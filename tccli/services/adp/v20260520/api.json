@@ -1,7 +1,7 @@
 {
   "actions": {
     "CopyAgentFromApp": {
-      "document": "创建Agent",
+      "document": "复制 Agent（目前仅支持claw模式））",
       "input": "CopyAgentFromAppRequest",
       "name": "复制 Agent",
       "output": "CopyAgentFromAppResponse",
@@ -33,6 +33,13 @@
       "input": "CreateAppTriggerRequest",
       "name": "创建应用触发器",
       "output": "CreateAppTriggerResponse",
+      "status": "online"
+    },
+    "CreateChannel": {
+      "document": "创建渠道（通过scene区分B端应用发布渠道与C端IM渠道）",
+      "input": "CreateChannelRequest",
+      "name": "创建渠道",
+      "output": "CreateChannelResponse",
       "status": "online"
     },
     "CreateConversation": {
@@ -124,6 +131,13 @@
       "input": "DeleteAppTriggerRequest",
       "name": "删除应用触发器",
       "output": "DeleteAppTriggerResponse",
+      "status": "online"
+    },
+    "DeleteChannel": {
+      "document": "删除渠道（通过scene区分场景）",
+      "input": "DeleteChannelRequest",
+      "name": "删除渠道",
+      "output": "DeleteChannelResponse",
       "status": "online"
     },
     "DeleteConversation": {
@@ -257,6 +271,20 @@
       "input": "DescribeAuditLogMetaRequest",
       "name": "获取审计日志元信息",
       "output": "DescribeAuditLogMetaResponse",
+      "status": "online"
+    },
+    "DescribeChannel": {
+      "document": "获取渠道详情（scene区分场景）",
+      "input": "DescribeChannelRequest",
+      "name": "查询渠道",
+      "output": "DescribeChannelResponse",
+      "status": "online"
+    },
+    "DescribeChannelList": {
+      "document": "获取渠道列表（scene区分场景）",
+      "input": "DescribeChannelListRequest",
+      "name": "查询渠道列表",
+      "output": "DescribeChannelListResponse",
       "status": "online"
     },
     "DescribeConcurrencyLimitDetailList": {
@@ -460,6 +488,13 @@
       "input": "ModifyAppTriggerRequest",
       "name": "修改应用触发器",
       "output": "ModifyAppTriggerResponse",
+      "status": "online"
+    },
+    "ModifyChannel": {
+      "document": "修改渠道（支持修改备注与企微机器人渠道回调机器人ID）",
+      "input": "ModifyChannelRequest",
+      "name": "更新渠道",
+      "output": "ModifyChannelResponse",
       "status": "online"
     },
     "ModifyConversation": {
@@ -1170,6 +1205,95 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证配置</p>",
+          "example": "无",
+          "member": "AgentPluginCredentialConfig",
+          "name": "CredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginCredentialConfig": {
+      "document": "Agent 插件凭据配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件鉴权值来源</p><p>枚举值：</p><ul><li>0： 未指定</li><li>1： 使用插件默认鉴权值，仅 APIKey/AccessKey 支持</li><li>2： 引用凭证</li><li>3： 引用变量</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "AuthValueSource",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证ID</p><p>入参限制：AuthValueSource=2时必填</p>",
+          "example": "K79A3**********************E6Gjk",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数配置</p>",
+          "example": "无",
+          "member": "AgentPluginCredentialParam",
+          "name": "ParamList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginCredentialParam": {
+      "document": "Agent 插件凭据参数配置（变量模式）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数位置</p><p>枚举值：</p><ul><li>0： Header 鉴权</li><li>1： Query 鉴权</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "KeyLocation",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数名称</p>",
+          "example": "SECRET_ID",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数取值来源</p>",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -4765,6 +4889,45 @@
       ],
       "usage": "both"
     },
+    "CallbackConfig": {
+      "document": "回调配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调AESKey</p>",
+          "example": "tQ**************IadwKAaMassVqLMEIjBMwfBhQWL",
+          "member": "string",
+          "name": "CallbackAesKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调Token</p>",
+          "example": "a****P**x*********sjNYtw",
+          "member": "string",
+          "name": "CallbackToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调URL</p>",
+          "example": "https:/***********gent.c*****st/channel/callba**/w***mrobot/1*********980125***",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CamAuthConfig": {
       "document": "CAM授权信息",
       "members": [
@@ -4850,6 +5013,249 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Channel": {
+      "document": "渠道信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道ID</p>",
+          "example": "20**4**5*********68",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道状态（仅B端）：1-未发布，2-运行中，3-已下线（与ConnectStatus互斥）</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "ChannelStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接状态（仅C端）：1-初始，2-连接成功，3-连接失败（与ChannelStatus互斥）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix秒）</p>",
+          "example": "1784617016",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道规格</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChannelSpec",
+          "name": "Spec",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix秒）</p>",
+          "example": "1784617895",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后更新人</p>",
+          "example": "4939",
+          "member": "string",
+          "name": "Updater",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ChannelSpec": {
+      "document": "渠道规格（聚合场景/类型/名称/备注/配置）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道名称</p>",
+          "example": "钉钉机器人",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道类型，详见ChannelType枚举</p><p>枚举值：</p><ul><li>10000： 微信服务号(Wechat)</li><li>10002： 企微应用(WeComApp)</li><li>10004： 微信客服(WechatCustomerService)</li><li>10009： 企微智能机器人(WeComRobot)</li><li>10013： 钉钉机器人(DingTalk)</li><li>10014： 企微智能机器人WebSocket(WeComRobot)</li><li>10015： 微信ClawBot(WechatClawBot)</li><li>10011： LINE(Line)</li><li>10012： Telegram(Telegram)</li><li>10016： 飞书机器人(Lark) </li></ul><p>C端场景（Scene=1时）只支持10014和10015</p>",
+          "example": "10013",
+          "member": "int64",
+          "name": "ChannelType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "ding3ufrav3malmak4sh_1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>钉钉机器人配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DingTalkChannelConfig",
+          "name": "DingTalk",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书机器人配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LarkChannelConfig",
+          "name": "Lark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>LINE配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LineChannelConfig",
+          "name": "Line",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道场景：0-B端场景，1-C端场景</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Telegram配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TelegramChannelConfig",
+          "name": "Telegram",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属用户+Agent运行态标识（C端）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserAgentReference",
+          "name": "UserAgent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信公众号/小程序配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WechatChannelConfig",
+          "name": "Wechat",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信ClawBot配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WechatClawBotChannelConfig",
+          "name": "WechatClawBot",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信客服配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WechatCustomerServiceChannelConfig",
+          "name": "WechatCustomerService",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微应用配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WecomAppChannelConfig",
+          "name": "WecomApp",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微机器人配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WecomRobotChannelConfig",
+          "name": "WecomRobot",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6607,6 +7013,62 @@
       ],
       "type": "object"
     },
+    "CreateChannelRequest": {
+      "document": "CreateChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用业务ID</p>",
+          "example": "20*************7392",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道规格（场景/类型/名称/备注/配置，必填）</p>",
+          "example": "无",
+          "member": "ChannelSpec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateChannelResponse": {
+      "document": "CreateChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道ID</p>",
+          "example": "20****8********2560",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>二维码URL（扫码类渠道创建后回填，其他场景为空）</p>",
+          "example": "ht**s*/**i*e***.w******qq**om/q/7GiQu1?qrcode****00****b6c*********************bot_type=3",
+          "member": "string",
+          "name": "QrcodeUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConversationRequest": {
       "document": "CreateConversation请求参数结构体",
       "members": [
@@ -7590,6 +8052,51 @@
     },
     "DeleteAppTriggerResponse": {
       "document": "DeleteAppTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChannelRequest": {
+      "document": "DeleteChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用业务ID</p>",
+          "example": "20*************7712",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道业务ID</p>",
+          "example": "20***********451392",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道场景：0-B端场景，1-C端场景</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteChannelResponse": {
+      "document": "DeleteChannel返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8779,6 +9286,144 @@
           "name": "BizObjects",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelListRequest": {
+      "document": "DescribeChannelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用业务ID</p>",
+          "example": "20***2*********7712",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道场景：0-B端场景，1-C端场景</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件（可选，支持ChannelType/ChannelStatus等维度）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码（从1开始）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量（最大100）</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelListResponse": {
+      "document": "DescribeChannelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道列表</p>",
+          "example": "无",
+          "member": "Channel",
+          "name": "ChannelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelRequest": {
+      "document": "DescribeChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用业务ID</p>",
+          "example": "20****2********7712",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道业务ID</p>",
+          "example": "20*****2*******9232",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道场景：0-B端场景，1-C端场景</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelResponse": {
+      "document": "DescribeChannel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道信息（含spec）</p>",
+          "example": "无",
+          "member": "Channel",
+          "name": "Channel",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -10811,6 +11456,34 @@
       ],
       "usage": "both"
     },
+    "DingTalkChannelConfig": {
+      "document": "钉钉机器人渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>钉钉机器人ClientId（AppKey）</p>",
+          "example": "d*********s3b1m***jw",
+          "member": "string",
+          "name": "AppKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>钉钉机器人ClientSecret（AppSecret）</p>",
+          "example": "2g*************p********NGdd9lZkXChKQIrv_6aG*************rGhRA5v",
+          "member": "string",
+          "name": "AppSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DuplexBilling": {
       "document": "DuplexBilling",
       "members": [
@@ -11279,6 +11952,73 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LarkChannelConfig": {
+      "document": "飞书机器人渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>飞书机器人AppId</p>",
+          "example": "c*******0********be9",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>飞书机器人AppSecret</p>",
+          "example": "i8*********v***********TLnqns3nu",
+          "member": "string",
+          "name": "AppSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LineChannelConfig": {
+      "document": "LINE渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>LINE Channel Access Token</p>",
+          "example": "b***************************23d4a7bc",
+          "member": "string",
+          "name": "AccessToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LINE回调地址</p>",
+          "example": "https://********************b********3d4a7**",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LINE Channel Secret</p>",
+          "example": "*********************76-7a9323d4a7bc",
+          "member": "string",
+          "name": "ChannelSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12502,6 +13242,69 @@
     },
     "ModifyAppTriggerResponse": {
       "document": "ModifyAppTrigger返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChannelRequest": {
+      "document": "ModifyChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用业务ID</p>",
+          "example": "20*************7712",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道业务ID</p>",
+          "example": "207**68*********392",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道场景：0-B端场景，1-C端场景</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scene",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待更新的渠道规格</p>",
+          "example": "无",
+          "member": "ChannelSpec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新字段掩码,<br>B端(Scene=0)：支持：【spec.description&quot; ,&quot;spec.wecom_robot.callback.wecom_robot_id&quot;】<br>C端(Scene=1)：支持：【&quot;spec.description&quot; , &quot;spec.wecom_robot.websocket.bot_id&quot; ,&quot;spec.wecom_robot.websocket.bot_secret&quot;】</p>",
+          "example": "无",
+          "member": "FieldMask",
+          "name": "UpdateMask",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyChannelResponse": {
+      "document": "ModifyChannel返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -15109,6 +15912,34 @@
       ],
       "usage": "both"
     },
+    "SkillCorpShareConfig": {
+      "document": "Skill 企业共享配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>SHARE_SCOPE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ALL</td><td>1</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_ACCOUNT</td><td>2</td><td></td></tr><tr><td>SHARE_SCOPE_TYPE_SPACE</td><td>3</td><td></td></tr></tbody></table><p>枚举值：</p><ul><li>0： 未指定</li><li>1： 全企业共享</li><li>3： 按空间共享</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "ShareScope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享范围信息，仅支持空间；StrId 为空间ID，Name 为空间名称</p>",
+          "example": "无",
+          "member": "Identity",
+          "name": "ShareScopeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SkillDetail": {
       "document": "skill详情",
       "members": [
@@ -15203,7 +16034,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间（Unix秒）",
+          "document": "<p>创建时间（Unix秒）</p>",
           "example": "1716825600",
           "member": "string",
           "name": "CreateTime",
@@ -15214,7 +16045,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者",
+          "document": "<p>创建者</p>",
           "example": "智能体开发平台",
           "member": "string",
           "name": "Creator",
@@ -15225,7 +16056,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 描述",
+          "document": "<p>Skill 描述</p>",
           "example": "A skill for analyzing datasets, generating insights, and creating reports.",
           "member": "string",
           "name": "Description",
@@ -15236,7 +16067,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 展示描述",
+          "document": "<p>Skill 展示描述</p>",
           "example": "用于分析数据集、生成洞察并输出分析报告的 Skill。",
           "member": "string",
           "name": "DisplayDescription",
@@ -15247,7 +16078,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 展示名称",
+          "document": "<p>Skill 展示名称</p>",
           "example": "数据分析助手",
           "member": "string",
           "name": "DisplayName",
@@ -15258,7 +16089,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 图标",
+          "document": "<p>Skill 图标</p>",
           "example": "https://example.com/icons/data-analysis.png",
           "member": "string",
           "name": "IconUrl",
@@ -15269,7 +16100,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill 名称",
+          "document": "<p>Skill 名称</p>",
           "example": "data_analysis_assistant",
           "member": "string",
           "name": "Name",
@@ -15280,12 +16111,23 @@
         },
         {
           "disabled": false,
-          "document": "更新时间（Unix秒）",
+          "document": "<p>更新时间（Unix秒）</p>",
           "example": "1716825600",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -15408,7 +16250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审批ID",
+          "document": "<p>审批ID</p>",
           "example": "20621320***********",
           "member": "string",
           "name": "ApprovalId",
@@ -15419,7 +16261,7 @@
         },
         {
           "disabled": false,
-          "document": "共享后关联的新 skill_id",
+          "document": "<p>共享后关联的新 skill_id</p>",
           "example": "c8c9668b-**************-7c5f644f8a20_shared",
           "member": "string",
           "name": "ShareSkillId",
@@ -15430,7 +16272,7 @@
         },
         {
           "disabled": false,
-          "document": "共享版本，如 1.0.0",
+          "document": "<p>共享版本，如 1.0.0</p>",
           "example": "1.0.11",
           "member": "string",
           "name": "ShareVersion",
@@ -15441,7 +16283,7 @@
         },
         {
           "disabled": false,
-          "document": "共享版本ID",
+          "document": "<p>共享版本ID</p>",
           "example": "afebd117-*********-a1f2-ab52264835c1",
           "member": "string",
           "name": "ShareVersionId",
@@ -15452,7 +16294,7 @@
         },
         {
           "disabled": false,
-          "document": "原 skill_id",
+          "document": "<p>原 skill_id</p>",
           "example": "c8c9668b-*********-8af5-7c5f644f8a20",
           "member": "string",
           "name": "SkillId",
@@ -15463,13 +16305,24 @@
         },
         {
           "disabled": false,
-          "document": "共享状态\n\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 | 未共享 |\n| 1 | 已共享 |\n| 2 | 审批中 |",
+          "document": "<p>共享状态</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 未共享 |<br>| 1 | 已共享 |<br>| 2 | 审批中 |</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业共享范围</p>",
+          "example": "无",
+          "member": "SkillCorpShareConfig",
+          "name": "CorpShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -15585,7 +16438,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>检测信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SkillAnalysisInfo",
           "name": "AnalysisInfo",
@@ -15596,7 +16449,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效版本号",
+          "document": "<p>当前生效版本号</p>",
           "example": "1.0.8",
           "member": "string",
           "name": "Version",
@@ -15607,7 +16460,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效版本ID",
+          "document": "<p>当前生效版本ID</p>",
           "example": "25551ac3-**************-1a829b1a6255",
           "member": "string",
           "name": "VersionId",
@@ -15618,7 +16471,7 @@
         },
         {
           "disabled": false,
-          "document": "    Skill 版本发布流程状态：\n      - 0 INITIALIZED      初始化（版本初始态）\n      - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）\n      - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）\n      - 3 RELEASED         已发布\n      - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史\"不通过\"语义）\n    与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。",
+          "document": "<p>Skill 版本发布流程状态：</p><pre><code>  - 0 INITIALIZED      初始化（版本初始态）  - 1 AUDITING         审核中（f_analysis_status ∈ {PENDING, RUNNING}）  - 2 PENDING_RELEASE  待发布（低/中风险，等用户确认上架）  - 3 RELEASED         已发布  - 4 UNRELEASED       未发布（HIGH / UNAVAILABLE / FAILED / 用户放弃，含历史&quot;不通过&quot;语义）与 SkillAnalysisStatus 解耦：前者是用户视角发布生命周期，后者是安全检测阶段。</code></pre>",
           "example": "3",
           "member": "int64",
           "name": "VersionStatus",
@@ -15629,7 +16482,7 @@
         },
         {
           "disabled": false,
-          "document": "Skill包的md5信息",
+          "document": "<p>Skill包的md5信息</p>",
           "example": "6e33f50cb**********1a3967ea3a857",
           "member": "string",
           "name": "SkillMd5",
@@ -15640,7 +16493,7 @@
         },
         {
           "disabled": false,
-          "document": "版本包地址",
+          "document": "<p>版本包地址</p>",
           "example": "https://****a***********************************************************/skill/****/*******_*****/************************************/*****************************_package.zip",
           "member": "string",
           "name": "SkillUrl",
@@ -15651,7 +16504,7 @@
         },
         {
           "disabled": false,
-          "document": "版本创建时间（Unix秒）",
+          "document": "<p>版本创建时间（Unix秒）</p>",
           "example": "1779884935",
           "member": "string",
           "name": "CreateTime",
@@ -15662,7 +16515,7 @@
         },
         {
           "disabled": false,
-          "document": "skill md文档",
+          "document": "<p>skill md文档</p>",
           "example": "https://************************************************************************/**************************/*******************************6******************/SKILL.md",
           "member": "string",
           "name": "SkillMarkdownUrl",
@@ -15673,10 +16526,21 @@
         },
         {
           "disabled": false,
-          "document": "版本变更说明",
+          "document": "<p>版本变更说明</p>",
           "example": "nano****",
           "member": "string",
           "name": "UpdateDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更用户</p>",
+          "example": "*******@qq.com",
+          "member": "string",
+          "name": "Updater",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -15841,6 +16705,23 @@
           "name": "Name",
           "output_required": false,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TelegramChannelConfig": {
+      "document": "Telegram渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Telegram Bot Token</p>",
+          "example": "1**************12",
+          "member": "string",
+          "name": "BotToken",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -16580,6 +17461,34 @@
       ],
       "usage": "both"
     },
+    "UserAgentReference": {
+      "document": "用户+Agent归属引用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>claw agent 运行态标识</p>",
+          "example": "use**********************96b-a9217f611508",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属用户标识</p>",
+          "example": "**bo",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Variable": {
       "document": "变量信息",
       "members": [
@@ -16618,7 +17527,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模块类型。枚举值: 1:环境参数, 2:应用参数, 3:系统参数, -1:所有参数</p>",
+          "document": "<p>变量模块类型</p><p>枚举值：</p><ul><li>0： API参数</li><li>1： 环境参数</li><li>2： 应用参数</li><li>3： 系统参数</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "ModuleType",
@@ -16680,6 +17589,28 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否内置变量</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsBuiltin",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可注入到沙箱环境</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSandbox",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -16747,6 +17678,378 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WechatChannelConfig": {
+      "document": "微信公众号/小程序渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>授权二维码URL（创建后回填）</p>",
+          "example": "https://**e**e*ltime-test-1251316161.cos.ap-****gzhou.*encentcos.9*b*****.p*g?*-*ign-algo*ith*=*ha1&q-ak=*KIDIqOlYFqIa*bLv*WZaJv33todLw**v**M**-***n-ti*e=*784606077%3B2415326077-param-l*st***-signature=34***********a840a52da0bb509c2340980db95",
+          "member": "string",
+          "name": "QrcodeUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公众号/小程序AppId（授权后回填）</p>",
+          "example": "wxe****9*********2",
+          "member": "string",
+          "name": "WechatAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公众号/小程序RefreshToken（授权后回填）</p>",
+          "example": "re***s***************ndP-Wqso9FSO576beH0gA2IS4529**UIkz3e0",
+          "member": "string",
+          "name": "WechatRefreshToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WechatClawBotChannelConfig": {
+      "document": "微信ClawBot渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>ClawBot机器人ID（扫码后回填）</p>",
+          "example": "c******6***f*****ot",
+          "member": "string",
+          "name": "BotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ClawBot机器人Token（扫码后回填）</p>",
+          "example": "12***************",
+          "member": "string",
+          "name": "BotToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>二维码状态（wait/confirmed/expired）</p>",
+          "example": "wait",
+          "member": "string",
+          "name": "QrcodeStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>二维码URL（创建后回填）</p>",
+          "example": "https://***e**********.qq.com/q/7Gi********de***6bb*****2d5c125229e41af6**31f6&*******e=3",
+          "member": "string",
+          "name": "QrcodeUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>微信用户ID（扫码后回填）</p>",
+          "example": "o9*********************r2diI@im.wechat",
+          "member": "string",
+          "name": "WechatUserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WechatCustomerServiceChannelConfig": {
+      "document": "微信客服渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业微信应用Secret</p>",
+          "example": "UId******************Z8_eBaogaaacwyk1v-XADI",
+          "member": "string",
+          "name": "AgentSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>头像URL</p>",
+          "example": "https://*****************pic*az/***********_2mKS32R9z1***58730024/0",
+          "member": "string",
+          "name": "Avatar",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "CallbackConfig",
+          "name": "Callback",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客服账号ID</p>",
+          "example": "wkN*********************aMsTAC_A",
+          "member": "string",
+          "name": "CustomerServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客服账号名称</p>",
+          "example": "****-***",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客服形象二维码URL</p>",
+          "example": "htt*-458***************************i*n-a**orithm=sh*1&q-ak=AKIDI*OlYF***fbLvJWZaJ*33todLwQkvvkM&q-sig******=17**735697%3B241*******************178******7%**2414**56*7&q-hea**r-list=&q-u*****ram*list=&q-signature=15245f305f*0dc22927396e52caff0a31a2c913*",
+          "member": "string",
+          "name": "ShareCodeUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业微信企业ID</p>",
+          "example": "ww************ef71",
+          "member": "string",
+          "name": "WecomCorpId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WecomAppChannelConfig": {
+      "document": "企微应用渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "CallbackConfig",
+          "name": "Callback",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方企业ID</p>",
+          "example": "*h********e******d",
+          "member": "string",
+          "name": "ThirdChannelCorpId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方渠道ID</p>",
+          "example": "***r*********d",
+          "member": "string",
+          "name": "ThirdChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微应用ID</p>",
+          "example": "1****22",
+          "member": "string",
+          "name": "WecomAgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微应用Secret</p>",
+          "example": "x**3*****N**************THYUlkbMV1kr-iEWY8I",
+          "member": "string",
+          "name": "WecomAgentSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "ww********7***4a16",
+          "member": "string",
+          "name": "WecomCorpId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WecomRobotCallbackAccess": {
+      "document": "企微机器人回调接入配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "CallbackConfig",
+          "name": "Callback",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器人名称</p>",
+          "example": "t****t",
+          "member": "string",
+          "name": "RobotName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微企业ID</p>",
+          "example": "w***************dc",
+          "member": "string",
+          "name": "WecomCorpId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微机器人ID</p>",
+          "example": "ai**********************IV2lOjCcAIo",
+          "member": "string",
+          "name": "WecomRobotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WecomRobotChannelConfig": {
+      "document": "企微机器人渠道配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调接入配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WecomRobotCallbackAccess",
+          "name": "Callback",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>WebSocket长连接配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WecomRobotWebsocketAccess",
+          "name": "Websocket",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WecomRobotWebsocketAccess": {
+      "document": "企微机器人WebSocket接入配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>绑定类型：1-扫码绑定，2-填写表单绑定</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BindType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微机器人BotId</p>",
+          "example": "aib***********************fxzxWjrB9",
+          "member": "string",
+          "name": "BotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企微机器人BotSecret</p>",
+          "example": "eq********************qMAyYJwQhISGohK7VxMO8",
+          "member": "string",
+          "name": "BotSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

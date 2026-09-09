@@ -76,7 +76,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间名称, 长度限制 2~64",
+          "document": "<p>工作空间名称, 长度限制 2~64</p>",
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
@@ -85,7 +85,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间描述, 长度限制 0~255",
+          "document": "<p>工作空间描述, 长度限制 0~255</p>",
           "example": "this is a workspace",
           "member": "string",
           "name": "Description",
@@ -94,7 +94,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。",
+          "document": "<p>工作空间规格。Standard: 2C4G, Calculation: 4C8G, Profession: 8C16G. 默认是 Standard。</p>",
           "example": "Standard",
           "member": "string",
           "name": "Specs",
@@ -103,7 +103,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255",
+          "document": "<p>工作空间基础镜像名称, 默认会使用 All In One 镜像, 长度限制 1~255</p>",
           "example": "cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/go-1.20:2023-04-25.0943",
           "member": "string",
           "name": "Image",
@@ -112,8 +112,8 @@
         },
         {
           "disabled": false,
-          "document": "Git 仓库. 工作空间启动时会自动克隆该仓库",
-          "example": "{         \"url\": \"https://github.com/koajs/koa.git\",         \"branch\": \"v0.0.1\"     }",
+          "document": "<p>Git 仓库. 工作空间启动时会自动克隆该仓库</p>",
+          "example": "无",
           "member": "GitRepository",
           "name": "Repository",
           "required": false,
@@ -121,8 +121,8 @@
         },
         {
           "disabled": false,
-          "document": "环境变量. 会被注入到工作空间中",
-          "example": "[{\"name\": \"test\", \"value\": \"test\"}]",
+          "document": "<p>环境变量. 会被注入到工作空间中</p>",
+          "example": "无",
           "member": "Env",
           "name": "Envs",
           "required": false,
@@ -130,7 +130,7 @@
         },
         {
           "disabled": false,
-          "document": "预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10",
+          "document": "<p>预装插件. 工作空间启动时, 会自动安装这些插件。长度限制: 0~10</p>",
           "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
           "member": "string",
           "name": "Extensions",
@@ -139,8 +139,8 @@
         },
         {
           "disabled": false,
-          "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
-          "example": "{         \"init\": [             {                 \"name\": \"init\",                 \"command\": \"echo init\"             }         ],         \"start\": [             {                 \"name\": \"start\",                 \"command\": \"echo start\"             }         ],         \"destroy\": [             {                 \"name\": \"shutdown\",                 \"command\": \"echo shutdown\"             }         ]     }",
+          "document": "<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>",
+          "example": "无",
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,
@@ -148,7 +148,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "1303697168",
           "member": "int64",
           "name": "TenantAppId",
@@ -157,7 +157,7 @@
         },
         {
           "disabled": false,
-          "document": "用户UIN",
+          "document": "<p>用户UIN</p>",
           "example": "100015915015",
           "member": "string",
           "name": "TenantUin",
@@ -166,7 +166,7 @@
         },
         {
           "disabled": false,
-          "document": "VPCID",
+          "document": "<p>VPCID</p>",
           "example": "vpc-rdfkabjj",
           "member": "string",
           "name": "TenantUniqVpcId",
@@ -175,19 +175,10 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-bx88somq",
           "member": "string",
           "name": "TenantSubnetId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "地域",
-          "example": "ap-shanghai",
-          "member": "string",
-          "name": "Region",
           "required": false,
           "type": "string"
         }
@@ -199,7 +190,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间 SpaceKey",
+          "document": "<p>工作空间 SpaceKey</p>",
           "example": "ubbyfp",
           "member": "string",
           "name": "SpaceKey",
@@ -208,7 +199,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间名称",
+          "document": "<p>工作空间名称</p>",
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
@@ -339,6 +330,7 @@
           "example": "[       {         \"Name\": \"All in one\",         \"Repository\": \"cloudstudio-devops-docker.pkg.coding.net/artifacts/workspace/full-1.0.0\",         \"Tag\": [           \"abc\"         ]       }     ]",
           "member": "Image",
           "name": "Images",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

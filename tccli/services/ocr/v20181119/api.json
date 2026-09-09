@@ -13406,6 +13406,104 @@
       ],
       "usage": "out"
     },
+    "ReasoningConfig": {
+      "document": "推理输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际使用的推理输出模式：enum 或 string。</p>",
+          "example": "enum",
+          "member": "string",
+          "name": "OutputMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>枚举值集合，仅在 OutputMode=enum 时生效。  VLM 输出必须精确命中此集合中的某个值。</p>",
+          "example": "[\"Tamper\"]",
+          "member": "string",
+          "name": "EnumValues",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本输出最大长度，仅在 OutputMode=string 时生效。</p><p>取值范围：[1, 500]</p><p>默认值：200</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxLength",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在推理调用时向 VLM 传入原图进行多模态理解。  true（默认）：VLM 同时接收原图和渲染后的 Prompt，具备多模态理解能力，可直接&quot;看&quot;图片内容进行推理。  false：不传入原图，仅以渲染后的 Prompt（含变量注入值）进行纯文本推理。适用于推理逻辑完全基于结构化出参字段（如水印文字、置信度比较等）的场景，可降低推理延迟和计费成本。  建议：当 ReasoningPrompt 中未涉及&quot;观察图片&quot;、&quot;直接看图&quot;等多模态指令，且推理规则完全基于 ${变量名} 引用的文字结果时，可设为 false 以优化性能。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableImageInput",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReasoningResult": {
+      "document": "VLM 推理结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实际使用的推理输出模式：enum 或 string。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "OutputMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>",
+          "example": "__UNCERTAIN__",
+          "member": "string",
+          "name": "EnumValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>",
+          "example": "所有鉴伪项均未触发风险，无水印或水印内容与商户注册业务一致，门头照符合入网审核要求。",
+          "member": "string",
+          "name": "TextValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VLM 原始输出文本（未经过结构化校验）。</p>",
+          "example": "所有鉴伪项均未触发风险，无水印或水印内容与商户注册业务一致，门头照符合入网审核要求。",
+          "member": "string",
+          "name": "RawOutput",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量替换后的实际 Prompt（脱敏后）。</p>",
+          "example": "请直接观察图片并结合以下检测结果，检测结果：篡改 IsWarn=false（置信度 0）。规则：任一鉴伪项 IsWarn=true 则拒绝并说明原因；如水印内容与商户注册业务不符也拒绝；其余情况通过。",
+          "member": "string",
+          "name": "RenderedPrompt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RecognizeAgentRequest": {
       "document": "RecognizeAgent请求参数结构体",
       "members": [
@@ -23855,6 +23953,24 @@
           "name": "ImageBase64",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>",
+          "example": "直接理解图片以及分析水印识别文字：${WatermarkContent}，我们**************************************如\"仅供办理电信开户业务\"判定为 reject，没有异常情况判定为 pass",
+          "member": "string",
+          "name": "ReasoningPrompt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理输出配置。当 ReasoningPrompt 传入时建议同步传入，未传入时使用默认配置（OutputMode=enum, EnumValues=[&quot;true&quot;,&quot;false&quot;], EnableImageInput=true）。</p>",
+          "example": "无",
+          "member": "ReasoningConfig",
+          "name": "ReasoningConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -23920,6 +24036,26 @@
           "name": "WatermarkContent",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板图片提示</p>",
+          "example": "无",
+          "member": "SceneWarnInfo",
+          "name": "Template",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VLM 推理结果。仅当请求中传入 ReasoningPrompt 时返回，否则不返回此字段。</p>",
+          "example": "无",
+          "member": "ReasoningResult",
+          "name": "ReasoningResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {

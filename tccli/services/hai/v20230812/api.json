@@ -1672,7 +1672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HiCache缓存",
+          "document": "<p>HiCache缓存</p>",
           "example": "无",
           "member": "HiCacheInfo",
           "name": "HiCache",

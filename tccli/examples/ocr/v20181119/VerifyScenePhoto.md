@@ -7,7 +7,8 @@ Input:
 ```
 tccli ocr VerifyScenePhoto --cli-unfold-argument  \
     --Scene 0101 \
-    --ImageUrl https://demo-1400073141.cos.ap-guangzhou.myqcloud.com/%E5%85%83%E5%AE%9D.png?q-sign-algorithm=sha1&q-ak=AKID6WpjBeiQeF0RA-TleJJ5oe9uVZAtM4w6oX1k6TKXVVuLpSkq7pNd3draS3XjwHw7&q-sign-time=1776838277;1776841877&q-key-time=1776838277;1776841877&q-header-list=host&q-url-param-list=&q-signature=4cef25001d28d2172825e41f75c2af5bf551014e&x-cos-security-token=xheG1dXFML3tXG5BbL3WBkxVgTMPn53a210e4baed39631a9b75078d24ada5312POGPBv-E8gHNUZW60alPmj_rZ6YYQDrEldc7Vd-Prv9oW4mMNFQT1EXd92m7fxTHnqgjLnAgBMOIfJXdAMF1huLxH8LXhOiJXD9ydvh_tgzegboc_lUSLWebcUBHP4Wbq7pIN_be3zrdHxGvqr1nG1y_ACrwo6iujcbock0-U4fqsvf1R_Z00Xch68U_u51UAr9Kc9fYYD9uVW1JpQCdMKn2A3eFsVEocM8Pvx_BvVGYlr1slpJcYePdieaREOaGdejq_g9aozxuR5P0jNrowA
+    --ImageUrl https://demo-1400073141.cos.ap-guangzhou.myqcloud.com/%E5%85%83%E5%AE%9D.png?q-sign-algorithm=sha1&q-ak=AKID6WpjBeiQeF0RA-TleJJ5oe9uVZAtM4w6oX1k6TKXVVuLpSkq7pNd3draS3XjwHw7&q-sign-time=1776838277;1776841877&q-key-time=1776838277;1776841877&q-header-list=host&q-url-param-list=&q-signature=4cef25001d28d2172825e41f75c2af5bf551014e&x-cos-security-token=xheG1dXFML3tXG5BbL3WBkxVgTMPn53a210e4baed39631a9b75078d24ada5312POGPBv-E8gHNUZW60alPmj_rZ6YYQDrEldc7Vd-Prv9oW4mMNFQT1EXd92m7fxTHnqgjLnAgBMOIfJXdAMF1huLxH8LXhOiJXD9ydvh_tgzegboc_lUSLWebcUBHP4Wbq7pIN_be3zrdHxGvqr1nG1y_ACrwo6iujcbock0-U4fqsvf1R_Z00Xch68U_u51UAr9Kc9fYYD9uVW1JpQCdMKn2A3eFsVEocM8Pvx_BvVGYlr1slpJcYePdieaREOaGdejq_g9aozxuR5P0jNrowA \
+    --ReasoningPrompt 直接理解图片以及分析水印识别文字：${WatermarkContent}，我们**************************************如"仅供办理电信开户业务"判定为 reject，没有异常情况判定为 pass
 ```
 
 Output: 

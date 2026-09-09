@@ -203,6 +203,13 @@
       "output": "DescribeEmrOverviewMetricsResponse",
       "status": "online"
     },
+    "DescribeExportConfs": {
+      "document": "查询导出配置",
+      "input": "DescribeExportConfsRequest",
+      "name": "查询导出配置",
+      "output": "DescribeExportConfsResponse",
+      "status": "online"
+    },
     "DescribeGlobalConfig": {
       "document": "查询YARN资源调度的全局配置",
       "input": "DescribeGlobalConfigRequest",
@@ -586,6 +593,13 @@
       "input": "ModifySLInstanceBasicRequest",
       "name": "Serverless HBase修改实例名称",
       "output": "ModifySLInstanceBasicResponse",
+      "status": "online"
+    },
+    "ModifyServiceParamsByExportConfs": {
+      "document": "配置导入下发",
+      "input": "ModifyServiceParamsByExportConfsRequest",
+      "name": "导入配置并下发",
+      "output": "ModifyServiceParamsByExportConfsResponse",
       "status": "online"
     },
     "ModifyUserGroup": {
@@ -3532,6 +3546,34 @@
           "name": "NodePoolJoinMode",
           "output_required": false,
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfSubContext": {
+      "document": "配置下发参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件名字",
+          "example": "test.properties",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件参数,需要转为base64",
+          "example": "W3siY2hhbmdlVHlwZSI6InVwZGF0ZSIsImtleSI6Inlhcm4uYXBwLm1hcHJlZHVjZS5hbS5zY2hlZHVsZXIuY29ubmVjdGlvbi53YWl0LmludGVydmFsLW1zIiwib2xkVmFsdWUiOiI1NTAwIiwibmV3VmFsdWUiOiI1NjAwIiwicmFuZ2UiOlsiMCIsIjIxNDc0ODM2NDciXX1d",
+          "member": "string",
+          "name": "Params",
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6958,6 +7000,79 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportConfsRequest": {
+      "document": "DescribeExportConfs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "emr-cf5zdrxk",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定需要导出的配置</p>",
+          "example": "无",
+          "member": "ExportConfContext",
+          "name": "ExportConfContexts",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出类型</p><p>枚举值：</p><ul><li>0： 全部配置</li><li>1： 只导出自定义和修改过的配置</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExportType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点ip</p>",
+          "example": "10.0.10.210",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置组名称</p>",
+          "example": "yarn-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExportConfsResponse": {
+      "document": "DescribeExportConfs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导出配置参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExportConfMeta",
+          "name": "ExportConfParamList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12336,6 +12451,89 @@
       ],
       "usage": "both"
     },
+    "ExportConfContext": {
+      "document": "指定要导出配置的上下文结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务配置</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "test.xml",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "yarn",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ExportConfMeta": {
+      "document": "导出配置结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>组件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "YARN",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yarn-env.sh",
+          "member": "string",
+          "name": "Classification",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3.3.5",
+          "member": "string",
+          "name": "ServiceVersion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出配置参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fhjkajd",
+          "member": "string",
+          "name": "Properties",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExternalAccess": {
       "document": "容器集群外部访问设置",
       "members": [
@@ -17069,6 +17267,80 @@
     "ModifySLInstanceResponse": {
       "document": "ModifySLInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceParamsByExportConfsRequest": {
+      "document": "ModifyServiceParamsByExportConfs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "emr-rhmc70zt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导入配置项</p>",
+          "example": "无",
+          "member": "ExportConfMeta",
+          "name": "ExportConfParamList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ip</p>",
+          "example": "[\"10.0.129.116\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置组</p>",
+          "example": "yarn-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceParamsByExportConfsResponse": {
+      "document": "ModifyServiceParamsByExportConfs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "546",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更项</p>",
+          "example": "无",
+          "member": "ConfSubContext",
+          "name": "WaitModifyConfList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

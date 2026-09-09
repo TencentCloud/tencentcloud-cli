@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateCustomizeErrorPage": {
-      "document": "创建自定义错误页面。",
+      "document": "创建自定义响应页面。",
       "input": "CreateCustomizeErrorPageRequest",
       "name": "创建自定义响应页面",
       "output": "CreateCustomizeErrorPageResponse",
@@ -1289,7 +1289,7 @@
       "status": "online"
     },
     "ModifyCustomErrorPage": {
-      "document": "修改自定义错误页面。",
+      "document": "修改自定义响应页面。",
       "input": "ModifyCustomErrorPageRequest",
       "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
@@ -7323,7 +7323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-2kplomhisdcb",
           "member": "string",
           "name": "ZoneId",
@@ -7332,7 +7332,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页名称，名称为 2-30 个字符。",
+          "document": "<p>自定义响应页面名称，名称为 2-30 个字符。</p>",
           "example": "错误定制页",
           "member": "string",
           "name": "Name",
@@ -7341,7 +7341,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面类型，取值有：<li>text/html； </li><li>application/json；</li><li>text/plain；</li><li>text/xml。</li>",
+          "document": "<p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>",
           "example": "application/json",
           "member": "string",
           "name": "ContentType",
@@ -7350,7 +7350,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面描述，描述不超过 60 个字符。",
+          "document": "<p>自定义响应页面描述，描述不超过 60 个字符。</p>",
           "example": "web规则自定义错误页面",
           "member": "string",
           "name": "Description",
@@ -7359,7 +7359,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面内容，内容不超过 2KB。",
+          "document": "<p>自定义响应页面内容，内容不超过 16KB。</p>",
           "example": "{\"title\":\"自定义错误页\", \"Content\":\"自定义错误页面内容\"}",
           "member": "string",
           "name": "Content",
@@ -7374,7 +7374,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "页面 ID。",
+          "document": "<p>自定义响应页面 ID。</p>",
           "example": "p-2kplomhisdcb",
           "member": "string",
           "name": "PageId",
@@ -25528,7 +25528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义错误页面 ID。",
+          "document": "<p>自定义响应页面 ID。</p>",
           "example": "p-2kplomhisdcb",
           "member": "string",
           "name": "PageId",
@@ -25537,7 +25537,7 @@
         },
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-2kplomhisdcb",
           "member": "string",
           "name": "ZoneId",
@@ -25546,7 +25546,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页名称，名称为2 - 60个字符。",
+          "document": "<p>自定义响应页面名称，名称为 2 - 60 个字符。</p>",
           "example": "web防护自定义错误页",
           "member": "string",
           "name": "Name",
@@ -25555,7 +25555,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页描述，描述内容不超过60个字符。",
+          "document": "<p>自定义响应页面描述，描述内容不超过 60 个字符。</p>",
           "example": "web规则自定义错误页面",
           "member": "string",
           "name": "Description",
@@ -25564,7 +25564,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面类型，取值有：<li>text/html。 </li><li>application/json。</li><li>plain/text。</li><li>text/xml。</li>",
+          "document": "<p>自定义响应页面类型，取值有：</p><ul><li>text/html</li><li>application/json</li><li>plain/text</li><li>text/xml</li><li>text/css</li><li>text/javascript</li><li>application/javascript</li><li>text/markdown</li></ul>",
           "example": "application/json",
           "member": "string",
           "name": "ContentType",
@@ -25573,7 +25573,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面内容。内容不超过 2KB。",
+          "document": "<p>自定义响应页面内容。内容不超过 16KB。</p>",
           "example": "{\"title\":\"自定义错误页\", \"Content\":\"自定义错误页面内容\"}",
           "member": "string",
           "name": "Content",

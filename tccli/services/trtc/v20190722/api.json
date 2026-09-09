@@ -1608,7 +1608,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一标识",
+          "document": "<p>任务唯一标识</p>",
           "example": "v2*****test",
           "member": "string",
           "name": "TaskId",
@@ -1617,7 +1617,7 @@
         },
         {
           "disabled": false,
-          "document": "控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话",
+          "document": "<p>控制命令，目前支持命令如下：- ServerPushText，服务端发送文本给AI机器人，AI机器人会播报该文本. - InvokeLLM，服务端发送文本给大模型，触发对话。- TransparentData，透传信息给客户端。</p>",
           "example": "ServerPushText",
           "member": "string",
           "name": "Command",
@@ -1626,7 +1626,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端发送播报文本命令，当Command为ServerPushText时必填",
+          "document": "<p>服务端发送播报文本命令，当Command为ServerPushText时必填</p>",
           "example": "无",
           "member": "ServerPushText",
           "name": "ServerPushText",
@@ -1635,10 +1635,19 @@
         },
         {
           "disabled": false,
-          "document": "服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=\"1\"",
+          "document": "<p>服务端发送命令主动请求大模型,当Command为InvokeLLM时会把content请求到大模型,头部增加X-Invoke-LLM=&quot;1&quot;</p>",
           "example": "无",
           "member": "InvokeLLM",
           "name": "InvokeLLM",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ai对话需要透传给客户端的信息</p>",
+          "example": "无",
+          "member": "TransparentData",
+          "name": "TransparentData",
           "required": false,
           "type": "object"
         }
@@ -11033,6 +11042,21 @@
           "name": "Terminologies",
           "required": false,
           "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "TransparentData": {
+      "document": "ai对话需要透传给客户端的数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>透传给客户端的信息</p>",
+          "example": "hello world",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string"
         }
       ],
       "usage": "in"

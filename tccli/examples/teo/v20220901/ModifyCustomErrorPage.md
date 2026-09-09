@@ -1,6 +1,6 @@
-**Example 1: 修改自定义错误页面**
+**Example 1: 修改自定义响应页面**
 
-修改自定义错误页面。
+修改自定义响应页面。
 
 Input: 
 
@@ -8,10 +8,10 @@ Input:
 tccli teo ModifyCustomErrorPage --cli-unfold-argument  \
     --PageId p-2kplomhisdcb \
     --ZoneId zone-2kplomhisdcb \
-    --Name web防护自定义错误页面 \
-    --Description web防护自定义错误页面 \
+    --Name web防护自定义响应页面 \
+    --Description web防护自定义响应页面 \
     --ContentType application/json \
-    --Content {"title": "自定义错误页面title","content": "自定义错误页面内容"}
+    --Content {"title": "自定义响应页面title","content": "自定义响应页面内容"}
 ```
 
 Output: 

@@ -77,13 +77,6 @@
       "output": "GetKnowledgeBaseListResponse",
       "status": "online"
     },
-    "GetSessionDetails": {
-      "document": "获取用户会话记录详情列表",
-      "input": "GetSessionDetailsRequest",
-      "name": "获取会话详情",
-      "output": "GetSessionDetailsResponse",
-      "status": "online"
-    },
     "GetUploadJobDetails": {
       "document": "查询上传任务",
       "input": "GetUploadJobDetailsRequest",
@@ -145,6 +138,13 @@
       "input": "QueryUserAuthorityRequest",
       "name": "查询对象的用户权限信息",
       "output": "QueryUserAuthorityResponse",
+      "status": "online"
+    },
+    "QueryUserSessionDetail": {
+      "document": "查询用户会话详情",
+      "input": "QueryUserSessionDetailRequest",
+      "name": "获取用户session详情",
+      "output": "QueryUserSessionDetailResponse",
       "status": "online"
     },
     "StopChatAI": {
@@ -1325,72 +1325,6 @@
       ],
       "type": "object"
     },
-    "GetSessionDetailsRequest": {
-      "document": "GetSessionDetails请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "dataagent-hLhMpd0H",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "会话ID",
-          "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
-          "member": "string",
-          "name": "SessionId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetSessionDetailsResponse": {
-      "document": "GetSessionDetails返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "会话记录详情",
-          "example": "无",
-          "member": "Record",
-          "name": "RecordList",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录总数",
-          "example": "10",
-          "member": "int64",
-          "name": "RecordCount",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前在运行的record信息",
-          "example": "xkdsZ0df-sdfjkx-aqjlx-xla",
-          "member": "string",
-          "name": "RunRecord",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "GetUploadJobDetailsRequest": {
       "document": "GetUploadJobDetails请求参数结构体",
       "members": [
@@ -2285,298 +2219,225 @@
       ],
       "type": "object"
     },
-    "Record": {
-      "document": "问答结构",
+    "QueryUserSessionDetailRequest": {
+      "document": "QueryUserSessionDetail请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "问题内容",
-          "example": "hello",
+          "document": "<p>会话id</p>",
+          "example": "67e0bdc1-c148-45c7-8ec5-9c8908b83932",
           "member": "string",
-          "name": "Question",
-          "output_required": true,
-          "required": true,
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页参数</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dataagent-haBKQxLt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserSessionDetailResponse": {
+      "document": "QueryUserSessionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户 Id</p>",
+          "example": "600000563247",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "回答内容",
-          "example": "hello",
-          "member": "string",
-          "name": "Answer",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "思考内容",
-          "example": "think",
-          "member": "string",
-          "name": "Think",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务列表",
-          "example": "无",
-          "member": "Task",
-          "name": "TaskList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录创建时间",
-          "example": "2025-05-13 14:23:41",
-          "member": "string",
-          "name": "CreateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录更新时间",
-          "example": "2025-05-13 14:23:41",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录id",
-          "example": "1j28j8-2j83e2-2312-xjax",
-          "member": "string",
-          "name": "RecordId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总结内容",
-          "example": "总结",
-          "member": "string",
-          "name": "FinalSummary",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "会话ID",
-          "example": "j28j8-2j83e2-2312-xazx",
+          "document": "<p>会话id</p>",
+          "example": "67e0bdc1-c148-45c7-8ec5-9c8908b83932",
           "member": "string",
           "name": "SessionId",
           "output_required": false,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "1=赞，2=踩，0=无反馈",
-          "example": "1",
-          "member": "int64",
-          "name": "Feedback",
+          "document": "<p>会话详情数组</p>",
+          "example": "无",
+          "member": "RecordList",
+          "name": "RecordList",
           "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "数据库信息",
-          "example": "\"{\\\"DbTable\\\":[{\\\"DbName\\\":\\\"database_name\\\",\\\"TableList\\\":[\\\"table1\\\"]}],\\\"DatasourceName\\\":\\\"test\\\"}\")",
-          "member": "string",
-          "name": "DbInfo",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "错误信息",
-          "example": "error msg",
-          "member": "string",
-          "name": "ErrorContext",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "TaskList的string字符串",
-          "example": "\"{\"TaskName\":\"task1\"}\"",
-          "member": "string",
-          "name": "TaskListStr",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "知识库id列表",
-          "example": "[\"dxjajkke\"]",
-          "member": "string",
-          "name": "KnowledgeBaseIds",
-          "output_required": false,
-          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "上下文",
-          "example": "\"sdfs\"",
+          "document": "<p>记录总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中的聊天请求, 返回为json字符串</p>",
+          "example": "{\"SessionId\": \"\",\"Context\": \"{\\\"KnowledgeBases\\\":[{\\\"KnowledgeBaseId\\\":\\\"klbase-TX1cUnuOLa\\\",\\\"FileIds\\\":[],\\\"SelectAllFiles\\\":true,\\\"DbTables\\\":[]}],\\\"SceneId\\\":\\\"\\\",\\\"Version\\\":\\\"2.0.1\\\",\\\"DataSourceInfo\\\":{}}\", \"OldRecordId\": \"\", \"RecordId\": \"\"}",
+          "member": "string",
+          "name": "RunRecord",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecordList": {
+      "document": "记录列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话上下文</p>",
+          "example": "{\"KnowledgeBases\":[{\"KnowledgeBaseId\":\"klbase-TX1cUnuOLa\",\"FileIds\":[],\"SelectAllFiles\":true,\"DbTables\":[]},{\"KnowledgeBaseId\":\"klbase-YlPWM4EWXt\",\"FileIds\":[],\"SelectAllFiles\":true,\"DbTables\":[]}],\"SceneId\":\"\",\"Version\":\"2.0.1\",\"DataSourceInfo\":{}}",
           "member": "string",
           "name": "Context",
           "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "StepExpand": {
-      "document": "步骤扩展结构",
-      "members": [
-        {
-          "disabled": false,
-          "document": "标题",
-          "example": "数据查询",
-          "member": "string",
-          "name": "Title",
-          "output_required": false,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "状态",
-          "example": "running",
+          "document": "<p>记录id</p>",
+          "example": "c36a73a9-c158-4e88-9aff-161115ab2036",
           "member": "string",
-          "name": "Status",
+          "name": "RecordId",
           "output_required": false,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cellid数组",
-          "example": "无",
+          "document": "<p>追踪id</p>",
+          "example": "7c6d5c68-dc83-4929-b3f2-c1909633701a",
           "member": "string",
-          "name": "CellIds",
+          "name": "TraceId",
           "output_required": false,
-          "required": false,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "StepInfo": {
-      "document": "任务步骤",
-      "members": [
+        },
         {
           "disabled": false,
-          "document": "步骤id",
-          "example": "1",
+          "document": "<p>会话id</p>",
+          "example": "5a905d26-a24d-47cc-a5e4-00f2d27155da",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题</p>",
+          "example": "模拟一个工具调用失败的场景？",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回答</p>",
+          "example": "[\"durationMs\": 823}, {\"kind\": \"run.finished\", \"name\": \"\", \"status\": \"completed\", \"payload\": {\"status\": \"completed\"}, \"durationMs\": null}]",
+          "member": "string",
+          "name": "Answer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0-否定反馈, 1-肯定反馈</p>",
+          "example": "0",
           "member": "int64",
-          "name": "Id",
-          "output_required": true,
-          "required": true,
+          "name": "Feedback",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "步骤名称",
-          "example": "查询",
+          "document": "<p>错误信息</p>",
+          "example": "Internal error.",
           "member": "string",
-          "name": "Name",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "步骤状态",
-          "example": "待补充",
-          "member": "string",
-          "name": "Status",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "类型(text/expand)",
-          "example": "text",
-          "member": "string",
-          "name": "Type",
-          "output_required": true,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "总结",
-          "example": "总结内容",
-          "member": "string",
-          "name": "Summary",
+          "name": "ErrorContext",
           "output_required": false,
-          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "步骤扩展结构",
-          "example": "无",
-          "member": "StepExpand",
-          "name": "Expand",
+          "document": "<p>创建时间</p>",
+          "example": "2026-07-15T10:51:38.862993+00:00",
+          "member": "string",
+          "name": "CreateTime",
           "output_required": false,
-          "required": false,
-          "type": "object",
+          "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "描述",
-          "example": "描述",
+          "document": "<p>更新时间</p>",
+          "example": "2026-07-15T10:51:44.358128+00:00",
           "member": "string",
-          "name": "Desc",
+          "name": "UpdateTime",
           "output_required": false,
-          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型信息</p>",
+          "example": "deepseek-v4-pro-202606",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "both"
+      "usage": "out"
     },
     "StopChatAIRequest": {
       "document": "StopChatAI请求参数结构体",
@@ -2623,56 +2484,6 @@
         }
       ],
       "type": "object"
-    },
-    "Task": {
-      "document": "任务信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "任务ID",
-          "example": "1",
-          "member": "int64",
-          "name": "Id",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务名称",
-          "example": "查询db",
-          "member": "string",
-          "name": "Name",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务状态",
-          "example": "processing",
-          "member": "string",
-          "name": "Status",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "任务步骤列表",
-          "example": "无",
-          "member": "StepInfo",
-          "name": "StepInfoList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
     },
     "UploadAndCommitFileRequest": {
       "document": "UploadAndCommitFile请求参数结构体",

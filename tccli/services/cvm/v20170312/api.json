@@ -7879,6 +7879,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>实例是否开启巨型帧</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableJumboFrame",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>自定义metadata，本参数对应创建 CVM时指定的Metadata 信息。<strong>注：内测中</strong>。</p>",
           "example": "无",
           "member": "Metadata",

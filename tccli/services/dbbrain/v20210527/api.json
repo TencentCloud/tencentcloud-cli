@@ -5478,7 +5478,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "cmgo-ag8kko4r",
           "member": "string",
           "name": "InstanceId",
@@ -5487,7 +5487,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：mongodb",
+          "document": "<p>服务产品类型，支持值：mongodb</p>",
           "example": "mongodb",
           "member": "string",
           "name": "Product",
@@ -5496,7 +5496,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的ID，用于筛选线程列表。",
+          "document": "<p>线程的ID，用于筛选线程列表。</p>",
           "example": "123",
           "member": "uint64",
           "name": "ID",
@@ -5505,7 +5505,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作主机地址，用于筛选线程列表。",
+          "document": "<p>线程的操作主机地址，用于筛选线程列表。</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Host",
@@ -5514,7 +5514,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作数据库，用于筛选线程列表,如果是多个 使用 ','  分割",
+          "document": "<p>线程的操作数据库，用于筛选线程列表,如果是多个 使用 &#39;,&#39;  分割</p>",
           "example": "test_db",
           "member": "string",
           "name": "DB",
@@ -5523,7 +5523,7 @@
         },
         {
           "disabled": false,
-          "document": "命令类型 ,如果是多个 使用 ','  分割",
+          "document": "<p>命令类型 ,如果是多个 使用 &#39;,&#39;  分割</p>",
           "example": "update",
           "member": "string",
           "name": "Type",
@@ -5532,7 +5532,7 @@
         },
         {
           "disabled": false,
-          "document": "线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。",
+          "document": "<p>线程的操作时长最小值，单位秒，用于筛选操作时长大于该值的线程列表。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Time",
@@ -5541,7 +5541,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20。",
+          "document": "<p>返回数量，默认20。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5556,7 +5556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MongoDBProcessList",
           "name": "ProcessList",

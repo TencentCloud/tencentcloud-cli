@@ -58,6 +58,14 @@
         "title": "成功"
       }
     ],
+    "CreateChannel": [
+      {
+        "document": "创建渠道",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannel\n<公共请求参数>\n\n{\n    \"AppId\": \"20*************7392\",\n    \"Spec\": {\n        \"ChannelName\": \"*****test_2\",\n        \"ChannelType\": 10014,\n        \"Description\": \"********t_desc\",\n        \"Scene\": 1,\n        \"UserAgent\": {\n            \"AgentId\": \"user**********3********-a96b-a9217f6115**\",\n            \"UserId\": \"****\"\n        },\n        \"WecomRobot\": {\n            \"Websocket\": {\n                \"BindType\": 2,\n                \"BotId\": \"a*b*************g*****E**Cr7b_xze0a\",\n                \"BotSecret\": \"f***********q***********GhEkxgJejFKl4mjPM*I\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"20****8********2560\",\n        \"QrcodeUrl\": \"ht**s*/**i*e***.w******qq**om/q/7GiQu1?qrcode****00****b6c*********************bot_type=3\",\n        \"RequestId\": \"e1a33115-e3f9-4dda-b953-78ac0ec772b5\"\n    }\n}",
+        "title": "正常请求1"
+      }
+    ],
     "CreateConversation": [
       {
         "document": "",
@@ -166,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"TriggerId\": \"77ec7105-0cb8-4c87-ac30-d7eb6688bf4c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ee65f43-8d16-4e15-ac24-5c69b3ec8a76\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "DeleteChannel": [
+      {
+        "document": "删除渠道请求",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteChannel\n<公共请求参数>\n\n{\n    \"AppId\": \"20*************7712\",\n    \"ChannelId\": \"20***********451392\",\n    \"Scene\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"429677ac-a2e7-4cc3-9342-2cfa03d319ec\"\n    }\n}",
+        "title": "删除渠道请求"
       }
     ],
     "DeleteConversation": [
@@ -324,6 +340,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogMeta\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Actions\": [\n            {\n                \"Key\": \"create\",\n                \"Name\": \"新建\"\n            }\n        ],\n        \"BizObjects\": [\n            {\n                \"Key\": \"app\",\n                \"Name\": \"应用\"\n            }\n        ],\n        \"RequestId\": \"a398a630-d061-4dbe-a353-2e4943d11182\"\n    }\n}",
         "title": "查询审计日志元信息"
+      }
+    ],
+    "DescribeChannel": [
+      {
+        "document": "查询渠道信息",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannel\n<公共请求参数>\n\n{\n    \"AppId\": \"20****2********7712\",\n    \"ChannelId\": \"20*****2*******9232\",\n    \"Scene\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Channel\": {\n            \"ChannelId\": \"20***6**********232\",\n            \"ConnectStatus\": 2,\n            \"CreateTime\": \"1784283158\",\n            \"Spec\": {\n                \"ChannelName\": \"*********_test_1\",\n                \"ChannelType\": 10015,\n                \"Description\": \"**********test_desc\",\n                \"Scene\": 1,\n                \"UserAgent\": {\n                    \"AgentId\": \"user_***d*1****dd8**d*******-cf999d376482\",\n                    \"UserId\": \"a********\"\n                },\n                \"WechatClawBot\": {\n                    \"BotId\": \"c***7***1********ot\",\n                    \"BotToken\": \"\",\n                    \"QrcodeStatus\": \"confirmed\",\n                    \"QrcodeUrl\": \"\",\n                    \"WechatUserId\": \"o9****4**Nu**********Car*diI@im.wechat\"\n                }\n            },\n            \"UpdateTime\": \"1784283158\",\n            \"Updater\": \"\"\n        },\n        \"RequestId\": \"7abdf1cb-2a77-4284-b4c7-67b059dcd34f\"\n    }\n}",
+        "title": "查询渠道信息"
+      }
+    ],
+    "DescribeChannelList": [
+      {
+        "document": "查询渠道列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelList\n<公共请求参数>\n\n{\n    \"AppId\": \"20***2*********7712\",\n    \"Scene\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelList\": [\n            {\n                \"ChannelId\": \"20**************392\",\n                \"ConnectStatus\": 2,\n                \"CreateTime\": \"1784285002\",\n                \"Spec\": {\n                    \"ChannelName\": \"a*************_2\",\n                    \"ChannelType\": 10014,\n                    \"Description\": \"**************_desc\",\n                    \"Scene\": 1,\n                    \"UserAgent\": {\n                        \"AgentId\": \"use*********d*******d01-bc10-cf999d37648*\",\n                        \"UserId\": \"al******u\"\n                    },\n                    \"WecomRobot\": {\n                        \"Websocket\": {\n                            \"BindType\": 0,\n                            \"BotId\": \"a****F*********N******1ldolKHwOOYCW\",\n                            \"BotSecret\": \"\"\n                        }\n                    }\n                },\n                \"UpdateTime\": \"1784285002\",\n                \"Updater\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"bc4a1046-fbac-49ce-9812-6e15701b200f\"\n    }\n}",
+        "title": "查询渠道列表"
       }
     ],
     "DescribeConcurrencyLimitDetailList": [
@@ -556,6 +588,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"Trigger\": {\n        \"TriggerName\": \"每隔30分钟执行一次\"\n    },\n    \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"TriggerName\"\n        ]\n    },\n    \"UserId\": \"cuiyo******\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a0ed855-acc1-4bd1-b297-119dc5f5b5ab\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "ModifyChannel": [
+      {
+        "document": "修改渠道信息",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyChannel\n<公共请求参数>\n\n{\n    \"AppId\": \"20*************7712\",\n    \"ChannelId\": \"207**68*********392\",\n    \"Scene\": 1,\n    \"Spec\": {\n        \"Scene\": 1,\n        \"WecomRobot\": {\n            \"Websocket\": {\n                \"BindType\": 1,\n                \"BotId\": \"aib**F***************Y1ldolKHwOOYCW\",\n                \"BotSecret\": \"Xyd********QA*******I6GNX0or57z98TidPUyIJR6\"\n            }\n        }\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Spec.WecomRobot.Websocket.BotId\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eed79ed8-edfa-430e-9956-f26c0b385d97\"\n    }\n}",
+        "title": "修改渠道信息"
       }
     ],
     "ModifyConversation": [
