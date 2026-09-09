@@ -1,13 +1,19 @@
-**Example 1: DescribeMongoDbProcessList示例**
+**Example 1: DescribeMongoDBProcessList请求示例**
 
-DescribeMongoDbProcessList示例
+DescribeMongoDBProcessList请求示例
 
 Input: 
 
 ```
 tccli dbbrain DescribeMongoDBProcessList --cli-unfold-argument  \
     --InstanceId cmgo-3bfxr69z \
-    --Product mongodb
+    --Product mongodb \
+    --ID 123 \
+    --Host 168.9.0.1 \
+    --DB test_db \
+    --Type update \
+    --Time 123 \
+    --Limit 10
 ```
 
 Output: 

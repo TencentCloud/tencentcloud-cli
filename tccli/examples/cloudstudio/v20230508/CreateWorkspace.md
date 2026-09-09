@@ -1,21 +1,21 @@
-**Example 1: 创建工作空间**
+**Example 1: CreateWorkspace**
 
-创建工作空间
+
 
 Input: 
 
 ```
 tccli cloudstudio CreateWorkspace --cli-unfold-argument  \
-    --Name workspace-name
+    --Name foo
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "workspace-name",
-        "SpaceKey": "tfyiyw",
-        "RequestId": "26881c75-375d-48ad-9a24-7270176e4fab"
+        "Name": "foo",
+        "RequestId": "74fb69eb-2cc4-496f-9abb-34dcfded1e63",
+        "SpaceKey": "so**bq"
     }
 }
 ```

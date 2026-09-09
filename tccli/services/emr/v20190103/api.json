@@ -707,6 +707,13 @@
       "output": "ModifySLInstanceBasicResponse",
       "status": "online"
     },
+    "ModifyServiceParamsByExportConfs": {
+      "document": "配置导入下发",
+      "input": "ModifyServiceParamsByExportConfsRequest",
+      "name": "导入配置并下发",
+      "output": "ModifyServiceParamsByExportConfsResponse",
+      "status": "online"
+    },
     "ModifyUserGroup": {
       "document": "用户管理-修改用户组",
       "input": "ModifyUserGroupRequest",
@@ -4467,6 +4474,34 @@
           "name": "NodePoolJoinMode",
           "output_required": false,
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfSubContext": {
+      "document": "配置下发参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件名字",
+          "example": "test.properties",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件参数,需要转为base64",
+          "example": "W3siY2hhbmdlVHlwZSI6InVwZGF0ZSIsImtleSI6Inlhcm4uYXBwLm1hcHJlZHVjZS5hbS5zY2hlZHVsZXIuY29ubmVjdGlvbi53YWl0LmludGVydmFsLW1zIiwib2xkVmFsdWUiOiI1NTAwIiwibmV3VmFsdWUiOiI1NjAwIiwicmFuZ2UiOlsiMCIsIjIxNDc0ODM2NDciXX1d",
+          "member": "string",
+          "name": "Params",
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -14729,7 +14764,7 @@
         {
           "disabled": false,
           "document": "<p>导出配置参数</p>",
-          "example": "djsaflda",
+          "example": "fhjkajd",
           "member": "string",
           "name": "Properties",
           "output_required": true,
@@ -14745,8 +14780,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件名和版本号信息",
-          "example": "无",
+          "document": "<p>组件名和版本号信息</p>",
+          "example": "HDFS-3.2.2",
           "member": "string",
           "name": "ServiceNameAndVersion",
           "output_required": false,
@@ -14755,7 +14790,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件列表",
+          "document": "<p>配置文件列表</p>",
           "example": "无",
           "member": "ExportOriginalConfFile",
           "name": "ExportOriginalConfFileList",
@@ -14771,8 +14806,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件名称",
-          "example": "无",
+          "document": "<p>配置文件名称</p>",
+          "example": "core-site.xml",
           "member": "string",
           "name": "FileName",
           "output_required": false,
@@ -14781,8 +14816,8 @@
         },
         {
           "disabled": false,
-          "document": "配置文件内容",
-          "example": "无",
+          "document": "<p>配置文件内容</p>",
+          "example": "fajdlafkl",
           "member": "string",
           "name": "FileContent",
           "output_required": false,
@@ -19794,6 +19829,80 @@
     "ModifySLInstanceResponse": {
       "document": "ModifySLInstance返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceParamsByExportConfsRequest": {
+      "document": "ModifyServiceParamsByExportConfs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "emr-rhmc70zt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导入配置项</p>",
+          "example": "无",
+          "member": "ExportConfMeta",
+          "name": "ExportConfParamList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ip</p>",
+          "example": "[\"10.0.129.116\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置组</p>",
+          "example": "yarn-core-defaultGroup",
+          "member": "string",
+          "name": "ConfGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyServiceParamsByExportConfsResponse": {
+      "document": "ModifyServiceParamsByExportConfs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程id</p>",
+          "example": "546",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更项</p>",
+          "example": "无",
+          "member": "ConfSubContext",
+          "name": "WaitModifyConfList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -1724,6 +1724,84 @@
       ],
       "usage": "both"
     },
+    "AgentPluginCredentialConfig": {
+      "document": "Agent 插件凭据配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>插件鉴权值来源</p><p>枚举值：</p><ul><li>0： 未指定</li><li>1： 使用插件默认鉴权值，仅 APIKey/AccessKey 支持</li><li>2： 引用凭证</li><li>3： 引用变量</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "AuthValueSource",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证ID</p><p>入参限制：AuthValueSource=2时必填</p>",
+          "example": "test_qYx***********************5n6B40",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数配置</p>",
+          "example": "无",
+          "member": "AgentPluginCredentialParam",
+          "name": "ParamList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentPluginCredentialParam": {
+      "document": "Agent 插件凭据参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>参数位置</p><p>枚举值：</p><ul><li>0： Header 鉴权</li><li>1： Query 鉴权</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyLocation",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数名称</p>",
+          "example": "TENCE*************T_ID",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数取值来源</p>",
+          "example": "无",
+          "member": "AgentInput",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentPluginHeader": {
       "document": "应用配置MCP插件header信息",
       "members": [
@@ -1926,6 +2004,28 @@
           "example": "1",
           "member": "int64",
           "name": "PluginStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据配置</p>",
+          "example": "无",
+          "member": "AgentPluginCredentialConfig",
+          "name": "CredentialConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证状态</p><p>枚举值：</p><ul><li>0： 未指定（agent 未引用任何凭证）</li><li>1： 已授权（凭证有效）</li><li>2： 凭证不存在</li><li>3： 授权已失效（OAuth/CAM）</li><li>4： 凭证未向当前企业空间共享</li><li>5： 凭证共享范围不包含当前空间</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "CredentialStatus",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -4918,6 +5018,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用或工作流资源产物</p>",
+          "example": "无",
+          "member": "ConversationResourceArtifact",
+          "name": "Resource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5070,6 +5181,67 @@
       ],
       "usage": "out"
     },
+    "ConversationAppArtifact": {
+      "document": "应用资源产物",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用头像</p>",
+          "example": "https://******************/static/adp/appavatar/default.png",
+          "member": "string",
+          "name": "AppAvatar",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "209*************216",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用形态</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "AppPattern",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p>",
+          "example": "****助手",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "Vf****lv",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConversationMcpApp": {
       "document": "MCP App 内容，供历史会话重建可交互 App",
       "members": [
@@ -5116,6 +5288,95 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationResourceArtifact": {
+      "document": "应用或工作流资源产物",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用产物</p>",
+          "example": "无",
+          "member": "ConversationAppArtifact",
+          "name": "App",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源产物类型<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>CONVERSATION_RESOURCE_ARTIFACT_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>CONVERSATION_RESOURCE_ARTIFACT_TYPE_APP</td><td>1</td><td>应用</td></tr><tr><td>CONVERSATION_RESOURCE_ARTIFACT_TYPE_WORKFLOW</td><td>2</td><td>工作流</td></tr></table></p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流产物</p>",
+          "example": "无",
+          "member": "ConversationWorkflowArtifact",
+          "name": "Workflow",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationWorkflowArtifact": {
+      "document": "工作流资源产物",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "209*************680",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流名称</p>",
+          "example": "****工作流",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "Vf****lv",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流ID</p>",
+          "example": "28c*****-d**3-4**6-8**5-*********510",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

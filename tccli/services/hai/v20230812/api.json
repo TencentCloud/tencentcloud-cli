@@ -1765,10 +1765,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "HiCache缓存",
+          "document": "<p>HiCache缓存</p>",
           "example": "无",
           "member": "HiCacheInfo",
           "name": "HiCache",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由配置</p>",
+          "example": "无",
+          "member": "RouterConfig",
+          "name": "Router",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -3099,6 +3110,23 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RouterConfig": {
+      "document": "路由配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启智能路由</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

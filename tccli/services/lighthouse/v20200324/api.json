@@ -8684,6 +8684,7 @@
           "example": "无",
           "member": "FunctionActivity",
           "name": "FunctionActivitySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8693,6 +8694,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8765,6 +8767,7 @@
           "example": "无",
           "member": "Function",
           "name": "FunctionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8774,6 +8777,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

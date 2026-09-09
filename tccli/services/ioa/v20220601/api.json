@@ -15009,6 +15009,215 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有化网关信息</p>",
+          "example": "无",
+          "member": "ZeroTrustGatewayInfo",
+          "name": "SmartGateItems",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectivityCheckSwitch",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "ConnectivityCheckInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>",
+          "example": "min",
+          "member": "string",
+          "name": "ConnectivityCheckIntervalUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计开关：0-关闭 1-开启，默认0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "URLAuditState",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计证书ID列表，多个用分号分隔</p>",
+          "example": "/hr.com",
+          "member": "string",
+          "name": "URLAuditId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计路径，多个用分号分隔</p>",
+          "example": "/hr/system",
+          "member": "string",
+          "name": "URLPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测方式：0-未检测 1-主动 2-流量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReachableType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API密钥名称</p>",
+          "example": "***fe*qe*rwerwe",
+          "member": "string",
+          "name": "APISecretName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API密钥Key</p>",
+          "example": "*****few****w**",
+          "member": "string",
+          "name": "APISecretKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为敏感资源：0-否 1-是</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableSensitiveRes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户接入IP限制开关：0-不启用 1-启用</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableIPPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP分组属性：0-白名单 1-黑名单</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IPPolicyAttr",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP分组ID列表</p>",
+          "example": "[12131,21212]",
+          "member": "int64",
+          "name": "IPPolicyIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP分组名称（分号分隔）</p>",
+          "example": "禁用规则",
+          "member": "string",
+          "name": "IPPolicyNames",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问浏览器规则开关：0-不启用 1-启用</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableUserAgent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览器规则属性：0-白名单 1-黑名单</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UserAgentAttr",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览器规则ID列表</p>",
+          "example": "[\"crhome\"]",
+          "member": "string",
+          "name": "UserAgentIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览器规则名称（分号分隔）</p>",
+          "example": "1",
+          "member": "string",
+          "name": "UserAgentNames",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19872,33 +20081,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载操作的预签名URL",
-          "example": "-",
+          "document": "<p>下载操作的预签名URL</p>",
+          "example": "testdir",
           "member": "string",
           "name": "DownloadURL",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "下载操作token凭证",
-          "example": "-",
+          "document": "<p>下载操作token凭证</p>",
+          "example": "a-b-c",
           "member": "string",
           "name": "DownloadToken",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "下载操作的过期时间",
-          "example": "-",
+          "document": "<p>下载操作的过期时间</p>",
+          "example": "20281017",
           "member": "string",
           "name": "ExpireAt",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载路径信息</p>",
+          "example": "testdir",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载domain信息</p>",
+          "example": "a/12",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -32034,33 +32268,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "上传操作的预签名URL",
-          "example": "-",
+          "document": "<p>上传操作的预签名URL</p>",
+          "example": "testdir",
           "member": "string",
           "name": "UploadURL",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "上传操作token凭证",
-          "example": "-",
+          "document": "<p>上传操作token凭证</p>",
+          "example": "12abc",
           "member": "string",
           "name": "UploadToken",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "上传操作的过期时间",
-          "example": "-",
+          "document": "<p>上传操作的过期时间</p>",
+          "example": "20281017",
           "member": "string",
           "name": "ExpireAt",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传的路径信息</p>",
+          "example": "testdir",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传的domain信息</p>",
+          "example": "a-12",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -50036,6 +50295,73 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ZeroTrustGatewayInfo": {
+      "document": "零信任网关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关名称</p>",
+          "example": "广州接入网关",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关配置信息</p>",
+          "example": "无",
+          "member": "ZeroTrustGatewayIpPort",
+          "name": "SvrAddressConfigs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ZeroTrustGatewayIpPort": {
+      "document": "零信任网关入口信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP地址</p>",
+          "example": "124.6.6.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口号</p>",
+          "example": "9443",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
