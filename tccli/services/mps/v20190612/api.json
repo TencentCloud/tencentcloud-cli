@@ -1724,6 +1724,363 @@
       ],
       "usage": "out"
     },
+    "AIDubbingTaskInput": {
+      "document": "AI配音任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI配音模板id。</p>",
+          "example": "20003",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音自定义参数，当 Definition 填 0 时有效。 该参数用于高度定制场景，建议您优先使用 Definition 指定配音参数。</p>",
+          "example": "无",
+          "member": "RawAIDubbingParameter",
+          "name": "RawParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音自定义参数，当 Definition 不填 0 时有效。 当填写了该结构中的部分配音参数时，将使用填写的参数覆盖AI配音模板中的参数。 该参数用于高度定制场景，建议您仅使用 Definition 指定配音参数。</p>",
+          "example": "无",
+          "member": "OverrideAIDubbingParameter",
+          "name": "OverrideParameter",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件的目标存储，不填则继承上层的 OutputStorage 值。</p>",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部源字幕文件信息。</p>",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "SrcSubtitleInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部字幕文件信息，译文字幕。</p>",
+          "example": "无",
+          "member": "DstSubtitleInput",
+          "name": "DstSubtitleInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件的输出路径，可以为相对路径或者绝对路径。<br>若需定义输出路径，路径需以<code>.{format}</code>结尾。变量名请参考 <a href=\"https://cloud.tencent.com/document/product/862/37039\">文件名变量说明</a>。<br>相对路径示例：</p><li>文件名_{变量名}.{format}</li><li>文件名.{format}</li>绝对路径示例：<li>/自定义路径/文件名_{变量名}.{format}</li><p><strong>注意</strong>：目前不支持<code>BatchProcessMedia</code>接口。</p>",
+          "example": "{inputName}_{definition}.{format}",
+          "member": "string",
+          "name": "OutputObjectPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音扩展参数，序列化的 json 字符串。</p>",
+          "example": "{\"key\":24001}",
+          "member": "string",
+          "name": "ExtendedParameter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联剧集ID。<br>注意：配音模式为按角色智能配音时此值生效。</p>",
+          "example": "4432dc10-3336-4c8b-bee7-df5bca792ddd",
+          "member": "string",
+          "name": "DramaId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIDubbingTaskOutput": {
+      "document": "AI配音结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕文件路径。</p>",
+          "example": "/output/123_20003.vtt",
+          "member": "string",
+          "name": "OriginSubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕翻译文件路径。</p>",
+          "example": "/output/123_20003_en.vtt",
+          "member": "string",
+          "name": "TranslateSubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色克隆后的视频文件地址</p>",
+          "example": "/output/123_20003_en.mp4",
+          "member": "string",
+          "name": "VoiceClonedVideo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色克隆的标注文件地址</p>",
+          "example": "/output/delogo-result-0.json",
+          "member": "string",
+          "name": "VoiceClonedMarkFile",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频输出路径。</p>",
+          "example": "/output/123_20003.mp4",
+          "member": "string",
+          "name": "VideoPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕文件FileId。</p>",
+          "example": "966263619047610987",
+          "member": "string",
+          "name": "OriginSubtitleFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于画面提取的字幕翻译文件FileId    。</p>",
+          "example": "966263619047610988",
+          "member": "string",
+          "name": "TranslateSubtitleFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记文件路径。</p>",
+          "example": "/output/dub-result-0.json",
+          "member": "string",
+          "name": "SpeakerPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记文件Fileid。</p>",
+          "example": "966263619047610900",
+          "member": "string",
+          "name": "SpeakerFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除视频输出FileId。</p>",
+          "example": "9662636190476109801",
+          "member": "string",
+          "name": "EraseVideoFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除视频输出路径。</p>",
+          "example": "/output/test-result.mp4",
+          "member": "string",
+          "name": "EraseVideoPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>译文配音音频文件路径。</p>",
+          "example": "/output/123_20003.aac",
+          "member": "string",
+          "name": "DstAudioPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>译文配音音频文件FileId。</p>",
+          "example": "966263619047610600",
+          "member": "string",
+          "name": "DstAudioFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音色克隆编辑信息</p><p>用于音色克隆二次修改的编辑信息</p>",
+          "example": "https://xx-xx.cos-internal.ap-nanjing.tencentcos.cn/smart_dub/edit_info/2026/03/07/xxxxx-WorkflowTask-46c29a89dcd6ec9cb40f762418ef1e0dtt259184_edit_info.json",
+          "member": "string",
+          "name": "DubbingEditInfoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除的字幕位置。<strong>注意</strong>：仅对字幕提取且开启返回字幕位置时有效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubtitlePosition",
+          "name": "SubtitlePos",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务输出文件的存储位置。</p>",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AIDubbingTaskResult": {
+      "document": "AI配音任务结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。</p>",
+          "example": "FAIL",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">媒体处理类错误码</a> 列表。</p>",
+          "example": "InvalidInput.InvalidParameter",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "Request parameter error.",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务输入。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIDubbingTaskInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIDubbingTaskOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务进度。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始执行的时间，采用 ISO 日期格式。</p>",
+          "example": "2026-09-03T10:24:56Z",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行完毕的时间，采用 ISO 日期格式。</p>",
+          "example": "2026-09-03T10:24:58Z",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AIRecognitionTemplateItem": {
       "document": "视频内容识别模板详情",
       "members": [
@@ -1956,7 +2313,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "视频转码任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频转码任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TranscodeTaskInput",
           "name": "TranscodeTask",
@@ -1967,7 +2324,7 @@
         },
         {
           "disabled": false,
-          "document": "视频转动图任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频转动图任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AnimatedGraphicTaskInput",
           "name": "AnimatedGraphicTask",
@@ -1978,7 +2335,7 @@
         },
         {
           "disabled": false,
-          "document": "视频按时间点截图任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频按时间点截图任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "SnapshotByTimeOffsetTask",
@@ -1989,7 +2346,7 @@
         },
         {
           "disabled": false,
-          "document": "视频采样截图任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频采样截图任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SampleSnapshotTaskInput",
           "name": "SampleSnapshotTask",
@@ -2000,7 +2357,7 @@
         },
         {
           "disabled": false,
-          "document": "视频截雪碧图任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频截雪碧图任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageSpriteTaskInput",
           "name": "ImageSpriteTask",
@@ -2011,7 +2368,7 @@
         },
         {
           "disabled": false,
-          "document": "转自适应码流任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转自适应码流任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "AdaptiveDynamicStreamingTask",
@@ -2022,7 +2379,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容审核类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容审核类型任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
@@ -2033,7 +2390,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容分析类型任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
@@ -2044,7 +2401,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容识别类型任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>视频内容识别类型任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
@@ -2055,7 +2412,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体质检任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiQualityControlTaskInput",
           "name": "QualityControlTask",
@@ -2066,7 +2423,7 @@
         },
         {
           "disabled": false,
-          "document": "任务条件判断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务条件判断</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExecRulesTask",
           "name": "ExecRulesTask",
@@ -2077,7 +2434,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartSubtitlesTaskInput",
           "name": "SmartSubtitlesTask",
@@ -2088,7 +2445,7 @@
         },
         {
           "disabled": false,
-          "document": "智能擦除任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能擦除任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartEraseTaskInput",
           "name": "SmartEraseTask",
@@ -2096,6 +2453,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务。</p>",
+          "example": "无",
+          "member": "AIDubbingTaskInput",
+          "name": "AIDubbingTask",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2105,7 +2473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转码任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskTranscodeResult",
           "name": "TranscodeTask",
@@ -2115,7 +2483,7 @@
         },
         {
           "disabled": false,
-          "document": "转动图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>转动图任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskAnimatedGraphicResult",
           "name": "AnimatedGraphicTask",
@@ -2125,7 +2493,7 @@
         },
         {
           "disabled": false,
-          "document": "时间点截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间点截图任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskSnapshotByTimeOffsetResult",
           "name": "SnapshotByTimeOffsetTask",
@@ -2135,7 +2503,7 @@
         },
         {
           "disabled": false,
-          "document": "采样截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>采样截图任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskSampleSnapshotResult",
           "name": "SampleSnapshotTask",
@@ -2145,7 +2513,7 @@
         },
         {
           "disabled": false,
-          "document": "雪碧图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>雪碧图任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskImageSpriteResult",
           "name": "ImageSpriteTask",
@@ -2155,7 +2523,7 @@
         },
         {
           "disabled": false,
-          "document": "自适应码流任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自适应码流任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaProcessTaskAdaptiveDynamicStreamingResult",
           "name": "AdaptiveDynamicStreamingTask",
@@ -2165,7 +2533,7 @@
         },
         {
           "disabled": false,
-          "document": "识别任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>识别任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleRecognitionTaskResult",
           "name": "RecognitionTask",
@@ -2175,7 +2543,7 @@
         },
         {
           "disabled": false,
-          "document": "审核任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审核任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleReviewTaskResult",
           "name": "ReviewTask",
@@ -2185,7 +2553,7 @@
         },
         {
           "disabled": false,
-          "document": "分析任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分析任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleAnalysisTaskResult",
           "name": "AnalysisTask",
@@ -2195,7 +2563,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体质检任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleQualityControlTaskResult",
           "name": "QualityControlTask",
@@ -2205,7 +2573,7 @@
         },
         {
           "disabled": false,
-          "document": "条件判断任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>条件判断任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleExecRuleTaskResult",
           "name": "ExecRuleTask",
@@ -2215,7 +2583,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleSmartSubtitleTaskResult",
           "name": "SmartSubtitlesTask",
@@ -2225,13 +2593,23 @@
         },
         {
           "disabled": false,
-          "document": "智能擦除任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能擦除任务输出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartEraseTaskResult",
           "name": "SmartEraseTask",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务输出。</p>",
+          "example": "无",
+          "member": "AIDubbingTaskResult",
+          "name": "AIDubbingTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2241,7 +2619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "原子任务类型。\n<li>Transcode：转码。</li>\n<li>SampleSnapshot：采样截图。</li>\n<li>AnimatedGraphics：转动图。</li>\n<li>SnapshotByTimeOffset：时间点截图。</li>\n<li>ImageSprites：雪碧图。</li>\n<li>AdaptiveDynamicStreaming：自适应码流。</li>\n<li>AiContentReview：内容审核。</li>\n<li>AIRecognition：智能识别。</li>\n<li>AIAnalysis：智能分析。</li>\n<li>AiQualityControl：媒体质检。</li>\n<li>SmartSubtitles：智能字幕。</li>\n<li>SmartErase：智能擦除。</li>",
+          "document": "<p>原子任务类型。</p><li>Transcode：转码。</li><li>SampleSnapshot：采样截图。</li><li>AnimatedGraphics：转动图。</li><li>SnapshotByTimeOffset：时间点截图。</li><li>ImageSprites：雪碧图。</li><li>AdaptiveDynamicStreaming：自适应码流。</li><li>AiContentReview：内容审核。</li><li>AIRecognition：智能识别。</li><li>AIAnalysis：智能分析。</li><li>AiQualityControl：媒体质检。</li><li>SmartSubtitles：智能字幕。</li><li>SmartErase：智能擦除。</li><li>Dubbing: AI配音</li>",
           "example": "Transcode",
           "member": "string",
           "name": "ActivityType",
@@ -2251,7 +2629,7 @@
         },
         {
           "disabled": false,
-          "document": "原子任务输出。",
+          "document": "<p>原子任务输出。</p>",
           "example": "无",
           "member": "ActivityResItem",
           "name": "ActivityResItem",
@@ -7165,8 +7543,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "翻译片段列表。",
-          "example": "NULL",
+          "document": "<p>翻译片段列表。</p>",
+          "example": "无",
           "member": "AiRecognitionTaskTransTextSegmentItem",
           "name": "SegmentSet",
           "output_required": true,
@@ -7175,7 +7553,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕文件地址。",
+          "document": "<p>字幕文件地址。</p>",
           "example": "http://lily-1256342427.cos.ap-shanghai.myqcloud.com/3109868718.vtt",
           "member": "string",
           "name": "SubtitlePath",
@@ -26534,6 +26912,273 @@
       ],
       "usage": "both"
     },
+    "DstSubtitleInput": {
+      "document": "AI配音外部翻译字幕信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>外部翻译字幕信息。</p>",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "DstSubtitleInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DubbingConfig": {
+      "document": "dubbing任务配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配音类型，可选值：FullAutoEmotionClone：全自动高情感克隆配音；RoleBasedSmartDubbing：按角色智能配音；SingleVoice：指定单一音色；</p>",
+          "example": "SingleVoice",
+          "member": "string",
+          "name": "DubbingMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>背景音音量，范围0-100</p><p>默认值：80</p>",
+          "example": "80",
+          "member": "int64",
+          "name": "BackgroundVolume",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>二次微调开关，可选值：<br>ON: 开启二次微调；<br>OFF: 不开启二次微调；</p><p>默认值：OFF</p><p>仅 RoleBasedSmartDubbing 时允许设为 ON</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "SecondaryTuning",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定音色</p><p>仅 SingleVoice 时有效且 Create 必填</p>",
+          "example": "s1_0iZ++jB6ujkV8jCTIrSSPa/3nnzWXROeIZiwgywwAzxF5ipn8D8zyDluNSKYdtajzg==",
+          "member": "string",
+          "name": "VoiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配音版本，可选值：v1，v2</p><p>默认值：v2</p><p>只在（FullAutoEmotionClone：全自动高情感克隆配音）模式下生效</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "DubbingVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DubbingEmbedSubtitleConfig": {
+      "document": "dubbing任务压制字幕配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>压制字幕id。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SubtitleEmbedId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沿用原字幕位置。</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalPos",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沿用原字幕字号。</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseOriginalSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DubbingOutputConfig": {
+      "document": "dubbing任务输出配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出方式</p><p>枚举值：</p><ul><li>FinalVideoOnly： 默认，仅成片视频</li><li>AudioAndSubtitle： 译文音频+译文字幕</li><li>Custom： 自定义</li></ul><p>默认值：FinalVideoOnly</p><p>使用外部字幕时无译文音频+字幕返回</p>",
+          "example": "Custom",
+          "member": "string",
+          "name": "OutputMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出成片视频开关</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul><p>默认值：ON</p><p>仅 Custom 模式生效</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "OutputFinalVideo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出字幕文件（同时包含原语音字幕、目标语言字幕）开关</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "OutputSubtitle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出译文配音音频开关</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p><p>仅 Custom 模式生效</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "OutputDstAudio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>压制字幕配置信息。</p>",
+          "example": "无",
+          "member": "DubbingEmbedSubtitleConfig",
+          "name": "EmbedSubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DubbingSubtitleConfig": {
+      "document": "dubbing任务翻译配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字幕来源。</p><p>枚举值：</p><ul><li>OCR： OCR文本识别，识别视频画面上的文本。</li><li>ASR： ASR语音识别，识别视频语音对话。</li><li>External： 外部字幕文件，提供原文/译文字幕URL。</li></ul>",
+          "example": "External",
+          "member": "string",
+          "name": "SubtitleSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用ASR辅助OCR。</p><p>枚举值：</p><ul><li>ON： 开启使用ASR辅助OCR。</li><li>OFF： 不开启使用ASR辅助OCR。</li></ul><p>默认值：OFF</p><p>仅 SubtitleSource=OCR 时允许设为 ON</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "AsrAssistOcr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除原字幕。</p><p>枚举值：</p><ul><li>ON： 擦除原字幕。</li><li>OFF： 保留原字幕。</li></ul><p>默认值：OFF</p><p>SubtitleSource=External 时不允许设为 ON</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "EraseOriginalSubtitle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕位置信息。</p>",
+          "example": "无",
+          "member": "SelectingSubtitleAreasConfig",
+          "name": "SelectingSubtitleAreasConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DubbingTranslateConfig": {
+      "document": "dubbing任务翻译配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源语言。</p>",
+          "example": "zh",
+          "member": "string",
+          "name": "VideoSrcLanguage",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻译目标语言。</p>",
+          "example": "en",
+          "member": "string",
+          "name": "TranslateDstLanguage",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能简化译文。</p><p>枚举值：</p><ul><li>ON： 开启智能简化译文。</li><li>OFF： 关闭智能简化译文。</li></ul><p>默认值：OFF</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "SimplifyTranslation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EditMediaFileInfo": {
       "document": "编辑点播视频文件信息",
       "members": [
@@ -38337,6 +38982,56 @@
       ],
       "usage": "both"
     },
+    "OverrideAIDubbingParameter": {
+      "document": "AI配音自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>翻译配置信息。</p>",
+          "example": "无",
+          "member": "DubbingTranslateConfig",
+          "name": "TranslateConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕配置信息。</p>",
+          "example": "无",
+          "member": "DubbingSubtitleConfig",
+          "name": "SubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配音配置信息。</p>",
+          "example": "无",
+          "member": "DubbingConfig",
+          "name": "DubbingConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出配置信息。</p>",
+          "example": "无",
+          "member": "DubbingOutputConfig",
+          "name": "OutputConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OverrideEraseParameter": {
       "document": "智能擦除自定义参数",
       "members": [
@@ -40098,6 +40793,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>AI配音类型任务参数</p>",
+          "example": "无",
+          "member": "AIDubbingTaskInput",
+          "name": "AIDubbingTask",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>任务的事件通知信息，不填代表不获取事件通知。</p>",
           "example": "无",
           "member": "TaskNotifyConfig",
@@ -41465,6 +42169,56 @@
         }
       ],
       "usage": "in"
+    },
+    "RawAIDubbingParameter": {
+      "document": "AI配音自定义参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>翻译配置信息。</p>",
+          "example": "无",
+          "member": "DubbingTranslateConfig",
+          "name": "TranslateConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕配置信息。</p>",
+          "example": "无",
+          "member": "DubbingSubtitleConfig",
+          "name": "SubtitleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配音配置信息。</p>",
+          "example": "无",
+          "member": "DubbingConfig",
+          "name": "DubbingConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出配置信息。</p>",
+          "example": "无",
+          "member": "DubbingOutputConfig",
+          "name": "OutputConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RawImageWatermarkInput": {
       "document": "图片水印模板输入参数",
@@ -52882,140 +53636,140 @@
         {
           "disabled": false,
           "document": "工作流 ID。",
-          "example": "NULL",
+          "example": "435xxx",
           "member": "int64",
           "name": "WorkflowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "工作流名称。",
-          "example": "NULL",
+          "example": "workname",
           "member": "string",
           "name": "WorkflowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "工作流状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>",
-          "example": "NULL",
+          "example": "Enabled",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "工作流绑定的输入规则，当上传视频命中该规则到该对象时即触发工作流。",
-          "example": "NULL",
+          "example": "无",
           "member": "WorkflowTrigger",
           "name": "Trigger",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "媒体处理的文件输出存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "媒体处理的文件输出存储位置。",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "媒体处理类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "媒体处理类型任务参数。",
+          "example": "无",
           "member": "MediaProcessTaskInput",
           "name": "MediaProcessTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频内容审核类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "视频内容分析类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "视频内容识别类型任务参数。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "任务的事件通知信息，不填代表不获取事件通知。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NULL",
+          "document": "任务的事件通知信息，不填代表不获取事件通知。",
+          "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
-          "example": "NULL",
+          "example": "0",
           "member": "int64",
           "name": "TaskPriority",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "媒体处理生成的文件输出的目标目录，如`/movie/201907/`。",
-          "example": "NULL",
+          "example": "/output/",
           "member": "string",
           "name": "OutputDir",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "工作流创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "NULL",
+          "example": "2024-03-21T18:12:49+08:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "工作流最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。",
-          "example": "NULL",
+          "example": "2024-03-21T18:12:49+08:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -53027,7 +53781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体处理任务 ID。",
+          "document": "<p>媒体处理任务 ID。</p>",
           "example": "2xxxx-asdews",
           "member": "string",
           "name": "TaskId",
@@ -53037,7 +53791,7 @@
         },
         {
           "disabled": false,
-          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "document": "<p>任务流状态，取值：</p><li>PROCESSING：处理中；</li><li>FINISH：已完成。</li>",
           "example": "PROCESSING",
           "member": "string",
           "name": "Status",
@@ -53047,7 +53801,7 @@
         },
         {
           "disabled": false,
-          "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。",
+          "document": "<p>源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。</p>",
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
@@ -53057,7 +53811,7 @@
         },
         {
           "disabled": false,
-          "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。",
+          "document": "<p>源异常时返回对应异常Message，否则请使用各个具体任务的 Message。</p>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Message",
@@ -53067,7 +53821,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理的目标文件信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体处理的目标文件信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
@@ -53077,7 +53831,7 @@
         },
         {
           "disabled": false,
-          "document": "原始视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>原始视频的元信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MediaMetaData",
           "name": "MetaData",
@@ -53087,7 +53841,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理任务的执行状态与结果。",
+          "document": "<p>媒体处理任务的执行状态与结果。</p>",
           "example": "无",
           "member": "MediaProcessTaskResult",
           "name": "MediaProcessResultSet",
@@ -53097,7 +53851,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容审核任务的执行状态与结果。",
+          "document": "<p>视频内容审核任务的执行状态与结果。</p>",
           "example": "无",
           "member": "AiContentReviewResult",
           "name": "AiContentReviewResultSet",
@@ -53107,7 +53861,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容分析任务的执行状态与结果。",
+          "document": "<p>视频内容分析任务的执行状态与结果。</p>",
           "example": "无",
           "member": "AiAnalysisResult",
           "name": "AiAnalysisResultSet",
@@ -53117,7 +53871,7 @@
         },
         {
           "disabled": false,
-          "document": "视频内容识别任务的执行状态与结果。",
+          "document": "<p>视频内容识别任务的执行状态与结果。</p>",
           "example": "无",
           "member": "AiRecognitionResult",
           "name": "AiRecognitionResultSet",
@@ -53127,7 +53881,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检任务的执行状态与结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体质检任务的执行状态与结果。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ScheduleQualityControlTaskResult",
           "name": "AiQualityControlTaskResult",
@@ -53137,7 +53891,7 @@
         },
         {
           "disabled": false,
-          "document": "智能字幕任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能字幕任务的执行结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartSubtitlesResult",
           "name": "SmartSubtitlesTaskResult",
@@ -53147,13 +53901,23 @@
         },
         {
           "disabled": false,
-          "document": "智能擦除任务的执行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>智能擦除任务的执行结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SmartEraseTaskResult",
           "name": "SmartEraseTaskResult",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI配音任务的执行结果。</p>",
+          "example": "无",
+          "member": "AIDubbingTaskResult",
+          "name": "AiDubbingTaskResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

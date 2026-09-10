@@ -221,7 +221,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间 SpaceKey",
+          "document": "<p>工作空间 SpaceKey</p>",
           "example": "knhwex",
           "member": "string",
           "name": "SpaceKey",
@@ -230,7 +230,7 @@
         },
         {
           "disabled": false,
-          "document": "token过期时间，单位是秒，默认 3600",
+          "document": "<p>token过期时间，单位是秒，默认 3600</p>",
           "example": "3600",
           "member": "uint64",
           "name": "TokenExpiredLimitSec",
@@ -239,7 +239,7 @@
         },
         {
           "disabled": false,
-          "document": "token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only",
+          "document": "<p>token 授权策略，可选值为 workspace-run-only, all。默认为 workspace-run-only</p>",
           "example": "[\"workspace-run-only\"]",
           "member": "string",
           "name": "Policies",
@@ -254,7 +254,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问工作空间临时凭证",
+          "document": "<p>访问工作空间临时凭证</p>",
           "example": "83c99d6a03aa94f5e7bbfb4eded0de0b1153f44d05126d34b5f36e8343eca973",
           "member": "string",
           "name": "Token",
@@ -263,7 +263,7 @@
         },
         {
           "disabled": false,
-          "document": "token 过期时间",
+          "document": "<p>token 过期时间</p>",
           "example": "2023-02-13T12:33:48 GMT+08:00",
           "member": "string",
           "name": "ExpiredTime",
@@ -533,7 +533,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间 SpaceKey. 更新该工作空间的属性",
+          "document": "<p>工作空间 SpaceKey. 更新该工作空间的属性</p>",
           "example": "ubbyfp",
           "member": "string",
           "name": "SpaceKey",
@@ -542,7 +542,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间名称",
+          "document": "<p>工作空间名称</p>",
           "example": "workspace-name",
           "member": "string",
           "name": "Name",
@@ -551,7 +551,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间描述",
+          "document": "<p>工作空间描述</p>",
           "example": "this is a workspace",
           "member": "string",
           "name": "Description",
@@ -560,7 +560,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。",
+          "document": "<p>工作空间规格。STANDARD: 2C4G, CALCULATION: 4C8G, PROFESSION: 8C16G. 默认是 STANDARD。</p>",
           "example": "STANDARD",
           "member": "string",
           "name": "Specs",
@@ -569,8 +569,8 @@
         },
         {
           "disabled": false,
-          "document": "环境变量. 会被注入到工作空间中",
-          "example": "[{\"name\": \"test\", \"value\": \"test\"}]",
+          "document": "<p>环境变量. 会被注入到工作空间中</p>",
+          "example": "无",
           "member": "Env",
           "name": "Envs",
           "required": false,
@@ -578,7 +578,7 @@
         },
         {
           "disabled": false,
-          "document": "预装插件. 工作空间启动时, 会自动安装这些插件 ",
+          "document": "<p>预装插件. 工作空间启动时, 会自动安装这些插件</p>",
           "example": "[\"cloudstudio.tencent-cloud-toolkit@1.3.0\"]",
           "member": "string",
           "name": "Extensions",
@@ -587,8 +587,8 @@
         },
         {
           "disabled": false,
-          "document": "工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令. ",
-          "example": "{ \"init\": [ { \"name\": \"init\", \"command\": \"echo init\" } ], \"start\": [ { \"name\": \"start\", \"command\": \"echo start\" } ], \"destroy\": [ { \"name\": \"shutdown\", \"command\": \"echo shutdown\" } ] }",
+          "document": "<p>工作空间生命周期钩子.  分为三个阶段 init, start, destroy. 分别表示工作空间数据初始化阶段, 工作空间启动阶段, 工作空间关闭阶段.  用户可以自定义 shell 命令.</p>",
+          "example": "无",
           "member": "LifeCycle",
           "name": "Lifecycle",
           "required": false,

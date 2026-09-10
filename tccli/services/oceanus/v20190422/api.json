@@ -7471,6 +7471,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动位点</p>",
+          "example": "0",
+          "member": "string",
+          "name": "StartupPoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有事件</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsEvent",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否告警</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAlarm",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -1008,6 +1008,14 @@
         "title": "获取资产识别结果列表"
       }
     ],
+    "DescribeNDRDataLeakOutAlertList": [
+      {
+        "document": "获取出站数据泄露风险事件列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNDRDataLeakOutAlertList\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AnalysisStatusOptions\": [\n            {\n                \"Text\": \"待启动\",\n                \"Value\": \"0\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"AiSuggestedLevel\": 0,\n                \"AnalysisFailReason\": \"\",\n                \"AnalysisStatus\": 3,\n                \"ApiBizType\": \"AI推理\",\n                \"ApiPattern\": \"/chat/completions\",\n                \"Comment\": \"\",\n                \"DstGeoLocation\": \"中国 内蒙古自治区 乌兰察布\",\n                \"DstIPPort\": \"116.205.40.114:443\",\n                \"DstServiceName\": \"DeepSeek\",\n                \"DstServiceType\": \"ai\",\n                \"EventCount\": 3,\n                \"FirstIdentificationTime\": \"2026-03-04 10:16:05\",\n                \"Hostname\": \"api.deepseek.com\",\n                \"InstanceId\": \"ins-mxqs52ee\",\n                \"InstanceName\": \"外联AI测试用-勿删\",\n                \"InstanceType\": \"CVM\",\n                \"LatestIdentificationTime\": \"2026-03-04 11:06:34\",\n                \"LeakTypeSet\": \"6201,6225\",\n                \"Level\": 2,\n                \"Region\": \"ap-guangzhou\",\n                \"RiskID\": \"1357473720924375000\",\n                \"RiskScenario\": \"Insider Leak\",\n                \"SrcIP\": \"10.0.0.10\",\n                \"Status\": 0\n            }\n        ],\n        \"DstServiceTypeOptions\": [\n            {\n                \"Text\": \"云存储\",\n                \"Value\": \"Cloud Storage\"\n            }\n        ],\n        \"InstanceTypeOptions\": [\n            {\n                \"Text\": \"CVM\",\n                \"Value\": \"CVM\"\n            }\n        ],\n        \"RegionOptions\": [\n            {\n                \"Text\": \"广州\",\n                \"Value\": \"ap-guangzhou\"\n            }\n        ],\n        \"RiskScenarioOptions\": [\n            {\n                \"Text\": \"批量爬取\",\n                \"Value\": \"Batch Scraping\"\n            }\n        ],\n        \"Total\": 2,\n        \"RequestId\": \"a36e9ea4-e93b-4057-9c79-57ad91a04cef\"\n    }\n}",
+        "title": "获取出站数据泄露风险事件列表"
+      }
+    ],
     "DescribeNatAcRule": [
       {
         "document": "查询NAT访问控制出向规则列表，其中Filters中 Direction 为0时表示查询出向规则列表，为1时表示查询入向规则列表",

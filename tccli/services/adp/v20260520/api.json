@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateAgent": {
-      "document": "创建Agent",
+      "document": "创建Agent（目前仅支持claw模式）",
       "input": "CreateAgentRequest",
       "name": "创建 Agent",
       "output": "CreateAgentResponse",
@@ -684,6 +684,112 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AccessKeyAuthConfig": {
+      "document": "AccessKey鉴权配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Access Key字段配置</p>",
+          "example": "无",
+          "member": "AccessKeyParamConfig",
+          "name": "ParamList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Access Key透传配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccessKeyPassThroughConfig",
+          "name": "PassThroughConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Access Key 使用模式</p><p>枚举值：</p><ul><li>1： Access Key透传</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "UsageMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AccessKeyParamConfig": {
+      "document": "Access Key 字段配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Access Key 字段类型，1:AccessKeyId，2:AccessKeySecret，3:SessionToken</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FieldType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否必填</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRequired",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>header/query 字段名</p>",
+          "example": "SecretId",
+          "member": "string",
+          "name": "ParamName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessKey密钥默认值，允许为空</p>",
+          "example": "****",
+          "member": "string",
+          "name": "ParamValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AccessKeyPassThroughConfig": {
+      "document": "Access Key 透传配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Access Key 字段统一注入位置，0:Header，1:Query</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "KeyLocation",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4688,7 +4794,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>API Key授权配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApiKeyAuthConfig",
           "name": "ApiKeyAuthConfig",
@@ -4699,7 +4805,7 @@
         },
         {
           "disabled": false,
-          "document": "CAM授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CAM授权配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CamAuthConfig",
           "name": "CamAuthConfig",
@@ -4710,7 +4816,7 @@
         },
         {
           "disabled": false,
-          "document": "OAuth2.0授权配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>OAuth2.0授权配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "OAuthConfig",
           "name": "OAuthConfig",
@@ -4718,6 +4824,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessKey授权配置</p>",
+          "example": "无",
+          "member": "AccessKeyAuthConfig",
+          "name": "AccessKeyAuthConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4933,7 +5050,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色名称",
+          "document": "<p>角色名称</p>",
           "example": "TCADP_QCSLinkedRoleInTableOCR",
           "member": "string",
           "name": "RoleName",
@@ -4944,7 +5061,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥位置 HEADER/QUERY\n\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 | 头鉴权 |\n| 1 | 请求信息鉴权 |",
+          "document": "<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | 头鉴权 |<br>| 1 | 请求信息鉴权 |</p>",
           "example": "0",
           "member": "int64",
           "name": "KeyLocation",
@@ -4955,7 +5072,7 @@
         },
         {
           "disabled": false,
-          "document": "SecretId字段名称",
+          "document": "<p>SecretId字段名称</p>",
           "example": "SECRET_ID",
           "member": "string",
           "name": "SecretIdName",
@@ -4966,13 +5083,35 @@
         },
         {
           "disabled": false,
-          "document": "SecretKey字段名称",
+          "document": "<p>SecretKey字段名称</p>",
           "example": "SECRET_KEY",
           "member": "string",
           "name": "SecretKeyName",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CAM Access Key 字段配置</p>",
+          "example": "无",
+          "member": "AccessKeyParamConfig",
+          "name": "ParamList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持CAM角色授权</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportRoleAuth",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -7564,6 +7703,15 @@
           "name": "VersionId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享配置</p>",
+          "example": "无",
+          "member": "SkillCorpShareConfig",
+          "name": "CorpShareConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10529,7 +10677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间ID，查询空间内的插件列表时使用",
+          "document": "<p>空间ID，查询空间内的插件列表时使用</p>",
           "example": "default_space",
           "member": "string",
           "name": "SpaceId",
@@ -10538,7 +10686,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件列表 支持：PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType",
+          "document": "<p>过滤条件列表，支持 PluginKind、CategoryKey、PluginSource、PluginId、PluginClass、BillingType、AuthType、IsShared、IsCreatedByMe</p>",
           "example": "无",
           "member": "Filter",
           "name": "FilterList",
@@ -10565,7 +10713,7 @@
         },
         {
           "disabled": false,
-          "document": "页码 从0开始",
+          "document": "<p>页码 从0开始</p>",
           "example": "0",
           "member": "int64",
           "name": "PageNumber",
@@ -10574,7 +10722,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小",
+          "document": "<p>每页大小</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -10583,7 +10731,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述",
+          "document": "<p>查询内容 模糊匹配：插件名称/插件描述/工具名称/工具描述</p>",
           "example": "天气",
           "member": "string",
           "name": "Query",
@@ -10598,6 +10746,15 @@
           "name": "SortType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选当前空间/企业共享插件</p><p>取值范围：[0, 2]</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PluginSpaceRelation",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10607,7 +10764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "plugin_list",
+          "document": "<p>plugin_list</p>",
           "example": "无",
           "member": "PluginSummary",
           "name": "PluginList",
@@ -10617,7 +10774,7 @@
         },
         {
           "disabled": false,
-          "document": "total_count",
+          "document": "<p>total_count</p>",
           "example": "788",
           "member": "int64",
           "name": "TotalCount",
@@ -10862,6 +11019,16 @@
           "name": "ReferenceList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户是否允许强制删除有引用的Skill</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowForceModify",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -11768,7 +11935,7 @@
       "usage": "both"
     },
     "Filter": {
-      "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系）",
+      "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系；BETWEEN 时 value_list 必须恰好 2 个元素表示闭区间 [start, end]）",
       "members": [
         {
           "disabled": false,
@@ -11783,7 +11950,7 @@
         },
         {
           "disabled": false,
-          "document": "操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr></table>",
+          "document": "操作符，默认 IN（向后兼容）<table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>FILTER_OPERATOR_IN</td><td>0</td><td>属于 value_list（默认值，向后兼容；value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_NOT_IN</td><td>1</td><td>不属于 value_list（value_list 不可为空）</td></tr><tr><td>FILTER_OPERATOR_BETWEEN</td><td>2</td><td>之间（闭区间 [start, end]；value_list 必须恰好 2 个元素，允许其一为空表示单边开区间）</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "Operator",
@@ -14691,6 +14858,28 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>插件配置信息</p>",
+          "example": "无",
+          "member": "PluginConfig",
+          "name": "Config",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已配置共享</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsShared",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>插件运营管理信息</p>",
           "example": "无",
           "member": "PluginOperation",
@@ -14724,6 +14913,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>插件所属空间 ID；内置插件为空</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>插件统计信息</p>",
           "example": "无",
           "member": "PluginStatistics",
@@ -14746,6 +14946,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>工具信息</p>",
+          "example": "无",
+          "member": "ToolSummary",
+          "name": "ToolList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>用户维度的插件状态信息</p>",
           "example": "无",
           "member": "PluginUserState",
@@ -14757,24 +14968,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>插件配置信息</p>",
-          "example": "无",
-          "member": "PluginConfig",
-          "name": "Config",
+          "document": "<p>更新时间，Unix时间戳</p><p>单位：秒</p>",
+          "example": "1787714756",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>工具信息</p>",
-          "example": "无",
-          "member": "ToolSummary",
-          "name": "ToolList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
         }
       ],

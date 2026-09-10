@@ -1135,14 +1135,14 @@
       "status": "online"
     },
     "DownloadL4Logs": {
-      "document": "本接口（DownloadL4Logs）用于下载四层离线日志。",
+      "document": "本接口（DownloadL4Logs）用于获取四层代理业务的离线日志下载链接。\n**注意：**仅当离线日志功能开启期间，EO 才会存储相关离线日志并提供下载服务。具体功能介绍请见[文档](https://cloud.tencent.com/document/product/1552/73660)。",
       "input": "DownloadL4LogsRequest",
       "name": "下载四层离线日志",
       "output": "DownloadL4LogsResponse",
       "status": "online"
     },
     "DownloadL7Logs": {
-      "document": "本接口（DownloadL7Logs）下载七层离线日志。",
+      "document": "本接口（DownloadL7Logs）用于获取七层域名业务的离线日志下载链接。\n**注意：**仅当离线日志功能开启期间，EO 才会存储相关离线日志并提供下载服务。具体功能介绍请见[文档](https://cloud.tencent.com/document/product/1552/73660)。",
       "input": "DownloadL7LogsRequest",
       "name": "下载七层离线日志",
       "output": "DownloadL7LogsResponse",
@@ -18762,7 +18762,7 @@
           "example": "[\"zone-2m6jx63f6k3x\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {
@@ -18854,7 +18854,7 @@
           "example": "[\"zone-2nepupfjtjlf\"]",
           "member": "string",
           "name": "ZoneIds",
-          "required": false,
+          "required": true,
           "type": "list"
         },
         {

@@ -160,6 +160,20 @@
         "title": "开通环境下日志资源"
       }
     ],
+    "CreateFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"my-func\",\n    \"EnvId\": \"env-zyxjgkd\",\n    \"Handler\": \"index.main\",\n    \"MemorySize\": 0,\n    \"Timeout\": 0,\n    \"UseGpu\": \"FALSE\",\n    \"InstallDependency\": \"TRUE\",\n    \"Stamp\": \"Tcb\",\n    \"Role\": \"TCB_QcsRole\",\n    \"Description\": \"my function\",\n    \"Runtime\": \"nodejs16\",\n    \"ClsTopicId\": \"topic-xx\",\n    \"ClsLogsetId\": \"logset-yy\",\n    \"Code\": {\n        \"ZipFile\": \"zip-code-here\"\n    },\n    \"PrivateConfig\": {\n        \"Language\": \"nodejs\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建函数"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"jackvylitest2\",\n    \"EnvId\": \"cbftest-goreliu-d5f0c7kud1ee02a6\",\n    \"Handler\": \"index.main\",\n    \"MemorySize\": 256,\n    \"Timeout\": 3,\n    \"UseGpu\": \"FALSE\",\n    \"InstallDependency\": \"TRUE\",\n    \"Runtime\": \"Nodejs24.14\",\n    \"Code\": {\n        \"ZipFile\": \"UEsDBBQAAAAIAKyFGF0rzojg8AAAAEIBAAAIABwAaW5kZXguanNVVAkAA6MEjGqkBIxqdXgLAAEE9QEAAAQUAAAAXY89TsNAEIV7n+JV2VgydkTpKBREQoICCg6ANt6xs7DeMbvrKJblkppDII6We2A7pIk0xfzove9NlmFruFX30hMeWlsEzRanr9/T909Ex4Zd8GkttcUG0ne2wJIOZEOCgm2gY4ixuUMfYZo9G0oNV0tR7EooqhnaHviDlEjw9PrynPrgtK102Z1d4ng9Kh2F1tnZBPBBhtZvWVGO29UqmZd7koqcz9FDzFwbbkLXkMghZNMYXcgpd/bu2QoMZ9GOVZdfY3vU5L2sRnexJ2MYpeMaY94xoqPPlnx4VPnlOywWlzb9v75phSGeEMM6GusPUEsDBBQAAAAIAKyFGF2amvlBfwAAALoAAAAMABwAcGFja2FnZS5qc29uVVQJAAOjBIxqowSManV4CwABBPUBAAAEFAAAAD2OSwoCMQxA9z1FyFrKuHWpILhw5wVKG6EyTaXJiDDM3e1ncJn3XkJWA4DsEuEJ8Lmw15hZSRQPzXyoSAVNHu1kp0EDiS/xrbu5zHkJZycE1/0ABEp5tMnFHkUO9LUvGXTsSxVrHRtQV7R1nAPBP65y6wtz9MTSv7zfHmg28wNQSwECHgMUAAAACACshRhdK86I4PAAAABCAQAACAAYAAAAAAABAAAApIEAAAAAaW5kZXguanNVVAUAA6MEjGp1eAsAAQT1AQAABBQAAABQSwECHgMUAAAACACshRhdmpr5QX8AAAC6AAAADAAYAAAAAAABAAAApIEyAQAAcGFja2FnZS5qc29uVVQFAAOjBIxqdXgLAAEE9QEAAAQUAAAAUEsFBgAAAAACAAIAoAAAAPcBAAAAAA==\\n\"\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"vpc-3m4f4bhq\",\n        \"SubnetId\": \"subnet-2tvkenrt\"\n    },\n    \"Layers\": [\n        {\n            \"LayerName\": \"demo\",\n            \"LayerVersion\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SCFErrorCode\": \"\",\n        \"SCFErrorMsg\": \"\",\n        \"RequestId\": \"cc908925-479f-4ed5-ab49-bc2c6466bd92\"\n    }\n}",
+        "title": "创建函数0824"
+      }
+    ],
     "CreateHTTPServiceRoute": [
       {
         "document": "",
@@ -258,6 +272,20 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudAppVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-xx12\",\n    \"DeployType\": \"static-hosting\",\n    \"ServiceName\": \"vue\",\n    \"VersionName\": \"vue-01\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"c4ab40c6-be31-4b3c-b70d-de920f28d262\"\n    }\n}",
         "title": "删除云应用版本"
+      }
+    ],
+    "DeleteFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"jackvyli-d1g5v7p5e7191af47\",\n    \"FunctionName\": \"scfnodejshelloworldasdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionId\": \"\",\n        \"RequestId\": \"f49351aa-0d13-46f9-af46-0f8aebf62e60\"\n    }\n}",
+        "title": "SCF DeleteFunction"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"cbftest-goreliu-d5f0c7kud1ee02a6\",\n    \"FunctionName\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionId\": \"fn-b5366dccb51c67d3\",\n        \"RequestId\": \"e0303e53-760a-455a-8af8-86bf30c9e821\"\n    }\n}",
+        "title": "删除函数"
       }
     ],
     "DeleteHTTPServiceRoute": [
@@ -700,6 +728,14 @@
         "title": "销毁资源"
       }
     ],
+    "DownloadFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"scfhelloworld\",\n    \"EnvId\": \"lowcode-xxx\",\n    \"Qualifier\": \"$LATEST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SCFErrorCode\": \"\",\n        \"SCFErrorMsg\": \"\",\n        \"Url\": \"https://...\",\n        \"RequestId\": \"c75d9568-6abf-41ad-91d6-3ab9171e1741\"\n    }\n}",
+        "title": "获取云函数地址并下载zip包"
+      }
+    ],
     "ExecutePGSql": [
       {
         "document": "",
@@ -708,12 +744,34 @@
         "title": "ExecutePGSql"
       }
     ],
+    "GetFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"jackvyli-d1g5v7p5e7191af47\",\n    \"FunctionName\": \"jackvylitest7\",\n    \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2026-08-20 10:53:26\",\n        \"AsyncRunEnable\": \"FALSE\",\n        \"AvailableStatus\": \"Available\",\n        \"CodeInfo\": \"\",\n        \"CodeResult\": \"success\",\n        \"CodeSize\": 0,\n        \"Description\": \"Hello World\",\n        \"ErrNo\": 0,\n        \"FunctionId\": \"lam-bl4u8z57\",\n        \"FunctionName\": \"jackvylitest7\",\n        \"FunctionVersion\": \"$LATEST\",\n        \"Handler\": \"\",\n        \"ImageConfig\": {\n            \"Args\": \"\",\n            \"Command\": \"\",\n            \"ContainerImageAccelerate\": false,\n            \"ImageType\": \"\",\n            \"ImageUri\": \"\",\n            \"RegistryId\": \"\"\n        },\n        \"InitTimeout\": 65,\n        \"InstallDependency\": \"TRUE\",\n        \"L5Enable\": \"FALSE\",\n        \"MemorySize\": 256,\n        \"ModTime\": \"2026-08-20 10:53:26\",\n        \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n        \"OnsEnable\": \"FALSE\",\n        \"Qualifier\": \"$LATEST\",\n        \"RequestId\": \"94070739-c916-496b-9e2a-3f93cf69fc9d\",\n        \"Role\": \"TCB_QcsRole\",\n        \"Runtime\": \"Nodejs18.15\",\n        \"Status\": \"Creating\",\n        \"Tags\": [],\n        \"Timeout\": 3,\n        \"TraceEnable\": \"FALSE\",\n        \"Triggers\": [],\n        \"Type\": \"HTTP\",\n        \"UseGpu\": \"FALSE\",\n        \"VpcConfig\": {\n            \"SubnetId\": \"subnet-2tvkenrt\",\n            \"VpcId\": \"vpc-3m4f4bhq\"\n        }\n    }\n}",
+        "title": "GetFunction-0819"
+      }
+    ],
     "GetProviders": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetProviders\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AutoSignUpWithProviderUser\": \"TRUE\",\n                \"Config\": {\n                    \"AuthorizationEndpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\",\n                    \"ClientId\": \"example\",\n                    \"ClientSecret\": \"example\",\n                    \"Issuer\": \"\",\n                    \"JwksUri\": \"\",\n                    \"RedirectUri\": \"\",\n                    \"RequestParametersMap\": {\n                        \"RegisterUserType\": \"externalUser\"\n                    },\n                    \"ResponseParametersMap\": {\n                        \"Email\": \"email\",\n                        \"Groups\": \"groups\",\n                        \"Name\": \"name\",\n                        \"PhoneNumber\": \"phone_number\",\n                        \"Picture\": \"picture\",\n                        \"Sub\": \"sub\",\n                        \"Username\": \"username\"\n                    },\n                    \"ResponseType\": \"\",\n                    \"SamlMetadata\": \"\",\n                    \"Scope\": \"email openid profile\",\n                    \"SignoutEndpoint\": \"\",\n                    \"TokenEndpoint\": \"https://oauth2.googleapis.com/token\",\n                    \"TokenEndpointAuthMethod\": \"CLIENT_SECRET_BASIC\",\n                    \"UserinfoEndpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\"\n                },\n                \"Description\": {\n                    \"Localized\": [],\n                    \"Message\": \"\"\n                },\n                \"Homepage\": \"\",\n                \"Id\": \"google\",\n                \"Name\": {\n                    \"Localized\": [],\n                    \"Message\": \"Google\"\n                },\n                \"On\": \"TRUE\",\n                \"Picture\": \"https://qcloudimg.tencent-cloud.cn/raw/f9131c00dcbcbccd5899a449d68da3ba.png\",\n                \"ProviderType\": \"OAUTH\",\n                \"TransparentMode\": \"FALSE\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"490fbbcb-c5e3-4037-b851-099e636768cc\"\n    }\n}",
         "title": "查询身份源列表"
+      }
+    ],
+    "ListFunctions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFunctions\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-5gtny6fc61de9566\",\n    \"Order\": \"DESC\",\n    \"Orderby\": \"ModTime\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Functions\": [\n            {\n                \"AddTime\": \"2025-04-22 20:49:17\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"低码数据源函数，自动生成，请勿删除\",\n                \"FunctionId\": \"lam-5s91bx6p\",\n                \"FunctionName\": \"lowcode-datasource-preview\",\n                \"ModTime\": \"2025-12-24 15:04:36\",\n                \"Namespace\": \"lowcode-5gtny6fc61de9566\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs12.16\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"Event\"\n            }\n        ],\n        \"TotalCount\": 5,\n        \"RequestId\": \"819b5c9d-43e0-4704-b4de-d9368e500c76\"\n    }\n}",
+        "title": "ListFunction"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFunctions\n<公共请求参数>\n\n{\n    \"EnvId\": \"jackvyli-d1g5v7p5e7191af47\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Functions\": [\n            {\n                \"AddTime\": \"2026-08-19 16:37:23\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Hello World\",\n                \"FunctionId\": \"lam-hlxwkilh\",\n                \"FunctionName\": \"jackvylitest6\",\n                \"ModTime\": \"2026-08-19 16:37:23\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"CreateFailed\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": [\n                    {\n                        \"ErrorCode\": \"ResourceNotFound.BootstrapFile\",\n                        \"ErrorMessage\": \"BuildCodeViaSCF Failed resp:null: ResourceNotFound.Entryfile Error,Err:&{ResourceNotFound.Entryfile Unzip entryfile Failded,Err:exit status 11 OUT:caution: filename not matched:  scf_bootstrap\\n}\"\n                    }\n                ],\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-19 16:32:07\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Hello World\",\n                \"FunctionId\": \"lam-oz9u16zl\",\n                \"FunctionName\": \"scfnodejshelloworldasdf\",\n                \"ModTime\": \"2026-08-19 16:32:07\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"Event\"\n            },\n            {\n                \"AddTime\": \"2026-08-18 15:05:47\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Nodejs 语言 Websocket 模板\",\n                \"FunctionId\": \"lam-9t9ss2xx\",\n                \"FunctionName\": \"jackvylitest5\",\n                \"ModTime\": \"2026-08-18 15:05:47\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-18 15:05:16\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Nodejs 语言 Websocket 模板\",\n                \"FunctionId\": \"lam-1i4pllmx\",\n                \"FunctionName\": \"jackvylitest4\",\n                \"ModTime\": \"2026-08-18 15:05:16\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-18 14:56:16\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Nodejs 语言 Websocket 模板\",\n                \"FunctionId\": \"lam-6jcmfig1\",\n                \"FunctionName\": \"jackvylitest3\",\n                \"ModTime\": \"2026-08-18 14:56:16\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-17 18:03:30\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Nodejs 语言 Websocket 模板\",\n                \"FunctionId\": \"lam-oz8ntn37\",\n                \"FunctionName\": \"jackvylitest\",\n                \"ModTime\": \"2026-08-17 18:03:30\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-17 17:09:31\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"Nodejs 语言 Websocket 模板\",\n                \"FunctionId\": \"lam-6mv2t7lt\",\n                \"FunctionName\": \"httpnodejswebsocket\",\n                \"ModTime\": \"2026-08-17 17:09:31\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-17 15:59:22\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"基于 Nodejs 语言框架 Express 实现的 HTTP 调用示例\",\n                \"FunctionId\": \"lam-9enjzkkv\",\n                \"FunctionName\": \"httpnodejsexpress\",\n                \"ModTime\": \"2026-08-17 15:59:22\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs20.19\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"HTTP\"\n            },\n            {\n                \"AddTime\": \"2026-08-13 14:33:50\",\n                \"AsyncRunEnable\": \"FALSE\",\n                \"Description\": \"asd\",\n                \"FunctionId\": \"lam-0qxuqwmn\",\n                \"FunctionName\": \"scfnodejshelloworld\",\n                \"ModTime\": \"2026-08-17 15:47:28\",\n                \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n                \"ReservedConcurrencyMem\": 0,\n                \"Runtime\": \"Nodejs18.15\",\n                \"Status\": \"Active\",\n                \"StatusDesc\": \"\",\n                \"StatusReasons\": null,\n                \"Tags\": null,\n                \"TotalProvisionedConcurrencyMem\": 0,\n                \"TraceEnable\": \"FALSE\",\n                \"Type\": \"Event\"\n            }\n        ],\n        \"RequestId\": \"e225e7f0-12a3-42d1-aa96-21a397867a65\",\n        \"TotalCount\": 9\n    }\n}",
+        "title": "ListFunction-0819"
       }
     ],
     "ListPGUserMigrations": [
@@ -1008,6 +1066,22 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAIModel\n<公共请求参数>\n\n{\n    \"EnvId\": \"httpservice-wushan-8devh79e82d2a\",\n    \"GroupName\": \"cloudbase-test\",\n    \"Models\": [\n        {\n            \"Model\": \"hy3-preview\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"dffc99bc-c381-4d74-9bf4-ec8e141ea3bd\"\n    }\n}",
         "title": "更新模型列表"
+      }
+    ],
+    "UpdateFunctionCode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"FunctionName\": \"scfweb2\",\n    \"EnvId\": \"************************\",\n    \"Handler\": \"\",\n    \"Namespace\": \"\",\n    \"InstallDependency\": \"TRUE\",\n    \"Publish\": \"\",\n    \"Code\": {\n        \"ZipFile\": \"\"\n    },\n    \"CodeSource\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a1b1e20-f32c-4285-b3b9-a94c493fa3d1\"\n    }\n}",
+        "title": "更新云函数代码"
+      }
+    ],
+    "UpdateFunctionConfiguration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionConfiguration\n<公共请求参数>\n\n{\n    \"EnvId\": \"playground-2g2mc217d35d5e5e\",\n    \"FunctionName\": \"wxpayFunctions\",\n    \"Description\": \"微信支付云模板内置云函数\",\n    \"MemorySize\": 512,\n    \"Timeout\": 20,\n    \"Environment\": {\n        \"Variables\": [\n            {\n                \"Key\": \"\",\n                \"Value\": \"\"\n            }\n        ]\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"\",\n        \"SubnetId\": \"\"\n    },\n    \"PublicNetConfig\": {\n        \"PublicNetStatus\": \"ENABLE\",\n        \"EipConfig\": {\n            \"EipStatus\": \"DISABLE\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"uuid\"\n    }\n}",
+        "title": "更新函数配置"
       }
     ],
     "UpdateTable": [

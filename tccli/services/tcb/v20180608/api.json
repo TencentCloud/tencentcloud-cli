@@ -98,6 +98,13 @@
       "output": "CreateEnvResourceResponse",
       "status": "online"
     },
+    "CreateFunction": {
+      "document": "创建云函数",
+      "input": "CreateFunctionRequest",
+      "name": "创建云函数",
+      "output": "CreateFunctionResponse",
+      "status": "online"
+    },
     "CreateHTTPServiceRoute": {
       "document": "本接口CreateHTTPServiceRoute用于创建HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。",
       "input": "CreateHTTPServiceRouteRequest",
@@ -173,6 +180,13 @@
       "input": "DeleteCloudAppVersionRequest",
       "name": "删除云应用服务版本",
       "output": "DeleteCloudAppVersionResponse",
+      "status": "online"
+    },
+    "DeleteFunction": {
+      "document": "删除云函数。\n\n删除指定环境下的云函数。调用接口后，若通过 GetFunction 接口查询不到该函数，则表示删除成功。",
+      "input": "DeleteFunctionRequest",
+      "name": "删除云函数",
+      "output": "DeleteFunctionResponse",
       "status": "online"
     },
     "DeleteHTTPServiceRoute": {
@@ -497,6 +511,13 @@
       "output": "DestroyStaticStoreResponse",
       "status": "online"
     },
+    "DownloadFunction": {
+      "document": "获取云函数地址并下载zip包",
+      "input": "DownloadFunctionRequest",
+      "name": "获取云函数地址并下载",
+      "output": "DownloadFunctionResponse",
+      "status": "online"
+    },
     "ExecutePGSql": {
       "document": "在Postgres数据库上执行SQL",
       "input": "ExecutePGSqlRequest",
@@ -504,11 +525,25 @@
       "output": "ExecutePGSqlResponse",
       "status": "online"
     },
+    "GetFunction": {
+      "document": "获取云函数详情",
+      "input": "GetFunctionRequest",
+      "name": "获取云函数详情",
+      "output": "GetFunctionResponse",
+      "status": "online"
+    },
     "GetProviders": {
       "document": "查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。",
       "input": "GetProvidersRequest",
       "name": "获取三方认证源列表",
       "output": "GetProvidersResponse",
+      "status": "online"
+    },
+    "ListFunctions": {
+      "document": "该接口根据传入的查询参数返回相关函数信息。",
+      "input": "ListFunctionsRequest",
+      "name": "获取函数列表",
+      "output": "ListFunctionsResponse",
       "status": "online"
     },
     "ListPGUserMigrations": {
@@ -698,6 +733,20 @@
       "input": "UpdateAIModelRequest",
       "name": "更新AI模型",
       "output": "UpdateAIModelResponse",
+      "status": "online"
+    },
+    "UpdateFunctionCode": {
+      "document": "更新云函数代码",
+      "input": "UpdateFunctionCodeRequest",
+      "name": "更新云函数代码",
+      "output": "UpdateFunctionCodeResponse",
+      "status": "online"
+    },
+    "UpdateFunctionConfiguration": {
+      "document": "该接口根据传入参数更新函数配置。",
+      "input": "UpdateFunctionConfigurationRequest",
+      "name": "更新函数配置",
+      "output": "UpdateFunctionConfigurationResponse",
       "status": "online"
     },
     "UpdateTable": {
@@ -1051,6 +1100,78 @@
         }
       ],
       "type": "object"
+    },
+    "AgentRuntimeCodeImageConfig": {
+      "document": "Agent 创建云函数镜像配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像仓库类型，个人版或者企业版：personal/enterprise",
+          "example": "enterprise",
+          "member": "string",
+          "name": "ImageType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "{domain}/{namespace}/{imageName}:{tag}@{digest}",
+          "example": "tcr.tencentcloudcr.com/namespace/test:latest",
+          "member": "string",
+          "name": "ImageUri",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于企业版TCR获取镜像拉取临时凭证，ImageType为\"enterprise\"时必填",
+          "example": "tcr-xxx",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器的启动命令。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 Entrypoint。传入规范，填写可运行的指令，例如 python",
+          "example": "python",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器的启动参数。该参数为可选参数，如果不填写，则默认使用 Dockerfile 中的 CMD。传入规范，以“空格”作为参数的分割标识，例如 -u app.py",
+          "example": "-u app.py",
+          "member": "string",
+          "name": "Args",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像加速开关，默认False",
+          "example": "false",
+          "member": "bool",
+          "name": "ContainerImageAccelerate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AllocateEnvRequest": {
       "document": "AllocateEnv请求参数结构体",
@@ -2200,6 +2321,75 @@
       ],
       "usage": "out"
     },
+    "CodeReq": {
+      "document": "base64编码后的代码块",
+      "members": [
+        {
+          "disabled": false,
+          "document": "包含函数代码的zip格式文件",
+          "example": "base64编码",
+          "member": "string",
+          "name": "ZipFile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象存储桶名称（填写存储桶名称自定义部分，不包含-appid）\n",
+          "example": "BucketName",
+          "member": "string",
+          "name": "CosBucketName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象存储中代码包文件路径，以/开头\n",
+          "example": "ObjectName",
+          "member": "string",
+          "name": "CosObjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。\n",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果是从TempCos创建的话，需要传入TempCosObjectName",
+          "example": "/2026-01-05/1257473911/ceshi-cd/agent-tes.zip",
+          "member": "string",
+          "name": "TempCosObjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如果是通过Demo创建的话，需要传入DemoId\n",
+          "example": "DemoId",
+          "member": "string",
+          "name": "DemoId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "上传云开发cos后返回的时间戳",
+          "example": "1766477686",
+          "member": "string",
+          "name": "CosTimestamp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "CreateAIModelRequest": {
       "document": "CreateAIModel请求参数结构体",
       "members": [
@@ -2920,6 +3110,305 @@
           "member": "string",
           "name": "EnvId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionRequest": {
+      "document": "CreateFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的函数名称</p>",
+          "example": "helloworld",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "env-xxyyzzaa",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数处理方法名称</p>",
+          "example": "index.main_handler",
+          "member": "string",
+          "name": "Handler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数运行时内存大小</p>",
+          "example": "128",
+          "member": "int64",
+          "name": "MemorySize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数最长执行时间</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>此参数公司内部展示。是否使用GPU进行计算</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "UseGpu",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在线依赖安装</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "InstallDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>此参数公司内部展示。用于小程序，GPU集群，不对外</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Stamp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数绑定的角色</p>",
+          "example": "SCF_ExecuteRole",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数描述</p>",
+          "example": "hello world!",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数运行环境</p>",
+          "example": "Python3.6",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数日志投递到的CLS TopicID</p>",
+          "example": "topic-xxyyzad",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数日志投递到的CLS LogsetID</p>",
+          "example": "logset-xjckuisd",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含函数代码文件的zip格式文件</p>",
+          "example": "无",
+          "member": "CodeReq",
+          "name": "Code",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云函数配置项</p>",
+          "example": "无",
+          "member": "PrivateConfig",
+          "name": "PrivateConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数类型，默认值为Event，创建触发器函数请填写Event，创建HTTP函数级服务请填写HTTP</p>",
+          "example": "Event",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP函数支持的访问协议。当前支持WebSockets协议，值为WS</p>",
+          "example": "WS",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>",
+          "example": "无",
+          "member": "FunctionEnvironment",
+          "name": "Environment",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数初始化超时时间，默认 65s，镜像部署函数默认 90s。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "InitTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源，支持ZipFile, Cos, Demo 其中之一</p>",
+          "example": "ZipFile",
+          "member": "string",
+          "name": "CodeSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的私有网络配置</p>",
+          "example": "无",
+          "member": "FunctionVpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数要关联的Layer版本列表，Layer会按照在列表中顺序依次覆盖。</p>",
+          "example": "无",
+          "member": "FunctionLayer",
+          "name": "Layers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问配置</p>",
+          "example": "无",
+          "member": "FunctionPublicNetConfig",
+          "name": "PublicNetConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启异步属性，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AsyncRunEnable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事件追踪，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "TraceEnable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动创建cls主题，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoCreateClsTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动创建cls索引，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AutoDeployClsTopicIndex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "DnsCache",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>EipConfig固定ip配置</p>",
+          "example": "无",
+          "member": "FunctionEipConfigFixed",
+          "name": "EipConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFunctionResponse": {
+      "document": "CreateFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用scf返回的错误码</p>",
+          "example": "FailedOperation.Namespace",
+          "member": "string",
+          "name": "SCFErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码对应的描述信息</p>",
+          "example": "命名空间已存在，请勿重复创建。",
+          "member": "string",
+          "name": "SCFErrorMsg",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3793,6 +4282,61 @@
           "name": "Result",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionRequest": {
+      "document": "DeleteFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境 ID。可通过 DescribeEnvs 接口获取。</p>",
+          "example": "cbftest-goreliu-d5f0c7kud1ee02a6",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数名称。最大 60 字符，以字母开头，支持字母、数字、下划线和连字符。可通过 ListFunctions 或 GetFunction 获取。</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数版本。取值：$LATEST（最新版本）。不填默认 $LATEST。当前仅支持 $LATEST。</p>",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFunctionResponse": {
+      "document": "DeleteFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>函数 ID，仅 CBF 云函数返回</p>",
+          "example": "fn-b5366dccb51c67d3",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -7773,6 +8317,91 @@
       ],
       "type": "object"
     },
+    "DownloadFunctionRequest": {
+      "document": "DownloadFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>函数的名称</p>",
+          "example": "helloworld",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "env-xxyyzzaa",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的版本</p>",
+          "example": "LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DownloadFunctionResponse": {
+      "document": "DownloadFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用SCF报错的错误码</p>",
+          "example": "InvalidParameterValue",
+          "member": "string",
+          "name": "SCFErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用SCF报错的错误信息</p>",
+          "example": "参数取值错误",
+          "member": "string",
+          "name": "SCFErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的不跨域url</p>",
+          "example": "https://xxx.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的SHA256编码</p>",
+          "example": "fdsfdgdfgdfghdfhdfgsfsrewreterytfdx",
+          "member": "string",
+          "name": "CodeSha256",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DropIndex": {
       "document": "本类型用于UpdateTable接口中描述待删除索引信息",
       "members": [
@@ -8635,6 +9264,221 @@
       ],
       "usage": "both"
     },
+    "Function": {
+      "document": "云函数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-08-11 19:26:00",
+          "member": "string",
+          "name": "ModTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-08-05 10:57:37",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时</p>",
+          "example": "Nodejs20.19",
+          "member": "string",
+          "name": "Runtime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数名称</p>",
+          "example": "agt-hy3test-6gwc9lew899fa266",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数ID</p>",
+          "example": "lam-57ifs4pt",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "jackvyli-d1g5v7p5e7191af47",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数状态，状态值</p>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数状态详情</p>",
+          "example": "可用",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数描述</p>",
+          "example": "Nodejs 语言 空白 helloworld 模板",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数类型，取值为 HTTP 或者 Event</p>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数状态失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatusReason",
+          "name": "StatusReasons",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数所有版本预置并发内存总和</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalProvisionedConcurrencyMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数并发保留内存</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReservedConcurrencyMem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数异步属性，取值 TRUE 或者 FALSE</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AsyncRunEnable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步函数是否开启调用追踪，取值 TRUE 或者 FALSE</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "TraceEnable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionEipConfig": {
+      "document": "云函数公网访问固定ip配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Eip开启状态，取值['ENABLE','DISABLE']\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "EipStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionEipConfigFixed": {
+      "document": "固定 IP 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否固定 IP，TRUE / FALSE</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EipFixed",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "FunctionEnvironment": {
+      "document": "函数的环境变量参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境变量数组",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FunctionInfo": {
       "document": "函数的信息",
       "members": [
@@ -8660,6 +9504,140 @@
         }
       ],
       "usage": "out"
+    },
+    "FunctionLayer": {
+      "document": "云函数Layer版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>层名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "LayerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>层版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "LayerVersion",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "FunctionPublicNetConfig": {
+      "document": "云函数公网访问配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启公网访问能力取值['DISABLE','ENABLE']\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "PublicNetStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Eip配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionEipConfig",
+          "name": "EipConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionTrigger": {
+      "document": "触发器类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>触发器最后修改时间</p>",
+          "example": "2026-01-12 20:20:33",
+          "member": "datetime",
+          "name": "ModTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器类型</p>",
+          "example": "timer",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器详细配置</p>",
+          "example": "{\"cron\":\"0 0 2 1 * * *\"}",
+          "member": "string",
+          "name": "TriggerDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器名称</p>",
+          "example": "myTrigger",
+          "member": "string",
+          "name": "TriggerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器创建时间</p>",
+          "example": "2026-01-12 20:20:33",
+          "member": "datetime",
+          "name": "AddTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionVpcConfig": {
+      "document": "私有网络参数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>私有网络 的 id</p>",
+          "example": "vpc-********",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网的 id</p>",
+          "example": "subnet-********",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GatewayVersionItem": {
       "document": "网关版本详情",
@@ -8776,6 +9754,379 @@
         }
       ],
       "usage": "both"
+    },
+    "GetFunctionRequest": {
+      "document": "GetFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境Id</p>",
+          "example": "cbf-wushan-d8gg2hg8mae294e31",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数名</p>",
+          "example": "jackvylitest7",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的版本</p>",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境</p>",
+          "example": "cbf-wushan-d8gg2hg8mae294e31",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回代码</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "ShowCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFunctionResponse": {
+      "document": "GetFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>函数最后修改时间</p>",
+          "example": "2026-08-20 10:53:26",
+          "member": "string",
+          "name": "ModTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数代码（&gt;1M 不返回）</p>",
+          "example": "exports.main = async (event, context) => {\\n    return {  \\n        \\\"hello\\\": \\\"world\\\",\\n        \\\"event\\\": event,\\n        \\\"context\\\": context\\n    }\\n}",
+          "member": "string",
+          "name": "CodeInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数描述</p>",
+          "example": "Hello World",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionTrigger",
+          "name": "Triggers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>入口函数</p>",
+          "example": "index.main",
+          "member": "string",
+          "name": "Handler",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码大小（字节）</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CodeSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间（秒）</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数版本</p>",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "FunctionVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小（MB）</p>",
+          "example": "256",
+          "member": "uint64",
+          "name": "MemorySize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行环境</p>",
+          "example": "Nodejs18.15",
+          "member": "string",
+          "name": "Runtime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数名称</p>",
+          "example": "autotest",
+          "member": "string",
+          "name": "FunctionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FunctionVpcConfig",
+          "name": "VpcConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用 GPU (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "UseGpu",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码校验结果 (&quot;success&quot;/&quot;failed&quot;)</p>",
+          "example": "success",
+          "member": "string",
+          "name": "CodeResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码错误码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrNo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "cbf-wushan-d8gg2hg8mae294e31",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色</p>",
+          "example": "TCB_QcsRole",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动安装依赖 (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "InstallDependency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数状态 (&quot;Active&quot;, &quot;Inactive&quot; 等)</p>",
+          "example": "Creating",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数 ID</p>",
+          "example": "lam-0qxuqwmn",
+          "member": "string",
+          "name": "FunctionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数类型 (&quot;HTTP&quot; 或 &quot;Event&quot;)</p>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 L5 (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "L5Enable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数创建时间</p>",
+          "example": "2026-08-20 10:53:26",
+          "member": "string",
+          "name": "AddTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应scf.GetFunction接口的OnsEnable，是否启用 Ons (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "OnsEnable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费状态 (&quot;Available&quot; 等)</p>",
+          "example": "Available",
+          "member": "string",
+          "name": "AvailableStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数版本（查询时传入的）</p>",
+          "example": "$LATEST",
+          "member": "string",
+          "name": "Qualifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始化超时时间（秒）</p>",
+          "example": "65",
+          "member": "uint64",
+          "name": "InitTimeout",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启异步 (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "AsyncRunEnable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事件追踪 (&quot;TRUE&quot;/&quot;FALSE&quot;)</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "TraceEnable",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentRuntimeCodeImageConfig",
+          "name": "ImageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetProvidersRequest": {
       "document": "GetProviders请求参数结构体",
@@ -9974,6 +11325,116 @@
         }
       ],
       "usage": "both"
+    },
+    "ListFunctionsRequest": {
+      "document": "ListFunctions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "lowcode-5gtny6fc61de9566",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>以升序还是降序的方式返回结果，可选值 ASC 和 DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据哪个字段进行返回结果排序,支持以下字段：AddTime, ModTime, FunctionName</p>",
+          "example": "ModTime",
+          "member": "string",
+          "name": "Orderby",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据偏移量，默认值为 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据长度，默认值为 20</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持FunctionName模糊匹配</p>",
+          "example": "kong555",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数描述，支持模糊搜索</p>",
+          "example": "kong555",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤特定属性或者有特定标签的函数。- 传值方式key-value 进行传值 例如：&quot;Filters&quot;: [{ &quot;Name&quot;: &quot;Status&quot;, &quot;Values&quot;: [&quot;CreateFailed&quot;,&quot;Creating&quot;]}, {&quot;Name&quot;: &quot;Type&quot;,&quot;Values&quot;: [&quot;HTTP&quot;]}]上述条件的函数是，函数状态为创建失败或者创建中，且函数类型为 HTTP 函数如果通过标签进行过滤：- tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。示例值：&quot;Filters&quot;: [{&quot;Name&quot;:&quot;tag-dmtest&quot;,&quot;Values&quot;:[&quot;dmtest&quot;]}]入参限制：1.每次请求的Filters的上限为10，Filter.Values的上限为5。2.[VpcId&#39;, &#39;SubnetId&#39;, &#39;ClsTopicId&#39;, &#39;ClsLogsetId&#39;, &#39;Role&#39;, &#39;CfsId&#39;, &#39;CfsMountInsId&#39;, &#39;Eip&#39;] 过滤的Name 为这些属性时， values 只能传一个值3.[&#39;Status&#39;, &#39;Runtime&#39;, &#39;Type&#39;, &#39;PublicNetStatus&#39;, &#39;AsyncRunEnable&#39;, &#39;TraceEnable&#39;, &#39;Stamp&#39;] 过滤的Name 为这些属性时 ，values 可以传多个值</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFunctionsResponse": {
+      "document": "ListFunctions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>函数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Function",
+          "name": "Functions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ListPGUserMigrationsRequest": {
       "document": "ListPGUserMigrations请求参数结构体",
@@ -12821,6 +14282,21 @@
       ],
       "type": "object"
     },
+    "PrivateConfig": {
+      "document": "云函数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云函数的语言",
+          "example": "python",
+          "member": "string",
+          "name": "Language",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "Provider": {
       "document": "身份源配置信息。描述云开发环境下用户登录身份源的完整配置，定义了用户通过何种方式进入系统并完成身份认证。支持多种类型：包括标准协议身份源（OAuth 2.0、OIDC、SAML 2.0）、内置身份源（邮箱登录、自定义登录）以及通过插件机制扩展的身份源（如 CAS）。每个身份源包含认证配置、启用状态、用户自动注册策略、信息透传模式等核心属性，是登录认证流程的核心数据结构。",
       "members": [
@@ -14475,6 +15951,34 @@
       ],
       "usage": "out"
     },
+    "StatusReason": {
+      "document": "状态原因描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>",
+          "example": "ResourceNotFound.BootstrapFile",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误描述</p>",
+          "example": "BuildCodeViaSCF Failed resp:null: ResourceNotFound.Entryfile Error,Err:&{ResourceNotFound.Entryfile Unzip entryfile Failded,Err:exit status 11 OUT:caution: filename not matched:  scf_bootstrap\n}",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StorageInfo": {
       "document": "StorageInfo 资源信息",
       "members": [
@@ -14761,6 +16265,314 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionCodeRequest": {
+      "document": "UpdateFunctionCode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建的函数名称</p>",
+          "example": "envfn",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "************************",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数处理方法名称</p>",
+          "example": "index.main",
+          "member": "string",
+          "name": "Handler",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数所属命名空间</p>",
+          "example": "namespace",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在线依赖安装</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "InstallDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在更新时是否同步发布新版本，默认为：FALSE，不发布 示例值：FALSE</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "Publish",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>包含函数代码文件的zip格式文件</p>",
+          "example": "无",
+          "member": "CodeReq",
+          "name": "Code",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源方式，支持 ZipFile, Cos, Inline 之一 示例值：Cos</p>",
+          "example": "Cos",
+          "member": "string",
+          "name": "CodeSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionCodeResponse": {
+      "document": "UpdateFunctionCode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用scf返回的错误码</p>",
+          "example": "InvalidParameterValue",
+          "member": "string",
+          "name": "SCFErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码对应的描述信息</p>",
+          "example": "参数取值错误",
+          "member": "string",
+          "name": "SCFErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionConfigurationRequest": {
+      "document": "UpdateFunctionConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "env-3icjklduoid",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要修改的函数名称</p>",
+          "example": "function-name",
+          "member": "string",
+          "name": "FunctionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数描述。最大支持 1000 个英文字母、数字、空格、逗号和英文句号，支持中文</p>",
+          "example": "my special function",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数运行时内存大小，默认为 128 M，可选范围64M、128 M-3072 M，以 128MB 为阶梯。</p>",
+          "example": "128",
+          "member": "int64",
+          "name": "MemorySize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的环境变量</p>",
+          "example": "无",
+          "member": "FunctionEnvironment",
+          "name": "Environment",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数的私有网络配置</p>",
+          "example": "无",
+          "member": "FunctionVpcConfig",
+          "name": "VpcConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网访问配置</p>",
+          "example": "无",
+          "member": "FunctionPublicNetConfig",
+          "name": "PublicNetConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数运行环境，创建时指定，目前不支持修改。</p>",
+          "example": "Python3.6",
+          "member": "string",
+          "name": "Runtime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数绑定的角色</p>",
+          "example": "role",
+          "member": "string",
+          "name": "Role",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在线依赖安装，TRUE 表示安装，仅支持 Node.js 函数。 </p><p>默认值：FALSE</p>",
+          "example": "TRUE",
+          "member": "string",
+          "name": "InstallDependency",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志投递到的cls日志集ID</p>",
+          "example": "fsdfs-sfdsdfsd-sdfsdf",
+          "member": "string",
+          "name": "ClsTopicId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志投递到的cls Topic ID</p>",
+          "example": "fsdfs-sfdsdfsd-sdfsdf",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在更新时是否同步发布新版本</p><p>默认值：FALSE</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "Publish",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启L5访问能力，TRUE 为开启，FALSE为关闭</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "L5Enable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数要关联的层版本列表，层的版本会按照在列表中顺序依次覆盖。</p>",
+          "example": "无",
+          "member": "FunctionLayer",
+          "name": "Layers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数初始化执行超时时间</p>",
+          "example": "15",
+          "member": "int64",
+          "name": "InitTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启Dns缓存能力。只支持EVENT函数。</p><p>默认值：FALSE</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "DnsCache",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略系统日志上报</p>",
+          "example": "FALSE",
+          "member": "string",
+          "name": "IgnoreSysLog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>固定IP配置</p>",
+          "example": "无",
+          "member": "FunctionEipConfigFixed",
+          "name": "EipConfig",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionConfigurationResponse": {
+      "document": "UpdateFunctionConfiguration返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -546,6 +546,13 @@
       "output": "DescribeNDRAssetIdentificationListResponse",
       "status": "online"
     },
+    "DescribeNDRDataLeakOutAlertList": {
+      "document": "DescribeNDRDataLeakOutAlertList -- 查询NDR数据泄露出站告警列表",
+      "input": "DescribeNDRDataLeakOutAlertListRequest",
+      "name": "获取NDR出站敏感数据泄露风险列表",
+      "output": "DescribeNDRDataLeakOutAlertListResponse",
+      "status": "online"
+    },
     "DescribeNatAcRule": {
       "document": "查询NAT访问控制列表",
       "input": "DescribeNatAcRuleRequest",
@@ -5375,6 +5382,262 @@
         }
       ],
       "usage": "both"
+    },
+    "DataLeakOutAlertEvent": {
+      "document": "NDR出站数据泄露-告警事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "1357473720924375000",
+          "member": "string",
+          "name": "RiskID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-mxqs52ee",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "外联AI测试用-勿删",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "CVM",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP",
+          "example": "10.0.0.10",
+          "member": "string",
+          "name": "SrcIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的IP端口，多个以逗号连接：1.1.1.1:80,1.1.1.1:8080",
+          "example": "116.205.40.114:443",
+          "member": "string",
+          "name": "DstIPPort",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hostname",
+          "example": "api.deepseek.com",
+          "member": "string",
+          "name": "Hostname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的服务类型",
+          "example": "ai",
+          "member": "string",
+          "name": "DstServiceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的服务名称",
+          "example": "DeepSeek",
+          "member": "string",
+          "name": "DstServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "以逗号连接的敏感类型ID集合: 10001,10002,10003",
+          "example": "6201,6225",
+          "member": "string",
+          "name": "LeakTypeSet",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "EventCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "首次识别时间",
+          "example": "2026-03-04 10:16:05",
+          "member": "string",
+          "name": "FirstIdentificationTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近识别时间",
+          "example": "2026-03-04 11:06:34",
+          "member": "string",
+          "name": "LatestIdentificationTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "2",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "已处置",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API",
+          "example": "/chat/completions",
+          "member": "string",
+          "name": "ApiPattern",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI分析状态",
+          "example": "3",
+          "member": "uint64",
+          "name": "AnalysisStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI分析失败原因（失败时）",
+          "example": "风险记录不存在",
+          "member": "string",
+          "name": "AnalysisFailReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API业务类型",
+          "example": "Search Query",
+          "member": "string",
+          "name": "ApiBizType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险类型（风险场景）",
+          "example": "Insider Leak",
+          "member": "string",
+          "name": "RiskScenario",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI建议风险等级",
+          "example": "2",
+          "member": "int64",
+          "name": "AiSuggestedLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的IP地理信息",
+          "example": "中国 内蒙古自治区 乌兰察布",
+          "member": "string",
+          "name": "DstGeoLocation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最高敏感等级",
+          "example": "S4",
+          "member": "string",
+          "name": "HighestLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DatabaseWhiteListRuleData": {
       "document": "数据库白名单规则数据",
@@ -10751,6 +11014,139 @@
           "example": "无",
           "member": "FieldOption",
           "name": "InstanceTypeOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRDataLeakOutAlertListRequest": {
+      "document": "DescribeNDRDataLeakOutAlertList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，asc正序 desc倒序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "LatestIdentificationTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤条件，多个条件之间为AND的关系",
+          "example": "无",
+          "member": "OperatorFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNDRDataLeakOutAlertListResponse": {
+      "document": "DescribeNDRDataLeakOutAlertList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的总条数",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果列表",
+          "example": "无",
+          "member": "DataLeakOutAlertEvent",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例类型可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "InstanceTypeOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "RegionOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标服务类型可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "DstServiceTypeOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险场景（类型）可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "RiskScenarioOptions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI分析任务状态可选项",
+          "example": "无",
+          "member": "FieldOption",
+          "name": "AnalysisStatusOptions",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
