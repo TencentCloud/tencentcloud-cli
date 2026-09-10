@@ -274,6 +274,20 @@
         "title": "删除云应用版本"
       }
     ],
+    "DeleteFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"jackvyli-d1g5v7p5e7191af47\",\n    \"FunctionName\": \"scfnodejshelloworldasdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionId\": \"\",\n        \"RequestId\": \"f49351aa-0d13-46f9-af46-0f8aebf62e60\"\n    }\n}",
+        "title": "SCF DeleteFunction"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"cbftest-goreliu-d5f0c7kud1ee02a6\",\n    \"FunctionName\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FunctionId\": \"fn-b5366dccb51c67d3\",\n        \"RequestId\": \"e0303e53-760a-455a-8af8-86bf30c9e821\"\n    }\n}",
+        "title": "删除函数"
+      }
+    ],
     "DeleteHTTPServiceRoute": [
       {
         "document": "删除域名及所有路由",
@@ -738,12 +752,28 @@
         "title": "销毁资源"
       }
     ],
+    "DownloadFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadFunction\n<公共请求参数>\n\n{\n    \"FunctionName\": \"scfhelloworld\",\n    \"EnvId\": \"lowcode-xxx\",\n    \"Qualifier\": \"$LATEST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SCFErrorCode\": \"\",\n        \"SCFErrorMsg\": \"\",\n        \"Url\": \"https://...\",\n        \"RequestId\": \"c75d9568-6abf-41ad-91d6-3ab9171e1741\"\n    }\n}",
+        "title": "获取云函数地址并下载zip包"
+      }
+    ],
     "ExecutePGSql": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecutePGSql\n<公共请求参数>\n\n{\n    \"EnvId\": \"lo**od*-*********10a94df\",\n    \"Sql\": \"select * from pg_namespace\"\n}",
         "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Columns\": [\n            \"oid\"\n        ],\n        \"ExecutionTimeMs\": 8,\n        \"Rows\": [\n            \"[\\\"99\\\",\\\"pg_toast\\\",\\\"10\\\",null]\"\n        ],\n        \"RequestId\": \"6907a086-5639-4c9d-89bf-66921dd1168e\"\n    }\n}",
         "title": "ExecutePGSql"
+      }
+    ],
+    "GetFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFunction\n<公共请求参数>\n\n{\n    \"EnvId\": \"jackvyli-d1g5v7p5e7191af47\",\n    \"FunctionName\": \"jackvylitest7\",\n    \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTime\": \"2026-08-20 10:53:26\",\n        \"AsyncRunEnable\": \"FALSE\",\n        \"AvailableStatus\": \"Available\",\n        \"CodeInfo\": \"\",\n        \"CodeResult\": \"success\",\n        \"CodeSize\": 0,\n        \"Description\": \"Hello World\",\n        \"ErrNo\": 0,\n        \"FunctionId\": \"lam-bl4u8z57\",\n        \"FunctionName\": \"jackvylitest7\",\n        \"FunctionVersion\": \"$LATEST\",\n        \"Handler\": \"\",\n        \"ImageConfig\": {\n            \"Args\": \"\",\n            \"Command\": \"\",\n            \"ContainerImageAccelerate\": false,\n            \"ImageType\": \"\",\n            \"ImageUri\": \"\",\n            \"RegistryId\": \"\"\n        },\n        \"InitTimeout\": 65,\n        \"InstallDependency\": \"TRUE\",\n        \"L5Enable\": \"FALSE\",\n        \"MemorySize\": 256,\n        \"ModTime\": \"2026-08-20 10:53:26\",\n        \"Namespace\": \"jackvyli-d1g5v7p5e7191af47\",\n        \"OnsEnable\": \"FALSE\",\n        \"Qualifier\": \"$LATEST\",\n        \"RequestId\": \"94070739-c916-496b-9e2a-3f93cf69fc9d\",\n        \"Role\": \"TCB_QcsRole\",\n        \"Runtime\": \"Nodejs18.15\",\n        \"Status\": \"Creating\",\n        \"Tags\": [],\n        \"Timeout\": 3,\n        \"TraceEnable\": \"FALSE\",\n        \"Triggers\": [],\n        \"Type\": \"HTTP\",\n        \"UseGpu\": \"FALSE\",\n        \"VpcConfig\": {\n            \"SubnetId\": \"subnet-2tvkenrt\",\n            \"VpcId\": \"vpc-3m4f4bhq\"\n        }\n    }\n}",
+        "title": "GetFunction-0819"
       }
     ],
     "GetProviders": [
@@ -1089,9 +1119,17 @@
     "UpdateFunctionCode": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"FunctionName\": \"scfweb2\",\n    \"EnvId\": \"lowcode-1gk9y5ik310a94df\",\n    \"Handler\": \"\",\n    \"Namespace\": \"\",\n    \"InlineZipFile\": \"\",\n    \"InstallDependency\": \"TRUE\",\n    \"Publish\": \"\",\n    \"CodeSecret\": \"\",\n    \"Code\": {\n        \"ZipFile\": \"\"\n    },\n    \"CodeSource\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionCode\n<公共请求参数>\n\n{\n    \"FunctionName\": \"scfweb2\",\n    \"EnvId\": \"************************\",\n    \"Handler\": \"\",\n    \"Namespace\": \"\",\n    \"InlineZipFile\": \"\",\n    \"InstallDependency\": \"TRUE\",\n    \"Publish\": \"\",\n    \"CodeSecret\": \"\",\n    \"Code\": {\n        \"ZipFile\": \"\"\n    },\n    \"CodeSource\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a1b1e20-f32c-4285-b3b9-a94c493fa3d1\"\n    }\n}",
         "title": "更新云函数代码"
+      }
+    ],
+    "UpdateFunctionConfiguration": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunctionConfiguration\n<公共请求参数>\n\n{\n    \"EnvId\": \"playground-2g2mc217d35d5e5e\",\n    \"FunctionName\": \"wxpayFunctions\",\n    \"Description\": \"微信支付云模板内置云函数\",\n    \"MemorySize\": 512,\n    \"Timeout\": 20,\n    \"Environment\": {\n        \"Variables\": [\n            {\n                \"Key\": \"\",\n                \"Value\": \"\"\n            }\n        ]\n    },\n    \"VpcConfig\": {\n        \"VpcId\": \"\",\n        \"SubnetId\": \"\"\n    },\n    \"PublicNetConfig\": {\n        \"PublicNetStatus\": \"ENABLE\",\n        \"EipConfig\": {\n            \"EipStatus\": \"DISABLE\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"uuid\"\n    }\n}",
+        "title": "更新函数配置"
       }
     ],
     "UpdateFunctionIncrementalCode": [

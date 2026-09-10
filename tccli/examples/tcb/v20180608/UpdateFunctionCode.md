@@ -7,7 +7,7 @@ Input:
 ```
 tccli tcb UpdateFunctionCode --cli-unfold-argument  \
     --FunctionName scfweb2 \
-    --EnvId lowcode-1gk9y5ik310a94df \
+    --EnvId ************************ \
     --Handler  \
     --Namespace  \
     --InlineZipFile  \

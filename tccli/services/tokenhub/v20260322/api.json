@@ -5449,7 +5449,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>[tokens 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>",
+          "document": "<p>[tokens / apikey_usage 族]总 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>",
           "example": "[12,null,15]",
           "member": "string",
           "name": "TotalToken",
@@ -5459,7 +5459,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>",
+          "document": "<p>[tokens / apikey_usage 族]输入 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[7,null,9]&quot;</code>。</p>",
           "example": "[7,null,9]",
           "member": "string",
           "name": "InputTotalToken",
@@ -5469,7 +5469,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>",
+          "document": "<p>[tokens / apikey_usage 族]输出 token 数用量时间周期内的 JSON 字符串形式，如 <code>&quot;[5,null,6]&quot;</code>。</p>",
           "example": "[5,null,6]",
           "member": "string",
           "name": "OutputTotalToken",
@@ -5479,7 +5479,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>",
+          "document": "<p>[tokens / apikey_usage 族]读缓存 token 数用量时间周期内的 JSON 字符串形式，如<code>&quot;[5,null,6]&quot;</code>。</p>",
           "example": "[5,null,6]",
           "member": "string",
           "name": "CacheTotalToken",
@@ -5506,16 +5506,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 请求次数在时间周期内的 JSON 字符串形式，如 <code>&quot;[12,null,15]&quot;</code>。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "RequestCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 请求失败次数在时间周期内的 JSON 字符串形式，如 &quot;[12,null,15]&quot;。</p>",
+          "example": "[5,null,6]",
+          "member": "string",
+          "name": "RequestFailCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
     "UsageStats": {
-      "document": "时间周期内的统计聚合值（按 metric key 索引）。声明 tokens / search 两族字段都在本 schema 中，按 MetricKeys 实际返回取值，参见响应顶层 `MetricKeys` 字段。",
+      "document": "时间周期内的统计聚合值，按 MetricKeys 实际返回取值，参见响应顶层 `MetricKeys` 字段。",
       "members": [
         {
           "disabled": false,
-          "document": "<p>[tokens 族] 时间周期内的累计总 token 数。</p>",
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计总 token 数。</p>",
           "example": "1834000",
           "member": "int64",
           "name": "TotalToken",
@@ -5525,7 +5545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族] 时间周期内的累计输入 token 数。</p>",
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计输入 token 数。</p>",
           "example": "1100000",
           "member": "int64",
           "name": "InputTotalToken",
@@ -5535,7 +5555,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族] 时间周期内的累计输出 token 数。</p>",
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计输出 token 数。</p>",
           "example": "734000",
           "member": "int64",
           "name": "OutputTotalToken",
@@ -5545,7 +5565,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[tokens 族] 时间周期内的累计读缓存 token 数（命中缓存部分）</p>",
+          "document": "<p>[tokens / apikey_usage 族] 时间周期内的累计读缓存 token 数（命中缓存部分）注意：CacheTotalToken 是 InputTotalToken 的子集（已包含在内）。</p>",
           "example": "120000",
           "member": "int64",
           "name": "CacheTotalToken",
@@ -5555,7 +5575,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>[search 族] 整段累计联网搜索请求数</p>",
+          "document": "<p>[search 族] 时间周期内的累计联网搜索请求数</p>",
           "example": "100",
           "member": "int64",
           "name": "SearchRequestCount",
@@ -5565,10 +5585,30 @@
         },
         {
           "disabled": false,
-          "document": "<p>[search 族] 整段累计搜索引擎调用次数</p>",
+          "document": "<p>[search 族] 时间周期内的累计搜索引擎调用次数</p>",
           "example": "100",
           "member": "int64",
           "name": "SearchCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 时间周期内的累计请求次数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RequestCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[apikey_usage 族] 时间周期内的累计请求失败次数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "RequestFailCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

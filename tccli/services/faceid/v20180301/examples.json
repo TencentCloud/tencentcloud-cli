@@ -442,6 +442,14 @@
         "title": "拉取结果"
       }
     ],
+    "GetNFCResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetNFCResult\n<公共请求参数>\n\n{\n    \"NFCToken\": \"a1cfec70-4b29-11f0-bce7-c66e37472b33\",\n    \"IdNum\": \"111111111111111111\",\n    \"Name\": \"韦小宝\",\n    \"EnName\": \"\",\n    \"Picture\": \"base64\",\n    \"BirthDate\": \"19460815\",\n    \"Address\": \"北京市xxxx\",\n    \"Nation\": \"汉\",\n    \"Sex\": \"男\",\n    \"SigningOrganization\": \"\",\n    \"BeginTime\": \"\",\n    \"EndTime\": \"\",\n    \"CountryCode\": \"\",\n    \"Nationality\": \"\",\n    \"MachineReadCode\": \"343dasd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IdType\": \"0\",\n        \"CheckMRTD\": \"0\",\n        \"IdNumCompareResult\": \"0\",\n        \"NameCompareResult\": \"0\",\n        \"PictureCompareSim\": 85.5,\n        \"BirthDateCompareResult\": \"0\",\n        \"BeginTimeCompareResult\": \"0\",\n        \"EndTimeCompareResult\": \"0\",\n        \"AddressCompareResult\": \"0\",\n        \"NationCompareResult\": \"0\",\n        \"SexCompareResult\": \"0\",\n        \"EnNameCompareResult\": \"0\",\n        \"SigningOrganizationCompareResult\": \"0\",\n        \"NationalityCompareResult\": \"0\",\n        \"CountryCodeCompareResult\": \"0\",\n        \"MachineReadCodeCompareResult\": \"0\",\n        \"PictureCompareResult\": \"0\",\n        \"ChargeCode\": \"0\",\n        \"RequestId\": \"fb2675fb-40e6-42ce-a958-d72413197ad1\"\n    }\n}",
+        "title": "NFC比对"
+      }
+    ],
     "GetNFCToken": [
       {
         "document": "",

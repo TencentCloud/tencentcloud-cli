@@ -266,6 +266,13 @@
       "output": "GetLivenessResultResponse",
       "status": "online"
     },
+    "GetNFCResult": {
+      "document": "NFC数据核验服务，传入SDK返回的NFCToken以及需要核验的证件字段信息和人像照片，服务将自动把待核验信息与证件NFC解密后数据进行比对，输出核验结果。SDK生成的NFCToken 1小时内内有效，服务将按查询次数收费。\n服务目前支持大陆二代身份证、港澳通行证和中国居民护照中关于以下字段以及人像照片的NFC识别及核验：\n\n- 大陆二代身份证：身份证号、姓名、性别、民族、出生日期、住址、签发机关、有效期起始时间、有效期终止时间、人像照片\n- 港澳通行证：证件号、姓名、性别、英文名、签发地点、签发机关、有效期结束时间、出生日期、人像照片、机读码\n- 中国居民护照：护照号码、中文名、英文名、国籍、性别、国家或地区代码、有效期起始时间、有效期结束时间、出生日期、出生地点、签发地点、签发机关、人像照片、机读码",
+      "input": "GetNFCResultRequest",
+      "name": "NFC数据核验",
+      "output": "GetNFCResultResponse",
+      "status": "online"
+    },
     "GetNFCToken": {
       "document": "NFC核验服务，获取NFC识别请求对应的Token信息。",
       "input": "GetNFCTokenRequest",
@@ -5849,6 +5856,339 @@
           "name": "Video",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNFCResultRequest": {
+      "document": "GetNFCResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "前端 NFC SDK返回的唯一标识ID",
+          "example": "ECBEC11E6-F05A-40DE-9CC3-C9EF119F55FE1",
+          "member": "string",
+          "name": "NFCToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份证号/护照号码/港澳通行证",
+          "example": "11204416541220243X",
+          "member": "string",
+          "name": "IdNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "姓名",
+          "example": "韦小宝",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "人像照片的Base64值",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "Picture",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "出生日期（格式：YYYYMMDD)",
+          "example": "20220222",
+          "member": "string",
+          "name": "BirthDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件有效期起始时间（格式：YYYYMMDD)",
+          "example": "20220222",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件有效期结束时间（格式：YYYYMMDD)",
+          "example": "20220222",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "住址",
+          "example": "北京市东城区景山前街4号紫禁城敬事房",
+          "member": "string",
+          "name": "Address",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "民族",
+          "example": "汉",
+          "member": "string",
+          "name": "Nation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "性别",
+          "example": "男",
+          "member": "string",
+          "name": "Sex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "英文姓名",
+          "example": "lily",
+          "member": "string",
+          "name": "EnName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签发机关",
+          "example": "上海市公安局南山分局",
+          "member": "string",
+          "name": "SigningOrganization",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国籍",
+          "example": "英国",
+          "member": "string",
+          "name": "Nationality",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国家码",
+          "example": "CHN",
+          "member": "string",
+          "name": "CountryCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "护照的机读码",
+          "example": "CSCF97979026<3409084<0103314<4",
+          "member": "string",
+          "name": "MachineReadCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNFCResultResponse": {
+      "document": "GetNFCResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费结果码，NFC识读成功一次计费一次。取值范围： 0：识读成功，计费 -1：识读失败，不计费",
+          "example": "0",
+          "member": "string",
+          "name": "ChargeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件类型。 取值范围： 01：身份证。 02 ：中国护照 03：港澳通行证  99：其他证件 注意：此字段可能返回 null，表示取不到有效值",
+          "example": "01",
+          "member": "string",
+          "name": "IdType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件的验真结果。NFC校验的项目如下：\n {\"result_issuer \":\"签发者证书合法性验证结果 \",\"result_paper\":\"证件安全对象合法性验证结果 \",\"result_data\" :\"防数据篡改验证结果 \",\"result_chip\" :\"防证书件芯片被复制验证结果\"} 。 \n 取值范围：0:验证通过  1: 验证不通过  2: 未验证  3:部分通过 \n当四项核验结果都为0时，表示证件为真。",
+          "example": "0",
+          "member": "string",
+          "name": "CheckMRTD",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的身份证号/护照号/港澳通行证号与NFC识别的身份证号比对结果。 \n0：一致 \n-1：不一致\n -2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "IdNumCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的姓名与NFC识别的姓名比对结果。\n 0：一致\n -1：不一致\n -2：NFC识读不到，无法比对",
+          "example": "0",
+          "member": "string",
+          "name": "NameCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的人脸图片与NFC识别人像照的相似度分数。\n - 取值范围 [0.00, 100.00]。\n - 推荐相似度大于等于70分时可判断为同一人，客户也可根据具体场景自行调整阈值（阈值70的误通过率为千分之一，阈值80的误通过率是万分之一）。",
+          "example": "99.5",
+          "member": "float",
+          "name": "PictureCompareSim",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的人脸图片与NFC识别人像照的比对结果。 \n0：同人（相似度大于等于70分）\n 1：非同人（相似度小于70分）\n 2：比对失败（传入图片质量过低）\n 3：比对失败（传入图片不含人脸或人脸不完整或存在多张人脸）\n 4：比对失败（传入图片过大或过小）\n 5：比对失败（NFC识读不到人像照片）\n 6：比对失败（未传入图片数据）\n 7：比对失败（其他原因）",
+          "example": "0",
+          "member": "string",
+          "name": "PictureCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的出生日期与NFC识别的出生日期比对结果。 \n0：一致\n-1：不一致\n -2：NFC识读不到，无法比对",
+          "example": "0",
+          "member": "string",
+          "name": "BirthDateCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的有效期起始时间与NFC识别的有效期起始时间比对结果。 \n0：一致\n -1：不一致\n -2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "BeginTimeCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的有效期结束时间与NFC识别的有效期结束时间比对结果。\n 0：一致\n -1：不一致\n -2：NFC识读不到，无法比对 ",
+          "example": "0",
+          "member": "string",
+          "name": "EndTimeCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的住址与NFC识别的住址比对结果。\n 0：一致\n -1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "AddressCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的民族与NFC识别的民族比对结果。 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "NationCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的性别与NFC识别的性别比对结果。 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "SexCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的英文姓名与NFC识别的英文姓名比对结果。\n 0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "EnNameCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的签发机关与NFC识别的签发机关比对结果。 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "SigningOrganizationCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的国籍与NFC识别的国籍比对结果。 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对 ",
+          "example": "0",
+          "member": "string",
+          "name": "NationalityCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的国家码与NFC识别的国家码比对结果。 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对 ",
+          "example": "0",
+          "member": "string",
+          "name": "CountryCodeCompareResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "传入的机读码与NFC识别的机读码比对结果 \n0：一致 \n-1：不一致 \n-2：NFC识读不到，无法比对  ",
+          "example": "0",
+          "member": "string",
+          "name": "MachineReadCodeCompareResult",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
