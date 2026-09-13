@@ -1,4 +1,33 @@
-**Example 1: 查询沙箱实例列表**
+**Example 1: 查询实例声明的访问策略**
+
+返回实例自己声明的访问策略，不包含 Tool 与 Instance 合并后的内部结果。
+
+Input: 
+
+```
+tccli ags DescribeSandboxInstanceList --cli-unfold-argument  \
+    --InstanceIds ins-policy123
+```
+
+Output: 
+```
+{
+    "Response": {
+        "InstanceSet": [
+            {
+                "InstanceId": "ins-policy123",
+                "ToolId": "sdt-policy123",
+                "ToolName": "browser-policy-sandbox",
+                "Status": "RUNNING"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "req-describe-instance-policy-example"
+    }
+}
+```
+
+**Example 2: 查询沙箱实例列表**
 
 
 

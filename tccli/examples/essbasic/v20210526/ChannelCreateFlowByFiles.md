@@ -579,7 +579,7 @@ Output:
 
 **Example 7: 处方单场景**
 
-1.处方单场景的"典子谦"医生需要自动签(典子谦参与人的ApproverType设置成PERSON_AUTO_SIGN, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)
+1.处方单场景的"典子谦"医生需要授权签(典子谦参与人的ApproverType设置成PERSON_AUTO_SIGN, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)
 2.处方单的患者张三需要手工签署(张三参与人的ApproverType设置成PERSON)
 3.双方签署方的签署控件都是通过关键字生成(典子谦签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字"处方医生", 张三签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字"患者签名" )
 4.不给合同签署方发送短信 (NotifyType设置成NONE)

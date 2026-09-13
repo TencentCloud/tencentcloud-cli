@@ -21,11 +21,25 @@
       "output": "BatchCreateTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "BatchCreateTWeSeeSubscription": {
+      "document": "批量开通 TWeSee 预付费订阅",
+      "input": "BatchCreateTWeSeeSubscriptionRequest",
+      "name": "批量开通 TWeSee 预付费订阅",
+      "output": "BatchCreateTWeSeeSubscriptionResponse",
+      "status": "online"
+    },
     "BatchInvokeTWeSeeRecognitionTask": {
       "document": "批量同步执行 TWeSee 语义理解任务",
       "input": "BatchInvokeTWeSeeRecognitionTaskRequest",
       "name": "批量同步执行 TWeSee 语义理解任务",
       "output": "BatchInvokeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
+    "BatchRenewTWeSeeSubscription": {
+      "document": "批量续费 TWeSee 预付费订阅",
+      "input": "BatchRenewTWeSeeSubscriptionRequest",
+      "name": "批量续费 TWeSee 预付费订阅",
+      "output": "BatchRenewTWeSeeSubscriptionResponse",
       "status": "online"
     },
     "BatchUpdateFirmware": {
@@ -2287,6 +2301,61 @@
       ],
       "type": "object"
     },
+    "BatchCreateTWeSeeSubscriptionRequest": {
+      "document": "BatchCreateTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待开通的订阅列表",
+          "example": "无",
+          "member": "SeeCreateSubscriptionEntry",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动使用代金券",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "代金券 ID 列表",
+          "example": "[\"voucher-001\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateTWeSeeSubscriptionResponse": {
+      "document": "BatchCreateTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅开通结果列表",
+          "example": "无",
+          "member": "SeeCreateSubscriptionResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchInvokeTWeSeeRecognitionTaskRequest": {
       "document": "BatchInvokeTWeSeeRecognitionTask请求参数结构体",
       "members": [
@@ -2379,6 +2448,61 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchRenewTWeSeeSubscriptionRequest": {
+      "document": "BatchRenewTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待续费的订阅列表",
+          "example": "无",
+          "member": "SeeRenewSubscriptionEntry",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动使用代金券",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "代金券 ID 列表",
+          "example": "[\"voucher-001\"]",
+          "member": "string",
+          "name": "VoucherIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRenewTWeSeeSubscriptionResponse": {
+      "document": "BatchRenewTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅续费结果列表",
+          "example": "无",
+          "member": "SeeRenewSubscriptionResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchUpdateFirmwareRequest": {
       "document": "BatchUpdateFirmware请求参数结构体",
@@ -24514,6 +24638,120 @@
       ],
       "usage": "out"
     },
+    "SeeCreateSubscriptionEntry": {
+      "document": "待开通的 TWeSee 预付费订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可选值：\n\n- `BASIC`：基础版\n- `ADVANCED`：高级版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "ServiceTier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅购买时长，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0011",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。可选值：\n\n- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）\n- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费\n- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SeeCreateSubscriptionResult": {
+      "document": "TWeSee 预付费订阅开通结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20260420*********550201",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeDeleteTaskCondition": {
       "document": "TWeSee 任务删除条件",
       "members": [
@@ -24775,6 +25013,102 @@
           "name": "Source",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeRenewSubscriptionEntry": {
+      "document": "待续费的 TWeSee 预付费订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0013",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SeeRenewSubscriptionResult": {
+      "document": "TWeSee 预付费订阅续费结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "2026042**********584511",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -25116,6 +25450,16 @@
           "example": "cos://twesee-input-test-125*****99.ap-guangzhou/Direct/*********711/019ffdf0-*********-8ad0-5e70d23ae269/***************-lTXjNweg/1786671516_1786671526.ts",
           "member": "string",
           "name": "COSURI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的输入 URL</p>",
+          "example": "https://*********-125*******.cos.ap-guangzhou.tencentcos.cn/*******.mp4",
+          "member": "string",
+          "name": "InputURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -27689,6 +28033,16 @@
           "example": "/product/1.jpg",
           "member": "string",
           "name": "Thumbnail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>",
+          "example": "high",
+          "member": "string",
+          "name": "Confidence",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

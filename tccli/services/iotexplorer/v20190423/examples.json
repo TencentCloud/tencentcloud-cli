@@ -30,6 +30,14 @@
         "title": "批量创建 TWeSee 语义理解任务 - 失败"
       }
     ],
+    "BatchCreateTWeSeeSubscription": [
+      {
+        "document": "批量开通多个 TWeSee 视频理解订阅。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"Entries\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev001\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"ServiceTier\": \"BASIC\",\n            \"Period\": 1,\n            \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n            \"CustomOrderId\": \"order-0011\"\n        },\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"ServiceTier\": \"BASIC\",\n            \"Period\": 1,\n            \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n            \"CustomOrderId\": \"order-0012\"\n        }\n    ],\n    \"AutoVoucher\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"OrderId\": \"20260420*********550201\",\n                \"Status\": \"DELIVERED\",\n                \"ResourceId\": \"twesee-753yd29x30********jqww1\"\n            },\n            {\n                \"OrderId\": \"20260420*********550202\",\n                \"Status\": \"DELIVERING\",\n                \"ResourceId\": \"\"\n            }\n        ],\n        \"RequestId\": \"6f7647ba-757c-439c-8781-c187b5a561f3\"\n    }\n}",
+        "title": "批量开通 TWeSee 视频理解订阅"
+      }
+    ],
     "BatchInvokeTWeSeeRecognitionTask": [
       {
         "document": "",
@@ -42,6 +50,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"fa6f4dfb-45eb-4263-b889-e46b50bfcdbf\"\n    }\n}",
         "title": "批量同步执行 TWeSee 语义理解任务 - 失败"
+      }
+    ],
+    "BatchRenewTWeSeeSubscription": [
+      {
+        "document": "批量续费多个 TWeSee 视频理解订阅。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchRenewTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"Entries\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev001\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"Period\": 1,\n            \"CustomOrderId\": \"order-0013\"\n        },\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"Period\": 1,\n            \"CustomOrderId\": \"order-0014\"\n        }\n    ],\n    \"AutoVoucher\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"OrderId\": \"2026042**********584511\",\n                \"Status\": \"DELIVERED\",\n                \"ResourceId\": \"twesee-753yd29x30********jqww1\"\n            },\n            {\n                \"OrderId\": \"2026042**********584512\",\n                \"Status\": \"DELIVERING\",\n                \"ResourceId\": \"\"\n            }\n        ],\n        \"RequestId\": \"0d350a07-0fc9-455c-98c8-0946d721dc1a\"\n    }\n}",
+        "title": "批量续费 TWeSee 视频理解订阅"
       }
     ],
     "BatchUpdateFirmware": [

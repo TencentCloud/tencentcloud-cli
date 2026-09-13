@@ -1933,7 +1933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。",
+          "document": "<p>需要创建快照的云硬盘ID，可通过<a href=\"/document/product/362/16315\">DescribeDisks</a>接口查询。</p>",
           "example": "disk-l7mxexxc",
           "member": "string",
           "name": "DiskId",
@@ -1942,7 +1942,7 @@
         },
         {
           "disabled": false,
-          "document": "快照名称，不传则新快照名称默认为“未命名”。",
+          "document": "<p>快照名称，不传则新快照名称默认为“未命名”。</p>",
           "example": "cloud-snap",
           "member": "string",
           "name": "SnapshotName",
@@ -1951,7 +1951,7 @@
         },
         {
           "disabled": false,
-          "document": "快照的到期时间，到期后该快照将会自动删除,需要传入UTC时间下的ISO-8601标准时间格式,例如:2022-01-08T09:47:55+00:00,。到期时间最小可设置为一天后的当前时间。",
+          "document": "<p>快照的到期时间，到期后该快照将会自动删除，需要传入UTC时间下的ISO-8601标准时间格式，例如:2022-01-08T09:47:55+00:00。到期时间最小可设置为一天后的当前时间。</p>",
           "example": "2022-01-08T09:47:55+00:00",
           "member": "datetime_iso",
           "name": "Deadline",
@@ -1960,7 +1960,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过[DescribeDiskBackups](/document/product/362/80278)接口查询。",
+          "document": "<p>云硬盘备份点ID。传入此参数时，将通过备份点创建快照。备份点 ID 可以通过<a href=\"/document/product/362/80278\">DescribeDiskBackups</a>接口查询。</p>",
           "example": "dbp-l7mxexxc",
           "member": "string",
           "name": "DiskBackupId",
@@ -1969,8 +1969,8 @@
         },
         {
           "disabled": false,
-          "document": "快照绑定的标签。",
-          "example": "[{\"value\": \"常规项目\", \"key\": \"项目类型\"}]",
+          "document": "<p>快照绑定的标签。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -1978,8 +1978,8 @@
         },
         {
           "disabled": false,
-          "document": "内部组件专用字段，不对外暴露。快照补充信息, 比如镜像/系统/跨账号复制等信息。",
-          "example": "{\"CopyFromSnapshotId\":\"snap-sdaf213\"}",
+          "document": "<p>内部组件专用字段，不对外暴露。快照补充信息, 比如镜像/系统/跨账号复制等信息。</p>",
+          "example": "无",
           "member": "SnapshotExtraDetail",
           "name": "SnapshotExtraDetail",
           "required": false,
@@ -1987,8 +1987,8 @@
         },
         {
           "disabled": false,
-          "document": "内部组件专用字段，不对外暴露。是否强制创建",
-          "example": "True",
+          "document": "<p>内部组件专用字段，不对外暴露。是否强制创建</p>",
+          "example": "true",
           "member": "bool",
           "name": "ForceCreate",
           "required": false,
@@ -1996,7 +1996,7 @@
         },
         {
           "disabled": false,
-          "document": "内部组件专用字段。快照隐藏类型。取值：1-隐藏快照， 2-后台快照，4-云盘备份点快照",
+          "document": "<p>内部组件专用字段。快照隐藏类型。取值：1-隐藏快照， 2-后台快照，4-云盘备份点快照</p>",
           "example": "1",
           "member": "uint64",
           "name": "HideType",
@@ -2005,8 +2005,8 @@
         },
         {
           "disabled": false,
-          "document": "内部组件专用字段。是否执行空转检查",
-          "example": "True",
+          "document": "<p>内部组件专用字段。是否执行空转检查</p>",
+          "example": "true",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -2014,8 +2014,8 @@
         },
         {
           "disabled": false,
-          "document": "是否将快照创建在云盘的专有集群中。",
-          "example": "True",
+          "document": "<p>是否将快照创建在云盘的专有集群中。</p>",
+          "example": "true",
           "member": "bool",
           "name": "CreateInCluster",
           "required": false,
@@ -2023,8 +2023,8 @@
         },
         {
           "disabled": false,
-          "document": "是否创建本地快照。",
-          "example": "True",
+          "document": "<p>是否创建极速快照。</p><p>极速快照数据存储在云硬盘所在的存储集群上，可实现秒级创建和回滚。该功能当前通过白名单控制开放。</p>",
+          "example": "false",
           "member": "bool",
           "name": "LocalSnap",
           "required": false,
@@ -2032,7 +2032,7 @@
         },
         {
           "disabled": false,
-          "document": "快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。",
+          "document": "<p>快照关联云硬盘类型, SYSTEM_DISK: 系统盘, DATA_DISK: 数据盘,非必填参数，不填时快照类型与云盘类型保持一致， 该参数基于某些场景用户需要将系统盘创建出数据盘快照共享使用。</p>",
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
@@ -2041,7 +2041,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "token-8e035a41-6b85-11f0-8bdf-6657862821d5",
           "member": "string",
           "name": "ClientToken",
@@ -2056,7 +2056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新创建的快照ID。",
+          "document": "<p>新创建的快照ID。</p>",
           "example": "snap-3xvkxyxp",
           "member": "string",
           "name": "SnapshotId",
