@@ -1,7 +1,7 @@
-**Example 1: 获取设置自动签印章的小程序链接。**
+**Example 1: 获取设置“授权签”印章的小程序链接。**
 
-1. 用户已经开通自动签。
-2. 获取设置自动签印章的小程序链接。
+1. 用户已经开通“授权签”。
+2. 获取设置“授权签”印章的小程序链接。
 
 Input: 
 
@@ -29,39 +29,10 @@ Output:
 }
 ```
 
-**Example 2: 错误示例-获取设置自动签印章的小程序链接。**
+**Example 2: 获取设置“授权签”印章的小程序长链接。**
 
-1. 用户没有开通自动签。
-
-Input: 
-
-```
-tccli ess CreateUserAutoSignSealUrl --cli-unfold-argument  \
-    --Operator.ClientIp 1.2.3.4 \
-    --Operator.UserId yDRCLUUgygq2xu********Ewg0vjoimj \
-    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
-    --UserInfo.IdCardNumber 37000019890303000X \
-    --UserInfo.IdCardType ID_CARD \
-    --UserInfo.Name 张三
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "FailedOperation",
-            "Message": "用户未开通自动签"
-        },
-        "RequestId": "s16***55712"
-    }
-}
-```
-
-**Example 3: 获取设置自动签印章的小程序长链接。**
-
-1. 用户已经开通自动签。
-2. 获取设置自动签印章的小程序链接。
+1. 用户已经开通“授权签”。
+2. 获取设置“授权签”印章的小程序链接。
 3.设置EndPoint=HTTP
 
 Input: 
@@ -86,6 +57,35 @@ Output:
         "QrCode": "",
         "Url": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=KA_AUTO_ESIGN_MODIFY&channel=autoSign&identityChange=0&organizationId=yDwf3UUckpshchk9Uuan1OkFOE0qLixm&sceneKey=E_PRESCRIPTION_AUTO_SIGN&confToken=yD3JcUUckpepfv1yU0WZWMpDKfYS68Wu",
         "RequestId": "2c2a4cff-ce6f-4e77-95f8-69588569aab4"
+    }
+}
+```
+
+**Example 3: 错误示例-获取设置“授权签”印章的小程序链接。**
+
+1. 用户没有开通“授权签”。
+
+Input: 
+
+```
+tccli ess CreateUserAutoSignSealUrl --cli-unfold-argument  \
+    --Operator.ClientIp 1.2.3.4 \
+    --Operator.UserId yDRCLUUgygq2xu********Ewg0vjoimj \
+    --SceneKey E_PRESCRIPTION_AUTO_SIGN \
+    --UserInfo.IdCardNumber 37000019890303000X \
+    --UserInfo.IdCardType ID_CARD \
+    --UserInfo.Name 张三
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "用户未开通**签"
+        },
+        "RequestId": "s16***55712"
     }
 }
 ```

@@ -297,6 +297,9 @@ SERVICE_VERSIONS = {
     "dataagent": [
         "2025-05-13"
     ],
+    "databuddy": [
+        "2026-07-15"
+    ],
     "dayu": [
         "2018-07-09"
     ],

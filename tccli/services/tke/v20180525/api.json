@@ -5335,7 +5335,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志采集配置的json表达",
+          "document": "<p>日志采集配置的json表达</p>",
           "example": "参考 https://cloud.tencent.com/document/product/457/48425",
           "member": "string",
           "name": "LogConfig",
@@ -5344,7 +5344,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-kaftesta",
           "member": "string",
           "name": "ClusterId",
@@ -5353,7 +5353,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID",
+          "document": "<p>CLS日志集ID</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "LogsetId",
@@ -5362,7 +5362,7 @@
         },
         {
           "disabled": false,
-          "document": "当前集群类型支持tke（标准集群）、eks（serverless集群）",
+          "document": "<p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -6984,7 +6984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-kaftesta",
           "member": "string",
           "name": "ClusterId",
@@ -6993,7 +6993,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集配置的json表达",
+          "document": "<p>日志采集配置的json表达</p>",
           "example": "参考https://cloud.tencent.com/document/product/614/61244#18392ce7-9600-4f59-a62a-148e12335a37",
           "member": "string",
           "name": "LogConfig",
@@ -7002,7 +7002,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "LogsetId",
@@ -7017,7 +7017,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志采集topicid",
+          "document": "<p>日志采集topicid</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "TopicId",

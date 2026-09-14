@@ -1400,14 +1400,6 @@
         "title": "OperateApplicationTcrBinding"
       }
     ],
-    "ReassociateBusinessLogConfig": [
-      {
-        "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=ReassociateBusinessLogConfig\n&ApplicationId=application-6a79x94v\n&GroupId=group-6a79x94v\n&ConfigId=config-old\n&NewConfigId=config-new\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96561cf1-738a-47d6-943b-dec7ebbccabe\"\n    }\n}",
-        "title": "重关联业务日志配置"
-      }
-    ],
     "ReleaseApiGroup": [
       {
         "document": "",

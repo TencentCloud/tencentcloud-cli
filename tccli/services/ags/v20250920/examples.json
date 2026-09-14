@@ -118,6 +118,12 @@
     ],
     "DescribeSandboxInstanceList": [
       {
+        "document": "返回实例自己声明的访问策略，不包含 Tool 与 Instance 合并后的内部结果。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxInstanceList\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-policy123\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"ins-policy123\",\n                \"ToolId\": \"sdt-policy123\",\n                \"ToolName\": \"browser-policy-sandbox\",\n                \"Status\": \"RUNNING\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"req-describe-instance-policy-example\"\n    }\n}",
+        "title": "查询实例声明的访问策略"
+      },
+      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxInstanceList\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"RUNNING\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"12345678123412341234123456789abc\",\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"my-browser-tool\",\n                \"Status\": \"RUNNING\",\n                \"TimeoutSeconds\": 600,\n                \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n                \"CreateTime\": \"2024-01-01T10:00:00Z\",\n                \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",

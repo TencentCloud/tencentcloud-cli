@@ -1,41 +1,4 @@
-**Example 1: 查询企业扩展服务授权详情-批量签署**
-
-
-
-Input: 
-
-```
-tccli essbasic DescribeExtendedServiceAuthDetail --cli-unfold-argument  \
-    --Agent.AppId yDxjsxxxxxxxxxxxxxxMOX9y \
-    --Agent.ProxyOrganizationOpenId open_id_test \
-    --Agent.ProxyOperator.OpenId user_open_id \
-    --ExtendServiceType BATCH_SIGN \
-    --Limit 10 \
-    --Offset 0
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AuthInfoDetail": {
-            "AuthOrganizationTotal": 0,
-            "AuthUserTotal": 1,
-            "HasAuthOrganizationList": [],
-            "HasAuthUserList": [
-                {
-                    "OpenId": "us-user_open_id"
-                }
-            ],
-            "Name": "批量签署",
-            "Type": "BATCH_SIGN"
-        },
-        "RequestId": "s1699xxxxxxx898950"
-    }
-}
-```
-
-**Example 2: 查询企业扩展服务授权详情- 企业自动签**
+**Example 1: 查询企业扩展服务授权详情- 企业授权签**
 
 
 
@@ -72,8 +35,45 @@ Output:
                     "OpenId": "us-user_open_id"
                 }
             ],
-            "Name": "企业静默签（自动签署）",
+            "Name": "企业授权签",
             "Type": "OPEN_SERVER_SIGN"
+        },
+        "RequestId": "s1699xxxxxxx898950"
+    }
+}
+```
+
+**Example 2: 查询企业扩展服务授权详情-批量签署**
+
+
+
+Input: 
+
+```
+tccli essbasic DescribeExtendedServiceAuthDetail --cli-unfold-argument  \
+    --Agent.AppId yDxjsxxxxxxxxxxxxxxMOX9y \
+    --Agent.ProxyOrganizationOpenId open_id_test \
+    --Agent.ProxyOperator.OpenId user_open_id \
+    --ExtendServiceType BATCH_SIGN \
+    --Limit 10 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AuthInfoDetail": {
+            "AuthOrganizationTotal": 0,
+            "AuthUserTotal": 1,
+            "HasAuthOrganizationList": [],
+            "HasAuthUserList": [
+                {
+                    "OpenId": "us-user_open_id"
+                }
+            ],
+            "Name": "批量签署",
+            "Type": "BATCH_SIGN"
         },
         "RequestId": "s1699xxxxxxx898950"
     }

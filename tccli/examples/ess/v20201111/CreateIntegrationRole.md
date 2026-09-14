@@ -1164,7 +1164,7 @@ tccli ess CreateIntegrationRole --cli-unfold-argument  \
     --PermissionGroups.8.Permissions.1.Children.0.Hide 1 \
     --PermissionGroups.8.Permissions.1.Children.0.IsChecked False \
     --PermissionGroups.8.Permissions.1.Children.0.Key Company-Serves-ServerSign \
-    --PermissionGroups.8.Permissions.1.Children.0.Name 企业静默签 \
+    --PermissionGroups.8.Permissions.1.Children.0.Name 企业**签 \
     --PermissionGroups.8.Permissions.1.Children.0.ParentKey  \
     --PermissionGroups.8.Permissions.1.Children.0.Type 2 \
     --PermissionGroups.8.Permissions.1.Children.1.DataLabel 0 \

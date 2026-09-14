@@ -23,7 +23,31 @@ Output:
 }
 ```
 
-**Example 2: 示例-普通企业更新角色（带权限树参数）**
+**Example 2: 示例-普通企业更新角色（不带权限树参数）**
+
+示例-普通企业更新角色（不带权限树参数）
+
+Input: 
+
+```
+tccli ess ModifyIntegrationRole --cli-unfold-argument  \
+    --RoleId yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84 \
+    --Name 业务员角色 \
+    --Description 这是角色描述信息 \
+    --Operator.UserId y******************5
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RoleId": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
+        "RequestId": "4558af3c-b35b-41f2-85e4-31854a39a512"
+    }
+}
+```
+
+**Example 3: 示例-普通企业更新角色（带权限树参数）**
 
 更新角色并同时设置角色中的权限内容，设置权限树参数 PermissionGroups ，PermissionGroups 展开为树形结构，可以需要的权限节点下将 IsChecked 属性设置为true。
 注意：父权限节点 IsChecked 属性为true，则需要将其下所有子节点的 IsChecked属性同时设置为true，否则校验不通过。
@@ -1140,7 +1164,7 @@ tccli ess ModifyIntegrationRole --cli-unfold-argument  \
     --PermissionGroups.8.Permissions.1.Children.0.Hide 1 \
     --PermissionGroups.8.Permissions.1.Children.0.IsChecked False \
     --PermissionGroups.8.Permissions.1.Children.0.Key Company-Serves-ServerSign \
-    --PermissionGroups.8.Permissions.1.Children.0.Name 企业静默签 \
+    --PermissionGroups.8.Permissions.1.Children.0.Name 企业**签 \
     --PermissionGroups.8.Permissions.1.Children.0.ParentKey  \
     --PermissionGroups.8.Permissions.1.Children.0.Type 2 \
     --PermissionGroups.8.Permissions.1.Children.1.DataLabel 0 \
@@ -1206,30 +1230,6 @@ tccli ess ModifyIntegrationRole --cli-unfold-argument  \
     --PermissionGroups.9.Permissions.2.Name 审批流程配置 \
     --PermissionGroups.9.Permissions.2.ParentKey  \
     --PermissionGroups.9.Permissions.2.Type 2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RoleId": "yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84",
-        "RequestId": "4558af3c-b35b-41f2-85e4-31854a39a512"
-    }
-}
-```
-
-**Example 3: 示例-普通企业更新角色（不带权限树参数）**
-
-示例-普通企业更新角色（不带权限树参数）
-
-Input: 
-
-```
-tccli ess ModifyIntegrationRole --cli-unfold-argument  \
-    --RoleId yDR1dUUgygj77gh6UuO4zjEvSXYRnQ84 \
-    --Name 业务员角色 \
-    --Description 这是角色描述信息 \
-    --Operator.UserId y******************5
 ```
 
 Output: 

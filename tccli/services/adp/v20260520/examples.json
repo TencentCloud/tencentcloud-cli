@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CheckLabel": [
+      {
+        "document": "校验标签下的标准词是否已存在",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLabel\n<公共请求参数>\n\n{\n    \"KbId\": \"2067622575842400832\",\n    \"TermList\": [\n        \"2067622575842400832\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckList\": [\n            {\n                \"CheckResult\": {\n                    \"Passed\": false,\n                    \"Reason\": \"标准词已存在\"\n                },\n                \"Term\": \"价格\",\n                \"TermId\": \"1\"\n            }\n        ],\n        \"RequestId\": \"de76301d-5863-4a5e-a879-7dbddcc987c0\"\n    }\n}",
+        "title": "校验标签下的标准词是否已存在"
+      }
+    ],
     "CopyAgentFromApp": [
       {
         "document": "",
@@ -58,6 +66,14 @@
         "title": "成功"
       }
     ],
+    "CreateCategory": [
+      {
+        "document": "创建分类",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCategory\n<公共请求参数>\n\n{\n    \"CategoryType\": 1,\n    \"KbId\": \"2067622575842400832\",\n    \"Name\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryId\": \"20001\",\n        \"RequestId\": \"2756b5cb-9f70-4950-aefa-29267248f67a\"\n    }\n}",
+        "title": "创建分类"
+      }
+    ],
     "CreateChannel": [
       {
         "document": "创建渠道",
@@ -72,6 +88,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConversation\n<公共请求参数>\n\n{\n    \"Type\": 2,\n    \"AppId\": \"2049148302274678336\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConversationId\": \"dd6a4e74-b2d4-463f-ba01-429304a4a142\",\n        \"RequestId\": \"f408c5a9-e87b-4d86-baa6-c2b950c5d047\"\n    }\n}",
         "title": "创建会话"
+      }
+    ],
+    "CreateKB": [
+      {
+        "document": "创建知识库",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKB\n<公共请求参数>\n\n{\n    \"KbType\": 2,\n    \"SharedSubType\": 1,\n    \"SpaceId\": \"default_space\",\n    \"Spec\": {\n        \"Name\": \"共享知识库_生效范围综合查询_adp_qta_YFTOka\",\n        \"Description\": \"标准模式共享知识库测试\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KbId\": \"2097704030430616192\",\n        \"RequestId\": \"d162e414-3a60-45e5-bf87-a8fb10019f4b\"\n    }\n}",
+        "title": "创建知识库"
+      }
+    ],
+    "CreateLabel": [
+      {
+        "document": "创建标签",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLabel\n<公共请求参数>\n\n{\n    \"KbId\": \"2097216771738716160\",\n    \"Name\": \"班级\",\n    \"TermList\": [\n        {\n            \"SynonymList\": [],\n            \"Term\": \"二年级\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LabelId\": \"2097217495989591744\",\n        \"TermList\": [\n            {\n                \"TermId\": \"2097217495989591745\",\n                \"Term\": \"二年级\",\n                \"SynonymList\": []\n            }\n        ],\n        \"RequestId\": \"df05caba-494f-491f-bf4a-3355233445b8\"\n    }\n}",
+        "title": "创建标签"
       }
     ],
     "CreateMsgRecordCategory": [
@@ -90,12 +122,36 @@
         "title": "创建插件"
       }
     ],
+    "CreateQAGenerationTask": [
+      {
+        "document": "创建 QA 生成任务",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQAGenerationTask\n<公共请求参数>\n\n{\n    \"DocIdList\": [\n        \"2095352703294256640\"\n    ],\n    \"KbId\": \"2095346479588688512\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskIdList\": [\n            \"2097960333379110400\"\n        ],\n        \"RequestId\": \"b5ab552e-b852-44c7-b74b-80ca0a47cdc6\"\n    }\n}",
+        "title": "创建 QA 生成任务"
+      }
+    ],
+    "CreateQAList": [
+      {
+        "document": "批量创建 QA",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateQAList\n<公共请求参数>\n\n{\n    \"KbId\": \"2057747189113440256\",\n    \"QaList\": [\n        {\n            \"Question\": \"苹果有多少个品种？\",\n            \"Answer\": \"苹果大约有7500个品种\",\n            \"EffectiveDomain\": 4\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2097886214516234688\",\n                \"Succeeded\": true,\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"bb39c555-1128-4ef0-85c6-dd76d7d9f00d\"\n    }\n}",
+        "title": "批量创建 QA"
+      }
+    ],
     "CreateRelease": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRelease\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"Description\": \"我的发布信息\"\n}",
         "output": "{\n    \"Response\": {\n        \"NeedApproval\": false,\n        \"ReleaseId\": \"2061**********47232\",\n        \"RequestId\": \"ff0a13da-3d36-48b8-ad44-a34d48e6ca44\"\n    }\n}",
         "title": "CreateRelease"
+      }
+    ],
+    "CreateSimilarQuestion": [
+      {
+        "document": "创建相似问生成任务",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSimilarQuestion\n<公共请求参数>\n\n{\n    \"KbId\": \"2097333005876517504\",\n    \"Question\": \"智阅Air14轻薄笔记本电脑的价格是多少？\",\n    \"Answer\": \"智阅Air14轻薄笔记本电脑的价格为¥4123。\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuestionList\": [\n            \"智阅Air14轻薄本多少钱\"\n        ],\n        \"RequestId\": \"9e5d32ed-ddc0-437e-85c1-3cc91389bb11\"\n    }\n}",
+        "title": "创建相似问生成任务"
       }
     ],
     "CreateSkill": [
@@ -176,6 +232,14 @@
         "title": "成功"
       }
     ],
+    "DeleteCategory": [
+      {
+        "document": "删除分类",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCategory\n<公共请求参数>\n\n{\n    \"KbId\": \"2097906073615828672\",\n    \"CategoryId\": \"2097907011406387648\",\n    \"CategoryType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"62931e21-0bd8-43fb-b7d0-d38a7b7a63bd\"\n    }\n}",
+        "title": "删除分类"
+      }
+    ],
     "DeleteChannel": [
       {
         "document": "删除渠道请求",
@@ -192,6 +256,30 @@
         "title": "删除ClawAgent模式的对话"
       }
     ],
+    "DeleteDocList": [
+      {
+        "document": "批量删除文档",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDocList\n<公共请求参数>\n\n{\n    \"DocIdList\": [\n        \"2097525829590848512\"\n    ],\n    \"KbId\": \"2095766521673516736\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2097525829590848512\",\n                \"Succeeded\": true,\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"0b23fead-c4a3-41da-964a-92936fd22a62\"\n    }\n}",
+        "title": "批量删除文档"
+      }
+    ],
+    "DeleteKB": [
+      {
+        "document": "删除知识库",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteKB\n<公共请求参数>\n\n{\n    \"KbId\": \"2097604536481973952\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c969f06-9953-4e98-82c6-52fc8262f2d3\"\n    }\n}",
+        "title": "删除知识库"
+      }
+    ],
+    "DeleteLabelList": [
+      {
+        "document": "批量删除标签",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLabelList\n<公共请求参数>\n\n{\n    \"KbId\": \"2095766521673516736\",\n    \"LabelIdList\": [\n        \"2096808563606119107\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2096808563606119107\",\n                \"Succeeded\": true,\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"b83c3494-3da7-4604-b31b-94714736ff76\"\n    }\n}",
+        "title": "批量删除标签"
+      }
+    ],
     "DeleteMsgRecordCategory": [
       {
         "document": "",
@@ -206,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"06f22d3d-07c6-45dd-a54d-565875ddbe37\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18c4c8d8-dead-4a21-b2e2-49baf9edf8bd\"\n    }\n}",
         "title": "删除插件"
+      }
+    ],
+    "DeleteQAList": [
+      {
+        "document": "批量删除 QA",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteQAList\n<公共请求参数>\n\n{\n    \"KbId\": \"2097596899749103296\",\n    \"QaIdList\": [\n        \"2097597073372212992\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2097597073372212992\",\n                \"Succeeded\": true,\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"eb095262-d0cb-4988-b193-24fcebceea4c\"\n    }\n}",
+        "title": "批量删除 QA"
       }
     ],
     "DeleteSkill": [
@@ -342,6 +438,14 @@
         "title": "查询审计日志元信息"
       }
     ],
+    "DescribeCategoryList": [
+      {
+        "document": "查询分类列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCategoryList\n<公共请求参数>\n\n{\n    \"KbId\": \"2082355981171975296\",\n    \"FilterList\": [\n        {\n            \"Name\": \"CategoryType\",\n            \"Operator\": 0,\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"PageNumber\": 0,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryList\": [\n            {\n                \"CanAdd\": false,\n                \"CanDelete\": false,\n                \"CanEdit\": false,\n                \"CategoryId\": \"2082355982908901632\",\n                \"ChildList\": [],\n                \"ItemCount\": 0,\n                \"Name\": \"未分类\"\n            }\n        ],\n        \"RequestId\": \"b8e226f9-8a05-4b6a-b901-9ce41fedc989\"\n    }\n}",
+        "title": "查询分类列表"
+      }
+    ],
     "DescribeChannel": [
       {
         "document": "查询渠道信息",
@@ -364,6 +468,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConcurrencyLimitDetailList\n<公共请求参数>\n\n{\n    \"TimeRange\": {\n        \"EndTime\": \"1786463999\",\n        \"StartTime\": \"1786377600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 1,\n        \"ScopeId\": \"default_space\"\n    },\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"ConcurrencyLimitDetailList\": [\n            {\n                \"CallSource\": {\n                    \"SubjectId\": \"10023456\",\n                    \"SubjectName\": \"智能客服应用\",\n                    \"SubjectType\": 1\n                },\n                \"EventTime\": \"1754956800\",\n                \"ModelName\": \"hunyuan-turbo\",\n                \"RequestQuery\": \"请帮我分析以下合同条款中的风险点，合同内容如下：甲方...\",\n                \"SpaceId\": \"space_abc123\"\n            }\n        ],\n        \"TotalCount\": \"47\",\n        \"RequestId\": \"0ce01e90-96e4-4646-914f-8565942b1492\"\n    }\n}",
         "title": "DescribeConcurrencyLimitDetailList"
+      }
+    ],
+    "DescribeConflictQA": [
+      {
+        "document": "查询冲突问详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConflictQA\n<公共请求参数>\n\n{\n    \"KbId\": \"2097944147493706368\",\n    \"ConflictGroupId\": \"2097944306089351424\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictQaList\": [\n            {\n                \"QaId\": \"2097944152336885184\",\n                \"Question\": \"智阅Air14轻薄笔记本电脑的价格是多少？\",\n                \"Answer\": \"智阅Air14轻薄笔记本电脑的价格为¥4123。\",\n                \"SourceType\": 3,\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"UpdateTime\": \"1789023875\",\n                \"EffectiveDomain\": 4\n            }\n        ],\n        \"RequestId\": \"889461f2-8d96-4704-999b-30f5c5b55d43\"\n    }\n}",
+        "title": "查询冲突问详情"
+      }
+    ],
+    "DescribeConflictQASummaryList": [
+      {
+        "document": "查询冲突问列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConflictQASummaryList\n<公共请求参数>\n\n{\n    \"FilterList\": [\n        {\n            \"Name\": \"status\",\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"KbId\": \"2095766521673516736\",\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"ConflictQaList\": [\n            {\n                \"ConflictGroupId\": \"2096809118072442560\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"ca71b9e2-5def-41c0-bdfc-46fd60cc1717\"\n    }\n}",
+        "title": "查询冲突问列表"
       }
     ],
     "DescribeConsumptionDetailList": [
@@ -396,6 +516,54 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConversationMessageList\n<公共请求参数>\n\n{\n    \"ConversationId\": \"27fe97d2-b9a7-457f-b2a2-73dc901f2959\",\n    \"Type\": 2,\n    \"RecordQueryDirection\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"FirstRecordId\": \"req_65faffa4-0d6f-402d-8511-60eb472880ae\",\n        \"HasMoreAfter\": false,\n        \"HasMoreBefore\": false,\n        \"LastRecordId\": \"rcd_70b72a39-b7fc-405f-a0b9-32f786a3effc\",\n        \"MessageList\": [\n            {\n                \"ContentList\": [\n                    {\n                        \"CustomParamList\": [],\n                        \"OptionCardList\": [],\n                        \"QuoteInfoList\": [],\n                        \"ReferenceList\": [],\n                        \"TaskList\": [],\n                        \"Tasks\": [],\n                        \"Text\": \"你好\",\n                        \"Type\": \"text\"\n                    }\n                ],\n                \"ConversationId\": \"27fe97d2-b9a7-457f-b2a2-73dc901f2959\",\n                \"Icon\": \"\",\n                \"MessageId\": \"user_65faffa4-0d6f-402d-8511-60eb472880ae_turn_65faffa4-0d6f-402d-8511-60eb472880ae_content\",\n                \"Name\": \"question\",\n                \"RecordId\": \"req_65faffa4-0d6f-402d-8511-60eb472880ae\",\n                \"Role\": \"user\",\n                \"Status\": \"success\",\n                \"StatusDesc\": \"回复完成\",\n                \"Title\": \"用户提问\",\n                \"Type\": \"question\"\n            }\n        ],\n        \"RecordSummaryList\": [\n            {\n                \"ErrorInfo\": null,\n                \"RecordId\": \"rcd_65faffa4-0d6f-402d-8511-60eb472880ae\",\n                \"RelatedRecordId\": \"req_65faffa4-0d6f-402d-8511-60eb472880ae\",\n                \"Status\": \"success\",\n                \"TimeUsage\": {\n                    \"Elapsed\": \"3139\",\n                    \"FirstTokenCost\": \"3397\",\n                    \"TotalCost\": \"3139\"\n                },\n                \"TokenUsage\": {\n                    \"CachedTokens\": \"0\",\n                    \"InputTokens\": \"17190\",\n                    \"OutputTokens\": \"29\",\n                    \"ReasoningTokens\": \"20\",\n                    \"TotalTokens\": \"17219\"\n                }\n            }\n        ],\n        \"ResetInfo\": {\n            \"ResetThroughRecordId\": \"\",\n            \"ResetTime\": \"0\"\n        },\n        \"RequestId\": \"a36c0228-248b-4b38-8e5b-396aaf89ab41\"\n    }\n}",
         "title": "查询会话历史消息记录"
+      }
+    ],
+    "DescribeDoc": [
+      {
+        "document": "查询文档详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDoc\n<公共请求参数>\n\n{\n    \"DocId\": \"2067622575842400832\",\n    \"KbId\": \"2067622575842400832\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DocLink\": {\n            \"CosUrl\": \"https://cos.example.com/kb/50001/billing.pdf?sign=xxx\",\n            \"ExternalLink\": {\n                \"ExternalUrl\": \"https://example.com/docs/billing.html\",\n                \"ReplaceOriginEnabled\": false\n            }\n        },\n        \"ParseConfig\": {\n            \"ContentFilter\": {\n                \"ImageMinHeight\": 64,\n                \"ImageMinWidth\": 64,\n                \"ImageNamePatterns\": \"icon;logo;banner.*\"\n            },\n            \"SplitRule\": \"chapter\"\n        },\n        \"Summary\": {\n            \"CategoryPath\": {\n                \"CategoryId\": \"1002\",\n                \"CategoryIdPath\": [\n                    \"1001\"\n                ],\n                \"CategoryNamePath\": [\n                    \"产品咨询\"\n                ]\n            },\n            \"DocId\": \"50001\",\n            \"KnowledgeScope\": {\n                \"EffectiveDomain\": 4,\n                \"LabelRefList\": [\n                    {\n                        \"LabelId\": \"30001\",\n                        \"LabelName\": \"咨询意图\",\n                        \"LabelTermIdList\": [\n                            \"1\"\n                        ],\n                        \"LabelTermList\": [\n                            \"价格\"\n                        ]\n                    }\n                ]\n            },\n            \"Lifecycle\": {\n                \"CreateTime\": \"1735689600\",\n                \"ExpirationPolicy\": {\n                    \"EffectivePeriod\": {\n                        \"EndTime\": \"0\",\n                        \"StartTime\": \"1735689600\"\n                    }\n                },\n                \"Status\": 8,\n                \"StatusDesc\": \"导入完成\",\n                \"StatusMessage\": \"\",\n                \"UpdateTime\": \"1736294400\"\n            },\n            \"Metadata\": {\n                \"DocCharCount\": \"15320\",\n                \"FileName\": \"计费说明.pdf\",\n                \"FileSize\": \"204800\",\n                \"FileType\": \"pdf\",\n                \"RefFieldNameList\": [\n                    \"产品咨询/计费咨询\"\n                ],\n                \"SourceDesc\": \"本地上传\",\n                \"SourceType\": 1\n            },\n            \"OperatorInfo\": {\n                \"Modifier\": {\n                    \"UserId\": \"u_10001\",\n                    \"UserName\": \"张三\"\n                },\n                \"Permission\": {\n                    \"CanDelete\": true,\n                    \"CanEdit\": true,\n                    \"CanRestart\": true,\n                    \"CanRetry\": false\n                }\n            },\n            \"TaskStatus\": {\n                \"CompletedTaskTypeList\": [\n                    1\n                ],\n                \"OngoingTaskTypeList\": []\n            }\n        },\n        \"Switch\": {\n            \"DownloadEnabled\": true,\n            \"ReferEnabled\": true\n        },\n        \"UpdatePeriod\": {\n            \"Enabled\": true,\n            \"PeriodHour\": 24\n        },\n        \"UserAccessConfig\": {\n            \"CustomerKnowledgeId\": \"cust-doc-abc-001\",\n            \"IsPublic\": true\n        },\n        \"RequestId\": \"8d87d655-d6d6-45ca-9034-d37d3b003249\"\n    }\n}",
+        "title": "查询文档详情"
+      }
+    ],
+    "DescribeDocSummaryList": [
+      {
+        "document": "查询文档摘要列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDocSummaryList\n<公共请求参数>\n\n{\n    \"KbId\": \"2063937671963228544\",\n    \"SummaryListSwitch\": {\n        \"ShowMetadataEnabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DocList\": [\n            {\n                \"CategoryPath\": {\n                    \"CategoryId\": \"2063937672853638592\",\n                    \"CategoryIdPath\": [],\n                    \"CategoryNamePath\": []\n                },\n                \"DocId\": \"2095797834220731520\",\n                \"KnowledgeScope\": {\n                    \"EffectiveDomain\": 4,\n                    \"LabelRefList\": []\n                },\n                \"Lifecycle\": {\n                    \"CreateTime\": \"1788512116\",\n                    \"ExpirationPolicy\": null,\n                    \"Status\": 8,\n                    \"StatusDesc\": \"导入完成\",\n                    \"StatusMessage\": \"\",\n                    \"UpdateTime\": \"1788935064\"\n                },\n                \"Metadata\": {\n                    \"DocCharCount\": \"45120\",\n                    \"FileName\": \"《人保健康玺悦君心互联网重大疾病保险（2022版）》_1721880984_1_副本.doc\",\n                    \"FileSize\": \"435953\",\n                    \"FileType\": \"doc\",\n                    \"RefFieldNameList\": [],\n                    \"SourceDesc\": \"本地文档\",\n                    \"SourceType\": 0\n                },\n                \"OperatorInfo\": {\n                    \"Modifier\": {\n                        \"UserId\": \"1747547736783716352\",\n                        \"UserName\": \"coco测试11\"\n                    },\n                    \"Permission\": {\n                        \"CanDelete\": true,\n                        \"CanEdit\": true,\n                        \"CanRestart\": true,\n                        \"CanRetry\": false\n                    }\n                },\n                \"TaskStatus\": null\n            }\n        ],\n        \"TotalCount\": 22,\n        \"RequestId\": \"66c89981-2fd7-4eab-a598-4610960b9662\"\n    }\n}",
+        "title": "查询文档摘要列表"
+      }
+    ],
+    "DescribeKB": [
+      {
+        "document": "查询知识库详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKB\n<公共请求参数>\n\n{\n    \"KbId\": \"2097668735455299264\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": {\n            \"KbId\": \"2097668735455299264\",\n            \"Name\": \"托管es共享\",\n            \"Description\": \"\",\n            \"KbType\": 2,\n            \"SharedSubType\": 0,\n            \"DocCount\": 0,\n            \"IsExceeded\": false,\n            \"CreateTime\": \"1788958174\",\n            \"UpdateTime\": \"1788958174\",\n            \"ProcessingFlagList\": [],\n            \"AppList\": [],\n            \"LatestOperator\": null,\n            \"Creator\": null\n        },\n        \"ModelConfig\": {\n            \"EmbeddingModel\": \"Youtu/youtu-embedding-llm\",\n            \"QaExtractModel\": \"Deepseek/deepseek-v4-pro\",\n            \"SchemaModel\": \"Deepseek/deepseek-v4-pro\"\n        },\n        \"EsConfig\": {\n            \"StorageType\": 2,\n            \"InstanceId\": \"es-jirwzied\",\n            \"UserName\": \"elastic\",\n            \"EncryptedPassword\": \"\",\n            \"CanModify\": true\n        },\n        \"CapacityInfo\": {\n            \"MaxCharSize\": \"0\",\n            \"UsedCharSize\": \"0\",\n            \"OverCharSize\": \"0\"\n        },\n        \"Owner\": {\n            \"UserId\": \"14337\",\n            \"UserName\": \"\"\n        },\n        \"AppIdList\": [],\n        \"RequestId\": \"b90eb2fd-e8ff-44dc-aa88-4f33c933ded6\"\n    }\n}",
+        "title": "查询知识库详情"
+      }
+    ],
+    "DescribeKBSummaryList": [
+      {
+        "document": "查询知识库列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKBSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\",\n    \"PageNumber\": 1,\n    \"PageSize\": 100,\n    \"Query\": \"共享知识库_文档问答PG检索开_adp_qta_ZRWBJY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KbList\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"c03c9513-4994-4feb-8f44-d89efaaef369\"\n    }\n}",
+        "title": "查询知识库列表"
+      }
+    ],
+    "DescribeLabel": [
+      {
+        "document": "查询标签详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLabel\n<公共请求参数>\n\n{\n    \"KbId\": \"2021487500370535744\",\n    \"LabelId\": \"2097607550895843008\",\n    \"LastTermId\": \"2097607550895843009\",\n    \"Limit\": 20,\n    \"Query\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": {\n            \"LabelId\": \"2097607550895843008\",\n            \"Name\": \"666a\",\n            \"TermTotalCount\": 1,\n            \"TermList\": [],\n            \"RefCount\": 0,\n            \"MetaValue\": null\n        },\n        \"RequestId\": \"9da30b82-26a4-4de4-968e-5cd5cfb80b00\"\n    }\n}",
+        "title": "查询标签详情"
+      }
+    ],
+    "DescribeLabelSummaryList": [
+      {
+        "document": "查询标签列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLabelSummaryList\n<公共请求参数>\n\n{\n    \"KbId\": \"2067622575842400832\",\n    \"PageNumber\": 0,\n    \"PageSize\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"LabelList\": [\n            {\n                \"LabelId\": \"2092176729458955969\",\n                \"Name\": \"来源\",\n                \"TermTotalCount\": 1,\n                \"TermList\": [\n                    {\n                        \"TermId\": \"2092176729458955968\",\n                        \"Term\": \"来源1\",\n                        \"SynonymList\": [\n                            \"来源11\"\n                        ]\n                    }\n                ],\n                \"RefCount\": 0,\n                \"MetaValue\": null\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"3f0e3632-afb5-4ffb-af63-9c086752d5d8\"\n    }\n}",
+        "title": "查询标签列表"
       }
     ],
     "DescribeLatestRelease": [
@@ -452,6 +620,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePluginSummaryList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"default_space\"\n}",
         "output": "{\n    \"Response\": {\n        \"PluginList\": [\n            {\n                \"Operation\": {\n                    \"AllowExternalAccess\": false,\n                    \"BillingType\": 2,\n                    \"CategoryKey\": \"image_processing\",\n                    \"Introduction\": \"\",\n                    \"IsRecommended\": true\n                },\n                \"PluginId\": \"adcda186-813b-4d70-bb3f-538a522fe4a5\",\n                \"Profile\": {\n                    \"Author\": \"智能体开发平台\",\n                    \"Description\": \"腾讯混元生3D（Tencent HY 3D）基于自研生成式AI大模型，为开发者提供专业、高效的3D内容生成API服务。该接口支持文生3D、图生3D、八视图生3D等多种生成方式，几何结构精准，纹理细节丰富，模型还原度高，并具备智能拓扑优化、组件化生成、自动UV展开等高级处理能力。\",\n                    \"IconUrl\": \"https://qidian-qbot-test-1251316161.cos.ap-guangzhou.myqcloud.com/public/adp/0d0b65f37d0651ef8c4dc61d7238617d_1780285068379.png\",\n                    \"Name\": \"混元生3D AI3D\",\n                    \"PluginClass\": 0,\n                    \"PluginKind\": 2,\n                    \"PluginSource\": 1\n                },\n                \"Statistics\": {\n                    \"CallCount\": 9,\n                    \"ToolCount\": 4\n                },\n                \"Status\": 1,\n                \"UserState\": {\n                    \"IsFavorite\": false,\n                    \"IsInWhiteList\": false,\n                    \"WhiteListType\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 787,\n        \"RequestId\": \"c3778060-c630-4243-80a3-58cd409898b4\"\n    }\n}",
         "title": "拉取插件列表"
+      }
+    ],
+    "DescribeQA": [
+      {
+        "document": "查询 QA 详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQA\n<公共请求参数>\n\n{\n    \"KbId\": \"2097880104242874048\",\n    \"QaId\": \"2097880162191295680\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Summary\": {\n            \"QaId\": \"2097880162191295680\",\n            \"Metadata\": {\n                \"Question\": \"qa_batch_q2_adp_qta_piCYLj\",\n                \"Answer\": \"答案2\",\n                \"QaCharCount\": \"29\",\n                \"QaSize\": \"33\",\n                \"RefFieldNameList\": []\n            },\n            \"CategoryPath\": {\n                \"CategoryId\": \"2097880106271627712\",\n                \"CategoryIdPath\": [\n                    \"0\"\n                ],\n                \"CategoryNamePath\": [\n                    \"全部分类\"\n                ]\n            },\n            \"Lifecycle\": {\n                \"CreateTime\": \"1789008582\",\n                \"UpdateTime\": \"1789008625\",\n                \"ExpirationPolicy\": {\n                    \"EffectivePeriod\": {\n                        \"StartTime\": \"1789008595\",\n                        \"EndTime\": \"1789094967\"\n                    }\n                },\n                \"Status\": 8,\n                \"StatusDesc\": \"导入完成\",\n                \"StatusMessage\": \"\"\n            },\n            \"KnowledgeScope\": {\n                \"EffectiveDomain\": 4,\n                \"LabelRefList\": []\n            },\n            \"OperatorInfo\": {\n                \"Modifier\": {\n                    \"UserId\": \"13351\",\n                    \"UserName\": \"\"\n                },\n                \"Permission\": {\n                    \"CanEdit\": true,\n                    \"CanDelete\": true,\n                    \"CanAccept\": false\n                }\n            },\n            \"SourceInfo\": {\n                \"SourceType\": 3,\n                \"SourceDesc\": \"手动录入\",\n                \"DocId\": \"0\",\n                \"FileName\": \"\",\n                \"FileType\": \"\",\n                \"DocEffectiveDomain\": 0\n            },\n            \"SimilarQuestion\": {\n                \"SimilarQuestionCount\": 0,\n                \"SimilarQuestionTips\": \"\"\n            }\n        },\n        \"SimilarQuestionList\": [],\n        \"QuestionDescription\": \"\",\n        \"PageContent\": \"\",\n        \"HighlightList\": [],\n        \"RequestId\": \"cf2c1e16-54c7-4b15-ae40-96b3f55932db\"\n    }\n}",
+        "title": "查询 QA 详情"
+      }
+    ],
+    "DescribeQASummaryList": [
+      {
+        "document": "查询 QA 列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQASummaryList\n<公共请求参数>\n\n{\n    \"FilterList\": [\n        {\n            \"Name\": \"Status\",\n            \"ValueList\": [\n                \"3\"\n            ]\n        }\n    ],\n    \"KbId\": \"2097994659744810688\",\n    \"PageNumber\": 0,\n    \"PageSize\": 15,\n    \"SummaryListSwitch\": {\n        \"ShowMetadataEnabled\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"QaList\": [\n            {\n                \"QaId\": \"2097996646136716608\",\n                \"Metadata\": {\n                    \"Question\": \"小李电话\",\n                    \"Answer\": \"119\",\n                    \"QaCharCount\": \"7\",\n                    \"QaSize\": \"15\",\n                    \"RefFieldNameList\": []\n                },\n                \"CategoryPath\": {\n                    \"CategoryId\": \"2097996546747386624\",\n                    \"CategoryIdPath\": [],\n                    \"CategoryNamePath\": []\n                },\n                \"Lifecycle\": {\n                    \"CreateTime\": \"1789036354\",\n                    \"UpdateTime\": \"1789036395\",\n                    \"ExpirationPolicy\": {\n                        \"EffectivePeriod\": {\n                            \"StartTime\": \"1789036354\",\n                            \"EndTime\": \"1797053400\"\n                        }\n                    },\n                    \"Status\": 8,\n                    \"StatusDesc\": \"导入完成\",\n                    \"StatusMessage\": \"\"\n                },\n                \"KnowledgeScope\": {\n                    \"EffectiveDomain\": 3,\n                    \"LabelRefList\": []\n                },\n                \"OperatorInfo\": {\n                    \"Modifier\": {\n                        \"UserId\": \"14337\",\n                        \"UserName\": \"jesper2\"\n                    },\n                    \"Permission\": {\n                        \"CanEdit\": true,\n                        \"CanDelete\": true,\n                        \"CanAccept\": false\n                    }\n                },\n                \"SourceInfo\": {\n                    \"SourceType\": 2,\n                    \"SourceDesc\": \"批量导入\",\n                    \"DocId\": \"0\",\n                    \"FileName\": \"\",\n                    \"FileType\": \"\",\n                    \"DocEffectiveDomain\": 0\n                },\n                \"SimilarQuestion\": {\n                    \"SimilarQuestionCount\": 0,\n                    \"SimilarQuestionTips\": \"\"\n                }\n            }\n        ],\n        \"TotalCount\": 8,\n        \"PendingVerifyCount\": 0,\n        \"NotAcceptedCount\": 0,\n        \"RequestId\": \"d6c2cd3e-24ef-4a78-aa7d-82a9e178be39\"\n    }\n}",
+        "title": "查询 QA 列表"
       }
     ],
     "DescribeReleaseList": [
@@ -550,6 +734,14 @@
         "title": "DescribeVariableList"
       }
     ],
+    "ExportQA": [
+      {
+        "document": "异步导出 QA",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportQA\n<公共请求参数>\n\n{\n    \"FilterList\": [\n        {\n            \"Name\": \"Status\",\n            \"ValueList\": [\n                \"3\"\n            ]\n        }\n    ],\n    \"KbId\": \"2068959268369066176\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExportTaskId\": \"223780\",\n        \"RequestId\": \"159e3177-7072-477f-9a18-5486b5074aca\"\n    }\n}",
+        "title": "异步导出 QA"
+      }
+    ],
     "FavoritePlugin": [
       {
         "document": "",
@@ -564,6 +756,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FavoriteSkill\n<公共请求参数>\n\n{\n    \"SkillId\": \"8988*******************-ca5d3bdd0ffc\",\n    \"SpaceId\": \"default_space\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c3b1e939-c42f-44fd-b4ef-2941833feba9\"\n    }\n}",
         "title": "收藏skill"
+      }
+    ],
+    "ImportDocList": [
+      {
+        "document": "批量导入文档",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportDocList\n<公共请求参数>\n\n{\n    \"DocList\": [\n        {\n            \"FileId\": \"2079463384883903552\"\n        }\n    ],\n    \"KbId\": \"2079089760838256704\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2079876913604708608\",\n                \"Reason\": \"\",\n                \"Succeeded\": true\n            }\n        ],\n        \"RequestId\": \"33ac60aa-d82f-4f2c-9f0b-71913caaf740\"\n    }\n}",
+        "title": "批量导入文档"
       }
     ],
     "ModifyAgent": [
@@ -590,6 +790,14 @@
         "title": "成功"
       }
     ],
+    "ModifyCategory": [
+      {
+        "document": "修改分类",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCategory\n<公共请求参数>\n\n{\n    \"CategoryId\": \"2097580091993756672\",\n    \"CategoryType\": 1,\n    \"Fields\": {\n        \"Name\": \"2423432443242\"\n    },\n    \"KbId\": \"2092085032339506432\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Name\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c034503c-b9cb-461c-8b1c-c0bf5d134591\"\n    }\n}",
+        "title": "修改分类"
+      }
+    ],
     "ModifyChannel": [
       {
         "document": "修改渠道信息",
@@ -598,12 +806,52 @@
         "title": "修改渠道信息"
       }
     ],
+    "ModifyConflictQA": [
+      {
+        "document": "修改冲突问",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConflictQA\n<公共请求参数>\n\n{\n    \"ConflictGroupId\": \"2097996818891709760\",\n    \"KbId\": \"2097994659744810688\",\n    \"Resolution\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49696b7-1af1-485d-8e3c-2f64142a6be2\"\n    }\n}",
+        "title": "修改冲突问"
+      }
+    ],
     "ModifyConversation": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConversation\n<公共请求参数>\n\n{\n    \"Type\": 1,\n    \"AppId\": \"205***********75456\",\n    \"ConversationId\": \"e9261687-****-*********-1980aedad3f2\",\n    \"Title\": \"查找深大校长\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33d1dfd7-b8fd-4487-8edb-f2f635b3d895\"\n    }\n}",
         "title": "修改会话标题"
+      }
+    ],
+    "ModifyDoc": [
+      {
+        "document": "修改单个文档",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDoc\n<公共请求参数>\n\n{\n    \"DocId\": \"2067623425823338880\",\n    \"Fields\": {\n        \"Name\": \"肺鱼rename111.txt\"\n    },\n    \"KbId\": \"2067622575842400832\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Name\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4e631fb-298b-440b-8a55-4b08691a10a3\"\n    }\n}",
+        "title": "修改单个文档"
+      }
+    ],
+    "ModifyDocList": [
+      {
+        "document": "批量修改文档",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDocList\n<公共请求参数>\n\n{\n    \"DocIdList\": [\n        \"2096882953701315136\"\n    ],\n    \"EffectiveDomain\": 4,\n    \"KbId\": \"2096881888856621696\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2096882953701315136\",\n                \"Succeeded\": false,\n                \"Reason\": \"type:business, code:450156, msg:ErrDocNotAllowEdit\"\n            }\n        ],\n        \"RequestId\": \"07edd952-9922-4f3e-8af5-13fc4afd6c25\"\n    }\n}",
+        "title": "批量修改文档"
+      }
+    ],
+    "ModifyKB": [
+      {
+        "document": "修改知识库",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyKB\n<公共请求参数>\n\n{\n    \"KbId\": \"2095346479588688512\",\n    \"Spec\": {\n        \"Description\": \"测试编辑\",\n        \"EsConfig\": {\n            \"EncryptedPassword\": \"WG1MFdZ8blowOUfmgYdcRZrN0jUR0qbO2MT4ZkjsNYDkVZra4Y0cA0+BCVe7+mJh07fPBqGn12QivpFACZ7Yt9oALjEMeEznjmW6YKRCwt3AaZ5l6liiCuFhO3x1DfWEr0kTb2acxVGYw40cv5QdivoSu+bLtcF8XATIT3KEeAuUAmBEsd2rWLWpKQAwVCxRSskO3TA2hy+mMtYa8ERLhELn9bDMRahrY2tcLK0Wl+5ji1aZuDBp/4z/KhOLVtpvg87tcd6rGY5WWhIStAgBoQs5XsBHMDZKCDapKWKmpXBLJKViBE9LQhRXDNLRvikwO0v1/pcjmoy++7nFaJAmBQ==\",\n            \"InstanceId\": \"\",\n            \"StorageType\": 2,\n            \"UserName\": \"\"\n        },\n        \"ModelConfig\": {\n            \"EmbeddingModel\": \"Youtu/youtu-embedding-llm\",\n            \"QaExtractModel\": \"Deepseek/deepseek-v4-pro\"\n        },\n        \"Name\": \"测试编辑\"\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"name\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"18174358-c58e-4c2a-baf4-0bfebd539f16\"\n    }\n}",
+        "title": "修改知识库"
+      }
+    ],
+    "ModifyLabel": [
+      {
+        "document": "修改标签",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLabel\n<公共请求参数>\n\n{\n    \"Fields\": {\n        \"Name\": \"测试33\",\n        \"TermModifyList\": [\n            {\n                \"ModifyAction\": 1,\n                \"SynonymList\": [],\n                \"Term\": \"323232\"\n            }\n        ]\n    },\n    \"KbId\": \"2095766521673516736\",\n    \"LabelId\": \"2096808563606119109\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Name\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TermList\": [\n            {\n                \"TermId\": \"2098002223121287936\",\n                \"Term\": \"323232\",\n                \"SynonymList\": []\n            }\n        ],\n        \"RequestId\": \"f83fcb3a-adfc-491a-9386-a95444c620d2\"\n    }\n}",
+        "title": "修改标签"
       }
     ],
     "ModifyMsgRecordCategory": [
@@ -620,6 +868,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"6ec78f78-23fb-49db-8e53-76921e1e3918\",\n    \"PluginVersion\": 4,\n    \"Profile\": {\n        \"Description\": \"天气插件测试\",\n        \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/%E6%8F%92%E4%BB%B6-%E9%BB%98%E8%AE%A4.png\",\n        \"Name\": \"CAPI-Test-modify\",\n        \"PluginClass\": 0,\n        \"PluginKind\": 2\n    },\n    \"Config\": {\n        \"MCPPluginConfig\": {\n            \"MCPServerUrl\": \"https://******************************.com/sse\",\n            \"MCPTransport\": 0,\n            \"PluginHeader\": [\n                {\n                    \"IsGlobalHidden\": false,\n                    \"IsRequired\": true,\n                    \"Name\": \"Authorization\",\n                    \"Value\": \"Bearer ************************************************\"\n                }\n            ],\n            \"PluginQuery\": [],\n            \"SSEReadTimeout\": 300,\n            \"Timeout\": 15,\n            \"AuthConfig\": {\n                \"AuthType\": 0\n            }\n        }\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Config.Timeout\"\n        ]\n    },\n    \"LoginUin\": \"6000005624511\",\n    \"LoginSubAccountUin\": \"6000005624511\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9814760b-4166-4571-bf83-856aed7ccade\"\n    }\n}",
         "title": "修改插件示例"
+      }
+    ],
+    "ModifyQA": [
+      {
+        "document": "修改单个 QA",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQA\n<公共请求参数>\n\n{\n    \"Fields\": {\n        \"Answer\": \"333334\",\n        \"CategoryId\": \"2085302048496970304\",\n        \"DocId\": \"0\",\n        \"EffectiveDomain\": 2,\n        \"ExpirationPolicy\": {\n            \"EffectivePeriod\": {\n                \"EndTime\": \"0\"\n            },\n            \"ExpireBehavior\": 1\n        },\n        \"LabelRefList\": [],\n        \"Question\": \"测试一下2\",\n        \"QuestionDescription\": \"\"\n    },\n    \"KbId\": \"2085302046444998912\",\n    \"QaId\": \"2097209703376155200\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"category_id\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7402c05e-ecaf-4799-af8d-ccf8933b9856\"\n    }\n}",
+        "title": "修改单个 QA"
+      }
+    ],
+    "ModifyQAList": [
+      {
+        "document": "批量修改 QA",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyQAList\n<公共请求参数>\n\n{\n    \"KbId\": \"2097635494119704256\",\n    \"QaIdList\": [\n        \"2097635721520180864\"\n    ],\n    \"EffectiveDomain\": 2,\n    \"LabelRefList\": {\n        \"ItemList\": [\n            {\n                \"LabelId\": \"2097635499087851136\",\n                \"LabelTermIdList\": [\n                    \"2097635499087851138\"\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultList\": [\n            {\n                \"Id\": \"2097635721520180864\",\n                \"Succeeded\": true,\n                \"Reason\": \"\"\n            }\n        ],\n        \"RequestId\": \"0685d2df-ea42-40ff-880f-7d00aa6a9e0e\"\n    }\n}",
+        "title": "批量修改 QA"
       }
     ],
     "ModifySkill": [
@@ -700,6 +964,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunAppTriggerNow\n<公共请求参数>\n\n{\n    \"AppId\": \"2072866150944382336\",\n    \"TriggerId\": \"64201696-52ee-49f6-a95b-0773b60a8e6b\"\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceId\": \"2e41cd4a-39cc-455e-a530-8a543db8ac13\",\n        \"RequestId\": \"588843cd-59d7-4294-9b9d-2c09b13e37d8\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "SearchKnowledge": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKnowledge\n<公共请求参数>\n\n{\n    \"AdvancedConfig\": {\n        \"FinalRerankConfig\": {\n            \"ModelName\": \"Youtu/youtu-reranker-llm\"\n        },\n        \"KbRetrievalList\": [\n            {\n                \"DbRetrievalConfig\": {\n                    \"Enabled\": true\n                },\n                \"DocRetrievalConfig\": {\n                    \"Confidence\": 0.2,\n                    \"Enabled\": true,\n                    \"TopN\": 5\n                },\n                \"KbId\": \"2067622575842400832\",\n                \"QaRetrievalConfig\": {\n                    \"Confidence\": 0.7,\n                    \"Enabled\": true,\n                    \"TopN\": 3\n                },\n                \"RerankConfig\": {\n                    \"Enabled\": true,\n                    \"ModelName\": \"Youtu/youtu-reranker-llm\"\n                },\n                \"StrategyType\": 0,\n                \"TextToSqlModel\": {\n                    \"Alias\": \"DeepSeek-V4-Flash\",\n                    \"HistoryLimit\": 0,\n                    \"ModelId\": \"Deepseek/deepseek-v4-flash\"\n                }\n            }\n        ],\n        \"KnowledgeType\": 1,\n        \"RecallCount\": 13\n    },\n    \"Input\": {\n        \"Question\": \"什么是肺鱼\"\n    },\n    \"Context\": {\n        \"CallSource\": 5\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"KnowledgeList\": [\n            {\n                \"Confidence\": 0.5791762,\n                \"KnowledgeType\": 2,\n                \"RecallTypeList\": [\n                    2\n                ],\n                \"ResultPayload\": {\n                    \"GraphData\": \"\",\n                    \"ImageUrlList\": [],\n                    \"SheetInfo\": \"\"\n                },\n                \"ResultType\": 0,\n                \"SimilarQuestionExtra\": {\n                    \"Content\": \"\",\n                    \"SimilarQuestionId\": \"0\"\n                },\n                \"SnippetProfile\": {\n                    \"Content\": \"文档名：肺鱼\\n文档片段：肺鱼是一类具有独特生理结构和生存能力的古老鱼类，属于硬骨鱼纲肉鳍鱼亚纲肺鱼目。它们最早出现在距今约4亿年前的泥盆纪时期，是现存最古老的鱼类之一。\\n\\n\\n主要特征\\n\\n\\n呼吸方式：肺鱼具有鳃和肺两个呼吸器官。在水中，它们主要通过鳃呼吸；在水体干涸时，可以利用特化的鱼鳔（称为“肺”）直接呼吸空气。\\n\\n\\n形态结构：肺鱼的体态修长，胸鳍和腹鳍肥厚有力，可以在水底行走。它们的鳞片细小，身体呈鳗状，有助于在水草丛生的环境中灵活穿梭。\\n\\n\\n生存能力：肺鱼能够在干旱的环境中生存。当河水干涸时，它们会钻入泥土中，形成茧状结构，通过肺部和内鼻孔呼吸，等待雨季到来。\\n\\n\\n分布与种类\\n\\n\\n分布：现存的肺鱼主要分布在南美洲、非洲和澳大利亚的淡水环境中。\\n\\n\\n种类：肺鱼目包括两个主要的科——美洲肺鱼科和非洲肺鱼科。其中，澳洲肺鱼、美洲肺鱼和非洲肺鱼是较为常见的种类。\\n\\n\\n生活习性\\n\\n\\n食性：肺鱼以甲壳类、软体动物和蠕虫等为食，具有强大的咬合力，能够捕食带壳的无脊椎动物。\\n\\n\\n繁殖：肺鱼的繁殖方式多样，有的种类会在水生植物中产卵，幼鱼无外鳃，发育无需经过变态；而有的种类则需要经过变态，幼鱼\\n\\n\\n保护现状\\n\\n\\n肺鱼因其独特的生理特性和重要的科研价值，被列入《濒危野生动植物种国际贸易公约附录Ⅰ、附录Ⅱ和附录Ⅲ》，受到国际保护。\\n\",\n                    \"DocId\": \"2079848099272955712\",\n                    \"DocName\": \"肺鱼.txt\",\n                    \"KbId\": \"2079847931153870720\",\n                    \"KnowledgeId\": \"2079848160140695360\",\n                    \"Question\": \"\",\n                    \"Title\": \"肺鱼\"\n                },\n                \"SourceInfo\": {\n                    \"IsBigData\": false,\n                    \"IsShared\": false,\n                    \"KbName\": \"\"\n                }\n            }\n        ],\n        \"TokenUsageList\": [\n            {\n                \"CompletionTokens\": 0,\n                \"ModelName\": \"Youtu/youtu-embedding\",\n                \"PromptTokens\": 16,\n                \"TotalTokens\": 16\n            }\n        ],\n        \"RequestId\": \"e06aa6d0-1811-480b-b21d-900bc835e6da\"\n    }\n}",
+        "title": "知识检索"
       }
     ],
     "UnfavoritePlugin": [

@@ -30,6 +30,22 @@
         "title": "批量创建 TWeSee 语义理解任务 - 失败"
       }
     ],
+    "BatchCreateTWeSeeSubscription": [
+      {
+        "document": "批量开通多个 TWeSee 视频理解订阅。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"Entries\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev001\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"ServiceTier\": \"BASIC\",\n            \"Period\": 1,\n            \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n            \"CustomOrderId\": \"order-0011\"\n        },\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"ServiceTier\": \"BASIC\",\n            \"Period\": 1,\n            \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n            \"CustomOrderId\": \"order-0012\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"OrderId\": \"20260420*********550201\",\n                \"Status\": \"DELIVERED\",\n                \"ResourceId\": \"twesee-753yd29x30********jqww1\"\n            },\n            {\n                \"OrderId\": \"20260420*********550202\",\n                \"Status\": \"DELIVERING\",\n                \"ResourceId\": \"\"\n            }\n        ],\n        \"RequestId\": \"6f7647ba-757c-439c-8781-c187b5a561f3\"\n    }\n}",
+        "title": "批量开通 TWeSee 视频理解订阅"
+      }
+    ],
+    "BatchDescribeTWeSeeOrders": [
+      {
+        "document": "同时按订单 ID 和自定义订单 ID 批量查询订单状态。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDescribeTWeSeeOrders\n<公共请求参数>\n\n{\n    \"Entries\": [\n        {\n            \"OrderId\": \"2026042**********584511\"\n        },\n        {\n            \"CustomOrderId\": \"custom-order-002\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"OrderId\": \"2026042**********584511\",\n                \"CustomOrderId\": \"custom-order-001\",\n                \"Status\": \"DELIVERED\",\n                \"Price\": \"1200\",\n                \"Currency\": \"CNY\",\n                \"ResourceId\": \"twesee-753yd29x30********jqww1\"\n            },\n            {\n                \"OrderId\": \"\",\n                \"CustomOrderId\": \"custom-order-002\",\n                \"Status\": \"QUERY_FAILED\",\n                \"ErrorCode\": \"FailedOperation.CustomOrderIdNotExist\",\n                \"ErrorMessage\": \"自定义订单 ID 不存在\"\n            }\n        ],\n        \"RequestId\": \"0d350a07-0fc9-455c-98c8-0946d721dc1a\"\n    }\n}",
+        "title": "批量查询 TWeSee 订单"
+      }
+    ],
     "BatchInvokeTWeSeeRecognitionTask": [
       {
         "document": "",
@@ -42,6 +58,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchInvokeTWeSeeRecognitionTask\n<公共请求参数>\n\n{\n    \"Inputs\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"InputURL\": \"https://example.qq.com/video.mp4\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Outputs\": [\n            {\n                \"Completed\": false,\n                \"ErrorCode\": \"InvalidParameter\",\n                \"ErrorMessage\": \"参数错误:InputURL\"\n            }\n        ],\n        \"RequestId\": \"fa6f4dfb-45eb-4263-b889-e46b50bfcdbf\"\n    }\n}",
         "title": "批量同步执行 TWeSee 语义理解任务 - 失败"
+      }
+    ],
+    "BatchRenewTWeSeeSubscription": [
+      {
+        "document": "批量续费多个 TWeSee 视频理解订阅。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchRenewTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"Entries\": [\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev001\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"Period\": 1,\n            \"CustomOrderId\": \"order-0013\"\n        },\n        {\n            \"ProductId\": \"4AHMY9X89Y\",\n            \"DeviceName\": \"dev002\",\n            \"ChannelId\": 0,\n            \"ServiceType\": \"VID_COMP\",\n            \"Period\": 1,\n            \"CustomOrderId\": \"order-0014\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"OrderId\": \"2026042**********584511\",\n                \"Status\": \"DELIVERED\",\n                \"ResourceId\": \"twesee-753yd29x30********jqww1\"\n            },\n            {\n                \"OrderId\": \"2026042**********584512\",\n                \"Status\": \"DELIVERING\",\n                \"ResourceId\": \"\"\n            }\n        ],\n        \"RequestId\": \"0d350a07-0fc9-455c-98c8-0946d721dc1a\"\n    }\n}",
+        "title": "批量续费 TWeSee 视频理解订阅"
       }
     ],
     "BatchUpdateFirmware": [
@@ -2112,6 +2136,26 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTopicRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"test_create\",\n    \"TopicRulePayload\": {\n        \"Sql\": \"U0VMRUNUICogRlJPTSAnJHRoaW5nL3VwLysvVFRVMk5OSVU3MC8jJw==\",\n        \"Actions\": \"[{\\\"forward\\\":{\\\"api\\\":\\\"http://127.0.0.1:1080/sub.php\\\"}}]\",\n        \"Description\": \"修改topic信息\",\n        \"RuleDisabled\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "修改规则"
+      }
+    ],
+    "OperateTWeSeeDirectUploadObject": [
+      {
+        "document": "分页列举指定目录下的直传对象。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateTWeSeeDirectUploadObject\n<公共请求参数>\n\n{\n    \"Operation\": \"ListBucket\",\n    \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/\",\n    \"ListOptions\": {\n        \"Marker\": \"\",\n        \"MaxKeys\": 100,\n        \"Delimiter\": \"/\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 200,\n        \"ListingResponse\": {\n            \"Prefix\": \"Direct/*********711/session-id/\",\n            \"Marker\": \"\",\n            \"MaxKeys\": 100,\n            \"Delimiter\": \"/\",\n            \"IsTruncated\": false,\n            \"NextMarker\": \"\",\n            \"Contents\": [\n                {\n                    \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4\",\n                    \"Key\": \"Direct/*********711/session-id/video.mp4\",\n                    \"Size\": 1228800,\n                    \"ETag\": \"0f343b0931126a20f133d67c2b018a3b\",\n                    \"LastModified\": 1776621600\n                }\n            ],\n            \"CommonPrefixes\": []\n        },\n        \"RequestId\": \"98add049-2852-46f4-8fb5-034f283e281c\"\n    }\n}",
+        "title": "列举 TWeSee 直传对象"
+      },
+      {
+        "document": "删除指定的直传对象。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateTWeSeeDirectUploadObject\n<公共请求参数>\n\n{\n    \"Operation\": \"DeleteObject\",\n    \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 204,\n        \"RequestId\": \"1cb2e17b-945b-4343-9448-bc38815be032\"\n    }\n}",
+        "title": "删除 TWeSee 直传对象"
+      },
+      {
+        "document": "查询指定直传对象的元数据。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateTWeSeeDirectUploadObject\n<公共请求参数>\n\n{\n    \"Operation\": \"HeadObject\",\n    \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 200,\n        \"ObjectResponse\": {\n            \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4\",\n            \"Key\": \"Direct/*********711/session-id/video.mp4\",\n            \"Size\": 1228800,\n            \"ETag\": \"0f343b0931126a20f133d67c2b018a3b\",\n            \"LastModified\": 1776621600,\n            \"ContentType\": \"video/mp4\",\n            \"Metadata\": []\n        },\n        \"RequestId\": \"a0fc12a1-3196-4fa7-8125-10d29d52e8df\"\n    }\n}",
+        "title": "查询 TWeSee 直传对象元数据"
       }
     ],
     "PauseTWeCallDevice": [

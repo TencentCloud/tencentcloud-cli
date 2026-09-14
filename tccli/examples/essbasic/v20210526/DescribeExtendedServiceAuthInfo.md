@@ -57,7 +57,7 @@ Output:
                 "Type": "MOBILE_CHECK_APPROVER"
             },
             {
-                "Name": "企业自动签（自动签署）",
+                "Name": "企业授权签",
                 "OperateOn": 1672989237,
                 "OperatorOpenId": "admin-open-id",
                 "Status": "DISABLE",

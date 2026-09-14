@@ -1,4 +1,4 @@
-**Example 1: 关闭自动签署**
+**Example 1: 关闭“授权签”**
 
 
 
@@ -23,10 +23,10 @@ Output:
 }
 ```
 
-**Example 2: 开通自动签署**
+**Example 2: 开通“授权签”**
 
-1.开通企业自动签署（ServiceType 设置为WEIXINAPP）
-2.设置Endpoint 为WEIXINAPP ，得到小程序链接，操作人可拿链接签署协议开通自动签署
+1.开通企业“授权签”（ServiceType 设置为WEIXINAPP）
+2.设置Endpoint 为WEIXINAPP ，得到小程序链接，操作人可拿链接签署协议开通“授权签”
 
 Input: 
 

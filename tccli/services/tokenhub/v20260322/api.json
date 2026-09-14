@@ -176,7 +176,7 @@
       "status": "online"
     },
     "DescribeUsageRankList": {
-      "document": "查询用量排行列表。\n\n指标族（MetricType）\n- `tokens`（默认）：Token 用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：TotalToken（总）/ InputTotalToken（输入）/ OutputTotalToken（输出）/ CacheTotalToken（读缓存）。\n- `search`：【待上线】联网搜索用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：SearchRequestCount（搜索请求数）/ SearchCount（搜索引擎调用次数）。\n\n响应内容\n- MetricType 字段用于切换指标族，响应回显 MetricType 与 MetricKeys。\n- TotalStats：时间窗内全部对象的整段聚合值。\n- PageStats：当前翻页内对象的整段聚合值。\n- TopList：按MetricKeys[0]降序的对象列表，含整段聚合值与逐时间点曲线。",
+      "document": "查询用量排行列表。\n\n指标族（MetricType）\n- `tokens`（默认）：Token 用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：TotalToken（总）/ InputTotalToken（输入）/ OutputTotalToken（输出）/ CacheTotalToken（读缓存）。\n- `search`：联网搜索用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：SearchRequestCount（搜索请求数）/ SearchCount（搜索引擎调用次数）。\n- `apikey_usage`：APIKey 锚定用量统计（某 APIKey 下按模型或接入点展开）。支持 Dimension = endpoint / model。\n  返回指标：TotalToken（总 Token）/ InputTotalToken（输入 Token）/ OutputTotalToken（输出 Token）/ CacheTotalToken（读缓存）/ RequestCount（请求次数）/ SuccessCount（成功次数）。\n\n响应内容\n- MetricType 字段用于切换指标族，响应回显 MetricType 与 MetricKeys。\n- TotalStats：时间窗内全部对象的整段聚合值。\n- PageStats：当前翻页内对象的整段聚合值。\n- TopList：按MetricKeys[0]降序的对象列表，含整段聚合值与逐时间点曲线。",
       "input": "DescribeUsageRankListRequest",
       "name": "查询用量排行列表",
       "output": "DescribeUsageRankListResponse",
@@ -2621,10 +2621,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>指标族切换字段。</p><ul><li>tokens（默认）：Token 消耗图（statistics=sum），支持 Dimension = apikey/endpoint/model</li><li>search【待上线】：联网搜索调用次数（statistics=sum），仅支持 Dimension = model</li><li>其他值返回 InvalidParameter。</li></ul><p>枚举值：</p><ul><li>tokens： tokens</li></ul>",
+          "document": "<p>指标族切换字段。</p><ul><li>tokens（默认）：Token 用量消耗（statistics=sum），支持 Dimension = apikey/endpoint/model</li><li>search：联网搜索调用次数（statistics=sum），仅支持 Dimension = model</li><li>apikey_usage: APIKey 锚定用量统计（某 APIKey 下按模型或接入点展开）（statistics=sum），支持 Dimension = endpoint/model</li><li>其他值返回 InvalidParameter。</li></ul>",
           "example": "tokens",
           "member": "string",
           "name": "MetricType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>锚定对象，用于缩小统计范围「在哪个具体对象之内」，MetricType 为 apikey_usage 时必填。<br>各 MetricType 是否支持/如何使用 Anchor，见 MetricType 字段说明。</p>",
+          "example": "ak-20260618-**************************",
+          "member": "string",
+          "name": "Anchor",
           "required": false,
           "type": "string"
         },
@@ -2663,6 +2672,15 @@
           "name": "ShowAll",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序指标键（可选），具体值见响应 MetricKeys。为空时按 <code>MetricKeys[0]</code> 降序排序（tokens/apikey_usage 族为 TotalToken，search 族为 SearchRequestCount）。非法值返回 InvalidParameter。</p>",
+          "example": "TotalToken",
+          "member": "string",
+          "name": "SortKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2682,7 +2700,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回填请求的指标族：tokens / search 。</p>",
+          "document": "<p>回填请求的指标族：取值同入参 MetricType（tokens / search / apikey_usage）</p><p>枚举值：</p><ul><li>tokens： tokens</li></ul>",
           "example": "tokens",
           "member": "string",
           "name": "MetricType",
@@ -2692,7 +2710,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：tokens=[Total,Input,Output,Cache]、search=[SearchRequestCount,SearchCount]</p>",
+          "document": "<p>本次响应中 Stats / Series / PageStats / TotalStats 实际包含的 metric key 列表，按MetricType 区分：<br>tokens=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken]<br>search=[SearchRequestCount,SearchCount]<br>apikey_usage=[TotalToken, InputTotalToken, OutputTotalToken, CacheTotalToken, RequestCount, RequestFailCount]</p>",
           "example": "[\"TotalToken\",\"InputTotalToken\",\"OutputTotalToken\"]",
           "member": "string",
           "name": "MetricKeys",
@@ -2782,7 +2800,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>对象排行列表，按<code>MetricKeys[0]</code>降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>",
+          "document": "<p>对象排行列表，按 SortKey 降序排序。ShowAll=false 时为当前页 10 个对象（含 Series）；ShowAll=true 时为全量对象（不含 Series，用于 CSV 导出）。</p>",
           "example": "无",
           "member": "UsageRankItem",
           "name": "TopList",
@@ -2808,6 +2826,16 @@
           "name": "TotalStats",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序指标键</p>",
+          "example": "TotalToken",
+          "member": "string",
+          "name": "SortKey",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

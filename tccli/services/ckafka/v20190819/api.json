@@ -11234,6 +11234,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户选择数据订阅任务的数据（如DTS）时，源数据的格式</p><p>枚举值：</p><ul><li>Debezium： Debezium格式json</li><li>Canal： Canal格式json</li></ul>",
+          "example": "Canal",
+          "member": "string",
+          "name": "SourceDataFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

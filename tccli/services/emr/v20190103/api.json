@@ -12522,7 +12522,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>导出配置参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>导出配置参数 base64格式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fhjkajd",
           "member": "string",
           "name": "Properties",

@@ -15,8 +15,8 @@ Output:
 ```
 {
     "Response": {
-        "TopicId": "b54181b9-422e-4a6b-8ce1-30d64ddcb02b",
-        "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2"
+        "RequestId": "f12a6e20-f950-4af9-8f8b-b6329a4961c2",
+        "TopicId": "b54181b9-422e-4a6b-8ce1-30d64ddcb02b"
     }
 }
 ```

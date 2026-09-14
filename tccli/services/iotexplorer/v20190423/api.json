@@ -21,11 +21,32 @@
       "output": "BatchCreateTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "BatchCreateTWeSeeSubscription": {
+      "document": "批量开通 TWeSee 预付费订阅",
+      "input": "BatchCreateTWeSeeSubscriptionRequest",
+      "name": "批量开通 TWeSee 预付费订阅",
+      "output": "BatchCreateTWeSeeSubscriptionResponse",
+      "status": "online"
+    },
+    "BatchDescribeTWeSeeOrders": {
+      "document": "批量查询 TWeSee 订单状态",
+      "input": "BatchDescribeTWeSeeOrdersRequest",
+      "name": "批量查询 TWeSee 订单",
+      "output": "BatchDescribeTWeSeeOrdersResponse",
+      "status": "online"
+    },
     "BatchInvokeTWeSeeRecognitionTask": {
       "document": "批量同步执行 TWeSee 语义理解任务",
       "input": "BatchInvokeTWeSeeRecognitionTaskRequest",
       "name": "批量同步执行 TWeSee 语义理解任务",
       "output": "BatchInvokeTWeSeeRecognitionTaskResponse",
+      "status": "online"
+    },
+    "BatchRenewTWeSeeSubscription": {
+      "document": "批量续费 TWeSee 预付费订阅",
+      "input": "BatchRenewTWeSeeSubscriptionRequest",
+      "name": "批量续费 TWeSee 预付费订阅",
+      "output": "BatchRenewTWeSeeSubscriptionResponse",
       "status": "online"
     },
     "BatchUpdateFirmware": {
@@ -1540,6 +1561,13 @@
       "output": "ModifyTopicRuleResponse",
       "status": "online"
     },
+    "OperateTWeSeeDirectUploadObject": {
+      "document": "查询、删除或列举 TWeSee 直传对象",
+      "input": "OperateTWeSeeDirectUploadObjectRequest",
+      "name": "操作 TWeSee 直传对象",
+      "output": "OperateTWeSeeDirectUploadObjectResponse",
+      "status": "online"
+    },
     "PauseTWeCallDevice": {
       "document": "暂停设备",
       "input": "PauseTWeCallDeviceRequest",
@@ -2273,6 +2301,190 @@
       ],
       "type": "object"
     },
+    "BatchCreateTWeSeeSubscriptionRequest": {
+      "document": "BatchCreateTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待开通的订阅列表",
+          "example": "无",
+          "member": "SeeCreateSubscriptionEntry",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateTWeSeeSubscriptionResponse": {
+      "document": "BatchCreateTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅开通结果列表",
+          "example": "无",
+          "member": "SeeCreateSubscriptionResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeTWeSeeOrdersEntry": {
+      "document": "待查询的订单标识。OrderId 和 CustomOrderId 必须且只能填写一个。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单 ID，与 CustomOrderId 二选一</p>",
+          "example": "2026042**********584511",
+          "member": "string",
+          "name": "OrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义订单 ID，与 OrderId 二选一</p>",
+          "example": "custom-order-001",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BatchDescribeTWeSeeOrdersRequest": {
+      "document": "BatchDescribeTWeSeeOrders请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待查询的订单列表，最多 200 条",
+          "example": "无",
+          "member": "BatchDescribeTWeSeeOrdersEntry",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeTWeSeeOrdersResponse": {
+      "document": "BatchDescribeTWeSeeOrders返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "与请求 Entries 顺序一致的订单查询结果",
+          "example": "无",
+          "member": "BatchDescribeTWeSeeOrdersResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchDescribeTWeSeeOrdersResult": {
+      "document": "单个订单的查询结果。查询失败时 ErrorCode 和 ErrorMessage 非空。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>订单 ID</p>",
+          "example": "2026042**********584511",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单状态。</p><p>枚举值：</p><ul><li>DELIVERED： 已发货</li><li>DELIVERING： 发货中</li><li>DELIVER_FAILED： 发货失败</li><li>NOT_DELIVERED： 未发货</li></ul>",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源 ID</p>",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>币种</p>",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单价格</p>",
+          "example": "1200",
+          "member": "string",
+          "name": "Price",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义订单 ID</p>",
+          "example": "custom-order-001",
+          "member": "string",
+          "name": "CustomOrderId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单个订单的查询错误码，查询成功时为空</p>",
+          "example": "FailedOperation.CustomOrderIdNotExist",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单个订单的查询错误信息，查询成功时为空</p>",
+          "example": "自定义订单 ID 不存在",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BatchInvokeTWeSeeRecognitionTaskRequest": {
       "document": "BatchInvokeTWeSeeRecognitionTask请求参数结构体",
       "members": [
@@ -2365,6 +2577,43 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchRenewTWeSeeSubscriptionRequest": {
+      "document": "BatchRenewTWeSeeSubscription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待续费的订阅列表",
+          "example": "无",
+          "member": "SeeRenewSubscriptionEntry",
+          "name": "Entries",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchRenewTWeSeeSubscriptionResponse": {
+      "document": "BatchRenewTWeSeeSubscription返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅续费结果列表",
+          "example": "无",
+          "member": "SeeRenewSubscriptionResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BatchUpdateFirmwareRequest": {
       "document": "BatchUpdateFirmware请求参数结构体",
@@ -21715,6 +21964,81 @@
       ],
       "type": "object"
     },
+    "OperateTWeSeeDirectUploadObjectRequest": {
+      "document": "OperateTWeSeeDirectUploadObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TWeSee 直传对象或目录的 COS URI",
+          "example": "cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/",
+          "member": "string",
+          "name": "COSURI",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型。可选值：\n\n- `HeadObject`：查询对象元数据\n- `DeleteObject`：删除对象\n- `ListBucket`：列举对象",
+          "example": "ListBucket",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列举对象时使用的分页和目录选项",
+          "example": "无",
+          "member": "SeeObjectListOptions",
+          "name": "ListOptions",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateTWeSeeDirectUploadObjectResponse": {
+      "document": "OperateTWeSeeDirectUploadObject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象列举结果",
+          "example": "无",
+          "member": "SeeObjectListing",
+          "name": "ListingResponse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象元数据",
+          "example": "无",
+          "member": "SeeObjectMetadata",
+          "name": "ObjectResponse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果状态码",
+          "example": "200",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OtaModuleInfo": {
       "document": "升级包类型详细信息",
       "members": [
@@ -24234,6 +24558,120 @@
       ],
       "usage": "out"
     },
+    "SeeCreateSubscriptionEntry": {
+      "document": "待开通的 TWeSee 预付费订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐规格。可选值：\n\n- `BASIC`：基础版\n- `ADVANCED`：高级版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "ServiceTier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅购买时长，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0011",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费标识。可选值：\n\n- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）\n- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费\n- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SeeCreateSubscriptionResult": {
+      "document": "TWeSee 预付费订阅开通结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "20260420*********550201",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeeDeleteTaskCondition": {
       "document": "TWeSee 任务删除条件",
       "members": [
@@ -24444,6 +24882,283 @@
       ],
       "usage": "out"
     },
+    "SeeObjectListOptions": {
+      "document": "TWeSee 直传对象列举选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目录分隔符",
+          "example": "/",
+          "member": "string",
+          "name": "Delimiter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页标记",
+          "example": "Direct/*********711/session-id/video-001.mp4",
+          "member": "string",
+          "name": "Marker",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单页返回的最大对象数量",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxKeys",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SeeObjectListing": {
+      "document": "TWeSee 直传对象列举结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对象列表</p>",
+          "example": "无",
+          "member": "SeeObjectSummary",
+          "name": "Contents",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子目录路径列表</p>",
+          "example": "[\"Direct/*********711/session-id/frames/\"]",
+          "member": "string",
+          "name": "CommonPrefixes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次列举使用的目录分隔符</p>",
+          "example": "/",
+          "member": "string",
+          "name": "Delimiter",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否还有后续分页数据</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次列举使用的分页标记</p>",
+          "example": "Direct/*********711/session-id/",
+          "member": "string",
+          "name": "Marker",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次列举的最大对象数量</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxKeys",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页的分页标记</p>",
+          "example": "Direct/*********711/session-id/",
+          "member": "string",
+          "name": "NextMarker",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次列举的对象路径前缀</p>",
+          "example": "Direct/*********711/session-id/",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeObjectMetadata": {
+      "document": "TWeSee 直传对象元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对象 Key</p>",
+          "example": "Direct/*********711/session-id/video.mp4",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象的 COS URI</p>",
+          "example": "cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4",
+          "member": "string",
+          "name": "COSURI",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象的 MIME 类型</p>",
+          "example": "video/mp4",
+          "member": "string",
+          "name": "ContentType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象大小，单位：字节</p>",
+          "example": "1228800",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象的 ETag</p>",
+          "example": "0f343b0931126a20f133d67c2b018a3b",
+          "member": "string",
+          "name": "ETag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象最后修改时间，秒级 UNIX 时间戳</p>",
+          "example": "1776621600",
+          "member": "int64",
+          "name": "LastModified",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象的自定义元数据列表</p>",
+          "example": "无",
+          "member": "SeeObjectMetadataEntry",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeObjectMetadataEntry": {
+      "document": "TWeSee 直传对象自定义元数据项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据名称",
+          "example": "purpose",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据值",
+          "example": "video-analysis",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeObjectSummary": {
+      "document": "TWeSee 直传对象概要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对象 Key</p>",
+          "example": "Direct/*********711/session-id/video.mp4",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TWeSee 直传对象或目录的 COS URI</p>",
+          "example": "cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/session-id/video.mp4",
+          "member": "string",
+          "name": "COSURI",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象大小，单位：字节</p>",
+          "example": "1228800",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象的 ETag</p>",
+          "example": "0f343b0931126a20f133d67c2b018a3b",
+          "member": "string",
+          "name": "ETag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象最后修改时间，秒级 UNIX 时间戳</p>",
+          "example": "1776621600",
+          "member": "int64",
+          "name": "LastModified",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SeePersonInfo": {
       "document": "TWeSee 人员信息",
       "members": [
@@ -24495,6 +25210,102 @@
           "name": "Source",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeRenewSubscriptionEntry": {
+      "document": "待续费的 TWeSee 预付费订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解\n- `IMG_COMP`：图片理解",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位：月",
+          "example": "1",
+          "member": "int64",
+          "name": "Period",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义订单 ID",
+          "example": "order-0013",
+          "member": "string",
+          "name": "CustomOrderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "SeeRenewSubscriptionResult": {
+      "document": "TWeSee 预付费订阅续费结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单 ID",
+          "example": "2026042**********584511",
+          "member": "string",
+          "name": "OrderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单状态",
+          "example": "DELIVERED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源 ID",
+          "example": "twesee-753yd29x30********jqww1",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -24826,6 +25637,16 @@
           "example": "cos://twesee-input-test-125*****99.ap-guangzhou/Direct/*********711/019ffdf0-*********-8ad0-5e70d23ae269/***************-lTXjNweg/1786671516_1786671526.ts",
           "member": "string",
           "name": "COSURI",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的输入 URL</p>",
+          "example": "https://*********-125*******.cos.ap-guangzhou.tencentcos.cn/*******.mp4",
+          "member": "string",
+          "name": "InputURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -27401,6 +28222,26 @@
           "name": "Thumbnail",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索结果置信度</p><p>枚举值：</p><ul><li>high： 高（精准匹配，或包括性的匹配）</li><li>medium： 中（近义匹配）</li><li>low： 低（模糊匹配，部分要素与用户 Query 可能不符合）</li></ul>",
+          "example": "high",
+          "member": "string",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务信息</p><p>当入参 WithTaskInfo = true 时，出参中会返回任务信息</p>",
+          "example": "无",
+          "member": "SeeTaskInfo",
+          "name": "TaskInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

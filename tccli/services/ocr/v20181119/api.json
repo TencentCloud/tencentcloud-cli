@@ -14587,7 +14587,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -14596,7 +14596,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证背面图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>卡证背面图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "BackImageBase64",
@@ -14605,7 +14605,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。要求图片经Base64编码后不超过 10M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。",
+          "document": "<p>图片的 Url 地址。要求图片经Base64编码后不超过 7M，分辨率建议500*800以上，支持PNG、JPG、JPEG、BMP格式。建议卡片部分占据图片2/3以上。建议图片存储于腾讯云，可保障更高的下载速度和稳定性。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -14614,7 +14614,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证背面图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>卡证背面图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "BackImageUrl",
@@ -14623,7 +14623,7 @@
         },
         {
           "disabled": false,
-          "document": "图片开关。默认为false，不返回泰国身份证头像照片的base64编码。\n设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码",
+          "document": "<p>图片开关。默认为false，不返回泰国身份证头像照片的base64编码。<br>设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码</p>",
           "example": "false",
           "member": "bool",
           "name": "CropPortrait",
@@ -14638,7 +14638,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "身份证号码",
+          "document": "<p>身份证号码</p>",
           "example": "3102001968756",
           "member": "string",
           "name": "ID",
@@ -14648,7 +14648,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文姓名",
+          "document": "<p>泰文姓名</p>",
           "example": "นาย ธนกฤต  บุญโญปกรุณ์",
           "member": "string",
           "name": "ThaiName",
@@ -14658,7 +14658,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "Mr. Thanakit",
           "member": "string",
           "name": "EnFirstName",
@@ -14668,7 +14668,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "Boonyopakron",
           "member": "string",
           "name": "EnLastName",
@@ -14678,7 +14678,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文签发日期",
+          "document": "<p>泰文签发日期</p>",
           "example": "9ธ.ค.2559",
           "member": "string",
           "name": "IssueDate",
@@ -14688,7 +14688,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文到期日期",
+          "document": "<p>泰文到期日期</p>",
           "example": "13ธ.ค.2567",
           "member": "string",
           "name": "ExpirationDate",
@@ -14698,7 +14698,7 @@
         },
         {
           "disabled": false,
-          "document": "英文签发日期",
+          "document": "<p>英文签发日期</p>",
           "example": "29 Mar. 2021",
           "member": "string",
           "name": "EnIssueDate",
@@ -14708,7 +14708,7 @@
         },
         {
           "disabled": false,
-          "document": "英文到期日期",
+          "document": "<p>英文到期日期</p>",
           "example": "12 Mar. 2030",
           "member": "string",
           "name": "EnExpirationDate",
@@ -14718,7 +14718,7 @@
         },
         {
           "disabled": false,
-          "document": "泰文出生日期",
+          "document": "<p>泰文出生日期</p>",
           "example": "14ธ.ค.2509",
           "member": "string",
           "name": "Birthday",
@@ -14728,7 +14728,7 @@
         },
         {
           "disabled": false,
-          "document": "英文出生日期",
+          "document": "<p>英文出生日期</p>",
           "example": "13 Mar. 1986",
           "member": "string",
           "name": "EnBirthday",
@@ -14738,7 +14738,7 @@
         },
         {
           "disabled": false,
-          "document": "宗教信仰",
+          "document": "<p>宗教信仰</p>",
           "example": "พุทธ",
           "member": "string",
           "name": "Religion",
@@ -14748,7 +14748,7 @@
         },
         {
           "disabled": false,
-          "document": "序列号",
+          "document": "<p>序列号</p>",
           "example": "1047-02-03291045",
           "member": "string",
           "name": "SerialNumber",
@@ -14758,7 +14758,7 @@
         },
         {
           "disabled": false,
-          "document": "地址",
+          "document": "<p>地址</p>",
           "example": "ที่อยู่21/19หมู่ที่3ต.บางคูครัดอ.บางบัวทอง",
           "member": "string",
           "name": "Address",
@@ -14768,7 +14768,7 @@
         },
         {
           "disabled": false,
-          "document": "背面号码",
+          "document": "<p>背面号码</p>",
           "example": "JC4-1841713-14",
           "member": "string",
           "name": "LaserID",
@@ -14778,7 +14778,7 @@
         },
         {
           "disabled": false,
-          "document": "证件人像照片抠取",
+          "document": "<p>证件人像照片抠取</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "PortraitImage",
@@ -14788,7 +14788,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n-9101 证件边框不完整告警\n-9102 证件复印件告警\n-9103 证件翻拍告警\n-9107 证件反光告警\n-9108 证件模糊告警\n-9109 告警能力未开通",
+          "document": "<p>告警码<br>-9101 证件边框不完整告警<br>-9102 证件复印件告警<br>-9103 证件翻拍告警<br>-9104 证件PS告警<br>-9107 证件反光告警<br>-9108 证件模糊告警<br>-9109 告警能力未开通</p>",
           "example": "[-9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -14798,7 +14798,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃， 将固定返回\"1\"，不建议使用。 ",
+          "document": "<p>该字段已废弃， 将固定返回&quot;1&quot;，不建议使用。</p>",
           "example": "{\"ID\":{\"Confidence\":\"0.9500\"},\"ThaiName\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",
@@ -14808,7 +14808,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）",
+          "document": "<p>卡证正面图片中，证件主体的数量（仅请求曼谷地域[ap-bangkok]返回）</p>",
           "example": "1",
           "member": "int64",
           "name": "CardCount",

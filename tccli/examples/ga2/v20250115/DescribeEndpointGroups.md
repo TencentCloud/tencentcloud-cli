@@ -58,6 +58,8 @@ Output:
                     "42.193.118.160",
                     "49.233.85.107"
                 ],
+                "OriginPrivateIps": [],
+                "OriginPublicCidrs": [],
                 "StatusMask": [],
                 "PortOverrides": [
                     {

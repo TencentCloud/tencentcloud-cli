@@ -404,7 +404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>地域中文名称。</p>",
+          "document": "<p>地域名称。</p>",
           "example": "广州",
           "member": "string",
           "name": "Name",
@@ -424,7 +424,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域信息。</p>",
+          "document": "<p>地域。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -444,7 +444,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否中国地域。</p>",
+          "document": "<p>是否中国地域。1 代表是中国地域，0代表不是中国地域。</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsChinaMainland",
@@ -464,7 +464,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否腾讯地域。</p>",
+          "document": "<p>是否腾讯云地域。1代表是腾讯云地域，0代表不是。</p>",
           "example": "0",
           "member": "uint64",
           "name": "IsTencentRegion",
@@ -853,7 +853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>GA示例唯一Id</p>",
+          "document": "<p>GA实例唯一Id</p>",
           "example": "ga-8sreohed",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -1977,7 +1977,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加速地域信息。",
+          "document": "<p>加速地域信息。</p>",
           "example": "无",
           "member": "AcceleratorRegionSet",
           "name": "AcceleratorRegionSet",
@@ -1996,7 +1996,17 @@
     },
     "DescribeAccessLogParamRequest": {
       "document": "DescribeAccessLogParam请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全球加速实例ID。</p>",
+          "example": "ga-ee9hwx13",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeAccessLogParamResponse": {
@@ -2174,7 +2184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-dz058gbb",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -2183,7 +2193,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-dz058gbb",
           "member": "string",
           "name": "ListenerId",
@@ -2192,7 +2202,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2201,12 +2211,21 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。<li>forwarding-policy-id - String -（过滤条件）策略ID。</li></p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2216,7 +2235,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的策略信息。",
+          "document": "<p>符合条件的策略信息。</p>",
           "example": "无",
           "member": "ForwardingPolicySet",
           "name": "ForwardingPolicySet",
@@ -2226,7 +2245,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例个数。",
+          "document": "<p>符合条件的实例个数。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -2248,7 +2267,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-dz058gbb",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -2257,7 +2276,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-dz058gbb",
           "member": "string",
           "name": "ListenerId",
@@ -2266,7 +2285,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "dm-io46vpu6",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -2275,7 +2294,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2284,12 +2303,21 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。<li>forwarding-rule-id - String -（过滤条件）规则ID。</li></p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2299,7 +2327,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的规则信息。",
+          "document": "<p>符合条件的规则信息。</p>",
           "example": "无",
           "member": "ForwardingRuleSet",
           "name": "ForwardingRuleSet",
@@ -2309,7 +2337,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的实例个数。",
+          "document": "<p>符合条件的实例个数。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -2494,6 +2522,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。<li>global-accelerator-acl-rule-id - String -（过滤条件）ACL规则ID。</li></p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2674,7 +2711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "37f82c4e-a9b3-4c05-bf21-9c5492f9f856",
           "member": "string",
           "name": "TaskId",
@@ -2689,7 +2726,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。",
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>SUCCESS： 任务成功。</li><li>FAILURE： 任务失败。</li><li>RUNNING： 任务运行。</li></ul>",
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
@@ -2788,7 +2825,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检查协议。支持配置&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>枚举值：</p><ul><li>TCP： 当终端节点组所在监听器协议是TCP时，可以选择检查协议为TCP。</li><li>HTTP： 当终端节点组所在监听器协议是HTTP或HTTPS时，可以选择检查协议为HTTP。</li><li>PING： 当终端节点组所在监听器协议是UDP时，可以选择检查协议为PING。</li><li>CUSTOM： 当终端节点组所在监听器协议是UDP或TCP时，可以选择检查协议为CUSTOM。</li></ul><p>当开启健康检查时此字段必传。</p>",
+          "document": "<p>检查协议。支持配置&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>枚举值：</p><ul><li>TCP： 当终端节点组所在监听器协议是TCP时，可以选择检查协议为TCP。</li><li>HTTP： 当终端节点组所在监听器协议是HTTP或HTTPS时，可以选择检查协议为HTTP。</li><li>PING： 当终端节点组所在监听器协议是UDP时，可以选择检查协议为PING。</li><li>CUSTOM： 当终端节点组所在监听器协议是UDP或TCP时，可以选择检查协议为CUSTOM。</li><li>HTTPS： 当终端节点组所在监听器协议是HTTPS时，可以选择检查协议为HTTPS。</li></ul><p>当开启健康检查时此字段必传。</p>",
           "example": "TCP",
           "member": "string",
           "name": "CheckType",
@@ -3261,6 +3298,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出终端节点组内网IP</p>",
+          "example": "[\"10.0.0.2\"]",
+          "member": "string",
+          "name": "OriginPrivateIps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出终端节点组公网CIDR</p>",
+          "example": "[\"101.42.53.0/24\"]",
+          "member": "string",
+          "name": "OriginPublicCidrs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3473,7 +3530,108 @@
     },
     "GlobalAcceleratorAccessLog": {
       "document": "GA访问日志",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志唯一Id</p>",
+          "example": "galog-8agteyy6",
+          "member": "string",
+          "name": "LogPushTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GA实例唯一Id</p>",
+          "example": "ga-rs4cpp5u",
+          "member": "string",
+          "name": "GlobalAcceleratorId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>监听器唯一Id</p>",
+          "example": "lsr-3c7xwnq3",
+          "member": "string",
+          "name": "ListenerId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>终端节点组唯一Id</p>",
+          "example": "epg-pg931p4y",
+          "member": "string",
+          "name": "EndpointGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志任务描述</p>",
+          "example": "wick-测试创建日志任务-修改",
+          "member": "string",
+          "name": "FlowLogDescription",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志所在地域</p>",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "CloudRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志主题Id</p>",
+          "example": "8b82e387-a213-41f7-aaa3-2fd6d02265d8",
+          "member": "string",
+          "name": "CloudLogId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集Id</p>",
+          "example": "b18a3982-b759-4809-9f59-17a0b971f223",
+          "member": "string",
+          "name": "CloudLogSetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择日志采集字段</p>",
+          "example": "[\"upstream_bytes_received\"]",
+          "member": "string",
+          "name": "FieldKeys",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志任务状态</p><p>枚举值：</p><ul><li>active： 运行中</li><li>stopped： 已暂停</li></ul>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "GlobalAcceleratorAclPolicies": {
@@ -3796,7 +3954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-sjk45jnn",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -3806,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "listener-sjk45jnn",
           "member": "string",
           "name": "ListenerId",
@@ -3816,7 +3974,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器名称。",
+          "document": "<p>监听器名称。</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -3826,7 +3984,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器描述。",
+          "document": "<p>监听器描述。</p>",
           "example": "description",
           "member": "string",
           "name": "Description",
@@ -3836,7 +3994,7 @@
         },
         {
           "disabled": false,
-          "document": "协议。",
+          "document": "<p>协议。</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -3846,7 +4004,7 @@
         },
         {
           "disabled": false,
-          "document": "端口范围。",
+          "document": "<p>端口范围。</p>",
           "example": "无",
           "member": "PortRanges",
           "name": "PortRanges",
@@ -3856,8 +4014,8 @@
         },
         {
           "disabled": false,
-          "document": "是否打开七层获取源IP方式。",
-          "example": "True",
+          "document": "<p>是否打开七层获取源IP方式。</p>",
+          "example": "true",
           "member": "bool",
           "name": "XForwardedForRealIp",
           "output_required": true,
@@ -3866,7 +4024,7 @@
         },
         {
           "disabled": false,
-          "document": "开启会话保持。",
+          "document": "<p>开启会话保持。</p>",
           "example": "Open",
           "member": "string",
           "name": "ClientAffinity",
@@ -3876,7 +4034,7 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。",
+          "document": "<p>会话保持时间。</p>",
           "example": "10",
           "member": "uint64",
           "name": "ClientAffinityTime",
@@ -3886,7 +4044,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL解析方式。",
+          "document": "<p>SSL解析方式。</p>",
           "example": "UNIDIRECTIONAL",
           "member": "string",
           "name": "CertificationType",
@@ -3896,8 +4054,8 @@
         },
         {
           "disabled": false,
-          "document": "服务器证书。",
-          "example": "无",
+          "document": "<p>服务器证书。</p>",
+          "example": "[\"Zy7jVcqp\"]",
           "member": "string",
           "name": "ServerCertificates",
           "output_required": true,
@@ -3906,8 +4064,8 @@
         },
         {
           "disabled": false,
-          "document": "客户端证书。",
-          "example": "无",
+          "document": "<p>客户端证书。</p>",
+          "example": "[\"W6aH2tOc\"]",
           "member": "string",
           "name": "ClientCaCertificates",
           "output_required": true,
@@ -3916,7 +4074,7 @@
         },
         {
           "disabled": false,
-          "document": "TLS密码套件包。",
+          "document": "<p>TLS密码套件包。</p>",
           "example": "tls_cipher_policy_1_0",
           "member": "string",
           "name": "CipherPolicyId",
@@ -3926,7 +4084,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP版本。",
+          "document": "<p>HTTP版本。</p>",
           "example": "HTTP3",
           "member": "string",
           "name": "HttpVersion",
@@ -3936,7 +4094,7 @@
         },
         {
           "disabled": false,
-          "document": "请求超时时间。",
+          "document": "<p>请求超时时间。</p>",
           "example": "1",
           "member": "uint64",
           "name": "RequestTimeout",
@@ -3946,7 +4104,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2025-03-09 17:48:54",
           "member": "string",
           "name": "CreateTime",
@@ -3956,7 +4114,7 @@
         },
         {
           "disabled": false,
-          "document": "监听路由类型。",
+          "document": "<p>监听路由类型。</p>",
           "example": "Standard",
           "member": "string",
           "name": "ListenerType",
@@ -3966,7 +4124,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器状态。",
+          "document": "<p>监听器状态。</p><p>枚举值：</p><ul><li>ACTIVE： 可用。</li><li>CREATING： 创建中。</li><li>DELETING： 删除中。</li><li>CONFIGURING： 修改配置中。</li></ul>",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -3976,7 +4134,7 @@
         },
         {
           "disabled": false,
-          "document": "所属监听器终端节点组个数。",
+          "document": "<p>所属监听器终端节点组个数。</p>",
           "example": "2",
           "member": "uint64",
           "name": "EndpointGroupCounts",
@@ -3986,7 +4144,7 @@
         },
         {
           "disabled": false,
-          "document": "四层获取源IP方式。",
+          "document": "<p>四层获取源IP方式。</p>",
           "example": "ProxyProtocol",
           "member": "string",
           "name": "GetRealIpType",
@@ -3996,7 +4154,7 @@
         },
         {
           "disabled": false,
-          "document": "连接超时时间。",
+          "document": "<p>连接超时时间。</p>",
           "example": "15",
           "member": "uint64",
           "name": "IdleTimeout",
@@ -4202,7 +4360,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。<br>2、当监听器是UDP时，可以选PING+CUSTOM。<br>3、当监听器是HTTP或HTTPS时，可以选HTTP。</p>",
+          "document": "<p>检查协议。</p><p>入参限制：支持填写：&#39;TCP&#39;, &#39;HTTP&#39;, &#39;PING&#39;, &#39;CUSTOM&#39;,&#39;HTTPS&#39;。</p><p>1、当监听器是TCP时，可以选CUSTOM+TCP。2、当监听器是UDP时，可以选PING+CUSTOM。3、当监听器是HTTP或HTTPS时，可以选HTTP。4、当监听器是HTTS时，可以选HTTPS。</p>",
           "example": "TCP",
           "member": "string",
           "name": "CheckType",
@@ -4968,6 +5126,15 @@
           "example": "ProxyProtocol",
           "member": "string",
           "name": "GetRealIpType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTPS监听器支持选择版本</p><p>枚举值：</p><ul><li>HTTP/1.1： 版本HTTP/1.1</li><li>HTTP/2： 版本HTTP/2</li></ul>",
+          "example": "HTTP/1.1",
+          "member": "string",
+          "name": "HttpVersion",
           "required": false,
           "type": "string"
         }

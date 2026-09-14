@@ -9111,6 +9111,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>透传参数。</p>",
+          "example": "myExtInfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10389,6 +10399,16 @@
           "name": "Seed",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>透传参数。</p>",
+          "example": "myExtInfo",
+          "member": "string",
+          "name": "ExtInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

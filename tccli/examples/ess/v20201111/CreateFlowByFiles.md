@@ -72,7 +72,64 @@ Output:
 }
 ```
 
-**Example 2: 创建一份涉及本方企业、他方企业和个人签署的三方无序签署合同**
+**Example 2: 创建一份涉及本方企业“授权签”和个人签署的B2C合同**
+
+1. 签署方包括本方企业和个人（在Approvers中包含两个ApproverInfo元素）。
+2. 本方企业采用“授权签”方式（在approver中将approverType设置为3）。
+3. 在发起合同之前，需要为本方经办人开通并授权“授权签”功能（登录【腾讯电子签控制台】 -> 【更多】 -> 【高级签署能力】-> 【企业“授权签”】），详见<a href="https://qian.tencent.com/document/92776/">企业“授权签”开通参考文档</a>
+4. “授权签”方的签署人默认为发起方。
+5. 本方企业的签署区仅包含一个印章签署控件：印章（在SignComponents中包含一个Component元素，印章（SIGN_SEAL）采用绝对定位方式，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage）。
+6. 本方企业的印章控件必须指定印章（ComponentValue必须指定当前员工已经授权的印章Id，可登录腾讯电子签控制台 -> 印章 -> 印章中心 选择某一个印章，在页面上显示为印章ID）。
+7. C端参与者仅包含一个签名签署控件（在SignComponents中仅包含一个Component元素，且该元素的ComponentType为SIGN_SIGNATURE，采用绝对定位方式，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage）。
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --FlowName **签署 & B2C合同 \
+    --FlowType 示例合同 \
+    --Approvers.0.ApproverType 3 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.NotifyType NONE \
+    --Approvers.0.PreReadTime 10 \
+    --Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.ComponentValue yDxMjUyKQDN7EkUuO4zjEBpGXvHEACSA \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.NotifyType NONE \
+    --Approvers.1.ApproverName 李四 \
+    --Approvers.1.ApproverMobile 15100000000 \
+    --Approvers.1.PreReadTime 10 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwqoUUckp3bkzgpUuPTimaSDVz2ukqv",
+        "PreviewUrl": "",
+        "RequestId": "s1692183667030779528"
+    }
+}
+```
+
+**Example 3: 创建一份涉及本方企业、他方企业和个人签署的三方无序签署合同**
 
 1. 签署方包括本方企业、他方企业和个人（Approvers中有三个ApproverInfo元素）。
 2. 本方企业的签署区仅具有一个印章签署控件：印章（SignComponents中有一个Component元素，印章（SIGN_SEAL）使用关键字定位方式，即GenerateMode = KEYWORD）。
@@ -179,7 +236,7 @@ Output:
 }
 ```
 
-**Example 3: 创建一份涉及本方企业、他方企业和个人签署的三方有序签署合同**
+**Example 4: 创建一份涉及本方企业、他方企业和个人签署的三方有序签署合同**
 
 1. 签署方包括本方企业、他方企业和个人（Approvers中有三个ApproverInfo元素）。
 2. 本方企业的签署区包含两个签署控件：骑缝章和印章（SignComponents中有两个Component元素，骑缝章（SIGN_PAGING_SEAL）采用绝对定位，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage方式；印章（SIGN_SEAL）使用表单域定位方式，即GenerateMode = FIELD）。
@@ -273,63 +330,6 @@ Output:
         "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
         "PreviewUrl": "",
         "RequestId": "s1665674603446404796"
-    }
-}
-```
-
-**Example 4: 创建一份涉及本方企业自动签署和个人签署的B2C合同**
-
-1. 签署方包括本方企业和个人（在Approvers中包含两个ApproverInfo元素）。
-2. 本方企业采用自动签署方式（在approver中将approverType设置为3）。
-3. 在发起合同之前，需要为本方经办人开通并授权自动签署功能（登录【腾讯电子签控制台】 -> 【更多】 -> 【高级签署能力】-> 【企业自动签署】），详见<a href="https://qian.tencent.com/document/92776/">企业自动签署开通参考文档</a>
-4. 自动签署方的签署人默认为发起方。
-5. 本方企业的签署区仅包含一个印章签署控件：印章（在SignComponents中包含一个Component元素，印章（SIGN_SEAL）采用绝对定位方式，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage）。
-6. 本方企业的印章控件必须指定印章（ComponentValue必须指定当前员工已经授权的印章Id，可登录腾讯电子签控制台 -> 印章 -> 印章中心 选择某一个印章，在页面上显示为印章ID）。
-7. C端参与者仅包含一个签名签署控件（在SignComponents中仅包含一个Component元素，且该元素的ComponentType为SIGN_SIGNATURE，采用绝对定位方式，即指定具体的ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage）。
-
-Input: 
-
-```
-tccli ess CreateFlowByFiles --cli-unfold-argument  \
-    --Operator.UserId 19561039c99fe825a934a132520fde6a \
-    --FlowName 静默签署 & B2C合同 \
-    --FlowType 示例合同 \
-    --Approvers.0.ApproverType 3 \
-    --Approvers.0.OrganizationName 典子谦示例企业 \
-    --Approvers.0.ApproverName 典子谦 \
-    --Approvers.0.ApproverMobile 13200000000 \
-    --Approvers.0.NotifyType NONE \
-    --Approvers.0.PreReadTime 10 \
-    --Approvers.0.SignComponents.0.ComponentPosY 260 \
-    --Approvers.0.SignComponents.0.ComponentWidth 100 \
-    --Approvers.0.SignComponents.0.FileIndex 0 \
-    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
-    --Approvers.0.SignComponents.0.ComponentValue yDxMjUyKQDN7EkUuO4zjEBpGXvHEACSA \
-    --Approvers.0.SignComponents.0.ComponentPage 1 \
-    --Approvers.0.SignComponents.0.ComponentPosX 160 \
-    --Approvers.0.SignComponents.0.ComponentHeight 100 \
-    --Approvers.1.ApproverType 1 \
-    --Approvers.1.NotifyType NONE \
-    --Approvers.1.ApproverName 李四 \
-    --Approvers.1.ApproverMobile 15100000000 \
-    --Approvers.1.PreReadTime 10 \
-    --Approvers.1.SignComponents.0.ComponentPosY 260 \
-    --Approvers.1.SignComponents.0.ComponentWidth 100 \
-    --Approvers.1.SignComponents.0.FileIndex 0 \
-    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
-    --Approvers.1.SignComponents.0.ComponentPage 1 \
-    --Approvers.1.SignComponents.0.ComponentPosX 160 \
-    --Approvers.1.SignComponents.0.ComponentHeight 100 \
-    --FileIds yDwqYUUckp39gkfxUu14JJPxaTyM1ltq
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FlowId": "yDwqoUUckp3bkzgpUuPTimaSDVz2ukqv",
-        "PreviewUrl": "",
-        "RequestId": "s1692183667030779528"
     }
 }
 ```
@@ -646,7 +646,7 @@ Output:
 
 **Example 10: 处方单场景**
 
-1. 处方单场景的"典子谦"医生需要自动签(典子谦参与人的ApproverType设置成7, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)
+1. 处方单场景的"典子谦"医生需要“授权签”(典子谦参与人的ApproverType设置成7, 并且AutoSignScene设置成E_PRESCRIPTION_AUTO_SIGN表明是处方单场景)
 2. 处方单的患者张三需要手工签署(张三参与人的ApproverType设置成1)
 3. 双方签署方的签署控件都是通过关键字生成(典子谦签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字"处方医生", 张三签署区GenerateMode设置成KEYWORD并且ComponentId设置成关键字"患者签名" )
 4. 不给合同签署方发送短信  (NotifyType设置成NONE)

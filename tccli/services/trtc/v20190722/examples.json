@@ -16,6 +16,14 @@
         "title": "发送播报文本"
       }
     ],
+    "CreateAudioModerationSync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAudioModerationSync\n<公共请求参数>\n\n{\n    \"Sdkappid\": 140034324,\n    \"DataId\": \"sdyfasdf\",\n    \"FileFormat\": \"wav\",\n    \"FileName\": \"testaudio.wav\",\n    \"FileUrl\": \"https://sa201-oss-ugc-center.oss-cn-beijing.aliyuncs.com/hangtest/pkxkj22x902jILSIO28shxca/%E7%AC%AC%E4%B8%80%E6%89%B9%E6%B5%8B%E8%AF%95/%E9%9F%B3%E9%A2%91%E4%B8%8B%E8%BD%BD/29.wav\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Audio\": \"\",\n        \"AudioText\": \"求真务实，充分体现了马克思列宁主义，毛泽东思想，邓小平理论，三个代表重要思想和科学发展观的历史逻辑和内在联系。\",\n        \"CheckDetail\": [\n            {\n                \"Desc\": \"涉政；核心领导\",\n                \"Keywords\": [\n                    \"毛泽东思想\"\n                ],\n                \"Label\": \"Polity\",\n                \"LibName\": \"\",\n                \"Scene\": \"\",\n                \"Score\": 100,\n                \"Severity\": 0,\n                \"SeverityDesc\": \"\",\n                \"SubLabel\": \"politics_coreleader\",\n                \"Suggest\": 2\n            }\n        ],\n        \"DataId\": \"sdyfasdf\",\n        \"FileName\": \"testaudio.wav\",\n        \"Label\": \"Polity\",\n        \"MediaType\": 1,\n        \"Rate\": 100,\n        \"SubLabel\": \"politics_coreleader\",\n        \"Suggest\": 2,\n        \"TaskId\": \"636545579459027127\",\n        \"RequestId\": \"0edb21fb-a9ac-4b0d-b12a-adf728d26980\"\n    }\n}",
+        "title": "短音频内容理解同步接口"
+      }
+    ],
     "CreateCloudModeration": [
       {
         "document": "启动SdkAppId 为 200806 指定房间（房间号为150）的AI 内容理解任务\n\n房间空闲等待时间设置为30秒。\n送审模式设置为，每隔5秒，送审一张视频截帧图片到ace审核商\n音频每隔15秒，送审一个15s长的音频到ace审核\n审核结果通过配置的回调url触达",

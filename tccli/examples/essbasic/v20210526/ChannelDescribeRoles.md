@@ -258,7 +258,7 @@ Output:
                                 "IsChecked": true,
                                 "Children": [
                                     {
-                                        "Name": "企业自动签署",
+                                        "Name": "企业授权签署",
                                         "Key": "CompanyAutoSign",
                                         "Type": 1,
                                         "Hide": 0,

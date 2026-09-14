@@ -19,31 +19,118 @@ Output:
                 "Messages": [
                     {
                         "AISpeak": {
-                            "CanBeInterrupted": true,
+                            "CanBeInterrupted": false,
                             "LatencyMetrics": {
                                 "AsrLatency": -1,
-                                "LLMFirstTokenLatency": 29,
-                                "TTSLatency": 295,
-                                "TotalLatency": 329
+                                "LLMFirstTokenLatency": 41,
+                                "TTSLatency": 255,
+                                "TotalLatency": 306
                             },
-                            "SpokenText": "xiaopan为您服务，售前请说 123，售后请说 456",
+                            "SpokenText": "您好，我是腾讯汽车的，这边儿看到您在关注腾讯比亚迪车型，刚好这两天店里有试驾活动，您看这周或下周有空来门店试驾详谈吗？",
                             "SpokenType": "Script"
                         },
-                        "Timestamp": 1774931367634
+                        "Timestamp": 1784166669089
                     }
                 ],
                 "Paths": [
                     {
-                        "NodeName": "对话 1",
+                        "NodeName": "开场白",
                         "NodeType": "DIALOGUE",
-                        "Timestamp": 1774931367607
+                        "Timestamp": 1784166668940
                     }
                 ],
-                "RoundId": "6418f9b0-fbbc-4063-8b6f-ec11f7599c14",
+                "RoundId": "95bcce08-5c94-43c3-8ed5-e678db41d9bf",
                 "RoundIndex": 1
+            },
+            {
+                "Messages": [
+                    {
+                        "Timestamp": 1784166685178,
+                        "UserReply": {
+                            "ASRTranscript": "嗯，好的",
+                            "BranchType": "Intent",
+                            "ExtractedSlots": "[{\"TagName\":\"city\",\"TagValue\":\"深圳\",\"TagType\":3}]",
+                            "MatchedIntent": "客户给出了方便看车的时间或者同意到店看车"
+                        }
+                    },
+                    {
+                        "AISpeak": {
+                            "CanBeInterrupted": true,
+                            "LatencyMetrics": {
+                                "AsrLatency": 727,
+                                "LLMFirstTokenLatency": 954,
+                                "TTSLatency": 258,
+                                "TotalLatency": 2127
+                            },
+                            "SpokenText": "好的，看到您是想在深圳看车，我们让这边儿的门店和您联系，可以吧？",
+                            "SpokenType": "Other"
+                        },
+                        "Timestamp": 1784166687141
+                    }
+                ],
+                "Paths": [
+                    {
+                        "NodeName": "开场白",
+                        "NodeType": "DIALOGUE",
+                        "Timestamp": 1784166685942
+                    },
+                    {
+                        "NodeName": "确认方便的时间与城市",
+                        "NodeType": "DIALOGUE",
+                        "Timestamp": 1784166685942
+                    },
+                    {
+                        "APICall": {
+                            "Async": false,
+                            "Attempts": [
+                                {
+                                    "CostMS": 3000,
+                                    "ErrorType": "timeout",
+                                    "Index": 1,
+                                    "Request": {
+                                        "Headers": "{\"Authorization\":\"***456789\",\"Content-Type\":\"application/json\"}",
+                                        "Method": "POST",
+                                        "Params": "{\"city\":\"深圳\"}",
+                                        "URL": "https://example.com/api/store/assign"
+                                    },
+                                    "Status": "unreachable",
+                                    "Summary": "timeout：context deadline exceeded",
+                                    "Timestamp": 1784166687200
+                                },
+                                {
+                                    "CostMS": 155,
+                                    "Index": 2,
+                                    "Request": {
+                                        "Headers": "{\"Authorization\":\"***456789\",\"Content-Type\":\"application/json\"}",
+                                        "Method": "POST",
+                                        "Params": "{\"city\":\"深圳\"}",
+                                        "URL": "https://example.com/api/store/assign"
+                                    },
+                                    "Response": {
+                                        "Body": "{\"code\":0,\"data\":{\"storeName\":\"深圳南山店\"}}",
+                                        "Headers": "{\"Content-Type\":\"application/json\"}",
+                                        "StatusCode": 200
+                                    },
+                                    "Status": "success",
+                                    "StatusCode": 200,
+                                    "Timestamp": 1784166690300
+                                }
+                            ],
+                            "CostMS": 3155,
+                            "RetryCount": 1,
+                            "Status": "success",
+                            "StatusCode": 200
+                        },
+                        "NodeName": "分配门店",
+                        "NodeType": "API_CALL",
+                        "Timestamp": 1784166687190
+                    }
+                ],
+                "RoundId": "1522ea24-5102-475a-9a5e-f08ecaa07cc8",
+                "RoundIndex": 2
             }
         ],
-        "RequestId": "bb532c51-cfa4-41f3-a9e9-bd8506ec26f1"
+        "RequestId": "de6e0a7d-0723-4e79-86ea-1faf25e5fe69"
     }
 }
 ```

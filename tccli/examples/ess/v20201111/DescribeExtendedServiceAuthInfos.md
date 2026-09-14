@@ -1,4 +1,29 @@
-**Example 1: 查询全部扩展服务信息**
+**Example 1: 查询不支持的特定扩展服务**
+
+传入了不支持的特定扩展服务，返回错误
+
+Input: 
+
+```
+tccli ess DescribeExtendedServiceAuthInfos --cli-unfold-argument  \
+    --Operator.UserId yDR*****oimj \
+    --ExtendServiceType TEST
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "OperationDenied",
+            "Message": "不支持的扩展类型"
+        },
+        "RequestId": "s1**********72"
+    }
+}
+```
+
+**Example 2: 查询全部扩展服务信息**
 
 查询全部支持的扩展服务开通和授权信息
 
@@ -30,7 +55,7 @@ Output:
                         "UserId": "yDRC*********g0vjoimj"
                     }
                 ],
-                "Name": "企业自动签（自动签署）",
+                "Name": "企业**签（**签署）",
                 "OperateOn": 1681289048,
                 "OperatorUserId": "yDRC*********g0vjoimj",
                 "Status": "ENABLE",
@@ -87,7 +112,7 @@ Output:
 }
 ```
 
-**Example 2: 查询特定的扩展服务信息**
+**Example 3: 查询特定的扩展服务信息**
 
 查询特定的扩展服务开通和授权信息
 
@@ -119,7 +144,7 @@ Output:
                         "UserId": "yDR*****oimj"
                     }
                 ],
-                "Name": "企业自动签（自动签署）",
+                "Name": "企业**签（**签署）",
                 "OperateOn": 1681289048,
                 "OperatorUserId": "yDR*****oimj",
                 "Status": "ENABLE",
@@ -127,31 +152,6 @@ Output:
             }
         ],
         "RequestId": "s1*****90"
-    }
-}
-```
-
-**Example 3: 查询不支持的特定扩展服务**
-
-传入了不支持的特定扩展服务，返回错误
-
-Input: 
-
-```
-tccli ess DescribeExtendedServiceAuthInfos --cli-unfold-argument  \
-    --Operator.UserId yDR*****oimj \
-    --ExtendServiceType TEST
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "OperationDenied",
-            "Message": "不支持的扩展类型"
-        },
-        "RequestId": "s1**********72"
     }
 }
 ```

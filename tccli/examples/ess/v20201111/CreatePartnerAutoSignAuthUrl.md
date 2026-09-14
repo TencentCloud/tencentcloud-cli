@@ -1,4 +1,4 @@
-**Example 1: 创建他方自动签授权链接-他方授权**
+**Example 1: 创建他方“授权签”授权链接-他方授权**
 
 他方授权给我方（AuthToMe被设置成true）
 
@@ -24,9 +24,9 @@ Output:
 }
 ```
 
-**Example 2: 创建他方自动签授权链接-我方授权**
+**Example 2: 创建他方“授权签”授权链接-我方授权**
 
-创建他方自动签授权链接（AuthToMe设置成false）
+创建他方“授权签”授权链接（AuthToMe设置成false）
 
 
 Input: 
