@@ -1045,7 +1045,7 @@ def doDescribeExternalNodeSupportConfig(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateClusterMaintenanceWindowAndExclusions(args, parsed_globals):
+def doDeleteEdgeClusterInstances(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1079,11 +1079,11 @@ def doCreateClusterMaintenanceWindowAndExclusions(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateClusterMaintenanceWindowAndExclusionsRequest()
+    model = models.DeleteEdgeClusterInstancesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateClusterMaintenanceWindowAndExclusions(model)
+        rsp = client.DeleteEdgeClusterInstances(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2224,6 +2224,63 @@ def doDeleteClusterVirtualNode(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteClusterVirtualNode(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDeleteClusterCLSResources(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DeleteClusterCLSResourcesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DeleteClusterCLSResources(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6403,7 +6460,7 @@ def doDetachApplicationRole(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteEdgeClusterInstances(args, parsed_globals):
+def doCreateClusterMaintenanceWindowAndExclusions(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -6437,11 +6494,11 @@ def doDeleteEdgeClusterInstances(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteEdgeClusterInstancesRequest()
+    model = models.CreateClusterMaintenanceWindowAndExclusionsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteEdgeClusterInstances(model)
+        rsp = client.CreateClusterMaintenanceWindowAndExclusions(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -7315,7 +7372,7 @@ def doDeleteGlobalMaintenanceWindowAndExclusion(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAddonValues(args, parsed_globals):
+def doDeleteTKEEdgeCluster(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -7349,11 +7406,11 @@ def doDescribeAddonValues(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAddonValuesRequest()
+    model = models.DeleteTKEEdgeClusterRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAddonValues(model)
+        rsp = client.DeleteTKEEdgeCluster(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12217,7 +12274,7 @@ def doDescribeECMInstances(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteTKEEdgeCluster(args, parsed_globals):
+def doDescribeAddonValues(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -12251,11 +12308,11 @@ def doDeleteTKEEdgeCluster(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.TkeClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteTKEEdgeClusterRequest()
+    model = models.DescribeAddonValuesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteTKEEdgeCluster(model)
+        rsp = client.DescribeAddonValues(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -17606,7 +17663,7 @@ ACTION_MAP = {
     "DeleteCluster": doDeleteCluster,
     "UpdateEdgeClusterVersion": doUpdateEdgeClusterVersion,
     "DescribeExternalNodeSupportConfig": doDescribeExternalNodeSupportConfig,
-    "CreateClusterMaintenanceWindowAndExclusions": doCreateClusterMaintenanceWindowAndExclusions,
+    "DeleteEdgeClusterInstances": doDeleteEdgeClusterInstances,
     "DescribeTKEEdgeExternalKubeconfig": doDescribeTKEEdgeExternalKubeconfig,
     "SetNodePoolNodeProtection": doSetNodePoolNodeProtection,
     "DescribeEKSContainerInstanceEvent": doDescribeEKSContainerInstanceEvent,
@@ -17627,6 +17684,7 @@ ACTION_MAP = {
     "DescribeReservedInstances": doDescribeReservedInstances,
     "ModifyHealthCheckPolicy": doModifyHealthCheckPolicy,
     "DeleteClusterVirtualNode": doDeleteClusterVirtualNode,
+    "DeleteClusterCLSResources": doDeleteClusterCLSResources,
     "DeleteBackupStorageLocation": doDeleteBackupStorageLocation,
     "ModifyK8sWorkload": doModifyK8sWorkload,
     "DescribeAvailableTKEEdgeVersion": doDescribeAvailableTKEEdgeVersion,
@@ -17700,7 +17758,7 @@ ACTION_MAP = {
     "ForwardTKEEdgeApplicationRequestV3": doForwardTKEEdgeApplicationRequestV3,
     "DescribeBatchModifyTagsStatus": doDescribeBatchModifyTagsStatus,
     "DetachApplicationRole": doDetachApplicationRole,
-    "DeleteEdgeClusterInstances": doDeleteEdgeClusterInstances,
+    "CreateClusterMaintenanceWindowAndExclusions": doCreateClusterMaintenanceWindowAndExclusions,
     "DescribeK8sWorkloadPods": doDescribeK8sWorkloadPods,
     "AddExistedInstances": doAddExistedInstances,
     "DescribeK8sWorkload": doDescribeK8sWorkload,
@@ -17716,7 +17774,7 @@ ACTION_MAP = {
     "UpgradeClusterRelease": doUpgradeClusterRelease,
     "DescribeClusterControllers": doDescribeClusterControllers,
     "DeleteGlobalMaintenanceWindowAndExclusion": doDeleteGlobalMaintenanceWindowAndExclusion,
-    "DescribeAddonValues": doDescribeAddonValues,
+    "DeleteTKEEdgeCluster": doDeleteTKEEdgeCluster,
     "AddClusterCIDR": doAddClusterCIDR,
     "CreateImageCache": doCreateImageCache,
     "DeleteClusterVirtualNodePool": doDeleteClusterVirtualNodePool,
@@ -17802,7 +17860,7 @@ ACTION_MAP = {
     "DescribePrometheusTempSync": doDescribePrometheusTempSync,
     "DescribePodsBySpec": doDescribePodsBySpec,
     "DescribeECMInstances": doDescribeECMInstances,
-    "DeleteTKEEdgeCluster": doDeleteTKEEdgeCluster,
+    "DescribeAddonValues": doDescribeAddonValues,
     "GetMostSuitableImageCache": doGetMostSuitableImageCache,
     "DescribeExternalNodePools": doDescribeExternalNodePools,
     "DescribeOpenPolicyList": doDescribeOpenPolicyList,

@@ -988,6 +988,22 @@
     "serviceShortName": "postgres"
   },
   "objects": {
+    "AIRelatedStatus": {
+      "document": "AI相关状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预热实例账号名称</p>",
+          "example": "root",
+          "member": "string",
+          "name": "WarmPoolAccount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AccountInfo": {
       "document": "账户信息",
       "members": [
@@ -5268,6 +5284,26 @@
           "example": "active",
           "member": "string",
           "name": "DBRestAccessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI服务相关状态</p>",
+          "example": "无",
+          "member": "AIRelatedStatus",
+          "name": "AIRelatedStatus",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCB多租户场景租户类型</p><p>枚举值：</p><ul><li>tenant： 多租户共享</li><li>instance： 独享版实例</li></ul>",
+          "example": "tenant",
+          "member": "string",
+          "name": "DBTenantType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -89,7 +89,7 @@ Output:
     "Response": {
         "Error": {
             "Code": "FailedOperation",
-            "Message": "用户未开通自动签"
+            "Message": "用户未开通授权签"
         },
         "RequestId": "s169***148251031"
     }

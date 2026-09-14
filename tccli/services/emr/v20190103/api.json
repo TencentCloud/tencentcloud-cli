@@ -14763,7 +14763,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>导出配置参数</p>",
+          "document": "<p>导出配置参数 base64格式</p>",
           "example": "fhjkajd",
           "member": "string",
           "name": "Properties",

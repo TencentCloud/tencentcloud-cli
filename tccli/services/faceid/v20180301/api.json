@@ -12135,8 +12135,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>回调唯一ID</p>",
+          "example": "58",
           "member": "int64",
           "name": "WebhookId",
           "output_required": false,
@@ -12146,8 +12146,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>回调地址名称</p>",
+          "example": "WebhooK-03",
           "member": "string",
           "name": "WebhookName",
           "output_required": false,
@@ -12157,8 +12157,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>回调枚举场景</p>",
+          "example": "AML_SCREENING_",
           "member": "string",
           "name": "Scene",
           "output_required": false,
@@ -12168,8 +12168,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>回调地址，必须HTTPS</p>",
+          "example": "https://api.gongju.dev/api/webhook/rec/f98vxlev",
           "member": "string",
           "name": "WebhookURL",
           "output_required": false,
@@ -12179,8 +12179,8 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>添加时间</p><p>参数格式：格式示例：2026-09-09 14:33:41</p>",
+          "example": "2026-09-09 14:33:41",
           "member": "string",
           "name": "AddTime",
           "output_required": false,
@@ -12190,14 +12190,36 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>更新时间</p><p>参数格式：格式示例：2026-09-09 14:33:41</p>",
+          "example": "2026-09-09 14:33:41",
           "member": "string",
           "name": "ModTime",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调请求秘钥</p>",
+          "example": "asdasdsdsdsdsd",
+          "member": "string",
+          "name": "SignatureKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存在回调接口秘钥</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasSignatureKey",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

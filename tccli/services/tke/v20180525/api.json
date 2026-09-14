@@ -343,6 +343,13 @@
       "output": "DeleteClusterAsGroupsResponse",
       "status": "online"
     },
+    "DeleteClusterCLSResources": {
+      "document": "清理集群CLS资源",
+      "input": "DeleteClusterCLSResourcesRequest",
+      "name": "删除集群CLS资源",
+      "output": "DeleteClusterCLSResourcesResponse",
+      "status": "online"
+    },
     "DeleteClusterEndpoint": {
       "document": "删除集群访问端口",
       "input": "DeleteClusterEndpointRequest",
@@ -5989,7 +5996,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志采集配置的json表达",
+          "document": "<p>日志采集配置的json表达</p>",
           "example": "参考 https://cloud.tencent.com/document/product/457/48425",
           "member": "string",
           "name": "LogConfig",
@@ -5998,7 +6005,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-kaftesta",
           "member": "string",
           "name": "ClusterId",
@@ -6007,7 +6014,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集ID",
+          "document": "<p>CLS日志集ID</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "LogsetId",
@@ -6016,10 +6023,19 @@
         },
         {
           "disabled": false,
-          "document": "当前集群类型支持tke（标准集群）、eks（serverless集群）",
+          "document": "<p>当前集群类型支持tke（标准集群）、eks（serverless集群）</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属产品标识</p>",
+          "example": "dlc",
+          "member": "string",
+          "name": "ProductName",
           "required": false,
           "type": "string"
         }
@@ -7656,7 +7672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-kaftesta",
           "member": "string",
           "name": "ClusterId",
@@ -7665,7 +7681,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集配置的json表达",
+          "document": "<p>日志采集配置的json表达</p>",
           "example": "参考https://cloud.tencent.com/document/product/614/61244#18392ce7-9600-4f59-a62a-148e12335a37",
           "member": "string",
           "name": "LogConfig",
@@ -7674,10 +7690,19 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属产品标识</p>",
+          "example": "dlc",
+          "member": "string",
+          "name": "ProductName",
           "required": false,
           "type": "string"
         }
@@ -7689,7 +7714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志采集topicid",
+          "document": "<p>日志采集topicid</p>",
           "example": "tas89a94-d952-410a-a393-9224de64test",
           "member": "string",
           "name": "TopicId",
@@ -9052,6 +9077,42 @@
     },
     "DeleteClusterAsGroupsResponse": {
       "document": "DeleteClusterAsGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterCLSResourcesRequest": {
+      "document": "DeleteClusterCLSResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前集群类型支持tke（标准集群）、eks（serverless集群）",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteClusterCLSResourcesResponse": {
+      "document": "DeleteClusterCLSResources返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

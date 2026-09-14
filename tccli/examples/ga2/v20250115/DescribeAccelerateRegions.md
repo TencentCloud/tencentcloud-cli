@@ -18,6 +18,7 @@ Output:
                 "Region": "ap-beijing",
                 "IsChinaMainland": 1,
                 "AreaName": "中国大陆",
+                "IsTencentRegion": 0,
                 "SupportIspType": [
                     "CMCC"
                 ]
