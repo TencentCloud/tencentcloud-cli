@@ -4963,6 +4963,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>",
+          "example": "0.85",
+          "member": "float",
+          "name": "FullDeleteCapacityUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "FullDeleteMinTtl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "ExpireDeleteTtl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

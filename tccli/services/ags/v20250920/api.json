@@ -357,13 +357,6 @@
       "output": "ModifySessionSpaceResponse",
       "status": "online"
     },
-    "ModifySessionTitle": {
-      "document": "会话标题编辑",
-      "input": "ModifySessionTitleRequest",
-      "name": "会话标题编辑",
-      "output": "ModifySessionTitleResponse",
-      "status": "online"
-    },
     "PauseSandboxInstance": {
       "document": "暂停沙箱实例",
       "input": "PauseSandboxInstanceRequest",
@@ -806,7 +799,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>非管控面（envd）的访问Token</p>",
+          "document": "<p>除管控面envd端口(49983)以外端口的访问Token</p>",
           "example": "f0XXXXX077d7d61862e0f144568bd2c207cbbbbe94eb5ef919f884dc614796ab",
           "member": "string",
           "name": "TrafficToken",
@@ -5793,79 +5786,6 @@
           "member": "SessionSpaceInfo",
           "name": "SessionSpace",
           "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifySessionTitleRequest": {
-      "document": "ModifySessionTitle请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>会话所属空间 ID。</p>",
-          "example": "space-198577ac-324e-4e1b-bfda-f75a2365c9df",
-          "member": "string",
-          "name": "SpaceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>用户 ID。可通过调用方业务系统接口获取。</p>",
-          "example": "customer-32874915",
-          "member": "string",
-          "name": "UserId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>会话 ID。可通过 CreateSession 或 DescribeSessions 接口获取。</p>",
-          "example": "session-order-assistance-20260817-0001",
-          "member": "string",
-          "name": "SessionId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>会话标题，最大长度 255 字符。</p>",
-          "example": "Order refund assistance after update",
-          "member": "string",
-          "name": "Title",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>Agent ID。可选。</p>",
-          "example": "rocz-test-agent-0706v1",
-          "member": "string",
-          "name": "AgentId",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifySessionTitleResponse": {
-      "document": "ModifySessionTitle返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>会话信息概要</p>",
-          "example": "无",
-          "member": "SessionInfo",
-          "name": "Session",
-          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },

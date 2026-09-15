@@ -1,4 +1,47 @@
-**Example 1: 查询套餐配置**
+**Example 1: 查询套餐时指定镜像**
+
+查询套餐时指定镜像
+
+Input: 
+
+```
+tccli lighthouse DescribeBundleConfigs --cli-unfold-argument  \
+    --BundleIds bundle_starter_mc_med2_01 \
+    --BlueprintId lhbp-etg1zbmm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BundleConfigSet": [
+            {
+                "BandwidthType": "BANDWIDTH",
+                "BundleDisplayLabel": "NORMAL",
+                "BundleId": "bundle_starter_mc_med2_01",
+                "BundleSalesState": "SOLD_OUT",
+                "BundleType": "STARTER_BUNDLE",
+                "BundleTypeDescription": "入门型",
+                "BundleTypePriority": 20,
+                "CPU": 2,
+                "InternetChargeType": "TRAFFIC_POSTPAID_BY_HOUR",
+                "InternetMaxBandwidthOut": 3,
+                "Memory": 2,
+                "MonthlyTraffic": 200,
+                "SupportLinuxUnixPlatform": true,
+                "SupportWindowsPlatform": true,
+                "SystemDiskSize": 40,
+                "SystemDiskType": "CLOUD_SSD",
+                "TrafficUnlimited": false
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "066f45e2-89eb-4d4a-b438-1f8e34c014a8"
+    }
+}
+```
+
+**Example 2: 查询套餐配置**
 
 查询套餐配置
 

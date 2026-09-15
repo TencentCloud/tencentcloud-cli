@@ -3260,6 +3260,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>markdown 原生内容的模型提供方详情</p>",
+          "example": "# 模型提供方 - 杭州深度求索人工智能基础技术研究有限公司",
+          "member": "string",
+          "name": "ProviderIntroduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>",
           "example": "online",
           "member": "string",

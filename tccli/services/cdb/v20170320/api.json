@@ -4528,7 +4528,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本地专属集群ID",
+          "document": "<p>本地专属集群ID</p>",
           "example": "cluster_cdc_test",
           "member": "string",
           "name": "CdcId",
@@ -4538,7 +4538,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群所在可用区ID",
+          "document": "<p>本地专属集群所在可用区ID</p>",
           "example": "100006",
           "member": "uint64",
           "name": "ZoneId",
@@ -4548,7 +4548,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群所在地域",
+          "document": "<p>本地专属集群所在地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Zone",
@@ -4558,7 +4558,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群名称",
+          "document": "<p>本地专属集群名称</p>",
           "example": "广州CDC测试",
           "member": "string",
           "name": "CdcName",
@@ -4568,7 +4568,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群是否对外售卖",
+          "document": "<p>本地专属集群是否对外售卖</p>",
           "example": "ON/OFF",
           "member": "string",
           "name": "Status",
@@ -4578,8 +4578,8 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群类型：\n0——金融围拢\n1——CDC",
-          "example": "1/0",
+          "document": "<p>本地专属集群类型：<br>0——金融围拢<br>1——CDC</p>",
+          "example": "1",
           "member": "uint64",
           "name": "ClusterType",
           "output_required": false,
@@ -4588,7 +4588,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群所在的Campus",
+          "document": "<p>本地专属集群所在的Campus</p>",
           "example": "468",
           "member": "uint64",
           "name": "CampusId",
@@ -4598,7 +4598,7 @@
         },
         {
           "disabled": false,
-          "document": "本地专属集群OSS售卖的设备类型",
+          "document": "<p>本地专属集群OSS售卖的设备类型</p>",
           "example": "VSELF5",
           "member": "string",
           "name": "DeviceClass",
@@ -4608,12 +4608,62 @@
         },
         {
           "disabled": false,
-          "document": "CDC集群在OSS映射的独享集群",
+          "document": "<p>CDC集群在OSS映射的独享集群</p>",
           "example": "cdc-test",
           "member": "string",
           "name": "ExclusterId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端设备类型</p>",
+          "example": "normal/common",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的cdc数据库类型</p><p>枚举值：</p><ul><li>z3： 本地盘</li><li>CLOUD_NATIVE_CLUSTER： 云盘版标准型</li></ul><p>默认值：CLOUD_NATIVE_CLUSTER</p>",
+          "example": "[\"CLOUD_NATIVE_CLUSTER\"]",
+          "member": "string",
+          "name": "SupportTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应的后端cdc集群id</p>",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterPlatform",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cdc支持的功能列表</p><p>枚举值：</p><ul><li>CreateRO： 支持购买RO只读实例</li><li>CreateProxy： 支持购买Proxy</li></ul>",
+          "example": "[\"CreateRO\"]",
+          "member": "string",
+          "name": "SupportActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的磁盘类型</p><p>枚举值：</p><ul><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul><p>如果是云盘版类型cdc，需要使用该值定义的可选磁盘列表</p>",
+          "example": "[\"CLOUD_PREMIUM\"]",
+          "member": "string",
+          "name": "SupportDiskTypeList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

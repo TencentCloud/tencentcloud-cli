@@ -113,7 +113,7 @@
     "DescribeAddressPoolList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressPools\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"PoolName\",\n            \"Value\": [\n                \"gtm-dnspod\"\n            ],\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressPoolList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"PoolName\",\n            \"Value\": [\n                \"gtm-dnspod\"\n            ],\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"AddressPoolSet\": [\n            {\n                \"PoolId\": 1,\n                \"PoolName\": \"gtm-dnspod\",\n                \"TrafficStrategy\": \"WEIGHT\",\n                \"MonitorId\": 1,\n                \"Status\": \"WARN\",\n                \"AddressNum\": 0,\n                \"MonitorGroupNum\": 0,\n                \"MonitorTaskNum\": 0,\n                \"AddressSet\": [\n                    {\n                        \"AddressId\": 1,\n                        \"Addr\": \"1.1.1.2\",\n                        \"Location\": \"上海电信\",\n                        \"Status\": \"UNMONITORED\",\n                        \"IsEnable\": \"ENABLED\",\n                        \"Weight\": 1,\n                        \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                        \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n                    }\n                ],\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "地址池列表"
       }
@@ -145,7 +145,7 @@
     "DescribeDnsLineList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsLines\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\"\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsLineList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\"\n}",
         "output": "{\n    \"Response\": {\n        \"DnsLineSet\": [\n            {\n                \"DnsLineId\": 1,\n                \"Parent\": 1,\n                \"LineName\": \"默认\",\n                \"LineId\": \"1\",\n                \"Useful\": true,\n                \"SubGroup\": 1,\n                \"LinePackage\": 1,\n                \"Weight\": 1\n            }\n        ],\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "线路列表"
       }
@@ -177,7 +177,7 @@
     "DescribeMonitorDetail": [
       {
         "document": "查询监控器详情",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHealthyCheckRule\n<公共请求参数>\n\n{\n    \"MonitorId\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMonitorDetail\n<公共请求参数>\n\n{\n    \"MonitorId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"MonitorDetail\": {\n            \"MonitorId\": 1,\n            \"MonitorName\": \"测试监控器\",\n            \"Uin\": \"10012894645\",\n            \"DetectorGroupIds\": [\n                1\n            ],\n            \"CheckProtocol\": \"HTTP\",\n            \"CheckInterval\": 300,\n            \"PingNum\": 20,\n            \"TcpPort\": 80,\n            \"Host\": \"gtmtest.com\",\n            \"Path\": \"/path\",\n            \"ReturnCodeThreshold\": 500,\n            \"EnableRedirect\": \"DISABLED\",\n            \"EnableSni\": \"DISABLED\",\n            \"PacketLossRate\": 50,\n            \"Timeout\": 15,\n            \"FailTimes\": 1,\n            \"FailRate\": 100,\n            \"CreatedOn\": \"2023-01-1 11:11:11\",\n            \"UpdatedOn\": \"2023-01-1 11:11:11\",\n            \"DetectorStyle\": \"INTERNAL\",\n            \"DetectNum\": 0,\n            \"ContinuePeriod\": 1\n        },\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": " 查询监控器详情"
       }
@@ -209,7 +209,7 @@
     "DescribeStrategyList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"StrategyName\",\n            \"Value\": [\n                \"test-strategy\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: igtm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStrategyList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gtm-dsdd123xdo\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"StrategyName\",\n            \"Value\": [\n                \"test-strategy\"\n            ],\n            \"Fuzzy\": true\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"StrategySet\": [\n            {\n                \"InstanceId\": \"gtm-dsdd123xdo\",\n                \"StrategyId\": 1,\n                \"Name\": \"test-strategy\",\n                \"Source\": [\n                    {\n                        \"DnsLineId\": 1,\n                        \"Name\": \"默认\"\n                    }\n                ],\n                \"Status\": \"WARN\",\n                \"ActivePoolType\": \"MAIN\",\n                \"ActiveTrafficStrategy\": \"WEIGHT\",\n                \"MonitorNum\": 1,\n                \"KeepDomainRecords\": \"DISABLED\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdatedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"8f0325a8-4dd6-4fcb-8f6b-c45e587e51b0\"\n    }\n}",
         "title": "策略列表"
       }

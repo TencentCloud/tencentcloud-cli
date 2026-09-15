@@ -5776,7 +5776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
+          "document": "<p>应用ID<br>若要操作共享知识库，传KnowledgeBizId</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "BotBizId",
@@ -5785,7 +5785,7 @@
         },
         {
           "disabled": false,
-          "document": "问题",
+          "document": "<p>问题</p>",
           "example": "你是谁",
           "member": "string",
           "name": "Question",
@@ -5794,7 +5794,7 @@
         },
         {
           "disabled": false,
-          "document": "答案",
+          "document": "<p>答案</p>",
           "example": "我是AI小助手",
           "member": "string",
           "name": "Answer",
@@ -5803,7 +5803,7 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围 1：全部，2：按条件",
+          "document": "<p>标签适用范围 1：全部，2：按条件</p>",
           "example": "1",
           "member": "uint64",
           "name": "AttrRange",
@@ -5812,7 +5812,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数",
+          "document": "<p>自定义参数</p>",
           "example": "{\"key\":\"CustomParam\"}",
           "member": "string",
           "name": "CustomParam",
@@ -5821,7 +5821,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -5830,7 +5830,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -5839,7 +5839,7 @@
         },
         {
           "disabled": false,
-          "document": "标签引用",
+          "document": "<p>标签引用</p>",
           "example": "无",
           "member": "AttrLabelRefer",
           "name": "AttrLabels",
@@ -5848,7 +5848,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "<p>文档ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "DocBizId",
@@ -5857,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID",
+          "document": "<p>分类ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "CateBizId",
@@ -5866,7 +5866,7 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.",
+          "document": "<p>有效开始时间，单位是unix时间戳。默认值为0，表示问答为永久有效.</p>",
           "example": "1766038604",
           "member": "string",
           "name": "ExpireStart",
@@ -5875,7 +5875,7 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，unix时间戳，0代表永久有效",
+          "document": "<p>有效结束时间，unix时间戳，0代表永久有效</p>",
           "example": "1766038604",
           "member": "string",
           "name": "ExpireEnd",
@@ -5884,7 +5884,7 @@
         },
         {
           "disabled": false,
-          "document": "相似问内容",
+          "document": "<p>相似问内容</p>",
           "example": "[\"ques\"]",
           "member": "string",
           "name": "SimilarQuestions",
@@ -5893,7 +5893,7 @@
         },
         {
           "disabled": false,
-          "document": "问题描述",
+          "document": "<p>问题描述</p>",
           "example": "desc",
           "member": "string",
           "name": "QuestionDesc",
@@ -5902,7 +5902,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效\n默认值：应用内默认知识库为2，共享知识库为4。",
+          "document": "<p>问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效<br>默认值：应用内默认知识库为2，共享知识库为4。</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -5917,7 +5917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "问答ID",
+          "document": "<p>问答ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "QaBizId",
@@ -8590,7 +8590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "QA业务ID\n",
+          "document": "<p>QA业务ID</p>",
           "example": "1903999940055016768",
           "member": "string",
           "name": "QaBizId",
@@ -8599,7 +8599,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "1887842680054218000",
           "member": "string",
           "name": "BotBizId",
@@ -8608,7 +8608,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -8617,7 +8617,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -8632,7 +8632,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "QA业务ID\n",
+          "document": "<p>QA业务ID</p>",
           "example": "1903999940055016768",
           "member": "string",
           "name": "QaBizId",
@@ -8642,7 +8642,7 @@
         },
         {
           "disabled": false,
-          "document": "问题\n",
+          "document": "<p>问题</p>",
           "example": "哪吒2",
           "member": "string",
           "name": "Question",
@@ -8652,7 +8652,7 @@
         },
         {
           "disabled": false,
-          "document": "答案\n",
+          "document": "<p>答案</p>",
           "example": "《哪吒之魔童闹海》亦称《哪吒贰之魔童闹海》，简称《哪吒2》",
           "member": "string",
           "name": "Answer",
@@ -8662,7 +8662,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数",
+          "document": "<p>自定义参数</p>",
           "example": "{\"电影\":\"哪吒\"}",
           "member": "string",
           "name": "CustomParam",
@@ -8672,7 +8672,7 @@
         },
         {
           "disabled": false,
-          "document": "来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对",
+          "document": "<p>来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对</p>",
           "example": "3",
           "member": "uint64",
           "name": "Source",
@@ -8682,7 +8682,7 @@
         },
         {
           "disabled": false,
-          "document": "来源描述\n",
+          "document": "<p>来源描述</p>",
           "example": "手动录入",
           "member": "string",
           "name": "SourceDesc",
@@ -8692,7 +8692,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间\n",
+          "document": "<p>更新时间</p>",
           "example": "1742783938",
           "member": "string",
           "name": "UpdateTime",
@@ -8702,7 +8702,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 <br>1-未校验  2,4-导入完成  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败",
+          "document": "<p>状态 <br>1-未校验  2,4-导入完成  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8712,7 +8712,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述\n",
+          "document": "<p>状态描述</p>",
           "example": "导入完成",
           "member": "string",
           "name": "StatusDesc",
@@ -8722,7 +8722,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID\n",
+          "document": "<p>分类ID</p>",
           "example": "1887842680872108032",
           "member": "string",
           "name": "CateBizId",
@@ -8732,7 +8732,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许校验\n",
+          "document": "<p>是否允许校验</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowAccept",
@@ -8742,7 +8742,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许删除\n",
+          "document": "<p>是否允许删除</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowDelete",
@@ -8752,7 +8752,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许编辑\n",
+          "document": "<p>是否允许编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllowEdit",
@@ -8762,7 +8762,7 @@
         },
         {
           "disabled": false,
-          "document": "文档id\n",
+          "document": "<p>文档id</p>",
           "example": "0",
           "member": "string",
           "name": "DocBizId",
@@ -8772,7 +8772,7 @@
         },
         {
           "disabled": false,
-          "document": "文档名称\n",
+          "document": "<p>文档名称</p>",
           "example": "哪吒",
           "member": "string",
           "name": "FileName",
@@ -8782,7 +8782,7 @@
         },
         {
           "disabled": false,
-          "document": "文档类型\n",
+          "document": "<p>文档类型</p>",
           "example": "1",
           "member": "string",
           "name": "FileType",
@@ -8792,7 +8792,7 @@
         },
         {
           "disabled": false,
-          "document": "分片ID\n",
+          "document": "<p>分片ID</p>",
           "example": "0",
           "member": "string",
           "name": "SegmentBizId",
@@ -8802,7 +8802,7 @@
         },
         {
           "disabled": false,
-          "document": "分片内容",
+          "document": "<p>分片内容</p>",
           "example": "哪吒",
           "member": "string",
           "name": "PageContent",
@@ -8812,7 +8812,7 @@
         },
         {
           "disabled": false,
-          "document": "分片高亮内容",
+          "document": "<p>分片高亮内容</p>",
           "example": "无",
           "member": "Highlight",
           "name": "Highlights",
@@ -8822,7 +8822,7 @@
         },
         {
           "disabled": false,
-          "document": "分片内容\n",
+          "document": "<p>分片内容</p>",
           "example": "哪吒",
           "member": "string",
           "name": "OrgData",
@@ -8832,7 +8832,7 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围",
+          "document": "<p>标签适用范围</p>",
           "example": "1",
           "member": "int64",
           "name": "AttrRange",
@@ -8842,7 +8842,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "AttrLabel",
           "name": "AttrLabels",
@@ -8852,7 +8852,7 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，unix时间戳",
+          "document": "<p>有效开始时间，unix时间戳</p>",
           "example": "1742783934",
           "member": "string",
           "name": "ExpireStart",
@@ -8862,7 +8862,7 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，unix时间戳，0代表永久有效",
+          "document": "<p>有效结束时间，unix时间戳，0代表永久有效</p>",
           "example": "1742783934",
           "member": "string",
           "name": "ExpireEnd",
@@ -8872,7 +8872,7 @@
         },
         {
           "disabled": false,
-          "document": "相似问列表信息",
+          "document": "<p>相似问列表信息</p>",
           "example": "无",
           "member": "SimilarQuestion",
           "name": "SimilarQuestions",
@@ -8882,7 +8882,7 @@
         },
         {
           "disabled": false,
-          "document": "问题和答案文本审核状态 1审核失败",
+          "document": "<p>问题和答案文本审核状态 1审核失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "QaAuditStatus",
@@ -8892,7 +8892,7 @@
         },
         {
           "disabled": false,
-          "document": "答案中的图片审核状态 1审核失败",
+          "document": "<p>答案中的图片审核状态 1审核失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "PicAuditStatus",
@@ -8902,7 +8902,7 @@
         },
         {
           "disabled": false,
-          "document": "答案中的视频审核状态 1审核失败",
+          "document": "<p>答案中的视频审核状态 1审核失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "VideoAuditStatus",
@@ -8912,7 +8912,7 @@
         },
         {
           "disabled": false,
-          "document": "问题描述",
+          "document": "<p>问题描述</p>",
           "example": "哪吒之魔童闹海",
           "member": "string",
           "name": "QuestionDesc",
@@ -8922,7 +8922,7 @@
         },
         {
           "disabled": false,
-          "document": "问答是否停用，false:未停用，true已停用",
+          "document": "<p>问答是否停用，false:未停用，true已停用</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDisabled",
@@ -8932,7 +8932,7 @@
         },
         {
           "disabled": false,
-          "document": "从根节点开始的路径分类ID",
+          "document": "<p>从根节点开始的路径分类ID</p>",
           "example": "[\"135\",\"246\"]",
           "member": "string",
           "name": "CateBizIdPath",
@@ -8942,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "从根节点开始的路径分类名称",
+          "document": "<p>从根节点开始的路径分类名称</p>",
           "example": "[\"全部分类\",\"未分类\"]",
           "member": "string",
           "name": "CateNamePath",
@@ -8952,7 +8952,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效",
+          "document": "<p>问答生效域: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -8962,7 +8962,7 @@
         },
         {
           "disabled": false,
-          "document": "问答关联的文档生效域:1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效.\n若问答未关联文档，则该字段值同问答生效域",
+          "document": "<p>问答关联的文档生效域:1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效.<br>若问答未关联文档，则该字段值同问答生效域</p>",
           "example": "1",
           "member": "int64",
           "name": "DocEnableScope",
@@ -15147,6 +15147,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超过有效时间后的行为</p><p>枚举值：</p><ul><li>0： 不可被检索（到期后问答下架，默认值）</li><li>1： 仍可被检索（到期后问答不下架，标记时效范围）</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireBehavior",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18082,6 +18092,17 @@
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>top_k</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TopK",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -18734,7 +18755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID\n若要操作共享知识库，传KnowledgeBizId",
+          "document": "<p>应用ID<br>若要操作共享知识库，传KnowledgeBizId</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "BotBizId",
@@ -18743,7 +18764,7 @@
         },
         {
           "disabled": false,
-          "document": "问答ID",
+          "document": "<p>问答ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "QaBizId",
@@ -18752,7 +18773,7 @@
         },
         {
           "disabled": false,
-          "document": "问题",
+          "document": "<p>问题</p>",
           "example": "你是谁",
           "member": "string",
           "name": "Question",
@@ -18761,7 +18782,7 @@
         },
         {
           "disabled": false,
-          "document": "答案",
+          "document": "<p>答案</p>",
           "example": "我是AI小助手",
           "member": "string",
           "name": "Answer",
@@ -18770,7 +18791,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -18779,7 +18800,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
@@ -18788,7 +18809,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义参数",
+          "document": "<p>自定义参数</p>",
           "example": "{\"key\":\"CustomParam\"}",
           "member": "string",
           "name": "CustomParam",
@@ -18797,7 +18818,7 @@
         },
         {
           "disabled": false,
-          "document": "标签适用范围 1：全部，2：按条件\n默认值：当没有属性标签，labelRefers为空时，默认值为1\n有属性标签，labelRefers不为空，默认值为2",
+          "document": "<p>标签适用范围 1：全部，2：按条件<br>默认值：当没有属性标签，labelRefers为空时，默认值为1<br>有属性标签，labelRefers不为空，默认值为2</p>",
           "example": "1",
           "member": "uint64",
           "name": "AttrRange",
@@ -18806,7 +18827,7 @@
         },
         {
           "disabled": false,
-          "document": "标签引用",
+          "document": "<p>标签引用</p>",
           "example": "无",
           "member": "AttrLabelRefer",
           "name": "AttrLabels",
@@ -18815,7 +18836,7 @@
         },
         {
           "disabled": false,
-          "document": "文档ID",
+          "document": "<p>文档ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "DocBizId",
@@ -18824,7 +18845,7 @@
         },
         {
           "disabled": false,
-          "document": "分类ID",
+          "document": "<p>分类ID</p>",
           "example": "1963543972205658048",
           "member": "string",
           "name": "CateBizId",
@@ -18833,7 +18854,7 @@
         },
         {
           "disabled": false,
-          "document": "有效开始时间，单位是unix时间戳，默认值为0，代表永久有效",
+          "document": "<p>有效开始时间，单位是unix时间戳，默认值为0，代表永久有效</p>",
           "example": "1766038604",
           "member": "string",
           "name": "ExpireStart",
@@ -18842,7 +18863,7 @@
         },
         {
           "disabled": false,
-          "document": "有效结束时间，单位是unix时间戳，默认值为0，代表永久有效",
+          "document": "<p>有效结束时间，单位是unix时间戳，默认值为0，代表永久有效</p>",
           "example": "1766038604",
           "member": "string",
           "name": "ExpireEnd",
@@ -18851,7 +18872,7 @@
         },
         {
           "disabled": false,
-          "document": "相似问修改信息(相似问没有修改则不传)",
+          "document": "<p>相似问修改信息(相似问没有修改则不传)</p>",
           "example": "无",
           "member": "SimilarQuestionModify",
           "name": "SimilarQuestionModify",
@@ -18860,7 +18881,7 @@
         },
         {
           "disabled": false,
-          "document": "问题描述",
+          "document": "<p>问题描述</p>",
           "example": "desc",
           "member": "string",
           "name": "QuestionDesc",
@@ -18869,7 +18890,7 @@
         },
         {
           "disabled": false,
-          "document": "问答生效范围: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。若不传该字段，则不修改问答的生效范围。",
+          "document": "<p>问答生效范围: 1-不生效；2-仅开发域生效；3-仅发布域生效；4-开发域和发布域均生效。若不传该字段，则不修改问答的生效范围。</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableScope",
@@ -22248,6 +22269,15 @@
           "name": "ContentFilter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>超过有效时间后的行为：0-未指定(默认不可被检索)，1-不可被检索(下架)，2-仍可被检索</p><p>取值范围：[0, 2]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExpireBehavior",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -22347,7 +22377,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检索策略类型 0:混合检索，1：语义检索",
+          "document": "<p>检索策略类型 0:混合检索，1：语义检索</p>",
           "example": "1",
           "member": "uint64",
           "name": "StrategyType",
@@ -22358,7 +22388,7 @@
         },
         {
           "disabled": false,
-          "document": "Excel检索增强开关, false关闭，true打开",
+          "document": "<p>Excel检索增强开关, false关闭，true打开</p>",
           "example": "true",
           "member": "bool",
           "name": "TableEnhancement",
@@ -22369,7 +22399,7 @@
         },
         {
           "disabled": false,
-          "document": "向量模型",
+          "document": "<p>向量模型</p>",
           "example": "adp-embedding-model",
           "member": "string",
           "name": "EmbeddingModel",
@@ -22380,7 +22410,7 @@
         },
         {
           "disabled": false,
-          "document": "结果重排序开关， on打开，off关闭",
+          "document": "<p>结果重排序开关， on打开，off关闭</p>",
           "example": "on",
           "member": "string",
           "name": "RerankModelSwitch",
@@ -22391,7 +22421,7 @@
         },
         {
           "disabled": false,
-          "document": "结果重排序模型",
+          "document": "<p>结果重排序模型</p>",
           "example": "adp-rerank-model",
           "member": "string",
           "name": "RerankModel",
@@ -22402,7 +22432,7 @@
         },
         {
           "disabled": false,
-          "document": "NL2SQL模型配置",
+          "document": "<p>NL2SQL模型配置</p>",
           "example": "无",
           "member": "NL2SQLModelConfig",
           "name": "NatureLanguageToSqlModelConfig",
@@ -22413,7 +22443,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启图谱检索",
+          "document": "<p>是否开启图谱检索</p>",
           "example": "true",
           "member": "bool",
           "name": "GraphRetrieval",

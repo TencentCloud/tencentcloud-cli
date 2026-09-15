@@ -6129,7 +6129,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户平台ID",
+          "document": "<p>用户平台ID</p>",
           "example": "100008882712",
           "member": "uint64",
           "name": "PlatformId",
@@ -6138,7 +6138,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID",
+          "document": "<p>角色ID</p>",
           "example": "125",
           "member": "uint64",
           "name": "RoleId",
@@ -6147,7 +6147,7 @@
         },
         {
           "disabled": false,
-          "document": "角色名",
+          "document": "<p>角色名</p>",
           "example": "justtest008",
           "member": "string",
           "name": "RoleName",
@@ -6156,7 +6156,7 @@
         },
         {
           "disabled": false,
-          "document": "用户id",
+          "document": "<p>用户id</p>",
           "example": "700002184808",
           "member": "int64",
           "name": "UserId",
@@ -6165,7 +6165,7 @@
         },
         {
           "disabled": false,
-          "document": "返回限制",
+          "document": "<p>返回限制</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -6174,7 +6174,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0",
+          "document": "<p>偏移量，默认为0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6183,7 +6183,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，支持如下字段类型，create_time",
+          "document": "<p>排序字段，支持如下字段类型，create_time</p>",
           "example": "create_time",
           "member": "string",
           "name": "OrderBy",
@@ -6192,12 +6192,21 @@
         },
         {
           "disabled": false,
-          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
+          "document": "<p>排序方式，desc表示正序，asc表示反序， 默认为asc</p>",
           "example": "desc",
           "member": "string",
           "name": "OrderByType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选过滤，支持以下过滤条件： role-name：模糊匹配角色名</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6207,7 +6216,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的用户总数",
+          "document": "<p>查询到的用户总数</p>",
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
@@ -6217,7 +6226,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息集合",
+          "document": "<p>用户信息集合</p>",
           "example": "无",
           "member": "RoleInfo",
           "name": "RoleSet",

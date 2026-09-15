@@ -2369,7 +2369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -2378,7 +2378,7 @@
         },
         {
           "disabled": false,
-          "document": "从可用区",
+          "document": "<p>备可用区</p>",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "SlaveZone",
@@ -2387,7 +2387,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog同步方式。默认值：async。可选值：sync、semisync、async",
+          "document": "<p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>",
           "example": "async",
           "member": "string",
           "name": "BinlogSyncWay",
@@ -2396,7 +2396,7 @@
         },
         {
           "disabled": false,
-          "document": "半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。",
+          "document": "<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>",
           "example": "10000",
           "member": "int64",
           "name": "SemiSyncTimeout",
@@ -2411,7 +2411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>异步FlowId</p>",
           "example": "147184",
           "member": "int64",
           "name": "FlowId",
@@ -27766,7 +27766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "cynosdbmysql-xxxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -27775,7 +27775,7 @@
         },
         {
           "disabled": false,
-          "document": "旧从可用区",
+          "document": "<p>旧备可用区</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "OldSlaveZone",
@@ -27784,7 +27784,7 @@
         },
         {
           "disabled": false,
-          "document": "新从可用区",
+          "document": "<p>新备可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "NewSlaveZone",
@@ -27793,7 +27793,7 @@
         },
         {
           "disabled": false,
-          "document": "binlog同步方式。默认值：async。可选值：sync、semisync、async",
+          "document": "<p>binlog同步方式。默认值：async。可选值：sync、semisync、async</p>",
           "example": "async",
           "member": "string",
           "name": "BinlogSyncWay",
@@ -27802,7 +27802,7 @@
         },
         {
           "disabled": false,
-          "document": "半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。",
+          "document": "<p>半同步超时时间，单位ms。为保证业务稳定性，半同步复制存在退化逻辑，当主可用区集群在等待备可用区集群确认事务时若超过该超时时间，复制方式将降为异步复制。最低设置为1000ms，最高支持4294967295ms，默认10000ms。</p>",
           "example": "10000",
           "member": "int64",
           "name": "SemiSyncTimeout",
@@ -27817,7 +27817,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>异步FlowId</p>",
           "example": "147285",
           "member": "int64",
           "name": "FlowId",
@@ -33380,7 +33380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-bdcl1n11",
           "member": "string",
           "name": "ClusterId",
@@ -33389,7 +33389,7 @@
         },
         {
           "disabled": false,
-          "document": "从可用区",
+          "document": "<p>备可用区</p>",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "SlaveZone",
@@ -33404,7 +33404,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步FlowId",
+          "document": "<p>异步FlowId</p>",
           "example": "147264",
           "member": "int64",
           "name": "FlowId",

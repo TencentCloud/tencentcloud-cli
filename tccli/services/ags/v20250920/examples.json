@@ -426,14 +426,6 @@
         "title": "修改会话空间信息"
       }
     ],
-    "ModifySessionTitle": [
-      {
-        "document": "修改指定会话的标题。",
-        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionTitle\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Title\": \"Order refund assistance after update\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance after update\",\n            \"UpdateTime\": \"2026-08-17T08:45:02Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"5f5c6054-42c6-4137-bfcd-3aceb8611a38\"\n    }\n}",
-        "title": "修改会话标题"
-      }
-    ],
     "PauseSandboxInstance": [
       {
         "document": "",
