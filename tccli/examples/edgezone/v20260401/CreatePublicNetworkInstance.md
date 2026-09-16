@@ -6,19 +6,18 @@ Input:
 
 ```
 tccli edgezone CreatePublicNetworkInstance --cli-unfold-argument  \
-    --ZoneId ap-beijing-a \
-    --NetworkInstanceName test-bgp-instance \
-    --Line BGP \
-    --Bandwidth 100 \
-    --RouteMode bgp
+    --ZoneId ap-guangzhou-7 \
+    --NetworkInstanceName e2e-real-static-pub \
+    --Line CT \
+    --RouteMode static
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "test-req-001",
-        "NetworkInstanceId": "epn-a1b2c3d4"
+        "NetworkInstanceId": "epn-efcc33f1",
+        "RequestId": "2fecac51-e082-4e03-86cf-548369a3f8f2"
     }
 }
 ```

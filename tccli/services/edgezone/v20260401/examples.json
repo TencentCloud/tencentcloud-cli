@@ -41,8 +41,8 @@
     "CreatePublicNetworkInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePublicNetworkInstance\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-beijing-a\",\n    \"NetworkInstanceName\": \"test-bgp-instance\",\n    \"Line\": \"BGP\",\n    \"Bandwidth\": 100,\n    \"RouteMode\": \"bgp\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-001\",\n        \"NetworkInstanceId\": \"epn-a1b2c3d4\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePublicNetworkInstance\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-guangzhou-7\",\n    \"NetworkInstanceName\": \"e2e-real-static-pub\",\n    \"Line\": \"CT\",\n    \"RouteMode\": \"static\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInstanceId\": \"epn-efcc33f1\",\n        \"RequestId\": \"2fecac51-e082-4e03-86cf-548369a3f8f2\"\n    }\n}",
         "title": "创建公网实例"
       }
     ],

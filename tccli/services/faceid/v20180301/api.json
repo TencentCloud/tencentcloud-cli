@@ -98,6 +98,13 @@
       "output": "CreateAMLWebhookResponse",
       "status": "deprecated"
     },
+    "CreateEKYCWebhook": {
+      "document": "创建EKYC Webhook配置",
+      "input": "CreateEKYCWebhookRequest",
+      "name": "创建EKYC Webhook配置",
+      "output": "CreateEKYCWebhookResponse",
+      "status": "online"
+    },
     "CreateUploadUrl": {
       "document": "生成一个临时的UploadUrl用于上传资源文件，客户需要使用HTTP PUT方法上传，上传完成后将ResourceUrl传给TargetAction对应接口完成资源传递（具体字段由使用场景确定）。\n数据存储于Region参数对应地域的腾讯云COS Bucket，存储有效期2小时。",
       "input": "CreateUploadUrlRequest",
@@ -111,6 +118,13 @@
       "name": "删除Webhook配置",
       "output": "DeleteAMLWebhookResponse",
       "status": "deprecated"
+    },
+    "DeleteEKYCWebhook": {
+      "document": "删除Webhook配置",
+      "input": "DeleteEKYCWebhookRequest",
+      "name": "删除EKYC Webhook配置",
+      "output": "DeleteEKYCWebhookResponse",
+      "status": "online"
     },
     "DeleteSDKRecord": {
       "document": "此接口提供给客户删除SDK验证记录，传入token，删除与此token相关的所有验证记录信息。此接口请求时的部分会进行排队处理，如一次请求删除的验证记录较多，则记录的删除时间可能存在时延。",
@@ -166,6 +180,13 @@
       "input": "GenerateReflectSequenceRequest",
       "name": "获取光线序列",
       "output": "GenerateReflectSequenceResponse",
+      "status": "online"
+    },
+    "GetAMLScreeningResult": {
+      "document": "持续名单筛查状态变更",
+      "input": "GetAMLScreeningResultRequest",
+      "name": "查询筛查结果",
+      "output": "GetAMLScreeningResultResponse",
       "status": "online"
     },
     "GetActionSequence": {
@@ -336,6 +357,13 @@
       "output": "ListAMLWebhooksResponse",
       "status": "deprecated"
     },
+    "ListEKYCWebhooks": {
+      "document": "Webhook 配置列表",
+      "input": "ListEKYCWebhooksRequest",
+      "name": "查询EKYC Webhook配置列表",
+      "output": "ListEKYCWebhooksResponse",
+      "status": "online"
+    },
     "LivenessCompare": {
       "document": "传入视频和照片，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
       "input": "LivenessCompareRequest",
@@ -420,11 +448,32 @@
       "output": "ProcessAMLCallbackResponse",
       "status": "online"
     },
+    "RunAMLNameScreening": {
+      "document": "AML 名单筛查",
+      "input": "RunAMLNameScreeningRequest",
+      "name": "AML名单筛查",
+      "output": "RunAMLNameScreeningResponse",
+      "status": "online"
+    },
     "ScreenAMLName": {
       "document": "AML 名单筛查",
       "input": "ScreenAMLNameRequest",
       "name": "AML 名单筛查",
       "output": "ScreenAMLNameResponse",
+      "status": "online"
+    },
+    "UpdateAMLCustomerProfile": {
+      "document": "AML 名单筛查",
+      "input": "UpdateAMLCustomerProfileRequest",
+      "name": "更新客户档案",
+      "output": "UpdateAMLCustomerProfileResponse",
+      "status": "online"
+    },
+    "UpdateAMLOngoingScreeningStatus": {
+      "document": "持续名单筛查状态变更",
+      "input": "UpdateAMLOngoingScreeningStatusRequest",
+      "name": "启用或关闭持续筛查",
+      "output": "UpdateAMLOngoingScreeningStatusResponse",
       "status": "online"
     },
     "UpdateAMLWebhook": {
@@ -433,6 +482,13 @@
       "name": "更新Webhook配置",
       "output": "UpdateAMLWebhookResponse",
       "status": "deprecated"
+    },
+    "UpdateEKYCWebhook": {
+      "document": "更新Webhook配置",
+      "input": "UpdateEKYCWebhookRequest",
+      "name": "更新EKYC Webhook配置",
+      "output": "UpdateEKYCWebhookResponse",
+      "status": "online"
     },
     "VideoLivenessCompare": {
       "document": "传入视频和照片地址，先判断视频中是否为真人，判断为真人后，再判断该视频中的人与上传照片是否属于同一个人。",
@@ -2289,7 +2345,7 @@
         {
           "disabled": false,
           "document": "<p>企业注册号 / 统一社会信用代码（可选）</p>",
-          "example": "",
+          "example": "TSC-20260509",
           "member": "string",
           "name": "CompanyCertNumber",
           "output_required": false,
@@ -2311,7 +2367,7 @@
         {
           "disabled": false,
           "document": "<p>企业地址（可选）</p>",
-          "example": "",
+          "example": "1 Test Street, Test City",
           "member": "string",
           "name": "CompanyAddress",
           "output_required": false,
@@ -2628,6 +2684,82 @@
       ],
       "type": "object"
     },
+    "CreateEKYCWebhookRequest": {
+      "document": "CreateEKYCWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Webhook 名称，用于控制台展示</p>",
+          "example": "qq",
+          "member": "string",
+          "name": "WebhookName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调地址，必须为 HTTPS 协议</p>",
+          "example": "https://www.qq.com/",
+          "member": "string",
+          "name": "WebhookURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEKYCWebhookResponse": {
+      "document": "CreateEKYCWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建的 Webhook 配置 ID</p>",
+          "example": "51",
+          "member": "int64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否添加秘钥</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasSignatureKey",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调秘钥</p>",
+          "example": "asdasdasdsss",
+          "member": "string",
+          "name": "SignatureKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUploadUrlRequest": {
       "document": "CreateUploadUrl请求参数结构体",
       "members": [
@@ -2722,6 +2854,53 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKYCWebhookRequest": {
+      "document": "DeleteEKYCWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Webhook 配置 ID</p>",
+          "example": "49",
+          "member": "int64",
+          "name": "WebhookId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteEKYCWebhookResponse": {
+      "document": "DeleteEKYCWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的 Webhook 配置 ID</p>",
+          "example": "49",
+          "member": "int64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4364,6 +4543,113 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAMLScreeningResultRequest": {
+      "document": "GetAMLScreeningResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
+          "example": "USER_20260908_004",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAMLScreeningResultResponse": {
+      "document": "GetAMLScreeningResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>筛查结果：NO-HITS（未命中）/ HAS-HITS（命中）</p>",
+          "example": "HAS-HITS",
+          "member": "string",
+          "name": "ScreeningResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查，默认 false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果描述</p>",
+          "example": "成功",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>即一次「命中筛查」产生的 case（案例）的唯一标识</p>",
+          "example": "01a08025-c1c3-7ba8-94be-ca8ca2a50156",
+          "member": "string",
+          "name": "ScreeningId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛查结果时间</p>",
+          "example": "2026-09-08T08:32:33.23402Z",
+          "member": "string",
+          "name": "ResultTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中的 AML 类型列表（去重）</p>",
+          "example": "[\"r_fraud\"]",
+          "member": "string",
+          "name": "AMLTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中风险详情列表</p>",
+          "example": "[...]",
+          "member": "string",
+          "name": "HitDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -8045,6 +8331,72 @@
       ],
       "type": "object"
     },
+    "ListEKYCWebhooksRequest": {
+      "document": "ListEKYCWebhooks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认值 0</p><p>取值范围：[0, 100]</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认值 20，最大值 100（超过自动截断为 100）</p><p>取值范围：[20, 100]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListEKYCWebhooksResponse": {
+      "document": "ListEKYCWebhooks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Webhook 配置总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Webhook 配置列表</p>",
+          "example": "无",
+          "member": "WebhookList",
+          "name": "WebhookList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LivenessCompareRequest": {
       "document": "LivenessCompare请求参数结构体",
       "members": [
@@ -10279,7 +10631,7 @@
         {
           "disabled": false,
           "document": "<p>证件号码（可选）</p>",
-          "example": "",
+          "example": "GOLDEN-ID-001",
           "member": "string",
           "name": "IdentityNumber",
           "output_required": false,
@@ -10312,7 +10664,7 @@
         {
           "disabled": false,
           "document": "<p>地址</p>",
-          "example": "",
+          "example": "1 Golden Street, Test City, Singapore 048616",
           "member": "string",
           "name": "Address",
           "output_required": false,
@@ -11223,6 +11575,139 @@
       ],
       "usage": "in"
     },
+    "RunAMLNameScreeningRequest": {
+      "document": "RunAMLNameScreening请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
+          "example": "USER_20260908_006",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体类型，枚举值：PERSON / COMPANY</p><p>枚举值：</p><ul><li>PERSON： 个人</li><li>COMPANY： 公司</li></ul>",
+          "example": "PERSON",
+          "member": "string",
+          "name": "EntityType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>个人信息，EntityType=PERSON 时必填</p><p>入参限制：EntityType=PERSON</p>",
+          "example": "无",
+          "member": "Person",
+          "name": "Person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业信息，EntityType=COMPANY 时必填</p><p>入参限制：EntityType=COMPANY</p>",
+          "example": "无",
+          "member": "Company",
+          "name": "Company",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查，默认 false</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunAMLNameScreeningResponse": {
+      "document": "RunAMLNameScreening返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>筛查结果：NO-HITS（未命中）/ HAS-HITS（命中）</p>",
+          "example": "HAS-HITS",
+          "member": "string",
+          "name": "ScreeningResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中的 AML 类型列表（去重）</p>",
+          "example": "[\"r_fraud\"]",
+          "member": "string",
+          "name": "AMLTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中时返回，命中风险详情列表</p>",
+          "example": "[...]",
+          "member": "string",
+          "name": "HitDetail",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果描述</p>",
+          "example": "成功",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>即一次「命中筛查」产生的 case（案例）的唯一标识</p>",
+          "example": "01a08076-fe30-70a4-a023-b77421ef6d10",
+          "member": "string",
+          "name": "ScreeningId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查，默认 false</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ScreenAMLNameRequest": {
       "document": "ScreenAMLName请求参数结构体",
       "members": [
@@ -11634,6 +12119,176 @@
       ],
       "usage": "out"
     },
+    "UpdateAMLCustomerProfileRequest": {
+      "document": "UpdateAMLCustomerProfile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
+          "example": "USER_20260904_004",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体类型，枚举值：PERSON / COMPANY</p><p>枚举值：</p><ul><li>PERSON： 个人</li><li>COMPANY： 公司</li></ul>",
+          "example": "PERSON",
+          "member": "string",
+          "name": "EntityType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>个人信息，EntityType=PERSON 时必填</p><p>入参限制：EntityType=PERSON</p>",
+          "example": "无",
+          "member": "Person",
+          "name": "Person",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业信息，EntityType=COMPANY 时必填</p><p>入参限制：EntityType=COMPANY</p>",
+          "example": "无",
+          "member": "Company",
+          "name": "Company",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAMLCustomerProfileResponse": {
+      "document": "UpdateAMLCustomerProfile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险等级</p>",
+          "example": "SKIPPED",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果描述</p>",
+          "example": "Customer profile updated successfully.",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAMLOngoingScreeningStatusRequest": {
+      "document": "UpdateAMLOngoingScreeningStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识，最长 256 字符。</p>",
+          "example": "USER_20260904_001",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查，默认 false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAMLOngoingScreeningStatusResponse": {
+      "document": "UpdateAMLOngoingScreeningStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户系统中终端用户的唯一标识</p>",
+          "example": "USER_20260904_001",
+          "member": "string",
+          "name": "UniqueCustomerID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启持续监控筛查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableOngoingScreening",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果描述</p>",
+          "example": "成功",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateAMLWebhookRequest": {
       "document": "UpdateAMLWebhook请求参数结构体",
       "members": [
@@ -11689,6 +12344,81 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKYCWebhookRequest": {
+      "document": "UpdateEKYCWebhook请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要更新的 Webhook 配置 ID</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "WebhookId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的 Webhook 名称</p>",
+          "example": "bbai",
+          "member": "string",
+          "name": "WebhookName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的回调地址，必须为 HTTPS 协议</p>",
+          "example": "https://www.baidu.com",
+          "member": "string",
+          "name": "WebhookURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateEKYCWebhookResponse": {
+      "document": "UpdateEKYCWebhook返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被更新的 Webhook 配置 ID</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "WebhookId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新后的修改时间，格式 YYYY-MM-DD HH:mm:ss</p>",
+          "example": "2026-05-26 10:28:46",
+          "member": "string",
+          "name": "ModTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

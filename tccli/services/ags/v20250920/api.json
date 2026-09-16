@@ -4268,6 +4268,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话空间筛选条件列表，支持按空间 ID 精确匹配、名称精确或模糊匹配、描述模糊匹配。同一 Filter 内多个 Values 之间为 OR，不同 Filter 之间为 AND。不传或传空数组时不增加筛选限制。</p><p>入参限制：Filter.Name 支持 space-id、name、name-like、description-like，不可重复。name 与 name-like 不可同时提供。Values 不可为空数组，筛选值不可为空或纯空白。匹配区分大小写，包含匹配中的 %、_ 按普通字符处理，不具有通配含义。</p><p>例如 Name 为 name-like，Values 为 [&quot;客服&quot;,&quot;测试&quot;]，表示查询名称包含“客服”或“测试”的会话空间。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4363,7 +4372,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件列表，最多支持 10 个。当前仅支持按 Session Metadata 过滤，Filter.Name 格式为 metadata:MetadataKey，例如 metadata:env。同一个 Filter 中多个 Values 之间为“或”关系，多个 Filter 之间为“且”关系。</p><p>入参限制：最多传入 10 个 Filter，每个 Filter 最多支持 100 个 Values。Filter.Name 必须以 metadata: 开头，冒号后需填写完整的 Metadata Key。</p><p>例如 Name 为 metadata:env，Values 为 [&quot;dev&quot;,&quot;test&quot;]，表示查询 Metadata 中存在 env，并且其值为 dev 或 test 的 Session。</p>",
+          "document": "<p>会话筛选条件列表，支持 Metadata 精确匹配、标题精确匹配和标题模糊匹配。同一 Filter 内多个 Values 之间为 OR，不同 Filter 之间为 AND。不传或传空数组时不增加筛选限制。</p><p>入参限制：最多传入 10 个 Filter，每个 Filter 最多支持 100 个 Values。Filter.Name 不可重复，支持 metadata:MetadataKey、title、title-like；title 与 title-like 不可同时提供。标题筛选值不可为空或纯空白。匹配区分大小写，标题包含匹配中的 %、_ 按普通字符处理，不具有通配含义。</p><p>例如 Name 为 title-like，Values 为 [&quot;客服&quot;,&quot;测试&quot;]，表示查询标题包含“客服”或“测试”的会话。Name 为 metadata:env，Values 为 [&quot;dev&quot;,&quot;test&quot;]，表示按 Metadata env 的值精确筛选。标题条件与 Metadata、SessionIds、UserIds 筛选条件可组合使用，条件之间为 AND。筛选在分页前执行，TotalCount 为符合条件的会话总数。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

@@ -429,8 +429,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区ID",
-          "example": "ap-singapore-1",
+          "document": "<p>可用区</p>",
+          "example": "ap-guangzhou-7",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -438,7 +438,7 @@
         },
         {
           "disabled": false,
-          "document": "公网实例名称",
+          "document": "<p>公网实例名称</p>",
           "example": "新加坡EPM公网实例",
           "member": "string",
           "name": "NetworkInstanceName",
@@ -447,7 +447,7 @@
         },
         {
           "disabled": false,
-          "document": "网络线路",
+          "document": "<p>网络线路</p>",
           "example": "BGP",
           "member": "string",
           "name": "Line",
@@ -456,7 +456,7 @@
         },
         {
           "disabled": false,
-          "document": "路由模式",
+          "document": "<p>路由模式</p>",
           "example": "static",
           "member": "string",
           "name": "RouteMode",
@@ -465,12 +465,39 @@
         },
         {
           "disabled": false,
-          "document": "公网带宽（Mbps）",
+          "document": "<p>公网带宽（Mbps）</p>",
           "example": "100",
           "member": "int64",
           "name": "Bandwidth",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGP AS号</p>",
+          "example": "65100",
+          "member": "int64",
+          "name": "BgpAsNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGP认证密码</p>",
+          "example": "ByoipTest@123",
+          "member": "string",
+          "name": "BgpPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网实例类型</p><p>枚举值：</p><ul><li>standard： 标准型(默认)</li><li>custom： 自定义型(暂不支持创建)</li></ul>",
+          "example": "standard",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -480,7 +507,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "公网实例 ID",
+          "document": "<p>公网实例 ID</p>",
           "example": "epn-dfghjk",
           "member": "string",
           "name": "NetworkInstanceId",

@@ -31,3 +31,36 @@ Output:
 }
 ```
 
+**Example 2: 按描述筛选会话空间**
+
+使用 description-like 筛选描述中包含“DSH Brain Session cookbook”的会话空间，返回匹配的空间列表及总数。
+
+Input: 
+
+```
+tccli ags DescribeSessionSpaces --cli-unfold-argument  \
+    --Filters.0.Name description-like \
+    --Filters.0.Values 'DSH Brain Session cookbook'
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SessionSpaces": [
+            {
+                "CreateTime": "2026-09-03T08:03:05.279Z",
+                "Default": false,
+                "Description": "DSH Brain Session cookbook Chongqing validation",
+                "Name": "dsh-session-cq-09031603",
+                "SpaceId": "space-04664885-bd66-4a51-83f5-5f6132f8642a",
+                "Status": "Active",
+                "UpdateTime": "2026-09-03T08:03:05.279Z"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "de553d46-8094-4644-a68b-ed6b3db7b07c"
+    }
+}
+```
+
