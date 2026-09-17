@@ -1,9 +1,9 @@
 {
   "actions": {
     "CheckLabel": {
-      "document": "校验标签下的标准词是否已存在",
+      "document": "校验标签",
       "input": "CheckLabelRequest",
-      "name": "校验标签下的标准词是否已存在",
+      "name": "校验标签",
       "output": "CheckLabelResponse",
       "status": "online"
     },
@@ -546,6 +546,13 @@
       "output": "DescribeReleaseSummaryResponse",
       "status": "online"
     },
+    "DescribeResourceSummary": {
+      "document": "获取用户资源套餐和增值包用量信息",
+      "input": "DescribeResourceSummaryRequest",
+      "name": "获取资源套餐和增值包摘要信息",
+      "output": "DescribeResourceSummaryResponse",
+      "status": "online"
+    },
     "DescribeSkillCategoryList": {
       "document": "查询 Skill 分类列表",
       "input": "DescribeSkillCategoryListRequest",
@@ -1070,6 +1077,102 @@
         }
       ],
       "usage": "both"
+    },
+    "AddOnPackageInfo": {
+      "document": "计费增值包用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>增值包总量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "AddOnTotal",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>增值包用量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "AddOnUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属并发总数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExclusiveConcurrency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源包状态</p><p>枚举值：</p><ul><li>1： 可使</li><li>2： 已用完</li><li>3： 已过期</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属并发状态</p><p>枚举值：</p><ul><li>1： 可使</li><li>3： 已过期</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConcurrencyStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属tpm</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExclusiveTpm",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属tpm状态</p><p>枚举值：</p><ul><li>1： 可使</li><li>3： 已过期</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExclusiveTpmStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属计算单元</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExclusiveComputeUnit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专属计算单元状态</p><p>枚举值：</p><ul><li>1： 可使</li><li>3： 已过期</li><li>4： 已销毁</li><li>5： 已隔离</li><li>6： 未生效</li><li>7： 暂不可用（套餐包过期时）</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExclusiveComputeUnitStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AgentAdvancedConfig": {
       "document": "Agent高级设置",
@@ -5753,7 +5856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>是否通过校验</p>",
+          "document": "是否通过校验",
           "example": "true",
           "member": "bool",
           "name": "Passed",
@@ -5764,7 +5867,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>失败原因（passed=false 时填充）</p>",
+          "document": "失败原因（passed=false 时填充）",
           "example": "标签名称与管理后台重复",
           "member": "string",
           "name": "Reason",
@@ -13003,6 +13106,43 @@
       ],
       "type": "object"
     },
+    "DescribeResourceSummaryRequest": {
+      "document": "DescribeResourceSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeResourceSummaryResponse": {
+      "document": "DescribeResourceSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计费套餐包用量信息</p>",
+          "example": "无",
+          "member": "ResourcePackageInfo",
+          "name": "ResourcePackage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费增值包用量信息</p>",
+          "example": "无",
+          "member": "AddOnPackageInfo",
+          "name": "AddOnPackage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillCategoryListRequest": {
       "document": "DescribeSkillCategoryList请求参数结构体",
       "members": [],
@@ -15113,7 +15253,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>描述</p>",
+          "document": "描述",
           "example": "标签信息描述",
           "member": "string",
           "name": "Description",
@@ -15124,7 +15264,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数字 ID</p>",
+          "document": "数字 ID",
           "example": "1990010100000000001",
           "member": "string",
           "name": "Id",
@@ -15135,7 +15275,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>名称</p>",
+          "document": "名称",
           "example": "办公协作",
           "member": "string",
           "name": "Name",
@@ -15146,7 +15286,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字符串 ID</p>",
+          "document": "字符串 ID",
           "example": "1990010100000000001",
           "member": "string",
           "name": "StrId",
@@ -15488,6 +15628,45 @@
       ],
       "usage": "both"
     },
+    "KBPermission": {
+      "document": "知识库操作权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否可删除</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可编辑</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanEdit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可查看</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanView",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "KBRetrievalConfig": {
       "document": "单个知识库检索配置",
       "members": [
@@ -15766,6 +15945,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作权限</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KBPermission",
+          "name": "Permission",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -16314,7 +16504,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>校验结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "校验结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CheckResult",
           "name": "CheckResult",
@@ -16325,7 +16515,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>待校验的标准词</p>",
+          "document": "待校验的标准词",
           "example": "测试50",
           "member": "string",
           "name": "Term",
@@ -16336,7 +16526,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>已存在时返回对应标准词 ID</p>",
+          "document": "已存在时返回对应标准词 ID",
           "example": "2097973974787774145",
           "member": "string",
           "name": "TermId",
@@ -17176,7 +17366,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启深度思考",
+          "document": "<p>是否开启深度思考</p>",
           "example": "disabled",
           "member": "string",
           "name": "DeepThinking",
@@ -17187,7 +17377,7 @@
         },
         {
           "disabled": false,
-          "document": "频率惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>频率惩罚</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.4",
           "member": "float",
           "name": "FrequencyPenalty",
@@ -17198,7 +17388,7 @@
         },
         {
           "disabled": false,
-          "document": "最大输出长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大输出长度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16384",
           "member": "int64",
           "name": "MaxTokens",
@@ -17209,7 +17399,7 @@
         },
         {
           "disabled": false,
-          "document": "存在惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>存在惩罚</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.3",
           "member": "float",
           "name": "PresencePenalty",
@@ -17220,7 +17410,7 @@
         },
         {
           "disabled": false,
-          "document": "深度思考效果",
+          "document": "<p>深度思考效果</p>",
           "example": "none",
           "member": "string",
           "name": "ReasoningEffort",
@@ -17231,7 +17421,7 @@
         },
         {
           "disabled": false,
-          "document": "重复惩罚\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重复惩罚</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.4",
           "member": "float",
           "name": "RepetitionPenalty",
@@ -17242,7 +17432,7 @@
         },
         {
           "disabled": false,
-          "document": "输出格式（text、json_object）",
+          "document": "<p>输出格式（text、json_object）</p>",
           "example": "text",
           "member": "string",
           "name": "ReplyFormat",
@@ -17253,7 +17443,7 @@
         },
         {
           "disabled": false,
-          "document": "seed 随机种子\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>seed 随机种子</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Seed",
@@ -17264,7 +17454,7 @@
         },
         {
           "disabled": false,
-          "document": "停止序列",
+          "document": "<p>停止序列</p>",
           "example": "[\"前进\"]",
           "member": "string",
           "name": "StopSequenceList",
@@ -17275,7 +17465,7 @@
         },
         {
           "disabled": false,
-          "document": "温度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>温度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.6",
           "member": "float",
           "name": "Temperature",
@@ -17286,7 +17476,7 @@
         },
         {
           "disabled": false,
-          "document": "top_p\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>top_p</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.6",
           "member": "float",
           "name": "TopP",
@@ -17294,6 +17484,17 @@
           "required": false,
           "type": "float",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>top_k</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TopK",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19316,7 +19517,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>用户 ID</p>",
+          "document": "用户 ID",
           "example": "9747",
           "member": "string",
           "name": "UserId",
@@ -19327,7 +19528,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户姓名</p>",
+          "document": "用户姓名",
           "example": "张三",
           "member": "string",
           "name": "UserName",
@@ -21259,6 +21460,72 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourcePackageInfo": {
+      "document": "计费套餐包用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>套餐类型</p><p>枚举值：</p><ul><li>1： 免费版</li><li>2： 专业版</li><li>3： 企业版</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "PackageType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源包总量</p>",
+          "example": "150000",
+          "member": "int64",
+          "name": "ResourceTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源包用量</p>",
+          "example": "150000",
+          "member": "float",
+          "name": "ResourceUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库容量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "KnowledgeCapacity",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库用量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "KnowledgeUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源包状态</p><p>枚举值：</p><ul><li>1： 正常</li><li>3： 已到期</li><li>4： 即将到期</li></ul>",
+          "example": "3",
+          "member": "uint64",
+          "name": "ResourceStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ResponseParam": {
       "document": "ResponseParam",
@@ -24119,7 +24386,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>视图类型；枚举值：VIEW_TYPE_CORP(1) 企业视图、VIEW_TYPE_SPACE(2) 空间视图、VIEW_TYPE_APP(3) 应用视图</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>VIEW_TYPE_UNSPECIFIED</td><td>0</td><td>未指定（无效值，请求勿传）</td></tr><tr><td>VIEW_TYPE_CORP</td><td>1</td><td>企业视图</td></tr><tr><td>VIEW_TYPE_SPACE</td><td>2</td><td>空间视图</td></tr><tr><td>VIEW_TYPE_APP</td><td>3</td><td>应用视图</td></tr></tbody></table>",
+          "document": "<p>视图类型；枚举值：VIEW_TYPE_CORP(1) 企业视图、VIEW_TYPE_SPACE(2) 空间视图、VIEW_TYPE_APP(3) 应用视图</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>VIEW_TYPE_UNSPECIFIED</td><td>0</td><td>未指定（无效值，请求勿传）</td></tr><tr><td>VIEW_TYPE_CORP</td><td>1</td><td>企业视图</td></tr><tr><td>VIEW_TYPE_SPACE</td><td>2</td><td>空间视图</td></tr><tr><td>VIEW_TYPE_APP</td><td>3</td><td>应用视图</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "ViewType",

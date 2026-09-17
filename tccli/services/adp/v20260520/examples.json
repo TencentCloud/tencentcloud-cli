@@ -2,10 +2,10 @@
   "actions": {
     "CheckLabel": [
       {
-        "document": "校验标签下的标准词是否已存在",
+        "document": "校验标签",
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLabel\n<公共请求参数>\n\n{\n    \"KbId\": \"2067622575842400832\",\n    \"TermList\": [\n        \"2067622575842400832\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CheckList\": [\n            {\n                \"CheckResult\": {\n                    \"Passed\": false,\n                    \"Reason\": \"标准词已存在\"\n                },\n                \"Term\": \"价格\",\n                \"TermId\": \"1\"\n            }\n        ],\n        \"RequestId\": \"de76301d-5863-4a5e-a879-7dbddcc987c0\"\n    }\n}",
-        "title": "校验标签下的标准词是否已存在"
+        "title": "校验标签"
       }
     ],
     "CopyAgentFromApp": [
@@ -652,6 +652,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseSummary\n<公共请求参数>\n\n{\n    \"AppId\": \"2060************184\",\n    \"ReleaseId\": \"2060***********3392\"\n}",
         "output": "{\n    \"Response\": {\n        \"ReleaseSummary\": {\n            \"ChannelIdList\": [],\n            \"CreateTime\": \"1780045630\",\n            \"Description\": \"\",\n            \"ReleaseId\": \"2060***********3392\",\n            \"Status\": 3,\n            \"StatusDescription\": \"发布成功\"\n        },\n        \"RequestId\": \"f3052ff0-4b3f-40a8-ba05-5c2019a909c6\"\n    }\n}",
         "title": "DescribeReleaseSummary"
+      }
+    ],
+    "DescribeResourceSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AddOnPackage\": {\n            \"AddOnTotal\": 0,\n            \"AddOnUsage\": 0,\n            \"ConcurrencyStatus\": 1,\n            \"ExclusiveComputeUnit\": 0,\n            \"ExclusiveComputeUnitStatus\": 1,\n            \"ExclusiveConcurrency\": 0,\n            \"ExclusiveTpm\": 0,\n            \"ExclusiveTpmStatus\": 1,\n            \"ResourceStatus\": 1\n        },\n        \"ResourcePackage\": {\n            \"KnowledgeCapacity\": 0,\n            \"KnowledgeUsage\": 0,\n            \"PackageType\": 2,\n            \"ResourceStatus\": 3,\n            \"ResourceTotal\": 150000,\n            \"ResourceUsage\": 150000\n        },\n        \"RequestId\": \"556a8474-d04f-4d1d-a660-982d99a8f05c\"\n    }\n}",
+        "title": "获取资源套餐和增值包摘要信息"
       }
     ],
     "DescribeSkillCategoryList": [

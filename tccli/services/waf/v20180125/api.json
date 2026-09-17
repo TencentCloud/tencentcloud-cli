@@ -91,6 +91,13 @@
       "output": "CreateAccessExportResponse",
       "status": "online"
     },
+    "CreateAndUpdateBatchCCRule": {
+      "document": "批量cc规则配置接口",
+      "input": "CreateAndUpdateBatchCCRuleRequest",
+      "name": "批量cc规则添加更新接口",
+      "output": "CreateAndUpdateBatchCCRuleResponse",
+      "status": "online"
+    },
     "CreateAreaBanRule": {
       "document": "添加（编辑）地域封禁中的地域信息",
       "input": "CreateAreaBanRuleRequest",
@@ -9151,6 +9158,296 @@
           "member": "string",
           "name": "ExportId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndUpdateBatchCCRuleRequest": {
+      "document": "CreateAndUpdateBatchCCRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "batch-test-cc-0",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID，新增时填0\t",
+          "example": "1900037478",
+          "member": "int64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高级模式（是否使用Session检测），0表示不启用，1表示启用",
+          "example": "1",
+          "member": "string",
+          "name": "Advance",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CC检测阈值\t",
+          "example": "3",
+          "member": "string",
+          "name": "Limit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CC检测周期\t",
+          "example": "60",
+          "member": "string",
+          "name": "Interval",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截，26表示精准人机识别，27表示JS校验",
+          "example": "22",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级\t",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动作有效时间\t",
+          "example": "60",
+          "member": "int64",
+          "name": "ValidTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检测Url\t",
+          "example": "/",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "url长度\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Length",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含，3表示不等于，6表示后缀匹配，7表示不包含",
+          "example": "0",
+          "member": "int64",
+          "name": "MatchFunc",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CC的匹配条件JSON序列化的字符串，示例：[{\"key\":\"Method\",\"args\":[\"=R0VU\"],\"match\":\"0\",\"encodeflag\":true}] Key可选值为 Method、Post、Referer、Cookie、User-Agent、CustomHeader、CaptchaRisk、CaptchaDeviceRisk、CaptchaScore match可选值为，当Key为Method的时候可选值为0（等于）、3（不等于）。 Key为Post的时候可选值为0（等于）、3（不等于），Key为Cookie的时候可选值为0（等于）、2（包含），3（不等于）、7（不包含）、 当Key为Referer的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为Cookie的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为User-Agent的时候可选值为0（等于）、3（不等于）、1（前缀匹配）、6（后缀匹配）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）， 当Key为CustomHeader的时候可选值为0（等于）、3（不等于）、2（包含）、7（不包含）、12（存在）、5（不存在）、4（内容为空）。 Key为IPLocation时，可选值为13（属于）、14（不属于）。 Key为CaptchaRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaDeviceRisk时，可选值为0（等于）、3（不等于）、13（属于）、14（不属于）、12（存在）、5（不存在）。 Key为CaptchaScore时，可选值为15（数值等于）、16（数值不等于）、17（数值大于）、18（数值小于）、19（数值大于等于）、20（数值小于等于）、12（存在）、5（不存在）。args用来表示匹配内容，需要设置encodeflag为true，当Key为Post、Cookie、CustomHeader时，用等号=来分别串接Key和Value，并分别用Base64编码，类似YWJj=YWJj。当Key为Referer、User-Agent时，用等号=来串接Value，类似=YWJj。",
+          "example": "[{\"key\":\"URL\",\"args\":[\"=L2FiYw\"],\"match\":\"1\",\"encodeflag\":true}]",
+          "member": "string",
+          "name": "OptionsArr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "waf版本，sparta-waf或者clb-waf\t",
+          "example": "sparata-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型\t",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "添加规则的来源事件id",
+          "example": "api_qwe1231",
+          "member": "string",
+          "name": "EventId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则需要启用的SessionID",
+          "example": "[2000000577]",
+          "member": "int64",
+          "name": "SessionApplied",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "限频方式\t",
+          "example": "only_limit",
+          "member": "string",
+          "name": "LimitMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置方式的逻辑操作符，and或者or",
+          "example": "and",
+          "member": "string",
+          "name": "LogicalOp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cel表达式",
+          "example": "asd",
+          "member": "string",
+          "name": "CelRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作灰度比例，默认值100",
+          "example": "100",
+          "member": "int64",
+          "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面ID",
+          "example": "0",
+          "member": "string",
+          "name": "PageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量规则配置的域名",
+          "example": "[\"test.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量规则配置的防护组",
+          "example": "[8500001558]",
+          "member": "uint64",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "定时生效类型",
+          "example": "CronJob",
+          "member": "string",
+          "name": "JobType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定时生效配置",
+          "example": "无",
+          "member": "JobDateTime",
+          "name": "JobDateTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "定时生效类型：month or week",
+          "example": "month",
+          "member": "string",
+          "name": "CronType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "1",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAndUpdateBatchCCRuleResponse": {
+      "document": "CreateAndUpdateBatchCCRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cc规则id",
+          "example": "1900037478",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "响应数据",
+          "example": "waf",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34186,7 +34483,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段 匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同，具体如下所示： <table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>匹配字段</th>\n\t\t\t<th>匹配参数</th>\n\t\t\t<th>逻辑符号</th>\n\t\t\t<th>匹配内容</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>IP（来源IP）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>多个IP以英文逗号隔开,最多20个</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IPV6（来源IPv6）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>支持单个IPV6地址</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Referer（Referer）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>URL（请求路径）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）<br /></td>\n\t\t\t<td>请以/开头,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>UserAgent（UserAgent）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HTTP_METHOD（HTTP请求方法）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入方法名称,建议大写</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>QUERY_STRING（请求字符串）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET（GET参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_PARAMS_NAMES（GET参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST（POST参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_POST_NAMES（POST参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST_BODY（完整BODY）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入BODY内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>COOKIE（Cookie）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_COOKIES_NAMES（Cookie参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_COOKIE（Cookie参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_HEADERS_NAMES（Header参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,建议小写,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_HEADER（Header参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CONTENT_LENGTH（Content-length）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>\n\t\t\t<td>请输入0-9999999999999之间的整数</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IP_GEO（来源IP归属地）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>geo_in（属于）<br />geo_not_in（不属于）</td>\n\t\t\t<td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HOST（请求Host）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入Host值,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_RISK（验证码风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>请输入风险等级值,支持数值范围0-255</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>请输入设备风险代码,支持取值：101、201、301、401、501、601、701</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHAR_SCORE（验证码风险评估分）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numle（数值小于等于）<br />numge（数值大于等于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>请输入评估分数,支持数值范围0-100</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+          "document": "匹配字段 匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同，具体如下所示： <table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>匹配字段</th>\n\t\t\t<th>匹配参数</th>\n\t\t\t<th>逻辑符号</th>\n\t\t\t<th>匹配内容</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>IP（来源IP）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>多个IP以英文逗号隔开,最多20个</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IPV6（来源IPv6）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>支持单个IPV6地址</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Referer（Referer）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>URL（请求路径）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）<br /></td>\n\t\t\t<td>请以/开头,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>UserAgent（UserAgent）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HTTP_METHOD（HTTP请求方法）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入方法名称,建议大写</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>QUERY_STRING（请求字符串）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET（GET参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_PARAMS_NAMES（GET参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST（POST参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_POST_NAMES（POST参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST_BODY（完整BODY）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入BODY内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>COOKIE（Cookie）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_COOKIES_NAMES（Cookie参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_COOKIE（Cookie参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_HEADERS_NAMES（Header参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,建议小写,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_HEADER（Header参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CONTENT_LENGTH（Content-length）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>\n\t\t\t<td>请输入0-9999999999999之间的整数</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IP_GEO（来源IP归属地）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>geo_in（属于）<br />geo_not_in（不属于）</td>\n\t\t\t<td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HOST（请求Host）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入Host值,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_RISK（验证码风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>numeq/numneq：Content 为 0-255 的整数字符串，例如 \"10\"；belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"1\",\"2\"]，最多50个元素，每个值为0-255整数；null/nnull：Content 必须为空字符串。集合格式不能使用普通逗号分隔字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>numeq/numneq：Content 为单个设备风险代码字符串；belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"101\",\"201\"]，最多7个元素；支持取值：101、201、301、401、501、601、701；null/nnull：Content 必须为空字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHAR_SCORE（验证码风险评估分）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numle（数值小于等于）<br />numge（数值大于等于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>数值比较时 Content 为 0-100 的整数字符串；null/nnull 时 Content 必须为空字符串。</td>\n\t\t</tr>\n\t</tbody>\n</table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -34208,7 +34505,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配内容\n\n    目前 当匹配字段为COOKIE（Cookie）时，不需要输入 匹配内容\u000b其他都需要\n",
+          "document": "匹配内容。请根据 Field 和 CompareFunc 按匹配字段表填写。CAPTCHA_RISK、CAPTCHA_DEVICE_RISK 和 CAPTCHAR_SCORE 使用 null/nnull 时必须传空字符串；数值比较传单个整数字符串；CAPTCHA_RISK、CAPTCHA_DEVICE_RISK 使用 belong_to/not_belong_to 时传 JSON 字符串数组的序列化字符串，数组元素范围和数量限制详见 Field。",
           "example": "/url",
           "member": "string",
           "name": "Content",

@@ -1,0 +1,193 @@
+{
+  "actions": {
+    "ApplyPublicIps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyPublicIps\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-dfghjkl\",\n    \"Type\": \"ipv4\",\n    \"Count\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-021\",\n        \"IpList\": [\n            \"224.12.10.25\"\n        ]\n    }\n}",
+        "title": "申请公网Ipv4"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ApplyPublicIps\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-xxxxxxxx\",\n    \"Type\": \"ipv6\",\n    \"Count\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-021\",\n        \"IpList\": [\n            \"2001:db8::1\"\n        ]\n    }\n}",
+        "title": "申请公网Ipv6"
+      }
+    ],
+    "CreateEdgeNodeService": [
+      {
+        "document": "为广州一区开通边缘物理机计费能力。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEdgeNodeService\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5f6a789-4c3d-5b2e-af01-8d7c6b5a4e3f\"\n    }\n}",
+        "title": "开通指定可用区的边缘物理机计费能力"
+      }
+    ],
+    "CreateInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\",\n    \"InstanceType\": \"BMS5.MEDIUM8\",\n    \"ImageId\": \"img-hmk3il0q\",\n    \"InstanceName\": \"my-epm-instance\",\n    \"InstanceCount\": 1,\n    \"PrivateNetworkId\": \"net-private-001\",\n    \"PublicNetworkId\": \"net-public-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"epm-abcd1234\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "创建单台物理机实例"
+      }
+    ],
+    "CreatePrivateNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateNetworkInstance\n<公共请求参数>\n\n{\n    \"NetworkInstanceName\": \"test-pri-instance\",\n    \"ZoneId\": \"ap-beijing\",\n    \"Network\": \"10.0.0.0\",\n    \"Mask\": 24\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-011\",\n        \"NetworkInstanceId\": \"ein-a1b2c3d4\"\n    }\n}",
+        "title": "创建私网实例"
+      }
+    ],
+    "CreatePublicNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePublicNetworkInstance\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-guangzhou-7\",\n    \"NetworkInstanceName\": \"e2e-real-static-pub\",\n    \"Line\": \"CT\",\n    \"RouteMode\": \"static\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NetworkInstanceId\": \"epn-efcc33f1\",\n        \"RequestId\": \"2fecac51-e082-4e03-86cf-548369a3f8f2\"\n    }\n}",
+        "title": "创建公网实例"
+      }
+    ],
+    "DeletePrivateNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateNetworkInstance\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"ein-a1b2c3d4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-021\"\n    }\n}",
+        "title": "删除私网实例"
+      }
+    ],
+    "DeletePublicNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePublicNetworkInstance\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-011\"\n    }\n}",
+        "title": "删除公网实例"
+      }
+    ],
+    "DescribeInstanceTypes": [
+      {
+        "document": "查询指定可用区下当前账号可用的机型配额列表。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTypes\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeQuotaSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-1\",\n                \"InstanceType\": \"BMS5.MEDIUM8\",\n                \"InstanceFamily\": \"BM.S5\",\n                \"CpuCores\": 8,\n                \"CpuType\": \"6231C*2\",\n                \"MemoryGb\": 32,\n                \"SystemDiskType\": \"SSD\",\n                \"SystemDiskSize\": 480,\n                \"SystemDiskCount\": 2,\n                \"DataDiskType\": \"SSD\",\n                \"DataDiskSize\": 960,\n                \"DataDiskCount\": 4,\n                \"DiskType\": \"SSD-480G*2, SSD-960G*4\",\n                \"NetworkInterfaceType\": \"25G*2\",\n                \"GpuType\": \"\",\n                \"Quota\": 10\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询指定可用区的账号机型配额"
+      },
+      {
+        "document": "不传 Zone 时，返回当前账号下所有可用区的机型配额列表。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeQuotaSet\": [\n            {\n                \"Zone\": \"ap-guangzhou-1\",\n                \"InstanceType\": \"BMS5.MEDIUM8\",\n                \"InstanceFamily\": \"BM.S5\",\n                \"CpuCores\": 8,\n                \"CpuType\": \"6231C*2\",\n                \"MemoryGb\": 32,\n                \"SystemDiskType\": \"SSD\",\n                \"SystemDiskSize\": 480,\n                \"SystemDiskCount\": 2,\n                \"DataDiskType\": \"SSD\",\n                \"DataDiskSize\": 960,\n                \"DataDiskCount\": 4,\n                \"DiskType\": \"SSD-480G*2, SSD-960G*4\",\n                \"NetworkInterfaceType\": \"25G*2\",\n                \"GpuType\": \"\",\n                \"Quota\": 10\n            },\n            {\n                \"Zone\": \"ap-guangzhou-2\",\n                \"InstanceType\": \"BMS5.LARGE16\",\n                \"InstanceFamily\": \"BM.S5\",\n                \"CpuCores\": 16,\n                \"CpuType\": \"6231C*2\",\n                \"MemoryGb\": 64,\n                \"SystemDiskType\": \"SSD\",\n                \"SystemDiskSize\": 480,\n                \"SystemDiskCount\": 2,\n                \"DataDiskType\": \"SSD\",\n                \"DataDiskSize\": 1920,\n                \"DataDiskCount\": 4,\n                \"DiskType\": \"SSD-480G*2, SSD-1920G*4\",\n                \"NetworkInterfaceType\": \"25G*2\",\n                \"GpuType\": \"\",\n                \"Quota\": 0\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"b5d7f3a2-c418-4b9e-9c72-4a1e6d3f8b90\"\n    }\n}",
+        "title": "查询账号全部可用区机型配额"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "查询广州一区运行中的实例列表",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-1\",\n    \"InstanceStatus\": [\n        \"running\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"epm-efgh5678\",\n                \"InstanceName\": \"web-server-01\",\n                \"MachineId\": \"srv-efgh5678\",\n                \"InstanceType\": \"BM.S5.LARGE8\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ImageId\": \"img-ubuntu-20.04\",\n                \"VersionNumber\": \"20.04\",\n                \"InstanceStatus\": \"running\",\n                \"OperateStatus\": \"normal\",\n                \"PrivateNetworkId\": \"net-private-002\",\n                \"PrivateIp\": \"10.0.0.2\",\n                \"PrivateIpV6\": \"\",\n                \"PublicNetworkId\": \"net-public-002\",\n                \"PublicIp\": \"203.0.113.20\",\n                \"PublicIpV6\": \"\",\n                \"CreatedTime\": \"2026-02-15T14:30:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b5d7f3a2-c418-4b9e-9c72-4a1e6d3f8b90\"\n    }\n}",
+        "title": "按可用区和状态筛选实例"
+      },
+      {
+        "document": "按实例ID查询实例列表",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"epm-abcd1234\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"epm-abcd1234\",\n                \"InstanceName\": \"my-epm-instance\",\n                \"MachineId\": \"srv-abcd1234\",\n                \"InstanceType\": \"BM.S5.LARGE8\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ImageId\": \"img-centos-7.9\",\n                \"VersionNumber\": \"7.9.2009\",\n                \"InstanceStatus\": \"running\",\n                \"OperateStatus\": \"normal\",\n                \"PrivateNetworkId\": \"net-private-001\",\n                \"PrivateIp\": \"10.0.0.1\",\n                \"PrivateIpV6\": \"fd00::1\",\n                \"PublicNetworkId\": \"net-public-001\",\n                \"PublicIp\": \"203.0.113.10\",\n                \"PublicIpV6\": \"2001:db8::1\",\n                \"CreatedTime\": \"2026-01-13T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "查询实例列表"
+      }
+    ],
+    "DescribePrivateNetworkInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateNetworkInstances\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-beijing\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-013\",\n        \"TotalCount\": 1,\n        \"PrivateNetworkInstanceSet\": [\n            {\n                \"NetworkInstanceId\": \"ein-a1b2c3d4\",\n                \"ZoneId\": \"ap-beijing-a\",\n                \"NetworkInstanceName\": \"test-pri-instance\",\n                \"Network\": \"10.0.0.0\",\n                \"Mask\": 24,\n                \"ServerCount\": 3,\n                \"AvailableIpCount\": 251,\n                \"CreatedAt\": \"2026-04-07T00:00:00\",\n                \"UpdatedAt\": \"2026-04-07T00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "根据可用区查询私网实例"
+      }
+    ],
+    "DescribePublicIps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicIps\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-beijing\",\n    \"State\": [\n        \"InUse\"\n    ],\n    \"Type\": [\n        \"Ipv4\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-028\",\n        \"TotalCount\": 2,\n        \"IpInfoSet\": [\n            {\n                \"Ip\": \"10.0.0.200\",\n                \"NetworkInstanceId\": \"epn-xxxxxxxx\",\n                \"InstanceId\": \"ins-001\",\n                \"State\": \"InUse\",\n                \"Type\": \"Ipv4\",\n                \"CreatedAt\": \"2026-04-07T00:00:00\",\n                \"UpdatedAt\": \"2026-04-07T00:00:00\"\n            },\n            {\n                \"Ip\": \"10.0.0.201\",\n                \"NetworkInstanceId\": \"epn-xxxxxxxx\",\n                \"InstanceId\": \"\",\n                \"State\": \"Unbound\",\n                \"Type\": \"Ipv4\",\n                \"CreatedAt\": \"2026-04-07T00:00:00\",\n                \"UpdatedAt\": \"2026-04-07T00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "查询静态公网实例Ip信息"
+      }
+    ],
+    "DescribePublicNetworkInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicNetworkInstances\n<公共请求参数>\n\n{\n    \"ZoneId\": \"ap-beijing\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-003\",\n        \"TotalCount\": 2,\n        \"PublicNetworkInstanceSet\": [\n            {\n                \"NetworkInstanceId\": \"epn-a1b2c3d4\",\n                \"ZoneId\": \"ap-beijing\",\n                \"NetworkInstanceName\": \"test-bgp-instance\",\n                \"Bandwidth\": 100,\n                \"Line\": \"BGP\",\n                \"RouteMode\": \"BGP\",\n                \"Ipv4CidrSet\": [\n                    {\n                        \"Cidr\": \"10.0.0.128/26\",\n                        \"Gateway\": \"10.0.0.129\"\n                    }\n                ],\n                \"Ipv6CidrSet\": [\n                    {\n                        \"Cidr\": \"2001:db8::/96\",\n                        \"Gateway\": \"2001:db8::1\"\n                    }\n                ],\n                \"ServerCount\": 2,\n                \"Ipv4Count\": 61,\n                \"Ipv6Count\": -1,\n                \"CreatedAt\": \"2026-04-07T00:00:00\",\n                \"UpdatedAt\": \"2026-04-07T00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "根据可用区ID查询公网实例"
+      }
+    ],
+    "DescribeZoneData": [
+      {
+        "document": "按指标名，查询统计数据。数据按1分钟间隔统计",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneData\n<公共请求参数>\n\n{\n    \"MetricName\": \"inbw\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"StartTime\": \"2026-04-23T07:00:00Z\",\n    \"EndTime\": \"2026-04-23T08:00:00Z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Time\": \"2026-04-23T07:00:00Z\",\n                \"Value\": 1.1\n            },\n            {\n                \"Time\": \"2026-04-23T07:01:00Z\",\n                \"Value\": 2.1\n            }\n        ],\n        \"RequestId\": \"b5d7f3a2-c418-4b9e-9c72-4a1e6d3f8b90\"\n    }\n}",
+        "title": "查询指定机房交换机数据"
+      }
+    ],
+    "DescribeZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ZoneSet\": [\n            {\n                \"ZoneId\": 100001,\n                \"Zone\": \"ap-guangzhou-tez-gz-1\",\n                \"ZoneName\": \"广州边缘一区\",\n                \"ZoneNameEn\": \"Guangzhou Edge Zone 1\",\n                \"Region\": \"ap-guangzhou\"\n            },\n            {\n                \"ZoneId\": 160001,\n                \"Zone\": \"ap-chengdu-tez-cd-1\",\n                \"ZoneName\": \"成都边缘一区\",\n                \"ZoneNameEn\": \"Chengdu Edge Zone 1\",\n                \"Region\": \"ap-chengdu\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "查询所有地域账号边缘可用区列表"
+      }
+    ],
+    "ModifyInstanceAttribute": [
+      {
+        "document": "修改指定实例的名称。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bms-abcd1234\",\n    \"InstanceName\": \"new-instance-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5f6a789-4c3d-5b2e-af01-8d7c6b5a4e3f\"\n    }\n}",
+        "title": "修改实例名称"
+      },
+      {
+        "document": "变更指定实例的公网IPv4地址。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"bms-abcd1234\",\n    \"NewPublicIp\": \"203.0.113.20\",\n    \"IpType\": \"ipv4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5f6a789-4c3d-5b2e-af01-8d7c6b5a4e3f\"\n    }\n}",
+        "title": "变更公网IPv4"
+      }
+    ],
+    "ModifyPrivateNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPrivateNetworkInstance\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"ein-dfghjkl\",\n    \"NetworkInstanceName\": \"new-pri-name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-021\"\n    }\n}",
+        "title": "修改私网实例名称"
+      }
+    ],
+    "ModifyPublicNetworkInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkInstance\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-dfghjkl1\",\n    \"NetworkInstanceName\": \"新实例名称\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-004\"\n    }\n}",
+        "title": "修改公网实例名称"
+      }
+    ],
+    "ReleasePublicIp": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleasePublicIp\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-dfghjkl\",\n    \"Type\": \"ipv4\",\n    \"IpList\": [\n        \"226.10.12.3\",\n        \"226.10.12.4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-026\"\n    }\n}",
+        "title": "释放公网 Ipv4"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReleasePublicIp\n<公共请求参数>\n\n{\n    \"NetworkInstanceId\": \"epn-xxxxxxxx\",\n    \"Type\": \"ipv6\",\n    \"IpList\": [\n        \"2001:db8::1a2b\",\n        \"2001:db8::3c4d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"test-req-026\"\n    }\n}",
+        "title": "释放公网 Ipv6"
+      }
+    ],
+    "TerminateInstances": [
+      {
+        "document": "批量销毁两个实例，其中一个因状态不允许而失败。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"epm-mnop3456\",\n        \"epm-abcd1234\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"bms-mnop3456\"\n        ],\n        \"FailedInstanceSet\": [\n            {\n                \"InstanceId\": \"bms-abcd1234\",\n                \"ErrorCode\": \"UnsupportedOperation.InvalidInstanceState\",\n                \"ErrorMessage\": \"Instance bms-abcd1234 is in allocating status, cannot terminate\"\n            }\n        ],\n        \"RequestId\": \"f2a3b456-7c8d-9e0f-1a2b-3c4d5e6f7a8b\"\n    }\n}",
+        "title": "批量销毁实例（部分成功）"
+      },
+      {
+        "document": "销毁指定实例，成功后实例状态变更为 terminating。",
+        "input": "POST / HTTP/1.1\nHost: edgezone.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"epm-mnop3456\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"bms-mnop3456\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "销毁单个实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

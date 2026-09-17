@@ -20,7 +20,20 @@ Output:
             "Region": 1,
             "ResourcePoolCode": "dlc-ae511d85_2",
             "Scheduler": "KUEUE",
-            "Status": 1
+            "Status": 1,
+            "SchedulableLimitList": [
+                {
+                    "BillingItem": "sv_dlc_standard_cu_standard_cu",
+                    "MaxSchedulableUnits": 32
+                }
+            ],
+            "Tags": [
+                {
+                    "TagKey": "env",
+                    "TagValue": "dev",
+                    "Category": "Custom"
+                }
+            ]
         },
         "RequestId": "f11aa289-824c-42e9-b7b2-dca6ed75d9ba"
     }

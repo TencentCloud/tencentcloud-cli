@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod ExecuteFunction --cli-unfold-argument  \
     --FunctionName ExampleFunc \
-    --FunctionArg XXX
+    --FunctionArg param1
 ```
 
 Output: 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "RequestId": "8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0",
-        "Result": "XXX"
+        "Result": "taskId"
     }
 }
 ```

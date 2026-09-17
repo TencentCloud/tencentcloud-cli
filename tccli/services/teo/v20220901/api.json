@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DeleteCustomErrorPage": {
-      "document": "删除自定义错误页面。",
+      "document": "删除自定义响应页面。",
       "input": "DeleteCustomErrorPageRequest",
       "name": "删除自定义响应页面",
       "output": "DeleteCustomErrorPageResponse",
@@ -11022,7 +11022,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义页面 ID。",
+          "document": "自定义响应页面 ID。",
           "example": "p-2kplomhisdcb",
           "member": "string",
           "name": "PageId",
@@ -12860,7 +12860,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-2kplomhisdcb",
           "member": "string",
           "name": "ZoneId",
@@ -12869,7 +12869,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为20，详细的过滤条件Name值如下：\n<li>page-id： 按照页面 ID 进行过滤；</li>\n<li>name： 按照页面名称进行过滤；</li>\n<li>description：按照页面描述过滤；</li>\n<li>content-type：按照页面类型过滤。</li>",
+          "document": "<p>过滤条件，Filters.Values 的上限为 20，详细的过滤条件Name值如下：<li>page-id： 按照页面 ID 进行过滤；</li><li>name： 按照页面名称进行过滤；</li><li>description：按照页面描述过滤；</li><li>content-type：按照页面类型过滤。</li></p>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -12878,7 +12878,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询偏移量。默认值：0。",
+          "document": "<p>分页查询偏移量。默认值：0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -12887,7 +12887,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询限制数目。默认值：20，最大值：1000。 ",
+          "document": "<p>分页查询限制数目。默认值：20，最大值：1000。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -12902,7 +12902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自定义错误页面总数。",
+          "document": "<p>自定义响应页面总数。</p>",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -12912,7 +12912,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义错误页面数据列表。",
+          "document": "<p>自定义响应页面数据列表。</p>",
           "example": "无",
           "member": "CustomErrorPage",
           "name": "ErrorPages",

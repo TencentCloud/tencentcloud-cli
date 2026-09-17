@@ -310,7 +310,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>非管控面（envd）的访问Token</p>",
+          "document": "<p>除管控面envd端口(49983)以外端口的访问Token</p>",
           "example": "f0XXXXX077d7d61862e0f144568bd2c207cbbbbe94eb5ef919f884dc614796ab",
           "member": "string",
           "name": "TrafficToken",

@@ -20436,7 +20436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警分组ID，满足正则表达式<code>alert-[a-z0-9]{8}</code></p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "alert-f2vx278",
           "member": "string",
           "name": "GroupId",
@@ -20446,7 +20446,7 @@
         },
         {
           "disabled": false,
-          "document": "告警分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警分组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "告警分组-11",
           "member": "string",
           "name": "GroupName",
@@ -20456,7 +20456,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>腾讯云可观测平台告警模板ID ，返回告警模板转换后的notice ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"notice-as454a12\"]",
           "member": "string",
           "name": "AMPReceivers",
@@ -20466,7 +20466,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义告警模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自定义告警模板</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusAlertCustomReceiver",
           "name": "CustomReceiver",
@@ -20476,7 +20476,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通知间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>告警通知间隔</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5m",
           "member": "string",
           "name": "RepeatInterval",
@@ -20486,7 +20486,7 @@
         },
         {
           "disabled": false,
-          "document": "若告警分组通过模板创建，则返回模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>若告警分组通过模板创建，则返回模板ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "temp-sa123dsx",
           "member": "string",
           "name": "TemplateId",
@@ -20496,7 +20496,7 @@
         },
         {
           "disabled": false,
-          "document": "分组内告警规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组内告警规则详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrometheusAlertGroupRuleSet",
           "name": "Rules",
@@ -20506,7 +20506,7 @@
         },
         {
           "disabled": false,
-          "document": "分组创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-07-24T17:08:16+08:00",
           "member": "string",
           "name": "CreatedAt",
@@ -20516,13 +20516,23 @@
         },
         {
           "disabled": false,
-          "document": "分组更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>分组更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-07-24T17:08:16+08:00",
           "member": "string",
           "name": "UpdatedAt",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后修改人子账号uin</p>",
+          "example": "11251235",
+          "member": "string",
+          "name": "LastModifySubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -1,0 +1,2282 @@
+{
+  "actions": {
+    "ApplyPublicIps": {
+      "document": "从静态 IP 池为指定公网实例批量申请多个 Ip 地址（随机分配）。申请前需检查用户配额。\n此接口仅适用于 `RouteMode=static` 的公网实例。BGP/OSPF 实例调用此接口将返回错误。",
+      "input": "ApplyPublicIpsRequest",
+      "name": "申请公网 IP",
+      "output": "ApplyPublicIpsResponse",
+      "status": "online"
+    },
+    "CreateEdgeNodeService": {
+      "document": "开通边缘节点计费服务。",
+      "input": "CreateEdgeNodeServiceRequest",
+      "name": "开通边缘节点计费服务",
+      "output": "CreateEdgeNodeServiceResponse",
+      "status": "online"
+    },
+    "CreateInstances": {
+      "document": "创建物理机实例，系统自动分配物理机资源并完成装机。如果用户未在当前可用区开通计费，系统自动开通。支持并发分配物理机资源，异步执行网络分配和装机任务。",
+      "input": "CreateInstancesRequest",
+      "name": "创建物理机实例",
+      "output": "CreateInstancesResponse",
+      "status": "online"
+    },
+    "CreatePrivateNetworkInstance": {
+      "document": "创建私网实例，一个用户在一个可用区仅支持创建一个私网实例，网络地址由 Network（网络号）和 Mask（掩码位数）两个参数共同决定子网范围。Network 必须是三个 RFC 1918 私有地址段之一的合法网络地址：10.0.0.0/8、172.16.0.0/12 或 192.168.0.0/16，且 host 位必须全为 0（即Network 与 Mask 组合后不能有主机位被置位，例如 10.0.0.1/24 是非法的，应填 10.0.0.0/24）。Mask 的上限统一为 28，下限由所属地址段决定：10.x.x.x 段允许 8～28，172.16.x.x 段允许 12～28，192.168.x.x 段允许 16～28。",
+      "input": "CreatePrivateNetworkInstanceRequest",
+      "name": "创建私网实例",
+      "output": "CreatePrivateNetworkInstanceResponse",
+      "status": "online"
+    },
+    "CreatePublicNetworkInstance": {
+      "document": "用户输入可用区ID、公网实例名称、网络线路、路由模式以创建公网实例，一个用户在一个可用区仅支持创建一个公网实例\n路由模式为 **静态** 的公网实例需要用户主动申请和释放公网IP\n路由模式为 **OSPF、BGP** 的公网实例在创建时自动分配公网IP段，销毁时自动释放公网IP段",
+      "input": "CreatePublicNetworkInstanceRequest",
+      "name": "创建公网实例",
+      "output": "CreatePublicNetworkInstanceResponse",
+      "status": "online"
+    },
+    "DeletePrivateNetworkInstance": {
+      "document": "删除私网实例",
+      "input": "DeletePrivateNetworkInstanceRequest",
+      "name": "删除私网实例",
+      "output": "DeletePrivateNetworkInstanceResponse",
+      "status": "online"
+    },
+    "DeletePublicNetworkInstance": {
+      "document": "修改公网实例信息",
+      "input": "DeletePublicNetworkInstanceRequest",
+      "name": "删除公网实例",
+      "output": "DeletePublicNetworkInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstanceTypes": {
+      "document": "根据 AppId 查询账号下可用区维度的机型配额列表；若传入 Zone，则仅返回指定可用区下的机型配额；若不传，则返回账号下所有可用区的机型配额。",
+      "input": "DescribeInstanceTypesRequest",
+      "name": "查询物理机机型",
+      "output": "DescribeInstanceTypesResponse",
+      "status": "online"
+    },
+    "DescribeInstances": {
+      "document": "查询物理机实例列表，支持按实例ID、实例名称、可用区、实例状态等条件筛选，并支持分页查询。",
+      "input": "DescribeInstancesRequest",
+      "name": "查询物理机实例列表",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribePrivateNetworkInstances": {
+      "document": "查询私网实例，支持通过私网实例ID、私网实例名称、可用区ID等参数进行查询",
+      "input": "DescribePrivateNetworkInstancesRequest",
+      "name": "查询私网实例",
+      "output": "DescribePrivateNetworkInstancesResponse",
+      "status": "online"
+    },
+    "DescribePublicIps": {
+      "document": "查询用户的公网Ip信息，对于路由模式为Static的公网实例，会返回所有已申请的公网Ip信息，对于路由模式为Ospf和Bgp的公网实例，会直接返回网段信息",
+      "input": "DescribePublicIpsRequest",
+      "name": "查询公网IP列表",
+      "output": "DescribePublicIpsResponse",
+      "status": "online"
+    },
+    "DescribePublicNetworkInstances": {
+      "document": "查询公网实例列表，支持按实例ID、实例名称、可用区等条件筛选，并支持分页查询。",
+      "input": "DescribePublicNetworkInstancesRequest",
+      "name": "查询公网实例列表",
+      "output": "DescribePublicNetworkInstancesResponse",
+      "status": "online"
+    },
+    "DescribeZoneData": {
+      "document": "按指标名，查询统计数据。数据按1分钟间隔统计",
+      "input": "DescribeZoneDataRequest",
+      "name": "查询可用区机房指标数据",
+      "output": "DescribeZoneDataResponse",
+      "status": "online"
+    },
+    "DescribeZones": {
+      "document": "跨地域聚合查询所有已配置 region 下的可用区列表。支持通过 FilterByAppId 参数控制是否按账号过滤：默认仅返回账号关联的可用区，设为 False 时返回所有可用区。本地域直查数据库，远程地域并发 HTTP 请求后合并返回。",
+      "input": "DescribeZonesRequest",
+      "name": "查询所有地域可用区列表",
+      "output": "DescribeZonesResponse",
+      "status": "online"
+    },
+    "ModifyInstanceAttribute": {
+      "document": "修改物理机实例的属性，支持修改实例名称、变更公网IP（IPv4/IPv6）。InstanceName 和 NewPublicIp 至少传入一个。",
+      "input": "ModifyInstanceAttributeRequest",
+      "name": "修改实例属性",
+      "output": "ModifyInstanceAttributeResponse",
+      "status": "online"
+    },
+    "ModifyPrivateNetworkInstance": {
+      "document": "修改私网实例信息",
+      "input": "ModifyPrivateNetworkInstanceRequest",
+      "name": "修改私网实例",
+      "output": "ModifyPrivateNetworkInstanceResponse",
+      "status": "online"
+    },
+    "ModifyPublicNetworkInstance": {
+      "document": "修改公网实例信息",
+      "input": "ModifyPublicNetworkInstanceRequest",
+      "name": "修改公网实例",
+      "output": "ModifyPublicNetworkInstanceResponse",
+      "status": "online"
+    },
+    "ReleasePublicIp": {
+      "document": "批量释放已分配给 STATIC 公网实例但**未绑定物理服务器**的 IPv4 地址\n此接口仅适用于 STATIC 模式实例。BGP/OSPF 实例的 CIDR 在实例删除时自动归还，无需手动释放单个 IP。",
+      "input": "ReleasePublicIpRequest",
+      "name": "释放公网 IP",
+      "output": "ReleasePublicIpResponse",
+      "status": "online"
+    },
+    "TerminateInstances": {
+      "document": "销毁物理机实例，释放资源。接口同步释放网络资源（IP回收）并更新状态为 terminating，后台异步执行磁盘清理。支持部分成功。",
+      "input": "TerminateInstancesRequest",
+      "name": "销毁实例",
+      "output": "TerminateInstancesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-04-01",
+    "api_brief": "腾讯云边缘可用区边缘裸金属向用户提供弹性的计算、存储和网络资源。用户可以使用本文档介绍的 API，并参照相应的示例，对边缘裸金属进行相关操作：如创建、销毁、申请IP、重启等。",
+    "serviceNameCN": "边缘可用区",
+    "serviceShortName": "edgezone"
+  },
+  "objects": {
+    "ApplyPublicIpsRequest": {
+      "document": "ApplyPublicIps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例 ID（路由发布模式必须为 STATIC ）",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请Ip数量，最小为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "申请的Ip类型，枚举值：ipv4、ipv6",
+          "example": "ipv4",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ApplyPublicIpsResponse": {
+      "document": "ApplyPublicIps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分配的公网 IP 地址列表",
+          "example": "[\"224.12.10.25\"]",
+          "member": "string",
+          "name": "IpList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeNodeServiceRequest": {
+      "document": "CreateEdgeNodeService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区代码，如 ap-guangzhou-1。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEdgeNodeServiceResponse": {
+      "document": "CreateEdgeNodeService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可用区代码，如 ap-guangzhou-1。</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型规格，如 BMS5.MEDIUM8。</p>",
+          "example": "BMS5.MEDIUM8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网网络实例ID，格式如 net-xxx。</p>",
+          "example": "net-private-001",
+          "member": "string",
+          "name": "PrivateNetworkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网网络实例ID，格式如 net-xxx。</p>",
+          "example": "net-public-001",
+          "member": "string",
+          "name": "PublicNetworkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称。</p>",
+          "example": "my-epm-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像ID，如 img-centos-7.9。</p>",
+          "example": "img-centos-7.9",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建数量，默认1，最大50。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录密码，与SSHKey二选一</p>",
+          "example": "Tencent@epm1",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSH密钥公钥字符串，与Password二选一</p>",
+          "example": "AAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZWb3BlbnNzaC1rZXktdjEAAAAABG5vbmU TsC85sqFfWw9JxFT3j9ul582QAAAJj6oDbs+qA2QyNTUxOQAAACC5aPbeBgxRy7Be3cl6S",
+          "member": "string",
+          "name": "SSHKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>镜像版本号，仅公共镜像有版本概念。</p>",
+          "example": "7.9.2009",
+          "member": "string",
+          "name": "VersionNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>是否启用公网IPv6，默认false。启用后系统会在分配IPv4后额外分配一个IPv6地址。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableIpv6",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功的实例ID列表。</p>",
+          "example": "[\"ins-abcd1234\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建失败的实例个数。仅部分失败时返回，全部成功时不返回该字段。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "FailedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNetworkInstanceRequest": {
+      "document": "CreatePrivateNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新实例名称",
+          "example": "test-pri-instance",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络地址（host 位必须全为 0），必须落在以下 RFC 1918 私有范围之一：`10.0.0.0/8`、`172.16.0.0/12`、`192.168.0.0/16`",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "Network",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "掩码位数，上限统一为 `28`，下限随所属私有段而定：`10.0.0.0/8` 允许 `8~28`，`172.16.0.0/12` 允许 `12~28`，`192.168.0.0/16` 允许 `16~28`；需与 Network 共同构成合法网络地址（host 位全为 0）",
+          "example": "24",
+          "member": "int64",
+          "name": "Mask",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateNetworkInstanceResponse": {
+      "document": "CreatePrivateNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例ID",
+          "example": "ein-a1b2c3d4",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePublicNetworkInstanceRequest": {
+      "document": "CreatePublicNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可用区</p>",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网实例名称</p>",
+          "example": "新加坡EPM公网实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络线路</p>",
+          "example": "BGP",
+          "member": "string",
+          "name": "Line",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由模式</p>",
+          "example": "static",
+          "member": "string",
+          "name": "RouteMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网带宽（Mbps）</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGP AS号</p>",
+          "example": "65100",
+          "member": "int64",
+          "name": "BgpAsNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGP认证密码</p>",
+          "example": "ByoipTest@123",
+          "member": "string",
+          "name": "BgpPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网实例类型</p><p>枚举值：</p><ul><li>standard： 标准型(默认)</li><li>custom： 自定义型(暂不支持创建)</li></ul>",
+          "example": "standard",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePublicNetworkInstanceResponse": {
+      "document": "CreatePublicNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>公网实例 ID</p>",
+          "example": "epn-dfghjk",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNetworkInstanceRequest": {
+      "document": "DeletePrivateNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例Id",
+          "example": "ein-a1b2c3d4",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateNetworkInstanceResponse": {
+      "document": "DeletePrivateNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePublicNetworkInstanceRequest": {
+      "document": "DeletePublicNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例 ID",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePublicNetworkInstanceResponse": {
+      "document": "DeletePublicNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTypesRequest": {
+      "document": "DescribeInstanceTypes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区代码，如 ap-guangzhou-1；不传则返回账号下所有可用区的机型。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量,默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认20，最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceTypesResponse": {
+      "document": "DescribeInstanceTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机型配额列表。",
+          "example": "无",
+          "member": "InstanceTypeQuota",
+          "name": "InstanceTypeQuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回记录数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID列表，用于按实例ID筛选</p>",
+          "example": "[\"epm-abcd1234\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称，支持模糊匹配</p>",
+          "example": "my-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区代码，用于筛选指定可用区的实例</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态列表，用于按状态筛选实例。可选值：allocating、running、isolating、isolated、terminating、error</p>",
+          "example": "[\"running\"]",
+          "member": "string",
+          "name": "InstanceStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网网络ID</p>",
+          "example": "epn-223dedd6",
+          "member": "string",
+          "name": "PublicNetworkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "ein-5df44fef",
+          "member": "string",
+          "name": "PrivateNetworkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IPv4地址列表，用于按公网IP筛选实例</p>",
+          "example": "[\"203.0.113.10\"]",
+          "member": "string",
+          "name": "PublicIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认20，最大100</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例详细信息列表</p>",
+          "example": "无",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的实例数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNetworkInstancesRequest": {
+      "document": "DescribePrivateNetworkInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例Id",
+          "example": "ein-a1b2c3d4",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新实例名称",
+          "example": "测试私网实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateNetworkInstancesResponse": {
+      "document": "DescribePrivateNetworkInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网实例集合",
+          "example": "无",
+          "member": "PrivateNetworkInstanceInfo",
+          "name": "PrivateNetworkInstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicIpsRequest": {
+      "document": "DescribePublicIps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "按公网实例 ID 过滤（子串匹配，多个值取并集）",
+          "example": "[\"epn-dfghjkl\", \"epn-a1b2c3d4\"]",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按可用区/机房过滤",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按 IP 过滤（子串匹配，多个值取并集）",
+          "example": "[\"10.100.12.1\", \"10.100.13.2\"]",
+          "member": "string",
+          "name": "Ip",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按状态过滤，可选值：`InUse`、`Unbound`（多个值取并集）",
+          "example": "[\"Unbound\", \"InUse\"]",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按 IP 版本过滤，可选值：`Ipv4`、`Ipv6`（多个值取并集）",
+          "example": "[\"ipv4\", \"ipv6\"]",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "按创建时间排序，可选值：`asc`、`desc`（默认 `desc`）",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByCreateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按更新时间排序，可选值：`asc`、`desc`（优先级高于创建时间排序）",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByUpdateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicIpsResponse": {
+      "document": "DescribePublicIps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网Ip总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分配的公网 IP 地址列表",
+          "example": "无",
+          "member": "IpInfo",
+          "name": "IpInfoSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicNetworkInstancesRequest": {
+      "document": "DescribePublicNetworkInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例ID",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网实例名称",
+          "example": "北京测试公网实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区Id",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicNetworkInstancesResponse": {
+      "document": "DescribePublicNetworkInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网实例集合",
+          "example": "无",
+          "member": "PublicNetworkInstanceInfo",
+          "name": "PublicNetworkInstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneDataRequest": {
+      "document": "DescribeZoneData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区id",
+          "example": "ap-singapore-tez-shouer-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标名(inbw:入带宽，outbw:出带宽)",
+          "example": "inbw",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（UTC时间:0时区）",
+          "example": "2026-04-13T00:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（UTC时间:0时区）,最多查询2天时间",
+          "example": "2026-04-13T00:00:00Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneDataResponse": {
+      "document": "DescribeZoneData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计数据,指标inbw|outbw单位为Mbps",
+          "example": "无",
+          "member": "SwitchData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZonesRequest": {
+      "document": "DescribeZones请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeZonesResponse": {
+      "document": "DescribeZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>所有地域的可用区列表。</p>",
+          "example": "无",
+          "member": "ZoneInfo",
+          "name": "ZoneSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区总数量。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FailedInstance": {
+      "document": "操作失败的实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "bms-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。",
+          "example": "UnsupportedOperation.InvalidInstanceState",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "Instance bms-abcd1234 operate status is normal, cannot start",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Instance": {
+      "document": "描述物理机实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "bms-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "my-epm-instance",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的物理机ID</p>",
+          "example": "srv-abcd1234",
+          "member": "string",
+          "name": "MachineId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型规格</p>",
+          "example": "BM.S5.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区代码</p>",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像ID</p>",
+          "example": "img-centos-7.9",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>镜像版本号</p>",
+          "example": "7.9.2009",
+          "member": "string",
+          "name": "VersionNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态，可选值：allocating、running、isolating、isolated、terminating、error</p>",
+          "example": "running",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作状态，可选值：normal、starting、stopping、stopped、rebooting</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "OperateStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "net-private-001",
+          "member": "string",
+          "name": "PrivateNetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有IPv4地址</p>",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "PrivateIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有IPv6地址</p>",
+          "example": "fd00::1",
+          "member": "string",
+          "name": "PrivateIpV6",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网网络ID</p>",
+          "example": "net-public-001",
+          "member": "string",
+          "name": "PublicNetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IPv4地址</p>",
+          "example": "203.0.113.10",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网IPv6地址</p>",
+          "example": "2001:db8::1",
+          "member": "string",
+          "name": "PublicIpV6",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统类型</p>",
+          "example": "ext3",
+          "member": "string",
+          "name": "FileSystemType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。按照ISO8601标准表示，并且使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。</p>",
+          "example": "2026-01-13T10:00:00Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型族标识</p>",
+          "example": "S",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机型族名称</p>",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "InstanceFamilyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 型号</p>",
+          "example": "Intel Xeon Platinum 8255C",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 核数</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存大小</p>",
+          "example": "32",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceTypeQuota": {
+      "document": "账号在可用区下的机型配额信息，包含可用区、机型详情和配额数量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区代码。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型规格。",
+          "example": "BMS5.MEDIUM8",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型家族。",
+          "example": "BM.S5",
+          "member": "string",
+          "name": "InstanceFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型族名称",
+          "example": "标准型",
+          "member": "string",
+          "name": "InstanceFamilyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU核数。",
+          "example": "8",
+          "member": "int64",
+          "name": "CpuCores",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU类型。",
+          "example": "6231C*2",
+          "member": "string",
+          "name": "CpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小（GB）。",
+          "example": "32",
+          "member": "int64",
+          "name": "MemoryGb",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘类型。",
+          "example": "SSD",
+          "member": "string",
+          "name": "SystemDiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小（GB）。",
+          "example": "480",
+          "member": "int64",
+          "name": "SystemDiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "系统盘数量。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SystemDiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据盘类型。",
+          "example": "SSD",
+          "member": "string",
+          "name": "DataDiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据盘大小（GB）。",
+          "example": "960",
+          "member": "int64",
+          "name": "DataDiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据盘数量。",
+          "example": "4",
+          "member": "uint64",
+          "name": "DataDiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第二组数据盘类型",
+          "example": "SSD",
+          "member": "string",
+          "name": "SecondaryDataDiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第二组数据盘大小(GB)",
+          "example": "10",
+          "member": "int64",
+          "name": "SecondaryDataDiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "第二组数据盘数量",
+          "example": "2",
+          "member": "int64",
+          "name": "SecondaryDataDiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘描述字符串（向后兼容）。",
+          "example": "SSD-480G*2, SSD-960G*4",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络接口类型。",
+          "example": "25G*2",
+          "member": "string",
+          "name": "NetworkInterfaceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU类型，无GPU时为空字符串。",
+          "example": "NVIDIA H20*8",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配额数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Quota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpInfo": {
+      "document": "公网Ip信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "10.100.0.20",
+          "example": "公网IP",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "epn-asdfghjkl",
+          "example": "公网实例ID",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "epm-asdfghjkl",
+          "example": "物理服务器实例ID",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Unbound",
+          "example": "IP使用状态状态，Unbound或InUse",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ipv4",
+          "example": "IP类型，Ipv4或Ipv6",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2026-04-07T00:00:00",
+          "example": "申请时间",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "2026-04-07T00:00:00",
+          "example": "更新时间",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyInstanceAttributeRequest": {
+      "document": "ModifyInstanceAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "bms-abcd1234",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的实例名称，1-60字符。与 NewPublicIp 至少传入一个。",
+          "example": "new-instance-name",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "新的公网IP（需从该实例所绑定公网实例的可用IP中选择）。与 InstanceName 至少传入一个。",
+          "example": "203.0.113.20",
+          "member": "string",
+          "name": "NewPublicIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "IP类型，ipv4 或 ipv6，默认 ipv4。仅在指定 NewPublicIp 时有效。",
+          "example": "ipv4",
+          "member": "string",
+          "name": "IpType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAttributeResponse": {
+      "document": "ModifyInstanceAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNetworkInstanceRequest": {
+      "document": "ModifyPrivateNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例Id",
+          "example": "ein-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新实例名称",
+          "example": "测试私网实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPrivateNetworkInstanceResponse": {
+      "document": "ModifyPrivateNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPublicNetworkInstanceRequest": {
+      "document": "ModifyPublicNetworkInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例 ID",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新实例名称",
+          "example": "测试实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPublicNetworkInstanceResponse": {
+      "document": "ModifyPublicNetworkInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PrivateNetworkInstanceInfo": {
+      "document": "私网实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私网实例ID",
+          "example": "ein-a1b2c3d4",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私网实例名称",
+          "example": "test-pri-instance",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络地址",
+          "example": "10.0.0.0",
+          "member": "string",
+          "name": "Network",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络掩码",
+          "example": "8",
+          "member": "int64",
+          "name": "Mask",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联物理机数量",
+          "example": "10",
+          "member": "int64",
+          "name": "ServerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用Ip数量",
+          "example": "255",
+          "member": "int64",
+          "name": "AvailableIpCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2026-04-07T00:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2026-04-07T00:00:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublicNetworkInstanceInfo": {
+      "document": "公网实例信息，包含实例ID、可用区ID、实例名称、线路、路由模式等信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例ID",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "北京测试公网实例",
+          "member": "string",
+          "name": "NetworkInstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "线路信息",
+          "example": "BGP",
+          "member": "string",
+          "name": "Line",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路由模式，枚举值：STATIC、BGP、OSPF",
+          "example": "BGP",
+          "member": "string",
+          "name": "RouteMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的物理服务器数量",
+          "example": "10",
+          "member": "int64",
+          "name": "ServerCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已申请的Ipv4数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Ipv4Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已申请的Ipv6数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Ipv6Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的Ipv4网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicNetworkSegment",
+          "name": "Ipv4CidrSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的Ipv6网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicNetworkSegment",
+          "name": "Ipv6CidrSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网实例创建时间",
+          "example": "2026-04-07T00:00:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网实例修改时间",
+          "example": "2026-04-07T00:00:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublicNetworkSegment": {
+      "document": "公网网段信息，包含网段cidr和网关ip",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网段Cidr",
+          "example": "224.16.14.0/24",
+          "member": "string",
+          "name": "Cidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关Ip",
+          "example": "224.16.14.1",
+          "member": "string",
+          "name": "Gateway",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReleasePublicIpRequest": {
+      "document": "ReleasePublicIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网实例 ID（路由发布模式为 STATIC ）",
+          "example": "epn-dfghjkl",
+          "member": "string",
+          "name": "NetworkInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待释放的Ip类型，枚举值：ipv4、ipv6",
+          "example": "ipv4",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待释放的 Ip 地址列表",
+          "example": "[\"226.10.12.3\", \"226.10.12.4\"]",
+          "member": "string",
+          "name": "IpList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ReleasePublicIpResponse": {
+      "document": "ReleasePublicIp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchData": {
+      "document": "交换机数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UTC时间",
+          "example": "2026-04-13T00:00:00Z",
+          "member": "string",
+          "name": "Time",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计值",
+          "example": "1.11",
+          "member": "float",
+          "name": "Value",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TerminateInstancesRequest": {
+      "document": "TerminateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID列表，最多100个。</p>",
+          "example": "[\"epm-mnop3456\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesResponse": {
+      "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>销毁成功的实例ID列表。</p>",
+          "example": "[\"epm-mnop3456\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>销毁失败的实例信息列表（部分成功时返回）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FailedInstance",
+          "name": "FailedInstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ZoneInfo": {
+      "document": "跨地域聚合后的可用区信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区ID。",
+          "example": "100001",
+          "member": "int64",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区代码。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区中文名称。",
+          "example": "广州一区",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区英文名称。",
+          "example": "Guangzhou Zone 1",
+          "member": "string",
+          "name": "ZoneNameEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域代码。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域代码。",
+          "example": "asia_pacific_1",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域名称。",
+          "example": "亚太1",
+          "member": "string",
+          "name": "LocationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

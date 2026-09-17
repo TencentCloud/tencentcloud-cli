@@ -198,6 +198,14 @@
         "title": "CreateMySQL"
       }
     ],
+    "CreatePlatformEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"platform01\",\n    \"PlatformId\": \"pf-*************\",\n    \"ReqKey\": \"rewkey-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"platform01-******r**********\",\n        \"RequestId\": \"68393676-975c-4eec-b485-36d4ee4f30a5\"\n    }\n}",
+        "title": "创建平台版环境"
+      }
+    ],
     "CreateStaticStore": [
       {
         "document": "",
@@ -618,6 +626,52 @@
         "title": "DescribePGUserMigration"
       }
     ],
+    "DescribePlatformAccountCircle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformAccountCircle\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-09-20 23:59:59\",\n        \"StartTime\": \"2026-08-20 21:01:24\",\n        \"RequestId\": \"5552ceb4-5918-46b6-a487-327e035ac538\"\n    }\n}",
+        "title": "查询平台版资源计费周期"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformAccountCircle\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-09-28 23:59:59\",\n        \"StartTime\": \"2026-08-29 00:00:00\",\n        \"RequestId\": \"95410dd7-bfd7-43f4-b228-e0d89f0fab9f\"\n    }\n}",
+        "title": "查询平台版资源计费周期(包含历史周期)"
+      }
+    ],
+    "DescribePlatformCreditsUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformCreditsUsage\n<公共请求参数>\n\n{\n    \"StartDate\": \"2026-09-01\",\n    \"EndDate\": \"2026-09-30\",\n    \"PlatformId\": \"pf-3iovc1ty3nug3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DailyList\": [\n            {\n                \"Date\": \"2026-09-01\",\n                \"DeductValue\": 0,\n                \"OriginCredits\": 0,\n                \"PackageDeductValue\": 0,\n                \"ReportValue\": 0\n            }\n        ],\n        \"DeductValueCount\": 8579960,\n        \"PackageDeductValueCount\": 0,\n        \"ReportValueCount\": 123625.5,\n        \"RequestId\": \"19c3312e-4267-40c6-8066-387a30492ab2\"\n    }\n}",
+        "title": "DescribePlatformCreditsUsage"
+      }
+    ],
+    "DescribePlatformCreditsUsageDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformCreditsUsageDetail\n<公共请求参数>\n\n{\n    \"Modules\": [\n        \"PostgreSQL\"\n    ],\n    \"StartDate\": \"2026-09-11\",\n    \"EndDate\": \"2026-10-11\",\n    \"NeedUsageDetails\": true,\n    \"PlatformId\": \"pf-35zc08k5rfxtq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Usages\": [\n            {\n                \"CreditsValue\": 0,\n                \"DeductValue\": 0,\n                \"MetricUsageDetail\": [\n                    {\n                        \"BillingCycleType\": \"hourly\",\n                        \"CreditsValue\": 0,\n                        \"DeductValue\": 0,\n                        \"MetricName\": \"HourlyCU\",\n                        \"PackageDeductValue\": 0,\n                        \"ReportValue\": 0,\n                        \"ResourceType\": \"PostgreSQL\",\n                        \"Unit\": \"核秒\",\n                        \"Value\": 0,\n                        \"ValueDetailList\": []\n                    }\n                ],\n                \"Module\": \"PostgreSQL\",\n                \"PackageDeductValue\": 0,\n                \"PlatformId\": \"pf-35zc08k5rfxtq\",\n                \"ReportValue\": 0\n            }\n        ],\n        \"RequestId\": \"c14de03b-f26f-41e4-b3e4-014055424d11\"\n    }\n}",
+        "title": "DescribePlatformCreditsUsageDetail"
+      }
+    ],
+    "DescribePlatformEnvUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformEnvUsage\n<公共请求参数>\n\n{\n    \"EnvId\": \"jeff-d4g6izo8z6a0502f6\",\n    \"StartDate\": \"2026-08-20\",\n    \"EndDate\": \"2026-09-20\",\n    \"ResourceTypes\": [\n        \"Storage\"\n    ],\n    \"NeedUsageDetails\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"CreditsScale\": 10000,\n        \"Resources\": [\n            {\n                \"Metrics\": [\n                    {\n                        \"Credits\": 50000,\n                        \"DailyUsageList\": [\n                            {\n                                \"Credits\": 50000,\n                                \"Date\": \"2026-09-08\",\n                                \"UsageValue\": 5000\n                            }\n                        ],\n                        \"MetricName\": \"ReadRequests\",\n                        \"OriginalMetricName\": \"ReadRequests\",\n                        \"OriginalResourceType\": \"COS\",\n                        \"UsageUnit\": \"Count\",\n                        \"UsageValue\": 5000\n                    }\n                ],\n                \"ResourceType\": \"Storage\",\n                \"TotalCredits\": 100000\n            }\n        ],\n        \"TotalCredits\": 100000,\n        \"RequestId\": \"b847eba1-a5b0-4f2a-b978-cc0389ca5141\"\n    }\n}",
+        "title": "查询环境资源用量"
+      }
+    ],
+    "DescribePlatforms": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatforms\n<公共请求参数>\n\n{\n    \"PlatformIds\": [\n        \"pf-2v4plhx1ph2bq\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PlatformList\": [\n            {\n                \"Alias\": \"\",\n                \"BillStatus\": \"normal\",\n                \"BillTime\": \"2026-09-08 21:26:03\",\n                \"ExpireTime\": \"2026-10-08 23:59:59\",\n                \"IsAutoRenew\": 0,\n                \"PackageId\": \"default\",\n                \"PlatformId\": \"pf-2v4plhx1ph2bq\",\n                \"Region\": \"ap-shanghai\",\n                \"Resources\": [\n                    {\n                        \"Detail\": \"{\\\"Bucket\\\":\\\"b5c5-static-pf-2v4plhx1ph2bq-1258467748\\\",\\\"PolicyId\\\":285688480,\\\"Region\\\":\\\"ap-shanghai\\\"}\",\n                        \"Id\": 84,\n                        \"PlatformId\": 30,\n                        \"ResName\": \"b5c5-static-pf-2v4plhx1ph2bq-1258467748\",\n                        \"ResType\": \"hosting\",\n                        \"Status\": 0\n                    }\n                ],\n                \"Spec\": \"{\\\"credits\\\":6000,\\\"envNum\\\":60}\",\n                \"Status\": 0\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"db08ab1f-fa4b-4c52-bc4d-09149ac24d40\"\n    }\n}",
+        "title": "查询指定平台版资源信息"
+      }
+    ],
     "DescribeQuotaData": [
       {
         "document": "",
@@ -718,6 +772,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyMySQL\n<公共请求参数>\n\n{\n    \"EnvId\": \"**s**r*pr********bc0df14561\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"IsSuccess\": true,\n            \"TaskId\": \"16710\",\n            \"TaskName\": \"DeleteDataHub\"\n        },\n        \"RequestId\": \"be616768-b634-4cd1-ad50-fd101be6a0a7\"\n    }\n}",
         "title": "DestroyMySQL"
+      }
+    ],
+    "DestroyPlatformEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPlatformEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"platform02-*****************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3482459c-d139-49ba-857a-c7f7a2b463ca\"\n    }\n}",
+        "title": "删除平台版环境"
       }
     ],
     "DestroyStaticStore": [
@@ -878,6 +940,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPGInstanceSpec\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****-****-d7gpxb78091c30209\",\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"Storage\": 30,\n    \"SwitchTag\": 1,\n    \"SwitchStartTime\": \"2026-08-26 20:15:00\",\n    \"SwitchEndTime\": \"2026-08-26 21:15:00\",\n    \"DryRun\": false\n}",
         "output": "{\n    \"Response\": {\n        \"BillId\": \"219429\",\n        \"DealName\": \"\",\n        \"RequestId\": \"4bcb1dba-5360-4c46-a8b5-5406958ebc72\"\n    }\n}",
         "title": "执行变配"
+      }
+    ],
+    "ModifyPlatformEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlatformEnv\n<公共请求参数>\n\n{\n    \"EnvId\": \"free2-2gi6dzbde85f86a0\",\n    \"Status\": \"DISABLE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"388e7b1e-c1ac-460d-8e85-e29bcb965f55\"\n    }\n}",
+        "title": "修改环境状态为 DISABLE"
       }
     ],
     "ModifyProvider": [

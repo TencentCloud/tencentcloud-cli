@@ -126,6 +126,13 @@
       "output": "CreateMySQLResponse",
       "status": "online"
     },
+    "CreatePlatformEnv": {
+      "document": "用户在购买平台版套餐后，可调用此接口创建平台版套餐环境，将产生一个平台版套餐环境。",
+      "input": "CreatePlatformEnvRequest",
+      "name": "创建平台版套餐环境",
+      "output": "CreatePlatformEnvResponse",
+      "status": "online"
+    },
     "CreateStaticStore": {
       "document": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看",
       "input": "CreateStaticStoreRequest",
@@ -441,6 +448,41 @@
       "output": "DescribePGUserMigrationResponse",
       "status": "online"
     },
+    "DescribePlatformAccountCircle": {
+      "document": "查询平台版资源计费周期。\n云开发平台版资源点都是按月结算的，每个月都有一定的抵扣额度。\n\n例如：\n  某个平台版在 2026-01-05 购买了3个月(到期时间: 2026-04-05)，则他可以在以下3个周期内，分别享有40000资源点的额度：\n  1. 2026-01-05 ~ 2026-02-05 23:59:59\n  2. 2026-02-06 ~ 2026-03-05 23:59:59\n  3. 2026-03-06 ~ 2026-04-05 23:59:59\n\n本接口，用于获取平台版当前属于哪个计费周期内。\n\n影响范围：只读查询，不影响平台版资源\n使用场景：控制台资源用量页面/API 主动查询当前计费周期等",
+      "input": "DescribePlatformAccountCircleRequest",
+      "name": "查询平台版资源计费周期",
+      "output": "DescribePlatformAccountCircleResponse",
+      "status": "online"
+    },
+    "DescribePlatformCreditsUsage": {
+      "document": "查询平台版本资源点模式下的资源点用量",
+      "input": "DescribePlatformCreditsUsageRequest",
+      "name": "获取平台版资源点用量",
+      "output": "DescribePlatformCreditsUsageResponse",
+      "status": "online"
+    },
+    "DescribePlatformCreditsUsageDetail": {
+      "document": "查询平台版资源点模式下的资源点用量及原始用量明细",
+      "input": "DescribePlatformCreditsUsageDetailRequest",
+      "name": "获取平台版资源点用量明细",
+      "output": "DescribePlatformCreditsUsageDetailResponse",
+      "status": "online"
+    },
+    "DescribePlatformEnvUsage": {
+      "document": "查询平台版环境资源用量\n\n指定查询范围，按资源类型返回各资源指标的用量及用量明细(按天)\n用量信息包含资源点用量，原始用量值（如流量、调用次数、容量等），原始用量单位等\n\n影响范围：只读查询、不改变资源\n使用场景：控制台用量页/API 查询平台版环境用量",
+      "input": "DescribePlatformEnvUsageRequest",
+      "name": "查询平台版资源用量",
+      "output": "DescribePlatformEnvUsageResponse",
+      "status": "online"
+    },
+    "DescribePlatforms": {
+      "document": "查询平台版资源信息列表，返回信息包括\n\n1.平台版基础信息如资源id，所属地域等;\n2.计费相关信息如：购买/过期时间，资源规格，计费状态等; \n3.底层资源信息如：存储，日志，静态托管等资源信息等;\n\n入参支持platformIds，可查询指定平台版套餐信息\n\n影响范围：查询接口，返回当前用户账号下平台版资源信息\n使用场景：控制台展示平台版套餐信息/查平台版资源详情/资源状态",
+      "input": "DescribePlatformsRequest",
+      "name": "查询平台版资源信息",
+      "output": "DescribePlatformsResponse",
+      "status": "online"
+    },
     "DescribeQuotaData": {
       "document": "查询指定指标的配额使用量",
       "input": "DescribeQuotaDataRequest",
@@ -502,6 +544,13 @@
       "input": "DestroyMySQLRequest",
       "name": "销毁MySql",
       "output": "DestroyMySQLResponse",
+      "status": "online"
+    },
+    "DestroyPlatformEnv": {
+      "document": "用户可以调用本接口，删除平台版套餐下的指定平台版环境。",
+      "input": "DestroyPlatformEnvRequest",
+      "name": "删除平台版环境",
+      "output": "DestroyPlatformEnvResponse",
       "status": "online"
     },
     "DestroyStaticStore": {
@@ -621,6 +670,13 @@
       "input": "ModifyPGInstanceSpecRequest",
       "name": "修改 PG 独享实例规格",
       "output": "ModifyPGInstanceSpecResponse",
+      "status": "online"
+    },
+    "ModifyPlatformEnv": {
+      "document": "修改平台版环境信息",
+      "input": "ModifyPlatformEnvRequest",
+      "name": "修改平台版环境信息",
+      "output": "ModifyPlatformEnvResponse",
       "status": "online"
     },
     "ModifyProvider": {
@@ -3634,6 +3690,61 @@
       ],
       "usage": "out"
     },
+    "CreatePlatformEnvRequest": {
+      "document": "CreatePlatformEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境别名</p>",
+          "example": "platform01",
+          "member": "string",
+          "name": "Alias",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐池标识</p>",
+          "example": "pf-*************",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>幂等键</p>",
+          "example": "rewkey-01",
+          "member": "string",
+          "name": "ReqKey",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePlatformEnvResponse": {
+      "document": "CreatePlatformEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "platform01-******r**********",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaticStoreRequest": {
       "document": "CreateStaticStore请求参数结构体",
       "members": [
@@ -3962,6 +4073,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DailyUsageList": {
+      "document": "每日用量详情结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源点用量</p>",
+          "example": "50000",
+          "member": "uint64",
+          "name": "Credits",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点用量日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-09-08",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始资源用量</p>",
+          "example": "5000",
+          "member": "uint64",
+          "name": "UsageValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7604,6 +7754,359 @@
       ],
       "type": "object"
     },
+    "DescribePlatformAccountCircleRequest": {
+      "document": "DescribePlatformAccountCircle请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePlatformAccountCircleResponse": {
+      "document": "DescribePlatformAccountCircle返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>套餐计费周期开始时间</p>",
+          "example": "2026-08-20 21:01:24",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐计费周期结束时间</p>",
+          "example": "2026-09-20 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformCreditsUsageDetailRequest": {
+      "document": "DescribePlatformCreditsUsageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模块列表</p><p>枚举值：</p><ul><li>FLEXDB： 文档数据库</li><li>TDSQL： MYSQL数据库</li><li>SCF： 云函数</li><li>AI： 大模型</li><li>EKS： 云托管</li><li>COS： 云存储</li><li>HOSTING： 静态托管</li><li>Auth： 用户权限</li><li>APIInvocation： API调用</li><li>HTTPInvocation： HTTP调用</li><li>VM： 主机</li><li>Workflow： 工作流</li><li>Other： 其他</li><li>PostgreSQL： PostgreSQL</li><li>Token： Token</li></ul>",
+          "example": "[\"PostgreSQL\"]",
+          "member": "string",
+          "name": "Modules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-09-11",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-10-11",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要每日用量明细</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedUsageDetails",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台版套餐id</p>",
+          "example": "pf-35zc08k5rfxtq",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformCreditsUsageDetailResponse": {
+      "document": "DescribePlatformCreditsUsageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用量数据</p>",
+          "example": "无",
+          "member": "PlatformPkgCreditsUsage",
+          "name": "Usages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformCreditsUsageRequest": {
+      "document": "DescribePlatformCreditsUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始日期</p><p>参数格式：2025-09-22</p>",
+          "example": "2026-09-01",
+          "member": "string",
+          "name": "StartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束日期</p><p>参数格式：2025-09-22</p>",
+          "example": "2026-09-30",
+          "member": "string",
+          "name": "EndDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台版套餐id</p>",
+          "example": "pf-3iovc1ty3nug3",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformCreditsUsageResponse": {
+      "document": "DescribePlatformCreditsUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源点套餐内用量总和</p>",
+          "example": "8579960",
+          "member": "float",
+          "name": "DeductValueCount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点资源包用量总和</p>",
+          "example": "0",
+          "member": "float",
+          "name": "PackageDeductValueCount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点按量用量总和</p>",
+          "example": "123625.5",
+          "member": "float",
+          "name": "ReportValueCount",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每日消耗具体数据</p>",
+          "example": "无",
+          "member": "PlatformCreditsUsageDaily",
+          "name": "DailyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformEnvUsageRequest": {
+      "document": "DescribePlatformEnvUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境Id</p>",
+          "example": "jeff-d4g6izo8z6a0502f6",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询用量起始时间</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-08-20",
+          "member": "string",
+          "name": "StartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询用量结束时间</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-09-20",
+          "member": "string",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>Storage： 云存储</li><li>Function： 云函数</li><li>Database： 数据库</li></ul>",
+          "example": "[\"Database\"]",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否展示用量明细</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedUsageDetails",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformEnvUsageResponse": {
+      "document": "DescribePlatformEnvUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源用量信息</p>",
+          "example": "无",
+          "member": "PlatformResUsageItem",
+          "name": "Resources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点</p>",
+          "example": "595100",
+          "member": "uint64",
+          "name": "TotalCredits",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点取整倍数</p>",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CreditsScale",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsRequest": {
+      "document": "DescribePlatforms请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台版套餐id列表</p><p>默认值：若不指定，则分页返回当前账号下所有平台版资源</p>",
+          "example": "[\"pf-2v4plhx1ph2bq\"]",
+          "member": "string",
+          "name": "PlatformIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页限制</p><p>取值范围：[10, 100]</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量</p><p>默认值：0</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformsResponse": {
+      "document": "DescribePlatforms返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台版资源列表</p>",
+          "example": "无",
+          "member": "PlatformInfo",
+          "name": "PlatformList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "13",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQuotaDataRequest": {
       "document": "DescribeQuotaData请求参数结构体",
       "members": [
@@ -8270,6 +8773,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DestroyPlatformEnvRequest": {
+      "document": "DestroyPlatformEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "platform02-*****************",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyPlatformEnvResponse": {
+      "document": "DestroyPlatformEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DestroyStaticStoreRequest": {
       "document": "DestroyStaticStore请求参数结构体",
@@ -10215,7 +10745,7 @@
       "usage": "both"
     },
     "HTTPServiceCacheKeyParams": {
-      "document": "自定义缓存键参数。约束：FullURLCache=on 与 QueryStringSwitch=on 互斥\n使用示例：\n- 整 URL 参与缓存键：{FullURLCache: \"on\", QueryStringSwitch: \"off\"}\n- URL 路径 + 仅保留 x/y：{FullURLCache: \"off\", QueryStringSwitch: \"on\", QueryStringAction: \"includeCustom\", QueryStringValues: [\"x\", \"y\"]}\n- URL 路径 + 忽略 debug：{FullURLCache: \"off\", QueryStringSwitch: \"on\", QueryStringAction: \"excludeCustom\", QueryStringValues: [\"debug\"]}",
+      "document": "自定义缓存键参数。约束：FullURLCache=on 与 QueryStringSwitch=on 互斥\n使用示例：\n- 整 URL 参与缓存键：{FullURLCache: \"on\", QueryStringSwitch: \"off\"}\n- 整 URL 不参与缓存键：{FullURLCache: \"off\", QueryStringSwitch: \"off\"}\n- URL 路径 + 仅保留 x/y：{FullURLCache: \"off\", QueryStringSwitch: \"on\", QueryStringAction: \"includeCustom\", QueryStringValues: [\"x\", \"y\"]}\n- URL 路径 + 忽略 debug：{FullURLCache: \"off\", QueryStringSwitch: \"on\", QueryStringAction: \"excludeCustom\", QueryStringValues: [\"debug\"]}",
       "members": [
         {
           "disabled": false,
@@ -10252,7 +10782,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>参数名列表</p><p>入参限制：最多 100 项，单项 1~128 字节</p>",
+          "document": "<p>参数名列表</p><p>入参限制：最多 30 项，单项 1~128 字节</p>",
           "example": "[\"y\"]",
           "member": "string",
           "name": "QueryStringValues",
@@ -10502,7 +11032,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p>",
+          "document": "<p>绑定类型。默认DIRECT。DIRECT: 直连到HTTP访问服务， CDN: 接入云开发CDN，CUSTOM: 自定义接入类型（其他CDN或者WAF）</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN（即将下线）</li><li>EO： 接入云开发EdgeOne</li><li>CUSTOM： 自定义接入类型（其他CDN或者WAF）</li><li>NONE： 不接入，当使用泛域名接入时，可通过NONE来接入子域名，子域名证书及协议继承泛域名</li></ul><p>默认值：DIRECT</p>",
           "example": "CDN",
           "member": "string",
           "name": "AccessType",
@@ -10647,7 +11177,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN（即将下线）</li><li>CUSTOM： 自定义接入类型（CDN、EO、WAF等接入）</li><li>EO： 接入云开发EdgeOne</li></ul><p>默认值：DIRECT</p>",
+          "document": "<p>绑定类型</p><p>枚举值：</p><ul><li>DIRECT： 直连到HTTP访问服务</li><li>CDN： 接入云开发CDN（即将下线）</li><li>EO： 接入云开发EdgeOne</li><li>NONE： 不接入，当使用泛域名接入时，可通过NONE来接入子域名，子域名证书及协议继承泛域名</li></ul><p>默认值：DIRECT</p>",
           "example": "DIRECT",
           "member": "string",
           "name": "AccessType",
@@ -10727,7 +11257,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>HTTPService 缓存配置，包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>",
+          "document": "<p>HTTPService 缓存配置，仅限自定义域名配置。包含Cache 节点缓存 / MaxAge 浏览器缓存 / CacheKey 自定义缓存键</p>",
           "example": "无",
           "member": "HTTPServiceCacheSet",
           "name": "Cache",
@@ -11150,7 +11680,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 100 条</p>",
+          "document": "<p>Values 匹配值集合，Values 内任一命中即认为条件成立（OR 语义）</p><p>入参限制：单项 1~1024 字节，最多 30 条</p>",
           "example": "[\"jpg\"]",
           "member": "string",
           "name": "Values",
@@ -13086,6 +13616,42 @@
       ],
       "type": "object"
     },
+    "ModifyPlatformEnvRequest": {
+      "document": "ModifyPlatformEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "free2-2gi6dzbde85f86a0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境状态</p><p>枚举值：</p><ul><li>ENABLE： 启用环境</li><li>DISABLE： 禁用环境</li></ul>",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPlatformEnvResponse": {
+      "document": "ModifyPlatformEnv返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProviderRequest": {
       "document": "ModifyProvider请求参数结构体",
       "members": [
@@ -14133,6 +14699,471 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatFormResourceInfo": {
+      "document": "平台版资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类系</p><p>枚举值：</p><ul><li>log： 日志</li><li>storage： 云存储</li><li>hosting： 静态托管</li></ul>",
+          "example": "cls",
+          "member": "string",
+          "name": "ResType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源唯一标识</p>",
+          "example": "tcb-pf-logset-pf-38qhqu1izodbl",
+          "member": "string",
+          "name": "ResName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源详细信息</p>",
+          "example": "{\"LogsetId\":\"a70cb875-b9ef-4861-9ee8-aa573f127b83\",\"TopicId\":\"a35fa12b-1798-4a5c-b56d-d73eb4feec68\",\"Region\":\"ap-shanghai\"}",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源状态</p><p>枚举值：</p><ul><li>0： 正常</li><li>5： 初始化中</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源id</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "PlatformId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对用平台资源id</p>",
+          "example": "68",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformCreditsUsageDaily": {
+      "document": "平台版本消耗数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据日期</p><p>参数格式：YYYY-MM-DD</p>",
+          "example": "2026-09-18",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点套餐内用量</p>",
+          "example": "8577960",
+          "member": "float",
+          "name": "DeductValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点资源包用量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "PackageDeductValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点按量用量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "ReportValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点原价消耗</p>",
+          "example": "2800.75",
+          "member": "float",
+          "name": "OriginCredits",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformInfo": {
+      "document": "平台版资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台版套餐id</p>",
+          "example": "pf-ogqesqsj",
+          "member": "string",
+          "name": "PlatformId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐别名</p>",
+          "example": "curl-test-0827",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐id</p>",
+          "example": "default",
+          "member": "string",
+          "name": "PackageId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费状态</p><p>枚举值：</p><ul><li>normal： 正常</li><li>isolated： 已隔离</li><li>destroyed： 已销毁</li></ul>",
+          "example": "destroyed",
+          "member": "string",
+          "name": "BillStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐资源状态</p><p>枚举值：</p><ul><li>0： 可用</li><li>5： 发货中</li></ul>",
+          "example": "5",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置</p>",
+          "example": "{\"credits\":10000,\"envNum\":100}",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-08-20 21:01:24",
+          "member": "string",
+          "name": "BillTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐过期时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-10-08 23:59:59",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动续费</p><p>枚举值：</p><ul><li>0： 未设置</li><li>1： 自动续费</li><li>2： 设置为到期不续费</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsAutoRenew",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源信息列表</p>",
+          "example": "无",
+          "member": "PlatFormResourceInfo",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属地域</p><p>枚举值：</p><ul><li>ap-shanghai： 上海</li><li>ap-singapore： 新加坡</li></ul>",
+          "example": "ap-singapore",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformMetricUsageItem": {
+      "document": "平台版指标用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指标名称</p>",
+          "example": "HourlyStorage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始资源类型</p><p>枚举值：</p><ul><li>COS： 对象存储</li></ul>",
+          "example": "COS",
+          "member": "string",
+          "name": "OriginalResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始指标</p>",
+          "example": "HourlyStorage",
+          "member": "string",
+          "name": "OriginalMetricName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源用量</p>",
+          "example": "25",
+          "member": "uint64",
+          "name": "UsageValue",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源用量单位</p>",
+          "example": "MB",
+          "member": "string",
+          "name": "UsageUnit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点</p>",
+          "example": "409600",
+          "member": "uint64",
+          "name": "Credits",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用量按日明细列表</p>",
+          "example": "无",
+          "member": "DailyUsageList",
+          "name": "DailyUsageList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformPkgCreditsUsage": {
+      "document": "模块内平台版资源点用量及原始用量数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台版套餐id</p>",
+          "example": "pf-35zc08k5rfxtq",
+          "member": "string",
+          "name": "PlatformId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模块</p>",
+          "example": "CI",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>module总资源点用量</p>",
+          "example": "0.01",
+          "member": "float",
+          "name": "CreditsValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标用量明细</p>",
+          "example": "无",
+          "member": "MetricUsage",
+          "name": "MetricUsageDetail",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点套餐内用量</p>",
+          "example": "0.01",
+          "member": "float",
+          "name": "DeductValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点资源包用量</p>",
+          "example": "0",
+          "member": "float",
+          "name": "PackageDeductValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点按量用量</p>",
+          "example": "72676.79",
+          "member": "float",
+          "name": "ReportValue",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PlatformResUsageItem": {
+      "document": "平台版资源用量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>Storage： 云存储</li><li>Function： 云函数</li></ul>",
+          "example": "Database",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源点</p>",
+          "example": "495100",
+          "member": "uint64",
+          "name": "TotalCredits",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标用量信息</p>",
+          "example": "无",
+          "member": "PlatformMetricUsageItem",
+          "name": "Metrics",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

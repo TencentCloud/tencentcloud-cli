@@ -4029,6 +4029,24 @@
           "name": "TerminateProtection",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用emr-proxy</p><p>枚举值：</p><ul><li>true： 启用</li><li>false： 关闭</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEmrProxy",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志存储服务实例id</p>",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "LogStoreID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

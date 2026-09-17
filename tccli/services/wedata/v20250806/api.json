@@ -11124,7 +11124,7 @@
         {
           "disabled": false,
           "document": "数据探索任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "6820260903180522033",
           "member": "string",
           "name": "JobId",
           "output_required": true,
@@ -11135,7 +11135,7 @@
         {
           "disabled": false,
           "document": "数据探索任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "20260903-1805",
           "member": "string",
           "name": "JobName",
           "output_required": true,
@@ -11146,7 +11146,7 @@
         {
           "disabled": false,
           "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "EXECUTOR",
           "member": "string",
           "name": "JobType",
           "output_required": true,
@@ -11157,7 +11157,7 @@
         {
           "disabled": false,
           "document": "脚本ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "adhoc-f085e4ba-33ef-45ec-aba2-7e6def785510",
           "member": "string",
           "name": "ScriptId",
           "output_required": true,
@@ -11168,7 +11168,7 @@
         {
           "disabled": false,
           "document": "子任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "JobExecutionDto",
           "name": "JobExecutionList",
           "output_required": false,
@@ -11179,7 +11179,7 @@
         {
           "disabled": false,
           "document": "脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "show databases;",
           "member": "string",
           "name": "ScriptContent",
           "output_required": true,
@@ -11190,7 +11190,7 @@
         {
           "disabled": false,
           "document": "任务状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": true,
@@ -11201,7 +11201,7 @@
         {
           "disabled": false,
           "document": "任务创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:19",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
@@ -11212,7 +11212,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:28",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -11223,7 +11223,7 @@
         {
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:28",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -11234,7 +11234,7 @@
         {
           "disabled": false,
           "document": "云主账号UIN\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "700001893691",
           "member": "string",
           "name": "OwnerUin",
           "output_required": true,
@@ -11245,7 +11245,7 @@
         {
           "disabled": false,
           "document": "账号UIN\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "700001893691",
           "member": "string",
           "name": "UserUin",
           "output_required": true,
@@ -11256,7 +11256,7 @@
         {
           "disabled": false,
           "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "9000",
           "member": "int64",
           "name": "TimeCost",
           "output_required": true,
@@ -11267,7 +11267,7 @@
         {
           "disabled": false,
           "document": "是否脚本内容被截断\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "ScriptContentTruncate",
           "output_required": false,
@@ -11284,7 +11284,7 @@
         {
           "disabled": false,
           "document": "数据探索任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "6820260903180522033",
           "member": "string",
           "name": "JobId",
           "output_required": false,
@@ -11295,7 +11295,7 @@
         {
           "disabled": false,
           "document": "子查询任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "6820260903180522033_0",
           "member": "string",
           "name": "JobExecutionId",
           "output_required": false,
@@ -11306,7 +11306,7 @@
         {
           "disabled": false,
           "document": "子查询名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "结果1",
           "member": "string",
           "name": "JobExecutionName",
           "output_required": false,
@@ -11317,7 +11317,7 @@
         {
           "disabled": false,
           "document": "子查询sql内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "show databases",
           "member": "string",
           "name": "ScriptContent",
           "output_required": false,
@@ -11328,7 +11328,7 @@
         {
           "disabled": false,
           "document": "子查询状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "SUCCESS",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -11339,7 +11339,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:19",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -11350,7 +11350,7 @@
         {
           "disabled": false,
           "document": "执行阶段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "LAUNCH_JOB_SUCCESS",
           "member": "string",
           "name": "ExecuteStageInfo",
           "output_required": false,
@@ -11361,7 +11361,7 @@
         {
           "disabled": false,
           "document": "日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/dataexploration/internal-hosting/job/251412235/6820260903180522033/6820260903180522033_0-execution-log.log",
           "member": "string",
           "name": "LogFilePath",
           "output_required": false,
@@ -11372,7 +11372,7 @@
         {
           "disabled": false,
           "document": "下载结果路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/dataexploration/internal-hosting/job/251412235/6820260903180522033/6820260903180522033_0-execution-result.csv",
           "member": "string",
           "name": "ResultFilePath",
           "output_required": false,
@@ -11383,7 +11383,7 @@
         {
           "disabled": false,
           "document": "预览结果路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "/dataexploration/internal-hosting/job/251412235/6820260903180522033/6820260903180522033_0-preview-result.csv",
           "member": "string",
           "name": "ResultPreviewFilePath",
           "output_required": false,
@@ -11393,8 +11393,19 @@
         },
         {
           "disabled": false,
+          "document": "结果集schema信息文件cos路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/dataexploration/internal-hosting/job/251412235/6820260903180522033/6820260903180522033_0-result-schema.json",
+          "member": "string",
+          "name": "SchemaInfoFilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "任务执行的结果总行数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ResultTotalCount",
           "output_required": false,
@@ -11405,7 +11416,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:28",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -11416,7 +11427,7 @@
         {
           "disabled": false,
           "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2026-09-03 18:05:28",
           "member": "string",
           "name": "EndTime",
           "output_required": false,
@@ -11427,7 +11438,7 @@
         {
           "disabled": false,
           "document": "耗时\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "9000",
           "member": "int64",
           "name": "TimeCost",
           "output_required": false,
@@ -11438,7 +11449,7 @@
         {
           "disabled": false,
           "document": "上下文SQL内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[\"set spark.sql.shuffle.partitions=200;\"]",
           "member": "string",
           "name": "ContextScriptContent",
           "output_required": false,
@@ -11449,7 +11460,7 @@
         {
           "disabled": false,
           "document": "任务执行的结果预览行数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "100",
           "member": "int64",
           "name": "ResultPreviewCount",
           "output_required": false,
@@ -11460,7 +11471,7 @@
         {
           "disabled": false,
           "document": "任务执行的结果影响行数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ResultEffectCount",
           "output_required": false,
@@ -11471,7 +11482,7 @@
         {
           "disabled": false,
           "document": "是否正在收集全量结果：默认false，true表示正在收集全量结果，用于前端判断是否需要继续轮询\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "CollectingTotalResult",
           "output_required": false,
@@ -11482,9 +11493,20 @@
         {
           "disabled": false,
           "document": "是否需要截断脚本内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "ScriptContentTruncate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预览结果集是否收集完成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CollectedPreviewResult",
           "output_required": false,
           "required": false,
           "type": "bool",
@@ -25224,15 +25246,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "脚本id",
-          "example": "d61a6a13-630a-42ed-813c-326ebef4a35e",
-          "member": "string",
-          "name": "ScriptId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "项目ID",
           "example": "2924443218685956096",
           "member": "string",
@@ -25242,7 +25255,25 @@
         },
         {
           "disabled": false,
-          "document": "脚本内容，不传则默认执行已保存的全量脚本内容；若传递则要用Base64编码",
+          "document": "脚本id。如果不填则需要传入 ScriptConfig、ScriptContent，此时为免脚本临时运行模式，服务端不保存脚本",
+          "example": "d61a6a13-630a-42ed-813c-326ebef4a35e",
+          "member": "string",
+          "name": "ScriptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "脚本配置。免脚本临时运行模式（未传 ScriptId）下必填，其中 DatasourceId 必填、ExecutorGroupId 选填（缺省时使用项目管理-数据分析配置中的执行资源组）；传入 ScriptId 时本字段被忽略，配置取自已保存的脚本",
+          "example": "无",
+          "member": "SQLScriptConfig",
+          "name": "ScriptConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "脚本内容，支持传递代码原文或者 Base64 编码，服务端自动识别。传 ScriptId 时不传则执行已保存的全量脚本内容；免脚本临时运行模式下必填。注意：若原文恰好由 Base64 字符集组成且长度为 4 的倍数（如 descTBLS），会被识别为已编码，此类内容请显式 Base64 编码后传入",
           "example": "c2VsZWN0IDE7",
           "member": "string",
           "name": "ScriptContent",
@@ -25251,7 +25282,7 @@
         },
         {
           "disabled": false,
-          "document": "高级运行参数，JSON格式base64编码",
+          "document": "高级运行参数，支持传递 JSON 格式原文或者 Base64 编码，服务端自动识别。示例：{\"executorNum\":1} 或 eyJleGVjdXRvck51bSI6MX0=",
           "example": "eyJleGVjdXRvck51bSI6MX0=",
           "member": "string",
           "name": "Params",

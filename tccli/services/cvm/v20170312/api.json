@@ -7849,6 +7849,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>实例主机名。</p>",
+          "example": "VM-4-18-ubuntu",
+          "member": "string",
+          "name": "HostName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>默认登录用户。</p>",
           "example": "root",
           "member": "string",

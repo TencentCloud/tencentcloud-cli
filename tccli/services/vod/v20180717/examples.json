@@ -170,6 +170,14 @@
         "title": "创建自定义音色"
       }
     ],
+    "CreateAigcHunyuan3DTask": [
+      {
+        "document": "通过提示词生成 3D",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAigcHunyuan3DTask\n<公共请求参数>\n\n{\n    \"SubAppId\": 250000002,\n    \"Prompt\": \"a warrior holding a sword\",\n    \"KeepUV\": \"Enabled\",\n    \"Style\": \"cyberpunk\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Temporary\"\n    },\n    \"SessionId\": \"my*******Id\",\n    \"SessionContext\": \"*********Context\",\n    \"TasksPriority\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"251******-AigcHunyuan3DTask-7bf97*************afcdb0f0342fc2t\",\n        \"RequestId\": \"a92d6730-19ec-4c3f-b579-44097aab0fc2\"\n    }\n}",
+        "title": "文生 3D"
+      }
+    ],
     "CreateAigcImageTask": [
       {
         "document": "",
@@ -1388,16 +1396,16 @@
         "title": "获取任务列表"
       },
       {
-        "document": "获取任务列表-翻页",
-        "input": "https://vod.tencentcloudapi.com/?Action=DescribeTasks\n&Status=FINISH\n&Limit=5\n&ScrollToken=taskId6\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"Status\": \"FINISH\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"token-test\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
-        "title": "获取任务列表-翻页"
-      },
-      {
         "document": "获取任务列表-处理中",
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeTasks\n&Status=PROCESSING\n&Limit=5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId7\",\n                \"Status\": \"PROCESSING\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"0001-01-01T00:00:00Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"token-test\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
         "title": "获取任务列表-处理中"
+      },
+      {
+        "document": "获取任务列表-翻页",
+        "input": "https://vod.tencentcloudapi.com/?Action=DescribeTasks\n&Status=FINISH\n&Limit=5\n&ScrollToken=taskId6\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"taskId6\",\n                \"Status\": \"FINISH\",\n                \"TaskType\": \"transcode\",\n                \"CreateTime\": \"2018-12-27T13:57:15Z\",\n                \"BeginProcessTime\": \"2018-12-27T13:57:15Z\",\n                \"FinishTime\": \"2018-12-27T13:57:15Z\",\n                \"SessionContext\": \"\",\n                \"SessionId\": \"\",\n                \"FileId\": \"528xx124\"\n            }\n        ],\n        \"ScrollToken\": \"token-test\",\n        \"RequestId\": \"46311b39-10ce-47eb-b2b6-7ce82bb4476d\"\n    }\n}",
+        "title": "获取任务列表-翻页"
       }
     ],
     "DescribeTranscodeTemplates": [
@@ -1523,8 +1531,8 @@
     "ExecuteFunction": [
       {
         "document": "",
-        "input": "https://vod.tencentcloudapi.com/?Action=ExecuteFunction\n&FunctionName=ExampleFunc\n&FunctionArg=XXX\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"XXX\"\n    }\n}",
+        "input": "https://vod.tencentcloudapi.com/?Action=ExecuteFunction\n&FunctionName=ExampleFunc\n&FunctionArg=param1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8ad61e3a-6b8e-4b4e-9256-fdc701190064ef0\",\n        \"Result\": \"taskId\"\n    }\n}",
         "title": "A 客户发起定制的视频处理"
       }
     ],
@@ -1984,22 +1992,10 @@
     ],
     "ModifyVodDomainConfig": [
       {
-        "document": "设置域名的 QUIC 配置",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&QUICConfig.Status=Enabled\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
-        "title": "设置域名的 QUIC 配置"
-      },
-      {
-        "document": "设置域名的 Key 防盗链",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=Enabled\n&UrlSignatureAuthPolicy.EncryptedKey=AKIDwgcP1i\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
-        "title": "设置域名的 Key 防盗链"
-      },
-      {
-        "document": "设置域名的 Referer 防盗链",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&RefererAuthPolicy.Status=Enabled\n&RefererAuthPolicy.AuthType=Black\n&RefererAuthPolicy.Referers.0=example.com\n&RefererAuthPolicy.BlankRefererAllowed=Yes\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
-        "title": "设置域名的 Referer 防盗链"
+        "document": "设置域名的 IP 白名单，允许来自该白名单的请求对加速域名的访问。",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&IPFilterPolicy.Status=Enabled\n&IPFilterPolicy.FilterType=White\n&IPFilterPolicy.IPList.0=1.2.3.4\n&IPFilterPolicy.IPList.1=2.3.4.5\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1536ae8d8e-dce3-4551-9d4b-55f78201\"\n    }\n}",
+        "title": "设置域名的 IP 白名单"
       },
       {
         "document": "设置域名的 IP 黑名单，拦截来自该黑名单的请求对加速域名的访问。",
@@ -2008,10 +2004,22 @@
         "title": "设置域名的 IP 黑名单"
       },
       {
-        "document": "设置域名的 IP 白名单，允许来自该白名单的请求对加速域名的访问。",
-        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&IPFilterPolicy.Status=Enabled\n&IPFilterPolicy.FilterType=White\n&IPFilterPolicy.IPList.0=1.2.3.4\n&IPFilterPolicy.IPList.1=2.3.4.5\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1536ae8d8e-dce3-4551-9d4b-55f78201\"\n    }\n}",
-        "title": "设置域名的 IP 白名单"
+        "document": "设置域名的 Key 防盗链",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&UrlSignatureAuthPolicy.Status=Enabled\n&UrlSignatureAuthPolicy.EncryptedKey=AKIDwgcP1i\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "设置域名的 Key 防盗链"
+      },
+      {
+        "document": "设置域名的 QUIC 配置",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&QUICConfig.Status=Enabled\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "设置域名的 QUIC 配置"
+      },
+      {
+        "document": "设置域名的 Referer 防盗链",
+        "input": "https://vod.tencentcloudapi.com/?Action=ModifyVodDomainConfig\n&Domain=myexample.com\n&RefererAuthPolicy.Status=Enabled\n&RefererAuthPolicy.AuthType=Black\n&RefererAuthPolicy.Referers.0=example.com\n&RefererAuthPolicy.BlankRefererAllowed=Yes\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "设置域名的 Referer 防盗链"
       }
     ],
     "ModifyWatermarkTemplate": [

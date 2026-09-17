@@ -110,6 +110,14 @@
         "title": "创建访问日志导出"
       }
     ],
+    "CreateAndUpdateBatchCCRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndUpdateBatchCCRule\n<公共请求参数>\n\n{\n    \"Name\": \"batch-test-cc-0\",\n    \"RuleId\": 0,\n    \"Status\": 1,\n    \"Advance\": \"1\",\n    \"Limit\": \"3\",\n    \"Interval\": \"60\",\n    \"ActionType\": \"22\",\n    \"Priority\": 50,\n    \"ValidTime\": 600,\n    \"SessionApplied\": [\n        2000000577\n    ],\n    \"LogicalOp\": \"and\",\n    \"ActionRatio\": 100,\n    \"PageId\": \"0\",\n    \"GroupIds\": [\n        8500001558\n    ],\n    \"JobType\": \"TimedJob\",\n    \"JobDateTime\": {\n        \"Timed\": [\n            {\n                \"StartDateTime\": 0,\n                \"EndDateTime\": 0\n            }\n        ],\n        \"TimeTZone\": \"UTC+8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RuleId\": 1900037478,\n        \"RequestId\": \"aee526df-4ce6-451a-8d39-cce39ed2e46c\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "CreateAreaBanRule": [
       {
         "document": "",

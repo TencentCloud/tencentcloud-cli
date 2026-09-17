@@ -5,13 +5,7 @@
 Input: 
 
 ```
-tccli vpc DescribeCustomerGateways --cli-unfold-argument  \
-    --CustomerGatewayIds cgw-mgp33pll \
-    --Filters.0.Name customer-gateway-name \
-    --Filters.0.Values test-cgw \
-    --Offset 1 \
-    --Limit 1
-```
+tccli vpc DescribeCustomerGateways --cli-unfold-argument ```
 
 Output: 
 ```
@@ -19,14 +13,17 @@ Output:
     "Response": {
         "CustomerGatewaySet": [
             {
-                "CustomerGatewayId": "cgw-mgp33pll",
-                "IpAddress": "58.211.1.12",
-                "CustomerGatewayName": "test-cgw",
-                "CreatedTime": "2018-03-25 17:52:39"
+                "BgpAsn": 0,
+                "CreatedTime": "2026-07-06 23:00:09",
+                "CustomerGatewayId": "cgw-dby2ybob",
+                "CustomerGatewayName": "cgw-01",
+                "IpAddress": "43.1****0.53",
+                "TagSet": [],
+                "VpnConnNum": 2
             }
         ],
         "TotalCount": 1,
-        "RequestId": "e5500b60-4964-43c7-8a6c-4bff98f59aeb"
+        "RequestId": "4ec28434-c40f-450d-a58e-7b001bcb4d58"
     }
 }
 ```

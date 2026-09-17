@@ -1336,8 +1336,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "告警过滤条件：PoolName：地址池名称；MonitorId：监控器id",
-          "example": "[{\"Name\": \"MonitorName\", \"Value\": [\"监控器001\"]}, {\"Name\": \"MonitorId\", \"Value\": [\"123\"]}]",
+          "document": "<p>告警过滤条件：PoolName：地址池名称；MonitorId：监控器id</p>",
+          "example": "无",
           "member": "ResourceFilter",
           "name": "Filters",
           "required": false,
@@ -1345,7 +1345,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -1354,7 +1354,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数",
+          "document": "<p>每页数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -1369,7 +1369,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组列表",
+          "document": "<p>资源组列表</p>",
           "example": "无",
           "member": "AddressPool",
           "name": "AddressPoolSet",
@@ -1379,7 +1379,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -1630,7 +1630,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "gtm-Ul65AOsdfDvxVD",
           "member": "string",
           "name": "InstanceId",
@@ -1645,7 +1645,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地址池列表",
+          "document": "<p>地址池列表</p>",
           "example": "无",
           "member": "GroupLine",
           "name": "DnsLineSet",
@@ -1853,7 +1853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监控器id",
+          "document": "<p>监控器id</p>",
           "example": "1",
           "member": "uint64",
           "name": "MonitorId",
@@ -1868,7 +1868,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "探测规则",
+          "document": "<p>探测规则</p>",
           "example": "无",
           "member": "MonitorDetail",
           "name": "MonitorDetail",
@@ -2047,7 +2047,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 id",
+          "document": "<p>实例 id</p>",
           "example": "gtm-Ul65AOsdfDvxVD",
           "member": "string",
           "name": "InstanceId",
@@ -2056,7 +2056,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
@@ -2065,7 +2065,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条数",
+          "document": "<p>每页条数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2074,8 +2074,8 @@
         },
         {
           "disabled": false,
-          "document": "策略过滤条件：StrategyName：策略名称",
-          "example": "[{\"Name\": \"StrategyName\", \"Value\": [\"策略1\"]}]",
+          "document": "<p>策略过滤条件：StrategyName：策略名称</p>",
+          "example": "无",
           "member": "ResourceFilter",
           "name": "Filters",
           "required": false,
@@ -2089,7 +2089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略列表",
+          "document": "<p>策略列表</p>",
           "example": "无",
           "member": "Strategy",
           "name": "StrategySet",
@@ -2099,7 +2099,7 @@
         },
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -4021,7 +4021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段名，支持的列表如下：\n- type：主资源类型，CDN。\n- instanceId：IGTM实例ID。此为必传参数，未传将导致接口查询失败。",
+          "document": "过滤字段名，支持的列表如下：\n- MonitorName：监控器名称。\n- MonitorId：监控器名称",
           "example": "InstanceId",
           "member": "string",
           "name": "Name",
@@ -4031,7 +4031,7 @@
         {
           "disabled": false,
           "document": "过滤字段值。\n",
-          "example": "gtm-xxxxxxxx",
+          "example": "[\"gtm-dsgiaewda\"]",
           "member": "string",
           "name": "Value",
           "required": true,
@@ -4040,7 +4040,7 @@
         {
           "disabled": false,
           "document": "是否启用模糊查询，仅支持过滤字段名为domain。\n模糊查询时，Value长度最大为1，否则Value长度最大为5。(预留字段，暂未使用)",
-          "example": "Ture",
+          "example": "true",
           "member": "bool",
           "name": "Fuzzy",
           "required": false,

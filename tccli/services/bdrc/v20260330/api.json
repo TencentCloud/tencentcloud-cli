@@ -7965,8 +7965,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要修改属性的复制对id",
-          "example": "copypair-xxxxxxxx",
+          "document": "<p>要修改属性的复制对id</p>",
+          "example": "cvmcopypair-jzrnvbwp",
           "member": "string",
           "name": "CopyPairId",
           "required": true,
@@ -7974,7 +7974,7 @@
         },
         {
           "disabled": false,
-          "document": "要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE",
+          "document": "<p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>",
           "example": "INSTANCE",
           "member": "string",
           "name": "CopyPairType",
@@ -7983,10 +7983,19 @@
         },
         {
           "disabled": false,
-          "document": "修改复制对名称（长度最大支持 64 个字符）",
+          "document": "<p>修改复制对名称（长度最大支持 64 个字符）</p>",
           "example": "my-copy-pair",
           "member": "string",
           "name": "CopyPairName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容灾端实例类型（仅容灾端CVM未创建时可修改）</p>",
+          "example": "S5.MEDIUM2",
+          "member": "string",
+          "name": "InstanceType",
           "required": false,
           "type": "string"
         }

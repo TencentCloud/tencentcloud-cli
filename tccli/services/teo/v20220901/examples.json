@@ -640,10 +640,10 @@
     ],
     "DeleteCustomErrorPage": [
       {
-        "document": "删除自定义错误页面接口",
+        "document": "删除自定义响应页面接口",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
-        "title": "删除自定义错误页面接口"
+        "title": "删除自定义响应页面接口"
       }
     ],
     "DeleteDnsRecords": [
@@ -946,10 +946,10 @@
     ],
     "DescribeCustomErrorPages": [
       {
-        "document": "自定义错误页面查询列表",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomErrorPages\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Filters\": [\n        {\n            \"Name\": \"name\",\n            \"Values\": [\n                \"web防护错误页面\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorPages\": [\n            {\n                \"PageId\": \"p-2kplomhisdcb\",\n                \"Name\": \"web防护错误页面\",\n                \"ContentType\": \"application/json\",\n                \"Content\": \"{\\\"title\\\": \\\"自定义错误页面title\\\",\\\"content\\\": \\\"自定义错误页面内容\\\"}\",\n                \"Description\": \"自定义的web防护错误页面\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
-        "title": "自定义错误页面查询列表"
+        "document": "自定义响应页面查询列表",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomErrorPages\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Filters\": [\n        {\n            \"Name\": \"name\",\n            \"Values\": [\n                \"web防护响应页面\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorPages\": [\n            {\n                \"PageId\": \"p-2kplomhisdcb\",\n                \"Name\": \"web防护响应页面\",\n                \"ContentType\": \"application/json\",\n                \"Content\": \"{\\\"title\\\": \\\"自定义响应页面title\\\",\\\"content\\\": \\\"自定义响应页面内容\\\"}\",\n                \"Description\": \"自定义的web防护响应页面\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
+        "title": "自定义响应页面查询列表"
       }
     ],
     "DescribeDDoSAttackData": [

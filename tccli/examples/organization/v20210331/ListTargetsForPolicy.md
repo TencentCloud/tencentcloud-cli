@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli organization ListTargetsForPolicy --cli-unfold-argument  \
-    --PolicyId 1001
+    --PolicyId 2149848746 \
+    --Rp 20 \
+    --Page 1 \
+    --PolicyType SERVICE_CONTROL_POLICY
 ```
 
 Output: 
@@ -15,14 +18,70 @@ Output:
     "Response": {
         "List": [
             {
-                "AddTime": "2022-08-09 17:08:35",
-                "Name": "member_name",
+                "AddTime": "2026-08-18 21:50:42",
+                "Name": "基础架构组",
+                "NodePath": [
+                    "Root",
+                    "研发中心",
+                    "基础架构组"
+                ],
+                "NodePathIds": [
+                    224674,
+                    225415,
+                    225418
+                ],
                 "RelatedType": 1,
-                "Uin": 111111111111
+                "Uin": 225418
+            },
+            {
+                "AddTime": "2026-08-18 21:50:58",
+                "Name": "元数据组",
+                "NodePath": [
+                    "Root",
+                    "研发中心",
+                    "基础架构组",
+                    "存储小组",
+                    "分布式存储",
+                    "元数据组"
+                ],
+                "NodePathIds": [
+                    224674,
+                    225415,
+                    225418,
+                    225421,
+                    225422,
+                    225423
+                ],
+                "RelatedType": 1,
+                "Uin": 225423
+            },
+            {
+                "AddTime": "2026-08-18 16:08:18",
+                "Name": "testCIC2",
+                "NodePath": [
+                    "Root",
+                    "研发中心",
+                    "基础架构组",
+                    "存储小组",
+                    "分布式存储",
+                    "元数据组",
+                    "testCIC2"
+                ],
+                "NodePathIds": [
+                    224674,
+                    225415,
+                    225418,
+                    225421,
+                    225422,
+                    225423,
+                    700003086465
+                ],
+                "RelatedType": 2,
+                "Uin": 700003086465
             }
         ],
-        "RequestId": "676ed1a2-8a98-4834-8d7a-19538980ad0e",
-        "TotalNum": 1
+        "RequestId": "0816fb00-e6c3-4583-9754-4b561dda0f1a",
+        "TotalNum": 3
     }
 }
 ```

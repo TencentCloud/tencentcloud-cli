@@ -673,9 +673,55 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>具备能力</p>",
+          "example": "[\"chat.image-upload\"]",
+          "member": "string",
+          "name": "Capabilities",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是免部署实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DeploymentFree",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
+    },
+    "Attachments": {
+      "document": "聊天图片附件列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>cos key</p>",
+          "example": "chat-images/123456/123456/202609/707dae073fbc4012b801647c701a35ce.png",
+          "member": "string",
+          "name": "CosKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片类型</p>",
+          "example": "image/png",
+          "member": "string",
+          "name": "MimeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ChatBrief": {
       "document": "会话信息",
@@ -1188,6 +1234,15 @@
           "name": "IsChatHidden",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>传递图片附件</p>",
+          "example": "无",
+          "member": "Attachments",
+          "name": "Attachments",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

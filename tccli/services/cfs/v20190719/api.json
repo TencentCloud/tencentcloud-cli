@@ -3347,7 +3347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统 ID",
+          "document": "<p>文件系统 ID</p>",
           "example": "cfs-12345",
           "member": "string",
           "name": "FileSystemId",
@@ -3356,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络（VPC） ID",
+          "document": "<p>私有网络（VPC） ID</p>",
           "example": "vpc-12345",
           "member": "string",
           "name": "VpcId",
@@ -3365,7 +3365,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID",
+          "document": "<p>子网 ID</p>",
           "example": "subnet-12345",
           "member": "string",
           "name": "SubnetId",
@@ -3374,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "Offset 分页码,默认0",
+          "document": "<p>Offset 分页码,默认0</p>",
           "example": "10",
           "member": "uint64",
           "name": "Offset",
@@ -3383,7 +3383,7 @@
         },
         {
           "disabled": false,
-          "document": "Limit 页面大小，默认10",
+          "document": "<p>Limit 页面大小，默认10</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -3392,12 +3392,30 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义名称",
+          "document": "<p>用户自定义名称</p>",
           "example": "test_fs",
           "member": "string",
           "name": "CreationToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。<br><br><li>Protocol - Array of String - 是否必填：否 -（过滤条件）按协议过滤。(NFS | CIFS | TURBO) </li><br><br><li>StorageType - Array of String - 是否必填：否 -（过滤条件）按存储类型过滤。(SD | HP | TB | TP | THP) </li><br><br><li>LifeCycleState - Array of String - 是否必填：否 -（过滤条件）按生命周期过滤。(creating | create_failed | available | deleting | delete_failed | upgrading | unserviced | expanding) </li><br><br><li>Zone - Array of String - 是否必填：否 -（过滤条件）按可用区过滤。(例如：ap-guangzhou-3) </li><br><br><li>IpAddress - Array of String - 是否必填：否 -（过滤条件）按导出点IP地址过滤。(例如：10.0.0.3) </li><br><br><li>PGroupId - Array of String - 是否必填：否 -（过滤条件）按权限组ID过滤。(例如：pgroup-xxxxxrxt) </li><br><br><li>PGroupName - Array of String - 是否必填：否 -（过滤条件）按权限组名称过滤。(例如：默认权限组) </li><br><br><li>Scenario- Array of String - 是否必填：否 -（过滤条件）按权限组名称过滤。(例如：AgentSandbox) </li></p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3407,7 +3425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件系统信息",
+          "document": "<p>文件系统信息</p>",
           "example": "无",
           "member": "FileSystemInfo",
           "name": "FileSystems",
@@ -3417,7 +3435,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统总数",
+          "document": "<p>文件系统总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -4890,6 +4908,36 @@
           "name": "Scenario",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过满删除容量占比，0.0 表示关闭</p><p>取值范围：[0.0, 1.0]</p>",
+          "example": "0.85",
+          "member": "float",
+          "name": "FullDeleteCapacityUsage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过满删除最小存活时间，单位秒</p><p>单位：秒</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "FullDeleteMinTtl",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期删除 TTL，单位秒，0 表示关闭</p><p>单位：秒</p>",
+          "example": "3600",
+          "member": "uint64",
+          "name": "ExpireDeleteTtl",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

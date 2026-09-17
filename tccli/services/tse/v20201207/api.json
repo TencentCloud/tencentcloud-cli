@@ -2660,6 +2660,100 @@
       ],
       "type": "object"
     },
+    "AgentSkill": {
+      "document": "AgentSkill AI Agent 技能定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>agentID</p>",
+          "example": "20",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill名称</p>",
+          "example": "default:svg-architecture-diagram",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "Captures learnings, errors, and corrections to enable continuous improvement. Use when: (1) A command or operation fails unexpectedly, (2) User corrects Claude ('No, that's wrong...'' y( oered for a recurring task. Also review learnings before major tasks.",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>",
+          "example": "[\"string\",\"213\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>样例</p>",
+          "example": "[\"string\",\"213\"]",
+          "member": "string",
+          "name": "Examples",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入模式</p>",
+          "example": "[\"string\",\"213\"]",
+          "member": "string",
+          "name": "InputModes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出模式</p>",
+          "example": "[\"string\",\"213\"]",
+          "member": "string",
+          "name": "OutputModes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本</p>",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApolloEnvParam": {
       "document": "Apollo 环境配置参数",
       "members": [
@@ -17302,6 +17396,34 @@
       ],
       "usage": "both"
     },
+    "ExtendedMetadata": {
+      "document": "服务扩展元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>枚举类型</p>",
+          "example": "EXTENDED_METADATA_SKILL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent参数</p>",
+          "example": "无",
+          "member": "AgentSkill",
+          "name": "AgentSkill",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExternalRedis": {
       "document": "云原生网关限流插件外部redis配置",
       "members": [
@@ -18827,6 +18949,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务元数据</p>",
+          "example": "无",
+          "member": "ExtendedMetadata",
+          "name": "ExtendedMetadata",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -19163,6 +19295,15 @@
           "name": "Type",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拓展服务元数据</p>",
+          "example": "无",
+          "member": "ExtendedMetadata",
+          "name": "ExtendedMetadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -24336,7 +24477,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "inst-12345678",
           "member": "string",
           "name": "InstanceId",
@@ -24346,7 +24487,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "instance-name",
           "member": "string",
           "name": "Name",
@@ -24356,7 +24497,7 @@
         },
         {
           "disabled": false,
-          "document": "版本号",
+          "document": "<p>版本号</p>",
           "example": "1.8.6",
           "member": "string",
           "name": "Edition",
@@ -24366,7 +24507,7 @@
         },
         {
           "disabled": false,
-          "document": "状态, 枚举值:creating/create_fail/running/updating/update_fail/restarting/restart_fail/destroying/destroy_fail",
+          "document": "<p>状态, 枚举值:creating/create_fail/running/updating/update_fail/restarting/restart_fail/destroying/destroy_fail</p>",
           "example": "creating",
           "member": "string",
           "name": "Status",
@@ -24376,7 +24517,7 @@
         },
         {
           "disabled": false,
-          "document": "规格ID",
+          "document": "<p>规格ID</p>",
           "example": "spec-12345678",
           "member": "string",
           "name": "SpecId",
@@ -24386,7 +24527,7 @@
         },
         {
           "disabled": false,
-          "document": "副本数",
+          "document": "<p>副本数</p>",
           "example": "3",
           "member": "int64",
           "name": "Replica",
@@ -24396,7 +24537,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "<p>类型</p>",
           "example": "consul",
           "member": "string",
           "name": "Type",
@@ -24406,7 +24547,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc iD",
+          "document": "<p>Vpc iD</p>",
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
@@ -24416,7 +24557,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "[\"subnet-12345678\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -24426,7 +24567,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启持久化存储",
+          "document": "<p>是否开启持久化存储</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableStorage",
@@ -24436,7 +24577,7 @@
         },
         {
           "disabled": false,
-          "document": "数据存储方式",
+          "document": "<p>数据存储方式</p>",
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "StorageType",
@@ -24446,7 +24587,7 @@
         },
         {
           "disabled": false,
-          "document": "云硬盘容量",
+          "document": "<p>云硬盘容量</p>",
           "example": "10",
           "member": "int64",
           "name": "StorageCapacity",
@@ -24456,7 +24597,7 @@
         },
         {
           "disabled": false,
-          "document": "计费方式",
+          "document": "<p>计费方式</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "Paymode",
@@ -24466,7 +24607,7 @@
         },
         {
           "disabled": false,
-          "document": "EKS集群的ID",
+          "document": "<p>EKS集群的ID</p>",
           "example": "cls-1234567",
           "member": "string",
           "name": "EKSClusterID",
@@ -24476,7 +24617,7 @@
         },
         {
           "disabled": false,
-          "document": "集群创建时间",
+          "document": "<p>集群创建时间</p>",
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "CreateTime",
@@ -24486,7 +24627,7 @@
         },
         {
           "disabled": false,
-          "document": "环境配置信息列表",
+          "document": "<p>环境配置信息列表</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvInfos",
@@ -24496,7 +24637,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎所在的区域",
+          "document": "<p>引擎所在的区域</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
@@ -24506,7 +24647,7 @@
         },
         {
           "disabled": false,
-          "document": "注册引擎是否开启公网",
+          "document": "<p>注册引擎是否开启公网</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInternet",
@@ -24516,7 +24657,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络列表信息",
+          "document": "<p>私有网络列表信息</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfos",
@@ -24526,7 +24667,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理相关信息列表",
+          "document": "<p>服务治理相关信息列表</p>",
           "example": "无",
           "member": "ServiceGovernanceInfo",
           "name": "ServiceGovernanceInfos",
@@ -24536,8 +24677,8 @@
         },
         {
           "disabled": false,
-          "document": "实例的标签信息",
-          "example": "[{\"Key\":\"type\",\"Value\":\"nacos\"}]",
+          "document": "<p>实例的标签信息</p>",
+          "example": "无",
           "member": "KVPair",
           "name": "Tags",
           "output_required": true,
@@ -24546,7 +24687,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎实例是否开启控制台公网访问地址",
+          "document": "<p>引擎实例是否开启控制台公网访问地址</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableConsoleInternet",
@@ -24556,7 +24697,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎实例是否开启控制台内网访问地址",
+          "document": "<p>引擎实例是否开启控制台内网访问地址</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableConsoleIntranet",
@@ -24566,7 +24707,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎实例是否展示参数配置页面",
+          "document": "<p>引擎实例是否展示参数配置页面</p>",
           "example": "true",
           "member": "bool",
           "name": "ConfigInfoVisible",
@@ -24576,7 +24717,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎实例控制台默认密码",
+          "document": "<p>引擎实例控制台默认密码</p>",
           "example": "nacosxx",
           "member": "string",
           "name": "ConsoleDefaultPwd",
@@ -24586,7 +24727,7 @@
         },
         {
           "disabled": false,
-          "document": "交易付费类型，0后付费/1预付费",
+          "document": "<p>交易付费类型，0后付费/1预付费</p>",
           "example": "1",
           "member": "int64",
           "name": "TradeType",
@@ -24596,7 +24737,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费",
+          "document": "<p>自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费</p>",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -24606,7 +24747,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费到期时间",
+          "document": "<p>预付费到期时间</p>",
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "CurDeadline",
@@ -24616,7 +24757,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离开始时间",
+          "document": "<p>隔离开始时间</p>",
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "IsolateTime",
@@ -24626,7 +24767,7 @@
         },
         {
           "disabled": false,
-          "document": "实例地域相关的描述信息",
+          "document": "<p>实例地域相关的描述信息</p>",
           "example": "无",
           "member": "DescribeInstanceRegionInfo",
           "name": "RegionInfos",
@@ -24636,7 +24777,7 @@
         },
         {
           "disabled": false,
-          "document": "所在EKS环境，分为common和yunti",
+          "document": "<p>所在EKS环境，分为common和yunti</p>",
           "example": "common",
           "member": "string",
           "name": "EKSType",
@@ -24646,7 +24787,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎的产品版本",
+          "document": "<p>引擎的产品版本</p>",
           "example": "STANDARD",
           "member": "string",
           "name": "FeatureVersion",
@@ -24656,7 +24797,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎实例是否开启客户端内网访问地址",
+          "document": "<p>引擎实例是否开启客户端内网访问地址</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableClientIntranet",
@@ -24666,7 +24807,7 @@
         },
         {
           "disabled": false,
-          "document": "存储额外配置选项",
+          "document": "<p>存储额外配置选项</p>",
           "example": "无",
           "member": "StorageOption",
           "name": "StorageOption",
@@ -24676,7 +24817,7 @@
         },
         {
           "disabled": false,
-          "document": "Zookeeper的额外环境数据信息",
+          "document": "<p>Zookeeper的额外环境数据信息</p>",
           "example": "无",
           "member": "ZookeeperRegionInfo",
           "name": "ZookeeperRegionInfo",
@@ -24686,7 +24827,7 @@
         },
         {
           "disabled": false,
-          "document": "部署架构",
+          "document": "<p>部署架构</p>",
           "example": "SingleRegion",
           "member": "string",
           "name": "DeployMode",
@@ -24696,7 +24837,7 @@
         },
         {
           "disabled": false,
-          "document": "全局属性",
+          "document": "<p>全局属性</p>",
           "example": "Global",
           "member": "string",
           "name": "GlobalType",
@@ -24706,7 +24847,7 @@
         },
         {
           "disabled": false,
-          "document": "所属组类型",
+          "document": "<p>所属组类型</p>",
           "example": "ClusterFederationGroup",
           "member": "string",
           "name": "GroupType",
@@ -24716,8 +24857,8 @@
         },
         {
           "disabled": false,
-          "document": "组id",
-          "example": "986b8507b256d967b8840b127511fbafc5e37c363be039b6270ae4da827b654a",
+          "document": "<p>组id</p>",
+          "example": "[\"7afaa71e2924802e6762305ca700f96465cb9fdfae5a1c4edffafd5aec87cc4e\"]",
           "member": "string",
           "name": "GroupId",
           "output_required": false,
@@ -24726,10 +24867,30 @@
         },
         {
           "disabled": false,
-          "document": "是否为主地域",
+          "document": "<p>是否为主地域</p>",
           "example": "true",
           "member": "bool",
           "name": "IsMainRegion",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁止变更</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MutationEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>禁止限流</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MaxCapacityLimitEnabled",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -24781,7 +24942,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "引擎所在的地域",
+          "document": "<p>引擎所在的地域</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
@@ -24792,7 +24953,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理引擎绑定的kubernetes集群信息",
+          "document": "<p>服务治理引擎绑定的kubernetes集群信息</p>",
           "example": "无",
           "member": "BoundK8SInfo",
           "name": "BoundK8SInfos",
@@ -24803,7 +24964,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理引擎绑定的网络信息",
+          "document": "<p>服务治理引擎绑定的网络信息</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfos",
@@ -24814,7 +24975,7 @@
         },
         {
           "disabled": false,
-          "document": "当前实例鉴权是否开启",
+          "document": "<p>当前实例鉴权是否开启</p>",
           "example": "true",
           "member": "bool",
           "name": "AuthOpen",
@@ -24825,7 +24986,7 @@
         },
         {
           "disabled": false,
-          "document": "该实例支持的功能，鉴权就是 Auth",
+          "document": "<p>该实例支持的功能，鉴权就是 Auth</p>",
           "example": "[\"Auth\"]",
           "member": "string",
           "name": "Features",
@@ -24836,7 +24997,7 @@
         },
         {
           "disabled": false,
-          "document": "主账户名默认为 polaris，该值为主账户的默认密码",
+          "document": "<p>主账户名默认为 polaris，该值为主账户的默认密码</p>",
           "example": "主账户密码",
           "member": "string",
           "name": "MainPassword",
@@ -24847,7 +25008,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理pushgateway引擎绑定的网络信息",
+          "document": "<p>服务治理pushgateway引擎绑定的网络信息</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "PgwVpcInfos",
@@ -24858,7 +25019,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理限流server引擎绑定的网络信息",
+          "document": "<p>服务治理限流server引擎绑定的网络信息</p>",
           "example": "无",
           "member": "VpcInfo",
           "name": "LimiterVpcInfos",
@@ -24869,7 +25030,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎关联CLS日志主题信息",
+          "document": "<p>引擎关联CLS日志主题信息</p>",
           "example": "无",
           "member": "PolarisCLSTopicInfo",
           "name": "CLSTopics",
@@ -24880,13 +25041,35 @@
         },
         {
           "disabled": false,
-          "document": "子用户密码",
+          "document": "<p>子用户密码</p>",
           "example": "sub@asdasd123",
           "member": "string",
           "name": "SubPassword",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许变更</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DisableMutation",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启限流</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MaxCapacityLimitEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

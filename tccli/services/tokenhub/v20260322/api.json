@@ -3260,6 +3260,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>markdown 原生内容的模型提供方详情</p>",
+          "example": "# 模型提供方 - 杭州深度求索人工智能基础技术研究有限公司",
+          "member": "string",
+          "name": "ProviderIntroduction",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>模型状态。取值：online（上线）、offline（下线）。</p><p>枚举值：</p><ul><li>online ： 上线</li><li>pre-offline： 预下线</li><li>discontinued： 停止新购</li><li>maintenance： 维护中</li></ul>",
           "example": "online",
           "member": "string",
@@ -4437,7 +4447,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "独占额度。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>独占额度。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "500000",
           "member": "string",
           "name": "ExclusiveQuota",
@@ -4447,7 +4457,7 @@
         },
         {
           "disabled": false,
-          "document": "独占额度已用量。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>独占额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "100000",
           "member": "string",
           "name": "ExclusiveUsed",
@@ -4457,7 +4467,7 @@
         },
         {
           "disabled": false,
-          "document": "独占额度剩余量。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>独占额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "400000",
           "member": "string",
           "name": "ExclusiveRemain",
@@ -4467,7 +4477,7 @@
         },
         {
           "disabled": false,
-          "document": "共享额度上限，-1 表示不限。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>共享额度上限，-1 表示不限。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "-1",
           "member": "string",
           "name": "SharedQuota",
@@ -4477,7 +4487,7 @@
         },
         {
           "disabled": false,
-          "document": "共享额度已用量。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>共享额度已用量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "50000",
           "member": "string",
           "name": "SharedUsed",
@@ -4487,7 +4497,7 @@
         },
         {
           "disabled": false,
-          "document": "共享额度剩余量。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>共享额度剩余量。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "-1",
           "member": "string",
           "name": "SharedRemain",
@@ -4497,7 +4507,17 @@
         },
         {
           "disabled": false,
-          "document": "API Key 额度包状态。取值：0（正常）、1（耗尽）。",
+          "document": "<p>当前周期已用总量 exclusive_used + shared_used + overflow_used</p>",
+          "example": "50000",
+          "member": "string",
+          "name": "TotalUsed",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API Key 额度包状态。取值：0（正常）、1（耗尽）。</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",

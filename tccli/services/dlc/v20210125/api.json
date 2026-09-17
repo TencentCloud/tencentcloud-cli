@@ -400,14 +400,14 @@
       "status": "online"
     },
     "CreatePartition": {
-      "document": "新增资源包",
+      "document": "新增资源包（预付费 / 后付费）",
       "input": "CreatePartitionRequest",
       "name": "新增资源包",
       "output": "CreatePartitionResponse",
       "status": "online"
     },
     "CreatePartitionQueue": {
-      "document": "新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列名称、描述、资源规格列表和队列类型。",
+      "document": "新增资源队列：在指定分区下创建一个新的资源队列，支持设置队列编码、别名、描述、资源规格列表和队列类型。",
       "input": "CreatePartitionQueueRequest",
       "name": "新增资源队列",
       "output": "CreatePartitionQueueResponse",
@@ -2059,7 +2059,7 @@
       "status": "online"
     },
     "ModifyPartitionQueue": {
-      "document": "编辑资源队列：根据队列ID修改指定资源队列的名称、描述、资源规格列表和队列类型等信息。",
+      "document": "编辑资源队列：根据队列ID修改指定资源队列的别名（显示名）、描述、资源规格列表和队列类型等信息。队列编码（QueueName）不可变，仅作为一致性校验键。",
       "input": "ModifyPartitionQueueRequest",
       "name": "编辑资源队列",
       "output": "ModifyPartitionQueueResponse",
@@ -6292,6 +6292,45 @@
       ],
       "usage": "both"
     },
+    "CloudTag": {
+      "document": "腾讯云资源标签键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "env",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "dev",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签类型：Custom（自定义）/ System（系统）/ All（全部），仅查询接口返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ClsTopicItem": {
       "document": "CLS 日志主题条目",
       "members": [
@@ -7066,6 +7105,16 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10263,6 +10312,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>作业包URL</p>",
           "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260090589/20260324152119/7acf492b-2686-4c0f-8372-165a14e1d64d.zip",
           "member": "string",
@@ -11646,15 +11705,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>队列名称</p>",
-          "example": "122211",
-          "member": "string",
-          "name": "QueueName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>资源规格列表，定义队列的资源类型及大小范围</p>",
           "example": "无",
           "member": "ResourceUsage",
@@ -11670,6 +11720,24 @@
           "name": "QueueType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列编码（不可变 code）：透传时按 RFC1123 校验并作为队列的固定标识；未透传时系统自动生成（格式 dlc-rg-xxxxxxxx）。落库后不可修改</p>",
+          "example": "122211",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列别名（显示名）：用户可见、可修改；未提供时等于最终 QueueName。可与其它队列重复</p>",
+          "example": "生产队列",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -11694,6 +11762,26 @@
           "name": "Id",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最终生效的队列编码（含系统生成场景），与 DescribePartitionQueues 出参的 QueueName 语义一致</p>",
+          "example": "122211",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列别名（显示名）</p>",
+          "example": "生产队列",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11765,7 +11853,7 @@
         {
           "disabled": false,
           "document": "<p>弹性资源池名称，用于订单页展示</p>",
-          "example": "my_part",
+          "example": "test-postpay-pool",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -11774,7 +11862,7 @@
         {
           "disabled": false,
           "document": "<p>资源包描述</p>",
-          "example": "This is my part",
+          "example": "postpay pool",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -11789,7 +11877,7 @@
         {
           "disabled": false,
           "document": "<p>子订单号</p>",
-          "example": "20260826585023461942461",
+          "example": "20260812501023354768101",
           "member": "string",
           "name": "DealName",
           "output_required": false,
@@ -11798,13 +11886,23 @@
         },
         {
           "disabled": false,
-          "document": "<p>大订单号</p>",
-          "example": "20260826585023461942451",
+          "document": "<p>大订单号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260812501023354768091",
           "member": "string",
           "name": "BigDealId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>冻结流水号（后付费返回；预付费为空）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260821501023416367131",
+          "member": "string",
+          "name": "BillId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23252,7 +23350,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分区编码",
+          "document": "<p>分区编码</p>",
           "example": "dlc-ae511d85",
           "member": "string",
           "name": "PartitionCode",
@@ -23267,7 +23365,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分区详情",
+          "document": "<p>分区详情</p>",
           "example": "无",
           "member": "PartitionDetail",
           "name": "PartitionDetail",
@@ -23331,6 +23429,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回队列实时余量（ResourceQuotas），默认 false 不返回。余量需实时查询 Prometheus，仅在需要时透传 true。Used 为计费 spec 口径（队列内业务容器 Pod limits，经 kube_pod_labels 队列过滤），依赖 kube_pod_labels 指标采集",
+          "example": "false",
+          "member": "bool",
+          "name": "ShowResourceQuotas",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -28592,8 +28699,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>活动编码</p>",
-          "example": "CREATE_NAMESPACE",
+          "document": "<p>活动编码；国际站返回英文编码，国内站返回中文描述</p>",
+          "example": "提交BCP订单",
           "member": "string",
           "name": "ActivityCode",
           "output_required": false,
@@ -28603,8 +28710,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>活动状态</p>",
-          "example": "1",
+          "document": "<p>活动状态：1-运行中，2-已完成，-2-失败</p>",
+          "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -28614,19 +28721,19 @@
         },
         {
           "disabled": false,
-          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2026-01-15 10:30:00",
+          "document": "<p>活动创建时间</p>",
+          "example": "2026-01-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<p>耗时（秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "30",
+          "document": "<p>耗时（秒），活动未完成时省略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
           "member": "int64",
           "name": "Duration",
           "output_required": false,
@@ -30046,6 +30153,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>作业包URL</p>",
           "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260090589/20260324210556/b765a3a7-d630-46a5-bba3-866212d027d4.zip",
           "member": "string",
@@ -30367,6 +30484,16 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -31797,6 +31924,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>应用ID</p>",
           "example": "260200065",
           "member": "int64",
@@ -32508,6 +32645,16 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35104,6 +35251,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>集群组Id</p>",
           "example": "rayclustergroup-tfbd8i-6mfm",
           "member": "string",
@@ -35159,6 +35317,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>",
+          "example": "Cos",
+          "member": "string",
+          "name": "JobPackageSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>优先级</p>",
           "example": "6",
           "member": "int64",
@@ -35196,6 +35365,17 @@
           "example": "600000563453",
           "member": "string",
           "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "700002744585",
+          "member": "string",
+          "name": "SubAccountName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -35644,6 +35824,17 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -41964,10 +42155,19 @@
         },
         {
           "disabled": false,
-          "document": "队列名称",
+          "document": "队列编码（不可变 code）：与 Id 定位记录的一致性校验键，传入值必须与队列当前 QueueName 一致，不参与更新",
           "example": "my-queue",
           "member": "string",
           "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列别名（显示名）：透传时更新，未透传时保持不变。可与其它队列重复",
+          "example": "生产队列-改名",
+          "member": "string",
+          "name": "Alias",
           "required": false,
           "type": "string"
         },
@@ -44513,6 +44713,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchedulableLimit",
+          "name": "SchedulableLimitList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>付费模式</p>",
           "example": "10",
           "member": "int64",
@@ -44554,6 +44765,61 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p><p>参数格式：yyyy-MM-dd hh:mm:ss</p>",
+          "example": "2026-09-17 15:15:16",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p><p>参数格式：yyyy-MM-dd hh:mm:ss</p>",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "IsolatedTimestamp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudTag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>",
+          "example": "USER",
+          "member": "string",
+          "name": "ResourcePoolKind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>",
+          "example": "***",
+          "member": "string",
+          "name": "ExternalClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -44568,6 +44834,7 @@
           "member": "string",
           "name": "Name",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -44578,6 +44845,7 @@
           "member": "string",
           "name": "PartitionCode",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -44588,6 +44856,7 @@
           "member": "string",
           "name": "Description",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -44598,6 +44867,7 @@
           "member": "int64",
           "name": "Status",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -44608,6 +44878,7 @@
           "member": "int64",
           "name": "QueueCount",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -44618,6 +44889,18 @@
           "member": "ResourceQuota",
           "name": "ResourceQuota",
           "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>各计费项的单 worker/executor 最大可调度资源量列表，用于约束提交作业时可申请的规格上限；仅包含分区已有的非 GPU 计费项，无可返回项时为空数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SchedulableLimit",
+          "name": "SchedulableLimitList",
+          "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -44628,8 +44911,20 @@
           "member": "int64",
           "name": "PayMode",
           "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标志：0-默认，1-自动续费，2-不自动续费（仅预付费有效）；按量计费分区无该字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -44638,6 +44933,7 @@
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -44648,6 +44944,7 @@
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -44658,11 +44955,45 @@
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
+          "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池形态：SYSTEM（系统）/ USER（用户）/ EXTERNAL_TKE（纳管外部 TKE 集群）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "USER",
+          "member": "string",
+          "name": "ResourcePoolKind",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>纳管外部集群的原始 ID（例如 EMR 实例 ID emr-xxx），仅 EXTERNAL_TKE 等纳管场景有值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-*******x",
+          "member": "string",
+          "name": "ExternalClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源已绑定的标签列表，由标签平台 GetResources 接口实时查询得到；列表场景下仅对当前页分区加载，单分区标签查询失败时降级留空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudTag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "PauseStandardEngineResourceGroupsRequest": {
       "document": "PauseStandardEngineResourceGroups请求参数结构体",
@@ -45847,10 +46178,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>队列名称</p>",
+          "document": "<p>不可变的Code</p>",
           "example": "default",
           "member": "string",
           "name": "QueueName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列别名（用户可改显示名）；alias 为空时回落为 QueueName</p>",
+          "example": "default",
+          "member": "string",
+          "name": "Alias",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -45862,6 +46204,17 @@
           "example": "无",
           "member": "ResourceUsage",
           "name": "ResourceUsage",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列各资源类型的实时余量（总量 / 已用量 / 可用量）。由 Kueue Prometheus 指标实时计算；监控关闭或查询失败时为 null，字段省略不返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QueueResourceQuota",
+          "name": "ResourceQuotas",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -45898,6 +46251,67 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "QueueResourceQuota": {
+      "document": "队列维度单条资源配额数据（含总量、已用量、可用量）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型标识。CPU / HM_CPU 类计费项统一映射为 \"CU\"；GPU 类计费项取卡型简称（如 \"T4\"、\"H20\"）</p>",
+          "example": "CU",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源单位。CU 类为 \"core\"；GPU 类为 \"card\"</p>",
+          "example": "core",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额总量，由 resource_usage 最大值（index 1）× spec 折算得出</p>",
+          "example": "100",
+          "member": "float",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前已使用量，计费 spec 口径：队列内业务容器（ray-head/ray-worker）的 Pod limits 之和，经 kube_pod_labels 按 local queue 过滤。依赖 kube_pod_labels 指标采集，未开启时恒为 0",
+          "example": "30",
+          "member": "float",
+          "name": "Used",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用量（总量 - 已使用量，截断至 0）。当 used 超出 total 时（例如配额尚未生效或数据短暂不一致），返回 0 而非负数</p>",
+          "example": "70",
+          "member": "float",
+          "name": "Available",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -45967,6 +46381,17 @@
           "example": "mao-group",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -46425,6 +46850,17 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -47503,7 +47939,7 @@
         {
           "disabled": false,
           "document": "<p>配额数量</p><p>请注意，CPU类型计费项为32的整数倍，GPU类型计费项为1的整数倍。</p>",
-          "example": "32",
+          "example": "100",
           "member": "int64",
           "name": "Quota",
           "output_required": false,
@@ -48684,6 +49120,34 @@
         }
       ],
       "usage": "in"
+    },
+    "SchedulableLimit": {
+      "document": "计费项最大可调度限制",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>四层计费项，与 ResourceQuota[].ResourceSpec.BillingItem 同值</p>",
+          "example": "sv_dlc_standard_cu_standard_cu",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该计费项下单 worker/executor 可申请的最大可调度资源量，单位随计费项资源类型：CPU 计费项为 CU 数，GPU 计费项为 GU（卡）数</p>",
+          "example": "32",
+          "member": "int64",
+          "name": "MaxSchedulableUnits",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ScheduleElasticityConf": {
       "document": "引擎资源弹性伸缩策略",
@@ -56044,6 +56508,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>提交时 runtime_env JSON</p>",
           "example": "{\"env_vars\":{\"MLFLOW_TRACKING_URI\":\"xxx\"}",
           "member": "string",
@@ -56410,6 +56885,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -59148,6 +59634,16 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属队列别名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "QueueAlias",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

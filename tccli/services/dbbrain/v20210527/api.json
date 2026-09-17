@@ -12612,47 +12612,47 @@
       "usage": "in"
     },
     "StatisticDataInfo": {
-      "document": "统计分析维度下的统计数据详情",
+      "document": "统计分析维度下的统计数据详情。",
       "members": [
         {
           "disabled": false,
-          "document": "统计维度的值。",
+          "document": "统计维度的值。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "p=dbbrain,kk=cc",
           "member": "string",
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "平均时间。",
+          "document": "平均时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23.1",
           "member": "float",
           "name": "TimeAvg",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "总时间。",
+          "document": "总时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "238.2",
           "member": "float",
           "name": "TimeSum",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "数量。",
+          "document": "数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

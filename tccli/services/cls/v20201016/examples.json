@@ -108,6 +108,14 @@
         "title": "创建告警屏蔽"
       }
     ],
+    "CreateCLSDeliverTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSDeliverTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"b*******_test_ap-tokyo_cross\",\n    \"SourceTopicConfig\": {\n        \"TopicFilterType\": 1,\n        \"LogsetId\": \"ca5938d1-e027-409c-a345-16ce7b5e8d98\",\n        \"Topics\": [\n            {\n                \"TopicId\": \"b*******-test-ok-1254077820\"\n            }\n        ]\n    },\n    \"TargetTopicConfig\": {\n        \"AccountType\": 1,\n        \"Region\": \"ap-*****\",\n        \"LogsetId\": \"16bcb721-0101-4c6f-8c4c-aa0e290ab5da\",\n        \"TopicId\": \"32d29136-bdfc-4749-928b-a0b24d62a3b8\"\n    },\n    \"DeliverRule\": {\n        \"DataScope\": 3\n    },\n    \"Compliance\": 1,\n    \"HasServicesLog\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"5c1f1002-ceb1-4b45-a2f9-bcfc1fbd23ed\",\n        \"RequestId\": \"2ade24da-8ed5-4680-bf2e-c2b9e1be01f8\"\n    }\n}",
+        "title": "创建投递任务"
+      }
+    ],
     "CreateCloudProductLogCollection": [
       {
         "document": "",
@@ -466,6 +474,14 @@
         "title": "删除告警屏蔽"
       }
     ],
+    "DeleteCLSDeliverTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCLSDeliverTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"986d9c8a-a274-4ea6-81cf-bbcae096f19e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a06532f-2f47-4f53-acda-51f419e20473\"\n    }\n}",
+        "title": "删除跨账号投递任务"
+      }
+    ],
     "DeleteCloudProductLogCollection": [
       {
         "document": "",
@@ -816,6 +832,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlertRecordHistory\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"From\": 1681401600000,\n    \"To\": 1681487999999,\n    \"Filters\": [\n        {\n            \"Key\": \"status\",\n            \"Values\": [\n                \"0\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Records\": [\n            {\n                \"RecordId\": \"977c26df-d47f-404c-b0d2-c9ccd73f1407\",\n                \"AlarmId\": \"alarm-98ba728c-3888-4049-b510-20e26de53894\",\n                \"AlarmName\": \"TKE Demo事件日志告警策略_100001001014\",\n                \"TopicId\": \"0337bf0c-7a38-456a-bd59-ba2feaa55195\",\n                \"TopicName\": \"TKE Demo事件日志日志主题_100001001014\",\n                \"Region\": \"ap-chongqing\",\n                \"Trigger\": \"$1.Warning事件数 > 0\",\n                \"TriggerCount\": 1,\n                \"AlarmPeriod\": 15,\n                \"Notices\": [\n                    {\n                        \"Name\": \"TKE Demo事件日志通知渠道组_100001001014\",\n                        \"AlarmNoticeId\": \"notice-117dbad3-cc1b-4455-b112-76b0658dddc2\"\n                    }\n                ],\n                \"Duration\": 90,\n                \"Status\": 0,\n                \"CreateTime\": 1681439122000,\n                \"AlarmLevel\": 0,\n                \"MonitorObjectType\": 0,\n                \"GroupTriggerCondition\": [],\n                \"SendType\": 1\n            },\n            {\n                \"RecordId\": \"1be40239-505f-4f1a-a6aa-4b71a9757d8a\",\n                \"AlarmId\": \"alarm-7be9386d-01e9-4b8b-a54e-fe00f6b15b1d\",\n                \"AlarmName\": \"TKE Demo审计日志告警策略_100001001014\",\n                \"TopicId\": \"6a4adc63-d145-4da4-a0e7-72bb1a9f8fcd\",\n                \"TopicName\": \"TKE Demo审计日志日志主题_100001001014\",\n                \"Region\": \"ap-chongqing\",\n                \"Trigger\": \"$1.操作次数 >10\",\n                \"TriggerCount\": 1,\n                \"AlarmPeriod\": 15,\n                \"Notices\": [\n                    {\n                        \"Name\": \"TKE Demo审计日志通知渠道组_100001001014\",\n                        \"AlarmNoticeId\": \"notice-f7d09113-b870-4f98-b99d-38d8ecf5393b\"\n                    }\n                ],\n                \"Duration\": 90,\n                \"Status\": 0,\n                \"CreateTime\": 1681438941000,\n                \"AlarmLevel\": 0,\n                \"MonitorObjectType\": 0,\n                \"GroupTriggerCondition\": [],\n                \"SendType\": 1\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"431449a5-95ab-4168-9a0e-7db48692d917\"\n    }\n}",
         "title": "查询未恢复告警"
+      }
+    ],
+    "DescribeCLSDeliverTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSDeliverTasks\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Compliance\": 1,\n                \"CreateTime\": 1776754097,\n                \"DeliverRule\": {\n                    \"DataScope\": 3\n                },\n                \"Enable\": 0,\n                \"HasServicesLog\": 2,\n                \"Progress\": 0,\n                \"SourceTopicConfig\": {\n                    \"LogsetId\": \"e83e2d17-6d97-429d-b073-acbcd625ad5f\",\n                    \"TopicFilterType\": 1,\n                    \"Topics\": [\n                        {\n                            \"TopicId\": \"871710c5-35cd-4d1e-8e79-2fa92c35d612\"\n                        }\n                    ]\n                },\n                \"Status\": 0,\n                \"TargetTopicConfig\": {\n                    \"AccountType\": 1,\n                    \"LogsetId\": \"b*******-diy-1254139626\",\n                    \"Region\": \"ap-**************\",\n                    \"TopicId\": \"12cd155d-feb0-497e-929d-dd0070867599\"\n                },\n                \"TaskId\": \"075210cd-28ac-497c-8575-8e0e5e11e1db\",\n                \"TaskName\": \"update\",\n                \"Uin\": 100001127589,\n                \"UpdateTime\": 1776915747\n            }\n        ],\n        \"Total\": 7,\n        \"RequestId\": \"42c19473-518f-4f2e-810f-a3329cdc6709\"\n    }\n}",
+        "title": "查询跨账号投递任务列表"
       }
     ],
     "DescribeCloudProductLogTasks": [
@@ -1460,6 +1484,14 @@
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmShield\n<公共请求参数>\n\n{\n    \"TaskId\": \"bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"AlarmNoticeId\": \"notice-bb42f112-a74d-456e-b3c4-ff5472911b42\",\n    \"StartTime\": 1701872657,\n    \"EndTime\": 1701892657,\n    \"Type\": 1,\n    \"Rule\": \"\",\n    \"Reason\": \"修改原因\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1142f112-a74d-456e-b3c4-ff5472911b11\"\n    }\n}",
         "title": "修改告警屏蔽"
+      }
+    ],
+    "ModifyCLSDeliverTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCLSDeliverTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"3f2cdda9-263e-47fe-8bde-bb3c541e45e6\",\n    \"TargetTopicConfig\": {\n        \"AccountType\": 1,\n        \"Region\": \"ap-*******\",\n        \"LogsetId\": \"16bcb721-0101-4c6f-8c4c-aa0e290ab5da\",\n        \"TopicId\": \"32d29136-bdfc-4749-928b-a0b24d62a3b8\"\n    },\n    \"HasServicesLog\": 1,\n    \"TaskName\": \"b*******_update\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f4416ef-3255-4b9b-8207-1738b290fbac\"\n    }\n}",
+        "title": "修改跨账号投递任务"
       }
     ],
     "ModifyCloudProductLogCollection": [

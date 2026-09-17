@@ -12497,7 +12497,7 @@
           "type": "object"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>可用区，如：ap-guangzhou-2。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -12549,6 +12549,51 @@
           "name": "BgpAsn",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是私网类型</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrivate",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私网唯一ID</p>",
+          "example": "subnet-re2m1xhu",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BGP 开关，开启时需指定BgpAsn。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "BgpEnable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内外层IP协议</p><p>枚举值：</p><ul><li>4in4： IPv4 over IPv4</li><li>6in4： IPv6 over IPv4</li><li>6in6： IPv6 over IPv6</li><li>4in6： IPv4 over IPv6</li></ul><p>默认值：4in4</p>",
+          "example": "4in4",
+          "member": "string",
+          "name": "IpStack",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CCN类型私网VPN接入网段</p>",
+          "example": "10.0.0.0/12",
+          "member": "string",
+          "name": "AccessSubnet",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12626,7 +12671,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SSL-VPN-SERVER 实例ID。",
+          "document": "<p>SSL-VPN-SERVER 实例ID。</p>",
           "example": "vpns-5au854w1",
           "member": "string",
           "name": "SslVpnServerId",
@@ -12635,7 +12680,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。",
+          "document": "<p>SSL-VPN-CLIENT实例Name。不可和SslVpnClientNames同时使用。</p>",
           "example": "client-name",
           "member": "string",
           "name": "SslVpnClientName",
@@ -12644,7 +12689,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。",
+          "document": "<p>SSL-VPN-CLIENT实例Name数字。批量创建时使用。不可和SslVpnClientName同时使用。</p>",
           "example": "[\"client-name-01\", \"client-name-02\"]",
           "member": "string",
           "name": "SslVpnClientNames",
@@ -12653,8 +12698,8 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表",
-          "example": "[{\"Key\": \"name\", \"Value\": \"123\"}]",
+          "document": "<p>指定绑定的标签列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -12668,7 +12713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "671233",
           "member": "uint64",
           "name": "TaskId",
@@ -12678,12 +12723,22 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN client 唯一ID",
+          "document": "<p>SSL VPN客户端唯一ID</p>",
           "example": "vpnc-f5yln4n3",
           "member": "string",
           "name": "SslVpnClientId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL VPN客户端唯一ID</p><p>仅批量场景返回</p>",
+          "example": "[\"vpnc-f5yln4n3\"]",
+          "member": "string",
+          "name": "SslVpnClientIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12700,7 +12755,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPN网关实例ID。",
+          "document": "<p>VPN网关实例ID。</p>",
           "example": "vpn-12345678",
           "member": "string",
           "name": "VpnGatewayId",
@@ -12709,7 +12764,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN-SERVER 实例名称，长度不超过60个字节。",
+          "document": "<p>SSL-VPN-SERVER 实例名称，长度不超过60个字节。</p>",
           "example": "name",
           "member": "string",
           "name": "SslVpnServerName",
@@ -12718,7 +12773,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端地址网段。",
+          "document": "<p>客户端地址网段。</p>",
           "example": "172.16.0.0/16",
           "member": "string",
           "name": "RemoteAddress",
@@ -12727,7 +12782,7 @@
         },
         {
           "disabled": false,
-          "document": "云端地址（CIDR）列表。",
+          "document": "<p>云端地址（CIDR）列表。</p>",
           "example": "[\"10.0.0.0/16\"]",
           "member": "string",
           "name": "LocalAddress",
@@ -12736,7 +12791,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。",
+          "document": "<p>SSL VPN服务端监听协议。当前仅支持 UDP，默认UDP。</p>",
           "example": "UDP",
           "member": "string",
           "name": "SslVpnProtocol",
@@ -12745,8 +12800,8 @@
         },
         {
           "disabled": false,
-          "document": "SSL VPN服务端监听协议端口，默认1194。",
-          "example": "1194",
+          "document": "<p>SSL VPN服务端监听协议端口，默认9798。</p>",
+          "example": "9798",
           "member": "int64",
           "name": "SslVpnPort",
           "required": false,
@@ -12754,7 +12809,7 @@
         },
         {
           "disabled": false,
-          "document": "认证算法。可选 'SHA1'，默认SHA1。",
+          "document": "<p>认证算法。可选 &#39;SHA1&#39;, &#39;SHA224&#39;, &#39;SHA256&#39;, &#39;SHA384&#39;, &#39;SHA512&#39; 默认SHA1。</p>",
           "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",
@@ -12763,7 +12818,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。",
+          "document": "<p>加密算法。可选 &#39;AES-128-CBC&#39;,&#39;AES-192-CBC&#39;, &#39;AES-256-CBC&#39;, &#39;AES-128-GCM&#39;, &#39;AES-192-GCM&#39;, &#39;AES-256-GCM&#39;。</p><p>默认值：AES-128-CBC</p>",
           "example": "AES-128-CBC",
           "member": "string",
           "name": "EncryptAlgorithm",
@@ -12772,7 +12827,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持压缩。当前不支持压缩，默认False。",
+          "document": "<p>是否支持压缩。当前不支持压缩，默认False。</p>",
           "example": "false",
           "member": "bool",
           "name": "Compress",
@@ -12781,7 +12836,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
+          "document": "<p>是否开启SSO认证。默认为False。该功能当前需要申请开白使用。</p>",
           "example": "false",
           "member": "bool",
           "name": "SsoEnabled",
@@ -12790,7 +12845,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启策略访问控制。默认为False",
+          "document": "<p>是否开启策略访问控制。默认为False</p>",
           "example": "false",
           "member": "bool",
           "name": "AccessPolicyEnabled",
@@ -12799,7 +12854,7 @@
         },
         {
           "disabled": false,
-          "document": "SAML-DATA，开启SSO时传。",
+          "document": "<p>SAML-DATA，开启SSO时传。</p>",
           "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGl",
           "member": "string",
           "name": "SamlData",
@@ -12808,7 +12863,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表",
+          "document": "<p>指定绑定的标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -12817,7 +12872,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS Server 地址",
+          "document": "<p>DNS Server 地址</p>",
           "example": "无",
           "member": "DnsServers",
           "name": "DnsServers",
@@ -12832,7 +12887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建SSL-VPN server 异步任务ID。",
+          "document": "<p>创建SSL-VPN server 异步任务ID。</p>",
           "example": "52631",
           "member": "int64",
           "name": "TaskId",
@@ -12842,7 +12897,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN-SERVER 唯一ID。",
+          "document": "<p>SSL-VPN-SERVER 唯一ID。</p>",
           "example": "vpns-xxxxx",
           "member": "string",
           "name": "SslVpnServerId",
@@ -13156,7 +13211,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户网关唯一ID",
+          "document": "<p>用户网关唯一ID</p>",
           "example": "cgw-021cr501",
           "member": "string",
           "name": "CustomerGatewayId",
@@ -13166,7 +13221,7 @@
         },
         {
           "disabled": false,
-          "document": "网关名称",
+          "document": "<p>网关名称</p>",
           "example": "对端网关-1",
           "member": "string",
           "name": "CustomerGatewayName",
@@ -13176,7 +13231,7 @@
         },
         {
           "disabled": false,
-          "document": "公网地址",
+          "document": "<p>公网地址</p>",
           "example": "12.31.451.4",
           "member": "string",
           "name": "IpAddress",
@@ -13186,7 +13241,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-15 10:33:22",
           "member": "string",
           "name": "CreatedTime",
@@ -13196,12 +13251,32 @@
         },
         {
           "disabled": false,
-          "document": "BGP ASN。",
+          "document": "<p>BGP ASN。</p>",
           "example": "2731",
           "member": "uint64",
           "name": "BgpAsn",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联通道数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "VpnConnNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -17315,8 +17390,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。",
-          "example": "cgw-2wqq41m9",
+          "document": "<p>对端网关ID，例如：cgw-2wqq41m9。每次请求的实例的上限为100。参数不支持同时指定CustomerGatewayIds和Filters。</p>",
+          "example": "[\"cgw-2wqq41m9\"]",
           "member": "string",
           "name": "CustomerGatewayIds",
           "required": false,
@@ -17324,8 +17399,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。\n<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：`cgw-mgp33pll`。</li>\n<li>customer-gateway-name - String - （过滤条件）用户网关名称形如：`test-cgw`。</li>\n<li>ip-address - String - （过滤条件）公网地址形如：`58.211.1.12`。</li>",
-          "example": "null",
+          "document": "<p>过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定CustomerGatewayIds和Filters。<li>customer-gateway-id - String - （过滤条件）用户网关唯一ID形如：<code>cgw-mgp33pll</code>。</li><li>customer-gateway-name - String - （过滤条件）用户网关名称形如：<code>test-cgw</code>。</li><li>ip-address - String - （过滤条件）公网地址形如：<code>58.211.1.12</code>。</li><li>ip-version - String - （过滤条件）公网地址类型,可选值[&#39;IPv4&#39;,&#39;IPv6&#39;]。</li></p>",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -17333,7 +17408,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/11646)中的相关小节。",
+          "document": "<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API <a href=\"https://cloud.tencent.com/document/api/213/11646\">简介</a>中的相关小节。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -17342,7 +17417,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -17357,19 +17432,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "对端网关对象列表。",
-          "example": " [             {                 \"CustomerGatewayId\": \"cgw-mgp33pll\",                 \"IpAddress\": \"58.211.1.12\",                 \"CustomerGatewayName\": \"test-cgw\",                 \"CreatedTime\": \"2018-03-25 17:52:39\"             }         ]",
+          "document": "<p>对端网关对象列表。</p>",
+          "example": "无",
           "member": "CustomerGateway",
           "name": "CustomerGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "符合条件的实例数量。",
+          "document": "<p>符合条件的实例数量。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32651,7 +32728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "SSL-VPN SERVER 实例ID",
+          "document": "<p>SSL-VPN SERVER 实例ID</p>",
           "example": "vpns-43eqlqex",
           "member": "string",
           "name": "SslVpnServerId",
@@ -32660,7 +32737,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL-VPN SERVER NAME",
+          "document": "<p>SSL-VPN SERVER NAME</p>",
           "example": "rename-test",
           "member": "string",
           "name": "SslVpnServerName",
@@ -32669,7 +32746,7 @@
         },
         {
           "disabled": false,
-          "document": "本端地址",
+          "document": "<p>本端地址</p>",
           "example": "[\"10.0.0.0/24\"]",
           "member": "string",
           "name": "LocalAddress",
@@ -32678,7 +32755,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端地址",
+          "document": "<p>客户端地址</p>",
           "example": "9.0.0.0/24",
           "member": "string",
           "name": "RemoteAddress",
@@ -32686,8 +32763,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP",
+          "disabled": true,
+          "document": "<p>SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP</p>",
           "example": "UDP",
           "member": "string",
           "name": "SslVpnProtocol",
@@ -32696,7 +32773,7 @@
         },
         {
           "disabled": false,
-          "document": "SSL VPN服务端监听协议端口。",
+          "document": "<p>SSL VPN服务端监听协议端口。</p>",
           "example": "1194",
           "member": "int64",
           "name": "SslVpnPort",
@@ -32705,7 +32782,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。",
+          "document": "<p>加密算法。可选值 &#39;AES-128-CBC&#39;, &#39;AES-192-CBC&#39;, &#39;AES-256-CBC&#39;, &#39;AES-128-GCM&#39;, &#39;AES-192-GCM&#39;, &#39;AES-256-GCM&#39;, 默认AES-128-CBC。</p>",
           "example": "AES-128-CBC",
           "member": "string",
           "name": "EncryptAlgorithm",
@@ -32714,7 +32791,7 @@
         },
         {
           "disabled": false,
-          "document": "认证算法。可选 'SHA1'，默认SHA1。",
+          "document": "<p>认证算法。可选 &#39;SHA1&#39;, &#39;MD5&#39;, &#39;SHA224&#39;, &#39;SHA256&#39;, &#39;SHA384&#39;, &#39;SHA512&#39;，默认SHA1。</p>",
           "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorithm",
@@ -32723,7 +32800,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持压缩。当前不支持压缩。默认False。",
+          "document": "<p>是否支持压缩。当前不支持压缩。默认False。</p>",
           "example": "false",
           "member": "bool",
           "name": "Compress",
@@ -32732,7 +32809,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSO认证。默认为False。该功能当前需要申请开白使用。",
+          "document": "<p>是否开启SSO认证。默认为False。该功能当前需要申请开白使用。</p>",
           "example": "false",
           "member": "bool",
           "name": "SsoEnabled",
@@ -32741,7 +32818,7 @@
         },
         {
           "disabled": false,
-          "document": "SAML-DATA",
+          "document": "<p>SAML-DATA</p>",
           "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGlu",
           "member": "string",
           "name": "SamlData",
@@ -32750,7 +32827,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS Server地址",
+          "document": "<p>DNS Server地址</p>",
           "example": "无",
           "member": "DnsServers",
           "name": "DnsServers",
@@ -32765,7 +32842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务TASKID",
+          "document": "<p>异步任务TASKID</p>",
           "example": "5671",
           "member": "int64",
           "name": "TaskId",
@@ -42159,6 +42236,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私网VPN标识</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPrivate",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -42168,7 +42255,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽配额，单位：Mbps。",
+          "document": "<p>带宽配额，单位：Mbps。</p>",
           "example": "5",
           "member": "uint64",
           "name": "Bandwidth",
@@ -42178,7 +42265,7 @@
         },
         {
           "disabled": false,
-          "document": "配额中文名称",
+          "document": "<p>配额中文名称</p>",
           "example": "微小型",
           "member": "string",
           "name": "Cname",
@@ -42188,12 +42275,22 @@
         },
         {
           "disabled": false,
-          "document": "配额英文名称",
+          "document": "<p>配额英文名称</p>",
           "example": "mini",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL 连接数可选配额</p>",
+          "example": "[5,10,20,50,100]",
+          "member": "uint64",
+          "name": "MaxConnection",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

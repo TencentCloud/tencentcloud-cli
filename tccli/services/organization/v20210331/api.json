@@ -8078,7 +8078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "scp账号uin或节点Id",
+          "document": "<p>scp账号uin或节点Id</p>",
           "example": "100022242314",
           "member": "uint64",
           "name": "Uin",
@@ -8088,7 +8088,7 @@
         },
         {
           "disabled": false,
-          "document": "关联类型 1-节点关联 2-用户关联",
+          "document": "<p>关联类型 1-节点关联 2-用户关联</p>",
           "example": "2",
           "member": "uint64",
           "name": "RelatedType",
@@ -8098,7 +8098,7 @@
         },
         {
           "disabled": false,
-          "document": "账号或者节点名称",
+          "document": "<p>账号或者节点名称</p>",
           "example": "T1-Node",
           "member": "string",
           "name": "Name",
@@ -8108,12 +8108,32 @@
         },
         {
           "disabled": false,
-          "document": "绑定时间",
+          "document": "<p>绑定时间</p>",
           "example": "2022-08-09 17:11:54",
           "member": "string",
           "name": "AddTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标对象所属的组织层级名称路径</p>",
+          "example": "[\"Root\"]",
+          "member": "string",
+          "name": "NodePath",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应的组织层级 ID 路径</p>",
+          "example": "[224674]",
+          "member": "int64",
+          "name": "NodePathIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8124,7 +8144,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略Id。",
+          "document": "<p>策略Id。</p>",
           "example": "1001",
           "member": "uint64",
           "name": "PolicyId",
@@ -8133,7 +8153,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量。默认值是 20，必须大于 0 且小于或等于 200",
+          "document": "<p>每页数量。默认值是 20，必须大于 0 且小于或等于 200</p>",
           "example": "1",
           "member": "uint64",
           "name": "Rp",
@@ -8142,7 +8162,7 @@
         },
         {
           "disabled": false,
-          "document": "页码。默认值是 1，从 1开始，不能大于 200",
+          "document": "<p>页码。默认值是 1，从 1开始，不能大于 200</p>",
           "example": "10",
           "member": "uint64",
           "name": "Page",
@@ -8151,7 +8171,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。取值范围：All-全部、User-用户、Node-节点",
+          "document": "<p>策略类型。取值范围：All-全部、User-用户、Node-节点</p>",
           "example": "All",
           "member": "string",
           "name": "TargetType",
@@ -8160,7 +8180,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略",
+          "document": "<p>策略类型。默认值SERVICE_CONTROL_POLICY，取值范围：SERVICE_CONTROL_POLICY-服务控制策略、TAG_POLICY-标签策略</p>",
           "example": "SERVICE_CONTROL_POLICY",
           "member": "string",
           "name": "PolicyType",
@@ -8169,7 +8189,7 @@
         },
         {
           "disabled": false,
-          "document": "按照多个策略id搜索，空格隔开。",
+          "document": "<p>按照多个策略id搜索，空格隔开。</p>",
           "example": "10001 10002",
           "member": "string",
           "name": "Keyword",
@@ -8184,7 +8204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数。",
+          "document": "<p>总数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalNum",
@@ -8194,7 +8214,7 @@
         },
         {
           "disabled": false,
-          "document": "指定SCP策略关联目标列表。",
+          "document": "<p>指定SCP策略关联目标列表。</p>",
           "example": "[{\"AddTime\":\"2022-08-09 17:08:35\",\"Name\":\"member_name\",\"RelatedType\":1,\"Uin\":111111111111}]",
           "member": "ListTargetsForPolicyNode",
           "name": "List",

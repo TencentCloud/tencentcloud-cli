@@ -749,7 +749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "默认转发规则动作列表。目前监听器仅支持添加 1 个默认转发规则动作。",
+          "document": "<p>默认转发规则动作列表。目前监听器仅支持添加 1 个默认转发规则动作。</p>",
           "example": "无",
           "member": "DefaultAction",
           "name": "DefaultActions",
@@ -758,7 +758,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例前端使用的端口。  取值：1~65535。",
+          "document": "<p>负载均衡实例前端使用的端口。  取值：1~65535。</p>",
           "example": "80",
           "member": "uint64",
           "name": "ListenerPort",
@@ -767,7 +767,7 @@
         },
         {
           "disabled": false,
-          "document": "监听协议。  取值：HTTP、HTTPS 或 QUIC。",
+          "document": "<p>监听协议。  取值：HTTP、HTTPS 或 QUIC。</p>",
           "example": "HTTP",
           "member": "string",
           "name": "ListenerProtocol",
@@ -776,7 +776,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。",
+          "document": "<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>",
           "example": "alb-f8q2xk9m",
           "member": "string",
           "name": "LoadBalancerId",
@@ -785,7 +785,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器配置的CA证书ID列表。目前监听器仅支持添加 1 个 CA 证书。\n当 CaEnabled 参数取值为 true 时，此参数必填。",
+          "document": "<p>监听器配置的CA证书ID列表。目前监听器仅支持添加 1 个 CA 证书。<br>当 CaEnabled 参数取值为 true 时，此参数必填。</p>",
           "example": "[\"Fm8Wp7x8\"]",
           "member": "string",
           "name": "CaCertificateIds",
@@ -794,7 +794,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启双向认证。\n取值：\ntrue：开启。\nfalse（默认值）：不开启。",
+          "document": "<p>是否开启双向认证。<br>取值：<br>true：开启。<br>false（默认值）：不开启。</p>",
           "example": "false",
           "member": "bool",
           "name": "CaEnabled",
@@ -803,7 +803,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器证书 ID 列表。",
+          "document": "<p>服务器证书 ID 列表。</p>",
           "example": "[\"Fm8Wp7x8\"]",
           "member": "string",
           "name": "CertificateIds",
@@ -812,7 +812,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端Token，用于保证请求的幂等性。  \n\n从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。",
+          "document": "<p>客户端Token，用于保证请求的幂等性。  </p><p>从您的客户端生成一个参数值，确保不同请求间该参数值唯一。ClientToken只支持ASCII字符。</p>",
           "example": "3e727335-f94c-468f-9989-21759a3b6de8",
           "member": "string",
           "name": "ClientToken",
@@ -821,7 +821,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启Gzip压缩。取值:true(默认值):是。false:否",
+          "document": "<p>是否开启Gzip压缩。取值:true(默认值):是。false:否</p>",
           "example": "false",
           "member": "bool",
           "name": "GzipEnabled",
@@ -830,7 +830,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP/2特性。HTTP 协议默认 false，HTTPS 协议默认 true。只有 HTTPS 协议支持此参数。",
+          "document": "<p>是否开启HTTP/2特性。HTTP 协议默认 false，HTTPS 协议默认 true。只有 HTTPS 协议支持此参数。</p>",
           "example": "true",
           "member": "bool",
           "name": "Http2Enabled",
@@ -839,7 +839,7 @@
         },
         {
           "disabled": false,
-          "document": "连接空闲超时时间。单位：秒。\n取值范围：1~600。\n默认值：15。\n如果在超时时间内一直没有访问请求，负载均衡会断开当前连接，在下次请求到来时创建新的连接。",
+          "document": "<p>连接空闲超时时间。单位：秒。<br>取值范围：1~600。<br>默认值：15。<br>如果在超时时间内一直没有访问请求，负载均衡会断开当前连接，在下次请求到来时创建新的连接。</p>",
           "example": "15",
           "member": "uint64",
           "name": "IdleTimeout",
@@ -848,7 +848,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义监听名称。  长度为 1~255 个字符，必须是中文和无害字符串中的字符，  可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。",
+          "document": "<p>自定义监听名称。  长度为 1~255 个字符，必须是中文和无害字符串中的字符，  可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>",
           "example": "http_listener",
           "member": "string",
           "name": "ListenerName",
@@ -857,7 +857,7 @@
         },
         {
           "disabled": false,
-          "document": "请求超时时间。单位：秒。\n取值：1~600。\n默认值：60。\n如果在超时时间内后端服务器没有返回响应，负载均衡将放弃等待，并给客户端返回HTTP 504错误码。",
+          "document": "<p>连接请求超时时间。单位：秒。取值：1~600。默认值：60。如果在超时时间内后端服务器没有返回响应，负载均衡将放弃等待，并给客户端返回HTTP 504错误码。</p>",
           "example": "60",
           "member": "uint64",
           "name": "RequestTimeout",
@@ -866,7 +866,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略 ID，格式为 tls- 后接 8 位字母数字。",
+          "document": "<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>",
           "example": "tls-t2ckydug",
           "member": "string",
           "name": "SecurityPolicyId",
@@ -875,7 +875,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表。最大支持20个。",
+          "document": "<p>标签列表。最大支持20个。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -884,7 +884,7 @@
         },
         {
           "disabled": false,
-          "document": "X-Forwarded-For配置",
+          "document": "<p>X-Forwarded-For配置</p>",
           "example": "无",
           "member": "XForwardedForConfig",
           "name": "XForwardedForConfig",
@@ -899,7 +899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器 ID，格式为 lst- 后接 8 位字母数字。",
+          "document": "<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>",
           "example": "lst-d9p3k7wa",
           "member": "string",
           "name": "ListenerId",
@@ -1901,7 +1901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器 ID，格式为 lst- 后接 8 位字母数字。",
+          "document": "<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>",
           "example": "lst-d9p3k7wa",
           "member": "string",
           "name": "ListenerId",
@@ -1910,7 +1910,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。",
+          "document": "<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>",
           "example": "alb-f8q2xk9m",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1925,7 +1925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听器绑定的CA证书ID列表。",
+          "document": "<p>监听器绑定的CA证书ID列表。</p>",
           "example": "[\"Fm8Wp7x8\"]",
           "member": "string",
           "name": "CaCertificateIds",
@@ -1935,7 +1935,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启双向认证。",
+          "document": "<p>是否开启双向认证。</p>",
           "example": "false",
           "member": "bool",
           "name": "CaEnabled",
@@ -1945,7 +1945,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器证书 ID 列表。",
+          "document": "<p>服务器证书 ID 列表。</p>",
           "example": "[\"Fm8Wp7x8\"]",
           "member": "string",
           "name": "CertificateIds",
@@ -1955,7 +1955,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）",
+          "document": "<p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>",
           "example": "2025-01-01T08:30:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1965,7 +1965,7 @@
         },
         {
           "disabled": false,
-          "document": "规则动作列表。",
+          "document": "<p>规则动作列表。</p>",
           "example": "无",
           "member": "DefaultAction",
           "name": "DefaultActions",
@@ -1975,7 +1975,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用 Gzip 压缩。",
+          "document": "<p>是否启用 Gzip 压缩。</p>",
           "example": "false",
           "member": "bool",
           "name": "GzipEnabled",
@@ -1985,7 +1985,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启HTTP/2特性。",
+          "document": "<p>是否开启HTTP/2特性。</p>",
           "example": "true",
           "member": "bool",
           "name": "Http2Enabled",
@@ -1995,7 +1995,7 @@
         },
         {
           "disabled": false,
-          "document": "指定连接空闲超时时间。单位：秒。",
+          "document": "<p>指定连接空闲超时时间。单位：秒。</p>",
           "example": "15",
           "member": "uint64",
           "name": "IdleTimeout",
@@ -2005,7 +2005,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器 ID，格式为 lst- 后接 8 位字母数字。",
+          "document": "<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>",
           "example": "lst-d9p3k7wa",
           "member": "string",
           "name": "ListenerId",
@@ -2015,7 +2015,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义监听名称。",
+          "document": "<p>自定义监听名称。</p>",
           "example": "http_listener",
           "member": "string",
           "name": "ListenerName",
@@ -2025,7 +2025,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例前端使用的端口。",
+          "document": "<p>负载均衡实例前端使用的端口。</p>",
           "example": "80",
           "member": "uint64",
           "name": "ListenerPort",
@@ -2035,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "监听协议。",
+          "document": "<p>监听协议。</p>",
           "example": "HTTP",
           "member": "string",
           "name": "ListenerProtocol",
@@ -2045,7 +2045,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器状态。取值:=\n\n- **Active**: 运行中。\n- **Provisioning**：创建中。\n- **Configuring**：变配中。\n- **ProvisionFailed**：创建失败",
+          "document": "<p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>",
           "example": "Active",
           "member": "string",
           "name": "ListenerStatus",
@@ -2055,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。",
+          "document": "<p>负载均衡实例 ID，格式为 alb- 后接 8 位字母数字。</p>",
           "example": "alb-f8q2xk9m",
           "member": "string",
           "name": "LoadBalancerId",
@@ -2065,7 +2065,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）",
+          "document": "<p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>",
           "example": "2025-01-01T08:30:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -2075,7 +2075,7 @@
         },
         {
           "disabled": false,
-          "document": "请求超时时间。单位：秒。",
+          "document": "<p>连接请求超时时间。单位：秒。</p>",
           "example": "60",
           "member": "uint64",
           "name": "RequestTimeout",
@@ -2085,7 +2085,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略 ID，格式为 tls- 后接 8 位字母数字。",
+          "document": "<p>安全策略 ID，格式为 tls- 后接 8 位字母数字。</p>",
           "example": "tls-t2ckydug",
           "member": "string",
           "name": "SecurityPolicyId",
@@ -2095,7 +2095,7 @@
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "<p>标签。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -2105,7 +2105,7 @@
         },
         {
           "disabled": false,
-          "document": "XForwardedFor配置。",
+          "document": "<p>XForwardedFor配置。</p>",
           "example": "无",
           "member": "XForwardedForConfig",
           "name": "XForwardedForConfig",
@@ -3893,7 +3893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启双向认证。",
+          "document": "<p>是否开启双向认证。</p>",
           "example": "false",
           "member": "bool",
           "name": "CaEnable",
@@ -3904,7 +3904,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）",
+          "document": "<p>监听器实例的创建时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>",
           "example": "2025-01-01T08:30:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -3915,7 +3915,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用 Gzip 压缩。",
+          "document": "<p>是否启用 Gzip 压缩。</p>",
           "example": "false",
           "member": "bool",
           "name": "GzipEnabled",
@@ -3926,7 +3926,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用http2。",
+          "document": "<p>是否启用http2。</p>",
           "example": "false",
           "member": "bool",
           "name": "Http2Enable",
@@ -3937,7 +3937,7 @@
         },
         {
           "disabled": false,
-          "document": "空闲超时时间。",
+          "document": "<p>空闲超时时间。</p>",
           "example": "15",
           "member": "uint64",
           "name": "IdleTimeout",
@@ -3948,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器 ID，格式为 lst- 后接 8 位字母数字。",
+          "document": "<p>监听器 ID，格式为 lst- 后接 8 位字母数字。</p>",
           "example": "lst-d9p3k7wa",
           "member": "string",
           "name": "ListenerId",
@@ -3959,7 +3959,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器名称。",
+          "document": "<p>监听器名称。</p>",
           "example": "http-listener",
           "member": "string",
           "name": "ListenerName",
@@ -3970,7 +3970,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器端口。",
+          "document": "<p>监听器端口。</p>",
           "example": "80",
           "member": "uint64",
           "name": "ListenerPort",
@@ -3981,7 +3981,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议。",
+          "document": "<p>监听器协议。</p>",
           "example": "HTTPS",
           "member": "string",
           "name": "ListenerProtocol",
@@ -3992,7 +3992,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器状态。取值:=\n\n- **Active**: 运行中。\n- **Provisioning**：创建中。\n- **Configuring**：变配中。\n- **ProvisionFailed**：创建失败",
+          "document": "<p>监听器状态。取值:=</p><ul><li><strong>Active</strong>: 运行中。</li><li><strong>Provisioning</strong>：创建中。</li><li><strong>Configuring</strong>：变配中。</li><li><strong>ProvisionFailed</strong>：创建失败</li></ul>",
           "example": "Active",
           "member": "string",
           "name": "ListenerStatus",
@@ -4003,7 +4003,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）",
+          "document": "<p>监听器实例的最后变更时间。格式：ISO 8601（例如 2025-01-01T08:30:00+08:00）</p>",
           "example": "2025-01-01T08:30:00+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -4014,7 +4014,7 @@
         },
         {
           "disabled": false,
-          "document": "请求超时时间。",
+          "document": "<p>连接请求超时时间。</p>",
           "example": "60",
           "member": "uint64",
           "name": "RequestTimeout",
@@ -4025,7 +4025,7 @@
         },
         {
           "disabled": false,
-          "document": "标签。",
+          "document": "<p>标签。</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
@@ -4036,7 +4036,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略 ID。",
+          "document": "<p>安全策略 ID。</p>",
           "example": "test-policy",
           "member": "string",
           "name": "TlsSecurityPolicyId",
@@ -4047,7 +4047,7 @@
         },
         {
           "disabled": false,
-          "document": "XForwardedFor配置。",
+          "document": "<p>XForwardedFor配置。</p>",
           "example": "无",
           "member": "XForwardedForConfig",
           "name": "XForwardedForConfig",

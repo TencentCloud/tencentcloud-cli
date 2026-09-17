@@ -30,8 +30,21 @@ Output:
                         }
                     }
                 ],
+                "SchedulableLimitList": [
+                    {
+                        "BillingItem": "sv_dlc_standard_cu_standard_cu",
+                        "MaxSchedulableUnits": 32
+                    }
+                ],
                 "Status": 11,
-                "UpdateTime": "2026-03-19T15:12:19"
+                "UpdateTime": "2026-03-19T15:12:19",
+                "Tags": [
+                    {
+                        "Category": "Custom",
+                        "TagKey": "env",
+                        "TagValue": "dev"
+                    }
+                ]
             }
         ],
         "Total": 10,

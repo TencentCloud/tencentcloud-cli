@@ -13850,7 +13850,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。模型GL支持的版本号：3.0-clip、3.0-pro。模型MiniMaxMusic支持的版本号：2.0、2.5、2.6， 3.0。模型EL支持的版本号: compose_v2、sound_t2s_v2。模型Mureka支持的版本号: song_8、song_9、song_9.5、instrumental_8、instrumental_9、instrumental_9.5。</p>",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。<br>模型GL支持的版本号：3.0-clip、3.0-pro。<br>模型MiniMaxMusic支持的版本号：2.0、2.5、2.6， 3.0。<br>模型EL支持的版本号: compose_v2、sound_t2s_v2。<br>模型Mureka支持的版本号: song_8、song_9、song_9.5、instrumental_8、instrumental_9、instrumental_9.5。</p>",
           "example": "1.0",
           "member": "string",
           "name": "ModelVersion",
@@ -13913,7 +13913,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p><ol><li>MiniMaxMusic生纯音乐参数使用示例: &quot;AdditionalParameters&quot;:&quot;{\"is_instrumental\":true}&quot;。<br>支持的透传参数有: lyrics，is_instrumental，aigc_watermark，sample_rate，bitrate。</li><li>EL生音乐支持透传的参数有:<br>PromptInfluence，WithTimestamps，CompositionPlan，ForceInstrumental等参数。</li></ol>",
+          "document": "<p>用于传入一些模型需要的特殊场景参数，Json格式序列化成字符串。<br>示例MinimaxMusic模型传入歌词时：<br>{\"lyric\":{\"小马在快乐奔跑，花儿在开放\"}}</p><ol><li>MiniMaxMusic生纯音乐参数使用示例: &quot;AdditionalParameters&quot;:&quot;{\"is_instrumental\":true}&quot;。<br>支持的透传参数有: lyrics，is_instrumental，aigc_watermark，sample_rate，bitrate。</li><li>EL生音乐支持透传的参数有:<br>PromptInfluence，WithTimestamps，CompositionPlan，ForceInstrumental等参数。</li><li>Mureka模型支持的透传参数有：<br>n: 指定输出音频文件数。<br>非instrumental版本支持：lyrics，gender，reference_id，melody_id。<br>instrumental版本支持：instrumental_id。</li></ol>",
           "example": "{\"sequential_image_generation\":\"auto\"}",
           "member": "string",
           "name": "AdditionalParameters",
@@ -14647,7 +14647,7 @@
         {
           "disabled": false,
           "document": "<p>任务id</p>",
-          "example": "e084efaa-d25************6b85e473c0e5",
+          "example": "516e11a9-**************-e0c84dffda8b",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -14668,8 +14668,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>生图模型</p><p>枚举值：</p><ul><li>WAND-create-1.0-lite： 轻量生图模型</li><li>WAND-create-1.0-flash： 质量-速度平衡生图模型</li><li>WAND-create-1.0-pro： 高质量生图模型</li></ul>",
-          "example": "WAND-create-1.0-flash",
+          "document": "<p>生图模型</p><p>枚举值：</p><ul><li>scene-image-lite： 场景生图 lite 模型</li></ul>",
+          "example": "scene-image-lite",
           "member": "string",
           "name": "Model",
           "output_required": false,
@@ -25919,6 +25919,24 @@
         },
         {
           "disabled": false,
+          "document": "<p>分页查询页码。从1开始，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页大小。不填默认返回所有符合条件数据</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>扩展参数，json字符串</p><p>其他筛选条件voiceName String 音色名，模糊匹配labels Array of String 标签，匹配包含这些标签的音色</p>",
           "example": "{\n    \"labels\": [\"温柔\"]\n}",
           "member": "string",
@@ -26701,20 +26719,20 @@
         },
         {
           "disabled": false,
-          "document": "<p>文档生成视频模型名称</p><p>默认值：Wand</p>",
-          "example": "Wand",
-          "member": "string",
-          "name": "ModelName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>文档生成视频模型版本号</p><p>枚举值：</p><ul><li>1.0： 1.0</li><li>1.0-lite： 1.0-lite</li></ul><p>默认值：1.0</p>",
           "example": "1.0",
           "member": "string",
           "name": "ModelVersion",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档生成视频模型名称</p><p>枚举值：</p><ul><li>WAND： WAND</li></ul><p>默认值：WAND</p>",
+          "example": "WAND",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
           "type": "string"
         },
         {
@@ -52996,24 +53014,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>",
+          "document": "<p>视角类型</p><p>枚举值：</p><ul><li>front： 正视图 （必填）</li><li>back： 背视图</li><li>left： 左视图</li><li>right： 右视图</li><li>top： 顶视图</li><li>bottom： 底视图</li><li>left_front： 左前 45°</li><li>right_front： 右前 45°</li></ul><p>MultiViewImages 数组长度 ≥ 2 ; 必须包含 front 视角;  同一 ViewType 不允许重复; 每项必须提供 ViewImageUrl</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "front",
           "member": "string",
           "name": "ViewType",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>图片 URL（http / https）</p>",
+          "document": "<p>图片 URL（http / https）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png",
           "member": "string",
           "name": "ViewImageUrl",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "VoiceInfo": {
       "document": "音色信息",

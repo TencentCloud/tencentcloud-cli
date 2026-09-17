@@ -21,6 +21,13 @@
       "output": "CreateAppResponse",
       "status": "online"
     },
+    "CreateAudioModerationSync": {
+      "document": "短音频内容理解同步接口",
+      "input": "CreateAudioModerationSyncRequest",
+      "name": "短音频内容理解同步",
+      "output": "CreateAudioModerationSyncResponse",
+      "status": "online"
+    },
     "CreateCustomization": {
       "document": "用户使用该接口可以创建语音消息转文本热句模型，以供识别调用",
       "input": "CreateCustomizationRequest",
@@ -910,6 +917,34 @@
       ],
       "usage": "both"
     },
+    "AudioSegments": {
+      "document": "音频片段时间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该参数用于返回对应语种标签的片段在音频文件内的开始时间，单位为秒。 示例值：0</p>",
+          "example": "0",
+          "member": "float",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该参数用于返回对应语种标签的片段在音频文件内的结束时间，单位为秒。 示例值：15</p>",
+          "example": "15",
+          "member": "float",
+          "name": "FinishTime",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AudioTextStatisticsItem": {
       "document": "录音转文本用量统计数据",
       "members": [
@@ -1333,6 +1368,207 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAudioModerationSyncRequest": {
+      "document": "CreateAudioModerationSync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>sdkappid app账号</p>",
+          "example": "1410000000",
+          "member": "int64",
+          "name": "Sdkappid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>BizType为策略的具体的编号, GME业务 2_2_3_sdkappid</p>",
+          "example": "2_2_3_1410000***",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据标识，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符</p>",
+          "example": "123456789111",
+          "member": "string",
+          "name": "DataId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频格式，当FileUrl为空时，必填。音频文件资源格式，当前支持格式：wav、mp3、m4a，请按照实际文件格式填入。 示例值：mp3</p>",
+          "example": "ogg",
+          "member": "string",
+          "name": "FileFormat",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名称，可以由英文字母、数字、下划线、-、@#组成，不超过64个字符 示例值：file_name</p>",
+          "example": "test.ogg",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据Base64编码，短音频同步接口仅传入可音频内容； 支持范围：文件大小不能超过5M，时长不可超过60s； 支持格式：wav (PCM编码)、mp3、m4a (采样率：16kHz~48kHz，位深：16bit 小端，声道数：单声道/双声道，建议格式：16kHz/16bit/单声道)。 示例值：1</p>",
+          "example": "T2dnUwACAAAAAAAAAABmd9OQAAAAAIw+",
+          "member": "string",
+          "name": "FileContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频资源访问链接，与FileContent参数必须二选一输入； 支持范围及格式：同FileContent；</p>",
+          "example": "https://*****-oss-ugc-center.oss-cn-beijing.aliyuncs.com/hangtest/pkxkj22x902jILSIO28shxca/%E7%AC%AC%E4%B8%80%E6%89%B9%E6%B5%8B%E8%AF%95/%E9%9F%B3%E9%A2%91%E4%B8%8B%E8%BD%BD/29.wav",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAudioModerationSyncResponse": {
+      "document": "CreateAudioModerationSync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回传入的DataId</p>",
+          "example": "12345***9111",
+          "member": "string",
+          "name": "DataId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核返回的任务id</p>",
+          "example": "63680997*96*535991",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "test.ogg",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1：语音。 2：图片。</p><p>枚举值：</p><ul><li>1： 语音</li><li>2： 图片</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "MediaType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0：建议通过。 1 ：建议人工重新内容识别。 2：建议屏蔽。</p><p>枚举值：</p><ul><li>0： 建议通过</li><li>1： 建议人工重新内容识别</li><li>2： 建议屏蔽</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Suggest",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置信度分数，取值范围：0（置信度最低）-100（置信度最高 ），越高代表越有可能属于当前返回的标签。 实例值：100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Rate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Normal：正常文本  Ad:广告 Porn：色情 Abuse：谩骂 Illegal: 违禁 Polity: 涉政 Terror: 暴恐 Sexy: 性感 Moan: 呻吟/娇喘 QRCode: 二维码 Custom: 自定义</p>",
+          "example": "Polity",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子标签</p>",
+          "example": "politics_coreleader",
+          "member": "string",
+          "name": "SubLabel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频链接地址</p>",
+          "example": "https://*****-oss-ugc-center.oss-cn-beijing.aliyuncs.com/hangtest/pkxkj22x902jILSIO28shxca/%E7%AC%AC%E4%B8%80%E6%89%B9%E6%B5%8B%E8%AF%95/%E9%9F%B3%E9%A2%91%E4%B8%8B%E8%BD%BD/29.wav",
+          "member": "string",
+          "name": "Audio",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核识别音频文本</p>",
+          "example": "求真务实，充分体现了马克思列宁主义，毛泽东思想，邓小平理论，三个代表重要思想和科学发展观的历史逻辑和内在联系。",
+          "member": "string",
+          "name": "AudioText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核明细</p>",
+          "example": "无",
+          "member": "ModerationCheckDetail",
+          "name": "CheckDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频时长，单位 ms</p>",
+          "example": "12894",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2956,6 +3192,34 @@
       ],
       "type": "object"
     },
+    "ImageLocation": {
+      "document": "图片违规位置坐标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该参数用于返回检测框左上角位置的横坐标（x）所在的像素位置，结合剩余参数可唯一确定检测框的大小和位置。 示例值：51</p>",
+          "example": "11",
+          "member": "float",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该参数用于返回检测框左上角位置的纵坐标（y）所在的像素位置，结合剩余参数可唯一确定检测框的大小和位置。 示例值：448</p>",
+          "example": "22",
+          "member": "float",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InOutTimeInfo": {
       "document": "房间内的事件",
       "members": [
@@ -3005,6 +3269,144 @@
         }
       ],
       "usage": "in"
+    },
+    "ModerationCheckDetail": {
+      "document": "内容理解结果明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该字段在内容理解回调事件中可直接忽略，仅在第三方审核时存在，检出违规的模型场景，枚举值：Ad/Porn/Abuse/Illegal/Polity/Terror/Sexy/Moan/Custom</p>",
+          "example": "Ad",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Normal：正常文本  Ad:广告 Porn：色情 Abuse：谩骂 Illegal: 违禁 Polity: 涉政 Terror: 暴恐 Sexy: 性感 Moan: 呻吟/娇喘 QRCode: 二维码 Custom: 自定义</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>二级标签</p>",
+          "example": "politics_coreleader",
+          "member": "string",
+          "name": "SubLabel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理建议</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Suggest",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义词库名</p>",
+          "example": "testLib",
+          "member": "string",
+          "name": "LibName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的关键词</p>",
+          "example": "[\"毛泽东思想\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>中文二级标签。</p>",
+          "example": "涉政；核心领导",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置信度分值</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>违规严重程度: 0-不区分 1-轻度 2-严重</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Severity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>违规严重程度描述 仅名单内sdkappid返回 负面表达,正面或中性表达,语义模糊</p>",
+          "example": "负面表达",
+          "member": "string",
+          "name": "SeverityDesc",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频切片位置信息</p>",
+          "example": "无",
+          "member": "AudioSegments",
+          "name": "AudioSegments",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片命中坐标信息。</p>",
+          "example": "无",
+          "member": "ImageLocation",
+          "name": "ImageLocation",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAppStatusRequest": {
       "document": "ModifyAppStatus请求参数结构体",

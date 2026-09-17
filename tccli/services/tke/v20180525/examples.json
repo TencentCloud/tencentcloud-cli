@@ -1933,9 +1933,9 @@
     "ModifyClusterNodePool": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-e55paxnt\",\n    \"NodePoolId\": \"np-e55paxnt\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d174dcb6-659b-4ab6-9533-e470a7d91e43\"\n    }\n}",
-        "title": "编辑节点池"
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterNodePool\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-7cohhdby\",\n    \"NodePoolId\": \"np-prfovafy\",\n    \"ExtraArgs\": {\n        \"Kubelet\": [\n            \"v=3\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4eef499-a63b-41ec-a24b-fb6bfcaa6f98\"\n    }\n}",
+        "title": "修改kubelet参数并应用到存量节点"
       }
     ],
     "ModifyClusterRollOutSequenceTags": [

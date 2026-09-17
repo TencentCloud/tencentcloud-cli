@@ -1679,8 +1679,8 @@
     "DescribeCustomerGateways": [
       {
         "document": "查询对端网关",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerGateways\n<公共请求参数>\n\n{\n    \"CustomerGatewayIds\": [\n        \"cgw-mgp33pll\"\n    ],\n    \"Filters\": [\n        {\n            \"Name\": \"customer-gateway-name\",\n            \"Values\": [\n                \"test-cgw\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"CustomerGatewaySet\": [\n            {\n                \"CustomerGatewayId\": \"cgw-mgp33pll\",\n                \"IpAddress\": \"58.211.1.12\",\n                \"CustomerGatewayName\": \"test-cgw\",\n                \"CreatedTime\": \"2018-03-25 17:52:39\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"e5500b60-4964-43c7-8a6c-4bff98f59aeb\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomerGateways\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CustomerGatewaySet\": [\n            {\n                \"BgpAsn\": 0,\n                \"CreatedTime\": \"2026-07-06 23:00:09\",\n                \"CustomerGatewayId\": \"cgw-dby2ybob\",\n                \"CustomerGatewayName\": \"cgw-01\",\n                \"IpAddress\": \"43.1****0.53\",\n                \"TagSet\": [],\n                \"VpnConnNum\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4ec28434-c40f-450d-a58e-7b001bcb4d58\"\n    }\n}",
         "title": "查询对端网关"
       }
     ],

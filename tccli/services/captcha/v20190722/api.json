@@ -1791,7 +1791,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定填值：9。",
+          "document": "<p>固定填值：9。</p>",
           "example": "9",
           "member": "uint64",
           "name": "CaptchaType",
@@ -1800,7 +1800,7 @@
         },
         {
           "disabled": false,
-          "document": "前端回调函数返回的用户验证票据",
+          "document": "<p>前端回调函数返回的用户验证票据</p>",
           "example": "tr03XaCUZPAlPdIMqv17yvcfdXCzkqvLE09AbCA4ghlWfD8hkySfbU2TZVCyoOCjNI84pAYEMopKv7Uh8XwQDSE9DC0xJpXVC7kmlPENlbFINs_N937qkoEmU6Pl8e-9EkFQzvrrwsZOTKQ*",
           "member": "string",
           "name": "Ticket",
@@ -1809,7 +1809,7 @@
         },
         {
           "disabled": false,
-          "document": "业务侧获取到的验证码使用者的外网IP",
+          "document": "<p>业务侧获取到的验证码使用者的外网IP</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "UserIp",
@@ -1818,7 +1818,7 @@
         },
         {
           "disabled": false,
-          "document": "前端回调函数返回的随机字符串",
+          "document": "<p>前端回调函数返回的随机字符串</p>",
           "example": "@Vki",
           "member": "string",
           "name": "Randstr",
@@ -1827,7 +1827,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码应用ID。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到CaptchaAppId。",
+          "document": "<p>验证码应用ID。登录 <a href=\"https://console.cloud.tencent.com/captcha/graphical\">验证码控制台</a>，在验证列表的【密钥】列，即可查看到CaptchaAppId。</p>",
           "example": "199999164",
           "member": "uint64",
           "name": "CaptchaAppId",
@@ -1836,7 +1836,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码应用密钥。登录 [验证码控制台](https://console.cloud.tencent.com/captcha/graphical)，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。",
+          "document": "<p>验证码应用密钥。登录 <a href=\"https://console.cloud.tencent.com/captcha/graphical\">验证码控制台</a>，在验证列表的【密钥】列，即可查看到AppSecretKey。AppSecretKey属于服务器端校验验证码票据的密钥，请妥善保密，请勿泄露给第三方。</p>",
           "example": "E4kwK9AcXQMHkktiItyMEyQPn",
           "member": "string",
           "name": "AppSecretKey",
@@ -1845,7 +1845,7 @@
         },
         {
           "disabled": false,
-          "document": "预留字段",
+          "document": "<p>预留字段</p>",
           "example": "1",
           "member": "uint64",
           "name": "BusinessId",
@@ -1854,7 +1854,7 @@
         },
         {
           "disabled": false,
-          "document": "预留字段",
+          "document": "<p>预留字段</p>",
           "example": "3",
           "member": "uint64",
           "name": "SceneId",
@@ -1863,7 +1863,7 @@
         },
         {
           "disabled": false,
-          "document": "mac 地址或设备唯一标识",
+          "document": "<p>mac 地址或设备唯一标识</p>",
           "example": "\"00:1A:2B:3C:4D:5E\"",
           "member": "string",
           "name": "MacAddress",
@@ -1872,7 +1872,7 @@
         },
         {
           "disabled": false,
-          "document": "手机设备号",
+          "document": "<p>手机设备号</p>",
           "example": "\"359880051234567\"",
           "member": "string",
           "name": "Imei",
@@ -1881,7 +1881,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回前端获取验证码时间，取值1：需要返回",
+          "document": "<p>是否返回前端获取验证码时间，取值1：需要返回</p>",
           "example": "1",
           "member": "int64",
           "name": "NeedGetCaptchaTime",
@@ -1896,7 +1896,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1 OK 验证通过\n7 captcha no match 传入的Randstr不合法，请检查Randstr是否与前端返回的Randstr一致\n8 ticket expired 传入的Ticket已过期（Ticket有效期5分钟），请重新生成Ticket、Randstr进行校验\n9 ticket reused 传入的Ticket被重复使用，请重新生成Ticket、Randstr进行校验\n15 decrypt fail 传入的Ticket不合法，请检查Ticket是否与前端返回的Ticket一致\n16 appid-ticket mismatch 传入的CaptchaAppId错误，请检查CaptchaAppId是否与前端传入的CaptchaAppId一致，并且保障CaptchaAppId是从验证码控制台【验证管理】->【基础配置】中获取\n21 diff 票据校验异常，可能的原因是（1）若Ticket包含trerror前缀，一般是由于用户网络较差，导致前端自动容灾，而生成了容灾票据，业务侧可根据需要进行跳过或二次处理。（2）若Ticket不包含trerror前缀，则是由于验证码风控系统发现请求有安全风险，业务侧可根据需要进行拦截。\n100 appid-secretkey-ticket mismatch 参数校验错误，（1）请检查CaptchaAppId与AppSecretKey是否正确，CaptchaAppId、AppSecretKey需要在验证码控制台【验证管理】>【基础配置】中获取（2）请检查传入的Ticket是否由传入的CaptchaAppId生成",
+          "document": "<p>1 OK 验证通过<br>7 captcha no match 传入的Randstr不合法，请检查Randstr是否与前端返回的Randstr一致<br>8 ticket expired 传入的Ticket已过期（Ticket有效期5分钟），请重新生成Ticket、Randstr进行校验<br>9 ticket reused 传入的Ticket被重复使用，请重新生成Ticket、Randstr进行校验<br>15 decrypt fail 传入的Ticket不合法，请检查Ticket是否与前端返回的Ticket一致<br>16 appid-ticket mismatch 传入的CaptchaAppId错误，请检查CaptchaAppId是否与前端传入的CaptchaAppId一致，并且保障CaptchaAppId是从验证码控制台【验证管理】-&gt;【基础配置】中获取<br>21 diff 票据校验异常，可能的原因是（1）若Ticket包含trerror前缀，一般是由于用户网络较差，导致前端自动容灾，而生成了容灾票据，业务侧可根据需要进行跳过或二次处理。（2）若Ticket不包含trerror前缀，则是由于验证码风控系统发现请求有安全风险，业务侧可根据需要进行拦截。<br>100 appid-secretkey-ticket mismatch 参数校验错误，（1）请检查CaptchaAppId与AppSecretKey是否正确，CaptchaAppId、AppSecretKey需要在验证码控制台【验证管理】&gt;【基础配置】中获取（2）请检查传入的Ticket是否由传入的CaptchaAppId生成</p>",
           "example": "1",
           "member": "int64",
           "name": "CaptchaCode",
@@ -1906,7 +1906,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述及验证错误信息",
+          "document": "<p>状态描述及验证错误信息</p>",
           "example": "OK",
           "member": "string",
           "name": "CaptchaMsg",
@@ -1916,7 +1916,7 @@
         },
         {
           "disabled": false,
-          "document": "无感验证模式下，该参数返回验证结果：\nEvilLevel=0 请求无恶意\nEvilLevel=100 请求有恶意",
+          "document": "<p>无感验证模式下，该参数返回验证结果：<br>EvilLevel=0 请求无恶意<br>EvilLevel=100 请求有恶意</p>",
           "example": "0",
           "member": "int64",
           "name": "EvilLevel",
@@ -1926,7 +1926,7 @@
         },
         {
           "disabled": false,
-          "document": "前端获取验证码时间，时间戳格式",
+          "document": "<p>前端获取验证码时间，时间戳格式</p>",
           "example": "1583749870",
           "member": "int64",
           "name": "GetCaptchaTime",
@@ -1936,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "拦截类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>拦截类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "EvilBitmap",
@@ -1946,7 +1946,7 @@
         },
         {
           "disabled": false,
-          "document": "提交验证码时间",
+          "document": "<p>提交验证码时间</p>",
           "example": "1583749870",
           "member": "int64",
           "name": "SubmitCaptchaTime",
@@ -1956,7 +1956,7 @@
         },
         {
           "disabled": false,
-          "document": "设备风险大类\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>设备风险大类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"301\"",
           "member": "string",
           "name": "DeviceRiskCategory",
@@ -1966,7 +1966,7 @@
         },
         {
           "disabled": false,
-          "document": "验证码评分",
+          "document": "<p>验证码评分</p><p>取值0-100，分值越高，风险越大</p>",
           "example": "60",
           "member": "int64",
           "name": "Score",

@@ -31,6 +31,15 @@ Output:
                         "SpecDesc": "1CPU / 4GB"
                     }
                 }
+            ],
+            "ResourceQuotas": [
+                {
+                    "ResourceType": "CU",
+                    "Unit": "core",
+                    "Total": 32.0,
+                    "Used": 10.0,
+                    "Available": 22.0
+                }
             ]
         },
         "QueueList": [
@@ -49,6 +58,15 @@ Output:
                             "Spec": "0:1:4",
                             "SpecDesc": "1CPU / 4GB"
                         }
+                    }
+                ],
+                "ResourceQuotas": [
+                    {
+                        "ResourceType": "CU",
+                        "Unit": "core",
+                        "Total": 32.0,
+                        "Used": 10.0,
+                        "Available": 22.0
                     }
                 ]
             }
