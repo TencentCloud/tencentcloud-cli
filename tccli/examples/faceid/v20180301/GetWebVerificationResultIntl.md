@@ -6,118 +6,34 @@ Input:
 
 ```
 tccli faceid GetWebVerificationResultIntl --cli-unfold-argument  \
-    --BizToken EE13636D-1985-42CA-BD61-73F4C8B687E6
+    --BizToken 4A7E7CE1-834C-4016-84DB-23823024233F
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "BestFrameBase64": "/9j/4AAQSkZJRgABAQAAA**",
         "ErrorCode": 0,
-        "ErrorMsg": "abc",
+        "ErrorMsg": "Success, tap next to continue",
+        "Extra": null,
+        "OCRResult": null,
+        "RequestId": "e7ad0f19-0c3e-402f-9fb0-720dd7ed0d99",
         "VerificationDetailList": [
             {
+                "CompareErrorCode": null,
+                "CompareErrorMsg": null,
                 "ErrorCode": 0,
-                "ErrorMsg": "abc",
+                "ErrorMsg": "Success, tap next to continue",
                 "LivenessErrorCode": 0,
-                "LivenessErrorMsg": "abc",
-                "CompareErrorCode": 0,
-                "CompareErrorMsg": "abc",
-                "ReqTimestamp": 1,
-                "Similarity": 0,
-                "Seq": "abc"
+                "LivenessErrorMsg": "Success, tap next to continue",
+                "LivenessInfoTag": null,
+                "ReqTimestamp": 1789473304325,
+                "Seq": "11a370d4-9a16-49c8-b1bb-74ad89ac6965",
+                "Similarity": 0
             }
         ],
-        "VideoBase64": "abc",
-        "BestFrameBase64": "abc",
-        "OCRResult": [
-            {
-                "IsPass": true,
-                "CardImageBase64": "abc",
-                "CardInfo": {
-                    "HKIDCard": {
-                        "CnName": "abc",
-                        "EnName": "abc",
-                        "IdNum": "abc",
-                        "Birthday": "abc",
-                        "Sex": "abc"
-                    },
-                    "MLIDCard": {
-                        "Name": "abc",
-                        "ID": "abc",
-                        "Sex": "abc",
-                        "Address": "abc",
-                        "Type": "abc",
-                        "Birthday": "abc"
-                    },
-                    "PhilippinesVoteID": {
-                        "VIN": "abc",
-                        "FirstName": "abc",
-                        "LastName": "abc",
-                        "Birthday": "abc",
-                        "CivilStatus": "abc",
-                        "Citizenship": "abc",
-                        "Address": "abc",
-                        "PrecinctNo": "abc"
-                    },
-                    "IndonesiaIDCard": {
-                        "NIK": "abc",
-                        "Nama": "abc",
-                        "TempatTglLahir": "abc",
-                        "JenisKelamin": "abc",
-                        "GolDarah": "abc",
-                        "Alamat": "abc",
-                        "RTRW": "abc",
-                        "KelDesa": "abc",
-                        "Kecamatan": "abc",
-                        "Agama": "abc",
-                        "StatusPerkawinan": "abc",
-                        "Perkerjaan": "abc",
-                        "KewargaNegaraan": "abc",
-                        "BerlakuHingga": "abc",
-                        "IssuedDate": "abc",
-                        "Provinsi": "abc",
-                        "Kota": "abc"
-                    },
-                    "PhilippinesDrivingLicense": {
-                        "Name": "abc",
-                        "LastName": "abc",
-                        "FirstName": "abc",
-                        "MiddleName": "abc",
-                        "Nationality": "abc",
-                        "Sex": "abc",
-                        "Address": "abc",
-                        "LicenseNo": "abc",
-                        "ExpiresDate": "abc",
-                        "AgencyCode": "abc",
-                        "Birthday": "abc"
-                    },
-                    "PhilippinesTinID": {
-                        "LicenseNumber": "abc",
-                        "FullName": "abc",
-                        "Address": "abc",
-                        "Birthday": "abc",
-                        "IssueDate": "abc"
-                    },
-                    "PhilippinesSSSID": {
-                        "LicenseNumber": "abc",
-                        "FullName": "abc",
-                        "Birthday": "abc"
-                    },
-                    "PhilippinesUMID": {
-                        "Surname": "abc",
-                        "MiddleName": "abc",
-                        "GivenName": "abc",
-                        "Sex": "abc",
-                        "Birthday": "abc",
-                        "Address": "abc",
-                        "CRN": "abc"
-                    }
-                },
-                "RequestId": "abc"
-            }
-        ],
-        "RequestId": "abc"
+        "VideoBase64": "AAAAIGZ0eXBpc29tAAACAG**"
     }
 }
 ```

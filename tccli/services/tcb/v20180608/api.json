@@ -8524,7 +8524,7 @@
         {
           "disabled": false,
           "document": "<p>分页偏移量</p><p>默认值：0</p>",
-          "example": "20",
+          "example": "5",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -8549,7 +8549,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p>",
-          "example": "1",
+          "example": "13",
           "member": "uint64",
           "name": "Total",
           "output_required": false,
@@ -15428,7 +15428,7 @@
         {
           "disabled": false,
           "document": "<p>资源类系</p><p>枚举值：</p><ul><li>log： 日志</li><li>storage： 云存储</li><li>hosting： 静态托管</li></ul>",
-          "example": "storage",
+          "example": "cls",
           "member": "string",
           "name": "ResType",
           "output_required": false,
@@ -15439,7 +15439,7 @@
         {
           "disabled": false,
           "document": "<p>资源唯一标识</p>",
-          "example": "a9d0-asdfacls",
+          "example": "tcb-pf-logset-pf-38qhqu1izodbl",
           "member": "string",
           "name": "ResName",
           "output_required": false,
@@ -15450,7 +15450,7 @@
         {
           "disabled": false,
           "document": "<p>资源详细信息</p>",
-          "example": "\"{\\\"Bucket\\\":\\\"e87a-static-pf-3samhacbjp0hz-1258229445\\\",\\\"PolicyId\\\":284124310,\\\"Region\\\":\\\"ap-guangzhou\\\"}\"",
+          "example": "{\"LogsetId\":\"a70cb875-b9ef-4861-9ee8-aa573f127b83\",\"TopicId\":\"a35fa12b-1798-4a5c-b56d-d73eb4feec68\",\"Region\":\"ap-shanghai\"}",
           "member": "string",
           "name": "Detail",
           "output_required": false,
@@ -15461,7 +15461,7 @@
         {
           "disabled": false,
           "document": "<p>资源状态</p><p>枚举值：</p><ul><li>0： 正常</li><li>5： 初始化中</li></ul>",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -15472,7 +15472,7 @@
         {
           "disabled": false,
           "document": "<p>资源id</p>",
-          "example": "8",
+          "example": "5",
           "member": "uint64",
           "name": "PlatformId",
           "output_required": false,
@@ -15483,7 +15483,7 @@
         {
           "disabled": false,
           "document": "<p>对用平台资源id</p>",
-          "example": "7",
+          "example": "68",
           "member": "uint64",
           "name": "Id",
           "output_required": false,
@@ -15572,7 +15572,7 @@
         {
           "disabled": false,
           "document": "<p>套餐别名</p>",
-          "example": "test-platform-pkg",
+          "example": "curl-test-0827",
           "member": "string",
           "name": "Alias",
           "output_required": false,
@@ -15594,7 +15594,7 @@
         {
           "disabled": false,
           "document": "<p>计费状态</p><p>枚举值：</p><ul><li>normal： 正常</li><li>isolated： 已隔离</li><li>destroyed： 已销毁</li></ul>",
-          "example": "normal",
+          "example": "destroyed",
           "member": "string",
           "name": "BillStatus",
           "output_required": false,
@@ -15605,7 +15605,7 @@
         {
           "disabled": false,
           "document": "<p>套餐资源状态</p><p>枚举值：</p><ul><li>0： 可用</li><li>5： 发货中</li></ul>",
-          "example": "0",
+          "example": "5",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -15616,7 +15616,7 @@
         {
           "disabled": false,
           "document": "<p>资源配置</p>",
-          "example": "{\"credits\":20000000,\"envNum\":200}",
+          "example": "{\"credits\":10000,\"envNum\":100}",
           "member": "string",
           "name": "Spec",
           "output_required": false,
@@ -15638,7 +15638,7 @@
         {
           "disabled": false,
           "document": "<p>套餐过期时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
-          "example": "2026-12-31 23:59:59",
+          "example": "2026-10-08 23:59:59",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -15671,7 +15671,7 @@
         {
           "disabled": false,
           "document": "<p>所属地域</p><p>枚举值：</p><ul><li>ap-shanghai： 上海</li><li>ap-singapore： 新加坡</li></ul>",
-          "example": "ap-shanghai",
+          "example": "ap-singapore",
           "member": "string",
           "name": "Region",
           "output_required": false,

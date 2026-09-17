@@ -906,7 +906,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "核验结束后重定向的Web回跳地址，包含协议头，主机名和路径，如：https://www.tencentcloud.com/products/faceid。\n核验流程完成后，回跳地址会拼接当次流程的BizToken，以https://www.tencentcloud.com/products/faceid?token={BizToken}的格式进行跳转。",
+          "document": "<p>核验结束后重定向的Web回跳地址，包含协议头，主机名和路径，如：https://www.tencentcloud.com/products/faceid。<br>核验流程完成后，回跳地址会拼接当次流程的BizToken，以https://www.tencentcloud.com/products/faceid?token={BizToken}的格式进行跳转。</p>",
           "example": "https://www.tencentcloud.com/products/faceid",
           "member": "string",
           "name": "RedirectURL",
@@ -915,7 +915,7 @@
         },
         {
           "disabled": false,
-          "document": "比对照片的base64编码字符串，base64编码后的字符串需要从编码字符串中删除Data URI scheme头部，并且大小不超过8MB。",
+          "document": "<p>比对照片的base64编码字符串，base64编码后的字符串需要从编码字符串中删除Data URI scheme头部，并且大小不超过8MB。</p>",
           "example": "xhBQAAACBjSFJNAAB6************AAAASUVORK5CYII=",
           "member": "string",
           "name": "CompareImageBase64",
@@ -924,7 +924,7 @@
         },
         {
           "disabled": false,
-          "document": "业务透传参数，最大长度为1000个字符，会在GetWebVerificationResultIntl接口中返回。",
+          "document": "<p>业务透传参数，最大长度为1000个字符，会在GetWebVerificationResultIntl接口中返回。</p>",
           "example": "ExtraString",
           "member": "string",
           "name": "Extra",
@@ -933,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "控制台配置生成的Id",
+          "document": "<p>控制台配置生成的Id</p>",
           "example": "1",
           "member": "string",
           "name": "RuleId",
@@ -942,7 +942,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义核验页面的相关配置。",
+          "document": "<p>自定义核验页面的相关配置。</p>",
           "example": "无",
           "member": "WebVerificationConfigIntl",
           "name": "Config",
@@ -957,7 +957,7 @@
       "members": [
         {
           "disabled": true,
-          "document": "本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。",
+          "document": "<p>本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。</p>",
           "example": "https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "VerificationUrl",
@@ -967,7 +967,7 @@
         },
         {
           "disabled": false,
-          "document": "标识一次Web核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。",
+          "document": "<p>标识一次Web核验流程的令牌，有效时间为10分钟。流程结束后可用该令牌获取核验结果信息。</p>",
           "example": "81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "BizToken",
@@ -977,7 +977,7 @@
         },
         {
           "disabled": false,
-          "document": "本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。",
+          "document": "<p>本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。</p>",
           "example": "https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
           "name": "VerificationURL",
@@ -6708,8 +6708,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Web核验令牌，由ApplyWebVerificationBizTokenIntl接口生成。",
-          "example": "81EEF678-28EE-4759-A82E-6CBBBE6BC442",
+          "document": "<p>Web核验令牌，由ApplyWebVerificationBizTokenIntl接口生成。</p>",
+          "example": "4A7E7CE1-834C-4016-84DB-23823024233F",
           "member": "string",
           "name": "BizToken",
           "required": true,
@@ -6723,7 +6723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "本次流程的最终结果，0为核验通过，是同一人。\n其余错误码请参考：<a href=\"https://www.tencentcloud.com/document/product/1061/55390?lang=en&pg=#8a960e1e-39c0-42cb-b181-b3164d77f81e\">Liveness Detection and Face Comparison (Mobile HTML5) Error Codes</a>",
+          "document": "<p>本次流程的最终结果，0为核验通过，是同一人。<br>其余错误码请参考：<a href=\"https://www.tencentcloud.com/document/product/1061/55390?lang=en&amp;pg=#8a960e1e-39c0-42cb-b181-b3164d77f81e\">Liveness Detection and Face Comparison (Mobile HTML5) Error Codes</a></p>",
           "example": "0",
           "member": "int64",
           "name": "ErrorCode",
@@ -6733,7 +6733,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程的最终结果描述。",
+          "document": "<p>本次流程的最终结果描述。</p>",
           "example": "Success",
           "member": "string",
           "name": "ErrorMsg",
@@ -6743,7 +6743,7 @@
         },
         {
           "disabled": false,
-          "document": "本次流程的详细核验结果列表，由于可重试的原因，本次流程可能存在多个核验信息。",
+          "document": "<p>本次流程的详细核验结果列表，由于可重试的原因，本次流程可能存在多个核验信息。</p>",
           "example": "无",
           "member": "VerificationDetail",
           "name": "VerificationDetailList",
@@ -6753,7 +6753,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流中采集的视频内容的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到视频，则返回null。",
+          "document": "<p>视频流中采集的视频内容的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到视频，则返回null。</p>",
           "example": "VideoBase64String",
           "member": "string",
           "name": "VideoBase64",
@@ -6763,7 +6763,7 @@
         },
         {
           "disabled": false,
-          "document": "视频流中采集的最佳人脸照片的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到最佳人脸照片，则返回null。",
+          "document": "<p>视频流中采集的最佳人脸照片的base64编码字符串，由于可重试的原因，该字段返回最后一次核验采集的数据，如果未采集到最佳人脸照片，则返回null。</p>",
           "example": "BestFrameBase64String",
           "member": "string",
           "name": "BestFrameBase64",
@@ -6773,7 +6773,7 @@
         },
         {
           "disabled": false,
-          "document": "证照识别的结果",
+          "document": "<p>证照识别的结果</p>",
           "example": "无",
           "member": "OCRResult",
           "name": "OCRResult",
@@ -6783,7 +6783,7 @@
         },
         {
           "disabled": false,
-          "document": "业务透传参数",
+          "document": "<p>业务透传参数</p>",
           "example": "无",
           "member": "string",
           "name": "Extra",

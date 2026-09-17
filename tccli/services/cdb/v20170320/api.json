@@ -2090,7 +2090,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "cdb-aykuksx3",
           "member": "string",
           "name": "InstanceId",
@@ -2099,7 +2099,7 @@
         },
         {
           "disabled": false,
-          "document": "代理组 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>代理组 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxy-il2nlsdn",
           "member": "string",
           "name": "ProxyGroupId",
@@ -2108,8 +2108,8 @@
         },
         {
           "disabled": false,
-          "document": "节点规格配置\n备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。\n示例中参数说明：\nNodeCount：节点个数\nRegion：节点地域\nZone：节点可用区\nCpu：单个代理节点核数（单位：核）\nMem：单个代理节点内存数（单位：MB）",
-          "example": "{     \"NodeCount\": 2,     \"Region\": \"ap-guangzhou\",     \"Zone\": \"ap-guangzhou-1\",     \"Cpu\": 2,     \"Mem\": 4000     }",
+          "document": "<p>节点规格配置<br>备注：数据库代理支持的节点规格为：2C4000MB、4C8000MB、8C16000MB。<br>示例中参数说明：<br>NodeCount：节点个数<br>Region：节点地域<br>Zone：节点可用区<br>Cpu：单个代理节点核数（单位：核）<br>Mem：单个代理节点内存数（单位：MB）</p>",
+          "example": "无",
           "member": "ProxyNodeCustom",
           "name": "ProxyNodeCustom",
           "required": true,
@@ -2117,7 +2117,7 @@
         },
         {
           "disabled": false,
-          "document": "重新负载均衡：auto(自动),manual(手动)",
+          "document": "<p>重新负载均衡：auto(自动),manual(手动)</p>",
           "example": "auto",
           "member": "string",
           "name": "ReloadBalance",
@@ -2126,12 +2126,21 @@
         },
         {
           "disabled": false,
-          "document": "升级切换时间：nowTime(升级完成时),timeWindow(维护时间内)",
+          "document": "<p>升级切换时间。</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 维护时间内</li><li>rollUpgrade： 滚动升级</li></ul>",
           "example": "nowTime",
           "member": "string",
           "name": "UpgradeTime",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动升级或平滑变配等待时间</p><p>取值范围：[0, 3600]</p><p>单位：秒</p>",
+          "example": "3600",
+          "member": "int64",
+          "name": "RollUpgradeWaitingTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2141,7 +2150,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",
@@ -26757,7 +26766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "cdb-pr1rb3j1",
           "member": "string",
           "name": "InstanceId",
@@ -26766,7 +26775,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理 ID。可通过 [DescribeCdbProxyInfo](https://cloud.tencent.com/document/api/236/90585) 接口获取。",
+          "document": "<p>数据库代理 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/236/90585\">DescribeCdbProxyInfo</a> 接口获取。</p>",
           "example": "proxy-p11rb3j9",
           "member": "string",
           "name": "ProxyGroupId",
@@ -26775,7 +26784,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理当前版本",
+          "document": "<p>数据库代理当前版本</p>",
           "example": "1.0.1",
           "member": "string",
           "name": "SrcProxyVersion",
@@ -26784,7 +26793,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理升级版本",
+          "document": "<p>数据库代理升级版本</p>",
           "example": "1.1.2",
           "member": "string",
           "name": "DstProxyVersion",
@@ -26793,12 +26802,21 @@
         },
         {
           "disabled": false,
-          "document": "升级时间 ：nowTime（升级完成时）timeWindow（实例维护时间）",
+          "document": "<p>升级切换时间</p><p>枚举值：</p><ul><li>nowTime： 升级完成时</li><li>timeWindow： 实例维护时间</li><li>rollUpgrade： 滚动升级</li></ul>",
           "example": "nowTime",
           "member": "string",
           "name": "UpgradeTime",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>滚动升级等待时间</p><p>取值范围：[10, 3600]</p><p>单位：秒</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "RollUpgradeWaitingTime",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -26808,7 +26826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步处理ID",
+          "document": "<p>异步处理ID</p>",
           "example": "8155d27a-079a2580-19593e48-f1af5042",
           "member": "string",
           "name": "AsyncRequestId",
@@ -26905,6 +26923,16 @@
           "name": "AsyncRequestId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务列表ID</p>",
+          "example": "18800234",
+          "member": "int64",
+          "name": "JobId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

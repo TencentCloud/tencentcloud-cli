@@ -1,55 +1,10 @@
-# Release 3.0.1497.1
+# Release 3.0.1498.1
 
-## Agent 沙箱服务(ags) 版本：2025-09-20
-
-### 第 31 次发布
-
-发布时间：2026-09-17 01:08:07
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeSessionSpaces](http://document.tencentcloudapi.woa.com/document/product/1804/92386)
-
-	* 新增入参：Filters
-
-
-
-
-## 云联络中心(ccc) 版本：2020-02-10
-
-### 第 102 次发布
-
-发布时间：2026-09-17 01:21:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeSessionDetail](http://document.tencentcloudapi.woa.com/document/product/679/87622)
-
-	* 新增出参：EndStatusV2
-
-
-修改数据结构：
-
-* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
-
-	* 新增成员：EndStatusV2
-
-
-
-
-## 边缘可用区(edgezone) 版本：2026-04-01
+## 灾备中心(bdrc) 版本：2026-03-30
 
 ### 第 4 次发布
 
-发布时间：2026-09-17 01:49:41
+发布时间：2026-09-18 01:13:22
 
 本次发布包含了以下内容：
 
@@ -57,45 +12,68 @@
 
 修改接口：
 
-* [CreatePublicNetworkInstance](http://document.tencentcloudapi.woa.com/document/product/1812/91495)
+* [ModifyCopyPairAttribute](http://document.tencentcloudapi.woa.com/document/product/1824/92300)
 
-	* 新增入参：BgpAsNumber, BgpPassword, InstanceType
-
-
+	* 新增入参：InstanceType
 
 
-## 人脸核身(faceid) 版本：2018-03-01
 
-### 第 115 次发布
 
-发布时间：2026-09-17 01:53:18
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 181 次发布
+
+发布时间：2026-09-18 01:21:41
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
+修改接口：
 
-* [CreateEKYCWebhook](http://document.tencentcloudapi.woa.com/document/product/1007/92615)
-* [DeleteEKYCWebhook](http://document.tencentcloudapi.woa.com/document/product/1007/92614)
-* [GetAMLScreeningResult](http://document.tencentcloudapi.woa.com/document/product/1007/92613)
-* [ListEKYCWebhooks](http://document.tencentcloudapi.woa.com/document/product/1007/92612)
-* [RunAMLNameScreening](http://document.tencentcloudapi.woa.com/document/product/1007/92611)
-* [UpdateAMLCustomerProfile](http://document.tencentcloudapi.woa.com/document/product/1007/92610)
-* [UpdateAMLOngoingScreeningStatus](http://document.tencentcloudapi.woa.com/document/product/1007/92609)
-* [UpdateEKYCWebhook](http://document.tencentcloudapi.woa.com/document/product/1007/92608)
+* [AdjustCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77513)
 
+	* 新增入参：RollUpgradeWaitingTime
 
+* [UpgradeCDBProxyVersion](http://document.tencentcloudapi.woa.com/document/product/236/68160)
 
-## 腾讯云可观测平台(monitor) 版本：2023-06-16
+	* 新增入参：RollUpgradeWaitingTime
 
+* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
+
+	* 新增出参：JobId
 
 
-## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 138 次发布
 
-发布时间：2026-09-17 02:13:44
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 52 次发布
+
+发布时间：2026-09-18 01:25:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCfsFileSystems](http://document.tencentcloudapi.woa.com/document/product/582/38170)
+
+	* 新增入参：Filters, Tags
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 106 次发布
+
+发布时间：2026-09-18 01:32:50
 
 本次发布包含了以下内容：
 
@@ -103,18 +81,18 @@
 
 修改数据结构：
 
-* [PrometheusAlertGroupSet](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertGroupSet)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
 
-	* 新增成员：LastModifySubAccountUin
-
-
+	* 新增成员：HostName
 
 
-## 云开发 CloudBase(tcb) 版本：2018-06-08
 
-### 第 72 次发布
 
-发布时间：2026-09-17 02:26:31
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 102 次发布
+
+发布时间：2026-09-18 01:58:50
 
 本次发布包含了以下内容：
 
@@ -122,24 +100,88 @@
 
 新增接口：
 
-* [CreatePlatformEnv](http://document.tencentcloudapi.woa.com/document/product/876/92624)
-* [DescribePlatformAccountCircle](http://document.tencentcloudapi.woa.com/document/product/876/92618)
-* [DescribePlatformCreditsUsage](http://document.tencentcloudapi.woa.com/document/product/876/92623)
-* [DescribePlatformCreditsUsageDetail](http://document.tencentcloudapi.woa.com/document/product/876/92622)
-* [DescribePlatformEnvUsage](http://document.tencentcloudapi.woa.com/document/product/876/92621)
-* [DescribePlatforms](http://document.tencentcloudapi.woa.com/document/product/876/92620)
-* [DestroyPlatformEnv](http://document.tencentcloudapi.woa.com/document/product/876/92619)
-* [ModifyPlatformEnv](http://document.tencentcloudapi.woa.com/document/product/876/92617)
+* [DescribeCloudStorageEventsByTWeSeePerson](http://document.tencentcloudapi.woa.com/document/product/1081/92647)
+* [DescribeTWeSeeDirectUploadInfo](http://document.tencentcloudapi.woa.com/document/product/1081/92646)
+* [DescribeVodCloudStorageDate](http://document.tencentcloudapi.woa.com/document/product/1081/92645)
+* [GetVodCloudStorageEventList](http://document.tencentcloudapi.woa.com/document/product/1081/92644)
+* [GetVodCloudStorageVideoList](http://document.tencentcloudapi.woa.com/document/product/1081/92643)
 
 新增数据结构：
 
-* [DailyUsageList](http://document.tencentcloudapi.woa.com/document/product/876/34822#DailyUsageList)
-* [PlatFormResourceInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatFormResourceInfo)
-* [PlatformCreditsUsageDaily](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatformCreditsUsageDaily)
-* [PlatformInfo](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatformInfo)
-* [PlatformMetricUsageItem](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatformMetricUsageItem)
-* [PlatformPkgCreditsUsage](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatformPkgCreditsUsage)
-* [PlatformResUsageItem](http://document.tencentcloudapi.woa.com/document/product/876/34822#PlatformResUsageItem)
+* [VideoList](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VideoList)
+* [VodCloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VodCloudStorageEvent)
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 67 次发布
+
+发布时间：2026-09-18 02:29:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ListTargetsForPolicyNode](http://document.tencentcloudapi.woa.com/document/product/850/67060#ListTargetsForPolicyNode)
+
+	* 新增成员：NodePath, NodePathIds
+
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 腾讯云数据库 AI 服务(tdai) 版本：2025-07-17
+
+### 第 4 次发布
+
+发布时间：2026-09-18 02:55:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateChatCompletion](http://document.tencentcloudapi.woa.com/document/product/1802/91665)
+
+	* 新增入参：Attachments
+
+
+新增数据结构：
+
+* [Attachments](http://document.tencentcloudapi.woa.com/document/product/1802/91680#Attachments)
+
+修改数据结构：
+
+* [AgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91680#AgentInstance)
+
+	* 新增成员：Capabilities, DeploymentFree
+
+
+
+
+## TokenHub(tokenhub) 版本：2026-03-22
+
+### 第 25 次发布
+
+发布时间：2026-09-18 03:03:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SubPackageBalance](http://document.tencentcloudapi.woa.com/document/product/1814/90425#SubPackageBalance)
+
+	* 新增成员：TotalUsed
+
 
 
 

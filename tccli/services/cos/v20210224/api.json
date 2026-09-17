@@ -1,0 +1,748 @@
+{
+  "actions": {
+    "DescribeBucketList": {
+      "document": "桶列表拉取",
+      "input": "DescribeBucketListRequest",
+      "name": "桶列表",
+      "output": "DescribeBucketListResponse",
+      "status": "online"
+    },
+    "ListBuckets": {
+      "document": "列出COS存储桶",
+      "input": "ListBucketsRequest",
+      "name": "列出COS存储桶",
+      "output": "ListBucketsResponse",
+      "status": "online"
+    },
+    "UpdateBucketStat": {
+      "document": "封禁解封cos桶",
+      "input": "UpdateBucketStatRequest",
+      "name": "桶封禁解封",
+      "output": "UpdateBucketStatResponse",
+      "status": "online"
+    },
+    "UpdateObjectStat": {
+      "document": "对象的封禁解封",
+      "input": "UpdateObjectStatRequest",
+      "name": "对象封禁解封",
+      "output": "UpdateObjectStatResponse",
+      "status": "online"
+    },
+    "UpdateUinStat": {
+      "document": "uin的封禁解封",
+      "input": "UpdateUinStatRequest",
+      "name": "用户封禁解封",
+      "output": "UpdateUinStatResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2021-02-24",
+    "api_brief": "安全稳定、海量、便捷、低延迟、低成本的云端存储服务",
+    "serviceNameCN": "对象存储",
+    "serviceShortName": "cos"
+  },
+  "objects": {
+    "Bucket": {
+      "document": "存储桶信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储桶名称，例如 test-1250000000",
+          "example": "test-1250000000",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶所在 COS 地域，例如 ap-beijing",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶创建时间，格式如 2021-02-24T20:00:00Z",
+          "example": "2021-02-24T20:00:00Z",
+          "member": "string",
+          "name": "CreationDate",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储桶类型",
+          "example": "ofs",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BucketRetItem": {
+      "document": "桶列表返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次返回数量",
+          "example": "",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "bucket列表",
+          "example": "",
+          "member": "CosBucketListItem",
+          "name": "Buckets",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一次调用时的参数",
+          "example": "",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CosBucketListItem": {
+      "document": "桶接口信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶的appid",
+          "example": "",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "uin",
+          "example": "",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "region地域，CosRegion的枚举",
+          "example": "",
+          "member": "int64",
+          "name": "CosRegion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "BucketName 桶名称",
+          "example": "",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶创建时间",
+          "example": "",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeBucketListRequest": {
+      "document": "DescribeBucketList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条数限制，最大2000",
+          "example": "3",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始NextToken，上一次拉取的最后一个LastBucket;第一次调用时为空字符串\"\"",
+          "example": "direct-ofs-maz-billing-bandwidth-quota-1251668577",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBucketListResponse": {
+      "document": "DescribeBucketList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桶返回",
+          "example": "无",
+          "member": "BucketRetItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBucketsRequest": {
+      "document": "ListBuckets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](/document/api/213/11646#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，最大和默认10000个",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶所在的 COS 地域",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "CosRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶字段搜索条件，模糊匹配",
+          "example": "test-1250000000",
+          "member": "string",
+          "name": "BucketFilter",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶类型，如 tcb，默认不传",
+          "example": "tcb",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则字符串，如 CreationDate desc，默认不传",
+          "example": "CreationDate desc",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListBucketsResponse": {
+      "document": "ListBuckets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](/document/api/213/11646#.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0.E4.B8.8E.E8.BF.94.E5.9B.9E.E5.8F.82.E6.95.B0.E9.87.8A.E4.B9.89)中的相关小节。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，最大和默认返回10000个",
+          "example": "1000",
+          "member": "int64",
+          "name": "Limit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的存储桶数量",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的存储桶列表",
+          "example": "无",
+          "member": "Bucket",
+          "name": "Buckets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketStatReqParam": {
+      "document": "封禁解封cos bucket桶",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作类型枚举：forbid, permit</p>",
+          "example": "forbid",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作原因，yy和comp有固定原因</p>",
+          "example": "欠费封禁、违反腾讯云规定",
+          "member": "string",
+          "name": "OpReason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者的名称</p>",
+          "example": "nedzzhang",
+          "member": "string",
+          "name": "RtxUser",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求的来源</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作者的uin</p>",
+          "example": "0",
+          "member": "string",
+          "name": "OpUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>从url中解析bucket进行封禁，和bucket相同功能，二选一即可</p>",
+          "example": "http://forbid-test01-1300258161.cos.yfb.myqcloud.com/autotest/object_forbid/64723999a18e46998120cb35648df7ec.txt",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁的桶 bucketname-appid</p>",
+          "example": "forbid-test01-1300258161",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateBucketStatRequest": {
+      "document": "UpdateBucketStat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用方服务名</p>",
+          "example": "sdsfd",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参详情</p>",
+          "example": "无",
+          "member": "UpdateBucketStatReqParam",
+          "name": "Payload",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳</p>",
+          "example": "1781519703",
+          "member": "uint64",
+          "name": "AuthTimeStamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名</p>",
+          "example": "e2f7dba4cd86612670c898cdce42299c44f8987ea5a0524918d614d399a49d57",
+          "member": "string",
+          "name": "AuthSign",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateBucketStatResponse": {
+      "document": "UpdateBucketStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回详情</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateObjectStatReqParam": {
+      "document": "封禁解封对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>封禁操作：forbid, permit</p>",
+          "example": "forbid",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁原因：comp和yy有固定格式</p>",
+          "example": "色情内容",
+          "member": "string",
+          "name": "OpReason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁类型，同研发沟通</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ForbidValue",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作用户的uin</p>",
+          "example": "0",
+          "member": "string",
+          "name": "OpUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作用户的名称</p>",
+          "example": "tarzanzhang",
+          "member": "string",
+          "name": "RtxUser",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求来源，如cos-yy,comp等，同研发沟通</p>",
+          "example": "cos",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁的文件path，同bucket搭配使用</p>",
+          "example": "",
+          "member": "string",
+          "name": "FilePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>同path搭配使用：通过bucket+path封禁或者通过url封禁</p>",
+          "example": "",
+          "member": "string",
+          "name": "Bucket",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁的对象url</p>",
+          "example": "http://forbid-test01-1300258161.cos.yfb.myqcloud.com/autotest/object_forbid/d2ac0e75cd234a818150e4107147b379.txt",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateObjectStatRequest": {
+      "document": "UpdateObjectStat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用方服务名</p>",
+          "example": "costest",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参详情</p>",
+          "example": "无",
+          "member": "UpdateObjectStatReqParam",
+          "name": "Payload",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名时间戳</p>",
+          "example": "1781523293",
+          "member": "int64",
+          "name": "AuthTimeStamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名</p>",
+          "example": "b8f2ecd8aa40ff39cf6236c9bd0fd5c48cf8fad404eb1b8556e6f145f3f2ac92",
+          "member": "string",
+          "name": "AuthSign",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateObjectStatResponse": {
+      "document": "UpdateObjectStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>出参，正确时返回1否则error返回</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUinStatReqParam": {
+      "document": "封禁uin账号入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被封禁的uin账号</p>",
+          "example": "700001107506",
+          "member": "string",
+          "name": "UinId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p><p>枚举值：</p><ul><li>forbid： 封禁</li><li>permit： 解封</li></ul>",
+          "example": "forbid",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁原因</p>",
+          "example": "we",
+          "member": "string",
+          "name": "OpReason",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作的用户的uin</p>",
+          "example": "0",
+          "member": "string",
+          "name": "OpUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作用户的名称：如nedzzhang</p>",
+          "example": "comp",
+          "member": "string",
+          "name": "RtxUser",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作系统来源，和研发沟通确认</p>",
+          "example": "comp",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "UpdateUinStatRequest": {
+      "document": "UpdateUinStat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用方服务名</p>",
+          "example": "cos-yy",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入参详情</p>",
+          "example": "无",
+          "member": "UpdateUinStatReqParam",
+          "name": "Payload",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名时间戳</p><p>单位：1</p>",
+          "example": "1781519703",
+          "member": "uint64",
+          "name": "AuthTimeStamp",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签名参数</p>",
+          "example": "e2f7dba4cd86612670c898cdce42299c44f8987ea5a0524918d614d399a49d57",
+          "member": "string",
+          "name": "AuthSign",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUinStatResponse": {
+      "document": "UpdateUinStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结构是否成功，失败则通过error返回</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

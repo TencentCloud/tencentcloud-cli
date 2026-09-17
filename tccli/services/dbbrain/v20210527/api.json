@@ -13279,7 +13279,7 @@
       "usage": "in"
     },
     "StatisticDataInfo": {
-      "document": "统计分析维度下的统计数据详情",
+      "document": "统计分析维度下的统计数据详情。",
       "members": [
         {
           "disabled": false,
@@ -13289,7 +13289,7 @@
           "name": "Name",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -13299,7 +13299,7 @@
           "name": "TimeAvg",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -13309,7 +13309,7 @@
           "name": "TimeSum",
           "output_required": false,
           "type": "float",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -13319,7 +13319,7 @@
           "name": "Count",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

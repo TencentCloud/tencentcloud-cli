@@ -1,0 +1,45 @@
+{
+  "actions": {
+    "DescribeBucketList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBucketList\n<公共请求参数>\n\n{\n    \"Limit\": 3,\n    \"NextToken\": \"direct-ofs-maz-billing-bandwidth-quota-1251668577\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Buckets\": [\n                {\n                    \"AppId\": 1251668577,\n                    \"Bucket\": \"direct-ofs-saz-billing-bandwidth-quota\",\n                    \"CreateTime\": \"2024-08-19T11:54:12+08:00\",\n                    \"Uin\": \"2779643970\"\n                }\n            ],\n            \"Count\": 3,\n            \"NextToken\": \"adcd-static-gjihgjncgyfhtvhv-4fh0foredc03e79-1300041554\"\n        },\n        \"RequestId\": \"3696dd0b-7118-4864-9367-93ab63a00265\"\n    }\n}",
+        "title": "正常结构"
+      }
+    ],
+    "ListBuckets": [
+      {
+        "document": "列出COS存储桶",
+        "input": "POST / HTTP/1.1\nHost: cos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBuckets\n<公共请求参数>\n\n{\n\n        \"CosRegion\": \"ap-shanghai\", \n        \"BucketFilter\": [\n            \"test-1251902136\"\n        ], \n        \"Offset\": 0, \n        \"Limit\": 0,\n        \"OrderBy\": \"Name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Offset\": 0,\n        \"Limit\": 0,\n        \"TotalCount\": 1,\n        \"Buckets\": [\n            {\n                \"Name\": \"test-1251902136\",\n                \"Location\": \"ap-shanghai\",\n                \"CreationDate\": \"2019-01-30T14:12:05.000Z\",\n                \"Type\": \"ofs\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "UpdateBucketStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateBucketStat\n<公共请求参数>\n\n{\n    \"AppName\": \"sdsfd\",\n    \"Payload\": {\n        \"OpType\": \"forbid\",\n        \"OpReason\": \"dds\",\n        \"RtxUser\": \"nedzzhang\",\n        \"Source\": \"cos\",\n        \"OpUin\": \"0\",\n        \"Url\": \"http://forbid-test01-1300258161.cos.yfb.myqcloud.com/autotest/object_forbid/64723999a18e46998120cb35648df7ec.txt\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"6543d4be-54ca-4bcd-985a-7ed430346fd3\"\n    }\n}",
+        "title": "成功的下的返回"
+      }
+    ],
+    "UpdateObjectStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateObjectStat\n<公共请求参数>\n\n{\n    \"AppName\": \"costest\",\n    \"Payload\": {\n        \"OpType\": \"forbid\",\n        \"OpReason\": \"色情内容\",\n        \"ForbidValue\": 1,\n        \"OpUin\": \"0\",\n        \"RtxUser\": \"tarzanzhang\",\n        \"Source\": \"cos\",\n        \"Url\": \"http://forbid-test01-1300258161.cos.yfb.myqcloud.com/autotest/object_forbid/d2ac0e75cd234a818150e4107147b379.txt\"\n    },\n    \"AuthTimeStamp\": 1781523293,\n    \"AuthSign\": \"b8f2ecd8aa40ff39cf6236c9bd0fd5c48cf8fad404eb1b8556e6f145f3f2ac92\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"1db799cc-c55c-4e3b-b080-01cd3b302622\"\n    }\n}",
+        "title": "成功请求"
+      }
+    ],
+    "UpdateUinStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUinStat\n<公共请求参数>\n\n{\n    \"AppName\": \"23\",\n    \"Payload\": {\n        \"UinId\": \"700001107506\",\n        \"OpType\": \"forbid\",\n        \"OpReason\": \"we\",\n        \"OpUin\": \"0\",\n        \"RtxUser\": \"comp\",\n        \"Source\": \"comp\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 1,\n        \"RequestId\": \"162c6a69-894e-4898-962c-eff457529a5e\"\n    }\n}",
+        "title": "成功情况的返回"
+      }
+    ]
+  },
+  "version": "1.0"
+}

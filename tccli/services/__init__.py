@@ -304,6 +304,9 @@ SERVICE_VERSIONS = {
     "controlcenter": [
         "2023-01-10"
     ],
+    "cos": [
+        "2021-02-24"
+    ],
     "cpdp": [
         "2019-08-20"
     ],
