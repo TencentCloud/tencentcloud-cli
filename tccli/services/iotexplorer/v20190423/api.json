@@ -609,6 +609,13 @@
       "output": "DescribeCloudStorageEventsResponse",
       "status": "online"
     },
+    "DescribeCloudStorageEventsByTWeSeePerson": {
+      "document": "查询 TWeSee 人员关联的云存事件及 AI 任务",
+      "input": "DescribeCloudStorageEventsByTWeSeePersonRequest",
+      "name": "查询 TWeSee 人员关联的云存事件",
+      "output": "DescribeCloudStorageEventsByTWeSeePersonResponse",
+      "status": "online"
+    },
     "DescribeCloudStorageEventsWithAITasks": {
       "document": "拉取云存事件列表",
       "input": "DescribeCloudStorageEventsWithAITasksRequest",
@@ -931,6 +938,13 @@
       "output": "DescribeTWeSeeConfigResponse",
       "status": "online"
     },
+    "DescribeTWeSeeDirectUploadInfo": {
+      "document": "查询 TWeSee 直传信息",
+      "input": "DescribeTWeSeeDirectUploadInfoRequest",
+      "name": "查询 TWeSee 直传信息",
+      "output": "DescribeTWeSeeDirectUploadInfoResponse",
+      "status": "online"
+    },
     "DescribeTWeSeeFace": {
       "document": "查询指定 TWeSee 人脸详情。",
       "input": "DescribeTWeSeeFaceRequest",
@@ -1049,6 +1063,13 @@
       "name": "查询视频激活码统计概览",
       "output": "DescribeVideoLicenseResponse",
       "status": "deprecated"
+    },
+    "DescribeVodCloudStorageDate": {
+      "document": "拉取云存日期",
+      "input": "DescribeVodCloudStorageDateRequest",
+      "name": "拉取云存日期",
+      "output": "DescribeVodCloudStorageDateResponse",
+      "status": "online"
     },
     "DestroyTWeSeeSubscription": {
       "document": "销毁 TWeSee 预付费订阅",
@@ -1237,6 +1258,20 @@
       "input": "GetTopicRuleListRequest",
       "name": "获取规则列表",
       "output": "GetTopicRuleListResponse",
+      "status": "online"
+    },
+    "GetVodCloudStorageEventList": {
+      "document": "获取云存事件列表",
+      "input": "GetVodCloudStorageEventListRequest",
+      "name": "获取云存事件列表",
+      "output": "GetVodCloudStorageEventListResponse",
+      "status": "online"
+    },
+    "GetVodCloudStorageVideoList": {
+      "document": "获取云存时间轴视频列表",
+      "input": "GetVodCloudStorageVideoListRequest",
+      "name": "获取云存时间轴视频列表",
+      "output": "GetVodCloudStorageVideoListResponse",
       "status": "online"
     },
     "GetWechatDeviceTicket": {
@@ -9196,6 +9231,98 @@
       ],
       "type": "object"
     },
+    "DescribeCloudStorageEventsByTWeSeePersonRequest": {
+      "document": "DescribeCloudStorageEventsByTWeSeePerson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "QDA1PZLBNB",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>人员 ID</p>",
+          "example": "person-11111111-2222-3333-4444-555555555555",
+          "member": "string",
+          "name": "PersonId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页拉取数量，取值范围为 1-100</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页拉取偏移</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageEventsByTWeSeePersonResponse": {
+      "document": "DescribeCloudStorageEventsByTWeSeePerson返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>人员关联的云存事件列表</p>",
+          "example": "无",
+          "member": "CloudStorageEventWithAITasks",
+          "name": "Events",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>人员关联的云存事件总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudStorageEventsRequest": {
       "document": "DescribeCloudStorageEvents请求参数结构体",
       "members": [
@@ -12738,6 +12865,118 @@
       ],
       "type": "object"
     },
+    "DescribeTWeSeeDirectUploadInfoRequest": {
+      "document": "DescribeTWeSeeDirectUploadInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品 ID</p>",
+          "example": "default",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "dev001",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型。</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li><li>IMG_COMP： 图片理解</li></ul>",
+          "example": "VID_COMP",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传方式。</p><p>枚举值：</p><ul><li>single： 单文件上传</li><li>manifest： 上传源文件与 Manifest（先上传多个源文件，然后上传 Manifest JSON 触发分析）</li></ul><p>默认值：single</p>",
+          "example": "single",
+          "member": "string",
+          "name": "UploadMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传目标，固定取值为 <code>stream</code>，不填时默认为 <code>stream</code></p><p>枚举值：</p><ul><li>stream： 上传到指定设备（加载对应设备的 ComprehensionConfig 等配置）</li></ul><p>默认值：stream</p>",
+          "example": "stream",
+          "member": "string",
+          "name": "UploadTarget",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTWeSeeDirectUploadInfoResponse": {
+      "document": "DescribeTWeSeeDirectUploadInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TWeSee 直传目录的 COS URI</p>",
+          "example": "cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/vid-z1-s/",
+          "member": "string",
+          "name": "COSURI",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TWeSee 直传存储桶</p>",
+          "example": "twesee-input-125*****99",
+          "member": "string",
+          "name": "StorageBucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TWeSee 直传目录路径</p>",
+          "example": "Direct/*********711/vid-z1-s/",
+          "member": "string",
+          "name": "StoragePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>TWeSee 直传存储地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "StorageRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTWeSeeFaceRequest": {
       "document": "DescribeTWeSeeFace请求参数结构体",
       "members": [
@@ -13870,6 +14109,79 @@
           "member": "VideoLicenseEntity",
           "name": "License",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVodCloudStorageDateRequest": {
+      "document": "DescribeVodCloudStorageDate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品id</p>",
+          "example": "YYZRTPMCUG",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "billing_test_7",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道id</p>",
+          "example": "1",
+          "member": "string",
+          "name": "ChannelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户id</p>",
+          "example": "videouser",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时区</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVodCloudStorageDateResponse": {
+      "document": "DescribeVodCloudStorageDate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日期数据</p>",
+          "example": "[\"2026-09-11\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17024,6 +17336,330 @@
           "name": "Rules",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVodCloudStorageEventListRequest": {
+      "document": "GetVodCloudStorageEventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品id</p>",
+          "example": "YYZRTPMCUG",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名</p>",
+          "example": "billing_test_7",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期</p><p>参数格式：格式 yyyy-MM-dd</p>",
+          "example": "2026-08-24",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标，首页为空。</p>",
+          "example": "DnF1ZXJ5VGhlbkZldGNoEAAA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p><p>取值范围：[10, 100]</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道id</p>",
+          "example": "23",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户id</p>",
+          "example": "videouser",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时区</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非加密 URL 签名有效期</p><p>单位：秒</p>",
+          "example": "7200",
+          "member": "uint64",
+          "name": "ExpireSec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求平台：0 Android，1 小程序，2 iOS，3 鸿蒙</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Platform",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVodCloudStorageEventListResponse": {
+      "document": "GetVodCloudStorageEventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件列表</p>",
+          "example": "无",
+          "member": "VodCloudStorageEvent",
+          "name": "Events",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据是否已完整</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页游标</p>",
+          "example": "DnF1ZXJ5VGhlbkZldGNoEAAA",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密播放器使用的 VOD 子应用 ID</p>",
+          "example": "1500058***",
+          "member": "string",
+          "name": "VodAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVodCloudStorageVideoListRequest": {
+      "document": "GetVodCloudStorageVideoList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品id</p>",
+          "example": "YYZRTPMCUG",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "*******_test_7",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日期</p><p>参数格式：格式 yyyy-MM-dd</p>",
+          "example": "2026-08-26",
+          "member": "string",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道id</p>",
+          "example": "23",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间；与 EndTime 必须同时填或同时省略</p><p>单位：秒</p>",
+          "example": "1672502400",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>单位：秒</p>",
+          "example": "1672520400",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户id</p>",
+          "example": "videouser",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时区</p>",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "TimeZone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>非加密文件的防盗链 URL 有效期</p><p>单位：秒</p>",
+          "example": "7200",
+          "member": "uint64",
+          "name": "ExpireSec",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>0 Android，1 小程序，2 iOS，3 鸿蒙</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Platform",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标；首页传空，之后原样回填上一页响应的 Context</p>",
+          "example": "DnF1ZXJ5VGhlbkZldGNoEAAAAAA",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页视频条数；&lt;=0 或不填默认 10，&gt;100 按 100 计</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Size",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVodCloudStorageVideoListResponse": {
+      "document": "GetVodCloudStorageVideoList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>播放器使用的 VOD 子应用 ID</p>",
+          "example": "1500058***",
+          "member": "string",
+          "name": "VodAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频列表</p>",
+          "example": "无",
+          "member": "VideoList",
+          "name": "VideoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已拉完</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Listover",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页游标</p>",
+          "example": "DnF1ZXJ5VGhlbkZldGNoEAAAAAA",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -29227,6 +29863,78 @@
       ],
       "usage": "out"
     },
+    "VideoList": {
+      "document": "加密云存视频列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用于播放加密视频</p>",
+          "example": "signmessage",
+          "member": "string",
+          "name": "Psign",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "1788867272",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "1788867322",
+          "member": "uint64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>播放url</p>",
+          "example": "https://1500058999.vod-qcloud.com/fe0388edvodgzp1500058999/c10f39e25001834819525022769/9YCNCx6ZTcQA.m3u8?sign=8894daeab6e698fe84959b3a1cff43ed&t=6aa00ffc&us=1788867548926033249155465881074730*****",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频类型</p>",
+          "example": "vod",
+          "member": "string",
+          "name": "StreamType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>点播文件id</p>",
+          "example": "5001834819525022769",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "VisionCustomDetectQuery": {
       "document": "TWeSee 语义理解自定义标签请求",
       "members": [
@@ -29644,6 +30352,72 @@
         }
       ],
       "usage": "both"
+    },
+    "VodCloudStorageEvent": {
+      "document": "加密云存事件数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事件id</p>",
+          "example": "_sys_static_1787538066",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缩略图url</p>",
+          "example": "/700000625262/YYZRTPMCUG/billing_test_7/23/events/1787538070641402396.jpg",
+          "member": "string",
+          "name": "ThumbnailUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件开始时间</p>",
+          "example": "1787538066",
+          "member": "uint64",
+          "name": "EventStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件结束时间</p>",
+          "example": "1787538066",
+          "member": "uint64",
+          "name": "EventEndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频相关信息</p>",
+          "example": "无",
+          "member": "VideoList",
+          "name": "VideoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为图片事件</p><p>枚举值：</p><ul><li>true： 图片事件</li><li>false： 视频事件</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsStaticEvent",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WXDeviceInfo": {
       "document": "微信硬件设备信息",

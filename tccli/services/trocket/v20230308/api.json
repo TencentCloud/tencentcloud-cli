@@ -1559,6 +1559,15 @@
           "name": "Group",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者标签</p><p>传入 Label 表示只删除该标签路由，不传表示删除完整路由</p>",
+          "example": "env-1",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

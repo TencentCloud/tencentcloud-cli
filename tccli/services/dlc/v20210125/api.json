@@ -35589,11 +35589,11 @@
       "usage": "both"
     },
     "KVPair": {
-      "document": "配置格式",
+      "document": "通用键值对 POJO（替代各 DTO 中重复定义的 PropEntry / KVPair / PropertyEntry）。",
       "members": [
         {
           "disabled": false,
-          "document": "<p>配置的key值</p>",
+          "document": "配置的key值",
           "example": "format-version",
           "member": "string",
           "name": "Key",
@@ -35604,7 +35604,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>配置的value值</p>",
+          "document": "配置的value值",
           "example": "1",
           "member": "string",
           "name": "Value",

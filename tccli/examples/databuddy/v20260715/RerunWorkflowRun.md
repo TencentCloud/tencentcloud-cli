@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli databuddy RerunWorkflowRun --cli-unfold-argument  \
-    --WorkspaceId 17678671667189298 \
-    --WorkflowId 1b185f10-151d-42e5-886d-f8c4eb2fcae5 \
-    --WorkflowRunId 1b185f10-151d-42e5-886d-f8c4eb2fcae5_1787110336358_p550ec615a5cdfee0 \
+    --WorkspaceId 17697410068842890 \
+    --WorkflowId 18b1a42e-951d-4b31-98a0-b404dac2c324 \
+    --WorkflowRunId 18b1a42e-951d-4b31-98a0-b404dac2c324_1786024800000 \
     --RunType 1
 ```
 
@@ -21,14 +21,14 @@ Output:
                 {
                     "ErrorMessage": "",
                     "OpStatus": true,
-                    "RunActionId": "cmd_20260819135346_000001",
-                    "WorkflowId": "1b185f10-151d-42e5-886d-f8c4eb2fcae5",
-                    "WorkflowName": "zl_wf_260813_142851",
-                    "WorkflowRunId": "1b185f10-151d-42e5-886d-f8c4eb2fcae5_1787110336358_p550ec615a5cdfee0"
+                    "RunActionId": "cmd_20260807233141_000001",
+                    "WorkflowId": "18b1a42e-951d-4b31-98a0-b404dac2c324_1786024800000",
+                    "WorkflowName": "",
+                    "WorkflowRunId": ""
                 }
             ]
         },
-        "RequestId": "5503d42a-692f-4b40-a974-ef33dad110f9"
+        "RequestId": "fa65efd3-dd08-4f9d-9b94-acdba94366ca"
     }
 }
 ```

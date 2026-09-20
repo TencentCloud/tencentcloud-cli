@@ -91,6 +91,13 @@
       "output": "CopyLiveAvatarRoomResponse",
       "status": "online"
     },
+    "CreateAuditImages": {
+      "document": "直播审核图库添加图片，添加到预设库，图库不需要创建。",
+      "input": "CreateAuditImagesRequest",
+      "name": "直播审核图库添加图片",
+      "output": "CreateAuditImagesResponse",
+      "status": "online"
+    },
     "CreateAuditKeywordLib": {
       "document": "创建关键词库，直播审核功能使用。",
       "input": "CreateAuditKeywordLibRequest",
@@ -320,6 +327,20 @@
       "input": "CreateVideoRedrawTaskRequest",
       "name": "创建AIGC视频转绘任务",
       "output": "CreateVideoRedrawTaskResponse",
+      "status": "online"
+    },
+    "DeleteAuditImages": {
+      "document": "直播审核图库删除图片。",
+      "input": "DeleteAuditImagesRequest",
+      "name": "直播审核图库删除图片",
+      "output": "DeleteAuditImagesResponse",
+      "status": "online"
+    },
+    "DeleteAuditKeywordLib": {
+      "document": "删除关键词库，直播审核功能使用。",
+      "input": "DeleteAuditKeywordLibRequest",
+      "name": "直播审核删除词库",
+      "output": "DeleteAuditKeywordLibResponse",
       "status": "online"
     },
     "DeleteAuditKeywords": {
@@ -558,6 +579,27 @@
       "input": "DescribeAreaBillBandwidthAndFluxListRequest",
       "name": "海外分区直播播放带宽和流量数据查询",
       "output": "DescribeAreaBillBandwidthAndFluxListResponse",
+      "status": "online"
+    },
+    "DescribeAuditGroupTag": {
+      "document": "获取标签组分类数据，直播审核中。",
+      "input": "DescribeAuditGroupTagRequest",
+      "name": "直播审核获取标签组分类数据",
+      "output": "DescribeAuditGroupTagResponse",
+      "status": "online"
+    },
+    "DescribeAuditImages": {
+      "document": "直播审核图库获取图片。",
+      "input": "DescribeAuditImagesRequest",
+      "name": "直播审核图库获取图片",
+      "output": "DescribeAuditImagesResponse",
+      "status": "online"
+    },
+    "DescribeAuditKeywordLibs": {
+      "document": "获取关键词库列表，直播审核功能使用。",
+      "input": "DescribeAuditKeywordLibsRequest",
+      "name": "直播审核词库列表",
+      "output": "DescribeAuditKeywordLibsResponse",
       "status": "online"
     },
     "DescribeAuditKeywords": {
@@ -1323,6 +1365,13 @@
       "output": "InsertTaskTemporaryFilesResponse",
       "status": "online"
     },
+    "ModifyAuditKeywordLib": {
+      "document": "更新关键词库信息，直播审核功能使用。",
+      "input": "ModifyAuditKeywordLibRequest",
+      "name": "直播审核更新词库",
+      "output": "ModifyAuditKeywordLibResponse",
+      "status": "online"
+    },
     "ModifyCaster": {
       "document": "该接口用来设置导播台的描述、名称、录制模板id等参数。",
       "input": "ModifyCasterRequest",
@@ -2081,6 +2130,227 @@
       ],
       "type": "object"
     },
+    "AuditGroupClassInfo": {
+      "document": "直播审核标签分组数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签组分类中文名。</p>",
+          "example": "宗教识别",
+          "member": "string",
+          "name": "GroupClassName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签组分类英文名。</p>",
+          "example": "Polity",
+          "member": "string",
+          "name": "GroupClassEname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签组列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditLabelGroupInfo",
+          "name": "LabelGroupList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditGroupInfo": {
+      "document": "直播审核标签分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签类型。<br>可取值：TagImage，TagText，TagAudio。</p>",
+          "example": "TagText",
+          "member": "string",
+          "name": "TagType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签组分类列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditGroupClassInfo",
+          "name": "GroupClassList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditImage": {
+      "document": "向图库提交的图片数据类型。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提交的图片顺序索引。</p>",
+          "example": "autotest_index_HLRIioUifQ",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片地址。</p>",
+          "example": "https://livewatermark-1251132611.cos.ap-guangzhou.myqcloud.com/1256342408/watermark_img_1682650739917_huiyi.jpeg",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片 md5 值。</p>",
+          "example": "75500dac4340c9973f90e24331c07127",
+          "member": "string",
+          "name": "Md5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片名称。</p>",
+          "example": "autotest_HLRIioUifQ.jpeg",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>违规类型。<br>可取值：Normal: 正常 ，Polity: 政治，Porn: 色情，Sexy：性感，Ad: 广告，Illegal: 违法，Abuse: 谩骂，Terror: 暴恐，Spam: 灌水，Moan:呻吟。</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditImageCreateDetail": {
+      "document": "直播审核图库添加图片详细结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片上传状态，0 表示成功，其他表示失败。\n10101: url 解码失败。\n10102: url 解析失败。\n10103: url 不是 cos 地址。\n10301: label 不合法。\n20101: 数据入库错误。\n30101: cos 下载图片连接错误。\n30102: cos 下载图片响应错误。\n40101: 优图接口调用错误。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上传的图片 Id。",
+          "example": "id1",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图片上传顺序索引。",
+          "example": "index1",
+          "member": "string",
+          "name": "Index",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditImageDeleteDetail": {
+      "document": "直播审核图库删除图片详细结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片 Id。</p>",
+          "example": "75500dac4340c9973f90e24331c07127_100",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片名称</p>",
+          "example": "autotest_HLRIioUifQ.jpeg",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除状态。<br>0：成功。<br>10104：原图不存在。<br>40201:  图库删图失败。<br>20201:  图库记录删除失败。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>违规类型。<br>可取值：Normal: 正常 ，Polity: 政治，Porn: 色情，Sexy：性感，Ad: 广告，Illegal: 违法，Abuse: 谩骂，Terror: 暴恐，Spam: 灌水，Moan:呻吟。</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "\" \"",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditImageInfo": {
+      "document": "直播审核图库图片信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片名称。",
+          "example": "pic1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AuditKeyword": {
       "document": "直播审核关键词信息",
       "members": [
@@ -2190,6 +2460,108 @@
           "example": "2018-11-29T19:00:00Z",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditKeywordLibInfo": {
+      "document": "直播审核，关键词库信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词库 Id。</p>",
+          "example": "a4cf3b9b-0c17-4155-ac34-d7d26ae20e68",
+          "member": "string",
+          "name": "LibId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义词库名称。</p>",
+          "example": "autotest_lib_001",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义词库描述。</p>",
+          "example": "autotest",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。UTC 格式，例如：2018-11-29T19:00:00Z。<br>注意：</p><ol><li>北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示。</li></ol>",
+          "example": "2026-09-18T08:00:14Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理建议。<br>可取值：Review 疑似，Block 违规。</p>",
+          "example": "Review",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配模式。<br>可取值：ExactMatch 精确匹配， FuzzyMatch 模糊匹配。</p>",
+          "example": "ExactMatch",
+          "member": "string",
+          "name": "MatchType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuditLabelGroupInfo": {
+      "document": "直播审核标签组信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签组中文名。</p>",
+          "example": "男性性感着装",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签组英文名。</p>",
+          "example": "SexyNudityScenes",
+          "member": "string",
+          "name": "GroupEname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签组描述。</p>",
+          "example": "男性内裤、情趣着装等",
+          "member": "string",
+          "name": "GroupMsg",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5403,6 +5775,43 @@
       ],
       "type": "object"
     },
+    "CreateAuditImagesRequest": {
+      "document": "CreateAuditImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>样本图片列表。</p>",
+          "example": "无",
+          "member": "AuditImage",
+          "name": "Images",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditImagesResponse": {
+      "document": "CreateAuditImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建图片结果详情。</p>",
+          "example": "无",
+          "member": "AuditImageCreateDetail",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAuditKeywordLibRequest": {
       "document": "CreateAuditKeywordLib请求参数结构体",
       "members": [
@@ -5520,8 +5929,8 @@
           "example": "无",
           "member": "AuditKeywordInfo",
           "name": "Keywords",
-          "output_required": true,
-          "type": "list",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -8702,6 +9111,70 @@
       ],
       "usage": "out"
     },
+    "DeleteAuditImagesRequest": {
+      "document": "DeleteAuditImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片 Id 列表。</p>",
+          "example": "[\"75500dac4340c9973f90e24331c07127_100\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditImagesResponse": {
+      "document": "DeleteAuditImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建图片结果详情。</p>",
+          "example": "无",
+          "member": "AuditImageDeleteDetail",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditKeywordLibRequest": {
+      "document": "DeleteAuditKeywordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>词库 Id。</p>",
+          "example": "4c49c04f-6617-4705-b3ff-bedce642bfcb",
+          "member": "string",
+          "name": "LibId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditKeywordLibResponse": {
+      "document": "DeleteAuditKeywordLib返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAuditKeywordsRequest": {
       "document": "DeleteAuditKeywords请求参数结构体",
       "members": [
@@ -10010,6 +10483,173 @@
           "member": "BillAreaInfo",
           "name": "DataInfoList",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditGroupTagRequest": {
+      "document": "DescribeAuditGroupTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签类别。<br>Other：全量，TagText：文字，TagImage：图片，TagAudio：音频。</p>",
+          "example": "Other",
+          "member": "string",
+          "name": "TagType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditGroupTagResponse": {
+      "document": "DescribeAuditGroupTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签组分类数据按类型返回。</p>",
+          "example": "无",
+          "member": "AuditGroupInfo",
+          "name": "GroupTypeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditImagesRequest": {
+      "document": "DescribeAuditImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>违规类型。<br>可取值：Normal: 正常 ，Polity: 政治，Porn: 色情，Sexy：性感，Ad: 广告，Illegal: 违法，Abuse: 谩骂，Terror: 暴恐，Spam: 灌水，Moan:呻吟。</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "Label",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询页码。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条目数。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditImagesResponse": {
+      "document": "DescribeAuditImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建图片结果详情。</p>",
+          "example": "无",
+          "member": "AuditImageInfo",
+          "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditKeywordLibsRequest": {
+      "document": "DescribeAuditKeywordLibs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>获取偏移量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取条数。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据关键词库名进行模糊查询。<br>传递空字符串时，忽略。</p>",
+          "example": "12",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditKeywordLibsResponse": {
+      "document": "DescribeAuditKeywordLibs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>满足条件的关键词库数量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词库信息列表。</p>",
+          "example": "无",
+          "member": "AuditKeywordLibInfo",
+          "name": "Infos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19033,6 +19673,60 @@
         }
       ],
       "usage": "in"
+    },
+    "ModifyAuditKeywordLibRequest": {
+      "document": "ModifyAuditKeywordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义词库名称。</p>",
+          "example": "黄暴过滤",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义词库描述。</p>",
+          "example": "自定义词库",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理建议。<br>可取值：Review 疑似，Block 违规。</p>",
+          "example": "Block",
+          "member": "string",
+          "name": "Suggestion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要更新的词库 Id。</p>",
+          "example": "4c49c04f-6617-4705-b3ff-bedce642bfcb",
+          "member": "string",
+          "name": "LibId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditKeywordLibResponse": {
+      "document": "ModifyAuditKeywordLib返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCasterInputInfoRequest": {
       "document": "ModifyCasterInputInfo请求参数结构体",

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddConsoleUsers": {
+      "document": "添加控制台用户",
+      "input": "AddConsoleUsersRequest",
+      "name": "添加控制台用户",
+      "output": "AddConsoleUsersResponse",
+      "status": "online"
+    },
     "CreateFile": {
       "document": "在Studio（统一开发 IDE）的工作空间文件树中新建一个文件（Notebook/SQL/Python等），创建成功后返回文件的完整元信息。\n\n**前置条件**\n1. WorkspaceId 对应工作空间存在，且调用方为该工作空间成员；\n2. ParentFolderPath 对应的父文件夹必须存在，且调用方对其有写权限（根目录传 `/`）；\n3. FileName 在同一父文件夹下不能重名（含后缀比较）；\n4. FileName 后缀必须与 FileType 匹配（`.ipynb`↔`NOTEBOOK_FILE`、`.sql`↔`SQL_FILE`）；\n5. 需带文件内容创建时通过 Storage 传入（大文件走 COS 中转，小文件放 Storage.Content）。",
       "input": "CreateFileRequest",
@@ -63,6 +70,13 @@
       "output": "KillWorkflowRunResponse",
       "status": "online"
     },
+    "ListConsoleUsers": {
+      "document": "查询控制台用户列表",
+      "input": "ListConsoleUsersRequest",
+      "name": "查询控制台用户列表",
+      "output": "ListConsoleUsersResponse",
+      "status": "online"
+    },
     "ListWorkflowRuns": {
       "document": "工作流运行列表",
       "input": "ListWorkflowRunsRequest",
@@ -84,6 +98,13 @@
       "output": "ListWorkflowsResponse",
       "status": "online"
     },
+    "RemoveConsoleUsers": {
+      "document": "<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准）</p>",
+      "input": "RemoveConsoleUsersRequest",
+      "name": "批量移除控制台用户",
+      "output": "RemoveConsoleUsersResponse",
+      "status": "online"
+    },
     "RerunWorkflowRun": {
       "document": "重跑工作流",
       "input": "RerunWorkflowRunRequest",
@@ -103,6 +124,13 @@
       "input": "UnbindWorkflowBundleRequest",
       "name": "解绑工作流Bundle信息",
       "output": "UnbindWorkflowBundleResponse",
+      "status": "online"
+    },
+    "UpdateConsoleUsers": {
+      "document": "修改控制台用户角色",
+      "input": "UpdateConsoleUsersRequest",
+      "name": "修改控制台用户角色",
+      "output": "UpdateConsoleUsersResponse",
       "status": "online"
     },
     "UpdateFile": {
@@ -127,6 +155,68 @@
     "serviceShortName": "databuddy"
   },
   "objects": {
+    "AddConsoleUsersRequest": {
+      "document": "AddConsoleUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户 UIN 列表，单次最多100个</p>",
+          "example": "[\"700002692363\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "example": "[\"2002\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddConsoleUsersResponse": {
+      "document": "AddConsoleUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "AddConsoleUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddConsoleUsersRsp": {
+      "document": "添加控制台用户响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AdvancedDependencyConfig": {
       "document": "高级依赖配置",
       "members": [
@@ -382,6 +472,138 @@
         }
       ],
       "usage": "both"
+    },
+    "CommonFailItem": {
+      "document": "通用错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>uin或者groupId</p>",
+          "example": "334",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "用户不在Agent席位中",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsoleUserInfo": {
+      "document": "控制台用户信息（规范化，与内部 UserDetailInfo 解耦）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 UIN",
+          "example": "100012345678",
+          "member": "string",
+          "name": "UserUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user_name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "小明",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoleBasicInfo",
+          "name": "Roles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户来源，group：用户组、user:用户",
+          "example": "user",
+          "member": "string",
+          "name": "UserSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否主账号",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOwner",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 普通用户 1: entraId用户",
+          "example": "0",
+          "member": "int64",
+          "name": "UserTag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否具有 admin 权限的子账号",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAdmin",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateFileRequest": {
       "document": "CreateFile请求参数结构体",
@@ -1648,7 +1870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "TaskName",
@@ -1659,7 +1881,7 @@
         },
         {
           "disabled": false,
-          "document": "任务运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2b9d5e77-4c1a-49f8-8a52-13c6f0b9d740",
           "member": "string",
           "name": "WorkflowTaskRunId",
@@ -1670,7 +1892,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACTIVE",
           "member": "string",
           "name": "RunState",
@@ -1681,7 +1903,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "17622177773248536",
           "member": "string",
           "name": "WorkspaceId",
@@ -1692,7 +1914,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "WorkflowId",
@@ -1703,7 +1925,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8f2a1c40-1d33-4f9a-9c21-6b0a7e5d3e11",
           "member": "string",
           "name": "WorkflowRunId",
@@ -1714,7 +1936,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a4dfb8d2-cc55-4a24-8573-0091b791a927",
           "member": "string",
           "name": "TaskId",
@@ -1725,7 +1947,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "TaskTypeName",
@@ -1736,7 +1958,7 @@
         },
         {
           "disabled": false,
-          "document": "任务版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务版本ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "TaskVersionId",
@@ -1747,7 +1969,7 @@
         },
         {
           "disabled": false,
-          "document": "触发类型 (参考SchedulerTriggerType枚举)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发类型 (参考SchedulerTriggerType枚举)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMMON",
           "member": "string",
           "name": "TriggerType",
@@ -1758,7 +1980,7 @@
         },
         {
           "disabled": false,
-          "document": "所属资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属资源组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "ResourceGroupId",
@@ -1769,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ErrorCodeString",
@@ -1780,7 +2002,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100044134096",
           "member": "string",
           "name": "RunUserUin",
@@ -1791,7 +2013,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "RunUserName",
@@ -1802,7 +2024,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100044134096",
           "member": "string",
           "name": "CreateUserUin",
@@ -1813,7 +2035,7 @@
         },
         {
           "disabled": false,
-          "document": "执行平台执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行平台执行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "JobId",
@@ -1824,7 +2046,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "CreateTime",
@@ -1835,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>更新时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "UpdateTime",
@@ -1846,7 +2068,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖任务完成时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>依赖任务完成时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "DependenceFinishedTime",
@@ -1857,7 +2079,7 @@
         },
         {
           "disabled": false,
-          "document": "运行开始时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行开始时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunStartTime",
@@ -1868,7 +2090,7 @@
         },
         {
           "disabled": false,
-          "document": "运行结束时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行结束时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunEndTime",
@@ -1879,7 +2101,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时长，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunCostTime",
@@ -1890,7 +2112,7 @@
         },
         {
           "disabled": false,
-          "document": "等待时长（依赖就绪到开始运行的等待耗时），单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>等待时长（依赖就绪到开始运行的等待耗时），单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "WaitTime",
@@ -1901,7 +2123,7 @@
         },
         {
           "disabled": false,
-          "document": "下发执行平台时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>下发执行平台时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "IssueTime",
@@ -1912,7 +2134,7 @@
         },
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Asia/Shanghai",
           "member": "string",
           "name": "TimeZone",
@@ -1923,7 +2145,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖上游任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>依赖上游任务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"demo\"]",
           "member": "string",
           "name": "DependOnList",
@@ -1934,7 +2156,7 @@
         },
         {
           "disabled": false,
-          "document": "运行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "RunParams",
@@ -1945,7 +2167,7 @@
         },
         {
           "disabled": false,
-          "document": "任务扩展信息，包含脚本路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务扩展信息，包含脚本路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "TaskTypeExtensions",
@@ -1956,7 +2178,7 @@
         },
         {
           "disabled": false,
-          "document": "任务X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务X坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "float",
           "name": "LeftCoordinate",
@@ -1967,7 +2189,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务Y坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "float",
           "name": "TopCoordinate",
@@ -1978,7 +2200,7 @@
         },
         {
           "disabled": false,
-          "document": "重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RetryTimes",
@@ -1989,7 +2211,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo_workflow",
           "member": "string",
           "name": "WorkflowName",
@@ -2000,7 +2222,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RerunTimes",
@@ -2011,7 +2233,7 @@
         },
         {
           "disabled": false,
-          "document": "是否最新一次运行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否最新一次运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsLatestRun",
@@ -2022,7 +2244,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceGroupInfo",
           "name": "ResourceGroupInfoList",
@@ -2033,7 +2255,7 @@
         },
         {
           "disabled": false,
-          "document": "错误消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ErrorMessage",
@@ -2044,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "运行结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "RunResult",
@@ -2055,13 +2277,24 @@
         },
         {
           "disabled": false,
-          "document": "内嵌工作流任务运行详情（仅限 FOR_EACH 任务，其他任务类型不返回该字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内嵌工作流任务运行详情（仅限 FOR_EACH 任务，其他任务类型不返回该字段）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InnerWorkflowTaskRun",
           "name": "InnerWorkflowTaskRun",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划调度时间</p><p>参数格式：毫秒时间戳（UTC）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ScheduledTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2593,6 +2826,135 @@
         }
       ],
       "usage": "both"
+    },
+    "ListConsoleUsersRequest": {
+      "document": "ListConsoleUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称与 UIN 模糊匹配</p>",
+          "example": "junzha2",
+          "member": "string",
+          "name": "UserKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于过滤角色关联的用户</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "example": "[\"2002\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多字段排序，如 [{Name: &#39;CreateTime&#39;, Direction: &#39;Desc&#39;}, {Name: &#39;UserName&#39;, Direction: &#39;Asc&#39;}]，默认按创建时间降序</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleUsersResponse": {
+      "document": "ListConsoleUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>控制台用户列表</p>",
+          "example": "无",
+          "member": "ListConsoleUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleUsersRsp": {
+      "document": "查询控制台用户列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleUserInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ListWorkflowRunsRequest": {
       "document": "ListWorkflowRuns请求参数结构体",
@@ -3289,13 +3651,86 @@
       ],
       "usage": "both"
     },
+    "RemoveConsoleUsersRequest": {
+      "document": "RemoveConsoleUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，待移除的用户 UIN 列表，单次最多10个</p>",
+          "example": "[\"700002270524\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveConsoleUsersResponse": {
+      "document": "RemoveConsoleUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批量移除控制台用户结果</p>",
+          "example": "无",
+          "member": "RemoveConsoleUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveConsoleUsersRsp": {
+      "document": "批量移除控制台用户响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求已完成处理；即使部分失败也为 true，逐个结果以 SuccessUins/FailItems 为准</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除成功的用户 UIN 列表</p>",
+          "example": "[\"10001\"]",
+          "member": "string",
+          "name": "SuccessUins",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败项列表（Item 为用户 UIN，FailReason 为失败原因）</p>",
+          "example": "无",
+          "member": "CommonFailItem",
+          "name": "FailItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RerunWorkflowRunRequest": {
       "document": "RerunWorkflowRun请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "<p>工作空间ID，可通过 ListWorkspaces 获取。必填</p>",
-          "example": "17678671667189298",
+          "example": "17697410068842890",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3304,7 +3739,7 @@
         {
           "disabled": false,
           "document": "<p>工作流ID，可通过 ListWorkflows 获取。必填</p>",
-          "example": "1b185f10-151d-42e5-886d-f8c4eb2fcae5",
+          "example": "18b1a42e-951d-4b31-98a0-b404dac2c324",
           "member": "string",
           "name": "WorkflowId",
           "required": true,
@@ -3313,7 +3748,7 @@
         {
           "disabled": false,
           "document": "<p>工作流运行ID，可通过 ListWorkflowRuns 获取。必填</p>",
-          "example": "1b185f10-151d-42e5-886d-f8c4eb2fcae5_1787110336358_p550ec615a5cdfee0",
+          "example": "18b1a42e-951d-4b31-98a0-b404dac2c324_1786024800000",
           "member": "string",
           "name": "WorkflowRunId",
           "required": true,
@@ -3345,6 +3780,15 @@
           "name": "TaskIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划调度时间列表配置</p>",
+          "example": "无",
+          "member": "ScheduledTimeConfig",
+          "name": "ScheduledTimeConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3406,6 +3850,89 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleBasicInfo": {
+      "document": "角色基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色描述</p>",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显示名称</p>",
+          "example": "管理员",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型</p>",
+          "example": "default",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>继承来源的用户组名称列表，Source=1 时为空</p>",
+          "example": "[\"example1\"]",
+          "member": "string",
+          "name": "GroupNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3538,6 +4065,15 @@
           "name": "IdempotencyToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划调度时间列表配置</p>",
+          "example": "无",
+          "member": "ScheduledTimeConfig",
+          "name": "ScheduledTimeConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3595,6 +4131,67 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledTimeConfig": {
+      "document": "计划调度时间配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调度时区，IANA 时区 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Asia/Shanghai",
+          "member": "string",
+          "name": "ScheduledTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度生效开始时间</p><p>参数格式：毫秒时间戳（UTC）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1788228057000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度生效结束时间</p><p>参数格式：毫秒时间戳（UTC）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1788400857000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期类型</p><p>枚举值：</p><ul><li>DAY_CYCLE： 天</li><li>HOUR_CYCLE： 小时</li><li>MINUTE_CYCLE： 分钟</li><li>WEEK_CYCLE： 周</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DAY_CYCLE",
+          "member": "string",
+          "name": "CycleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期步长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CycleNum",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -3921,6 +4518,68 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateConsoleUsersRequest": {
+      "document": "UpdateConsoleUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户 UIN 列表，单次最多100个</p>",
+          "example": "[\"700002692363\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "example": "[\"2001\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConsoleUsersResponse": {
+      "document": "UpdateConsoleUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateConsoleUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConsoleUsersRsp": {
+      "document": "修改控制台用户响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UpdateFileRequest": {
       "document": "UpdateFile请求参数结构体",
@@ -4737,7 +5396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AppId",
@@ -4748,7 +5407,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo_workflow",
           "member": "string",
           "name": "WorkflowName",
@@ -4759,7 +5418,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "WorkflowId",
@@ -4770,7 +5429,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8f2a1c40-1d33-4f9a-9c21-6b0a7e5d3e11",
           "member": "string",
           "name": "WorkflowRunId",
@@ -4781,7 +5440,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "17622177773248536",
           "member": "string",
           "name": "WorkspaceId",
@@ -4792,7 +5451,7 @@
         },
         {
           "disabled": false,
-          "document": "触发方式，Scheduler、ManualTrigger、Event (参考SchedulerTriggerType)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发方式，Scheduler、ManualTrigger、Event (参考SchedulerTriggerType)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMMON",
           "member": "string",
           "name": "TriggerType",
@@ -4803,7 +5462,7 @@
         },
         {
           "disabled": false,
-          "document": "运行开始时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行开始时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunStartTime",
@@ -4814,7 +5473,7 @@
         },
         {
           "disabled": false,
-          "document": "pending 状态开始时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pending 状态开始时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "PendingStartTime",
@@ -4825,7 +5484,7 @@
         },
         {
           "disabled": false,
-          "document": "queue 状态开始时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>queue 状态开始时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "QueueStartTime",
@@ -4836,7 +5495,7 @@
         },
         {
           "disabled": false,
-          "document": "运行结束时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行结束时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunEndTime",
@@ -4847,7 +5506,7 @@
         },
         {
           "disabled": false,
-          "document": "终态时间，运行进入终态时都有值，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>终态时间，运行进入终态时都有值，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "EndTime",
@@ -4858,7 +5517,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时长，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行时长，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "RunCostTime",
@@ -4869,7 +5528,7 @@
         },
         {
           "disabled": false,
-          "document": "并发排队花费时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>并发排队花费时间，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "QueueCostTime",
@@ -4880,7 +5539,7 @@
         },
         {
           "disabled": false,
-          "document": "等待资源花费时间，单位：秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>等待资源花费时间，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "PendingCostTime",
@@ -4891,7 +5550,7 @@
         },
         {
           "disabled": false,
-          "document": "运行状态。取值参考工作流运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行状态。取值参考工作流运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ACTIVE",
           "member": "string",
           "name": "RunState",
@@ -4902,7 +5561,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源（任务的资源组ID集合）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>计算资源（任务的资源组ID集合）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"f4ec3e79-7368-44c9-8b04-031fad7f1a76\"]",
           "member": "string",
           "name": "ResourceGroupIds",
@@ -4913,7 +5572,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户UIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户UIN</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100044134096",
           "member": "string",
           "name": "RunUserUin",
@@ -4924,7 +5583,7 @@
         },
         {
           "disabled": false,
-          "document": "运行用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "RunUserName",
@@ -4935,7 +5594,7 @@
         },
         {
           "disabled": false,
-          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ErrorCodeString",
@@ -4946,7 +5605,7 @@
         },
         {
           "disabled": false,
-          "document": "运行参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "WorkflowParams",
@@ -4957,7 +5616,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流版本ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流版本ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "WorkflowVersionId",
@@ -4968,7 +5627,7 @@
         },
         {
           "disabled": false,
-          "document": "当前工作流是否支持重跑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前工作流是否支持重跑</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "SupportRerun",
@@ -4979,7 +5638,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流运行创建时间，单位：毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流运行创建时间，单位：毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "CreateTime",
@@ -4990,7 +5649,7 @@
         },
         {
           "disabled": false,
-          "document": "重跑次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>重跑次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RerunTimes",
@@ -5001,7 +5660,7 @@
         },
         {
           "disabled": false,
-          "document": "运行的任务范围，任务ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>运行的任务范围，任务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"f4ec3e79-7368-44c9-8b04-031fad7f1a76\"]",
           "member": "string",
           "name": "SelectedTaskIds",
@@ -5012,7 +5671,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ResourceGroupInfo",
           "name": "ResourceGroupInfoList",
@@ -5023,7 +5682,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -5034,7 +5693,7 @@
         },
         {
           "disabled": false,
-          "document": "父工作流运行ID 【由嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父工作流运行ID 【由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "ParentWorkflowRunId",
@@ -5045,7 +5704,7 @@
         },
         {
           "disabled": false,
-          "document": "父工作流任务运行ID 【由嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父工作流任务运行ID 【由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "ParentWorkflowTaskRunId",
@@ -5056,7 +5715,7 @@
         },
         {
           "disabled": false,
-          "document": "父工作流任务运行名称 【由嵌套工作流触发独有】\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>父工作流任务运行名称 【由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "ParentWorkflowTaskRunName",
@@ -5067,7 +5726,7 @@
         },
         {
           "disabled": false,
-          "document": "权限信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>授权权限类型<br>PERMISSION_TYPE_UNSPECIFIED：未指定权限<br>MANAGE : 管理权限：包含所有操作权限<br>RUN : 运行权限：可执行实体<br>VIEW : 查看权限：可查看实体内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo",
           "member": "string",
           "name": "Permission",
@@ -5078,13 +5737,24 @@
         },
         {
           "disabled": false,
-          "document": "工作流高级运行时用户填入的参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流高级运行时用户填入的参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedParameter",
           "name": "AdvancedParameters",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划调度时间</p><p>参数格式：毫秒时间戳（UTC）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ScheduledTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5923,6 +6593,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划调度时间</p><p>参数格式：毫秒时间戳，UTC</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ScheduledTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

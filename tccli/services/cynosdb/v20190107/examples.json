@@ -1938,7 +1938,7 @@
       {
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeClusterVersion\n&ClusterId=cynosdbmysql-qwerasd\n&CynosVersion=2.0.0\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"FlowId\": \"1472831\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"347698da-03e4-4078-8d96-9a8b219c01a5\",\n        \"FlowId\": 1472831\n    }\n}",
         "title": "更新内核小版本"
       }
     ],

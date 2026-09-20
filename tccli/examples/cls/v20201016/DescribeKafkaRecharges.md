@@ -44,11 +44,23 @@ Output:
                     "UnMatchLogTimeSrc": 0
                 },
                 "Name": "kafkaRechargeTest1",
+                "NetworkInfo": {
+                    "AppID": 0,
+                    "NetworkType": 0,
+                    "PrivateDomainNames": [],
+                    "VirtualGatewayType": 0,
+                    "VpcGatewayIndex": "",
+                    "VpcID": ""
+                },
                 "Offset": -2,
                 "Protocol": {
+                    "CACertificateId": "",
+                    "EnableClientCertificate": 0,
+                    "EnableServerCertificate": 0,
                     "Mechanism": "PLAIN",
                     "Password": "Axxxxxx#lFSOxxxxxx",
                     "Protocol": "sasl_plaintext",
+                    "SVRCertificateId": "",
                     "UserName": "05593101-xxxx-xxxx-8a71-44f8340e1327"
                 },
                 "ServerAddr": "kafka-xxxx.com:8050",

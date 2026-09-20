@@ -77,13 +77,6 @@
       "output": "BatchModifyImageVulWhitelistResponse",
       "status": "online"
     },
-    "BindClusterOwner": {
-      "document": "绑定集群负责人",
-      "input": "BindClusterOwnerRequest",
-      "name": "绑定集群负责人",
-      "output": "BindClusterOwnerResponse",
-      "status": "online"
-    },
     "CancelEdrAlertIgnore": {
       "document": "取消已永久忽略的EDR多行为告警，从AI-Link永久忽略白名单移除对应主机+规则记录，并将告警状态恢复为待处理（PENDING）",
       "input": "CancelEdrAlertIgnoreRequest",
@@ -1930,13 +1923,6 @@
       "input": "DescribeClusterInstallCommandRequest",
       "name": "查询集群安装命令",
       "output": "DescribeClusterInstallCommandResponse",
-      "status": "online"
-    },
-    "DescribeClusterListV2": {
-      "document": "查询集群列表",
-      "input": "DescribeClusterListV2Request",
-      "name": "查询集群列表V2版本",
-      "output": "DescribeClusterListV2Response",
       "status": "online"
     },
     "DescribeClusterNamespaceList": {
@@ -3795,7 +3781,7 @@
       "status": "online"
     },
     "DescribeSkillScanPayInfo": {
-      "document": "查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。",
+      "document": "查询 Skill 安全检测计费信息，包括订单状态、总配额、已消耗配额、到期时间、支付模式等。无订单时返回零值（仅含 TimeNow 和 BetaEndTime）。试用订单通过 ModifyTrialStatus(Module=9) 领取，正式订单通过计费系统创建。后付费资源信息通过 PostPayStatus、PostPayResourceId、PostPayBeginTime 返回，与预付费订单字段相互独立，二者可同时有效（预付额度耗尽后溢出用量进入后付费）。",
       "input": "DescribeSkillScanPayInfoRequest",
       "name": "查询 Skill 安全检测计费信息",
       "output": "DescribeSkillScanPayInfoResponse",
@@ -3806,6 +3792,13 @@
       "input": "DescribeSkillScanResultRequest",
       "name": "查询 Skill 安全检测结果",
       "output": "DescribeSkillScanResultResponse",
+      "status": "online"
+    },
+    "DescribeSkillScanTaskList": {
+      "document": "分页查询 Skill 扫描任务列表，返回每个任务的 Skill 名称、消耗次数与上传时间，按上传时间倒序排列。默认查询本月数据，可通过 StartTime / EndTime 指定时间范围。",
+      "input": "DescribeSkillScanTaskListRequest",
+      "name": "查询 Skill 扫描任务列表",
+      "output": "DescribeSkillScanTaskListResponse",
       "status": "online"
     },
     "DescribeSourceIPAsset": {
@@ -11117,6 +11110,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯TCE专有云资产数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TceAssetCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -16270,60 +16273,6 @@
         }
       ],
       "usage": "out"
-    },
-    "BindClusterOwnerRequest": {
-      "document": "BindClusterOwner请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>集群资产id</p>",
-          "example": "[\"86693c5bf9e9fbdce993d557b1038fd8\"]",
-          "member": "string",
-          "name": "ClusterAssetIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>集团账号的成员id</p>",
-          "example": "[\"mem-a6df317cb6a8c424\"]",
-          "member": "string",
-          "name": "MemberId",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>负责人名称</p>",
-          "example": "声声乌龙",
-          "member": "string",
-          "name": "OwnerName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群CAMD5值</p>",
-          "example": "[\"86693c5bf9e9fbdce993d557b1038fd8\"]",
-          "member": "string",
-          "name": "ClusterCaMD5List",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "BindClusterOwnerResponse": {
-      "document": "BindClusterOwner返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "BruteAttackRule": {
       "document": "标准阻断模式规则",
@@ -26148,6 +26097,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签ID</p>",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AssetTagIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -26237,6 +26195,15 @@
           "example": "[3]",
           "member": "uint64",
           "name": "StandardIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签ID</p>",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AssetTagIDs",
           "required": false,
           "type": "list"
         }
@@ -31834,7 +31801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -32979,6 +32946,16 @@
           "name": "AssetTypeIconURL",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则默认开启状态</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "EnableDefault",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -40401,6 +40378,15 @@
           "name": "StandardIDs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签ID</p>",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "AssetTagIDs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -42052,6 +42038,16 @@
           "name": "Content",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网节点数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PathCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -44632,62 +44628,6 @@
           "name": "FileContent",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClusterListV2Request": {
-      "document": "DescribeClusterListV2请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>集团账号的成员id</p>",
-          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
-          "member": "string",
-          "name": "MemberId",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "<p>通用过滤条件列表。支持的过滤字段：<br>ClusterId：集群ID，精确匹配。<br>ClusterName：集群名称，模糊匹配。<br>ClusterType：集群类型，精确匹配。取值：TKE_MANAGED_CLUSTER（腾讯云标准集群）、TKE_INDEPENDENT_CLUSTER（标准集群Master自维护）、TKE_SERVERLESS_CLUSTER（Serverless集群）、TKE_EDGE_CLUSTER（边缘集群）、SELF_BUILT（腾讯云内自建）、SELF_BUILT_OTHER（非腾讯云自建/混合云）。<br>RunStatus：集群运行状态，精确匹配。取值：Running（运行中）、Exception（异常）、Unknown（未知）。<br>AccessedStatus：接入状态，精确匹配。取值：AccessedNone（未接入）、AccessedInstalling（接入中）、AccessedException（接入异常）、AccessedInstalled（已接入）。<br>DefendStatus：防护状态，精确匹配。取值：Enabled（已防护）、Partial（部分防护）、Disabled（未防护）。<br>RiskStatus：风险检查状态，精确匹配。<br>RiskLevel：风险等级，精确匹配。取值：CRITICAL、HIGH、MEDIUM、LOW、NONE（无风险）。<br>HasHighRisk：仅筛选含高危及以上风险的集群，无需填入 value，传入 HasHighRisk 即生效。<br>Region：地域，精确匹配。<br>OwnerName：负责人，模糊匹配。<br>ClusterAssetIds：集群资产ID，精确匹配。<br>ExcludeClusterAssetIds：排除的集群资产ID，精确排除。</p>",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filter",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeClusterListV2Response": {
-      "document": "DescribeClusterListV2返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>总数</p>",
-          "example": "10",
-          "member": "uint64",
-          "name": "TotalCount",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>列表</p>",
-          "example": "无",
-          "member": "ClusterListItem",
-          "name": "List",
-          "output_required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -49399,7 +49339,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "cdb-32dek12a",
           "member": "string",
           "name": "AssetId",
@@ -49408,7 +49348,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "test_db",
           "member": "string",
           "name": "DbName",
@@ -49417,7 +49357,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "test_tb",
           "member": "string",
           "name": "TableName",
@@ -49435,12 +49375,21 @@
         },
         {
           "disabled": false,
-          "document": "筛选项",
+          "document": "<p>筛选项</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SchemaName</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -49450,7 +49399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -49460,7 +49409,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "DspmAssetFieldInfo",
           "name": "DataSet",
@@ -49893,7 +49842,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产实例id",
+          "document": "<p>资产实例id</p>",
           "example": "cdb-32dek12a",
           "member": "string",
           "name": "AssetId",
@@ -49902,11 +49851,20 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称",
+          "document": "<p>数据库名称</p>",
           "example": "test_db",
           "member": "string",
           "name": "DbName",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema名称</p>",
+          "example": "test_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": false,
           "type": "string"
         },
         {
@@ -49920,7 +49878,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选项",
+          "document": "<p>筛选项</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filter",
@@ -49935,7 +49893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -49945,7 +49903,7 @@
         },
         {
           "disabled": false,
-          "document": "结果集",
+          "document": "<p>结果集</p>",
           "example": "无",
           "member": "DspmAssetTableInfo",
           "name": "DataSet",
@@ -53092,7 +53050,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>登陆状态(0 全部 1 成功 2 失败)</p>",
+          "document": "<p>登录状态</p><p>枚举值：</p><ul><li>0： 全部</li><li>1： 成功</li><li>2： 失败</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "LoginType",
@@ -54255,7 +54213,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>PolicyType - int - 是否必填：否 - 策略类型PolicyName - string - 是否必填：否 - 策略名称Domain - string - 是否必填：否 - 域名(先对域名做urlencode,再base64)PolicyAction- int - 是否必填：否 - 策略动作IsEnabled - int - 是否必填：否 - 是否生效</p>",
+          "document": "<p>过滤条件，支持的 Name 如下：<br/>【资源属性过滤】（前缀模糊，后端自动反查资产后按实例过滤）<br/>InstanceName - string - 是否必填：否 - 资产名称（前缀匹配）<br/>InstanceID - string - 是否必填：否 - 实例ID（前缀匹配）<br/>IP - string - 是否必填：否 - IP地址，支持内网/外网IP（前缀匹配）<br/>Tags - string - 是否必填：否 - 腾讯云标签，格式 tagKey$tagValue（仅单账号场景生效）<br/>CSIPTag - string - 是否必填：否 - 安全中心标签名称（前缀匹配，按语言环境匹配中/英文字段）<br/>AssetTagIds - string - 是否必填：否 - 安全中心资产标签ID（精确匹配，多个标签ID之间为或关系；标签ID可通过资产中心标签树接口 DescribeAssetTagTree 获取）<br/>【容器维度过滤】（前缀模糊，命中后仅返回容器告警）<br/>ClusterName - string - 是否必填：否 - 集群名称（前缀匹配）<br/>ContainerName - string - 是否必填：否 - 容器名称（前缀匹配）<br/>【告警字段过滤】（精确匹配，支持多值）<br/>Status - int - 是否必填：否 - 处理状态<br/>Level - int - 是否必填：否 - 威胁等级<br/>AlertCategory - string - 是否必填：否 - 告警大类<br/>AlertSubType - string - 是否必填：否 - 告警子类型<br/>AttackStage - string - 是否必填：否 - 攻击阶段<br/>DetectMode - string - 是否必填：否 - 检测模式<br/>AlertSource - string - 是否必填：否 - 告警来源（HOST/CONTAINER）<br/>AlertId - string - 是否必填：否 - 告警ID<br/>InstanceId - string - 是否必填：否 - 实例ID（精确匹配）<br/>ContainerId - string - 是否必填：否 - 容器ID（精确匹配）<br/>ClusterId - string - 是否必填：否 - 集群ID（精确匹配）<br/>【时间范围】<br/>StartTime - string - 是否必填：否 - 开始时间，格式 2006-01-02 15:04:05（默认近180天）<br/>EndTime - string - 是否必填：否 - 结束时间，格式 2006-01-02 15:04:05（默认当前时间）</p>",
           "example": "无",
           "member": "EDRFilter",
           "name": "Filters",
@@ -54971,7 +54929,7 @@
         },
         {
           "disabled": false,
-          "document": "资产ID",
+          "document": "<p>资产ID</p>",
           "example": "ins-1shdjyd",
           "member": "string",
           "name": "AssetId",
@@ -54980,7 +54938,7 @@
         },
         {
           "disabled": false,
-          "document": "资产IP",
+          "document": "<p>资产IP</p>",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
@@ -54989,7 +54947,7 @@
         },
         {
           "disabled": false,
-          "document": "资产域名",
+          "document": "<p>资产域名</p>",
           "example": "abc.com",
           "member": "string",
           "name": "Domain",
@@ -54998,7 +54956,7 @@
         },
         {
           "disabled": false,
-          "document": "端口或端口范围",
+          "document": "<p>端口或端口范围</p>",
           "example": "80-65535/8080",
           "member": "string",
           "name": "Port",
@@ -55013,12 +54971,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "云边界分析路径节点内容",
+          "document": "<p>云边界分析路径节点内容</p>",
           "example": "1",
           "member": "string",
           "name": "Content",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网节点数量</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PathCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -64281,7 +64249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团账号的成员id",
+          "document": "<p>集团账号的成员id</p>",
           "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
           "member": "string",
           "name": "MemberId",
@@ -65542,6 +65510,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>后付费资源状态<br>枚举值：<br>0：未开通<br>1：正常<br>2：隔离</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PostPayStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后付费资源ID，未开通后付费时为空</p>",
+          "example": "skill-scan-3f9c2a1b8d4e",
+          "member": "string",
+          "name": "PostPayResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后付费资源开通时间，未开通后付费时为空。格式 YYYY-MM-DD HH:mm:ss</p>",
+          "example": "2026-08-20 10:30:00",
+          "member": "string",
+          "name": "PostPayBeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -65604,6 +65602,98 @@
           "name": "Data",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillScanTaskListRequest": {
+      "document": "DescribeSkillScanTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 10，上限 200",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间，筛选上传时间不早于该时刻的任务\n参数格式：YYYY-MM-DD HH:mm:ss\n最大长度：128 字符\n使用约束：StartTime 与 EndTime 要么同时传入，要么都不传；都不传时默认查询本月数据",
+          "example": "2026-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间，筛选上传时间不晚于该时刻的任务\n参数格式：YYYY-MM-DD HH:mm:ss\n最大长度：128 字符\n建议与 StartTime 同时传入；未传入时默认使用当前时间作为结束时间",
+          "example": "2026-08-26 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式\n最大长度：128 字符\n枚举值：\nASC：升序\nDESC：降序（默认）",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段\n最大长度：128 字符\n枚举值：\nInsertTime：上传时间（默认）",
+          "example": "InsertTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillScanTaskListResponse": {
+      "document": "DescribeSkillScanTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描任务列表，按上传时间倒序排列",
+          "example": "无",
+          "member": "SkillScanTaskItem",
+          "name": "TaskList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -82776,6 +82866,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接状态</p><p>枚举值：</p><ul><li>status_connected： 连接成功</li><li>status_connecting： 连接中</li><li>status_connect_failed： 连接失败</li><li>status_partial_failed： 部分连接失败</li></ul>",
+          "example": "status_connected",
+          "member": "string",
+          "name": "ConnStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -91069,7 +91169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "接入类型，当前支持 1和7, 类型vip网络类型（1:外网TGW 2:基础网络 3:VPC网络 4:支撑网络(idc 环境) 5:SSL外网访问方式访问 6:黑石环境vpc 7:支撑网络(cvm 环境）",
+          "document": "<p>接入类型，当前支持 1和7</p><p>枚举值：</p><ul><li>1： 外网TGW</li><li>2： 基础网络</li><li>3： VPC网络</li><li>4： idc环境-支撑网络</li><li>5： SSL外网访问方式访问</li><li>6： 黑石环境vpc</li><li>7： cvm环境-支撑网络</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "VipType",
@@ -91078,7 +91178,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的地域",
+          "document": "<p>实例的地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "RegionId",
@@ -91087,7 +91187,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的id",
+          "document": "<p>实例的id</p>",
           "example": "ins-f784fkre",
           "member": "string",
           "name": "InstanceId",
@@ -91096,7 +91196,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "测试DB",
           "member": "string",
           "name": "InstanceName",
@@ -91105,7 +91205,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的接入信息",
+          "document": "<p>实例的接入信息</p>",
           "example": "无",
           "member": "RouteInfo",
           "name": "RouteInfo",
@@ -91114,7 +91214,7 @@
         },
         {
           "disabled": false,
-          "document": "接入为域名的时候，有效",
+          "document": "<p>接入为域名的时候，有效</p>",
           "example": "root",
           "member": "string",
           "name": "Username",
@@ -91123,7 +91223,7 @@
         },
         {
           "disabled": false,
-          "document": "接入为域名的时候，有效",
+          "document": "<p>接入为域名的时候，有效</p>",
           "example": "pwd@root",
           "member": "string",
           "name": "Password",
@@ -91132,7 +91232,7 @@
         },
         {
           "disabled": false,
-          "document": "日志投递的主题配置",
+          "document": "<p>日志投递的主题配置</p>",
           "example": "无",
           "member": "LogDeliveryInfo",
           "name": "LogDeliveryInfo",
@@ -91141,7 +91241,7 @@
         },
         {
           "disabled": false,
-          "document": "已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）",
+          "document": "<p>已存在配置时是否覆盖，默认 false（不覆盖，保持兼容）</p>",
           "example": "false",
           "member": "bool",
           "name": "IsOverwrite",
@@ -104206,6 +104306,42 @@
           "name": "Description",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SkillScanTaskItem": {
+      "document": "Skill 扫描任务列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-08-20T10:30:00+08:00",
+          "member": "datetime_iso",
+          "name": "InsertTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Skill 名称",
+          "example": "git-helper",
+          "member": "string",
+          "name": "SkillName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗次数（总消耗次数）",
+          "example": "37",
+          "member": "int64",
+          "name": "DeductCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

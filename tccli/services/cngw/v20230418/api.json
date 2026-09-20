@@ -2289,7 +2289,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务类型：</p><ul><li>Registry  </li><li>HostIP</li></ul>",
+          "document": "<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>",
           "example": "HostIP",
           "member": "string",
           "name": "UpstreamType",
@@ -2472,6 +2472,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志采集配置</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3990,6 +4001,67 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWSimpleSecretKey": {
+      "document": "简单密钥信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥ID</p>",
+          "example": "secret-56537c1ca1d039",
+          "member": "string",
+          "name": "SecretKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥名称</p>",
+          "example": "nogood",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用状态</p><p>枚举值：</p><ul><li>Enable： 启动</li><li>Disable： 禁用</li></ul>",
+          "example": "Disable",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥类型</p><p>枚举值：</p><ul><li>ApiKey： ApiKey类型</li></ul>",
+          "example": "ApiKey",
+          "member": "string",
+          "name": "SecretType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：2026-09-03 14:11:05</p>",
+          "example": "2026-09-03 14:11:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -5673,6 +5745,28 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该消费者密钥绑定的模型密钥列表</p>",
+          "example": "无",
+          "member": "AIGWSimpleSecretKey",
+          "name": "BoundModelSecretKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定了该模型密钥的消费者密钥列表</p>",
+          "example": "无",
+          "member": "AIGWSimpleSecretKey",
+          "name": "BoundConsumerSecretKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -7775,7 +7869,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心- Registry</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li></ul>",
+          "document": "<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>",
           "example": "VirtualMCPServer",
           "member": "string",
           "name": "UpstreamType",
@@ -7853,6 +7947,15 @@
           "name": "PreserveHost",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志采集配置</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8714,6 +8817,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>关键字</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>过滤条件</p>",
           "example": "无",
           "member": "Filter",
@@ -8806,7 +8918,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
+          "document": "<p>实例 ID</p>",
           "example": "gateway-4e588095",
           "member": "string",
           "name": "GatewayId",
@@ -8815,7 +8927,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -8824,12 +8936,30 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "<p>分页偏移</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键词</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -8839,7 +8969,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "MCP Server 列表结果",
+          "document": "<p>MCP Server 列表结果</p>",
           "example": "无",
           "member": "CNAPIGwAIServiceSourceList",
           "name": "Result",
@@ -10078,7 +10208,7 @@
         {
           "disabled": false,
           "document": "<p>实例 ID</p>",
-          "example": "gateway-xxx",
+          "example": "gateway-657ece23",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -10087,7 +10217,7 @@
         {
           "disabled": false,
           "document": "<p>每页条数，范围 [1, 100]，默认 10。</p>",
-          "example": "10",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -10104,12 +10234,48 @@
         },
         {
           "disabled": false,
+          "document": "<p>过滤条件。支持的 Name：Status / GenerateType / SecretType。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊匹配密钥名称。</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应资源的 ID（消费者 ID 或模型服务 ID）。</p>",
+          "example": "f5b6da2b-7229-400e-b7aa-9f2ad1fc645f",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>密钥归属资源类型。UseToBind=true 时必填。</p><p>枚举值：</p><ul><li>Consumer：消费者</li><li>ModelService：模型服务</li></ul>",
-          "example": "ModelService",
+          "example": "Consumer",
           "member": "string",
           "name": "ResourceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否用于绑定场景。true 时返回可被绑定到指定资源的密钥。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseToBind",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10201,6 +10367,15 @@
           "member": "string",
           "name": "SecretKeyId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定从 AKSK 或 CAM 成对凭证中返回哪一半。取值：AccessKey（AKSK 返回 AccessKeyId，CAM 返回 SecretId）、SecretKey（AKSK 返回 SecretAccessKey，CAM 返回 SecretKey）。不传则保持原行为，仅返回 AccessKeyId 或 SecretId。",
+          "example": "AccessKey",
+          "member": "string",
+          "name": "SecretValueType",
+          "required": false,
           "type": "string"
         }
       ],
@@ -12120,7 +12295,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>后端类型</p><p>枚举值：</p><ul><li>HostIP： 域名 ip</li><li>MCPRegistry： MCP 注册中心</li><li>VirtualMCPServer： 虚拟MCP 服务</li></ul>",
+          "document": "<p>后端类型</p><p>枚举值：</p><ul><li>MCPRegistry： mcp 注册中心</li><li>Registry： 普通注册中心</li><li>HostIP： 域名或ip</li><li>VirtualMCPServer： 虚拟MCPServer</li><li>DNS： 私有域名</li><li>Kubernetes： Kubernetes服务</li></ul>",
           "example": "HostIP",
           "member": "string",
           "name": "UpstreamType",
@@ -12198,6 +12373,15 @@
           "name": "PreserveHost",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志配置</p>",
+          "example": "无",
+          "member": "AIGWLogConfig",
+          "name": "LogConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

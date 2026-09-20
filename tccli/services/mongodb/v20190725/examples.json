@@ -8,6 +8,14 @@
         "title": "指定云数据库实例的所属项目"
       }
     ],
+    "CheckDBInstanceElasticCpuScalable": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDBInstanceElasticCpuScalable\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExtraCpu\": 6,\n        \"IsLocked\": false,\n        \"IsScaled\": true,\n        \"MaxExtraCpu\": 4,\n        \"Reason\": \"Instance is already in scaled state\",\n        \"Scalable\": false,\n        \"ScaleUpTime\": \"2026-02-28 10:31:09\",\n        \"TriggerType\": 1,\n        \"RequestId\": \"efb92d21-55ba-4054-87a9-8f776b4afb32\"\n    }\n}",
+        "title": "查询实例是否可开启弹性cpu扩容"
+      }
+    ],
     "CloseAuditService": [
       {
         "document": "",

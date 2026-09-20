@@ -290,10 +290,16 @@
     ],
     "CreateLoadBalancer": [
       {
-        "document": "健康检查策略选择 ICMP Ping，请求重试策略选择重试组内其他源站。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"ICMP-LB\",\n    \"Type\": \"HTTP\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"ICMP Ping\",\n        \"Interval\": 30,\n        \"Timeout\": 5,\n        \"HealthThreshold\": 3,\n        \"CriticalThreshold\": 2\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherRecordInOriginGroup\"\n}",
+        "document": "不启用任何健康检查策略，请求重试策略选择重试下一优先级源站组。适用于仅配置主备源站的场景。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"NoCheck-LB\",\n    \"Type\": \"HTTP\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2ase\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"NoCheck\"\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherOriginGroup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c619f7f-27e9-43c5-b42c-68dcca803d35\",\n        \"InstanceId\": \"lb-2osw2ssziowm\"\n    }\n}",
+        "title": "创建不启用探测的负载均衡实例"
+      },
+      {
+        "document": "健康检查策略选择 HTTP，请求重试策略选择重试组内其他源站。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"HTTP-LB\",\n    \"Type\": \"GENERAL\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_3\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"HTTP\",\n        \"Path\": \"www.example.com/test\",\n        \"Port\": 80,\n        \"Interval\": 30,\n        \"Method\": \"HEAD\",\n        \"ExpectedCodes\": [\n            \"200\",\n            \"500\",\n            \"501\",\n            \"502\",\n            \"503\",\n            \"504\",\n            \"505\",\n            \"507\",\n            \"520\",\n            \"521\",\n            \"525\",\n            \"530\",\n            \"544\",\n            \"562\",\n            \"567\",\n            \"599\"\n        ],\n        \"FollowRedirect\": \"true\",\n        \"Headers\": [\n            {\n                \"Key\": \"header1\",\n                \"Value\": \"header1\"\n            },\n            {\n                \"Key\": \"header2\",\n                \"Value\": \"header2\"\n            },\n            {\n                \"Key\": \"header3\",\n                \"Value\": \"header3\"\n            }\n        ],\n        \"Timeout\": 5,\n        \"HealthThreshold\": 3,\n        \"CriticalThreshold\": 2\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherRecordInOriginGroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2967195-cfd7-4bd0-ac05-d2eaccde6909\",\n        \"InstanceId\": \"lb-2osw7z07dnyu\"\n    }\n}",
-        "title": "创建健康检查策略为 ICMP Ping 的负载均衡实例"
+        "title": "创建健康检查策略为 HTTP 的负载均衡实例"
       },
       {
         "document": "健康检查策略选择 HTTPS，请求重试策略选择重试组内其他源站。",
@@ -302,10 +308,10 @@
         "title": "创建健康检查策略为 HTTPS 的负载均衡实例"
       },
       {
-        "document": "健康检查策略选择 HTTP，请求重试策略选择重试组内其他源站。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"HTTP-LB\",\n    \"Type\": \"GENERAL\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_3\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"HTTP\",\n        \"Path\": \"www.example.com/test\",\n        \"Port\": 80,\n        \"Interval\": 30,\n        \"Method\": \"HEAD\",\n        \"ExpectedCodes\": [\n            \"200\",\n            \"500\",\n            \"501\",\n            \"502\",\n            \"503\",\n            \"504\",\n            \"505\",\n            \"507\",\n            \"520\",\n            \"521\",\n            \"525\",\n            \"530\",\n            \"544\",\n            \"562\",\n            \"567\",\n            \"599\"\n        ],\n        \"FollowRedirect\": \"true\",\n        \"Headers\": [\n            {\n                \"Key\": \"header1\",\n                \"Value\": \"header1\"\n            },\n            {\n                \"Key\": \"header2\",\n                \"Value\": \"header2\"\n            },\n            {\n                \"Key\": \"header3\",\n                \"Value\": \"header3\"\n            }\n        ],\n        \"Timeout\": 5,\n        \"HealthThreshold\": 3,\n        \"CriticalThreshold\": 2\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherRecordInOriginGroup\"\n}",
+        "document": "健康检查策略选择 ICMP Ping，请求重试策略选择重试组内其他源站。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"ICMP-LB\",\n    \"Type\": \"HTTP\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"ICMP Ping\",\n        \"Interval\": 30,\n        \"Timeout\": 5,\n        \"HealthThreshold\": 3,\n        \"CriticalThreshold\": 2\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherRecordInOriginGroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2967195-cfd7-4bd0-ac05-d2eaccde6909\",\n        \"InstanceId\": \"lb-2osw7z07dnyu\"\n    }\n}",
-        "title": "创建健康检查策略为 HTTP 的负载均衡实例"
+        "title": "创建健康检查策略为 ICMP Ping 的负载均衡实例"
       },
       {
         "document": "健康检查策略选择 TCP，请求重试策略选择重试下一优先级源站组。",
@@ -318,12 +324,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lsnpaxol\",\n    \"Name\": \"UDP-LB\",\n    \"Type\": \"GENERAL\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z215e\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"UDP\",\n        \"Port\": 80,\n        \"SendContext\": \"requestcontent\",\n        \"RecvContext\": \"responsecontent\",\n        \"Interval\": 30,\n        \"Timeout\": 5,\n        \"HealthThreshold\": 3,\n        \"CriticalThreshold\": 2\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherOriginGroup\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"57d0154c-f9ab-42b7-ad83-232106647ff3\",\n        \"InstanceId\": \"lb-2oswhs520uqe\"\n    }\n}",
         "title": "创建健康检查策略为 UDP 的负载均衡实例"
-      },
-      {
-        "document": "不启用任何健康检查策略，请求重试策略选择重试下一优先级源站组。适用于仅配置主备源站的场景。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLoadBalancer\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2ju9lrnpaxol\",\n    \"Name\": \"NoCheck-LB\",\n    \"Type\": \"HTTP\",\n    \"OriginGroups\": [\n        {\n            \"Priority\": \"priority_1\",\n            \"OriginGroupId\": \"og-30l5kv5z2bse\"\n        },\n        {\n            \"Priority\": \"priority_2\",\n            \"OriginGroupId\": \"og-30l5kv5z2ase\"\n        }\n    ],\n    \"HealthChecker\": {\n        \"Type\": \"NoCheck\"\n    },\n    \"SteeringPolicy\": \"Pritory\",\n    \"FailoverPolicy\": \"OtherOriginGroup\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c619f7f-27e9-43c5-b42c-68dcca803d35\",\n        \"InstanceId\": \"lb-2osw2ssziowm\"\n    }\n}",
-        "title": "创建不启用探测的负载均衡实例"
       }
     ],
     "CreateLogAnalysisDownloadTask": [
@@ -876,6 +876,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableCustomActionsForRuleEngine\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3**********x\",\n    \"Filters\": [\n        {\n            \"Name\": \"action-id\",\n            \"Values\": [\n                \"ca-3**********n\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"SortBy\": \"action-id\",\n    \"SortOrder\": \"desc\"\n}",
         "output": "{\n    \"Response\": {\n        \"CustomActionSet\": [\n            {\n                \"ActionId\": \"ca-3**********n\",\n                \"Description\": \"Rate limiting for client IP access.\",\n                \"Name\": \"ClientIPRateLimit\",\n                \"Parameters\": [\n                    {\n                        \"Default\": \"100\",\n                        \"Description\": \"The maximum QPS of the client IP\",\n                        \"MaxValue\": 10000,\n                        \"MinValue\": 1,\n                        \"Name\": \"MaxQPS\",\n                        \"Required\": false,\n                        \"ValueType\": \"Integer\"\n                    }\n                ],\n                \"SupportedConditions\": [\n                    \"http.request.host\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"bbd3abd8-aeb6-4ca5-a623-6502f8f19c1a\"\n    }\n}",
         "title": "查询规则引擎可用的定制配置列表"
+      }
+    ],
+    "DescribeAvailableOriginACLFamily": [
+      {
+        "document": "可任意选择一个账户下的站点来查询源站防护各种不同控制域的 IP 网段信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvailableOriginACLFamily\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2w0bpv1wlag8\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"OriginACLFamilyInfos\": [\n            {\n                \"ActiveTime\": \"2025-08-15T00:00:00+08:00\",\n                \"EntireAddresses\": {\n                    \"IPv4\": [\n                        \"113.13.111.0/24\"\n                    ],\n                    \"IPv6\": [\n                        \"240d:c010:c2:3::/64\"\n                    ]\n                },\n                \"OriginACLFamily\": \"emc\",\n                \"Version\": \"emc-0.0.2-20250814\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"ddc1548a-a1d3-464d-a4d8-377ef6b5ed1f\"\n    }\n}",
+        "title": "通过账号下任意指定站点查询源站防护控制域"
       }
     ],
     "DescribeAvailablePlans": [

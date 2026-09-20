@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddConsoleUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddConsoleUsers\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"700002692363\"\n    ],\n    \"RoleIds\": [\n        \"2002\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"5412bd73-9874-44be-955a-077d92a4f94a\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "CreateFile": [
       {
         "document": "",
@@ -72,6 +80,14 @@
         "title": "终止工作流的运行"
       }
     ],
+    "ListConsoleUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConsoleUsers\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 11,\n    \"UserKeyword\": \"junzha2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CreateTime\": \"1784861927\",\n                    \"IsAdmin\": false,\n                    \"IsOwner\": false,\n                    \"Nickname\": \"junzha2\",\n                    \"Roles\": [\n                        {\n                            \"Description\": \"对控制台功能仅有只读权限\",\n                            \"DisplayName\": \"控制台成员\",\n                            \"Id\": \"2002\",\n                            \"Name\": \"Console Member\",\n                            \"RoleType\": \"console\"\n                        }\n                    ],\n                    \"UpdateTime\": \"1784861927\",\n                    \"UserName\": \"junzha2\",\n                    \"UserSource\": \"\",\n                    \"UserTag\": 0,\n                    \"UserUin\": \"700002692363\"\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 11,\n            \"TotalCount\": 1,\n            \"TotalPageNumber\": 1\n        },\n        \"RequestId\": \"47e28ab5-3d75-41d9-8c82-2f5761960dd1\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "ListWorkflowRuns": [
       {
         "document": "",
@@ -102,11 +118,19 @@
         "title": "查询工作流列表"
       }
     ],
+    "RemoveConsoleUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveConsoleUsers\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"700002270524\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailItems\": [],\n            \"Status\": true,\n            \"SuccessUins\": [\n                \"700002270524\"\n            ]\n        },\n        \"RequestId\": \"694d652d-ba1b-4f7a-b5f6-42b572bf5a80\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "RerunWorkflowRun": [
       {
         "document": "重跑工作流",
-        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RerunWorkflowRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"WorkflowId\": \"1b185f10-151d-42e5-886d-f8c4eb2fcae5\",\n    \"WorkflowRunId\": \"1b185f10-151d-42e5-886d-f8c4eb2fcae5_1787110336358_p550ec615a5cdfee0\",\n    \"RunType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260819135346_000001\",\n                    \"WorkflowId\": \"1b185f10-151d-42e5-886d-f8c4eb2fcae5\",\n                    \"WorkflowName\": \"zl_wf_260813_142851\",\n                    \"WorkflowRunId\": \"1b185f10-151d-42e5-886d-f8c4eb2fcae5_1787110336358_p550ec615a5cdfee0\"\n                }\n            ]\n        },\n        \"RequestId\": \"5503d42a-692f-4b40-a974-ef33dad110f9\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RerunWorkflowRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"WorkflowId\": \"18b1a42e-951d-4b31-98a0-b404dac2c324\",\n    \"WorkflowRunId\": \"18b1a42e-951d-4b31-98a0-b404dac2c324_1786024800000\",\n    \"RunType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260807233141_000001\",\n                    \"WorkflowId\": \"18b1a42e-951d-4b31-98a0-b404dac2c324_1786024800000\",\n                    \"WorkflowName\": \"\",\n                    \"WorkflowRunId\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"fa65efd3-dd08-4f9d-9b94-acdba94366ca\"\n    }\n}",
         "title": "重跑工作流"
       }
     ],
@@ -124,6 +148,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindWorkflowBundle\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697667906247629\",\n    \"WorkflowId\": \"3ad17013-7f55-44fe-beb7-9bc17e37a93a\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"67a322c0-198c-4d22-a07b-d193f14f1a27\"\n    }\n}",
         "title": "解绑工作流Bundle信息"
+      }
+    ],
+    "UpdateConsoleUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateConsoleUsers\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"700002692363\"\n    ],\n    \"RoleIds\": [\n        \"2001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"8661d046-6c57-486f-a08b-88747e518112\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UpdateFile": [

@@ -1364,7 +1364,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称。",
+          "document": "<p>应用名称。</p>",
           "example": "app-test",
           "member": "string",
           "name": "AppName",
@@ -1373,7 +1373,7 @@
         },
         {
           "disabled": false,
-          "document": "用户标识。",
+          "document": "<p>用户标识。</p>",
           "example": "d2w7m6t9z8",
           "member": "string",
           "name": "UserId",
@@ -1388,8 +1388,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户信息。",
-          "example": "{\"AppName\": \"app-test\",\"UserId\": \"d2w7m6t9z8\",\"LiveVipUserInfo\": {\"RoomId\": \"awv5dis27j\",\"LiveVipEndTime\": \"2020-09-22T00:00:00+00:00\",\"LiveVipStatus\": \"Valid\"},\"UserType\": \"Normal\"}",
+          "document": "<p>用户信息。</p>",
+          "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
           "output_required": true,
@@ -1687,7 +1687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "歌曲Id。",
+          "document": "<p>歌曲Id。</p>",
           "example": "3mcwprujq9",
           "member": "string",
           "name": "MusicId",
@@ -1697,7 +1697,7 @@
         },
         {
           "disabled": false,
-          "document": "歌曲名称。",
+          "document": "<p>歌曲名称。</p>",
           "example": "七里香",
           "member": "string",
           "name": "Name",
@@ -1707,7 +1707,7 @@
         },
         {
           "disabled": false,
-          "document": "歌手名称。",
+          "document": "<p>歌手名称。</p>",
           "example": "[\"周杰伦\"]",
           "member": "string",
           "name": "SingerSet",
@@ -1717,7 +1717,7 @@
         },
         {
           "disabled": false,
-          "document": "播放时长。",
+          "document": "<p>播放时长。</p><p>单位：秒</p>",
           "example": "120",
           "member": "int64",
           "name": "Duration",
@@ -1727,7 +1727,7 @@
         },
         {
           "disabled": false,
-          "document": "歌手图片链接。",
+          "document": "<p>歌手图片链接。</p>",
           "example": "http://image.tencent.com",
           "member": "string",
           "name": "SingerImageUrl",
@@ -1737,8 +1737,8 @@
         },
         {
           "disabled": false,
-          "document": "专辑信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Name\": \"一个浪漫的专辑\",\"CoverInfoSet\": [{\"Dimension\": \"Mini\",\"Url\": \"http://download.tencent.com\"}]}",
+          "document": "<p>专辑信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "MusicAlbumInfo",
           "name": "AlbumInfo",
           "output_required": true,
@@ -1747,7 +1747,7 @@
         },
         {
           "disabled": false,
-          "document": "权益列表，取值有：\n<li>Play：可播；</li>\n<li>Sing：可唱。</li>",
+          "document": "<p>权益列表，取值有：</p><li>Play：可播；</li><li>Sing：可唱。</li>",
           "example": "[\"Play\"]",
           "member": "string",
           "name": "RightSet",
@@ -1757,7 +1757,7 @@
         },
         {
           "disabled": false,
-          "document": "推荐类型，取值有：\n<li>Featured：精选；</li>\n<li>Other：其他。</li>",
+          "document": "<p>推荐类型，取值有：</p><li>Featured：精选；</li><li>Other：其他。</li>",
           "example": "Featured",
           "member": "string",
           "name": "RecommendType",

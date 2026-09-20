@@ -16,6 +16,30 @@
         "title": "获取访问沙箱工具时所需要使用的访问Token"
       }
     ],
+    "AppendEvent": [
+      {
+        "document": "向指定的订单协助会话追加用户退款状态查询事件，同时更新当前任务和用户最近访问渠道等状态信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AppendEvent\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\",\n    \"Event\": {\n        \"EventId\": \"event-user-message-20260817-0001\",\n        \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n        \"Author\": \"user\",\n        \"Content\": {\n            \"Role\": \"user\",\n            \"Parts\": [\n                {\n                    \"Text\": \"Please help me check the refund status for my order.\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Event\": {\n            \"Author\": \"user\",\n            \"Content\": {\n                \"Parts\": [\n                    {\n                        \"FunctionCall\": \"null\",\n                        \"FunctionResponse\": \"null\",\n                        \"Text\": \"Please help me check the refund status for my order.\"\n                    }\n                ],\n                \"Role\": \"user\"\n            },\n            \"EventId\": \"event-user-message-20260817-0001\",\n            \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n            \"Timestamp\": \"2026-08-17T09:08:09.463Z\"\n        },\n        \"RequestId\": \"dd3bdbb7-1093-4a91-a708-2ba848f8a960\"\n    }\n}",
+        "title": "追加事件"
+      }
+    ],
+    "ApproveRegistryRecord": [
+      {
+        "document": "PENDING_APPROVAL → APPROVED，Comment 必填。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: ApproveRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "审批通过 Version"
+      }
+    ],
+    "CancelRegistryRecord": [
+      {
+        "document": "PREPARING / PENDING_APPROVAL → CANCELED，仅可取消非 Stable Version。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CancelRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "取消 Version"
+      }
+    ],
     "CreateAPIKey": [
       {
         "document": "",
@@ -46,6 +70,28 @@
         "title": "预热用户 VPC 可达第三方镜像"
       }
     ],
+    "CreateRegistry": [
+      {
+        "document": "响应体带 RequestId 与 RegistryId；后续获取详情用 DescribeRegistry。ApprovalMode 省略时默认 AUTO。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "创建 MANUAL 审批的 Registry"
+      }
+    ],
+    "CreateRegistryRecord": [
+      {
+        "document": "CUSTOM 直接提交顶层 CustomDescriptors；服务端 SourceType 固定为 MANUAL。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "创建 CUSTOM 类型 Record"
+      },
+      {
+        "document": "统一 Create 接口，通过 DescriptorType + Source Union 选择协议类型。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "创建 URL_IMPORT 类型的 MCP Record"
+      }
+    ],
     "CreateSandboxTool": [
       {
         "document": "",
@@ -58,6 +104,22 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxTool\n<公共请求参数>\n\n{\n    \"ToolName\": \"tool_img_tst\",\n    \"ToolType\": \"waa\",\n    \"NetworkConfiguration\": {\n        \"NetworkMode\": \"PUBLIC\"\n    },\n    \"ComputerConfiguration\": {\n        \"WAAConfiguration\": {\n            \"ImageId\": \"img-pamebyja\"\n        }\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ToolId\": \"sdt-p8auk8v3\",\n        \"RequestId\": \"75310f95-d0ff-4756-891e-6c0e8b0c64f2\"\n    }\n}",
         "title": "创建自定义镜像的tool"
+      }
+    ],
+    "CreateSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"UserId\": \"0001\",\n    \"Title\": \"0902 test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-09-02T08:00:03Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n            \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n            \"Title\": \"0902 test\",\n            \"UpdateTime\": \"2026-09-02T08:00:03Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"604abedd-3dfe-4d3d-a842-addbe6e28053\"\n    }\n}",
+        "title": "创建session"
+      }
+    ],
+    "CreateSessionSpace": [
+      {
+        "document": "为生产环境的客服应用创建独立会话空间，用于隔离会话、事件和用户状态数据。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSessionSpace\n<公共请求参数>\n\n{\n    \"Name\": \"Customer Service Production Space\",\n    \"Description\": \"Stores sessions for the production customer service application.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:35:11.868Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for the production customer service application.\",\n            \"Name\": \"Customer Service Production Space\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T03:35:11.868Z\"\n        },\n        \"RequestId\": \"5bf9b472-8e6d-453f-ab2f-f2b7c332fc5c\"\n    }\n}",
+        "title": "创建生产环境会话空间"
       }
     ],
     "DeleteAPIKey": [
@@ -76,12 +138,50 @@
         "title": "删除 Deployment"
       }
     ],
+    "DeleteRegistry": [
+      {
+        "document": "响应只带 RequestId。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "删除空 Registry"
+      }
+    ],
+    "DeleteRegistryRecord": [
+      {
+        "document": "传入 VersionId 时只删除该 Version（软删除）；Stable 指向的 Version 或最后一个 Approved Version 不允许删除。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "删除单个 Version"
+      },
+      {
+        "document": "省略 VersionId 时对整个 Record 进行软删除。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "软删除整个 Record"
+      }
+    ],
     "DeleteSandboxTool": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxTool\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",
         "title": "删除沙箱工具"
+      }
+    ],
+    "DeleteSession": [
+      {
+        "document": "删除指定会话空间下的指定会话。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"afdb8139-1c10-475b-876d-6b8d791a8a2e\"\n    }\n}",
+        "title": "删除会话"
+      }
+    ],
+    "DeleteSessionSpace": [
+      {
+        "document": "删除不再使用且不包含任何会话、事件或用户状态数据的普通会话空间。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-22eed49f-e3ae-4b4a-8efa-4cd961bf4764\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"34b2cdc8-973c-4990-a1d9-614113e08f4f\"\n    }\n}",
+        "title": "删除空的非默认会话空间"
       }
     ],
     "DescribeAPIKeyList": [
@@ -108,12 +208,82 @@
         "title": "查询 Deployment 列表"
       }
     ],
+    "DescribeEvents": [
+      {
+        "document": "查询指定会话空间下的指定会话事件列表。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874234\",\n    \"SessionId\": \"9e527749-0313-4871-85dc-4b9055561c06\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Actions\": {\n                    \"StateDelta\": \"{\\\"currentTask\\\":\\\"refund_status_lookup\\\",\\\"user:lastChannel\\\":\\\"web\\\"}\"\n                },\n                \"Author\": \"user\",\n                \"Content\": {\n                    \"Parts\": [\n                        {\n                            \"FunctionCall\": \"null\",\n                            \"FunctionResponse\": \"null\",\n                            \"Text\": \"Please help me check the refund status for my order.\"\n                        }\n                    ],\n                    \"Role\": \"user\"\n                },\n                \"EventId\": \"event-refund-status-20260817-0001\",\n                \"Extensions\": \"{\\\"Source\\\":\\\"customer-portal\\\"}\",\n                \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n                \"Metadata\": \"{\\\"Channel\\\":\\\"web\\\",\\\"TurnComplete\\\":true}\",\n                \"Timestamp\": \"2026-08-17T09:28:54.216Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"909e1ece-2cea-426f-ad67-d98b0393c676\"\n    }\n}",
+        "title": "查询事件列表"
+      }
+    ],
     "DescribePreCacheImageTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"ImageRegistryType\": \"custom\"\n}",
         "output": "{\n    \"Response\": {\n        \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n        \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"ImageRegistryType\": \"custom\",\n        \"Status\": \"Success\",\n        \"Message\": \"conversion-backed precache completed\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "查询用户 VPC 可达第三方镜像预热状态"
+      }
+    ],
+    "DescribeQuotaOverview": [
+      {
+        "document": "查询当前主账号的配额上限和全账号当前用量，并分页返回配额组的配额、用量及基本信息",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotaOverview\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"tag-key\",\n            \"Values\": [\n                \"business\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountQuotaOverview\": {\n            \"Quota\": {\n                \"CPUCores\": 200,\n                \"MemoryGiB\": 200,\n                \"PausedInstances\": 200,\n                \"SandboxInstances\": 200,\n                \"SandboxTools\": 100\n            },\n            \"Usage\": {\n                \"CPUCores\": 0,\n                \"MemoryGiB\": 0,\n                \"PausedInstances\": 0,\n                \"SandboxInstances\": 0,\n                \"SandboxTools\": 9\n            }\n        },\n        \"DataTime\": \"2026-08-17T16:51:04+08:00\",\n        \"QuotaGroupSet\": [\n            {\n                \"CreateTime\": \"2026-08-17T16:36:09+08:00\",\n                \"Name\": \"business-group1\",\n                \"Quota\": {\n                    \"CPUCores\": 20,\n                    \"MemoryGiB\": 40,\n                    \"SandboxInstances\": 10\n                },\n                \"Tag\": {\n                    \"Key\": \"business\",\n                    \"Value\": \"group1\"\n                },\n                \"UpdateTime\": \"2026-08-17T16:36:09+08:00\",\n                \"Usage\": {\n                    \"CPUCores\": 0,\n                    \"MemoryGiB\": 0,\n                    \"SandboxInstances\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f27201f0-627d-4f8e-8c05-b3fc861364b1\"\n    }\n}",
+        "title": "DescribeQuotaOverview"
+      }
+    ],
+    "DescribeRegistry": [
+      {
+        "document": "响应仅返回 Registry；已废弃顶层 RegistryId。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "查询 Registry 详情"
+      }
+    ],
+    "DescribeRegistryAuditLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryAuditLogList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "查询 Record 版本审计"
+      }
+    ],
+    "DescribeRegistryList": [
+      {
+        "document": "未命中任何 Registry 时 RegistrySet 为空数组，TotalCount 为 0。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "模糊搜索 `example` 关键字"
+      }
+    ],
+    "DescribeRegistryRecord": [
+      {
+        "document": "VersionId 与 Label 互斥；均省略时等价于 Label=stable。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "按 Label=stable 查询"
+      },
+      {
+        "document": "指定 VersionId 时不返回 ResolvedLabel。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "按 VersionId 精确查询"
+      }
+    ],
+    "DescribeRegistryRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "查询 weather 相关 Record"
+      }
+    ],
+    "DescribeRegistryRecordVersionList": [
+      {
+        "document": "Filter 支持 status、source_type；多值按 OR。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordVersionList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "按状态过滤 Version 列表"
       }
     ],
     "DescribeSandboxInstanceList": [
@@ -138,6 +308,60 @@
         "title": "查询沙箱工具列表"
       }
     ],
+    "DescribeSession": [
+      {
+        "document": "根据会话空间 ID、用户 ID 和会话 ID，查询指定会话的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874915\",\n    \"SessionId\": \"session-order-assistance-20260817-0001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-08-17T08:15:18Z\",\n            \"EventCount\": 0,\n            \"SessionId\": \"session-order-assistance-20260817-0001\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Title\": \"Order refund assistance\",\n            \"UpdateTime\": \"2026-08-17T08:15:18Z\",\n            \"UserId\": \"customer-32874915\"\n        },\n        \"RequestId\": \"82581530-d12d-40b2-8e11-9f3c308367c7\"\n    }\n}",
+        "title": "查询指定会话详情"
+      }
+    ],
+    "DescribeSessionSpace": [
+      {
+        "document": "根据会话空间 ID 查询生产客服会话空间的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:35:11.868Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for the production customer service application.\",\n            \"Name\": \"Customer Service Production Space\",\n            \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T03:35:11.868Z\"\n        },\n        \"RequestId\": \"7764a908-369a-4bab-8ffb-6446c86b54d6\"\n    }\n}",
+        "title": "查询指定会话空间详情"
+      }
+    ],
+    "DescribeSessionSpaces": [
+      {
+        "document": "查询当前应用及地域下的会话空间列表，每页返回 20 条数据。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionSpaces\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpaces\": [\n            {\n                \"CreateTime\": \"2026-08-17T03:51:17.608Z\",\n                \"Default\": false,\n                \"Description\": \"Reserved for sessions generated during a seasonal marketing campaign.\",\n                \"Name\": \"Seasonal Campaign Temporary Space\",\n                \"SpaceId\": \"space-22eed49f-e3ae-4b4a-8efa-4cd961bf4764\",\n                \"Status\": \"Active\",\n                \"UpdateTime\": \"2026-08-17T03:51:17.608Z\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"9d08f066-c47e-4e5d-ae9c-a51d7edf01a6\"\n    }\n}",
+        "title": "分页查询会话空间"
+      },
+      {
+        "document": "使用 description-like 筛选描述中包含“DSH Brain Session cookbook”的会话空间，返回匹配的空间列表及总数。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionSpaces\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"description-like\",\n            \"Values\": [\n                \"DSH Brain Session cookbook\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpaces\": [\n            {\n                \"CreateTime\": \"2026-09-03T08:03:05.279Z\",\n                \"Default\": false,\n                \"Description\": \"DSH Brain Session cookbook Chongqing validation\",\n                \"Name\": \"dsh-session-cq-09031603\",\n                \"SpaceId\": \"space-04664885-bd66-4a51-83f5-5f6132f8642a\",\n                \"Status\": \"Active\",\n                \"UpdateTime\": \"2026-09-03T08:03:05.279Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"de553d46-8094-4644-a68b-ed6b3db7b07c\"\n    }\n}",
+        "title": "按描述筛选会话空间"
+      }
+    ],
+    "DescribeSessions": [
+      {
+        "document": "查询 Metadata 中 env 字段值为 dev 的 Session 列表。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessions\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"Filters\": [\n        {\n            \"Name\": \"metadata:env\",\n            \"Values\": [\n                \"dev\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Sessions\": [\n            {\n                \"CreateTime\": \"2026-09-02T08:00:03Z\",\n                \"EventCount\": 0,\n                \"Metadata\": [\n                    {\n                        \"Name\": \"env\",\n                        \"Value\": \"dev\"\n                    }\n                ],\n                \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n                \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n                \"Title\": \"modify titile\",\n                \"UpdateTime\": \"2026-09-02T08:08:23Z\",\n                \"UserId\": \"0001\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"823e1eb7-3b87-459c-a239-cfe1efafcd32\"\n    }\n}",
+        "title": "按 Metadata 过滤 Session"
+      }
+    ],
+    "GetSkillPackageDownloadURL": [
+      {
+        "document": "VersionId 与 Label 互斥；均省略时使用 Stable。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: GetSkillPackageDownloadURL\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "按 Label 下载 Skill 包"
+      }
+    ],
+    "GetSkillPackageUploadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: GetSkillPackageUploadURL\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "重试 Skill Version 上传"
+      }
+    ],
     "ModifyDeployment": [
       {
         "document": "",
@@ -146,12 +370,44 @@
         "title": "修改 Deployment"
       }
     ],
+    "ModifySession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n    \"Metadata\": [\n        {\n            \"Name\": \"env\",\n            \"Value\": \"dev\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-09-02T08:00:03Z\",\n            \"EventCount\": 0,\n            \"Metadata\": [\n                {\n                    \"Name\": \"env\",\n                    \"Value\": \"dev\"\n                }\n            ],\n            \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n            \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n            \"Title\": \"0902 test\",\n            \"UpdateTime\": \"2026-09-02T08:06:45Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"4c41c3b7-6c43-4dde-ade3-b460400933bb\"\n    }\n}",
+        "title": "修改会话的元数据"
+      }
+    ],
+    "ModifySessionSpace": [
+      {
+        "document": "调整会话空间名称和描述，使其覆盖订单、退款及售后业务场景。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySessionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75ef3dc0-8523-4e5c-81e3-57ff8a453c7a\",\n    \"Name\": \"Order and After-Sales Service Space\",\n    \"Description\": \"Stores sessions for order, refund, and after-sales service workflows.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionSpace\": {\n            \"CreateTime\": \"2026-08-17T03:50:59.655Z\",\n            \"Default\": false,\n            \"Description\": \"Stores sessions for order, refund, and after-sales service workflows.\",\n            \"Name\": \"Order and After-Sales Service Space\",\n            \"SpaceId\": \"space-75ef3dc0-8523-4e5c-81e3-57ff8a453c7a\",\n            \"Status\": \"Active\",\n            \"UpdateTime\": \"2026-08-17T06:08:18.127Z\"\n        },\n        \"RequestId\": \"accebb0a-563d-43a5-ac93-f2f5ce5ae943\"\n    }\n}",
+        "title": "修改会话空间信息"
+      }
+    ],
     "PauseSandboxInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "暂停沙箱实例"
+      }
+    ],
+    "PreviewRegistryRecord": [
+      {
+        "document": "不创建 Version、不修改 Label；仅返回一次拉取结果。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: PreviewRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "预览 Stable 目标"
+      }
+    ],
+    "RejectRegistryRecord": [
+      {
+        "document": "PENDING_APPROVAL → REJECTED。Comment 必填，用于审计留痕。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: RejectRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "驳回 Version"
       }
     ],
     "ResumeSandboxInstance": [
@@ -176,6 +432,42 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "停止沙箱实例"
+      }
+    ],
+    "SyncRegistryRecord": [
+      {
+        "document": "从远端拉取到新内容时创建新 Version 并移动 Latest；Stable 保持不变。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: SyncRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "同步 Stable 目标 Version"
+      },
+      {
+        "document": "远端无变化时不创建 Version、不修改 Label。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: SyncRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "远端未变化"
+      }
+    ],
+    "UpdateRegistry": [
+      {
+        "document": "只允许修改 Description；Name/ApprovalMode 不可修改。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "更新 Registry 描述"
+      }
+    ],
+    "UpdateRegistryRecord": [
+      {
+        "document": "不提交 Source/CustomDescriptors 时是 Record 更新模式，允许 Description/LabelMutations。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "Record 更新模式：移动 stable + 新增 grey"
+      },
+      {
+        "document": "提交内容输入进入 Version 创建模式；禁止同时提交 Description/LabelMutations。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "Version 创建模式：MCP URL_IMPORT"
       }
     ],
     "UpdateSandboxInstance": [

@@ -21548,6 +21548,24 @@
           "name": "EndpointPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查方式</p><p>枚举值：</p><ul><li>Service： 探测服务可用性</li><li>Model： 探测模型可用性</li></ul>",
+          "example": "Service",
+          "member": "string",
+          "name": "HealthCheckMethod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>",
+          "example": "v1/models",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

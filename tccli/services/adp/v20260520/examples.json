@@ -382,6 +382,14 @@
         "title": "DescribeApp"
       }
     ],
+    "DescribeAppStatisticsOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAppStatisticsOverview\n<公共请求参数>\n\n{\n    \"AppType\": 1,\n    \"TimeRange\": {\n        \"EndTime\": \"1789487999\",\n        \"StartTime\": \"1789401600\"\n    },\n    \"ViewScope\": {\n        \"ViewType\": 3,\n        \"ScopeId\": \"2099767969573745984\"\n    },\n    \"SpaceId\": \"default_space\",\n    \"AppId\": \"2099767969573745984\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvgFirstTokenTime\": \"0\",\n        \"AvgTotalTokenTime\": \"0\",\n        \"CallSuccessRate\": 0,\n        \"ReplyTypeDistributionList\": [\n            {\n                \"CallCount\": \"0\",\n                \"Percentage\": 0,\n                \"ReplyName\": \"问答直接回复\"\n            }\n        ],\n        \"TotalCallCount\": \"0\",\n        \"RequestId\": \"5f6d2237-9741-4788-b442-56feb1022bab\"\n    }\n}",
+        "title": "DescribeAppStatisticsOverview 查询用户详情"
+      }
+    ],
     "DescribeAppSummaryList": [
       {
         "document": "查询应用列表",

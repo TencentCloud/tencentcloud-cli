@@ -904,7 +904,7 @@
       "status": "online"
     },
     "DescribeLogContext": {
-      "document": "本接口用于搜索日志上下文附近的内容，详情参考[上下文检索](https://cloud.tencent.com/document/product/614/53248)。\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
+      "document": "本接口用于搜索日志上下文附近的内容，部分日志采集方式不支持本接口，详情参考[上下文检索](https://cloud.tencent.com/document/product/614/53248)。\n**注意事项**：\n1. API返回数据包最大49MB，返回数据量大时，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。\n2. 本接口存在频率限制，不适合批量读取海量日志，如需下载或实时读取日志，建议使用[日志下载](https://cloud.tencent.com/document/product/614/52901)或[投递与消费](https://cloud.tencent.com/document/product/614/37908)功能。",
       "input": "DescribeLogContextRequest",
       "name": "上下文检索",
       "output": "DescribeLogContextResponse",
@@ -1898,7 +1898,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse​ 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>",
+          "document": "<p>接入类型</p><p>枚举值：</p><ul><li>Langfuse：  Langfuse 是一款开源的 LLM（大语言模型）工程与可观测性平台（LLMOps Tool）</li></ul>",
           "example": "Langfuse",
           "member": "string",
           "name": "AccessType",
@@ -1954,6 +1954,56 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志集id</p>",
+          "example": "a5f33417-ec31-4927-ade3-c5b4ada48240",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务方名称</p>",
+          "example": "*****an*******assumer_name",
+          "member": "string",
+          "name": "AssumerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务方子名称</p>",
+          "example": "******n******_log_type",
+          "member": "string",
+          "name": "SubAssumerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务方Uin</p>",
+          "example": "90000000269",
+          "member": "uint64",
+          "name": "AssumerUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务方使用的角色</p>",
+          "example": "**w*w*n*-****_role_name",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -3716,7 +3766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。",
+          "document": "<p>导入Kafka类型，0: 腾讯云CKafka；1: 用户自建Kafka。</p>",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -3725,7 +3775,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID。\nKafkaType为0时，KafkaInstance必填\n\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
+          "document": "<p>腾讯云CKafka实例ID。<br>KafkaType为0时，KafkaInstance必填</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/597/40835\">获取实例列表信息</a> 获取实例id。</li></ul>",
           "example": "ckafka-5kysm8",
           "member": "string",
           "name": "KafkaInstance",
@@ -3734,7 +3784,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址。\nKafkaType为1时，ServerAddr必填",
+          "document": "<p>服务地址。<br>KafkaType为1时，ServerAddr必填</p>",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -3743,7 +3793,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。",
+          "document": "<p>ServerAddr是否为加密连接，默认值false。当KafkaType为1用户自建kafka时生效。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -3752,7 +3802,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。",
+          "document": "<p>加密访问协议。KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -3761,7 +3811,16 @@
         },
         {
           "disabled": false,
-          "document": "用户kafka拓展信息",
+          "document": "<p>网络信息参数</p>",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户kafka拓展信息</p>",
           "example": "无",
           "member": "UserKafkaMeta",
           "name": "UserKafkaMeta",
@@ -3776,7 +3835,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka集群可访问状态。\n\n- 0：可正常访问 \n- -1：broker 连接失败\n- -2：sasl 鉴权失败\n- -3：ckafka 角色未授权\n- -4：topic 列表不存在\n- -5：topic 内暂无数据\n- -6：用户没有 ckafka 权限\n- -7：消费组已经存在\n- -8：kafka 实例不存在或已销毁\n- -9：Broker 列表为空\n- -10：Broker 地址格式不正确\n- -11：Broker 端口非整型",
+          "document": "<p>Kafka集群可访问状态。</p><ul><li>0：可正常访问 </li><li>-1：broker 连接失败</li><li>-2：sasl 鉴权失败</li><li>-3：ckafka 角色未授权</li><li>-4：topic 列表不存在</li><li>-5：topic 内暂无数据</li><li>-6：用户没有 ckafka 权限</li><li>-7：消费组已经存在</li><li>-8：kafka 实例不存在或已销毁</li><li>-9：Broker 列表为空</li><li>-10：Broker 地址格式不正确</li><li>-11：Broker 端口非整型</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -4029,6 +4088,16 @@
           "name": "LogsetTags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>",
+          "example": "agent-app-f188a70a-35ce-475d-973f-ebff90af517b",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8273,7 +8342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入CLS目标TopicId。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454) 获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456) 获取日志主题Id。",
+          "document": "<p>导入CLS目标TopicId。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a> 获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a> 获取日志主题Id。</li></ul>",
           "example": "b53fe5be-7ee3-4031-8043-5a73bad4f572",
           "member": "string",
           "name": "TopicId",
@@ -8282,7 +8351,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka导入配置名称",
+          "document": "<p>Kafka导入配置名称</p>",
           "example": "mysql-subscribe",
           "member": "string",
           "name": "Name",
@@ -8291,7 +8360,7 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "document": "<p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -8300,7 +8369,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "document": "<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>",
           "example": "topic1,topic2",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -8309,7 +8378,7 @@
         },
         {
           "disabled": false,
-          "document": "导入数据位置，-2:最早（默认），-1：最晚",
+          "document": "<p>导入数据位置，-2:最早（默认），-1：最晚</p>",
           "example": "-1",
           "member": "int64",
           "name": "Offset",
@@ -8318,7 +8387,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导入规则。",
+          "document": "<p>日志导入规则。</p>",
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
@@ -8327,7 +8396,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
+          "document": "<p>腾讯云CKafka实例ID，KafkaType为0时必填。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/597/40835\">获取实例列表信息</a> 获取实例id。</li></ul>",
           "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
@@ -8336,7 +8405,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址，KafkaType为1时必填。",
+          "document": "<p>服务地址，KafkaType为1时必填。</p>",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -8345,7 +8414,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接，KafkaType为1时必填。",
+          "document": "<p>ServerAddr是否为加密连接，KafkaType为1时必填。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -8354,7 +8423,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填。",
+          "document": "<p>加密访问协议。<br>KafkaType为1并且IsEncryptionAddr为true时Protocol必填。</p>",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -8363,7 +8432,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组名称。\n- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。",
+          "document": "<p>用户Kafka消费组名称。</p><ul><li>消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。</li></ul>",
           "example": "consumer-group-name",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -8372,7 +8441,16 @@
         },
         {
           "disabled": false,
-          "document": "用户kafka拓展信息",
+          "document": "<p>网络信息参数</p>",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户kafka拓展信息</p>",
           "example": "无",
           "member": "UserKafkaMeta",
           "name": "UserKafkaMeta",
@@ -8387,7 +8465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka导入配置ID",
+          "document": "<p>Kafka导入配置ID</p>",
           "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111",
           "member": "string",
           "name": "Id",
@@ -20836,7 +20914,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n\n- 当IsEncryptionAddr为true时，Protocol必填。\n- 支持的协议类型如下：\n    - plaintext：纯文本无加密协议\n    - sasl_ssl：SASL 认证 + SSL 加密\n    - ssl：纯 SSL/TLS 加密协议\n    - sasl_plaintext：SASL 认证 + 非加密通道\n",
+          "document": "<p>协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。</p><ul><li>当IsEncryptionAddr为true时，Protocol必填。</li><li>支持的协议类型如下：<ul><li>plaintext：纯文本无加密协议</li><li>sasl_ssl：SASL 认证 + SSL 加密</li><li>ssl：纯 SSL/TLS 加密协议</li><li>sasl_plaintext：SASL 认证 + 非加密通道</li></ul></li></ul>",
           "example": "sasl_ssl",
           "member": "string",
           "name": "Protocol",
@@ -20847,7 +20925,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n\n- 当Protocol为  `sasl_plaintext` 或 `sasl_ssl` 时 Mechanism 必填。\n- 支持加密类型如下\n    -  PLAIN：明文认证\n    -  SCRAM-SHA-256：基于挑战-响应机制，使用PBKDF2-HMAC-SHA256算法\n    -  SCRAM-SHA-512：增强版SCRAM，使用PBKDF2-HMAC-SHA512算法",
+          "document": "<p>加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。</p><ul><li>当Protocol为  <code>sasl_plaintext</code> 或 <code>sasl_ssl</code> 时 Mechanism 必填。</li><li>支持加密类型如下<ul><li>PLAIN：明文认证</li><li>SCRAM-SHA-256：基于挑战-响应机制，使用PBKDF2-HMAC-SHA256算法</li><li>SCRAM-SHA-512：增强版SCRAM，使用PBKDF2-HMAC-SHA512算法</li></ul></li></ul>",
           "example": "PLAIN",
           "member": "string",
           "name": "Mechanism",
@@ -20858,7 +20936,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名。\n当Protocol为sasl_plaintext或sasl_ssl时必填",
+          "document": "<p>用户名。<br>当Protocol为sasl_plaintext或sasl_ssl时必填</p>",
           "example": "name",
           "member": "string",
           "name": "UserName",
@@ -20869,11 +20947,55 @@
         },
         {
           "disabled": false,
-          "document": "用户密码。\n当Protocol为sasl_plaintext或sasl_ssl时必填",
+          "document": "<p>用户密码。<br>当Protocol为sasl_plaintext或sasl_ssl时必填</p>",
           "example": "axxxxxx",
           "member": "string",
           "name": "Password",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启客户端证书验证</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableClientCertificate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启服务端证书验证</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableServerCertificate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云托管CA证书id</p>",
+          "example": "cert-abcd1234",
+          "member": "string",
+          "name": "CACertificateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云托管服务端证书id</p>",
+          "example": "cert-efgh5678",
+          "member": "string",
+          "name": "SVRCertificateId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -20886,7 +21008,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka数据订阅配置的ID。",
+          "document": "<p>Kafka数据订阅配置的ID。</p>",
           "example": "86076b49-xxxx-xxxx-ab09-a5d7e7972825",
           "member": "string",
           "name": "Id",
@@ -20896,7 +21018,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "957f4aed-xxxx-xxxx-b98b-c3c806f9e71b",
           "member": "string",
           "name": "TopicId",
@@ -20906,7 +21028,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka导入任务名称",
+          "document": "<p>Kafka导入任务名称</p>",
           "example": "xxx任务导入",
           "member": "string",
           "name": "Name",
@@ -20916,7 +21038,7 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka",
+          "document": "<p>导入Kafka类型，0: 腾讯云CKafka，1: 用户自建Kafka</p>",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -20926,7 +21048,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "document": "<p>腾讯云CKafka实例ID，KafkaType为0时必填</p>",
           "example": "ckafka-xxxx",
           "member": "string",
           "name": "KafkaInstance",
@@ -20936,7 +21058,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址",
+          "document": "<p>服务地址</p>",
           "example": "kafkaconsumer-ap-chongqing.aaa.com:1534",
           "member": "string",
           "name": "ServerAddr",
@@ -20946,7 +21068,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接\t",
+          "document": "<p>ServerAddr是否为加密连接</p>",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -20956,7 +21078,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "document": "<p>加密访问协议，IsEncryptionAddr参数为true时必填</p>",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -20966,7 +21088,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "document": "<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开</p>",
           "example": "1256238147-f3061593-cd5b-4321-1254-3ba507d43301",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -20976,7 +21098,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组名称\t",
+          "document": "<p>用户Kafka消费组名称</p>",
           "example": "cls-xxxxx",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -20986,7 +21108,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 ，1：运行中；2：暂停。",
+          "document": "<p>状态 ，1：运行中；2：暂停。</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -20996,7 +21118,7 @@
         },
         {
           "disabled": false,
-          "document": "导入数据位置，-2:最早（默认），-1：最晚",
+          "document": "<p>导入数据位置，-2:最早（默认），-1：最晚</p>",
           "example": "-2",
           "member": "int64",
           "name": "Offset",
@@ -21006,7 +21128,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。格式`YYYY-MM-DD HH:MM:SS`",
+          "document": "<p>创建时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "CreateTime",
@@ -21016,7 +21138,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。格式`YYYY-MM-DD HH:MM:SS`",
+          "document": "<p>更新时间。格式<code>YYYY-MM-DD HH:MM:SS</code></p>",
           "example": "2021-11-08 14:40:22",
           "member": "string",
           "name": "UpdateTime",
@@ -21026,7 +21148,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导入规则",
+          "document": "<p>日志导入规则</p>",
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
@@ -21036,7 +21158,17 @@
         },
         {
           "disabled": false,
-          "document": "用户kafka拓展信息",
+          "document": "<p>私有网络信息</p>",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户kafka拓展信息</p>",
           "example": "无",
           "member": "UserKafkaMeta",
           "name": "UserKafkaMeta",
@@ -21359,8 +21491,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志时间，单位ms",
-          "example": "1619162953000",
+          "document": "<p>日志时间，单位ms</p>",
+          "example": "1789443988000",
           "member": "int64",
           "name": "Time",
           "output_required": true,
@@ -21369,7 +21501,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "4463e7b0-3ec8-41a1-ae48-5d24b22167c2",
           "member": "string",
           "name": "TopicId",
@@ -21379,7 +21511,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "<p>日志主题名称</p>",
           "example": "业务A日志主题",
           "member": "string",
           "name": "TopicName",
@@ -21389,7 +21521,7 @@
         },
         {
           "disabled": false,
-          "document": "日志来源IP",
+          "document": "<p>日志来源IP</p>",
           "example": "10.0.0.1",
           "member": "string",
           "name": "Source",
@@ -21399,7 +21531,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件名称",
+          "document": "<p>日志文件名称</p>",
           "example": "/test/access.log",
           "member": "string",
           "name": "FileName",
@@ -21409,7 +21541,7 @@
         },
         {
           "disabled": false,
-          "document": "日志上报请求包的ID",
+          "document": "<p>日志上报请求包的ID</p>",
           "example": "0",
           "member": "string",
           "name": "PkgId",
@@ -21419,7 +21551,7 @@
         },
         {
           "disabled": false,
-          "document": "请求包内日志的ID",
+          "document": "<p>请求包内日志的ID</p>",
           "example": "0",
           "member": "string",
           "name": "PkgLogId",
@@ -21429,7 +21561,7 @@
         },
         {
           "disabled": false,
-          "document": "符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索\t",
+          "document": "<p>符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索</p>",
           "example": "无",
           "member": "HighLightItem",
           "name": "HighLights",
@@ -21439,7 +21571,7 @@
         },
         {
           "disabled": false,
-          "document": "日志内容的Json序列化字符串",
+          "document": "<p>日志内容的Json序列化字符串</p>",
           "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
           "member": "string",
           "name": "LogJson",
@@ -21449,7 +21581,7 @@
         },
         {
           "disabled": false,
-          "document": "日志来源主机名称",
+          "document": "<p>日志来源主机名称</p>",
           "example": "hostName-1",
           "member": "string",
           "name": "HostName",
@@ -21459,7 +21591,7 @@
         },
         {
           "disabled": false,
-          "document": "原始日志(仅在日志创建索引异常时有值)",
+          "document": "<p>原始日志(仅在日志创建索引异常时有值)</p>",
           "example": "{\\\\\"content\\\\\":\\\\\"test\\\\\"}",
           "member": "string",
           "name": "RawLog",
@@ -21469,12 +21601,22 @@
         },
         {
           "disabled": false,
-          "document": "日志创建索引异常原因(仅在日志创建索引异常时有值)",
+          "document": "<p>日志创建索引异常原因(仅在日志创建索引异常时有值)</p>",
           "example": "IndexAllFail:fields like 'a' and 'a.b' can not appear in the same topic",
           "member": "string",
           "name": "IndexStatus",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志时间，单位ns</p><p>单位：纳秒</p>",
+          "example": "1789443988000000000",
+          "member": "int64",
+          "name": "TimeNanos",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -24861,7 +25003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入配置Id。\n- 通过 [创建Kafka数据订阅任务](https://cloud.tencent.com/document/product/614/94448)获取Kafka导入配置Id。\n- 通过 [获取Kafka数据订阅任务列表](https://cloud.tencent.com/document/product/614/94446)获取Kafka导入配置Id。",
+          "document": "<p>导入配置Id。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/94448\">创建Kafka数据订阅任务</a>获取Kafka导入配置Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/94446\">获取Kafka数据订阅任务列表</a>获取Kafka导入配置Id。</li></ul>",
           "example": "1014cc79-f006-48e4-8820-1dc7270540c0",
           "member": "string",
           "name": "Id",
@@ -24870,7 +25012,7 @@
         },
         {
           "disabled": false,
-          "document": "导入CLS目标TopicId。\n- 通过 [获取日志主题列表](https://cloud.tencent.com/document/product/614/56454)获取日志主题Id。\n- 通过 [创建日志主题](https://cloud.tencent.com/document/product/614/56456)获取日志主题Id。",
+          "document": "<p>导入CLS目标TopicId。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56454\">获取日志主题列表</a>获取日志主题Id。</li><li>通过 <a href=\"https://cloud.tencent.com/document/product/614/56456\">创建日志主题</a>获取日志主题Id。</li></ul>",
           "example": "06bdb6f6-ae6e-41f6-9e7b-fcab91cb0111",
           "member": "string",
           "name": "TopicId",
@@ -24879,7 +25021,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka导入配置名称",
+          "document": "<p>Kafka导入配置名称</p>",
           "example": "kafka导入",
           "member": "string",
           "name": "Name",
@@ -24888,7 +25030,7 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。",
+          "document": "<p>导入Kafka类型，0：腾讯云CKafka：1：用户自建Kafka。</p>",
           "example": "0",
           "member": "uint64",
           "name": "KafkaType",
@@ -24897,7 +25039,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
+          "document": "<p>腾讯云CKafka实例ID，KafkaType为0时必填。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/597/40835\">获取实例列表信息</a> 获取实例id。</li></ul>",
           "example": "ckafka-2vrgxbxa",
           "member": "string",
           "name": "KafkaInstance",
@@ -24906,7 +25048,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址，KafkaType为1时必填。",
+          "document": "<p>服务地址，KafkaType为1时必填。</p>",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -24915,7 +25057,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接，KafkaType为1时必填。",
+          "document": "<p>ServerAddr是否为加密连接，KafkaType为1时必填。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -24924,7 +25066,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。",
+          "document": "<p>加密访问协议，KafkaType参数为1并且IsEncryptionAddr参数为true时必填。</p>",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -24933,7 +25075,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。\n\n- Kafka类型为腾讯云CKafka时：通过 [获取主题列表](https://cloud.tencent.com/document/product/597/40847) 获取TopicName。",
+          "document": "<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。</p><ul><li>Kafka类型为腾讯云CKafka时：通过 <a href=\"https://cloud.tencent.com/document/product/597/40847\">获取主题列表</a> 获取TopicName。</li></ul>",
           "example": "topic-subs-0px4qkvu32-cdb-5zi7jf11",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -24942,7 +25084,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组名称",
+          "document": "<p>用户Kafka消费组名称</p>",
           "example": "cls-xxxxx",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -24951,7 +25093,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导入规则",
+          "document": "<p>日志导入规则</p>",
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
@@ -24960,7 +25102,7 @@
         },
         {
           "disabled": false,
-          "document": "导入控制，1：暂停；2：启动。",
+          "document": "<p>导入控制，1：暂停；2：启动。</p>",
           "example": "1",
           "member": "uint64",
           "name": "StatusControl",
@@ -24969,7 +25111,16 @@
         },
         {
           "disabled": false,
-          "document": "用户kafka拓展信息",
+          "document": "<p>私有网络信息参数</p>",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户kafka拓展信息</p>",
           "example": "无",
           "member": "UserKafkaMeta",
           "name": "UserKafkaMeta",
@@ -27434,6 +27585,78 @@
       ],
       "usage": "out"
     },
+    "NetworkInfo": {
+      "document": "网络打通信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网络类型。 0：公网，1：内网</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "NetworkType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络id</p>",
+          "example": "vpc-d18pppxl",
+          "member": "string",
+          "name": "VpcID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络所属用户app id</p>",
+          "example": "17678273444",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络服务类型。0：CVM，3：专线网关，11：云联网，1025：CLB</p>",
+          "example": "11",
+          "member": "uint64",
+          "name": "VirtualGatewayType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专线网关id或者云联网id</p>",
+          "example": "ccn-ap4f12qzl",
+          "member": "string",
+          "name": "VpcGatewayIndex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有域名映射地址</p>",
+          "example": "无",
+          "member": "PrivateDomainNames",
+          "name": "PrivateDomainNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "NoticeContent": {
       "document": "通知内容模板详细配置",
       "members": [
@@ -28194,7 +28417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预览类型，1：源数据预览；2：导出结果预览。",
+          "document": "<p>预览类型，1：源数据预览；2：导出结果预览。</p>",
           "example": "1",
           "member": "uint64",
           "name": "PreviewType",
@@ -28203,7 +28426,7 @@
         },
         {
           "disabled": false,
-          "document": "导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。",
+          "document": "<p>导入Kafka类型，0：腾讯云CKafka；1：用户自建Kafka。</p>",
           "example": "1",
           "member": "uint64",
           "name": "KafkaType",
@@ -28212,7 +28435,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。\n最多支持100个。",
+          "document": "<p>用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。<br>最多支持100个。</p>",
           "example": "topic_111b1f24-1ce6-45a3-a515-6e293429f111,topic_11161155-0ea3-4e53-9626-72b4837a4111,topic_111f125e-86f6-41c9-9dcc-360594290111",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -28221,7 +28444,7 @@
         },
         {
           "disabled": false,
-          "document": "导入数据位置，-2：最早；-1：最晚。",
+          "document": "<p>导入数据位置，-2：最早；-1：最晚。</p>",
           "example": "-1",
           "member": "int64",
           "name": "Offset",
@@ -28230,7 +28453,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。\n- 通过 [获取实例列表信息](https://cloud.tencent.com/document/product/597/40835) 获取实例id。",
+          "document": "<p>腾讯云CKafka实例ID，当KafkaType为0时参数KafkaInstance有效且必填。</p><ul><li>通过 <a href=\"https://cloud.tencent.com/document/product/597/40835\">获取实例列表信息</a> 获取实例id。</li></ul>",
           "example": "ckafka-k9m5vj11",
           "member": "string",
           "name": "KafkaInstance",
@@ -28239,7 +28462,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址。\nKafkaType为1时ServerAddr必填。",
+          "document": "<p>服务地址。<br>KafkaType为1时ServerAddr必填。</p>",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -28248,7 +28471,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接。\nKafkaType为1时有效。",
+          "document": "<p>ServerAddr是否为加密连接。<br>KafkaType为1时有效。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -28257,7 +28480,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填。",
+          "document": "<p>加密访问协议。<br>KafkaType为1并且IsEncryptionAddr为true时Protocol必填。</p>",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -28266,7 +28489,7 @@
         },
         {
           "disabled": false,
-          "document": "用户Kafka消费组。\n\n- 消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。",
+          "document": "<p>用户Kafka消费组。</p><ul><li>消费组是 Kafka 提供的可扩展且具有容错性的消费者机制，一个消费组中存在多个消费者，组内的所有消费者共同消费订阅 Topic 中的消息。一个消费者可同时消费多个 Partition，但一个 Partition 只能被消费组内的一个消费者消费。</li></ul>",
           "example": "webevent_log-group",
           "member": "string",
           "name": "ConsumerGroupName",
@@ -28275,7 +28498,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导入规则",
+          "document": "<p>日志导入规则</p>",
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
@@ -28284,7 +28507,16 @@
         },
         {
           "disabled": false,
-          "document": "用户kafka拓展信息",
+          "document": "<p>网络连接参数</p>",
+          "example": "无",
+          "member": "NetworkInfo",
+          "name": "NetworkInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户kafka拓展信息</p>",
           "example": "无",
           "member": "UserKafkaMeta",
           "name": "UserKafkaMeta",
@@ -28299,7 +28531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志样例，PreviewType为2时返回",
+          "document": "<p>日志样例，PreviewType为2时返回</p>",
           "example": "{\\\"__PKG_ID__\\\":\\\"61E93B596600E6D3-2B2B0\\\",\\\"__PKG_LOGID__\\\":65536,\\\"__TAG__.container_name\\\":\\\"main\\\",\\\"__TAG__.namespace\\\":\\\"sync-mysql\\\",\\\"__TAG__.pod_name\\\":\\\"sync-kxjyxkfe-start-vg7vz-1887219422\\\",\\\"__TIMESTAMP__\\\":1734519599010}",
           "member": "string",
           "name": "LogSample",
@@ -28309,7 +28541,7 @@
         },
         {
           "disabled": false,
-          "document": "日志预览结果",
+          "document": "<p>日志预览结果</p>",
           "example": "{\\\"__PKG_ID__\\\":\\\"61E93B596600E6D3-2B2B0\\\",\\\"__PKG_LOGID__\\\":65536,\\\"__TAG__.container_name\\\":\\\"main\\\",\\\"__TAG__.namespace\\\":\\\"sync-mysql\\\",\\\"__TAG__.pod_name\\\":\\\"sync-kxjyxkfe-start-vg7vz-1887219422\\\",\\\"__TIMESTAMP__\\\":1734519599010}",
           "member": "string",
           "name": "LogData",
@@ -28394,6 +28626,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrivateDomainNames": {
+      "document": "私有域名信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名地址",
+          "example": "brokerxx.xxx.com",
+          "member": "string",
+          "name": "DomainName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ip地址",
+          "example": "10.0.x.xx",
+          "member": "string",
+          "name": "IpAddr",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

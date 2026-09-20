@@ -2093,6 +2093,13 @@
       "output": "TriggerManualTasksResponse",
       "status": "online"
     },
+    "UnbindingResource": {
+      "document": "解绑bundle绑定的资源",
+      "input": "UnbindingResourceRequest",
+      "name": "解绑资源",
+      "output": "UnbindingResourceResponse",
+      "status": "online"
+    },
     "UnboundProjectExecutorResource": {
       "document": "商业化版本：执行资源组/资源包解除绑定项目",
       "input": "UnboundProjectExecutorResourceRequest",
@@ -7264,6 +7271,85 @@
         }
       ],
       "usage": "both"
+    },
+    "BooleanResponse": {
+      "document": "BooleanResponse",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败返回提示信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "参数不正确",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "基线Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BaselineId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NAME_EXIST",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BundleResource": {
+      "document": "boundle 绑定/解绑操作资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型，取值范围：</p>\n<ul>\n<li>WORKFLOW 工作流</li>\n<li>TASK 任务</li>\n<li>CODE_TEMPLATE 代码模版</li>\n<li>RESOURCE 资源信息</li>\n<li>EVENT 事件</li>\n<li>PROJECT_PARAM 项目参数</li>\n</ul>",
+          "example": "TASK",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "659e034b-9e99-455a-a9f9-041fc9774c27",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "工作流",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "BytesSpeed": {
       "document": "实时任务同步速度 字节/s",
@@ -67576,6 +67662,52 @@
           "name": "Data",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindingResourceRequest": {
+      "document": "UnbindingResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "1464962169590902784",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源列表",
+          "example": "无",
+          "member": "BundleResource",
+          "name": "ResourceList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindingResourceResponse": {
+      "document": "UnbindingResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BooleanResponse",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {

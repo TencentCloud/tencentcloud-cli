@@ -574,6 +574,13 @@
       "output": "DescribeAvailableCustomActionsForRuleEngineResponse",
       "status": "online"
     },
+    "DescribeAvailableOriginACLFamily": {
+      "document": "查询源站防护 IP 段控制域详细信息，包含版本号和具体IP网段信息等。\n标准控制域和精简控制域主要区别在于提供的 IP 段数量差异，后者数量更少,但是使用上有些限制，具体限制请咨询产品。具体格式说明如下：\n标准控制域：\n<li>gaz：标准全球控制域；</li>\n<li>mlc：标准中国控制域；</li>\n<li>emc：标准海外(全球不含中国)控制域；</li>\n精简控制域控制域：\n<li>plat-gaz：精简全球控制域；</li>\n<li>plat-mlc：精简中国控制域；</li>\n<li>plat-emc：精简海外(全球不含中国)控制域；</li>\n<li>plat-specific-gaz：定制版控全球可用区制域；</li>\n<li>plat-specific-mlc：定制版控中国大陆可用区控制域；</li>\n<li>plat-specific-emc：定制版控全球（不含中国大陆）可用区控制域；</li>\n缩写说明：\n<li>gaz：Global AZ Availability Zone;</li>\n<li>mlc：mainlandChina;</li>\n<li>emc：Exclude mainlandChina.</li>",
+      "input": "DescribeAvailableOriginACLFamilyRequest",
+      "name": "查询源站防护可配置控制域列表信息",
+      "output": "DescribeAvailableOriginACLFamilyResponse",
+      "status": "online"
+    },
     "DescribeAvailablePlans": {
       "document": "查询当前账户可用套餐信息列表",
       "input": "DescribeAvailablePlansRequest",
@@ -8198,8 +8205,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
-          "example": "zone-27q0p0bali16\t",
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-27q0p0bali16",
           "member": "string",
           "name": "ZoneId",
           "required": true,
@@ -8207,7 +8214,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。",
+          "document": "<p>实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。</p>",
           "example": "lb-1",
           "member": "string",
           "name": "Name",
@@ -8216,7 +8223,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，取值有：\n<li>HTTP：HTTP 专用型，支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）；</li>\n<li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。</li>",
+          "document": "<p>实例类型，取值有：</p><li>HTTP_V2：HTTP 专用型（V2），支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）。该实例类型支持选择发起探测的区域，可显著降低探测请求量但对源站的健康感知灵敏度更低；</li><li>HTTP：HTTP 专用型（V1），支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）。该实例类型不支持选择发起探测的区域，探测请求量较大但对源站的健康感知灵敏度更高；</li><li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。该实例类型不支持选择发起探测的区域，探测请求量较大但对源站的健康感知灵敏度更高。</li>",
           "example": "HTTP",
           "member": "string",
           "name": "Type",
@@ -8225,8 +8232,8 @@
         },
         {
           "disabled": false,
-          "document": "源站组列表及其对应的容灾调度优先级。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223) 中的示例场景。",
-          "example": "[{\"Priority\": \"proiority_1\", \"OriginGroupId\": \"origin-1\"}, {\"Priority\": \"proiority_2\", \"OriginGroupId\": \"origin-2\"}]",
+          "document": "<p>源站组列表及其对应的容灾调度优先级。详情请参考 <a href=\"https://cloud.tencent.com/document/product/1552/104223\">快速创建负载均衡实例</a> 中的示例场景。</p>",
+          "example": "无",
           "member": "OriginGroupInLoadBalancer",
           "name": "OriginGroups",
           "required": true,
@@ -8234,7 +8241,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查策略。详情请参考 [健康检查策略介绍](https://cloud.tencent.com/document/product/1552/104228)。不填写时，默认为不启用健康检查。",
+          "document": "<p>健康检查策略。详情请参考 <a href=\"https://cloud.tencent.com/document/product/1552/104228\">健康检查策略介绍</a>。不填写时，默认为不启用健康检查。</p>",
           "example": "无",
           "member": "HealthChecker",
           "name": "HealthChecker",
@@ -8243,7 +8250,7 @@
         },
         {
           "disabled": false,
-          "document": "源站组间的流量调度策略，取值有：\n<li>Pritory：按优先级顺序进行故障转移。</li>默认值为 Pritory。",
+          "document": "<p>源站组间的流量调度策略，取值有：</p><li>Pritory：按优先级顺序进行故障转移。</li>默认值为 Pritory。",
           "example": "Pritory",
           "member": "string",
           "name": "SteeringPolicy",
@@ -8252,7 +8259,7 @@
         },
         {
           "disabled": false,
-          "document": "实际访问某源站失败时的请求重试策略，详情请参考 [请求重试策略介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li>\n<li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>默认值为 OtherRecordInOriginGroup。",
+          "document": "<p>实际访问某源站失败时的请求重试策略，详情请参考 <a href=\"https://cloud.tencent.com/document/product/1552/104227\">请求重试策略介绍</a>，取值有：</p><li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li><li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>默认值为 OtherRecordInOriginGroup。",
           "example": "OtherRecordInOriginGroup",
           "member": "string",
           "name": "FailoverPolicy",
@@ -8267,7 +8274,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例 ID。",
+          "document": "<p>负载均衡实例 ID。</p>",
           "example": "lb-asdfasdff",
           "member": "string",
           "name": "InstanceId",
@@ -12473,6 +12480,80 @@
           "example": "无",
           "member": "RuleEngineCustomAction",
           "name": "CustomActionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableOriginACLFamilyRequest": {
+      "document": "DescribeAvailableOriginACLFamily请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点ID。</p>",
+          "example": "zone-2w0bpv1wlag8",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前站点下所有可用版本。源站防护的 IP 段控制域包含标准控制域和精简控制域。标准控制域和精简控制域主要区别在于提供的回源 IP 网段数量差异，后者数量更少,但是使用上有限制，如需使用请联系技术支持。具体取值说明如下：<br>详细的过滤条件如下：<br>OriginACLFamily：按照控制域进行过滤；</p><li>gaz：标准全球可用区控制域；</li><li>mlc：标准中国大陆可用区控制域；</li><li>emc：标准全球(不含中国大陆)可用区控制域；</li><li>plat-gaz：精简全球可用区控制域；</li><li>plat-mlc：精简中国大陆可用区控制域；</li><li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li><li>plat-specific-gaz：定制版控全球可用区制域；</li><li>plat-specific-mlc：定制版控中国大陆可用区控制域；</li><li>plat-specific-emc：定制版控全球（不含中国大陆）可用区控制域。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询偏移量，默认为 0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目，默认值：20，最大值：100。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvailableOriginACLFamilyResponse": {
+      "document": "DescribeAvailableOriginACLFamily返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源站防护 IP 段详细信息总数。</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回源 IP 网段详细信息列表。</p>",
+          "example": "无",
+          "member": "OriginACLFamilyInfo",
+          "name": "OriginACLFamilyInfos",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -21253,7 +21334,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "健康检查策略，取值有：\n<li>HTTP；</li>\n<li>HTTPS；</li>\n<li>TCP；</li>\n<li>UDP；</li>\n<li>ICMP Ping；</li>\n<li>NoCheck。</li>\n注意：NoCheck 表示不启用健康检查策略。",
+          "document": "<p>健康检查策略，取值有：</p><li>HTTP；</li><li>HTTPS；</li><li>TCP；</li><li>UDP；</li><li>ICMP Ping；</li><li>NoCheck。</li>注意：NoCheck 表示不启用健康检查策略。",
           "example": "HTTP",
           "member": "string",
           "name": "Type",
@@ -21264,7 +21345,7 @@
         },
         {
           "disabled": false,
-          "document": "检查端口。当 Type=HTTP 或 Type=HTTPS 或 Type=TCP 或 Type=UDP 时为必填。",
+          "document": "<p>检查端口。当 Type=HTTP 或 Type=HTTPS 或 Type=TCP 或 Type=UDP 时为必填。</p>",
           "example": "80",
           "member": "uint64",
           "name": "Port",
@@ -21275,7 +21356,7 @@
         },
         {
           "disabled": false,
-          "document": "检查频率，表示多久发起一次健康检查任务，单位为秒。可配置 10-600 秒。",
+          "document": "<p>检查频率，表示多久发起一次健康检查任务，单位为秒。可配置 10-600 秒。</p>",
           "example": "30",
           "member": "uint64",
           "name": "Interval",
@@ -21286,7 +21367,7 @@
         },
         {
           "disabled": false,
-          "document": "每一次健康检查的超时时间，若健康检查消耗时间大于此值，则检查结果判定为“不健康”， 单位为秒，默认值为 5s，取值必须小于 Interval。",
+          "document": "<p>每一次健康检查的超时时间，若健康检查消耗时间大于此值，则检查结果判定为“不健康”， 单位为秒，默认值为 5s，取值必须小于 Interval。</p>",
           "example": "5",
           "member": "uint64",
           "name": "Timeout",
@@ -21297,7 +21378,7 @@
         },
         {
           "disabled": false,
-          "document": "健康阈值，表示连续几次健康检查结果为\"健康\"，则判断源站为\"健康\"，单位为次，默认 3 次，最小取值 1 次。",
+          "document": "<p>健康阈值，表示连续几次健康检查结果为&quot;健康&quot;，则判断源站为&quot;健康&quot;，单位为次，默认 3 次，最小取值 1 次。</p>",
           "example": "3",
           "member": "uint64",
           "name": "HealthThreshold",
@@ -21308,7 +21389,7 @@
         },
         {
           "disabled": false,
-          "document": "不健康阈值，表示连续几次健康检查结果为\"不健康\"，则判断源站为\"不健康\"，单位为次，默认 2 次。",
+          "document": "<p>不健康阈值，表示连续几次健康检查结果为&quot;不健康&quot;，则判断源站为&quot;不健康&quot;，单位为次，默认 2 次。</p>",
           "example": "5",
           "member": "uint64",
           "name": "CriticalThreshold",
@@ -21319,7 +21400,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测路径，需要填写完整的 host/path，不包含协议部分，例如：www.example.com/test。\n",
+          "document": "<p>该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测路径，需要填写完整的 host/path，不包含协议部分，例如：www.example.com/test。</p>",
           "example": "www.example.com/test",
           "member": "string",
           "name": "Path",
@@ -21330,7 +21411,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示请求方法，取值有：\n<li>GET；</li>\n<li>HEAD。</li>",
+          "document": "<p>该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示请求方法，取值有：</p><li>GET；</li><li>HEAD。</li>",
           "example": "HEAD",
           "member": "string",
           "name": "Method",
@@ -21341,7 +21422,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测节点向源站发起健康检查时，响应哪些状态码可用于认定探测结果为健康。",
+          "document": "<p>该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测节点向源站发起健康检查时，响应哪些状态码可用于认定探测结果为健康。</p>",
           "example": "[\"200\", \"500\"]",
           "member": "string",
           "name": "ExpectedCodes",
@@ -21352,8 +21433,8 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测请求携带的自定义  HTTP 请求头，至多可配置 10 个。",
-          "example": "[{   \"Key\": \"host\",   \"Value\": \"www.example.com\" }]",
+          "document": "<p>该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示探测请求携带的自定义  HTTP 请求头，至多可配置 10 个。</p>",
+          "example": "无",
           "member": "CustomizedHeader",
           "name": "Headers",
           "output_required": false,
@@ -21363,7 +21444,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示是否启用遵循 301/302 重定向。启用后，301/302 默认为\"健康\"的状态码，默认跳转 3 次。",
+          "document": "<p>该参数仅当 Type=HTTP 或 Type=HTTPS 时有效，表示是否启用遵循 301/302 重定向。启用后，301/302 默认为&quot;健康&quot;的状态码，默认跳转 3 次。</p>",
           "example": "true",
           "member": "string",
           "name": "FollowRedirect",
@@ -21374,7 +21455,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=UDP 时有效，表示健康检查发送的内容。只允许 ASCII 可见字符，最大长度限制 500 个字符。",
+          "document": "<p>该参数仅当 Type=UDP 时有效，表示健康检查发送的内容。只允许 ASCII 可见字符，最大长度限制 500 个字符。</p>",
           "example": "send_payload",
           "member": "string",
           "name": "SendContext",
@@ -21385,10 +21466,21 @@
         },
         {
           "disabled": false,
-          "document": "该参数仅当 Type=UDP 时有效，表示健康检查期望源站返回结果。只允许 ASCII 可见字符，最大长度限制 500 个字符。",
+          "document": "<p>该参数仅当 Type=UDP 时有效，表示健康检查期望源站返回结果。只允许 ASCII 可见字符，最大长度限制 500 个字符。</p>",
           "example": "recv_context",
           "member": "string",
           "name": "RecvContext",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查探测集群。指定本负载均衡实例发起健康探测的集群区域范围，探测集群地区分布详见<a href=\"https://cloud.tencent.com/document/product/1552/104228\">健康检查策略介绍</a>，仅 HTTP 专用型（V2）版本负载均衡实例支持设置。取值有：<br>global：由全球所有区域的探测集群发起探测，包括中国大陆区域以及非中国大陆区域，各个区域的集群独立维护各自的探测结果；<br>mainland_china：仅由中国大陆区域的探测集群发起探测，当前中国大陆区域共用一个探测集群，探测结果由中国大陆区域的探测集群维护，其他区域跟随中国大陆区域的集群的探测结果；<br>overseas：仅由非中国大陆区域的探测集群发起探测，当前非中国大陆区域包含多个地区的探测集群，探测结果由各个地区的探测集群独立维护，中国大陆区域的探测结果由所有其他地区的探测集群的探测结果汇总生成。<br>默认为 global。</p>",
+          "example": "global",
+          "member": "string",
+          "name": "ProbeCluster",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -24465,7 +24557,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "lb-2dafsdff",
           "member": "string",
           "name": "InstanceId",
@@ -24475,7 +24567,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。\t",
+          "document": "<p>实例名称，可输入 1-200 个字符，允许字符为 a-z，A-Z，0-9，_，-。</p>",
           "example": "lb-test",
           "member": "string",
           "name": "Name",
@@ -24485,7 +24577,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型，取值有：\n<li>HTTP：HTTP 专用型，支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）；</li>\n<li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。</li>",
+          "document": "<p>实例类型，取值有：</p><li>HTTP_V2：HTTP 专用型（V2），支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）。该实例类型支持选择发起探测的区域，可显著降低探测请求量但对源站的健康感知灵敏度更低；</li><li>HTTP：HTTP 专用型（V1），支持添加 HTTP 专用型和通用型源站组，仅支持被站点加速相关服务引用（如域名服务和规则引擎）。该实例类型不支持选择发起探测的区域，探测请求量较大但对源站的健康感知灵敏度更高；</li><li>GENERAL：通用型，仅支持添加通用型源站组，能被站点加速服务（如域名服务和规则引擎）和四层代理引用。该实例类型不支持选择发起探测的区域，探测请求量较大但对源站的健康感知灵敏度更高。</li>",
           "example": "HTTP",
           "member": "string",
           "name": "Type",
@@ -24495,7 +24587,7 @@
         },
         {
           "disabled": false,
-          "document": "健康检查策略。详情请参考 [健康检查策略介绍](https://cloud.tencent.com/document/product/1552/104228)。",
+          "document": "<p>健康检查策略。详情请参考 <a href=\"https://cloud.tencent.com/document/product/1552/104228\">健康检查策略介绍</a>。</p>",
           "example": "无",
           "member": "HealthChecker",
           "name": "HealthChecker",
@@ -24505,7 +24597,7 @@
         },
         {
           "disabled": false,
-          "document": "源站组间的流量调度策略，取值有：\n<li>Pritory：按优先级顺序进行故障转移 。</li>",
+          "document": "<p>源站组间的流量调度策略，取值有：</p><li>Pritory：按优先级顺序进行故障转移 。</li>",
           "example": "Pritory",
           "member": "string",
           "name": "SteeringPolicy",
@@ -24515,7 +24607,7 @@
         },
         {
           "disabled": false,
-          "document": "实际访问某源站失败时的请求重试策略，详情请参考 [请求重试策略介绍](https://cloud.tencent.com/document/product/1552/104227)，取值有：\n<li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li>\n<li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>",
+          "document": "<p>实际访问某源站失败时的请求重试策略，详情请参考 <a href=\"https://cloud.tencent.com/document/product/1552/104227\">请求重试策略介绍</a>，取值有：</p><li>OtherOriginGroup：单次请求失败后，请求优先重试下一优先级源站组；</li><li>OtherRecordInOriginGroup：单次请求失败后，请求优先重试同源站组内的其他源站。</li>",
           "example": "OtherRecordInOriginGroup",
           "member": "string",
           "name": "FailoverPolicy",
@@ -24525,7 +24617,7 @@
         },
         {
           "disabled": false,
-          "document": "源站组健康状态。",
+          "document": "<p>源站组健康状态。</p>",
           "example": "无",
           "member": "OriginGroupHealthStatus",
           "name": "OriginGroupHealthStatus",
@@ -24535,7 +24627,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡状态，取值有：\n<li>Pending：部署中；</li>\n<li>Deleting：删除中；</li>\n<li>Running：已生效。</li>",
+          "document": "<p>负载均衡状态，取值有：</p><li>Pending：部署中；</li><li>Deleting：删除中；</li><li>Running：已生效。</li>",
           "example": "Running",
           "member": "string",
           "name": "Status",
@@ -24545,7 +24637,7 @@
         },
         {
           "disabled": false,
-          "document": "该负载均衡实例绑的四层代理实例的列表。",
+          "document": "<p>该负载均衡实例绑的四层代理实例的列表。</p>",
           "example": "[\"sid-asdfsd1asdf\", \"sid-8asdfjasdfl\"]",
           "member": "string",
           "name": "L4UsedList",
@@ -24555,7 +24647,7 @@
         },
         {
           "disabled": false,
-          "document": "该负载均衡实例绑定的七层域名列表。",
+          "document": "<p>该负载均衡实例绑定的七层域名列表。</p>",
           "example": "[\"www.qq.com\", \"www.qq2.com\"]",
           "member": "string",
           "name": "L7UsedList",
@@ -24565,7 +24657,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡被引用实例的列表。",
+          "document": "<p>负载均衡被引用实例的列表。</p>",
           "example": "无",
           "member": "OriginGroupReference",
           "name": "References",
@@ -29158,6 +29250,56 @@
         }
       ],
       "usage": "in"
+    },
+    "OriginACLFamilyInfo": {
+      "document": "回源 IP 网段版本信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站防护版本号。\n格式说明：\n标准版本：\n<li>gaz-xxxxx：全球；</li>\n<li>mlc-xxxxx：中国；</li>\n<li>emc-xxxxx：海外(全球不含中国)；</li>\n精简版(平台级版本)：\n<li>plat-gaz-xxxxxx：精简全球版；</li>\n<li>plat-mlc-xxxxxx：精简中国版；</li>\n<li>plat-emc-xxxxxx：精简海外(全球不含中国)版；</li>\n缩写说明：\n<li>gaz：Global AZ Availability Zone;</li>\n<li>mlc：mainlandChina;</li>\n<li>emc：Exclude mainlandChina.</li>",
+          "example": "emc-0.0.2-20250814",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本生效时间，时间是北京时间 UTC+8， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2026-03-06T00:00:00+08:00",
+          "member": "string",
+          "name": "ActiveTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回源 IP 网段详情。\t",
+          "example": "无",
+          "member": "Addresses",
+          "name": "EntireAddresses",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站防护回源ACL控制域。取值说明如下：\n<li>gaz：标准全球可用区控制域；</li>\n<li>mlc：标准中国大陆可用区控制域；</li>\n<li>emc：标准全球(不含中国大陆)可用区控制域；</li>\n<li>plat-gaz：精简全球可用区控制域；</li>\n<li>plat-mlc：精简中国大陆可用区控制域；</li>\n<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>",
+          "example": "plat-emc",
+          "member": "string",
+          "name": "OriginACLFamily",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OriginACLInfo": {
       "document": "七层加速域名/四层代理实例与回源 IP 网段的绑定关系，同时包含回源 IP 网段详情和选择可切换的回源 IP 网段列表。",

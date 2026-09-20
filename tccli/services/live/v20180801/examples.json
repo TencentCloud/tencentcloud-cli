@@ -110,6 +110,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateAuditImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditImages\n<公共请求参数>\n\n{\n    \"Images\": [\n        {\n            \"Index\": \"autotest_index_HLRIioUifQ\",\n            \"Url\": \"https://livewatermark-1251132611.cos.ap-guangzhou.myqcloud.com/1256342408/watermark_img_1682650739917_huiyi.jpeg\",\n            \"Md5\": \"75500dac4340c9973f90e24331c07127\",\n            \"Name\": \"autotest_HLRIioUifQ.jpeg\",\n            \"Label\": \"Normal\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"ImageId\": \"75500dac4340c9973f90e24331c07127_100\",\n                \"Index\": \"autotest_index_HLRIioUifQ\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"be35ef55-f49f-49f4-a836-af13acbcb9f2\"\n    }\n}",
+        "title": "直播审核图库添加图片"
+      }
+    ],
     "CreateAuditKeywordLib": [
       {
         "document": "",
@@ -122,7 +130,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditKeywords\n<公共请求参数>\n\n{\n    \"Keywords\": [\n        {\n            \"Content\": \"content\",\n            \"Label\": \"321\"\n        }\n    ],\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"content\",\n                \"KeywordId\": \"8454212\",\n                \"CreateTime\": \"2018-11-29T19:00:00Z\",\n                \"Label\": \"321\"\n            }\n        ],\n        \"KeywordIds\": [\n            \"4895545216621\"\n        ],\n        \"Keywords\": [],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DupInfos\": [\n            {\n                \"Content\": \"content\",\n                \"KeywordId\": \"8454212\",\n                \"CreateTime\": \"2018-11-29T19:00:00Z\",\n                \"Label\": \"321\"\n            }\n        ],\n        \"KeywordIds\": [\n            \"4895545216621\"\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核创建关键词"
       }
     ],
@@ -404,6 +412,22 @@
         "title": "创建AIGC视频转绘任务"
       }
     ],
+    "DeleteAuditImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"75500dac4340c9973f90e24331c07127_100\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"ErrMsg\": \"\",\n                \"ImageId\": \"75500dac4340c9973f90e24331c07127_100\",\n                \"Label\": \"Normal\",\n                \"Name\": \"autotest_HLRIioUifQ.jpeg\",\n                \"Status\": 0\n            }\n        ],\n        \"RequestId\": \"474bee92-37cb-4645-9f7b-b77ba014c6ef\"\n    }\n}",
+        "title": "直播审核图库删除图片"
+      }
+    ],
+    "DeleteAuditKeywordLib": [
+      {
+        "document": "删除词库。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditKeywordLib\n<公共请求参数>\n\n{\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播审核删除词库"
+      }
+    ],
     "DeleteAuditKeywords": [
       {
         "document": "",
@@ -674,6 +698,30 @@
         "input": "https://live.tencentcloudapi.com/?Action=DescribeAreaBillBandwidthAndFluxList\n&PlayDomains.0=5000.playdomain.com\n&StartTime=2019-02-0100:00:00\n&EndTime=2019-02-0100:10:00\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"Name\": \"中东/非洲\",\n                \"Countrys\": [\n                    {\n                        \"Name\": \"阿联酋\",\n                        \"BandInfoList\": [\n                            {\n                                \"Bandwidth\": 6.95,\n                                \"Flux\": 260.7,\n                                \"PeakTime\": \"2020-09-09 00:00:00\",\n                                \"Time\": \"2020-09-09 00:05:00\"\n                            },\n                            {\n                                \"Bandwidth\": 5.84,\n                                \"Flux\": 219.09,\n                                \"PeakTime\": \"2020-09-09 00:05:00\",\n                                \"Time\": \"2020-09-09 00:10:00\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DescribeAuditGroupTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditGroupTag\n<公共请求参数>\n\n{\n    \"TagType\": \"Other\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupTypeList\": [\n            {\n                \"GroupClassList\": [\n                    {\n                        \"GroupClassEname\": \"Polity\",\n                        \"GroupClassName\": \"政治\",\n                        \"LabelGroupList\": [\n                            {\n                                \"GroupEname\": \"PositiveContent\",\n                                \"GroupMsg\": \"示例：厉害了，我的国！这是祖国崛起的见证\",\n                                \"GroupName\": \"正面内容\"\n                            }\n                        ]\n                    }\n                ],\n                \"TagType\": \"TagText\"\n            }\n        ],\n        \"RequestId\": \"76984f4f-b2a3-4131-9785-6e62bb2907a2\"\n    }\n}",
+        "title": "直播审核图库添加图片"
+      }
+    ],
+    "DescribeAuditImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditImages\n<公共请求参数>\n\n{\n    \"Label\": \"Normal\",\n    \"PageIndex\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"Name\": \"autotest_HLRIioUifQ.jpeg\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"07a4835e-f140-48d4-b67e-6a1887b71399\"\n    }\n}",
+        "title": "直播审核图库获取图片"
+      }
+    ],
+    "DescribeAuditKeywordLibs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditKeywordLibs\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Name\": \"autotest_lib_001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Infos\": [\n            {\n                \"CreateTime\": \"2026-09-18T08:00:14Z\",\n                \"Description\": \"autotest\",\n                \"LibId\": \"a4cf3b9b-0c17-4155-ac34-d7d26ae20e68\",\n                \"MatchType\": \"ExactMatch\",\n                \"Name\": \"autotest_lib_001\",\n                \"Suggestion\": \"Review\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"839aca8d-2c66-4c16-a214-f364b57ada71\"\n    }\n}",
+        "title": "直播审核词库列表"
       }
     ],
     "DescribeAuditKeywords": [
@@ -1546,6 +1594,14 @@
         "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: InsertTaskTemporaryFiles\n<公共请求参数>\n\n{\n    \"TaskId\": \"895451\",\n    \"InsertAfterIndex\": 0,\n    \"TemporaryFiles\": [\n        \"http://vod.com/path/test.mp4\"\n    ],\n    \"Operator\": \"admin\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyAuditKeywordLib": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditKeywordLib\n<公共请求参数>\n\n{\n    \"Name\": \"黄暴过滤\",\n    \"Suggestion\": \"Block\",\n    \"Description\": \"自定义词库\",\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "直播审核更新词库"
       }
     ],
     "ModifyCaster": [

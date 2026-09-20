@@ -2524,6 +2524,14 @@
         "title": "手动任务触发运行"
       }
     ],
+    "UnbindingResource": [
+      {
+        "document": "解绑被bundle绑定的资源",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindingResource\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1464962169590902784\",\n    \"ResourceList\": [\n        {\n            \"ResourceType\": \"TASK\",\n            \"ResourceId\": \"20250716170423856\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Code\": \"20250716170423856\",\n                \"Message\": \"\",\n                \"Success\": true\n            }\n        ],\n        \"RequestId\": \"6b453935-44f9-47e8-bf9d-db6b0399a47f\"\n    }\n}",
+        "title": "解绑被bundle绑定的资源"
+      }
+    ],
     "UnboundProjectExecutorResource": [
       {
         "document": "解绑多个",

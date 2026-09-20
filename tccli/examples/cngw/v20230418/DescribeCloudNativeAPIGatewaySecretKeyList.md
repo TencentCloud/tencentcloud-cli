@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli cngw DescribeCloudNativeAPIGatewaySecretKeyList --cli-unfold-argument  \
-    --GatewayId gateway-c7fb18e4 \
-    --Limit 10 \
+    --GatewayId gateway-657ece23 \
+    --Limit 20 \
     --Offset 0 \
     --ResourceType Consumer
 ```
@@ -16,27 +16,30 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b9b49623-c235-4839-b1d6-1f6f23ae8dcd",
         "Result": {
+            "TotalCount": 8,
             "SecretKeys": [
                 {
-                    "BindCount": 0,
-                    "CreateTime": "2025-11-19 12:35:50",
-                    "Description": "密钥",
-                    "GenerateType": "System",
+                    "Name": "yoyo",
+                    "SecretKeyId": "secret-24de766980fe83",
+                    "SecretValue": "yoy****est",
+                    "Status": "Enable",
+                    "SecretType": "ApiKey",
+                    "ResourceType": "Consumer",
+                    "SourceType": "Private",
+                    "SyncedVersion": "v0",
+                    "GenerateType": "Custom",
+                    "Description": "",
                     "KmsKeyName": "",
                     "KmsKeyVersion": "",
-                    "ModifyTime": "2025-11-19 12:35:50",
-                    "Name": "测试系统密钥",
-                    "ResourceType": "Consumer",
-                    "SecretKeyId": "secret-wefawwe",
-                    "SecretType": "ApiKey",
-                    "SecretValue": "sk-****wdk",
-                    "Status": "Enable"
+                    "Provider": "",
+                    "BindCount": 0,
+                    "CreateTime": "2026-09-09 14:24:32",
+                    "ModifyTime": "2026-09-09 14:24:32"
                 }
-            ],
-            "TotalCount": 1
-        }
+            ]
+        },
+        "RequestId": "e16cd828-c7f0-4201-9630-8b3efa03c3f2"
     }
 }
 ```

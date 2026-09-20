@@ -1584,7 +1584,7 @@
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1593,7 +1593,7 @@
           "example": "/v12222",
           "member": "string",
           "name": "TargetPath",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -1602,7 +1602,25 @@
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>",
+          "example": "tencentTokenHub",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider=tencentTokenHub时对应的密钥</p>",
+          "example": "[\"sk-test123\"]",
+          "member": "string",
+          "name": "ApiKeys",
+          "required": false,
           "type": "list"
         },
         {
@@ -4045,6 +4063,16 @@
           "example": "mod-85b343e0",
           "member": "string",
           "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供商</p>",
+          "example": "tencentTokenHub",
+          "member": "string",
+          "name": "Provider",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

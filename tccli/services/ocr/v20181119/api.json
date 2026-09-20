@@ -274,7 +274,7 @@
       "status": "online"
     },
     "MultimodalDocParse": {
-      "document": "本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。\n\n支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持70M以内。\n\n默认接口请求频率限制：5 并发。",
+      "document": "本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。\n\n支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持70M以内。\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
       "input": "MultimodalDocParseRequest",
       "name": "多模态文档解析",
       "output": "MultimodalDocParseResponse",
@@ -7481,7 +7481,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否返回人像照片。",
+          "document": "<p>是否返回人像照片。</p>",
           "example": "false",
           "member": "bool",
           "name": "ReturnHeadImage",
@@ -7490,7 +7490,7 @@
         },
         {
           "disabled": true,
-          "document": "是否鉴伪。",
+          "document": "<p>是否鉴伪。</p>",
           "example": "true",
           "member": "bool",
           "name": "DetectFake",
@@ -7499,7 +7499,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。",
+          "document": "<p>图片的 Base64 值。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经Base64编码后不超过 10M。图片下载时间不超过 3 秒。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -7508,7 +7508,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -7523,7 +7523,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "中文姓名",
+          "document": "<p>中文姓名</p>",
           "example": "申能",
           "member": "string",
           "name": "CnName",
@@ -7533,7 +7533,7 @@
         },
         {
           "disabled": false,
-          "document": "英文姓名",
+          "document": "<p>英文姓名</p>",
           "example": "SAN, Nan",
           "member": "string",
           "name": "EnName",
@@ -7543,7 +7543,7 @@
         },
         {
           "disabled": false,
-          "document": "中文姓名对应电码",
+          "document": "<p>中文姓名对应电码</p>",
           "example": "300000000000",
           "member": "string",
           "name": "TelexCode",
@@ -7553,7 +7553,7 @@
         },
         {
           "disabled": false,
-          "document": "性别 ：“男M”或“女F”",
+          "document": "<p>性别 ：“男M”或“女F”</p>",
           "example": "女F",
           "member": "string",
           "name": "Sex",
@@ -7563,7 +7563,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "<p>出生日期</p>",
           "example": "01-01-2001",
           "member": "string",
           "name": "Birthday",
@@ -7573,7 +7573,7 @@
         },
         {
           "disabled": false,
-          "document": "永久性居民身份证。\n0：非永久；\n1：永久；\n-1：未知。",
+          "document": "<p>永久性居民身份证。<br>0：非永久；<br>1：永久；<br>-1：未知。</p>",
           "example": "1",
           "member": "int64",
           "name": "Permanent",
@@ -7583,7 +7583,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码",
+          "document": "<p>身份证号码</p>",
           "example": "C000000(E)",
           "member": "string",
           "name": "IdNum",
@@ -7593,7 +7593,7 @@
         },
         {
           "disabled": false,
-          "document": "证件符号，出生日期下的符号，例如\"***AZ\"",
+          "document": "<p>证件符号，出生日期下的符号，例如&quot;***AZ&quot;</p>",
           "example": "***AZ",
           "member": "string",
           "name": "Symbol",
@@ -7603,7 +7603,7 @@
         },
         {
           "disabled": false,
-          "document": "首次签发日期",
+          "document": "<p>首次签发日期</p>",
           "example": "(09-99)",
           "member": "string",
           "name": "FirstIssueDate",
@@ -7613,7 +7613,7 @@
         },
         {
           "disabled": false,
-          "document": "最近领用日期",
+          "document": "<p>最近领用日期</p>",
           "example": "23-09-10",
           "member": "string",
           "name": "CurrentIssueDate",
@@ -7623,7 +7623,7 @@
         },
         {
           "disabled": true,
-          "document": "真假判断。\n0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；\n1：假；\n2：真。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>真假判断。<br>0：无法判断（图像模糊、不完整、反光、过暗等导致无法判断）；<br>1：假；<br>2：真。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "FakeDetectResult",
@@ -7633,7 +7633,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的证件左侧人像大图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Base64编码的证件左侧人像大图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "HeadImage",
@@ -7643,7 +7643,7 @@
         },
         {
           "disabled": false,
-          "document": "Base64编码的证件右侧人像小图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Base64编码的证件右侧人像小图</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "SmallHeadImage",
@@ -7653,7 +7653,7 @@
         },
         {
           "disabled": true,
-          "document": "该字段已废弃， 将固定返回空数组，不建议使用。\n",
+          "document": "<p>该字段已废弃， 将固定返回空数组，不建议使用。</p>",
           "example": "[-9102,-9103]",
           "member": "int64",
           "name": "WarningCode",
@@ -7663,7 +7663,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通",
+          "document": "<p>该字段仅对国际站请求起作用，国内站该字段将固定返回空数组。国际站告警码如下：    告警码-9101 证件边框不完整告警-9102 证件复印件告警-9103 证件翻拍告警-9104 证件PS告警-9107 证件反光告警-9108 证件模糊告警-9109 告警能力未开通</p>",
           "example": "[-9101]",
           "member": "int64",
           "name": "WarnCardInfos",
@@ -7673,7 +7673,7 @@
         },
         {
           "disabled": false,
-          "document": "证件透明视窗内的文本信息",
+          "document": "<p>证件透明视窗内的文本信息</p>",
           "example": "C000000",
           "member": "string",
           "name": "WindowEmbeddedText",

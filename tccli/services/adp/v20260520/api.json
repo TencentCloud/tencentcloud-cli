@@ -308,6 +308,13 @@
       "output": "DescribeAppResponse",
       "status": "online"
     },
+    "DescribeAppStatisticsOverview": {
+      "document": "查询应用视图下的调用统计总览，包含总调用次数、调用成功率、总tokens平均耗时及首tokens平均耗时；RAG 应用额外返回各回复方式的调用次数及占比，用于绘制饼图",
+      "input": "DescribeAppStatisticsOverviewRequest",
+      "name": "查询应用统计总览",
+      "output": "DescribeAppStatisticsOverviewResponse",
+      "status": "online"
+    },
     "DescribeAppSummaryList": {
       "document": "获取应用摘要列表",
       "input": "DescribeAppSummaryListRequest",
@@ -10165,6 +10172,128 @@
       ],
       "type": "object"
     },
+    "DescribeAppStatisticsOverviewRequest": {
+      "document": "DescribeAppStatisticsOverview请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用类型。可选值：APP_TYPE_RAG（RAG）、APP_TYPE_WORKFLOW（Workflow）、APP_TYPE_CLAW（Claw）、APP_TYPE_MULTIAGENT（MultiAgent）；本期仅 APP_TYPE_RAG 生效，其余为预留值，传入将返回 InvalidParameter</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TYPE_UNSPECIFIED</td><td>0</td><td>未指定（无效值，请求勿传）</td></tr><tr><td>APP_TYPE_RAG</td><td>1</td><td>RAG（本期唯一支持）</td></tr><tr><td>APP_TYPE_WORKFLOW</td><td>2</td><td>Workflow（预留，暂不支持）</td></tr><tr><td>APP_TYPE_CLAW</td><td>3</td><td>Claw（预留，暂不支持）</td></tr><tr><td>APP_TYPE_MULTIAGENT</td><td>4</td><td>MultiAgent（预留，暂不支持）</td></tr></tbody></table>",
+          "example": "1",
+          "member": "int64",
+          "name": "AppType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围（Unix 秒）</p>",
+          "example": "无",
+          "member": "TimeRange",
+          "name": "TimeRange",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视图范围：应用视图（VIEW_TYPE_APP），scope_id 填应用 ID（uint64 雪花 ID 的十进制字符串）</p>",
+          "example": "无",
+          "member": "ViewScope",
+          "name": "ViewScope",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p><p>参数格式：<p>空间 ID</p></p><p>默认值：default_space</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p><p>参数格式：</p><p>应用 ID</p><p></p><p>参考值：2099767969573745984</p>",
+          "example": "2099767969573745984",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展过滤。Filter 组合规则：多项 AND，同项 value_list OR。支持 Name：space_id（空间 ID）、channel_type（调用方式/渠道类型，取值参考 trpc.adp.common.v2.ChannelType 枚举名）；channel_type 不传时按全部渠道聚合</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppStatisticsOverviewResponse": {
+      "document": "DescribeAppStatisticsOverview返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>首 tokens 平均耗时（毫秒）</p>",
+          "example": "0",
+          "member": "string",
+          "name": "AvgFirstTokenTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总 tokens 平均耗时（毫秒）</p>",
+          "example": "0",
+          "member": "string",
+          "name": "AvgTotalTokenTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用调用成功率（百分比，0~100）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "CallSuccessRate",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回复类型分布列表；按 app_type 统计，已补全所有回复方式并按固定顺序返回，无数据的回复方式 call_count 为 0</p>",
+          "example": "无",
+          "member": "Distribution",
+          "name": "ReplyTypeDistributionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总调用次数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TotalCallCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAppSummaryListRequest": {
       "document": "DescribeAppSummaryList请求参数结构体",
       "members": [
@@ -13884,6 +14013,45 @@
           "example": "2g*************p********NGdd9lZkXChKQIrv_6aG*************rGhRA5v",
           "member": "string",
           "name": "AppSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Distribution": {
+      "document": "回复类型分布项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该回复方式的调用次数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "CallCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该回复方式在总调用次数中的占比（百分比，0~100，保留两位小数；无数据时全为 0，有数据时各项之和为 100）</p>",
+          "example": "0",
+          "member": "float",
+          "name": "Percentage",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回复方式名称（已按请求语言国际化；i18n 缺失时兜底为 reply_method 的枚举名）</p>",
+          "example": "问答直接回复",
+          "member": "string",
+          "name": "ReplyName",
           "output_required": false,
           "required": false,
           "type": "string",

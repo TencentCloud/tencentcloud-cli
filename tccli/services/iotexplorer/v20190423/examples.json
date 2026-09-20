@@ -900,6 +900,14 @@
         "title": "拉取云存事件列表"
       }
     ],
+    "DescribeCloudStorageEventsByTWeSeePerson": [
+      {
+        "document": "查询指定 TWeSee 人员所关联的云存事件及 AI 任务。",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageEventsByTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"QDA1PZLBNB\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Events\": [\n            {\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Thumbnail\": \"/10000****725/QDA****BNB/dev001/events/1710487888.jpg\",\n                \"EventId\": \"event-123\",\n                \"UploadStatus\": \"Finished\",\n                \"Data\": \"\",\n                \"AITasks\": [\n                    {\n                        \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                        \"ProductId\": \"QDA1PZLBNB\",\n                        \"DeviceName\": \"dev001\",\n                        \"ChannelId\": 0,\n                        \"ServiceType\": \"VideoToText\",\n                        \"StartTime\": 1710487888,\n                        \"EndTime\": 1710487898,\n                        \"StartTimeMs\": 1710487888270,\n                        \"EndTimeMs\": 1710487898990,\n                        \"Status\": 3,\n                        \"Result\": \"{\\\"Summary\\\":\\\"一个人在门前经过\\\"}\",\n                        \"Files\": [],\n                        \"CreateTime\": 1711338476,\n                        \"UpdateTime\": 1711338476,\n                        \"CustomId\": \"event-123\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"3eace4a0-d09c-4dc9-b91c-98c10d48b009\"\n    }\n}",
+        "title": "查询 TWeSee 人员关联的云存事件"
+      }
+    ],
     "DescribeCloudStorageEventsWithAITasks": [
       {
         "document": "",
@@ -1268,6 +1276,14 @@
         "title": "查询 TWeSee 配置"
       }
     ],
+    "DescribeTWeSeeDirectUploadInfo": [
+      {
+        "document": "查询指定设备的视频理解单文件直传目录",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeDirectUploadInfo\n<公共请求参数>\n\n{\n    \"ProductId\": \"default\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"ServiceType\": \"VID_COMP\",\n    \"UploadTarget\": \"stream\",\n    \"UploadMethod\": \"single\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageBucket\": \"twesee-input-125*****99\",\n        \"StoragePath\": \"Direct/*********711/vid-z1-s/\",\n        \"COSURI\": \"cos://twesee-input-125*****99.ap-guangzhou/Direct/*********711/vid-z1-s/\",\n        \"RequestId\": \"a0fc12a1-3196-4fa7-8125-10d29d52e8df\"\n    }\n}",
+        "title": "查询 TWeSee 直传信息"
+      }
+    ],
     "DescribeTWeSeeFace": [
       {
         "document": "查询指定人脸详情。",
@@ -1414,6 +1430,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoLicense\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-R4rvgd\"\n}",
         "output": "{\n    \"Response\": {\n        \"License\": [\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"0_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"1_5_mbps\",\n                \"UsedCount\": 0\n            },\n            {\n                \"ExpiresSoonCount\": 0,\n                \"TotalCount\": 0,\n                \"Type\": \"2_mbps\",\n                \"UsedCount\": 0\n            }\n        ],\n        \"RequestId\": \"65ca8e0a-422a-4a7a-94bc-041ecd7abaf0\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeVodCloudStorageDate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVodCloudStorageDate\n<公共请求参数>\n\n{\n    \"ProductId\": \"YYZRTPMCUG\",\n    \"DeviceName\": \"billing_test_7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            \"2026-09-11\"\n        ],\n        \"RequestId\": \"a7c79c6c-d926-4e47-a3e3-fd11a3073c22\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "DestroyTWeSeeSubscription": [
@@ -1636,6 +1660,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTopicRuleList\n<公共请求参数>\n\n{\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\",\n        \"Rules\": [\n            {\n                \"RuleName\": \"test_create\",\n                \"Description\": \"规则描述\",\n                \"CreatedAt\": 1599017883,\n                \"RuleDisabled\": true\n            }\n        ],\n        \"TotalCnt\": 1\n    }\n}",
         "title": "获取规则列表"
+      }
+    ],
+    "GetVodCloudStorageEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVodCloudStorageEventList\n<公共请求参数>\n\n{\n    \"ProductId\": \"YYZRTPMCUG\",\n    \"DeviceName\": \"billing_test_7\",\n    \"Date\": \"2026-08-24\",\n    \"ChannelId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"\",\n        \"Events\": [\n            {\n                \"EventEndTime\": 1787538066,\n                \"EventId\": \"_sys_static_1787538066\",\n                \"EventStartTime\": 1787538066,\n                \"IsStaticEvent\": true,\n                \"ThumbnailUrl\": \"/700000625262/YYZRTPMCUG/billing_test_7/23/events/1787538070641402396.jpg\",\n                \"VideoList\": []\n            }\n        ],\n        \"Listover\": true,\n        \"Total\": 2,\n        \"VodAppId\": \"1500058***\",\n        \"RequestId\": \"befa4124-838a-4baf-9bc3-1490f47655e2\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "GetVodCloudStorageVideoList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVodCloudStorageVideoList\n<公共请求参数>\n\n{\n    \"ProductId\": \"YYZRTPMCUG\",\n    \"DeviceName\": \"*******_test_7\",\n    \"Date\": \"2026-08-26\",\n    \"ChannelId\": 23\n}",
+        "output": "{\n    \"Response\": {\n        \"Context\": \"\",\n        \"Listover\": true,\n        \"VideoList\": [\n            {\n                \"EndTime\": 1787729122,\n                \"FileId\": \"5001834817655768113\",\n                \"Psign\": \"\",\n                \"StartTime\": 1787729072,\n                \"StreamType\": \"vod\",\n                \"Url\": \"https://1500058999.vod-qcloud.com/fe0388edvodgzp1500058999/02dbb5c45001834817655768113/1Nh4Vbiish0A.m3u8?sign=6de370a61cfbec60c49269911552c865&t=6a8ef0c4&us=178774544425833604633398685843586842504412\"\n            }\n        ],\n        \"VodAppId\": \"1500058***\",\n        \"RequestId\": \"9ba1e7f3-55b0-4d06-a77a-e2451f71a915\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "GetWechatDeviceTicket": [
