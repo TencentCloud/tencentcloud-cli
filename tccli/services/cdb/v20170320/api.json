@@ -17867,8 +17867,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例的小版本号</p>",
-          "example": "20230115",
+          "document": "<p>实例的小版本号</p><p>MySQL5.5、分析型RO、单节点OnTke、OnCVM、未发货成功的实例，此参数展示为空。</p>",
+          "example": "20251130",
           "member": "string",
           "name": "SubVersion",
           "output_required": false,
@@ -21251,7 +21251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云数据库实例 ID。可通过 [DescribeDBInstances](https://cloud.tencent.com/document/product/236/15872) 接口获取。",
+          "document": "<p>云数据库实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/product/236/15872\">DescribeDBInstances</a> 接口获取。</p>",
           "example": "cdb-qwer1234",
           "member": "string",
           "name": "InstanceId",
@@ -21260,8 +21260,8 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。",
-          "example": "KMS-CDB",
+          "document": "<p>用户自定义密钥 ID，CMK 唯一标识符。该值为空时，将使用腾讯云自动生成的密钥 KMS-CDB。</p>",
+          "example": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
           "member": "string",
           "name": "KeyId",
           "required": false,
@@ -21269,7 +21269,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。",
+          "document": "<p>用户自定义密钥的存储地域。如：ap-guangzhou 。KeyId 不为空时，该参数必填。</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "KeyRegion",
@@ -25052,6 +25052,16 @@
           "member": "SlaveInstanceInfo",
           "name": "Second",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三备机信息</p>",
+          "example": "无",
+          "member": "SlaveInstanceInfo",
+          "name": "Third",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         }

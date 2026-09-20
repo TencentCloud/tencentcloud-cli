@@ -3509,6 +3509,46 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板id</p>",
+          "example": "tpl-dsv41fsh",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一次部署的模板id</p>",
+          "example": "tpl-dsv41fsh",
+          "member": "string",
+          "name": "PreviousTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署模式</p>",
+          "example": "PD_DISAGGREGATED",
+          "member": "string",
+          "name": "DeployMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型id</p>",
+          "example": "mdl-q7m3xk2p",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

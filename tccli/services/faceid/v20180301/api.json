@@ -1881,7 +1881,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>身份证人像面的 Url 地址</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经 Base64 编码后不超过 3M。图片下载时间不超过 3 秒。</li><li>图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。</li><li>非腾讯云存储的 Url 速度和稳定性可能受一定影响。</li></ul>",
+          "document": "<p>身份证人像面的 Url 地址</p><ul><li>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。</li><li>支持的图片大小：所下载图片经 Base64 编码后不超过 10M。图片下载时间不超过 3 秒。</li><li>图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。</li><li>非腾讯云存储的 Url 速度和稳定性可能受一定影响。</li></ul>",
           "example": "http://www.qq.com/image.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -7506,7 +7506,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>自定义描述字段。</p><ul><li>用于描述调用业务信息，出参中将返回此描述字段。 </li><li>每个自定义描述字段支持[1,10]个字符。</li></ul>",
+          "document": "<p>自定义描述字段。</p><ul><li><p>用于描述调用业务信息，出参中将返回此描述字段。</p></li><li><p>每个自定义描述字段最长支持10 个字符（即 [0,10] 个字符）；不传该参数时，出参中此字段返回空字符串。</p></li></ul>",
           "example": "开户业务",
           "member": "string",
           "name": "Extra",
@@ -10218,6 +10218,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步卡证识别状态：PROCESSING / COMPLETED / ABNORMAL</p>",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "CardResultStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12872,6 +12882,15 @@
           "example": "BASIC",
           "member": "string",
           "name": "Version",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步卡证识别时，识别结果的等待策略</p><p>枚举值：</p><ul><li>required： 卡证结束后，等待异步结果。</li><li>skip： 卡证结束后，跳过卡证结果显示，直接进入活体。</li></ul>",
+          "example": "required",
+          "member": "string",
+          "name": "OcrWaitPolicy",
           "required": false,
           "type": "string"
         }

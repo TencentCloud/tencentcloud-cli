@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli yinsuda DescribeUserInfo --cli-unfold-argument  \
-    --AppName test \
-    --UserId 111
+    --AppName apl_test \
+    --UserId user_id_0
 ```
 
 Output: 
@@ -15,16 +15,16 @@ Output:
 {
     "Response": {
         "UserInfo": {
-            "AppName": "test",
-            "UserId": "111",
+            "AppName": "apl_test",
+            "UserId": "user_id_0",
             "LiveVipUserInfo": {
-                "RoomId": "321",
+                "RoomId": "roomid_00",
                 "LiveVipEndTime": "2020-09-22T00:00:00+00:00",
                 "LiveVipStatus": "Valid"
             },
             "UserType": "Normal"
         },
-        "RequestId": "abc"
+        "RequestId": "1222fiud8946yhok"
     }
 }
 ```

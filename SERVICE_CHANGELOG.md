@@ -1,98 +1,10 @@
-# Release 3.0.1498.1
+# Release 3.0.1499.1
 
-## 灾备中心(bdrc) 版本：2026-03-30
+## Agent 沙箱服务(ags) 版本：2025-09-20
 
-### 第 4 次发布
+### 第 32 次发布
 
-发布时间：2026-09-18 01:13:22
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyCopyPairAttribute](http://document.tencentcloudapi.woa.com/document/product/1824/92300)
-
-	* 新增入参：InstanceType
-
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 181 次发布
-
-发布时间：2026-09-18 01:21:41
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AdjustCdbProxy](http://document.tencentcloudapi.woa.com/document/product/236/77513)
-
-	* 新增入参：RollUpgradeWaitingTime
-
-* [UpgradeCDBProxyVersion](http://document.tencentcloudapi.woa.com/document/product/236/68160)
-
-	* 新增入参：RollUpgradeWaitingTime
-
-* [UpgradeDBInstanceEngineVersion](http://document.tencentcloudapi.woa.com/document/product/236/15870)
-
-	* 新增出参：JobId
-
-
-
-
-## 文件存储(cfs) 版本：2019-07-19
-
-### 第 52 次发布
-
-发布时间：2026-09-18 01:25:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeCfsFileSystems](http://document.tencentcloudapi.woa.com/document/product/582/38170)
-
-	* 新增入参：Filters, Tags
-
-
-
-
-## 云服务器(cvm) 版本：2019-12-12
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 106 次发布
-
-发布时间：2026-09-18 01:32:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Instance](http://document.tencentcloudapi.woa.com/document/product/213/15753#Instance)
-
-	* 新增成员：HostName
-
-
-
-
-## 物联网开发平台(iotexplorer) 版本：2019-04-23
-
-### 第 102 次发布
-
-发布时间：2026-09-18 01:58:50
+发布时间：2026-09-21 01:07:58
 
 本次发布包含了以下内容：
 
@@ -100,47 +12,52 @@
 
 新增接口：
 
-* [DescribeCloudStorageEventsByTWeSeePerson](http://document.tencentcloudapi.woa.com/document/product/1081/92647)
-* [DescribeTWeSeeDirectUploadInfo](http://document.tencentcloudapi.woa.com/document/product/1081/92646)
-* [DescribeVodCloudStorageDate](http://document.tencentcloudapi.woa.com/document/product/1081/92645)
-* [GetVodCloudStorageEventList](http://document.tencentcloudapi.woa.com/document/product/1081/92644)
-* [GetVodCloudStorageVideoList](http://document.tencentcloudapi.woa.com/document/product/1081/92643)
+* [ApproveRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92664)
+* [CancelRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92663)
+* [CreateRegistry](http://document.tencentcloudapi.woa.com/document/product/1804/92670)
+* [CreateRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92662)
+* [DeleteRegistry](http://document.tencentcloudapi.woa.com/document/product/1804/92669)
+* [DeleteRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92661)
+* [DescribeQuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1804/92649)
+* [DescribeRegistry](http://document.tencentcloudapi.woa.com/document/product/1804/92668)
+* [DescribeRegistryAuditLogList](http://document.tencentcloudapi.woa.com/document/product/1804/92660)
+* [DescribeRegistryList](http://document.tencentcloudapi.woa.com/document/product/1804/92667)
+* [DescribeRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92659)
+* [DescribeRegistryRecordList](http://document.tencentcloudapi.woa.com/document/product/1804/92658)
+* [DescribeRegistryRecordVersionList](http://document.tencentcloudapi.woa.com/document/product/1804/92657)
+* [GetSkillPackageDownloadURL](http://document.tencentcloudapi.woa.com/document/product/1804/92656)
+* [GetSkillPackageUploadURL](http://document.tencentcloudapi.woa.com/document/product/1804/92655)
+* [ModifySession](http://document.tencentcloudapi.woa.com/document/product/1804/92671)
+* [PreviewRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92654)
+* [RejectRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92653)
+* [SyncRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92652)
+* [UpdateRegistry](http://document.tencentcloudapi.woa.com/document/product/1804/92666)
+* [UpdateRegistryRecord](http://document.tencentcloudapi.woa.com/document/product/1804/92651)
 
 新增数据结构：
 
-* [VideoList](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VideoList)
-* [VodCloudStorageEvent](http://document.tencentcloudapi.woa.com/document/product/1081/34988#VodCloudStorageEvent)
+* [AccountQuotaOverview](http://document.tencentcloudapi.woa.com/document/product/1804/87854#AccountQuotaOverview)
+* [CloudAgentSourceInput](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudAgentSourceInput)
+* [CloudAuditLog](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudAuditLog)
+* [CloudFilter](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudFilter)
+* [CloudMCPSourceInput](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudMCPSourceInput)
+* [CloudRecord](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudRecord)
+* [CloudRecordLabelMutation](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudRecordLabelMutation)
+* [CloudRecordVersion](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudRecordVersion)
+* [CloudRegistry](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudRegistry)
+* [CloudSkillSourceInput](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudSkillSourceInput)
+* [CloudTag](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudTag)
+* [CloudVersionApprovalAction](http://document.tencentcloudapi.woa.com/document/product/1804/87854#CloudVersionApprovalAction)
+* [QuotaGroupOverview](http://document.tencentcloudapi.woa.com/document/product/1804/87854#QuotaGroupOverview)
+* [QuotaResourceInfo](http://document.tencentcloudapi.woa.com/document/product/1804/87854#QuotaResourceInfo)
 
 
 
-## 集团账号管理(organization) 版本：2021-03-31
+## AI Agent 安全网关(apis) 版本：2024-08-01
 
-### 第 67 次发布
+### 第 26 次发布
 
-发布时间：2026-09-18 02:29:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ListTargetsForPolicyNode](http://document.tencentcloudapi.woa.com/document/product/850/67060#ListTargetsForPolicyNode)
-
-	* 新增成员：NodePath, NodePathIds
-
-
-
-
-## 集团账号管理(organization) 版本：2018-12-25
-
-
-
-## 腾讯云数据库 AI 服务(tdai) 版本：2025-07-17
-
-### 第 4 次发布
-
-发布时间：2026-09-18 02:55:47
+发布时间：2026-09-21 01:11:05
 
 本次发布包含了以下内容：
 
@@ -148,29 +65,33 @@
 
 修改接口：
 
-* [CreateChatCompletion](http://document.tencentcloudapi.woa.com/document/product/1802/91665)
+* [CreateAIMCredential](http://document.tencentcloudapi.woa.com/document/product/1805/89006)
 
-	* 新增入参：Attachments
+* [CreateModel](http://document.tencentcloudapi.woa.com/document/product/1805/88915)
 
+	* 新增入参：Provider, ApiKeys
 
-新增数据结构：
+	* <font color="#dd0000">**修改入参**：</font>HttpProtocolType, TargetPath, TargetHosts
 
-* [Attachments](http://document.tencentcloudapi.woa.com/document/product/1802/91680#Attachments)
 
 修改数据结构：
 
-* [AgentInstance](http://document.tencentcloudapi.woa.com/document/product/1802/91680#AgentInstance)
+* [DescribeModelResponseVO](http://document.tencentcloudapi.woa.com/document/product/1805/87916#DescribeModelResponseVO)
 
-	* 新增成员：Capabilities, DeploymentFree
+	* 新增成员：Provider
+
+* [McpSecurityRuleContent](http://document.tencentcloudapi.woa.com/document/product/1805/87916#McpSecurityRuleContent)
+
+* [McpSecurityRuleItem](http://document.tencentcloudapi.woa.com/document/product/1805/87916#McpSecurityRuleItem)
 
 
 
 
-## TokenHub(tokenhub) 版本：2026-03-22
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 25 次发布
+### 第 182 次发布
 
-发布时间：2026-09-18 03:03:39
+发布时间：2026-09-21 01:15:37
 
 本次发布包含了以下内容：
 
@@ -178,9 +99,226 @@
 
 修改数据结构：
 
-* [SubPackageBalance](http://document.tencentcloudapi.woa.com/document/product/1814/90425#SubPackageBalance)
+* [SlaveInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#SlaveInfo)
 
-	* 新增成员：TotalUsed
+	* 新增成员：Third
+
+
+
+
+## 负载均衡(clb) 版本：2023-04-17
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 100 次发布
+
+发布时间：2026-09-21 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TestServiceProviderConnection](http://document.tencentcloudapi.woa.com/document/product/214/91010)
+
+	* 新增入参：HealthCheckMethod, HealthCheckPath
+
+
+
+
+## 云原生智能网关(cngw) 版本：2023-04-18
+
+### 第 9 次发布
+
+发布时间：2026-09-21 01:19:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayMCPServer](http://document.tencentcloudapi.woa.com/document/product/1817/90861)
+
+	* 新增入参：LogConfig
+
+* [DescribeCloudNativeAPIGatewayAIQuotaList](http://document.tencentcloudapi.woa.com/document/product/1817/92572)
+
+	* 新增入参：Keyword
+
+* [DescribeCloudNativeAPIGatewayAIServiceSourceList](http://document.tencentcloudapi.woa.com/document/product/1817/92576)
+
+	* 新增入参：Keyword, Filters
+
+* [DescribeCloudNativeAPIGatewaySecretKeyList](http://document.tencentcloudapi.woa.com/document/product/1817/92579)
+
+	* 新增入参：Filters, Keyword, ResourceId, UseToBind
+
+* [DescribeCloudNativeAPIGatewaySecretKeyValue](http://document.tencentcloudapi.woa.com/document/product/1817/90839)
+
+	* 新增入参：SecretValueType
+
+* [ModifyCloudNativeAPIGatewayMCPServer](http://document.tencentcloudapi.woa.com/document/product/1817/90850)
+
+	* 新增入参：LogConfig
+
+
+新增数据结构：
+
+* [AIGWSimpleSecretKey](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWSimpleSecretKey)
+
+修改数据结构：
+
+* [AIGWMCPServer](http://document.tencentcloudapi.woa.com/document/product/1817/90862#AIGWMCPServer)
+
+	* 新增成员：LogConfig
+
+* [CNAPIGwSecretKey](http://document.tencentcloudapi.woa.com/document/product/1817/90862#CNAPIGwSecretKey)
+
+	* 新增成员：BoundModelSecretKeys, BoundConsumerSecretKeys
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 197 次发布
+
+发布时间：2026-09-21 01:22:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpgradeClusterVersion](http://document.tencentcloudapi.woa.com/document/product/1003/77830)
+
+	* 新增出参：TaskId
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 116 次发布
+
+发布时间：2026-09-21 01:27:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OCRResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#OCRResult)
+
+	* 新增成员：CardResultStatus
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：OcrWaitPolicy
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 37 次发布
+
+发布时间：2026-09-21 01:30:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ServiceDetail](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ServiceDetail)
+
+	* 新增成员：TemplateId, PreviousTemplateId, DeployMode, ModelId
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 101 次发布
+
+发布时间：2026-09-21 01:35:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateAuditImages](http://document.tencentcloudapi.woa.com/document/product/267/92679)
+* [DeleteAuditImages](http://document.tencentcloudapi.woa.com/document/product/267/92678)
+* [DeleteAuditKeywordLib](http://document.tencentcloudapi.woa.com/document/product/267/92677)
+* [DescribeAuditGroupTag](http://document.tencentcloudapi.woa.com/document/product/267/92676)
+* [DescribeAuditImages](http://document.tencentcloudapi.woa.com/document/product/267/92675)
+* [DescribeAuditKeywordLibs](http://document.tencentcloudapi.woa.com/document/product/267/92674)
+* [ModifyAuditKeywordLib](http://document.tencentcloudapi.woa.com/document/product/267/92673)
+
+修改接口：
+
+* [CreateAuditKeywords](http://document.tencentcloudapi.woa.com/document/product/267/87199)
+
+	* <font color="#dd0000">**修改出参**：</font>Keywords
+
+
+新增数据结构：
+
+* [AuditGroupClassInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditGroupClassInfo)
+* [AuditGroupInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditGroupInfo)
+* [AuditImage](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditImage)
+* [AuditImageCreateDetail](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditImageCreateDetail)
+* [AuditImageDeleteDetail](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditImageDeleteDetail)
+* [AuditImageInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditImageInfo)
+* [AuditKeywordLibInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditKeywordLibInfo)
+* [AuditLabelGroupInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#AuditLabelGroupInfo)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 66 次发布
+
+发布时间：2026-09-21 01:38:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckDBInstanceElasticCpuScalable](http://document.tencentcloudapi.woa.com/document/product/240/92680)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 69 次发布
+
+发布时间：2026-09-21 01:55:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteConsumerRouteConfig](http://document.tencentcloudapi.woa.com/document/product/1739/91087)
+
+	* 新增入参：Label
 
 
 

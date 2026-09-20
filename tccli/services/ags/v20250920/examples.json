@@ -40,6 +40,22 @@
         "title": "追加事件"
       }
     ],
+    "ApproveRegistryRecord": [
+      {
+        "document": "PENDING_APPROVAL → APPROVED，Comment 必填。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: ApproveRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\",\n    \"Comment\": \"approved\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Status\": \"APPROVED\"\n        }\n    }\n}",
+        "title": "审批通过 Version"
+      }
+    ],
+    "CancelRegistryRecord": [
+      {
+        "document": "PREPARING / PENDING_APPROVAL → CANCELED，仅可取消非 Stable Version。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CancelRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\",\n    \"Comment\": \"canceled by author\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Status\": \"CANCELED\"\n        }\n    }\n}",
+        "title": "取消 Version"
+      }
+    ],
     "CompleteOAuth2AccessTokenAuth": [
       {
         "document": "",
@@ -100,6 +116,28 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageRegistryType\": \"custom\",\n    \"ImageRegistryConfig\": {\n        \"CredentialId\": \"agc-xxxxxxxx\",\n        \"NetworkConfig\": {\n            \"VpcId\": \"vpc-xxxxxxxx\",\n            \"SubnetId\": \"subnet-xxxxxxxx\",\n            \"SecurityGroupId\": \"sg-xxxxxxxx\"\n        }\n    },\n    \"TimeoutMinutes\": 120\n}",
         "output": "{\n    \"Response\": {\n        \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n        \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"ImageRegistryType\": \"custom\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "预热用户 VPC 可达第三方镜像"
+      }
+    ],
+    "CreateRegistry": [
+      {
+        "document": "响应体带 RequestId 与 RegistryId；后续获取详情用 DescribeRegistry。ApprovalMode 省略时默认 AUTO。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"Name\": \"example-registry\",\n    \"Description\": \"对外提供实时天气 MCP/Agent 资产。\",\n    \"ApprovalMode\": \"MANUAL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RegistryId\": \"reg-0123abcd\",\n        \"Registry\": {\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-registry\",\n            \"Description\": \"AGS 示例 Registry\",\n            \"ApprovalMode\": \"MANUAL\",\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": \"ACTIVE\",\n            \"AppId\": 1300000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"\",\n            \"RecordCount\": 0,\n            \"PublishedRecordCount\": 0,\n            \"CreateTime\": \"2026-08-11T10:00:00Z\",\n            \"UpdateTime\": \"2026-08-11T10:00:00Z\",\n            \"Tags\": []\n        }\n    }\n}",
+        "title": "创建 MANUAL 审批的 Registry"
+      }
+    ],
+    "CreateRegistryRecord": [
+      {
+        "document": "CUSTOM 直接提交顶层 CustomDescriptors；服务端 SourceType 固定为 MANUAL。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"custom-order-query\",\n    \"DescriptorType\": \"CUSTOM\",\n    \"CustomDescriptors\": \"{\\\"vendor\\\":\\\"example\\\",\\\"capability\\\":\\\"order-query\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordId\": \"rec-01234567\",\n        \"Record\": {\n            \"RecordId\": \"rec-01234567\",\n            \"DescriptorType\": \"CUSTOM\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-01234567\",\n            \"Revision\": 1,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
+        "title": "创建 CUSTOM 类型 Record"
+      },
+      {
+        "document": "统一 Create 接口，通过 DescriptorType + Source Union 选择协议类型。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"order-query\",\n    \"Description\": \"订单查询 MCP 服务\",\n    \"DescriptorType\": \"MCP\",\n    \"VersionName\": \"v1\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp.json\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordId\": \"rec-0123abcd\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"DescriptorType\": \"MCP\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 1,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
+        "title": "创建 URL_IMPORT 类型的 MCP Record"
       }
     ],
     "CreateSandboxTool": [
@@ -186,6 +224,28 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironmentTemplate\n<公共请求参数>\n\n{\n    \"EnvironmentTemplateId\": \"envt-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除 EnvironmentTemplate"
+      }
+    ],
+    "DeleteRegistry": [
+      {
+        "document": "响应只带 RequestId。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "删除空 Registry"
+      }
+    ],
+    "DeleteRegistryRecord": [
+      {
+        "document": "传入 VersionId 时只删除该 Version（软删除）；Stable 指向的 Version 或最后一个 Approved Version 不允许删除。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0003abcd\",\n    \"Reason\": \"废弃过期版本\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "删除单个 Version"
+      },
+      {
+        "document": "省略 VersionId 时对整个 Record 进行软删除。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
+        "title": "软删除整个 Record"
       }
     ],
     "DeleteSandboxTool": [
@@ -332,6 +392,68 @@
         "title": "查询用户 VPC 可达第三方镜像预热状态"
       }
     ],
+    "DescribeQuotaOverview": [
+      {
+        "document": "查询当前主账号的配额上限和全账号当前用量，并分页返回配额组的配额、用量及基本信息",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotaOverview\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"tag-key\",\n            \"Values\": [\n                \"business\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AccountQuotaOverview\": {\n            \"Quota\": {\n                \"CPUCores\": 200,\n                \"MemoryGiB\": 200,\n                \"PausedInstances\": 200,\n                \"SandboxInstances\": 200,\n                \"SandboxTools\": 100\n            },\n            \"Usage\": {\n                \"CPUCores\": 0,\n                \"MemoryGiB\": 0,\n                \"PausedInstances\": 0,\n                \"SandboxInstances\": 0,\n                \"SandboxTools\": 9\n            }\n        },\n        \"DataTime\": \"2026-08-17T16:51:04+08:00\",\n        \"QuotaGroupSet\": [\n            {\n                \"CreateTime\": \"2026-08-17T16:36:09+08:00\",\n                \"Name\": \"business-group1\",\n                \"Quota\": {\n                    \"CPUCores\": 20,\n                    \"MemoryGiB\": 40,\n                    \"SandboxInstances\": 10\n                },\n                \"Tag\": {\n                    \"Key\": \"business\",\n                    \"Value\": \"group1\"\n                },\n                \"UpdateTime\": \"2026-08-17T16:36:09+08:00\",\n                \"Usage\": {\n                    \"CPUCores\": 0,\n                    \"MemoryGiB\": 0,\n                    \"SandboxInstances\": 0\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"f27201f0-627d-4f8e-8c05-b3fc861364b1\"\n    }\n}",
+        "title": "DescribeQuotaOverview"
+      }
+    ],
+    "DescribeRegistry": [
+      {
+        "document": "响应仅返回 Registry；已废弃顶层 RegistryId。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Registry\": {\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-registry\",\n            \"Description\": \"AGS 示例 Registry\",\n            \"ApprovalMode\": \"MANUAL\",\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": \"ACTIVE\",\n            \"AppId\": 1300000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"\",\n            \"RecordCount\": 3,\n            \"PublishedRecordCount\": 1,\n            \"CreateTime\": \"2026-08-11T10:00:00Z\",\n            \"UpdateTime\": \"2026-08-11T10:00:00Z\",\n            \"Tags\": []\n        }\n    }\n}",
+        "title": "查询 Registry 详情"
+      }
+    ],
+    "DescribeRegistryAuditLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryAuditLogList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"AuditLogSet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询 Record 版本审计"
+      }
+    ],
+    "DescribeRegistryList": [
+      {
+        "document": "未命中任何 Registry 时 RegistrySet 为空数组，TotalCount 为 0。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"search\",\n            \"Values\": [\n                \"example\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RegistrySet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "模糊搜索 `example` 关键字"
+      }
+    ],
+    "DescribeRegistryRecord": [
+      {
+        "document": "VersionId 与 Label 互斥；均省略时等价于 Label=stable。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\"\n            ]\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\"\n        },\n        \"ResolvedBy\": \"LABEL\",\n        \"ResolvedLabel\": \"stable\"\n    }\n}",
+        "title": "按 Label=stable 查询"
+      },
+      {
+        "document": "指定 VersionId 时不返回 ResolvedLabel。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\"\n        },\n        \"ResolvedBy\": \"VERSION_ID\"\n    }\n}",
+        "title": "按 VersionId 精确查询"
+      }
+    ],
+    "DescribeRegistryRecordList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"search\",\n            \"Values\": [\n                \"weather\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordSet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询 weather 相关 Record"
+      }
+    ],
+    "DescribeRegistryRecordVersionList": [
+      {
+        "document": "Filter 支持 status、source_type；多值按 OR。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordVersionList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"APPROVED\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"VersionSet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "按状态过滤 Version 列表"
+      }
+    ],
     "DescribeSandboxInstanceList": [
       {
         "document": "返回实例自己声明的访问策略，不包含 Tool 与 Instance 合并后的内部结果。",
@@ -392,6 +514,22 @@
         "title": "按 Metadata 过滤 Session"
       }
     ],
+    "GetSkillPackageDownloadURL": [
+      {
+        "document": "VersionId 与 Label 互斥；均省略时使用 Stable。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: GetSkillPackageDownloadURL\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"DownloadURL\": \"https://cos.example/download\",\n        \"ExpireTime\": \"2026-08-10T00:05:00Z\",\n        \"SHA256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\",\n        \"ResolvedVersionId\": \"rv-0123abcd\"\n    }\n}",
+        "title": "按 Label 下载 Skill 包"
+      }
+    ],
+    "GetSkillPackageUploadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: GetSkillPackageUploadURL\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"UploadURL\": \"https://cos.example/upload\",\n        \"ContentStatus\": \"UPLOADING\"\n    }\n}",
+        "title": "重试 Skill Version 上传"
+      }
+    ],
     "ModifyAgent": [
       {
         "document": "",
@@ -424,6 +562,14 @@
         "title": "修改 ExecutionRuntime"
       }
     ],
+    "ModifySession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySession\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n    \"UserId\": \"0001\",\n    \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n    \"Metadata\": [\n        {\n            \"Name\": \"env\",\n            \"Value\": \"dev\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Session\": {\n            \"CreateTime\": \"2026-09-02T08:00:03Z\",\n            \"EventCount\": 0,\n            \"Metadata\": [\n                {\n                    \"Name\": \"env\",\n                    \"Value\": \"dev\"\n                }\n            ],\n            \"SessionId\": \"ffa6e867-a315-447e-917b-ba01ea557c02\",\n            \"SpaceId\": \"space-75f28517-9fb3-4234-9530-afa323f496bc\",\n            \"Title\": \"0902 test\",\n            \"UpdateTime\": \"2026-09-02T08:06:45Z\",\n            \"UserId\": \"0001\"\n        },\n        \"RequestId\": \"4c41c3b7-6c43-4dde-ade3-b460400933bb\"\n    }\n}",
+        "title": "修改会话的元数据"
+      }
+    ],
     "ModifySessionSpace": [
       {
         "document": "调整会话空间名称和描述，使其覆盖订单、退款及售后业务场景。",
@@ -440,12 +586,28 @@
         "title": "暂停沙箱实例"
       }
     ],
+    "PreviewRegistryRecord": [
+      {
+        "document": "不创建 Version、不修改 Label；仅返回一次拉取结果。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: PreviewRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"PreviewResult\": \"{\\\"StatusCode\\\": 200, \\\"Body\\\": \\\"{\\\\\\\"name\\\\\\\":\\\\\\\"example.com/weather\\\\\\\"}\\\", \\\"HasUpdate\\\": false}\",\n        \"ResolvedVersionId\": \"rv-0123abcd\"\n    }\n}",
+        "title": "预览 Stable 目标"
+      }
+    ],
     "RegisterExecutionRuntime": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterExecutionRuntime\n<公共请求参数>\n\n{\n    \"AgentId\": \"ag-example\",\n    \"Capacity\": 0,\n    \"SchedulingStatus\": \"ENABLED\",\n    \"Endpoint\": {\n        \"Scheme\": \"HTTPS\",\n        \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n        \"Port\": \"443\",\n        \"Metadata\": [\n            {}\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ExecutionRuntime\": {\n            \"ExecutionRuntimeId\": \"runtime-example\",\n            \"AgentId\": \"ag-example\",\n            \"SchedulingStatus\": \"ENABLED\",\n            \"ActiveLeaseCount\": 2,\n            \"Capacity\": 0,\n            \"Endpoint\": {\n                \"Scheme\": \"HTTPS\",\n                \"Host\": \"{{ .SourcePort }}-{{ .Metadata.RuntimeInstanceID }}.example.com\",\n                \"Port\": \"443\",\n                \"Metadata\": [\n                    {}\n                ]\n            },\n            \"CreatedTime\": \"2026-07-03T10:56:18Z\",\n            \"UpdatedTime\": \"2026-07-03T10:56:18Z\"\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "注册 ExecutionRuntime"
+      }
+    ],
+    "RejectRegistryRecord": [
+      {
+        "document": "PENDING_APPROVAL → REJECTED。Comment 必填，用于审计留痕。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: RejectRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\",\n    \"Comment\": \"rejected: missing tests\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Status\": \"REJECTED\"\n        }\n    }\n}",
+        "title": "驳回 Version"
       }
     ],
     "RemoveExecutionRuntime": [
@@ -486,6 +648,42 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"12345678123412341234123456789abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "停止沙箱实例"
+      }
+    ],
+    "SyncRegistryRecord": [
+      {
+        "document": "从远端拉取到新内容时创建新 Version 并移动 Latest；Stable 保持不变。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: SyncRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\",\n    \"ChangeLog\": \"远端 MCP 更新，同步为 v3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"SyncStatus\": \"VERSION_CREATED\",\n        \"ResolvedVersionId\": \"rv-0123abcd\",\n        \"CreatedVersion\": {\n            \"VersionId\": \"rv-0005abcd\",\n            \"Revision\": 5\n        },\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\"\n        },\n        \"LastSyncTime\": \"2026-08-12T00:00:00Z\"\n    }\n}",
+        "title": "同步 Stable 目标 Version"
+      },
+      {
+        "document": "远端无变化时不创建 Version、不修改 Label。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: SyncRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"SyncStatus\": \"UNCHANGED\",\n        \"ResolvedVersionId\": \"rv-0123abcd\",\n        \"LastSyncTime\": \"2026-08-12T00:00:00Z\"\n    }\n}",
+        "title": "远端未变化"
+      }
+    ],
+    "UpdateRegistry": [
+      {
+        "document": "只允许修改 Description；Name/ApprovalMode 不可修改。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistry\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Description\": \"更新后的描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Registry\": {\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-registry\",\n            \"Description\": \"更新后的描述\",\n            \"ApprovalMode\": \"MANUAL\",\n            \"Region\": \"ap-guangzhou\",\n            \"Status\": \"ACTIVE\",\n            \"AppId\": 1300000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"\",\n            \"RecordCount\": 3,\n            \"PublishedRecordCount\": 1,\n            \"CreateTime\": \"2026-08-11T10:00:00Z\",\n            \"UpdateTime\": \"2026-08-11T12:00:00Z\",\n            \"Tags\": []\n        }\n    }\n}",
+        "title": "更新 Registry 描述"
+      }
+    ],
+    "UpdateRegistryRecord": [
+      {
+        "document": "不提交 Source/CustomDescriptors 时是 Record 更新模式，允许 Description/LabelMutations。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"LabelMutations\": [\n        {\n            \"Operation\": \"SET\",\n            \"Name\": \"stable\",\n            \"VersionId\": \"rv-0002abcd\",\n            \"Reason\": \"发布已验证的第二版\"\n        },\n        {\n            \"Operation\": \"SET\",\n            \"Name\": \"grey\",\n            \"VersionId\": \"rv-0003abcd\",\n            \"Reason\": \"灰度环境验证第三版\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\",\n                \"grey\"\n            ]\n        }\n    }\n}",
+        "title": "Record 更新模式：移动 stable + 新增 grey"
+      },
+      {
+        "document": "提交内容输入进入 Version 创建模式；禁止同时提交 Description/LabelMutations。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionName\": \"v2\",\n    \"ChangeLog\": \"增加订单状态筛选参数\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp-v2.json\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0004abcd\",\n            \"Revision\": 4,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
+        "title": "Version 创建模式：MCP URL_IMPORT"
       }
     ],
     "UpdateSandboxInstance": [

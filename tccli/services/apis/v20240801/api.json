@@ -1713,7 +1713,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "资源ID列表",
           "example": "[\"res-LDFxL6nq\"]",
           "member": "string",
@@ -2580,7 +2580,7 @@
           "example": "http",
           "member": "string",
           "name": "HttpProtocolType",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2589,7 +2589,7 @@
           "example": "/v12222",
           "member": "string",
           "name": "TargetPath",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2598,7 +2598,25 @@
           "example": "无",
           "member": "TargetHostDTO",
           "name": "TargetHosts",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提供商</p><p>枚举值：</p><ul><li>tencentTokenHub： 腾讯云TokenHub</li><li>tiONE： TI-ONE应用</li><li>default： 其他</li></ul>",
+          "example": "tencentTokenHub",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Provider=tencentTokenHub时对应的密钥</p>",
+          "example": "[\"sk-test123\"]",
+          "member": "string",
+          "name": "ApiKeys",
+          "required": false,
           "type": "list"
         },
         {
@@ -6589,6 +6607,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>模型提供商</p>",
+          "example": "tencentTokenHub",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>模型名称</p>",
           "example": "{55.52493325438*55.52493325438}",
           "member": "string",
@@ -8586,7 +8614,7 @@
       "document": "mcp安全规则内容",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "函数类型",
           "example": "mcpRequestBodyFilter",
           "member": "string",
@@ -8594,10 +8622,10 @@
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "内容",
           "example": "无",
           "member": "string",
@@ -8605,10 +8633,10 @@
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否接入门神",
           "example": "false",
           "member": "bool",
@@ -8616,7 +8644,7 @@
           "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8776,14 +8804,14 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "版本号",
           "example": "20250508172233",
           "member": "string",
           "name": "VersionNumber",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -8836,14 +8864,14 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "支持的mcp调用方法",
           "example": "[\"tools/call\"]",
           "member": "string",
           "name": "SupportMethods",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

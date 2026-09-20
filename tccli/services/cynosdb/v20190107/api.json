@@ -28022,7 +28022,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改前版本",
+          "document": "<p>修改前版本</p>",
           "example": "3.1.11",
           "member": "string",
           "name": "OldVersion",
@@ -28032,7 +28032,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后版本",
+          "document": "<p>修改后版本</p>",
           "example": "3.1.13",
           "member": "string",
           "name": "NewVersion",
@@ -28042,7 +28042,7 @@
         },
         {
           "disabled": false,
-          "document": "升级方式",
+          "document": "<p>升级方式</p>",
           "example": "upgradeInMaintain",
           "member": "string",
           "name": "UpgradeType",
@@ -38717,7 +38717,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-asdf54qw",
           "member": "string",
           "name": "ClusterId",
@@ -38726,7 +38726,7 @@
         },
         {
           "disabled": false,
-          "document": "内核版本",
+          "document": "<p>内核版本</p>",
           "example": "2.1.10",
           "member": "string",
           "name": "CynosVersion",
@@ -38735,7 +38735,7 @@
         },
         {
           "disabled": false,
-          "document": "升级时间类型，可选：upgradeImmediate,upgradeInMaintain",
+          "document": "<p>升级时间类型，可选：upgradeImmediate,upgradeInMaintain</p>",
           "example": "upgradeImmediate",
           "member": "string",
           "name": "UpgradeType",
@@ -38750,11 +38750,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务id",
+          "document": "<p>异步任务id</p>",
           "example": "1472831",
           "member": "int64",
           "name": "FlowId",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
