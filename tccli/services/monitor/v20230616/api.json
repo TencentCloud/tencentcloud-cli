@@ -301,6 +301,13 @@
       "output": "ModifyNoticeContentTmplResponse",
       "status": "online"
     },
+    "QueryMetrics": {
+      "document": "监控维度数据查询接口",
+      "input": "QueryMetricsRequest",
+      "name": "查询监控时序数据",
+      "output": "QueryMetricsResponse",
+      "status": "online"
+    },
     "TriggerAIWorkbenchSREDigitalTwinTask": {
       "document": "触发数字分身任务请求",
       "input": "TriggerAIWorkbenchSREDigitalTwinTaskRequest",
@@ -691,6 +698,30 @@
         }
       ],
       "usage": "out"
+    },
+    "Aggregation": {
+      "document": "聚合参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>聚合方式</p><p>枚举值：</p><ul><li>AVG： 平均值</li><li>MIN： 最小值</li><li>MAX： 最大值</li><li>SUM： 求和</li><li>COUNT： 求数量</li></ul>",
+          "example": "AVG",
+          "member": "string",
+          "name": "Statistic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合维度</p>",
+          "example": "[\"AppId\"]",
+          "member": "string",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "AlarmLable": {
       "document": "告警中的Label",
@@ -3913,6 +3944,62 @@
       ],
       "usage": "both"
     },
+    "FilterWithType": {
+      "document": "带Type字段的NameValue格式的过滤条件。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Key名称",
+          "example": "zone",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Value名称",
+          "example": "ap-chengdu-1",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签匹配",
+          "example": "Tag",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FiltersList": {
+      "document": "过滤条件数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "FilterWithType",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetAIWorkbenchArtifactDownloadURLRequest": {
       "document": "GetAIWorkbenchArtifactDownloadURL请求参数结构体",
       "members": [
@@ -6174,6 +6261,160 @@
       ],
       "usage": "both"
     },
+    "QueryMetricsData": {
+      "document": "QueryMetrics 返回结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称",
+          "example": "CpuUsage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间线数据",
+          "example": "无",
+          "member": "SeriesData",
+          "name": "Series",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryMetricsRequest": {
+      "document": "QueryMetrics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>对外API指标名称</p>",
+          "example": "CpuUsage",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间</p>",
+          "example": "2019-03-24T10:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截止时间</p>",
+          "example": "2019-03-24T10:51:23+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "FiltersList",
+          "name": "FiltersList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间粒度</p>",
+          "example": "60",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合参数</p>",
+          "example": "无",
+          "member": "Aggregation",
+          "name": "Aggregation",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序</p>",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域信息</p>",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含详细信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeRegionDetail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryMetricsResponse": {
+      "document": "QueryMetrics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据信息</p>",
+          "example": "无",
+          "member": "QueryMetricsData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceInstance": {
       "document": "资源实例",
       "members": [
@@ -6443,6 +6684,42 @@
       ],
       "usage": "out"
     },
+    "SeriesData": {
+      "document": "时间线数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度值",
+          "example": "无",
+          "member": "FilterWithType",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳",
+          "example": "[1759044300]",
+          "member": "int64",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "[24.9]",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SessionInfo": {
       "document": "会话实体",
       "members": [
@@ -6589,6 +6866,39 @@
         }
       ],
       "usage": "both"
+    },
+    "Sort": {
+      "document": "排序参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序方法",
+          "example": "AVG",
+          "member": "string",
+          "name": "Statistic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "正序反序",
+          "example": "Desc",
+          "member": "string",
+          "name": "Direction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "限制个数",
+          "example": "123",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "Tag": {
       "document": "标签",

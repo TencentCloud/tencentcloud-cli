@@ -2377,6 +2377,24 @@
           "name": "ResourceMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略模式：form=表单模式，json=JSON模式；不传默认 json</p><p>枚举值：</p><ul><li>form： 表单模式</li><li>json： JSON模式</li></ul>",
+          "example": "form",
+          "member": "string",
+          "name": "ScheduleStrategyMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表单模式调度策略参数</p>",
+          "example": "无",
+          "member": "ScheduleStrategyForm",
+          "name": "ScheduleStrategyForm",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3437,6 +3455,15 @@
           "name": "InferTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务的优先级</p><p>取值范围：[0, 9]</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6557,7 +6584,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId",
+          "document": "<p>资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId</p>",
           "example": "ersg-8jpj27jc",
           "member": "string",
           "name": "ResourceGroupId",
@@ -6575,7 +6602,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. Filter.Negative: 是否取反，默认为false\n4. Filter.Fuzzy: 是否模糊查询，默认为false\n5. 每次请求的Filters的上限为10，Filter.Values的上限为100",
+          "document": "<p>过滤条件<br>注意: </p><ol><li>Filter.Name 只支持以下枚举值:<br> InstanceId (资源组节点id)<br> InstanceStatus (资源组节点状态)</li><li>Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询</li><li>Filter.Negative: 是否取反，默认为false</li><li>Filter.Fuzzy: 是否模糊查询，默认为false</li><li>每次请求的Filters的上限为10，Filter.Values的上限为100</li></ol>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6584,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0",
+          "document": "<p>分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10...即每页左边为闭区间; 默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6593,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询每页大小，默认20",
+          "document": "<p>分页查询每页大小，默认20</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6602,7 +6629,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方向; 枚举值: ASC | DESC；默认DESC",
+          "document": "<p>排序方向; 枚举值: ASC | DESC；默认DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -6611,7 +6638,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime",
+          "document": "<p>排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime</p>",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
@@ -6620,7 +6647,7 @@
         },
         {
           "disabled": false,
-          "document": "是否实时查询可用资源",
+          "document": "<p>是否实时查询可用资源</p>",
           "example": "false",
           "member": "bool",
           "name": "IsRealTime",
@@ -6635,7 +6662,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小",
+          "document": "<p>资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -6645,7 +6672,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组节点信息",
+          "document": "<p>资源组节点信息</p>",
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
@@ -6655,7 +6682,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组纳管类型",
+          "document": "<p>资源组纳管类型</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "ResourceGroupSWType",
@@ -6665,7 +6692,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组负责人",
+          "document": "<p>资源组负责人</p>",
           "example": "无",
           "member": "ResourceGroupSupervisor",
           "name": "Supervisors",
@@ -6675,7 +6702,7 @@
         },
         {
           "disabled": false,
-          "document": "竞价实例节点信息",
+          "document": "<p>竞价实例节点信息</p>",
           "example": "无",
           "member": "SpotPaidInfo",
           "name": "SpotPaidInfo",
@@ -6685,7 +6712,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组总资源(包含购买中实例)",
+          "document": "<p>资源组总资源(包含购买中实例)</p>",
           "example": "无",
           "member": "GroupResource",
           "name": "TotalResourceWithPurchasing",
@@ -6695,7 +6722,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为热备资源组",
+          "document": "<p>是否为热备资源组</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHotBackupResourceGroup",
@@ -6705,7 +6732,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组是否开启配额管理",
+          "document": "<p>资源组是否开启配额管理</p>",
           "example": "false",
           "member": "bool",
           "name": "QuotaEnabled",
@@ -6715,7 +6742,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组默认配额",
+          "document": "<p>资源组默认配额</p>",
           "example": "无",
           "member": "ResourceQuota",
           "name": "DefaultResourceQuota",
@@ -6725,7 +6752,7 @@
         },
         {
           "disabled": false,
-          "document": "按之账号配置的配额",
+          "document": "<p>按之账号配置的配额</p>",
           "example": "无",
           "member": "ResourceQuota",
           "name": "ResourceQuotas",
@@ -6735,7 +6762,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间: 注意：北京时间，比如: 2021-12-01 12:00:00",
+          "document": "<p>创建时间: 注意：北京时间，比如: 2021-12-01 12:00:00</p>",
           "example": "2021-12-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -6745,7 +6772,7 @@
         },
         {
           "disabled": false,
-          "document": "节点实例可用区枚举",
+          "document": "<p>节点实例可用区枚举</p>",
           "example": "[\"ap-guangzhou-3\",\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "ZoneNames",
@@ -6755,7 +6782,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组回收策略，开启资源出借的情况下默认为unified-scheduling，取值范围：unified-scheduling（统一调度）或 force-reclaim（强制回收）",
+          "document": "<p>资源组回收策略，开启资源出借的情况下默认为unified-scheduling，取值范围：unified-scheduling（统一调度）或 force-reclaim（强制回收）</p>",
           "example": "unified-scheduling",
           "member": "string",
           "name": "ReclaimPolicy",
@@ -6765,10 +6792,60 @@
         },
         {
           "disabled": false,
-          "document": "是否启用空间编辑, true-启用，false-禁用",
+          "document": "<p>是否启用空间编辑, true-启用，false-禁用</p>",
           "example": "true",
           "member": "bool",
           "name": "SpaceEditEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>THIRD： 三方集群</li></ul>",
+          "example": "THIRD",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略模式</p><p>枚举值：</p><ul><li>json： 表单模式</li><li>form： JSON模式</li></ul>",
+          "example": "json",
+          "member": "string",
+          "name": "ScheduleStrategyMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表单模式调度策略参数</p>",
+          "example": "无",
+          "member": "ScheduleStrategyForm",
+          "name": "ScheduleStrategyForm",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>供应商类型</p>",
+          "example": "baidu",
+          "member": "string",
+          "name": "Supplier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有绑定过预约计划</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasBoundReservationPlan",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -10101,23 +10178,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境变量key",
+          "document": "<p>环境变量key</p>",
           "example": "TEST",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "环境变量value",
+          "document": "<p>环境变量value</p>",
           "example": "TEST",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPrivate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14436,6 +14526,15 @@
           "name": "InferTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务的优先级</p><p>取值范围：[0, 9]</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18595,6 +18694,56 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群类型</p><p>枚举值：</p><ul><li>THIRD： 三方集群</li></ul>",
+          "example": "THIRD",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略模式</p><p>枚举值：</p><ul><li>form： 表单模式</li><li>json： JSON模式</li></ul>",
+          "example": "form",
+          "member": "string",
+          "name": "ScheduleStrategyMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表单模式调度策略参数</p>",
+          "example": "无",
+          "member": "ScheduleStrategyForm",
+          "name": "ScheduleStrategyForm",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>供应商信息</p>",
+          "example": "baidu",
+          "member": "string",
+          "name": "Supplier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有绑定过预约计划</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasBoundReservationPlan",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -18776,7 +18925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "处理器资源, 单位为1/1000核",
+          "document": "<p>处理器资源, 单位为1/1000核</p>",
           "example": "1000",
           "member": "uint64",
           "name": "Cpu",
@@ -18787,7 +18936,7 @@
         },
         {
           "disabled": false,
-          "document": "内存资源, 单位为1M",
+          "document": "<p>内存资源, 单位为1M</p>",
           "example": "256",
           "member": "uint64",
           "name": "Memory",
@@ -18798,7 +18947,7 @@
         },
         {
           "disabled": false,
-          "document": "Gpu卡个数资源, 单位为0.01单位的GpuType.\nGpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型\n例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.\n例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.",
+          "document": "<p>Gpu卡个数资源, 单位为0.01单位的GpuType.<br>Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能是虚拟化后的1/4卡, 也有可能是整张卡. 取决于实例的机型<br>例1 实例的机型带有1张虚拟gpu卡, 每张虚拟gpu卡对应1/4张实际T4卡, 则此时 GpuType=T4, Gpu=100, RealGpu=25.<br>例2 实例的机型带有4张gpu整卡, 每张卡对应1张实际T4卡, 则 此时 GpuType=T4, Gpu=400, RealGpu=400.</p>",
           "example": "100",
           "member": "uint64",
           "name": "Gpu",
@@ -18809,7 +18958,7 @@
         },
         {
           "disabled": false,
-          "document": "Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。",
+          "document": "<p>Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。</p>",
           "example": "none",
           "member": "string",
           "name": "GpuType",
@@ -18820,7 +18969,7 @@
         },
         {
           "disabled": false,
-          "document": "创建或更新时无需填写，仅展示需要关注\n后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.\nRealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.",
+          "document": "<p>创建或更新时无需填写，仅展示需要关注<br>后付费非整卡实例对应的实际的Gpu卡资源, 表示gpu资源对应实际的gpu卡个数.<br>RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有可能代表带有1/4卡的实例4个, 或者带有1/2卡的实例2个, 或者带有1卡的实力1个.</p>",
           "example": "50",
           "member": "uint64",
           "name": "RealGpu",
@@ -18831,7 +18980,7 @@
         },
         {
           "disabled": false,
-          "document": "创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。",
+          "document": "<p>创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。</p>",
           "example": "无",
           "member": "GpuDetail",
           "name": "RealGpuDetailSet",
@@ -18842,7 +18991,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启rdma",
+          "document": "<p>是否开启rdma</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableRDMA",
@@ -18853,7 +19002,18 @@
         },
         {
           "disabled": false,
-          "document": "root disk size(GB)",
+          "document": "<p>rdma number</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "RdmaNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>root disk size(GB)</p>",
           "example": "100",
           "member": "uint64",
           "name": "RootDisk",
@@ -18864,10 +19024,32 @@
         },
         {
           "disabled": false,
-          "document": "data disk size(GB)",
+          "document": "<p>data disk size(GB)</p>",
           "example": "200",
           "member": "uint64",
           "name": "DataDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>rdma</p><p>取值范围：[0, 99]</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "Rdma",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预留内存</p><p>单位：MB</p>",
+          "example": "1024",
+          "member": "uint64",
+          "name": "ReservedMemory",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -19305,7 +19487,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启ssh",
+          "document": "<p>是否开启ssh</p>",
           "example": "false",
           "member": "bool",
           "name": "Enable",
@@ -19316,7 +19498,7 @@
         },
         {
           "disabled": false,
-          "document": "公钥信息",
+          "document": "<p>公钥信息</p>",
           "example": "ssh-rsa AAAAB3**8NYTfO0=",
           "member": "string",
           "name": "PublicKey",
@@ -19327,7 +19509,7 @@
         },
         {
           "disabled": false,
-          "document": "端口号",
+          "document": "<p>端口号</p>",
           "example": "80",
           "member": "int64",
           "name": "Port",
@@ -19338,7 +19520,7 @@
         },
         {
           "disabled": false,
-          "document": "登录命令",
+          "document": "<p>登录命令</p>",
           "example": "ssh root@127.0.0.1",
           "member": "string",
           "name": "LoginCommand",
@@ -19349,7 +19531,7 @@
         },
         {
           "disabled": false,
-          "document": "登录地址是否改变",
+          "document": "<p>登录地址是否改变</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAddressChanged",
@@ -19360,7 +19542,7 @@
         },
         {
           "disabled": false,
-          "document": "POD访问信息",
+          "document": "<p>POD访问信息</p>",
           "example": "无",
           "member": "PodSSHInfo",
           "name": "PodSSHInfo",
@@ -19368,6 +19550,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSH凭证列表</p>",
+          "example": "[\"1890\"]",
+          "member": "string",
+          "name": "UserCredentialIdList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19431,7 +19624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "检测项英文标识",
+          "document": "<p>检测项英文标识</p>",
           "example": "nccl-test",
           "member": "string",
           "name": "Item",
@@ -19442,7 +19635,7 @@
         },
         {
           "disabled": false,
-          "document": "检测项名称",
+          "document": "<p>检测项名称</p>",
           "example": "NCCL-TEST",
           "member": "string",
           "name": "Name",
@@ -19453,7 +19646,7 @@
         },
         {
           "disabled": false,
-          "document": "检测项描述信息",
+          "document": "<p>检测项描述信息</p>",
           "example": "nccl 网络测试",
           "member": "string",
           "name": "Message",
@@ -19464,13 +19657,35 @@
         },
         {
           "disabled": false,
-          "document": "支持的训练模式",
+          "document": "<p>支持的训练模式</p>",
           "example": "[\"MPI\",\"DDP\"]",
           "member": "string",
           "name": "SupportedTrainingModes",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>在任务运行前执行</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RunBeforeJob",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>在任务失败后运行</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RunAfterJobFailed",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -19543,6 +19758,56 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduleStrategyForm": {
+      "document": "表单模式调度策略参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>默认优先级 0-9</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "DefaultPriority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排队策略</p>",
+          "example": "fifo",
+          "member": "string",
+          "name": "QueuePolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用抢占</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DisablePreempt",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可被抢占的任务类型</p>",
+          "example": "[\"train\",\"inference\"]",
+          "member": "string",
+          "name": "PreemptiveTaskTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -20652,9 +20917,58 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务内容日志投递相关配置</p>",
+          "example": "无",
+          "member": "ServiceGroupLogConfig",
+          "name": "ServiceGroupLogConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "ServiceGroupLogConfig": {
+      "document": "日志配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务内容日志投递相关配置</p>",
+          "example": "无",
+          "member": "ServiceLogConfig",
+          "name": "ServiceLogConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单请求输入记录大小上限：默认8（KB）</p>",
+          "example": "8",
+          "member": "string",
+          "name": "MaxReqBodyBytes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单请求输出记录大小上限：默认16（KB）</p>",
+          "example": "16",
+          "member": "string",
+          "name": "MaxRespBodyBytes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ServiceHistory": {
       "document": "服务历史版本",
@@ -21269,6 +21583,89 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceLogConfig": {
+      "document": "日志配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志需要投递到cls的日志集</p>",
+          "example": "f6d99cc5-bb78-425f-b96a-b505e3f53063",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志需要投递到cls的主题</p>",
+          "example": "3ae296d8-91c9-406e-b6b6-f72547228e83",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志需要投递到cls的地域，只有跨地域投递时需要配置</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启单请求输入记录</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ReqBodyEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单请求输入记录大小上限</p>",
+          "example": "8",
+          "member": "string",
+          "name": "ReqBodyBytes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启单请求输出记录</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "RespBodyEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单请求输出记录大小上限</p>",
+          "example": "16",
+          "member": "string",
+          "name": "RespBodyBytes",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
