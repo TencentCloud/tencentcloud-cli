@@ -5,6 +5,11 @@ import stat
 import tempfile
 import unittest
 
+try:
+    from unittest import mock
+except ImportError:
+    import mock
+
 from tccli.utils import Utils
 
 
@@ -41,3 +46,12 @@ class TestDumpJsonMsgPermissions(unittest.TestCase):
         self._dump_with_permissive_umask(cli_dir)
 
         self.assertEqual(stat.S_IMODE(os.stat(cli_dir).st_mode), 0o700)
+
+    def test_existing_private_directory_skips_chmod(self):
+        cli_dir = os.path.join(self.root_dir, ".tccli")
+        os.makedirs(cli_dir, 0o700)
+        os.chmod(cli_dir, 0o700)
+
+        with mock.patch("os.chmod") as chmod:
+            self._dump_with_permissive_umask(cli_dir)
+            chmod.assert_not_called()
