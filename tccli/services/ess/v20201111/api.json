@@ -3020,7 +3020,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同对比差异点唯一ID。",
+          "document": "<p>合同对比差异点唯一ID。</p>",
           "example": "fc*****f0",
           "member": "string",
           "name": "ComparisonPointId",
@@ -3030,7 +3030,7 @@
         },
         {
           "disabled": false,
-          "document": "对比前后差异类型，具体如下：\n<ul><li> **add**：新增</li>\n<li> **change**：变更</li>\n<li> **delete**：删除</li>\n</ul>",
+          "document": "<p>对比前后差异类型，具体如下：</p><ul><li> **add**：新增</li><li> **change**：变更</li><li> **delete**：删除</li></ul>",
           "example": "add",
           "member": "string",
           "name": "ComparisonType",
@@ -3040,7 +3040,7 @@
         },
         {
           "disabled": false,
-          "document": "对比内容类型，具体如下：\n<ul><li> **text**：文本</li>\n<li> **table**：表格</li>\n<li> **picture**：图片</li>\n</ul>",
+          "document": "<p>对比内容类型，具体如下：</p><ul><li> **text**：文本</li><li> **table**：表格</li><li> **picture**：图片</li></ul>",
           "example": "text",
           "member": "string",
           "name": "ContentType",
@@ -3050,7 +3050,7 @@
         },
         {
           "disabled": false,
-          "document": "原文文本。",
+          "document": "<p>原文文本。</p>",
           "example": "******",
           "member": "string",
           "name": "OriginText",
@@ -3060,7 +3060,7 @@
         },
         {
           "disabled": false,
-          "document": "对比文本。",
+          "document": "<p>对比文本。</p>",
           "example": "-----",
           "member": "string",
           "name": "DiffText",
@@ -3070,10 +3070,20 @@
         },
         {
           "disabled": false,
-          "document": "合同文本的格式类型。\n类型如下：\n<ul><li> **0**：段落（正文）</li>\n<li> **1**：标点符号</li>\n<li> **2**：页眉页脚</li>\n<li> **3**：目录</li>\n<li> **4**：印章</li>\n<li> **5**：序号</li>\n<li> **6**：水印</li>\n<li> **7**：下划线内容（填写区）</li>\n</ul>",
+          "document": "<p>合同文本的格式类型。<br>类型如下：</p><ul><li> **0**：段落（正文）</li><li> **1**：标点符号</li><li> **2**：页眉页脚</li><li> **3**：目录</li><li> **4**：印章</li><li> **5**：序号</li><li> **6**：水印</li><li> **7**：下划线内容（填写区）</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "FormatType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码：对比点所在页码。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -21407,7 +21417,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。",
+          "document": "<p>验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。</p>",
           "example": "1",
           "member": "int64",
           "name": "VerifyResult",
@@ -21417,7 +21427,7 @@
         },
         {
           "disabled": false,
-          "document": "签署平台\n如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，\n如果文件不在腾讯电子签平台签署，则为**其他平台**。",
+          "document": "<p>签署平台<br>如果文件是在腾讯电子签平台签署，则为<strong>腾讯电子签</strong>，<br>如果文件不在腾讯电子签平台签署，则为<strong>其他平台</strong>。</p>",
           "example": "腾讯电子签",
           "member": "string",
           "name": "SignPlatform",
@@ -21427,7 +21437,7 @@
         },
         {
           "disabled": false,
-          "document": "申请证书的主体的名字\n\n如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下\n**企业**:  ESS@企业名称@编码\n**个人**: ESS@个人姓名@证件号@808854\n\n如果在其他平台签署的, 主体的名字参考其他平台的说明",
+          "document": "<p>申请证书的主体的名字</p><p>如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下<br><strong>企业</strong>:  ESS@企业名称@编码<br><strong>个人</strong>: ESS@个人姓名@证件号@808854</p><p>如果在其他平台签署的, 主体的名字参考其他平台的说明</p>",
           "example": "ESS@典子谦示例企业@382919",
           "member": "string",
           "name": "SignerName",
@@ -21437,7 +21447,7 @@
         },
         {
           "disabled": false,
-          "document": "签署时间的Unix时间戳，单位毫秒",
+          "document": "<p>签署时间的Unix时间戳，单位毫秒</p>",
           "example": "1699252042000",
           "member": "int64",
           "name": "SignTime",
@@ -21447,7 +21457,7 @@
         },
         {
           "disabled": false,
-          "document": "证书签名算法,  如SHA1withRSA等算法",
+          "document": "<p>证书签名算法,  如SHA1withRSA等算法</p>",
           "example": "SHA1withRSA",
           "member": "string",
           "name": "SignAlgorithm",
@@ -21457,7 +21467,7 @@
         },
         {
           "disabled": false,
-          "document": "在数字证书申请过程中，系统会自动生成一个独一无二的序列号。",
+          "document": "<p>在数字证书申请过程中，系统会自动生成一个独一无二的序列号。</p>",
           "example": "6c8e2911fadf70ea",
           "member": "string",
           "name": "CertSn",
@@ -21467,7 +21477,7 @@
         },
         {
           "disabled": false,
-          "document": "证书起始时间的Unix时间戳，单位毫秒",
+          "document": "<p>证书起始时间的Unix时间戳，单位毫秒</p>",
           "example": "1699006057000",
           "member": "int64",
           "name": "CertNotBefore",
@@ -21477,7 +21487,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间的时间戳，单位毫秒",
+          "document": "<p>证书过期时间的时间戳，单位毫秒</p>",
           "example": "1730542057000",
           "member": "int64",
           "name": "CertNotAfter",
@@ -21487,7 +21497,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域横坐标，单位px",
+          "document": "<p>签名域横坐标，单位px</p>",
           "example": "361.0799865722656",
           "member": "float",
           "name": "ComponentPosX",
@@ -21497,7 +21507,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域纵坐标，单位px",
+          "document": "<p>签名域纵坐标，单位px</p>",
           "example": "481.6199951171875",
           "member": "float",
           "name": "ComponentPosY",
@@ -21507,7 +21517,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域宽度，单位px",
+          "document": "<p>签名域宽度，单位px</p>",
           "example": "119",
           "member": "float",
           "name": "ComponentWidth",
@@ -21517,7 +21527,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域高度，单位px",
+          "document": "<p>签名域高度，单位px</p>",
           "example": "14",
           "member": "float",
           "name": "ComponentHeight",
@@ -21527,12 +21537,32 @@
         },
         {
           "disabled": false,
-          "document": "签名域所在页码，1～N",
+          "document": "<p>签名域所在页码，1～N</p>",
           "example": "1",
           "member": "int64",
           "name": "ComponentPage",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书颁发机构</p>",
+          "example": "nmgwxca",
+          "member": "string",
+          "name": "CertProvider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有可信时间戳</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTimestampTrust",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

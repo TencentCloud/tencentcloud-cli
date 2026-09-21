@@ -49932,7 +49932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "spark作业ID",
+          "document": "<p>spark作业ID</p>",
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
           "name": "JobId",
@@ -49942,7 +49942,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业名",
+          "document": "<p>spark作业名</p>",
           "example": "test-app",
           "member": "string",
           "name": "JobName",
@@ -49952,7 +49952,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业",
+          "document": "<p>spark作业类型，可去1或者2，1表示batch作业， 2表示streaming作业</p>",
           "example": "1",
           "member": "int64",
           "name": "JobType",
@@ -49962,7 +49962,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎名",
+          "document": "<p>引擎名</p>",
           "example": "spark-engine",
           "member": "string",
           "name": "DataEngine",
@@ -49972,7 +49972,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段已下线，请使用字段Datasource",
+          "document": "<p>该字段已下线，请使用字段Datasource</p>",
           "example": "kafka",
           "member": "string",
           "name": "Eni",
@@ -49982,7 +49982,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包是否本地上传，cos或者lakefs",
+          "document": "<p>程序包是否本地上传，cos或者lakefs</p>",
           "example": "cos",
           "member": "string",
           "name": "IsLocal",
@@ -49992,7 +49992,7 @@
         },
         {
           "disabled": false,
-          "document": "程序包路径",
+          "document": "<p>程序包路径</p>",
           "example": "cosn://bucket/example.jar",
           "member": "string",
           "name": "JobFile",
@@ -50002,7 +50002,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID",
+          "document": "<p>角色ID</p>",
           "example": "1",
           "member": "int64",
           "name": "RoleArn",
@@ -50012,7 +50012,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业运行主类",
+          "document": "<p>spark作业运行主类</p>",
           "example": "org.tencent.Example",
           "member": "string",
           "name": "MainClass",
@@ -50022,7 +50022,7 @@
         },
         {
           "disabled": false,
-          "document": "命令行参数，spark作业命令行参数，空格分隔",
+          "document": "<p>命令行参数，spark作业命令行参数，空格分隔</p>",
           "example": "1 2",
           "member": "string",
           "name": "CmdArgs",
@@ -50032,7 +50032,7 @@
         },
         {
           "disabled": false,
-          "document": "spark原生配置，换行符分隔",
+          "document": "<p>spark原生配置，换行符分隔</p>",
           "example": "spark.network.timeout=120s",
           "member": "string",
           "name": "JobConf",
@@ -50042,7 +50042,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖jars是否本地上传，cos或者lakefs",
+          "document": "<p>依赖jars是否本地上传，cos或者lakefs</p>",
           "example": "cos",
           "member": "string",
           "name": "IsLocalJars",
@@ -50052,7 +50052,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业依赖jars，逗号分隔",
+          "document": "<p>spark作业依赖jars，逗号分隔</p>",
           "example": "example.jar",
           "member": "string",
           "name": "JobJars",
@@ -50062,7 +50062,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖文件是否本地上传，cos或者lakefs",
+          "document": "<p>依赖文件是否本地上传，cos或者lakefs</p>",
           "example": "cos",
           "member": "string",
           "name": "IsLocalFiles",
@@ -50072,7 +50072,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业依赖文件，逗号分隔",
+          "document": "<p>spark作业依赖文件，逗号分隔</p>",
           "example": "cos",
           "member": "string",
           "name": "JobFiles",
@@ -50082,7 +50082,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业driver资源大小",
+          "document": "<p>spark作业driver资源大小</p>",
           "example": "small",
           "member": "string",
           "name": "JobDriverSize",
@@ -50092,7 +50092,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业executor资源大小",
+          "document": "<p>spark作业executor资源大小</p>",
           "example": "small",
           "member": "string",
           "name": "JobExecutorSize",
@@ -50102,7 +50102,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业executor个数",
+          "document": "<p>spark作业executor个数</p>",
           "example": "1",
           "member": "int64",
           "name": "JobExecutorNums",
@@ -50112,7 +50112,7 @@
         },
         {
           "disabled": false,
-          "document": "spark流任务最大重试次数",
+          "document": "<p>spark流任务最大重试次数</p>",
           "example": "3",
           "member": "int64",
           "name": "JobMaxAttempts",
@@ -50122,7 +50122,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业创建者",
+          "document": "<p>spark作业创建者</p>",
           "example": "100******9064",
           "member": "string",
           "name": "JobCreator",
@@ -50132,7 +50132,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业创建时间",
+          "document": "<p>spark作业创建时间</p>",
           "example": "1",
           "member": "int64",
           "name": "JobCreateTime",
@@ -50142,7 +50142,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业更新时间",
+          "document": "<p>spark作业更新时间</p>",
           "example": "1",
           "member": "uint64",
           "name": "JobUpdateTime",
@@ -50152,7 +50152,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业最近任务ID",
+          "document": "<p>spark作业最近任务ID</p>",
           "example": "4a7cad6bb86211ec9c616e6f30623d72",
           "member": "string",
           "name": "CurrentTaskId",
@@ -50162,7 +50162,7 @@
         },
         {
           "disabled": false,
-          "document": "spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5",
+          "document": "<p>spark作业最近运行状态，初始化：0，运行中：1，成功：2，数据写入中： 3， 排队中： 4， 失败： -1， 已删除： -3，已过期： -5</p>",
           "example": "0",
           "member": "int64",
           "name": "JobStatus",
@@ -50172,7 +50172,7 @@
         },
         {
           "disabled": false,
-          "document": "spark流作业统计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark流作业统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StreamingStatistics",
           "name": "StreamingStat",
@@ -50182,7 +50182,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据源名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "kafka-datasource",
           "member": "string",
           "name": "DataSource",
@@ -50192,7 +50192,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pyspark：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos",
           "member": "string",
           "name": "IsLocalPythonFiles",
@@ -50202,7 +50202,7 @@
         },
         {
           "disabled": false,
-          "document": "注：该返回值已废弃\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>注：该返回值已废弃</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.py",
           "member": "string",
           "name": "AppPythonFiles",
@@ -50212,7 +50212,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>archives：依赖上传方式，1、cos；2、lakefs（控制台使用，该方式不支持直接接口调用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cos",
           "member": "string",
           "name": "IsLocalArchives",
@@ -50222,7 +50222,7 @@
         },
         {
           "disabled": false,
-          "document": "archives：依赖资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>archives：依赖资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "file1.tar.gz#abc",
           "member": "string",
           "name": "JobArchives",
@@ -50232,7 +50232,7 @@
         },
         {
           "disabled": false,
-          "document": "Spark Image 版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Spark Image 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "string",
           "name": "SparkImage",
@@ -50242,7 +50242,7 @@
         },
         {
           "disabled": false,
-          "document": "pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.py",
           "member": "string",
           "name": "JobPythonFiles",
@@ -50252,7 +50252,7 @@
         },
         {
           "disabled": false,
-          "document": "当前job正在运行或准备运行的任务个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前job正在运行或准备运行的任务个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "TaskNum",
@@ -50262,7 +50262,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎状态：-100（默认：未知状态），-2~11：引擎正常状态；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "DataEngineStatus",
@@ -50272,7 +50272,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "JobExecutorMaxNumbers",
@@ -50282,7 +50282,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>镜像版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "pyspark3.2",
           "member": "string",
           "name": "SparkImageVersion",
@@ -50292,7 +50292,7 @@
         },
         {
           "disabled": false,
-          "document": "查询脚本关联id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>查询脚本关联id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "931a72aa-4f83-4d6a-adf1-2sdda0234a655",
           "member": "string",
           "name": "SessionId",
@@ -50302,7 +50302,7 @@
         },
         {
           "disabled": false,
-          "document": "spark_emr_livy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>spark_emr_livy</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "引擎类型",
           "member": "string",
           "name": "DataEngineClusterType",
@@ -50312,7 +50312,7 @@
         },
         {
           "disabled": false,
-          "document": "Spark 3.2-EMR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Spark 3.2-EMR</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "引擎镜像版本",
           "member": "string",
           "name": "DataEngineImageVersion",
@@ -50322,7 +50322,7 @@
         },
         {
           "disabled": false,
-          "document": "任务资源配置是否继承集群模板，0（默认）不继承，1：继承\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务资源配置是否继承集群模板，0（默认）不继承，1：继承</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "IsInherit",
@@ -50332,7 +50332,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用session脚本的sql运行任务：false：否，true：是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否使用session脚本的sql运行任务：false：否，true：是</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsSessionStarted",
@@ -50342,13 +50342,33 @@
         },
         {
           "disabled": false,
-          "document": "引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引擎详细类型：SparkSQL、PrestoSQL、SparkBatch、StandardSpark、StandardPresto</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SparkSQL",
           "member": "string",
           "name": "EngineTypeDetail",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标准引擎依赖包</p>",
+          "example": "无",
+          "member": "DependencyPackage",
+          "name": "DependencyPackages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业运行鉴权身份</p>",
+          "example": "10001",
+          "member": "string",
+          "name": "RunAsIdentity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -1584,6 +1584,14 @@
         "title": "查询配置导入结果"
       }
     ],
+    "DescribeZoneCustomVariables": [
+      {
+        "document": "查询站点 zone-3t7hlhw8*6o* 的站点级自定义变量配置。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneCustomVariables\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3t7hlhw8*6o*\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomVariableOperations\": [],\n        \"CustomVariables\": [\n            {\n                \"Description\": \"\",\n                \"InitialValue\": \"124\",\n                \"Name\": \"user.zone.test2\"\n            }\n        ],\n        \"RequestId\": \"dfaf688e-86f6-4b0d-8b76-ba6aa5b3d7bf\"\n    }\n}",
+        "title": "查询站点级自定义变量配置"
+      }
+    ],
     "DescribeZoneSetting": [
       {
         "document": "",
@@ -2342,6 +2350,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZone\n<公共请求参数>\n\n{\n    \"VanityNameServers\": {\n        \"Switch\": \"on\",\n        \"Servers\": [\n            \"ns1.example.com\",\n            \"ns2.example.com\"\n        ]\n    },\n    \"Type\": \"full\",\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"AliasZoneName\": \"zone-example\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4ac50b24-7dc2-47f4-92ce-9fd25d53gt2f\"\n    }\n}",
         "title": "修改站点"
+      }
+    ],
+    "ModifyZoneCustomVariables": [
+      {
+        "document": "创建站点级自定义变量 user.zone.testa，并配置对应的变量运算规则。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneCustomVariables\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3n1uzjzxffby\",\n    \"CustomVariables\": [\n        {\n            \"Name\": \"user.zone.testa\",\n            \"InitialValue\": \"${http.request.headers[\\\"key\\\"]}\",\n            \"Description\": \"\"\n        }\n    ],\n    \"CustomVariableOperations\": [\n        {\n            \"Branches\": [\n                {\n                    \"Condition\": \"${eo.variable['user.zone.testa']} in ['aBc']\",\n                    \"Actions\": [\n                        {\n                            \"Name\": \"Set\",\n                            \"SetParameters\": {\n                                \"Name\": \"user.zone.testa\",\n                                \"Value\": \"${http.request.host}\"\n                            }\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a33d2e57-25db-43de-add9-cf43748af91c\"\n    }\n}",
+        "title": "配置站点级自定义变量"
       }
     ],
     "ModifyZoneSetting": [

@@ -4532,7 +4532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例`ID`，形如：`eni-m6dyj72l`。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
+          "document": "<p>弹性网卡实例<code>ID</code>，形如：<code>eni-m6dyj72l</code>。可通过<a href=\"https://cloud.tencent.com/document/product/215/15817\">DescribeNetworkInterfaces</a>接口获取。</p>",
           "example": "eni-5u5biujl",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4541,8 +4541,8 @@
         },
         {
           "disabled": false,
-          "document": "指定的`IPv6`地址列表，单次最多指定10个。与入参`Ipv6AddressCount`合并计算配额。与Ipv6AddressCount必填一个。",
-          "example": "[{\"Address\":\"3402:4e00:20:1202:0:8d05:c272:f514\"}]",
+          "document": "<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。与Ipv6AddressCount必填一个。</p>",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6Addresses",
           "required": false,
@@ -4550,7 +4550,7 @@
         },
         {
           "disabled": false,
-          "document": "自动分配`IPv6`地址个数，内网IP地址个数总和不能超过配额数。与入参`Ipv6Addresses`合并计算配额。与Ipv6Addresses必填一个。",
+          "document": "<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。与Ipv6Addresses必填一个。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
@@ -4559,7 +4559,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
@@ -4574,8 +4574,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "分配给弹性网卡的`IPv6`地址列表。",
-          "example": "[{\"Address\": \"3402:4e00:20:1202:0:8d05:c272:f514\", \"AddressId\": \"\", \"Primary\": false, \"Description\": \"\", \"IsWanIpBlocked\": false, \"State\": \"PENDING\"}]",
+          "document": "<p>分配给弹性网卡的<code>IPv6</code>地址列表。</p>",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "output_required": true,
@@ -4596,7 +4596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`VPC`实例`ID`，形如：`vpc-f49l6u0z`。",
+          "document": "<p><code>VPC</code>实例<code>ID</code>，形如：<code>vpc-f49l6u0z</code>。</p>",
           "example": "vpc-5k6fot41",
           "member": "string",
           "name": "VpcId",
@@ -4605,7 +4605,7 @@
         },
         {
           "disabled": false,
-          "document": "申请IPv6 Cidr 的类型，`GUA`(全球单播地址), `ULA`(唯一本地地址)。",
+          "document": "<p>申请IPv6 Cidr 的类型，<code>GUA</code>(全球单播地址), <code>ULA</code>(唯一本地地址)。</p>",
           "example": "GUA",
           "member": "string",
           "name": "AddressType",
@@ -4620,7 +4620,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "分配的 `IPv6` 网段。形如：`3402:4e00:20:1000::/56`。",
+          "document": "<p>分配的 <code>IPv6</code> 网段。形如：<code>3402:4e00:20:1000::/56</code>。</p>",
           "example": "3402:4e00:20:1000::/56",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -4630,7 +4630,7 @@
         },
         {
           "disabled": false,
-          "document": "申请IPv6 Cidr 的类型，`GUA`,  `ULA`",
+          "document": "<p>申请IPv6 Cidr 的类型，<code>GUA</code>,  <code>ULA</code></p>",
           "example": "GUA",
           "member": "string",
           "name": "AddressType",
@@ -4707,7 +4707,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。\n",
+          "document": "<p>弹性网卡实例ID，例如：eni-m6dyj72l。可通过<a href=\"https://cloud.tencent.com/document/product/215/15817\">DescribeNetworkInterfaces</a>接口获取。</p>",
           "example": "eni-afo43z61",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -4716,7 +4716,7 @@
         },
         {
           "disabled": false,
-          "document": "指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。",
+          "document": "<p>指定的内网IP信息，单次最多指定10个。与SecondaryPrivateIpAddressCount至少提供一个。</p>",
           "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
@@ -4725,7 +4725,7 @@
         },
         {
           "disabled": false,
-          "document": "新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。",
+          "document": "<p>新申请的内网IP地址个数，与PrivateIpAddresses至少提供一个。内网IP地址个数总和不能超过配额数，详见<a href=\"/document/product/576/18527\">弹性网卡使用限制</a>。</p>",
           "example": "2",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
@@ -4734,7 +4734,7 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
+          "document": "<p>IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -4743,7 +4743,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
@@ -4758,7 +4758,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "内网IP详细信息。",
+          "document": "<p>内网IP详细信息。</p>",
           "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
@@ -8250,7 +8250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。\n",
+          "document": "<p>VPC实例ID。可通过<a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a>接口获取。</p>",
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
@@ -8259,7 +8259,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡名称，最大长度不能超过60个字符。",
+          "document": "<p>弹性网卡名称，最大长度不能超过60个字符。</p>",
           "example": "eni-ed3452de",
           "member": "string",
           "name": "NetworkInterfaceName",
@@ -8268,7 +8268,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
+          "document": "<p>弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过<a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a>接口获取。</p>",
           "example": "subnet-76r802pg",
           "member": "string",
           "name": "SubnetId",
@@ -8277,7 +8277,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。",
+          "document": "<p>云服务器实例ID。可通过<a href=\"https://cloud.tencent.com/document/product/213/15728\">DescribeInstances</a>接口获取。</p>",
           "example": "ins-efe0238e",
           "member": "string",
           "name": "InstanceId",
@@ -8286,8 +8286,8 @@
         },
         {
           "disabled": false,
-          "document": "指定的内网IP信息，单次最多指定10个。",
-          "example": "[{\"PrivateIpAddress\": \"10.0.0.10\"}]",
+          "document": "<p>指定的内网IP信息，单次最多指定10个。</p>",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -8295,7 +8295,7 @@
         },
         {
           "disabled": false,
-          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。",
+          "document": "<p>新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SecondaryPrivateIpAddressCount",
@@ -8304,7 +8304,25 @@
         },
         {
           "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
+          "document": "<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>",
+          "example": "无",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Ipv6AddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -8313,7 +8331,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
+          "document": "<p>指定绑定的安全组，例如：[&#39;sg-1dd51d&#39;]。可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>接口获取。</p>",
           "example": "[\"sg-lb68uglp\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -8322,7 +8340,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
+          "document": "<p>弹性网卡描述，可任意命名，但不得超过60个字符。</p>",
           "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceDescription",
@@ -8331,8 +8349,8 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -8340,7 +8358,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定类型：0 标准型 1 扩展型。",
+          "document": "<p>绑定类型：0 标准型 1 扩展型。</p>",
           "example": "1",
           "member": "uint64",
           "name": "AttachType",
@@ -8349,7 +8367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false。",
+          "document": "<p>是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsRdma",
@@ -8358,12 +8376,30 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminationProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8373,7 +8409,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例。",
+          "document": "<p>弹性网卡实例。</p>",
           "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
@@ -10243,7 +10279,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC实例ID。可通过[DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)接口获取。",
+          "document": "<p>VPC实例ID。可通过<a href=\"https://cloud.tencent.com/document/product/215/15778\">DescribeVpcs</a>接口获取。</p>",
           "example": "vpc-0akbol5v",
           "member": "string",
           "name": "VpcId",
@@ -10252,8 +10288,8 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡名称，最大长度不能超过60个字节。",
-          "example": "demo",
+          "document": "<p>弹性网卡名称，最大长度不能超过60个字节。</p>",
+          "example": "NetworkInterfaceName1",
           "member": "string",
           "name": "NetworkInterfaceName",
           "required": true,
@@ -10261,7 +10297,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过[DescribeSubnets](https://cloud.tencent.com/document/product/215/15784)接口获取。",
+          "document": "<p>弹性网卡所在的子网实例ID，例如：subnet-0ap8nwca。可通过<a href=\"https://cloud.tencent.com/document/product/215/15784\">DescribeSubnets</a>接口获取。</p>",
           "example": "subnet-76r802pg",
           "member": "string",
           "name": "SubnetId",
@@ -10270,8 +10306,8 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡描述，可任意命名，但不得超过60个字符。",
-          "example": "demo",
+          "document": "<p>弹性网卡描述，可任意命名，但不得超过60个字符。</p>",
+          "example": "NetworkInterfaceDescription1",
           "member": "string",
           "name": "NetworkInterfaceDescription",
           "required": false,
@@ -10279,16 +10315,7 @@
         },
         {
           "disabled": false,
-          "document": "新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。\n配额数查询：[DescribeVpcLimits](https://cloud.tencent.com/document/api/215/42942)。",
-          "example": "1",
-          "member": "uint64",
-          "name": "SecondaryPrivateIpAddressCount",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。",
+          "document": "<p>IP服务质量等级，和SecondaryPrivateIpAddressCount配合使用，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>",
           "example": "PT",
           "member": "string",
           "name": "QosLevel",
@@ -10297,7 +10324,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的安全组，例如：['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。\n",
+          "document": "<p>指定绑定的安全组，例如：[&#39;sg-1dd51d&#39;]。可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>接口获取。</p>",
           "example": "[\"sg-05bb4upy\"]",
           "member": "string",
           "name": "SecurityGroupIds",
@@ -10306,8 +10333,8 @@
         },
         {
           "disabled": false,
-          "document": "指定的内网IP信息，单次最多指定10个。",
-          "example": "[{\"PrivateIpAddress\": \"192.168.0.10\"}]",
+          "document": "<p>指定的内网IP信息，单次最多指定10个。</p>",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddresses",
           "required": false,
@@ -10315,8 +10342,35 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。<br>配额数查询：<a href=\"https://cloud.tencent.com/document/api/215/42942\">DescribeVpcLimits</a>。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SecondaryPrivateIpAddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>",
+          "example": "无",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Ipv6AddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -10324,7 +10378,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。",
+          "document": "<p>网卡trunking模式设置，Enable-开启，Disable--关闭，默认关闭。</p>",
           "example": "Enable",
           "member": "string",
           "name": "TrunkingFlag",
@@ -10333,7 +10387,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false",
+          "document": "<p>是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false</p>",
           "example": "true",
           "member": "bool",
           "name": "IsRdma",
@@ -10342,12 +10396,30 @@
         },
         {
           "disabled": false,
-          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "document": "<p>用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。</p>",
           "example": "d7df28fd-dcba-4dbb-82bc-bce3bf4d3562",
           "member": "string",
           "name": "ClientToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminationProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10357,7 +10429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例。",
+          "document": "<p>弹性网卡实例。</p>",
           "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
@@ -11319,7 +11391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。",
+          "document": "<p>待操作的VPC实例ID。可通过DescribeVpcs接口返回值中的VpcId获取。</p>",
           "example": "vpc-m3ul053f",
           "member": "string",
           "name": "VpcId",
@@ -11328,7 +11400,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称，最大长度不能超过60个字节。",
+          "document": "<p>子网名称，最大长度不能超过60个字节。</p>",
           "example": "demo",
           "member": "string",
           "name": "SubnetName",
@@ -11337,16 +11409,7 @@
         },
         {
           "disabled": false,
-          "document": "子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。",
-          "example": "10.8.0.0/16",
-          "member": "string",
-          "name": "CidrBlock",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。",
+          "document": "<p>子网所在的可用区ID，不同子网选择不同可用区可以做跨可用区灾备。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -11355,7 +11418,34 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]",
+          "document": "<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>",
+          "example": "DualStack",
+          "member": "string",
+          "name": "StackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网网段，子网网段必须在VPC网段内，相同VPC内子网网段不能重叠。</p>",
+          "example": "10.8.0.0/16",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6网段</p>",
+          "example": "fd76:3600:1000:700::/64",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -11364,7 +11454,7 @@
         },
         {
           "disabled": false,
-          "document": "CDC实例ID。",
+          "document": "<p>CDC实例ID。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
@@ -11379,7 +11469,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网对象。",
+          "document": "<p>子网对象。</p>",
           "example": "无",
           "member": "Subnet",
           "name": "Subnet",
@@ -12112,7 +12202,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "vpc名称，最大长度不能超过60个字节。",
+          "document": "<p>vpc名称，最大长度不能超过60个字节。</p>",
           "example": "TestVPC",
           "member": "string",
           "name": "VpcName",
@@ -12121,16 +12211,43 @@
         },
         {
           "disabled": false,
-          "document": "vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。",
-          "example": "10.8.0.0/16",
+          "document": "<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>",
+          "example": "DualStack",
           "member": "string",
-          "name": "CidrBlock",
-          "required": true,
+          "name": "StackType",
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "是否开启组播。true: 开启, false: 不开启。",
+          "document": "<p>vpc的cidr，仅能在10.0.0.0/12，172.16.0.0/12，192.168.0.0/16这三个内网网段内。</p>",
+          "example": "10.8.0.0/16",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p><code>VPC</code>的<code>IPv6</code> <code>CIDR</code>。</p>",
+          "example": "fd76:3600:1000:700::/56",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>",
+          "example": "GUA",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启组播。true: 开启, false: 不开启。</p>",
           "example": "true",
           "member": "string",
           "name": "EnableMulticast",
@@ -12139,7 +12256,7 @@
         },
         {
           "disabled": false,
-          "document": "DNS地址，最多支持4个。",
+          "document": "<p>DNS地址，最多支持4个。</p>",
           "example": "[\"183.60.83.19\"]",
           "member": "string",
           "name": "DnsServers",
@@ -12148,7 +12265,7 @@
         },
         {
           "disabled": false,
-          "document": "DHCP使用的域名。",
+          "document": "<p>DHCP使用的域名。</p>",
           "example": "demo",
           "member": "string",
           "name": "DomainName",
@@ -12157,7 +12274,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -12166,7 +12283,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单",
+          "document": "<p>vpc关联云联网时路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时,请通过工单加入白名单</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableRouteVpcPublish",
@@ -12175,7 +12292,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。",
+          "document": "<p>vpc关联云联网时IPv6类型路由发布策略， true：开启cidr路由发布，false：开启subnet子网路由发布。创建vpc时默认为子网路由发布，当选择cidr路由发布时，请通过工单加入白名单。</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableRouteVpcPublishIpv6",
@@ -12190,7 +12307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Vpc对象。",
+          "document": "<p>Vpc对象。</p>",
           "example": "无",
           "member": "Vpc",
           "name": "Vpc",
@@ -13155,6 +13272,16 @@
           "name": "LegalPersonIdCard",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单开关是否开启",
+          "example": "True",
+          "member": "bool",
+          "name": "WhiteListFlag",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -27429,7 +27556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IPv6 CIdr Block",
+          "document": "<p>IPv6网段</p>",
           "example": "2402:4e00:1717:8200::/56",
           "member": "string",
           "name": "IPv6CidrBlock",
@@ -27439,7 +27566,7 @@
         },
         {
           "disabled": false,
-          "document": "网络运营商类型 取值范围:'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调",
+          "document": "<p>网络运营商类型</p><p>枚举值：</p><ul><li>BGP： 默认</li><li>CMCC： 中国移动</li><li>CTCC： 中国电信</li><li>CUCC： 中国联通</li></ul>",
           "example": "BGP",
           "member": "string",
           "name": "ISPType",
@@ -27449,7 +27576,7 @@
         },
         {
           "disabled": false,
-          "document": "IPv6 Cidr 的类型：`GUA`(全球单播地址), `ULA`(唯一本地地址)",
+          "document": "<p>IPv6网段类型</p><p>枚举值：</p><ul><li>GUA： 全球单播地址</li><li>ULA： 唯一本地地址</li></ul>",
           "example": "GUA",
           "member": "string",
           "name": "AddressType",
@@ -31647,7 +31774,7 @@
         {
           "disabled": false,
           "document": "选择策略信息集合，表示需要按照当前的策略来修改。",
-          "example": "-",
+          "example": "[{\"InstanceType\": \"VPC\", \"InstanceId\": \"vpc-rkxd3pgh\"}]",
           "member": "CcnRouteTableSelectPolicy",
           "name": "SelectionPolicies",
           "required": true,
@@ -34107,7 +34234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性网卡实例ID，例如：eni-f1xjkw1b。",
+          "document": "<p>弹性网卡实例ID，例如：eni-f1xjkw1b。</p>",
           "example": "eni-b4ax8qbz",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -34118,7 +34245,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡名称。",
+          "document": "<p>弹性网卡名称。</p>",
           "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceName",
@@ -34129,7 +34256,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡描述。",
+          "document": "<p>弹性网卡描述。</p>",
           "example": "demo",
           "member": "string",
           "name": "NetworkInterfaceDescription",
@@ -34140,7 +34267,7 @@
         },
         {
           "disabled": false,
-          "document": "子网实例ID。",
+          "document": "<p>子网实例ID。</p>",
           "example": "subnet-l0ykcjvi",
           "member": "string",
           "name": "SubnetId",
@@ -34151,7 +34278,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "<p>VPC实例ID。</p>",
           "example": "vpc-29mdigub",
           "member": "string",
           "name": "VpcId",
@@ -34162,7 +34289,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的安全组。",
+          "document": "<p>绑定的安全组。</p>",
           "example": "[\"sg-2edhcclz\"]",
           "member": "string",
           "name": "GroupSet",
@@ -34173,7 +34300,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是主网卡。",
+          "document": "<p>是否是主网卡。</p>",
           "example": "true",
           "member": "bool",
           "name": "Primary",
@@ -34184,7 +34311,7 @@
         },
         {
           "disabled": false,
-          "document": "MAC地址。",
+          "document": "<p>MAC地址。</p>",
           "example": "20:90:6F:EE:57:E2",
           "member": "string",
           "name": "MacAddress",
@@ -34195,7 +34322,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡状态：\n<li>`PENDING`：创建中</li>\n<li>`AVAILABLE`：可用的</li>\n<li>`ATTACHING`：绑定中</li>\n<li>`DETACHING`：解绑中</li>\n<li>`DELETING`：删除中</li>",
+          "document": "<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
@@ -34206,7 +34333,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡状态：\n<li>`PENDING`：创建中</li>\n<li>`AVAILABLE`：可用的</li>\n<li>`ATTACHING`：绑定中</li>\n<li>`DETACHING`：解绑中</li>\n<li>`DELETING`：删除中</li>\n<li>`INUSE`：已绑定</li>",
+          "document": "<p>弹性网卡状态：</p><li><code>PENDING</code>：创建中</li><li><code>AVAILABLE</code>：可用的</li><li><code>ATTACHING</code>：绑定中</li><li><code>DETACHING</code>：解绑中</li><li><code>DELETING</code>：删除中</li><li><code>INUSE</code>：已绑定</li>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "NetworkInterfaceState",
@@ -34217,8 +34344,8 @@
         },
         {
           "disabled": false,
-          "document": "内网IP信息。",
-          "example": "[{\"PrivateIpAddress\": \"192.168.0.10\"}]",
+          "document": "<p>内网IP信息。</p>",
+          "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
           "output_required": true,
@@ -34228,8 +34355,8 @@
         },
         {
           "disabled": false,
-          "document": "绑定的云服务器对象。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ins-ikgdajbc",
+          "document": "<p>绑定的云服务器对象。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "NetworkInterfaceAttachment",
           "name": "Attachment",
           "output_required": true,
@@ -34239,7 +34366,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。",
+          "document": "<p>可用区。</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -34250,7 +34377,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59",
+          "document": "<p>创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59</p>",
           "example": "2020-10-28 08:23:59",
           "member": "string",
           "name": "CreatedTime",
@@ -34261,8 +34388,8 @@
         },
         {
           "disabled": false,
-          "document": "`IPv6`地址列表。",
-          "example": "[{\"Description\": \"\", \"Primary\": false, \"Address\": \"3402:4e00:20:1202::1\", \"AddressId\": \"\", \"PublicIpAddress\": \"\", \"IsWanIpBlocked\": false, \"State\": \"AVAILABLE\", \"AddressType\": \"GUA\"}]",
+          "document": "<p><code>IPv6</code>地址列表。</p>",
+          "example": "无",
           "member": "Ipv6Address",
           "name": "Ipv6AddressSet",
           "output_required": true,
@@ -34272,8 +34399,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>标签键值对。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -34283,7 +34410,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡",
+          "document": "<p>网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡</p>",
           "example": "0",
           "member": "uint64",
           "name": "EniType",
@@ -34294,7 +34421,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。",
+          "document": "<p>网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。</p>",
           "example": "TKE",
           "member": "string",
           "name": "Business",
@@ -34305,7 +34432,7 @@
         },
         {
           "disabled": false,
-          "document": "网卡所关联的CDC实例ID。",
+          "document": "<p>网卡所关联的CDC实例ID。</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
@@ -34316,7 +34443,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡类型：0:标准型/1:扩展型。默认值为0。",
+          "document": "<p>弹性网卡类型：0:标准型/1:扩展型。默认值为0。</p>",
           "example": "0",
           "member": "uint64",
           "name": "AttachType",
@@ -34327,7 +34454,7 @@
         },
         {
           "disabled": false,
-          "document": "用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。",
+          "document": "<p>用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。</p>",
           "example": "cls-j85c20d4-reserved",
           "member": "string",
           "name": "ResourceId",
@@ -34338,13 +34465,35 @@
         },
         {
           "disabled": false,
-          "document": "服务质量级别：\nPT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n\n可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。\n",
+          "document": "<p>服务质量级别：<br>PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p><p>可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。</p>",
           "example": "AG",
           "member": "string",
           "name": "QosLevel",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的<code>IPv6</code>地址列表，单次最多指定10个。与入参<code>Ipv6AddressCount</code>合并计算配额。</p>",
+          "example": "无",
+          "member": "Ipv6Address",
+          "name": "Ipv6Addresses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动分配<code>IPv6</code>地址个数，内网IP地址个数总和不能超过配额数。与入参<code>Ipv6Addresses</code>合并计算配额。</p><p>取值范围：[1, 10]</p><p>单位：个</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Ipv6AddressCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -35655,7 +35804,7 @@
         {
           "disabled": false,
           "document": "新的路由传播策略",
-          "example": "无",
+          "example": "[{\"Action\": \"accept\", \"BroadcastConditions\": [{\"MatchPattern\": \"1\", \"Name\": \"instance-type\", \"Values\": [\"DIRECTCONNECT\"]}]",
           "member": "CcnRouteTableBroadcastPolicy",
           "name": "Policys",
           "required": true,
@@ -38775,7 +38924,7 @@
         {
           "disabled": false,
           "document": "云联网（CCN）各地域出带宽上限。",
-          "example": "无",
+          "example": "[{\"Region\": \"ap-guangzhou\", \"BandwidthLimit\": 10}]",
           "member": "CcnRegionBandwidthLimit",
           "name": "CcnRegionBandwidthLimits",
           "required": true,
@@ -38787,6 +38936,15 @@
           "example": "true",
           "member": "bool",
           "name": "SetDefaultLimitFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否设置默认QOS带宽；",
+          "example": "true",
+          "member": "bool",
+          "name": "SetQosDefaultLimitFlag",
           "required": false,
           "type": "bool"
         }
@@ -39778,6 +39936,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>",
+          "example": "DualStack",
+          "member": "string",
+          "name": "StackType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -39787,16 +39955,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子网的`CIDR`。",
-          "example": "10.0.0.0/24",
-          "member": "string",
-          "name": "CidrBlock",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "子网名称。",
+          "document": "<p>子网名称。</p>",
           "example": "demo",
           "member": "string",
           "name": "SubnetName",
@@ -39805,7 +39964,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区。形如：`ap-guangzhou-2`。",
+          "document": "<p>可用区。形如：<code>ap-guangzhou-2</code>。</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -39814,7 +39973,34 @@
         },
         {
           "disabled": false,
-          "document": "指定关联路由表，形如：`rtb-3ryrwzuu`。",
+          "document": "<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>",
+          "example": "DualStack",
+          "member": "string",
+          "name": "StackType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网的<code>CIDR</code>。</p>",
+          "example": "10.0.0.0/24",
+          "member": "string",
+          "name": "CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网的 <code>IPv6</code> <code>CIDR</code>。</p>",
+          "example": "fd76:3600:1300:c00::/64",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定关联路由表，形如：<code>rtb-3ryrwzuu</code>。</p>",
           "example": "rtb-h0fk8lfc",
           "member": "string",
           "name": "RouteTableId",
@@ -41544,6 +41730,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议栈类型</p><p>枚举值：</p><ul><li>DualStack： IPv4和IPv6双栈</li><li>IPv6Only： IPv6单栈</li></ul>",
+          "example": "DualStack",
+          "member": "string",
+          "name": "StackType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -41753,7 +41949,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道实例ID。",
+          "document": "<p>通道实例ID。</p>",
           "example": "vpnx-xxxxx",
           "member": "string",
           "name": "VpnConnectionId",
@@ -41763,7 +41959,7 @@
         },
         {
           "disabled": false,
-          "document": "通道名称。",
+          "document": "<p>通道名称。</p>",
           "example": "vpn-con-01",
           "member": "string",
           "name": "VpnConnectionName",
@@ -41773,7 +41969,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC实例ID。",
+          "document": "<p>VPC实例ID。</p>",
           "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
@@ -41783,7 +41979,7 @@
         },
         {
           "disabled": false,
-          "document": "VPN网关实例ID。",
+          "document": "<p>VPN网关实例ID。</p>",
           "example": "vpngw-xxxxx",
           "member": "string",
           "name": "VpnGatewayId",
@@ -41793,7 +41989,7 @@
         },
         {
           "disabled": false,
-          "document": "对端网关实例ID。",
+          "document": "<p>对端网关实例ID。</p>",
           "example": "cgw-xxxxx",
           "member": "string",
           "name": "CustomerGatewayId",
@@ -41803,7 +41999,7 @@
         },
         {
           "disabled": false,
-          "document": "预共享密钥。",
+          "document": "<p>预共享密钥。</p>",
           "example": "erxw1o931",
           "member": "string",
           "name": "PreShareKey",
@@ -41813,7 +42009,7 @@
         },
         {
           "disabled": false,
-          "document": "通道传输协议。",
+          "document": "<p>通道传输协议。</p>",
           "example": "IPSEC",
           "member": "string",
           "name": "VpnProto",
@@ -41823,7 +42019,7 @@
         },
         {
           "disabled": false,
-          "document": "通道加密协议。",
+          "document": "<p>通道加密协议。</p>",
           "example": "IKE",
           "member": "string",
           "name": "EncryptProto",
@@ -41833,7 +42029,7 @@
         },
         {
           "disabled": false,
-          "document": "路由类型。",
+          "document": "<p>路由类型。</p>",
           "example": "StaticRoute",
           "member": "string",
           "name": "RouteType",
@@ -41843,7 +42039,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "0000-00-00 00:00:00",
           "member": "datetime",
           "name": "CreatedTime",
@@ -41853,7 +42049,7 @@
         },
         {
           "disabled": false,
-          "document": "通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。",
+          "document": "<p>通道的生产状态，PENDING：生产中，AVAILABLE：运行中，DELETING：删除中。</p>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
@@ -41863,7 +42059,7 @@
         },
         {
           "disabled": false,
-          "document": "通道连接状态，AVAILABLE：已连接。",
+          "document": "<p>通道连接状态，AVAILABLE：已连接。</p>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "NetStatus",
@@ -41873,8 +42069,8 @@
         },
         {
           "disabled": false,
-          "document": "SPD。",
-          "example": "[{\"localCidrBlock\": \"0.0.0.0/0\", \"remoteCidrBlock\": [\"0.0.0.0/0\"]}]",
+          "document": "<p>SPD。</p>",
+          "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabaseSet",
           "output_required": true,
@@ -41883,7 +42079,7 @@
         },
         {
           "disabled": false,
-          "document": "IKE选项。",
+          "document": "<p>IKE选项。</p>",
           "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
@@ -41893,7 +42089,7 @@
         },
         {
           "disabled": false,
-          "document": "IPSEC选择。",
+          "document": "<p>IPSEC选择。</p>",
           "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
@@ -41903,7 +42099,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持健康状态探测",
+          "document": "<p>是否支持健康状态探测</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
@@ -41913,7 +42109,7 @@
         },
         {
           "disabled": false,
-          "document": "本端探测ip",
+          "document": "<p>本端探测ip</p>",
           "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckLocalIp",
@@ -41923,7 +42119,7 @@
         },
         {
           "disabled": false,
-          "document": "对端探测ip",
+          "document": "<p>对端探测ip</p>",
           "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckRemoteIp",
@@ -41933,7 +42129,7 @@
         },
         {
           "disabled": false,
-          "document": "通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象",
+          "document": "<p>通道健康检查状态，AVAILABLE：正常，UNAVAILABLE：不正常。 未配置健康检查不返回该对象</p>",
           "example": "AVAILABLE",
           "member": "string",
           "name": "HealthCheckStatus",
@@ -41943,7 +42139,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）",
+          "document": "<p>DPD探测开关。默认为0，表示关闭DPD探测。可选值：0（关闭），1（开启）</p>",
           "example": "0",
           "member": "int64",
           "name": "DpdEnable",
@@ -41953,7 +42149,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD超时时间。即探测确认对端不存在需要的时间。",
+          "document": "<p>DPD超时时间。即探测确认对端不存在需要的时间。</p>",
           "example": "30",
           "member": "string",
           "name": "DpdTimeout",
@@ -41963,7 +42159,7 @@
         },
         {
           "disabled": false,
-          "document": "DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）",
+          "document": "<p>DPD超时后的动作。默认为clear。dpdEnable为1（开启）时有效。可取值为clear（断开）和restart（重试）</p>",
           "example": "clear",
           "member": "string",
           "name": "DpdAction",
@@ -41973,8 +42169,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对数组",
-          "example": "[{'Key': 'tag-key', 'Value': 'tag-value'}]",
+          "document": "<p>标签键值对数组</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -41983,7 +42179,7 @@
         },
         {
           "disabled": false,
-          "document": "协商类型",
+          "document": "<p>协商类型</p><p>枚举值：</p><ul><li>active： 主动协商</li><li>passive： 被动协商</li><li>flowTrigger： 流量协商</li></ul>",
           "example": "flowTrigger",
           "member": "string",
           "name": "NegotiationType",
@@ -41993,7 +42189,7 @@
         },
         {
           "disabled": false,
-          "document": "Bgp配置信息",
+          "document": "<p>Bgp配置信息</p>",
           "example": "无",
           "member": "BgpConfigAndAsn",
           "name": "BgpConfig",
@@ -42003,8 +42199,8 @@
         },
         {
           "disabled": false,
-          "document": "Nqa配置信息",
-          "example": "{\"ProbeInterval\": \"5000\", \"ProbeThreshold\": \"3\", \"ProbeTimeout\": \"150\", \"ProbeType\": \"NQA\"}",
+          "document": "<p>Nqa配置信息</p>",
+          "example": "无",
           "member": "HealthCheckConfig",
           "name": "HealthCheckConfig",
           "output_required": false,

@@ -11529,7 +11529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志导出ID",
+          "document": "<p>日志导出ID，可以通过DescribeExports接口获取</p>",
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
@@ -11794,7 +11794,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则白名单ID列表",
+          "document": "规则白名单ID列表，可通过 [DescribeOwaspWhiteRule](https://cloud.tencent.com/document/product/627/122155) 接口获取",
           "example": "[100011,100023]",
           "member": "uint64",
           "name": "Ids",
@@ -18001,7 +18001,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "document": "<p>1-访问日志，2-攻击日志，默认为访问日志。</p>",
           "example": "1",
           "member": "int64",
           "name": "LogType",
@@ -18016,8 +18016,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "客户的投递流列表",
-          "example": "[{ \"FlowId\": 91}]",
+          "document": "<p>客户的投递流列表</p>",
+          "example": "无",
           "member": "PostCLSFlowInfo",
           "name": "PostCLSFlows",
           "output_required": true,
@@ -19781,7 +19781,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递流的流ID",
+          "document": "<p>投递流的流ID，可以通过DescribePostCKafkaFlows接口获取</p>",
           "example": "100001",
           "member": "int64",
           "name": "FlowId",
@@ -19790,7 +19790,7 @@
         },
         {
           "disabled": false,
-          "document": "1-访问日志，2-攻击日志，默认为访问日志。",
+          "document": "<p>1-访问日志，2-攻击日志，默认为访问日志。</p>",
           "example": "1",
           "member": "int64",
           "name": "LogType",
@@ -22809,7 +22809,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "\"txwafwx.qcloudwaf.com\"",
           "member": "string",
           "name": "Domain",
@@ -22818,7 +22818,7 @@
         },
         {
           "disabled": false,
-          "document": "域名ID",
+          "document": "<p>域名ID，使用DescribeDomains接口可以查询获取</p>",
           "example": "\"waf-SdN1ajkf\"",
           "member": "string",
           "name": "DomainId",
@@ -22827,7 +22827,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型",
+          "document": "<p>实例类型</p>",
           "example": "\"waf_1xf2vsq6ntyb\"",
           "member": "string",
           "name": "InstanceID",

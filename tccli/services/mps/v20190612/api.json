@@ -9187,8 +9187,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>换装模型，取值：</p><ul><li>WAND-tryon-1.0-lite</li><li>WAND-tryon-1.0-flash</li><li>WAND-tryon-1.0-pro</li></ul>",
-          "example": "WAND-tryon-1.0-lite",
+          "document": "<p>换装模型，取值：</p><ul><li>tryon-1.0-lite</li><li>tryon-1.0-flash</li><li>tryon-1.0-pro</li></ul>",
+          "example": "tryon-1.0-lite",
           "member": "string",
           "name": "Model",
           "output_required": false,
@@ -11212,7 +11212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "美颜效果",
+          "document": "<p>美颜效果</p>",
           "example": "无",
           "member": "BeautyEffectItemConfig",
           "name": "BeautyEffectItems",
@@ -11223,13 +11223,24 @@
         },
         {
           "disabled": false,
-          "document": "美颜滤镜",
+          "document": "<p>美颜滤镜</p>",
           "example": "无",
           "member": "BeautyFilterItemConfig",
           "name": "BeautyFilterItems",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>美颜类型</p><p>枚举值：</p><ul><li>auto： 智能自动美颜</li></ul><p>传入美颜参数时，忽略该参数。</p>",
+          "example": "auto",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -14690,7 +14701,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出图片的分辨率</p><p>枚举值：</p><ul><li>1K： 短边分辨率 1080</li><li>2K： 短边分辨率 1440</li><li>4K： 短边分辨率 2160</li></ul><p>默认值：1K</p>",
+          "document": "<p>输出图片的分辨率，可取值：1K/2K/4K。</p><p>默认值：1K</p>",
           "example": "1K",
           "member": "string",
           "name": "Resolution",
@@ -14701,7 +14712,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出图片的宽高比</p><p>枚举值：</p><ul><li>1:1： 宽高比 1:1</li><li>2:3： 宽高比 2:3</li><li>3:2： 宽高比 3:2</li><li>3:4： 宽高比 3:4</li><li>4:3： 宽高比 4:3</li><li>9:16： 宽高比 9:16</li><li>16:9： 宽高比 16:9</li></ul><p>默认值：1:1</p>",
+          "document": "<p>输出图片的宽高比，可取值：</p><ul><li>1:1</li><li>2:3</li><li>3:2</li><li>3:4</li><li>4:3</li><li>4:5</li><li>5:4</li><li>9:16</li><li>16:9</li></ul><p>默认值：1:1</p>",
           "example": "3:4",
           "member": "string",
           "name": "AspectRatio",
@@ -29992,7 +30003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>能力配置开关，可选值：</p><li>ON：开启；</li><li>OFF：关闭。</li>默认值：ON。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -30003,7 +30014,7 @@
         },
         {
           "disabled": false,
-          "document": "需要擦除的多个框选区域，最多开启16个区域。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>需要擦除的多个框选区域，最多开启16个区域。<br>注意：此字段可能返回 null，表示取不到有效值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ImageAreaBoxInfo",
           "name": "ImageAreaBoxes",
@@ -30014,7 +30025,7 @@
         },
         {
           "disabled": false,
-          "document": "图片框选区域类型，可选值：\n<li>logo：图标；</li>\n<li>text：文字；</li>\n<li>watermark：水印；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>图片框选区域类型，可选值：</p><li>logo：图标；</li><li>text：文字；</li><li>watermark：水印；</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"logo\", \"text\"]",
           "member": "string",
           "name": "DetectTypes",
@@ -30022,6 +30033,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印擦除能力档位，可选值：</p><p>枚举值：</p><ul><li>low： 快速擦除档位</li><li>mid： 擦除效果和速度均衡档位</li><li>high： 进阶擦除效果档位</li></ul><p>注意：根据擦除场景复杂度选择对应擦除档位。</p>",
+          "example": "mid",
+          "member": "string",
+          "name": "EraseStrength",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除图像水印时，选择特定水印类型，可选值：</p><p>枚举值：</p><ul><li>corner_watermark： 擦除常规定点水印</li><li>tiled_watermark： 擦除全图平铺水印</li><li>auto_detect_type： 自动识别水印类型擦除</li><li>selected_watermark： 跳过自动擦除，按指定位置进行水印擦除</li></ul>",
+          "example": "corner_watermark",
+          "member": "string",
+          "name": "WatermarkType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -50908,8 +50941,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>图片理解模型</p><p>枚举值：</p><ul><li>WAND-understand-1.0-lite： 轻量理解模型</li><li>WAND-understand-1.0-flash： 质量-速度平衡理解模型</li><li>WAND-understand-1.0-pro： 高质量理解模型</li></ul>",
-          "example": "WAND-understand-1.0-lite",
+          "document": "<p>图片理解模型</p><p>枚举值：</p><ul><li>understand-1.0-lite： 轻量理解模型</li><li>understand-1.0-flash： 质量-速度平衡理解模型</li><li>understand-1.0-pro： 高质量理解模型</li></ul>",
+          "example": "understand-1.0-flash",
           "member": "string",
           "name": "Model",
           "output_required": false,

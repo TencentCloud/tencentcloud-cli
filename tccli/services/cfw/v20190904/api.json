@@ -7009,7 +7009,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的起始时间，可不传</p>",
+          "document": "<p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -7018,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的截止时间，可不传</p>",
+          "document": "<p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -11635,7 +11635,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的起始时间，可不传</p>",
+          "document": "<p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -11644,7 +11644,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的截止时间，可不传</p>",
+          "document": "<p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",
@@ -13667,7 +13667,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的起始时间，可不传</p>",
+          "document": "<p>检索的起始时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "StartTime",
@@ -13676,7 +13676,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>检索的截止时间，可不传</p>",
+          "document": "<p>检索的截止时间，规则创建时间，可不传</p><p>参数格式：2022-07-27 16:00:00</p>",
           "example": "2022-07-27 16:00:00",
           "member": "string",
           "name": "EndTime",

@@ -1,4 +1,30 @@
-**Example 1: 更新工作流**
+**Example 1: 修改工作流Git信息**
+
+修改工作流Git信息
+
+Input: 
+
+```
+tccli databuddy UpdateWorkflow --cli-unfold-argument  \
+    --WorkspaceId 17678671667189298 \
+    --WorkflowId 8f760036-a086-49cd-9d20-7aa25c8a76be \
+    --NewSetting.GitConfigId 1785920869632**** \
+    --NewSetting.GitBranch main
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "Status": true
+        },
+        "RequestId": "bddfebb1-6ad0-482f-b21c-94bd5f2e7010"
+    }
+}
+```
+
+**Example 2: 更新工作流**
 
 
 

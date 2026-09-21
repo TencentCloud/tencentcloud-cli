@@ -128,6 +128,14 @@
         "title": "DescribeServicesCallInfo"
       }
     ],
+    "GetServicePodLogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetServicePodLogs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"64015e14-a860-4c62-bd4d-6678b2498115\"\n    }\n}",
+        "title": "GetServicePodLogs"
+      }
+    ],
     "InquirePriceRunInstances": [
       {
         "document": "",

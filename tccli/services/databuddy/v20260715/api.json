@@ -7,6 +7,13 @@
       "output": "AddConsoleUsersResponse",
       "status": "online"
     },
+    "CreateConsoleGroup": {
+      "document": "创建控制台用户组",
+      "input": "CreateConsoleGroupRequest",
+      "name": "创建控制台用户组",
+      "output": "CreateConsoleGroupResponse",
+      "status": "online"
+    },
     "CreateFile": {
       "document": "在Studio（统一开发 IDE）的工作空间文件树中新建一个文件（Notebook/SQL/Python等），创建成功后返回文件的完整元信息。\n\n**前置条件**\n1. WorkspaceId 对应工作空间存在，且调用方为该工作空间成员；\n2. ParentFolderPath 对应的父文件夹必须存在，且调用方对其有写权限（根目录传 `/`）；\n3. FileName 在同一父文件夹下不能重名（含后缀比较）；\n4. FileName 后缀必须与 FileType 匹配（`.ipynb`↔`NOTEBOOK_FILE`、`.sql`↔`SQL_FILE`）；\n5. 需带文件内容创建时通过 Storage 传入（大文件走 COS 中转，小文件放 Storage.Content）。",
       "input": "CreateFileRequest",
@@ -19,6 +26,13 @@
       "input": "CreateWorkflowRequest",
       "name": "创建工作流",
       "output": "CreateWorkflowResponse",
+      "status": "online"
+    },
+    "DeleteConsoleGroups": {
+      "document": "删除控制台用户组",
+      "input": "DeleteConsoleGroupsRequest",
+      "name": "删除控制台用户组",
+      "output": "DeleteConsoleGroupsResponse",
       "status": "online"
     },
     "DeleteFile": {
@@ -68,6 +82,27 @@
       "input": "KillWorkflowRunRequest",
       "name": "终止工作流的运行",
       "output": "KillWorkflowRunResponse",
+      "status": "online"
+    },
+    "ListConsoleGroupUsers": {
+      "document": "查询控制台用户组成员列表",
+      "input": "ListConsoleGroupUsersRequest",
+      "name": "查询控制台用户组成员列表",
+      "output": "ListConsoleGroupUsersResponse",
+      "status": "online"
+    },
+    "ListConsoleGroups": {
+      "document": "查询控制台用户组列表",
+      "input": "ListConsoleGroupsRequest",
+      "name": "查询控制台用户组列表",
+      "output": "ListConsoleGroupsResponse",
+      "status": "online"
+    },
+    "ListConsoleRoles": {
+      "document": "查询控制台角色列表",
+      "input": "ListConsoleRolesRequest",
+      "name": "查询控制台角色列表",
+      "output": "ListConsoleRolesResponse",
       "status": "online"
     },
     "ListConsoleUsers": {
@@ -124,6 +159,13 @@
       "input": "UnbindWorkflowBundleRequest",
       "name": "解绑工作流Bundle信息",
       "output": "UnbindWorkflowBundleResponse",
+      "status": "online"
+    },
+    "UpdateConsoleGroup": {
+      "document": "修改控制台用户组",
+      "input": "UpdateConsoleGroupRequest",
+      "name": "修改控制台用户组",
+      "output": "UpdateConsoleGroupResponse",
       "status": "online"
     },
     "UpdateConsoleUsers": {
@@ -499,6 +541,174 @@
       ],
       "usage": "out"
     },
+    "ConsoleGroupInfo": {
+      "document": "控制台用户组信息（对外标准版，与内部 UserGroupRoleInfo 解耦）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组 ID",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组名称",
+          "example": "group_name",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoleBasicInfo",
+          "name": "Roles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组下用户数量",
+          "example": "10",
+          "member": "int64",
+          "name": "UserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户组类型。取值为枚举数值的字符串形式：\"0\"=控制台系统类型（包含全部user）、\"1\"=控制台自定义类型、\"2\"=工作空间系统类型、\"3\"=工作空间自定义类型",
+          "example": "0",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsoleGroupUserInfo": {
+      "document": "控制台用户组成员信息（对外标准版，与内部 GroupUserInfo 解耦）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 UIN",
+          "example": "100012345678",
+          "member": "string",
+          "name": "UserUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "user_name",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "小明",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsoleRoleInfo": {
+      "document": "控制台角色信息（对外标准版，与内部 Role 解耦）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色基本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoleBasicInfo",
+          "name": "BasicInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色元信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoleMetaData",
+          "name": "MetaData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RolePermission",
+          "name": "Permissions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ConsoleUserInfo": {
       "document": "控制台用户信息（规范化，与内部 UserDetailInfo 解耦）",
       "members": [
@@ -600,6 +810,77 @@
           "name": "IsAdmin",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateConsoleGroupRequest": {
+      "document": "CreateConsoleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组名称</p>",
+          "example": "junzha",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组别名</p>",
+          "example": "dd",
+          "member": "string",
+          "name": "GroupNickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组描述</p>",
+          "example": "ff",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsoleGroupResponse": {
+      "document": "CreateConsoleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "CreateConsoleGroupRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsoleGroupRsp": {
+      "document": "创建控制台用户组响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的用户组 ID",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -876,6 +1157,59 @@
       ],
       "usage": "both"
     },
+    "DeleteConsoleGroupsRequest": {
+      "document": "DeleteConsoleGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的用户组 ID 列表</p>",
+          "example": "[\"17816640837776892\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsoleGroupsResponse": {
+      "document": "DeleteConsoleGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "DeleteConsoleGroupsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsoleGroupsRsp": {
+      "document": "删除控制台用户组响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteFileRequest": {
       "document": "DeleteFile请求参数结构体",
       "members": [
@@ -1011,7 +1345,7 @@
         {
           "disabled": false,
           "document": "删除状态，true 表示成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "Status",
           "output_required": false,
@@ -1039,7 +1373,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -1714,7 +2048,7 @@
         {
           "disabled": false,
           "document": "<p>Bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"bundle_key\": \"bundle_value\"}",
           "member": "string",
           "name": "BundleInfo",
           "output_required": false,
@@ -1871,7 +2205,7 @@
         {
           "disabled": false,
           "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -1947,8 +2281,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
           "output_required": false,
@@ -1992,7 +2326,7 @@
         {
           "disabled": false,
           "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "TaskExecuteFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -2014,7 +2348,7 @@
         {
           "disabled": false,
           "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "wedat******s***t****n****m",
           "member": "string",
           "name": "RunUserName",
           "output_required": false,
@@ -2145,8 +2479,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>依赖上游任务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"demo\"]",
+          "document": "<p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"000001\"]",
           "member": "string",
           "name": "DependOnList",
           "output_required": false,
@@ -2157,7 +2491,7 @@
         {
           "disabled": false,
           "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"loopDataArrayExpr\":\"[1,2]\",\"loopDataArrayResolved\":\"[1,2]\",\"maxConcurrency\":\"1\"}",
           "member": "string",
           "name": "RunParams",
           "output_required": false,
@@ -2168,7 +2502,7 @@
         {
           "disabled": false,
           "document": "<p>任务扩展信息，包含脚本路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"TaskTypeName\":\"PYTHON\",\"Notebook\":null,\"TaskTypePropertyList\":[{\"PropertyKey\":\"Source\",\"PropertyValue\":\"5\"},{\"PropertyKey\":\"SourcePath\",\"PropertyValue\":\"/Workspace/test.py\"}]}",
           "member": "string",
           "name": "TaskTypeExtensions",
           "output_required": false,
@@ -2212,7 +2546,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo_workflow",
+          "example": "zl_fh_r_wf_260818_120301",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -2256,7 +2590,7 @@
         {
           "disabled": false,
           "document": "<p>错误消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "Execution failed. Please check the driver and executor logs.",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -2267,7 +2601,7 @@
         {
           "disabled": false,
           "document": "<p>运行结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"TotalIterations\":3, \"MaxConcurrency\":3, \"LoopDataArray\":\"[1, 2, 3]\", \"State\":\"SUCCESS\", \"IterationInstanceIds\":[\"111_iter_1\", \"111_iter_2\", \"111_iter_3\"]}",
           "member": "string",
           "name": "RunResult",
           "output_required": false,
@@ -2317,7 +2651,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -2327,8 +2661,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
           "output_required": false,
@@ -2538,7 +2872,7 @@
         {
           "disabled": false,
           "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"pppp1\":\"vvvv1\"}",
           "member": "string",
           "name": "WorkflowParams",
           "output_required": false,
@@ -2643,7 +2977,7 @@
         {
           "disabled": false,
           "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"loopDataArray\":\"[1,2,3]\"}",
           "member": "string",
           "name": "TaskParams",
           "output_required": false,
@@ -2654,7 +2988,7 @@
         {
           "disabled": false,
           "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "TaskExecuteFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -2826,6 +3160,384 @@
         }
       ],
       "usage": "both"
+    },
+    "ListConsoleGroupUsersRequest": {
+      "document": "ListConsoleGroupUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组 ID</p>",
+          "example": "17848631472347483",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名称或 UIN 模糊匹配</p>",
+          "example": "junzha4",
+          "member": "string",
+          "name": "UserKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过 UIN 批量查询用户信息</p>",
+          "example": "[\"700002576299\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多字段排序，如 [{Name: &#39;CreateTime&#39;, Direction: &#39;DESC&#39;}, {Name: &#39;UserName&#39;, Direction: &#39;ASC&#39;}]，默认按创建时间降序</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleGroupUsersResponse": {
+      "document": "ListConsoleGroupUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "ListConsoleGroupUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleGroupUsersRsp": {
+      "document": "查询控制台用户组成员列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组成员列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleGroupUserInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListConsoleGroupsRequest": {
+      "document": "ListConsoleGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过用户组 ID 批量查询</p>",
+          "example": "[\"*****************\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称模糊匹配</p>",
+          "example": "bs_0630",
+          "member": "string",
+          "name": "GroupKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多字段排序，如 [{Name: &#39;CreateTime&#39;, Direction: &#39;Desc&#39;}, {Name: &#39;UserName&#39;, Direction: &#39;Asc&#39;}]，默认按创建时间降序</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleGroupsResponse": {
+      "document": "ListConsoleGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "ListConsoleGroupsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleGroupsRsp": {
+      "document": "查询控制台用户组列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleGroupInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListConsoleRolesRequest": {
+      "document": "ListConsoleRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称或描述模糊匹配</p>",
+          "example": "控制台",
+          "member": "string",
+          "name": "RoleKeyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleRolesResponse": {
+      "document": "ListConsoleRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "ListConsoleRolesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConsoleRolesRsp": {
+      "document": "查询控制台角色列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsoleRoleInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ListConsoleUsersRequest": {
       "document": "ListConsoleUsers请求参数结构体",
@@ -3551,7 +4263,7 @@
         {
           "disabled": false,
           "document": "监控指标类型,有三种类型：1. RUN_DURATION（运行时长）2. WAIT_DURATION（等待时长）3. COMPLETION_TIME（完成时间）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "COMMON",
+          "example": "RUN_DURATION",
           "member": "string",
           "name": "MetricType",
           "output_required": false,
@@ -3820,8 +4532,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
+          "document": "<p>资源组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "res-e**a38**",
           "member": "string",
           "name": "ResourceGroupId",
           "output_required": false,
@@ -3831,8 +4543,8 @@
         },
         {
           "disabled": false,
-          "document": "资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ray计算资源",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": false,
@@ -3842,7 +4554,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组状态\nCOMPUTE_RESOURCE_STATUS_UNSPECIFIED 未指定\nCOMPUTE_RESOURCE_STATUS_PENDING_CREATE 待创建\nCOMPUTE_RESOURCE_STATUS_CREATING 创建中\nCOMPUTE_RESOURCE_STATUS_RUNNING 运行中\nCOMPUTE_RESOURCE_STATUS_STOPPED 已停止\nCOMPUTE_RESOURCE_STATUS_STOPPING 停止中\nCOMPUTE_RESOURCE_STATUS_STARTING 启动中\nCOMPUTE_RESOURCE_STATUS_UPDATING 更新中\nCOMPUTE_RESOURCE_STATUS_DELETING 删除中\nCOMPUTE_RESOURCE_STATUS_DELETED 已删除\nCOMPUTE_RESOURCE_STATUS_FAILED  失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源组状态</p><p>参数格式：0 // 未指定 1 // 待创建 2 // 创建中 3 // 运行中 4 // 已停止 5 // 停止中 6 // 启动中 7 // 更新中 8 // 删除中 9 // 已删除 10 // 用户主动启动 / 自动启动（有任务提交且自动启停开启） 11 // 可用: 仅存在于数据计算型 12 // 不可用: 仅存在于数据计算型 13 // 失败</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMPUTE_RESOURCE_STATUS_UNSPECIFIED",
           "member": "string",
           "name": "ResourceGroupStatus",
@@ -3937,6 +4649,80 @@
       ],
       "usage": "both"
     },
+    "RoleMetaData": {
+      "document": "角色元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建者",
+          "example": "creator_user",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新者",
+          "example": "updater_user",
+          "member": "string",
+          "name": "Updater",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2025-01-01 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RolePermission": {
+      "document": "角色权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模块ID",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "ModuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权限点",
+          "example": "READ,WRITE",
+          "member": "string",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RunActionBrief": {
       "document": "单个操作项的执行结果。 由 RunWorkflow / RerunWorkflowRun / KillWorkflowRun 共用： RunWorkflow—— WorkflowId / WorkflowName 有值，WorkflowRunId 为空 RerunWorkflowRun —— WorkflowId / WorkflowName / WorkflowRunId 均有值 KillWorkflowRun  —— WorkflowId / WorkflowName / WorkflowRunId 均有值",
       "members": [
@@ -3976,7 +4762,7 @@
         {
           "disabled": false,
           "document": "失败错误信息，操作失败时返回具体的错误描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "Execution failed. Please check the driver and executor logs.",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": false,
@@ -3987,7 +4773,7 @@
         {
           "disabled": false,
           "document": "操作状态，true 表示成功，false 表示失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "OpStatus",
           "output_required": false,
@@ -4266,7 +5052,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "上游任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>上游任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "UpstreamTaskId",
@@ -4277,8 +5063,8 @@
         },
         {
           "disabled": false,
-          "document": "上游任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>上游任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "py_0807",
           "member": "string",
           "name": "UpstreamTaskName",
           "output_required": false,
@@ -4288,8 +5074,8 @@
         },
         {
           "disabled": false,
-          "document": "任务可运行条件\n支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"ACTIVE\"]",
+          "document": "<p>任务可运行条件<br>支持的状态值： - SUCCESS: 成功 - FAILED: 失败 - UPSTREAM_FAILED: 上游失败 - EXCLUDED: 排除运行</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"SUCCESS\"]",
           "member": "string",
           "name": "AllowedStates",
           "output_required": false,
@@ -4519,6 +5305,104 @@
       ],
       "usage": "both"
     },
+    "UpdateConsoleGroupRequest": {
+      "document": "UpdateConsoleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户组 ID</p>",
+          "example": "17848631472347483",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改标识：USER_GROUP_OPER_TYPE_ADD_USER(1)=添加成员、USER_GROUP_OPER_TYPE_DELETE_USER(2)=删除成员、USER_GROUP_OPER_TYPE_BASIC_INFO(3)=基础信息（别名和描述）</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "OperType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组名称</p>",
+          "example": "junzhaaa",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组别名</p>",
+          "example": "group_nickname",
+          "member": "string",
+          "name": "GroupNickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户组描述</p>",
+          "example": "测试描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>",
+          "example": "[\"700002692368\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConsoleGroupResponse": {
+      "document": "UpdateConsoleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateConsoleGroupRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateConsoleGroupRsp": {
+      "document": "修改控制台用户组响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UpdateConsoleUsersRequest": {
       "document": "UpdateConsoleUsers请求参数结构体",
       "members": [
@@ -4714,7 +5598,7 @@
         {
           "disabled": false,
           "document": "<p>工作空间ID，可通过 ListWorkspaces 获取。必填</p>",
-          "example": "17697410068842890",
+          "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -4723,7 +5607,7 @@
         {
           "disabled": false,
           "document": "<p>待更新的工作流ID，可通过 ListWorkflows 获取。必填</p>",
-          "example": "8e0e3485-2736-4530-92ed-932e019898f1",
+          "example": "8f760036-a086-49cd-9d20-7aa25c8a76be",
           "member": "string",
           "name": "WorkflowId",
           "required": true,
@@ -5335,8 +6219,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流权限信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>授权权限类型<br>PERMISSION_TYPE_UNSPECIFIED：未指定权限<br>MANAGE : 管理权限：包含所有操作权限<br>RUN : 运行权限：可执行实体<br>VIEW : 查看权限：可查看实体内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANAGE",
           "member": "string",
           "name": "Permission",
           "output_required": false,
@@ -5408,7 +6292,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo_workflow",
+          "example": "bonney_test",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -5452,7 +6336,7 @@
         {
           "disabled": false,
           "document": "<p>触发方式，Scheduler、ManualTrigger、Event (参考SchedulerTriggerType)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "COMMON",
+          "example": "Scheduler",
           "member": "string",
           "name": "TriggerType",
           "output_required": false,
@@ -5518,7 +6402,7 @@
         {
           "disabled": false,
           "document": "<p>运行时长，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "3600",
           "member": "string",
           "name": "RunCostTime",
           "output_required": false,
@@ -5529,7 +6413,7 @@
         {
           "disabled": false,
           "document": "<p>并发排队花费时间，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "30",
           "member": "string",
           "name": "QueueCostTime",
           "output_required": false,
@@ -5540,7 +6424,7 @@
         {
           "disabled": false,
           "document": "<p>等待资源花费时间，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "15",
           "member": "string",
           "name": "PendingCostTime",
           "output_required": false,
@@ -5550,8 +6434,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>运行状态。取值参考工作流运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ACTIVE",
+          "document": "<p>运行状态。CREATE(&quot;初始化&quot;),     QUEUED(&quot;等待中&quot;),     PENDING(&quot;准备中&quot;),     RUNNING(&quot;运行中&quot;),     SKIPPED(&quot;跳过运行&quot;),     SUCCESS(&quot;成功&quot;),     FAILED(&quot;失败&quot;),     TERMINATING(&quot;终止中&quot;),     TERMINATED(&quot;终止&quot;),     CANCELLED(&quot;被手动终止&quot;)等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
           "member": "string",
           "name": "RunState",
           "output_required": false,
@@ -5584,7 +6468,7 @@
         {
           "disabled": false,
           "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "we*a*******st1@*****nt.com",
           "member": "string",
           "name": "RunUserName",
           "output_required": false,
@@ -5595,7 +6479,7 @@
         {
           "disabled": false,
           "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "TaskExecuteFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -5606,7 +6490,7 @@
         {
           "disabled": false,
           "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"pppp1\":\"vvvv1\"}",
           "member": "string",
           "name": "WorkflowParams",
           "output_required": false,
@@ -5716,7 +6600,7 @@
         {
           "disabled": false,
           "document": "<p>父工作流任务运行名称 【由嵌套工作流触发独有】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "dwd_task",
           "member": "string",
           "name": "ParentWorkflowTaskRunName",
           "output_required": false,
@@ -5727,7 +6611,7 @@
         {
           "disabled": false,
           "document": "<p>授权权限类型<br>PERMISSION_TYPE_UNSPECIFIED：未指定权限<br>MANAGE : 管理权限：包含所有操作权限<br>RUN : 运行权限：可执行实体<br>VIEW : 查看权限：可查看实体内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "MANAGE",
           "member": "string",
           "name": "Permission",
           "output_required": false,
@@ -6019,7 +6903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "WorkflowId",
@@ -6030,7 +6914,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a4dfb8d2-cc55-4a24-8573-0091b791a927",
           "member": "string",
           "name": "TaskId",
@@ -6041,8 +6925,8 @@
         },
         {
           "disabled": false,
-          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -6052,8 +6936,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
           "output_required": false,
@@ -6063,7 +6947,7 @@
         },
         {
           "disabled": false,
-          "document": "任务依赖列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DependOnBrief",
           "name": "DependOnList",
@@ -6074,7 +6958,7 @@
         },
         {
           "disabled": false,
-          "document": "任务资源组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务资源组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "ResourceGroupId",
@@ -6085,8 +6969,8 @@
         },
         {
           "disabled": false,
-          "document": "任务资源组名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>任务资源组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "作业集群-计算型-16cu",
           "member": "string",
           "name": "ResourceGroupName",
           "output_required": false,
@@ -6096,7 +6980,7 @@
         },
         {
           "disabled": false,
-          "document": "任务X坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务X坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "float",
           "name": "LeftCoordinate",
@@ -6107,7 +6991,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Y坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务Y坐标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "50",
           "member": "float",
           "name": "TopCoordinate",
@@ -6118,7 +7002,7 @@
         },
         {
           "disabled": false,
-          "document": "任务重试策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务重试策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskRetryStrategy",
           "name": "TaskRetryStrategy",
@@ -6129,8 +7013,8 @@
         },
         {
           "disabled": false,
-          "document": "依赖运行条件\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
           "output_required": false,
@@ -6140,7 +7024,7 @@
         },
         {
           "disabled": false,
-          "document": "高级依赖配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高级依赖配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AdvancedDependencyConfig",
           "name": "AdvancedDependencyConfig",
@@ -6151,7 +7035,7 @@
         },
         {
           "disabled": false,
-          "document": "内嵌工作流任务节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>内嵌工作流任务节点</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTaskNodeBrief",
           "name": "InnerTask",
@@ -6169,7 +7053,7 @@
         {
           "disabled": false,
           "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -6245,8 +7129,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务类型名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
           "output_required": false,
@@ -6290,7 +7174,7 @@
         {
           "disabled": false,
           "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "UpstreamFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -6312,7 +7196,7 @@
         {
           "disabled": false,
           "document": "<p>运行用户名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "tom",
           "member": "string",
           "name": "RunUserName",
           "output_required": false,
@@ -6443,8 +7327,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>依赖上游任务ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"demo\"]",
+          "document": "<p>依赖上游任务ID列表。保留字段，暂时返回为[]</p><p>保留字段，暂时返回为[]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"00001\"]",
           "member": "string",
           "name": "DependOnList",
           "output_required": false,
@@ -6455,7 +7339,7 @@
         {
           "disabled": false,
           "document": "<p>运行参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"pt1\":\"1\"}",
           "member": "string",
           "name": "RunParams",
           "output_required": false,
@@ -6466,7 +7350,7 @@
         {
           "disabled": false,
           "document": "<p>任务扩展信息，包含脚本路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"TaskTypeName\":\"PYTHON\",\"Notebook\":null,\"TaskTypePropertyList\":[{\"PropertyKey\":\"Source\",\"PropertyValue\":\"5\"},{\"PropertyKey\":\"SourcePath\",\"PropertyValue\":\"/Workspace/test.py\"}]}",
           "member": "string",
           "name": "TaskTypeExtensions",
           "output_required": false,
@@ -6510,7 +7394,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo_workflow",
+          "example": "dwd_workflow_001",
           "member": "string",
           "name": "WorkflowName",
           "output_required": false,
@@ -6554,7 +7438,7 @@
         {
           "disabled": false,
           "document": "<p>运行结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"ConditionResults\":[], \"AllowedDownstreamTaskIds\":[], \"ExcludedDownstreamTaskIds\":[], \"State\":\"FAILED\", \"ErrorMessage\":\"parse if-else result failed: empty param_json\", \"ScriptFileId\":\"877523637043445760\"}",
           "member": "string",
           "name": "RunResult",
           "output_required": false,
@@ -6564,8 +7448,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>依赖运行条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>任务依赖运行条件</p><p>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功<br>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功<br>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中<br>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败<br>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败<br>ALL_FAILED: 全部失败：所有上游依赖任务都失败<br>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行<br>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游<br>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行<br>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行<br>ADVANCED:运行条件为高级模式时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
           "output_required": false,
@@ -6631,7 +7515,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调度配置ID，创建时无需传入，由服务端生成\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度配置ID，创建时无需传入，由服务端生成</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "TriggerId",
@@ -6642,7 +7526,7 @@
         },
         {
           "disabled": false,
-          "document": "调度状态 启动：START，暂停：PAUSE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度状态 启动：START，暂停：PAUSE</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "START",
           "member": "string",
           "name": "SchedulerStatus",
@@ -6653,7 +7537,7 @@
         },
         {
           "disabled": false,
-          "document": "触发方式，\n- 定时触发：TIME_TRIGGER\n- 持续运行：CONTINUE_RUN\n\n注意：\n- TIME_TRIGGER 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；\n- CONTINUE_RUN 模式下，AdvancedConfig必填；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发方式，</p><ul><li>定时触发：TIME_TRIGGER</li><li>持续运行：CONTINUE_RUN</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>CONTINUE_RUN 模式下，AdvancedConfig必填；</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TIME_TRIGGER",
           "member": "string",
           "name": "TriggerMode",
@@ -6664,7 +7548,7 @@
         },
         {
           "disabled": false,
-          "document": "调度时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Asia/Shanghai",
           "member": "string",
           "name": "SchedulerTimeZone",
@@ -6675,7 +7559,7 @@
         },
         {
           "disabled": false,
-          "document": "调度生效时间，单位：毫秒时间戳。必须小于 EndTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度生效时间，单位：毫秒时间戳。必须小于 EndTime</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "StartTime",
@@ -6686,7 +7570,7 @@
         },
         {
           "disabled": false,
-          "document": "调度结束时间，单位：毫秒时间戳。必须大于 StartTime\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>调度结束时间，单位：毫秒时间戳。必须大于 StartTime</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1773244800000",
           "member": "string",
           "name": "EndTime",
@@ -6697,7 +7581,7 @@
         },
         {
           "disabled": false,
-          "document": "配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>配置方式，常规：COMMON，CRON表达式：CRON_EXPRESSION</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "COMMON",
           "member": "string",
           "name": "ConfigMode",
@@ -6708,7 +7592,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型：支持的类型为 ONEOFF_CYCLE: 一次性 YEAR_CYCLE: 年 MONTH_CYCLE: 月 WEEK_CYCLE: 周 DAY_CYCLE: 天\nHOUR_CYCLE: 小时 MINUTE_CYCLE: 分钟 CRONTAB_CYCLE: crontab表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>周期类型：支持的类型为 ONEOFF_CYCLE: 一次性 YEAR_CYCLE: 年 MONTH_CYCLE: 月 WEEK_CYCLE: 周 DAY_CYCLE: 天<br>HOUR_CYCLE: 小时 MINUTE_CYCLE: 分钟 CRONTAB_CYCLE: crontab表达式类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ONEOFF_CYCLE",
           "member": "string",
           "name": "CycleType",
@@ -6719,7 +7603,7 @@
         },
         {
           "disabled": false,
-          "document": "cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cron表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0 0 0 * * ? *",
           "member": "string",
           "name": "CrontabExpression",
@@ -6730,8 +7614,8 @@
         },
         {
           "disabled": false,
-          "document": "Json格式，对账使用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>Json格式，对账使用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"taskAction\":\"1\"}",
           "member": "string",
           "name": "ExtraInfo",
           "output_required": false,
@@ -6741,7 +7625,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高级配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WorkflowTriggerAdvancedConfiguration",
           "name": "AdvancedConfig",

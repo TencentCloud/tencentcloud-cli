@@ -1113,6 +1113,13 @@
       "output": "DescribeZoneConfigImportResultResponse",
       "status": "online"
     },
+    "DescribeZoneCustomVariables": {
+      "document": "本接口用于查询站点级自定义变量配置，包括变量定义和变量运算。未配置时，变量定义和变量运算均返回空列表。\n\n如需查询规则级自定义变量，请调用 DescribeL7AccRules 接口。",
+      "input": "DescribeZoneCustomVariablesRequest",
+      "name": "查询站点级自定义变量",
+      "output": "DescribeZoneCustomVariablesResponse",
+      "status": "online"
+    },
     "DescribeZoneSetting": {
       "document": "本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819)。",
       "input": "DescribeZoneSettingRequest",
@@ -1566,6 +1573,13 @@
       "input": "ModifyZoneRequest",
       "name": "修改站点",
       "output": "ModifyZoneResponse",
+      "status": "online"
+    },
+    "ModifyZoneCustomVariables": {
+      "document": "本接口用于管理站点级自定义变量，支持创建、修改和删除变量定义及变量运算。提交的列表将覆盖对应的现有配置；如需清空配置，请传入空列表。未传入的配置项保持不变。变量定义和变量运算的默认值均为空。\n\n规则级自定义变量相关操作，请调用 CreateL7AccRules 或 ModifyL7AccRule 接口。",
+      "input": "ModifyZoneCustomVariablesRequest",
+      "name": "修改站点级自定义变量",
+      "output": "ModifyZoneCustomVariablesResponse",
       "status": "online"
     },
     "ModifyZoneSetting": {
@@ -18153,6 +18167,53 @@
       ],
       "type": "object"
     },
+    "DescribeZoneCustomVariablesRequest": {
+      "document": "DescribeZoneCustomVariables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3t7hlhw8*6o*",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneCustomVariablesResponse": {
+      "document": "DescribeZoneCustomVariables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量列表。</p>",
+          "example": "无",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量运算规则。</p>",
+          "example": "无",
+          "member": "CustomVariableOperation",
+          "name": "CustomVariableOperations",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeZoneSettingRequest": {
       "document": "DescribeZoneSetting请求参数结构体",
       "members": [
@@ -28154,6 +28215,51 @@
       ],
       "type": "object"
     },
+    "ModifyZoneCustomVariablesRequest": {
+      "document": "ModifyZoneCustomVariables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3n1uzjzxffby",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量列表。CustomVariable.Name 需要使用 user.zone. 作为前缀。变量按照数组顺序依次初始化，InitialValue 仅支持引用位于当前变量之前的变量，不支持引用当前变量自身或位于当前变量之后的变量。</p>",
+          "example": "无",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量运算规则。运算中支持引用已定义的站点级自定义变量。此列表当前只支持填写一项规则，多填无效。</p>",
+          "example": "无",
+          "member": "CustomVariableOperation",
+          "name": "CustomVariableOperations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneCustomVariablesResponse": {
+      "document": "ModifyZoneCustomVariables返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyZoneRequest": {
       "document": "ModifyZone请求参数结构体",
       "members": [
@@ -34328,7 +34434,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享CNAME类型：取值范围如下：\n<li>custom：由用户创建的自定义共享CNAME</li>\n<li>ip-ssl：IP SSL类型的共享CNAME</li>",
+          "document": "<p>共享CNAME类型：取值范围如下：</p><li>custom：由用户创建的自定义共享CNAME</li><li>ip-ssl：IP SSL类型的共享CNAME</li><li>zero-rating：免流类型的共享CNAME</li><li>preset：预置资源类型的共享CNAME</li>",
           "example": "custom",
           "member": "string",
           "name": "Type",
@@ -34338,7 +34444,7 @@
         },
         {
           "disabled": false,
-          "document": "共享CNAME名称。",
+          "document": "<p>共享CNAME名称。</p>",
           "example": "qq.com.share.eo.dnse5.com",
           "member": "string",
           "name": "SharedCNAME",
@@ -34348,7 +34454,7 @@
         },
         {
           "disabled": false,
-          "document": "描述。",
+          "document": "<p>描述。</p>",
           "example": "用于业务A场景",
           "member": "string",
           "name": "Description",
@@ -34358,7 +34464,7 @@
         },
         {
           "disabled": false,
-          "document": "当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。",
+          "document": "<p>当type为ip-ssl时，展示该共享CNAME关联的 IP SSL 配置信息。</p>",
           "example": "无",
           "member": "IPSSLConfig",
           "name": "IPSSLConfig",
@@ -34368,7 +34474,7 @@
         },
         {
           "disabled": false,
-          "document": "共享CNAME绑定的加速域名数量。",
+          "document": "<p>共享CNAME绑定的加速域名数量。</p>",
           "example": "3",
           "member": "int64",
           "name": "BindDomainCount",
@@ -34378,7 +34484,7 @@
         },
         {
           "disabled": false,
-          "document": "加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。",
+          "document": "<p>加入该共享CNAME的加速域名列表。当加入的域名数量超过100个时，只返回前100个加速域名。</p>",
           "example": "无",
           "member": "ReferenceHolder",
           "name": "AccelerationDomains",

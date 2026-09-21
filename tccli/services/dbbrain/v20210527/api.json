@@ -553,6 +553,13 @@
       "output": "DescribeTopSpaceTablesResponse",
       "status": "online"
     },
+    "DescribeTopSpaceTablesV2": {
+      "document": "表级空间 Top 对象查询（融合接口，多产品统一入口），按 SortBy 指定的排序字段返回实例内空间占用 Top N 的表/集合。支持产品：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、mongodb（云数据库 MongoDB）、postgres（云数据库 PostgreSQL）、dcdb（TDSQL MySQL 版）、tdsql（TDSQL）、mariadb（云数据库 MariaDB）。返回值根据产品类型返回对应字段：MySQL 系列返回 MysqlObjects，PostgreSQL 返回 PostgresObjects（PG 的 relation/bloat 字段与 MySQL 语义不同），MongoDB 返回 MongodbObjects。",
+      "input": "DescribeTopSpaceTablesV2Request",
+      "name": "查询表级空间 Top 对象（融合接口）",
+      "output": "DescribeTopSpaceTablesV2Response",
+      "status": "online"
+    },
     "DescribeUserAutonomyProfile": {
       "document": "自治中心-终止自治任务（单次）；注意： 接口调用需要加白名单。",
       "input": "DescribeUserAutonomyProfileRequest",
@@ -8157,6 +8164,109 @@
       ],
       "type": "object"
     },
+    "DescribeTopSpaceTablesV2Request": {
+      "document": "DescribeTopSpaceTablesV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "cdb-lvgh1oyv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型，支持值包括：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、mongodb（云数据库 MongoDB）、postgres（云数据库 PostgreSQL）、dcdb（TDSQL MySQL 版）、tdsql（TDSQL）、mariadb（云数据库 MariaDB）。</p>",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询日期，格式：yyyy-MM-dd。默认当天。</p>",
+          "example": "2026-08-25",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。MySQL/PG/TDSQL 系列支持：PhysicalFileSize/DataLength/IndexLength/TotalLength/DataFree/FragRatio/TableRows，默认 PhysicalFileSize。MongoDB 支持：Collection.CollectionSize/Collection.StorageSize/Collection.Size/Collection.AvgObjSize/Collection.Count/Collection.TotalIndexSize，默认 Collection.CollectionSize。</p>",
+          "example": "PhysicalFileSize",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认20，最大100。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopSpaceTablesV2Response": {
+      "document": "DescribeTopSpaceTablesV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MySQL/PG/TDSQL 系列产品表级空间对象列表。当产品为 mysql/cynosdb/tdsql/dcdb/mariadb/postgres 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MysqlSpaceObjectItem",
+          "name": "MysqlObjects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgreSQL 产品表级空间对象列表。当产品为 postgres 时返回。字段语义与 MySQL 不同：使用 RelationSize / TableSize / IndexSize / TotalRelationSize / TableBloat 等 PG 特有指标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostgresSpaceObjectItem",
+          "name": "PostgresObjects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MongoDB 产品表级（集合级）空间对象列表。当产品为 mongodb 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongoDBTableSpaceItem",
+          "name": "MongodbObjects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据采集时间戳（秒）。</p>",
+          "example": "1786559643",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserAutonomyProfileRequest": {
       "document": "DescribeUserAutonomyProfile请求参数结构体",
       "members": [
@@ -10343,6 +10453,144 @@
       ],
       "type": "object"
     },
+    "MongoCollectionDetail": {
+      "document": "MongoDB 集合级空间使用明细，包含集合的存储、索引、碎片等各维度指标。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集合命名空间，格式为 db.collection。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local.oplog.rs",
+          "member": "string",
+          "name": "CollStats",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集合逻辑大小（字节，未压缩）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "55166402",
+          "member": "int64",
+          "name": "CollectionSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集合已分配但未使用的空间（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "671744",
+          "member": "int64",
+          "name": "DataFree",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间利用率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "95.0%",
+          "member": "string",
+          "name": "SpaceRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.18%",
+          "member": "string",
+          "name": "FragRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集合数据大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "55166402",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所有索引占用大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalIndexSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>平均文档大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "313",
+          "member": "int64",
+          "name": "AvgObjSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集合实际占用存储大小（字节，压缩后）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7319552",
+          "member": "int64",
+          "name": "StorageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "175794",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>压缩率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "87.0%",
+          "member": "string",
+          "name": "CompressionRatio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可复用文件空间（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "671744",
+          "member": "int64",
+          "name": "FileReuseBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MongoDBIndex": {
       "document": "Mongodb索引项",
       "members": [
@@ -10550,6 +10798,78 @@
         }
       ],
       "usage": "out"
+    },
+    "MongoDBTableSpaceItem": {
+      "document": "MongoDB 产品表级（集合级）空间对象项，描述单个集合的空间使用统计信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 Id（AppId）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1360064893",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 Id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cmgo-rk83lmar",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local",
+          "member": "string",
+          "name": "Db",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据采集时间戳（毫秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1787673677200",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘占用大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7696384",
+          "member": "int64",
+          "name": "SizeOnDisk",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集合级空间使用明细。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongoCollectionDetail",
+          "name": "Collection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MonitorFloatMetric": {
       "document": "监控数据（浮点型）",
@@ -10771,6 +11091,122 @@
       ],
       "usage": "out"
     },
+    "MysqlSpaceObjectItem": {
+      "document": "MySQL 系列产品空间对象项。库级查询时不包含 TableName/Engine 字段；表级查询时包含全部字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sbtest",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名（Level=TABLE时返回）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sbtest9",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储引擎（Level=TABLE时返回）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InnoDB",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10505163",
+          "member": "int64",
+          "name": "TableRows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总使用空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2555.6",
+          "member": "float",
+          "name": "TotalLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2346",
+          "member": "float",
+          "name": "DataLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "204.6",
+          "member": "float",
+          "name": "IndexLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "float",
+          "name": "DataFree",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片率（%）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6.53",
+          "member": "float",
+          "name": "FragRatio",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>物理文件大小（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "float",
+          "name": "PhysicalFileSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "OpenAuditServiceRequest": {
       "document": "OpenAuditService请求参数结构体",
       "members": [
@@ -10843,6 +11279,111 @@
         }
       ],
       "type": "object"
+    },
+    "PostgresSpaceObjectItem": {
+      "document": "PostgreSQL 产品空间对象项。字段语义与 MySQL 不同：使用 pg_relation_size / pg_total_relation_size 等 PG 特有指标。库级查询时不包含 TableSchema/TableName 字段；表级查询时包含全部字段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名（PostgreSQL 顶层 catalog）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "postgres",
+          "member": "string",
+          "name": "TableCatalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema 名（Level=TABLE 时返回）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "public",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名（Level=TABLE 时返回）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "slow_log_demo_f396035540ac4d01",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表本身大小（MB），对应 pg_relation_size。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "70.9",
+          "member": "float",
+          "name": "RelationSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表数据大小（MB），含 TOAST 但不含索引，对应 pg_table_size。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "71.2",
+          "member": "float",
+          "name": "TableSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引大小（MB），对应 pg_indexes_size。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.5",
+          "member": "float",
+          "name": "IndexSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总大小（MB），含数据、索引、TOAST，对应 pg_total_relation_size。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "82.9",
+          "member": "float",
+          "name": "TotalRelationSize",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表膨胀率（PostgreSQL 特有指标）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "39",
+          "member": "float",
+          "name": "TableBloat",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableRows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Process": {
       "document": "实时会话详情。",
@@ -12245,6 +12786,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12499,6 +13050,26 @@
           "member": "string",
           "name": "Md5",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

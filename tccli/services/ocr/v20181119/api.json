@@ -11795,26 +11795,6 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>通行费车牌号</p>",
-          "example": "粤A12345",
-          "member": "string",
-          "name": "CarType",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>通行费车辆类型</p>",
-          "example": "客车",
-          "member": "string",
-          "name": "PlateNumber",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"

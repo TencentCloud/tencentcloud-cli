@@ -42,63 +42,7 @@ Output:
 }
 ```
 
-**Example 2: 设备类型错误**
-
- 
-
-Input: 
-
-```
-tccli iss AddUserDevice --cli-unfold-argument  \
-    --Name rtmp10086 \
-    --AccessProtocol 1 \
-    --Type 2 \
-    --OrganizationId 10092 \
-    --ClusterId 12345678-****-****-****-************
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue",
-            "Message": "无效的参数"
-        },
-        "RequestId": "1647459e-2715-4adb-a074-0c3d4df7d6a4"
-    }
-}
-```
-
-**Example 3: 无效的设备类型**
-
- 
-
-Input: 
-
-```
-tccli iss AddUserDevice --cli-unfold-argument  \
-    --Name rtmp10086 \
-    --AccessProtocol 1 \
-    --Type 2 \
-    --OrganizationId 10092 \
-    --ClusterId ********-60ad-*****-ac7e-d******dd0790
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameterValue.InvalidDeviceType",
-            "Message": "无效的设备类型"
-        },
-        "RequestId": "d4a82b07-08a2-47ba-8f22-04ce429a0dcd"
-    }
-}
-```
-
-**Example 4: success**
+**Example 2: success**
 
 成功
 
@@ -140,6 +84,62 @@ Output:
             "Username": ""
         },
         "RequestId": "56d8591d-85cb-498d-a5b6-52133305e69c"
+    }
+}
+```
+
+**Example 3: 无效的设备类型**
+
+ 
+
+Input: 
+
+```
+tccli iss AddUserDevice --cli-unfold-argument  \
+    --Name rtmp10086 \
+    --AccessProtocol 1 \
+    --Type 2 \
+    --OrganizationId 10092 \
+    --ClusterId ********-60ad-*****-ac7e-d******dd0790
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue.InvalidDeviceType",
+            "Message": "无效的设备类型"
+        },
+        "RequestId": "d4a82b07-08a2-47ba-8f22-04ce429a0dcd"
+    }
+}
+```
+
+**Example 4: 设备类型错误**
+
+ 
+
+Input: 
+
+```
+tccli iss AddUserDevice --cli-unfold-argument  \
+    --Name rtmp10086 \
+    --AccessProtocol 1 \
+    --Type 2 \
+    --OrganizationId 10092 \
+    --ClusterId 12345678-****-****-****-************
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameterValue",
+            "Message": "无效的参数"
+        },
+        "RequestId": "1647459e-2715-4adb-a074-0c3d4df7d6a4"
     }
 }
 ```

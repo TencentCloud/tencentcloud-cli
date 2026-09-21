@@ -24,6 +24,14 @@
         "title": "创建消费组灰度标签成功"
       }
     ],
+    "CreateConsumerLabels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerLabels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Labels\": [\n        {\n            \"Group\": \"grp-aa3973\",\n            \"Label\": \"lcaa3973\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FailedCount\": 0,\n        \"Failures\": [],\n        \"RequestId\": \"e7c0acd5-2ddd-48ef-9086-5f4cfb758af3\"\n    }\n}",
+        "title": "批量创建标签成功示例"
+      }
+    ],
     "CreateInstance": [
       {
         "document": "成功创建一个 TPS 2000 的 RocketMQ 5.x 集群。",
@@ -78,12 +86,28 @@
         "title": "删除标签成功"
       }
     ],
+    "DeleteConsumerLabels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerLabels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Labels\": [\n        {\n            \"Group\": \"bs01-fb0534\",\n            \"Label\": \"nw01fb0534\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FailedCount\": 0,\n        \"Failures\": [],\n        \"RequestId\": \"c8f5a5e1-6abd-4881-9d99-e7507bd369af\"\n    }\n}",
+        "title": "批量删除消费组灰度标签成功"
+      }
+    ],
     "DeleteConsumerRouteConfig": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1d7e894b-5fd5-408f-959b-b13bab02a44a\"\n    }\n}",
         "title": "删除消费组灰度路由配置成功"
+      }
+    ],
+    "DeleteConsumerRouteConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerRouteConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Configs\": [\n        {\n            \"Topic\": \"tp-353c89\",\n            \"Group\": \"grp-353c89\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FailedCount\": 0,\n        \"Failures\": [],\n        \"RequestId\": \"c5ba1682-4615-4da3-962f-6e7c76fb2990\"\n    }\n}",
+        "title": "批量删除消费组灰度路由配置成功"
       }
     ],
     "DeleteInstance": [
@@ -166,6 +190,22 @@
         "title": "查询消费组标签列表成功"
       }
     ],
+    "DescribeConsumerLabelLists": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerLabelLists\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Groups\": [\n        \"grp-123708\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Results\": [\n            {\n                \"Group\": \"grp-123708\",\n                \"TotalCount\": 1,\n                \"Labels\": [\n                    {\n                        \"Label\": \"de123708\",\n                        \"State\": \"ACTIVE\",\n                        \"UpdatedAt\": 1789631354847\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"72e88f60-568f-4934-bd08-44320ee10e4c\"\n    }\n}",
+        "title": "批量查询消费组灰度标签列表成功"
+      }
+    ],
+    "DescribeConsumerLabelRoutes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerLabelRoutes\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Labels\": [\n        {\n            \"Group\": \"grp-5e551b\",\n            \"Label\": \"rn5e551b\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Results\": [\n            {\n                \"Key\": {\n                    \"Group\": \"grp-5e551b\",\n                    \"Label\": \"rn5e551b\"\n                },\n                \"Routes\": [\n                    {\n                        \"Topic\": \"tp-5e551b\",\n                        \"MatchCondition\": \"****\",\n                        \"TargetConsumerLabel\": \"rn5e551b\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f13f4abd-9204-43a4-9494-6ebbfaf14c41\"\n    }\n}",
+        "title": "批量查询消费组灰度标签路由成功"
+      }
+    ],
     "DescribeConsumerLag": [
       {
         "document": "查询指定客户端堆积成功",
@@ -180,6 +220,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\"\n}",
         "output": "{\n    \"Response\": {\n        \"CutTimestamp\": 1782730693958,\n        \"Rules\": [\n            {\n                \"MatchCondition\": \"test_tagC\",\n                \"TargetConsumerLabel\": \"test_env\"\n            }\n        ],\n        \"Version\": 1,\n        \"RequestId\": \"149126a6-3eb1-4120-b81a-d86425fb9e3a\"\n    }\n}",
         "title": "查询消费组当前生效的灰度路由配置成功"
+      }
+    ],
+    "DescribeConsumerRouteConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerRouteConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Configs\": [\n        {\n            \"Topic\": \"tp-fd746f\",\n            \"Group\": \"grp-fd746f\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Results\": [\n            {\n                \"Key\": {\n                    \"Topic\": \"tp-fd746f\",\n                    \"Group\": \"grp-fd746f\"\n                },\n                \"Version\": 1,\n                \"Rules\": [\n                    {\n                        \"MatchCondition\": \"grayFlag = '1'\",\n                        \"TargetConsumerLabel\": \"l1fd746f\"\n                    }\n                ],\n                \"CutTimestamp\": 1789620229459\n            }\n        ],\n        \"RequestId\": \"306632c6-ddbc-409b-9c8e-e246f4f14209\"\n    }\n}",
+        "title": "批量查询消费组灰度路由配置成功示例"
       }
     ],
     "DescribeConsumerRouteVersionList": [
@@ -424,6 +472,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutConsumerRouteConfig\n<公共请求参数>\n\n{\n    \"Topic\": \"test_topic\",\n    \"InstanceId\": \"rmq-16je7x5e7o\",\n    \"Group\": \"test_group\",\n    \"Rules\": [\n        {\n            \"MatchCondition\": \"test_tagA\",\n            \"TargetConsumerLabel\": \"test_env\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Group\": \"test_group\",\n        \"InstanceId\": \"rmq-16je7x5e7o\",\n        \"Topic\": \"test_topic\",\n        \"Version\": 1,\n        \"RequestId\": \"9bd61d2b-ffcc-4e2d-91f3-9c95ec852d9d\"\n    }\n}",
         "title": "写入消费组灰度路由配置成功"
+      }
+    ],
+    "PutConsumerRouteConfigs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PutConsumerRouteConfigs\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-1****jjdr\",\n    \"Configs\": [\n        {\n            \"Topic\": \"tp-f4b91d\",\n            \"Group\": \"grp-f4b91d\",\n            \"Rules\": [\n                {\n                    \"MatchCondition\": \"****\",\n                    \"TargetConsumerLabel\": \"waf4b91d\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FailedCount\": 0,\n        \"Failures\": [],\n        \"RequestId\": \"be77bad0-5b6b-44f4-9419-5a53b7a91085\"\n    }\n}",
+        "title": "批量写入消费组灰度路由配置成功"
       }
     ],
     "RemoveMigratingTopic": [
