@@ -2704,6 +2704,24 @@
           "name": "WebhookURL",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景。不传默认 AML_SCREENING_RESULT_CHANGE。取值见下方枚举。</p><p>枚举值：</p><ul><li>AML_SCREENING_RESULT_CHANGE： AML 反洗钱筛查结果变更通知（默认值）    </li><li>NONDOC_VERIFICATION_RESULT： 非文档类（NonDoc）核验结果通知</li></ul>",
+          "example": "AML_SCREENING_RESULT_CHANGE",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调签名密钥，最长 128 字符。用于后续回调报文的 HMAC-SHA256 验签；不传则不启用签名。建议使用OpenSSL 随机字节生成密钥，推荐命令：openssl rand -base64 32</p><blockquote><p>我方使用您配置的 <code>SignatureKey</code>，对「时间戳（<code>X-Webhook-Timestamp</code>）+ <code>.</code> + 请求体」计算 HMAC-SHA256 签名，结果以十六进制放入请求头 <code>X-Webhook-Signature</code>，报文本身不加密、经 HTTPS 传输。请用同一密钥按相同规则重算并比对签名，即可确认通知来源可信、内容未被篡改。</p></blockquote>",
+          "example": "aSQsvw7cUSV+4gYt4XIwOwVkWZ7jrA2BiWPA+qj2qv8=",
+          "member": "string",
+          "name": "SignatureKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2733,7 +2751,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否添加秘钥</p><p>默认值：false</p>",
+          "document": "<p>是否添加回调签名密钥</p><p>默认值：false</p>",
           "example": "false",
           "member": "bool",
           "name": "HasSignatureKey",
@@ -2743,8 +2761,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>回调秘钥</p>",
-          "example": "asdasdasdsss",
+          "document": "<p>回调签名密钥</p>",
+          "example": "aSQsvw7cUSV+4gYt4XIwOwVkWZ7jrA2BiWPA+qj2qv8=",
           "member": "string",
           "name": "SignatureKey",
           "output_required": false,
@@ -12393,6 +12411,15 @@
           "name": "WebhookURL",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调签名密钥，最长 128 字符。用于后续回调报文的 HMAC-SHA256 验签；不传则不启用签名。建议使用OpenSSL 随机字节生成密钥，推荐命令：openssl rand -base64 32    </p><blockquote><p>我方使用您配置的 <code>SignatureKey</code>，对「时间戳（<code>X-Webhook-Timestamp</code>）+ <code>.</code> + 请求体」计算 HMAC-SHA256 签名，结果以十六进制放入请求头 <code>X-Webhook-Signature</code>，报文本身不加密、经 HTTPS 传输。请用同一密钥按相同规则重算并比对签名，即可确认通知来源可信、内容未被篡改。</p></blockquote>",
+          "example": "aSQsvw7cUSV+4gYt4XIwOwVkWZ7jrA2BiWPA+qj2qv8=",
+          "member": "string",
+          "name": "SignatureKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12968,8 +12995,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>回调请求秘钥</p>",
-          "example": "asdasdsdsdsdsd",
+          "document": "<p>回调签名密钥，最长 128 字符。</p>",
+          "example": "aSQs******qv8=",
           "member": "string",
           "name": "SignatureKey",
           "output_required": false,
@@ -12979,7 +13006,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否存在回调接口秘钥</p>",
+          "document": "<p>是否存在回调签名密钥</p>",
           "example": "true",
           "member": "bool",
           "name": "HasSignatureKey",

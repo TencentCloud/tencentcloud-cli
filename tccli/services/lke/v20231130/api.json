@@ -10616,24 +10616,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>存储类型，0: 未知类型， 1:默认存储(平台提供)，2: 自定义存储(用户自建ES)</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "StorageType",
+          "document": "<p>允许修改存储方式</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanModify",
           "output_required": false,
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>ES集群名称(自定义存储时必填)</p>",
-          "example": "adp-es-test",
-          "member": "string",
-          "name": "InstanceName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -10649,10 +10638,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>ES用户名(自定义存储时必填)</p>",
-          "example": "elastic",
+          "document": "<p>ES集群名称(自定义存储时必填)</p>",
+          "example": "adp-es-test",
           "member": "string",
-          "name": "Username",
+          "name": "InstanceName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -10671,13 +10660,24 @@
         },
         {
           "disabled": false,
-          "document": "<p>允许修改存储方式</p>",
-          "example": "true",
-          "member": "bool",
-          "name": "CanModify",
+          "document": "<p>存储类型，0: 未知类型， 1:默认存储(平台提供)，2: 自定义存储(用户自建ES)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "StorageType",
           "output_required": false,
           "required": false,
-          "type": "bool",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ES用户名(自定义存储时必填)</p>",
+          "example": "elastic",
+          "member": "string",
+          "name": "Username",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12997,21 +12997,54 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享知识库业务ID",
-          "example": "1908652910168703294",
+          "document": "知识库文档数量,当前仅支持公众号知识库",
+          "example": "0",
+          "member": "int64",
+          "name": "DocTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Embedding模型",
+          "example": "general-text-embedding-v2.7",
           "member": "string",
-          "name": "KnowledgeBizId",
+          "name": "EmbeddingModel",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ES配置信息",
+          "example": "",
+          "member": "ESConfig",
+          "name": "EsConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "知识库是否已导入数据(true表示已导入,不可修改ES配置;false表示未导入,可修改ES配置)",
+          "example": "",
+          "member": "bool",
+          "name": "HasData",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "共享知识库名称",
-          "example": "共享知识库1",
+          "document": "共享知识库业务ID",
+          "example": "1908652910168703294",
           "member": "string",
-          "name": "KnowledgeName",
+          "name": "KnowledgeBizId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -13030,36 +13063,14 @@
         },
         {
           "disabled": false,
-          "document": "Embedding模型",
-          "example": "general-text-embedding-v2.7",
+          "document": "共享知识库名称",
+          "example": "共享知识库1",
           "member": "string",
-          "name": "EmbeddingModel",
+          "name": "KnowledgeName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "问答提取模型",
-          "example": "general-qa-extract-v1.8",
-          "member": "string",
-          "name": "QaExtractModel",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "1747757139",
-          "member": "string",
-          "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13085,14 +13096,14 @@
         },
         {
           "disabled": false,
-          "document": "知识库文档数量,当前仅支持公众号知识库",
-          "example": "0",
-          "member": "int64",
-          "name": "DocTotal",
+          "document": "知识库拥有者的名字",
+          "example": "小明",
+          "member": "string",
+          "name": "OwnerStaffName",
           "output_required": false,
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -13107,14 +13118,25 @@
         },
         {
           "disabled": false,
-          "document": "知识库拥有者的名字",
-          "example": "小明",
+          "document": "问答提取模型",
+          "example": "general-qa-extract-v1.8",
           "member": "string",
-          "name": "OwnerStaffName",
+          "name": "QaExtractModel",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1747757139",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -16065,7 +16087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用业务id",
+          "document": "<p>应用业务id</p>",
           "example": "1904370549674213379",
           "member": "string",
           "name": "AppBizId",
@@ -16074,7 +16096,7 @@
         },
         {
           "disabled": false,
-          "document": "登录用户主账号(集成商模式必填)",
+          "document": "<p>登录用户主账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginUin",
@@ -16083,12 +16105,21 @@
         },
         {
           "disabled": false,
-          "document": "登录用户子账号(集成商模式必填)",
+          "document": "<p>登录用户子账号(集成商模式必填)</p>",
           "example": "6000005624511",
           "member": "string",
           "name": "LoginSubAccountUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p>",
+          "example": "无",
+          "member": "FilterItem",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16098,7 +16129,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享知识库信息列表",
+          "document": "<p>共享知识库信息列表</p>",
           "example": "无",
           "member": "KnowledgeBaseInfo",
           "name": "List",
@@ -16108,7 +16139,7 @@
         },
         {
           "disabled": false,
-          "document": "共享知识库数量",
+          "document": "<p>共享知识库数量</p>",
           "example": "1",
           "member": "string",
           "name": "Total",

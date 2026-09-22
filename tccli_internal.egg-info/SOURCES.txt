@@ -1108,6 +1108,8 @@ tccli/services/weilingwith/__init__.py
 tccli/services/weilingwith/weilingwith_client.py
 tccli/services/wimgs/__init__.py
 tccli/services/wimgs/wimgs_client.py
+tccli/services/workbuddyenterprise/__init__.py
+tccli/services/workbuddyenterprise/workbuddyenterprise_client.py
 tccli/services/yinsuda/__init__.py
 tccli/services/yinsuda/yinsuda_client.py
 tccli/services/yunsou/__init__.py

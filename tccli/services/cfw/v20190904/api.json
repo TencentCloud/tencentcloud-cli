@@ -19493,7 +19493,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回状态码",
+          "document": "<p>返回状态码</p>",
           "example": "0",
           "member": "int64",
           "name": "ReturnCode",
@@ -19503,10 +19503,20 @@
         },
         {
           "disabled": false,
-          "document": "返回信息",
+          "document": "<p>返回信息</p>",
           "example": "success",
           "member": "string",
           "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作状态</p><p>枚举值：</p><ul><li>processing： 进行中</li><li>success： 成功</li></ul>",
+          "example": "processing",
+          "member": "string",
+          "name": "Status",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
