@@ -16,6 +16,7 @@ Output:
 ```
 {
     "Response": {
+        "ResourceGraphId": "8c0433ae-a1bb-479a-a0fb-592560e3d22a",
         "RequestId": "8cd9d427-f94c-4d6b-81d9-121952d4c0a8"
     }
 }

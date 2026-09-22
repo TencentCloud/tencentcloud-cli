@@ -1,0 +1,205 @@
+{
+  "actions": {
+    "BindExternalAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindExternalAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"A2AAgentId\": \"a2a-agent-001\",\n    \"VersionId\": \"2087791755109965825\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"BOUND\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "把外部 Agent 绑定到指定 Agent"
+      }
+    ],
+    "CreateAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgent\n<公共请求参数>\n\n{\n    \"AgentName\": \"客服助手\",\n    \"Description\": \"自动回复客户问题\",\n    \"AvatarUrl\": \"https://cos.example.com/avatar.png\",\n    \"Model\": \"hunyuan-turbos-latest\",\n    \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"客服助手\",\n        \"Description\": \"自动回复客户问题\",\n        \"AvatarUrl\": \"https://cos.example.com/avatar.png\",\n        \"IsDebug\": false,\n        \"RoutingSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"Weight\": 1.0\n            }\n        ],\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-01T10:00:00Z\",\n        \"A2AConfig\": {\n            \"A2AEnabled\": true,\n            \"A2APublicRef\": \"a2a://workbuddy/736918300000000001\",\n            \"A2AEndpoint\": \"https://a2a.example.com/card/736918300000000001\",\n            \"A2AStatus\": \"REGISTERED\"\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "创建 Agent"
+      }
+    ],
+    "CreateAgentSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentSession\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"VersionId\": \"2087791755109965825\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionId\": \"sess-9f3c1a2b7d4e\",\n        \"EndpointSet\": [\n            {\n                \"EndpointType\": \"PUBLIC\",\n                \"Url\": \"https://736918300000000001-tc-nanjing.example-workbuddy.com\"\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "创建 Agent 会话"
+      }
+    ],
+    "CreateAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"Model\": \"hunyuan-turbos-latest\",\n    \"Description\": \"接入数据查询技能\",\n    \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionId\": \"2087791755109965825\",\n        \"AgentId\": \"736918300000000001\",\n        \"VersionName\": \"prod-3\",\n        \"VersionType\": \"PROD\",\n        \"Description\": \"接入数据查询技能\",\n        \"Model\": \"hunyuan-turbos-latest\",\n        \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\",\n        \"Status\": \"ENABLED\",\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-01T10:00:00Z\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "创建 Agent 版本"
+      }
+    ],
+    "CreateAgentVersionFromSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAgentVersionFromSource\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"SourceVersionId\": \"2087791755109965825\",\n    \"Model\": \"hunyuan-turbos-latest\",\n    \"Description\": \"在 prod-3 基础上调整系统提示词\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionId\": \"2087791755109965826\",\n        \"AgentId\": \"736918300000000001\",\n        \"VersionName\": \"test-3\",\n        \"VersionType\": \"TEST\",\n        \"Description\": \"在 prod-3 基础上调整系统提示词\",\n        \"Model\": \"hunyuan-turbos-latest\",\n        \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\",\n        \"Status\": \"ENABLED\",\n        \"CreatedTime\": \"2026-08-12T08:20:00Z\",\n        \"ModifiedTime\": \"2026-08-12T08:20:00Z\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "基于源版本创建 Agent 版本"
+      }
+    ],
+    "DeleteAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "删除 Agent"
+      }
+    ],
+    "DescribeAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"客服助手\",\n        \"Description\": \"自动回复客户问题\",\n        \"AvatarUrl\": \"https://cos.example.com/avatar.png\",\n        \"IsDebug\": false,\n        \"RoutingSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"Weight\": 1.0\n            }\n        ],\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"ActiveSessionCount\": 3,\n        \"A2AConfig\": {\n            \"A2AEnabled\": true,\n            \"A2APublicRef\": \"a2a://workbuddy/736918300000000001\",\n            \"A2AEndpoint\": \"https://a2a.example.com/card/736918300000000001\",\n            \"A2AStatus\": \"REGISTERED\"\n        },\n        \"AccountId\": \"1438693592234206274\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 详情"
+      }
+    ],
+    "DescribeAgentList": [
+      {
+        "document": "按名称模糊过滤并按创建时间倒序查询 Agent 列表",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"AgentName\",\n            \"Values\": [\n                \"数据分析\"\n            ],\n            \"ExactMatch\": false\n        }\n    ],\n    \"SortBy\": \"created_at\",\n    \"SortDirection\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"736918300000000001\",\n                \"AgentName\": \"数据分析助手\",\n                \"Description\": \"负责每日运营数据的汇总与分析\",\n                \"AvatarUrl\": \"https://example.com/avatar/agent-001.png\",\n                \"CreatedTime\": \"2026-06-01T09:00:00Z\",\n                \"ModifiedTime\": \"2026-09-10T15:20:00Z\",\n                \"A2AEnabled\": true,\n                \"A2AEndpoint\": \"https://a2a.example.workbuddy.com/agents/736918300000000001/.well-known/agent-card.json\",\n                \"A2AStatus\": \"REGISTERED\",\n                \"PublicApiEnabled\": true,\n                \"PublicApiUrl\": \"https://736918300000000001-tc-nanjing.example-workbuddy.com\",\n                \"CreatorUin\": \"100012345678\",\n                \"AccountId\": \"1438693592234206274\",\n                \"SessionCount\": 42,\n                \"Model\": \"hunyuan-turbos-latest\",\n                \"LatestVersionId\": \"2087791755109965825\",\n                \"LatestVersionName\": \"prod-3\"\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 列表"
+      }
+    ],
+    "DescribeAgentSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"sess-9f3c1a2b7d4e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionId\": \"sess-9f3c1a2b7d4e\",\n        \"SessionName\": \"7 月运营数据汇总\",\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"数据分析助手\",\n        \"VersionId\": \"2087791755109965825\",\n        \"VersionName\": \"prod-3\",\n        \"Status\": \"ACTIVE\",\n        \"Creator\": \"100012345678\",\n        \"Source\": \"CLOUD\",\n        \"EndpointSet\": [\n            {\n                \"EndpointType\": \"PUBLIC\",\n                \"Url\": \"https://736918300000000001-tc-nanjing.example-workbuddy.com\"\n            }\n        ],\n        \"CreatedTime\": \"2026-07-20T10:00:00Z\",\n        \"ModifiedTime\": \"2026-07-20T10:35:00Z\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 会话详情"
+      }
+    ],
+    "DescribeAgentSessionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentSessionList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"AgentId\",\n            \"Values\": [\n                \"736918300000000001\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SessionSet\": [\n            {\n                \"SessionId\": \"sess-9f3c1a2b7d4e\",\n                \"SessionName\": \"7 月运营数据汇总\",\n                \"AgentId\": \"736918300000000001\",\n                \"AgentName\": \"数据分析助手\",\n                \"VersionId\": \"2087791755109965825\",\n                \"VersionName\": \"prod-3\",\n                \"Status\": \"ACTIVE\",\n                \"Creator\": \"100012345678\",\n                \"Source\": \"CLOUD\",\n                \"CreatedTime\": \"2026-07-20T10:00:00Z\",\n                \"ModifiedTime\": \"2026-07-20T10:35:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 会话列表"
+      }
+    ],
+    "DescribeAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"VersionId\": \"2087791755109965825\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionId\": \"2087791755109965825\",\n        \"AgentId\": \"736918300000000001\",\n        \"VersionName\": \"prod-3\",\n        \"VersionType\": \"PROD\",\n        \"Description\": \"接入数据查询技能\",\n        \"Model\": \"hunyuan-turbos-latest\",\n        \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\",\n        \"Status\": \"ENABLED\",\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"SessionCount\": 42,\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 版本详情"
+      }
+    ],
+    "DescribeAgentVersionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAgentVersionList\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"VersionType\",\n            \"Values\": [\n                \"PROD\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AgentVersionSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"VersionName\": \"prod-3\",\n                \"VersionType\": \"PROD\",\n                \"Model\": \"hunyuan-turbos-latest\",\n                \"SandboxTemplateId\": \"sbt-001\",\n                \"Status\": \"ENABLED\",\n                \"SessionCount\": 42,\n                \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n                \"ModifiedTime\": \"2026-08-10T15:30:00Z\"\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Agent 版本列表"
+      }
+    ],
+    "DescribeBuiltinModelList": [
+      {
+        "document": "分页查询内置模型列表，按启用状态过滤。",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuiltinModelList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"ENABLED\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BuiltinModelSet\": [\n            {\n                \"ModelId\": \"hunyuan-turbo\",\n                \"Name\": \"混元 Turbo\",\n                \"Vendor\": \"TENCENT\",\n                \"MaxOutputTokens\": 8192,\n                \"MaxInputTokens\": 128000,\n                \"SupportsToolCall\": true,\n                \"SupportsImages\": false,\n                \"DescriptionZh\": \"腾讯混元 Turbo 大模型\",\n                \"DescriptionEn\": \"Tencent Hunyuan Turbo\",\n                \"Tags\": [\n                    \"fast\"\n                ],\n                \"Clients\": [\n                    \"WorkBuddy\",\n                    \"CLI\"\n                ],\n                \"ServiceEndpoint\": \"https://hunyuan.tencentcloudapi.com\",\n                \"Status\": \"ENABLED\",\n                \"AgentCount\": 3\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询内置模型列表"
+      }
+    ],
+    "DescribeConnectorList": [
+      {
+        "document": "按名称模糊过滤并分页查询连接器列表，Offset/Limit 为标准分页参数",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConnectorList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Name\",\n            \"Values\": [\n                \"notion\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ConnectorSet\": [\n            {\n                \"ConnectorId\": \"2087791755109965900\",\n                \"ConnectorSlug\": \"notion-k3x9m2\",\n                \"ConnectorKey\": \"notion-k3x9m2-v2\",\n                \"Name\": \"notion\",\n                \"Description\": \"接入企业 Notion\",\n                \"AvatarUrl\": \"https://example.com/icon.png\",\n                \"Source\": \"ENTERPRISE_AGENT\",\n                \"EnterpriseId\": \"100012345678\",\n                \"Type\": \"MCP_SERVER\",\n                \"ServiceUrl\": \"https://mcp.notion.internal/v2\",\n                \"AuthModes\": [\n                    \"ONEID\"\n                ],\n                \"LatestVersionNo\": 2,\n                \"Status\": \"ACTIVE\",\n                \"CreatorId\": \"100012345678\",\n                \"CreatedTime\": \"2026-08-26T09:10:03Z\",\n                \"ModifiedTime\": \"2026-08-26T11:20:44Z\"\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询连接器列表"
+      }
+    ],
+    "DescribeExpertList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExpertList\n<公共请求参数>\n\n{\n    \"Source\": \"CUSTOM\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Keyword\",\n            \"Values\": [\n                \"数据库\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ExpertSet\": [\n            {\n                \"Source\": \"CUSTOM\",\n                \"ExpertId\": \"expert-001\",\n                \"DisplayName\": \"数据库优化专家\",\n                \"Description\": \"SQL 优化与索引设计\",\n                \"Icon\": \"https://example.com/icon/db-optimization.png\",\n                \"ExpertVersion\": \"1.0.1\",\n                \"Enabled\": true,\n                \"DownloadUrl\": \"https://cos.example.com/signed-url\",\n                \"ModifiedTime\": \"2026-07-25T09:15:00Z\"\n            }\n        ],\n        \"Counts\": {\n            \"Builtin\": 6,\n            \"Custom\": 1,\n            \"Total\": 7\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询专家列表"
+      }
+    ],
+    "DescribeExternalAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"A2AAgentId\": \"a2a-agent-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"A2AAgentId\": \"a2a-agent-001\",\n        \"BindingId\": \"5001\",\n        \"Name\": \"code-review-bot\",\n        \"Description\": \"代码评审机器人\",\n        \"IconUrl\": \"https://example.com/icon.png\",\n        \"Endpoint\": \"https://a2a.example.com/server\",\n        \"A2AVersion\": \"1.0\",\n        \"A2ASkillSet\": [\n            {\n                \"A2ASkillId\": \"review\",\n                \"Name\": \"代码评审\",\n                \"Description\": \"按规范评审代码\"\n            }\n        ],\n        \"Bound\": true,\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询外部 Agent 详情"
+      }
+    ],
+    "DescribeExternalAgentList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalAgentList\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"Filters\": [\n        {\n            \"Name\": \"Bound\",\n            \"Values\": [\n                \"BOUND\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ExternalAgentSet\": [\n            {\n                \"A2AAgentId\": \"a2a-agent-001\",\n                \"BindingId\": \"5001\",\n                \"Name\": \"code-review-bot\",\n                \"Description\": \"代码评审机器人\",\n                \"IconUrl\": \"https://example.com/icon.png\",\n                \"Endpoint\": \"https://a2a.example.com/server\",\n                \"A2AVersion\": \"1.0\",\n                \"A2ASkillSet\": [\n                    {\n                        \"A2ASkillId\": \"review\",\n                        \"Name\": \"代码评审\",\n                        \"Description\": \"按规范评审代码\"\n                    }\n                ],\n                \"Bound\": true\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询外部 Agent 列表"
+      }
+    ],
+    "DescribeMessageEventList": [
+      {
+        "document": "查询消息事件列表",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageEventList\n<公共请求参数>\n\n{\n    \"SessionId\": \"sess-9f3c1a2b7d4e\",\n    \"AgentId\": \"736918300000000001\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"MessageEventSet\": [\n            {\n                \"Sequence\": 1,\n                \"EventType\": \"USER\",\n                \"OccurredAt\": \"2026-07-20T10:00:00Z\",\n                \"Message\": {\n                    \"Content\": \"帮我汇总一下 7 月各渠道的运营数据\"\n                }\n            },\n            {\n                \"Sequence\": 2,\n                \"EventType\": \"TOOL\",\n                \"OccurredAt\": \"2026-07-20T10:00:03Z\",\n                \"ToolCall\": {\n                    \"ToolCallId\": \"call-1\",\n                    \"ToolName\": \"query_operation_data\",\n                    \"Status\": \"SUCCEEDED\",\n                    \"Input\": \"{\\\"month\\\":\\\"2026-07\\\",\\\"groupBy\\\":\\\"channel\\\"}\",\n                    \"Output\": \"{\\\"channels\\\":[\\\"wechat\\\",\\\"app\\\"],\\\"rows\\\":2}\",\n                    \"StartedAt\": \"2026-07-20T10:00:03Z\",\n                    \"EndedAt\": \"2026-07-20T10:00:05Z\",\n                    \"DurationMs\": 2000\n                }\n            },\n            {\n                \"Sequence\": 3,\n                \"EventType\": \"ASSISTANT\",\n                \"OccurredAt\": \"2026-07-20T10:00:12Z\",\n                \"Message\": {\n                    \"Content\": \"7 月微信渠道环比增长 12%，App 渠道基本持平。\",\n                    \"TokenUsage\": {\n                        \"InputTokens\": 3421,\n                        \"OutputTokens\": 806,\n                        \"TotalTokens\": 4227,\n                        \"Scope\": \"TURN\"\n                    }\n                }\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询消息事件列表"
+      }
+    ],
+    "DescribeSkillList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSkillList\n<公共请求参数>\n\n{\n    \"Source\": \"CUSTOM\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Keyword\",\n            \"Values\": [\n                \"代码\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"SkillSet\": [\n            {\n                \"Source\": \"CUSTOM\",\n                \"SkillId\": \"skill-7f8g9h\",\n                \"Name\": \"code-review\",\n                \"DisplayName\": \"代码评审\",\n                \"Description\": \"按团队规范评审代码改动\",\n                \"Icon\": \"https://example.com/icon/code-review.png\",\n                \"Enabled\": true,\n                \"DownloadUrl\": \"https://cos.example.com/skill/code-review-1.2.0.zip\",\n                \"SkillVersion\": \"1.2.0\",\n                \"CreateTime\": \"2026-08-11T09:23:10Z\",\n                \"UpdateTime\": \"2026-09-15T06:51:26Z\"\n            }\n        ],\n        \"Counts\": {\n            \"Builtin\": 12,\n            \"Custom\": 1,\n            \"Total\": 13\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询 Skill 列表"
+      }
+    ],
+    "MigrateAgentSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: MigrateAgentSession\n<公共请求参数>\n\n{\n    \"SessionId\": \"sess-9f3c1a2b7d4e\",\n    \"AgentId\": \"736918300000000001\",\n    \"TargetVersionId\": \"2087791755109965825\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SessionId\": \"sess-9f3c1a2b7d4e\",\n        \"Status\": \"ACTIVE\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "迁移 Agent 会话"
+      }
+    ],
+    "ModifyAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"AgentName\": \"客服助手v2\",\n    \"Description\": \"自动回复客户问题，支持工单转接\",\n    \"AvatarUrl\": \"https://cos.example.com/avatar-v2.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"客服助手v2\",\n        \"Description\": \"自动回复客户问题，支持工单转接\",\n        \"AvatarUrl\": \"https://cos.example.com/avatar-v2.png\",\n        \"IsDebug\": false,\n        \"RoutingSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"Weight\": 1.0\n            }\n        ],\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"A2AConfig\": {\n            \"A2AEnabled\": true,\n            \"A2APublicRef\": \"a2a://workbuddy/736918300000000001\",\n            \"A2AEndpoint\": \"https://a2a.example.com/card/736918300000000001\",\n            \"A2AStatus\": \"REGISTERED\"\n        },\n        \"AccountId\": \"1438693592234206274\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "修改 Agent 基本信息"
+      }
+    ],
+    "ModifyAgentA2AConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentA2AConfig\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"A2AEnabled\": true,\n    \"A2ASkillSet\": [\n        {\n            \"A2ASkillId\": \"faq\",\n            \"Name\": \"常见问答\",\n            \"Description\": \"客户常见问题解答\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"客服助手\",\n        \"Description\": \"自动回复客户问题\",\n        \"AvatarUrl\": \"https://cos.example.com/avatar.png\",\n        \"IsDebug\": false,\n        \"RoutingSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"Weight\": 1.0\n            }\n        ],\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"A2AConfig\": {\n            \"A2AEnabled\": true,\n            \"A2APublicRef\": \"a2a://workbuddy/736918300000000001\",\n            \"A2AEndpoint\": \"https://a2a.example.com/card/736918300000000001\",\n            \"A2AStatus\": \"REGISTERED\"\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "修改 Agent 的 A2A 配置"
+      }
+    ],
+    "ModifyAgentRouting": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentRouting\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"RoutingSet\": [\n        {\n            \"VersionId\": \"2087791755109965825\",\n            \"Weight\": 0.8\n        },\n        {\n            \"VersionId\": \"2087791755109965826\",\n            \"Weight\": 0.2\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AgentId\": \"736918300000000001\",\n        \"AgentName\": \"客服助手\",\n        \"Description\": \"自动回复客户问题\",\n        \"AvatarUrl\": \"https://cos.example.com/avatar.png\",\n        \"IsDebug\": false,\n        \"RoutingSet\": [\n            {\n                \"VersionId\": \"2087791755109965825\",\n                \"Weight\": 0.8\n            },\n            {\n                \"VersionId\": \"2087791755109965826\",\n                \"Weight\": 0.2\n            }\n        ],\n        \"CreatedTime\": \"2026-08-01T10:00:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"A2AConfig\": {\n            \"A2AEnabled\": true,\n            \"A2APublicRef\": \"a2a://workbuddy/736918300000000001\",\n            \"A2AEndpoint\": \"https://a2a.example.com/card/736918300000000001\",\n            \"A2AStatus\": \"REGISTERED\"\n        },\n        \"AccountId\": \"1438693592234206274\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "修改 Agent 路由配置"
+      }
+    ],
+    "ModifyAgentVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"VersionId\": \"2087791755109965827\",\n    \"Model\": \"hunyuan-turbos-latest\",\n    \"Description\": \"调整系统提示词，收紧回答范围\"\n}",
+        "output": "{\n    \"Response\": {\n        \"VersionId\": \"2087791755109965827\",\n        \"AgentId\": \"736918300000000001\",\n        \"VersionName\": \"default\",\n        \"VersionType\": \"DEFAULT\",\n        \"Description\": \"调整系统提示词，收紧回答范围\",\n        \"Model\": \"hunyuan-turbos-latest\",\n        \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\",\n        \"Status\": \"ENABLED\",\n        \"CreatedTime\": \"2026-07-20T07:10:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "修改 Agent 版本"
+      }
+    ],
+    "UnbindExternalAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindExternalAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"A2AAgentId\": \"a2a-agent-001\",\n    \"BindingId\": \"5001\",\n    \"VersionId\": \"2087791755109965825\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"UNBOUND\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "解除外部 Agent 与 Agent 的绑定"
+      }
+    ]
+  },
+  "version": "1.0"
+}

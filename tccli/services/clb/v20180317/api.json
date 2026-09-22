@@ -1598,7 +1598,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例ID。",
+          "document": "<p>负载均衡实例ID。</p>",
           "example": "lb-r6nx1iby",
           "member": "string",
           "name": "LoadBalancerId",
@@ -1607,7 +1607,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS:443监听器的ID。",
+          "document": "<p>HTTPS:443监听器的ID。</p>",
           "example": "lbl-lmeeyb1q",
           "member": "string",
           "name": "ListenerId",
@@ -1616,7 +1616,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。",
+          "document": "<p>HTTPS:443监听器下需要重定向的域名，若不填，则对HTTPS:443监听器下的所有域名都设置重定向。</p>",
           "example": "[\"www.abc.com\\n\"]",
           "member": "string",
           "name": "Domains",
@@ -1625,8 +1625,8 @@
         },
         {
           "disabled": false,
-          "document": "重定向状态码，可取值301,302,307。",
-          "example": "301",
+          "document": "<p>重定向状态码，可取值301,302,307。</p><p>默认值：302</p>",
+          "example": "[301]",
           "member": "int64",
           "name": "RewriteCodes",
           "required": false,
@@ -1634,8 +1634,8 @@
         },
         {
           "disabled": false,
-          "document": "重定向是否携带匹配的URL。",
-          "example": "true",
+          "document": "<p>重定向是否携带匹配的URL。</p>",
+          "example": "[true]",
           "member": "bool",
           "name": "TakeUrls",
           "required": false,
@@ -19973,6 +19973,24 @@
           "name": "HealthCheckProtocol",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>",
+          "example": "v1/models",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查方式。</p><p>枚举值：</p><ul><li>Service： 探测服务可用性</li><li>Model： 探测模型可用性</li></ul>",
+          "example": "Service",
+          "member": "string",
+          "name": "HealthCheckMethod",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -20012,13 +20030,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>",
+          "document": "<p>健康检查使用的最大Token数量。部分模型如gpt系列可能仅支持大于等于16。</p><p>默认值：1</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "uint64",
           "name": "HealthCheckMaxTokens",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -20029,6 +20047,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查路径。仅HealthCheckMethod为Service时生效。</p>",
+          "example": "v1/models",
+          "member": "string",
+          "name": "HealthCheckPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查方式。</p>",
+          "example": "Service",
+          "member": "string",
+          "name": "HealthCheckMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

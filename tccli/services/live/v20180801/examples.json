@@ -134,6 +134,22 @@
         "title": "直播审核创建关键词"
       }
     ],
+    "CreateAuditRule": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRule\n<公共请求参数>\n\n{\n    \"DomainName\": \"5000.livepush.myqcloud.com\",\n    \"AppName\": \"live\",\n    \"TemplateId\": 0,\n    \"StreamName\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f44307f1-5a13-4edc-b5be-93f6ad1d4e3c\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "CreateAuditTemplate": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditTemplate\n<公共请求参数>\n\n{\n    \"AuditTemplate\": {\n        \"TemplateName\": \"appjirtp7tb2397的策略\",\n        \"Description\": \"appjirtp7tb2397的策略\",\n        \"TemplateId\": 0,\n        \"AuditAudio\": true,\n        \"AuditImage\": false,\n        \"AudioInterval\": 15,\n        \"SnapshotInterval\": 2,\n        \"CosBucket\": \"live-resource\",\n        \"CosRegion\": \"ap-shanghai\",\n        \"CosFilePath\": \"/Audit/{Year}-{Month}-{Day}/{StreamID}-Audit-{Hour}-{Minute}-{Second}{Ext}\",\n        \"EnableFailoverCos\": false,\n        \"FailoverCosBucket\": \"1\",\n        \"FailoverCosRegion\": \"1\",\n        \"SceneInfos\": [\n            {\n                \"SceneID\": \"LiveAudit\",\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"\",\n                        \"Status\": true,\n                        \"StrategyType\": \"ShortAudio\",\n                        \"StrategyConfig\": \"{...转义JSON字符串：ability/asr_text_labels/audio_labels/user_text_libs/ignore_word_conf...}\"\n                    },\n                    {\n                        \"BizType\": \"\",\n                        \"Status\": true,\n                        \"StrategyType\": \"Image\",\n                        \"StrategyConfig\": \"{...转义JSON字符串：ability/image_labels/ignore_word_conf...}\"\n                    },\n                    {\n                        \"BizType\": \"\",\n                        \"Status\": true,\n                        \"StrategyType\": \"Text\",\n                        \"StrategyConfig\": \"{...转义JSON字符串：ability/text_labels/user_text_libs/ignore_word_conf...}\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0d98ffdb-3d3e-4a72-94dc-3d6b2a97df54\",\n        \"TemplateId\": 55199\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "CreateCaster": [
       {
         "document": "请求创建导播台",
@@ -308,6 +324,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateLiveSmartEraseTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"SmartName111\",\n    \"Type\": \"illegal audio\",\n    \"Description\": \"SmartNameDesc\",\n    \"AuditConfId\": 0,\n    \"PrivacyProtection\": \"blur face\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 8390364,\n        \"RequestId\": \"11f23d53-613c-43ff-8f8b-81e3aef57952\"\n    }\n}",
+        "title": "调用示例"
+      }
+    ],
     "CreateLiveSnapshotRule": [
       {
         "document": "",
@@ -434,6 +458,22 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditKeywords\n<公共请求参数>\n\n{\n    \"KeywordIds\": [\n        \"xx-id1\",\n        \"xx-id2\"\n    ],\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"SuccessCount\": 100,\n        \"Infos\": [\n            {\n                \"KeywordId\": \"id1\",\n                \"Deleted\": true,\n                \"Content\": \"451id\",\n                \"Error\": \"suc\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核删除关键词"
+      }
+    ],
+    "DeleteAuditRule": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditRule\n<公共请求参数>\n\n{\n    \"DomainName\": \"5000.livepush.myqcloud.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4ec9307-0916-4daf-b1b7-74631f7f89fe\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteAuditTemplate": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 55621\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab84be72-33ce-4aa8-95f5-aa9efbb587aa\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteCaster": [
@@ -730,6 +770,30 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditKeywords\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 100,\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\",\n    \"Content\": \"\",\n    \"Labels\": []\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Infos\": [\n            {\n                \"KeywordId\": \"415124487845454\",\n                \"Content\": \"content-name\",\n                \"CreateTime\": \"20240214\",\n                \"Label\": \"12\"\n            }\n        ],\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核获取关键词"
+      }
+    ],
+    "DescribeAuditRules": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRules\n<公共请求参数>\n\n{\n    \"DomainName\": \"5000.livepush.myqcloud.com\",\n    \"TemplateId\": 1016,\n    \"AppName\": \"live\",\n    \"StreamName\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"AppName\": \"live\",\n                \"CreateTime\": \"2025-09-24T13:23:43+08:00\",\n                \"DomainName\": \"5000.livepush.myqcloud.com\",\n                \"StreamName\": \"test1\",\n                \"TemplateId\": 1016,\n                \"UpdateTime\": \"2025-09-24T13:23:43+08:00\"\n            }\n        ],\n        \"RequestId\": \"b4ec9307-0916-4daf-b1b7-74631f7f89fe\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeAuditTemplate": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 55023\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditTemplate\": {\n            \"TemplateId\": 55023,\n            \"TemplateName\": \"appwl9ph4hf4030的消音策略\",\n            \"Description\": \"appwl9ph4hf4030的消音策略\",\n            \"AuditAudio\": true,\n            \"AuditImage\": false,\n            \"AuditText\": 0,\n            \"AudioInterval\": 15,\n            \"SnapshotInterval\": 2,\n            \"CosBucket\": \"live-resource\",\n            \"CosRegion\": \"ap-shanghai\",\n            \"CosFilePath\": \"/Audit/{Year}-{Month}-{Day}/{StreamID}-Audit-{Hour}-{Minute}-{Second}{Ext}\",\n            \"EnableFailoverCos\": false,\n            \"FailoverCosBucket\": \"1\",\n            \"FailoverCosRegion\": \"1\",\n            \"SceneInfos\": [\n                {\n                    \"SceneID\": \"LiveAudit\",\n                    \"BizInfos\": [\n                        {\n                            \"BizType\": \"1_1_7_55023\",\n                            \"Status\": true,\n                            \"StrategyType\": \"ShortAudio\",\n                            \"StrategyConfig\": \"{\\\"user_text_libs\\\":[\\\"2758c78c-04c2-478a-a978-e7938037222e\\\"],\\\"ability\\\":{\\\"asr_text\\\":true,\\\"audio\\\":true},\\\"asr_text_labels\\\":{\\\"abuse\\\":[],\\\"ad\\\":[],\\\"illegal\\\":[],\\\"polity\\\":[],\\\"porn\\\":[],\\\"terror\\\":[]},\\\"audio_labels\\\":{\\\"moan\\\":[\\\"OVR\\\"]},\\\"service_config\\\":{\\\"callback_info\\\":{\\\"rcb_hseg_count\\\":30,\\\"scb_type\\\":3},\\\"codec_info\\\":{\\\"audio_frequency\\\":30,\\\"audio_sampling_rate\\\":16000},\\\"maximum_duration\\\":20},\\\"ignore_word_conf\\\":{\\\"model_disable\\\":false,\\\"rule_disable\\\":false,\\\"keyword_disable\\\":false}}\"\n                        },\n                        {\n                            \"BizType\": \"1_1_1_55023\",\n                            \"Status\": true,\n                            \"StrategyType\": \"Text\",\n                            \"StrategyConfig\": \"{\\\"user_text_libs\\\":[\\\"2758c78c-04c2-478a-a978-e7938037222e\\\"],\\\"ability\\\":{\\\"text\\\":true},\\\"text_labels\\\":{\\\"abuse\\\":[],\\\"ad\\\":[],\\\"illegal\\\":[],\\\"polity\\\":[],\\\"porn\\\":[],\\\"terror\\\":[]},\\\"service_config\\\":{\\\"callback_info\\\":{},\\\"codec_info\\\":{}},\\\"ignore_word_conf\\\":{\\\"model_disable\\\":false,\\\"rule_disable\\\":false,\\\"keyword_disable\\\":false}}\"\n                        },\n                        {\n                            \"BizType\": \"1_1_2_55023\",\n                            \"Status\": true,\n                            \"StrategyType\": \"Image\",\n                            \"StrategyConfig\": \"{\\\"ability\\\":{\\\"image\\\":true,\\\"ocr_text\\\":true},\\\"image_labels\\\":{\\\"ad\\\":[\\\"QRCode\\\",\\\"LOGO\\\"],\\\"illegal\\\":[\\\"Delinquenent\\\",\\\"NonMainstream\\\",\\\"Illegal\\\",\\\"Contraband\\\",\\\"PersonalPrivacy\\\",\\\"Nausea\\\"],\\\"polity\\\":[\\\"PositiveCharacter\\\",\\\"NegativeFigure\\\",\\\"ForeignLeaders\\\",\\\"Underdog\\\",\\\"PositiveFlagsLogos\\\",\\\"NegativeFlagsLogos\\\",\\\"ChinaMap\\\",\\\"Gallery\\\",\\\"Building\\\",\\\"SpecialItems\\\"],\\\"porn\\\":[\\\"Sexuality\\\",\\\"ObsceneBehaviour\\\",\\\"SexProducts\\\"],\\\"terror\\\":[\\\"Firearms\\\",\\\"LargeWeapons\\\",\\\"ColdWeapons\\\",\\\"CrowdGathering\\\",\\\"BloodyScenes\\\",\\\"FireExplosion\\\",\\\"TerrorismActs\\\",\\\"Uniforms\\\",\\\"SpecialDress\\\",\\\"ViolentLogos\\\"]},\\\"service_config\\\":{\\\"callback_info\\\":{},\\\"codec_info\\\":{\\\"image_frequency\\\":10}},\\\"ignore_word_conf\\\":{\\\"model_disable\\\":false,\\\"rule_disable\\\":false,\\\"keyword_disable\\\":false},\\\"user_text_libs\\\":[]}\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"0b370345-f1b7-4fc3-a635-93032ac540c2\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeAuditTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTemplates\n<公共请求参数>\n\n{\n    \"WithTextAudit\": false,\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"AuditTemplates\": [\n            {\n                \"AudioInterval\": 15,\n                \"AuditAudio\": false,\n                \"AuditImage\": true,\n                \"AuditText\": 0,\n                \"CosBucket\": \"2\",\n                \"CosFilePath\": \"/Audit/{Year}-{Month}-{Day}/{StreamID}-Audit-{Hour}-{Minute}-{Second}{Ext}\",\n                \"CosRegion\": \"ap-guangzhou\",\n                \"Description\": \"\",\n                \"EnableFailoverCos\": false,\n                \"FailoverCosBucket\": \"\",\n                \"FailoverCosRegion\": \"\",\n                \"SceneInfos\": [\n                    {\n                        \"BizInfos\": [\n                            {\n                                \"BizType\": \"1_1_7_8390211\",\n                                \"Status\": true,\n                                \"StrategyConfig\": \"{\\\"ability\\\":{\\\"asr_text\\\":true,\\\"audio\\\":true},\\\"service_config\\\":{\\\"callback_info\\\":{},\\\"codec_info\\\":{}},\\\"ignore_word_conf\\\":{\\\"model_disable\\\":false,\\\"rule_disable\\\":false,\\\"keyword_disable\\\":false},\\\"user_text_libs\\\":[]}\",\n                                \"StrategyType\": \"ShortAudio\"\n                            }\n                        ],\n                        \"SceneID\": \"LiveAudit\"\n                    }\n                ],\n                \"SnapshotInterval\": 2,\n                \"TemplateId\": 8390211,\n                \"TemplateName\": \"qwe\"\n            }\n        ],\n        \"RequestId\": \"23171f70-25d8-4c72-9342-51439526af6d\"\n    }\n}",
+        "title": "DescribeAuditTemplates"
       }
     ],
     "DescribeBackupStreamList": [
@@ -1602,6 +1666,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditKeywordLib\n<公共请求参数>\n\n{\n    \"Name\": \"黄暴过滤\",\n    \"Suggestion\": \"Block\",\n    \"Description\": \"自定义词库\",\n    \"LibId\": \"4c49c04f-6617-4705-b3ff-bedce642bfcb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "直播审核更新词库"
+      }
+    ],
+    "ModifyAuditTemplate": [
+      {
+        "document": "请求示例。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditTemplate\n<公共请求参数>\n\n{\n    \"AuditTemplate\": {\n        \"TemplateId\": 55514,\n        \"TemplateName\": \"直播审核_test\",\n        \"Description\": \"直播审核_test\",\n        \"AuditImage\": true,\n        \"AuditAudio\": true,\n        \"AuditText\": 1,\n        \"SnapshotInterval\": 50,\n        \"AudioInterval\": 30,\n        \"CosBucket\": \"live-test\",\n        \"CosRegion\": \"ap-shanghai\",\n        \"CosFilePath\": \"/Audit/{Year}-{Month}-{Day}/{StreamID}-Audit-{Hour}-{Minute}-{Second}{Ext}\",\n        \"EnableFailoverCos\": false,\n        \"SceneInfos\": [\n            {\n                \"BizInfos\": [\n                    {\n                        \"BizType\": \"1_1_7_55514\",\n                        \"Status\": true,\n                        \"StrategyType\": \"ShortAudio\",\n                        \"StrategyConfig\": \"{\\\"ability\\\":{\\\"asr_text\\\":true,\\\"audio\\\":true},\\\"asr_text_labels\\\":{\\\"ad\\\":[\\\"AdvertisingDiversion\\\",\\\"FinancialAdvertising\\\"]},\\\"audio_labels\\\":{},\\\"user_text_libs\\\":[\\\"0fd0600e-0603-41e8-a985-ae49a73fbe9f\\\"]}\"\n                    },\n                    {\n                        \"BizType\": \"1_1_2_55514\",\n                        \"Status\": true,\n                        \"StrategyType\": \"Image\",\n                        \"StrategyConfig\": \"{\\\"ability\\\":{\\\"image\\\":true,\\\"ocr_text\\\":true},\\\"ocr_text_labels\\\":{\\\"ad\\\":[\\\"AdvertisingDiversion\\\",\\\"FinancialAdvertising\\\"]},\\\"image_labels\\\":{\\\"illegal\\\":[\\\"Delinquenent\\\",\\\"NonMainstream\\\",\\\"Illegal\\\",\\\"Contraband\\\",\\\"PersonalPrivacy\\\",\\\"Nausea\\\"],\\\"ad\\\":[\\\"QRCode\\\",\\\"LOGO\\\"]},\\\"user_text_libs\\\":[\\\"0fd0600e-0603-41e8-a985-ae49a73fbe9f\\\"]}\"\n                    },\n                    {\n                        \"BizType\": \"1_1_1_55514\",\n                        \"Status\": true,\n                        \"StrategyType\": \"Text\",\n                        \"StrategyConfig\": \"{\\\"ability\\\":{\\\"text\\\":true},\\\"ignore_word_conf\\\":{\\\"keyword_disable\\\":false,\\\"model_disable\\\":false,\\\"rule_disable\\\":false},\\\"text_labels\\\":{\\\"ad\\\":[\\\"AdvertisingDiversion\\\",\\\"FinancialAdvertising\\\"]},\\\"user_text_libs\\\":[\\\"0fd0600e-0603-41e8-a985-ae49a73fbe9f\\\"]}\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e91114bc-9075-4d8e-a35f-d914ddf9cb39\",\n        \"TemplateId\": 55514\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "ModifyCaster": [

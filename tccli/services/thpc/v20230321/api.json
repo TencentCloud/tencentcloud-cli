@@ -5920,7 +5920,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "队列名称。",
+          "document": "<p>队列名称。</p>",
           "example": "compute",
           "member": "string",
           "name": "QueueName",

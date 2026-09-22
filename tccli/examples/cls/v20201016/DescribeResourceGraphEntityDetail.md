@@ -1,4 +1,4 @@
-**Example 1: 查询指定资源**
+**Example 1: success**
 
 
 
@@ -6,40 +6,38 @@ Input:
 
 ```
 tccli cls DescribeResourceGraphEntityDetail --cli-unfold-argument  \
-    --EntityId 002b693f4f8cd075e2c6a750e6e58e2c \
-    --ResourceGraphId test-yunapi-full \
-    --FromTime 1782230000 \
-    --ToTime 1782231000
+    --EntityId 322c008927ab772835d9cc34be4d5287 \
+    --ResourceGraphId 377f703a-6fab-41a9-b05a-636f06283a3f
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "21b0ace2-808f-486d-ab90-cf8b5aeb3fcf"
-    }
-}
-```
-
-**Example 2: 查询无数据**
-
-
-
-Input: 
-
-```
-tccli cls DescribeResourceGraphEntityDetail --cli-unfold-argument  \
-    --EntityId 7eca728abe2e4dacc8c687dfaca3d743 \
-    --ResourceGraphId test-yunapi-full \
-    --FromTime 1782230000 \
-    --ToTime 1782231000
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "b2e18bb2-cac6-44e0-b40e-41d61e07ae8d"
+        "EntityInfo": {
+            "Attributes": [
+                {
+                    "Key": "instance_id",
+                    "Value": "cdb-aav0v207"
+                }
+            ],
+            "Domain": "tc",
+            "EntityClassName": "tc.cdb.instance",
+            "EntityId": "322c008927ab772835d9cc34be4d5287",
+            "EntityName": "resource_test",
+            "Product": "cdb",
+            "RelatedLogTopics": [
+                {
+                    "BizType": 0,
+                    "LogType": "slowlog",
+                    "Region": "ap-guangzhou",
+                    "TopicId": "a35a8ea8-253e-47bb-9d16-41a514827d86"
+                }
+            ],
+            "ResourceId": "cdb-aav0v207",
+            "Tags": []
+        },
+        "RequestId": "eb3d359b-2928-49b9-ad42-2a860138203b"
     }
 }
 ```

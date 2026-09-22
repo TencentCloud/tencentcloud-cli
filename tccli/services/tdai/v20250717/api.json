@@ -1151,6 +1151,24 @@
           "name": "UsePlatformAccount",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是免部署实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DeploymentFree",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持记忆</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableMemory",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

@@ -8,137 +8,137 @@
       "status": "online"
     },
     "ChatCompletions": {
-      "document": "如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "ChatCompletionsRequest",
       "name": "对话",
       "output": "ChatCompletionsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ChatTranslations": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "ChatTranslationsRequest",
       "name": "翻译",
       "output": "ChatTranslationsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateGlossary": {
-      "document": "创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n创建自定义术语库，在翻译时自动将源语言术语替换为指定的目标语言译文，确保专业术语翻译的一致性和准确性。",
       "input": "CreateGlossaryRequest",
       "name": "创建术语库",
       "output": "CreateGlossaryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateGlossaryEntry": {
-      "document": "添加术语条目。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n添加术语条目。",
       "input": "CreateGlossaryEntryRequest",
       "name": "添加术语条目",
       "output": "CreateGlossaryEntryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateThread": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "CreateThreadRequest",
       "name": "创建会话",
       "output": "CreateThreadResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteGlossary": {
-      "document": "删除术语库。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n删除术语库。",
       "input": "DeleteGlossaryRequest",
       "name": "删除术语库",
       "output": "DeleteGlossaryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteGlossaryEntry": {
-      "document": "删除术语条目。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n删除术语条目。",
       "input": "DeleteGlossaryEntryRequest",
       "name": "删除术语条目",
       "output": "DeleteGlossaryEntryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "FilesDeletions": {
-      "document": "删除文件。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n删除文件。",
       "input": "FilesDeletionsRequest",
       "name": "文件删除",
       "output": "FilesDeletionsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "FilesList": {
-      "document": "文件列表。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n文件列表。",
       "input": "FilesListRequest",
       "name": "文件列表",
       "output": "FilesListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "FilesUploads": {
-      "document": "上传用于不同用途的文件。\n当前用途仅支持 hunyuan 等模型的文档理解。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n上传用于不同用途的文件。\n当前用途仅支持 hunyuan 等模型的文档理解。",
       "input": "FilesUploadsRequest",
       "name": "文件上传",
       "output": "FilesUploadsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetEmbedding": {
-      "document": "腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元 Embedding 接口，可以将文本转化为高质量的向量数据。向量维度为1024维。",
       "input": "GetEmbeddingRequest",
       "name": "向量化",
       "output": "GetEmbeddingResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetThread": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "GetThreadRequest",
       "name": "查询会话",
       "output": "GetThreadResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetThreadMessage": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "GetThreadMessageRequest",
       "name": "获取会话消息",
       "output": "GetThreadMessageResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetThreadMessageList": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "GetThreadMessageListRequest",
       "name": "会话消息列表",
       "output": "GetThreadMessageListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GetTokenCount": {
-      "document": "该接口用于计算文本对应Token数、字符数。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n该接口用于计算文本对应Token数、字符数。",
       "input": "GetTokenCountRequest",
       "name": "Token 计数",
       "output": "GetTokenCountResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "GroupChatCompletions": {
-      "document": "如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "GroupChatCompletionsRequest",
       "name": "群聊",
       "output": "GroupChatCompletionsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ImageQuestion": {
-      "document": "如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n如需使用OpenAI兼容接口， 请参考文档：[OpenAI 兼容接口](https://cloud.tencent.com/document/product/1729/111007)\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "ImageQuestionRequest",
       "name": "拍照解题",
       "output": "ImageQuestionResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListGlossary": {
-      "document": "查询术语库。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n查询术语库。",
       "input": "ListGlossaryRequest",
       "name": "查询术语库",
       "output": "ListGlossaryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ListGlossaryEntry": {
-      "document": "查询术语条目。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n查询术语条目。",
       "input": "ListGlossaryEntryRequest",
       "name": "查询术语条目",
       "output": "ListGlossaryEntryResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "QueryHunyuanImageChatJob": {
       "document": "混元生图（多轮对话）接口基于混元大模型，将根据输入的文本描述生成图像，支持通过多轮对话的方式不断调整图像内容。分为提交任务和查询任务2个接口。\n提交任务：输入文本和前置对话 ID 等，提交一个混元生图多轮对话异步任务，获得任务 ID。\n查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得在上一轮对话基础上继续生成的图像结果。\n混元生图（多轮对话）默认提供1个并发任务数，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。",
@@ -155,11 +155,11 @@
       "status": "online"
     },
     "RunThread": {
-      "document": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口支持流式或非流式调用，当使用流式调用时为 SSE 协议。\n\n 1. 本接口暂不支持返回图片内容。\n 2. 默认该接口下单账号限制并发数为  5 路，如您有提高并发限制的需求请 [购买](https://buy.cloud.tencent.com/hunyuan) 。\n 3. 请使用 SDK 调用本接口，每种开发语言的 SDK Git 仓库 examples/hunyuan/v20230901/ 目录下有提供示例供参考。SDK 链接在文档下方 “**开发者资源 - SDK**” 部分提供。\n 4. 我们推荐您使用 API Explorer，方便快速地在线调试接口和下载各语言的示例代码，[点击打开](https://console.cloud.tencent.com/api/explorer?Product=hunyuan&Version=2023-09-01&Action=ChatCompletions)。",
       "input": "RunThreadRequest",
       "name": "执行会话",
       "output": "RunThreadResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetPayMode": {
       "document": "设置付费模式",
@@ -190,11 +190,11 @@
       "status": "online"
     },
     "UpdateGlossaryEntry": {
-      "document": "更新术语条目。",
+      "document": "混元大模型老控制台将于9月30日下线，5月已发对外公告并通知客户，现将API接口文档变更为预下线状态\n\n更新术语条目。",
       "input": "UpdateGlossaryEntryRequest",
       "name": "更新术语条目",
       "output": "UpdateGlossaryEntryResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

@@ -282,6 +282,14 @@
         "title": "修改应用配置信息"
       }
     ],
+    "OpenApmPaidVersion": [
+      {
+        "document": "开通付费版本",
+        "input": "POST / HTTP/1.1\nHost: apm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenApmPaidVersion\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"wcl-9esoxoii8t2exer215won26rkzc8\"\n    }\n}",
+        "title": "开通付费版本"
+      }
+    ],
     "TerminateApmInstance": [
       {
         "document": "销毁 APM 业务系统",

@@ -826,6 +826,9 @@ SERVICE_VERSIONS = {
     "wimgs": [
         "2025-11-06"
     ],
+    "workbuddyenterprise": [
+        "2026-07-09"
+    ],
     "wsa": [
         "2025-05-08"
     ],

@@ -1,0 +1,4629 @@
+{
+  "actions": {
+    "BindExternalAgent": {
+      "document": "把外部 agent 绑定到某 managed agent",
+      "input": "BindExternalAgentRequest",
+      "name": "把外部 agent 绑定到某 managed agent",
+      "output": "BindExternalAgentResponse",
+      "status": "online"
+    },
+    "CreateAgent": {
+      "document": "创建一个新的 Managed Agent，同时自动生成 default 版本。配置采用 Manifest v2.0。",
+      "input": "CreateAgentRequest",
+      "name": "创建 Agent",
+      "output": "CreateAgentResponse",
+      "status": "online"
+    },
+    "CreateAgentSession": {
+      "document": "为指定 Agent 创建新的会话，返回会话 ID 和聊天凭证。",
+      "input": "CreateAgentSessionRequest",
+      "name": "创建 Agent 会话",
+      "output": "CreateAgentSessionResponse",
+      "status": "online"
+    },
+    "CreateAgentVersion": {
+      "document": "完全新建版本：外部准备完整 Manifest 后直接传入，不引用任何已有版本。",
+      "input": "CreateAgentVersionRequest",
+      "name": "创建 Agent 版本",
+      "output": "CreateAgentVersionResponse",
+      "status": "online"
+    },
+    "CreateAgentVersionFromSource": {
+      "document": "基于源版本创建新版本：Manifest / Model / Description 传入即整体覆盖，未传则沿用源版本。",
+      "input": "CreateAgentVersionFromSourceRequest",
+      "name": "基于源版本创建 Agent 版本",
+      "output": "CreateAgentVersionFromSourceResponse",
+      "status": "online"
+    },
+    "DeleteAgent": {
+      "document": "删除指定的 Agent 及其所有版本。删除后不可恢复。",
+      "input": "DeleteAgentRequest",
+      "name": "删除 Agent",
+      "output": "DeleteAgentResponse",
+      "status": "online"
+    },
+    "DescribeAgent": {
+      "document": "查询单个 Agent 的详细信息，包括基础配置和路由配置。",
+      "input": "DescribeAgentRequest",
+      "name": "查询 Agent 详情",
+      "output": "DescribeAgentResponse",
+      "status": "online"
+    },
+    "DescribeAgentList": {
+      "document": "查询当前企业的 Agent 列表，支持分页、过滤和排序。",
+      "input": "DescribeAgentListRequest",
+      "name": "查询 Agent 列表",
+      "output": "DescribeAgentListResponse",
+      "status": "online"
+    },
+    "DescribeAgentSession": {
+      "document": "查询单个 Agent 会话详情：返回会话基础信息（会话名称 / Agent / 版本 / 状态 / 来源 / 发起人）与可用的聊天接入点列表（EndpointSet）。数据面鉴权走 DescribeUserAccessToken 的用户级访问令牌。",
+      "input": "DescribeAgentSessionRequest",
+      "name": "查询 Agent 会话详情",
+      "output": "DescribeAgentSessionResponse",
+      "status": "online"
+    },
+    "DescribeAgentSessionList": {
+      "document": "分页查询企业下所有会话（跨 Agent）：支持按 SessionId / Status / AgentId / UserId 过滤，按创建 / 更新时间排序，返回会话摘要列表。",
+      "input": "DescribeAgentSessionListRequest",
+      "name": "查询 Agent 会话列表",
+      "output": "DescribeAgentSessionListResponse",
+      "status": "online"
+    },
+    "DescribeAgentVersion": {
+      "document": "查询单个版本的详细信息，包括 Manifest、Model、状态等。",
+      "input": "DescribeAgentVersionRequest",
+      "name": "查询 Agent 版本详情",
+      "output": "DescribeAgentVersionResponse",
+      "status": "online"
+    },
+    "DescribeAgentVersionList": {
+      "document": "查询指定 Agent 下的版本列表，支持分页和版本类型过滤。",
+      "input": "DescribeAgentVersionListRequest",
+      "name": "查询 Agent 版本列表",
+      "output": "DescribeAgentVersionListResponse",
+      "status": "online"
+    },
+    "DescribeBuiltinModelList": {
+      "document": "查询当前企业的内置模型列表，支持分页与过滤。内置模型由平台预置，企业可按需启用/停用。过滤字段支持：ModelId（模型ID，模糊）、Name（模型名称，模糊）、Vendor（供应商，模糊）、Status（状态，精确：enabled/disabled）。",
+      "input": "DescribeBuiltinModelListRequest",
+      "name": "查询内置模型列表",
+      "output": "DescribeBuiltinModelListResponse",
+      "status": "online"
+    },
+    "DescribeConnectorList": {
+      "document": "查询指定企业下的连接器列表（PageNumber/PageSize 分页，支持名称模糊与状态、来源过滤）。",
+      "input": "DescribeConnectorListRequest",
+      "name": "查询连接器列表",
+      "output": "DescribeConnectorListResponse",
+      "status": "online"
+    },
+    "DescribeExpertList": {
+      "document": "分页查询 Expert 列表，支持关键词、分类、发布状态过滤。",
+      "input": "DescribeExpertListRequest",
+      "name": "查询专家列表",
+      "output": "DescribeExpertListResponse",
+      "status": "online"
+    },
+    "DescribeExternalAgent": {
+      "document": "查询某 managed agent 绑定的单个外部 agent 详情",
+      "input": "DescribeExternalAgentRequest",
+      "name": "查询某 managed agent 绑定的单个外部 agent 详情",
+      "output": "DescribeExternalAgentResponse",
+      "status": "online"
+    },
+    "DescribeExternalAgentList": {
+      "document": "列某 managed agent 绑定的外部 agent 列表",
+      "input": "DescribeExternalAgentListRequest",
+      "name": "列某 managed agent 绑定的外部 agent 列表",
+      "output": "DescribeExternalAgentListResponse",
+      "status": "online"
+    },
+    "DescribeMessageEventList": {
+      "document": "按 Session 分页查询消息事件",
+      "input": "DescribeMessageEventListRequest",
+      "name": "查询消息事件列表",
+      "output": "DescribeMessageEventListResponse",
+      "status": "online"
+    },
+    "DescribeSkillList": {
+      "document": "分页查询 Skill 列表，支持关键词、分类、发布状态过滤。",
+      "input": "DescribeSkillListRequest",
+      "name": "查询技能列表",
+      "output": "DescribeSkillListResponse",
+      "status": "online"
+    },
+    "MigrateAgentSession": {
+      "document": "将指定会话迁移到目标版本。SessionID / RuntimeID 保持不变，通过 AgentOS UpdateSession 在原沙箱上更新 manifest 到新版本；AgentId 必须与原 Session 一致（禁止跨 Agent 迁移）；ChatToken 复用旧值不轮转。",
+      "input": "MigrateAgentSessionRequest",
+      "name": "迁移 Agent 会话",
+      "output": "MigrateAgentSessionResponse",
+      "status": "online"
+    },
+    "ModifyAgent": {
+      "document": "修改 Agent 基础信息（名称、描述、头像）。AgentName / Description / AvatarUrl 均为可选，仅传递需要更新的字段。",
+      "input": "ModifyAgentRequest",
+      "name": "修改 Agent",
+      "output": "ModifyAgentResponse",
+      "status": "online"
+    },
+    "ModifyAgentA2AConfig": {
+      "document": "修改 Agent 的 A2A 配置。A2AEnabled 是 Agent 级唯一开关，与具体版本和流量分发策略无关。",
+      "input": "ModifyAgentA2AConfigRequest",
+      "name": "修改 Agent A2A 配置",
+      "output": "ModifyAgentA2AConfigResponse",
+      "status": "online"
+    },
+    "ModifyAgentRouting": {
+      "document": "覆盖式写入 Agent 路由配置（版本权重）。所有 VersionId 必须属于同一 Agent 且未弃用；允许空数组（下线 Agent 对外流量）；非空时权重总和须等于 1。",
+      "input": "ModifyAgentRoutingRequest",
+      "name": "修改 Agent 路由",
+      "output": "ModifyAgentRoutingResponse",
+      "status": "online"
+    },
+    "ModifyAgentVersion": {
+      "document": "原地更新 default 或 test 版本的 Manifest / Model / Description / SandboxTemplateId / ConnectorSet（prod 版本冻结不可修改），五个可选字段至少提供一个。ConnectorSet 为全量覆盖语义：缺省表示不改动连接器绑定；空数组表示解绑全部连接器。",
+      "input": "ModifyAgentVersionRequest",
+      "name": "修改 Agent 版本",
+      "output": "ModifyAgentVersionResponse",
+      "status": "online"
+    },
+    "UnbindExternalAgent": {
+      "document": "解除外部 agent 与 managed agent 的绑定",
+      "input": "UnbindExternalAgentRequest",
+      "name": "解除外部 agent 与 managed agent 的绑定",
+      "output": "UnbindExternalAgentResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-07-09",
+    "api_brief": "WorkBuddy 企业版",
+    "serviceNameCN": "WorkBuddy Enterprise",
+    "serviceShortName": "workbuddyenterprise"
+  },
+  "objects": {
+    "A2AConfig": {
+      "document": "Agent 的 A2A 对外互通配置与注册态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 级唯一 A2A 开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "A2AEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对外 A2A handle（已注册时；仅 DescribeAgent / ModifyAgentA2AConfig 填充）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "agents/data-analyst",
+          "member": "string",
+          "name": "A2APublicRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对外 A2A card 发现地址（已注册时）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://a2a.example.com/agents/data-analyst",
+          "member": "string",
+          "name": "A2AEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注册状态：DRAFT / REGISTERED / DISABLED / NONE / UNKNOWN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "A2AStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "A2ASkillInput": {
+      "document": "A2A skill 录入项（注册外部 Agent 时传入）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>A2A skill ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "order_query",
+          "member": "string",
+          "name": "A2ASkillId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "订单查询",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>skill 描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "可以查询订单",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"订单\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>示例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"查一下上周订单\"]",
+          "member": "string",
+          "name": "Examples",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "A2ASkillItem": {
+      "document": "A2A skill 列表项（出参用，来自 A2A card 解析结果）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "A2A skill ID（加 A2A 前缀与内部 SkillId 概念区分）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skill-7f8g9h",
+          "member": "string",
+          "name": "A2ASkillId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "skill 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据分析",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "skill 描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "负责数据查询与分析技能",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentItem": {
+      "document": "Agent 列表项（原 AgentSummary；Agent 级纯字段，不再内嵌版本信息）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID（全局唯一，数字字符串形态）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述；未填写时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "负责每日运营数据的汇总与分析",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL；未设置时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，RFC3339 UTC 格式（如 2026-06-01T09:00:00Z）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-06-01T09:00:00Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，RFC3339 UTC 格式（如 2026-09-10T15:20:00Z）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-10T15:20:00Z",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 级 A2A 开关。false 恒输出（未开启不等于字段缺失）；A2AEndpoint / A2AStatus 由本接口在 A2A 开启时直接下发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "A2AEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "历史会话总数（t_managed_agent_sessions 未软删计数，含全部状态）。注意与 DescribeAgent.ActiveSessionCount（活跃会话数）口径不同\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42",
+          "member": "int64",
+          "name": "SessionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新版本的模型标识，取 latest_version_id 指向版本的 model；Agent 尚无版本时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hunyuan-turbos-latest",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新版本 ID（latest_version_id 转字符串，19 位雪花数字形态）；Agent 尚无版本时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2087791755109965825",
+          "member": "string",
+          "name": "LatestVersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最新版本名（可能为 default / test-N / prod-N 任意类型）；Agent 尚无版本时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prod-3",
+          "member": "string",
+          "name": "LatestVersionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对外 A2A card 发现地址（Agent Card JSON 地址），仅 A2AEnabled=true 的行下发；未注册 / registry 读失败时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://a2a.example.workbuddy.com/agents/736918300000000001/.well-known/agent-card.json",
+          "member": "string",
+          "name": "A2AEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "A2A 注册态：DRAFT / REGISTERED / DISABLED / NONE / UNKNOWN，仅 A2AEnabled=true 的行下发，与 DescribeAgent.A2AConfig.A2AStatus 同枚举；用于「开关已开但地址尚未生成」的空态文案\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "REGISTERED",
+          "member": "string",
+          "name": "A2AStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网链接访问开关。false 恒输出（未开启不等于字段缺失）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PublicApiEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网访问地址，仅 PublicApiEnabled=true 的行下发。固定拼法 https://{AgentId}-{region}.{endpoint_suffix}，与 DescribeAgentPublicAccess.Url 同规则；endpoint_suffix 未配置时为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://736918300000000001-tc-nanjing.example-workbuddy.com",
+          "member": "string",
+          "name": "PublicApiUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人 UIN（建号时落库的 sub_account_uin；主账号自建时为主账号 uin）。注意语义为「实际操作建号的账号」\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100012345678",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID（数字字符串形态，如 1438693592234206274）；空=未绑定（缺省）。与 DescribeAgent.AgentInfo.AccountId 同源同语义；创建时可选传入，之后不可变\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1438693592234206274",
+          "member": "string",
+          "name": "AccountId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentVersionItem": {
+      "document": "Agent 版本列表项（原 AgentVersionSummary / AgentVersionBrief 合并，字段取并集）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本 ID（雪花算法生成的数字字符串，唯一标识）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本名称，形如 default / test-N / prod-N（N 为同类型版本的自增序号）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本类型（服务端按 VersionName 派生）：DEFAULT（默认版本，可编辑）/ TEST（测试版本，可编辑）/ PROD（生产版本，内容冻结）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "VersionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本绑定的模型标识；未设置时缺省\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本运行时使用的沙箱模板业务 ID；空字符串表示使用默认沙箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tpl-fxuctus69mgw",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本状态：DRAFT（草稿）/ ENABLED（已启用）/ DISABLED（已停用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本累计承接的会话总数（历史累计值，只增不减）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "SessionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，RFC3339 UTC 格式（如 2026-08-01T10:00:00Z）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，RFC3339 UTC 格式（如 2026-08-10T15:30:00Z）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "BindExternalAgentRequest": {
+      "document": "BindExternalAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TMA managed agent 业务 ID（CloudAgentID）",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已注册的外部 A2A agent ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "A2AAgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindExternalAgentResponse": {
+      "document": "BindExternalAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果状态（大写枚举）：BOUND=已绑定 / UNBOUND=已解绑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定记录 ID（自增 ID 字符串）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bind-k4l5m6",
+          "member": "string",
+          "name": "BindingId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BuiltinModel": {
+      "document": "内置模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型唯一标识",
+          "example": "hunyuan-turbos-latest",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "混元 Turbos",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "供应商，如 TENCENT、OPENAI、ANTHROPIC、DEEPSEEK 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TENCENT",
+          "member": "string",
+          "name": "Vendor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大输出 Token 数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "32768",
+          "member": "int64",
+          "name": "MaxOutputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大输入 Token 数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "262144",
+          "member": "int64",
+          "name": "MaxInputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持函数调用（Tool Call）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportsToolCall",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持视觉（图片输入）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SupportsImages",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型中文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "混元 Turbo 版模型，速度快、成本低",
+          "member": "string",
+          "name": "DescriptionZh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型英文描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Hunyuan Turbo model with fast speed and low cost",
+          "member": "string",
+          "name": "DescriptionEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"chat\", \"tool_call\"]",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持的客户端列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"web\", \"desktop\"]",
+          "member": "string",
+          "name": "Clients",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务接入地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://hunyuan.tencentcloudapi.woa.com",
+          "member": "string",
+          "name": "ServiceEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态：ENABLED（已启用）/ DISABLED（已停用）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本企业内绑定该模型的 Agent 数（过滤软删除 Agent/版本与调试 Agent）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128",
+          "member": "int64",
+          "name": "AgentCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ChatEndpoint": {
+      "document": "聊天接入点。EndpointType 现在就引入枚举：当前仅返回一个 PUBLIC 元素，将来新增私网端点与 VPC 属性为纯增量。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入点类型：PUBLIC（公网）/ PRIVATE（私网，预留）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WEB",
+          "member": "string",
+          "name": "EndpointType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.com/chat/agent-001",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ConnectorInfo": {
+      "document": "连接器详情（主表 + 最新版本展开）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "连接器 ID",
+          "example": "conn_a3b91f0e2d7c4f88",
+          "member": "string",
+          "name": "ConnectorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器短标识（终身不变，跨版本稳定）",
+          "example": "notion-k3x9m2",
+          "member": "string",
+          "name": "ConnectorSlug",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本级连接器密钥",
+          "example": "notion-k3x9m2-v2",
+          "member": "string",
+          "name": "ConnectorKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器名称",
+          "example": "notion",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器描述",
+          "example": "企业 Notion 接入",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://example.com/icon.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器来源：ENTERPRISE_AGENT / ASSISTANT",
+          "example": "ENTERPRISE_AGENT",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "归属企业 ID",
+          "example": "ent-xxxx",
+          "member": "string",
+          "name": "EnterpriseId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器类型：MCP_SERVER / A2A / API_SERVICE",
+          "example": "MCP_SERVER",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上游服务地址",
+          "example": "https://mcp.notion.internal/v1",
+          "member": "string",
+          "name": "ServiceUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权方式列表：NONE / ONEID / OAUTH2_IDP",
+          "example": "[\"ONEID\"]",
+          "member": "string",
+          "name": "AuthModes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新版本号",
+          "example": "2",
+          "member": "int64",
+          "name": "LatestVersionNo",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器状态：ACTIVE / DISABLED",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人 ID",
+          "example": "100012345",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（ISO8601，UTC）",
+          "example": "2026-08-26T09:10:03Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后修改时间（ISO8601，UTC）",
+          "example": "2026-08-26T11:20:44Z",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConnectorRefInput": {
+      "document": "连接器引用入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "connector 主表 ID（雪花 ID 数字串）",
+          "example": "conn-p1q2r3",
+          "member": "string",
+          "name": "ConnectorId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateAgentRequest": {
+      "document": "CreateAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "hunyuan-turbos-latest",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Manifest v2.0 原文（JSON 字符串），作为 default 版本初始内容。ConnectorSet 非空时 Manifest 不可为空，否则返回 InvalidParameter",
+          "example": "{\"version\": \"1.0\", \"entry\": \"main\"}",
+          "member": "string",
+          "name": "Manifest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该 Agent 最终绑定的连接器集合（全量覆盖语义）：缺省 = 不绑定连接器；非空 = 物化为 manifest v2 mcp_servers 网关条目。ConnectorSet 非空时 Manifest 不可为空，否则返回 InvalidParameter",
+          "example": "无",
+          "member": "ConnectorRefInput",
+          "name": "ConnectorSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID。非空时必须是当前主账号已在企业授权表（t_managed_agent_enterprise_authorization）中授权的租户，否则返回 UnauthorizedOperation.AccountNotAuthorized。绑定后不可修改。TrimSpace 后长度 1~64 字符",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentResponse": {
+      "document": "CreateAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否调试 Agent",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDebug",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量路由配置（VersionId 恒为字符串，防 JS 精度丢失）",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "A2A 对外互通配置与注册态（只读回显；原四个平铺字段收进结构）",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID。允许为空：未绑定的存量与新建 Agent 该字段缺省，绑定后回显绑定值",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentSessionRequest": {
+      "document": "CreateAgentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定版本 ID（可选）。非空且合法时固定使用该版本，跳过 routing_config 权重挑选；指定版本需归属同一 Agent 且未被废弃</p>",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentSessionResponse": {
+      "document": "CreateAgentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>",
+          "example": "2101973232405491712",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用的聊天接入点列表（当前仅含一个 PUBLIC 公网接入点；空数组 = 无可用接入点）</p>",
+          "example": "无",
+          "member": "ChatEndpoint",
+          "name": "EndpointSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionFromSourceRequest": {
+      "document": "CreateAgentVersionFromSource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>源版本 ID，同 Agent 下未 DISABLED 的任意版本</p>",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "SourceVersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选，覆盖源版本的 Model</p>",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选，覆盖源版本的 Description</p>",
+          "example": "测试版本",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选，完整 v2.0 manifest JSON 字符串；传入则整体覆盖源版本 manifest</p>",
+          "example": "{\"id\":\"01M30YW815BNECBMPQ5Z3Z7V9Q\",\"metadata\":{\"agentName\":\"py-e2e-1789960003182\",\"model\":\"deepseek-v4-pro\"},\"system_prompt\":\"你是一个测试助手，请用一个词回答问题。\",\"version\":\"2.0\"}",
+          "member": "string",
+          "name": "Manifest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱模板 ID。可选，patch 语义：null 沿用源版本绑定的模板；空串解绑（恢复系统默认模板）；非空时模板须属于当前企业且可用（未删除、状态正常）。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionFromSourceResponse": {
+      "document": "CreateAgentVersionFromSource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本 ID</p>",
+          "example": "2101976040663908352",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名称</p>",
+          "example": "test-3",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本类型：DEFAULT / TEST / PROD</p>",
+          "example": "TEST",
+          "member": "string",
+          "name": "VersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明</p>",
+          "example": "init from source default",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识</p>",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Manifest v2.0 精简 manifest 原文（JSON 字符串）</p>",
+          "example": "{\"id\":\"01M30YW815BNECBMPQ5Z3Z7V9Q\",\"metadata\":{\"agentName\":\"py-e2e-1789960003182\",\"model\":\"deepseek-v4-pro\"},\"system_prompt\":\"你是一个测试助手，请用一个词回答问题。\",\"version\":\"2.0\"}",
+          "member": "string",
+          "name": "Manifest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本状态：DRAFT / ENABLED / DISABLED</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的沙箱模板 ID；未绑定时为空，创建会话沙箱使用系统默认模板。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionRequest": {
+      "document": "CreateAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Manifest v2.0 精简 manifest 原文（JSON 对象序列化后的字符串）</p>",
+          "example": "{\"id\":\"01M30YW815BNECBMPQ5Z3Z7V9Q\",\"metadata\":{\"agentName\":\"py-e2e-1789960003182\",\"model\":\"deepseek-v4-pro\"},\"system_prompt\":\"你是一个测试助手，请用一个词回答问题。\",\"version\":\"2.0\"}",
+          "member": "string",
+          "name": "Manifest",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识</p>",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明</p>",
+          "example": "测试版本",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱模板 ID。可选；传入时模板须属于当前企业且可用（未删除、状态正常），绑定到新建的 test/prod 版本。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAgentVersionResponse": {
+      "document": "CreateAgentVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本 ID</p>",
+          "example": "2101975266957500416",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名称</p>",
+          "example": "test-2",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本类型：DEFAULT / TEST / PROD</p>",
+          "example": "TEST",
+          "member": "string",
+          "name": "VersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明</p>",
+          "example": "测试版本",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识</p>",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Manifest v2.0 精简 manifest 原文（JSON 字符串）</p>",
+          "example": "{\"id\":\"01M30YW815BNECBMPQ5Z3Z7V9Q\",\"metadata\":{\"agentName\":\"py-e2e-1789960003182\",\"model\":\"deepseek-v4-pro\"},\"system_prompt\":\"你是一个测试助手，请用一个词回答问题。\",\"version\":\"2.0\"}",
+          "member": "string",
+          "name": "Manifest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本状态：DRAFT / ENABLED / DISABLED</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2006-01-02T15:04:05Z07:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的沙箱模板 ID；未绑定时为空，创建会话沙箱使用系统默认模板。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentRequest": {
+      "document": "DeleteAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2ZBZVRN7BRHN6ZF2N1H4E6B",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAgentResponse": {
+      "document": "DeleteAgent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentListRequest": {
+      "document": "DescribeAgentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，缺省为 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向：ASC / DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "SortDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentListResponse": {
+      "document": "DescribeAgentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的 Agent 总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 列表（分页后）；元素含 A2A / 公网 API 访问开关与地址、创建人 UIN、绑定的企业账号 ID",
+          "example": "无",
+          "member": "AgentItem",
+          "name": "AgentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentRequest": {
+      "document": "DescribeAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M07AMA4*********JT4BAPDK",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentResponse": {
+      "document": "DescribeAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "01M07AMA4*********JT4BAPDK",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "某某智能助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述",
+          "example": "某某智能助手，用来协助完成日常工作",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://xxxx.com/xxxx.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否调试 Agent",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDebug",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（RFC3339）",
+          "example": "2026-08-17T15:40:27.681+08:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）",
+          "example": "2026-08-17T15:40:27.681+08:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前活跃 session 数（ACTIVE/CREATING/MIGRATING，未软删）；仅 DescribeAgent 读路径填充，写路径回显不下发",
+          "example": "0",
+          "member": "int64",
+          "name": "ActiveSessionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量路由配置（VersionId 恒为字符串，防 JS 精度丢失）",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "A2A 对外互通配置与注册态（只读回显；原四个平铺字段收进结构）",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID。允许为空：未绑定的存量与新建 Agent 该字段缺省，绑定后回显绑定值",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSessionListRequest": {
+      "document": "DescribeAgentSessionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，缺省为 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向：ASC / DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "SortDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSessionListResponse": {
+      "document": "DescribeAgentSessionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话列表",
+          "example": "无",
+          "member": "SessionItem",
+          "name": "SessionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSessionRequest": {
+      "document": "DescribeAgentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "sess_a1b2c3d4",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentSessionResponse": {
+      "document": "DescribeAgentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID",
+          "example": "sess_a1b2c3d4",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话名称（AgentOS 侧生成的 AI 标题 / 用户改名）；缺失时为空，调用方可兜底展示 SessionId 后缀",
+          "example": "每日日报",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话使用的版本名称（与 VersionId 区分：此为版本名，非 ID）",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态：DRAFT / ENABLED / DISABLED",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者 Uin",
+          "example": "100012345678",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器来源：ENTERPRISE_AGENT / ASSISTANT",
+          "example": "authorized",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用的聊天接入点列表（详情独有）",
+          "example": "无",
+          "member": "ChatEndpoint",
+          "name": "EndpointSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionListRequest": {
+      "document": "DescribeAgentVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，缺省为 20，最大 100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionListResponse": {
+      "document": "DescribeAgentVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本列表（原 VersionSet；集合名带实体前缀以区分 Skill 版本接口的同名字段）</p>",
+          "example": "无",
+          "member": "AgentVersionItem",
+          "name": "AgentVersionSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionRequest": {
+      "document": "DescribeAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本 ID</p>",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentVersionResponse": {
+      "document": "DescribeAgentVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>版本 ID</p>",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本类型：DEFAULT / TEST / PROD</p>",
+          "example": "DEFAULT",
+          "member": "string",
+          "name": "VersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本变更说明</p>",
+          "example": "新版本",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型标识</p>",
+          "example": "glm-5.2",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Manifest v2.0 精简 manifest 原文（JSON 字符串）</p>",
+          "example": "{\"id\":\"01M30YW815BNECBMPQ5Z3Z7V9Q\",\"metadata\":{\"agentName\":\"py-e2e-1789960003182\",\"model\":\"deepseek-v4-pro\"},\"system_prompt\":\"你是一个测试助手，请用一个词回答问题。\",\"version\":\"2.0\"}",
+          "member": "string",
+          "name": "Manifest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本状态：DRAFT / ENABLED / DISABLED</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-09-21T01:50:55Z",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-09-21T01:51:25Z",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的沙箱模板 ID；未绑定时为空，创建会话沙箱使用系统默认模板。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本累计承接的会话总数（历史累计值，只增不减）</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "SessionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBuiltinModelListRequest": {
+      "document": "DescribeBuiltinModelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，缺省为 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "OneID 企业账号 ID，可选。传入时拉取该账号对应企业的模型（要求当前主账号 UIN 已授权该账号），不传时使用服务配置的企业 ID",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBuiltinModelListResponse": {
+      "document": "DescribeBuiltinModelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内置模型列表（分页后）",
+          "example": "无",
+          "member": "BuiltinModel",
+          "name": "BuiltinModelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectorListRequest": {
+      "document": "DescribeConnectorList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件数组，多个 Filter 之间为 AND 关系。支持 Name：Name（名称模糊匹配）/ Status（ACTIVE / DISABLED）/ Source（ENTERPRISE_AGENT / ASSISTANT）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃：服务端不再读取，请使用 Offset/Limit。字段保留仅为过渡兼容，后续下线",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃：服务端不再读取，请使用 Offset/Limit。字段保留仅为过渡兼容，后续下线",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，0 基准，缺省 0（标准 CAPI 分页参数）",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，取值 1-100，缺省 20（标准 CAPI 分页参数）",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConnectorListResponse": {
+      "document": "DescribeConnectorList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的连接器总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连接器列表（分页后）；连接器挂调用方主账号 UIN 下，不挂 OneID 企业",
+          "example": "无",
+          "member": "ConnectorInfo",
+          "name": "ConnectorSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertListRequest": {
+      "document": "DescribeExpertList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>专家来源，必填：BUILTIN（内置）/ CUSTOM（自建）</p>",
+          "example": "BUILTIN",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标准过滤条件：ExpertId（精确，多值 OR，携带即按 ID 批量查询，忽略分页）/ Keyword（模糊）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始，默认 0（按 ID 批量查询时忽略）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 200（按 ID 批量查询时忽略）</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExpertListResponse": {
+      "document": "DescribeExpertList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的专家总数（按 ID 批量时为实际命中数）</p>",
+          "example": "323",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专家列表</p>",
+          "example": "无",
+          "member": "ExpertItem",
+          "name": "ExpertSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全局计数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExpertCounts",
+          "name": "Counts",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalAgentListRequest": {
+      "document": "DescribeExternalAgentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID（必填：绑定状态的归属主体）",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标准过滤条件，支持的 Name：Bound（BOUND=仅已绑定 / UNBOUND=仅未绑定 / ALL=全部，缺省 ALL）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，从 0 开始，默认 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 20，最大 200",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "外部 Agent 列表查询关键字",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "DescribeExternalAgentList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalAgentListResponse": {
+      "document": "DescribeExternalAgentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的外部 Agent 总数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外部 Agent 集合（可见卡片全集 ∪ URL 直连型存量 binding 的合并视图）",
+          "example": "无",
+          "member": "ExternalAgentInfo",
+          "name": "ExternalAgentSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalAgentRequest": {
+      "document": "DescribeExternalAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TMA managed agent 业务 ID（CloudAgentID）</p>",
+          "example": "01M2ZBZVRN7BRHN6ZF2N1H4E6B",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已绑定的外部 A2A agent ID</p>",
+          "example": "pub_c644b27d2e457ea57f808021077271a8",
+          "member": "string",
+          "name": "A2AAgentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalAgentResponse": {
+      "document": "DescribeExternalAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>外部 A2A agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pub_c644b27d2e457ea57f808021077271a8",
+          "member": "string",
+          "name": "A2AAgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部 Agent 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdx-indicator-screener",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "技术面、基本面、资金面多维度NLP智能选股工具，支持自然语言条件输入，独立使用频率最高的核心技能",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部 A2A Server URL</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://staging.workbuddy.cn/a2a/agents/pub_c644b27d2e457ea57f808021077271a8",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定记录 ID（已绑定时返回）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "395",
+          "member": "string",
+          "name": "BindingId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已绑定到当前 Agent</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头像地址（取自 provider card 的 iconUrl；为空时前端回落首字母头像）</p>",
+          "example": "https://example.com",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部 agent card 声明的版本号</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "A2AVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A card skills 集合</p>",
+          "example": "无",
+          "member": "A2ASkillItem",
+          "name": "A2ASkillSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageEventListRequest": {
+      "document": "DescribeMessageEventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Session ID</p>",
+          "example": "2101867800935825408",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent ID</p>",
+          "example": "01M2SAF5W26NZRCPPT3P75YK0Y",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认 100，最大 100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMessageEventListResponse": {
+      "document": "DescribeMessageEventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息事件列表</p>",
+          "example": "无",
+          "member": "MessageEvent",
+          "name": "MessageEventSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合过滤条件的事件总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillListRequest": {
+      "document": "DescribeSkillList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "技能来源，必填：BUILTIN（内置）/ CUSTOM（自建）/ AUTHORIZED（企业授权）。数据通路判别，非筛选条件",
+          "example": "authorized",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标准过滤条件：SkillId（精确，多值 OR ≤100，携带即按 ID 批量查询）/ Keyword（模糊）/ PublishStatus（DRAFT/PUBLISHED/ALL）/ Status（ENABLED/DISABLED/ALL）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认 0（按 ID 批量查询时忽略）",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认 20，最大 200（按 ID 批量查询时忽略）",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "授权方企业账号标识；仅 Source=AUTHORIZED 时生效。不传则由后端用 Uin 推导全部已授权范围；未携带 SkillId 的分页查询必传",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅 Source=AUTHORIZED 时生效。Agent 绑定了 OneID 租户时，授权集合强制收窄到绑定租户；显式传入的 AccountId 必须等于绑定值，否则请求被拒绝。绑定 Agent 的分页查询可不传 AccountId（服务端按绑定值收窄到单一授权方）",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSkillListResponse": {
+      "document": "DescribeSkillList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的技能总数（按 ID 批量时为实际命中数）",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "技能列表（仅列表展示所需字段，完整信息走 DescribeSkill）",
+          "example": "无",
+          "member": "SkillItem",
+          "name": "SkillSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全局计数（不受 keyword 影响）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SkillCounts",
+          "name": "Counts",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExpertCounts": {
+      "document": "全局专家计数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内置专家数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "323",
+          "member": "int64",
+          "name": "Builtin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自建专家数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Custom",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "323",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExpertItem": {
+      "document": "专家列表/详情项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>专家来源：builtin、custom</p>",
+          "example": "BUILTIN",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示名</p>",
+          "example": "伯乐乐",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "精通人才招聘全流程，为团队找到最佳人才",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图标 URL</p>",
+          "example": "https://staging-download.codebuddy.cn/public/experts/avatars/ZhihuStrategist.png",
+          "member": "string",
+          "name": "Icon",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载 URL</p>",
+          "example": "https://staging-download.codebuddy.cn/operation-platform/experts/plugins/content-platform-experts/1.0.0.zip?sign=1789570921-aa39d00c6366b112-0-7042175b3155a3b0d1a4621502c968af&expert_id=ex_T7onGXvlG7E7",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-07-20T12:11:47Z",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启停状态：enabled、disabled</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>专家标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ex_McsoRGB85Aax",
+          "member": "string",
+          "name": "ExpertId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前生效版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.1",
+          "member": "string",
+          "name": "ExpertVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ExternalAgentInfo": {
+      "document": "外部 Agent 列表/详情项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "外部 A2A agent ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a2a-q7r8s9t0",
+          "member": "string",
+          "name": "A2AAgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 Agent 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "外部助手",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "一个用于外部协作的智能助手",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 A2A Server URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.com/a2a/agent",
+          "member": "string",
+          "name": "Endpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定记录 ID（已绑定时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "string",
+          "name": "BindingId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已绑定到当前 Agent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "头像地址（取自 provider card 的 iconUrl）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.xx/",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外部 agent card 声明的版本号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "A2AVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "A2A card skills 集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "A2ASkillItem",
+          "name": "A2ASkillSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "云 API 通用过滤结构。多个 Filter 之间为 AND 关系；同一 Filter 内多个 Values 为 OR 关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤属性名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TaskName",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤值列表（同一 Filter 内多个值为 OR 关系）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"每日日报\", \"每周周报\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否精确匹配，默认 false（模糊匹配）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MessageEvent": {
+      "document": "消息事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>序号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "29",
+          "member": "int64",
+          "name": "Sequence",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型 USER/TOOL/ASSISTANT</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TOOL",
+          "member": "string",
+          "name": "EventType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发生时间 ISO8601</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-22T03:31:06Z",
+          "member": "string",
+          "name": "OccurredAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MessageEventMessage",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具调用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MessageEventToolCall",
+          "name": "ToolCall",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MessageEventMessage": {
+      "document": "消息内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "随便使用个工具，查一下当前目录有多少文件",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token用量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TokenUsage",
+          "name": "TokenUsage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MessageEventToolCall": {
+      "document": "工具调用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "call_f4b4a3c718354152a953c5de",
+          "member": "string",
+          "name": "ToolCallId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Bash",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态 PENDING/IN_PROGRESS/SUCCEEDED/FAILED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCEEDED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具调用Input（已递归脱敏，JSON 字符串）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"command\":\"ls -1 /workspace/2102239219915046912 | wc -l\",\"description\":\"统计当前目录文件数量\"}",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具调用Output（已递归脱敏，JSON 字符串）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"text\":\"Command: ls -1 /workspace/2102239219915046912 | wc -l\\nStdout: 0\\n\\nStderr: (empty)\\nExit Code: 0\\nSignal: (none)\",\"type\":\"text\"}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-22T03:31:10Z",
+          "member": "string",
+          "name": "EndedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>耗时毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用开始时间（RFC3339 格式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-22T03:31:10Z",
+          "member": "string",
+          "name": "StartedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MigrateAgentSessionRequest": {
+      "document": "MigrateAgentSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待迁移的会话 ID（必填）</p>",
+          "example": "2101973232405491712",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标 Agent 业务 ID（必填），必须与 Session 原 Agent 相同</p>",
+          "example": "01M2YYX05YE46QG88E1SEPMZ9J",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标版本 ID（必填，字符串形式）。需归属同一 Agent 且未被废弃</p>",
+          "example": "2101589342229893121",
+          "member": "string",
+          "name": "TargetVersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MigrateAgentSessionResponse": {
+      "document": "MigrateAgentSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话 ID（回显原值，保持不变）</p>",
+          "example": "2101973232405491712",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>迁移后的会话状态</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentA2AConfigRequest": {
+      "document": "ModifyAgentA2AConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 级唯一 A2A 开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "A2AEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A 技能集合（原 A2ASkills）</p>",
+          "example": "无",
+          "member": "A2ASkillInput",
+          "name": "A2ASkillSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentA2AConfigResponse": {
+      "document": "ModifyAgentA2AConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Agent 业务 ID</p>",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 名称</p>",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 描述</p>",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>头像 URL</p>",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否调试 Agent</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDebug",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（RFC3339）</p>",
+          "example": "2026-06-01 09:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（RFC3339）</p>",
+          "example": "2026-09-10 15:20:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量路由配置（VersionId 恒为字符串，防 JS 精度丢失）</p>",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A 对外互通配置与注册态（只读回显；原四个平铺字段收进结构）</p>",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentRequest": {
+      "document": "ModifyAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称（可选，仅传递需要更新的字段）",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述（可选）",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL（可选）",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentResponse": {
+      "document": "ModifyAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否调试 Agent",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDebug",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量路由配置（VersionId 恒为字符串，防 JS 精度丢失）",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "A2A 对外互通配置与注册态（只读回显；原四个平铺字段收进结构）",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID。允许为空：未绑定的存量与新建 Agent 该字段缺省，绑定后回显绑定值",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentRoutingRequest": {
+      "document": "ModifyAgentRouting请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "路由配置，覆盖式写入（与出参 AgentInfo.RoutingSet 命名对齐）",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentRoutingResponse": {
+      "document": "ModifyAgentRouting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 描述",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "头像 URL",
+          "example": "https://example.com/avatar/agent-001.png",
+          "member": "string",
+          "name": "AvatarUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否调试 Agent",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDebug",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量路由配置（VersionId 恒为字符串，防 JS 精度丢失）",
+          "example": "无",
+          "member": "RoutingItem",
+          "name": "RoutingSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "A2A 对外互通配置与注册态（只读回显；原四个平铺字段收进结构）",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的 OneID 企业账号 ID。允许为空：未绑定的存量与新建 Agent 该字段缺省，绑定后回显绑定值",
+          "example": "ent-9f8e7d6c",
+          "member": "string",
+          "name": "AccountId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentVersionRequest": {
+      "document": "ModifyAgentVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID（仅 default 或 test 版本可原地更新，prod 拒绝）",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Manifest v2.0 原文（可选；Manifest / Model / Description / SandboxTemplateId / ConnectorSet 五个可选字段至少提供一个）",
+          "example": "{\"version\": \"1.0\", \"entry\": \"main\"}",
+          "member": "string",
+          "name": "Manifest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型标识（可选）",
+          "example": "hunyuan-turbos-latest",
+          "member": "string",
+          "name": "Model",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本变更说明（可选）",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "沙箱模板 ID。可选，patch 语义：null 不修改；空串解绑（恢复系统默认模板）；非空时模板须属于当前企业且可用（未删除、状态正常）。",
+          "example": "tpl-m1n2o3",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该版本最终绑定的连接器集合（全量覆盖语义）：缺省 = 本次不改动连接器绑定；空数组 = 解绑全部连接器；非空 = 物化为 manifest v2 mcp_servers 网关条目，manifest 中不在本集合内的连接器条目会被移除（解绑在服务端闭环，无需调用方改写 Manifest）",
+          "example": "无",
+          "member": "ConnectorRefInput",
+          "name": "ConnectorSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAgentVersionResponse": {
+      "document": "ModifyAgentVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本 ID",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本名称",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本类型：DEFAULT / TEST / PROD",
+          "example": "RELEASE",
+          "member": "string",
+          "name": "VersionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本变更说明",
+          "example": "示例描述：负责每日数据汇总",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型标识",
+          "example": "hunyuan-turbos-latest",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Manifest v2.0 精简 manifest 原文（JSON 字符串）",
+          "example": "{\"version\": \"1.0\", \"entry\": \"main\"}",
+          "member": "string",
+          "name": "Manifest",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态：DRAFT / ENABLED / DISABLED",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的沙箱模板 ID；未绑定时为空，创建会话沙箱使用系统默认模板。",
+          "example": "tpl-m1n2o3",
+          "member": "string",
+          "name": "SandboxTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RoutingItem": {
+      "document": "路由项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权重，(0, 1] 之间的浮点百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Weight",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SessionItem": {
+      "document": "会话列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sess_a1b2c3d4",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话名称（AI 生成标题或用户改名；缺失时为空）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "每日日报",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 业务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Agent 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据分析助手",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话使用的版本名称（与 VersionId 区分：此为版本名，非 ID；原 AgentVersion）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话使用的 Agent 版本 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COMPLETED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者 Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100012345678",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WEB",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间（RFC3339）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-18 10:00:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间（RFC3339）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-18 10:30:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SkillCounts": {
+      "document": "全局技能计数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内置技能数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "Builtin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自建技能数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "Custom",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "13",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SkillItem": {
+      "document": "Skill 列表项（按列表页展示裁剪：名称/版本/描述/状态/操作五列 + 编排所需的 Source 与 DownloadUrl）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "技能来源：BUILTIN（内置）/ CUSTOM（自建）/ AUTHORIZED（企业授权）",
+          "example": "authorized",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>slug（仅 custom 返回）</p>",
+          "example": "tst",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示名</p>",
+          "example": "t",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "t",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图标 URL</p>",
+          "example": "t",
+          "member": "string",
+          "name": "Icon",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下载 URL</p>",
+          "example": "d",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能标识</p>",
+          "example": "skill-7f8g9h",
+          "member": "string",
+          "name": "SkillId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前生效版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v1.2.0",
+          "member": "string",
+          "name": "SkillVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，RFC3339 UTC 格式（如 2026-08-11T09:23:10Z）",
+          "example": "2026-08-11T09:23:10Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，RFC3339 UTC 格式（如 2026-09-15T06:51:26Z）",
+          "example": "2026-09-15T06:51:26Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TokenUsage": {
+      "document": "Token用量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19143",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "42",
+          "member": "int64",
+          "name": "OutputTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "19185",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计口径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TURN",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UnbindExternalAgentRequest": {
+      "document": "UnbindExternalAgent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TMA managed agent 业务 ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已绑定的外部 A2A agent ID",
+          "example": "736918300000000001",
+          "member": "string",
+          "name": "A2AAgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定记录 ID（自增 ID 字符串）",
+          "example": "bind-k4l5m6",
+          "member": "string",
+          "name": "BindingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID",
+          "example": "v12",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindExternalAgentResponse": {
+      "document": "UnbindExternalAgent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果状态（大写枚举）：BOUND=已绑定 / UNBOUND=已解绑\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

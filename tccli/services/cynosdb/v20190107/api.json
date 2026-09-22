@@ -11049,6 +11049,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的真实可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "RealZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备可用区列表</p>",
+          "example": "[\"ap-guangzhou-5\"]",
+          "member": "string",
+          "name": "SlaveZones",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储版本</p><p>枚举值：</p><ul><li>1.0： 1.0版本存储</li><li>2.0： 2.0版本存储</li></ul>",
+          "example": "1.0",
+          "member": "string",
+          "name": "StorageVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

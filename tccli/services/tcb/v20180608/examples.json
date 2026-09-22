@@ -744,6 +744,14 @@
         "title": "查询所有表信息"
       }
     ],
+    "DescribeTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskResult\n<公共请求参数>\n\n{\n    \"EnvId\": \"pg-***********zgavrt1f14772b\",\n    \"TaskId\": \"task-e6ee5110\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreatedAt\": \"2026-05-26T11:26:13+08:00\",\n        \"Phase\": \"RunMigrations\",\n        \"Reason\": \"\",\n        \"Status\": \"Succeed\",\n        \"TaskId\": \"task-e6ee5110\",\n        \"TaskType\": \"PGUserMigration\",\n        \"UpdatedAt\": \"2026-05-26T11:26:14+08:00\",\n        \"RequestId\": \"2763d06c-6ee4-4290-b261-479e3ffc670b\"\n    }\n}",
+        "title": "DescribeTaskResult"
+      }
+    ],
     "DescribeUserList": [
       {
         "document": "",
@@ -1062,6 +1070,14 @@
         "title": "RepairPGUserMigrationHistory"
       }
     ],
+    "ResetPGAccountPassword": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetPGAccountPassword\n<公共请求参数>\n\n{\n    \"EnvId\": \"************-migrate-d6a7e6f7aa8\",\n    \"Password\": \"*********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08519f89-b618-42ff-861e-be4a9493c413\"\n    }\n}",
+        "title": "ResetPGAccountPassword"
+      }
+    ],
     "RunCommands": [
       {
         "document": "",
@@ -1166,6 +1182,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"TableName\": \"demo_items\",\n    \"CreateIndexes\": [\n        {\n            \"IndexName\": \"xishu2\",\n            \"MgoKeySchema\": {\n                \"MgoIndexKeys\": [\n                    {\n                        \"Name\": \"age\",\n                        \"Direction\": \"1\"\n                    }\n                ],\n                \"MgoIsUnique\": false\n            }\n        }\n    ],\n    \"EnvId\": \"mike-qiye-mongo2-d4eiui5538d249d\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f5a74bae-6743-4079-8114-137582a94c18\"\n    }\n}",
         "title": "给集合 demo_items 增加索引"
+      }
+    ],
+    "UpgradePGInstanceToDedicated": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradePGInstanceToDedicated\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****r-****8g1j2dbc0df14561\",\n    \"SwitchTag\": 1,\n    \"SwitchStartTime\": \"15:04:05\",\n    \"SwitchEndTime\": \"15:04:05\",\n    \"SpecCode\": \"pg.it.small2\",\n    \"Storage\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-sdffs\",\n        \"RequestId\": \"d6243aeb-67b2-483b-893b-d264361f6afd\"\n    }\n}",
+        "title": "UpgradePGInstanceToDedicated"
       }
     ],
     "VerifyHTTPServiceRoute": [

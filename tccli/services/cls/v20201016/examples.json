@@ -368,7 +368,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResourceGraph\n<公共请求参数>\n\n{\n    \"Name\": \"生产环境-test-2\",\n    \"Description\": \"生产环境资源空间\",\n    \"Tags\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"业务A\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8cd9d427-f94c-4d6b-81d9-121952d4c0a8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGraphId\": \"8c0433ae-a1bb-479a-a0fb-592560e3d22a\",\n        \"RequestId\": \"8cd9d427-f94c-4d6b-81d9-121952d4c0a8\"\n    }\n}",
         "title": "创建资源图谱"
       }
     ],
@@ -1227,43 +1227,25 @@
     "DescribeResourceGraphEntities": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntities\n<公共请求参数>\n\n{\n    \"ResourceGraphId\": \"test-yunapi-full\",\n    \"NextCursor\": \"db2a083497*******b***********40f\",\n    \"Limit\": 3,\n    \"FromTime\": 1782230000,\n    \"ToTime\": 1782231000\n}",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"002b693f4f8cd075e2c6a750e6e58e2c\",\n        \"RequestId\": \"93445bae-45f7-4d5c-bdc4-1a7f5d8a753f\"\n    }\n}",
-        "title": "分页查询资源列表"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntities\n<公共请求参数>\n\n{\n    \"ResourceGraphId\": \"badc7d81-70a6-4979-aa54-59ae51a4870a\",\n    \"Filters\": [\n        {\n            \"Key\": \"Product\",\n            \"Values\": [\n                \"tke\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"\",\n        \"RequestId\": \"32666ac9-87d7-49ab-aa01-98c569817625\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EntityInfos\": [\n            {\n                \"Attributes\": [\n                    {\n                        \"Key\": \"cluster_id\",\n                        \"Value\": \"cls-3js81lg0\"\n                    }\n                ],\n                \"Domain\": \"k8s\",\n                \"EntityClassName\": \"k8s.node\",\n                \"EntityId\": \"0db13f1dc7b4e58d90cb1e00d506516e\",\n                \"EntityName\": \"172.16.0.37\",\n                \"Product\": \"\",\n                \"RelatedLogTopics\": [],\n                \"Tags\": []\n            }\n        ],\n        \"HasMore\": 0,\n        \"NextCursor\": \"\",\n        \"RequestId\": \"32666ac9-87d7-49ab-aa01-98c569817625\"\n    }\n}",
         "title": "带过滤条件查询"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntities\n<公共请求参数>\n\n{\n    \"ResourceGraphId\": \"test-yunapi-full\",\n    \"Limit\": 3,\n    \"FromTime\": 1782230000,\n    \"ToTime\": 1782231000\n}",
-        "output": "{\n    \"Response\": {\n        \"NextCursor\": \"001fee59f00b6253231a932c4a8200b3\",\n        \"RequestId\": \"59515df4-b220-44bf-ab0d-019df54edf21\"\n    }\n}",
-        "title": "查询资源图谱列表"
       }
     ],
     "DescribeResourceGraphEntityDependency": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntityDependency\n<公共请求参数>\n\n{\n    \"ResourceGraphId\": \"test-yunapi-full\",\n    \"EntityId\": \"002b693f4f8cd075e2c6a750e6e58e2c\",\n    \"Depth\": 1,\n    \"Limit\": 3,\n    \"FromTime\": 1782230000,\n    \"ToTime\": 1782231000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e18c3587-d333-42cf-96dd-6319406f5bfc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Topology\": {\n            \"Edges\": [],\n            \"Nodes\": [\n                {\n                    \"Depth\": 0,\n                    \"Domain\": \"k8s\",\n                    \"EntityClassName\": \"k8s.pod\",\n                    \"EntityId\": \"002b693f4f8cd075e2c6a750e6e58e2c\",\n                    \"Name\": \"loadtest-pod-src-23-93\",\n                    \"Product\": \"null\"\n                }\n            ]\n        },\n        \"RequestId\": \"e18c3587-d333-42cf-96dd-6319406f5bfc\"\n    }\n}",
         "title": "查询资源拓扑关系"
       }
     ],
     "DescribeResourceGraphEntityDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntityDetail\n<公共请求参数>\n\n{\n    \"EntityId\": \"002b693f4f8cd075e2c6a750e6e58e2c\",\n    \"ResourceGraphId\": \"test-yunapi-full\",\n    \"FromTime\": 1782230000,\n    \"ToTime\": 1782231000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21b0ace2-808f-486d-ab90-cf8b5aeb3fcf\"\n    }\n}",
-        "title": "查询指定资源"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntityDetail\n<公共请求参数>\n\n{\n    \"EntityId\": \"7eca728abe2e4dacc8c687dfaca3d743\",\n    \"ResourceGraphId\": \"test-yunapi-full\",\n    \"FromTime\": 1782230000,\n    \"ToTime\": 1782231000\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2e18bb2-cac6-44e0-b40e-41d61e07ae8d\"\n    }\n}",
-        "title": "查询无数据"
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphEntityDetail\n<公共请求参数>\n\n{\n    \"EntityId\": \"322c008927ab772835d9cc34be4d5287\",\n    \"ResourceGraphId\": \"377f703a-6fab-41a9-b05a-636f06283a3f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EntityInfo\": {\n            \"Attributes\": [\n                {\n                    \"Key\": \"instance_id\",\n                    \"Value\": \"cdb-aav0v207\"\n                }\n            ],\n            \"Domain\": \"tc\",\n            \"EntityClassName\": \"tc.cdb.instance\",\n            \"EntityId\": \"322c008927ab772835d9cc34be4d5287\",\n            \"EntityName\": \"resource_test\",\n            \"Product\": \"cdb\",\n            \"RelatedLogTopics\": [\n                {\n                    \"BizType\": 0,\n                    \"LogType\": \"slowlog\",\n                    \"Region\": \"ap-guangzhou\",\n                    \"TopicId\": \"a35a8ea8-253e-47bb-9d16-41a514827d86\"\n                }\n            ],\n            \"ResourceId\": \"cdb-aav0v207\",\n            \"Tags\": []\n        },\n        \"RequestId\": \"eb3d359b-2928-49b9-ad42-2a860138203b\"\n    }\n}",
+        "title": "success"
       }
     ],
     "DescribeResourceGraphFailureDetail": [
@@ -1310,7 +1292,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceGraphs\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dcd938d1-502c-4765-865d-22231bc2856c\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGraphInfos\": [\n            {\n                \"CreateTime\": 1784269960,\n                \"Name\": \"test-yangxyang11\",\n                \"RelationLogset\": {\n                    \"LogsetId\": \"ff768190-a5b0-48d1-8a5a-78f148a56422\",\n                    \"LogsetName\": \"graph-logset-34b7ad8b-fb4c-42de-a7e1-2442202bad02\"\n                },\n                \"RelationTopics\": [\n                    {\n                        \"TopicId\": \"d4cf2dd5-3e50-43df-b21a-98406b509d87\",\n                        \"TopicName\": \"graph-entity-log-topic\",\n                        \"Type\": \"entity\"\n                    }\n                ],\n                \"ResourceGraphId\": \"34b7ad8b-fb4c-42de-a7e1-2442202bad02\",\n                \"Status\": 1,\n                \"Tags\": [],\n                \"UpdateTime\": 1784269965\n            }\n        ],\n        \"TotalCount\": 20,\n        \"RequestId\": \"d3251d25-b5fd-4c08-b13a-c6eea8fdd6f3\"\n    }\n}",
         "title": "查询资源图谱列表"
       }
     ],

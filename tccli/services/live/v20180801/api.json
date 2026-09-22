@@ -112,6 +112,20 @@
       "output": "CreateAuditKeywordsResponse",
       "status": "online"
     },
+    "CreateAuditRule": {
+      "document": "创建审核规则。",
+      "input": "CreateAuditRuleRequest",
+      "name": "创建审核规则",
+      "output": "CreateAuditRuleResponse",
+      "status": "online"
+    },
+    "CreateAuditTemplate": {
+      "document": "创建单个审核模板。",
+      "input": "CreateAuditTemplateRequest",
+      "name": "创建审核模板",
+      "output": "CreateAuditTemplateResponse",
+      "status": "online"
+    },
     "CreateCaster": {
       "document": "该接口用来创建新的导播台",
       "input": "CreateCasterRequest",
@@ -238,6 +252,13 @@
       "output": "CreateLiveRecordTemplateResponse",
       "status": "online"
     },
+    "CreateLiveSmartEraseTemplate": {
+      "document": "创建直播智能擦除模板。",
+      "input": "CreateLiveSmartEraseTemplateRequest",
+      "name": "创建直播智能擦除模板",
+      "output": "CreateLiveSmartEraseTemplateResponse",
+      "status": "online"
+    },
     "CreateLiveSnapshotRule": {
       "document": "创建截图规则，需要先调用[CreateLiveSnapshotTemplate](/document/product/267/32624)接口创建截图模板，然后将返回的模板 ID 绑定到流进行使用。\n<br>截图相关文档：[直播截图](/document/product/267/32737)。\n注意：单个域名仅支持关联一个截图模板。",
       "input": "CreateLiveSnapshotRuleRequest",
@@ -348,6 +369,20 @@
       "input": "DeleteAuditKeywordsRequest",
       "name": "直播审核删除关键词",
       "output": "DeleteAuditKeywordsResponse",
+      "status": "online"
+    },
+    "DeleteAuditRule": {
+      "document": "删除审核规则。",
+      "input": "DeleteAuditRuleRequest",
+      "name": "删除审核规则",
+      "output": "DeleteAuditRuleResponse",
+      "status": "online"
+    },
+    "DeleteAuditTemplate": {
+      "document": "删除审核模板。",
+      "input": "DeleteAuditTemplateRequest",
+      "name": "删除审核模板",
+      "output": "DeleteAuditTemplateResponse",
       "status": "online"
     },
     "DeleteCaster": {
@@ -607,6 +642,27 @@
       "input": "DescribeAuditKeywordsRequest",
       "name": "直播审核获取关键词",
       "output": "DescribeAuditKeywordsResponse",
+      "status": "online"
+    },
+    "DescribeAuditRules": {
+      "document": "获取审核规则列表。",
+      "input": "DescribeAuditRulesRequest",
+      "name": "获取审核规则列表",
+      "output": "DescribeAuditRulesResponse",
+      "status": "online"
+    },
+    "DescribeAuditTemplate": {
+      "document": "获取单个审核模板。",
+      "input": "DescribeAuditTemplateRequest",
+      "name": "获取审核模板",
+      "output": "DescribeAuditTemplateResponse",
+      "status": "online"
+    },
+    "DescribeAuditTemplates": {
+      "document": "返回当前用户的审核模板列表。",
+      "input": "DescribeAuditTemplatesRequest",
+      "name": "获取审核模板列表",
+      "output": "DescribeAuditTemplatesResponse",
       "status": "online"
     },
     "DescribeBackupStreamList": {
@@ -1370,6 +1426,13 @@
       "input": "ModifyAuditKeywordLibRequest",
       "name": "直播审核更新词库",
       "output": "ModifyAuditKeywordLibResponse",
+      "status": "online"
+    },
+    "ModifyAuditTemplate": {
+      "document": "修改审核模板。",
+      "input": "ModifyAuditTemplateRequest",
+      "name": "修改审核模板",
+      "output": "ModifyAuditTemplateResponse",
       "status": "online"
     },
     "ModifyCaster": {
@@ -2569,6 +2632,177 @@
       ],
       "usage": "out"
     },
+    "AuditTemplate": {
+      "document": "审核模板。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID 。<br>CreateAuditTemplate 时，此参数不传或传 0 。</p><p>ModifyAuditTemplate 时，此参数必传。</p>",
+          "example": "8511411",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称。<br>CreateAuditTemplate 必填。</p>",
+          "example": "describe",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息。<br>CreateAuditTemplate 必填。</p>",
+          "example": "审核模板",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cos Bucket名称。<br>CreateAuditTemplate 必填。</p>",
+          "example": "cosbucket",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cos 地域。<br>CreateAuditTemplate 必填。</p>",
+          "example": "region",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cos 完整文件名（包括前缀）。CreateAuditTemplate 必填。</p>",
+          "example": "path",
+          "member": "string",
+          "name": "CosFilePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用图片审核。<br>CreateAuditTemplate 必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditImage",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用音频审核。<br>CreateAuditTemplate 必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAudio",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图间隔，1-60秒。<br>CreateAuditTemplate 必填。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SnapshotInterval",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频间隔，1-60秒。<br>CreateAuditTemplate 必填。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AudioInterval",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启 Cos 容灾。<br>CreateAuditTemplate 必填。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableFailoverCos",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容灾 Cos Bucket 。<br>CreateAuditTemplate 必填。</p>",
+          "example": "jerrytest",
+          "member": "string",
+          "name": "FailoverCosBucket",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>容灾 Cos 地域。<br>CreateAuditTemplate 必填。</p>",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "FailoverCosRegion",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景策略配置信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CMSSceneDetail",
+          "name": "SceneInfos",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>1：表示启用音频文本识别。0 ：不启用。默认 0 。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditText",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AuthenticateDomainOwnerRequest": {
       "document": "AuthenticateDomainOwner请求参数结构体",
       "members": [
@@ -3464,6 +3698,84 @@
         }
       ],
       "usage": "out"
+    },
+    "CMSBizInfo": {
+      "document": "天御内容安全 策略基本信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略类型，可选值：<br>Text：文本ShortAudio：音频<br>Image:<br>图片。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Text",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略标识（自动生成）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1_1_7_8390211",
+          "member": "string",
+          "name": "BizType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略开通状态。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略配置。<br>json字符串。</p><p>具体取值方式如下：举例：色情：&quot;{\"ability\":{\"asr_text\":true,\"audio\":true},\"asr_text_labels\":{\"porn\":[\"OVR\",\"Pornography\",\"PornographyObscene\"]},\"audio_labels\":{},\"user_text_libs\":[\"320fb40e-9305-4b00-a191-945c219b5cc0\"]}&quot;    可选项： {     value: &#39;OVR&#39;,     text: t(&#39;低俗语音识别&#39;),     msg: t(&#39;示例：呻吟、娇喘、娇喘等性暗示相关的语音&#39;),   },   {     value: &#39;Pornography&#39;,     text: t(&#39;严重色情&#39;),     msg: t(&#39;性行为、性器官等相关描述&#39;),   },   {     value: &#39;PornographyObscene&#39;,     text: t(&#39;色情低俗&#39;),     msg: t(&#39;低俗行为、性暗示等相关描述&#39;),   }</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ability\":{\"asr_text\":true,\"audio\":true},\"service_config\":{\"callback_info\":{},\"codec_info\":{}},\"ignore_word_conf\":{\"model_disable\":false,\"rule_disable\":false,\"keyword_disable\":false},\"user_text_libs\":[]}",
+          "member": "string",
+          "name": "StrategyConfig",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CMSSceneDetail": {
+      "document": "直播审核（内容安全）场景明细。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略信息</p>",
+          "example": "无",
+          "member": "CMSBizInfo",
+          "name": "BizInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SceneID 。</p>",
+          "example": "LiveAudit",
+          "member": "string",
+          "name": "SceneID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CallBackRuleInfo": {
       "document": "规则信息",
@@ -5942,6 +6254,96 @@
       ],
       "type": "object"
     },
+    "CreateAuditRuleRequest": {
+      "document": "CreateAuditRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推流域名。</p>",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推流路径，与推流和播放地址中的AppName 保持一致。</p>",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核模板 ID。</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流名称。 不传默认为空。</p>",
+          "example": "1001",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditRuleResponse": {
+      "document": "CreateAuditRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditTemplateRequest": {
+      "document": "CreateAuditTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审核模板。</p>",
+          "example": "无",
+          "member": "AuditTemplate",
+          "name": "AuditTemplate",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditTemplateResponse": {
+      "document": "CreateAuditTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID 。</p>",
+          "example": "55199",
+          "member": "int64",
+          "name": "TemplateId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCasterInputPushUrlRequest": {
       "document": "CreateCasterInputPushUrl请求参数结构体",
       "members": [
@@ -7638,6 +8040,133 @@
       ],
       "type": "object"
     },
+    "CreateLiveSmartEraseTemplateRequest": {
+      "document": "CreateLiveSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称。长度上限：100字节。</p>",
+          "example": "SmartNametttttt",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型，如&quot;illegal audio|illegal image|logo|privacy protection 。</p>",
+          "example": "illegal audio|privacy protection",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
+          "example": "SmartNameDesc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的审核模板id, 表audio_conf 。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AuditConfId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御图片审核策略BizType  Image 。</p>",
+          "example": "Image",
+          "member": "string",
+          "name": "ImageBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频审核策略BizType  ShortAudio 。</p>",
+          "example": "ShortAudio",
+          "member": "string",
+          "name": "AudioBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频文本审核策略BizType  ShortAudio 。</p>",
+          "example": "ShortAudio",
+          "member": "string",
+          "name": "AudioTextBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示模式，取值 1:延时稳态展示; 3.实时动态展示。默认1 。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "DisplayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕延迟展示时间,单位毫秒。默认10000。</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "DisplayDelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐私保护可选的类型名，包括人脸模糊、车牌模糊</p><p>枚举值：</p><ul><li>blur face： 人脸模糊</li><li>blur license plate： 车牌模糊</li><li>blur face|blur license plate： 复选</li></ul>",
+          "example": "blur face|blur license plate",
+          "member": "string",
+          "name": "PrivacyProtection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频处理可选项：静音擦除、哔音擦除，默认选择静音擦除</p><p>枚举值：</p><ul><li>0： 静音</li><li>1： 哔音</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioErasureMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveSmartEraseTemplateResponse": {
+      "document": "CreateLiveSmartEraseTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板Id。</p>",
+          "example": "8390426",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLiveSnapshotRuleRequest": {
       "document": "CreateLiveSnapshotRule请求参数结构体",
       "members": [
@@ -9231,6 +9760,78 @@
       ],
       "type": "object"
     },
+    "DeleteAuditRuleRequest": {
+      "document": "DeleteAuditRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推流域名。</p>",
+          "example": "5000.livepush.myqcloud.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推流路径，与推流和播放地址中的AppName保持一致。</p>",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流名称 。 不传默认为空。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditRuleResponse": {
+      "document": "DeleteAuditRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditTemplateRequest": {
+      "document": "DeleteAuditTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审核模板 ID 。</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditTemplateResponse": {
+      "document": "DeleteAuditTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCasterInputInfoRequest": {
       "document": "DeleteCasterInputInfo请求参数结构体",
       "members": [
@@ -10732,6 +11333,161 @@
           "example": "无",
           "member": "AuditKeywordInfo",
           "name": "Infos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRulesRequest": {
+      "document": "DescribeAuditRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名。</p>",
+          "example": "www.5epark.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审核模板 ID 。</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AppName 。</p>",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流 ID 。</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRulesResponse": {
+      "document": "DescribeAuditRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则信息列表。</p>",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTemplateRequest": {
+      "document": "DescribeAuditTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID 。</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTemplateResponse": {
+      "document": "DescribeAuditTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审核模板。</p>",
+          "example": "无",
+          "member": "AuditTemplate",
+          "name": "AuditTemplate",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTemplatesRequest": {
+      "document": "DescribeAuditTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否过滤出文本审核，false不过滤，true过滤。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "WithTextAudit",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量。</p><p>取值范围：[5, 100]</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditTemplatesResponse": {
+      "document": "DescribeAuditTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审核模板列表。</p>",
+          "example": "无",
+          "member": "AuditTemplate",
+          "name": "AuditTemplates",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -19719,6 +20475,43 @@
     "ModifyAuditKeywordLibResponse": {
       "document": "ModifyAuditKeywordLib返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditTemplateRequest": {
+      "document": "ModifyAuditTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审核模板。</p>",
+          "example": "无",
+          "member": "AuditTemplate",
+          "name": "AuditTemplate",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditTemplateResponse": {
+      "document": "ModifyAuditTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID 。</p>",
+          "example": "55514",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

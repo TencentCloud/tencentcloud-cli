@@ -392,7 +392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通知渠道ID，可通过基础平台通知渠道相关接口获取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知渠道ID，可通过基础平台通知渠道相关接口获取</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "ChannelId",
@@ -403,8 +403,8 @@
         },
         {
           "disabled": false,
-          "document": "通知渠道名称，可以是用户组名称或邮箱地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>通知渠道名称，可以是用户组名称或邮箱地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1**19***71@*q.com",
           "member": "string",
           "name": "ChannelName",
           "output_required": false,
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用邮件渠道，默认值：false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否启用邮件渠道，默认值：false</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsEmailChannel",
@@ -425,8 +425,8 @@
         },
         {
           "disabled": false,
-          "document": "一组告警条件，有 启动，成功，失败和任务超时告警\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"demo\"]",
+          "document": "<p>告警条件列表。取值：<br>START：启动<br>SUCCESS：成功<br>FAILURE：失败<br>MONITOR_INDICATOR_ALARM：监控指标告警</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"START\",\"FAILURE\"]",
           "member": "string",
           "name": "AlarmConditions",
           "output_required": false,
@@ -436,7 +436,7 @@
         },
         {
           "disabled": false,
-          "document": "通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通知渠道类型。取值：0 未指定，1 Email，2 Webhook，3 Teams，4 Slack</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ChannelType",
@@ -1091,7 +1091,7 @@
         {
           "disabled": false,
           "document": "<p>Bundle信息</p>",
-          "example": "demo",
+          "example": "{\"bundle_name\":\"test_bj\",\"bundle_path\":\"/Workspace/Users/gaohan@100048098877/.bundle/test_bj/dev/files/resources/workflow/sql_workflow.yml\"}",
           "member": "string",
           "name": "BundleInfo",
           "required": false,
@@ -1970,7 +1970,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流参数列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -1981,7 +1981,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -2227,7 +2227,7 @@
         {
           "disabled": false,
           "document": "<p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ACTIVE",
+          "example": "RUNNING",
           "member": "string",
           "name": "RunState",
           "output_required": false,
@@ -2281,7 +2281,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
@@ -2303,8 +2303,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>触发类型 (参考SchedulerTriggerType枚举)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "COMMON",
+          "document": "<p>触发类型</p><p>枚举值：</p><ul><li>Scheduler： 调度触发</li><li>Manual： 手动触发</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Scheduler",
           "member": "string",
           "name": "TriggerType",
           "output_required": false,
@@ -2436,7 +2436,7 @@
         {
           "disabled": false,
           "document": "<p>运行时长，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "3600",
           "member": "string",
           "name": "RunCostTime",
           "output_required": false,
@@ -2447,7 +2447,7 @@
         {
           "disabled": false,
           "document": "<p>等待时长（依赖就绪到开始运行的等待耗时），单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "60",
           "member": "string",
           "name": "WaitTime",
           "output_required": false,
@@ -2883,7 +2883,7 @@
         {
           "disabled": false,
           "document": "<p>错误码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "TaskExecuteFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -3674,7 +3674,7 @@
         {
           "disabled": false,
           "document": "<p>工作空间ID，可通过 ListWorkspaces 获取。必填</p>",
-          "example": "17622177773248536",
+          "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3701,7 +3701,7 @@
         {
           "disabled": false,
           "document": "<p>工作流ID，精确匹配。非必填，单值</p>",
-          "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
+          "example": "8e8a8cd9-633f-4fae-b5fa-f376a4d31da7",
           "member": "string",
           "name": "WorkflowId",
           "required": false,
@@ -3710,7 +3710,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称关键字，对 WorkflowName 做模糊匹配。非必填，单值</p>",
-          "example": "demo",
+          "example": "dwd",
           "member": "string",
           "name": "WorkflowNameKeyword",
           "required": false,
@@ -3736,8 +3736,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>运行状态，精确匹配。非必填，多选（多个值之间为 OR 关系）。</p><p>可填 SUCCESS / FAILED 等，具体参考本接口出参 WorkflowRun.RunState 字段返回值。</p>",
-          "example": "[\"ACTIVE\"]",
+          "document": "<p>运行状态，精确匹配。非必填，多选（多个值之间为 OR 关系）。运行状态。CREATE(&quot;初始化&quot;), QUEUED(&quot;等待中&quot;), PENDING(&quot;准备中&quot;), RUNNING(&quot;运行中&quot;), SKIPPED(&quot;跳过运行&quot;), SUCCESS(&quot;成功&quot;), FAILED(&quot;失败&quot;), TERMINATING(&quot;终止中&quot;), TERMINATED(&quot;终止&quot;), CANCELLED(&quot;被手动终止&quot;)等</p>",
+          "example": "[\"SUCCESS\"]",
           "member": "string",
           "name": "RunStates",
           "required": false,
@@ -3746,7 +3746,7 @@
         {
           "disabled": false,
           "document": "<p>错误码，精确匹配。非必填，多选（多个值之间为 OR 关系）</p>",
-          "example": "[\"demo\"]",
+          "example": "[\"TaskExecuteFailed\"]",
           "member": "string",
           "name": "ErrorCodeStrings",
           "required": false,
@@ -4063,7 +4063,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称关键字，对 WorkflowName 做模糊匹配。非必填，单值</p>",
-          "example": "demo",
+          "example": "dwd",
           "member": "string",
           "name": "WorkflowNameKeyword",
           "required": false,
@@ -4072,7 +4072,7 @@
         {
           "disabled": false,
           "document": "<p>工作流名称，精确匹配。非必填，多选（多个值之间为 OR 关系）</p>",
-          "example": "[\"demo\"]",
+          "example": "[\"dwd_task\"]",
           "member": "string",
           "name": "WorkflowNames",
           "required": false,
@@ -5115,12 +5115,12 @@
       "usage": "both"
     },
     "TaskType": {
-      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | ----------------------- |\n| Source       | 来源              | 可填2或5,来源 2:GIT, 5:工作空间    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                    | 是否必需 |\n| --------------------- | -------------------- | --------------------------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                    | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                          | 是否必需             |\n| --------------- | ----------- | --------------------------------------------- | -------------------- |\n| Source          | 来源        | 可填2或5,来源 2:GIT, 5:工作空间               | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                   | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedQueries）接口获取 | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n\n### 5. PYTHON 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | -------- |\n| Source     | 来源           | 可填2或5,来源 2:GIT, 5:工作空间        | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | 是       |\n\n### 6. DATA_QUALITY（质量监控）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| SourceUniqueId | 质量监控ID       | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n\n### 7. IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | 是否必需 |\n| ---------- | -------- | --------------- | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | 是       |\n\n### 8. FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | 是       |\n\n### 9. RAY_JOB（Ray作业）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称             | 描述                               | 是否必需 |\n| -------------- | -------------------- | ---------------------------------- | -------- |\n| RunMode        | 运行方式             | 运行方式，取值：SERVERLESS（按需拉起集群）/ DEDICATED（提交到指定集群）。默认 DEDICATED | 是 |\n| Entrypoint     | 入口指令             | 入口指令                           | 是       |\n| JobConfig      | 任务配置             | 如存储配置 + 计算环境。传值请参考前端页面保存Ray作业任务时调用UpdateWorkflow。Image请调用DLC接口ListImages接口Url字段获取 | RunMode 为 SERVERLESS 时，必填 |\n| ClusterId      | Ray 集群             | 需从所选计算资源下已配置的 Ray 集群（引擎）列表中选择，可通过计算资源相关接口获取 | RunMode 为 DEDICATED 时，必填 |\n| Source         | 任务来源             | 任务来源，取值：1（本地文件）/ 5（工作空间） | 是 |\n| JobPackage     | 任务来源文件地址     | 任务来源路径：Source 为 1 时存本地上传文件的 COS 地址（支持 .zip / .py 文件）；Source 为 5 时存所选工作空间文件/文件夹路径 | 是 |\n| JobPackageName | 任务来源本地文件名   | 任务来源本地文件名                 | Source 为 1 时，必填 |\n| CodeFileId     | 代码文件ID           | Source 为 5 时，需从工作空间文件选择组件获取所选文件/文件夹对应的ID | Source 为 5 时，必填 |\n| WorkspaceEntryType | 工作空间入口类型 | Source 为 5 时，所选工作空间条目的类型：FILE（文件）/ FOLDER（文件夹），由前端选择器随选择目标自动写入 | Source 为 5 时，必填 |\n\n### RuntimePropertyList\n<p>任务运行参数列表，用于配置任务运行时的计算资源，与 TaskTypePropertyList（任务扩展属性）区分：TaskTypePropertyList 承载任务自身的业务配置（如脚本来源、路径等），RuntimePropertyList 承载任务运行时的资源配置（如资源模式、CU规格、Executor数量等）。</p>\n<p>主要适用于需要配置计算资源的任务类型（如 NOTEBOOK、PYTHON）。</p>\n<p>具体可填写的属性键以任务类型属性配置为准，可通过 ListWorkflowTaskTypeProperties 接口获取（propertyType 为 RUNTIME 的属性项）。常见运行参数键说明：</p>\n\n| 属性键 | 属性名称 | 描述 | 必填性（联动条件满足时） | 默认值 |\n| ---------- | -------------- | ---------------------------------- | -------- | -------- |\n| ResourceMode | 资源模式 | 1：分布式；2：单节点 | 是 | 1 |\n| ConfigType | 配置类型 | DEFAULT：默认配置；CUSTOM：自定义配置 | 是 | DEFAULT |\n| ExecutorAllocation | Executor分配模式 | DYNAMIC：动态分配；FIXED：固定分配 | 是（分布式且自定义配置时） | DYNAMIC |\n| ExecutorMinNum | Executor最小个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorMaxNum | Executor最大个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorFixedNum | Executor固定个数 | 正整数 | 否（固定分配时） | - |\n| ExecutorCU | Executor资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时） | - |\n| DriverCU | Driver资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时 或者单节点时） | - |\n| ExecutorGPU | Executor GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| DriverGPU | Driver GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| Style | 配置样式 | UI / JSON | 是（自定义配置时） | UI |\n\n<p>补充说明：</p>\n<p>1. \"必填性\"指属性配置中的必填标记，仅当属性联动条件（如 ResourceMode=1 且 ConfigType=CUSTOM）满足时才触发必填校验；</p>\n<p>2. ConfigType 为 DEFAULT（默认配置）时，需调用 ListComputeResourceOptions 接口获取所选计算资源的默认规格值，并将其填充到运行参数（ExecutorCU、DriverCU、ExecutorMinNum、ExecutorMaxNum 等）后传入；ConfigType 为 CUSTOM（自定义配置）时，运行参数由调用方自行指定；</p>",
+      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | ----------------------- |\n| Source       | 来源              | 只支持填2或5,来源 2:GIT, 5:工作空间    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                    | 是否必需 |\n| --------------------- | -------------------- | --------------------------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                    | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                          | 是否必需             |\n| --------------- | ----------- | --------------------------------------------- | -------------------- |\n| Source          | 来源        | 只支持填2或5,来源 2:GIT, 5:工作空间               | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                   | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedQueries）接口获取 | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n\n### 5. PYTHON 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | -------- |\n| Source     | 来源           | 只支持填2或5,来源 2:GIT, 5:工作空间        | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | 是       |\n\n### 6. DATA_QUALITY（质量监控）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| SourceUniqueId | 质量监控ID       | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n\n### 7. IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | 是否必需 |\n| ---------- | -------- | --------------- | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | 是       |\n\n### 8. FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | 是       |\n\n### 9. RAY_JOB（Ray作业）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称             | 描述                               | 是否必需 |\n| -------------- | -------------------- | ---------------------------------- | -------- |\n| RunMode        | 运行方式             | 运行方式，取值：SERVERLESS（按需拉起集群）/ DEDICATED（提交到指定集群）。默认 DEDICATED | 是 |\n| Entrypoint     | 入口指令             | 入口指令                           | 是       |\n| JobConfig      | 任务配置             | 如存储配置 + 计算环境。传值请参考前端页面保存Ray作业任务时调用UpdateWorkflow。Image请调用DLC接口ListImages接口Url字段获取 | RunMode 为 SERVERLESS 时，必填 |\n| ClusterId      | Ray 集群             | 需从所选计算资源下已配置的 Ray 集群（引擎）列表中选择，可通过计算资源相关接口获取 | RunMode 为 DEDICATED 时，必填 |\n| Source         | 任务来源             | 任务来源，取值：1（本地文件）/ 5（工作空间） | 是 |\n| JobPackage     | 任务来源文件地址     | 任务来源路径：Source 为 1 时存本地上传文件的 COS 地址（支持 .zip / .py 文件）；Source 为 5 时存所选工作空间文件/文件夹路径 | 是 |\n| JobPackageName | 任务来源本地文件名   | 任务来源本地文件名                 | Source 为 1 时，必填 |\n| CodeFileId     | 代码文件ID           | Source 为 5 时，需从工作空间文件选择组件获取所选文件/文件夹对应的ID | Source 为 5 时，必填 |\n| WorkspaceEntryType | 工作空间入口类型 | Source 为 5 时，所选工作空间条目的类型：FILE（文件）/ FOLDER（文件夹），由前端选择器随选择目标自动写入 | Source 为 5 时，必填 |\n\n### RuntimePropertyList\n<p>任务运行参数列表，用于配置任务运行时的计算资源，与 TaskTypePropertyList（任务扩展属性）区分：TaskTypePropertyList 承载任务自身的业务配置（如脚本来源、路径等），RuntimePropertyList 承载任务运行时的资源配置（如资源模式、CU规格、Executor数量等）。</p>\n<p>主要适用于需要配置计算资源的任务类型（如 NOTEBOOK、PYTHON）。</p>\n<p>具体可填写的属性键以任务类型属性配置为准，可通过 ListWorkflowTaskTypeProperties 接口获取（propertyType 为 RUNTIME 的属性项）。常见运行参数键说明：</p>\n\n| 属性键 | 属性名称 | 描述 | 必填性（联动条件满足时） | 默认值 |\n| ---------- | -------------- | ---------------------------------- | -------- | -------- |\n| ResourceMode | 资源模式 | 1：分布式；2：单节点 | 是 | 1 |\n| ConfigType | 配置类型 | DEFAULT：默认配置；CUSTOM：自定义配置 | 是 | DEFAULT |\n| ExecutorAllocation | Executor分配模式 | DYNAMIC：动态分配；FIXED：固定分配 | 是（分布式且自定义配置时） | DYNAMIC |\n| ExecutorMinNum | Executor最小个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorMaxNum | Executor最大个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorFixedNum | Executor固定个数 | 正整数 | 否（固定分配时） | - |\n| ExecutorCU | Executor资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时） | - |\n| DriverCU | Driver资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时 或者单节点时） | - |\n| ExecutorGPU | Executor GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| DriverGPU | Driver GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| Style | 配置样式 | UI / JSON | 是（自定义配置时） | UI |\n\n<p>补充说明：</p>\n<p>1. \"必填性\"指属性配置中的必填标记，仅当属性联动条件（如 ResourceMode=1 且 ConfigType=CUSTOM）满足时才触发必填校验；</p>\n<p>2. ConfigType 为 DEFAULT（默认配置）时，需调用 ListComputeResourceOptions 接口获取所选计算资源的默认规格值，并将其填充到运行参数（ExecutorCU、DriverCU、ExecutorMinNum、ExecutorMaxNum 等）后传入；ConfigType 为 CUSTOM（自定义配置）时，运行参数由调用方自行指定；</p>",
       "members": [
         {
           "disabled": false,
           "document": "<p>任务类型：SQL：用于执行SQL查询和数据处理操作；DATA_INTEGRATION：用于离线数据接入操作；NOTEBOOK：用于运行Notebook脚本；RUN_WORKFLOW：用于执行嵌套工作流；PYTHON：用于运行Python脚本；RAY_JOB：用于运行Ray作业；DATA_QUALITY：用于数据质量监控；IF_ELSE：用于条件分支判断；FOR_EACH：用于循环遍历执行；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
           "output_required": false,
@@ -5141,7 +5141,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务扩展属性列表，具体填写参考 ListWorkflowTaskTypeProperties 接口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型属性列表，不同任务类型所需的 PropertyKey 不同，具体取值请参考 ListWorkflowTaskTypeProperties 接口返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TaskTypeProperty",
           "name": "TaskTypePropertyList",
@@ -5169,7 +5169,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/\nSCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/\nSCRIPT_SOURCE_WORKSPACE（工作空间）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>脚本来源。取值：SCRIPT_SOURCE_LOCAL（本地）/ SCRIPT_SOURCE_GIT（Git 仓库）/<br>SCRIPT_SOURCE_CFS（CFS 文件系统）/ SCRIPT_SOURCE_COS（COS 对象存储）/<br>SCRIPT_SOURCE_WORKSPACE（工作空间）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SCRIPT_SOURCE_LOCAL",
           "member": "string",
           "name": "Source",
@@ -5180,8 +5180,8 @@
         },
         {
           "disabled": false,
-          "document": "前端显示使用，对执行平台无意义\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>前端显示使用，对执行平台无意义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/notebook_task.ipynb",
           "member": "string",
           "name": "DisplayPath",
           "output_required": false,
@@ -5191,8 +5191,8 @@
         },
         {
           "disabled": false,
-          "document": "Notebook 相对路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>Notebook 相对路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/Workspace/notebook_task.ipynb",
           "member": "string",
           "name": "NotebookPath",
           "output_required": false,
@@ -5202,8 +5202,8 @@
         },
         {
           "disabled": false,
-          "document": "Notebook 绝对路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "document": "<p>Notebook 绝对路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/Workspace/notebook_task.ipynb",
           "member": "string",
           "name": "NotebookAbsolutePath",
           "output_required": false,
@@ -5294,7 +5294,7 @@
         {
           "disabled": false,
           "document": "操作状态，true 表示成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "Status",
           "output_required": false,
@@ -5616,7 +5616,7 @@
         {
           "disabled": false,
           "document": "<p>需要清空的字段名列表，用于将指定字段重置为空</p>",
-          "example": "[\"demo\"]",
+          "example": "[\"/TaskList:[3e9e53ef-3aec-4e14-b55e-44bd07e7ee64]\"]",
           "member": "string",
           "name": "FieldToRemoveList",
           "required": false,
@@ -5662,7 +5662,7 @@
         {
           "disabled": false,
           "document": "更新状态，true 表示成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "Status",
           "output_required": false,
@@ -5711,7 +5711,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流参数列表 参数名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt; 最长128个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ParamInfo",
           "name": "ParamList",
@@ -5722,7 +5722,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;<!--'，最长128个字符--></p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>标签 标签名必填且只能包含数字、大小写字母、空格、.$@#!%^&amp;*()-_+=&gt;'，最长128个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LabelBrief",
           "name": "LabelList",
@@ -5789,7 +5789,7 @@
         {
           "disabled": false,
           "document": "<p>Bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"bundle_name\":\"test_bj\",\"bundle_path\":\"/Workspace/Users/gaohan@100048098877/.bundle/test_bj/dev/files/resources/workflow/sql_workflow.yml\"}",
           "member": "string",
           "name": "BundleInfo",
           "output_required": false,
@@ -5799,7 +5799,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>GIT配置ID，对应GetWorkspaceConfig接口中的ConfigKey</p>    -\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "GitConfigId",
@@ -5900,7 +5900,7 @@
         {
           "disabled": false,
           "document": "工作流负责人用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "tom",
           "member": "string",
           "name": "OwnerUserName",
           "output_required": false,
@@ -5983,7 +5983,7 @@
         {
           "disabled": false,
           "document": "工作流负责人用户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "tom",
           "member": "string",
           "name": "OwnerUserName",
           "output_required": false,
@@ -6005,7 +6005,7 @@
         {
           "disabled": false,
           "document": "工作流负责人展示名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "Tom Zhang",
           "member": "string",
           "name": "OwnerDisplayName",
           "output_required": false,
@@ -6088,7 +6088,7 @@
         {
           "disabled": false,
           "document": "<p>工作流负责人用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "tom",
           "member": "string",
           "name": "OwnerUserName",
           "output_required": false,
@@ -6110,7 +6110,7 @@
         {
           "disabled": false,
           "document": "<p>工作流负责人展示名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "Tom Zhang",
           "member": "string",
           "name": "OwnerDisplayName",
           "output_required": false,
@@ -6176,7 +6176,7 @@
         {
           "disabled": false,
           "document": "<p>工作流运行人用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "tom",
           "member": "string",
           "name": "RunUserName",
           "output_required": false,
@@ -6242,7 +6242,7 @@
         {
           "disabled": false,
           "document": "<p>Bundle信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "{\"bundle_name\":\"test_git\",\"bundle_path\":\"/Workspace/Users/700002164619/.bundle/test_git/prod/files/resources/workflow/zl_git_wf_260901.yml\"}",
           "member": "string",
           "name": "BundleInfo",
           "output_required": false,
@@ -6671,8 +6671,8 @@
         },
         {
           "disabled": false,
-          "document": "运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ACTIVE",
+          "document": "<p>运行状态。CREATE(&quot;初始化&quot;),     QUEUED(&quot;等待中&quot;),     PENDING(&quot;准备中&quot;),     RUNNING(&quot;运行中&quot;),     SKIPPED(&quot;跳过运行&quot;),     SUCCESS(&quot;成功&quot;),     FAILED(&quot;失败&quot;),     TERMINATING(&quot;终止中&quot;),     TERMINATED(&quot;终止&quot;),     CANCELLED(&quot;被手动终止&quot;)等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
           "member": "string",
           "name": "RunState",
           "output_required": false,
@@ -6683,7 +6683,7 @@
         {
           "disabled": false,
           "document": "运行错误码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "TaskExecuteFailed",
           "member": "string",
           "name": "ErrorCodeString",
           "output_required": false,
@@ -6733,7 +6733,7 @@
         {
           "disabled": false,
           "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "py_0807",
           "member": "string",
           "name": "TaskName",
           "output_required": false,
@@ -6810,7 +6810,7 @@
         {
           "disabled": false,
           "document": "<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "demo",
+          "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
           "output_required": false,
@@ -7013,7 +7013,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任依赖运行条件</p><ul><li>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功</li><li>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功</li><li>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中</li><li>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败</li><li>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败</li><li>ALL_FAILED: 全部失败：所有上游依赖任务都失败</li><li>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行</li><li>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游</li><li>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行</li><li>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行</li><li>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行</li><li>ADVANCED:运行条件为高级模式时配置</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务依赖运行条件</p><p>ALL_SUCCESS: 全部成功：所有上游依赖任务均已执行并成功<br>ONE_SUCCESS: 至少一个成功：至少有一个上游依赖任务成功<br>NONE_FAILED: 目前没有失败：没有依赖任务失败，并且至少有一个依赖任务在运行中<br>ALL_DONE: 全部完成：所有上游依赖任务均已执行并完成（无论成功或失败<br>ONE_FAILED: 至少一个失败：至少有一个上游依赖任务失败<br>ALL_FAILED: 全部失败：所有上游依赖任务都失败<br>ALL_DONE_AT_LEAST_ONE_SUCCESS：上游全部完成至少一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个成功，则依赖判断成功，否则就是跳过运行<br>ALL_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ONE_DONE：至少一个完成：上游只要有一个完成了，就进行依赖判断，且依赖判断成功，否则还是等待上游<br>ALL_DONE_NONE_FAILED_AT_LEAST_ONE_SUCCESS：上游全部完成，没有失败，至少有一个成功: 所有上游依赖任务都达到终态时，进行依赖判断，上游没有一个失败且至少有一个成功的情况下，依赖判断成功，否则就是跳过运行<br>NONE_SKIPPED：上游全部完成，没有跳过运行: 所有上游依赖任务都达到终态时，进行依赖判断, 如果上游状态全部都是成功、失败、上游失败状态，则依赖判断成功，否则为跳过运行<br>ALL_DONE_AT_LEAST_ONE_FAILED：上游全部完成至少一个失败: 所有上游依赖任务都达到终态时，进行依赖判断，至少有一个失败，则依赖判断成功，否则就是跳过运行<br>ADVANCED:运行条件为高级模式时配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ALL_SUCCESS",
           "member": "string",
           "name": "DependOnRunCondition",
@@ -7074,8 +7074,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>运行状态。取值参考工作流任务运行状态枚举，如 Pending / Running / Succeeded / Failed / Killed</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ACTIVE",
+          "document": "<p>运行状态。如CREATE(\"初始化\"), QUEUED(\"等待中\"), PENDING(\"准备中\"), RUNNING(\"运行中\"), SKIPPED(\"跳过运行\"), SUCCESS(\"成功\"), FAILED(\"失败\"), TERMINATING(\"终止中\"), TERMINATED(\"终止\"), CANCELLED(\"被手动终止\")等</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
           "member": "string",
           "name": "RunState",
           "output_required": false,
@@ -7129,7 +7129,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>任务类型名称，请参考数据结构TaskType中TaskTypeName字段描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PYTHON",
           "member": "string",
           "name": "TaskTypeName",
@@ -7151,8 +7151,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>触发类型 (参考SchedulerTriggerType枚举)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "COMMON",
+          "document": "<p>触发类型</p><p>枚举值：</p><ul><li>Manual： 手动触发</li><li>Scheduler： 调度触发</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Scheduler",
           "member": "string",
           "name": "TriggerType",
           "output_required": false,
@@ -7284,7 +7284,7 @@
         {
           "disabled": false,
           "document": "<p>运行时长，单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "3600",
           "member": "string",
           "name": "RunCostTime",
           "output_required": false,
@@ -7295,7 +7295,7 @@
         {
           "disabled": false,
           "document": "<p>等待时长（依赖就绪到开始运行的等待耗时），单位：秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1773244800000",
+          "example": "60",
           "member": "string",
           "name": "WaitTime",
           "output_required": false,
@@ -7498,8 +7498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务重试模式\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "COMMON",
+          "document": "<p>&lt;p&gt;该工作流下的所有任务重试模式，仅当TriggerMode为CONTINUE_RUN时有效。</p><p>枚举值：</p><ul><li>onFailure： 失败时自动重试</li><li>never： 从不重试</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "onFailure",
           "member": "string",
           "name": "TaskRetryMode",
           "output_required": false,

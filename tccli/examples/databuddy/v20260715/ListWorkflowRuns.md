@@ -6,18 +6,10 @@ Input:
 
 ```
 tccli databuddy ListWorkflowRuns --cli-unfold-argument  \
-    --WorkspaceId 17622177773248536 \
+    --WorkspaceId 17678671667189298 \
     --PageNumber 1 \
     --PageSize 10 \
-    --WorkflowId f4ec3e79-7368-44c9-8b04-031fad7f1a76 \
-    --WorkflowNameKeyword demo \
-    --CreateStartTime 1773244800000 \
-    --CreateEndTime 1773244800000 \
-    --RunStates ACTIVE \
-    --ErrorCodeStrings demo \
-    --RunUserUins 100044134096 \
-    --LabelKeyIds f4ec3e79-7368-44c9-8b04-031fad7f1a76 \
-    --LabelValueIds f4ec3e79-7368-44c9-8b04-031fad7f1a76
+    --WorkflowId 8e8a8cd9-633f-4fae-b5fa-f376a4d31da7
 ```
 
 Output: 
@@ -27,13 +19,63 @@ Output:
         "Data": {
             "PageNumber": 1,
             "PageSize": 10,
-            "TotalCount": 1,
-            "TotalPageNumber": 1,
-            "Items": [],
-            "BizStateEnumInfos": [],
-            "BizErrorCodeEnumInfos": []
+            "TotalCount": 125,
+            "TotalPageNumber": 13,
+            "Items": [
+                {
+                    "AppId": "260073493",
+                    "WorkflowName": "www1",
+                    "WorkflowId": "8e8a8cd9-633f-4fae-b5fa-f376a4d31da7",
+                    "WorkflowRunId": "8e8a8cd9-633f-4fae-b5fa-f376a4d31da7_1789995691987",
+                    "WorkspaceId": "17678671667189298",
+                    "TriggerType": "",
+                    "RunStartTime": "0",
+                    "PendingStartTime": "0",
+                    "QueueStartTime": "0",
+                    "RunEndTime": "0",
+                    "EndTime": "0",
+                    "RunCostTime": "0",
+                    "QueueCostTime": "0",
+                    "PendingCostTime": "1",
+                    "RunState": "QUEUED",
+                    "ResourceGroupIds": [],
+                    "RunUserUin": "700002164619",
+                    "RunUserName": "",
+                    "ErrorCodeString": "",
+                    "WorkflowParams": "",
+                    "WorkflowVersionId": "381cae4e-d8af-40d6-9b0d-79d0fad8b21f",
+                    "SupportRerun": false,
+                    "CreateTime": "1789995692013",
+                    "RerunTimes": 0,
+                    "SelectedTaskIds": [
+                        "9aa66a88-9a88-4a98-9d7f-1b92e3aedbff"
+                    ],
+                    "ResourceGroupInfoList": [],
+                    "LabelList": [],
+                    "ParentWorkflowRunId": "",
+                    "ParentWorkflowTaskRunId": "",
+                    "ParentWorkflowTaskRunName": "",
+                    "Permission": "MANAGE",
+                    "AdvancedParameters": [],
+                    "ScheduledTime": "1789995691987"
+                }
+            ],
+            "BizStateEnumInfos": [
+                {
+                    "LabelKey": "SUCCESS",
+                    "LabelValue": "成功",
+                    "Count": 78
+                }
+            ],
+            "BizErrorCodeEnumInfos": [
+                {
+                    "LabelKey": "ExecutionFailed",
+                    "LabelValue": "ExecutionFailed",
+                    "Count": 11
+                }
+            ]
         },
-        "RequestId": "43144820-519a-4b91-b2b3-4835ed5b35f5"
+        "RequestId": "d088d842-0a4f-4141-af82-50dde96919c4"
     }
 }
 ```

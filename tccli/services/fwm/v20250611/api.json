@@ -1104,7 +1104,7 @@
         {
           "disabled": false,
           "document": "筛选字段名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "PublicIp",
+          "example": "Domain",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1115,7 +1115,7 @@
         {
           "disabled": false,
           "document": "筛选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"106.55.203.88\"]",
+          "example": "[]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -1125,8 +1125,8 @@
         },
         {
           "disabled": false,
-          "document": "操作类型：1-精确匹配 9-模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "document": "操作类型：1=精确匹配，7=in，9=模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
           "member": "int64",
           "name": "OperatorType",
           "output_required": false,
@@ -3534,8 +3534,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>成员AppId</p>",
-          "example": "16898822",
+          "document": "成员 AppId",
+          "example": "1300999001",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -3545,8 +3545,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员Uin</p>",
-          "example": "12121212",
+          "document": "成员 Uin",
+          "example": "100001234567",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -3556,8 +3556,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员昵称</p>",
-          "example": "天空之蓝",
+          "document": "成员昵称",
+          "example": "成员A",
           "member": "string",
           "name": "Nickname",
           "output_required": false,
@@ -3567,8 +3567,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员Id</p>",
-          "example": "1212-3232",
+          "document": "成员 ID（个人场景为空）",
+          "example": "mem-abc123",
           "member": "string",
           "name": "MemberId",
           "output_required": false,
@@ -3578,8 +3578,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>所属部门</p>",
-          "example": "安全部",
+          "document": "所属部门",
+          "example": "研发部",
           "member": "string",
           "name": "NodeName",
           "output_required": false,

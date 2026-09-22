@@ -21427,7 +21427,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "ee20bb16-3025-4048-b81a-dd436373062e",
           "member": "string",
           "name": "TopicId",
@@ -21437,7 +21437,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出任务ID",
+          "document": "<p>日志导出任务ID</p>",
           "example": "export-57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
@@ -21447,7 +21447,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出查询语句",
+          "document": "<p>日志导出查询语句</p>",
           "example": "status:200",
           "member": "string",
           "name": "Query",
@@ -21457,7 +21457,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出文件名",
+          "document": "<p>日志导出文件名</p>",
           "example": "log_2075178708_ee20bb16-3025-4048-b81a-dd436373062f_20210107_571",
           "member": "string",
           "name": "FileName",
@@ -21467,7 +21467,7 @@
         },
         {
           "disabled": false,
-          "document": "日志文件大小",
+          "document": "<p>日志文件大小</p><p>单位：字节</p>",
           "example": "0",
           "member": "uint64",
           "name": "FileSize",
@@ -21477,7 +21477,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出时间排序",
+          "document": "<p>日志导出时间排序</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -21487,7 +21487,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出格式",
+          "document": "<p>日志导出格式</p>",
           "example": "json",
           "member": "string",
           "name": "Format",
@@ -21497,7 +21497,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出数量",
+          "document": "<p>日志导出数量</p>",
           "example": "100",
           "member": "uint64",
           "name": "Count",
@@ -21507,7 +21507,7 @@
         },
         {
           "disabled": false,
-          "document": "日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中",
+          "document": "<p>日志下载状态。Processing:导出正在进行中，Completed:导出完成，Failed:导出失败，Expired:日志导出已过期(三天有效期), Queuing 排队中</p>",
           "example": "Expired",
           "member": "string",
           "name": "Status",
@@ -21517,7 +21517,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出起始时间",
+          "document": "<p>日志导出起始时间</p>",
           "example": "1607499207000",
           "member": "int64",
           "name": "From",
@@ -21527,7 +21527,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出结束时间",
+          "document": "<p>日志导出结束时间</p>",
           "example": "1607499208000",
           "member": "int64",
           "name": "To",
@@ -21537,7 +21537,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出路径,有效期一个小时，请尽快使用该路径下载。",
+          "document": "<p>日志导出路径,有效期一个小时，请尽快使用该路径下载。</p>",
           "example": "https://waf-1234567890.cos.ap-guangzhou.myqcloud.com/export/access_log.csv",
           "member": "string",
           "name": "CosPath",
@@ -21547,7 +21547,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导出创建时间",
+          "document": "<p>日志导出创建时间</p>",
           "example": "2020-08-08 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -21557,7 +21557,7 @@
         },
         {
           "disabled": false,
-          "document": "语法规则。 默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "document": "<p>语法规则。 默认值为0。<br>0：Lucene语法，1：CQL语法。</p>",
           "example": "1",
           "member": "uint64",
           "name": "SyntaxRule",
@@ -21567,8 +21567,8 @@
         },
         {
           "disabled": false,
-          "document": "导出字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[\"__timestamp__\",\"a\",\"b\"]",
+          "document": "<p>导出字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"timestamp\"]",
           "member": "string",
           "name": "DerivedFields",
           "output_required": false,
