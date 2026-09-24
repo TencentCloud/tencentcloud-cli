@@ -16,6 +16,11 @@ Output:
 {
     "Response": {
         "RequestId": "req-example",
+        "Version": {
+            "VersionId": "rv-0123abcd",
+            "Revision": 2,
+            "Status": "APPROVED"
+        },
         "UploadURL": "https://cos.example/upload",
         "ContentStatus": "UPLOADING"
     }

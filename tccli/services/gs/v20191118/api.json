@@ -3838,7 +3838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，默认为 0",
+          "document": "<p>偏移量，默认为 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3847,7 +3847,7 @@
         },
         {
           "disabled": false,
-          "document": "限制量，默认为20，最大值为100",
+          "document": "<p>限制量，默认为20，最大值为100</p>",
           "example": "50",
           "member": "int64",
           "name": "Limit",
@@ -3856,8 +3856,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。每次请求的实例的上限为100。",
-          "example": "[ \"cai-abcd1234\" ]",
+          "document": "<p>实例ID。每次请求的实例的上限为100。</p>",
+          "example": "[\"cai-abcd1234\"]",
           "member": "string",
           "name": "AndroidInstanceIds",
           "required": false,
@@ -3865,7 +3865,7 @@
         },
         {
           "disabled": false,
-          "document": "实例地域。目前还不支持按地域进行聚合查询",
+          "document": "<p>实例地域。目前还不支持按地域进行聚合查询</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "AndroidInstanceRegion",
@@ -3874,7 +3874,7 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区",
+          "document": "<p>实例可用区</p>",
           "example": "ap-beijing-1",
           "member": "string",
           "name": "AndroidInstanceZone",
@@ -3883,8 +3883,8 @@
         },
         {
           "disabled": false,
-          "document": "实例分组 ID 列表",
-          "example": "[ \"aig-1234abcd' ]",
+          "document": "<p>实例分组 ID 列表</p>",
+          "example": "[\"aig-1234abcd\"]",
           "member": "string",
           "name": "AndroidInstanceGroupIds",
           "required": false,
@@ -3892,7 +3892,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签选择器",
+          "document": "<p>实例标签选择器</p>",
           "example": "无",
           "member": "LabelRequirement",
           "name": "LabelSelector",
@@ -3901,7 +3901,7 @@
         },
         {
           "disabled": false,
-          "document": "字段过滤器。Filter 的 Name 有以下值：\nName：实例名称\nUserId：实例用户ID\nHostSerialNumber：宿主机序列号\nHostServerSerialNumber：机箱序列号\nAndroidInstanceModel：实例型号",
+          "document": "<p>字段过滤器。Filter 的 Name 有以下值：<br>Name：实例名称<br>UserId：实例用户ID<br>HostSerialNumber：宿主机序列号<br>HostServerSerialNumber：机箱序列号<br>AndroidInstanceModel：实例型号</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3916,7 +3916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例总数量",
+          "document": "<p>实例总数量</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -3926,7 +3926,7 @@
         },
         {
           "disabled": false,
-          "document": "实例列表",
+          "document": "<p>实例列表</p>",
           "example": "无",
           "member": "AndroidInstance",
           "name": "AndroidInstances",

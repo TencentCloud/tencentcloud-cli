@@ -714,6 +714,13 @@
       "output": "DisassociateSecurityGroupsResponse",
       "status": "online"
     },
+    "ExecuteDBBrainQuery": {
+      "document": "DBBrain 通过 SqlNo（模板编号） 选择服务端预注册的诊断 SQL 模板，传入参数与结构化过滤条件，获取实例诊断数据。",
+      "input": "ExecuteDBBrainQueryRequest",
+      "name": "DBBrain 诊断 SQL 查询接口",
+      "output": "ExecuteDBBrainQueryResponse",
+      "status": "online"
+    },
     "InquiryPriceCreateDBInstances": {
       "document": "本接口（InquiryPriceCreateDBInstances）用于查询申请实例价格。",
       "input": "InquiryPriceCreateDBInstancesRequest",
@@ -4563,6 +4570,45 @@
         }
       ],
       "type": "object"
+    },
+    "DBBrainSqlFilter": {
+      "document": "DBBrain Sql查询结构化过滤（字段必须在模板白名单内）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>逻辑字段名（模板白名单内）</p>",
+          "example": "sql",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空默认 eq</p><p>枚举值：</p><ul><li>eq： =</li><li>not_eq： !=</li><li>in： in</li><li>not_in： not in</li><li>like： like</li><li>not_like： not like</li><li>gt： gt</li><li>ge： ge</li><li>lt： lt</li><li>le： le</li></ul>",
+          "example": "eq",
+          "member": "string",
+          "name": "Operate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值数组；like 由服务端拼 %，无需传通配符</p>",
+          "example": "[\"SELECT TOP 1 name FROM dbo.spt_values\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DBCreateInfo": {
       "document": "数据库创建信息",
@@ -13013,6 +13059,108 @@
         }
       ],
       "usage": "out"
+    },
+    "ExecuteDBBrainQueryRequest": {
+      "document": "ExecuteDBBrainQuery请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "mssql-0ma5rgjx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>sql编号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SqlNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例角色</p><p>枚举值：</p><ul><li>master： 主实例</li><li>ro： 只读实例</li></ul>",
+          "example": "master",
+          "member": "string",
+          "name": "NodeRole",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标库</p>",
+          "example": "tempdb",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化过滤，字段必须在模板白名单内</p>",
+          "example": "无",
+          "member": "DBBrainSqlFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>位置参数，数量必须等于模板声明（否则 ArgCountMismatch）；topN 须数字字符串</p>",
+          "example": "[\"50\"]",
+          "member": "string",
+          "name": "Args",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecuteDBBrainQueryResponse": {
+      "document": "ExecuteDBBrainQuery返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列名数组，与 SQL 的 SELECT 别名一一对应（SqlNo=13 例外：恒为 [&quot;plan&quot;]）</p>",
+          "example": "[\"Ok\"]",
+          "member": "string",
+          "name": "Names",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据行数组，每行是一个 JSON 字符串（需二次解析）；空结果集为 []，不是 null</p>",
+          "example": "[\"{\\\"Ok\\\":1}\"]",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>success；超 1000 行截断时含 truncated 标注；结果解析失败时追加 result parse failed: &lt;原因&gt;, raw result returned 且返回 agent 原始结果</p>",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ExportFile": {
       "document": "导出文件",

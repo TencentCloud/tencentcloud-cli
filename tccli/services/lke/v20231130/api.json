@@ -1262,8 +1262,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户输入的值",
-          "example": "['text']",
+          "document": "<p>用户输入的值</p>",
+          "example": "[\"text\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,

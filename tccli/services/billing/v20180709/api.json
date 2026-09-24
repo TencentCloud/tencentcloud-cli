@@ -589,7 +589,7 @@
       "status": "online"
     },
     "DescribeVoucherList": {
-      "document": "获取代金券列表",
+      "document": "获取近两年的代金券信息。",
       "input": "DescribeVoucherListRequest",
       "name": "获取代金券列表",
       "output": "DescribeVoucherListResponse",

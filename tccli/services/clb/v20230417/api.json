@@ -1670,7 +1670,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的负载均衡实例ID列表。",
+          "document": "<p>要查询的负载均衡实例ID列表。</p>",
           "example": "[\"lb-qc2iq5yc\"]",
           "member": "string",
           "name": "LoadBalancerIds",
@@ -1679,7 +1679,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的监听器ID列表。",
+          "document": "<p>要查询的监听器ID列表。</p>",
           "example": "[\"lbl-cpu5e38u\"]",
           "member": "string",
           "name": "ListenerIds",
@@ -1688,10 +1688,19 @@
         },
         {
           "disabled": false,
-          "document": "要查询的转发规则ID列表。",
+          "document": "<p>要查询的转发规则ID列表。</p>",
           "example": "[\"loc-q41gixxq\"]",
           "member": "string",
           "name": "LocationIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定展示扩充字段</p><p>枚举值：</p><ul><li>Statistics ： 后端服务健康状态统计</li></ul>",
+          "example": "[\"Statistics\"]",
+          "member": "string",
+          "name": "DisplayFields",
           "required": false,
           "type": "list"
         }
@@ -1703,7 +1712,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡实例列表。",
+          "document": "<p>负载均衡实例列表。</p>",
           "example": "无",
           "member": "LoadBalancerHealth",
           "name": "LoadBalancers",
@@ -3129,7 +3138,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "转发规则ID",
+          "document": "<p>转发规则ID</p>",
           "example": "loc-lmf0xxxx",
           "member": "string",
           "name": "LocationId",
@@ -3139,7 +3148,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的域名",
+          "document": "<p>转发规则的域名</p>",
           "example": "test.clb.cloud.tencent.com",
           "member": "string",
           "name": "Domain",
@@ -3149,7 +3158,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则的Url",
+          "document": "<p>转发规则的Url</p>",
           "example": "/health",
           "member": "string",
           "name": "Url",
@@ -3159,7 +3168,7 @@
         },
         {
           "disabled": false,
-          "document": "高级路由规则ID",
+          "document": "<p>高级路由规则ID</p>",
           "example": "rule-b6xw**lo",
           "member": "string",
           "name": "RuleId",
@@ -3169,12 +3178,22 @@
         },
         {
           "disabled": false,
-          "document": "本规则上绑定的后端服务的健康检查状态",
+          "document": "<p>本规则上绑定的后端服务的健康检查状态</p>",
           "example": "无",
           "member": "TargetHealth",
           "name": "Targets",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端服务健康状态统计</p>",
+          "example": "无",
+          "member": "TargetHealthStatistics",
+          "name": "TargetHealthStatistics",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3459,6 +3478,52 @@
           "example": "10",
           "member": "uint64",
           "name": "Weight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TargetHealthStatistics": {
+      "document": "健康检查统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>正常后端服务数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Alive",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常后端服务数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Dead",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未知状态后端服务数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Unknown",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关闭健康检查后端服务数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Close",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false

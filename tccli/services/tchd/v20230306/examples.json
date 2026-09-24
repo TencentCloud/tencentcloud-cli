@@ -1,13 +1,5 @@
 {
   "actions": {
-    "DescribeConsoleServiceEventList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tchd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleServiceEventList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d11ef357-27e0-477c-a763-b166aa67bd0f\"\n    }\n}",
-        "title": "查询服务事件列表接口示例"
-      }
-    ],
     "DescribeEventStatistics": [
       {
         "document": "查询腾讯云健康看板的实时可用性事件信息",

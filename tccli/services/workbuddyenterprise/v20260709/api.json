@@ -133,6 +133,13 @@
       "output": "DescribeSkillListResponse",
       "status": "online"
     },
+    "DescribeUserAccessToken": {
+      "document": "根据调用者的 Uin / SubAccountUin 调用 OneID 换取用户级 access_token。换取到的 token 是 OneID 用户身份的短期凭证，供调用方以用户身份访问 OneID 开平接口。默认开启 JIT，SubAccountUin 不存在时自动在目标企业下创建影子用户。",
+      "input": "DescribeUserAccessTokenRequest",
+      "name": "查询用户级访问凭证",
+      "output": "DescribeUserAccessTokenResponse",
+      "status": "online"
+    },
     "MigrateAgentSession": {
       "document": "将指定会话迁移到目标版本。SessionID / RuntimeID 保持不变，通过 AgentOS UpdateSession 在原沙箱上更新 manifest 到新版本；AgentId 必须与原 Session 一致（禁止跨 Agent 迁移）；ChatToken 复用旧值不轮转。",
       "input": "MigrateAgentSessionRequest",
@@ -3017,6 +3024,23 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAccessTokenRequest": {
+      "document": "DescribeUserAccessToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserAccessTokenResponse": {
+      "document": "DescribeUserAccessToken返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

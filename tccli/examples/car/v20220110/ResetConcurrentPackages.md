@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli car ResetConcurrentPackages --cli-unfold-argument  \
-    --ConcurrentPackageIds cac-1234abcd
+    --ConcurrentPackageIds cgc-a1b2c3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "add8a6c9-a323-4178-bc2e-410df812369e"
     }
 }
 ```

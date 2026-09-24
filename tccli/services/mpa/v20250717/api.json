@@ -465,6 +465,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Vpc子网ID。</p>",
+          "example": "subnet-pdwaiore",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

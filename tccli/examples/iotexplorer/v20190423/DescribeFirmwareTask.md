@@ -1,31 +1,42 @@
-**Example 1: 查询固件升级任务详情**
+**Example 1: 示例**
 
-查询固件升级任务详情
+查询指定批量升级固件任务的详情
 
 Input: 
 
 ```
 tccli iotexplorer DescribeFirmwareTask --cli-unfold-argument  \
-    --TaskId 1 \
+    --ProductID product \
     --FirmwareVersion 1.0.0 \
-    --ProductID J2CRPPZ8J4
+    --TaskId 1000
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3c11474f-9501-482f-8b59-97213b8779d4",
-        "UpgradeMode": "filename",
+        "TaskId": 1000,
+        "ProductId": "product",
         "ProductName": "name",
-        "CreateUserId": 2362445,
-        "ProductId": "J2CRPPZ8J4",
-        "Type": 1,
-        "TaskId": 1,
-        "CreateTime": 1686291740,
-        "OriginalVersion": "v1",
         "CreatorNickName": "leo",
-        "Status": 5
+        "Status": 5,
+        "Type": 1,
+        "CreateTime": 1791206390,
+        "CreateUserId": 2362445,
+        "UpgradeMode": "filename",
+        "OriginalVersion": "1.0.0",
+        "UpgradeMethod": 0,
+        "DelayTime": 0,
+        "TimeoutInterval": 86400,
+        "MaxRetryNum": 3,
+        "RetryInterval": 60,
+        "OverrideMode": 0,
+        "FwType": "mcu",
+        "TaskUserDefine": "{\"key\":\"value\"}",
+        "RateLimit": 1000,
+        "StartTime": 1791206400,
+        "EndTime": 1791811200,
+        "RequestId": "3c11474f-9501-482f-8b59-97213b8779d4"
     }
 }
 ```

@@ -2374,8 +2374,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "并发包ID数组",
-          "example": "cac-1234abcd",
+          "document": "<p>并发包ID数组</p>",
+          "example": "[\"cgc-a1b2c3\"]",
           "member": "string",
           "name": "ConcurrentPackageIds",
           "required": true,
@@ -2910,8 +2910,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用版本 Id",
-          "example": "\"ver-kcegqb\"",
+          "document": "<p>应用版本 Id</p>",
+          "example": "ver-kcegqb",
           "member": "string",
           "name": "ApplicationVersionId",
           "output_required": true,
@@ -2920,7 +2920,7 @@
         },
         {
           "disabled": false,
-          "document": "应用版本大小",
+          "document": "<p>应用版本大小</p>",
           "example": "1024",
           "member": "int64",
           "name": "ApplicationVersionSize",
@@ -2930,8 +2930,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本状态（Uploading 创建中、Creating 创建中、CreateFailed 创建失败、Deleting 删除中、Inuse 当前版本、Normal 待发布、Usable 可用）",
-          "example": "\"Createing\"",
+          "document": "<p>应用版本状态（Uploading 创建中、Creating 创建中、CreateFailed 创建失败、Deleting 删除中、Inuse 当前版本、Normal 待发布、Usable 可用）</p>",
+          "example": "Createing",
           "member": "string",
           "name": "ApplicationVersionStatus",
           "output_required": true,
@@ -2940,8 +2940,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本名称",
-          "example": "\"version_name\"",
+          "document": "<p>应用版本名称</p>",
+          "example": "version_name",
           "member": "string",
           "name": "ApplicationVersionName",
           "output_required": true,
@@ -2950,8 +2950,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本创建时间",
-          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "document": "<p>应用版本创建时间</p>",
+          "example": "2022-02-15T01:51:55.786Z",
           "member": "datetime_iso",
           "name": "CreateTime",
           "output_required": true,
@@ -2960,8 +2960,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本分发区域（\n标准区：\nap-chinese-mainland ： 中国大陆、\nna-north-america : 北美、\neu-frankfurt ：法兰克福、\nap-mumbai ： 孟买、\nap-tokyo ： 东京、\nap-seoul ： 首尔、\nap-singapore ： 新加坡、\nap-bangkok ： 曼谷、\nap-hongkong ： 中国香港、\n融合区:\nme-middle-east-fusion ：中东\nna-north-america-fusion ：北美\nsa-south-america-fusion ：南美\nap-tokyo-fusion ： 东京\nap-seoul-fusion ： 首尔\neu-frankfurt-fusion ：法兰克福\nap-singapore-fusion ： 新加坡\nap-hongkong-fusion ： 中国香港\n）",
-          "example": "\"[\"ap-chinese-mainland\",\"sa-south-america-fusion\"]\"",
+          "document": "<p>应用版本分发区域（<br>标准区：<br>ap-chinese-mainland ： 中国大陆、<br>na-north-america : 北美、<br>eu-frankfurt ：法兰克福、<br>ap-mumbai ： 孟买、<br>ap-tokyo ： 东京、<br>ap-seoul ： 首尔、<br>ap-singapore ： 新加坡、<br>ap-bangkok ： 曼谷、<br>ap-hongkong ： 中国香港、<br>融合区:<br>me-middle-east-fusion ：中东<br>na-north-america-fusion ：北美<br>sa-south-america-fusion ：南美<br>ap-tokyo-fusion ： 东京<br>ap-seoul-fusion ： 首尔<br>eu-frankfurt-fusion ：法兰克福<br>ap-singapore-fusion ： 新加坡<br>ap-hongkong-fusion ： 中国香港<br>）</p>",
+          "example": "[\"ap-chinese-mainland\",\"sa-south-america-fusion\"]",
           "member": "string",
           "name": "ApplicationVersionRegions",
           "output_required": true,
@@ -2970,8 +2970,8 @@
         },
         {
           "disabled": false,
-          "document": "应用版本更新方式：\nFULL：全量更新、\nINCREMENT：增量更新",
-          "example": "\"FULL|INCREMENT\"",
+          "document": "<p>应用版本更新方式：<br>FULL：全量更新、<br>INCREMENT：增量更新</p>",
+          "example": "FULL",
           "member": "string",
           "name": "ApplicationVersionUpdateMode",
           "output_required": true,

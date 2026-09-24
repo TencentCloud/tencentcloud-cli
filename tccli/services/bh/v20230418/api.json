@@ -13408,8 +13408,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索区间的开始时间",
-          "example": "2020-01-02T01:01:01+08:0",
+          "document": "<p>搜索区间的开始时间，缺省时取结束时间前7天（含结束时间当日）</p>",
+          "example": "2020-01-02T01:01:01+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": false,
@@ -13417,8 +13417,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索区间的结束时间",
-          "example": "2020-01-02T01:01:01+08:0",
+          "document": "<p>搜索区间的结束时间。未指定时，默认取当前时间</p>",
+          "example": "2020-01-02T01:01:01+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": false,
@@ -13426,7 +13426,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务ID",
+          "document": "<p>运维任务ID</p>",
           "example": "ops-awe1d23",
           "member": "string",
           "name": "OperationId",
@@ -13435,7 +13435,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务名称",
+          "document": "<p>运维任务名称</p>",
           "example": "\"运维任务1\"",
           "member": "string",
           "name": "Name",
@@ -13444,7 +13444,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名，长度不超过20",
+          "document": "<p>用户名，长度不超过20</p>",
           "example": "nick",
           "member": "string",
           "name": "UserName",
@@ -13453,7 +13453,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名，长度不超过20",
+          "document": "<p>姓名，长度不超过20</p>",
           "example": "tom",
           "member": "string",
           "name": "RealName",
@@ -13462,7 +13462,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型\n1 手工运维任务\n2 定时任务\n3 账号推送任务",
+          "document": "<p>任务类型<br>1 手工运维任务<br>2 定时任务<br>3 账号推送任务</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "TaskType",
@@ -13471,7 +13471,7 @@
         },
         {
           "disabled": false,
-          "document": "查询偏移",
+          "document": "<p>查询偏移</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -13480,7 +13480,7 @@
         },
         {
           "disabled": false,
-          "document": "分页的页内记录数，默认为20，最大200",
+          "document": "<p>分页的页内记录数，默认为20，最大200</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -13495,7 +13495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录数",
+          "document": "<p>记录数</p>",
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
@@ -13505,8 +13505,8 @@
         },
         {
           "disabled": false,
-          "document": "运维任务执行结果",
-          "example": " [ { \"UserName\": \"nick\", \"Status\": 0, \"Name\": \"nic\", \"FromIp\": \"192.168.0.1\", \"StartTime\": \"2020-09-22T00:00:00+08:00\", \"EndTime\": \"2020-09-22T00:00:00+08:00\", \"Id\": \"1\", \"RealName\": \"tom\", \"OperationId\": \"ops-adexdea\" } ]",
+          "document": "<p>运维任务执行结果</p>",
+          "example": "无",
           "member": "TaskResult",
           "name": "TaskResult",
           "output_required": true,

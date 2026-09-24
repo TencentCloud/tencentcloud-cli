@@ -219,8 +219,8 @@
     "ResetConcurrentPackages": [
       {
         "document": "重置并发包，断开所有用户连接",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConcurrentPackages\n<公共请求参数>\n\n{\n    \"ConcurrentPackageIds\": [\n        \"cac-1234abcd\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConcurrentPackages\n<公共请求参数>\n\n{\n    \"ConcurrentPackageIds\": [\n        \"cgc-a1b2c3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"add8a6c9-a323-4178-bc2e-410df812369e\"\n    }\n}",
         "title": "ResetConcurrentPackages示例"
       }
     ],

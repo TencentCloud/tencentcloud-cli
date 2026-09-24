@@ -526,7 +526,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: GetSkillPackageUploadURL\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"UploadURL\": \"https://cos.example/upload\",\n        \"ContentStatus\": \"UPLOADING\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\"\n        },\n        \"UploadURL\": \"https://cos.example/upload\",\n        \"ContentStatus\": \"UPLOADING\"\n    }\n}",
         "title": "重试 Skill Version 上传"
       }
     ],

@@ -246,14 +246,14 @@
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayLLMTokenUsageList": {
-      "document": "查询 AI 网关Token 消耗统计",
+      "document": "查询 AI 网关Token 消耗统计（消费者消费金额数据）",
       "input": "DescribeCloudNativeAPIGatewayLLMTokenUsageListRequest",
       "name": "查询AI网关Token用量详情",
       "output": "DescribeCloudNativeAPIGatewayLLMTokenUsageListResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics": {
-      "document": "查询 AI 网关Token 消耗统计汇总",
+      "document": "查询 AI 网关Token 消耗统计汇总含（消费者消费金额数据）",
       "input": "DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsRequest",
       "name": "查询AI网关Token用量消耗统计汇总结果",
       "output": "DescribeCloudNativeAPIGatewayLLMTokenUsageStatisticsResponse",
