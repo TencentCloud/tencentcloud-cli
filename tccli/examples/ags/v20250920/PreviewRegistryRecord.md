@@ -5,13 +5,19 @@
 Input: 
 
 ```
-tccli ags PreviewRegistryRecord --cli-unfold-argument ```
+tccli ags PreviewRegistryRecord --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd \
+    --Label stable
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-example"
+        "RequestId": "req-example",
+        "PreviewResult": "{\"StatusCode\": 200, \"Body\": \"{\\\"name\\\":\\\"example.com/weather\\\"}\", \"HasUpdate\": false}",
+        "ResolvedVersionId": "rv-0123abcd"
     }
 }
 ```

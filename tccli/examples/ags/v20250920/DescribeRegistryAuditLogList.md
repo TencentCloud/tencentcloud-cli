@@ -5,13 +5,19 @@
 Input: 
 
 ```
-tccli ags DescribeRegistryAuditLogList --cli-unfold-argument ```
+tccli ags DescribeRegistryAuditLogList --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd \
+    --VersionId rv-0123abcd
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-example"
+        "RequestId": "req-example",
+        "AuditLogSet": [],
+        "TotalCount": 0
     }
 }
 ```

@@ -2,10 +2,10 @@
   "actions": {
     "AddUser": [
       {
-        "document": "创建子账号",
-        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Remark\": \"jack account\",\n    \"Name\": \"jack\",\n    \"CountryCode\": \"86\",\n    \"NeedResetPassword\": \"0\",\n    \"PhoneNum\": \"10086\",\n    \"UseApi\": \"1\",\n    \"ConsoleLogin\": \"1\",\n    \"Password\": \"test123456\",\n    \"Email\": \"123%40qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Uid\": 5648765,\n        \"Uin\": 100000546533,\n        \"Name\": \"jack\",\n        \"Password\": \"test123456\",\n        \"SecretId\": \"faweffewagwaegawe\",\n        \"SecretKey\": \"fawef23rjhiuaefhuaifhiuawef\",\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
-        "title": "添加子用户"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddUser\n<公共请求参数>\n\n{\n    \"Name\": \"c*****\",\n    \"PhoneNum\": \"132*****828\",\n    \"CountryCode\": \"86\",\n    \"Email\": \"gavinh************t.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Name\": \"c*****\",\n        \"Password\": \"\",\n        \"PhoneNumVerifyLink\": \"https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca3537447af****************\",\n        \"SecretId\": \"\",\n        \"SecretKey\": \"\",\n        \"Uid\": 900000000,\n        \"Uin\": 700003000000,\n        \"RequestId\": \"bfbeba3a-40a2-4eb9-b760-3fdf2c92170f\"\n    }\n}",
+        "title": "创建子用户"
       }
     ],
     "AddUserToGroup": [
@@ -76,7 +76,7 @@
       {
         "document": "创建消息接收人",
         "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMessageReceiver\n<公共请求参数>\n\n{\n    \"Name\": \"用户\",\n    \"Remark\": \"添加消息接收人\",\n    \"CountryCode\": \"86\",\n    \"PhoneNumber\": \"132****4539\",\n    \"Email\": \"57****@qq.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f709ad6e-991f-49bb-aaaa-c354e434343434\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f709ad6e-991f-49bb-aaaa-c354e434343434\",\n        \"PhoneNumVerifyLink\": \"https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca353744****************2d1\"\n    }\n}",
         "title": "创建消息接收人"
       }
     ],

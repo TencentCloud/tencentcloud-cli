@@ -28,6 +28,7 @@ Output:
                     "DeviceNewStrategyVer": "",
                     "NGNNewStrategyVer": "2022-07-28 15:21:00",
                     "HostName": "",
+                    "Profiles": [],
                     "UserName": "niozhang",
                     "Version": "28429406901371100",
                     "Itime": "2022-10-21T15:21:37.460778+08:00",

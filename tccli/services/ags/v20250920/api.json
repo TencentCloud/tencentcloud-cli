@@ -721,12 +721,59 @@
     },
     "ApproveRegistryRecordRequest": {
       "document": "ApproveRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作留言；非空。</p>",
+          "example": "approved",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ApproveRegistryRecordResponse": {
       "document": "ApproveRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Version。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -755,12 +802,59 @@
     },
     "CancelRegistryRecordRequest": {
       "document": "CancelRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作留言；非空。</p>",
+          "example": "approved",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CancelRegistryRecordResponse": {
       "document": "CancelRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Version。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -794,6 +888,941 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudAgentSourceInput": {
+      "document": "Agent Record 内容来源。Type 判别 MANUAL 与 URL_IMPORT。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源类型。MANUAL：直接提交 Agent Descriptors JSON 文本；URL_IMPORT：从远端 Agent Card / AGUI 端点导入。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "URL_IMPORT",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Type=MANUAL 时必填；值为通用 JSON object 文本；A2A 标准校验或 AGUI/CUSTOM 规则由后端执行。（JSON 字符串形式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"name\":\"agui-manual-20260918032825-82314\",\"protocol\":\"ag-ui\",\"url\":\"https://example.com/agui/v1\",\"transport\":\"sse\",\"capabilities\":{}}",
+          "member": "string",
+          "name": "Descriptors",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A：Agent Card URL；AGUI：Runtime Endpoint URL。Type=URL_IMPORT 时必填，HTTPS。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://registry.tencentcloudapi.com/agui/agui-url-20260918032825-82314",
+          "member": "string",
+          "name": "EndpointURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudAuditLog": {
+      "document": "审计日志条目。记录 Registry / Record / Version 维度的动作。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审计日志 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "889f42e1-0361-4426-b948-75de1bf6e2b6",
+          "member": "string",
+          "name": "AuditLogId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属 Registry ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reg-2dqpkr02",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作发起者（主账号 UIN 或子账号 UIN）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100049523787",
+          "member": "string",
+          "name": "Actor",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Action 名称，等同 X-TC-Action。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "registry.update",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作脱敏摘要对象；使用云 API 字段命名，字段随 Action 而变；不包含凭据、预签名 URL 或完整 Descriptor。（JSON 字符串形式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"RecordId\":\"rec-0123abcd\",\"VersionId\":\"rv-0123abcd\",\"ApprovalMode\":\"MANUAL\",\"Comment\":\"approved\"}",
+          "member": "string",
+          "name": "Details",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作发生时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-03T11:52:49Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Record ID；仅 Record / Version 相关动作。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Version ID；仅 Version 相关动作。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudFilter": {
+      "document": "通用过滤条件。Name 为字段名，Values 为字段候选值；字段间 AND、Values 内 OR。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段名。DescribeRegistryList 支持 <code>name</code> / <code>search</code>（模糊搜索）与 <code>archived</code> / <code>status</code>（true / false / all）；DescribeRegistryRecordList 支持 <code>name</code> / <code>search</code>（模糊）、<code>descriptor-type</code>、<code>lifecycle-status</code>（精确）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "search",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤字段候选值列表；至少 1 项。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"C\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudMCPSourceInput": {
+      "document": "MCP Record 内容来源。Type 判别 MANUAL 与 URL_IMPORT。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源类型。MANUAL：直接提交 MCP Descriptors JSON 文本；URL_IMPORT：从远端 MCP server.json URL 导入。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Type=MANUAL 时必填；值为完整 MCP server.json 对象的 JSON 文本；完整 MCP 2025-12-11 标准校验由后端执行。（JSON 字符串形式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"$schema\":\"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json\",\"name\":\"example.com/weather\",\"description\":\"Weather v2\",\"version\":\"2.0.0\"}",
+          "member": "string",
+          "name": "Descriptors",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>远端 MCP server.json URL；HTTPS。Type=URL_IMPORT 时必填。Version 从远端 initialize.serverInfo.version 观测获得，无需请求参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://mcp.deepwiki.com/mcp",
+          "member": "string",
+          "name": "EndpointURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudRecord": {
+      "document": "Registry Record 对象。Record 只保存元数据；协议描述符与内容状态请通过 Version 相关接口获取。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Record ID；格式 <code>rec-</code> + 8 位小写字母/数字。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rec-hqrxvu1a",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属 Registry ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reg-n7a2l9no",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 名称；同一 Registry 内可重复。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "forC",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "导入测试",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议描述符类型；创建后不可变。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "DescriptorType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生命周期状态。ACTIVE：可用；DELETED：软删除墓碑，不再参与常规查询、下发或版本配额。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "LifecycleStatus",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属租户 AppId。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1457947897",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者主账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100051001552",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号 UIN；主账号直接创建时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100051001552",
+          "member": "string",
+          "name": "CreatorSubAccountUin",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T06:43:49Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T06:43:49Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 下未删除 Version 数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "VersionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"latest\"]",
+          "member": "string",
+          "name": "LabelSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudRecordLabelMutation": {
+      "document": "Record Label 变更操作项。Operation=SET 时可携带 VersionId；DELETE 时禁止 VersionId。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作类型。SET：创建或移动 Label；DELETE：删除自定义 Label（stable/latest 保留 Label 禁止删除）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SET",
+          "member": "string",
+          "name": "Operation",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Label 名称，长度 1..63，格式 ^[a-z][a-z0-9._-]{0,62}$，按小写规范化。stable、latest 为系统保留 Label。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "stable",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标 Version ID。SET 时可选：省略表示未绑定（自定义 Label 允许，stable 禁止）；DELETE 时禁止携带。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rv-i69ks9v2",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更原因，最大 1024 字符，可选。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "正式发布",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudRecordVersion": {
+      "document": "Record 的一个不可变 Version 快照；记录了描述符、来源配置与审批状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Version ID；格式 <code>rv-</code> + 8 位小写字母/数字。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rv-rgn1zzaa",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属 Record ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rec-hqrxvu1a",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 递增序号（1 起）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Revision",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 状态。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "APPROVED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批模式；创建时锁定，后续变更 Registry 审批模式不影响本 Version。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
+          "member": "string",
+          "name": "ApprovalMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属租户 AppId。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1457947897",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者主账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100051001552",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T06:43:49Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T06:43:49Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 别名（可选）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0.0",
+          "member": "string",
+          "name": "VersionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议描述符对象。（JSON 字符串形式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"$schema\":\"https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json\",\"name\":\"com.deepwiki.mcp/deepwiki\",\"description\":\"Imported MCP server\",\"version\":\"2.14.3\",\"remotes\":[{\"type\":\"streamable-http\",\"url\":\"https://mcp.deepwiki.com/mcp\"}]}",
+          "member": "string",
+          "name": "Descriptors",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容来源。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "URL_IMPORT",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>规范化来源配置对象。（JSON 字符串形式）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"EndpointURL\":\"https://mcp.deepwiki.com/mcp\",\"Version\":\"2.14.3\"}",
+          "member": "string",
+          "name": "SourceConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容状态。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "READY",
+          "member": "string",
+          "name": "ContentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>READY 内容 SHA-256。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "member": "string",
+          "name": "ContentSHA256",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>READY 内容字节数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20480",
+          "member": "int64",
+          "name": "ContentSizeBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置内容规范化后的 SHA-256（用于幂等去重）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7826ae36c55fd15af48d3043193671ef2cab220fa3f7ddb7786f8faaa010841a",
+          "member": "string",
+          "name": "ConfigSHA256",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100051001552",
+          "member": "string",
+          "name": "CreatorSubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 历次审批动作。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudVersionApprovalAction",
+          "name": "ApprovalActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>TAR 内容成功校验、完成物化并进入 READY 的时间；MANUAL / URL_IMPORT 或尚未 READY 的 TAR_PACKAGE 均为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-12T09:15:00Z",
+          "member": "string",
+          "name": "ContentReadyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次 Version 的变更原因，最大 4096 字符；不可修改。Revision 1 或未填写时返回空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "增加预警工具",
+          "member": "string",
+          "name": "ChangeLog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前绑定该 Version 的 Label Name 列表（例如 stable / latest 或自定义 Label 名称）。未绑定 Label 不在此返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"latest\"]",
+          "member": "string",
+          "name": "LabelSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudRegistry": {
+      "document": "Registry 对象。包含注册中心的基本信息与 Record 计数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry ID；格式 <code>reg-</code> + 8 位小写字母/数字。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reg-qdfy2ii2",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Registry 同一 AppId + Region 唯一名称。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "勿删",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批模式；AUTO 自动通过，MANUAL 需人工审批；创建时确定，不可修改。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "ApprovalMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Registry 所在腾讯云地域，如 <code>ap-guangzhou</code>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Registry 状态。ACTIVE / ARCHIVED。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ARCHIVED",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，ISO 8601 UTC，如 <code>2026-08-11T10:00:00Z</code>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T06:42:25Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-27T15:09:54Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Registry 下 Record 总数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "RecordCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>权威读取的腾讯云自定义标签，按 Key、Value 稳定排序；无标签时固定返回空数组，不返回 null。</p>",
+          "example": "无",
+          "member": "CloudTag",
+          "name": "Tags",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Stable Label 已绑定的 Record 数量。Approved Version 数量和可对外消费的 Record 数量已不再等价。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "PublishedRecordCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属租户 AppId。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1251707795",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者主账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3321337994",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号 UIN；主账号直接创建时为空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100009277106",
+          "member": "string",
+          "name": "CreatorSubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudSkillSourceInput": {
+      "document": "AGENT_SKILLS 内容来源。Type 判别 MANUAL 与 TAR_PACKAGE 两种模式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源类型。MANUAL：直接提交 SKILL.md 文本；TAR_PACKAGE：由服务端签发 COS PUT 预签名 URL，客户端上传后由服务端异步校验。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SKILL.md 原文；Type=MANUAL 时必填非空；Type=TAR_PACKAGE 时不得提供。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "--- name: example-skill description: Example skill --- # Example skill",
+          "member": "string",
+          "name": "SkillMd",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudTag": {
+      "document": "腾讯云自定义标签。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义标签键；不可使用 qcs:、project 或项目预留前缀，且不可包含首尾空格。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "forC",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义标签值，不可包含首尾空格。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudVersionApprovalAction": {
+      "document": "Version 一次审批动作条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>动作 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rva-ri4bzzm2",
+          "member": "string",
+          "name": "ActionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作类型。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "APPROVE",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作发起者类型。USER 用户；SYSTEM 系统自动通过。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "USER",
+          "member": "string",
+          "name": "ActorType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起者主账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3321337994",
+          "member": "string",
+          "name": "ActorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起者子账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100049523787",
+          "member": "string",
+          "name": "ActorSubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作留言。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发生时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-21T07:15:51Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应云 API 请求的 RequestId。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c0126355-5a96-4fc8-9eef-6fdad82848c8",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1072,12 +2101,154 @@
     },
     "CreateRegistryRecordRequest": {
       "document": "CreateRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>所属 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 名称，长度 1..255，同一租户、Registry 内按规范化 Name 唯一（大小写不敏感）；软删除后允许复用。</p>",
+          "example": "order-query",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议描述符类型。MCP / A2A / AGUI / CUSTOM / AGENT_SKILLS。Record 创建后不可修改。</p>",
+          "example": "MCP",
+          "member": "string",
+          "name": "DescriptorType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 描述，最大 4096 字符，可选，默认空。</p>",
+          "example": "订单查询 MCP 服务",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Revision 1 的展示名称，可选。</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DescriptorType=MCP 时必填，其他类型禁止。</p>",
+          "example": "无",
+          "member": "CloudMCPSourceInput",
+          "name": "MCPSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DescriptorType=A2A 或 AGUI 时必填，其他类型禁止。</p>",
+          "example": "无",
+          "member": "CloudAgentSourceInput",
+          "name": "AgentSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DescriptorType=AGENT_SKILLS 时必填，其他类型禁止。</p>",
+          "example": "无",
+          "member": "CloudSkillSourceInput",
+          "name": "SkillSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DescriptorType=CUSTOM 时必填，其他类型禁止。内容必须是 JSON object 字符串；服务端解析后写入 CloudRecordVersion.Descriptors，Version 的 SourceType 固定为 MANUAL、SourceConfig 固定为空对象。</p>",
+          "example": "{\"vendor\":\"example\",\"capability\":\"order-query\"}",
+          "member": "string",
+          "name": "CustomDescriptors",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateRegistryRecordResponse": {
       "document": "CreateRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>新 Record ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>新建的 Record 详情。</p>",
+          "example": "无",
+          "member": "CloudRecord",
+          "name": "Record",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次创建的 Revision 1 Version 详情。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：TAR 包上传预签名 URL。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cos.example/upload",
+          "member": "string",
+          "name": "UploadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：UploadURL 过期时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-11T00:05:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：Version 内容当前状态（UPLOADING 等）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UPLOADING",
+          "member": "string",
+          "name": "ContentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1089,12 +2260,69 @@
     },
     "CreateRegistryRequest": {
       "document": "CreateRegistry请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>同一 AppId + Region 唯一、长度 1–255</p>",
+          "example": "example-registry",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述文本；最长 4096。</p>",
+          "example": "对外提供实时天气 MCP/Agent 资产。",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批模式；创建时确定，创建后不可修改；省略时默认为 AUTO，枚举值区分大小写。</p>",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "ApprovalMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时绑定的腾讯云自定义标签；Key 不可重复；最多 10 个。</p>",
+          "example": "无",
+          "member": "CloudTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "CreateRegistryResponse": {
       "document": "CreateRegistry返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功的 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Registry 详细信息。</p>",
+          "example": "无",
+          "member": "CloudRegistry",
+          "name": "Registry",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1711,7 +2939,44 @@
     },
     "DeleteRegistryRecordRequest": {
       "document": "DeleteRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。传入时只删除 Record 下指定 Version（软删除）；省略时删除整个 Record。显式传入空字符串或 null 返回 InvalidParameter.VersionId，不得回退为删除整个 Record。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除原因，最大 1024 字符。删除单个 Version 时必填；删除整个 Record 时可选。</p>",
+          "example": "过期删除",
+          "member": "string",
+          "name": "Reason",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteRegistryRecordResponse": {
@@ -1728,7 +2993,17 @@
     },
     "DeleteRegistryRequest": {
       "document": "DeleteRegistry请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteRegistryResponse": {
@@ -2409,12 +3684,114 @@
     },
     "DescribeRegistryAuditLogListRequest": {
       "document": "DescribeRegistryAuditLogList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID；仅过滤 Version 维度动作，可选。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Action 精确过滤（如 <code>record.version.create</code>），可选。</p>",
+          "example": "record.version.create",
+          "member": "string",
+          "name": "ActionFilter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起者过滤（主账号 UIN 或子账号 UIN），可选。</p>",
+          "example": "100012345678",
+          "member": "string",
+          "name": "Actor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间；ISO 8601，可选。</p>",
+          "example": "2026-08-10T00:00:00Z",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间；ISO 8601，可选。</p>",
+          "example": "2026-08-10T23:59:59Z",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页起始偏移，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页条数，默认 20，最大 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryAuditLogListResponse": {
       "document": "DescribeRegistryAuditLogList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Record 维度的审计日志。</p>",
+          "example": "无",
+          "member": "CloudAuditLog",
+          "name": "AuditLogSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2426,12 +3803,60 @@
     },
     "DescribeRegistryListRequest": {
       "document": "DescribeRegistryList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页起始偏移，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页条数，默认 20，最大 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。Name 支持：<code>name</code>/<code>search</code>（模糊）、<code>archived</code>/<code>status</code>（true/false/all）、<code>tag-key</code> 和 <code>tag:&lt;key&gt;</code>；最多 6 个标签过滤组，每个标签过滤组最多 10 个 Values，同 Key 多值为 OR，不同 Key 为 AND。</p>",
+          "example": "无",
+          "member": "CloudFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryListResponse": {
       "document": "DescribeRegistryList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry 对象数组。</p>",
+          "example": "无",
+          "member": "CloudRegistry",
+          "name": "RegistrySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2443,12 +3868,69 @@
     },
     "DescribeRegistryRecordListRequest": {
       "document": "DescribeRegistryRecordList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页起始偏移，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页条数，默认 20，最大 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。支持 Filter.Name：<code>name</code>/<code>search</code>（按 Record Name 模糊搜索）；其他名称返回 <code>InvalidParameter.Filters.Name</code>。</p>",
+          "example": "无",
+          "member": "CloudFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryRecordListResponse": {
       "document": "DescribeRegistryRecordList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Record 对象数组。</p>",
+          "example": "无",
+          "member": "CloudRecord",
+          "name": "RecordSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2460,12 +3942,89 @@
     },
     "DescribeRegistryRecordRequest": {
       "document": "DescribeRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID，与 Label 互斥。指定时返回该 Version；均省略时等价于 Label=stable。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Label 名称，与 VersionId 互斥。指定时返回 Label 当前指向的 Version；均省略时等价于 stable。</p>",
+          "example": "stable",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryRecordResponse": {
       "document": "DescribeRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Record 元数据和全部 Label。</p>",
+          "example": "无",
+          "member": "CloudRecord",
+          "name": "Record",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据 VersionId / Label 解析得到的完整 Version。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析方式：DEFAULT_STABLE / LABEL / VERSION_ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DEFAULT_STABLE",
+          "member": "string",
+          "name": "ResolvedBy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过 Label 解析（ResolvedBy=LABEL 或 DEFAULT_STABLE）时返回该 Label 名称，例如 stable。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "stable",
+          "member": "string",
+          "name": "ResolvedLabel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2477,12 +4036,78 @@
     },
     "DescribeRegistryRecordVersionListRequest": {
       "document": "DescribeRegistryRecordVersionList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页起始偏移，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页条数，默认 20，最大 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。支持：status（按 Version 状态：PREPARING/PENDING_APPROVAL/APPROVED/REJECTED/CANCELED，多值 OR）、source_type（按内容来源：MANUAL/URL_IMPORT/TAR_PACKAGE，多值 OR）。</p>",
+          "example": "无",
+          "member": "CloudFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryRecordVersionListResponse": {
       "document": "DescribeRegistryRecordVersionList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Version 对象数组。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "VersionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合条件的总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2494,12 +4119,32 @@
     },
     "DescribeRegistryRequest": {
       "document": "DescribeRegistry请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeRegistryResponse": {
       "document": "DescribeRegistry返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry 详情。</p>",
+          "example": "无",
+          "member": "CloudRegistry",
+          "name": "Registry",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3268,12 +4913,89 @@
     },
     "GetSkillPackageDownloadURLRequest": {
       "document": "GetSkillPackageDownloadURL请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID；必须 AGENT_SKILLS 且 ContentStatus=READY。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要下载的 Version；与 Label 互斥；均省略时使用 Stable。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要下载的 Label 目标；与 VersionId 互斥；均省略时使用 Stable。</p>",
+          "example": "stable",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetSkillPackageDownloadURLResponse": {
       "document": "GetSkillPackageDownloadURL返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>COS GET 预签名 URL；带 response-content-disposition；默认 TTL 5 分钟；bearer 凭证禁止持久化。</p>",
+          "example": "https://cos.example/download",
+          "member": "string",
+          "name": "DownloadURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL 过期时间。</p>",
+          "example": "2026-08-10T00:05:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端记录的 SHA-256；下载后应本地自检。</p>",
+          "example": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "member": "string",
+          "name": "SHA256",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析出的 Version ID（Stable Version）。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "ResolvedVersionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3285,12 +5007,80 @@
     },
     "GetSkillPackageUploadURLRequest": {
       "document": "GetSkillPackageUploadURL请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID；格式 <code>rv-</code> + 8 位小写字母/数字。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "GetSkillPackageUploadURLResponse": {
       "document": "GetSkillPackageUploadURL返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Version 详情（Revision 不变）。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的 COS PUT 预签名 URL。</p>",
+          "example": "https://cos.example/upload",
+          "member": "string",
+          "name": "UploadURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重试后的内容状态。</p>",
+          "example": "UPLOADING",
+          "member": "string",
+          "name": "ContentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>UploadURL 过期时间。</p>",
+          "example": "2026-08-13T00:15:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3892,12 +5682,69 @@
     },
     "PreviewRegistryRecordRequest": {
       "document": "PreviewRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要预览的目标 Version；与 Label 互斥；均省略时使用 Stable。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要预览的目标 Label；与 VersionId 互斥；均省略时使用 Stable。</p>",
+          "example": "stable",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "PreviewRegistryRecordResponse": {
       "document": "PreviewRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>只读元数据预览结果对象（JSON 字符串形式）。字段：StatusCode（远端 HTTP 状态码，必返）、Body（远端响应体截断字符串，必返）、HasUpdate（Boolean，必返；远端内容按 Sync 相同的规范化规则处理后是否与请求 Version 配置不同；Error 非空时固定返回 false，此时不表示远端没有变化）、Error（调用错误信息，可选）。</p>",
+          "example": "{\"StatusCode\": 200, \"Body\": \"{}\", \"HasUpdate\": true}",
+          "member": "string",
+          "name": "PreviewResult",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际预览的 Version ID（由 VersionId / Label 解析得到）。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "ResolvedVersionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4114,12 +5961,59 @@
     },
     "RejectRegistryRecordRequest": {
       "document": "RejectRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version ID。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作留言；非空。</p>",
+          "example": "approved",
+          "member": "string",
+          "name": "Comment",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RejectRegistryRecordResponse": {
       "document": "RejectRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Version。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5046,12 +6940,128 @@
     },
     "SyncRegistryRecordRequest": {
       "document": "SyncRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>父 Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要同步的目标 Version；与 Label 互斥；均省略时使用 Stable。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选。指定要同步的目标 Label；与 VersionId 互斥；均省略时使用 Stable。Label 在请求开始时只解析一次。</p>",
+          "example": "stable",
+          "member": "string",
+          "name": "Label",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选，最大 4096 字符。若同步创建新 Version，将写入新 Version 的 ChangeLog；省略时保存为空。</p>",
+          "example": "更新版本",
+          "member": "string",
+          "name": "ChangeLog",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "SyncRegistryRecordResponse": {
       "document": "SyncRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>同步结果：UNCHANGED（远端无变化）/ VERSION_CREATED（远端有变化，已生成新 Version）/ FAILED（同步失败）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VERSION_CREATED",
+          "member": "string",
+          "name": "SyncStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>作为同步来源解析出的 Version ID（可能由 Label 解析而来）；不为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "ResolvedVersionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SyncStatus=VERSION_CREATED 时返回：本次新建的 Version。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "CreatedVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SyncStatus=VERSION_CREATED 时返回：同步后的最新 Record。</p>",
+          "example": "无",
+          "member": "CloudRecord",
+          "name": "Record",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后一次同步时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-12T00:00:00Z",
+          "member": "string",
+          "name": "LastSyncTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败错误码；SyncStatus=FAILED 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sync_failed",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败错误信息；SyncStatus=FAILED 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "远端返回 500 Internal Server Error",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5091,12 +7101,153 @@
     },
     "UpdateRegistryRecordRequest": {
       "document": "UpdateRegistryRecord请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record ID。</p>",
+          "example": "rec-0123abcd",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 描述，可选。Record 更新模式下允许，允许空字符串清空；Version 创建模式禁止。</p>",
+          "example": "更新后的描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新 Version 的展示名，可选。仅 Version 创建模式允许。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "VersionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新 Version 的变更原因，最大 4096 字符，可选。仅 Version 创建模式允许。</p>",
+          "example": "更新版本",
+          "member": "string",
+          "name": "ChangeLog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式：现有 Record 的 DescriptorType=MCP 时可提交。</p>",
+          "example": "无",
+          "member": "CloudMCPSourceInput",
+          "name": "MCPSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式：现有 Record 的 DescriptorType=A2A 或 AGUI 时可提交。</p>",
+          "example": "无",
+          "member": "CloudAgentSourceInput",
+          "name": "AgentSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式：现有 Record 的 DescriptorType=AGENT_SKILLS 时可提交。</p>",
+          "example": "无",
+          "member": "CloudSkillSourceInput",
+          "name": "SkillSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式：现有 Record 的 DescriptorType=CUSTOM 时可提交，必须是 JSON object 字符串。</p>",
+          "example": "{\"vendor\":\"example\",\"capability\":\"order-query\"}",
+          "member": "string",
+          "name": "CustomDescriptors",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 更新模式：Label 变更列表，最多 32 条，同一次请求中 Label Name 不可重复。</p>",
+          "example": "无",
+          "member": "CloudRecordLabelMutation",
+          "name": "LabelMutations",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "UpdateRegistryRecordResponse": {
       "document": "UpdateRegistryRecord返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Record。</p>",
+          "example": "无",
+          "member": "CloudRecord",
+          "name": "Record",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式返回：本次创建的新 Version。</p>",
+          "example": "无",
+          "member": "CloudRecordVersion",
+          "name": "Version",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式且 SkillSource.Type=TAR_PACKAGE 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://cos.example/upload",
+          "member": "string",
+          "name": "UploadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式且 SkillSource.Type=TAR_PACKAGE 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-11T00:05:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Version 创建模式且 SkillSource.Type=TAR_PACKAGE 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UPLOADING",
+          "member": "string",
+          "name": "ContentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5108,12 +7259,41 @@
     },
     "UpdateRegistryRequest": {
       "document": "UpdateRegistry请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Registry ID。</p>",
+          "example": "reg-0123abcd",
+          "member": "string",
+          "name": "RegistryId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的描述；必填；最长 4096。</p>",
+          "example": "Updated",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "UpdateRegistryResponse": {
       "document": "UpdateRegistry返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 Registry 详情。</p>",
+          "example": "无",
+          "member": "CloudRegistry",
+          "name": "Registry",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

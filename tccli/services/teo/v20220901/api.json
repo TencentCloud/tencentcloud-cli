@@ -154,6 +154,13 @@
       "output": "CreateInferenceAPITokenResponse",
       "status": "online"
     },
+    "CreateInferenceDomain": {
+      "document": "创建推理服务域名，用于通过自定义域名访问推理服务，一个推理服务下最多支持创建 5 个自定义域名。\n创建成功后，还需完成以下步骤，域名才能正常对外提供访问：\n1. 校验域名 CNAME 配置状态，请参考 [CheckCnameStatus](https://cloud.tencent.com/document/api/1552/94491) 接口；\n2. 验证归属权，请参考 [VerifyOwnership](https://cloud.tencent.com/document/api/1552/98879) 接口；\n3. 配置域名证书，请参考 [ModifyHostsCertificate](https://cloud.tencent.com/document/api/1552/80764) 接口。",
+      "input": "CreateInferenceDomainRequest",
+      "name": "创建推理域名",
+      "output": "CreateInferenceDomainResponse",
+      "status": "online"
+    },
     "CreateInferenceService": {
       "document": "创建推理服务，支持设置服务名称、监听端口、容器镜像配置和资源配置，创建成功后提供推理访问地址。",
       "input": "CreateInferenceServiceRequest",
@@ -761,6 +768,13 @@
       "input": "DescribeInferenceAPITokensRequest",
       "name": "查询推理 API Token",
       "output": "DescribeInferenceAPITokensResponse",
+      "status": "online"
+    },
+    "DescribeInferenceDomains": {
+      "document": "查询推理服务域名列表，返回域名的Cname地址、归属权验证和证书等相关信息。",
+      "input": "DescribeInferenceDomainsRequest",
+      "name": "查询推理服务域名列表",
+      "output": "DescribeInferenceDomainsResponse",
       "status": "online"
     },
     "DescribeInferenceHardwareSpecifications": {
@@ -1601,6 +1615,13 @@
       "input": "ModifyZoneWorkModeRequest",
       "name": "修改站点工作模式",
       "output": "ModifyZoneWorkModeResponse",
+      "status": "online"
+    },
+    "OperateInferenceDomain": {
+      "document": "操作推理服务域名，支持停止、启用和删除推理服务域名，删除后的资源不可恢复。",
+      "input": "OperateInferenceDomainRequest",
+      "name": "操作推理服务域名",
+      "output": "OperateInferenceDomainResponse",
       "status": "online"
     },
     "OperateInferenceService": {
@@ -7892,6 +7913,60 @@
       ],
       "type": "object"
     },
+    "CreateInferenceDomainRequest": {
+      "document": "CreateInferenceDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3v0yhgt4m1z9",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务ID。</p>",
+          "example": "inf-vs06pb1cdz61",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务域名。</p>",
+          "example": "test-ai.eo.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理任务请求鉴权开关。</p><p>枚举值：</p><ul><li>Off： 关闭鉴权；</li><li>On： 开启鉴权。</li></ul><p>默认值：On。</p>",
+          "example": "On",
+          "member": "string",
+          "name": "AuthSwitch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInferenceDomainResponse": {
+      "document": "CreateInferenceDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateInferenceServiceRequest": {
       "document": "CreateInferenceService请求参数结构体",
       "members": [
@@ -12232,7 +12307,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加速域名所属站点 ID。",
+          "document": "<p>加速域名所属站点 ID。</p>",
           "example": "zone-20hyebgyfsko",
           "member": "string",
           "name": "ZoneId",
@@ -12241,7 +12316,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询偏移量，默认为 0。",
+          "document": "<p>分页查询偏移量，默认为 0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -12250,7 +12325,7 @@
         },
         {
           "disabled": false,
-          "document": "分页查询限制数目，默认值：20，上限：200。",
+          "document": "<p>分页查询限制数目，默认值：20，上限：200。</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -12259,7 +12334,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：\n<li>domain-name：按照加速域名进行过滤；</li>\n<li>origin-type：按照源站类型进行过滤；</li>\n<li>origin：按照主源站地址进行过滤；</li>\n<li>backup-origin： 按照备用源站地址进行过滤；</li>\n<li>domain-cname：按照 CNAME 进行过滤；</li>\n<li>share-cname：按照共享 CNAME 进行过滤；</li>",
+          "document": "<p>过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：</p><li>domain-name：按照加速域名进行过滤；</li><li>origin-type：按照源站类型进行过滤；</li><li>origin：按照主源站地址进行过滤；</li><li>backup-origin： 按照备用源站地址进行过滤；</li><li>domain-cname：按照 CNAME 进行过滤；</li><li>share-cname：按照共享 CNAME 进行过滤；</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -12268,7 +12343,7 @@
         },
         {
           "disabled": false,
-          "document": "可根据该字段对返回结果进行排序，取值有：\n<li>created_on：加速域名创建时间；</li>\n<li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。",
+          "document": "<p>可根据该字段对返回结果进行排序，取值有：</p><li>created_on：加速域名创建时间；</li><li>domain-name：加速域名。</li>不填写时，默认对返回结果按照 domain-name 排序。",
           "example": "domain-name",
           "member": "string",
           "name": "Order",
@@ -12277,7 +12352,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ascill 码的大小排序。取值有：\n<li>asc：升序排列；</li>\n<li>desc：降序排列。</li>不填写使用默认值 asc。",
+          "document": "<p>排序方向，如果是字段值为数字，则根据数字大小排序；如果字段值为文本，则根据 ASCII 码的大小排序。取值有：</p><li>asc：升序排列；</li><li>desc：降序排列。</li>不填写使用默认值 asc。",
           "example": "asc",
           "member": "string",
           "name": "Direction",
@@ -12286,7 +12361,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配方式，取值有：\n<li>all：返回匹配所有查询条件的加速域名；</li>\n<li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。",
+          "document": "<p>匹配方式，取值有：</p><li>all：返回匹配所有查询条件的加速域名；</li><li>any：返回匹配任意一个查询条件的加速域名。</li>不填写时默认值为 all。",
           "example": "all",
           "member": "string",
           "name": "Match",
@@ -12301,7 +12376,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的加速域名个数。",
+          "document": "<p>符合查询条件的加速域名个数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -12311,7 +12386,7 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件的所有加速域名的信息。",
+          "document": "<p>符合查询条件的所有加速域名的信息。</p>",
           "example": "无",
           "member": "AccelerationDomain",
           "name": "AccelerationDomains",
@@ -14528,6 +14603,98 @@
           "example": "无",
           "member": "InferenceAPIToken",
           "name": "Tokens",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInferenceDomainsRequest": {
+      "document": "DescribeInferenceDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3v0yhgt4m1z9",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。</p>",
+          "example": "inf-vs06pb1cdz61",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。</p><p>枚举值：</p><ul><li>CreateTime： 域名创建时间；</li><li>UpdateTime： 域名修改时间。</li></ul><p>默认值：CreateTime。</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式。</p><p>枚举值：</p><ul><li>Asc： 升序方式；</li><li>Desc： 降序方式。</li></ul><p>默认值：Desc。</p>",
+          "example": "Desc",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询偏移量。</p><p>默认值：0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目。</p><p>默认值：20。</p><p>最大值：200。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInferenceDomainsResponse": {
+      "document": "DescribeInferenceDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>推理服务域名总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务域名列表。</p>",
+          "example": "无",
+          "member": "InferenceDomain",
+          "name": "Domains",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -21320,7 +21487,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "HTTP 应答超时时间，单位为秒，取值：5～600。",
+          "document": "<p>HTTP 应答超时时间。</p><p>取值范围：[5, 600]</p><p>单位：秒</p><p>默认值：15</p>",
           "example": "15",
           "member": "int64",
           "name": "ResponseTimeout",
@@ -21611,6 +21778,82 @@
       ],
       "usage": "both"
     },
+    "HostCertInfo": {
+      "document": "https 服务端证书配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器证书 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EO-dsfdsf",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书备注名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认证书",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书类型，取值有：\n<li>default：默认证书；</lil>\n<li>upload：用户上传；</li>\n<li>managed：腾讯云托管。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书过期时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书部署时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "DeployTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签名算法。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RSA",
+          "member": "string",
+          "name": "SignAlgo",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书状态，取值有：\n<li>deployed：已部署；</li>\n<li>processing：部署中；</li>\n<li>applying：申请中；</li>\n<li>failed：申请失败；</li>\n<li>issued：绑定失败。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deployed",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HostHeaderParameters": {
       "document": "Host Header 重写配置参数。",
       "members": [
@@ -21716,6 +21959,52 @@
         }
       ],
       "usage": "both"
+    },
+    "HostsCertificate": {
+      "document": "域名证书配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx.test.com",
+          "member": "string",
+          "name": "Host",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置证书的模式，取值有：\n<li>disable：不配置证书；</li>\n<li>eofreecert：配置 EdgeOne 免费证书；</li> \n<li>sslcert：配置 SSL 证书；</li> ",
+          "example": "disable",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端证书配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostCertInfo",
+          "name": "HostCertInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "申请类型，取值有：\n<li>apply：托管EdgeOne；</li>\n<li>none：不托管EdgeOne。</li>不填，默认取值为none。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apply",
+          "member": "string",
+          "name": "ApplyType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Hsts": {
       "document": "Hsts配置",
@@ -22711,6 +23000,92 @@
         }
       ],
       "usage": "in"
+    },
+    "InferenceDomain": {
+      "document": "推理服务的域名信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名名称。</p>",
+          "example": "test.infer.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名状态。</p><p>枚举值：</p><ul><li>Online： 已生效；</li><li>Process： 部署中；</li><li>Offline： 已停用；</li><li>Init： 未生效，待激活站点。</li></ul>",
+          "example": "Online",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理任务请求鉴权开关。</p><p>枚举值：</p><ul><li>Off： 关闭鉴权；</li><li>On： 开启鉴权。</li></ul><p>默认值：On。</p>",
+          "example": "On",
+          "member": "string",
+          "name": "AuthSwitch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CNAME 地址。</p><p>校验域名 CNAME 配置状态，请参考<a href=\"https://cloud.tencent.com/document/api/1552/94491\"> CheckCnameStatus </a>接口。</p>",
+          "example": "test-ai.eo.cn.ai.dns.vod-bk-qcloud.com.",
+          "member": "string",
+          "name": "Cname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名需进行归属权验证才能继续提供服务时，该对象会携带对应验证方式所需要的信息。</p><p>验证归属权，请参考<a href=\"https://cloud.tencent.com/document/api/1552/98879\"> VerifyOwnership </a>接口。</p>",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名证书信息。</p><p>申请免费证书，请参考 <a href=\"https://cloud.tencent.com/document/api/1552/124807\">ApplyFreeCertificate</a> 接口；<br>检查免费证书申请结果，请参考 <a href=\"https://cloud.tencent.com/document/api/1552/124806\">CheckFreeCertificateVerification</a> 接口；<br>配置域名证书，请参考 <a href=\"https://cloud.tencent.com/document/api/1552/80764\">ModifyHostsCertificate</a> 接口。</p>",
+          "example": "无",
+          "member": "HostsCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-09-15T20:02:58+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间。</p>",
+          "example": "2026-09-15T20:02:58+08:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "InferenceEnvironmentVariable": {
       "document": "推理容器运行时的环境变量。",
@@ -29289,6 +29664,60 @@
         }
       ],
       "usage": "both"
+    },
+    "OperateInferenceDomainRequest": {
+      "document": "OperateInferenceDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3v0yhgt4m1z9",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务 ID。</p>",
+          "example": "inf-vs06pb1cdz61",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理服务域名。</p>",
+          "example": "test-ai.eo.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型。</p><p>枚举值：</p><ul><li>Resume： 启用域名；</li><li>Stop： 停用域名；</li><li>Delete： 删除域名。</li></ul>",
+          "example": "Stop",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "OperateInferenceDomainResponse": {
+      "document": "OperateInferenceDomain返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "OperateInferenceServiceRequest": {
       "document": "OperateInferenceService请求参数结构体",
@@ -37239,6 +37668,34 @@
       ],
       "usage": "out"
     },
+    "ZoneCustomVariables": {
+      "document": "站点级自定义变量配置，包括变量定义和变量运算。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量列表。CustomVariable.Name 需要使用 user.zone. 作为前缀。变量按照数组顺序依次初始化，InitialValue 仅支持引用位于当前变量之前的变量，不支持引用当前变量自身或位于当前变量之后的变量。</p>",
+          "example": "无",
+          "member": "CustomVariable",
+          "name": "CustomVariables",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量运算规则。运算中支持引用已定义的站点级自定义变量。此列表当前只支持填写一项规则，多填无效。</p>",
+          "example": "无",
+          "member": "CustomVariableOperation",
+          "name": "CustomVariableOperations",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ZoneFullConfig": {
       "document": "站点完整配置结构。",
       "members": [
@@ -37259,6 +37716,17 @@
           "example": "无",
           "member": "ZoneConfig",
           "name": "ZoneConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点级自定义变量配置，包括变量定义和变量运算。</p>",
+          "example": "无",
+          "member": "ZoneCustomVariables",
+          "name": "ZoneCustomVariables",
           "output_required": false,
           "required": false,
           "type": "object",

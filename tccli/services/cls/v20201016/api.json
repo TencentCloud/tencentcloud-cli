@@ -15506,6 +15506,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>外网消费开关。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网消费开关。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>消费范围类型，0:最新，1:历史+最新</p>",
           "example": "1",
           "member": "uint64",
@@ -25222,6 +25242,24 @@
         },
         {
           "disabled": false,
+          "document": "<p>外网消费开关。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网消费开关。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "<p>消费范围类型，0:最新，1:历史+最新</p>",
           "example": "1",
           "member": "uint64",
@@ -28474,6 +28512,24 @@
           "name": "HasServicesLog",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网消费开关，默认开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInternetConsume",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网消费开关，默认开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIntranetConsume",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

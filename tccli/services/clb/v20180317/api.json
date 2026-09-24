@@ -3940,7 +3940,7 @@
           "example": "1231.111123",
           "member": "float",
           "name": "InputCachedCoefficient",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -3962,7 +3962,7 @@
           "example": "4323.111123",
           "member": "float",
           "name": "InputCoefficient",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -3973,7 +3973,7 @@
           "example": "3323.111123",
           "member": "float",
           "name": "OutputCoefficient",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -5424,7 +5424,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型输出模态</p>",
+          "document": "<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>",
           "example": "embedding",
           "member": "string",
           "name": "Capability",
@@ -5633,10 +5633,37 @@
         },
         {
           "disabled": false,
-          "document": "<p>Embedding 配置</p>",
+          "document": "<p>Embedding 调度配置</p>",
           "example": "无",
           "member": "EmbeddingConfig",
           "name": "EmbeddingConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Video 配置</p>",
+          "example": "无",
+          "member": "VideoConfig",
+          "name": "VideoConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rerank 调度配置</p>",
+          "example": "无",
+          "member": "RerankConfig",
+          "name": "RerankConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Decisions 调度配置</p>",
+          "example": "无",
+          "member": "DecisionsConfig",
+          "name": "DecisionsConfig",
           "required": false,
           "type": "object"
         }
@@ -6292,6 +6319,45 @@
         }
       ],
       "usage": "out"
+    },
+    "DecisionsConfig": {
+      "document": "DecisionsConfig配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DeleteBudgetsRequest": {
       "document": "DeleteBudgets请求参数结构体",
@@ -8936,12 +9002,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型输出模态</p>",
+          "document": "<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>",
           "example": "chat",
           "member": "string",
           "name": "Capability",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>rerank： 重排序</li><li>video： 视频</li></ul>",
+          "example": "[\"embedding\"]",
+          "member": "string",
+          "name": "Capabilities",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -10812,7 +10887,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型内路由策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型内路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SimpleShuffle",
           "member": "string",
           "name": "RoutingStrategy",
@@ -10834,7 +10909,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>同一模型请求重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "uint64",
           "name": "NumRetries",
@@ -14343,7 +14418,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>输出模态</p>",
+          "document": "<p>输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>",
           "example": "chat",
           "member": "string",
           "name": "Capability",
@@ -14684,7 +14759,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型输出模态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "embedding",
           "member": "string",
           "name": "Capability",
@@ -14736,7 +14811,7 @@
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalitiesUnion",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -15068,10 +15143,50 @@
         },
         {
           "disabled": false,
-          "document": "<p>Embedding配置</p>",
+          "document": "<p>Embedding调度配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "EmbeddingConfig",
           "name": "EmbeddingConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR关联的负载均衡实例id</p>",
+          "example": "lb-8p0jldxc",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频模型设置</p>",
+          "example": "无",
+          "member": "VideoConfig",
+          "name": "VideoConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rerank调度配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RerankConfig",
+          "name": "RerankConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>决策模型设置</p>",
+          "example": "无",
+          "member": "DecisionsConfig",
+          "name": "DecisionsConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -17137,7 +17252,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型输出模态</p>",
+          "document": "<p>模型输出模态</p><p>枚举值：</p><ul><li>chat： 文本</li><li>embedding： 向量</li><li>video： 视频</li><li>rerank： 重排序</li></ul>",
           "example": "embedding",
           "member": "string",
           "name": "Capability",
@@ -17146,10 +17261,37 @@
         },
         {
           "disabled": false,
-          "document": "<p>embedding 模态配置</p>",
+          "document": "<p>Embedding 调度配置</p><p>传入该参数时，必须传Capability为embedding</p>",
           "example": "无",
           "member": "EmbeddingConfig",
           "name": "EmbeddingConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Video 调度配置</p>",
+          "example": "无",
+          "member": "VideoConfig",
+          "name": "VideoConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Rerank 调度配置</p><p>传入该参数时，必须传Capability为rerank</p>",
+          "example": "无",
+          "member": "RerankConfig",
+          "name": "RerankConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Decisions 调度配置</p>",
+          "example": "无",
+          "member": "DecisionsConfig",
+          "name": "DecisionsConfig",
           "required": false,
           "type": "object"
         }
@@ -18679,6 +18821,45 @@
       ],
       "type": "object"
     },
+    "RerankConfig": {
+      "document": "Rerank调度配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>L2路由策略</p><p>枚举值：</p><ul><li>SimpleShuffle： 简单随机路由</li><li>LeastBusy： 最低繁忙路由</li><li>LatencyBasedRouting： 最低延迟路由</li><li>UsageBasedRouting： 用量均衡路由</li><li>CostBasedRouting： 最低积分路由</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CostBasedRouting",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>L2路由算法参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CMR实例级别模型组内请求重试次数</p><p>取值范围：[0, 5]</p><p>默认值：2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Resource": {
       "document": "资源详细信息",
       "members": [
@@ -20129,7 +20310,7 @@
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -21768,7 +21949,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li></ul>",
+          "document": "<p>对应模型的能力</p><p>枚举值：</p><ul><li>chat： 生文能力</li><li>embedding： 向量能力</li><li>rerank： 重排序能力</li><li>video： 生视频能力</li></ul>",
           "example": "chat",
           "member": "string",
           "name": "Capability",
@@ -22042,6 +22223,45 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoConfig": {
+      "document": "video配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型内路由策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同一模型请求重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ZoneInfo": {
       "document": "可用区相关信息",

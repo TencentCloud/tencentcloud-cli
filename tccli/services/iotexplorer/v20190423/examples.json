@@ -60,6 +60,20 @@
         "title": "批量同步执行 TWeSee 语义理解任务 - 失败"
       }
     ],
+    "BatchPublishMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchPublishMessage\n<公共请求参数>\n\n{\n    \"ProductId\": \"XXV7WNTR4F\",\n    \"DeviceNames\": [\n        \"dev_1\"\n    ],\n    \"Topic\": \"XXV7WNTR4F/${deviceName}/data\",\n    \"Payload\": \"hello\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Failures\": [\n            {\n                \"DeviceName\": \"dev_4\",\n                \"ErrCode\": 23102,\n                \"ErrMsg\": \"push: device offline (qos0): push: device unreachable\",\n                \"Status\": \"OFFLINE\"\n            }\n        ],\n        \"SuccessCount\": 3,\n        \"Total\": 4,\n        \"RequestId\": \"d6120860-b5a0-4cb7-a0a7-8de054461ef3\"\n    }\n}",
+        "title": "透传Payload批量下发至设备"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchPublishMessage\n<公共请求参数>\n\n{\n    \"ProductId\": \"XXV7WNTR4F\",\n    \"DeviceNames\": [\n        \"dev_1\"\n    ],\n    \"Topic\": \"XXV7WNTR4F/${deviceName}/data\",\n    \"Payload\": \"MQ==\",\n    \"Qos\": 1,\n    \"PayloadEncoding\": \"base64\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Failures\": [],\n        \"SuccessCount\": 2,\n        \"Total\": 2,\n        \"RequestId\": \"5522bd8b-d860-45c3-86cb-0c829fabaace\"\n    }\n}",
+        "title": "将接收到的经过业务系统base64编码后的Payload进行二进制编码后批量下发至设备"
+      }
+    ],
     "BatchRenewTWeSeeSubscription": [
       {
         "document": "批量续费多个 TWeSee 视频理解订阅。",
@@ -906,6 +920,12 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageEventsByTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"QDA1PZLBNB\",\n    \"DeviceName\": \"dev001\",\n    \"ChannelId\": 0,\n    \"PersonId\": \"person-11111111-2222-3333-4444-555555555555\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Events\": [\n            {\n                \"StartTime\": 1710487888,\n                \"EndTime\": 1710487898,\n                \"Thumbnail\": \"/10000****725/QDA****BNB/dev001/events/1710487888.jpg\",\n                \"EventId\": \"event-123\",\n                \"UploadStatus\": \"Finished\",\n                \"Data\": \"\",\n                \"AITasks\": [\n                    {\n                        \"TaskId\": \"fb066d7a-baac-4706-acda-058f56f82759\",\n                        \"ProductId\": \"QDA1PZLBNB\",\n                        \"DeviceName\": \"dev001\",\n                        \"ChannelId\": 0,\n                        \"ServiceType\": \"VideoToText\",\n                        \"StartTime\": 1710487888,\n                        \"EndTime\": 1710487898,\n                        \"StartTimeMs\": 1710487888270,\n                        \"EndTimeMs\": 1710487898990,\n                        \"Status\": 3,\n                        \"Result\": \"{\\\"Summary\\\":\\\"一个人在门前经过\\\"}\",\n                        \"Files\": [],\n                        \"CreateTime\": 1711338476,\n                        \"UpdateTime\": 1711338476,\n                        \"CustomId\": \"event-123\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"3eace4a0-d09c-4dc9-b91c-98c10d48b009\"\n    }\n}",
         "title": "查询 TWeSee 人员关联的云存事件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageEventsByTWeSeePerson\n<公共请求参数>\n\n{\n    \"ProductId\": \"default\",\n    \"DeviceName\": \"dev0923\",\n    \"PersonId\": \"person-e32b61dc-91a2-a6ca-2174-b2dde9808435\",\n    \"Limit\": 10,\n    \"StartTime\": 1790128384,\n    \"EndTime\": 1790128385\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Events\": [\n            {\n                \"StartTime\": 1790128384,\n                \"EndTime\": 1790128384,\n                \"Thumbnail\": \"\",\n                \"EventId\": \"\",\n                \"UploadStatus\": \"\",\n                \"Data\": \"\",\n                \"AITasks\": [\n                    {\n                        \"TaskId\": \"comp-84cd0c6a-df7d-33cc-2cad-3ce3ef5d9026\",\n                        \"ProductId\": \"700000****17_default\",\n                        \"DeviceName\": \"dev0923\",\n                        \"ServiceType\": \"VideoToText\",\n                        \"ChannelId\": 0,\n                        \"StartTime\": 1790128384,\n                        \"StartTimeMs\": 1790128384078,\n                        \"EndTime\": 1790128384,\n                        \"EndTimeMs\": 1790128384078,\n                        \"Status\": 3,\n                        \"Result\": \"{\\\"DetectedClassifications\\\":[\\\"person\\\"],\\\"Summary\\\":\\\"穿深色西装的男性面向镜头讲话并做手势\\\"}\",\n                        \"Files\": [],\n                        \"FilesInfo\": [],\n                        \"CreateTime\": 1790128384,\n                        \"UpdateTime\": 1790128387\n                    }\n                ]\n            }\n        ],\n        \"VideoURL\": \"\",\n        \"RequestId\": \"20afe765-9afa-41d1-be3f-443a01559800\"\n    }\n}",
+        "title": "查询 TWeSee 人员关联的指定时间范围内的云存事件"
       }
     ],
     "DescribeCloudStorageEventsWithAITasks": [
@@ -1086,10 +1106,10 @@
     ],
     "DescribeFirmwareTask": [
       {
-        "document": "查询固件升级任务详情",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"1\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"ProductID\": \"J2CRPPZ8J4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c11474f-9501-482f-8b59-97213b8779d4\",\n        \"UpgradeMode\": \"filename\",\n        \"ProductName\": \"name\",\n        \"CreateUserId\": 2362445,\n        \"ProductId\": \"J2CRPPZ8J4\",\n        \"Type\": 1,\n        \"TaskId\": 1,\n        \"CreateTime\": 1686291740,\n        \"OriginalVersion\": \"v1\",\n        \"CreatorNickName\": \"leo\",\n        \"Status\": 5\n    }\n}",
-        "title": "查询固件升级任务详情"
+        "document": "查询指定批量升级固件任务的详情",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirmwareTask\n<公共请求参数>\n\n{\n    \"ProductID\": \"product\",\n    \"FirmwareVersion\": \"1.0.0\",\n    \"TaskId\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1000,\n        \"ProductId\": \"product\",\n        \"ProductName\": \"name\",\n        \"CreatorNickName\": \"leo\",\n        \"Status\": 5,\n        \"Type\": 1,\n        \"CreateTime\": 1791206390,\n        \"CreateUserId\": 2362445,\n        \"UpgradeMode\": \"filename\",\n        \"OriginalVersion\": \"1.0.0\",\n        \"UpgradeMethod\": 0,\n        \"DelayTime\": 0,\n        \"TimeoutInterval\": 86400,\n        \"MaxRetryNum\": 3,\n        \"RetryInterval\": 60,\n        \"OverrideMode\": 0,\n        \"FwType\": \"mcu\",\n        \"TaskUserDefine\": \"{\\\"key\\\":\\\"value\\\"}\",\n        \"RateLimit\": 1000,\n        \"StartTime\": 1791206400,\n        \"EndTime\": 1791811200,\n        \"RequestId\": \"3c11474f-9501-482f-8b59-97213b8779d4\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeFirmwareTaskDevices": [

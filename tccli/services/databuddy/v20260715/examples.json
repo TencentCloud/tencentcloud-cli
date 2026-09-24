@@ -90,10 +90,22 @@
     ],
     "KillWorkflowRun": [
       {
+        "document": "OnlyKillPendingRuns=true 时仅终止等待资源中的实例，运行中的不受影响",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillWorkflowRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17623497097012366\",\n    \"WorkflowId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f\",\n    \"WorkflowRunIds\": [\n        \"8e116990-d2b2-451a-84d3-2f890b38de4f_1790157828891\"\n    ],\n    \"OnlyKillPendingRuns\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260923180358_000001\",\n                    \"WorkflowId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f\",\n                    \"WorkflowName\": \"\",\n                    \"WorkflowRunId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f_1790157828891\"\n                }\n            ]\n        },\n        \"RequestId\": \"d8344b33-2948-4a51-949a-aa7f22039440\"\n    }\n}",
+        "title": "仅终止等待中的实例"
+      },
+      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillWorkflowRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1\",\n    \"WorkflowRunIds\": [\n        \"8e0e3485-2736-4530-92ed-932e019898f1_1786115878097\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260807235246_000001\",\n                    \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1_1786115878097\",\n                    \"WorkflowName\": \"\",\n                    \"WorkflowRunId\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"43957900-50db-43be-9cb2-9af3b1f278c0\"\n    }\n}",
         "title": "终止工作流的运行"
+      },
+      {
+        "document": "KillAllRuns=true 时终止该工作流全部运行中实例",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillWorkflowRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17623497097012366\",\n    \"WorkflowId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f\",\n    \"KillAllRuns\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260923172209_000001\",\n                    \"WorkflowId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f\",\n                    \"WorkflowName\": \"\",\n                    \"WorkflowRunId\": \"8e116990-d2b2-451a-84d3-2f890b38de4f_1790155291965\"\n                }\n            ]\n        },\n        \"RequestId\": \"c227081f-3a22-43e7-8ca6-557cc006efbc\"\n    }\n}",
+        "title": "终止所有运行中的实例"
       }
     ],
     "ListConsoleGroupUsers": [

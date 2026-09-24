@@ -7063,7 +7063,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "cdb-test1254",
           "member": "string",
           "name": "InstanceId",
@@ -7072,7 +7072,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。",
+          "document": "<p>开始时间，如“2019-09-10 12:13:14”，截止时间与开始时间的间隔小于7天。</p>",
           "example": "2019-01-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -7081,7 +7081,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。",
+          "document": "<p>截止时间，如“2019-09-11 10:13:14”，截止时间与开始时间的间隔小于7天。</p>",
           "example": "2019-01-01 01:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -7090,7 +7090,7 @@
         },
         {
           "disabled": false,
-          "document": "\"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"redis\" - 云数据库 Redis，\"mongodb\" - 云数据库 MongoDB，默认为\"mysql\"。",
+          "document": "<p>&quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;redis&quot; - 云数据库 Redis，&quot;mongodb&quot; - 云数据库 MongoDB，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>",
           "example": "redis",
           "member": "string",
           "name": "Product",
@@ -7099,7 +7099,7 @@
         },
         {
           "disabled": false,
-          "document": "Proxy节点ID。",
+          "document": "<p>Proxy节点ID。</p>",
           "example": "c8eacc0b41689524298acea949b15aa5ff42c7b7",
           "member": "string",
           "name": "InstanceProxyId",
@@ -7108,7 +7108,7 @@
         },
         {
           "disabled": false,
-          "document": "实例节点ID。",
+          "document": "<p>实例节点ID。</p>",
           "example": "cmgo-8d8e5c87_0-node-slave0",
           "member": "string",
           "name": "InstanceNodeId",
@@ -7117,7 +7117,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型，目前支持值：mongod，mongos。\n其中：\nmongod - MongoDB的数据存储节点\nmongos - MongoDB的路由节点",
+          "document": "<p>查询类型，目前支持值：mongod，mongos。<br>其中：<br>mongod - MongoDB的数据存储节点<br>mongos - MongoDB的路由节点</p>",
           "example": "mongod",
           "member": "string",
           "name": "Type",
@@ -7132,7 +7132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的记录总数。",
+          "document": "<p>符合条件的记录总数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -7142,7 +7142,7 @@
         },
         {
           "disabled": false,
-          "document": "慢日志 top sql 列表。",
+          "document": "<p>慢日志 top sql 列表。</p>",
           "example": "无",
           "member": "SqlCostDistribution",
           "name": "Items",
@@ -7347,7 +7347,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB  for MySQL， &quot;tdstore&quot; - 云数据库TDSQL Boundless，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7394,7 +7394,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
+          "document": "<p>实例 ID。可通过 <a href=\"https://cloud.tencent.com/document/api/1130/57798\">DescribeDiagDBInstances</a> 接口获取。</p>",
           "example": "cdb-c1nl9rpv",
           "member": "string",
           "name": "InstanceId",
@@ -7403,7 +7403,7 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的开始时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "document": "<p>查询范围的开始时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>",
           "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -7412,7 +7412,7 @@
         },
         {
           "disabled": false,
-          "document": "查询范围的结束时间，格式: \"yyyy-MM-dd'T'HH:mm:ssXXX\"。",
+          "document": "<p>查询范围的结束时间，格式: &quot;yyyy-MM-dd&#39;T&#39;HH:mm:ssXXX&quot;。</p>",
           "example": "2019-09-10T12:13:14+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -7421,7 +7421,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值：\"mysql\" - 云数据库 MySQL；\"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "<p>服务产品类型，支持值：&quot;mysql&quot; - 云数据库 MySQL；&quot;cynosdb&quot; - 云数据库 TDSQL-C for MySQL，&quot;sqlserver&quot; - 云数据库 SQL Server，默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -7430,7 +7430,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL模板的MD5值",
+          "document": "<p>SQL模板的MD5值</p>",
           "example": "AD7651E51E8C6FBA",
           "member": "string",
           "name": "Md5",
@@ -7439,7 +7439,7 @@
         },
         {
           "disabled": false,
-          "document": "仅Redis产品使用；实例Proxy ID。",
+          "document": "<p>仅Redis产品使用；实例Proxy ID。</p>",
           "example": "ca7848437614df37a3365afaeb98dcf9baaae983",
           "member": "string",
           "name": "InstanceProxyId",
@@ -7448,7 +7448,7 @@
         },
         {
           "disabled": false,
-          "document": "仅Redis产品使用；命令。",
+          "document": "<p>仅Redis产品使用；命令。</p>",
           "example": "set",
           "member": "string",
           "name": "Cmd",
@@ -7463,7 +7463,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "来源地址数目。",
+          "document": "<p>来源地址数目。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -7473,7 +7473,7 @@
         },
         {
           "disabled": false,
-          "document": "各来源地址的慢日志占比详情列表。",
+          "document": "<p>各来源地址的慢日志占比详情列表。</p>",
           "example": "无",
           "member": "SlowLogHost",
           "name": "Items",
@@ -7483,7 +7483,7 @@
         },
         {
           "disabled": false,
-          "document": "各来源用户名的慢日志占比详情列表。",
+          "document": "<p>各来源用户名的慢日志占比详情列表。</p>",
           "example": "无",
           "member": "SlowLogUser",
           "name": "UserNameItems",
@@ -7493,7 +7493,7 @@
         },
         {
           "disabled": false,
-          "document": "来源用户数目。",
+          "document": "<p>来源用户数目。</p>",
           "example": "1",
           "member": "int64",
           "name": "UserTotalCount",
@@ -7515,7 +7515,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB for MySQL，&quot;tdstore&quot; - 云数据库TDSQL Boundless，默认为&quot;mysql&quot;。</p>",
+          "document": "<p>服务产品类型，支持值包括： &quot;mysql&quot; - 云数据库 MySQL， &quot;cynosdb&quot; - 云数据库 CynosDB for MySQL，&quot;tdstore&quot; - 云数据库TDSQL Boundless，&quot;sqlserver&quot; - 云数据库 SQL Server， 默认为&quot;mysql&quot;。</p>",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -12793,6 +12793,26 @@
           "example": "",
           "member": "string",
           "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ClientAppName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "",
+          "example": "",
+          "member": "string",
+          "name": "ClientHostName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -42,6 +42,13 @@
       "output": "BatchInvokeTWeSeeRecognitionTaskResponse",
       "status": "online"
     },
+    "BatchPublishMessage": {
+      "document": "批量设备透传指令控制",
+      "input": "BatchPublishMessageRequest",
+      "name": "批量设备透传指令控制",
+      "output": "BatchPublishMessageResponse",
+      "status": "online"
+    },
     "BatchRenewTWeSeeSubscription": {
       "document": "批量续费 TWeSee 预付费订阅",
       "input": "BatchRenewTWeSeeSubscriptionRequest",
@@ -2613,6 +2620,108 @@
       ],
       "usage": "out"
     },
+    "BatchPublishMessageRequest": {
+      "document": "BatchPublishMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品名称</p>",
+          "example": "XXV7WNTR4F",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "[\"dev_1\"]",
+          "member": "string",
+          "name": "DeviceNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题</p>",
+          "example": "XXV7WNTR4F/${deviceName}/data",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息体</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "Payload",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务质量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Qos",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息体编码</p>",
+          "example": "base64",
+          "member": "string",
+          "name": "PayloadEncoding",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchPublishMessageResponse": {
+      "document": "BatchPublishMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批量推送总数</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成功数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败明细</p>",
+          "example": "无",
+          "member": "DeviceResult",
+          "name": "Failures",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchRenewTWeSeeSubscriptionRequest": {
       "document": "BatchRenewTWeSeeSubscription请求参数结构体",
       "members": [
@@ -2655,7 +2764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "hsdkhfueh",
           "member": "string",
           "name": "ProductID",
@@ -2664,7 +2773,7 @@
         },
         {
           "disabled": false,
-          "document": "固件新版本号",
+          "document": "<p>固件新版本号</p>",
           "example": "2.0.0",
           "member": "string",
           "name": "FirmwareVersion",
@@ -2673,7 +2782,7 @@
         },
         {
           "disabled": false,
-          "document": "固件原版本号",
+          "document": "<p>固件原版本号</p>",
           "example": "1.0.0",
           "member": "string",
           "name": "FirmwareOriVersion",
@@ -2682,7 +2791,7 @@
         },
         {
           "disabled": false,
-          "document": "升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式",
+          "document": "<p>升级方式，0 静默升级  1 用户确认升级。 不填默认为静默升级方式</p>",
           "example": "0",
           "member": "uint64",
           "name": "UpgradeMethod",
@@ -2691,7 +2800,7 @@
         },
         {
           "disabled": false,
-          "document": "设备列表文件名称，根据文件列表升级固件需要填写此参数",
+          "document": "<p>设备列表文件名称，根据文件列表升级固件需要填写此参数</p>",
           "example": "ota",
           "member": "string",
           "name": "FileName",
@@ -2700,7 +2809,7 @@
         },
         {
           "disabled": false,
-          "document": "设备列表的文件md5值",
+          "document": "<p>设备列表的文件md5值</p>",
           "example": "608afe29a06b19d3033c5f8787ec75fa",
           "member": "string",
           "name": "FileMd5",
@@ -2709,7 +2818,7 @@
         },
         {
           "disabled": false,
-          "document": "设备列表的文件大小值",
+          "document": "<p>设备列表的文件大小值</p>",
           "example": "120",
           "member": "uint64",
           "name": "FileSize",
@@ -2718,7 +2827,7 @@
         },
         {
           "disabled": false,
-          "document": "需要升级的设备名称列表",
+          "document": "<p>需要升级的设备名称列表</p>",
           "example": "[\"dev001\"]",
           "member": "string",
           "name": "DeviceNames",
@@ -2727,7 +2836,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务，默认超时时间。 最小取值120秒，最大为900秒",
+          "document": "<p>固件升级任务，默认超时时间。 最小取值120秒，最大为900秒</p>",
           "example": "120",
           "member": "uint64",
           "name": "TimeoutInterval",
@@ -2736,7 +2845,7 @@
         },
         {
           "disabled": false,
-          "document": "固件升级任务类型，默认静态升级值为空或1，动态升级值为7",
+          "document": "<p>固件升级任务类型，默认静态升级值为空或1，动态升级值为7</p>",
           "example": "7",
           "member": "int64",
           "name": "Type",
@@ -2745,7 +2854,7 @@
         },
         {
           "disabled": false,
-          "document": "任务延迟时间",
+          "document": "<p>任务延迟时间</p>",
           "example": "10",
           "member": "int64",
           "name": "DelayTime",
@@ -2754,7 +2863,7 @@
         },
         {
           "disabled": false,
-          "document": "是否覆盖，0不覆盖，1覆盖",
+          "document": "<p>是否覆盖，0不覆盖，1覆盖</p>",
           "example": "1",
           "member": "uint64",
           "name": "OverrideMode",
@@ -2763,7 +2872,7 @@
         },
         {
           "disabled": false,
-          "document": "失败重试次数",
+          "document": "<p>失败重试次数</p>",
           "example": "1",
           "member": "uint64",
           "name": "MaxRetryNum",
@@ -2772,7 +2881,7 @@
         },
         {
           "disabled": false,
-          "document": "重试间隔min",
+          "document": "<p>重试间隔min</p>",
           "example": "1",
           "member": "uint64",
           "name": "RetryInterval",
@@ -2781,7 +2890,7 @@
         },
         {
           "disabled": false,
-          "document": "固件模块",
+          "document": "<p>固件模块</p>",
           "example": "mcu",
           "member": "string",
           "name": "FwType",
@@ -2790,7 +2899,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义信息",
+          "document": "<p>用户自定义信息</p>",
           "example": "{\"key\":\"value\"}",
           "member": "string",
           "name": "TaskUserDefine",
@@ -2799,10 +2908,28 @@
         },
         {
           "disabled": false,
-          "document": "每分钟下发设备量",
+          "document": "<p>每分钟下发设备量</p>",
           "example": "1000",
           "member": "int64",
           "name": "RateLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。</p><p>单位：秒</p>",
+          "example": "1791811200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。</p><p>单位：秒</p>",
+          "example": "1791206400",
+          "member": "int64",
+          "name": "StartTime",
           "required": false,
           "type": "int"
         }
@@ -2814,7 +2941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id",
+          "document": "<p>任务Id</p>",
           "example": "1000696",
           "member": "uint64",
           "name": "TaskId",
@@ -9281,6 +9408,24 @@
         },
         {
           "disabled": false,
+          "document": "<p>起始时间（Unix 时间戳）</p><p>单位：秒</p>",
+          "example": "1790128384",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间（Unix 时间戳）</p><p>单位：秒</p>",
+          "example": "1790128385",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "<p>通道 ID，非 NVR 设备不填，NVR 设备必填</p>",
           "example": "0",
           "member": "uint64",
@@ -9312,6 +9457,16 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频播放URL</p>",
+          "example": "http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11364,7 +11519,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "J2CRPPZ8J4",
           "member": "string",
           "name": "ProductID",
@@ -11373,7 +11528,7 @@
         },
         {
           "disabled": false,
-          "document": "固件版本号",
+          "document": "<p>固件版本号</p>",
           "example": "1.0.0",
           "member": "string",
           "name": "FirmwareVersion",
@@ -11382,7 +11537,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务ID",
+          "document": "<p>固件任务ID</p>",
           "example": "10000",
           "member": "uint64",
           "name": "TaskId",
@@ -11397,7 +11552,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "固件任务ID",
+          "document": "<p>固件任务ID</p>",
           "example": "1000175",
           "member": "uint64",
           "name": "TaskId",
@@ -11407,7 +11562,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务状态",
+          "document": "<p>固件任务状态</p>",
           "example": "3",
           "member": "int64",
           "name": "Status",
@@ -11417,7 +11572,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务创建时间，单位：秒",
+          "document": "<p>固件任务创建时间，单位：秒</p>",
           "example": "1589466879",
           "member": "int64",
           "name": "CreateTime",
@@ -11427,7 +11582,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务升级类型",
+          "document": "<p>固件任务升级类型</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -11437,7 +11592,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "门锁",
           "member": "string",
           "name": "ProductName",
@@ -11447,7 +11602,7 @@
         },
         {
           "disabled": false,
-          "document": "固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）",
+          "document": "<p>固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）</p>",
           "example": "originalVersion",
           "member": "string",
           "name": "UpgradeMode",
@@ -11457,7 +11612,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "J2CRPPZ8J4",
           "member": "string",
           "name": "ProductId",
@@ -11467,7 +11622,7 @@
         },
         {
           "disabled": false,
-          "document": "原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回",
+          "document": "<p>原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回</p>",
           "example": "v1.0",
           "member": "string",
           "name": "OriginalVersion",
@@ -11477,7 +11632,7 @@
         },
         {
           "disabled": false,
-          "document": "创建账号ID",
+          "document": "<p>创建账号ID</p>",
           "example": "89556966",
           "member": "uint64",
           "name": "CreateUserId",
@@ -11487,7 +11642,7 @@
         },
         {
           "disabled": false,
-          "document": "创建账号ID昵称",
+          "document": "<p>创建账号ID昵称</p>",
           "example": "leo",
           "member": "string",
           "name": "CreatorNickName",
@@ -11497,7 +11652,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟时间",
+          "document": "<p>延迟时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "DelayTime",
@@ -11507,7 +11662,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间",
+          "document": "<p>超时时间</p>",
           "example": "10",
           "member": "uint64",
           "name": "TimeoutInterval",
@@ -11517,7 +11672,7 @@
         },
         {
           "disabled": false,
-          "document": "静默升级or用户确认升级",
+          "document": "<p>静默升级or用户确认升级</p>",
           "example": "0",
           "member": "uint64",
           "name": "UpgradeMethod",
@@ -11527,7 +11682,7 @@
         },
         {
           "disabled": false,
-          "document": "最大重试次数",
+          "document": "<p>最大重试次数</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxRetryNum",
@@ -11537,7 +11692,7 @@
         },
         {
           "disabled": false,
-          "document": "固件类型",
+          "document": "<p>固件类型</p>",
           "example": "mcu",
           "member": "string",
           "name": "FwType",
@@ -11547,7 +11702,7 @@
         },
         {
           "disabled": false,
-          "document": "重试间隔时间单位min",
+          "document": "<p>重试间隔时间单位min</p>",
           "example": "1",
           "member": "uint64",
           "name": "RetryInterval",
@@ -11557,7 +11712,7 @@
         },
         {
           "disabled": false,
-          "document": "是否覆盖任务",
+          "document": "<p>是否覆盖任务</p>",
           "example": "1",
           "member": "uint64",
           "name": "OverrideMode",
@@ -11567,7 +11722,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义消息",
+          "document": "<p>用户自定义消息</p>",
           "example": "{\"data\": 1}",
           "member": "string",
           "name": "TaskUserDefine",
@@ -11577,10 +11732,30 @@
         },
         {
           "disabled": false,
-          "document": "每分钟发送设备量",
+          "document": "<p>每分钟发送设备量</p>",
           "example": "1000",
           "member": "int64",
           "name": "RateLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务截止时间，Unix 时间戳（单位：秒）。传入 0 或不传表示不设截止，任务按原重试/超时策略执行完毕。 </p><p>单位：秒</p>",
+          "example": "1791811200",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务开始调度时间，Unix 时间戳（单位：秒）。传入 0 或不传时任务立即创建执行，与 DelayTime 同时传入时，本参数优先生效。 </p><p>单位：秒</p>",
+          "example": "1791206400",
+          "member": "int64",
+          "name": "StartTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -14755,6 +14930,52 @@
           "name": "Latitude",
           "output_required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceResult": {
+      "document": "批处理发布消息请求单台设备下发结果(仅失败情况下显示具体情况)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "dev_2",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备状态</p><p>枚举值：</p><ul><li>SUCCESS： 下发成功    </li><li>PENDING： 存入离线存储</li><li>OFFLINE： 设备离线</li><li>FAILED： 下发失败</li><li>TIMEOUT： 下发超时</li></ul>",
+          "example": "OFFLINE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>",
+          "example": "23102",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "push: device offline (qos0): push: device unreachable",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -25124,6 +25345,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启扩展字段输出</p><p>枚举值：</p><ul><li>true： 开启</li><li>false： 关闭</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableExtendedOutput",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义扩展输出的提示词（目前仅支持覆盖 custom）</p>",
+          "example": "无",
+          "member": "SeeExtendedOutputPrompt",
+          "name": "ExtendedOutputPrompts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -25187,6 +25430,16 @@
           "example": "[\"行人\"]",
           "member": "string",
           "name": "Keywords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出的扩展字段文本</p>",
+          "example": "无",
+          "member": "SeeExtendedOutput",
+          "name": "ExtendedOutput",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -25399,11 +25652,11 @@
       "usage": "out"
     },
     "SeeEventIdFilterConfig": {
-      "document": "TWeSee 处理云存事件 EventId 的过滤规则配置",
+      "document": "TWeSee 处理云存事件的触发条件配置",
       "members": [
         {
           "disabled": false,
-          "document": "包含的云存事件 ID 集合",
+          "document": "<p>包含的云存事件 ID 集合</p>",
           "example": "[\"_sys_id2_data\"]",
           "member": "string",
           "name": "IncludeOnly",
@@ -25414,13 +25667,78 @@
         },
         {
           "disabled": false,
-          "document": "排除的云存事件 ID 集合",
+          "document": "<p>排除的云存事件 ID 集合</p>",
           "example": "[\"_sys_id3_data\"]",
           "member": "string",
           "name": "Exclude",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发分析的时机</p><p>枚举值：</p><ul><li>end： 在云存事件结束时触发视频理解</li><li>start： 在云存事件开始时触发视频理解</li><li>image_and_video： 上传云存事件缩略图后触发图片理解，并且在云存事件结束时触发视频理解</li></ul><p>默认值：end</p>",
+          "example": "end",
+          "member": "string",
+          "name": "TriggerAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SeeExtendedOutput": {
+      "document": "TWeSee 扩展输出字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词标识符</p><p>枚举值：</p><ul><li>overview： 内容概述</li><li>scene： 场景关键词</li><li>events： 事件关键词</li><li>objects： 物品关键词</li></ul>",
+          "example": "overview",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型输出的扩展内容文本</p>",
+          "example": "湿漉漉的灰色人行道、黄色警示柱、绿色草坪、黑色金属围栏、远处白色建筑群、树木枝干、路边停放的摩托车、黑色与黄色相间的路缘石",
+          "member": "string",
+          "name": "Output",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SeeExtendedOutputPrompt": {
+      "document": "TWeSee 扩展输出提示词",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词标识符</p><p>枚举值：</p><ul><li>custom： 自定义</li></ul>",
+          "example": "custom",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词内容</p>",
+          "example": "列举画面中出现的静态物品，最多16个，用中文顿号（、）分隔",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": true,
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

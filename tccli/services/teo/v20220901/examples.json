@@ -248,6 +248,14 @@
         "title": "创建推理 API Token"
       }
     ],
+    "CreateInferenceDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInferenceDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3v0yhgt4m1z9\",\n    \"ServiceId\": \"inf-vs06pb1cdz61\",\n    \"Domain\": \"test-ai.eo.cn\",\n    \"AuthSwitch\": \"On\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3ce4e1d1-9dcf-4905-aaac-09345f2aabe5\"\n    }\n}",
+        "title": "创建推理域名。"
+      }
+    ],
     "CreateInferenceService": [
       {
         "document": "创建推理服务。",
@@ -850,7 +858,7 @@
       {
         "document": "查询指定 zone-id 下源站类型为 IP_DOMAIN 的所有加速域名的信息，并将结果按照创建时间降序排列。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerationDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"IP_DOMAIN\"\n            ],\n            \"Name\": \"origin-type\"\n        }\n    ],\n    \"Direction\": \"desc\",\n    \"Order\": \"created_on\",\n    \"Match\": \"all\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccelerationDomains\": [\n            {\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"DomainName\": \"www.qq.com\",\n                \"DomainStatus\": \"online\",\n                \"OriginDetail\": {\n                    \"OriginType\": \"IP_DOMAIN\",\n                    \"HostHeader\": null,\n                    \"Origin\": \"origin.qq.com\",\n                    \"BackupOrigin\": \"\",\n                    \"PrivateParameters\": [],\n                    \"PrivateAccess\": \"\",\n                    \"OriginGroupName\": \"\",\n                    \"BackOriginGroupName\": \"\"\n                },\n                \"Certificate\": {\n                    \"Mode\": \"sslcert\",\n                    \"List\": [\n                        {\n                            \"CertId\": \"J2JqATrsx\"\n                        }\n                    ],\n                    \"ClientCertInfo\": {\n                        \"Switch\": \"on\",\n                        \"CertInfos\": [\n                            {\n                                \"CertId\": \"J2JqATrsx\"\n                            }\n                        ]\n                    },\n                    \"UpstreamCertInfo\": {\n                        \"UpstreamMutualTLS\": {\n                            \"Switch\": \"on\",\n                            \"CertInfos\": [\n                                {\n                                    \"CertId\": \"J2JqATrsx\"\n                                }\n                            ]\n                        }\n                    }\n                },\n                \"IdentificationStatus\": \"finished\",\n                \"Cname\": \"www.qq.com.eo.dnse3.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccelerationDomains\": [\n            {\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"DomainName\": \"www.qq.com\",\n                \"DomainStatus\": \"online\",\n                \"OriginDetail\": {\n                    \"OriginType\": \"IP_DOMAIN\",\n                    \"Origin\": \"origin.qq.com\",\n                    \"BackupOrigin\": \"\",\n                    \"PrivateParameters\": [],\n                    \"PrivateAccess\": \"\",\n                    \"OriginGroupName\": \"\",\n                    \"BackOriginGroupName\": \"\"\n                },\n                \"Certificate\": {\n                    \"Mode\": \"sslcert\",\n                    \"List\": [\n                        {\n                            \"CertId\": \"J2JqATrsx\"\n                        }\n                    ],\n                    \"ClientCertInfo\": {\n                        \"Switch\": \"on\",\n                        \"CertInfos\": [\n                            {\n                                \"CertId\": \"J2JqATrsx\"\n                            }\n                        ]\n                    },\n                    \"UpstreamCertInfo\": {\n                        \"UpstreamMutualTLS\": {\n                            \"Switch\": \"on\",\n                            \"CertInfos\": [\n                                {\n                                    \"CertId\": \"J2JqATrsx\"\n                                }\n                            ]\n                        }\n                    }\n                },\n                \"IdentificationStatus\": \"finished\",\n                \"Cname\": \"www.qq.com.eo.dnse3.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
         "title": "查询指定站点下的域名信息"
       }
     ],
@@ -1128,6 +1136,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceAPITokens\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2***8ev000\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Tokens\": [\n            {\n                \"Content\": \"j8UaDh0ZbjW***glcGsSEEYo\",\n                \"CreateTime\": \"2025-12-09T10:30:00Z\",\n                \"Name\": \"MyInferenceAPIToken\",\n                \"TokenId\": \"deb88f89-92b***3f3466bbb59b\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b31cafd9-b573-4e52-871f-359d398b890d\"\n    }\n}",
         "title": "查询推理 API Token"
+      }
+    ],
+    "DescribeInferenceDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInferenceDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3v0yhgt4m1z9\",\n    \"ServiceId\": \"inf-vs06pb1cdz61\",\n    \"SortBy\": \"CreateTime\",\n    \"SortOrder\": \"Desc\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"AuthSwitch\": \"On\",\n                \"Cname\": \"\",\n                \"CreateTime\": \"2026-09-16T20:53:08+08:00\",\n                \"Domain\": \"test-ai.eo.cn\",\n                \"OwnershipVerification\": {\n                    \"DnsVerification\": {\n                        \"RecordType\": \"TXT\",\n                        \"RecordValue\": \"reclaim-4lp50hbpdy0onjdgr01iley749id8kms\",\n                        \"Subdomain\": \"edgeonereclaim.test-ai\"\n                    },\n                    \"FileVerification\": {\n                        \"Content\": \"4lp50hbpdy0onjdgr01iley749id8kms\",\n                        \"Path\": \"/.well-known/teo-verification/vaqscx04xy.txt\"\n                    }\n                },\n                \"Status\": \"Init\",\n                \"UpdateTime\": \"2026-09-16T20:53:08+08:00\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"531d098e-65d0-494e-bf65-d6986ed1e389\"\n    }\n}",
+        "title": "查询推理域名列表。"
       }
     ],
     "DescribeInferenceHardwareSpecifications": [
@@ -2400,6 +2416,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneWorkMode\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27********v1\",\n    \"WorkModeInfos\": [\n        {\n            \"ConfigGroupType\": \"l7_acceleration\",\n            \"WorkMode\": \"version_control\"\n        },\n        {\n            \"ConfigGroupType\": \"edge_functions\",\n            \"WorkMode\": \"version_control\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a06f52e7-2aab-4510-b2c2-1065bfb4414c\"\n    }\n}",
         "title": "修改站点配置组的工作模式"
+      }
+    ],
+    "OperateInferenceDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateInferenceDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3v0yhgt4m1z9\",\n    \"ServiceId\": \"inf-vs06pb1cdz61\",\n    \"Domain\": \"test-ai.eo.cn\",\n    \"Operation\": \"Stop\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0ab2a646-f4ca-41d3-aef1-7d2f7aa22b83\"\n    }\n}",
+        "title": "操作推理域名。"
       }
     ],
     "OperateInferenceService": [

@@ -41828,7 +41828,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体质检模板唯一标识。",
+          "document": "<p>媒体质检模板唯一标识。</p>",
           "example": "10",
           "member": "int64",
           "name": "Definition",
@@ -41838,8 +41838,8 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "test",
+          "document": "<p>媒体质检模板名称。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Container Diagnosis",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -41848,7 +41848,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板描述信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "my test media quality control template",
           "member": "string",
           "name": "Comment",
@@ -41858,7 +41858,7 @@
         },
         {
           "disabled": false,
-          "document": "模板类型，取值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板类型，取值：</p><li>Preset：系统预置模板；</li><li>Custom：用户自定义模板。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Custom",
           "member": "string",
           "name": "Type",
@@ -41868,7 +41868,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检配置参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>媒体质检配置参数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "QualityControlItemConfig",
           "name": "QualityControlItemSet",
@@ -41878,7 +41878,7 @@
         },
         {
           "disabled": false,
-          "document": "模板创建时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板创建时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-03T04:05:06Z",
           "member": "string",
           "name": "CreateTime",
@@ -41888,7 +41888,7 @@
         },
         {
           "disabled": false,
-          "document": "模板最后修改时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模板最后修改时间，使用 <a href=\"https://cloud.tencent.com/document/product/862/37710#52\">ISO 日期格式</a>。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2022-02-03T04:05:06Z",
           "member": "string",
           "name": "UpdateTime",
@@ -41898,8 +41898,8 @@
         },
         {
           "disabled": false,
-          "document": "媒体质检的抽检策略。",
-          "example": " {         \"StrategyType\": \"TimeSpotCheck\",         \"TimeSpotCheck\": {             \"CheckDuration\": 50,             \"CheckInterval\": 10,             \"SkipDuration\": 10,             \"CirclesNumber\": 10         }     }",
+          "document": "<p>媒体质检的抽检策略。</p>",
+          "example": "无",
           "member": "QualityControlStrategy",
           "name": "Strategy",
           "output_required": false,

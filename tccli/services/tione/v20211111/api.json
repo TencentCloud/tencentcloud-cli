@@ -7857,6 +7857,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否对外不可见,true 表示该环境变量的 Value 为敏感值.</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPrivate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -12237,20 +12248,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "<p>指标名</p>",
           "example": "gpu-util",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "指标值",
-          "example": "{0,100}",
+          "document": "<p>指标值</p>",
+          "example": "50",
           "member": "int64",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false

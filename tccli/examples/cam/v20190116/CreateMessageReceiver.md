@@ -17,7 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f709ad6e-991f-49bb-aaaa-c354e434343434"
+        "RequestId": "f709ad6e-991f-49bb-aaaa-c354e434343434",
+        "PhoneNumVerifyLink": "https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca353744****************2d1"
     }
 }
 ```

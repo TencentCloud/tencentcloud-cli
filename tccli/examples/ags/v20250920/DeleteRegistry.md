@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ags DeleteRegistry --cli-unfold-argument ```
+tccli ags DeleteRegistry --cli-unfold-argument  \
+    --RegistryId reg-0123abcd
+```
 
 Output: 
 ```

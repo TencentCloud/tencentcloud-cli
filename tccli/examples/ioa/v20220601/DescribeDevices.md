@@ -59,6 +59,18 @@ Output:
                     "OsLanguage": "简体中文",
                     "OsType": 0,
                     "OsVersion": "10.0.19045",
+                    "Profiles": [
+                        {
+                            "Mid": "75129D715480905B6A9C4569893C7634656938E2",
+                            "IsCustom": "obsolete",
+                            "IsMust": "1",
+                            "Type": 4,
+                            "FieldId": 166,
+                            "Value": "Private assets",
+                            "Title": "Company assets",
+                            "Options": "obsolete"
+                        }
+                    ],
                     "RiskCount": 0,
                     "SerialNum": "VMware-56 4d 76 2d d7 24 e1 ab-43 f3 af 25 e3 10 00 5c",
                     "StrVersion": "209.12.18590.201",

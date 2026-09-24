@@ -2401,6 +2401,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启Token展示安全保护</p><p>单位：是、否</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TokenDisplayProtection",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -6662,6 +6672,15 @@
           "name": "CrossAccountPeerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启Token 展示安全保护</p><p>单位：0：不开启，1：开启</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TokenDisplayProtection",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

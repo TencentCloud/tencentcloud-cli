@@ -780,7 +780,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子用户用户名",
+          "document": "<p>子用户用户名</p>",
           "example": "Jack",
           "member": "string",
           "name": "Name",
@@ -789,7 +789,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户备注",
+          "document": "<p>子用户备注</p>",
           "example": "公司运营",
           "member": "string",
           "name": "Remark",
@@ -798,7 +798,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。",
+          "document": "<p>子用户是否可以登录控制台。传0子用户无法登录控制台，传1子用户可以登录控制台。</p>",
           "example": "1",
           "member": "uint64",
           "name": "ConsoleLogin",
@@ -807,7 +807,7 @@
         },
         {
           "disabled": false,
-          "document": "是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。",
+          "document": "<p>是否生成子用户密钥。传0不生成子用户密钥，传1生成子用户密钥。</p>",
           "example": "1",
           "member": "uint64",
           "name": "UseApi",
@@ -816,7 +816,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。",
+          "document": "<p>子用户控制台登录密码，若未进行密码规则设置则默认密码规则为8位以上同时包含大小写字母、数字和特殊字符。只有可以登录控制台时才有效，如果传空并且上面指定允许登录控制台，则自动生成随机密码，随机密码规则为32位包含大小写字母、数字和特殊字符。</p>",
           "example": "test123456",
           "member": "string",
           "name": "Password",
@@ -825,7 +825,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。",
+          "document": "<p>子用户是否要在下次登录时重置密码。传0子用户下次登录控制台不需重置密码，传1子用户下次登录控制台需要重置密码。</p>",
           "example": "0",
           "member": "uint64",
           "name": "NeedResetPassword",
@@ -834,7 +834,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号",
+          "document": "<p>手机号</p>",
           "example": "10086",
           "member": "string",
           "name": "PhoneNum",
@@ -843,7 +843,7 @@
         },
         {
           "disabled": false,
-          "document": "区号",
+          "document": "<p>区号</p>",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -852,7 +852,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱",
+          "document": "<p>邮箱</p>",
           "example": "12340qq.com",
           "member": "string",
           "name": "Email",
@@ -867,7 +867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子用户 UIN",
+          "document": "<p>子用户 UIN</p>",
           "example": "100000546533",
           "member": "uint64",
           "name": "Uin",
@@ -877,7 +877,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户用户名",
+          "document": "<p>子用户用户名</p>",
           "example": "Jack",
           "member": "string",
           "name": "Name",
@@ -887,7 +887,7 @@
         },
         {
           "disabled": false,
-          "document": "如果输入参数组合为自动生成随机密码，则返回生成的密码",
+          "document": "<p>如果输入参数组合为自动生成随机密码，则返回生成的密码</p>",
           "example": "test123456",
           "member": "string",
           "name": "Password",
@@ -897,7 +897,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户密钥 ID",
+          "document": "<p>子用户密钥 ID</p>",
           "example": "faweffewagwaegawe",
           "member": "string",
           "name": "SecretId",
@@ -907,7 +907,7 @@
         },
         {
           "disabled": false,
-          "document": "子用户密钥 Key",
+          "document": "<p>子用户密钥 Key</p>",
           "example": "fawef23rjhiuaefhuaifhiuawef",
           "member": "string",
           "name": "SecretKey",
@@ -917,12 +917,22 @@
         },
         {
           "disabled": false,
-          "document": "子用户 UID",
+          "document": "<p>子用户 UID</p>",
           "example": "5648765",
           "member": "uint64",
           "name": "Uid",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号验证地址。</p>",
+          "example": "https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca3537447af3bcba315cd2a12d1",
+          "member": "string",
+          "name": "PhoneNumVerifyLink",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -1711,7 +1721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息接收人的用户名",
+          "document": "<p>消息接收人的用户名</p>",
           "example": "用户",
           "member": "string",
           "name": "Name",
@@ -1720,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号国际区号，国内为86",
+          "document": "<p>手机号国际区号，国内为86</p>",
           "example": "86",
           "member": "string",
           "name": "CountryCode",
@@ -1729,16 +1739,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号码, 例如：132****2492",
-          "example": "132****3769",
-          "member": "string",
-          "name": "PhoneNumber",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "邮箱，例如：57*****@qq.com",
+          "document": "<p>邮箱，例如：57<strong>*</strong>@qq.com</p>",
           "example": "5732*****@qq.com",
           "member": "string",
           "name": "Email",
@@ -1747,7 +1748,16 @@
         },
         {
           "disabled": false,
-          "document": "消息接收人的备注，选填",
+          "document": "<p>手机号码, 例如：132****2492</p>",
+          "example": "132****3769",
+          "member": "string",
+          "name": "PhoneNumber",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息接收人的备注，选填</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -1760,6 +1770,16 @@
     "CreateMessageReceiverResponse": {
       "document": "CreateMessageReceiver返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>手机号验证地址。</p>",
+          "example": "https://cloud.tencent.com/cam/verifyPhone?token=81bf4ca353744****************2d1",
+          "member": "string",
+          "name": "PhoneNumVerifyLink",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

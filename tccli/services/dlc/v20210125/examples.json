@@ -404,6 +404,30 @@
         "title": "创建托管存储内表"
       }
     ],
+    "CreateJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJob\n<公共请求参数>\n\n{\n    \"JobName\": \"spark-sql-demo\",\n    \"MinorType\": \"SPARK_SQL\",\n    \"FlowId\": \"flow-2a9c4e\",\n    \"ExecutionId\": \"exec-6f1b83\",\n    \"RunMode\": \"WAREHOUSE\",\n    \"WarehouseId\": \"wh-8f21c3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-9f3a2b1c\",\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "创建作业"
+      }
+    ],
+    "CreateJobDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobDefinition\n<公共请求参数>\n\n{\n    \"Name\": \"spark-demo\",\n    \"MinorType\": \"SPARK_SQL\",\n    \"RunMode\": \"WAREHOUSE\",\n    \"WarehouseId\": \"wh-8f21c3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobDefinitionId\": \"jd-4b7e15\",\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "创建作业定义"
+      }
+    ],
+    "CreateJobFromDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJobFromDefinition\n<公共请求参数>\n\n{\n    \"JobDefinitionId\": \"jd-4b7e15\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"job-9f3a2b1c\",\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "按作业定义创建作业"
+      }
+    ],
     "CreateJobSpec": [
       {
         "document": "",
@@ -928,6 +952,38 @@
         "title": "查询可绑定 Prometheus"
       }
     ],
+    "DescribeCatalogTableInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogTableInfo\n<公共请求参数>\n\n{\n    \"CatalogName\": \"chenfan_test_1\",\n    \"SchemaName\": \"default\",\n    \"TableName\": \"sdfsdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Table\": {\n            \"Audit\": {\n                \"CreatedAt\": 1788503053534,\n                \"CreatedTime\": \"2026-09-04 14:24:13\",\n                \"Creator\": \"700002744585\",\n                \"LastModifiedTime\": \"\",\n                \"LastModifier\": \"\"\n            },\n            \"CatalogName\": \"chenfan_test_1\",\n            \"Columns\": [\n                {\n                    \"Comment\": \"xdv\",\n                    \"FieldSetting\": \"\",\n                    \"IsPrimaryKey\": false,\n                    \"Name\": \"sdfsdf\",\n                    \"Type\": \"double\",\n                    \"TypeText\": \"double\"\n                }\n            ],\n            \"Comment\": \"sdfsdf\",\n            \"FormatType\": \"\",\n            \"Name\": \"sdfsdf\",\n            \"Properties\": [\n                {\n                    \"Key\": \"format\",\n                    \"Value\": \"lance\"\n                }\n            ],\n            \"SchemaName\": \"default\",\n            \"TableFormat\": \"Lance\",\n            \"TableMode\": \"\",\n            \"TableType\": \"Managed\"\n        },\n        \"RequestId\": \"8e1bb12b-d1d0-4125-a96e-f64abca6adca\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeCatalogTableNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogTableNames\n<公共请求参数>\n\n{\n    \"CatalogName\": \"chenfan_test_1\",\n    \"SchemaName\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TableNames\": [\n            {\n                \"Name\": \"sdfsdf\",\n                \"Namespace\": [\n                    \"chenfan_test_1\"\n                ]\n            }\n        ],\n        \"RequestId\": \"12e53385-1ed0-4ef3-be44-640bf69d9eb9\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeCatalogTableNamesPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogTableNamesPage\n<公共请求参数>\n\n{\n    \"CatalogName\": \"chenfan_test_1\",\n    \"SchemaName\": \"default\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SnapshotId\": \"\",\n        \"TableNames\": [\n            {\n                \"Name\": \"test_column\",\n                \"Namespace\": [\n                    \"chenfan_test_1\"\n                ]\n            }\n        ],\n        \"TotalCount\": 6,\n        \"RequestId\": \"64b24832-6fc1-42b5-bfbf-4c0cf22706cd\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "DescribeCatalogs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCatalogs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Catalogs\": [\n            {\n                \"Audit\": {\n                    \"CreatedAt\": 1788268042334,\n                    \"CreatedTime\": \"\",\n                    \"Creator\": \"700002744585\",\n                    \"LastModifiedAt\": 1788511393388,\n                    \"LastModifiedTime\": \"\",\n                    \"LastModifier\": \"700002744585\"\n                },\n                \"Comment\": \"test_1\",\n                \"Connection\": {\n                    \"LakeHouseConnection\": {\n                        \"Location\": \"cosn://tcs-a54320701c-1785327710-251438733/260209337/warehouse/chenfan_test_1/\"\n                    }\n                },\n                \"CreateTime\": \"2026-09-01 21:07:22\",\n                \"Id\": \"be32d91c-9ea3-4397-982e-fc9578142942\",\n                \"Message\": \"Create Catalog Connection Success\",\n                \"Name\": \"chenfan_test_1\",\n                \"Operator\": \"700002744585\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"tclake.cos.credentials.server.url\",\n                        \"Value\": \"http://21.215.50.237:2030/v1/internal/GetTcLakeFsToken\"\n                    }\n                ],\n                \"Status\": 2,\n                \"Type\": \"LAKEHOUSE\",\n                \"UpdateTime\": \"2026-09-04 16:43:13\"\n            }\n        ],\n        \"Total\": 5,\n        \"RequestId\": \"a4aafbf9-b18c-44bf-a840-6e6bd4cd9029\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeClsTopics": [
       {
         "document": "按名称模糊查询日志主题",
@@ -1162,6 +1218,54 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeForbiddenTablePro\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"********-****-****-****-00419629123c\"\n    }\n}",
         "title": "查询被禁用的表属性列表（新）"
+      }
+    ],
+    "DescribeJobDefinitionDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobDefinitionDetail\n<公共请求参数>\n\n{\n    \"JobDefinitionId\": \"jd-4b7e15\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询作业定义详情"
+      }
+    ],
+    "DescribeJobDefinitions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobDefinitions\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"MinorType\",\n            \"Operator\": \"EQ\",\n            \"Values\": [\n                \"SPARK_SQL\"\n            ]\n        }\n    ],\n    \"SortFields\": [\n        {\n            \"Field\": \"UpdateTime\",\n            \"Order\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Items\": [\n            {\n                \"JobDefinitionId\": \"jd-4b7e15\",\n                \"Name\": \"spark-demo\",\n                \"Description\": \"演示用途的配置\",\n                \"MajorType\": \"SPARK\",\n                \"MinorType\": \"SPARK_SQL\",\n                \"CheckpointLocation\": \"cosn://demo-bucket/checkpoints/demo_stream\",\n                \"CreatorSubUin\": \"700281534962\",\n                \"CreateTime\": 1767256876123,\n                \"UpdateTime\": 1767256876123,\n                \"PartitionCode\": \"dlc-p-nwruuglc\",\n                \"PartitionName\": \"spark-demo-partition\",\n                \"QueueName\": \"root.default\",\n                \"RunMode\": \"WAREHOUSE\",\n                \"WarehouseId\": \"wh-8f21c3\",\n                \"InstanceCount\": 1,\n                \"RuntimeCode\": \"spark-3.5.5\",\n                \"RuntimeName\": \"Spark 3.5.5\",\n                \"WarehouseName\": \"spark-warehouse\"\n            }\n        ],\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询作业定义列表"
+      }
+    ],
+    "DescribeJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobDetail\n<公共请求参数>\n\n{\n    \"JobId\": \"job-9f3a2b1c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询作业详情"
+      }
+    ],
+    "DescribeJobList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobList\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"MinorType\",\n            \"Operator\": \"EQ\",\n            \"Values\": [\n                \"SPARK_SQL\"\n            ]\n        }\n    ],\n    \"SortFields\": [\n        {\n            \"Field\": \"CreateTime\",\n            \"Order\": \"DESC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Items\": [\n            {\n                \"JobId\": \"job-9f3a2b1c\",\n                \"JobName\": \"spark-sql-demo\",\n                \"CreatorSubUin\": \"700281534962\",\n                \"State\": \"SUCCEEDED\",\n                \"MajorType\": \"SPARK\",\n                \"MinorType\": \"SPARK_SQL\",\n                \"RunMode\": \"WAREHOUSE\",\n                \"WarehouseId\": \"wh-8f21c3\",\n                \"PartitionCode\": \"dlc-p-nwruuglc\",\n                \"PartitionName\": \"spark-demo-partition\",\n                \"QueueName\": \"root.default\",\n                \"CheckpointLocation\": \"cosn://demo-bucket/checkpoints/demo_stream\",\n                \"CreateTime\": 1767256876123,\n                \"SubmitTime\": 1767256876123,\n                \"FinishTime\": 1767256876123,\n                \"RunningTimeMs\": 900000,\n                \"WarehouseName\": \"spark-warehouse\"\n            }\n        ],\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询作业列表"
+      }
+    ],
+    "DescribeJobLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobLog\n<公共请求参数>\n\n{\n    \"JobId\": \"job-9f3a2b1c\",\n    \"LogType\": \"SPARK_SQL_OPERATION\",\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"Lines\": [\n            \"26/01/01 12:41:16 INFO SparkContext: Running Spark version 3.5.5\"\n        ],\n        \"Cursor\": \"eyJvZmZzZXQiOjEwMH0=\",\n        \"HasMore\": true,\n        \"Results\": [\n            {\n                \"Time\": 1767256876123,\n                \"LogJson\": \"{\\\"level\\\":\\\"INFO\\\",\\\"message\\\":\\\"SparkContext: Running Spark version 3.5.5\\\"}\"\n            }\n        ],\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询作业日志"
+      }
+    ],
+    "DescribeJobResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobResult\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"JobId\": \"job-9f3a2b1c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"JobId\": \"job-9f3a2b1c\",\n        \"State\": \"SUCCEEDED\",\n        \"Message\": \"OK\",\n        \"Columns\": [\n            {\n                \"Name\": \"id\",\n                \"DataType\": \"BIGINT\",\n                \"Comment\": \"行号\",\n                \"Nullable\": true\n            },\n            {\n                \"Name\": \"job_name\",\n                \"DataType\": \"STRING\",\n                \"Comment\": \"作业名\",\n                \"Nullable\": true\n            },\n            {\n                \"Name\": \"state\",\n                \"DataType\": \"STRING\",\n                \"Comment\": \"作业状态\",\n                \"Nullable\": true\n            }\n        ],\n        \"TotalRows\": 1,\n        \"Rows\": [\n            {\n                \"Values\": [\n                    \"1\",\n                    \"spark-sql-demo\",\n                    \"SUCCEEDED\"\n                ]\n            }\n        ],\n        \"Truncated\": false,\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "获取作业结果集"
       }
     ],
     "DescribeLakeFsDirSummary": [
@@ -1402,6 +1506,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSaleResourceInfo\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"SaleResourceInfoList\": [\n            {\n                \"ResourceSpec\": {\n                    \"ResourceType\": \"CPU\",\n                    \"InstanceType\": \"\",\n                    \"GpuType\": \"\",\n                    \"BillingItem\": \"sv_dlc_standard_cu_standard_cu\",\n                    \"SpecDesc\": \"1 CU = 1 × vCPU * 4GB Memory\",\n                    \"Spec\": \"0:1:4:0\",\n                    \"MaxCardPerNode\": 0\n                },\n                \"Step\": 32,\n                \"MaxSpec\": 4096,\n                \"StatusCategory\": \"EnoughStock\"\n            }\n        ],\n        \"RequestId\": \"313630c6-9e14-44ae-b9d6-00f019357803\"\n    }\n}",
         "title": "DescribeSaleResourceInfo"
+      }
+    ],
+    "DescribeSchemaNamesPage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSchemaNamesPage\n<公共请求参数>\n\n{\n    \"CatalogName\": \"chenfan_test_1\",\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"SchemaNames\": [\n            {\n                \"Name\": \"default\",\n                \"Namespace\": [\n                    \"chenfan_test_1\"\n                ]\n            }\n        ],\n        \"TotalCount\": 3,\n        \"SnapshotId\": \"\",\n        \"RequestId\": \"dca17bf4-111c-48aa-b995-8a210e180cea\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DescribeScripts": [
@@ -1750,6 +1862,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"testdb\",\n    \"Sort\": \"name\",\n    \"Asc\": true,\n    \"StartTime\": \"2021-11-11 00:00:00\",\n    \"EndTime\": \"2021-11-18 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1d840f1-2df8-4ef4-9e44-02db58f24475\",\n        \"TotalCount\": 1,\n        \"ViewList\": [\n            {\n                \"ViewBaseInfo\": {\n                    \"DatabaseName\": \"testdb\",\n                    \"ViewName\": \"v1\",\n                    \"UserAlias\": \"testUser\",\n                    \"UserSubUin\": \"100019878767\"\n                },\n                \"Columns\": [],\n                \"Properties\": [\n                    {\n                        \"Key\": \"presto_view\",\n                        \"Value\": \"true\"\n                    },\n                    {\n                        \"Key\": \"presto_query_id\",\n                        \"Value\": \"20210901_123510_00000_9jg5j\"\n                    },\n                    {\n                        \"Key\": \"transient_lastDdlTime\",\n                        \"Value\": \"1630499714051\"\n                    },\n                    {\n                        \"Key\": \"comment\",\n                        \"Value\": \"Presto View\"\n                    },\n                    {\n                        \"Key\": \"presto_version\",\n                        \"Value\": \"0.242.1-DLC-rc11-6fe2f42\"\n                    }\n                ],\n                \"CreateTime\": \"1630499714000\",\n                \"ModifiedTime\": \"1630499714000\"\n            }\n        ]\n    }\n}",
         "title": "查询视图列表"
+      }
+    ],
+    "DescribeWarehouses": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWarehouses\n<公共请求参数>\n\n{\n    \"Page\": 1,\n    \"PageSize\": 10,\n    \"Filters\": [\n        {\n            \"Name\": \"State\",\n            \"Operator\": \"EQ\",\n            \"Values\": [\n                \"RUNNING\"\n            ]\n        }\n    ],\n    \"SortFields\": [\n        {\n            \"Field\": \"WarehouseId\",\n            \"Order\": \"ASC\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"WarehouseList\": [\n            {\n                \"WarehouseId\": \"wh-8f21c3\",\n                \"Name\": \"spark-demo\",\n                \"CreatorSubUin\": \"700281534962\",\n                \"Description\": \"演示用途的配置\",\n                \"State\": \"RUNNING\",\n                \"PartitionCode\": \"dlc-p-nwruuglc\",\n                \"PartitionName\": \"spark-demo-partition\",\n                \"QueueName\": \"root.default\",\n                \"CreateTime\": 1767256876123,\n                \"UpdateTime\": 1767256876123,\n                \"ActiveClusters\": 1,\n                \"MinClusters\": 1,\n                \"MaxClusters\": 4,\n                \"RuntimeCode\": \"spark-3.5.5\",\n                \"RuntimeName\": \"Spark 3.5.5\",\n                \"SysCatalogVersion\": \"TCCATALOG\",\n                \"EnvVars\": [\n                    {\n                        \"Key\": \"spark.executor.memory\",\n                        \"Value\": \"4g\"\n                    }\n                ],\n                \"RuntimeConf\": \"{\\\"spark.driver.cores\\\":\\\"1\\\"}\",\n                \"DynamicProperties\": \"{\\\"spark.executor.instances\\\":\\\"2\\\"}\"\n            }\n        ],\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "查询计算仓库列表"
       }
     ],
     "DescribeWorkGroupInfo": [
@@ -2406,6 +2526,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGovernEventRule\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例一"
+      }
+    ],
+    "ModifyJobDefinition": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJobDefinition\n<公共请求参数>\n\n{\n    \"JobDefinitionId\": \"jd-4b7e15\",\n    \"Name\": \"spark-demo\",\n    \"Description\": \"演示用途的配置\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43\"\n    }\n}",
+        "title": "修改作业定义"
       }
     ],
     "ModifyLabPriority": [

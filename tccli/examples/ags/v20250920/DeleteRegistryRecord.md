@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli ags DeleteRegistryRecord --cli-unfold-argument ```
+tccli ags DeleteRegistryRecord --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd \
+    --VersionId rv-0003abcd \
+    --Reason 废弃过期版本
+```
 
 Output: 
 ```
@@ -23,7 +28,10 @@ Output:
 Input: 
 
 ```
-tccli ags DeleteRegistryRecord --cli-unfold-argument ```
+tccli ags DeleteRegistryRecord --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd
+```
 
 Output: 
 ```

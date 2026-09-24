@@ -43,7 +43,7 @@
       "status": "online"
     },
     "DescribeDeployTemplates": {
-      "document": "本接口(DescribeDeployTemplates)用于查询模型支持的部署模板",
+      "document": "本接口(DescribeDeployTemplates)用于查询模型支持的部署模板。传入 ServiceId 时按当前服务占用过滤重装候选模板。",
       "input": "DescribeDeployTemplatesRequest",
       "name": "查询模型支持的部署模板",
       "output": "DescribeDeployTemplatesResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "DescribeModels": {
-      "document": "本接口(DescribeModels)用于查询模型",
+      "document": "本接口(DescribeModels)用于查询模型。传入 ServiceId 时按当前服务占用过滤重装候选模型。",
       "input": "DescribeModelsRequest",
       "name": "查询模型",
       "output": "DescribeModelsResponse",
@@ -1024,6 +1024,15 @@
           "name": "ModelId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选。传入当前推理服务 ID 时，仅返回与该服务占用兼容的模板：同一 Scene、卡型家族兼容、机数相等、非机密计算。",
+          "example": "svc-xxxxxxxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1219,6 +1228,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可选。传入当前推理服务 ID 时，仅返回与该服务同一 Scene、且至少有一条兼容重装模板的模型。自定义部署、机密计算、具身智能服务返回空列表。",
+          "example": "svc-xxxxxxxx",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

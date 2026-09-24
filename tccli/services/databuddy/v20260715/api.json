@@ -1162,7 +1162,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>要删除的用户组 ID 列表</p>",
+          "document": "<p>要删除的用户组 ID 列表，单次最多100个</p>",
           "example": "[\"17816640837776892\"]",
           "member": "string",
           "name": "GroupIds",
@@ -3044,7 +3044,7 @@
         {
           "disabled": false,
           "document": "<p>工作空间ID，可通过 ListWorkspaces 获取。必填</p>",
-          "example": "17697410068842890",
+          "example": "17623497097012366",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3053,7 +3053,7 @@
         {
           "disabled": false,
           "document": "<p>工作流ID，可通过 ListWorkflows 获取。必填</p>",
-          "example": "8e0e3485-2736-4530-92ed-932e019898f1",
+          "example": "8e116990-d2b2-451a-84d3-2f890b38de4f",
           "member": "string",
           "name": "WorkflowId",
           "required": true,
@@ -3062,7 +3062,7 @@
         {
           "disabled": false,
           "document": "<p>待终止的工作流运行ID列表，可通过 ListWorkflowRuns 获取</p>",
-          "example": "[\"8e0e3485-2736-4530-92ed-932e019898f1_1786115878097\"]",
+          "example": "[\"8e116990-d2b2-451a-84d3-2f890b38de4f_1790157828891\"]",
           "member": "string",
           "name": "WorkflowRunIds",
           "required": false,
@@ -3080,7 +3080,7 @@
         {
           "disabled": false,
           "document": "<p>是否只终止处于等待中（Pending）状态的运行。非必填，默认 false</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "OnlyKillPendingRuns",
           "required": false,
@@ -3193,7 +3193,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>多字段排序，如 [{Name: &#39;CreateTime&#39;, Direction: &#39;DESC&#39;}, {Name: &#39;UserName&#39;, Direction: &#39;ASC&#39;}]，默认按创建时间降序</p>",
+          "document": "<p>多字段排序，如 [{Name: &#39;CreateTime&#39;, Direction: &#39;Desc&#39;}, {Name: &#39;UserName&#39;, Direction: &#39;Asc&#39;}]，默认按创建时间降序</p>",
           "example": "无",
           "member": "OrderBy",
           "name": "OrderBys",
@@ -3211,7 +3211,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "document": "<p>每页大小，默认10，最小10，最大100</p>",
           "example": "11",
           "member": "int64",
           "name": "PageSize",
@@ -3313,7 +3313,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "document": "<p>每页大小，默认10，最小10，最大100</p>",
           "example": "11",
           "member": "int64",
           "name": "PageSize",
@@ -3442,7 +3442,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "document": "<p>每页大小，默认10，最小10，最大100</p>",
           "example": "11",
           "member": "int64",
           "name": "PageSize",
@@ -3553,7 +3553,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>每页大小，默认10，最小10，最大200</p>",
+          "document": "<p>每页大小，默认10，最小10，最大100</p>",
           "example": "11",
           "member": "int64",
           "name": "PageSize",
@@ -5355,7 +5355,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>成员 UIN 列表（OperType 为添加/删除成员时使用）</p>",
+          "document": "<p>成员 UIN 列表（OperType 为添加/删除成员时使用），单次最多100个</p>",
           "example": "[\"700002692368\"]",
           "member": "string",
           "name": "UserUins",

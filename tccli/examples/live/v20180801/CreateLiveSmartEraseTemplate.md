@@ -6,11 +6,13 @@ Input:
 
 ```
 tccli live CreateLiveSmartEraseTemplate --cli-unfold-argument  \
-    --TemplateName SmartName111 \
-    --Type illegal audio \
-    --Description SmartNameDesc \
-    --AuditConfId 0 \
-    --PrivacyProtection blur face
+    --AudioBizType 1_1_7_55023 \
+    --AudioTextBizType 1_1_1_55023 \
+    --AuditConfId 55023 \
+    --Description appwl9ph4hf4030的消音模板 \
+    --ImageBizType 1_1_2_55023 \
+    --TemplateName appwl9ph4hf4030的消音模板 \
+    --Type illegal audio
 ```
 
 Output: 

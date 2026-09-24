@@ -44178,7 +44178,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "记录Id",
+          "document": "<p>记录Id</p>",
           "example": "10001",
           "member": "uint64",
           "name": "Id",
@@ -44188,7 +44188,7 @@
         },
         {
           "disabled": false,
-          "document": "主机Uuid",
+          "document": "<p>主机Uuid</p>",
           "example": "380add75-bb06-4cc4-84c5-cf806d102fba",
           "member": "string",
           "name": "Uuid",
@@ -44198,7 +44198,7 @@
         },
         {
           "disabled": false,
-          "document": "主机ip",
+          "document": "<p>主机ip</p>",
           "example": "192.18.**.**",
           "member": "string",
           "name": "MachineIp",
@@ -44208,7 +44208,7 @@
         },
         {
           "disabled": false,
-          "document": "主机名",
+          "document": "<p>主机名</p>",
           "example": "ins-dhadhf",
           "member": "string",
           "name": "MachineName",
@@ -44218,7 +44218,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "root",
           "member": "string",
           "name": "UserName",
@@ -44228,7 +44228,7 @@
         },
         {
           "disabled": false,
-          "document": "来源ip",
+          "document": "<p>来源ip</p>",
           "example": "192.18.**.**",
           "member": "string",
           "name": "SrcIp",
@@ -44238,7 +44238,7 @@
         },
         {
           "disabled": false,
-          "document": "1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。",
+          "document": "<p>1:正常登录；2异地登录； 5已加白； 14：已处理；15：已忽略。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -44248,7 +44248,7 @@
         },
         {
           "disabled": false,
-          "document": "国家id",
+          "document": "<p>国家id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Country",
@@ -44258,7 +44258,7 @@
         },
         {
           "disabled": false,
-          "document": "城市id",
+          "document": "<p>城市id</p>",
           "example": "23",
           "member": "uint64",
           "name": "City",
@@ -44268,7 +44268,7 @@
         },
         {
           "disabled": false,
-          "document": "省份id",
+          "document": "<p>省份id</p>",
           "example": "101",
           "member": "uint64",
           "name": "Province",
@@ -44278,7 +44278,7 @@
         },
         {
           "disabled": false,
-          "document": "登录时间",
+          "document": "<p>登录时间</p>",
           "example": "2024-10-30 15:58:43",
           "member": "string",
           "name": "LoginTime",
@@ -44288,7 +44288,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2024-10-30 15:58:43",
           "member": "string",
           "name": "ModifyTime",
@@ -44298,7 +44298,7 @@
         },
         {
           "disabled": false,
-          "document": "是否命中异地登录异常  1表示命中此类异常, 0表示未命中",
+          "document": "<p>是否命中异地登录异常  1表示命中此类异常, 0表示未命中</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsRiskArea",
@@ -44308,7 +44308,7 @@
         },
         {
           "disabled": false,
-          "document": "是否命中异常用户异常 1表示命中此类异常, 0表示未命中",
+          "document": "<p>是否命中异常用户异常 1表示命中此类异常, 0表示未命中</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsRiskUser",
@@ -44318,7 +44318,7 @@
         },
         {
           "disabled": false,
-          "document": "是否命中异常时间异常 1表示命中此类异常, 0表示未命中",
+          "document": "<p>是否命中异常时间异常 1表示命中此类异常, 0表示未命中</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsRiskTime",
@@ -44328,7 +44328,7 @@
         },
         {
           "disabled": false,
-          "document": "是否命中异常IP异常 1表示命中此类异常, 0表示未命中",
+          "document": "<p>是否命中异常IP异常 1表示命中此类异常, 0表示未命中</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsRiskSrcIp",
@@ -44338,7 +44338,7 @@
         },
         {
           "disabled": false,
-          "document": "危险等级：\n0 高危\n1 可疑",
+          "document": "<p>危险等级：<br>0 高危<br>1 可疑</p>",
           "example": "1",
           "member": "uint64",
           "name": "RiskLevel",
@@ -44348,7 +44348,7 @@
         },
         {
           "disabled": false,
-          "document": "位置名称",
+          "document": "<p>位置名称</p>",
           "example": "中国:北京市:北京市",
           "member": "string",
           "name": "Location",
@@ -44358,7 +44358,7 @@
         },
         {
           "disabled": false,
-          "document": "主机quuid",
+          "document": "<p>主机quuid</p>",
           "example": "935e27b1-d675-4509-80bf-96fbf0764237",
           "member": "string",
           "name": "Quuid",
@@ -44368,7 +44368,7 @@
         },
         {
           "disabled": false,
-          "document": "高危信息说明：\nABROAD - 境外IP；\nXTI - 威胁情报",
+          "document": "<p>高危信息说明：<br>ABROAD - 境外IP；<br>XTI - 威胁情报</p>",
           "example": "ABROAD",
           "member": "string",
           "name": "Desc",
@@ -44378,7 +44378,7 @@
         },
         {
           "disabled": false,
-          "document": "附加信息",
+          "document": "<p>附加信息</p>",
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
@@ -44388,7 +44388,7 @@
         },
         {
           "disabled": false,
-          "document": "请求目的端口",
+          "document": "<p>请求目的端口</p>",
           "example": "3306",
           "member": "int64",
           "name": "Port",
@@ -44398,12 +44398,92 @@
         },
         {
           "disabled": false,
-          "document": "ip分析",
+          "document": "<p>ip分析</p>",
           "example": "无",
           "member": "IPAnalyse",
           "name": "IPAnalyse",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中策略ID</p><p>枚举值：</p><ul><li>risk_login_1： 威胁情报</li><li>risk_login_2： 密码破解成功后登录</li><li>risk_login_3： 弱口令账户登录</li><li>risk_login_4： 非法账户登录</li><li>risk_login_5： 登录后存在入侵行为</li><li>risk_login_101： 海外IP登录</li><li>risk_login_102： 非常用登录地登录</li><li>risk_login_103： 非工作时间登录</li></ul>",
+          "example": "risk_login_1",
+          "member": "string",
+          "name": "HitRule",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中策略名</p>",
+          "example": "威胁情报",
+          "member": "string",
+          "name": "HitRuleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AlertCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>首次发现时间</p><p>参数格式：YYYY-MM-DD HH:MM:SS</p>",
+          "example": "2026-08-27 20:15:02",
+          "member": "string",
+          "name": "FirstDiscoverTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近发现时间</p><p>参数格式：YYYY-MM-DD HH:MM:SS</p>",
+          "example": "2026-09-04 16:02:13",
+          "member": "string",
+          "name": "LastDiscoverTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>危害描述</p>",
+          "example": "该登录来源 IP 在威胁情报平台被标记为恶意 IP，判定为异常登录。",
+          "member": "string",
+          "name": "HarmDescribe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复建议</p>",
+          "example": "登录行为评估：该登录IP在威胁情报平台被判断为黑，若是您的正常登录行为（如使用了代理、VPN 等导致出口 IP 变更），请在「主机防护 > 策略管理 > 规则管理」中添加 IP 白名单规则",
+          "member": "string",
+          "name": "SuggestScheme",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近登录历史</p>",
+          "example": "无",
+          "member": "RecentLoginItem",
+          "name": "RecentLoginList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -57864,6 +57944,42 @@
           "name": "SupportDefense",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecentLoginItem": {
+      "document": "异常登陆历史记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>登录时间</p><p>参数格式：YYYY-MM-DD HH:MM:SS</p>",
+          "example": "2022-08-23 11:49:46",
+          "member": "string",
+          "name": "LoginTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录方式</p><p>枚举值：</p><ul><li>0： 无效用户</li><li>1： 密码错误</li><li>2： 密码登录</li><li>3： 密钥登录</li><li>4： PAM 认证失败（sshd）</li><li>5： PAM 认证失败（tty）</li><li>6： 键盘交互登录</li><li>7： 键盘交互认证失败</li><li>8： PAM 认证失败</li></ul>",
+          "example": "3",
+          "member": "int64",
+          "name": "LoginType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录方式描述</p>",
+          "example": "密钥登录",
+          "member": "string",
+          "name": "LoginTypeDesc",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

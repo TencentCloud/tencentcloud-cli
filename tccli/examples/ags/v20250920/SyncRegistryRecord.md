@@ -5,13 +5,28 @@
 Input: 
 
 ```
-tccli ags SyncRegistryRecord --cli-unfold-argument ```
+tccli ags SyncRegistryRecord --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd \
+    --Label stable \
+    --ChangeLog 远端 MCP 更新，同步为 v3
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-example"
+        "RequestId": "req-example",
+        "SyncStatus": "VERSION_CREATED",
+        "ResolvedVersionId": "rv-0123abcd",
+        "CreatedVersion": {
+            "VersionId": "rv-0005abcd",
+            "Revision": 5
+        },
+        "Record": {
+            "RecordId": "rec-0123abcd"
+        },
+        "LastSyncTime": "2026-08-12T00:00:00Z"
     }
 }
 ```
@@ -23,13 +38,20 @@ Output:
 Input: 
 
 ```
-tccli ags SyncRegistryRecord --cli-unfold-argument ```
+tccli ags SyncRegistryRecord --cli-unfold-argument  \
+    --RegistryId reg-0123abcd \
+    --RecordId rec-0123abcd \
+    --Label stable
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-example"
+        "RequestId": "req-example",
+        "SyncStatus": "UNCHANGED",
+        "ResolvedVersionId": "rv-0123abcd",
+        "LastSyncTime": "2026-08-12T00:00:00Z"
     }
 }
 ```

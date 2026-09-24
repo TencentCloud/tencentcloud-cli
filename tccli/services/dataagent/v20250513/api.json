@@ -1644,6 +1644,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示名称</p>",
+          "example": "DeepSeek-V3.2",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "DeepSeek系列大模型",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文窗口大小，单位 token</p>",
+          "example": "128000",
+          "member": "int64",
+          "name": "ContextWindow",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型图标 URL</p>",
+          "example": "https://xxxxx.png",
+          "member": "string",
+          "name": "IconUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费倍率</p>",
+          "example": "3.33",
+          "member": "float",
+          "name": "CreditMultiplier",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>思考配置</p>",
+          "example": "无",
+          "member": "Thinking",
+          "name": "Thinking",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2484,6 +2550,56 @@
         }
       ],
       "type": "object"
+    },
+    "Thinking": {
+      "document": "模型思考强度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模式</p><p>枚举值：</p><ul><li>toggle： 可开关</li><li>always_on： 固定开启</li><li>always_off： 固定关闭</li><li>unconfigured： 未配置</li></ul>",
+          "example": "toggle",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认是否开启思考</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>思考强度可选项，如 [&quot;high&quot;,&quot;max&quot;]</p>",
+          "example": "[\"high\"]",
+          "member": "string",
+          "name": "EffortOptions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认思考强度</p>",
+          "example": "high",
+          "member": "string",
+          "name": "DefaultEffort",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UploadAndCommitFileRequest": {
       "document": "UploadAndCommitFile请求参数结构体",

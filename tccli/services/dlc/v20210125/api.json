@@ -343,6 +343,27 @@
       "output": "CreateInternalTableResponse",
       "status": "online"
     },
+    "CreateJob": {
+      "document": "创建并提交作业 Action。",
+      "input": "CreateJobRequest",
+      "name": "AI DLC 创建作业",
+      "output": "CreateJobResponse",
+      "status": "online"
+    },
+    "CreateJobDefinition": {
+      "document": "创建作业定义。",
+      "input": "CreateJobDefinitionRequest",
+      "name": "AI DLC 创建作业定义",
+      "output": "CreateJobDefinitionResponse",
+      "status": "online"
+    },
+    "CreateJobFromDefinition": {
+      "document": "按作业定义创建作业。",
+      "input": "CreateJobFromDefinitionRequest",
+      "name": "AI DLC 按作业定义创建作业",
+      "output": "CreateJobFromDefinitionResponse",
+      "status": "online"
+    },
     "CreateJobSpec": {
       "document": "创建作业配置",
       "input": "CreateJobSpecRequest",
@@ -791,6 +812,34 @@
       "output": "DescribeBindablePrometheusResponse",
       "status": "online"
     },
+    "DescribeCatalogTableInfo": {
+      "document": "获取 Table 详情",
+      "input": "DescribeCatalogTableInfoRequest",
+      "name": "获取Catalog Table 详情",
+      "output": "DescribeCatalogTableInfoResponse",
+      "status": "online"
+    },
+    "DescribeCatalogTableNames": {
+      "document": "获取 Schema 下所有 Table",
+      "input": "DescribeCatalogTableNamesRequest",
+      "name": "获取 Schema 下所有 Table",
+      "output": "DescribeCatalogTableNamesResponse",
+      "status": "online"
+    },
+    "DescribeCatalogTableNamesPage": {
+      "document": "分页查询表名",
+      "input": "DescribeCatalogTableNamesPageRequest",
+      "name": "分页查询表名",
+      "output": "DescribeCatalogTableNamesPageResponse",
+      "status": "online"
+    },
+    "DescribeCatalogs": {
+      "document": "查询数据目录列表",
+      "input": "DescribeCatalogsRequest",
+      "name": "查询数据目录列表",
+      "output": "DescribeCatalogsResponse",
+      "status": "online"
+    },
     "DescribeClsTopics": {
       "document": "查询 CLS 日志主题列表：TopicName 走模糊匹配，TopicId 走精确匹配，两者均可为空；分页返回。",
       "input": "DescribeClsTopicsRequest",
@@ -985,6 +1034,48 @@
       "input": "DescribeForbiddenTableProRequest",
       "name": "查询被禁用的表属性列表（新）",
       "output": "DescribeForbiddenTableProResponse",
+      "status": "online"
+    },
+    "DescribeJobDefinitionDetail": {
+      "document": "查询作业定义详情。",
+      "input": "DescribeJobDefinitionDetailRequest",
+      "name": "AI DLC 查询作业定义详情",
+      "output": "DescribeJobDefinitionDetailResponse",
+      "status": "online"
+    },
+    "DescribeJobDefinitions": {
+      "document": "查询作业定义列表。",
+      "input": "DescribeJobDefinitionsRequest",
+      "name": "AI DLC 查询作业定义列表",
+      "output": "DescribeJobDefinitionsResponse",
+      "status": "online"
+    },
+    "DescribeJobDetail": {
+      "document": "查询作业完整详情 Action。",
+      "input": "DescribeJobDetailRequest",
+      "name": "AI DLC 查询作业详情",
+      "output": "DescribeJobDetailResponse",
+      "status": "online"
+    },
+    "DescribeJobList": {
+      "document": "分页查询作业列表 Action. PageSize 上限 200；QueueName 必须配合 PartitionCode。",
+      "input": "DescribeJobListRequest",
+      "name": "AI DLC 查询作业列表",
+      "output": "DescribeJobListResponse",
+      "status": "online"
+    },
+    "DescribeJobLog": {
+      "document": "统一作业日志查询 Action。",
+      "input": "DescribeJobLogRequest",
+      "name": "AI DLC 查询作业日志",
+      "output": "DescribeJobLogResponse",
+      "status": "online"
+    },
+    "DescribeJobResult": {
+      "document": "获取 SQL 作业结果集 Action. 仅 MinorType=SPARK_SQL 有效（Batch 固定返回 State=NOT_SUPPORTED）。",
+      "input": "DescribeJobResultRequest",
+      "name": "AI DLC 获取作业结果集",
+      "output": "DescribeJobResultResponse",
       "status": "online"
     },
     "DescribeLakeFsDirSummary": {
@@ -1195,6 +1286,13 @@
       "input": "DescribeSaleResourceInfoRequest",
       "name": "查询可售卖资源规格",
       "output": "DescribeSaleResourceInfoResponse",
+      "status": "online"
+    },
+    "DescribeSchemaNamesPage": {
+      "document": "分页查询 Catalog 下 Schema 列表",
+      "input": "DescribeSchemaNamesPageRequest",
+      "name": "分页查询 Catalog 下 Schema 列表",
+      "output": "DescribeSchemaNamesPageResponse",
       "status": "online"
     },
     "DescribeScripts": {
@@ -1489,6 +1587,13 @@
       "input": "DescribeViewsRequest",
       "name": "查询视图列表",
       "output": "DescribeViewsResponse",
+      "status": "online"
+    },
+    "DescribeWarehouses": {
+      "document": "查询计算仓库列表 Action。",
+      "input": "DescribeWarehousesRequest",
+      "name": "AI DLC 查询计算仓库列表",
+      "output": "DescribeWarehousesResponse",
       "status": "online"
     },
     "DescribeWorkGroupInfo": {
@@ -2042,6 +2147,13 @@
       "input": "ModifyGovernEventRuleRequest",
       "name": "修改数据治理事件阈值",
       "output": "ModifyGovernEventRuleResponse",
+      "status": "online"
+    },
+    "ModifyJobDefinition": {
+      "document": "修改作业定义。",
+      "input": "ModifyJobDefinitionRequest",
+      "name": "AI DLC 修改作业定义",
+      "output": "ModifyJobDefinitionResponse",
       "status": "online"
     },
     "ModifyLabPriority": {
@@ -4251,6 +4363,78 @@
       ],
       "type": "object"
     },
+    "Audit": {
+      "document": "tcc 审计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建者</p>",
+          "example": "DLC_QCSLinkedRoleInRayOnDLC",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后修改者</p>",
+          "example": "700002744585",
+          "member": "string",
+          "name": "LastModifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间戳</p>",
+          "example": "1788268038116",
+          "member": "uint64",
+          "name": "CreatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后修改时间戳</p>",
+          "example": "1788548063490",
+          "member": "uint64",
+          "name": "LastModifiedAt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后修改时间（已废弃）</p><p>参数格式：2024-11-01 11:01:01</p>",
+          "example": "2026-09-05 02:54:23",
+          "member": "string",
+          "name": "LastModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（已废弃）</p><p>参数格式：2024-11-01 11:01:01</p>",
+          "example": "2026-09-01 21:07:18",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BatchSQLCostInfo": {
       "document": "spark session batch SQL的消耗信息",
       "members": [
@@ -5136,6 +5320,34 @@
       ],
       "type": "object"
     },
+    "BucketPartitioning": {
+      "document": "tcc BucketPartitioning定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分桶字段</p>",
+          "example": "[\"id_1\"]",
+          "member": "string",
+          "name": "FieldNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分桶数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "NumBuckets",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CHDFSProductVpcInfo": {
       "document": "chdfs产品vpc信息",
       "members": [
@@ -5516,6 +5728,293 @@
         }
       ],
       "type": "object"
+    },
+    "CatalogConfig": {
+      "document": "数据目录配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录唯一 ID</p>",
+          "example": "5bec9388-3a19-48e1-9775-2fff4e0e000b",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录名字</p>",
+          "example": "tet",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录类型</p><p>枚举值：</p><ul><li>LAKEHOUSE： LAKEHOUSE类型</li></ul>",
+          "example": "MODEL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录描述信息</p>",
+          "example": "是的发生的",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p><p>枚举值：</p><ul><li>2： 连接成功</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录属性</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接信息</p>",
+          "example": "无",
+          "member": "ConnectionConfig",
+          "name": "Connection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作人 uin</p>",
+          "example": "700002744585",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接日志</p>",
+          "example": "Create Catalog Connection Success",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计信息</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（已废弃）</p><p>参数格式：2024-01-01 12:00:00</p>",
+          "example": "2026-09-01 15:20:26",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（已废弃）</p><p>参数格式：2024-01-01 12:00:00</p>",
+          "example": "2026-09-07 14:35:03",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CatalogTaleInfo": {
+      "document": "tcc TableInfo定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表名称</p>",
+          "example": "test_iceberg",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段信息</p>",
+          "example": "无",
+          "member": "ColumnInfo",
+          "name": "Columns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>属性值</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区</p>",
+          "example": "无",
+          "member": "Partitioning",
+          "name": "Partitioning",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引</p>",
+          "example": "无",
+          "member": "IndexInfo",
+          "name": "Indexes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>编辑者/审计信息</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "test3",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称</p>",
+          "example": "test001",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表格式</p>",
+          "example": "TCIceberg",
+          "member": "string",
+          "name": "TableFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表格式类型</p><p>枚举值：</p><ul><li>v2： TcIceberg v2版本</li></ul>",
+          "example": "v2",
+          "member": "string",
+          "name": "FormatType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表类型</p><p>枚举值：</p><ul><li>Managed： 内部表</li></ul>",
+          "example": "Managed",
+          "member": "string",
+          "name": "TableType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>场景类型</p><p>枚举值：</p><ul><li>REALTIME： 实时类型</li></ul>",
+          "example": "REALTIME",
+          "member": "string",
+          "name": "TableMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CheckApiKeyNameRequest": {
       "document": "CheckApiKeyName请求参数结构体",
@@ -6331,6 +6830,32 @@
       ],
       "usage": "both"
     },
+    "ClsLogEntry": {
+      "document": "日志条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Unix 毫秒时间戳。</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "Time",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志 JSON 字符串。</p>",
+          "example": "{\"level\":\"INFO\",\"message\":\"SparkContext: Running Spark version 3.5.5\"}",
+          "member": "string",
+          "name": "LogJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClsTopicItem": {
       "document": "CLS 日志主题条目",
       "members": [
@@ -6806,6 +7331,78 @@
       ],
       "usage": "both"
     },
+    "ColumnInfo": {
+      "document": "tcc table列定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名</p>",
+          "example": "id_8",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型</p><p>枚举值：</p><ul><li>integer： 数值类型</li></ul>",
+          "example": "long",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段描述</p>",
+          "example": "xdv",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段设置（已废弃）</p>",
+          "example": "{\"\":\"\"}",
+          "member": "string",
+          "name": "FieldSetting",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为主键（已废弃）</p><p>枚举值：</p><ul><li>true： 是主键</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrimaryKey",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型 sqlType 格式</p>",
+          "example": "decimal(10,2)",
+          "member": "string",
+          "name": "TypeText",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CommonMetrics": {
       "document": "任务公共指标",
       "members": [
@@ -6921,6 +7518,89 @@
         }
       ],
       "usage": "out"
+    },
+    "ConnectionConfig": {
+      "document": "tcc链接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>mysql数据源连接信息</p>",
+          "example": "无",
+          "member": "MysqlConnection",
+          "name": "MysqlConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>hive数据源连接信息</p>",
+          "example": "无",
+          "member": "HiveConnection",
+          "name": "EmrHiveConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>doris数据源连接信息</p>",
+          "example": "无",
+          "member": "DorisConnection",
+          "name": "TCHouseDConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据卷连接信息</p>",
+          "example": "无",
+          "member": "VolumeConnection",
+          "name": "VolumeConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>lakehouse连接信息</p>",
+          "example": "无",
+          "member": "LakeHouseConnection",
+          "name": "LakeHouseConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgreSQL数据源连接信息</p>",
+          "example": "无",
+          "member": "PostgreSQLConnection",
+          "name": "PostgreSQLConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dlc数据源连接信息</p>",
+          "example": "无",
+          "member": "DlcConnection",
+          "name": "DlcConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CopyJobSpecRequest": {
       "document": "CopyJobSpec请求参数结构体",
@@ -9931,6 +10611,342 @@
           "member": "string",
           "name": "Execution",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobDefinitionRequest": {
+      "document": "CreateJobDefinition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义名称。必填，trim 后非空。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业定义描述。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎大类，非必传，缺省 SPARK；当前仅支持 SPARK。</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业子类型，SPARK_SQL / SPARK_BATCH / SPARK_STREAM，必填；决定 Entrypoint 字段的校验规则。</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（如 cosn://bucket/path/checkpoint）。MinorType=SPARK_STREAM 时必填；同一作业的多次运行必须复用同一路径，变更等于重置消费进度。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区代码，仅 RunMode=JOB 可传（QueueName 非空时必填）；RunMode=WAREHOUSE 时禁止传（被仓库反查值覆盖）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称，仅 RunMode=JOB 可传且须与 PartitionCode 成对；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像编码（可选值见 DescribeSparkRuntimes）。RunMode=JOB 新建时必填（无基座继承语义）；克隆场景可省略（继承源定义快照）；RunMode=WAREHOUSE 时忽略。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "RuntimeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内置 Catalog 版本码（取值为 DescribeSysCatalogList 返回的目录子类型）。RunMode=JOB 新建时条件必填：未传时若可用（enabled）SysCatalog 唯一则自动选中，多个/零个报错；克隆场景可省略（继承源定义快照）；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "SysCatalogVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CustomProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行模式，必填。可选值：WAREHOUSE（提交到计算仓库执行）/ JOB（按 Spec 独享资源）。两种模式的参数集严格隔离，详见各字段说明。</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID。RunMode=WAREHOUSE 时必填（仓库需可启动）；RunMode=JOB 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "WarehouseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobDefinitionResponse": {
+      "document": "CreateJobDefinition返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义唯一标识符（ID）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobDefinitionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobFromDefinitionRequest": {
+      "document": "CreateJobFromDefinition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义 ID（由 CreateJobDefinition 返回）。必填。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobDefinitionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobFromDefinitionResponse": {
+      "document": "CreateJobFromDefinition返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识符（ID）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobRequest": {
+      "document": "CreateJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业名称，长度 ≤256；可省略，省略时服务端回退为 JobId。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（如 cosn://bucket/path/checkpoint）。MinorType=SPARK_STREAM 时必填；同一作业的多次运行必须复用同一路径，变更等于重置消费进度。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎大类，非必传，缺省 SPARK；当前仅支持 SPARK。</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业子类型，决定入口形态：SPARK_SQL（SQL 作业，Entrypoint.Statement 必填）/ SPARK_BATCH（批处理作业，Entrypoint.EntryFile 必填）/ SPARK_STREAM（流作业，EntryFile 与 CheckpointLocation 必填）。</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流实例关联 ID（长度 ≤64）：同一工作流/会话的多条 SQL 作业传相同 FlowId，可共享同一 Spark 会话、复用已就绪引擎。MinorType=SPARK_SQL 时必填；FlowId 非空时必须同时传 ExecutionId。WAREHOUSE 模式下 FlowId 即会话句柄（一个 FlowId 只对应一个会话）：会话过期或已销毁后须换新 FlowId，否则返回 FailedOperation.FlowIdNotExists。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流内部执行标识（长度 ≤64），同一 FlowId 下每次提交须唯一（如自增序号/UUID）。用于重复提交防重：同一账号下命中未删除的同 (FlowId, ExecutionId) 作业时返回 FailedOperation.FlowExecutionConflict。FlowId 非空时必填（SPARK_SQL 因 FlowId 必填而必填）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "ExecutionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行模式，必填。WAREHOUSE / JOB.</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID。RunMode=WAREHOUSE 时必填（仓库需处于 RUNNING，或 STOPPED 且 AutoStart 开启（提交后冷启动拉起））；RunMode=JOB 时必须为空。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "WarehouseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像编码（可选值见 DescribeSparkRuntimes）。RunMode=JOB 时必填；RunMode=WAREHOUSE 时忽略。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "RuntimeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内置 Catalog 版本码（取值为 DescribeSysCatalogList 返回的目录子类型）。RunMode=JOB 时条件必填：未传时若可用（enabled）SysCatalog 唯一则自动选中，多个/零个报错；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "SysCatalogVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区代码，仅 RunMode=JOB 可传（QueueName 非空时必填）；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称，必须与 PartitionCode 成对使用（RunMode=JOB 下可选）；RunMode=WAREHOUSE 下被仓库反查值覆盖，无需传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CustomProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJobResponse": {
+      "document": "CreateJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识符（ID）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19618,6 +20634,355 @@
       ],
       "type": "object"
     },
+    "DescribeCatalogTableInfoRequest": {
+      "document": "DescribeCatalogTableInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Catalog名称</p>",
+          "example": "chenfan_test_1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Table名称</p>",
+          "example": "sdfsdf",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogTableInfoResponse": {
+      "document": "DescribeCatalogTableInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Table详细信息</p>",
+          "example": "无",
+          "member": "CatalogTaleInfo",
+          "name": "Table",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogTableNamesPageRequest": {
+      "document": "DescribeCatalogTableNamesPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>catalog名称</p>",
+          "example": "chenfan_test_1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否基于快照</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SnapshotBased",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照id</p>",
+          "example": "SnapshotId",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>table匹配规则</p>",
+          "example": "t%",
+          "member": "string",
+          "name": "TableNamePattern",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogTableNamesPageResponse": {
+      "document": "DescribeCatalogTableNamesPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>table名字列表</p>",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "TableNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>table总数</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照id</p>",
+          "example": "SnapshotId",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogTableNamesRequest": {
+      "document": "DescribeCatalogTableNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Catalog名称</p>",
+          "example": "chenfan_test_1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema名称</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogTableNamesResponse": {
+      "document": "DescribeCatalogTableNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Table名称列表</p>",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "TableNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogsRequest": {
+      "document": "DescribeCatalogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录 ID</p>",
+          "example": "be32d91c-9ea3-4397-982e-fc9578142942",
+          "member": "string",
+          "name": "CatalogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "chenfan_test_1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作人 uin</p>",
+          "example": "700002744585",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，支持 CreateTime / UpdateTime（默认 UpdateTime）</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>true:升序（默认）/ false:降序</p>",
+          "example": "true",
+          "member": "string",
+          "name": "Asc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态：0 注册中 / 1 待测试 / 2 连接成功 / 3 连接失败 / 4 删除中 / 5 已删除</p><p>枚举值：</p><ul><li>0： 注册中</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录类型</p><p>枚举值：</p><ul><li>LAKEHOUSE： lakehouse类型</li></ul>",
+          "example": "LAKEHOUSE",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在这个时间之后创建（时间戳）</p>",
+          "example": "1788268042334",
+          "member": "uint64",
+          "name": "CreatedAfter",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>在这个时间之前创建（时间戳）</p>",
+          "example": "1788268042334",
+          "member": "uint64",
+          "name": "CreatedBefore",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCatalogsResponse": {
+      "document": "DescribeCatalogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Catalog详细信息列表</p>",
+          "example": "无",
+          "member": "CatalogConfig",
+          "name": "Catalogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Catalog总数</p>",
+          "example": "5",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeClsTopicsRequest": {
       "document": "DescribeClsTopics请求参数结构体",
       "members": [
@@ -22088,6 +23453,535 @@
       ],
       "type": "object"
     },
+    "DescribeJobDefinitionDetailRequest": {
+      "document": "DescribeJobDefinitionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义 ID。必填。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobDefinitionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDefinitionDetailResponse": {
+      "document": "DescribeJobDefinitionDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDefinitionsRequest": {
+      "document": "DescribeJobDefinitions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认为1.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认为10.</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级过滤条件列表，元素 Name 为过滤字段名（PascalCase，可用字段与操作符约束见各接口 Filters 说明），Values 为过滤值列表；未列入白名单或非 PascalCase 的 Name 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表，元素 Field 为排序字段名（PascalCase，与响应字段命名对齐，可用字段见各接口 SortFields 说明），Order 为排序方向（ASC/DESC，不传默认 DESC）；未列入白名单或非 PascalCase 的 Field 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间下限（Unix 毫秒时间戳）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CreateTimeStart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间上限（Unix 毫秒时间戳）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CreateTimeEnd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业实例计数时间窗口（毫秒时长）。不传时默认 7 天。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InstanceTimeRange",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDefinitionsResponse": {
+      "document": "DescribeJobDefinitions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数.</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业定义列表项。</p>",
+          "example": "无",
+          "member": "JobDefinitionItemInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDetailRequest": {
+      "document": "DescribeJobDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识符（ID）。必填。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobDetailResponse": {
+      "document": "DescribeJobDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobListRequest": {
+      "document": "DescribeJobList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认为1.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认为10.</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级过滤条件列表，元素 Name 为过滤字段名（PascalCase，可用字段与操作符约束见各接口 Filters 说明），Values 为过滤值列表；未列入白名单或非 PascalCase 的 Name 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表，元素 Field 为排序字段名（PascalCase，与响应字段命名对齐，可用字段见各接口 SortFields 说明），Order 为排序方向（ASC/DESC，不传默认 DESC）；未列入白名单或非 PascalCase 的 Field 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间下限（Unix 毫秒时间戳）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CreateTimeStart",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间上限（Unix 毫秒时间戳）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "CreateTimeEnd",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobListResponse": {
+      "document": "DescribeJobList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数.</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业摘要列表。</p>",
+          "example": "无",
+          "member": "JobBriefInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobLogRequest": {
+      "document": "DescribeJobLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业 ID（必填）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型（必填）。可选值：SPARK_SQL_OPERATION / SPARK_BATCH_OPERATION / SPARK_LAUNCH / SPARK_DRIVER_STDOUT / SPARK_DRIVER_LOG4J / SPARK_EXECUTOR_STDOUT / SPARK_EXECUTOR_LOG4J。</p>",
+          "example": "SPARK_SQL_OPERATION",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Statement 序号（1-based，仅 LogType=SPARK_SQL_OPERATION 时可传），定位多语句作业中的具体语句。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StatementIndex",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页游标（首页不传，后续页原样透传上一响应的 Cursor；不透明，无需解析）。无法续读时以 HasMore=false 终止分页。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回上限（行数），范围 [1, 1000]。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词过滤。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Pod 名称过滤。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志级别过滤。取值：ERROR / WARN / INFO / DEBUG / TRACE，非法值拒绝。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "LogLevel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>起始时间，Unix 毫秒。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "From",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，Unix 毫秒。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "To",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobLogResponse": {
+      "document": "DescribeJobLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志行数据。</p>",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "Lines",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一页游标（不透明令牌，原样透传回请求即可；无更多日志时不返回）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否还有更多日志。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志条目列表。</p>",
+          "example": "无",
+          "member": "ClsLogEntry",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobResultRequest": {
+      "document": "DescribeJobResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识符（ID）。必填。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认为1.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认为10.</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Statement 序号（1-based），多语句作业时指定；缺省为 0，取整作业第一个结果集.</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StatementIndex",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobResultResponse": {
+      "document": "DescribeJobResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数.</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业 ID。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果状态（对客）：SUCCEEDED（结果集可用，含 0 行——DDL/DML 等无结果集语句亦归入此类，message 说明）/ UNAVAILABLE（终态无结果：statement 已失败或取消）/ ERROR（结果集拉取出错）/ NOT_READY（结果未就绪）/ NOT_SUPPORTED（作业形态不产出结果集）。</p>",
+          "example": "SUCCEEDED",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态描述（SUCCEEDED 0 行时为无结果集说明；ERROR 为错误信息；UNAVAILABLE 为 statement 失败/取消原因）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列定义列表（按结果集列顺序；State=SUCCEEDED 才有）。</p>",
+          "example": "无",
+          "member": "ResultColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集全量行数（未按在线展示上限封顶）。Total 为在线可见行数，二者不等说明仅部分行可内联查看，完整结果通过 Download 获取。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>行数据（State=SUCCEEDED 才有），每行为 {\"Values\": [单元格值...]} 数组。</p>",
+          "example": "无",
+          "member": "ResultRow",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows > Total 判断，完整结果通过 Download 获取.</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Truncated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLakeFsDirSummaryRequest": {
       "document": "DescribeLakeFsDirSummary请求参数结构体",
       "members": [],
@@ -23875,6 +25769,108 @@
           "name": "SaleResourceInfoList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSchemaNamesPageRequest": {
+      "document": "DescribeSchemaNamesPage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "chenfan_test_1",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否快照分页</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SnapshotBased",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照 ID</p>",
+          "example": "SnapshotId",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL查询格式匹配</p>",
+          "example": "table*",
+          "member": "string",
+          "name": "SchemaNamePattern",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSchemaNamesPageResponse": {
+      "document": "DescribeSchemaNamesPage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名称列表</p>",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "SchemaNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照 ID</p>",
+          "example": "SnapshotId",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -27123,6 +29119,80 @@
       ],
       "type": "object"
     },
+    "DescribeWarehousesRequest": {
+      "document": "DescribeWarehouses请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认为1.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量，默认为10.</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级过滤条件列表，元素 Name 为过滤字段名（PascalCase，可用字段与操作符约束见各接口 Filters 说明），Values 为过滤值列表；未列入白名单或非 PascalCase 的 Name 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表，元素 Field 为排序字段名（PascalCase，与响应字段命名对齐，可用字段见各接口 SortFields 说明），Order 为排序方向（ASC/DESC，不传默认 DESC）；未列入白名单或非 PascalCase 的 Field 报 InvalidParameter。</p>",
+          "example": "无",
+          "member": "SortField",
+          "name": "SortFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWarehousesResponse": {
+      "document": "DescribeWarehouses返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总记录数.</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库列表。</p>",
+          "example": "无",
+          "member": "WarehouseInfo",
+          "name": "WarehouseList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkGroupInfoRequest": {
       "document": "DescribeWorkGroupInfo请求参数结构体",
       "members": [
@@ -27413,6 +29483,106 @@
         }
       ],
       "type": "object"
+    },
+    "DlcConnection": {
+      "document": "tcc DlcConnection定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dsadhh-edsd-dsad-eew",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "name1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DorisConnection": {
+      "document": "tcc doris连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dsadhh-edsd-dsad-eew",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "doris01",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JDBC连接地址</p>",
+          "example": "jdbc:mysql://127.0.0.1:3306",
+          "member": "string",
+          "name": "JDBCUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号</p>",
+          "example": "User01",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>",
+          "example": "无",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DropDMSDatabaseRequest": {
       "document": "DropDMSDatabase请求参数结构体",
@@ -33411,6 +35581,67 @@
       ],
       "usage": "both"
     },
+    "HiveConnection": {
+      "document": "tcc hive连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dsadhh-edsd-dsad-eew",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "hive01",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据url</p>",
+          "example": "thrift://127.0.0.1:9083",
+          "member": "string",
+          "name": "MetaStoreUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>",
+          "example": "无",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>hive版本</p>",
+          "example": "3.1.3",
+          "member": "string",
+          "name": "HiveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "HiveInfo": {
       "document": "hive类型数据源的信息",
       "members": [
@@ -34099,6 +36330,45 @@
         }
       ],
       "type": "object"
+    },
+    "IndexInfo": {
+      "document": "tcc IndexInfo定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>索引名称</p>",
+          "example": "index_test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引类型</p><p>枚举值：</p><ul><li>primary_key： 主键</li></ul>",
+          "example": "primary_key",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引字段</p>",
+          "example": "[\"id\"]",
+          "member": "string",
+          "name": "FieldNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InferenceEngineInfo": {
       "document": "推理引擎具体信息",
@@ -34831,6 +37101,368 @@
         }
       ],
       "usage": "both"
+    },
+    "JobBriefInfo": {
+      "document": "入站作业摘要（DescribeJobList.Items[] 元素）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识.</p>",
+          "example": "job-9f3a2b1c",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业名称.</p>",
+          "example": "spark-sql-demo",
+          "member": "string",
+          "name": "JobName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建/提交者子账号 UIN。</p>",
+          "example": "700281534962",
+          "member": "string",
+          "name": "CreatorSubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业状态.</p>",
+          "example": "SUCCEEDED",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎大类.</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎子类型.</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行模式（WAREHOUSE / JOB）.</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID，RunMode=WAREHOUSE 时非空.</p>",
+          "example": "wh-8f21c3",
+          "member": "string",
+          "name": "WarehouseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区编码.</p>",
+          "example": "dlc-p-nwruuglc",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区展示名（解析不到时为空）.</p>",
+          "example": "spark-demo-partition",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称.</p>",
+          "example": "root.default",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（MinorType=SPARK_STREAM 时非空）。同一流作业的多次运行必须复用同一路径，变更等于重置消费进度。</p>",
+          "example": "cosn://demo-bucket/checkpoints/demo_stream",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "SubmitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长（毫秒）.</p>",
+          "example": "900000",
+          "member": "int64",
+          "name": "RunningTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库名称（列表整页批量反查填充；warehouse 模式下非空）.</p>",
+          "example": "spark-warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "JobDefinitionItemInfo": {
+      "document": "作业定义列表项 POJO（精简版）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义唯一标识符（ID）。</p>",
+          "example": "jd-4b7e15",
+          "member": "string",
+          "name": "JobDefinitionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业定义名称。</p>",
+          "example": "spark-demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业定义描述。</p>",
+          "example": "演示用途的配置",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业主类型。</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业子类型。</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（MinorType=SPARK_STREAM 时非空）。同一流作业的多次运行必须复用同一路径，变更等于重置消费进度。</p>",
+          "example": "cosn://demo-bucket/checkpoints/demo_stream",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者（子账号 UIN）。</p>",
+          "example": "700281534962",
+          "member": "string",
+          "name": "CreatorSubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 毫秒时间戳）。</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（Unix 毫秒时间戳）。</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区编码。</p>",
+          "example": "dlc-p-nwruuglc",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区展示名（解析不到时为空）。</p>",
+          "example": "spark-demo-partition",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称。</p>",
+          "example": "root.default",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行模式: JOB | WAREHOUSE.</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID, RunMode=WAREHOUSE 时非空.</p>",
+          "example": "wh-8f21c3",
+          "member": "string",
+          "name": "WarehouseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求时间窗口（InstanceTimeRange，默认 7 天）内的作业实例数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstanceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像编码（可选值见 DescribeSparkRuntimes）。JOB 模式取定义自身配置，WAREHOUSE 模式取所属计算仓库运行时；解析不到时为空。</p>",
+          "example": "spark-3.5.5",
+          "member": "string",
+          "name": "RuntimeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时展示名（如 Spark 3.5.5），与 RuntimeCode 配套；解析不到时为空。</p>",
+          "example": "Spark 3.5.5",
+          "member": "string",
+          "name": "RuntimeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库名称（列表整页按去重后的仓库反查填充；warehouse 模式下非空，仓库已销毁时仍回填历史名称）。</p>",
+          "example": "spark-warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "JobLogResult": {
       "document": "日志详情",
@@ -36328,6 +38960,89 @@
         }
       ],
       "usage": "out"
+    },
+    "LakeHouseConnection": {
+      "document": "tcc lakehouse 连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>元数据服务id</p>",
+          "example": "11",
+          "member": "string",
+          "name": "MetastoreEndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>endpoint服务id</p>",
+          "example": "11",
+          "member": "string",
+          "name": "EndpointServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据url</p>",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "MetaStoreUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ranger信息</p>",
+          "example": "无",
+          "member": "RangerConnection",
+          "name": "RangerConnection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>hive版本</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "HiveVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储位置</p>",
+          "example": "cosn://tcs-eae9685cba-1785327710-251438733/260209337/warehouse/chenfan_lakehouse_test_1/",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>",
+          "example": "无",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LaunchStandardEngineResourceGroupsRequest": {
       "document": "LaunchStandardEngineResourceGroups请求参数结构体",
@@ -38896,6 +41611,73 @@
       ],
       "type": "object"
     },
+    "ListPartition": {
+      "document": "tcc ListPartition定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区名</p>",
+          "example": "p1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区列表</p>",
+          "example": "无",
+          "member": "Literal",
+          "name": "Lists",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>属性</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListPartitioning": {
+      "document": "tcc ListPartitioning分区定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区字段</p>",
+          "example": "[\"id_2\"]",
+          "member": "string",
+          "name": "FieldNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区列表信息</p>",
+          "example": "无",
+          "member": "ListPartition",
+          "name": "Assignments",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ListRayClusterJobsRequest": {
       "document": "ListRayClusterJobs请求参数结构体",
       "members": [
@@ -40070,6 +42852,34 @@
         }
       ],
       "type": "object"
+    },
+    "Literal": {
+      "document": "tcc Literal定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数值</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p><p>枚举值：</p><ul><li>integer： 整数类型</li></ul>",
+          "example": "integer",
+          "member": "string",
+          "name": "DataType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LocationInfo": {
       "document": "Location信息结构",
@@ -41710,6 +44520,150 @@
       ],
       "type": "object"
     },
+    "ModifyJobDefinitionRequest": {
+      "document": "ModifyJobDefinition请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业定义 ID。必填。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "JobDefinitionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业定义名称。创建后不可修改：仅接受与当前名称相同的值（回显），传不同值报错；不传表示不修改。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的作业定义描述。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎大类（当前仅支持 SPARK）。</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业子类型，SPARK_SQL / SPARK_BATCH / SPARK_STREAM；非必填。</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（如 cosn://bucket/path/checkpoint），非必填，传了即覆盖。SPARK_STREAM 定义必须非空；变更等于重置消费进度。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区代码，仅目标 RunMode=JOB 可传（QueueName 非空时必填）；目标 RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "PartitionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称，仅目标 RunMode=JOB 可传且须与 PartitionCode 成对；目标 RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "QueueName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像编码，可选（null=沿用当前值）。仅对 JOB 模式定义生效；目标 RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "RuntimeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内置 Catalog 版本码（取值为 DescribeSysCatalogList 返回的目录子类型），可选（null=沿用当前值）。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "SysCatalogVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），非必填，传了即整串覆盖。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "CustomProperties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量（KEY=VALUE）列表，非必填，传了即整体覆盖。仅对 JOB 模式定义生效；目标 RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标运行模式：WAREHOUSE / JOB；未传=保持不变。切换模式时两种模式的参数集严格隔离（切换 WAREHOUSE 须提供 WarehouseId 且禁传 JOB 模式专属字段，反之亦然）。</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID。仅目标 RunMode=WAREHOUSE 时可传（必填）；未传 RunMode 或目标为 JOB 时禁止传。</p>",
+          "example": "string",
+          "member": "string",
+          "name": "WarehouseId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJobDefinitionResponse": {
+      "document": "ModifyJobDefinition返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLabPriorityRequest": {
       "document": "ModifyLabPriority请求参数结构体",
       "members": [
@@ -43323,6 +46277,78 @@
       ],
       "usage": "out"
     },
+    "MysqlConnection": {
+      "document": "tcc mysql连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "dsadhh-edsd-dsad-eew",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "mysql01",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JDBC连接地址</p>",
+          "example": "jdbc:mysql://127.0.0.1:3306",
+          "member": "string",
+          "name": "JDBCUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号</p>",
+          "example": "User",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>",
+          "example": "无",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MysqlInfo": {
       "document": "Mysql类型数据源信息",
       "members": [
@@ -43395,6 +46421,34 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NameIdentifier": {
+      "document": "tcc 通用命名标识",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test_data_2",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>",
+          "example": "[\"test001\"]",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -44995,6 +48049,122 @@
       ],
       "usage": "both"
     },
+    "Partitioning": {
+      "document": "tcc Partition分区定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转换策略</p>",
+          "example": "truncate",
+          "member": "string",
+          "name": "Strategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按年分区策略</p>",
+          "example": "无",
+          "member": "SingleFieldPartitioning",
+          "name": "YearPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按月分区策略</p>",
+          "example": "无",
+          "member": "SingleFieldPartitioning",
+          "name": "MonthPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按天分区策略</p>",
+          "example": "无",
+          "member": "SingleFieldPartitioning",
+          "name": "DayPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按小时分区策略</p>",
+          "example": "无",
+          "member": "SingleFieldPartitioning",
+          "name": "HourPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按字段分区策略</p>",
+          "example": "无",
+          "member": "SingleFieldPartitioning",
+          "name": "IdentityPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表分区策略</p>",
+          "example": "无",
+          "member": "ListPartitioning",
+          "name": "ListPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>范围分区策略</p>",
+          "example": "无",
+          "member": "RangePartitioning",
+          "name": "RangePartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分桶分区策略</p>",
+          "example": "无",
+          "member": "BucketPartitioning",
+          "name": "BucketPartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截断分区策略</p>",
+          "example": "无",
+          "member": "TruncatePartitioning",
+          "name": "TruncatePartitioning",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PauseStandardEngineResourceGroupsRequest": {
       "document": "PauseStandardEngineResourceGroups请求参数结构体",
       "members": [
@@ -45528,6 +48698,100 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PostgreSQLConnection": {
+      "document": "tcc PostgreSQL连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP地址</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>端口</p>",
+          "example": "8080",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "user01",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "pos-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名字</p>",
+          "example": "Postgre集群",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>",
+          "example": "无",
+          "member": "NetWork",
+          "name": "NetWork",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库</p>",
+          "example": "deatabase-01",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -46312,6 +49576,134 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangePartition": {
+      "document": "tcc RangePartition定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区名</p>",
+          "example": "p1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下界</p>",
+          "example": "无",
+          "member": "Literal",
+          "name": "Lower",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上界</p>",
+          "example": "无",
+          "member": "Literal",
+          "name": "Upper",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>属性</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangePartitioning": {
+      "document": "tcc RangePartitioning定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名</p>",
+          "example": "column1",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区信息</p>",
+          "example": "无",
+          "member": "RangePartition",
+          "name": "Assignments",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RangerConnection": {
+      "document": "tcc ranger连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "qq",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务url</p>",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "ServiceUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "myq",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -48702,6 +52094,68 @@
       ],
       "type": "object"
     },
+    "ResultColumn": {
+      "document": "结果集列定义（DescribeJobResult.Columns 的元素）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>列名。</p>",
+          "example": "spark-demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列数据类型（如 int / string）。</p>",
+          "example": "BIGINT",
+          "member": "string",
+          "name": "DataType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>列注释。</p>",
+          "example": "结果集列",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可为 NULL。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Nullable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultRow": {
+      "document": "结果集单行数据（DescribeJobResult.Rows 的元素）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本行的单元格值列表，与 SchemaJson 列定义顺序一一对应；NULL 值以 null 表示.</p>",
+          "example": "[\"1\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResumeTrainingJobInstanceRequest": {
       "document": "ResumeTrainingJobInstance请求参数结构体",
       "members": [
@@ -49525,6 +52979,23 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SingleFieldPartitioning": {
+      "document": "tcc SingleFieldPartitioning定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分区字段</p>",
+          "example": "p1",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -57612,6 +61083,34 @@
       ],
       "usage": "both"
     },
+    "TruncatePartitioning": {
+      "document": "tcc TruncatePartitioning定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截取长度</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段名</p>",
+          "example": "id",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TypeKVPair": {
       "document": "通用的键值对数据结构",
       "members": [
@@ -62574,6 +66073,23 @@
       ],
       "usage": "out"
     },
+    "VolumeConnection": {
+      "document": "tcc volume 连接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储路径</p>",
+          "example": "cosn://xxx",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "VpcCidrBlock": {
       "document": "VPC子网信息",
       "members": [
@@ -62651,6 +66167,202 @@
         }
       ],
       "usage": "both"
+    },
+    "WarehouseInfo": {
+      "document": "计算仓库基础信息（对外 API 响应，DescribeWarehouses 列表结构）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>仓库 id（格式 \"dlc-wh-xxxxxxxx\"）.</p>",
+          "example": "wh-8f21c3",
+          "member": "string",
+          "name": "WarehouseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名称，租户内唯一。</p>",
+          "example": "spark-demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号 UIN。</p>",
+          "example": "700281534962",
+          "member": "string",
+          "name": "CreatorSubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库描述信息。</p>",
+          "example": "演示用途的配置",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>fermion 合并后的单一状态。取值：STARTING / RUNNING / STOPPING / STOPPED / UPDATING / UNAVAILABLE / DESTROYING（销毁中，只读：不接受任何生命周期操作）。</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池编码.</p>",
+          "example": "dlc-p-nwruuglc",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源池展示名（解析不到时为空）.</p>",
+          "example": "spark-demo-partition",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源组/队列名。</p>",
+          "example": "root.default",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（毫秒时间戳）。</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后更新时间（毫秒时间戳）。</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>活跃集群数（describe 与 list 均返回）。集群明细等完整快照仅 DescribeWarehouseDetail 的 Observability 返回。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ActiveClusters",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小集群数（即最小实例数下限；describe 与 list 均返回）.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinClusters",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大集群数（即最大实例数上限；describe 与 list 均返回）.</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxClusters",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像.</p>",
+          "example": "spark-3.5.5",
+          "member": "string",
+          "name": "RuntimeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时展示名（如 Spark 3.5.5），与 RuntimeCode 配套；解析不到时为空.</p>",
+          "example": "Spark 3.5.5",
+          "member": "string",
+          "name": "RuntimeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Catalog 版本码.</p>",
+          "example": "TCCATALOG",
+          "member": "string",
+          "name": "SysCatalogVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量.</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>静态运行参数（RuntimeConf）：spark.* KV 的 JSON 字符串（如 \"{\\\"spark.sql.shuffle.partitions\\\":\\\"400\\\"}\"），spark-submit 时生效。</p>",
+          "example": "{\"spark.driver.cores\":\"1\"}",
+          "member": "string",
+          "name": "RuntimeConf",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动态参数（DynamicProperties）：spark.* KV 的 JSON 字符串，运行期生效（会话级，openSession 弱注入，即改即生效）。</p>",
+          "example": "{\"spark.executor.instances\":\"2\"}",
+          "member": "string",
+          "name": "DynamicProperties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "WorkGroupDetailInfo": {
       "document": "工作组详细信息",

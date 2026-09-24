@@ -1282,11 +1282,11 @@
       "status": "online"
     },
     "ModifyInstanceElasticMode": {
-      "document": "修改实例的QPS弹性计费开关",
+      "document": "接口无用，没有人调用\n\n修改实例的QPS弹性计费开关",
       "input": "ModifyInstanceElasticModeRequest",
       "name": "修改实例的QPS弹性计费开关",
       "output": "ModifyInstanceElasticModeResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyInstanceName": {
       "document": "修改实例的名称",

@@ -695,6 +695,67 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent memory 服务详情</p>",
+          "example": "无",
+          "member": "AgentMemInfo",
+          "name": "AgentMem",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentMemInfo": {
+      "document": "AGM 记忆服务开通信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Memory实例ID</p>",
+          "example": "mem-*******",
+          "member": "string",
+          "name": "MemInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1=active, 0=disabled（软删/关闭/下线历史行）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0=待安装,1=成功,2=失败待重试,3=开启中,4=关闭中/已关闭</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InstallStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>creating/online/isolated/error/</p>",
+          "example": "online",
+          "member": "string",
+          "name": "MemStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

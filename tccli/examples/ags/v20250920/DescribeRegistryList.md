@@ -5,13 +5,20 @@
 Input: 
 
 ```
-tccli ags DescribeRegistryList --cli-unfold-argument ```
+tccli ags DescribeRegistryList --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 20 \
+    --Filters.0.Name search \
+    --Filters.0.Values example
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "req-example"
+        "RequestId": "req-example",
+        "RegistrySet": [],
+        "TotalCount": 0
     }
 }
 ```

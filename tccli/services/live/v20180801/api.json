@@ -8072,8 +8072,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>关联的审核模板id, 表audio_conf 。</p>",
-          "example": "0",
+          "document": "<p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>",
+          "example": "7930",
           "member": "uint64",
           "name": "AuditConfId",
           "required": false,
@@ -8081,8 +8081,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>天御图片审核策略BizType  Image 。</p>",
-          "example": "Image",
+          "document": "<p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>",
+          "example": "1_1_1_7930",
           "member": "string",
           "name": "ImageBizType",
           "required": false,
@@ -8090,8 +8090,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>天御音频审核策略BizType  ShortAudio 。</p>",
-          "example": "ShortAudio",
+          "document": "<p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>",
+          "example": "1_1_1_7930",
           "member": "string",
           "name": "AudioBizType",
           "required": false,
@@ -8099,8 +8099,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>天御音频文本审核策略BizType  ShortAudio 。</p>",
-          "example": "ShortAudio",
+          "document": "<p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>",
+          "example": "1_1_1_7930",
           "member": "string",
           "name": "AudioTextBizType",
           "required": false,

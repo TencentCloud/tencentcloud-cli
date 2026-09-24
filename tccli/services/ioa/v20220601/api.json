@@ -7,6 +7,13 @@
       "output": "BindBusinessResourceConnectorGroupResponse",
       "status": "online"
     },
+    "BindVirtualAccounts": {
+      "document": "关联账户到虚拟组上，支持批量，私有化调用path为：capi/Assets/BindVirtualAccount，从7.x版本开始支持",
+      "input": "BindVirtualAccountsRequest",
+      "name": "绑定账户虚拟组",
+      "output": "BindVirtualAccountsResponse",
+      "status": "online"
+    },
     "CreateBusinessResource": {
       "document": "创建业务资源，会对一些必填参数进行校验和参数合法性校验，创建业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。创建时也会做校验，但没有返回对应的异常信息，私有化调用path为：capi/GatewayResource/CreateBusinessResource",
       "input": "CreateBusinessResourceRequest",
@@ -175,6 +182,13 @@
       "output": "DescribeDeviceInfoResponse",
       "status": "online"
     },
+    "DescribeDeviceSecurityInfo": {
+      "document": "查询指定终端的病毒库版本、漏洞库版本、系统修复引擎版本、防火墙状态和实时防护状态",
+      "input": "DescribeDeviceSecurityInfoRequest",
+      "name": "查询终端安全信息",
+      "output": "DescribeDeviceSecurityInfoResponse",
+      "status": "online"
+    },
     "DescribeDeviceVirtualGroups": {
       "document": "查询终端自定义分组列表，私有化调用path为：/capi/Assets/Device/DescribeDeviceVirtualGroups",
       "input": "DescribeDeviceVirtualGroupsRequest",
@@ -201,6 +215,13 @@
       "input": "DescribeLocalAccountsRequest",
       "name": "获取账号列表",
       "output": "DescribeLocalAccountsResponse",
+      "status": "online"
+    },
+    "DescribeProfileFieldsMenu": {
+      "document": "查询终端描述字段数据,私有化调用path为：capi/Assets/Device/DescribeProfileFieldsMenu",
+      "input": "DescribeProfileFieldsMenuRequest",
+      "name": "查询终端描述字段菜单",
+      "output": "DescribeProfileFieldsMenuResponse",
       "status": "online"
     },
     "DescribeResourceGrantedAccountGroups": {
@@ -243,6 +264,13 @@
       "input": "DescribeSoftwareInformationRequest",
       "name": "查看软件详情列表",
       "output": "DescribeSoftwareInformationResponse",
+      "status": "online"
+    },
+    "DescribeVirtualAccounts": {
+      "document": "列表虚拟组的账户，私有化调用path为：/capi/Assets/AccountVirtualGroup/DescribeVirtualAccounts，从7.x版本开始支持",
+      "input": "DescribeVirtualAccountsRequest",
+      "name": "列表虚拟组的账户",
+      "output": "DescribeVirtualAccountsResponse",
       "status": "online"
     },
     "DescribeVirtualDevices": {
@@ -314,6 +342,13 @@
       "name": "终端自定义分组批量增减终端",
       "output": "ModifyVirtualDeviceGroupsResponse",
       "status": "online"
+    },
+    "UnbindVirtualAccounts": {
+      "document": "取消关联账户到虚拟组上，支持批量，私有化调用path为：capi/Assets/UnbindVirtualAccount，从7.x版本开始支持",
+      "input": "UnbindVirtualAccountsRequest",
+      "name": "解绑账户虚拟组",
+      "output": "UnbindVirtualAccountsResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -323,6 +358,30 @@
     "serviceShortName": "ioa"
   },
   "objects": {
+    "AccountUserIdItem": {
+      "document": "账户标识项(目录MenuId+登录账号UserId)，用于以(菜单目录、登录账号)代替账号Id标识账户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Comment: 账号所在目录ID(MenuId)，与accounts表menu_id一致，用于同一登录账号在不同目录下去重;Required:true</p>",
+          "example": "2671",
+          "member": "uint64",
+          "name": "MenuId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Comment: 登录账号(UserId)，对应DescribeLocalAccount -&gt; UserId;Required:true</p>",
+          "example": "canaan",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "AggrCategorySoftDetailRow": {
       "document": "按版本聚合后的软件列表",
       "members": [
@@ -723,6 +782,142 @@
     "BindBusinessResourceConnectorGroupResponse": {
       "document": "BindBusinessResourceConnectorGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindVirtualAccountData": {
+      "document": "绑定账户虚拟组响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>绑定失败明细（含失败原因）</p>",
+          "example": "无",
+          "member": "BindVirtualAccountResultData",
+          "name": "FailItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定成功明细（含幂等场景：已存在绑定的账号也归入成功）</p>",
+          "example": "无",
+          "member": "BindVirtualAccountResultData",
+          "name": "SuccessItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindVirtualAccountResultData": {
+      "document": "绑定虚拟组结果明细项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号Id（通过AccountIdList传入时回显）</p>",
+          "example": "5365",
+          "member": "int64",
+          "name": "AccountId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录ID（通过AccountUserList传入时回显，否则为0）</p>",
+          "example": "2671",
+          "member": "uint64",
+          "name": "MenuId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因，仅失败项有值：ACCOUNT_NOT_FOUND / ACCOUNT_NOT_IN_GROUP / DB_ERROR</p>",
+          "example": "ACCOUNT_NOT_FOUND",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录账号（通过AccountUserList传入时回显，否则为空）</p>",
+          "example": "canaan1",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindVirtualAccountsRequest": {
+      "document": "BindVirtualAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Comment: 虚拟组id;Required:true</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "VirtualGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Comment: 要绑定的账户Id集合，这里的Id指的是DescribeLocalAccountsData结构体里返回的Id;Required:true</p>",
+          "example": "[12]",
+          "member": "int64",
+          "name": "AccountIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Comment: 要绑定的账户(目录MenuId+登录账号UserId)集合，与AccountIdList二选一或并用，查不到的账号会被跳过;Required:false</p>",
+          "example": "无",
+          "member": "AccountUserIdItem",
+          "name": "AccountUserList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Comment: 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindVirtualAccountsResponse": {
+      "document": "BindVirtualAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务响应数据</p>",
+          "example": "无",
+          "member": "BindVirtualAccountData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1635,6 +1830,67 @@
           "name": "ResourceId",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeAccountAccountGroupsData": {
+      "document": "多OU组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>组Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "293",
+          "member": "int64",
+          "name": "AccountGroupId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "产品中心",
+          "member": "string",
+          "name": "AccountGroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主组标识(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MasterFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>组路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"全网账户\" ,\"企业微信代理-勿删\",\"产品中心\"]",
+          "member": "string",
+          "name": "AccountGroupNamePaths",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>组路径Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[2,284,293]",
+          "member": "int64",
+          "name": "AccountGroupPathIds",
+          "output_required": true,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -4626,6 +4882,99 @@
       ],
       "usage": "both"
     },
+    "DescribeDeviceSecurityInfoData": {
+      "document": "终端安全信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>防火墙状态</p><p>枚举值：</p><ul><li>0：未开启</li><li>1：已开启</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "FirewallStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时防护状态</p><p>枚举值：</p><ul><li>0：未开启</li><li>1：部分开启</li><li>2：已开启</li><li>-1：未知</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "RealTimeProtectionStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统修复引擎版本</p>",
+          "example": "2026.07.31.11.45.06",
+          "member": "string",
+          "name": "SysRepVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>病毒库版本</p>",
+          "example": "2.0.13789.1131",
+          "member": "string",
+          "name": "VirusVer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>漏洞库版本</p>",
+          "example": "2019.08.19.09.50.30",
+          "member": "string",
+          "name": "VulVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeDeviceSecurityInfoRequest": {
+      "document": "DescribeDeviceSecurityInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>设备唯一标识符</p>",
+          "example": "D1098D67B85C540A2595BDF296953EDB6A89750F",
+          "member": "string",
+          "name": "Mid",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceSecurityInfoResponse": {
+      "document": "DescribeDeviceSecurityInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>终端安全信息</p>",
+          "example": "无",
+          "member": "DescribeDeviceSecurityInfoData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceVirtualGroupsPageRsp": {
       "document": "查询返回终端自定义分组的Data数据",
       "members": [
@@ -5245,6 +5594,78 @@
       ],
       "type": "object"
     },
+    "DescribeProfileFieldsMenuRequest": {
+      "document": "DescribeProfileFieldsMenu请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查找自动填写字段</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "OnlyRule",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProfileFieldsMenuResponse": {
+      "document": "DescribeProfileFieldsMenu返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>描述字段数据</p>",
+          "example": "无",
+          "member": "DescribeProfileFieldsRspData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProfileFieldsRspData": {
+      "document": "描述字段数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>详情item</p>",
+          "example": "无",
+          "member": "ProfileFieldItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>profile开关配置</p>",
+          "example": "无",
+          "member": "ProfileTips",
+          "name": "ProfileTips",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeResourceGrantedAccountGroupsData": {
       "document": "账号分组授权信息",
       "members": [
@@ -5756,6 +6177,260 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVirtualAccountsData": {
+      "document": "列表虚拟组的账户分页数据集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1213121",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户账号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户分组Id(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1213",
+          "member": "uint64",
+          "name": "AccountGroupId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试分组1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联服务器名称(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1212",
+          "member": "uint64",
+          "name": "AccountId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户源(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Source",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户namepath</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "全网账号",
+          "member": "string",
+          "name": "NamePath",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账户扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "ExtraInfo",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1788422561",
+          "member": "string",
+          "name": "Itime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1788422561",
+          "member": "string",
+          "name": "Utime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>多OU组信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeAccountAccountGroupsData",
+          "name": "AccountGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定PC端数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PcBindNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定移动端数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MobileBindNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeVirtualAccountsPageData": {
+      "document": "业务响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页公共对象</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>列表虚拟组的账户分页数据集合</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeVirtualAccountsData",
+          "name": "Items",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeVirtualAccountsRequest": {
+      "document": "DescribeVirtualAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账户虚拟组Id(只支持32位)</p>",
+          "example": "554",
+          "member": "uint64",
+          "name": "VirtualGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>滤条件、分页参数</p><li>UserName - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按用户名称过滤。</li><li>UserId - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按用户账号过滤。</li><li>Phone - String - 是否必填：否 - 操作符: eq,like  - 排序支持：否- 按电话过滤。</li>",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVirtualAccountsResponse": {
+      "document": "DescribeVirtualAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务响应数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeVirtualAccountsPageData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -6323,6 +6998,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>信息登记数据</p>",
+          "example": "无",
+          "member": "DeviceProfile",
+          "name": "Profiles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>主板序列号</p>",
           "example": "C02FVC8CQ05P",
           "member": "string",
@@ -6415,6 +7101,17 @@
           "example": "0",
           "member": "int64",
           "name": "DiskAccessPermission",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装状态（私有化：0: 已安装 1: 已卸载 ）（SaaS及一体化：0: 未知 1: 已安装 2: 已卸载）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InstallationStatus",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -6911,6 +7608,100 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeviceProfile": {
+      "document": "信息登记数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "qwe",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>属性ID(只支持32位)</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "FieldId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备唯一标识码</p>",
+          "example": "70849F6A37D2A0363A411F8A8415BFDB697720BA",
+          "member": "string",
+          "name": "Mid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "定义字段1",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选数据</p>",
+          "example": "[\"qwe\"]",
+          "member": "string",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填数据</p>",
+          "example": "1",
+          "member": "string",
+          "name": "IsMust",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填数据</p>",
+          "example": "1",
+          "member": "string",
+          "name": "IsCustom",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8685,6 +9476,45 @@
       ],
       "type": "object"
     },
+    "OptionsItem": {
+      "document": "多项选择数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>中文值</p>",
+          "example": "A组",
+          "member": "string",
+          "name": "ValueCh",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>英文值</p>",
+          "example": "A Group",
+          "member": "string",
+          "name": "ValueEn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每一项的Key值</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "OptionKey",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Paging": {
       "document": "页码",
       "members": [
@@ -8730,6 +9560,200 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ProfileFieldItem": {
+      "document": "登记信息数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>键值id</p>",
+          "example": "1223",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序key(只支持32位)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Key",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "\"个人电脑\"",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入类型(只支持32位)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否必选(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsMust",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否显示(只支持32位)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IsShow",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自定义(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsCustom",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下一个选项key(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NextOptionKey",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项数据</p>",
+          "example": "1",
+          "member": "string",
+          "name": "Options",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否覆盖(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsReplace",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以修改分组</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "GroupEditable",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有规则</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasRules",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称-英文</p>",
+          "example": "\"personal compute\"",
+          "member": "string",
+          "name": "TitleEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项数据-英文</p>",
+          "example": "\"yes\"",
+          "member": "string",
+          "name": "OptionsEn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项数据(包含中英文)</p>",
+          "example": "无",
+          "member": "OptionsItem",
+          "name": "OptionsItem",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProfileTips": {
+      "document": "profile开关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置id",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各开关值(json)",
+          "example": "{\\\"enable\\\":1,\\\"way\\\":\\\"startup\\\",\\\"editable\\\":0,\\\"groupEditable\\\":0}",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9102,6 +10126,96 @@
         }
       ],
       "usage": "both"
+    },
+    "UnbindVirtualAccountData": {
+      "document": "取消绑定账户虚拟组响应数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>解绑失败明细（含失败原因）</p>",
+          "example": "无",
+          "member": "BindVirtualAccountResultData",
+          "name": "FailItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解绑成功明细（含幂等场景：本就未绑定的账号也归入成功）</p>",
+          "example": "无",
+          "member": "BindVirtualAccountResultData",
+          "name": "SuccessItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UnbindVirtualAccountsRequest": {
+      "document": "UnbindVirtualAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Comment: 虚拟组id;Required:true</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "VirtualGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Comment: 要取消绑定的账户Id集合，这里的Id指的是DescribeLocalAccountsData结构体里返回的Id;Required:true</p>",
+          "example": "[12]",
+          "member": "int64",
+          "name": "AccountIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Comment: 要取消绑定的账户(目录MenuId+登录账号UserId)集合，与AccountIdList二选一或并用，查不到的账号会被跳过;Required:false</p>",
+          "example": "无",
+          "member": "AccountUserIdItem",
+          "name": "AccountUserList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Comment: 管理域实例ID，用于CAM管理域权限分配。若企业未进行管理域的划分，可直接传入根域\"1\"，此时表示针对当前企业的全部设备和账号进行接口CRUD，具体CRUD的影响范围限制于相应接口的入参。",
+          "example": "1",
+          "member": "string",
+          "name": "DomainInstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindVirtualAccountsResponse": {
+      "document": "UnbindVirtualAccounts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务响应数据</p>",
+          "example": "无",
+          "member": "UnbindVirtualAccountData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"
