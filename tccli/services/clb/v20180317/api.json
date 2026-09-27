@@ -4397,6 +4397,15 @@
           "name": "RouterDescribe",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图路由使用决策模型配置</p>",
+          "example": "无",
+          "member": "IntentRouterDecisionModelConfig",
+          "name": "DecisionModelConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11793,6 +11802,23 @@
       ],
       "type": "object"
     },
+    "IntentRouterDecisionModelConfig": {
+      "document": "意图路由使用决策模型配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启使用决策模型</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IntentRouterItem": {
       "document": "意图路由摘要信息对象（不含分层详情）。",
       "members": [
@@ -11854,6 +11880,16 @@
           "name": "Tiers",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图路由使用决策模型配置</p>",
+          "example": "无",
+          "member": "IntentRouterDecisionModelConfig",
+          "name": "DecisionModelConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -16422,12 +16458,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>新的分层配置列表（全量替换）。</p><p>选填；不传则不修改。传入时必须为完整分层集合：复杂度分层须包含全部 4 个分层 SIMPLE/MEDIUM/COMPLEX/REASONING；语义分层须包含 default 及各语义 Tier（取决于实例所用协议，且不可跨协议变更）。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。</p>",
+          "document": "<p>新的分层配置列表（全量替换）。</p><p>选填；传入时必须包含全部4个分层：SIMPLE、MEDIUM、COMPLEX、REASONING。每个分层至少包含一个模型，模型名称必须是已关联到该实例的模型。不传则不修改。</p>",
           "example": "无",
           "member": "TierItem",
           "name": "Tiers",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图路由使用决策模型配置</p>",
+          "example": "无",
+          "member": "IntentRouterDecisionModelConfig",
+          "name": "DecisionModelConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
