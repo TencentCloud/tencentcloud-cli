@@ -309,7 +309,7 @@
 | trdp | [流量风险决策平台](http://document.tencentcloudapi.woa.com/document/product/1604) | [查看](http://document.tencentcloudapi.woa.com/document/product/1718/80582) | 2024-03-20 01:27:41 |
 | trocket | [消息队列 RocketMQ 版](http://document.tencentcloudapi.woa.com/document/product/1493) | [查看](http://document.tencentcloudapi.woa.com/document/product/1739/81448) | 2026-09-25 02:40:15 |
 | trp | [T-Sec-安心平台(RP)](http://document.tencentcloudapi.woa.com/document/product/1458) | [查看](http://document.tencentcloudapi.woa.com/document/product/1685/79717) | 2023-09-21 03:34:26 |
-| trro | [实时互动-工业能源版](http://document.tencentcloudapi.woa.com/document/product/1584) | [查看](http://document.tencentcloudapi.woa.com/document/product/1714/80508) | 2026-09-07 01:45:21 |
+| trro | [实时互动-工业能源版](http://document.tencentcloudapi.woa.com/document/product/1584) | [查看](http://document.tencentcloudapi.woa.com/document/product/1714/80508) | 2026-09-28 02:32:58 |
 | trtc | [实时音视频](http://document.tencentcloudapi.woa.com/document/product/647) | [查看](http://document.tencentcloudapi.woa.com/document/product/647/37085) | 2026-07-08 16:34:15 |
 | tse | [TSF-Polaris&ZK&网关](http://document.tencentcloudapi.woa.com/document/product/1364) | [查看](http://document.tencentcloudapi.woa.com/document/product/1364/54626) | 2026-08-26 03:00:32 |
 | tsf | [TSF-应用管理&Consul](http://document.tencentcloudapi.woa.com/document/product/649) | [查看](http://document.tencentcloudapi.woa.com/document/product/649/36044) | 2025-08-08 02:16:28 |
