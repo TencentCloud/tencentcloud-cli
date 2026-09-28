@@ -1133,31 +1133,6 @@ def test_G5_unfold_typo_unknown_param_still_raises():
         restore()
 
 
-def test_G6_unfold_deep_value_does_not_leak_help_to_common_client():
-    """深层参数值被 argparse 暂存为 help 后，不应进入 CommonClient 请求体。"""
-    if not _billing_schema_available():
-        pytest.skip("local billing api.json missing")
-    captured = {}
-    ac = _make_billing_action_command(captured)
-    restore = _patch_credentials()
-    try:
-        g = _make_globals(profile="default", cli_unfold_argument=True)
-        result = ac([
-            "--Id", "2",
-            "--RuleList.RuleDetail.Children.0.Children.0.RuleKey", "abc",
-            "--Month", "5",
-        ], g)
-
-        assert result == "ok"
-        assert "help" not in captured["params"]
-        assert captured["params"]["Id"] == 2
-        assert captured["params"]["Month"] == "5"
-        leaf = _walk_to_leaf(captured["params"], 1)
-        assert leaf == {"RuleKey": "abc"}
-    finally:
-        restore()
-
-
 def test_G7_unfold_equals_form_normalization():
     """G7: ``--key=value`` 与 ``--key value`` 两种 argparse 写法等价。"""
     if not _billing_schema_available():

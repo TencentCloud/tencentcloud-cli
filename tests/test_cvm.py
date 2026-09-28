@@ -1,20 +1,31 @@
-from utils import shell
-
+from utils import TestCli
 
 def test_describe_regions():
-    assert "\"Region\": \"ap-guangzhou\"" in shell("tccli cvm DescribeRegions")
+    cmd = 'tccli cvm DescribeRegions --version 2017-03-12'
+    expect = "\"Region\": \"ap-guangzhou\""
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_describe_instances():
-    assert "\"TotalCount\":" in shell("tccli cvm DescribeInstances")
+    cmd = 'tccli cvm DescribeInstances --version 2017-03-12'
+    expect = "\"TotalCount\":"
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_describe_disaster_disaster_recover_group_quota():
-    assert "\"CvmInHostGroupQuota\":" in shell("tccli cvm DescribeDisasterRecoverGroupQuota")
+    cmd = 'tccli cvm DescribeDisasterRecoverGroupQuota --version 2017-03-12'
+    expect = "\"CvmInHostGroupQuota\":"
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_describe_disaster_recover_groups():
-    assert "DisasterRecoverGroupSet" in shell("tccli cvm DescribeDisasterRecoverGroups")
+    cmd = 'tccli cvm DescribeDisasterRecoverGroups --version 2017-03-12'
+    expect = "DisasterRecoverGroupSet"
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_describe_hosts():
@@ -22,15 +33,20 @@ def test_describe_hosts():
     cmd += ' --Filters.0.Name zone'
     cmd += ' --Filters.0.Values ap-guangzhou-2'
     cmd += ' --Offset 0 --Limit 20'
-
-    assert "\"HostSet\": []" in shell(cmd)
+    expect = "\"HostSet\": []"
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_create_image_dry_run():
     cmd = 'tccli cvm CreateImage --ImageName test-image --DryRun true'
-    assert "\"RequestId\": " in shell(cmd)
+    expect = "\"RequestId\": "
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)
 
 
 def test_create_image_dry_run_with_unfold_argument():
     cmd = 'tccli cvm CreateImage --cli-unfold-argument --ImageName test-image --DryRun true'
-    assert "\"RequestId\": " in shell(cmd)
+    expect = "\"RequestId\": "
+    test_cli = TestCli()
+    test_cli.equal(cmd, expect)

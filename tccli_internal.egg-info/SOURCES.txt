@@ -792,7 +792,6 @@ tccli_internal.egg-info/entry_points.txt
 tccli_internal.egg-info/requires.txt
 tccli_internal.egg-info/top_level.txt
 tests/test_action_caller.py
-tests/test_auth.py
 tests/test_cli_unfold_argument.py
 tests/test_command.py
 tests/test_configure.py
