@@ -127,7 +127,6 @@ tccli/services/bda/__init__.py
 tccli/services/bda/v20200324/api.json
 tccli/services/bda/v20200324/examples.json
 tccli/services/bdrc/__init__.py
-tccli/services/bdrc/bdrc_client.py
 tccli/services/bh/__init__.py
 tccli/services/bi/__init__.py
 tccli/services/billing/__init__.py
@@ -244,7 +243,6 @@ tccli/services/cmq/__init__.py
 tccli/services/cmq/v20190304/api.json
 tccli/services/cmq/v20190304/examples.json
 tccli/services/cmr/__init__.py
-tccli/services/cmr/cmr_client.py
 tccli/services/cms/__init__.py
 tccli/services/cms/v20190321/api.json
 tccli/services/cms/v20190321/examples.json
@@ -253,7 +251,6 @@ tccli/services/cngw/__init__.py
 tccli/services/config/__init__.py
 tccli/services/controlcenter/__init__.py
 tccli/services/cos/__init__.py
-tccli/services/cos/cos_client.py
 tccli/services/cpdp/__init__.py
 tccli/services/cpdp/v20190820/api.json
 tccli/services/cpdp/v20190820/examples.json
@@ -781,7 +778,6 @@ tccli/services/wedata/v20210820/examples.json
 tccli/services/weilingwith/__init__.py
 tccli/services/wimgs/__init__.py
 tccli/services/workbuddyenterprise/__init__.py
-tccli/services/workbuddyenterprise/workbuddyenterprise_client.py
 tccli/services/yinsuda/__init__.py
 tccli/services/yunsou/__init__.py
 tccli/services/yunsou/v20180504/api.json
