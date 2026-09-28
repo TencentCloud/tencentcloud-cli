@@ -75,7 +75,7 @@
     "DescribeInstanceState": [
       {
         "document": "需要展现集群状态以及操作进度",
-        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-exs8Mnql\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-exs8Mnql\",\n    \"InstanceIds\": [\n        \"cdwpg-********\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BackupStatus\": 0,\n        \"FlowCreateTime\": \"\",\n        \"FlowMsg\": \"\",\n        \"FlowName\": \"\",\n        \"FlowProgress\": 0,\n        \"InstanceState\": \"Serving\",\n        \"InstanceStateDesc\": \"运行中\",\n        \"ProcessName\": \"\",\n        \"RequestId\": \"07fc03a7-0e42-4a21-b10d-ed0ceda4ab27\"\n    }\n}",
         "title": "获取集群状态"
       }

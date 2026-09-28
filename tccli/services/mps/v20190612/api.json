@@ -5712,6 +5712,56 @@
       ],
       "usage": "out"
     },
+    "AiComposeConfig": {
+      "document": "图片处理图层融合配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关。</p><li>ON：开启（默认值）；</li><li>OFF：关闭。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>合成模型。可选值：compose-1.0-lite（默认值，可不传）。</p>",
+          "example": "compose-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>画布定义。可省略：省略时取 ZIndex 最小的图层（底层图层）的自然尺寸。</p>",
+          "example": "无",
+          "member": "ImageComposeCanvas",
+          "name": "Canvas",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图层列表，图层的唯一来源。至少 1 层、最多 20 层。</p>",
+          "example": "无",
+          "member": "ImageComposeLayer",
+          "name": "Layers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AiContentReviewResult": {
       "document": "内容审核结果",
       "members": [
@@ -6168,7 +6218,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型名称。</p><p>枚举值：</p><ul><li>WAND-suite-1.0-flash： WAND-suite-1.0-flash</li></ul>",
+          "document": "<p>模型名称。</p><p>枚举值：</p><ul><li>suite-1.0-flash： suite-1.0-flash</li></ul>",
           "example": "WAND-suite-1.0-flash",
           "member": "string",
           "name": "Model",
@@ -29842,6 +29892,95 @@
       ],
       "usage": "both"
     },
+    "ImageComposeCanvas": {
+      "document": "图片处理图层融合功能画布参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>画布宽度，取值范围 [1, 10240]，需与 Height 同时设置。</p>",
+          "example": "1679",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>画布高度，取值范围 [1, 10240]，需与 Width 同时设置。</p>",
+          "example": "937",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>画布底色，统一为 8 位十六进制 #RRGGBBAA（含 alpha），原样作为画布底色。缺省 #00000000（全透明）。示例：#FFFFFFFF 不透明白、#FFFFFF80 半透明白。</p><p>输出格式不支持透明通道时（如 JPEG），透明区域按该底色的 RGB 塌陷；缺省值会得到黑底，需要白底请显式传    #FFFFFFFF。</p>",
+          "example": "#FFFFFFFF",
+          "member": "string",
+          "name": "Background",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageComposeLayer": {
+      "document": "图片处理图层融合功能图层数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图层堆叠顺序，必填。同一请求内不可重复，数值越大越靠上（建议从 0 开始连续编号）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ZIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图层图片来源，必填。支持 URL / COS / AWS-S3 / VOD。</p>",
+          "example": "无",
+          "member": "MediaInputInfo",
+          "name": "InputInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图层在画布中的位置与尺寸，必填。长度为 4 的数组 [X1, Y1, X2, Y2]：左上角 + 右下角坐标，要求 X2 &gt; X1、Y2 &gt;    Y1。</p><p>两种语义（与图片擦除能力的 BoundingBox 对齐）：</p><ul><li>像素：坐标值，取值范围 [-10240,    10240]，允许为负或超出画布（超出部分被裁掉）；</li><li>比例：各值 ∈ [-1, 1]，按画布宽高换算（x 乘画布宽、y    乘画布高）。</li></ul><p>图层会缩放填满该矩形；超出画布的部分一律裁掉，输出尺寸恒等于画布尺寸。</p>",
+          "example": "[0]",
+          "member": "float",
+          "name": "BoundingBox",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>坐标单位，与图片擦除能力对齐。取值：</p><ul><li>0：自动判定（不传时的默认值）；</li><li>1：比例；</li><li>2：像素。</li></ul><p>自动判定规则：四个值全部大于 1 按像素解释、全部不大于 1 按比例解释；混合取值会返回InvalidParameter，建议始终显式指定。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "BoundingBoxUnitType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ImageDenoiseConfig": {
       "document": "图片降噪配置",
       "members": [
@@ -30861,6 +31000,17 @@
           "example": "无",
           "member": "ImageQualityConfig",
           "name": "ImageQualityConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图层融合配置。</p>",
+          "example": "无",
+          "member": "AiComposeConfig",
+          "name": "AiComposeConfig",
           "output_required": false,
           "required": false,
           "type": "object",

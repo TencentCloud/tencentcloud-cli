@@ -65,6 +65,12 @@
     "CreatePreCacheImageTask": [
       {
         "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"tcr-cq.tencentcloudcr.com/test/alpine:latest\",\n    \"ImageRegistryType\": \"enterprise\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Image\": \"******.tencentcloudcr.com/***********:******\",\n        \"ImageDigest\": \"sha256:*************************************************************\",\n        \"ImageRegistryType\": \"enterprise\",\n        \"PreCacheImageId\": \"pcimg-f8c*****\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "预热"
+      },
+      {
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageRegistryType\": \"custom\"\n}",
         "output": "{\n    \"Response\": {\n        \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n        \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n        \"ImageRegistryType\": \"custom\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
         "title": "预热用户 VPC 可达第三方镜像"
@@ -217,6 +223,12 @@
       }
     ],
     "DescribePreCacheImageTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"PreCacheImageId\": \"pcimg-qi3p****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CachedImageSizeBytes\": 3523604480,\n        \"CreateTime\": \"2026-09-11T16:41:57+08:00\",\n        \"Image\": \"***.ccs.tencentyun.com/*********/************************:*****\",\n        \"ImageDigest\": \"sha256:*************\",\n        \"ImageRegistryType\": \"personal\",\n        \"LastUsedTime\": \"2026-09-11T18:04:36+08:00\",\n        \"Message\": \"Image precache completed successfully\",\n        \"PreCacheImageId\": \"pcimg-qi3p****\",\n        \"SourceType\": \"EXPLICIT\",\n        \"Status\": \"Success\",\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "按PreCacheImageId查询预热镜像"
+      },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageTask\n<公共请求参数>\n\n{\n    \"Image\": \"harbor.internal.example.com/team/app:1.0\",\n    \"ImageDigest\": \"sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"ImageRegistryType\": \"custom\"\n}",

@@ -21,11 +21,25 @@
       "output": "CreateFileResponse",
       "status": "online"
     },
+    "CreateFolder": {
+      "document": "创建文件夹",
+      "input": "CreateFolderRequest",
+      "name": "创建文件夹",
+      "output": "CreateFolderResponse",
+      "status": "online"
+    },
     "CreateWorkflow": {
       "document": "创建工作流",
       "input": "CreateWorkflowRequest",
       "name": "创建工作流",
       "output": "CreateWorkflowResponse",
+      "status": "online"
+    },
+    "CreateWorkspace": {
+      "document": "创建工作空间",
+      "input": "CreateWorkspaceRequest",
+      "name": "创建工作空间",
+      "output": "CreateWorkspaceResponse",
       "status": "online"
     },
     "DeleteConsoleGroups": {
@@ -42,6 +56,13 @@
       "output": "DeleteFileResponse",
       "status": "online"
     },
+    "DeleteFolder": {
+      "document": "删除文件夹",
+      "input": "DeleteFolderRequest",
+      "name": "删除文件夹",
+      "output": "DeleteFolderResponse",
+      "status": "online"
+    },
     "DeleteWorkflow": {
       "document": "删除工作流",
       "input": "DeleteWorkflowRequest",
@@ -49,11 +70,25 @@
       "output": "DeleteWorkflowResponse",
       "status": "online"
     },
+    "DeleteWorkspace": {
+      "document": "删除工作空间",
+      "input": "DeleteWorkspaceRequest",
+      "name": "删除工作空间",
+      "output": "DeleteWorkspaceResponse",
+      "status": "online"
+    },
     "GetFile": {
       "document": "获取文件的元信息，可选包含文件内容，支持按版本读取历史快照。\n\n**前置条件**\n1. FileId 与 FilePath 二选一，至少传一个；同时传时以 FileId 为准；\n2. 对应文件必须存在，且调用方对该文件有读权限；\n3. 传 VersionId 时该版本必须存在。\n\n**错误码（Module 均为 `Studio`）**\n\n| 错误码（Code） | InnerCode | 描述 | 处理建议 |\n| --- | --- | --- | --- |\n| `MissingParameter.WorkspaceId` | 1030001 | 缺少 WorkspaceId | 请传入 WorkspaceId |\n| `MissingParameter.FileId` | 1030003 | FileId 与 FilePath 同时为空 | FileId 与 FilePath 二选一，至少传一个 |\n| `InvalidParameterValue.FileType` | 1030102 | FileType 取值不支持 | FileType 取 FILE/NOTEBOOK_FILE/SQL_FILE |\n| `ResourceNotFound.FileNotFound` | 1030203 | 文件不存在或已删除 | 请确认 FileId 或 FilePath |\n| `ResourceNotFound.FileVersionNotFound` | 1030205 | 指定的文件版本不存在 | 请确认 VersionId，或调用 ListFileVersions 获取 |\n| `UnauthorizedOperation.FileReadDenied` | 1030304 | 对该文件无读权限 | 请联系文件负责人或空间管理员授权 |\n| `InternalError` | 1030900 | 服务内部异常 | 请携带 RequestId 联系支持 |",
       "input": "GetFileRequest",
       "name": "获取代码文件详情",
       "output": "GetFileResponse",
+      "status": "online"
+    },
+    "GetFolder": {
+      "document": "获取文件夹详情",
+      "input": "GetFolderRequest",
+      "name": "获取文件夹详情",
+      "output": "GetFolderResponse",
       "status": "online"
     },
     "GetWorkflow": {
@@ -75,6 +110,13 @@
       "input": "GetWorkflowTaskRunRequest",
       "name": "查询任务运行详情",
       "output": "GetWorkflowTaskRunResponse",
+      "status": "online"
+    },
+    "GetWorkspace": {
+      "document": "查询工作空间详情",
+      "input": "GetWorkspaceRequest",
+      "name": "查询工作空间详情",
+      "output": "GetWorkspaceResponse",
       "status": "online"
     },
     "KillWorkflowRun": {
@@ -110,6 +152,13 @@
       "input": "ListConsoleUsersRequest",
       "name": "查询控制台用户列表",
       "output": "ListConsoleUsersResponse",
+      "status": "online"
+    },
+    "ListFiles": {
+      "document": "获取文件夹和文件列表",
+      "input": "ListFilesRequest",
+      "name": "获取文件夹和文件列表",
+      "output": "ListFilesResponse",
       "status": "online"
     },
     "ListWorkflowRuns": {
@@ -182,11 +231,25 @@
       "output": "UpdateFileResponse",
       "status": "online"
     },
+    "UpdateFolder": {
+      "document": "更新文件夹（支持重命名+移动）",
+      "input": "UpdateFolderRequest",
+      "name": "更新文件夹（支持文件夹重命名、移动文件夹）",
+      "output": "UpdateFolderResponse",
+      "status": "online"
+    },
     "UpdateWorkflow": {
       "document": "更新工作流",
       "input": "UpdateWorkflowRequest",
       "name": "更新工作流",
       "output": "UpdateWorkflowResponse",
+      "status": "online"
+    },
+    "UpdateWorkspace": {
+      "document": "修改工作空间",
+      "input": "UpdateWorkspaceRequest",
+      "name": "修改工作空间",
+      "output": "UpdateWorkspaceResponse",
       "status": "online"
     }
   },
@@ -995,6 +1058,96 @@
       ],
       "type": "object"
     },
+    "CreateFolderRequest": {
+      "document": "CreateFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间名称</p>",
+          "example": "17799542221324491",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件夹名称</p>",
+          "example": "folder1",
+          "member": "string",
+          "name": "FolderName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件夹类型</p><p>枚举值：</p><ul><li>FOLDER： 文件夹</li><li>GIT_FOLDER： git文件夹</li></ul>",
+          "example": "FOLDER",
+          "member": "string",
+          "name": "FolderType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>父节点</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "ParentFolder",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>git配置，FolderType=GIT_FOLDER 时必填</p>",
+          "example": "无",
+          "member": "GitRepoConfig",
+          "name": "GitConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFolderResponse": {
+      "document": "CreateFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建文件夹结果</p>",
+          "example": "无",
+          "member": "CreateFolderRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateFolderRsp": {
+      "document": "创建文件夹回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件夹 ID</p>",
+          "example": "872499382026919936",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateWorkflowRequest": {
       "document": "CreateWorkflow请求参数结构体",
       "members": [
@@ -1157,6 +1310,78 @@
       ],
       "usage": "both"
     },
+    "CreateWorkspaceRequest": {
+      "document": "CreateWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间名称，max_len=128</p>",
+          "example": "testleo",
+          "member": "string",
+          "name": "WorkspaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间地域（如 ap-guangzhou），max_len=64</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "WorkspaceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间描述，max_len=300</p>",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceResponse": {
+      "document": "CreateWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功的工作空间ID</p>",
+          "example": "无",
+          "member": "CreateWorkspaceRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkspaceRsp": {
+      "document": "创建工作空间响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功的工作空间ID",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteConsoleGroupsRequest": {
       "document": "DeleteConsoleGroups请求参数结构体",
       "members": [
@@ -1293,6 +1518,78 @@
       ],
       "usage": "both"
     },
+    "DeleteFolderRequest": {
+      "document": "DeleteFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17799542221324491",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待删除的文件夹</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "Folder",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>软删除还是从回收站硬删除</p><p>枚举值：</p><ul><li>false： 软删除到回收站</li><li>true： 从回收站硬删除</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceDelete",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFolderResponse": {
+      "document": "DeleteFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除文件夹结果</p>",
+          "example": "无",
+          "member": "DeleteFolderRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFolderRsp": {
+      "document": "删除文件夹回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除文件夹状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteWorkflowRequest": {
       "document": "DeleteWorkflow请求参数结构体",
       "members": [
@@ -1352,6 +1649,60 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteWorkspaceRequest": {
+      "document": "DeleteWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17851552324107340",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkspaceResponse": {
+      "document": "DeleteWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果</p>",
+          "example": "无",
+          "member": "DeleteWorkspaceRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkspaceRsp": {
+      "document": "删除工作空间响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1726,6 +2077,205 @@
       ],
       "usage": "both"
     },
+    "FileMeta": {
+      "document": "文件元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件id</p>",
+          "example": "135",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件/文件夹名称</p>",
+          "example": "acf",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件类型</p>",
+          "example": "FILE",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，毫秒秒级时间戳</p><p>参数格式：时间戳</p>",
+          "example": "1779954222000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：时间戳字符串</p>",
+          "example": "1779954222000",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>acl权限类型</p>",
+          "example": "[\"MANAGE\"]",
+          "member": "string",
+          "name": "AllowActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否收藏</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFavorite",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件path</p>",
+          "example": "/Workspace/Users/we*********v@*******.co*******2**46**/new-folder",
+          "member": "string",
+          "name": "PathName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否系统创建</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSystemGenerated",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileNode": {
+      "document": "文件节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前节点</p>",
+          "example": "无",
+          "member": "FileMeta",
+          "name": "Node",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>父节点</p>",
+          "example": "无",
+          "member": "FileMeta",
+          "name": "Parent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>拥有者</p>",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Owner",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点类型</p>",
+          "example": "“ROOT”",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始路径</p>",
+          "example": "/a/b/c",
+          "member": "string",
+          "name": "OriginPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回收时间</p>",
+          "example": "“1766631841”",
+          "member": "string",
+          "name": "DeleteTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件git配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GitRepoConfig",
+          "name": "GitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FileOutputConf": {
       "document": "Notebook/Python单元格输出配置",
       "members": [
@@ -1796,6 +2346,34 @@
           "example": "\"hello\"",
           "member": "string",
           "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FolderLocator": {
+      "document": "文件夹定位器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点id</p>",
+          "example": "847862709978656768",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点path</p>",
+          "example": "/Workspace/Users/weda****-***@te***n**co******0******8/folder1",
+          "member": "string",
+          "name": "PathName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1885,6 +2463,69 @@
         }
       ],
       "type": "object"
+    },
+    "GetFolderRequest": {
+      "document": "GetFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17799542221324491",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件夹定位</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "Folder",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFolderResponse": {
+      "document": "GetFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件夹详情结果</p>",
+          "example": "无",
+          "member": "GetFolderRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFolderRsp": {
+      "document": "获取文件夹回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件夹信息</p>",
+          "example": "无",
+          "member": "FileNode",
+          "name": "Folder",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GetWorkflowRequest": {
       "document": "GetWorkflow请求参数结构体",
@@ -2630,6 +3271,110 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GetWorkspaceRequest": {
+      "document": "GetWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17851563773633788",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWorkspaceResponse": {
+      "document": "GetWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间详情</p>",
+          "example": "无",
+          "member": "GetWorkspaceRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetWorkspaceRsp": {
+      "document": "查询工作空间详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间详情",
+          "example": "无",
+          "member": "WorkspaceInfo",
+          "name": "WorkspaceInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GitRepoConfig": {
+      "document": "git配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检出规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparseCheckoutConfig",
+          "name": "SparseCheckout",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Git 仓库地址</p>",
+          "example": "https://github.com/Doble-creater/test",
+          "member": "string",
+          "name": "RepoUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分支名</p>",
+          "example": "main",
+          "member": "string",
+          "name": "Branch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的 gitAuth 配置名称</p>",
+          "example": "17884219514893801",
+          "member": "string",
+          "name": "AuthConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3658,6 +4403,171 @@
         {
           "disabled": false,
           "document": "总页数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListFilesRequest": {
+      "document": "ListFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间id</p>",
+          "example": "17697****0**47629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>父目录，不填默认查询根节点</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "Parent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按文件类型过滤</p>",
+          "example": "[\"FOLDER\"]",
+          "member": "string",
+          "name": "FileTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名模糊匹配</p>",
+          "example": "071*****",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按所有者UIN过滤，多值为或关系</p>",
+          "example": "[\"4611686018428258532\"]",
+          "member": "string",
+          "name": "OwnerUserUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只列出文件夹，默认 false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OnlyFolder",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段列表，如创建时间 [{Name: &#39;CreateTime&#39;, Direction: &#39;DESC&#39;}]，文件名称 [{Name: &#39;Name&#39;, Direction: &#39;ASC&#39;}]</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，默认1，最小值1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，默认10，最小值10，最大值100</p><p>取值范围：[10, 100]</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFilesResponse": {
+      "document": "ListFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件列表结果</p>",
+          "example": "无",
+          "member": "ListFilesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFilesRsp": {
+      "document": "查询文件信息结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件/文件夹节点列表</p>",
+          "example": "无",
+          "member": "FileNode",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总条数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalPageNumber",
@@ -4986,6 +5896,95 @@
       ],
       "usage": "both"
     },
+    "SparseCheckoutConfig": {
+      "document": "git检出规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用稀疏检出</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用 cone 模式（推荐 true，按目录匹配更高效）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ConeMode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>稀疏检出路径列表（如 [&quot;src/module-a/&quot;, &quot;docs/&quot;]）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"src/module-a/\", \"docs/\"]",
+          "member": "string",
+          "name": "Patterns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StandardUserInfo": {
+      "document": "用户基础展示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户UIN",
+          "example": "100044134096",
+          "member": "string",
+          "name": "UserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "sub-user-01",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "昵称",
+          "example": "sub-user-01",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0: 普通用户 1: entraId用户",
+          "example": "0",
+          "member": "string",
+          "name": "UserTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TaskRetryStrategy": {
       "document": "任务重试策略",
       "members": [
@@ -5592,6 +6591,96 @@
       ],
       "type": "object"
     },
+    "UpdateFolderRequest": {
+      "document": "UpdateFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17799542221324491",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待更新文件夹</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "Folder",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p><p>枚举值：</p><ul><li>1： 重命名</li><li>2： 移动</li></ul>",
+          "example": "1",
+          "member": "string",
+          "name": "OperationType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重命名后的文件名，OperationType = 1时生效</p>",
+          "example": "new-folder",
+          "member": "string",
+          "name": "FolderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>移动的目的文件夹，OperationType = 2时生效</p>",
+          "example": "无",
+          "member": "FolderLocator",
+          "name": "TargetParent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFolderResponse": {
+      "document": "UpdateFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新文件夹结果</p>",
+          "example": "无",
+          "member": "UpdateFolderRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFolderRsp": {
+      "document": "更新文件夹回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新文件夹结果，true为成功</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateWorkflowRequest": {
       "document": "UpdateWorkflow请求参数结构体",
       "members": [
@@ -5669,6 +6758,128 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateWorkspaceRequest": {
+      "document": "UpdateWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17851563773633788",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间名称，max_len=128</p>",
+          "example": "hehefdf",
+          "member": "string",
+          "name": "WorkspaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间描述，max_len=300</p>",
+          "example": "fdsfsd",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceResponse": {
+      "document": "UpdateWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果</p>",
+          "example": "无",
+          "member": "UpdateWorkspaceRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceRsp": {
+      "document": "修改工作空间响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UserInfo": {
+      "document": "用户基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>uin</p>",
+          "example": "700002267912",
+          "member": "string",
+          "name": "UserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称</p>",
+          "example": "wedata30-test1@tencent.com",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户昵称</p>",
+          "example": "wedata30-test1@tencent.com",
+          "member": "string",
+          "name": "Nickname",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>0: 普通用户 1: entraId用户</p>",
+          "example": "0",
+          "member": "string",
+          "name": "UserTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7633,6 +8844,122 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkspaceInfo": {
+      "document": "工作空间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "my_workspace",
+          "member": "string",
+          "name": "WorkspaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间地域（如 ap-guangzhou）",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "WorkspaceRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作空间状态：0=未指定 1=创建中 2=创建失败 3=正常运行中 4=已删除",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因（Status=2 创建失败时有值）",
+          "example": "权限不足",
+          "member": "string",
+          "name": "ErrorReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者信息",
+          "example": "无",
+          "member": "StandardUserInfo",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，毫秒时间戳",
+          "example": "1735689600000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间，毫秒时间戳",
+          "example": "1735689600000",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户是否拥有该工作空间的访问权限",
+          "example": "true",
+          "member": "bool",
+          "name": "HasAccess",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

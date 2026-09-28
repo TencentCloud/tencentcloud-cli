@@ -823,6 +823,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "hsm-cluster-2131da",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群角色</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ClusterRole",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -836,7 +856,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移",
+          "document": "<p>偏移</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -845,7 +865,7 @@
         },
         {
           "disabled": false,
-          "document": "最大数量",
+          "document": "<p>最大数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -854,7 +874,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID或者资源名字模糊查询的关键字",
+          "document": "<p>资源ID或者资源名字模糊查询的关键字</p>",
           "example": "hsm-r19rq1b0",
           "member": "string",
           "name": "SearchWord",
@@ -863,8 +883,8 @@
         },
         {
           "disabled": false,
-          "document": "标签过滤条件",
-          "example": "[{\"TagKey\":\"env\",\"TagValue\":[\"dev\"]}]",
+          "document": "<p>标签过滤条件</p>",
+          "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
           "required": false,
@@ -872,7 +892,7 @@
         },
         {
           "disabled": false,
-          "document": "设备所属的厂商名称，根据厂商来进行筛选",
+          "document": "<p>设备所属的厂商名称，根据厂商来进行筛选</p>",
           "example": "TASS",
           "member": "string",
           "name": "Manufacturer",
@@ -881,10 +901,19 @@
         },
         {
           "disabled": false,
-          "document": "Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all",
+          "document": "<p>Hsm服务类型，可选virtualization、physical、GHSM、EHSM、SHSM、all</p>",
           "example": "virtualization",
           "member": "string",
           "name": "HsmType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "hsm-cluster-dsad2",
+          "member": "string",
+          "name": "ClusterId",
           "required": false,
           "type": "string"
         }
@@ -896,7 +925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "获取实例的总个数",
+          "document": "<p>获取实例的总个数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -906,8 +935,8 @@
         },
         {
           "disabled": false,
-          "document": "资源信息",
-          "example": "[       {         \"AlarmStatus\": 0,         \"CreateUin\": \"100000007998\",         \"ExpireTime\": 1722255890,         \"Expired\": true,         \"Manufacturer\": \"TASS\",         \"Model\": \"SJJ1528\",         \"RegionId\": 1,         \"RegionName\": \"广州\",         \"RemainSeconds\": -8197142,         \"RenewFlag\": 1,         \"ResourceId\": \"hsm-r19rq1b0\",         \"ResourceName\": \"default-hsmName\",         \"SgList\": [           {             \"CreateTime\": \"2024-02-02 16:53:18\",             \"SgId\": \"sg-6tjv5yxb\",             \"SgName\": \"default\",             \"SgRemark\": \"System created security group\"           }         ]",
+          "document": "<p>资源信息</p>",
+          "example": "无",
           "member": "ResourceInfo",
           "name": "VsmList",
           "output_required": false,
@@ -981,7 +1010,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源Id",
+          "document": "<p>资源Id</p>",
           "example": "hsm-1234abcd",
           "member": "string",
           "name": "ResourceId",
@@ -990,7 +1019,7 @@
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "<p>资源名称</p>",
           "example": "default-hsmName",
           "member": "string",
           "name": "ResourceName",
@@ -1005,12 +1034,32 @@
       "members": [
         {
           "disabled": false,
-          "document": "VSM监控信息",
-          "example": "json字符串:{\\\"vsm\\\":{\\\"uuid\\\":\\\"C2B7885C-642A-4459-8D8D-D43FD5CFCE35\\\",\\\"version\\\":\\\"1.0.19.0_STD\\\",\\\"status\\\":\\\"ok\\\",\\\"ip\\\":\\\"9.82.42.102\\\",\\\"ip6\\\":\\\"\\\",\\\"token\\\":\\\"\\\",}}",
+          "document": "<p>VSM监控信息</p>",
+          "example": "[\"vsm\",\"uuid\"]",
           "member": "string",
           "name": "MonitorInfo",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vsm摘要列表</p>",
+          "example": "无",
+          "member": "VsmDigestItem",
+          "name": "DigestList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始化状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "InitStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1595,6 +1644,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>vsm版本号</p>",
+          "example": "GST000H1.04.16.rv03",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群id</p>",
+          "example": "hsm-cluster-1f611e16",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群角色，0-未加入集群 1-主 2-从</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterRole",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -1996,6 +2075,32 @@
           "name": "IsDefault",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VsmDigestItem": {
+      "document": "VSM摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "DigestVer",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>摘要值</p>",
+          "example": "gDfVKGQxYGlp6g1JH9MdHZLoB8mUdAaDS/gIKUQxFU8=",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

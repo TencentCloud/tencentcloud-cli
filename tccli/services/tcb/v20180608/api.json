@@ -133,6 +133,13 @@
       "output": "CreatePlatformEnvResponse",
       "status": "online"
     },
+    "CreatePlatformHTTPServiceRoute": {
+      "document": "本接口CreateHTTPServiceRoute用于创建平台版HTTP访问服务路由。如果不传Domain.Routes，仅创建域名信息。首次创建域名后需要调用DescribeHTTPServiceRoute查询域名状态，如果状态是PROCESSING，需要轮询查询域名状态直到SUCCESS或者FAIL。如果状态是FAIL，可以删除后重新创建。创建成功后域名可能无法访问，原因是异步下发的路由，可通过http或者https探测路由是否下发，如果http访问返回404或者https访问握手失败，可等待一会再试，直到访问正常。此外HTTP访问服务提供了默认域名，通过DescribeHTTPServiceRoute接口可直接获取默认域名。",
+      "input": "CreatePlatformHTTPServiceRouteRequest",
+      "name": "创建平台HTTP访问服务路由",
+      "output": "CreatePlatformHTTPServiceRouteResponse",
+      "status": "online"
+    },
     "CreateStaticStore": {
       "document": "创建静态托管资源，包括COS和CDN，异步任务创建，查看创建结果需要根据DescribeStaticStore接口来查看",
       "input": "CreateStaticStoreRequest",
@@ -201,6 +208,13 @@
       "input": "DeleteHTTPServiceRouteRequest",
       "name": "删除HTTP访问服务路由",
       "output": "DeleteHTTPServiceRouteResponse",
+      "status": "online"
+    },
+    "DeletePlatformHTTPServiceRoute": {
+      "document": "本接口DeleteHTTPServiceRoute用于删除平台版HTTP访问服务域名或者路由。可批量删除多条path路由、删除域名及所有path路由，如果Paths字段为空则删除域名及所有path路由，如果Paths不为空则仅删除path路由。",
+      "input": "DeletePlatformHTTPServiceRouteRequest",
+      "name": "删除平台HTTP访问服务路由",
+      "output": "DeletePlatformHTTPServiceRouteResponse",
       "status": "online"
     },
     "DeleteProvider": {
@@ -476,6 +490,13 @@
       "output": "DescribePlatformEnvUsageResponse",
       "status": "online"
     },
+    "DescribePlatformHTTPServiceRoute": {
+      "document": "本接口DescribeHTTPServiceRoute用于查询平台版下HTTP访问服务路由信息。可通过Filters过滤。如果不存在不会返回错误。HTTP访问服务提供了默认域名，通过本接口可直接获取默认域名。前置需已开通 HTTP 访问服务；调用CreateHTTPServiceRoute或者ModifyHTTPServiceRoute后可使用本接口查询创建或者修改结果",
+      "input": "DescribePlatformHTTPServiceRouteRequest",
+      "name": "查询平台HTTP访问服务路由信息",
+      "output": "DescribePlatformHTTPServiceRouteResponse",
+      "status": "online"
+    },
     "DescribePlatforms": {
       "document": "查询平台版资源信息列表，返回信息包括\n\n1.平台版基础信息如资源id，所属地域等;\n2.计费相关信息如：购买/过期时间，资源规格，计费状态等; \n3.底层资源信息如：存储，日志，静态托管等资源信息等;\n\n入参支持platformIds，可查询指定平台版套餐信息\n\n影响范围：查询接口，返回当前用户账号下平台版资源信息\n使用场景：控制台展示平台版套餐信息/查平台版资源详情/资源状态",
       "input": "DescribePlatformsRequest",
@@ -686,6 +707,13 @@
       "output": "ModifyPlatformEnvResponse",
       "status": "online"
     },
+    "ModifyPlatformHTTPServiceRoute": {
+      "document": "本接口ModifyHTTPServiceRoute用于修改平台版HTTP访问服务路由。支持增量修改，对应字段不传参数则不修改",
+      "input": "ModifyPlatformHTTPServiceRouteRequest",
+      "name": "修改平台HTTP访问服务路由",
+      "output": "ModifyPlatformHTTPServiceRouteResponse",
+      "status": "online"
+    },
     "ModifyProvider": {
       "document": "修改身份认证源。更新指定云开发环境下已有身份认证源的配置信息，支持修改基本信息（名称、图标、描述）、协议连接配置（ClientId、ClientSecret、端点地址等）、登录行为控制（透传模式、自动注册、邮箱/手机号自动关联）以及启用状态。\n对于 OIDC 类型身份源，修改 Issuer 后将自动通过 OpenID Connect Discovery 重新获取端点配置。\n若自定义登录（CUSTOM）或邮箱登录（EMAIL）身份源尚不存在，调用该接口时将自动创建。",
       "input": "ModifyProviderRequest",
@@ -838,6 +866,13 @@
       "input": "VerifyHTTPServiceRouteRequest",
       "name": "校验HTTP访问服务路由",
       "output": "VerifyHTTPServiceRouteResponse",
+      "status": "online"
+    },
+    "VerifyPlatformHTTPServiceRoute": {
+      "document": "本接口VerifyPlatformHTTPServiceRoute用于前置校验平台版HTTP访问服务域名或者路由。覆盖的校验项包括：\n1. Ownership：域名所有权（TXT/CNAME 记录）；\n2. Cert：证书与域名匹配（CertId 为空时跳过）；\n3. Quota：环境下域名/路径数量配额；\n4. RouteConflict：同域名下路由路径冲突；\n5. DomainConflict：域名被其他环境占用；\n6. InternalAccount：内部域名且非内部账号；\n7. Blacklist：域名黑名单；\n8. CDNResource：AccessType=CDN 时 CDN 资源存在性 / 状态（含 ICP 未备案提示）；\n9. EO：AccessType=EO 时 EdgeOne 侧域名冲突 / 备案 / 归属权预检。\n\n使用方式：\n- 调用本接口前置校验，若 Passed=true 表示所有启用检查项均通过，可继续调用 CreateHTTPServiceRoute 正式创建；\n- 若 Passed=false，前端应根据各 CheckItem 的 Code 精确渲染对应的错误提示与用户操作指引（如 DNS 归属权配置、ICP 备案指引等），用户修正参数后可重复调用本接口，直到通过后再进行创建。\n\n注意：本接口为只读 dry-run 操作，不落库、不创建任何资源，仅返回各项检查的详细结果。本接口通过不代表 CreateHTTPServiceRoute 必然成功（例如证书运行时状态、并发抢占等仍需创建时最终判定），但本接口不通过则 CreateHTTPServiceRoute 必然不通过。",
+      "input": "VerifyPlatformHTTPServiceRouteRequest",
+      "name": "校验平台HTTP访问服务路由",
+      "output": "VerifyPlatformHTTPServiceRouteResponse",
       "status": "online"
     }
   },
@@ -1764,6 +1799,52 @@
       ],
       "type": "object"
     },
+    "BuildArtifactInfo": {
+      "document": "构建产物信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物类型</p>",
+          "example": "image",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物名称</p>",
+          "example": "my-app-001",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物状态</p>",
+          "example": "ready",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展详情 Json</p>",
+          "example": "\\\"metadata\\\":{\\\"step\\\":\\\"web:deploy\\\"}",
+          "member": "string",
+          "name": "ContentJson",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BuildCommands": {
       "document": "构建命令",
       "members": [
@@ -1802,6 +1883,30 @@
         }
       ],
       "usage": "both"
+    },
+    "BuildContext": {
+      "document": "构建上下文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建路径</p>",
+          "example": "frontend",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建产物输出路径</p>",
+          "example": "dist",
+          "member": "string",
+          "name": "OutPut",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "BuildSecret": {
       "document": "构建密钥",
@@ -1917,6 +2022,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>zip 包名称</p>",
+          "example": "package.zip",
+          "member": "string",
+          "name": "PackageFileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2008,12 +2124,185 @@
       ],
       "type": "object"
     },
+    "CloudAppFilter": {
+      "document": "云应用过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云应用过滤列表</p>",
+          "example": "[\"my-vue-app\"]",
+          "member": "string",
+          "name": "ServiceNameList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudAppLinkService": {
+      "document": "云应用关联服务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>http-function： HTTP 云函数</li><li>function： 普通云函数</li><li>static-hosting： 静态托管</li></ul>",
+          "example": "function",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务身份</p>",
+          "example": "web",
+          "member": "string",
+          "name": "Identifier",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务动作</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Action",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务构建命令</p>",
+          "example": "无",
+          "member": "BuildCommands",
+          "name": "Command",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务构建部署上下文</p>",
+          "example": "无",
+          "member": "BuildContext",
+          "name": "BuildContext",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "CloudAppResourceItem": {
+      "document": "云应用资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "web",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>http-function： HTTP 云函数</li><li>function： 普通云函数</li><li>static-hosting： 静态托管</li></ul>",
+          "example": "static-hosting",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务部署版本</p>",
+          "example": "11",
+          "member": "string",
+          "name": "DeployedRef",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务动作</p>",
+          "example": "changed",
+          "member": "string",
+          "name": "DiffCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务状态</p>",
+          "example": "staged",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudAppRoute": {
+      "document": "云应用路由",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务跟路由</p>",
+          "example": "/api-demo",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型</p><p>枚举值：</p><ul><li>http-function： HTTP 云函数</li><li>function： 普通云函数</li><li>static-hosting： 静态托管</li></ul>",
+          "example": "function",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标路径，暂不支持</p>",
+          "example": "/",
+          "member": "string",
+          "name": "TargetPath",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "CloudAppServiceItem": {
       "document": "部署服务信息",
       "members": [
         {
           "disabled": false,
-          "document": "服务名",
+          "document": "<p>服务名</p>",
           "example": "react-wxrun",
           "member": "string",
           "name": "ServiceName",
@@ -2023,7 +2312,7 @@
         },
         {
           "disabled": false,
-          "document": "框架名",
+          "document": "<p>框架名</p>",
           "example": "react",
           "member": "string",
           "name": "Framework",
@@ -2033,7 +2322,7 @@
         },
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "lowcode-1gk9y5ik310a94df-1307578329.tcloudbaseapp.com",
           "member": "string",
           "name": "Domain",
@@ -2043,7 +2332,7 @@
         },
         {
           "disabled": false,
-          "document": "应用路径",
+          "document": "<p>应用路径</p>",
           "example": "/qqq",
           "member": "string",
           "name": "AppPath",
@@ -2053,7 +2342,7 @@
         },
         {
           "disabled": false,
-          "document": "服务创建时间",
+          "document": "<p>服务创建时间</p>",
           "example": "2026-03-12 20:53:19",
           "member": "string",
           "name": "CreateTime",
@@ -2063,7 +2352,7 @@
         },
         {
           "disabled": false,
-          "document": "最新版本名",
+          "document": "<p>最新版本名</p>",
           "example": "react-wxrun-001",
           "member": "string",
           "name": "LatestVersionName",
@@ -2073,7 +2362,7 @@
         },
         {
           "disabled": false,
-          "document": "最新版本状态",
+          "document": "<p>最新版本状态</p>",
           "example": "FAILED",
           "member": "string",
           "name": "LatestStatus",
@@ -2083,7 +2372,7 @@
         },
         {
           "disabled": false,
-          "document": "最新版本构建时间",
+          "document": "<p>最新版本构建时间</p>",
           "example": "2026-03-12 20:53:20",
           "member": "string",
           "name": "LatestBuildTime",
@@ -2093,16 +2382,51 @@
         },
         {
           "disabled": false,
-          "document": "部署类型",
+          "document": "<p>部署类型</p>",
           "example": "static-hosting",
           "member": "string",
           "name": "DeployType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建配置</p>",
+          "example": "{\"Source\":{}}",
+          "member": "string",
+          "name": "BuildConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前流量版本</p>",
+          "example": "mycloudapp2-016",
+          "member": "string",
+          "name": "CurrentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "CloudAppTrigger": {
+      "document": "云应用触发器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>webhook 配置</p>",
+          "example": "无",
+          "member": "CloudAppWebHook",
+          "name": "Webhook",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
     },
     "CloudAppVersionItem": {
       "document": "服务版本信息",
@@ -2186,9 +2510,92 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本部署快照</p>",
+          "example": "{\"Source\":{、}],\"PromoteType\":\"manual\"}",
+          "member": "string",
+          "name": "Snapshot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本域名</p>",
+          "example": "******************************************************************e.com",
+          "member": "string",
+          "name": "VersionDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本流量</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "TrafficPercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务资源</p>",
+          "example": "无",
+          "member": "CloudAppResourceItem",
+          "name": "Resources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产物列表</p>",
+          "example": "无",
+          "member": "BuildArtifactInfo",
+          "name": "Artifacts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
+    },
+    "CloudAppWebHook": {
+      "document": "云应用 WebHook 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开启 webhook 触发</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发分支</p>",
+          "example": "[\"main\"]",
+          "member": "string",
+          "name": "Branches",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发事件</p>",
+          "example": "[\"push\"]",
+          "member": "string",
+          "name": "Events",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "CloudBaseRunBuildLog": {
       "document": "BuildLog",
@@ -2959,6 +3366,78 @@
           "example": "22",
           "member": "string",
           "name": "NodeJsVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>暂不支持：Webhook 触发器功能尚未对外开放，客户端传入的 Trigger 字段会被平台静默忽略（仅日志告警，不拒绝请求）</p>",
+          "example": "无",
+          "member": "CloudAppTrigger",
+          "name": "Trigger",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务列表</p>",
+          "example": "无",
+          "member": "CloudAppLinkService",
+          "name": "ServiceList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全局工作目录</p>",
+          "example": "./",
+          "member": "string",
+          "name": "WorkingDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由列表</p>",
+          "example": "无",
+          "member": "CloudAppRoute",
+          "name": "Routes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署类型</p>",
+          "example": "manual",
+          "member": "string",
+          "name": "PromoteType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>发布 Token 校验</p>",
+          "example": "mycloudapp-001",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>前置执行命令</p>",
+          "example": "node -v",
+          "member": "string",
+          "name": "PreDeployCommand",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>后置执行命令</p>",
+          "example": "cat /root/*******s************************************************",
+          "member": "string",
+          "name": "PostDeployCommand",
           "required": false,
           "type": "string"
         }
@@ -3766,6 +4245,52 @@
       ],
       "type": "object"
     },
+    "CreatePlatformHTTPServiceRouteRequest": {
+      "document": "CreatePlatformHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台id</p>",
+          "example": "pf-************",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名路由信息</p>",
+          "example": "无",
+          "member": "HTTPServiceDomainParam",
+          "name": "Domain",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePlatformHTTPServiceRouteResponse": {
+      "document": "CreatePlatformHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>归属权校验不通过返回信息，根据校验信息配置dns或者文件验证，可通过VerifyHTTPServiceRoute接口验证归属权是否通过</p>",
+          "example": "无",
+          "member": "OwnershipVerificationInfo",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateStaticStoreRequest": {
       "document": "CreateStaticStore请求参数结构体",
       "members": [
@@ -4554,6 +5079,51 @@
     },
     "DeleteHTTPServiceRouteResponse": {
       "document": "DeleteHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePlatformHTTPServiceRouteRequest": {
+      "document": "DeletePlatformHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台id</p>",
+          "example": "pf-t960szfwv1cs",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "*.rgw.***************.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径列表。为空则表示删除此域名和所有路由</p>",
+          "example": "[\"/\"]",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePlatformHTTPServiceRouteResponse": {
+      "document": "DeletePlatformHTTPServiceRoute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -5365,6 +5935,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>构建配置</p>",
+          "example": "{\"Source\":{\"}]}",
+          "member": "string",
+          "name": "BuildConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前服务流量版本</p>",
+          "example": "mycloudapp2-016",
+          "member": "string",
+          "name": "CurrentVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本关联默认域名</p>",
+          "example": "mycloudapp2-***********************************************************",
+          "member": "string",
+          "name": "PreviewDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5420,6 +6020,15 @@
           "name": "PageNo",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务过滤</p>",
+          "example": "无",
+          "member": "CloudAppFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5659,6 +6268,56 @@
           "example": "无",
           "member": "BuildStepStatus",
           "name": "Steps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本快照</p>",
+          "example": "{\"Source\":[]}",
+          "member": "string",
+          "name": "Snapshot",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本流量比例</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TrafficPercent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务版本域名</p>",
+          "example": "cl*u*ap*-****************************************************************",
+          "member": "string",
+          "name": "VersionDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务管理资源列表</p>",
+          "example": "无",
+          "member": "CloudAppResourceItem",
+          "name": "Resources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>[]ArtifactInfo 的 JSON 序列化</p>",
+          "example": "无",
+          "member": "BuildArtifactInfo",
+          "name": "Artifacts",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -8051,6 +8710,90 @@
           "member": "uint64",
           "name": "CreditsScale",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformHTTPServiceRouteRequest": {
+      "document": "DescribePlatformHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台id</p>",
+          "example": "pf-************",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。Key的含义参考对应字段，Value精确匹配。可过滤: Domain、Path、DomainType、UpstreamResourceType。可过滤的Values单条不超过100</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。默认 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页限制。默认20，最大值1000</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlatformHTTPServiceRouteResponse": {
+      "document": "DescribePlatformHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名路由信息列表</p>",
+          "example": "无",
+          "member": "HTTPServiceDomain",
+          "name": "Domains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义接入的源站域名（HTTPService接入层域名）</p>",
+          "example": "***************.*********-expr.tencentcloudbase.com",
+          "member": "string",
+          "name": "OriginDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名总数，分页查询使用总数判断是否已经拉取到所有数据</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13789,6 +14532,42 @@
       ],
       "type": "object"
     },
+    "ModifyPlatformHTTPServiceRouteRequest": {
+      "document": "ModifyPlatformHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台id</p>",
+          "example": "pf-************",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名路由信息</p>",
+          "example": "无",
+          "member": "HTTPServiceDomainParam",
+          "name": "Domain",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPlatformHTTPServiceRouteResponse": {
+      "document": "ModifyPlatformHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProviderRequest": {
       "document": "ModifyProvider请求参数结构体",
       "members": [
@@ -17720,8 +18499,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志投递到的cls日志集ID</p>",
-          "example": "fsdfs-sfdsdfsd-sdfsdf",
+          "document": "<p>日志投递到的cls Topic ID</p>",
+          "example": "topic-id-sdf",
           "member": "string",
           "name": "ClsTopicId",
           "required": false,
@@ -17729,8 +18508,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>日志投递到的cls Topic ID</p>",
-          "example": "fsdfs-sfdsdfsd-sdfsdf",
+          "document": "<p>日志投递到的cls日志集ID</p>",
+          "example": "log-id-sdf",
           "member": "string",
           "name": "ClsLogsetId",
           "required": false,
@@ -18320,6 +19099,142 @@
           "disabled": false,
           "document": "<p>前置校验总开关。所有启用的检查项均为 PASS 或 SKIPPED 时为 true，任一检查项为 FAIL 时为 false。当为 false 时，前端应根据各 CheckItem 的 Code 精确渲染错误提示和操作指引；当为 true 时可继续调用 CreateHTTPServiceRoute 完成创建。 示例值：false</p>",
           "example": "false",
+          "member": "bool",
+          "name": "Passed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名归属权校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Ownership",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书校验结果；CertId 为空时 Status=SKIPPED</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Cert",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名/路径数量配额校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Quota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同域名下路由路径冲突校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "RouteConflict",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名被其他环境占用校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "DomainConflict",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部域名且非内部账号校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "InternalAccount",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名黑名单校验结果</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "Blacklist",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessType=CDN 时 CDN 资源存在性 / 状态校验结果（含 ICP 未备案的提示）</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "CDNResource",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AccessType=EO 时的 EdgeOne 预检结果（域名冲突/备案/归属权）</p>",
+          "example": "无",
+          "member": "VerifyHTTPServiceRouteCheckItem",
+          "name": "EO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyPlatformHTTPServiceRouteRequest": {
+      "document": "VerifyPlatformHTTPServiceRoute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>平台id</p>",
+          "example": "pf-t960szfwv1cs",
+          "member": "string",
+          "name": "PlatformId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名路由信息</p>",
+          "example": "无",
+          "member": "HTTPServiceDomainParam",
+          "name": "Domain",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyPlatformHTTPServiceRouteResponse": {
+      "document": "VerifyPlatformHTTPServiceRoute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>前置校验总开关。所有启用的检查项均为 PASS 或 SKIPPED 时为 true，任一检查项为 FAIL 时为 false。当为 false 时，前端应根据各 CheckItem 的 Code 精确渲染错误提示和操作指引；当为 true 时可继续调用 CreateHTTPServiceRoute 完成创建。 示例值：false</p>",
+          "example": "true",
           "member": "bool",
           "name": "Passed",
           "output_required": false,

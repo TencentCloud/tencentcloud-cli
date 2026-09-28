@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cdwpg DescribeInstanceState --cli-unfold-argument  \
-    --InstanceId cdwpg-exs8Mnql
+    --InstanceId cdwpg-exs8Mnql \
+    --InstanceIds cdwpg-********
 ```
 
 Output: 

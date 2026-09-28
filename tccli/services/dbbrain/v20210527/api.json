@@ -301,6 +301,13 @@
       "output": "DescribeDatabaseAutonomyStatusResponse",
       "status": "online"
     },
+    "DescribeDeadLockLogs": {
+      "document": "查询实例的死锁事件列表",
+      "input": "DescribeDeadLockLogsRequest",
+      "name": "查询死锁日志",
+      "output": "DescribeDeadLockLogsResponse",
+      "status": "online"
+    },
     "DescribeDiagDBInstances": {
       "document": "获取实例信息列表。Region统一选择广州。",
       "input": "DescribeDiagDBInstancesRequest",
@@ -3008,6 +3015,646 @@
       ],
       "type": "object"
     },
+    "DeadLockLogItem": {
+      "document": "死锁事件列表。按事件时间倒序排列（最近的死锁在前）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，例如 mssql-ks3s56dj。</p>",
+          "example": "mssql-15rso1sb",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间字段来源。XML_EVENT 表示时间来自 xml_deadlock_report 的引擎打点；OBSERVED_LOG 表示时间来自 chain/lock 观测记录（partial 事件）。</p>",
+          "example": "XML_EVENT",
+          "member": "string",
+          "name": "TimestampSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>降级原因码。IsPartial=true 时值为 XML_NOT_AVAILABLE；否则为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "XML_NOT_AVAILABLE",
+          "member": "string",
+          "name": "PartialReasonCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被回滚的进程内部指针列表，例如 process260256c7468。与 Resources.Owners/Waiters.ProcessId 对齐，可用于死锁环节点定位。</p>",
+          "example": "[\"process2b11e2c1468\"]",
+          "member": "string",
+          "name": "VictimProcessIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始负载是否被上游截断。true 表示 XmlReport 或 chain/lock payload 有过截断，会影响诊断可信度。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "PayloadTruncated",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组成本事件的所有 XEvent 原始消息 UUID 列表（去重后按字典序排序），用于多源溯源、审计、补数。</p>",
+          "example": "[\"7ebe128e-fb90-4f2b-af4c-abc62336e478\"]",
+          "member": "string",
+          "name": "SourceUuids",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际可归因（有 TransactionId）的事务数量。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ObservedTransactionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>死锁发生时间。ISO-8601 带偏移格式，例如 2026-09-16T06:58:52.611+00:00。来源于 XEvent 原始 timestamp。</p>",
+          "example": "2026-09-18T09:34:23.1632967+00:00",
+          "member": "string",
+          "name": "EventTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>死锁图完整性。COMPLETE 表示成功装配 xml_deadlock_report；MISSING 表示无 xml 只有 chain/lock 消息（对应 IsPartial=true）。</p>",
+          "example": "COMPLETE",
+          "member": "string",
+          "name": "GraphStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次响应中是否内联了原始死锁 XML。仅当请求参数 IncludeXml=true 且事件为 COMPLETE 时为 true。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "XmlIncluded",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参与死锁的进程总数。2 方死锁最常见，N 方死锁更严重。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ProcessCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参与死锁的事务列表（按 IsVictim=true 排前、TransactionId 升序）。每个事务下可能有多个 Session（例如并行执行 worker）。</p>",
+          "example": "无",
+          "member": "DeadlockTransaction",
+          "name": "Transactions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎内的死锁编号，例如 84。与 SQL Server 端 xml_deadlock_report 对齐。同实例短期内可辨识，重启后会复用。若上游数据缺失则为 null。</p>",
+          "example": "75775",
+          "member": "string",
+          "name": "DeadlockId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始 SQL Server 死锁图 XML 字符串（xml_deadlock_report 输出）。IncludeXml=false 或事件为 partial 时为 null。可用于前端直接绘制死锁环、AI 深度诊断，或落到对象存储做冷归档。</p>",
+          "example": "<deadlock>\\r\\n <victim-list>\\r\\n<deadlock>",
+          "member": "string",
+          "name": "XmlReport",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始 XML 字节数，用于采集侧健康度评估。partial 事件为 null。</p>",
+          "example": "5320",
+          "member": "int64",
+          "name": "OriginalXmlBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被 SQL Server 选中回滚的会话 SPID 列表（去重）。DBA 复盘定位牺牲者的核心字段。</p>",
+          "example": "[142]",
+          "member": "int64",
+          "name": "VictimSessionIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为降级 partial 事件。true 表示无 xml_deadlock_report，Transactions/Resources 只能从 chain/lock 消息尽力还原。AI 诊断前建议过滤 IsPartial=true 的记录。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPartial",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>涉及的数据库名去重列表，用于分库聚合与影响范围判断。</p>",
+          "example": "[\"test_lock\"]",
+          "member": "string",
+          "name": "DatabaseNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件唯一 ID，格式为 xml:&lt;uuid&gt; 或 partial:&lt;uuid&gt;。前缀 xml 表示由 xml_deadlock_report 装配的完整事件；partial 表示只有 chain/lock 消息的降级事件。可作为幂等主键。</p>",
+          "example": "xml:8a7e5df0-bfe2-11dc-878f-68b855d89593",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>死锁事件级签名（SHA-1 前 16 位）。基于参与死锁的所有锁资源三元组 (Kind, ObjectName, IndexName, Mode) 排序后计算，用于聚合相同锁冲突模式的死锁模板。partial 事件无 Resources 时为 null。</p>",
+          "example": "103d452bfafa8449",
+          "member": "string",
+          "name": "DeadlockSignature",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>死锁涉及的锁资源节点列表。每个资源节点有若干 Owners（持有边）与 Waiters（等待边），二者组合构成死锁环。partial 事件为空数组。</p>",
+          "example": "无",
+          "member": "DeadlockResource",
+          "name": "Resources",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>XE 辅助事件（chain/lock）与 XML 图的关联状态。MATCHED 表示至少一个 chain/lock 消息已关联到该 xml；UNMATCHED 表示只有孤立 xml 或降级 partial 事件。</p>",
+          "example": "MATCHED",
+          "member": "string",
+          "name": "AssociationStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参与死锁的事务总数（有 TransactionId 的会话按事务分组后的数量）。当存在无 TransactionId 的会话时为 null，通过 ObservedTransactionCount 与该字段的差值可以判断归因缺失情况。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TransactionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeadlockFrame": {
+      "document": "SQL Server 执行栈中的单个帧。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>帧对应的行号（存储过程内的行号）。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Line",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>语句在存储过程文本内的起始字节偏移。</p>",
+          "example": "2762",
+          "member": "int64",
+          "name": "StatementStart",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储过程名。adhoc 表示动态 SQL、非存过。</p>",
+          "example": "mssqlsystemresource.sys.sp_getapplock",
+          "member": "string",
+          "name": "ProcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 句柄（0x 十六进制字节），用于拉取具体语句文本和关联执行计划。</p>",
+          "example": "0x0300ff7fbb63b9f6b5df7501d8ab000001000000000000000000000000000000000000000000000000000000",
+          "member": "string",
+          "name": "SqlHandle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>语句在存储过程文本内的结束字节偏移。StatementStart/StatementEnd 组合用于精确切片。</p>",
+          "example": "2946",
+          "member": "int64",
+          "name": "StatementEnd",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeadlockResource": {
+      "document": "死锁涉及的锁资源节点。Owners（持有边）+ Waiters（等待边）与 Transactions[].Processes[] 关联，构成完整死锁环。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>锁资源对应的索引名。keylock/ridlock 尤为重要，可判断索引设计是否合理。</p>",
+          "example": "PK__dl_a__3213E83FD6185C99",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分区 HoBT ID（从 Attributes.hobtid 抽出）。分区表死锁排查必需字段，可定位到具体物理分区。</p>",
+          "example": "72057594047234048",
+          "member": "string",
+          "name": "PartitionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待该锁资源的进程列表（死锁环的等待边）。</p>",
+          "example": "无",
+          "member": "WaiterItem",
+          "name": "Waiters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>锁资源类型。常见值：keylock / pagelock / objectlock / ridlock / applicationlock / exchangeEvent 等。</p>",
+          "example": "keylock",
+          "member": "string",
+          "name": "Kind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>锁模式。常见值：X（排他）/ U（更新）/ S（共享）/ IX / IU / RangeS-U / RangeX-X 等。</p>",
+          "example": "IS",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联对象 ID（从 Attributes.associatedObjectId 抽出）。ObjectName 为空时可用于兜底定位对象。</p>",
+          "example": "72057594047234048",
+          "member": "string",
+          "name": "AssociatedObjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 引擎内的锁资源指针，例如 lock26054644a80。环内节点唯一标识，串联 Owners/Waiters。</p>",
+          "example": "lock1ce209a8680",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>锁资源对应的数据库对象名，格式 &#39;数据库.架构.表&#39;，例如 tempdb.dbo.dl_a。applicationlock 无此字段。</p>",
+          "example": "test_lock.dbo.dl_a",
+          "member": "string",
+          "name": "ObjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>持有该锁资源的进程列表（死锁环的持有边）。</p>",
+          "example": "无",
+          "member": "OwnerItem",
+          "name": "Owners",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeadlockSession": {
+      "document": "参与死锁的单个进程/会话。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SQL 归一化后的指纹（SHA-1 前 16 位）。去掉字面量、注释、参数名、空白差异后计算，抗字面量差异，用于聚合相同 SQL 模板。SqlText 为空时为 null。</p>",
+          "example": "b85b07494731332c",
+          "member": "string",
+          "name": "SqlFingerprint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 登录账号，用于权限归因。可判断是 SQLAgent、业务账号还是 DBA 账号。</p>",
+          "example": "test_g",
+          "member": "string",
+          "name": "LoginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话执行栈帧列表（xml 的 executionStack.frame），用于定位到存储过程内的具体语句区间。partial 事件为空数组。</p>",
+          "example": "无",
+          "member": "DeadlockFrame",
+          "name": "Frames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事务隔离级别，例如 &#39;read committed (2)&#39;、&#39;repeatable read (3)&#39;、&#39;serializable (4)&#39; 等。显著影响锁形态和死锁模式。</p>",
+          "example": "read committed (2)",
+          "member": "string",
+          "name": "IsolationLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程状态。常见值：suspended（挂起等锁）/ running / background。判断是否运行中被检测终止。</p>",
+          "example": "suspended",
+          "member": "string",
+          "name": "ProcessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端应用名（xml 的 clientapp）。判断连接来源，例如 SQLAgent Job、ORM、SSMS、业务服务名等。</p>",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "ClientApp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话的 DEADLOCK_PRIORITY 设置。-10 表示主动降级为牺牲者候选；10 表示优先级更高。可解释为何这一方成为牺牲品。</p>",
+          "example": "-10",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话当前活跃的数据库名（xml 的 currentdbname）。</p>",
+          "example": "test_lock",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本进程当前持有的锁资源描述列表（死锁环的持有边）。格式同 LockRequest 但结尾为 &#39;holding&#39;。partial 事件为空数组。</p>",
+          "example": "[\"keylock on test_lock.dbo.dl_b mode X holding\"]",
+          "member": "string",
+          "name": "LockHold",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话最近执行的 SQL 文本（xml 的 InputBuf）。是 AI 诊断的主输入与 SqlFingerprint 的来源。</p>",
+          "example": "UPDATE dbo.dl_a SET v=202 WHERE id=1",
+          "member": "string",
+          "name": "SqlText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端主机的 IP 地址（点分十进制，来自 message.ip）。判断是否来自同一台机器、批处理源。</p>",
+          "example": "10.22.16.14",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话当前活跃的数据库 ID（xml 的 currentdb）。</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "DatabaseId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本事务是否为牺牲事务。true 表示 SQL Server 已回滚该事务；false 表示正常提交；null 表示 XML 缺 VictimProcessIds 无法判定。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsVictim",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>等锁时长，单位毫秒。判断死锁检测延迟、事务超时的辅助指标。</p>",
+          "example": "9908",
+          "member": "int64",
+          "name": "WaitTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事务开始时间（xml 里的 lasttranstarted，本地时间字符串，如 2026-09-16T14:58:23.840）。用于分析长事务、锁持有时长。</p>",
+          "example": "2026-09-24T14:39:41.030",
+          "member": "string",
+          "name": "LastTransStarted",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该边对应进程的并行执行子线程 ID。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExecutionContextId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 引擎内的进程指针，例如 process260256c7468。与 Resources.Owners/Waiters.ProcessId 拼接死锁环。partial 事件为 null。</p>",
+          "example": "process1ce25b23438",
+          "member": "string",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>归一化后的客户端应用名。去掉 SQLAgent 的 JobId（16-64 位十六进制串）、Step 号、GUID、末尾进程号等易变部分，用于按应用类别聚合。</p>",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "ClientAppNormalized",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本进程正在等待的锁资源描述列表（死锁环的等待边）。每条形如 &#39;keylock on tempdb.dbo.dl_a mode X waiting&#39;。applicationlock 会展示原始资源名（如 &#39;lock_a&#39;）。partial 事件为空数组。</p>",
+          "example": "[\"keylock on test_lock.dbo.dl_a mode X waiting\"]",
+          "member": "string",
+          "name": "LockRequest",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 会话 ID。日志排查主键。</p>",
+          "example": "63",
+          "member": "int64",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeadlockTransaction": {
+      "document": "参与死锁的单个事务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>事务最终状态。Rollback（被回滚，对应 IsVictim=true）/ Normal（正常，对应 IsVictim=false）/ Unknown（无 victim 信息）。</p>",
+          "example": "Rollback",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 引擎内的事务 ID。同实例短期内唯一。与 Auxiliary 记录里的 transaction_id 对齐。</p>",
+          "example": "19914079",
+          "member": "string",
+          "name": "TransactionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本事务是否为牺牲事务。true 表示 SQL Server 已回滚该事务；false 表示正常提交；null 表示 XML 缺 VictimProcessIds 无法判定。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsVictim",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该事务下的进程/会话列表。并行计划下同一事务可能包含多个 worker（SessionId 相同 ExecutionContextId 不同）。</p>",
+          "example": "无",
+          "member": "DeadlockSession",
+          "name": "Sessions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DeleteAuditLogFileRequest": {
       "document": "DeleteAuditLogFile请求参数结构体",
       "members": [
@@ -4905,6 +5552,136 @@
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeadLockLogsRequest": {
+      "document": "DescribeDeadLockLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：sqlserver（云数据库 Sqlserver）。</p>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。SQLServer: mssql-xxxx。</p>",
+          "example": "mssql-15rso1sb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询开始时间，格式 yyyy-MM-dd HH:mm:ss，按 UTC+8 解析；也兼容带偏移的 ISO-8601（如 2026-09-16T00:00:00+08:00）。半开区间左闭。</p><p>参数格式：2026-09-16 00:00:00</p>",
+          "example": "2026-09-18 14:50:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，格式同 StartTime。EndTime 必须大于 StartTime，且总查询窗口不超过 24 小时。半开区间右开。</p><p>参数格式：2026-09-16 23:59:59</p>",
+          "example": "2026-09-18 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，非负整数，默认 0。当 Offset&gt;0 时必须同时传入 ResultVersion，否则报 INVALID_PARAMETER。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单页返回死锁事件数量，范围 [1, 100]。默认 20。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在响应中包含原始死锁图 XML（XmlReport）。默认 false，避免响应体过大。仅在需要绘制完整死锁环时置 true。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeXml",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集版本号，最大 128 字符。首次查询无需传入；翻页时必须透传首次响应中的 ResultVersion，服务端会校验结果集是否发生变化，变化时返回 RESULT_CHANGED 提示重新拉取首页。</p>",
+          "example": "0587b3cf0a28da7cdd93e6ecb1c1f5bc850805d6e506ccadc31b0f18ef144f81",
+          "member": "string",
+          "name": "ResultVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeadLockLogsResponse": {
+      "document": "DescribeDeadLockLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否还有更多分页。true 表示 Offset+Limit &lt; TotalCount，客户端可用 Offset+Limit 与本次 ResultVersion 继续翻页。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "HasMore",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前查询窗口内可用的死锁事件总数（去重、关联、时间窗口过滤后）。</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果集版本号（SHA-256 十六进制）。同一批数据在同一查询条件下保持不变；数据发生变化时版本变化。翻页必须透传。</p>",
+          "example": "8cc6fd1f70a2dfbdaa69b590f5daab353a98c959fb24a9d342df483b550ec796",
+          "member": "string",
+          "name": "ResultVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>死锁事件列表。按事件时间倒序排列（最近的死锁在前）。</p>",
+          "example": "无",
+          "member": "DeadLockLogItem",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -11280,6 +12057,52 @@
       ],
       "type": "object"
     },
+    "OwnerItem": {
+      "document": "持有该锁资源的进程列表（死锁环的持有边）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>锁模式。常见值：X（排他）/ U（更新）/ S（共享）/ IX / IU / RangeS-U / RangeX-X 等。</p>",
+          "example": "IS",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该边对应进程的并行执行子线程 ID。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExecutionContextId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 引擎内的进程指针，例如 process260256c7468。与 Resources.Owners/Waiters.ProcessId 拼接死锁环。partial 事件为 null。</p>",
+          "example": "process2b121309468",
+          "member": "string",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 会话 ID。日志排查主键。</p>",
+          "example": "140",
+          "member": "int64",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PostgresSpaceObjectItem": {
       "document": "PostgreSQL 产品空间对象项。字段语义与 MySQL 不同：使用 pg_relation_size / pg_total_relation_size 等 PG 特有指标。库级查询时不包含 TableSchema/TableName 字段；表级查询时包含全部字段。",
       "members": [
@@ -14396,6 +15219,62 @@
         }
       ],
       "type": "object"
+    },
+    "WaiterItem": {
+      "document": "等待该锁资源的进程列表（死锁环的等待边）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该边持有或申请的锁模式。</p>",
+          "example": "Sch-M",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>并行执行子线程 ID。0 表示主线程；大于 0 表示并行计划的 worker。SessionId + ExecutionContextId 组合可唯一区分并行执行下的 worker。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExecutionContextId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>进程内部指针，对应 Transactions[].Processes[].ProcessId。</p>",
+          "example": "process2b121302108",
+          "member": "string",
+          "name": "ProcessId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该边对应进程的 SPID，便于前端直接展示无需回查。</p>",
+          "example": "142",
+          "member": "int64",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 Waiters 边有值。常见值：wait（普通等待）/ convert（锁转换，如从 S 升级到 X）。owner 边无此字段。</p>",
+          "example": "wait",
+          "member": "string",
+          "name": "RequestType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

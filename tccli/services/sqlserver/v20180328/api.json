@@ -3834,6 +3834,16 @@
       "document": "CreateExportTask返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>下载文件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mssql-********_20260928-080244_to_20260928-110244_1790564580141.tar.gz",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -12791,6 +12801,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-28 08:02:44",
+          "member": "string",
+          "name": "LogStartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-28 11:02:44",
+          "member": "string",
+          "name": "LogEndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志过滤条件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{Compare: \"EQS\", Type: \"UserName\", Value: [\"root\"]}]",
+          "member": "string",
+          "name": "LogFilter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -13849,7 +13892,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Timestamp",
@@ -13860,7 +13903,7 @@
         },
         {
           "disabled": false,
-          "document": "错误类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误类别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "Category",
@@ -13871,7 +13914,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端应用程序名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>客户端应用程序名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ClientAppName",
@@ -13882,7 +13925,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端主机名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>客户端主机名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ClientHostName",
@@ -13893,7 +13936,7 @@
         },
         {
           "disabled": false,
-          "document": "CPU 时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>CPU 时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CpuTime",
@@ -13904,7 +13947,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "DatabaseId",
@@ -13915,7 +13958,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "DatabaseName",
@@ -13926,7 +13969,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Duration",
@@ -13937,7 +13980,7 @@
         },
         {
           "disabled": false,
-          "document": "错误编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误编号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ErrorNumber",
@@ -13948,7 +13991,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被拦截\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否被拦截</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "IsIntercepted",
@@ -13959,7 +14002,7 @@
         },
         {
           "disabled": false,
-          "document": "最后行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最后行计数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "LastRowCount",
@@ -13970,7 +14013,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>逻辑读取</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "LogicalReads",
@@ -13981,7 +14024,7 @@
         },
         {
           "disabled": false,
-          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>消息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "Message",
@@ -13992,7 +14035,7 @@
         },
         {
           "disabled": false,
-          "document": "对象 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对象 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ObjectId",
@@ -14003,7 +14046,7 @@
         },
         {
           "disabled": false,
-          "document": "对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对象名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ObjectName",
@@ -14014,7 +14057,7 @@
         },
         {
           "disabled": false,
-          "document": "对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>对象类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ObjectType",
@@ -14025,7 +14068,7 @@
         },
         {
           "disabled": false,
-          "document": "输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输出参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "OutputParameters",
@@ -14036,7 +14079,7 @@
         },
         {
           "disabled": false,
-          "document": "参数化计划句柄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>参数化计划句柄</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ParameterizedPlanHandle",
@@ -14047,7 +14090,7 @@
         },
         {
           "disabled": false,
-          "document": "物理读取\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>物理读取</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "PhysicalReads",
@@ -14058,7 +14101,7 @@
         },
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "Result",
@@ -14069,7 +14112,7 @@
         },
         {
           "disabled": false,
-          "document": "行计数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>行计数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RowCount",
@@ -14080,7 +14123,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>服务器主体名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "ServerPrincipalName",
@@ -14091,7 +14134,7 @@
         },
         {
           "disabled": false,
-          "document": "会话服务器主体名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>会话服务器主体名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "SessionServerPrincipalName",
@@ -14102,7 +14145,7 @@
         },
         {
           "disabled": false,
-          "document": "严重性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>严重性</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Severity",
@@ -14113,7 +14156,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据库 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>源数据库 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SourceDatabaseId",
@@ -14124,7 +14167,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL 文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>SQL 文本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "SqlText",
@@ -14135,7 +14178,7 @@
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "State",
@@ -14146,7 +14189,7 @@
         },
         {
           "disabled": false,
-          "document": "语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>语句</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "Statement",
@@ -14157,7 +14200,7 @@
         },
         {
           "disabled": false,
-          "document": "系统线程 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>系统线程 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SystemThreadId",
@@ -14168,7 +14211,7 @@
         },
         {
           "disabled": false,
-          "document": "事务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>事务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TransactionId",
@@ -14179,7 +14222,7 @@
         },
         {
           "disabled": false,
-          "document": "用户定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户定义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "UserDefined",
@@ -14190,7 +14233,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "UserName",
@@ -14201,7 +14244,7 @@
         },
         {
           "disabled": false,
-          "document": "写入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>写入</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Writes",
@@ -14212,10 +14255,21 @@
         },
         {
           "disabled": false,
-          "document": "目标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>目标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\" \"",
           "member": "string",
           "name": "Destination",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LOGIN",
+          "member": "string",
+          "name": "EventName",
           "output_required": false,
           "required": false,
           "type": "string",

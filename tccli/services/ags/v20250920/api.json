@@ -2038,7 +2038,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>镜像地址</p>",
+          "document": "<p>镜像地址。仅支持 repository:tag、repository@sha256:&lt;64 位摘要&gt; 或 repository:tag@sha256:&lt;64 位摘要&gt;。</p>",
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
@@ -2087,6 +2087,16 @@
           "member": "string",
           "name": "ImageRegistryType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热ID</p>",
+          "example": "pcimg-00001",
+          "member": "string",
+          "name": "PreCacheImageId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3511,16 +3521,7 @@
           "example": "nginx:latest",
           "member": "string",
           "name": "Image",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>镜像 Digest</p>",
-          "example": "sha256:abcdefg123...",
-          "member": "string",
-          "name": "ImageDigest",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -3529,7 +3530,25 @@
           "example": "enterprise",
           "member": "string",
           "name": "ImageRegistryType",
-          "required": true,
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像 Digest</p>",
+          "example": "sha256:abcdefg123...",
+          "member": "string",
+          "name": "ImageDigest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热ID，只能ID或三元组（Image、ImageDigest、ImageRegistrytype）二选一查询</p>",
+          "example": "pcimg-00001",
+          "member": "string",
+          "name": "PreCacheImageId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -3585,6 +3604,56 @@
           "member": "string",
           "name": "Message",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热创建时间</p>",
+          "example": "2026-09-11T16:41:57+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热ID</p>",
+          "example": "pcimg-00001",
+          "member": "string",
+          "name": "PreCacheImageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热资源的来源类型，取值为 EXPLICIT、AUTO</p><p>枚举值：</p><ul><li>EXPLICIT： 手动创建</li><li>AUTO： 自动创建</li><li>TCR_AUTO： TCR自动预热</li></ul>",
+          "example": "EXPLICIT",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热存储大小</p><p>单位：Byte</p>",
+          "example": "3523604480",
+          "member": "int64",
+          "name": "CachedImageSizeBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该预热镜像最近一次被沙箱实例使用时间</p>",
+          "example": "2026-09-11T18:04:36+08:00",
+          "member": "string",
+          "name": "LastUsedTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

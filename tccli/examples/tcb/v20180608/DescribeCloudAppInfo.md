@@ -20,7 +20,8 @@ Output:
         "LatestStatus": "******",
         "LatestVersionName": "html-002",
         "ServiceName": "html",
-        "RequestId": "1a868e16-5f2f-4a34-82d8-eb477dcaede3"
+        "RequestId": "1a868e16-5f2f-4a34-82d8-eb477dcaede3",
+        "PreviewDomain": "mycloudapp2-***********************************************************"
     }
 }
 ```

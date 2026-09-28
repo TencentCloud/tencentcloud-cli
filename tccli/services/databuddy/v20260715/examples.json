@@ -24,12 +24,28 @@
         "title": "创建文件示例"
       }
     ],
+    "CreateFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFolder\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17799542221324491\",\n    \"FolderName\": \"folder1\",\n    \"FolderType\": \"FOLDER\",\n    \"ParentFolder\": {\n        \"FolderId\": \"847862709978656768\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FolderId\": \"872499382026919936\"\n        },\n        \"RequestId\": \"6f839388-9463-4f58-976c-3c39162505e9\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateWorkflow": [
       {
         "document": "创建携带python任务的工作流",
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkflow\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"BaseInfo\": {\n        \"WorkflowName\": \"*n**g*****n*pr**\"\n    },\n    \"AdvanceConfig\": {\n        \"QueuingMode\": \"OFF\",\n        \"MaxConcurrentNum\": 1\n    },\n    \"TaskList\": [\n        {\n            \"ParamList\": [],\n            \"DependOnList\": [],\n            \"TaskName\": \"py_0807\",\n            \"TaskType\": {\n                \"TaskTypeName\": \"PYTHON\",\n                \"TaskTypePropertyList\": [\n                    {\n                        \"PropertyKey\": \"Source\",\n                        \"PropertyValue\": \"5\"\n                    }\n                ],\n                \"RuntimePropertyList\": [\n                    {\n                        \"PropertyKey\": \"ResourceMode\",\n                        \"PropertyValue\": \"1\"\n                    }\n                ]\n            },\n            \"ResourceGroupId\": \"res-ea***8f8\",\n            \"TaskRetryStrategy\": {},\n            \"DependOnRunCondition\": \"ALL_SUCCESS\",\n            \"LeftCoordinate\": 50,\n            \"TopCoordinate\": 50\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkflowId\": \"9a1670f3-14df-4869-9f38-ec31a4c4aac9\"\n        },\n        \"RequestId\": \"81772cad-5e71-4a7c-b063-a7b5db0d929a\"\n    }\n}",
         "title": "创建携带python任务的工作流"
+      }
+    ],
+    "CreateWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceName\": \"testleo\",\n    \"WorkspaceRegion\": \"ap-guangzhou\",\n    \"Description\": \"这是描述信息\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkspaceId\": \"17851552324107340\"\n        },\n        \"RequestId\": \"03a6cbd4-5a5f-4f8f-ba67-48fc06279fdd\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteConsoleGroups": [
@@ -48,6 +64,14 @@
         "title": "删除文件示例"
       }
     ],
+    "DeleteFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFolder\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17799542221324491\",\n    \"Folder\": {\n        \"FolderId\": \"872499382026919936\"\n    },\n    \"ForceDelete\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"c1ef31bb-bf47-472b-9eef-5f632570c610\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DeleteWorkflow": [
       {
         "document": "",
@@ -56,12 +80,28 @@
         "title": "删除工作流"
       }
     ],
+    "DeleteWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17851552324107340\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"bd298f03-0cd9-4ebc-a3a6-ac7d5c7a8ccd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "GetFile": [
       {
         "document": "查询文件元信息与内容",
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFile\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17676920188276733\",\n    \"FileId\": \"837014075591299072\",\n    \"FileType\": \"NOTEBOOK_FILE\",\n    \"IncludeContent\": false,\n    \"VersionId\": \"872595707510808576\",\n    \"FilePath\": \"/Workspace/Users/xingyundong@700002355291/abc.ipynb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AppId\": \"251436191\",\n            \"BundleId\": \"\",\n            \"BundleInfo\": \"\",\n            \"CreateTime\": \"1777367707\",\n            \"CreateUserUin\": \"700002164618\",\n            \"FileConfig\": {\n                \"AdvanceConfig\": \"\",\n                \"DefaultCatalog\": \"\",\n                \"DefaultSchema\": \"\",\n                \"ExtraParams\": \"\",\n                \"OutputConf\": [],\n                \"Params\": \"eyJtbGZsb3dfcHJlX2V4ZWN1dGVfY29zX3BhdGgiOiIifQ==\",\n                \"ResourceId\": \"\"\n            },\n            \"FileId\": \"837014075591299072\",\n            \"FileName\": \"abc.ipynb\",\n            \"FileType\": \"NOTEBOOK_FILE\",\n            \"OwnerUserName\": \"wedata30-dev@tencent.com\",\n            \"Path\": \"/Workspace/Users/xingyundong@700002355291/abc.ipynb\",\n            \"Permissions\": \"[MANAGE]\",\n            \"ReleaseStatus\": false,\n            \"ResourceMode\": 1,\n            \"Status\": \"active\",\n            \"Storage\": {\n                \"Content\": \"\",\n                \"StoragePath\": \"\",\n                \"StorageType\": 0\n            },\n            \"UpdateTime\": \"1785851029\",\n            \"UpdateUserUin\": \"700002164618\",\n            \"WorkspaceId\": \"17676920188276733\"\n        },\n        \"RequestId\": \"30507de5-777a-48b0-ab08-c86597439dd5\"\n    }\n}",
         "title": "获取文件信息示例"
+      }
+    ],
+    "GetFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFolder\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17799542221324491\",\n    \"Folder\": {\n        \"FolderId\": \"847862709978656768\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Folder\": {\n                \"Creator\": {\n                    \"Nickname\": \"\",\n                    \"UserName\": \"\",\n                    \"UserTag\": \"\",\n                    \"UserUin\": \"700002164618\"\n                },\n                \"DeleteTime\": \"\",\n                \"GitConfig\": null,\n                \"Node\": {\n                    \"AllowActions\": [\n                        \"MANAGE\"\n                    ],\n                    \"CreateTime\": \"1779954223000\",\n                    \"FileId\": \"847862709978656768\",\n                    \"FileName\": \"wedata30-dev@tencent.com@700002164618\",\n                    \"FileType\": \"FOLDER\",\n                    \"IsFavorite\": false,\n                    \"IsSystemGenerated\": true,\n                    \"PathName\": \"/Workspace/Users/wedata30-dev@tencent.com@700002164618\",\n                    \"UpdateTime\": \"1779954223000\"\n                },\n                \"NodeType\": \"\",\n                \"OriginPath\": \"\",\n                \"Owner\": {\n                    \"Nickname\": \"\",\n                    \"UserName\": \"\",\n                    \"UserTag\": \"\",\n                    \"UserUin\": \"700002164618\"\n                },\n                \"Parent\": {\n                    \"AllowActions\": [],\n                    \"CreateTime\": \"\",\n                    \"FileId\": \"847862709680861184\",\n                    \"FileName\": \"\",\n                    \"FileType\": \"\",\n                    \"IsFavorite\": false,\n                    \"IsSystemGenerated\": false,\n                    \"PathName\": \"\",\n                    \"UpdateTime\": \"\"\n                }\n            }\n        },\n        \"RequestId\": \"4a6bf4b4-449b-493e-8e8a-8b39c6a5c889\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "GetWorkflow": [
@@ -86,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkflowTaskRun\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"WorkflowTaskRunId\": \"f2d5ffc0-af32-4584-a315-b106637f1bfe_1786115878097_1\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": \"1786115878247\",\n            \"CreateUserUin\": \"700002164618\",\n            \"DependOnList\": [],\n            \"DependenceFinishedTime\": \"0\",\n            \"ErrorCodeString\": \"\",\n            \"IsLatestRun\": true,\n            \"JobId\": \"\",\n            \"LeftCoordinate\": 0,\n            \"RerunTimes\": 0,\n            \"ResourceGroupId\": \"\",\n            \"ResourceGroupInfoList\": [],\n            \"RetryTimes\": 0,\n            \"RunCostTime\": \"0\",\n            \"RunParams\": \"\",\n            \"RunResult\": \"\",\n            \"RunState\": \"CREATE\",\n            \"RunUserName\": \"weda***0*d*v*********c**\",\n            \"RunUserUin\": \"700002164618\",\n            \"TaskId\": \"f2d5ffc0-af32-4584-a315-b106637f1bfe\",\n            \"TaskName\": \"py_0807\",\n            \"TaskTypeExtensions\": \"{\\\"TaskTypeName\\\":\\\"PYTHON\\\",\\\"Notebook\\\":null,\\\"TaskTypePropertyList\\\":[{\\\"PropertyKey\\\":\\\"Source\\\",\\\"PropertyValue\\\":\\\"5\\\"},{\\\"PropertyKey\\\":\\\"SourcePath\\\",\\\"PropertyValue\\\":\\\"/Workspace/test.py\\\"}],\\\"RuntimePropertyList\\\":[{\\\"PropertyKey\\\":\\\"ConfigType\\\",\\\"PropertyValue\\\":\\\"DEFAULT\\\"},{\\\"PropertyKey\\\":\\\"DriverCU\\\",\\\"PropertyValue\\\":\\\"large\\\"},{\\\"PropertyKey\\\":\\\"DriverGPU\\\",\\\"PropertyValue\\\":\\\"\\\"},{\\\"PropertyKey\\\":\\\"ExecutorAllocation\\\",\\\"PropertyValue\\\":\\\"DYNAMIC\\\"},{\\\"PropertyKey\\\":\\\"ExecutorCU\\\",\\\"PropertyValue\\\":\\\"large\\\"},{\\\"PropertyKey\\\":\\\"ExecutorFixedNum\\\",\\\"PropertyValue\\\":\\\"1\\\"},{\\\"PropertyKey\\\":\\\"ExecutorGPU\\\",\\\"PropertyValue\\\":\\\"\\\"},{\\\"PropertyKey\\\":\\\"ExecutorMaxNum\\\",\\\"PropertyValue\\\":\\\"15\\\"},{\\\"PropertyKey\\\":\\\"ExecutorMinNum\\\",\\\"PropertyValue\\\":\\\"1\\\"},{\\\"PropertyKey\\\":\\\"ResourceMode\\\",\\\"PropertyValue\\\":\\\"1\\\"},{\\\"PropertyKey\\\":\\\"Style\\\",\\\"PropertyValue\\\":\\\"UI\\\"}]}\",\n            \"TaskTypeName\": \"PYTHON\",\n            \"TaskVersionId\": \"2cf47642-f9b8-4b93-a6fa-31a03810c423\",\n            \"TimeZone\": \"\",\n            \"TopCoordinate\": 0,\n            \"TriggerType\": \"\",\n            \"UpdateTime\": \"1786115878236\",\n            \"WaitTime\": \"1645528\",\n            \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1\",\n            \"WorkflowName\": \"new_workflow_20260807_190451\",\n            \"WorkflowRunId\": \"8e0e3485-2736-4530-92ed-932e019898f1_1786115878097\",\n            \"WorkflowTaskRunId\": \"f2d5ffc0-af32-4584-a315-b106637f1bfe_1786115878097_1\",\n            \"WorkspaceId\": \"17697410068842890\"\n        },\n        \"RequestId\": \"f3a6c04b-fe86-48b3-bdb5-8bd4523a7698\"\n    }\n}",
         "title": "查询任务运行详情"
+      }
+    ],
+    "GetWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17851563773633788\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkspaceInfo\": {\n                \"CreateTime\": \"1785156377363\",\n                \"Creator\": {\n                    \"Nickname\": \"wedata30-dev@tencent.com\",\n                    \"UserName\": \"wedata30-dev@tencent.com\",\n                    \"UserTag\": \"\",\n                    \"UserUin\": \"700002164618\"\n                },\n                \"Description\": \"fdsfsd\",\n                \"ErrorReason\": \"\",\n                \"HasAccess\": true,\n                \"Status\": 3,\n                \"UpdateTime\": \"1785156451495\",\n                \"WorkspaceId\": \"17851563773633788\",\n                \"WorkspaceName\": \"hehefdf\",\n                \"WorkspaceRegion\": \"ap-guangzhou\"\n            }\n        },\n        \"RequestId\": \"a1d0fd0e-73e8-4fd1-8e43-196679d12a4b\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "KillWorkflowRun": [
@@ -138,6 +186,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListConsoleUsers\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 11,\n    \"UserKeyword\": \"junzha2\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CreateTime\": \"1784861927\",\n                    \"IsAdmin\": false,\n                    \"IsOwner\": false,\n                    \"Nickname\": \"junzha2\",\n                    \"Roles\": [\n                        {\n                            \"Description\": \"对控制台功能仅有只读权限\",\n                            \"DisplayName\": \"控制台成员\",\n                            \"Id\": \"2002\",\n                            \"Name\": \"Console Member\",\n                            \"RoleType\": \"console\"\n                        }\n                    ],\n                    \"UpdateTime\": \"1784861927\",\n                    \"UserName\": \"junzha2\",\n                    \"UserSource\": \"\",\n                    \"UserTag\": 0,\n                    \"UserUin\": \"700002692363\"\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 11,\n            \"TotalCount\": 1,\n            \"TotalPageNumber\": 1\n        },\n        \"RequestId\": \"47e28ab5-3d75-41d9-8c82-2f5761960dd1\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ListFiles": [
+      {
+        "document": "获取文件夹和文件列表",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFiles\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697****0**47629\",\n    \"Parent\": {\n        \"FolderId\": \"86553********46400\"\n    },\n    \"NameKeyword\": \"071*****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Creator\": {\n                        \"Nickname\": \"we***a*************t.com\",\n                        \"UserName\": \"weda**3**********ent.com\",\n                        \"UserTag\": \"0\",\n                        \"UserUin\": \"70*******618\"\n                    },\n                    \"DeleteTime\": \"\",\n                    \"GitConfig\": null,\n                    \"Node\": {\n                        \"AllowActions\": [\n                            \"MANAGE\"\n                        ],\n                        \"CreateTime\": \"1784168588000\",\n                        \"FileId\": \"865539****5***5136\",\n                        \"FileName\": \"07161023.ipynb\",\n                        \"FileType\": \"NOTEBOOK_FILE\",\n                        \"IsFavorite\": false,\n                        \"IsSystemGenerated\": false,\n                        \"PathName\": \"/Workspace/Users/weda********@tenc***************64618/0716/07161023.ipynb\",\n                        \"UpdateTime\": \"1784168790000\"\n                    },\n                    \"NodeType\": \"\",\n                    \"OriginPath\": \"\",\n                    \"Owner\": {\n                        \"Nickname\": \"\",\n                        \"UserName\": \"\",\n                        \"UserTag\": \"\",\n                        \"UserUin\": \"700*******18\"\n                    },\n                    \"Parent\": {\n                        \"AllowActions\": [],\n                        \"CreateTime\": \"\",\n                        \"FileId\": \"86553*********6400\",\n                        \"FileName\": \"\",\n                        \"FileType\": \"\",\n                        \"IsFavorite\": false,\n                        \"IsSystemGenerated\": false,\n                        \"PathName\": \"\",\n                        \"UpdateTime\": \"\"\n                    }\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"TotalCount\": 1,\n            \"TotalPageNumber\": 1\n        },\n        \"RequestId\": \"6decf098-7409-4899-8018-a563aa53fa73\"\n    }\n}",
+        "title": "ListFiles"
       }
     ],
     "ListWorkflowRuns": [
@@ -226,6 +282,14 @@
         "title": "更新文件元信息与内容示例"
       }
     ],
+    "UpdateFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFolder\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17799542221324491\",\n    \"Folder\": {\n        \"FolderId\": \"872499382026919936\"\n    },\n    \"OperationType\": \"1\",\n    \"FolderName\": \"new-folder\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"ed726c83-df5e-401f-948a-47b25831b463\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "UpdateWorkflow": [
       {
         "document": "修改工作流Git信息",
@@ -238,6 +302,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkflow\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1\",\n    \"NewSetting\": {\n        \"TaskList\": [\n            {\n                \"ParamList\": [],\n                \"DependOnList\": [],\n                \"TaskName\": \"py_0807\",\n                \"TaskType\": {\n                    \"TaskTypeName\": \"PYTHON\",\n                    \"TaskTypePropertyList\": [\n                        {\n                            \"PropertyKey\": \"Source\",\n                            \"PropertyValue\": \"5\"\n                        }\n                    ],\n                    \"RuntimePropertyList\": [\n                        {\n                            \"PropertyKey\": \"ResourceMode\",\n                            \"PropertyValue\": \"1\"\n                        }\n                    ]\n                },\n                \"ResourceGroupId\": \"res******8f8\",\n                \"TaskRetryStrategy\": {},\n                \"DependOnRunCondition\": \"ALL_SUCCESS\",\n                \"LeftCoordinate\": 50,\n                \"TopCoordinate\": 50\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"516da81c-51c7-4f90-9cad-8545fb200113\"\n    }\n}",
         "title": "更新工作流"
+      }
+    ],
+    "UpdateWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17851563773633788\",\n    \"WorkspaceName\": \"hehefdf\",\n    \"Description\": \"fdsfsd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"20a53860-e428-4ac1-a530-19a8a24b4379\"\n    }\n}",
+        "title": "示例"
       }
     ]
   },

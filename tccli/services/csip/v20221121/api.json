@@ -98028,6 +98028,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "ProjectIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -113644,7 +113655,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产范围类型（对齐 NotifyAssetRange）\n枚举值：\n1：全部主机（可剔除）\n2：自选主机\n3：按标签选择",
+          "document": "<p>资产范围类型（对齐 NotifyAssetRange）<br>枚举值：<br>1：全部主机（可剔除）<br>2：自选主机<br>3：按标签选择</p>",
           "example": "1",
           "member": "int64",
           "name": "AssetRange",
@@ -113655,8 +113666,8 @@
         },
         {
           "disabled": false,
-          "document": "选中的主机 quuid 列表，仅 AssetRange=2 生效",
-          "example": "[]",
+          "document": "<p>选中的主机 quuid 列表，仅 AssetRange=2 生效</p>",
+          "example": "[\"host:ins-4mtuwx47\"]",
           "member": "string",
           "name": "InstanceIds",
           "output_required": false,
@@ -113666,7 +113677,7 @@
         },
         {
           "disabled": false,
-          "document": "排除的主机 quuid 列表，仅 AssetRange=1 生效",
+          "document": "<p>排除的主机 quuid 列表，仅 AssetRange=1 生效</p>",
           "example": "[\"ins-a1b2c3d4\"]",
           "member": "string",
           "name": "ExcludedInstanceIds",
@@ -113677,8 +113688,8 @@
         },
         {
           "disabled": false,
-          "document": "安全中心标签 ID 列表，仅 AssetRange=3 生效",
-          "example": "[]",
+          "document": "<p>安全中心标签 ID 列表，仅 AssetRange=3 生效</p>",
+          "example": "[252]",
           "member": "int64",
           "name": "TagIds",
           "output_required": false,
@@ -113688,10 +113699,21 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云标签列表，仅 AssetRange=3 生效\n入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空",
-          "example": "[]",
+          "document": "<p>腾讯云标签列表，仅 AssetRange=3 生效<br>入参限制：AssetRange=3 时 TagIds + CloudTags 不能同时为空</p>",
+          "example": "[\"tke-clusterId$cls-jjqp****\"]",
           "member": "string",
           "name": "CloudTags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "[0]",
+          "member": "uint64",
+          "name": "ProjectIds",
           "output_required": false,
           "required": false,
           "type": "list",

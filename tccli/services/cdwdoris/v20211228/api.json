@@ -2382,7 +2382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "<p>可用区</p>",
           "example": "ap-guangzhou-5",
           "member": "string",
           "name": "Zone",
@@ -2391,8 +2391,8 @@
         },
         {
           "disabled": false,
-          "document": "FE规格",
-          "example": "S_4_16_H",
+          "document": "<p>FE规格</p>",
+          "example": "无",
           "member": "CreateInstanceSpec",
           "name": "FeSpec",
           "required": true,
@@ -2400,8 +2400,8 @@
         },
         {
           "disabled": false,
-          "document": "BE规格",
-          "example": "S_4_16_H",
+          "document": "<p>BE规格</p>",
+          "example": "无",
           "member": "CreateInstanceSpec",
           "name": "BeSpec",
           "required": true,
@@ -2409,7 +2409,7 @@
         },
         {
           "disabled": false,
-          "document": "是否高可用",
+          "document": "<p>是否高可用</p>",
           "example": "true",
           "member": "bool",
           "name": "HaFlag",
@@ -2418,7 +2418,7 @@
         },
         {
           "disabled": false,
-          "document": "用户VPCID",
+          "document": "<p>用户VPCID</p>",
           "example": "vpc-xadsfx",
           "member": "string",
           "name": "UserVPCId",
@@ -2427,7 +2427,7 @@
         },
         {
           "disabled": false,
-          "document": "用户子网ID",
+          "document": "<p>用户子网ID</p>",
           "example": "subnet-xasdf3",
           "member": "string",
           "name": "UserSubnetId",
@@ -2436,7 +2436,7 @@
         },
         {
           "disabled": false,
-          "document": "产品版本号",
+          "document": "<p>产品版本号</p>",
           "example": "2.1",
           "member": "string",
           "name": "ProductVersion",
@@ -2445,8 +2445,8 @@
         },
         {
           "disabled": false,
-          "document": "付费类型",
-          "example": "chargeProperties",
+          "document": "<p>付费类型</p>",
+          "example": "无",
           "member": "ChargeProperties",
           "name": "ChargeProperties",
           "required": true,
@@ -2454,7 +2454,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名字",
+          "document": "<p>实例名字</p>",
           "example": "prod_doris",
           "member": "string",
           "name": "InstanceName",
@@ -2463,7 +2463,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库密码",
+          "document": "<p>数据库密码</p>",
           "example": "xafd#sfs31",
           "member": "string",
           "name": "DorisUserPwd",
@@ -2472,8 +2472,8 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
-          "example": "tags",
+          "document": "<p>标签列表</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -2481,7 +2481,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用类型：\n0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），\n1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count>=3，且为奇数），\n2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count>=5，且为奇数）。",
+          "document": "<p>高可用类型：<br>0：非高可用（只有1个FE，FeSpec.CreateInstanceSpec.Count=1），<br>1：读高可用（至少需部署3个FE，FeSpec.CreateInstanceSpec.Count&gt;=3，且为奇数），<br>2：读写高可用（至少需部署5个FE，FeSpec.CreateInstanceSpec.Count&gt;=5，且为奇数）。</p>",
           "example": "0",
           "member": "int64",
           "name": "HaType",
@@ -2490,7 +2490,7 @@
         },
         {
           "disabled": false,
-          "document": "表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储",
+          "document": "<p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>",
           "example": "2",
           "member": "int64",
           "name": "CaseSensitive",
@@ -2499,7 +2499,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启多可用区",
+          "document": "<p>是否开启多可用区</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableMultiZones",
@@ -2508,8 +2508,8 @@
         },
         {
           "disabled": true,
-          "document": "开启多可用区后，用户的所有可用区和子网信息",
-          "example": "networkInfo",
+          "document": "<p>开启多可用区后，用户的所有可用区和子网信息</p>",
+          "example": "无",
           "member": "NetworkInfo",
           "name": "UserMultiZoneInfos",
           "required": false,
@@ -2517,8 +2517,8 @@
         },
         {
           "disabled": false,
-          "document": "开启多可用区后，用户的所有可用区和子网信息",
-          "example": "networkInfo",
+          "document": "<p>开启多可用区后，用户的所有可用区和子网信息</p>",
+          "example": "无",
           "member": "NetworkInfo",
           "name": "UserMultiZoneInfoArr",
           "required": false,
@@ -2526,7 +2526,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存算分离",
+          "document": "<p>是否存算分离</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSSC",
@@ -2535,7 +2535,7 @@
         },
         {
           "disabled": false,
-          "document": "CU数",
+          "document": "<p>CU数</p>",
           "example": "64",
           "member": "int64",
           "name": "SSCCU",
@@ -2544,7 +2544,7 @@
         },
         {
           "disabled": true,
-          "document": "缓存盘大小",
+          "document": "<p>缓存盘大小</p>",
           "example": "200",
           "member": "string",
           "name": "CacheDiskSize",
@@ -2553,10 +2553,19 @@
         },
         {
           "disabled": false,
-          "document": "缓存盘大小",
+          "document": "<p>缓存盘大小</p>",
           "example": "200",
           "member": "int64",
           "name": "CacheDataDiskSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘加密</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DiskEncrypt",
           "required": false,
           "type": "int"
         }
@@ -2568,7 +2577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程ID",
+          "document": "<p>流程ID</p>",
           "example": "25691",
           "member": "string",
           "name": "FlowId",
@@ -2578,7 +2587,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdwdoris-xadf451",
           "member": "string",
           "name": "InstanceId",
@@ -2588,7 +2597,7 @@
         },
         {
           "disabled": false,
-          "document": "错误信息",
+          "document": "<p>错误信息</p>",
           "example": "error",
           "member": "string",
           "name": "ErrorMsg",

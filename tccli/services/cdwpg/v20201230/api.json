@@ -243,13 +243,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "盘类型",
-          "example": "CLOUD_SSD",
-          "member": "string",
-          "name": "DiskType",
+          "document": "个数",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskCount",
           "output_required": false,
           "required": true,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -265,13 +265,13 @@
         },
         {
           "disabled": false,
-          "document": "个数",
-          "example": "10",
-          "member": "int64",
-          "name": "DiskCount",
+          "document": "盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
           "output_required": false,
           "required": true,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -321,13 +321,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "节点类型",
-          "example": "cn/dn",
-          "member": "string",
-          "name": "Type",
+          "document": "节点个数",
+          "example": "2",
+          "member": "int64",
+          "name": "Count",
           "output_required": true,
           "required": true,
-          "type": "string",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘信息",
+          "example": "无",
+          "member": "CBSSpec",
+          "name": "DiskSpec",
+          "output_required": true,
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -343,24 +354,13 @@
         },
         {
           "disabled": false,
-          "document": "节点个数",
-          "example": "2",
-          "member": "int64",
-          "name": "Count",
+          "document": "节点类型",
+          "example": "cn/dn",
+          "member": "string",
+          "name": "Type",
           "output_required": true,
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "磁盘信息",
-          "example": "{\"DiskType\":\"CLOUD_HSSD\",\"DiskSize\":400,\"DiskCount\":1}",
-          "member": "CBSSpec",
-          "name": "DiskSpec",
-          "output_required": true,
-          "required": true,
-          "type": "object",
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -404,17 +404,6 @@
         },
         {
           "disabled": false,
-          "document": "计费类型0-按量计费，1-包年包月",
-          "example": "0",
-          "member": "int64",
-          "name": "PayMode",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "PREPAID、POSTPAID_BY_HOUR",
           "example": "PREPAID",
           "member": "string",
@@ -422,6 +411,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费类型0-按量计费，1-包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1236,12 +1236,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例名称",
+          "document": "<p>集群实例名称</p>",
           "example": "cdwpg-cdsxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群实例名称列表（批量查询，优先于 InstanceId；上限100，超出截断）</p>",
+          "example": "[\"cdwpg-********\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1251,77 +1260,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群状态，例如：Serving",
-          "example": "Serving",
-          "member": "string",
-          "name": "InstanceState",
-          "output_required": true,
-          "type": "string",
+          "document": "<p>集群备份任务开启状态2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupOpenStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群操作创建时间",
-          "example": "2023-04-10 15:30:00",
-          "member": "string",
-          "name": "FlowCreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群操作名称",
-          "example": "create",
-          "member": "string",
-          "name": "FlowName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群操作进度",
-          "example": "75",
-          "member": "float",
-          "name": "FlowProgress",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群状态描述，例如：运行中",
-          "example": "运行中",
-          "member": "string",
-          "name": "InstanceStateDesc",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群流程错误信息，例如：“创建失败，资源不足”",
-          "example": "Error:...",
-          "member": "string",
-          "name": "FlowMsg",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当前步骤的名称，例如：”购买资源中“",
-          "example": "create",
-          "member": "string",
-          "name": "ProcessName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "集群备份任务开启状态",
+          "document": "<p>集群备份任务开启状态</p>",
           "example": "0",
           "member": "int64",
           "name": "BackupStatus",
@@ -1331,12 +1280,82 @@
         },
         {
           "disabled": false,
-          "document": "集群备份任务开启状态2",
-          "example": "0",
-          "member": "int64",
-          "name": "BackupOpenStatus",
+          "document": "<p>集群操作创建时间</p>",
+          "example": "2023-04-10 15:30:00",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群流程错误信息，例如：“创建失败，资源不足”</p>",
+          "example": "Error:...",
+          "member": "string",
+          "name": "FlowMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作名称</p>",
+          "example": "create",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作进度</p>",
+          "example": "75",
+          "member": "float",
+          "name": "FlowProgress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群状态，例如：Serving</p>",
+          "example": "Serving",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群状态描述，例如：运行中</p>",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前步骤的名称，例如：”购买资源中“</p>",
+          "example": "create",
+          "member": "string",
+          "name": "ProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>",
+          "example": "无",
+          "member": "InstanceStateItem",
+          "name": "InstanceStates",
           "output_required": false,
-          "type": "int",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2906,6 +2925,112 @@
       ],
       "usage": "out"
     },
+    "InstanceStateItem": {
+      "document": "批量实例状态项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群实例名称</p>",
+          "example": "cdwpg-cdsxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群状态，例如：Serving</p>",
+          "example": "Serving",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群状态描述，例如：运行中</p>",
+          "example": "运行中",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群备份任务开启状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群备份任务开启状态2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupOpenStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作创建时间</p>",
+          "example": "2026-09-17 14:20:54",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作名称</p>",
+          "example": "回档创建",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作进度</p>",
+          "example": "0",
+          "member": "float",
+          "name": "FlowProgress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群流程错误信息</p>",
+          "example": "快照数据恢复失败: not finished within 24h0m0s, previous status: mounting",
+          "member": "string",
+          "name": "FlowMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前步骤的名称</p>",
+          "example": "销毁",
+          "member": "string",
+          "name": "ProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyDBParametersRequest": {
       "document": "ModifyDBParameters请求参数结构体",
       "members": [
@@ -4047,6 +4172,7 @@
           "example": "标签一",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4057,6 +4183,7 @@
           "example": "内容一",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

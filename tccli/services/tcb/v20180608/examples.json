@@ -125,7 +125,7 @@
     "CreateCloudApp": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"my-vue-app-01\",\n    \"DeployType\": \"custom\",\n    \"Source\": {\n        \"Type\": \"git\",\n        \"Repo\": \"https://gi**u*********************-**********.git\",\n        \"Ref\": \"master\",\n        \"Channel\": \"github\"\n    },\n    \"CustomSteps\": [\n        {\n            \"Name\": \"ls\",\n            \"Command\": \"node -v\"\n        }\n    ],\n    \"NodeJsVersion\": \"22\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudApp\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"my-vue-app-01\",\n    \"DeployType\": \"custom\",\n    \"Source\": {\n        \"Type\": \"git\",\n        \"Repo\": \"https://gi**u*********************-**********.git\",\n        \"Ref\": \"master\",\n        \"Channel\": \"github\"\n    },\n    \"CustomSteps\": [\n        {\n            \"Name\": \"ls\",\n            \"Command\": \"node -v\"\n        }\n    ],\n    \"NodeJsVersion\": \"22\",\n    \"PostDeployCommand\": \"cat /root/*******s************************************************\"\n}",
         "output": "{\n    \"Response\": {\n        \"BuildId\": \"**********\",\n        \"ServiceName\": \"my-***-***-**\",\n        \"VersionName\": \"my-vue-app-01-001\",\n        \"RequestId\": \"75628170-c5b9-4bda-b370-fec9dd4362f0\"\n    }\n}",
         "title": "创建 custom 服务"
       }
@@ -204,6 +204,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformEnv\n<公共请求参数>\n\n{\n    \"Alias\": \"platform01\",\n    \"PlatformId\": \"pf-*************\",\n    \"ReqKey\": \"rewkey-01\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvId\": \"platform01-******r**********\",\n        \"RequestId\": \"68393676-975c-4eec-b485-36d4ee4f30a5\"\n    }\n}",
         "title": "创建平台版环境"
+      }
+    ],
+    "CreatePlatformHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlatformHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"PlatformId\": \"pf-************\",\n    \"Domain\": {\n        \"Domain\": \"*.*******************.cn\",\n        \"AccessType\": \"EO\",\n        \"CertId\": \"afCtB6as\",\n        \"Enable\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"OwnershipVerification\": null,\n        \"RequestId\": \"d4185a63-ba12-42b1-8c1b-545a5d6ae097\"\n    }\n}",
+        "title": "创建平台域名"
       }
     ],
     "CreateStaticStore": [
@@ -304,6 +312,14 @@
         "title": "删除所有路由"
       }
     ],
+    "DeletePlatformHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlatformHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"PlatformId\": \"pf-t960szfwv1cs\",\n    \"Domain\": \"*.rgw.***************.cn\",\n    \"Paths\": [\n        \"/\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f8aec3a6-eae0-4fee-bdd3-0fdbcf7ed168\"\n    }\n}",
+        "title": "删除平台域名"
+      }
+    ],
     "DeleteProvider": [
       {
         "document": "添加github认证源",
@@ -400,7 +416,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppInfo\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AppPath\": \"/html\",\n        \"CreateTime\": \"2026-07-29 15:11:17\",\n        \"DeployType\": \"static-hosting\",\n        \"Domain\": \"html-************************.***a*****clou*********\",\n        \"Framework\": \"other\",\n        \"LatestBuildTime\": \"2026-07-29 15:13:16\",\n        \"LatestStatus\": \"******\",\n        \"LatestVersionName\": \"html-002\",\n        \"ServiceName\": \"html\",\n        \"RequestId\": \"1a868e16-5f2f-4a34-82d8-eb477dcaede3\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppPath\": \"/html\",\n        \"CreateTime\": \"2026-07-29 15:11:17\",\n        \"DeployType\": \"static-hosting\",\n        \"Domain\": \"html-************************.***a*****clou*********\",\n        \"Framework\": \"other\",\n        \"LatestBuildTime\": \"2026-07-29 15:13:16\",\n        \"LatestStatus\": \"******\",\n        \"LatestVersionName\": \"html-002\",\n        \"ServiceName\": \"html\",\n        \"RequestId\": \"1a868e16-5f2f-4a34-82d8-eb477dcaede3\",\n        \"PreviewDomain\": \"mycloudapp2-***********************************************************\"\n    }\n}",
         "title": "查询应用详情"
       }
     ],
@@ -416,7 +432,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudAppVersion\n<公共请求参数>\n\n{\n    \"EnvId\": \"lowcode-****************\",\n    \"ServiceName\": \"html\",\n    \"DeployType\": \"static-hosting\",\n    \"VersionName\": \"html-002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BuildId\": \"2*********\",\n        \"BuildTime\": \"2026-07-29 15:13:36\",\n        \"BuildType\": \"ZIP\",\n        \"Framework\": \"other\",\n        \"StaticConfig\": {\n            \"AppPath\": \"/html\",\n            \"BuildPath\": \"\",\n            \"CodeBranch\": \"\",\n            \"CodeRepo\": \"\",\n            \"CodeSource\": \"\",\n            \"CosSuffix\": \"zip\",\n            \"CosTimestamp\": \"1*********\",\n            \"Framework\": \"other\",\n            \"NodeJsVersion\": \"18\",\n            \"StaticCmd\": {\n                \"BuildCmd\": \"\",\n                \"DeployCmd\": \"tcb hosting deploy ./ /html\",\n                \"InstallCmd\": \"\"\n            },\n            \"StaticEnv\": {\n                \"Variables\": null\n            },\n            \"ZipFileUrl\": \"\"\n        },\n        \"Status\": \"FAILED\",\n        \"Steps\": null,\n        \"RequestId\": \"b47866f0-2863-4721-818a-34a6ecd37cf7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BuildId\": \"2*********\",\n        \"BuildTime\": \"2026-07-29 15:13:36\",\n        \"BuildType\": \"ZIP\",\n        \"Framework\": \"other\",\n        \"StaticConfig\": {\n            \"AppPath\": \"/html\",\n            \"BuildPath\": \"\",\n            \"CodeBranch\": \"\",\n            \"CodeRepo\": \"\",\n            \"CodeSource\": \"\",\n            \"CosSuffix\": \"zip\",\n            \"CosTimestamp\": \"1*********\",\n            \"Framework\": \"other\",\n            \"NodeJsVersion\": \"18\",\n            \"StaticCmd\": {\n                \"BuildCmd\": \"\",\n                \"DeployCmd\": \"tcb hosting deploy ./ /html\",\n                \"InstallCmd\": \"\"\n            },\n            \"StaticEnv\": {\n                \"Variables\": null\n            },\n            \"ZipFileUrl\": \"\"\n        },\n        \"Status\": \"FAILED\",\n        \"Steps\": null,\n        \"RequestId\": \"b47866f0-2863-4721-818a-34a6ecd37cf7\",\n        \"VersionDomain\": \"cl*u*ap*-****************************************************************\",\n        \"Snapshot\": \"{\\\"Source\\\":{\\\"Type\\\":\\\"zip\\\",\\\"Repo\\\":\\\"\\\",\\\"Ref\\\":\\\"\\\",\\\"Commit\\\":\\\"\\\",\\\"PackageFileName\\\":\\\"\\\"},\\\"TriggerType\\\":\\\"manual\\\",\\\"Steps\\\":[{\\\"Name\\\":\\\"build-image\\\",\\\"Command\\\":\\\"D=/tmp/ctx-probe; curl -fsSL \\\\\\\"$ZIP_FILE_URL\\\\\\\" -o /tmp/c.zip \\\\u0026\\\\u0026 mkdir -p $D \\\\u0026\\\\u0026 unzip -o -q /tmp/c.zip -d $D \\\\u0026\\\\u0026 ls -la $D \\\\u0026\\\\u0026 tar -C $D -cf - . | docker build --platform linux/amd64 -t \\\\\\\"$CLOUDBASE_IMAGE_URL\\\\\\\" -\\\"},{\\\"Name\\\":\\\"push-image\\\",\\\"Command\\\":\\\"printf '%s' \\\\\\\"$CLOUDBASE_TCR_PASSWORD\\\\\\\" | docker login -u \\\\\\\"$CLOUDBASE_TCR_USERNAME\\\\\\\" --password-stdin \\\\\\\"$CLOUDBASE_TCR_REGISTRY\\\\\\\" \\\\u0026\\\\u0026 docker push \\\\\\\"$CLOUDBASE_IMAGE_URL\\\\\\\"\\\"}],\\\"ServiceList\\\":[],\\\"Env\\\":[]}\"\n    }\n}",
         "title": "查询云应用信息"
       }
     ],
@@ -662,6 +678,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformEnvUsage\n<公共请求参数>\n\n{\n    \"EnvId\": \"jeff-d4g6izo8z6a0502f6\",\n    \"StartDate\": \"2026-08-20\",\n    \"EndDate\": \"2026-09-20\",\n    \"ResourceTypes\": [\n        \"Storage\"\n    ],\n    \"NeedUsageDetails\": true\n}",
         "output": "{\n    \"Response\": {\n        \"CreditsScale\": 10000,\n        \"Resources\": [\n            {\n                \"Metrics\": [\n                    {\n                        \"Credits\": 50000,\n                        \"DailyUsageList\": [\n                            {\n                                \"Credits\": 50000,\n                                \"Date\": \"2026-09-08\",\n                                \"UsageValue\": 5000\n                            }\n                        ],\n                        \"MetricName\": \"ReadRequests\",\n                        \"OriginalMetricName\": \"ReadRequests\",\n                        \"OriginalResourceType\": \"COS\",\n                        \"UsageUnit\": \"Count\",\n                        \"UsageValue\": 5000\n                    }\n                ],\n                \"ResourceType\": \"Storage\",\n                \"TotalCredits\": 100000\n            }\n        ],\n        \"TotalCredits\": 100000,\n        \"RequestId\": \"b847eba1-a5b0-4f2a-b978-cc0389ca5141\"\n    }\n}",
         "title": "查询环境资源用量"
+      }
+    ],
+    "DescribePlatformHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlatformHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"PlatformId\": \"pf-************\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Domains\": [\n            {\n                \"AccessType\": \"EO\",\n                \"CertId\": \"afCtB6as\",\n                \"Cname\": \"3usgm1731e24.****************hou.cn.eo.dnse5.com\",\n                \"CreateTime\": \"2026-09-09T16:07:24+08:00\",\n                \"DNSStatus\": \"INVALID\",\n                \"Domain\": \"*.rgw.***************.cn\",\n                \"DomainType\": \"HTTPSERVICE\",\n                \"Enable\": true,\n                \"IsDefault\": false,\n                \"PlatformCnameDNSStatus\": \"INVALID\",\n                \"Protocol\": \"HTTP_AND_HTTPS\",\n                \"Status\": \"SUCCESS\",\n                \"UpdateTime\": \"2026-09-09T16:15:59+08:00\"\n            }\n        ],\n        \"OriginDomain\": \"***************.*********-expr.tencentcloudbase.com\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"c989cae9-a075-4deb-8f99-af7189b9c5e0\"\n    }\n}",
+        "title": "平台下域名路由信息"
       }
     ],
     "DescribePlatforms": [
@@ -958,6 +982,14 @@
         "title": "修改环境状态为 DISABLE"
       }
     ],
+    "ModifyPlatformHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlatformHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"PlatformId\": \"pf-************\",\n    \"Domain\": {\n        \"Domain\": \"*.rgw.***************.cn\",\n        \"AccessType\": \"EO\",\n        \"CertId\": \"afCtB6as\",\n        \"Enable\": false\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e46c574-c2b3-4db9-babe-ad759946970c\"\n    }\n}",
+        "title": "修改平台域名"
+      }
+    ],
     "ModifyProvider": [
       {
         "document": "修改谷歌认证源",
@@ -1198,6 +1230,14 @@
         "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"EnvId\": \"*****************-7ezncwdd421446\",\n    \"Domain\": {\n        \"Domain\": \"********************.cn\",\n        \"AccessType\": \"EO\",\n        \"Protocol\": \"HTTP_AND_HTTPS\",\n        \"Enable\": true,\n        \"Routes\": [\n            {\n                \"Path\": \"/autotest/api\",\n                \"UpstreamResourceType\": \"CBR\",\n                \"UpstreamResourceName\": \"autotest-service\",\n                \"EnableSafeDomain\": true,\n                \"EnableAuth\": false,\n                \"EnablePathTransmission\": false,\n                \"QPSPolicy\": {\n                    \"QPSTotal\": 500,\n                    \"QPSPerClient\": {\n                        \"LimitBy\": \"ClientIP\",\n                        \"LimitValue\": 50\n                    }\n                },\n                \"Enable\": true,\n                \"Extension\": {\n                    \"HeadersHandler\": {\n                        \"RequestHeadersToAdd\": [\n                            {\n                                \"Key\": \"X-Route-Header\",\n                                \"Value\": \"route-value\",\n                                \"Action\": \"OVERWRITE_IF_EXISTS_OR_ADD\"\n                            }\n                        ],\n                        \"ResponseHeadersToAdd\": [\n                            {\n                                \"Key\": \"X-Route-Response\",\n                                \"Value\": \"route-resp-value\",\n                                \"Action\": \"OVERWRITE_IF_EXISTS_OR_ADD\"\n                            }\n                        ]\n                    }\n                }\n            }\n        ],\n        \"Extension\": {}\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Blacklist\": {\n            \"Message\": \"not in blacklist\",\n            \"Status\": \"PASS\"\n        },\n        \"CDNResource\": {\n            \"Message\": \"access type is not CDN, cdn resource check skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"Cert\": {\n            \"Message\": \"CertId is empty, cert verify skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"DomainConflict\": {\n            \"Message\": \"no domain conflict\",\n            \"Status\": \"PASS\"\n        },\n        \"EO\": {\n            \"Message\": \"域名尚未备案\",\n            \"Status\": \"FAIL\"\n        },\n        \"InternalAccount\": {\n            \"Message\": \"not an internal domain, skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"Ownership\": {\n            \"Message\": \"domain ownership verification failed for ab7.woyaodaguaishou1.cn\",\n            \"OwnershipVerification\": {\n                \"DnsVerification\": [\n                    {\n                        \"RecordType\": \"TXT\",\n                        \"RecordValue\": \"*****************-7ezncwdd421446\",\n                        \"Subdomain\": \"_cloudbase-challenge.********************.cn\"\n                    }\n                ],\n                \"Domain\": \"********************.cn\"\n            },\n            \"Status\": \"FAIL\"\n        },\n        \"Passed\": false,\n        \"Quota\": {\n            \"Message\": \"quota check passed\",\n            \"Status\": \"PASS\"\n        },\n        \"RouteConflict\": {\n            \"Message\": \"no route conflict\",\n            \"Status\": \"PASS\"\n        },\n        \"RequestId\": \"b4912cfe-d26d-4cc0-bb55-eb47cee7fdcb\"\n    }\n}",
         "title": "校验路由"
+      }
+    ],
+    "VerifyPlatformHTTPServiceRoute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPlatformHTTPServiceRoute\n<公共请求参数>\n\n{\n    \"PlatformId\": \"pf-t960szfwv1cs\",\n    \"Domain\": {\n        \"Domain\": \"*.rgw.***************.cn\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Blacklist\": {\n            \"Message\": \"not in blacklist\",\n            \"Status\": \"PASS\"\n        },\n        \"CDNResource\": {\n            \"Message\": \"access type is not CDN, cdn resource check skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"Cert\": {\n            \"Message\": \"CertId is empty, cert verify skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"DomainConflict\": {\n            \"Message\": \"no domain conflict\",\n            \"Status\": \"PASS\"\n        },\n        \"EO\": {\n            \"Message\": \"access type is not EO, EO check skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"InternalAccount\": {\n            \"Message\": \"not an internal domain, skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"Ownership\": {\n            \"Message\": \"domain ownership verified\",\n            \"Status\": \"PASS\"\n        },\n        \"Passed\": true,\n        \"Quota\": {\n            \"Message\": \"quota check passed\",\n            \"Status\": \"PASS\"\n        },\n        \"RouteConflict\": {\n            \"Message\": \"no routes provided, route conflict check skipped\",\n            \"Status\": \"SKIPPED\"\n        },\n        \"RequestId\": \"0de3dab3-6917-4a6b-a243-432aa4cd8ed3\"\n    }\n}",
+        "title": "校验域名"
       }
     ]
   },

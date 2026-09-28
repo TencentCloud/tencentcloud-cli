@@ -15,7 +15,8 @@ tccli tcb CreateCloudApp --cli-unfold-argument  \
     --Source.Channel github \
     --CustomSteps.0.Name ls \
     --CustomSteps.0.Command node -v \
-    --NodeJsVersion 22
+    --NodeJsVersion 22 \
+    --PostDeployCommand cat /root/*******s************************************************
 ```
 
 Output: 
