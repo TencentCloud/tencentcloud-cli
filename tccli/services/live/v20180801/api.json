@@ -252,6 +252,13 @@
       "output": "CreateLiveRecordTemplateResponse",
       "status": "online"
     },
+    "CreateLiveSmartEraseRule": {
+      "document": "创建直播智能擦除规则。",
+      "input": "CreateLiveSmartEraseRuleRequest",
+      "name": "创建直播智能擦除规则",
+      "output": "CreateLiveSmartEraseRuleResponse",
+      "status": "online"
+    },
     "CreateLiveSmartEraseTemplate": {
       "document": "创建直播智能擦除模板。",
       "input": "CreateLiveSmartEraseTemplateRequest",
@@ -509,6 +516,20 @@
       "input": "DeleteLiveRecordTemplateRequest",
       "name": "删除录制模板",
       "output": "DeleteLiveRecordTemplateResponse",
+      "status": "online"
+    },
+    "DeleteLiveSmartEraseRule": {
+      "document": "删除直播智能擦除规则。",
+      "input": "DeleteLiveSmartEraseRuleRequest",
+      "name": "删除直播智能擦除规则",
+      "output": "DeleteLiveSmartEraseRuleResponse",
+      "status": "online"
+    },
+    "DeleteLiveSmartEraseTemplate": {
+      "document": "删除直播智能擦除模板。",
+      "input": "DeleteLiveSmartEraseTemplateRequest",
+      "name": "删除直播智能擦除模板",
+      "output": "DeleteLiveSmartEraseTemplateResponse",
       "status": "online"
     },
     "DeleteLiveSnapshotRule": {
@@ -1043,6 +1064,27 @@
       "output": "DescribeLiveRecordTemplatesResponse",
       "status": "online"
     },
+    "DescribeLiveSmartEraseRules": {
+      "document": "获取直播智能擦除规则列表。",
+      "input": "DescribeLiveSmartEraseRulesRequest",
+      "name": "获取直播智能擦除规则列表",
+      "output": "DescribeLiveSmartEraseRulesResponse",
+      "status": "online"
+    },
+    "DescribeLiveSmartEraseTemplate": {
+      "document": "获取单个直播智能擦除模板",
+      "input": "DescribeLiveSmartEraseTemplateRequest",
+      "name": "获取单个智能擦除模板",
+      "output": "DescribeLiveSmartEraseTemplateResponse",
+      "status": "online"
+    },
+    "DescribeLiveSmartEraseTemplates": {
+      "document": "获取直播智能擦除模板。",
+      "input": "DescribeLiveSmartEraseTemplatesRequest",
+      "name": "获取直播智能擦除模板",
+      "output": "DescribeLiveSmartEraseTemplatesResponse",
+      "status": "online"
+    },
     "DescribeLiveSnapshotRules": {
       "document": "获取截图规则列表",
       "input": "DescribeLiveSnapshotRulesRequest",
@@ -1552,6 +1594,13 @@
       "input": "ModifyLiveRecordTemplateRequest",
       "name": "直播修改录制模板配置",
       "output": "ModifyLiveRecordTemplateResponse",
+      "status": "online"
+    },
+    "ModifyLiveSmartEraseTemplate": {
+      "document": "修改直播智能擦除模板。",
+      "input": "ModifyLiveSmartEraseTemplateRequest",
+      "name": "修改直播智能擦除模板",
+      "output": "ModifyLiveSmartEraseTemplateResponse",
       "status": "online"
     },
     "ModifyLiveSnapshotTemplate": {
@@ -8040,6 +8089,60 @@
       ],
       "type": "object"
     },
+    "CreateLiveSmartEraseRuleRequest": {
+      "document": "CreateLiveSmartEraseRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推流域名。</p>",
+          "example": "29913pushtest.erheiyan.club",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推流路径，与推流和播放地址中的AppName保持一致，默认为 live。</p>",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流名称。<br>注：如果本参数设置为非空字符串，规则将只对此推流起作用。</p>",
+          "example": "stream",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateLiveSmartEraseRuleResponse": {
+      "document": "CreateLiveSmartEraseRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLiveSmartEraseTemplateRequest": {
       "document": "CreateLiveSmartEraseTemplate请求参数结构体",
       "members": [
@@ -10443,6 +10546,87 @@
     },
     "DeleteLiveRecordTemplateResponse": {
       "document": "DeleteLiveRecordTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveSmartEraseRuleRequest": {
+      "document": "DeleteLiveSmartEraseRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播智能擦除模板id。</p>",
+          "example": "8390394",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>推流域名。<br>域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。</p>",
+          "example": "29913pushtest.erheiyan.club",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>，与推流和播放地址中的AppName保持一致，默认为 live。域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。推流路径</p>",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流名称。<br>域名+AppName+StreamName唯一标识单个转码规则，如需删除需要强匹配，例如AppName为空也需要传空字符串进行强匹配。</p>",
+          "example": "stream",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveSmartEraseRuleResponse": {
+      "document": "DeleteLiveSmartEraseRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveSmartEraseTemplateRequest": {
+      "document": "DeleteLiveSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID。</p>",
+          "example": "8390365",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLiveSmartEraseTemplateResponse": {
+      "document": "DeleteLiveSmartEraseTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14425,6 +14609,97 @@
           "document": "录制模板信息列表。",
           "example": "无",
           "member": "RecordTemplateInfo",
+          "name": "Templates",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseRulesRequest": {
+      "document": "DescribeLiveSmartEraseRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseRulesResponse": {
+      "document": "DescribeLiveSmartEraseRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则信息列表。</p>",
+          "example": "无",
+          "member": "RuleInfo",
+          "name": "Rules",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseTemplateRequest": {
+      "document": "DescribeLiveSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板id。</p>",
+          "example": "8389247",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseTemplateResponse": {
+      "document": "DescribeLiveSmartEraseTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播智能擦除模板信息。</p>",
+          "example": "无",
+          "member": "SmartEraseTemplate",
+          "name": "Template",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseTemplatesRequest": {
+      "document": "DescribeLiveSmartEraseTemplates请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLiveSmartEraseTemplatesResponse": {
+      "document": "DescribeLiveSmartEraseTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>直播智能擦除模板信息。</p>",
+          "example": "无",
+          "member": "SmartEraseTemplate",
           "name": "Templates",
           "output_required": true,
           "type": "list",
@@ -21938,6 +22213,132 @@
       ],
       "type": "object"
     },
+    "ModifyLiveSmartEraseTemplateRequest": {
+      "document": "ModifyLiveSmartEraseTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板id。</p>",
+          "example": "8390426",
+          "member": "uint64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称。长度上限：100字节。</p>",
+          "example": "testName",
+          "member": "string",
+          "name": "TemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型，如&quot;illegal audio|illegal image|logo|privacy protection 。</p>",
+          "example": "illegal audio",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates返回的TemplateId</p>",
+          "example": "55023",
+          "member": "uint64",
+          "name": "AuditConfId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
+          "example": "描述信息",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御图片审核策略BizType Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>",
+          "example": "1_1_2_55023",
+          "member": "string",
+          "name": "ImageBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频审核策略BizType ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>",
+          "example": "1_1_7_55023",
+          "member": "string",
+          "name": "AudioBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频文本审核策略BizType ShortAudio</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>",
+          "example": "1_1_1_55023",
+          "member": "string",
+          "name": "AudioTextBizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示模式，取值 1:延时稳态展示; 3.实时动态展示。默认1 。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DisplayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕延迟展示时间,单位毫秒。默认10000。</p>",
+          "example": "4000",
+          "member": "int64",
+          "name": "DisplayDelayTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型选择“隐私保护”后，该项可见</p><p>枚举值：</p><ul><li>blur face： 人脸模糊</li><li>license plate： 车牌模糊</li></ul>",
+          "example": "blur face|blur license plate",
+          "member": "string",
+          "name": "PrivacyProtection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当擦除类型选择了违规音频，该项可见</p><p>枚举值：</p><ul><li>0： 静音</li><li>1： 哔音</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioErasureMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLiveSmartEraseTemplateResponse": {
+      "document": "ModifyLiveSmartEraseTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLiveSnapshotTemplateRequest": {
       "document": "ModifyLiveSnapshotTemplate请求参数结构体",
       "members": [
@@ -25818,6 +26219,166 @@
         }
       ],
       "type": "object"
+    },
+    "SmartEraseTemplate": {
+      "document": "直播智能擦除模板。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板id。</p>",
+          "example": "8392011",
+          "member": "uint64",
+          "name": "TemplateId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称。</p>",
+          "example": "ruxu001",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板描述。</p>",
+          "example": "update",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>擦除类型，如&quot;illegal audio|illegal image|logo|privacy protection 。</p>",
+          "example": "illegal audio|privacy protection",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的审核模板id, 表audio_conf 。</p><p>取值为DescribeAuditTemplates接口返回的AuditTemplates里面的TemplateId字段</p>",
+          "example": "8391249",
+          "member": "uint64",
+          "name": "AuditConfId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御图片审核策略BizType  Image 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Image&quot;的BizType值</p>",
+          "example": "1_1_7_7930",
+          "member": "string",
+          "name": "ImageBizType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;ShortAudio&quot;的BizType值</p>",
+          "example": "1_1_7_7930",
+          "member": "string",
+          "name": "AudioBizType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>天御音频文本审核策略BizType  ShortAudio 。</p><p>取值为DescribeAuditTemplates返回的SceneInfos下BizInfos里面的对应的StrategyType为&quot;Text&quot;的BizType值</p>",
+          "example": "1_1_7_7930",
+          "member": "string",
+          "name": "AudioTextBizType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板创建时间。</p>",
+          "example": "2026-01-04 10:37:49",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板修改时间。</p>",
+          "example": "2025-12-19 14:41:47",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示模式，取值 1:延时稳态展示; 3.实时动态展示。默认1 。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DisplayMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字幕延迟展示时间,单位毫秒。默认10000。</p>",
+          "example": "4000",
+          "member": "int64",
+          "name": "DisplayDelayTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当擦除类型选择了违规音频，该项可见</p><p>枚举值：</p><ul><li>blur face： 人脸模糊</li><li>blur license plate： 车牌模糊</li></ul>",
+          "example": "blur license plate",
+          "member": "string",
+          "name": "PrivacyProtection",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅当擦除类型选择了“隐私保护”后，该项可见</p><p>枚举值：</p><ul><li>0： 静音</li><li>1： 哔音</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AudioErasureMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SnapshotTemplateInfo": {
       "document": "截图模板信息。",

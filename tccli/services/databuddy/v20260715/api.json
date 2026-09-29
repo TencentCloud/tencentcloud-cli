@@ -127,28 +127,28 @@
       "status": "online"
     },
     "ListConsoleGroupUsers": {
-      "document": "查询控制台用户组成员列表",
+      "document": "查询控制台用户组成员列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListConsoleGroupUsersRequest",
       "name": "查询控制台用户组成员列表",
       "output": "ListConsoleGroupUsersResponse",
       "status": "online"
     },
     "ListConsoleGroups": {
-      "document": "查询控制台用户组列表",
+      "document": "查询控制台用户组列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListConsoleGroupsRequest",
       "name": "查询控制台用户组列表",
       "output": "ListConsoleGroupsResponse",
       "status": "online"
     },
     "ListConsoleRoles": {
-      "document": "查询控制台角色列表",
+      "document": "查询控制台角色列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListConsoleRolesRequest",
       "name": "查询控制台角色列表",
       "output": "ListConsoleRolesResponse",
       "status": "online"
     },
     "ListConsoleUsers": {
-      "document": "查询控制台用户列表",
+      "document": "查询控制台用户列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListConsoleUsersRequest",
       "name": "查询控制台用户列表",
       "output": "ListConsoleUsersResponse",
@@ -3911,7 +3911,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>用户组 ID</p>",
+          "document": "<p>用户组 ID，可通过 ListConsoleGroups 接口获取</p>",
           "example": "17848631472347483",
           "member": "string",
           "name": "GroupId",
@@ -4067,7 +4067,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>通过用户组 ID 批量查询</p>",
+          "document": "<p>通过用户组ID批量查询；用户组ID可通过 ListConsoleGroups 接口获取</p>",
           "example": "[\"*****************\"]",
           "member": "string",
           "name": "GroupIds",
@@ -4316,7 +4316,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用于过滤角色关联的用户</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "document": "<p>用于过滤角色关联的用户</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul><p>可通过 ListConsoleRoles 接口获取</p>",
           "example": "[\"2002\"]",
           "member": "string",
           "name": "RoleIds",
@@ -5481,7 +5481,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>角色ID</p>",
+          "document": "<p>角色ID，可通过 ListWorkspaceRoles / ListConsoleRoles 接口获取；创建/更新角色时无需填写（由系统自动生成，创建成功后从响应 Data.RoleId 获取）</p>",
           "example": "17676143448574812",
           "member": "string",
           "name": "Id",
@@ -5525,7 +5525,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>角色类型</p>",
+          "document": "<p>角色类型：workspace=工作空间系统角色，workspace_custom=工作空间自定义角色，console=控制台角色；查询时返回，创建时无需填写（系统固定创建自定义角色）</p>",
           "example": "default",
           "member": "string",
           "name": "RoleType",
@@ -5536,7 +5536,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>角色来源，参考 web_enum_standard.proto -&gt; RoleSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有</p>",
+          "document": "<p>角色来源（查询侧字段，创建时无需填写）：0=未指定，1=用户直绑，2=用户组继承，3=两者都有</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -5547,7 +5547,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>继承来源的用户组名称列表，Source=1 时为空</p>",
+          "document": "<p>继承来源的用户组名称列表（查询侧字段，创建时无需填写），Source=1 时为空</p>",
           "example": "[\"example1\"]",
           "member": "string",
           "name": "GroupNames",
@@ -5610,7 +5610,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模块ID",
+          "document": "<p>模块ID，须为当前租户已开通的功能模块（叶子节点）的模块ID（层级编码字符串，如 101=快速开始、109=工作流、116101103=工作空间管理_角色权限），非法值返回 InvalidParameterValue；模块清单可通过控制台「工作空间设置-角色权限」页面查看</p>",
           "example": "17676143448574812",
           "member": "string",
           "name": "ModuleId",
@@ -5621,7 +5621,7 @@
         },
         {
           "disabled": false,
-          "document": "权限点",
+          "document": "<p>模块访问权限，单值：R=只读，RW=读写，RWD=读写删除，N=无权限</p>",
           "example": "READ,WRITE",
           "member": "string",
           "name": "Permissions",

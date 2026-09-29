@@ -324,6 +324,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateLiveSmartEraseRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveSmartEraseRule\n<公共请求参数>\n\n{\n    \"DomainName\": \"29913pushtest.erheiyan.club\",\n    \"TemplateId\": 3,\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36ad0a6b-877a-47d4-a860-6dc920740ea8\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateLiveSmartEraseTemplate": [
       {
         "document": "",
@@ -618,6 +626,22 @@
         "input": "https://live.tencentcloudapi.com/?Action=DeleteLiveRecordTemplate\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "DeleteLiveSmartEraseRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveSmartEraseRule\n<公共请求参数>\n\n{\n    \"DomainName\": \"29913pushtest.erheiyan.club\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream\",\n    \"TemplateId\": 8390394\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"982f7d93-823b-4fb0-b1e8-877265c36f59\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteLiveSmartEraseTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLiveSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 8390365\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2000be1-d44f-42b2-82be-aff185f29ad6\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteLiveSnapshotRule": [
@@ -1228,6 +1252,30 @@
         "title": "请求示例"
       }
     ],
+    "DescribeLiveSmartEraseRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveSmartEraseRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30951a10-0efb-4d6a-b7f9-d017cfc32893\",\n        \"Rules\": [\n            {\n                \"AppName\": \"live\",\n                \"CreateTime\": \"\",\n                \"DomainName\": \"29913pushtest.erheiyan.club\",\n                \"StreamName\": \"stream\",\n                \"TemplateId\": 3,\n                \"UpdateTime\": \"0000-00-00 00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLiveSmartEraseTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74c5c04f-31ec-443f-8e97-be5eb793a793\",\n        \"Template\": {\n            \"AudioBizType\": \"\",\n            \"AudioTextBizType\": \"\",\n            \"AuditConfId\": 0,\n            \"CreateTime\": \"2025-03-03 16:29:10\",\n            \"Description\": \"describe\",\n            \"ImageBizType\": \"\",\n            \"TemplateId\": 2,\n            \"TemplateName\": \"smarterase\",\n            \"Type\": \"illegal audio\",\n            \"UpdateTime\": \"2025-03-03 16:29:10\"\n        }\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeLiveSmartEraseTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLiveSmartEraseTemplates\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"910c3e1f-a30a-4149-bf31-d34a191605e9\",\n        \"Templates\": [\n            {\n                \"AudioBizType\": \"\",\n                \"AudioTextBizType\": \"\",\n                \"AuditConfId\": 0,\n                \"CreateTime\": \"2025-03-03 16:29:10\",\n                \"Description\": \"describe\",\n                \"ImageBizType\": \"\",\n                \"TemplateId\": 2,\n                \"TemplateName\": \"smarterase\",\n                \"Type\": \"illegal audio\",\n                \"UpdateTime\": \"2025-03-03 16:29:10\"\n            },\n            {\n                \"AudioBizType\": \"\",\n                \"AudioTextBizType\": \"\",\n                \"AuditConfId\": 1,\n                \"CreateTime\": \"2025-03-03 16:43:58\",\n                \"Description\": \"smart erase template\",\n                \"ImageBizType\": \"\",\n                \"TemplateId\": 3,\n                \"TemplateName\": \"smarterasetemplate\",\n                \"Type\": \"privacy protection\",\n                \"UpdateTime\": \"2025-03-03 16:43:58\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeLiveSnapshotRules": [
       {
         "document": "",
@@ -1810,6 +1858,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=ModifyLiveRecordTemplate\n&TemplateName=templat\n&Description=record\n&FlvParam.Enable=1\n&FlvParam.RecordInterval=1800\n&FlvParam.StorageTime=700\n&TemplateId=1000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "ModifyLiveSmartEraseTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLiveSmartEraseTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": 16712,\n    \"TemplateName\": \"大有期货\",\n    \"Description\": \"\",\n    \"Type\": \"illegal audio\",\n    \"AuditConfId\": 43244,\n    \"AudioTextBizType\": \"1_1_1_43244\",\n    \"AudioErasureMode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bba35936-4179-47d2-bf69-0bbf5b6ba920\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyLiveSnapshotTemplate": [
