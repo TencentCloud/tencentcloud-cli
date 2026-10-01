@@ -1267,6 +1267,13 @@
       "output": "DescribeOriginStreamInfoResponse",
       "status": "online"
     },
+    "DescribeOriginWhiteIpList": {
+      "document": "获取直播源站的拉流IP白名单列表",
+      "input": "DescribeOriginWhiteIpListRequest",
+      "name": "获取直播源站白名单信息。",
+      "output": "DescribeOriginWhiteIpListResponse",
+      "status": "online"
+    },
     "DescribePlayErrorCodeDetailInfoList": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n查询下行播放错误码信息，某段时间内1分钟粒度的各http错误码出现的次数，包括4xx，5xx。",
       "input": "DescribePlayErrorCodeDetailInfoListRequest",
@@ -16645,6 +16652,23 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOriginWhiteIpListRequest": {
+      "document": "DescribeOriginWhiteIpList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOriginWhiteIpListResponse": {
+      "document": "DescribeOriginWhiteIpList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
