@@ -8,6 +8,14 @@
         "title": "示例1"
       }
     ],
+    "CreateCatalog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCatalog\n<公共请求参数>\n\n{\n    \"Name\": \"my_catalog\",\n    \"Type\": \"TABLE\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Comment\": \"这是一个数据目录\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"CatalogId\": \"e3f9a474-0f2e-4f93-90e7-b2fc9ec1405c\"\n        }\n    }\n}",
+        "title": "创建数据目录"
+      }
+    ],
     "CreateConsoleGroup": [
       {
         "document": "",
@@ -32,6 +40,14 @@
         "title": "示例"
       }
     ],
+    "CreateSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"Name\": \"my_schema\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Comment\": \"这是一个Schema\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Schema\": {\n                \"Name\": \"my_schema\",\n                \"Comment\": \"这是一个Schema\"\n            }\n        }\n    }\n}",
+        "title": "创建Schema"
+      }
+    ],
     "CreateWorkflow": [
       {
         "document": "创建携带python任务的工作流",
@@ -46,6 +62,22 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceName\": \"testleo\",\n    \"WorkspaceRegion\": \"ap-guangzhou\",\n    \"Description\": \"这是描述信息\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"WorkspaceId\": \"17851552324107340\"\n        },\n        \"RequestId\": \"03a6cbd4-5a5f-4f8f-ba67-48fc06279fdd\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "CreateWorkspaceRole": [
+      {
+        "document": "创建工作空间角色",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkspaceRole\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17623497097012366\",\n    \"BasicInfo\": {\n        \"Description\": \"zjy_role_name\",\n        \"DisplayName\": \"zjy_role_name\",\n        \"RoleType\": \"role\"\n    },\n    \"Permissions\": [\n        {\n            \"ModuleId\": \"104\",\n            \"Permissions\": \"RWD\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"RoleId\": \"869986134523174912\",\n            \"Status\": true\n        },\n        \"RequestId\": \"2cdc9c5e-c2d6-4e14-8a30-18514ba0a4ce\"\n    }\n}",
+        "title": "CreateWorkspaceRole"
+      }
+    ],
+    "DeleteCatalog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCatalog\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "删除数据目录"
       }
     ],
     "DeleteConsoleGroups": [
@@ -72,6 +104,14 @@
         "title": "示例"
       }
     ],
+    "DeleteSchema": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "删除Schema"
+      }
+    ],
     "DeleteWorkflow": [
       {
         "document": "",
@@ -86,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17851552324107340\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"bd298f03-0cd9-4ebc-a3a6-ac7d5c7a8ccd\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DeleteWorkspaceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWorkspaceRole\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1\",\n    \"RoleId\": \"784448714810134528\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"ffade50f-0ed2-41ac-bfa1-1263b97fb15c\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "GetFile": [
@@ -196,6 +244,14 @@
         "title": "ListFiles"
       }
     ],
+    "ListSchemas": [
+      {
+        "document": "获取schema列表",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSchemas\n<公共请求参数>\n\n{\n    \"CatalogName\": \"capi_no_delete_table\",\n    \"MaxResults\": 1,\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AssetGuid\": \"tccatalog.v1.uid1482527818963963288@251436191_ap-guangzhou_SCHEMA\",\n                    \"Audit\": {\n                        \"CreatedAt\": \"1778825400056\",\n                        \"Creator\": \"700002164618\",\n                        \"CreatorName\": \"wedata30-dev@tencent.com\",\n                        \"LastModifiedAt\": \"1778825400056\",\n                        \"LastModifier\": \"700002164618\",\n                        \"LastModifierName\": \"wedata30-dev@tencent.com\"\n                    },\n                    \"Comment\": \"\",\n                    \"MetaOwner\": {\n                        \"FullName\": \"capi_no_delete_table.capi_no_delete_schema\",\n                        \"Owner\": \"700002164618\",\n                        \"OwnerName\": \"wedata30-dev@tencent.com\",\n                        \"OwnerType\": \"user\"\n                    },\n                    \"Name\": \"capi_no_delete_schema\",\n                    \"Properties\": [\n                        {\n                            \"Key\": \"tccatalog.identifier\",\n                            \"Value\": \"tccatalog.v1.uid1482527818963963288\"\n                        }\n                    ],\n                    \"Tags\": []\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjF9\"\n        },\n        \"RequestId\": \"47d6c662-1c46-4227-bb34-6dc5db95b6a9\"\n    }\n}",
+        "title": "获取schema列表"
+      }
+    ],
     "ListWorkflowRuns": [
       {
         "document": "",
@@ -226,6 +282,14 @@
         "title": "查询工作流列表"
       }
     ],
+    "ListWorkspaces": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkspaces\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17676143448574812\",\n    \"WorkspaceKeyword\": \"example\",\n    \"StatusList\": [\n        1\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 11\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"PageNumber\": 1,\n            \"PageSize\": 11,\n            \"TotalCount\": 0,\n            \"TotalPageNumber\": 0\n        },\n        \"RequestId\": \"53f42163-04ec-4854-bb90-ce71f730e43e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "RemoveConsoleUsers": [
       {
         "document": "",
@@ -248,6 +312,22 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunWorkflow\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697410068842890\",\n    \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1\",\n    \"RunType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ActionResults\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"OpStatus\": true,\n                    \"RunActionId\": \"cmd_20260807195442_000001\",\n                    \"WorkflowId\": \"8e0e3485-2736-4530-92ed-932e019898f1_1786103682348\",\n                    \"WorkflowName\": \"new_workflow_20260807_190451\",\n                    \"WorkflowRunId\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"5e78212a-8c5b-444f-a493-f64b563d707c\"\n    }\n}",
         "title": "运行工作流"
+      }
+    ],
+    "StartCompute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCompute\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"ws-001\",\n    \"ResourceId\": \"res-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"d28b4aa5-262a-4fb3-87d8-87c036b6341a\"\n    }\n}",
+        "title": "启动计算资源"
+      }
+    ],
+    "StopCompute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCompute\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"ws-001\",\n    \"ResourceId\": \"res-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"d28b4aa5-262a-4fb3-87d8-87c036b6341a\"\n    }\n}",
+        "title": "停止计算资源"
       }
     ],
     "UnbindWorkflowBundle": [
@@ -310,6 +390,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspace\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17851563773633788\",\n    \"WorkspaceName\": \"hehefdf\",\n    \"Description\": \"fdsfsd\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"20a53860-e428-4ac1-a530-19a8a24b4379\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "UpdateWorkspaceRole": [
+      {
+        "document": "更新工作空间角色",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspaceRole\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1\",\n    \"BasicInfo\": {\n        \"Id\": \"784448714810134528\",\n        \"Name\": \"ab\",\n        \"Description\": \"ab\",\n        \"DisplayName\": \"abe\",\n        \"RoleType\": \"workspace_custom\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"e3150e02-35fc-4d98-92ed-d81b748fbba4\"\n    }\n}",
+        "title": "demo"
       }
     ]
   },

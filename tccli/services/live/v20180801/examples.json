@@ -1487,7 +1487,7 @@
     "DescribeOriginWhiteIpList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginWhiteIpList\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOriginWhiteIpList\n<公共请求参数>\n\n{\n    \"Domain\": \"aaa.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"de1bc736-5284-488b-b0ce-126e871df8b8\"\n    }\n}",
         "title": "示例"
       }

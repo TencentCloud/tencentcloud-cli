@@ -16663,7 +16663,17 @@
     },
     "DescribeOriginWhiteIpListRequest": {
       "document": "DescribeOriginWhiteIpList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>播放域名</p>",
+          "example": "aaa.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeOriginWhiteIpListResponse": {

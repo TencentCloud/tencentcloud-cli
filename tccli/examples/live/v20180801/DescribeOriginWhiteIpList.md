@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli live DescribeOriginWhiteIpList --cli-unfold-argument ```
+tccli live DescribeOriginWhiteIpList --cli-unfold-argument  \
+    --Domain aaa.com
+```
 
 Output: 
 ```
