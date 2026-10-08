@@ -537,9 +537,15 @@
     "CreateTWeSeeSubscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1,\n    \"ServiceTier\": \"BASIC\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OrderId\": \"20260420*********550201\",\n        \"OriginalPrice\": \"2000\",\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"6f7647ba-757c-439c-8781-c187b5a561f3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"default\",\n    \"DeviceName\": \"dev0923\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ServiceTier\": \"BASIC\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"2000\",\n        \"OrderId\": \"20260923417023758815491\",\n        \"OriginalPrice\": \"2000\",\n        \"ResourceId\": \"twesee-753yd29z8czyqn8lpvcxekj\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"ead581f8-936e-4e50-8de6-76cc431b2367\"\n    }\n}",
         "title": "开通 TWeSee 视频理解基础版"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"69E4CNU1F0\",\n    \"DeviceName\": \"10002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ServiceTier\": \"ADVANCED\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"4000\",\n        \"OrderId\": \"20260928990179696733571\",\n        \"OriginalPrice\": \"4000\",\n        \"ResourceId\": \"twesee-753yd29zazzcjodjbaplog3\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"b4a8bcd8-8c44-4e9f-ad72-4a73ebc17dfd\"\n    }\n}",
+        "title": "开通 TWeSee 视频理解高级版"
       }
     ],
     "CreateTWeTalkAIBot": [
@@ -1345,8 +1351,8 @@
     "DescribeTWeSeeSubscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ChannelId\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ComprehensionConfig\": {\n            \"AlternativeOutputLang\": \"en\",\n            \"DetectTypes\": [\n                \"person_climbing_fence\"\n            ],\n            \"EnableSearch\": true,\n            \"MultiCameraLayout\": \"Vertical,Num=2,Index=0;1\",\n            \"OutputLang\": \"zh\"\n        },\n        \"Enabled\": true,\n        \"EventIdFilterConfig\": {\n            \"IncludeOnly\": [\n                \"_sys_id1_data\"\n            ]\n        },\n        \"ExpireTime\": 1781897528,\n        \"QuotaBasic\": 3000,\n        \"QuotaRefreshTime\": 1779219128,\n        \"QuotaUsedBasic\": 2,\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"ServiceTier\": \"BASIC\",\n        \"Status\": \"NORMAL\",\n        \"RequestId\": \"a94ccccd-a34e-4daa-97fe-fed5a0c2f1c0\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"69E4CNU1F0\",\n    \"DeviceName\": \"10001\",\n    \"ServiceType\": \"VID_COMP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ComprehensionConfig\": {\n            \"DetectTypes\": [\n                \"person\"\n            ]\n        },\n        \"CreditsQuota\": 9000,\n        \"CreditsUsed\": 23.5,\n        \"Enabled\": true,\n        \"ExpireTime\": 1793172443,\n        \"QuotaAdvanced\": 9000,\n        \"QuotaRefreshTime\": 1793172443,\n        \"QuotaUsedAdvanced\": 23,\n        \"ResourceId\": \"twesee-753yd29zay9tzk8t140mner\",\n        \"ServiceTier\": \"ADVANCED\",\n        \"Status\": \"NORMAL\",\n        \"RequestId\": \"3af64ac3-74d8-4435-b02a-1a0803427518\"\n    }\n}",
         "title": "查询 TWeSee 视频理解订阅"
       }
     ],
@@ -1800,10 +1806,10 @@
         "title": "调用 TWeSee 视频理解算法"
       },
       {
-        "document": "对该视频生效视频搜索高级功能",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InvokeTWeSeeComprehension\n<公共请求参数>\n\n{\n    \"InputURL\": \"https://kero-test-1255707222.cos.ap-guangzhou.tencentcos.cn/jiwei/4.mp4\",\n    \"ServiceType\": \"VID_COMP\",\n    \"ComprehensionConfig\": {\n        \"EnableSearch\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ComprehensionResult\": {\n            \"DetectedClassifications\": [\n                \"person\"\n            ],\n            \"Summary\": \"穿浅色衣物的人在雨后湿滑的路边行走\"\n        },\n        \"CostAdvanced\": 1,\n        \"CostBasic\": 1,\n        \"Status\": 3,\n        \"TaskId\": \"comp-c01e4d7f-2bf5-3e6e-e865-bc495b954b23\",\n        \"RequestId\": \"296e405d-fe5f-4ed0-a2c4-f34fd70f4ab2\"\n    }\n}",
-        "title": "调用 TWeSee 视频理解算法（含高级功能）"
+        "title": "调用 TWeSee 视频理解算法（开启搜索库写入）"
       }
     ],
     "InvokeTWeSeeRecognitionTask": [
@@ -2283,8 +2289,8 @@
     "RenewTWeSeeSubscription": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1,\n    \"ChannelId\": 0,\n    \"CustomOrderId\": \"order-0013\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"1200\",\n        \"OrderId\": \"2026042**********584511\",\n        \"OriginalPrice\": \"2000\",\n        \"ResourceId\": \"twesee-753yd29x30********jqww1\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"0d350a07-0fc9-455c-98c8-0946d721dc1a\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewTWeSeeSubscription\n<公共请求参数>\n\n{\n    \"ProductId\": \"DLLNMAZ4EO\",\n    \"DeviceName\": \"cs_test02\",\n    \"ServiceType\": \"VID_COMP\",\n    \"Period\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Currency\": \"CNY\",\n        \"DiscountPrice\": \"4000\",\n        \"OrderId\": \"20260923311023764115441\",\n        \"OriginalPrice\": \"4000\",\n        \"ResourceId\": \"twesee-753yd29z71908rv8xo5g1dv\",\n        \"Status\": \"DELIVERED\",\n        \"RequestId\": \"e075af94-1ccf-4171-bb14-31ce419c943a\"\n    }\n}",
         "title": "续费 TWeSee 视频理解订阅"
       }
     ],

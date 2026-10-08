@@ -6866,8 +6866,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品 ID",
-          "example": "4AHMY9X89Y",
+          "document": "<p>产品 ID</p>",
+          "example": "default",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -6875,8 +6875,8 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
-          "example": "dev002",
+          "document": "<p>设备名称</p>",
+          "example": "dev0923",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -6884,7 +6884,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "document": "<p>算法类型</p><p>枚举值：</p><ul><li>VID_COMP： 视频理解</li></ul>",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -6893,7 +6893,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐规格。可选值：\n\n- `BASIC`：包年包月基础版（适用于视频理解）",
+          "document": "<p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>",
           "example": "BASIC",
           "member": "string",
           "name": "ServiceTier",
@@ -6902,7 +6902,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅购买时长，单位：月，支持 1-60",
+          "document": "<p>订阅购买时长，单位：月，支持 1-60</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -6911,7 +6911,7 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
+          "document": "<p>通道 ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -6920,7 +6920,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义订单 ID",
+          "document": "<p>自定义订单 ID</p>",
           "example": "order-0012",
           "member": "string",
           "name": "CustomOrderId",
@@ -6929,7 +6929,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标识。可选值：\n- `NOTIFY_AND_MANUAL_RENEW`：到期前通知并手动续费（默认）\n- `NOTIFY_AND_AUTO_RENEW`：到期前通知并自动续费\n- `DISABLE_NOTIFY_AND_MANUAL_RENEW`：不通知且手动续费",
+          "document": "<p>续费标识。可选值：</p><ul><li><code>NOTIFY_AND_MANUAL_RENEW</code>：到期前通知并手动续费（默认）</li><li><code>NOTIFY_AND_AUTO_RENEW</code>：到期前通知并自动续费</li><li><code>DISABLE_NOTIFY_AND_MANUAL_RENEW</code>：不通知且手动续费</li></ul>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -6944,8 +6944,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单 ID",
-          "example": "20260420*********550201",
+          "document": "<p>订单 ID</p>",
+          "example": "20260923417023758815491",
           "member": "string",
           "name": "OrderId",
           "output_required": true,
@@ -6954,7 +6954,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态",
+          "document": "<p>订单状态</p>",
           "example": "DELIVERED",
           "member": "string",
           "name": "Status",
@@ -6964,8 +6964,8 @@
         },
         {
           "disabled": false,
-          "document": "资源 ID",
-          "example": "twesee-753yd29x30********jqww1",
+          "document": "<p>资源 ID</p>",
+          "example": "twesee-753yd29z8czyqn8lpvcxekj",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -6974,7 +6974,7 @@
         },
         {
           "disabled": false,
-          "document": "原价",
+          "document": "<p>原价</p>",
           "example": "2000",
           "member": "string",
           "name": "OriginalPrice",
@@ -6984,8 +6984,8 @@
         },
         {
           "disabled": false,
-          "document": "折后价",
-          "example": "1200",
+          "document": "<p>折后价</p>",
+          "example": "2000",
           "member": "string",
           "name": "DiscountPrice",
           "output_required": false,
@@ -6994,7 +6994,7 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -13388,7 +13388,7 @@
         {
           "disabled": false,
           "document": "<p>产品 ID</p>",
-          "example": "4AHMY9X89Y",
+          "example": "69E4CNU1F0",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -13397,7 +13397,7 @@
         {
           "disabled": false,
           "document": "<p>设备名称</p>",
-          "example": "dev002",
+          "example": "10001",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -13430,7 +13430,7 @@
         {
           "disabled": false,
           "document": "<p>资源 ID</p>",
-          "example": "twesee-753yd29x30********jqww1",
+          "example": "twesee-753yd29zay9tzk8t140mner",
           "member": "string",
           "name": "ResourceId",
           "output_required": true,
@@ -13439,8 +13439,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>套餐规格。可能取值：</p><ul><li><code>BASIC</code>：包年包月基础版（适用于视频理解）</li></ul>",
-          "example": "BASIC",
+          "document": "<p>套餐规格</p><p>枚举值：</p><ul><li>BASIC： 包年包月基础版</li><li>ADVANCED： 包年包月高级版</li></ul>",
+          "example": "ADVANCED",
           "member": "string",
           "name": "ServiceTier",
           "output_required": true,
@@ -13450,7 +13450,7 @@
         {
           "disabled": false,
           "document": "<p>到期时间，秒级时间戳</p>",
-          "example": "1781897528",
+          "example": "1793172443",
           "member": "int64",
           "name": "ExpireTime",
           "output_required": true,
@@ -13519,7 +13519,37 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期基础能力总额度</p>",
+          "document": "<p>当前周期内的额度总量</p>",
+          "example": "9000",
+          "member": "float",
+          "name": "CreditsQuota",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期内的已使用额度</p>",
+          "example": "23.5",
+          "member": "float",
+          "name": "CreditsUsed",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额度刷新时间</p>",
+          "example": "1793172443",
+          "member": "int64",
+          "name": "QuotaRefreshTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期基础能力总额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsQuota）</p>",
           "example": "3000",
           "member": "int64",
           "name": "QuotaBasic",
@@ -13529,7 +13559,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期基础能力已用额度</p>",
+          "document": "<p>当前周期基础能力已用额度（已废弃，当 ServiceTier=BASIC 时，取值等于 CreditsUsed 向下取整）</p>",
           "example": "2",
           "member": "int64",
           "name": "QuotaUsedBasic",
@@ -13539,8 +13569,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期高级能力总额度</p>",
-          "example": "0",
+          "document": "<p>当前周期高级能力总额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsQuota）</p>",
+          "example": "9000",
           "member": "int64",
           "name": "QuotaAdvanced",
           "output_required": false,
@@ -13549,20 +13579,10 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前周期高级能力已用额度</p>",
-          "example": "0",
+          "document": "<p>当前周期高级能力已用额度（已废弃，当 ServiceTier=ADVANCED 时，取值等于 CreditsUsed 向下取整）</p>",
+          "example": "23",
           "member": "int64",
           "name": "QuotaUsedAdvanced",
-          "output_required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>额度刷新时间</p>",
-          "example": "1779219128",
-          "member": "int64",
-          "name": "QuotaRefreshTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -18998,6 +19018,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>需额外等待结果的字段列表</p><p>枚举值：</p><ul><li>FaceRecognitionResult： 等待人脸检测结果（仅当 ComprehensionConfig.EnableFaceDetection = true 时有效）</li></ul><p>接口固定会等待视觉理解结果，可选增加等待人脸检测结果</p>",
+          "example": "[\"FaceRecognitionResult\"]",
+          "member": "string",
+          "name": "WaitResultFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "<p>回调目标 ID</p>",
           "example": "cb-n9sl1wur",
           "member": "string",
@@ -19043,7 +19072,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成该任务所消耗的基础能力额度</p>",
+          "document": "<p>完成该任务所产生的视觉理解基础能力后付费用量</p>",
           "example": "1",
           "member": "int64",
           "name": "CostBasic",
@@ -19053,12 +19082,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成该任务所消耗的高级能力额度</p>",
+          "document": "<p>完成该任务所产生的视觉理解高级能力后付费用量</p>",
           "example": "0",
           "member": "int64",
           "name": "CostAdvanced",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成该任务所消耗的视觉理解预付费额度</p>",
+          "example": "1",
+          "member": "float",
+          "name": "CostCredits",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -20421,28 +20460,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>设备名称</p>",
-          "example": "dev002",
+          "document": "<p>产品 ID</p>",
+          "example": "4AHMY9X89Y",
           "member": "string",
-          "name": "DeviceName",
+          "name": "ProductId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "<p>分页拉取数量</p>",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>产品 ID</p>",
-          "example": "4AHMY9X89Y",
+          "document": "<p>设备名称</p>",
+          "example": "dev002",
           "member": "string",
-          "name": "ProductId",
+          "name": "DeviceName",
           "required": true,
           "type": "string"
         },
@@ -20454,6 +20484,15 @@
           "name": "ServiceCategory",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页拉取数量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -22214,19 +22253,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备名称",
-          "example": "dev002",
+          "document": "产品 ID",
+          "example": "4AHMY9X89Y",
           "member": "string",
-          "name": "DeviceName",
+          "name": "ProductId",
           "required": true,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "产品 ID",
-          "example": "4AHMY9X89Y",
+          "document": "设备名称",
+          "example": "dev002",
           "member": "string",
-          "name": "ProductId",
+          "name": "DeviceName",
           "required": true,
           "type": "string"
         },
@@ -22241,12 +22280,12 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
-          "example": "0",
-          "member": "uint64",
-          "name": "ChannelId",
+          "document": "视觉理解配置（适用于视频理解、图片理解），不传则不修改",
+          "example": "无",
+          "member": "SeeComprehensionConfig",
+          "name": "ComprehensionConfig",
           "required": false,
-          "type": "int"
+          "type": "object"
         },
         {
           "disabled": false,
@@ -22259,21 +22298,12 @@
         },
         {
           "disabled": false,
-          "document": "视觉理解配置（适用于视频理解、图片理解），不传则不修改",
+          "document": "每日与每周总结配置，不传则不修改",
           "example": "无",
-          "member": "SeeComprehensionConfig",
-          "name": "ComprehensionConfig",
+          "member": "SeeSummarizeConfig",
+          "name": "SummarizeConfig",
           "required": false,
           "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "功能开关。`true` 为开启，`false` 为关闭；不传表示不修改",
-          "example": "true",
-          "member": "bool",
-          "name": "Enabled",
-          "required": false,
-          "type": "bool"
         },
         {
           "disabled": false,
@@ -22286,12 +22316,21 @@
         },
         {
           "disabled": false,
-          "document": "每日与每周总结配置，不传则不修改",
-          "example": "无",
-          "member": "SeeSummarizeConfig",
-          "name": "SummarizeConfig",
+          "document": "通道 ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "ChannelId",
           "required": false,
-          "type": "object"
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "功能开关。`true` 为开启，`false` 为关闭；不传表示不修改",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -24366,8 +24405,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品 ID",
-          "example": "4AHMY9X89Y",
+          "document": "<p>产品 ID</p>",
+          "example": "DLLNMAZ4EO",
           "member": "string",
           "name": "ProductId",
           "required": true,
@@ -24375,8 +24414,8 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
-          "example": "dev002",
+          "document": "<p>设备名称</p>",
+          "example": "cs_test02",
           "member": "string",
           "name": "DeviceName",
           "required": true,
@@ -24384,7 +24423,7 @@
         },
         {
           "disabled": false,
-          "document": "算法类型。可选值：\n\n- `VID_COMP`：视频理解",
+          "document": "<p>算法类型。可选值：</p><ul><li><code>VID_COMP</code>：视频理解</li></ul>",
           "example": "VID_COMP",
           "member": "string",
           "name": "ServiceType",
@@ -24393,7 +24432,7 @@
         },
         {
           "disabled": false,
-          "document": "续费时长，单位：月，支持 1-60",
+          "document": "<p>续费时长，单位：月，支持 1-60</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -24402,7 +24441,7 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
+          "document": "<p>通道 ID</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChannelId",
@@ -24411,7 +24450,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义订单 ID",
+          "document": "<p>自定义订单 ID</p>",
           "example": "order-0013",
           "member": "string",
           "name": "CustomOrderId",
@@ -24426,8 +24465,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "订单 ID",
-          "example": "2026042**********584511",
+          "document": "<p>订单 ID</p>",
+          "example": "20260923311023764115441",
           "member": "string",
           "name": "OrderId",
           "output_required": true,
@@ -24436,7 +24475,7 @@
         },
         {
           "disabled": false,
-          "document": "订单状态",
+          "document": "<p>订单状态</p>",
           "example": "DELIVERED",
           "member": "string",
           "name": "Status",
@@ -24446,8 +24485,8 @@
         },
         {
           "disabled": false,
-          "document": "资源 ID",
-          "example": "twesee-753yd29x30********jqww1",
+          "document": "<p>资源 ID</p>",
+          "example": "twesee-753yd29z71908rv8xo5g1dv",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
@@ -24456,8 +24495,8 @@
         },
         {
           "disabled": false,
-          "document": "原价",
-          "example": "2000",
+          "document": "<p>原价</p>",
+          "example": "4000",
           "member": "string",
           "name": "OriginalPrice",
           "output_required": false,
@@ -24466,8 +24505,8 @@
         },
         {
           "disabled": false,
-          "document": "折后价",
-          "example": "1200",
+          "document": "<p>折后价</p>",
+          "example": "4000",
           "member": "string",
           "name": "DiscountPrice",
           "output_required": false,
@@ -24476,7 +24515,7 @@
         },
         {
           "disabled": false,
-          "document": "币种",
+          "document": "<p>币种</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",
@@ -26270,7 +26309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间",
+          "document": "<p>时间</p>",
           "example": "2026-04-20 00:00:00",
           "member": "string",
           "name": "Time",
@@ -26280,7 +26319,7 @@
         },
         {
           "disabled": false,
-          "document": "任务数量",
+          "document": "<p>任务数量</p>",
           "example": "1",
           "member": "int64",
           "name": "Count",
@@ -26290,7 +26329,7 @@
         },
         {
           "disabled": false,
-          "document": "基础能力用量",
+          "document": "<p>基础能力后付费用量</p>",
           "example": "1",
           "member": "int64",
           "name": "CostBasic",
@@ -26300,12 +26339,22 @@
         },
         {
           "disabled": false,
-          "document": "高级能力用量",
+          "document": "<p>高级能力后付费用量</p>",
           "example": "1",
           "member": "int64",
           "name": "CostAdvanced",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费额度用量</p>",
+          "example": "1",
+          "member": "float",
+          "name": "CostCredits",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -26527,7 +26576,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成该任务所消耗的基础能力额度</p>",
+          "document": "<p>完成该任务所产生的视觉理解基础能力后付费用量</p>",
           "example": "1",
           "member": "int64",
           "name": "CostBasic",
@@ -26537,12 +26586,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>完成该任务所消耗的高级能力额度</p>",
+          "document": "<p>完成该任务所产生的视觉理解高级能力后付费用量</p>",
           "example": "1",
           "member": "int64",
           "name": "CostAdvanced",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成该任务所消耗的视觉理解预付费额度</p>",
+          "example": "1",
+          "member": "float",
+          "name": "CostCredits",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {

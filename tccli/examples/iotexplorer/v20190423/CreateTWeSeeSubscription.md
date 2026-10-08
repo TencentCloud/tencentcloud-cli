@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli iotexplorer CreateTWeSeeSubscription --cli-unfold-argument  \
-    --ProductId 4AHMY9X89Y \
-    --DeviceName dev002 \
+    --ProductId default \
+    --DeviceName dev0923 \
     --ServiceType VID_COMP \
-    --Period 1 \
-    --ServiceTier BASIC
+    --ServiceTier BASIC \
+    --Period 1
 ```
 
 Output: 
@@ -18,12 +18,42 @@ Output:
 {
     "Response": {
         "Currency": "CNY",
-        "DiscountPrice": "1200",
-        "OrderId": "20260420*********550201",
+        "DiscountPrice": "2000",
+        "OrderId": "20260923417023758815491",
         "OriginalPrice": "2000",
-        "ResourceId": "twesee-753yd29x30********jqww1",
+        "ResourceId": "twesee-753yd29z8czyqn8lpvcxekj",
         "Status": "DELIVERED",
-        "RequestId": "6f7647ba-757c-439c-8781-c187b5a561f3"
+        "RequestId": "ead581f8-936e-4e50-8de6-76cc431b2367"
+    }
+}
+```
+
+**Example 2: 开通 TWeSee 视频理解高级版**
+
+
+
+Input: 
+
+```
+tccli iotexplorer CreateTWeSeeSubscription --cli-unfold-argument  \
+    --ProductId 69E4CNU1F0 \
+    --DeviceName 10002 \
+    --ServiceType VID_COMP \
+    --ServiceTier ADVANCED \
+    --Period 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Currency": "CNY",
+        "DiscountPrice": "4000",
+        "OrderId": "20260928990179696733571",
+        "OriginalPrice": "4000",
+        "ResourceId": "twesee-753yd29zazzcjodjbaplog3",
+        "Status": "DELIVERED",
+        "RequestId": "b4a8bcd8-8c44-4e9f-ad72-4a73ebc17dfd"
     }
 }
 ```

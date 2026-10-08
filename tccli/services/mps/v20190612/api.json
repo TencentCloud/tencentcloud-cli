@@ -42128,6 +42128,106 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "r_75466f84b0b911f1b1b66aacb78dd458",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p><p>枚举值：</p><ul><li>text_to_3d： 文生3D</li><li>image_to_3d： 图生3D</li><li>multiview_to_3d： 多视图生3D</li><li>mesh_to_texture： 网格生纹理</li><li>mesh_to_geometry： 网格生几何</li></ul>",
+          "example": "text_to_3d",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入的Prompt</p>",
+          "example": "a cute chicken, cartoon style",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图生3D场景下输入的图片URL</p>",
+          "example": "https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png",
+          "member": "string",
+          "name": "RefImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多图生3D场景下输入的图片信息</p>",
+          "example": "无",
+          "member": "ViewImage",
+          "name": "MultiViewImages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务创建时间</p>",
+          "example": "2026-09-15T03:56:40Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务更新时间</p>",
+          "example": "2026-09-15T04:00:14Z",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交任务的目标面数</p>",
+          "example": "500000",
+          "member": "uint64",
+          "name": "FaceCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生成类型</p><p>枚举值：</p><ul><li>Normal： 生成完整 3D 资产（几何 + 纹理）</li><li>Geometry： 只生成几何体（无纹理，输出速度更快）</li><li>Texture： 只生成纹理（需要传 MeshUrl）</li></ul><p>默认值：Normal</p>",
+          "example": "Normal",
+          "member": "string",
+          "name": "GenerateType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务在队列中的位置，数值越小越靠前；</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "QueuePosition",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -47997,6 +48097,15 @@
           "name": "Style",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户自己申请创建的COS存储桶</p>",
+          "example": "无",
+          "member": "AigcStoreCosParam",
+          "name": "StoreCosParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

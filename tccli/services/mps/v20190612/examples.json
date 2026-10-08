@@ -1974,6 +1974,18 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuan3DTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"4deda860-a9a0-47e3-81f1-00cadf02a44c\"\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"ResourceNotFound.TaskId\",\n        \"ErrorMessage\": \"task not found or expired\",\n        \"RequestId\": \"cec25a1e-0875-44f0-87da-2a1ebabee48b\"\n    }\n}",
         "title": "任务不存在"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuan3DTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"r_75466f84b0b911f1b1b66aacb78dd458\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-09-15T03:56:40Z\",\n        \"FaceCount\": 500000,\n        \"Progress\": 100,\n        \"Prompt\": \"a cute chicken, cartoon style\",\n        \"ResultFile3Ds\": [\n            {\n                \"PreviewImageUrl\": \"https://hunyuan-base-prod-1258344703.cos.ap-guangzhou.myqcloud.com/openapi/text2img/838676194d9cada36394b6ef08ee9bac.png?q-ak=************************************&q-header-list=&q-key-time=1789444785%3B1789531185&q-sign-algorithm=sha1&q-sign-time=1789444785%3B1789531185&q-signature=1559acdb874c9459b83599b5b6cae25f13f0dabd&q-url-param-list=\",\n                \"Type\": \"GLB\",\n                \"Url\": \"https://hunyuan-3d-1258344703.cos.ap-guangzhou.myqcloud.com/gen_tmp_test/efcec080d3e049c3911d5781518e59e7/946764dab065116e55f6204f00e43eab.glb?q-sign-algorithm=sha1&q-ak=************************************&q-sign-time=1789444780%3B1789531180&q-key-time=1789444780%3B1789531180&q-header-list=&q-url-param-list=&q-signature=cbc0494a4e5504a41d53698f2916ca8845a3e9f9\"\n            }\n        ],\n        \"Status\": \"DONE\",\n        \"TaskId\": \"r_75466f84b0b911f1b1b66aacb78dd458\",\n        \"TaskType\": \"text_to_3d\",\n        \"UpdateTime\": \"2026-09-15T04:00:14Z\",\n        \"RequestId\": \"531aa6de-1144-4797-9b87-b8c79c998160\"\n    }\n}",
+        "title": "回包较为完整的示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryHunyuan3DTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"r_e6fb6e39b0ba11f1b1b66aacb78dd458\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2026-09-15T04:07:01Z\",\n        \"FaceCount\": 500000,\n        \"Progress\": 0,\n        \"RefImage\": \"https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png\",\n        \"Status\": \"RUN\",\n        \"TaskId\": \"r_e6fb6e39b0ba11f1b1b66aacb78dd458\",\n        \"TaskType\": \"image_to_3d\",\n        \"UpdateTime\": \"2026-09-15T04:07:18Z\",\n        \"RequestId\": \"7b545f16-7552-4cc9-acfc-04cdc60581e8\"\n    }\n}",
+        "title": "返回RefImage"
       }
     ],
     "QueryProject": [
@@ -2046,6 +2058,12 @@
         "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuan3DTask\n<公共请求参数>\n\n{\n    \"MultiViewImages\": [\n        {\n            \"ViewType\": \"front\",\n            \"ViewImageUrl\": \"https://hunyuan-base-test-1258344703.cos.ap-guangzhou.myqcloud.com/public/test/eba3542f-5e19-4862-b95d-c2d28e7ef91e-latent.png\"\n        }\n    ],\n    \"EnablePBR\": true\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"r_fbdac9ac98c311f18af6166e9d240373\",\n        \"RequestId\": \"1a15321e-f92f-404e-8ccc-8b33d5359f14\"\n    }\n}",
         "title": "多视角图生 3D"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mps.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitHunyuan3DTask\n<公共请求参数>\n\n{\n    \"Prompt\": \"cute woman, high detail, 3d asset\",\n    \"ResultFormat\": \"FBX\",\n    \"StoreCosParam\": {\n        \"CosBucketName\": \"test-251006278\",\n        \"CosBucketRegion\": \"ap-guangzhou\",\n        \"CosBucketPath\": \"/\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"r_386a5affa77011f19a3d5a766fcc2bb3\",\n        \"RequestId\": \"29a04b4f-7662-4cde-8111-adb6d3e729e6\"\n    }\n}",
+        "title": "转存到客户的COS"
       }
     ],
     "SyncDubbing": [

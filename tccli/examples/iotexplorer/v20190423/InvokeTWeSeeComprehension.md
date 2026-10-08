@@ -62,9 +62,9 @@ Output:
 }
 ```
 
-**Example 3: 调用 TWeSee 视频理解算法（含高级功能）**
+**Example 3: 调用 TWeSee 视频理解算法（开启搜索库写入）**
 
-对该视频生效视频搜索高级功能
+
 
 Input: 
 
