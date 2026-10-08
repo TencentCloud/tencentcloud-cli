@@ -782,7 +782,7 @@ def _make_service_command_in_memory():
     """构造一个不触碰真实 SDK / 磁盘的 ServiceCommand。
 
     注入内存 service_model（含 1 个自引用 action + 1 个普通 action），
-    并 mock Services.action_caller，避免 import 真实 tencentcloud SDK 模块。
+    使用 GenericActionCaller，避免调用真实腾讯云 API。
     """
     sc = object.__new__(ServiceCommand)
     sc._service_name = "svc"
@@ -812,38 +812,24 @@ def _make_service_command_in_memory():
 
 def test_E4_servicecommand_get_command_map_lazy():
     """E4: _get_command_map 懒加载，并为自引用 action 注入 _is_self_ref 标记。"""
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
-    try:
-        sc = _make_service_command_in_memory()
-        cmap1 = sc._get_command_map()
-        cmap2 = sc._get_command_map()
-        assert cmap1 is cmap2  # 懒加载：同一对象
-        assert set(cmap1.keys()) == {"Tree", "Flat"}
-        # 本次改动：自引用 action 被打标，普通 action 不打标
-        assert cmap1["Tree"]._is_self_ref is True
-        assert cmap1["Flat"]._is_self_ref is False
-    finally:
-        _Services.action_caller = saved
+    sc = _make_service_command_in_memory()
+    cmap1 = sc._get_command_map()
+    cmap2 = sc._get_command_map()
+    assert cmap1 is cmap2  # 懒加载：同一对象
+    assert set(cmap1.keys()) == {"Tree", "Flat"}
+    # 本次改动：自引用 action 被打标，普通 action 不打标
+    assert cmap1["Tree"]._is_self_ref is True
+    assert cmap1["Flat"]._is_self_ref is False
 
 
 def test_E5_servicecommand_create_parser_returns_action_parser():
     """E5: _create_parser 返回 ActionArgParser 实例 + 注入 help。"""
     from tccli.argparser import ActionArgParser
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
-    try:
-        sc = _make_service_command_in_memory()
-        cmap = sc._get_command_map()
-        parser = sc._create_parser(cmap)
-        assert isinstance(parser, ActionArgParser)
-        assert "help" in cmap
-    finally:
-        _Services.action_caller = saved
+    sc = _make_service_command_in_memory()
+    cmap = sc._get_command_map()
+    parser = sc._create_parser(cmap)
+    assert isinstance(parser, ActionArgParser)
+    assert "help" in cmap
 
 
 def test_E6_servicecommand_create_help_command():
