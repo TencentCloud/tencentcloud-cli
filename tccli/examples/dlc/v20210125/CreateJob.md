@@ -11,7 +11,8 @@ tccli dlc CreateJob --cli-unfold-argument  \
     --FlowId flow-2a9c4e \
     --ExecutionId exec-6f1b83 \
     --RunMode WAREHOUSE \
-    --WarehouseId wh-8f21c3
+    --WarehouseId wh-8f21c3 \
+    --Entrypoint.Statement SELECT * FROM demo_table
 ```
 
 Output: 

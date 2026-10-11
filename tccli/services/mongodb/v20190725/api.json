@@ -70,6 +70,20 @@
       "output": "CreateDBInstanceParamTplResponse",
       "status": "online"
     },
+    "CreateInstanceRole": {
+      "document": "创建数据库角色",
+      "input": "CreateInstanceRoleRequest",
+      "name": "创建数据库角色",
+      "output": "CreateInstanceRoleResponse",
+      "status": "online"
+    },
+    "CreateInstanceUser": {
+      "document": "创建数据库账号",
+      "input": "CreateInstanceUserRequest",
+      "name": "创建数据库账号",
+      "output": "CreateInstanceUserResponse",
+      "status": "online"
+    },
     "CreateLogDownloadTask": {
       "document": "创建日志下载任务",
       "input": "CreateLogDownloadTaskRequest",
@@ -103,6 +117,20 @@
       "input": "DeleteDBBackupsRequest",
       "name": "删除全量备份",
       "output": "DeleteDBBackupsResponse",
+      "status": "online"
+    },
+    "DeleteInstanceRole": {
+      "document": "删除角色",
+      "input": "DeleteInstanceRoleRequest",
+      "name": "删除数据库角色",
+      "output": "DeleteInstanceRoleResponse",
+      "status": "online"
+    },
+    "DeleteInstanceUser": {
+      "document": "删除数据库账号。",
+      "input": "DeleteInstanceUserRequest",
+      "name": "删除数据库账号",
+      "output": "DeleteInstanceUserResponse",
       "status": "online"
     },
     "DeleteLogDownloadTask": {
@@ -259,11 +287,25 @@
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
+    "DescribeInstanceRoles": {
+      "document": "获取角色列表",
+      "input": "DescribeInstanceRolesRequest",
+      "name": "查询角色列表",
+      "output": "DescribeInstanceRolesResponse",
+      "status": "online"
+    },
     "DescribeInstanceSSL": {
       "document": "查看实例SSL开启状态",
       "input": "DescribeInstanceSSLRequest",
       "name": "查看实例SSL开启状态",
       "output": "DescribeInstanceSSLResponse",
+      "status": "online"
+    },
+    "DescribeInstanceUsers": {
+      "document": "获取账号列表",
+      "input": "DescribeInstanceUsersRequest",
+      "name": "查询账号列表",
+      "output": "DescribeInstanceUsersResponse",
       "status": "online"
     },
     "DescribeLogDownloadTasks": {
@@ -607,6 +649,20 @@
       "input": "TerminateDBInstancesRequest",
       "name": "包年包月退货退费",
       "output": "TerminateDBInstancesResponse",
+      "status": "online"
+    },
+    "UpdateInstanceRole": {
+      "document": "更新数据库角色",
+      "input": "UpdateInstanceRoleRequest",
+      "name": "更新数据库角色",
+      "output": "UpdateInstanceRoleResponse",
+      "status": "online"
+    },
+    "UpdateInstanceUser": {
+      "document": "更新数据库账号",
+      "input": "UpdateInstanceUserRequest",
+      "name": "更新账号信息",
+      "output": "UpdateInstanceUserResponse",
       "status": "online"
     },
     "UpgradeDBInstanceKernelVersion": {
@@ -2694,6 +2750,188 @@
       ],
       "type": "object"
     },
+    "CreateInstanceRoleRequest": {
+      "document": "CreateInstanceRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名</p>",
+          "example": "trole11",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色所属db</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限</p>",
+          "example": "无",
+          "member": "RolePrivilege",
+          "name": "Privileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>继承角色</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "InheritedRoles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceRoleResponse": {
+      "document": "CreateInstanceRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "4339802",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceUserRequest": {
+      "document": "CreateInstanceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "testuser1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码</p>",
+          "example": "*********",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密后的密码（与Password二选一）</p>",
+          "example": "***o*****DJ67kN52GK8oC49foA**+rXHRLrL6t2N7***CiKTN/mGSkMfD",
+          "member": "string",
+          "name": "EncryptedPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证数据库（用户所属数据库）</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表（新方式，可包含内置角色和自定义角色）</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限列表（旧方式）</p>",
+          "example": "无",
+          "member": "Auth",
+          "name": "AuthRole",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义描述</p>",
+          "example": "测试用",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启密码轮转（0-不开启，1-开启）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnablePasswordRotation",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceUserResponse": {
+      "document": "CreateInstanceUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID</p>",
+          "example": "1750660112001309",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateLogDownloadTaskRequest": {
       "document": "CreateLogDownloadTask请求参数结构体",
       "members": [
@@ -3191,6 +3429,116 @@
     "DeleteDBBackupsResponse": {
       "document": "DeleteDBBackups返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRoleRequest": {
+      "document": "DeleteInstanceRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名</p>",
+          "example": "trole11",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色所属数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRoleResponse": {
+      "document": "DeleteInstanceRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "4339803",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceUserRequest": {
+      "document": "DeleteInstanceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "testuser1",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceUserResponse": {
+      "document": "DeleteInstanceUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID</p>",
+          "example": "1750660112001310",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5196,6 +5544,125 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceRolesRequest": {
+      "document": "DescribeInstanceRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名，为空则查询所有数据库的角色</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型：builtin_database-内置数据库角色，builtin_cluster-内置集群角色，custom-自定义角色，为空则查询所有</p>",
+          "example": "[\"builtin_database\"]",
+          "member": "string",
+          "name": "RoleType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称，为空则查询所有角色</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用搜索关键字，模糊匹配继承角色和权限相关数据库名、角色名、Action名等</p>",
+          "example": "t",
+          "member": "string",
+          "name": "SearchKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，支持：RoleName，默认为 RoleName</p>",
+          "example": "RoleName",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式：asc-升序，desc-降序，默认为 asc</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认为 20，最大 100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRolesResponse": {
+      "document": "DescribeInstanceRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "RoleInfo",
+          "name": "Roles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceSSLRequest": {
       "document": "DescribeInstanceSSL请求参数结构体",
       "members": [
@@ -5243,6 +5710,107 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceUsersRequest": {
+      "document": "DescribeInstanceUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名，为空则查询所有用户</p>",
+          "example": "mongouser",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名，为空则查询所有数据库的账号</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，可选值：UserName；不传则默认按 UserName 排序</p>",
+          "example": "UserName",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式，可选值：asc（升序）、desc（降序），默认 asc</p>",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认为 20，最大 100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceUsersResponse": {
+      "document": "DescribeInstanceUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号列表</p>",
+          "example": "无",
+          "member": "InstanceUserInfo",
+          "name": "Users",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7703,6 +8271,111 @@
       ],
       "usage": "out"
     },
+    "InstanceUserInfo": {
+      "document": "账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "testuser1",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表（新方式）</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "Roles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限列表（老方式）</p>",
+          "example": "无",
+          "member": "Auth",
+          "name": "AuthRole",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-04-14 17:54:18",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2026-04-14 17:54:18",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>控制台密码更新时间</p>",
+          "example": "2026-04-14 17:43:04",
+          "member": "string",
+          "name": "ConsolePassUpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启密码轮转</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnablePasswordRotation",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义描述</p>",
+          "example": "测试用",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "IsolateDBInstanceRequest": {
       "document": "IsolateDBInstance请求参数结构体",
       "members": [
@@ -9560,6 +10233,162 @@
       ],
       "usage": "in"
     },
+    "Role": {
+      "document": "角色",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色名</p>",
+          "example": "readWrite",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色所属db</p>",
+          "example": "test_db",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleInfo": {
+      "document": "角色详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "trole8",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色所属数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型：builtin_database-内置数据库角色，builtin_cluster-内置集群角色，custom-自定义角色</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授予的权限</p>",
+          "example": "无",
+          "member": "RolePrivilege",
+          "name": "Privileges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>继承的角色</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "InheritedRoles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RolePrivilege": {
+      "document": "角色权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源</p>",
+          "example": "无",
+          "member": "RoleResource",
+          "name": "Resource",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作</p>",
+          "example": "[\"find\"]",
+          "member": "string",
+          "name": "Actions",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RoleResource": {
+      "document": "角色资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否集群级资源</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Cluster",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>db名</p>",
+          "example": "local",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>collection名</p>",
+          "example": "system.users",
+          "member": "string",
+          "name": "Collection",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ScaleDownDBInstanceCpuRequest": {
       "document": "ScaleDownDBInstanceCpu请求参数结构体",
       "members": [
@@ -10683,6 +11512,179 @@
     "TerminateDBInstancesResponse": {
       "document": "TerminateDBInstances返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceRoleRequest": {
+      "document": "UpdateInstanceRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-********",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "test1",
+          "member": "string",
+          "name": "RoleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色所属数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色权限列表，不传则不修改</p>",
+          "example": "无",
+          "member": "RolePrivilege",
+          "name": "Privileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表，不传则不修改</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "InheritedRoles",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceRoleResponse": {
+      "document": "UpdateInstanceRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "4356114",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceUserRequest": {
+      "document": "UpdateInstanceUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cmgo-14akamap",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "mongouser",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证数据库</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Database",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新密码（可选，为空则不修改密码）</p>",
+          "example": "**********",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加密后的密码（可选，与Password二选一）</p>",
+          "example": "*************************",
+          "member": "string",
+          "name": "EncryptedPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的角色列表（可选，为空则不修改角色）</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "Roles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的权限列表（可选，为空则不修改权限）</p>",
+          "example": "无",
+          "member": "Auth",
+          "name": "AuthRole",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户描述（可选，为空则不修改描述）</p>",
+          "example": "测试用",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateInstanceUserResponse": {
+      "document": "UpdateInstanceUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>流程ID</p>",
+          "example": "1750660112001308",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

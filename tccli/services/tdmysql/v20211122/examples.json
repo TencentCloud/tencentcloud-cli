@@ -421,8 +421,8 @@
     "ModifyInstanceSSLStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceSSLStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-6d3cbb0f\",\n    \"Enabled\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 42666,\n        \"RequestId\": \"599821ef-838c-4050-acc6-386ed52e2de2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceSSLStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-fx3xmcfghh \",\n    \"Enabled\": true,\n    \"CertificateType\": \"Custom\",\n    \"CertificateId\": \"ategdHIO\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 4295087399,\n        \"RequestId\": \"fcdc3907-6254-4c78-8b2e-77f2310d9e0c\"\n    }\n}",
         "title": "修改tdsql3-6d3cbb0f的SSL状态"
       }
     ],

@@ -17,108 +17,108 @@ Output:
         "TotalCount": 1,
         "ContentReviewTemplateSet": [
             {
-                "Definition": 0,
-                "Name": "abc",
-                "Comment": "abc",
+                "Definition": 10,
+                "Name": "智能模板1",
+                "Comment": "智能模板1说明",
                 "PornConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label1"
                         ],
-                        "BlockConfidence": 0,
+                        "BlockConfidence": 90,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "TerrorismConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label2"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "PoliticalConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label3"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "ProhibitedConfigure": {
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "UserDefineConfigure": {
                     "FaceReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label4"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label5"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label6"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "Type": "abc"
+                "CreateTime": "2019-04-24T07:28:03+08:00",
+                "UpdateTime": "2019-04-24T07:28:03+08:00",
+                "Type": "Preset"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "008xxxxx-xxxx-xxxx-xxxx-xxxxxxxxaa48"
     }
 }
 ```
@@ -141,108 +141,108 @@ Output:
         "TotalCount": 1,
         "ContentReviewTemplateSet": [
             {
-                "Definition": 0,
-                "Name": "abc",
-                "Comment": "abc",
+                "Definition": 30,
+                "Name": "智能模板1",
+                "Comment": "智能模板1说明",
                 "PornConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label1"
                         ],
-                        "BlockConfidence": 0,
+                        "BlockConfidence": 90,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "TerrorismConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label2"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "PoliticalConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label3"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "ProhibitedConfigure": {
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
                 "UserDefineConfigure": {
                     "FaceReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label4"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "AsrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label5"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     },
                     "OcrReviewInfo": {
-                        "Switch": "abc",
+                        "Switch": "ON",
                         "LabelSet": [
-                            "abc"
+                            "label6"
                         ],
                         "BlockConfidence": 0,
                         "ReviewConfidence": 0
                     }
                 },
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "Type": "abc"
+                "CreateTime": "2019-04-24T07:28:03+08:00",
+                "UpdateTime": "2019-04-24T07:28:03+08:00",
+                "Type": "Preset"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "008xxxxx-xxxx-xxxx-xxxx-xxxxxxxxaa48"
     }
 }
 ```

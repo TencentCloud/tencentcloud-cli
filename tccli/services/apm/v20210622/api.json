@@ -168,6 +168,13 @@
       "output": "DescribeServiceOverviewResponse",
       "status": "online"
     },
+    "DescribeSpanTreeByID": {
+      "document": "查询trace详情接口信息",
+      "input": "DescribeSpanTreeByIDRequest",
+      "name": "查询 Trace 详情信息页",
+      "output": "DescribeSpanTreeByIDResponse",
+      "status": "online"
+    },
     "DescribeTagValues": {
       "document": "根据维度名和过滤条件，查询维度数据.",
       "input": "DescribeTagValuesRequest",
@@ -2821,6 +2828,32 @@
       ],
       "usage": "both"
     },
+    "ChartData": {
+      "document": "接口参数列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口参数id列表</p>",
+          "example": "无",
+          "member": "Series",
+          "name": "Series",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口参数列表</p>",
+          "example": "无",
+          "member": "YAxis",
+          "name": "YAxis",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ComponentTopologyView": {
       "document": "包含了视图中节点组件类型的数量",
       "members": [
@@ -5085,6 +5118,115 @@
       ],
       "type": "object"
     },
+    "DescribeSpanTreeByIDRequest": {
+      "document": "DescribeSpanTreeByID请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>业务系统 ID</p>",
+          "example": "apm-52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TraceID</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Span查询开始时间戳（单位:秒）</p>",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Span查询结束时间戳（单位:秒）</p>",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代表请求的是否为完整瀑布图</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFold",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启关键调用视图</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EntrySpanSelected",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关注的SpanId</p>",
+          "example": "da21f86a7f76f925",
+          "member": "string",
+          "name": "FocusSpanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤视图的Tag列表</p>",
+          "example": "[\"peer.service\"]",
+          "member": "string",
+          "name": "FilterViewTagKeyList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启云资源关联</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableResourceLink",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpanTreeByIDResponse": {
+      "document": "DescribeSpanTreeByID返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>树形图</p>",
+          "example": "无",
+          "member": "SpanTreeView",
+          "name": "SpanTreeView",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTagValuesRequest": {
       "document": "DescribeTagValues请求参数结构体",
       "members": [
@@ -5405,6 +5547,32 @@
         }
       ],
       "type": "object"
+    },
+    "ErrorSpan": {
+      "document": "错误Span的数据项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异常SpanId</p>",
+          "example": "1e6f972cf8fec84e",
+          "member": "string",
+          "name": "SpanID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常信息</p>",
+          "example": "io.grpc.StatusRuntimeException",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "查询过滤参数",
@@ -7141,7 +7309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "<p>指标名</p>",
           "example": "request_count",
           "member": "string",
           "name": "MetricName",
@@ -7150,8 +7318,8 @@
         },
         {
           "disabled": false,
-          "document": "同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比) ",
-          "example": "CompareByYesterday",
+          "document": "<p>同比，现支持 CompareByYesterday (与昨天相比)和CompareByLastWeek (与上周相比)</p>",
+          "example": "[\"CompareByYesterday\"]",
           "member": "string",
           "name": "Compares",
           "required": false,
@@ -7159,7 +7327,7 @@
         },
         {
           "disabled": false,
-          "document": "同比，已弃用，不建议使用",
+          "document": "<p>同比，已弃用，不建议使用</p>",
           "example": "CompareByYesterday",
           "member": "string",
           "name": "Compare",
@@ -7229,8 +7397,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "组件勾选情况\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>组件勾选情况</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sql\"]",
           "member": "string",
           "name": "Component",
           "output_required": false,
@@ -7240,6 +7408,42 @@
         }
       ],
       "usage": "both"
+    },
+    "Series": {
+      "document": "耗时消耗时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "耗时列表信息",
+          "example": "[1,2,3,6,5]",
+          "member": "int64",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "qw23567",
+          "member": "string",
+          "name": "Stack",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "startTime",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ServiceDetail": {
       "document": "应用详细信息",
@@ -7680,6 +7884,120 @@
       ],
       "usage": "both"
     },
+    "SpanTreeView": {
+      "document": "树形结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "树结构json串",
+          "example": "qw23567",
+          "member": "string",
+          "name": "TreeData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "ChartData",
+          "name": "ChartData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Trace概览信息",
+          "example": "无",
+          "member": "TraceOverview",
+          "name": "TraceOverview",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "压缩编码后的树结构json串",
+          "example": "qw23567",
+          "member": "string",
+          "name": "CompressedTreeData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整条链路的 span 数量是否超过限制",
+          "example": "false",
+          "member": "bool",
+          "name": "CntExceeded",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有内部查询超时",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryTimeout",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链路中 span 总数量",
+          "example": "10000",
+          "member": "int64",
+          "name": "SpanTotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤视图的标签值列表",
+          "example": "无",
+          "member": "TagValues",
+          "name": "FilterViewTagValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TagValues": {
+      "document": "维度值（值为List）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维度键",
+          "example": "peer.service",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维度值",
+          "example": "[\"10.108.113.182:6379\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TerminateApmInstanceRequest": {
       "document": "TerminateApmInstance请求参数结构体",
       "members": [
@@ -7712,7 +8030,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -7723,7 +8041,7 @@
         },
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-pkask1w4",
           "member": "string",
           "name": "ClusterID",
@@ -7734,7 +8052,7 @@
         },
         {
           "disabled": false,
-          "document": "pod name",
+          "document": "<p>pod name</p>",
           "example": "java-taw-mock-project-experience-log-test-5788578c94-92tbv",
           "member": "string",
           "name": "PodName",
@@ -7745,8 +8063,8 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
-          "example": "test",
+          "document": "<p>命名空间</p>",
+          "example": "namespace-test",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -7756,8 +8074,8 @@
         },
         {
           "disabled": false,
-          "document": "工作负载",
-          "example": "test",
+          "document": "<p>工作负载</p>",
+          "example": "deployment-test",
           "member": "string",
           "name": "Deployment",
           "output_required": false,
@@ -7767,7 +8085,7 @@
         },
         {
           "disabled": false,
-          "document": "pod ip",
+          "document": "<p>pod ip</p>",
           "example": "10.80.1.34",
           "member": "string",
           "name": "PodIP",
@@ -7778,7 +8096,7 @@
         },
         {
           "disabled": false,
-          "document": "node ip",
+          "document": "<p>node ip</p>",
           "example": "9.223.65.110",
           "member": "string",
           "name": "NodeIP",
@@ -8211,6 +8529,128 @@
         }
       ],
       "usage": "both"
+    },
+    "TraceOverview": {
+      "document": "Trace概览查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>traceID调用状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>TraceId查询</p>",
+          "example": "7fa5e879e8782d7b",
+          "member": "string",
+          "name": "TraceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Exception",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "customer",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>耗时</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "Duration",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口名</p>",
+          "example": "/getUserInfo",
+          "member": "string",
+          "name": "Operation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间（微秒）</p>",
+          "example": "1776064696",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ApplicationCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常Span列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorSpan",
+          "name": "ErrorSpans",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "YAxis": {
+      "document": "接口列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口列表</p>",
+          "example": "[\"e29646669f404c73\"]",
+          "member": "string",
+          "name": "Keys",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接口列表</p>",
+          "example": "[\"test-java-gateway-service GET market-service-route\"]",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -6,16 +6,18 @@ Input:
 
 ```
 tccli tdmysql ModifyInstanceSSLStatus --cli-unfold-argument  \
-    --InstanceId tdsql3-6d3cbb0f \
-    --Enabled True
+    --InstanceId tdsql3-fx3xmcfghh  \
+    --Enabled True \
+    --CertificateType Custom \
+    --CertificateId ategdHIO
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": 42666,
-        "RequestId": "599821ef-838c-4050-acc6-386ed52e2de2"
+        "FlowId": 4295087399,
+        "RequestId": "fcdc3907-6254-4c78-8b2e-77f2310d9e0c"
     }
 }
 ```

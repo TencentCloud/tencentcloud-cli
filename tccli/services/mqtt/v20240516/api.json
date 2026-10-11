@@ -238,6 +238,13 @@
       "output": "DescribeCaCertificatesResponse",
       "status": "online"
     },
+    "DescribeClientEvents": {
+      "document": "查询轨迹",
+      "input": "DescribeClientEventsRequest",
+      "name": "事件查询",
+      "output": "DescribeClientEventsResponse",
+      "status": "online"
+    },
     "DescribeClientList": {
       "document": "查询 MQTT 客户端详情",
       "input": "DescribeClientListRequest",
@@ -3005,6 +3012,70 @@
           "example": "无",
           "member": "CaCertificateItem",
           "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientEventsRequest": {
+      "document": "DescribeClientEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "mqtt-12345",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1712025623202",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1712025623202",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "客户端id",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClientEventsResponse": {
+      "document": "DescribeClientEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "轨迹",
+          "example": "无",
+          "member": "EventItem",
+          "name": "Events",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5854,6 +5925,78 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EventInfo": {
+      "document": "客户端事件信息详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件信息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reason",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件信息值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disconnect",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EventItem": {
+      "document": "事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "事件",
+          "member": "string",
+          "name": "Event",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>发消息或者收消息的clientid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "client1",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件的相关信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EventInfo",
+          "name": "Info",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

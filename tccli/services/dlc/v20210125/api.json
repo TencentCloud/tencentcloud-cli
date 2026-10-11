@@ -10918,6 +10918,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>集群规格配置。RunMode=JOB 时必填（MajorType 对应引擎字段须非空、其余引擎字段须为空）；RunMode=WAREHOUSE 时忽略。</p>",
+          "example": "无",
+          "member": "Spec",
+          "name": "Spec",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>自定义 Spark conf（JSON 字符串，亦接受多行 key=value 文本，归一化为 JSON 存储、出参恒为 JSON），作为 SPARK_CUSTOM 配置通道落库，两种运行模式均生效。</p>",
           "example": "string",
           "member": "string",
@@ -10927,12 +10936,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>依赖管理（jars / files / archives / pyFiles）。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>",
+          "example": "无",
+          "member": "EngineConfigDependencies",
+          "name": "Dependencies",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>环境变量（KEY=VALUE）列表。仅 RunMode=JOB 可传；RunMode=WAREHOUSE 时禁止传。</p>",
           "example": "无",
           "member": "KVPair",
           "name": "EnvVars",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>入口点配置，必填。SPARK_SQL 时 Statement 必填（≤1MB）；SPARK_BATCH 时 Statement 或 EntryFile 至少其一（EntryFile 须匹配路径前缀白名单）。</p>",
+          "example": "无",
+          "member": "EntrypointInfo",
+          "name": "Entrypoint",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -23600,6 +23627,16 @@
       "document": "DescribeJobDetail返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>作业详情，JSON 嵌套在 JobDetail 键下。</p>",
+          "example": "无",
+          "member": "JobDetailInfo",
+          "name": "JobDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -23965,7 +24002,17 @@
         },
         {
           "disabled": false,
-          "document": "<p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows > Total 判断，完整结果通过 Download 获取.</p>",
+          "document": "<p>下载链接（结果集可用时按需返回；结果过大无法内联展示时仅返回 Download）。</p>",
+          "example": "无",
+          "member": "DownloadInfo",
+          "name": "Download",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本页内容是否因响应大小限制被截断（单元格/行超限，结果集仅 1 行时也可能触发）。行数超过在线展示上限不由本标记表达，以 TotalRows &gt; Total 判断，完整结果通过 Download 获取.</p>",
           "example": "false",
           "member": "bool",
           "name": "Truncated",
@@ -29584,6 +29631,52 @@
       ],
       "usage": "both"
     },
+    "DownloadInfo": {
+      "document": "入站下载信息（结果集 / 日志通用）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下载链接地址.</p>",
+          "example": "https://demo-bucket.cos.ap-guangzhou.myqcloud.com/result/demo.csv",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件格式（如 CSV / JSON）.</p>",
+          "example": "CSV",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小（字节）.</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>链接有效时长（秒）.</p>",
+          "example": "3600",
+          "member": "int64",
+          "name": "ExpireSeconds",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DropDMSDatabaseRequest": {
       "document": "DropDMSDatabase请求参数结构体",
       "members": [
@@ -30036,6 +30129,56 @@
       ],
       "usage": "both"
     },
+    "EngineConfigDependencies": {
+      "document": "引擎依赖管理，对应 Spark 的 --jars / --files / --archives / --py-files 四类资源。每条 JAR 要么 COS 路径（cos:///cosn://），要么 Maven GAV（group:artifact:version）；files/archives/pyFiles 是 COS 路径列表（pyFiles 支持 .py/.zip/.egg/.whl）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>JAR 列表：每行一个 COS 路径或 Maven GAV。</p>",
+          "example": "[\"cosn://demo-bucket/jars/demo.jar\"]",
+          "member": "string",
+          "name": "Jars",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>files 列表：COS 路径，下载到 executor 工作目录（不解压）。</p>",
+          "example": "[\"cosn://demo-bucket/files/demo.conf\"]",
+          "member": "string",
+          "name": "Files",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>archives 列表：COS 路径，下载并解压到 executor 工作目录。</p>",
+          "example": "[\"cosn://demo-bucket/archives/demo.tar.gz\"]",
+          "member": "string",
+          "name": "Archives",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>pyFiles 列表：COS 路径（.py/.zip/.egg/.whl），等价 Spark --py-files。</p>",
+          "example": "[\"cosn://demo-bucket/pyfiles/demo.zip\"]",
+          "member": "string",
+          "name": "PyFiles",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EngineNetworkInfo": {
       "document": "引擎网络信息",
       "members": [
@@ -30206,6 +30349,56 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "EntrypointInfo": {
+      "document": "入站作业入口（Entrypoint）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SQL 语句文本，须为 Base64 编码的 UTF-8 文本。仅 SPARK_SQL 模式可传且必填（解码后 ≤1MB）；SPARK_BATCH 模式禁止传。</p>",
+          "example": "U0VMRUNUICogRlJPTSBkZW1vX3RhYmxl",
+          "member": "string",
+          "name": "Statement",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业文件路径（JAR/Python），须匹配配置的路径前缀白名单。以 .py 结尾判定为 Python 入口（EntryPoint 禁传），否则为 JAR 入口（EntryPoint 必填）。</p>",
+          "example": "cosn://demo-bucket/jobs/demo_batch.py",
+          "member": "string",
+          "name": "EntryFile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入口类名（main class 全限定名）。JAR 入口（EntryFile 非 .py 结尾）必填；Python 入口（.py 结尾）禁传；SPARK_SQL 模式禁止传。</p>",
+          "example": "org.apache.spark.examples.SparkPi",
+          "member": "string",
+          "name": "EntryPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主方法参数列表（JSON 数组字符串），仅 SPARK_BATCH 模式可传；SPARK_SQL 模式禁止传。</p>",
+          "example": "--input cosn://demo-bucket/input/data.csv",
+          "member": "string",
+          "name": "MainArgs",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -37457,6 +37650,292 @@
           "example": "spark-warehouse",
           "member": "string",
           "name": "WarehouseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "JobDetailInfo": {
+      "document": "作业详情 POJO.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>作业唯一标识.</p>",
+          "example": "job-9f3a2b1c",
+          "member": "string",
+          "name": "JobId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业名称.</p>",
+          "example": "spark-sql-demo",
+          "member": "string",
+          "name": "JobName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建/提交者子账号 UIN。</p>",
+          "example": "700281534962",
+          "member": "string",
+          "name": "CreatorSubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业状态.</p>",
+          "example": "SUCCEEDED",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎大类.</p>",
+          "example": "SPARK",
+          "member": "string",
+          "name": "MajorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引擎子类型.</p>",
+          "example": "SPARK_SQL",
+          "member": "string",
+          "name": "MinorType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行模式（WAREHOUSE / JOB）.</p>",
+          "example": "WAREHOUSE",
+          "member": "string",
+          "name": "RunMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库 ID，RunMode=WAREHOUSE 时非空.</p>",
+          "example": "wh-8f21c3",
+          "member": "string",
+          "name": "WarehouseId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区编码.</p>",
+          "example": "dlc-p-nwruuglc",
+          "member": "string",
+          "name": "PartitionCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源分区展示名（解析不到时为空）.</p>",
+          "example": "spark-demo-partition",
+          "member": "string",
+          "name": "PartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列名称.</p>",
+          "example": "root.default",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流作业 checkpoint 路径（MinorType=SPARK_STREAM 时非空）。同一流作业的多次运行必须复用同一路径，变更等于重置消费进度。</p>",
+          "example": "cosn://demo-bucket/checkpoints/demo_stream",
+          "member": "string",
+          "name": "CheckpointLocation",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "SubmitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间（Unix 毫秒时间戳）.</p>",
+          "example": "1767256876123",
+          "member": "int64",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时长（毫秒）.</p>",
+          "example": "900000",
+          "member": "int64",
+          "name": "RunningTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算仓库名称（详情接口反查填充，warehouse 模式下非空）.</p>",
+          "example": "spark-warehouse",
+          "member": "string",
+          "name": "WarehouseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流程 ID。</p>",
+          "example": "flow-2a9c4e",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 ID。</p>",
+          "example": "exec-6f1b83",
+          "member": "string",
+          "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业来源。</p>",
+          "example": "手动触发",
+          "member": "string",
+          "name": "JobSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排队等待时长（毫秒）。</p>",
+          "example": "900000",
+          "member": "int64",
+          "name": "WaitingTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Spark UI 历史链接。</p>",
+          "example": "https://spark-history.demo/job-9f3a2b1c",
+          "member": "string",
+          "name": "HistoryUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败时的错误信息。</p>",
+          "example": "详见作业日志",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Spark conf（JSON 字符串，由 job_config 组装）.</p>",
+          "example": "{\"spark.executor.memory\":\"4g\"}",
+          "member": "string",
+          "name": "CustomProperties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量.</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时/镜像。</p>",
+          "example": "spark-3.5.5",
+          "member": "string",
+          "name": "RuntimeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时展示名（如 Spark 3.5.5），与 RuntimeCode 配套；解析不到时为空。</p>",
+          "example": "Spark 3.5.5",
+          "member": "string",
+          "name": "RuntimeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Catalog 版本码。</p>",
+          "example": "TCCATALOG",
+          "member": "string",
+          "name": "SysCatalogVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -53844,6 +54323,78 @@
       ],
       "usage": "out"
     },
+    "SparkJobSpec": {
+      "document": "Spark 集群资源规格（CU 维度），Spec.Spark 平铺字段载体。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Driver 资源规格（CU 数）.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DriverCU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Executor 资源规格（CU 数）.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ExecutorCU",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Executor 实例数量（弹性伸缩关闭时的固定数量）.</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ExecutorNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性扩缩容.</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DynamicAllocation",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性扩缩容最小 Executor 数.</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MinExecutors",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性扩缩容最大 Executor 数.</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "MaxExecutors",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SparkMonitorMetrics": {
       "document": "Spark监控数据",
       "members": [
@@ -54119,6 +54670,23 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Spec": {
+      "document": "作业资源规格（跨引擎平铺载体；字段须与请求 MajorType 匹配）。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SPARK 资源规格（CU 维度）；MajorType=SPARK 时必填，其余引擎字段须为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SparkJobSpec",
+          "name": "Spark",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -58859,6 +59427,16 @@
           "example": "SparkSQL",
           "member": "string",
           "name": "ResourceGroupType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务标签</p><p>参数格式：任意字符串</p>",
+          "example": "\"{\\\"tag\\\":\\\"query tag\\\"}\"",
+          "member": "string",
+          "name": "Tag",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

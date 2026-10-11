@@ -108,6 +108,14 @@
         "title": "调用成功示例"
       }
     ],
+    "DescribeMultimodalDocParseJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultimodalDocParseJob\n<公共请求参数>\n\n{\n    \"TaskId\": \"1493508761820692480\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": \"\",\n        \"ErrorMessage\": \"\",\n        \"FailPageNum\": 0,\n        \"ResultUrl\": \"https://ocr-smartdoc-1258344699.cos.ap-guangzhou.myqcloud.com/multimodal-doc-parse/result/251138**0/1493508761820692480/result.zip?q-sign-algorithm=sha1&q-ak=*KID1o*JyNjUcV7UbSNLo69woR0KPzLSF*VG&q-sign-time=178997464*%3B1*8*9*6447&q-key-time=17899746**%3B1789976447&q-header-list=host&q-url-param-list=&q-signature=f986bbc310f7684eef0c359a36ae5b09f35c8a68\",\n        \"Status\": \"Success\",\n        \"SuccessPageNum\": 1,\n        \"RequestId\": \"376ecd73-a87f-4f61-8075-8d94260161e9\"\n    }\n}",
+        "title": "查询任务成功示例"
+      }
+    ],
     "DescribeQuestionMarkAgentJob": [
       {
         "document": "",
@@ -564,6 +572,14 @@
         "title": "RideHailingTransportLicenseOCR调用"
       }
     ],
+    "RunRerank": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunRerank\n<公共请求参数>\n\n{\n    \"Model\": \"0\",\n    \"Query\": \"多模态文档解析\",\n    \"Docs\": [\n        \"文档解析大模型\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            {\n                \"Index\": 0,\n                \"Score\": 27.172710418701172\n            }\n        ],\n        \"RequestId\": \"55118933-250b-4d75-a70d-6c1227cb49ab\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "SealOCR": [
       {
         "document": "印章识别示例代码",
@@ -606,6 +622,14 @@
         "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMarkEssayAgentJob\n<公共请求参数>\n\n{\n    \"ImageBase64List\": [\n        \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB*****JoAAAYyCAYAAAB3uYQsAAAQAElEQVR4Aez9aZBkWXodiJ1zn7vHHpFL\"\n    ],\n    \"QuestionConfigMap\": \"{\\\"StructureAndContent\\\":\\\"1\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobIds\": [\n            \"1395596000423952234\"\n        ],\n        \"RequestId\": \"d1a86ab4-1366-4f03-882c-ae3c9f938be6\"\n    }\n}",
         "title": "调用成功示例2"
+      }
+    ],
+    "SubmitMultimodalDocParseJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitMultimodalDocParseJob\n<公共请求参数>\n\n{\n    \"FileType\": 7,\n    \"FileBase64\": \"/9j/4AAQSkZJRg.....s97n//2Q==\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1491762633211215872\",\n        \"RequestId\": \"6ef2d07d-c954-4def-9da3-8cd693bed049\"\n    }\n}",
+        "title": "成功调用请求示例"
       }
     ],
     "SubmitQuestionMarkAgentJob": [

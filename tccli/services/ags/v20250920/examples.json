@@ -98,6 +98,14 @@
         "title": "创建 URL_IMPORT 类型的 MCP Record"
       }
     ],
+    "CreateSandboxSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSandboxSnapshot\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ap35sxr52gtvkutvzfbjskfw45vsh3cn2atrkglf\",\n    \"Memory\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Snapshot\": {\n            \"CreateTime\": \"2026-08-06T04:59:06.162636734Z\",\n            \"MemoryIncluded\": false,\n            \"SnapshotId\": \"snapshot-019fd570-7a32-8013-8e9b-800f8082a260\",\n            \"SourceInstanceId\": \"ap35sxr52gtvkutvzfbjskfw45vsh3cn2atrkglf\",\n            \"Status\": \"ACTIVE\",\n            \"StatusReason\": \"\",\n            \"Tags\": [],\n            \"UpdateTime\": \"2026-08-06T04:59:06.162636734Z\"\n        },\n        \"RequestId\": \"cf9da8d3-98c7-42f8-b014-6a3bbaf3e06f\"\n    }\n}",
+        "title": "创建沙箱快照"
+      }
+    ],
     "CreateSandboxTool": [
       {
         "document": "",
@@ -164,6 +172,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DeleteRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\"\n    }\n}",
         "title": "软删除整个 Record"
+      }
+    ],
+    "DeleteSandboxSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSandboxSnapshot\n<公共请求参数>\n\n{\n    \"SnapshotId\": \"snapshot-019fd56d-51dc-8013-ba8b-23216f003cac\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"47ec5d95-8ee5-4360-b037-7bed1d3e3ae5\"\n    }\n}",
+        "title": "删除沙箱快照"
       }
     ],
     "DeleteSandboxTool": [
@@ -310,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxInstanceList\n<公共请求参数>\n\n{\n    \"ToolId\": \"sdt-ee4ywozw\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"RUNNING\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"12345678123412341234123456789abc\",\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"my-browser-tool\",\n                \"Status\": \"RUNNING\",\n                \"TimeoutSeconds\": 600,\n                \"ExpiresAt\": \"2024-01-01T10:30:00Z\",\n                \"CreateTime\": \"2024-01-01T10:00:00Z\",\n                \"UpdateTime\": \"2024-01-01T10:00:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"12345678123412341234123456789012\"\n    }\n}",
         "title": "查询沙箱实例列表"
+      }
+    ],
+    "DescribeSandboxSnapshotList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxSnapshotList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SnapshotSet\": [\n            {\n                \"CreateTime\": \"2026-08-06T04:59:06.164Z\",\n                \"MemoryIncluded\": false,\n                \"SnapshotId\": \"snapshot-019fd570-7a32-8013-8e9b-800f8082a260\",\n                \"SourceInstanceId\": \"ap35sxr52gtvkutvzfbjskfw45vsh3cn2atrkglf\",\n                \"Status\": \"ACTIVE\",\n                \"StatusReason\": \"\",\n                \"Tags\": [],\n                \"UpdateTime\": \"2026-08-06T04:59:06.304Z\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"f360264d-452f-4fe7-a71c-02e43f0c32a8\"\n    }\n}",
+        "title": "查询沙箱快照列表"
       }
     ],
     "DescribeSandboxToolList": [

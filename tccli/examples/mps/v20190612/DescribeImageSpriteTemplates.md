@@ -16,24 +16,24 @@ Output:
         "TotalCount": 1,
         "ImageSpriteTemplateSet": [
             {
-                "Definition": 1,
-                "Type": "abc",
-                "Name": "abc",
-                "Width": 1,
-                "Height": 1,
-                "ResolutionAdaptive": "abc",
-                "SampleType": "abc",
-                "SampleInterval": 1,
-                "RowCount": 1,
-                "ColumnCount": 1,
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "FillType": "abc",
-                "Comment": "abc",
-                "Format": "abc"
+                "Definition": 10,
+                "Type": "Preset",
+                "Name": "雪碧图模板",
+                "Width": 142,
+                "Height": 80,
+                "ResolutionAdaptive": "close",
+                "SampleType": "Time",
+                "SampleInterval": 10,
+                "RowCount": 10,
+                "ColumnCount": 10,
+                "CreateTime": "2019-07-25T22:24:36Z",
+                "UpdateTime": "2019-07-25T22:24:36Z",
+                "FillType": "stretch",
+                "Comment": "雪碧图模板说明",
+                "Format": "jpg"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "008xxxxx-xxxx-xxxx-xxxx-xxxxxxxxaa48"
     }
 }
 ```

@@ -49,6 +49,13 @@
       "output": "CancelLoadTaskResponse",
       "status": "online"
     },
+    "CancelPolicyRuleExecuteRecord": {
+      "document": "取消正在执行的扫描任务，正在扫描的任务取消后没有结果",
+      "input": "CancelPolicyRuleExecuteRecordRequest",
+      "name": "取消正在执行扫描的任务",
+      "output": "CancelPolicyRuleExecuteRecordResponse",
+      "status": "online"
+    },
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
@@ -77,6 +84,13 @@
       "output": "CreateLoadTaskResponse",
       "status": "online"
     },
+    "CreatePolicyRule": {
+      "document": "创建数据洞察任务",
+      "input": "CreatePolicyRuleRequest",
+      "name": "创建扫描规则",
+      "output": "CreatePolicyRuleResponse",
+      "status": "online"
+    },
     "DeleteCrossVpcSubnetSupportForClientNode": {
       "document": "为客户端节点删除跨vpc子网访问能力",
       "input": "DeleteCrossVpcSubnetSupportForClientNodeRequest",
@@ -103,6 +117,13 @@
       "input": "DeleteFilesetRequest",
       "name": "删除Fileset",
       "output": "DeleteFilesetResponse",
+      "status": "online"
+    },
+    "DeletePolicyRule": {
+      "document": "删除扫描规则",
+      "input": "DeletePolicyRuleRequest",
+      "name": "删除扫描规则",
+      "output": "DeletePolicyRuleResponse",
       "status": "online"
     },
     "DescribeClientNodes": {
@@ -175,11 +196,39 @@
       "output": "DescribeLoadTaskResponse",
       "status": "online"
     },
+    "DescribePolicyRule": {
+      "document": "列出所有的扫描规则",
+      "input": "DescribePolicyRuleRequest",
+      "name": "列出扫描规则",
+      "output": "DescribePolicyRuleResponse",
+      "status": "online"
+    },
+    "DescribePolicyRuleExecuteRecord": {
+      "document": "列出指定扫描规则的执行记录",
+      "input": "DescribePolicyRuleExecuteRecordRequest",
+      "name": "列出扫描规则执行记录",
+      "output": "DescribePolicyRuleExecuteRecordResponse",
+      "status": "online"
+    },
     "DetachFileSystemBucket": {
       "document": "解绑文件系统与Bucket的映射",
       "input": "DetachFileSystemBucketRequest",
       "name": "解绑文件系统与Bucket的映射",
       "output": "DetachFileSystemBucketResponse",
+      "status": "online"
+    },
+    "DisablePolicyRule": {
+      "document": "禁用扫描任务",
+      "input": "DisablePolicyRuleRequest",
+      "name": "禁用扫描规则",
+      "output": "DisablePolicyRuleResponse",
+      "status": "online"
+    },
+    "EnablePolicyRule": {
+      "document": "启用扫描任务",
+      "input": "EnablePolicyRuleRequest",
+      "name": "启用扫描规则",
+      "output": "EnablePolicyRuleResponse",
       "status": "online"
     },
     "ExpandCapacity": {
@@ -601,6 +650,51 @@
     },
     "CancelLoadTaskResponse": {
       "document": "CancelLoadTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelPolicyRuleExecuteRecordRequest": {
+      "document": "CancelPolicyRuleExecuteRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1785933849640",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行记录id</p>",
+          "example": "1785937538297",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelPolicyRuleExecuteRecordResponse": {
+      "document": "CancelPolicyRuleExecuteRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -1295,6 +1389,97 @@
       ],
       "type": "object"
     },
+    "CreatePolicyRuleRequest": {
+      "document": "CreatePolicyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统id</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描目录</p>",
+          "example": "/test_policy/",
+          "member": "string",
+          "name": "ScanDir",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>",
+          "example": "policy_now",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划</p>",
+          "example": "无",
+          "member": "ExecutionPlan",
+          "name": "Execution",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤规则</p>",
+          "example": "无",
+          "member": "PolicyRuleOperator",
+          "name": "PolicyRuleSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出清单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableManifest",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>清单配置</p>",
+          "example": "无",
+          "member": "ManifestAttr",
+          "name": "Manifest",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyRuleResponse": {
+      "document": "CreatePolicyRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1786020012996",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CustomerClusterAttr": {
       "document": "goosefsx客户端集群信息",
       "members": [
@@ -1546,6 +1731,42 @@
     },
     "DeleteFilesetResponse": {
       "document": "DeleteFileset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRuleRequest": {
+      "document": "DeletePolicyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1785919964984",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRuleResponse": {
+      "document": "DeletePolicyRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2030,6 +2251,145 @@
       ],
       "type": "object"
     },
+    "DescribePolicyRuleExecuteRecordRequest": {
+      "document": "DescribePolicyRuleExecuteRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大返回数量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1786019949985",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRuleExecuteRecordResponse": {
+      "document": "DescribePolicyRuleExecuteRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行记录详情</p>",
+          "example": "无",
+          "member": "RuleExecuteAttribute",
+          "name": "RuleExecuteList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRuleRequest": {
+      "document": "DescribePolicyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大返回数量</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRuleResponse": {
+      "document": "DescribePolicyRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则任务详情</p>",
+          "example": "无",
+          "member": "PolicyRuleTaskAttribute",
+          "name": "PolicyRuleTaskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务总数</p>",
+          "example": "11",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetachFileSystemBucketRequest": {
       "document": "DetachFileSystemBucket请求参数结构体",
       "members": [
@@ -2056,6 +2416,42 @@
     },
     "DetachFileSystemBucketResponse": {
       "document": "DetachFileSystemBucket返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisablePolicyRuleRequest": {
+      "document": "DisablePolicyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "1785919964984",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DisablePolicyRuleResponse": {
+      "document": "DisablePolicyRule返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2138,6 +2534,153 @@
       ],
       "usage": "both"
     },
+    "EnablePolicyRuleRequest": {
+      "document": "EnablePolicyRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "1785919964984",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统ID</p>",
+          "example": "x-c60-0q62fdo7",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnablePolicyRuleResponse": {
+      "document": "EnablePolicyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExecutePeriodAttribute": {
+      "document": "周期执行启动配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选择的周期类型</p><p>枚举值：</p><ul><li>DAY： 每天执行 </li><li>WEEK： 每周执行</li><li>MONTH： 每月执行</li></ul>",
+          "example": "DAY",
+          "member": "string",
+          "name": "PeriodType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择每周执行时必填，需要选择周几,0-6 分别是周日到周六</p><p>取值范围：[0, 6]</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartWeekday",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择每月执行时必填，1-28日选择一天</p><p>取值范围：[1, 28]</p><p>默认值：1</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartDate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期中的时间点，取值0~59</p><p>取值范围：[0, 59]</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "StartMinute",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>24小时周期开始的小时数，取值0~23</p><p>取值范围：[0, 23]</p><p>默认值：1</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "StartHour",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ExecutionPlan": {
+      "document": "执行时间",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行类型</p><p>枚举值：</p><ul><li>scheduled： 指定时间执行</li><li>periodic： 周期执行</li></ul>",
+          "example": "periodic",
+          "member": "string",
+          "name": "ExecuteMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行时间</p><p>参数格式：2026-07-23 08:30</p><p>入参限制：只有立即执行或者指定时间执行时设置，周期执行不需要设置</p><p>默认值：当前时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-08-14 15:55",
+          "member": "string",
+          "name": "ExecuteAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>周期执行的时间设置</p><p>入参限制：选择周期执行时必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExecutePeriodAttribute",
+          "name": "ExecutePeriod",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务等待时间</p><p>取值范围：[1, 500]</p><p>单位：H</p><p>默认值：12</p><p>任务执行的等待时间，超过时间任务未启动，自动取消</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "WaitTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ExpandCapacityRequest": {
       "document": "ExpandCapacity请求参数结构体",
       "members": [
@@ -2152,7 +2695,7 @@
         },
         {
           "disabled": false,
-          "document": "新增扩容的系统容量",
+          "document": "新增扩容的系统容量(单位 GiB)",
           "example": "4680",
           "member": "uint64",
           "name": "ExpandedCapacity",
@@ -2167,6 +2710,15 @@
           "name": "ModifyType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是快速扩容,只针对部分model有效",
+          "example": "false",
+          "member": "bool",
+          "name": "RapidExpansion",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -2965,6 +3517,56 @@
       ],
       "usage": "in"
     },
+    "ManifestAttr": {
+      "document": "清单配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>桶名字</p>",
+          "example": "go******-**-df-*e****-**********",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录前缀</p>",
+          "example": "/********_test/policy_test",
+          "member": "string",
+          "name": "Prefix",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件属性</p>",
+          "example": "[\"FILE_SIZE\"]",
+          "member": "string",
+          "name": "Attributes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桶所在地域</p><p>桶所在的地域，可以不填，认为是实例所在地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MappedBucket": {
       "document": "关联的对象Bucket, 并将其映射到文件系统某个路径上",
       "members": [
@@ -3274,6 +3876,151 @@
       ],
       "usage": "both"
     },
+    "PolicyRuleOperator": {
+      "document": "Policy扫描规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则名</p><p>枚举值：</p><ul><li>CREATION_TIME_DAYS： 创建时间，比较的value 是days，数字整数。判断条件均为与“今天”相差。例如 CREATION_TIME &gt; 5，指的是创建时间-今天大于5天，即5天前（以及更早）创建的文件</li><li>CHANGE_TIME_DAYS： 元数据修改时间，比较的value 是days，数字整数。判断条件均为与“今天”相差。例如 CHANGE_TIME &gt; 5，指的是元数据修改时间-今天大于5天，即5天前以及更早修改元数据的文件</li><li>MODIFICATION_TIME_DAYS： 数据修改时间，比较的value 是days，数字整数。判断条件均为与“今天”相差。例如 MODIFICATION_TIME &gt; 5，指的是数据修改时间-今天大于5天，即5天前（以及更早）修改的文件</li><li>ACCESS_TIME_DAYS： 访问时间，比较的value 是days，数字整数。判断条件均为与“今天”相差。例如 ACCESS_TIME &gt; 5，指的是访问时间-今天大于5天，即5天前（以及更早）访问的文件</li><li>CREATION_TIME_DATE： 创建时间，比较的value 是date,日期，格式为YYYY-MM-DD。判断条件均为与value对应的日期的对比。例如 CREATION_TIME &gt; 2026-06-01，指的是创建时间晚于2026年6月1日</li><li>CHANGE_TIME_DATE： 元数据修改时间，比较的value 是date,日期，格式为YYYY-MM-DD。判断条件均为与value对应的日期的对比。例如 CHANGE_TIME &gt; 2026-06-01，指的是元数据修改晚于2026年6月1日</li><li>MODIFICATION_TIME_DATE： 数据修改时间，比较的value 是date,日期，格式为YYYY-MM-DD。判断条件均为与value对应的日期的对比。例如 MODIFICATION_TIME &gt; 2026-06-01，指的是数据修改时间晚于2026年6月1日</li><li>ACCESS_TIME_DATE： 访问时间，比较的value 是date,日期，格式为YYYY-MM-DD。判断条件均为与value对应的日期的对比。例如 ACCESS_TIME &gt; 2026-06-01，指的是访问时间晚于2026年6月1日</li><li>FILE_SIZE： 文件大小，数字，单位byte，整数，0 ～ 64位整数最大值</li></ul>",
+          "example": "FILE_SIZE",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>比较关系</p><p>枚举值：</p><ul><li>&gt;：  大于</li><li>&gt;=： 大于等于</li><li>=： 相等</li><li>&lt;： 小于</li><li>&lt;=： 小于等于</li></ul>",
+          "example": ">",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>比较值</p><p>如果Key是CREATION_TIME_DAYS、CHANGE_TIME_DAYS、MODIFICATION_TIME_DAYS、ACCESS_TIME_DAYS时，值是整数；<br>如果Key是CREATION_TIME_DATE、CHANGE_TIME_DATE、MODIFICATION_TIME_DATE、ACCESS_TIME_DATE时，值是日期，格式是YYYY-MM-DD；<br>如果Key是FILE_SIZE，值是整数，单位是byte</p>",
+          "example": "1048576",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PolicyRuleTaskAttribute": {
+      "document": "扫描规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则id</p>",
+          "example": "1786343788516",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>",
+          "example": "policy_two",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描目录</p>",
+          "example": "/policy_scan/policy_two",
+          "member": "string",
+          "name": "ScanDir",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划</p>",
+          "example": "无",
+          "member": "ExecutionPlan",
+          "name": "Execution",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyRuleOperator",
+          "name": "PolicyRuleSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出清单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableManifest",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出清单配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ManifestAttr",
+          "name": "Manifest",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>0： 启用（enable）</li><li>1： 禁用（disable）</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-08-10T14:36:28+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "2026-08-10T14:36:28+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QueryClientNodeMountCommandRequest": {
       "document": "QueryClientNodeMountCommand请求参数结构体",
       "members": [
@@ -3439,6 +4186,82 @@
           "member": "string",
           "name": "Token",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleExecuteAttribute": {
+      "document": "扫描规则执行信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行id</p>",
+          "example": "1786344004715",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始执行时间</p>",
+          "example": "2026-08-10T14:40:07+08:00",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行结束时间</p>",
+          "example": "2026-08-10T14:40:08+08:00",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行状态</p><p>枚举值：</p><ul><li>0： 等待中</li><li>1： 执行中</li><li>2： 已完成</li><li>3： 已跳过</li></ul><p>默认值：0</p><p>已跳过是指任务排队超过了任务的等待时间会自动跳过</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储量</p><p>单位：GB</p><p>默认值：0</p><p>不足1G按照1G 统计</p>",
+          "example": "788",
+          "member": "uint64",
+          "name": "Capacity",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件数</p>",
+          "example": "167183",
+          "member": "uint64",
+          "name": "FileCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件清单路径</p><p>参数格式：http://xxx/xxx/xx</p>",
+          "example": "https://********-test-**********.cos.ap-shanghai.myqcloud.com/policy/scan_policy_all_1786019949985_1786020001688.list.gfsx",
+          "member": "string",
+          "name": "ManifestUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

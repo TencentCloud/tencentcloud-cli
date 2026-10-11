@@ -56,6 +56,14 @@
         "title": "取消任务预热"
       }
     ],
+    "CancelPolicyRuleExecuteRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelPolicyRuleExecuteRecord\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785933849640\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"RecordId\": \"1785937538297\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4ed8437-23df-4d77-ab9b-a6620695b10c\"\n    }\n}",
+        "title": "取消执行"
+      }
+    ],
     "CreateDataRepositoryTask": [
       {
         "document": "",
@@ -94,6 +102,14 @@
         "title": "创建MetadataLoad预热任务"
       }
     ],
+    "CreatePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicyRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"ScanDir\": \"/test_policy/\",\n    \"Name\": \"policy_now\",\n    \"Execution\": {\n        \"ExecuteMode\": \"scheduled\",\n        \"ExecuteAt\": \"2026-08-06T21:30:00\",\n        \"WaitTime\": 12\n    },\n    \"PolicyRuleSet\": [\n        {\n            \"Key\": \"FILE_SIZE\",\n            \"Operator\": \">\",\n            \"Value\": \"0\"\n        }\n    ],\n    \"EnableManifest\": true,\n    \"Manifest\": {\n        \"Bucket\": \"goosefsx-test-1252246555\",\n        \"Prefix\": \"policy\",\n        \"Attributes\": [\n            \"FILE_SIZE\"\n        ],\n        \"Region\": \"ap-shanghai\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"1786020012996\",\n        \"RequestId\": \"4c328927-f95e-40f0-9e14-2462a19e4027\"\n    }\n}",
+        "title": "创建扫描规则"
+      }
+    ],
     "DeleteCrossVpcSubnetSupportForClientNode": [
       {
         "document": "为客户端节点删除跨vpc子网访问能力",
@@ -124,6 +140,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFileset\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-gq019g3k\",\n    \"FsetId\": \"fset_1745468035294\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2465d830-6362-418e-8d28-f60e418aec7e\"\n    }\n}",
         "title": "删除Fileset"
+      }
+    ],
+    "DeletePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"48fc7a43-2c3c-45f4-8be7-b6014780c7b9\"\n    }\n}",
+        "title": "删除规则"
       }
     ],
     "DescribeClientNodes": [
@@ -206,12 +230,44 @@
         "title": "查询目标预热任务"
       }
     ],
+    "DescribePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRule\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyRuleTaskList\": [\n            {\n                \"CreateTime\": \"2026-08-06T20:40:12+08:00\",\n                \"EnableManifest\": true,\n                \"Execution\": {\n                    \"ExecuteAt\": \"2026-08-06T21:30:00\",\n                    \"ExecuteMode\": \"scheduled\",\n                    \"ExecutePeriod\": null,\n                    \"WaitTime\": 12\n                },\n                \"Manifest\": {\n                    \"Attributes\": [\n                        \"FILE_SIZE\"\n                    ],\n                    \"Bucket\": \"goosefsx-test-1252246555\",\n                    \"Prefix\": \"policy\",\n                    \"Region\": \"ap-shanghai\"\n                },\n                \"ModifyTime\": \"2026-08-06T20:40:12+08:00\",\n                \"Name\": \"policy_now\",\n                \"PolicyRuleSet\": [\n                    {\n                        \"Key\": \"FILE_SIZE\",\n                        \"Operator\": \">\",\n                        \"Value\": \"0\"\n                    }\n                ],\n                \"RuleId\": \"1786020012996\",\n                \"ScanDir\": \"/test_policy/\",\n                \"Status\": 0\n            }\n        ],\n        \"TotalCount\": 11,\n        \"RequestId\": \"0fbfbc3a-9d33-47e1-85af-b846e93a157f\"\n    }\n}",
+        "title": "列出扫描规则"
+      }
+    ],
+    "DescribePolicyRuleExecuteRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRuleExecuteRecord\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RuleId\": \"1786019949985\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleExecuteList\": [\n            {\n                \"Capacity\": 588,\n                \"EndTime\": \"2026-08-06T20:40:11+08:00\",\n                \"FileCount\": 111105,\n                \"ManifestUrl\": \"https://goosefsx-test-**********.cos.ap-shanghai.myqcloud.com/policy/scan_policy_all_1786019949985_1786020001688.list.gfsx\",\n                \"RecordId\": \"1786020001688\",\n                \"StartTime\": \"2026-08-06T20:40:06+08:00\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b0cde05c-ef51-4489-9999-6031a4921e02\"\n    }\n}",
+        "title": "查询执行记录"
+      }
+    ],
     "DetachFileSystemBucket": [
       {
         "document": "解绑文件系统与Bucket的映射",
         "input": "https://goosefs.tencentcloudapi.com/?Action=DetachFileSystemBucket\n&FileSystemId=x_c60_r3c4fa1f\n&BucketName=mybucket-12500000\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3caa32f-5e39-4360-91e4-5724369b78a6\"\n    }\n}",
         "title": "解绑文件系统与Bucket的映射"
+      }
+    ],
+    "DisablePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisablePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"50028d64-80fc-4bf1-b6ff-3736928bed7e\"\n    }\n}",
+        "title": "禁用规则"
+      }
+    ],
+    "EnablePolicyRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09943c39-ce3f-47bb-bdb8-04b95855da86\"\n    }\n}",
+        "title": "启用规则"
       }
     ],
     "ExpandCapacity": [

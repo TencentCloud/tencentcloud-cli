@@ -18787,7 +18787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "prom-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -18796,7 +18796,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "tke",
           "member": "string",
           "name": "ClusterType",
@@ -18805,7 +18805,7 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterId",
@@ -18814,7 +18814,7 @@
         },
         {
           "disabled": false,
-          "document": "ServiceMonitors配置",
+          "document": "<p>ServiceMonitors配置</p>",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "ServiceMonitors",
@@ -18823,7 +18823,7 @@
         },
         {
           "disabled": false,
-          "document": "PodMonitors配置",
+          "document": "<p>PodMonitors配置</p>",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "PodMonitors",
@@ -18832,7 +18832,7 @@
         },
         {
           "disabled": false,
-          "document": "prometheus原生Job配置",
+          "document": "<p>prometheus原生Job配置</p>",
           "example": "无",
           "member": "PrometheusConfigItem",
           "name": "RawJobs",
@@ -18840,8 +18840,8 @@
           "type": "list"
         },
         {
-          "disabled": false,
-          "document": "0: 更新实例组件镜像版本；\n1: 不更新实例组件镜像版本",
+          "disabled": true,
+          "document": "<p>0: 更新实例组件镜像版本；<br>1: 不更新实例组件镜像版本</p><p>取值范围：[0, 1]</p><p>默认值：0</p>",
           "example": "0",
           "member": "int64",
           "name": "UpdateImage",

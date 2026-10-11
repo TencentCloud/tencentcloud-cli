@@ -70,6 +70,13 @@
       "output": "CreateRegistryRecordResponse",
       "status": "online"
     },
+    "CreateSandboxSnapshot": {
+      "document": "创建沙箱快照\n该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。接入方需关注后续版本及变更说明，并根据需要调整调用代码。",
+      "input": "CreateSandboxSnapshotRequest",
+      "name": "创建沙箱快照",
+      "output": "CreateSandboxSnapshotResponse",
+      "status": "online"
+    },
     "CreateSandboxTool": {
       "document": "创建沙箱工具",
       "input": "CreateSandboxToolRequest",
@@ -117,6 +124,13 @@
       "input": "DeleteRegistryRecordRequest",
       "name": "删除 Record",
       "output": "DeleteRegistryRecordResponse",
+      "status": "online"
+    },
+    "DeleteSandboxSnapshot": {
+      "document": "删除沙箱快照\n该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。接入方需关注后续版本及变更说明，并根据需要调整调用代码。",
+      "input": "DeleteSandboxSnapshotRequest",
+      "name": "删除沙箱快照",
+      "output": "DeleteSandboxSnapshotResponse",
       "status": "online"
     },
     "DeleteSandboxTool": {
@@ -229,6 +243,13 @@
       "input": "DescribeSandboxInstanceListRequest",
       "name": "查询沙箱实例列表",
       "output": "DescribeSandboxInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeSandboxSnapshotList": {
+      "document": "查询沙箱快照\n该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。请关注后续版本及变更说明，并根据需要调整调用代码。",
+      "input": "DescribeSandboxSnapshotListRequest",
+      "name": "查询沙箱快照列表",
+      "output": "DescribeSandboxSnapshotListResponse",
       "status": "online"
     },
     "DescribeSandboxToolList": {
@@ -2342,6 +2363,79 @@
       ],
       "type": "object"
     },
+    "CreateSandboxSnapshotRequest": {
+      "document": "CreateSandboxSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待制作快照的沙箱实例 ID</p>",
+          "example": "ap35sxr52gtvkutvzfbjskfw45vsh3cn2atrkglf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照名称</p>",
+          "example": "sandbox-snapshot-001",
+          "member": "string",
+          "name": "SnapshotName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>制作快照时是否包含内存状态</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Memory",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>云资源标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>幂等 token</p>",
+          "example": "202608051745000",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSandboxSnapshotResponse": {
+      "document": "CreateSandboxSnapshot返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱快照</p>",
+          "example": "无",
+          "member": "SandboxSnapshot",
+          "name": "Snapshot",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSandboxToolRequest": {
       "document": "CreateSandboxTool请求参数结构体",
       "members": [
@@ -3018,6 +3112,33 @@
     },
     "DeleteRegistryResponse": {
       "document": "DeleteRegistry返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxSnapshotRequest": {
+      "document": "DeleteSandboxSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待删除的沙箱快照 ID</p>",
+          "example": "snapshot-019fd56d-51dc-8013-ba8b-23216f003cac",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSandboxSnapshotResponse": {
+      "document": "DeleteSandboxSnapshot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4328,6 +4449,108 @@
           "disabled": false,
           "document": "<p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。每个分页令牌在 24 小时后过期。</p>",
           "example": "eyJ2IjoxLCJjIjp7Li4ufX0",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxSnapshotListRequest": {
+      "document": "DescribeSandboxSnapshotList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待查询的沙箱快照 ID 列表</p>",
+          "example": "[\"snapshot-019fd144-889b-8013-9fa3-c51254f347f8\"]",
+          "member": "string",
+          "name": "SnapshotIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，与 NextToken 参数互斥</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量上限</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移 token，与 Offset 参数互斥</p>",
+          "example": "eyJjcmVhdGVkQXQiOiIyMDI2LTA4LTA1VDA4OjA1OjI2LjU3MloiLCJzbmFwc2hvdElkIjoic25hcHNob3QtMDE5ZmQwZjQtYjdhNi04MDEzLTgxZDItM2NjOTZlOTJmMjliIiwiZmlsdGVySGFzaCI6IjE2ODg2NDg4MmUwYTNhMzAxNjg3NzMwYjZmNzhmNWM4NzA1YTc1NGUxMDA1N2JjOWUyYWNkNzg1OTVjZDQ2MTIifQ",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每次调用返回的最大结果数。如果查询返回的时候有NextToken返回，您可以使用NextToken值获取更多页结果， 当NextToke返回空或者返回的结果数量小于MaxResults时，表示没有更多数据了。允许的最大页面大小为 100。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxSnapshotListResponse": {
+      "document": "DescribeSandboxSnapshotList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询到的沙箱快照列表</p>",
+          "example": "无",
+          "member": "SandboxSnapshot",
+          "name": "SnapshotSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询到的沙箱快照数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移 token，可用于下一次查询</p>",
+          "example": "eyJjcmVhdGVkQXQiOiIyMDI2LTA4LTA1VDA3OjA2OjAzLjY4WiIsInNuYXBzaG90SWQiOiJzbmFwc2hvdC0wMTlmZDBiZS01YTFlLTgwMTMtYjcyYS1mZGZjZWFkMWFmN2UiLCJmaWx0ZXJIYXNoIjoiMTdmYTU3ZGRhNjQ0NzU2OTUxNTZlMjA3YzY5NjAyZTYyOWUwYjZlN2IzMzdjNDVmMWU3NDZhOGYzYWY0MTJlZCJ9",
           "member": "string",
           "name": "NextToken",
           "output_required": false,
@@ -6349,6 +6572,111 @@
       ],
       "usage": "both"
     },
+    "SandboxSnapshot": {
+      "document": "沙箱快照",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱快照 ID</p>",
+          "example": "snapshot-019fd172-3718-8013-9858-2d5b22224260",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱快照名称</p>",
+          "example": "e2e-e2b-2eba714b",
+          "member": "string",
+          "name": "SnapshotName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源沙箱实例 ID，沙箱快照由其派生</p>",
+          "example": "soae7rqi57dkuz4dd7lqovy4dktykaabyk34lpbb",
+          "member": "string",
+          "name": "SourceInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>制作快照时是否包含内存状态</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MemoryIncluded",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱快照状态</p><p>枚举值：</p><ul><li>ACTIVE： 可用</li><li>DELETING： 删除中</li><li>DELETED： 已删除</li></ul>",
+          "example": "DELETING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于说明沙箱快照处于该状态的原因</p>",
+          "example": "System disk snapshot creation timed out. Please retry later.",
+          "member": "string",
+          "name": "StatusReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云资源标签</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：ISO8601</p>",
+          "example": "2026-08-05T10:22:31.196Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：ISO8601</p>",
+          "example": "2026-08-05T10:25:44.382Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SandboxTool": {
       "document": "沙箱工具结构体",
       "members": [
@@ -6798,6 +7126,15 @@
           "example": "my-browser-sandbox",
           "member": "string",
           "name": "ToolName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待克隆的源沙箱 ID</p>",
+          "example": "43omu725lpaf2ftksrcvexbfhwwu644zztj3bpi4",
+          "member": "string",
+          "name": "SourceInstanceId",
           "required": false,
           "type": "string"
         },

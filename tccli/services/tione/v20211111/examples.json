@@ -486,6 +486,14 @@
         "title": "查询工作空间列表"
       }
     ],
+    "EnableTrainingTaskClsConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTrainingTaskClsConfig\n<公共请求参数>\n\n{\n    \"LogEnable\": true,\n    \"LogConfig\": {\n        \"TopicId\": \"topic-123\",\n        \"LogsetId\": \"set-1323\"\n    },\n    \"TaskId\": \"train-45235\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xdsx-fdsa\"\n    }\n}",
+        "title": "开启CLS日志投递请求"
+      }
+    ],
     "ModifyModelService": [
       {
         "document": "",

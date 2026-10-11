@@ -16,22 +16,22 @@ Output:
         "TotalCount": 1,
         "SampleSnapshotTemplateSet": [
             {
-                "Definition": 1,
-                "Type": "abc",
-                "Name": "abc",
-                "Comment": "abc",
-                "Width": 1,
-                "Height": 1,
-                "ResolutionAdaptive": "abc",
-                "Format": "abc",
-                "SampleType": "abc",
-                "SampleInterval": 1,
-                "CreateTime": "abc",
-                "UpdateTime": "abc",
-                "FillType": "abc"
+                "Definition": 10,
+                "Type": "Preset",
+                "Name": "采样截图模板",
+                "Comment": "采样截图模板说明",
+                "Width": 0,
+                "Height": 0,
+                "ResolutionAdaptive": "open",
+                "Format": "jpg",
+                "SampleType": "Percent",
+                "SampleInterval": 10,
+                "CreateTime": "2017-10-26T18:34:44Z",
+                "UpdateTime": "2017-10-26T18:34:44Z",
+                "FillType": "stretch"
             }
         ],
-        "RequestId": "abc"
+        "RequestId": "008xxxxx-xxxx-xxxx-xxxx-xxxxxxxxaa48"
     }
 }
 ```

@@ -128,6 +128,14 @@
         "title": "查询账号分组列表"
       }
     ],
+    "DescribeAccountVirtualGroups": [
+      {
+        "document": "列表查询用户自定义分组",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountVirtualGroups\n<公共请求参数>\n\n{\n    \"AccountGroupId\": 1099\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AccountGroupId\": 1099,\n                    \"Description\": \"\",\n                    \"ExtraInfo\": \"{******************}\",\n                    \"Id\": 528,\n                    \"Itime\": \"\",\n                    \"Name\": \"ioa\",\n                    \"SourceType\": 2,\n                    \"UserTotal\": 11,\n                    \"Utime\": \"\"\n                }\n            ],\n            \"Page\": {\n                \"PageCount\": 6,\n                \"PageNum\": 1,\n                \"PageSize\": 10,\n                \"Total\": 58\n            }\n        },\n        \"RequestId\": \"8244ba70-3700-4608-b2bb-8843a801cb3c\"\n    }\n}",
+        "title": "列表查询用户自定义分组"
+      }
+    ],
     "DescribeAggrSoftCategorySoftList": [
       {
         "document": "1",

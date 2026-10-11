@@ -1807,7 +1807,7 @@
         {
           "disabled": false,
           "document": "<p>AI配音扩展参数，序列化的 json 字符串。</p>",
-          "example": "{\"key\":24001}",
+          "example": "{\"delogo\": {\"subtitle_param\": {\"voice_clone_param\": {\"extract_vocal_type\": -1 }}}}",
           "member": "string",
           "name": "ExtendedParameter",
           "output_required": false,
@@ -5954,6 +5954,56 @@
           "disabled": false,
           "document": "<p>抠图模型选择。</p><p>枚举值：</p><ul><li>cutout-1.0-lite： 基础版，速度最快</li><li>cutout-1.0-flash： 标准版，质量-速度平衡</li></ul>",
           "example": "cutout-1.0-lite",
+          "member": "string",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AiDecomposeConfig": {
+      "document": "智能图层拆分配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关。</p><p>枚举值：</p><ul><li>ON： 开启图层分离功能。</li><li>OFF： 关闭图层分离功能。</li></ul><p>默认值：ON</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预期拆层数量。</p><p>取值范围：[2, 17]</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Layers",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词。</p>",
+          "example": "将这张图片拆分图层，补充被遮挡的部分。",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p><p>枚举值：</p><ul><li>decompose-1.0-flash： 1.0版本 flash模型</li></ul>",
+          "example": "decompose-1.0-flash",
           "member": "string",
           "name": "Model",
           "output_required": false,
@@ -10569,7 +10619,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音频降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音频降噪配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioDenoiseConfig",
           "name": "Denoise",
@@ -10580,7 +10630,7 @@
         },
         {
           "disabled": false,
-          "document": "音频分离配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音频分离配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioSeparateConfig",
           "name": "Separate",
@@ -10591,7 +10641,7 @@
         },
         {
           "disabled": false,
-          "document": "音量均衡配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音量均衡配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VolumeBalanceConfig",
           "name": "VolumeBalance",
@@ -10602,7 +10652,7 @@
         },
         {
           "disabled": false,
-          "document": "音频美化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>音频美化配置。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AudioBeautifyConfig",
           "name": "Beautify",
@@ -10610,6 +10660,45 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频增强编辑。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioEnhanceEditConfig",
+          "name": "AudioEnhanceEdit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioEnhanceEditConfig": {
+      "document": "音频增强编辑",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频编辑类型</p><p>枚举值：</p><ul><li>restore： 修复</li></ul><p>默认值：restore</p>",
+          "example": "restore",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19007,8 +19096,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "关键词，数组长度限制：100 个词。",
-          "example": "“”",
+          "document": "<p>关键词，数组长度限制：100 个词。</p>",
+          "example": "[\"keyword\"]",
           "member": "string",
           "name": "Keywords",
           "required": true,
@@ -20502,8 +20591,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "智能审核模板唯一标识过滤条件，数组长度限制：50。",
-          "example": "无",
+          "document": "智能审核模板唯一标识过滤条件，数组长度限制：100。",
+          "example": "[10]",
           "member": "int64",
           "name": "Definitions",
           "required": false,
@@ -20512,7 +20601,7 @@
         {
           "disabled": false,
           "document": "分页偏移量，默认值：0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -20521,7 +20610,7 @@
         {
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：50。",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -20530,7 +20619,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，不填则返回所有，可选值：\n* Preset：系统预置模板；\n* Custom：用户自定义模板。",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -20539,7 +20628,7 @@
         {
           "disabled": false,
           "document": "智能审核模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "默认模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -20924,7 +21013,7 @@
         {
           "disabled": false,
           "document": "雪碧图模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "[\"10001\\r\\n\"]",
+          "example": "[10]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -20942,7 +21031,7 @@
         {
           "disabled": false,
           "document": "返回记录条数，默认值：10，最大值：100。",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -20951,7 +21040,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -20960,7 +21049,7 @@
         {
           "disabled": false,
           "document": "雪碧图模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "10雪碧图模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -20975,7 +21064,7 @@
         {
           "disabled": false,
           "document": "符合过滤条件的记录总数。",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -22761,7 +22850,7 @@
         {
           "disabled": false,
           "document": "采样截图模板唯一标识过滤条件，数组长度限制：100。",
-          "example": "[\"10001\\r\\n\"]",
+          "example": "[10001]",
           "member": "uint64",
           "name": "Definitions",
           "required": false,
@@ -22788,7 +22877,7 @@
         {
           "disabled": false,
           "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置模板；</li>\n<li>Custom：用户自定义模板。</li>",
-          "example": "“”",
+          "example": "Preset",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -22797,7 +22886,7 @@
         {
           "disabled": false,
           "document": "采样截图模板标识过滤条件，长度限制：64 个字符。",
-          "example": "“”",
+          "example": "采样截图模板",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -22812,7 +22901,7 @@
         {
           "disabled": false,
           "document": "符合过滤条件的记录总数。",
-          "example": "1",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -26620,6 +26709,34 @@
           "disabled": false,
           "document": "强度类型，可选值：\n\nweak\nnormal\nstrong\n默认值：normal。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "strong",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DiffusionEnhanceV2Config": {
+      "document": "大模型增强-专业版",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力配置开关</p><p>枚举值：</p><ul><li>ON： 开启</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>强度类型</p><p>枚举值：</p><ul><li>weak： 弱</li><li>normal： 中</li><li>strong： 强</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "weak",
           "member": "string",
           "name": "Type",
           "output_required": true,
@@ -31011,6 +31128,17 @@
           "example": "无",
           "member": "AiComposeConfig",
           "name": "AiComposeConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图层分离配置。</p>",
+          "example": "无",
+          "member": "AiDecomposeConfig",
+          "name": "AiDecomposeConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -52622,6 +52750,17 @@
           "example": "无",
           "member": "AiRestorationConfig",
           "name": "AiRestoration",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型增强专业版配置。注意大模型、综合增强、去毛刺三项里最多配置一项。且不可与超分、降噪同时开启。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiffusionEnhanceV2Config",
+          "name": "DiffusionEnhanceV2",
           "output_required": false,
           "required": false,
           "type": "object",

@@ -391,36 +391,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "私有网络 ID",
-          "example": "",
+          "document": "<p>私有网络 ID</p>",
+          "example": "vpc-nzx8dp7p",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "子网 ID",
-          "example": "",
+          "document": "<p>子网 ID</p>",
+          "example": "subnet-f6jkin78",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "云联网 ID，如 ccn-rahigzjd",
-          "example": "",
+          "document": "<p>云联网 ID，如 ccn-rahigzjd</p>",
+          "example": "ccn-rahigzjd",
           "member": "string",
           "name": "CcnId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CheckConnectorNameRequest": {
       "document": "CheckConnectorName请求参数结构体",
@@ -1612,7 +1615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群SerialId",
+          "document": "<p>集群SerialId</p>",
           "example": "cluster-nbcjavkn",
           "member": "string",
           "name": "ClusterGroupSerialId",
@@ -1622,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者appId",
+          "document": "<p>创建者appId</p>",
           "example": "1257058945",
           "member": "int64",
           "name": "AppId",
@@ -1632,7 +1635,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者主账号",
+          "document": "<p>创建者主账号</p>",
           "example": "100006386216",
           "member": "string",
           "name": "OwnerUin",
@@ -1642,7 +1645,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者账号",
+          "document": "<p>创建者账号</p>",
           "example": "100006386216",
           "member": "string",
           "name": "CreatorUin",
@@ -1652,7 +1655,7 @@
         },
         {
           "disabled": false,
-          "document": "区域",
+          "document": "<p>区域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -1662,7 +1665,7 @@
         },
         {
           "disabled": false,
-          "document": "zone",
+          "document": "<p>zone</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -1672,7 +1675,7 @@
         },
         {
           "disabled": false,
-          "document": "Session集群状态",
+          "document": "<p>Session集群状态</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1682,7 +1685,7 @@
         },
         {
           "disabled": false,
-          "document": "Session集群消耗的cu数量",
+          "document": "<p>Session集群消耗的cu数量</p>",
           "example": "2",
           "member": "float",
           "name": "CuNum",
@@ -1692,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "Session集群的Flink版本",
+          "document": "<p>Session集群的Flink版本</p>",
           "example": "Flink-1.13",
           "member": "string",
           "name": "FlinkVersion",
@@ -1702,7 +1705,7 @@
         },
         {
           "disabled": false,
-          "document": "session集群FlinkUi地址",
+          "document": "<p>session集群FlinkUi地址</p>",
           "example": "https://203.195.143.139/cql-01mgalxg-7089934/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
@@ -1712,7 +1715,7 @@
         },
         {
           "disabled": false,
-          "document": "session集群高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>session集群高级参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Property",
           "name": "Properties",
@@ -1722,7 +1725,7 @@
         },
         {
           "disabled": false,
-          "document": "引用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>引用资源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SessionClusterRefItem",
           "name": "ResourceRefs",
@@ -1732,7 +1735,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManager的规格",
+          "document": "<p>JobManager的规格</p>",
           "example": "1",
           "member": "float",
           "name": "JobManagerCuSpec",
@@ -1742,7 +1745,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager的规格",
+          "document": "<p>TaskManager的规格</p>",
           "example": "0.5",
           "member": "float",
           "name": "TaskManagerCuSpec",
@@ -1752,7 +1755,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManager启动的数量",
+          "document": "<p>TaskManager启动的数量</p>",
           "example": "2",
           "member": "int64",
           "name": "TaskManagerNum",
@@ -1762,7 +1765,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "CreateTime",
@@ -1772,7 +1775,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2023-11-17 09:11:43",
           "member": "string",
           "name": "UpdateTime",
@@ -1782,7 +1785,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManagerCpu",
+          "document": "<p>JobManagerCpu</p>",
           "example": "0",
           "member": "float",
           "name": "JobManagerCpu",
@@ -1792,7 +1795,7 @@
         },
         {
           "disabled": false,
-          "document": "JobManagerMem",
+          "document": "<p>JobManagerMem</p>",
           "example": "0",
           "member": "float",
           "name": "JobManagerMem",
@@ -1802,7 +1805,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManagerCpu",
+          "document": "<p>TaskManagerCpu</p>",
           "example": "0",
           "member": "float",
           "name": "TaskManagerCpu",
@@ -1812,7 +1815,7 @@
         },
         {
           "disabled": false,
-          "document": "TaskManagerMem",
+          "document": "<p>TaskManagerMem</p>",
           "example": "0",
           "member": "float",
           "name": "TaskManagerMem",
@@ -1822,13 +1825,123 @@
         },
         {
           "disabled": false,
-          "document": "jdk版本",
+          "document": "<p>jdk版本</p>",
           "example": "8",
           "member": "string",
           "name": "JdkVersion",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deploy cluster session anna-116",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ychenjiang-test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>session集群SerialId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ses-aoln958b",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "anna-cd-up勿删",
+          "member": "string",
+          "name": "ClusterGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>cu</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "float",
+          "name": "TotalCpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用Mem</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "float",
+          "name": "TotalMem",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间Id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "space-1mf4ifi6",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>采集日志配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"LogCollectType\":3,\"ClsLogsetId\":\"\",\"ClsTopicId\":\"\",\"COSBucket\":\"test-hk-1315051789\",\"LogLevel\":\"INFO\",\"ClazzLevels\":[]}",
+          "member": "string",
+          "name": "LogConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "700002164619",
+          "member": "string",
+          "name": "UpdateUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9764,6 +9877,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sec-11\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CCN",
+          "name": "CCNs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11147,6 +11282,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流湖托管通serialId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sls-3f46rvnu",
+          "member": "string",
+          "name": "StorageSerialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

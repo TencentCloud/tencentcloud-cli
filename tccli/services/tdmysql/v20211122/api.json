@@ -625,11 +625,11 @@
       "usage": "both"
     },
     "AutoScalingConfig": {
-      "document": "serverless实例的资源范围\nResourceType 为 cpu 时表示 ccu\n为 nodecount 时表示节点数范围",
+      "document": "实例变配的资源范围\nResourceType 为 cpu 时表示 ccu\n为 nodecount 时表示节点数范围\n为 disk 表示磁盘容量范围（单位 GB）\nScaleUpEnabled 为是否打开升配\nScaleDownEnabled 为是否打开降配\nThresholdPercent 为触发阈值（%）\nStep 为变配步长",
       "members": [
         {
           "disabled": false,
-          "document": "<p>ccu最小值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最小值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "float",
           "name": "RangeMin",
@@ -640,7 +640,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>ccu最大值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>最大值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "16",
           "member": "float",
           "name": "RangeMax",
@@ -651,14 +651,58 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回的 range 参数对应的资源类型</p><p>枚举值：</p><ul><li>cpu： 返回的是 cpu 调整返回限制，当不存在mem限制时代表 ccu</li><li>nodecount： 返回的是水平扩缩容的节点数限制范围</li></ul>",
+          "document": "<p>返回的 range 参数对应的资源类型</p><p>枚举值：</p><ul><li>cpu： 返回的是 cpu 调整返回限制，当不存在mem限制时代表 ccu</li><li>nodecount： 返回的是水平扩缩容的节点数限制范围</li><li>datadisk： 返回的是磁盘扩容的容量限制范围</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cpu",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许升配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "ScaleUpEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许降配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ScaleDownEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发阈值（%）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "int64",
+          "name": "ThresholdPercent",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变配步长</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "Step",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5400,6 +5444,15 @@
           "name": "IsExclusiveInstance",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区组合列表</p>",
+          "example": "[\"ap-guangzhou-7\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7495,7 +7548,7 @@
         {
           "disabled": false,
           "document": "<p>实例ID</p>",
-          "example": "tdsql3-6d3cbb0f",
+          "example": "tdsql3-fx3xmcfghh",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7509,6 +7562,24 @@
           "name": "Enabled",
           "required": true,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书类型</p><p>枚举值：</p><ul><li>Cloud： 云端证书</li><li>Custom： 自定义证书</li></ul>",
+          "example": "Custom",
+          "member": "string",
+          "name": "CertificateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云SSL证书服务的证书ID</p>",
+          "example": "ategdHIO",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7519,7 +7590,7 @@
         {
           "disabled": false,
           "document": "<p>异步流程ID</p>",
-          "example": "42666",
+          "example": "4295087399",
           "member": "int64",
           "name": "FlowId",
           "output_required": false,

@@ -49,6 +49,12 @@ Output:
                 ]
             }
         ],
+        "Download": {
+            "Url": "https://demo-bucket.cos.ap-guangzhou.myqcloud.com/result/demo.csv",
+            "Format": "CSV",
+            "Size": 1024,
+            "ExpireSeconds": 3600
+        },
         "Truncated": false,
         "RequestId": "f4a1c9b2-7d3e-4a58-9c62-1e8b5d7a2f43"
     }

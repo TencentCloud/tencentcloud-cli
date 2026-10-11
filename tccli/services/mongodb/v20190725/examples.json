@@ -80,6 +80,22 @@
         "title": "创建参数模板"
       }
     ],
+    "CreateInstanceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"RoleName\": \"trole11\",\n    \"Database\": \"admin\",\n    \"Privileges\": [\n        {\n            \"Resource\": {\n                \"Cluster\": false,\n                \"Database\": \"test123\"\n            },\n            \"Actions\": [\n                \"find\"\n            ]\n        }\n    ],\n    \"InheritedRoles\": [\n        {\n            \"RoleName\": \"read\",\n            \"Database\": \"test2\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4339802,\n        \"RequestId\": \"27516215-8d94-4c60-875d-2ba74deef405\"\n    }\n}",
+        "title": "创建角色"
+      }
+    ],
+    "CreateInstanceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"UserName\": \"testuser1\",\n    \"Password\": \"*********\",\n    \"EncryptedPassword\": \"***o*****DJ67kN52GK8oC49foA**+rXHRLrL6t2N7***CiKTN/mGSkMfDIh7vSrArnyk3ccBpG***Q***SUP/6uGotJaRLmN**O*B*1b1f**Cd7cEg*G3d****W*****v*a*V*l1w**68*btB*U*jH*******+cRO**PEhB**fEUgJ*mW************SrsUf***xPpL8E*q2x4Lljb*m*****+VLJL*7**UfFz**YSX48+Co*dAO*******1/*hGeCf**09yV0gJHa+zyas4Arbrr*Y5tEG3Ox**fh***gIrBBeEx1ZY**VnFBRs+699JijqQRlnZcZTl5WH**w==\",\n    \"Database\": \"admin\",\n    \"Description\": \"测试用\",\n    \"EnablePasswordRotation\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112001309,\n        \"RequestId\": \"81b1c606-daa6-4778-aedf-84dc896469d2\"\n    }\n}",
+        "title": "创建用户"
+      }
+    ],
     "CreateLogDownloadTask": [
       {
         "document": "创建日志下载任务",
@@ -118,6 +134,22 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDBBackups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-51l0dj35\",\n    \"BackupIds\": [\n        39983\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ab09c94-b2fc-4053-9115-ccc178e56000\"\n    }\n}",
         "title": "删除全量备份"
+      }
+    ],
+    "DeleteInstanceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstanceRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"RoleName\": \"trole11\",\n    \"Database\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4339803,\n        \"RequestId\": \"2113d87f-ea85-48b9-b213-bb4eeb97f399\"\n    }\n}",
+        "title": "删除角色"
+      }
+    ],
+    "DeleteInstanceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstanceUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"UserName\": \"testuser1\",\n    \"Database\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112001310,\n        \"RequestId\": \"47f5dbf1-df57-437c-8fd3-9d58bdb26b55\"\n    }\n}",
+        "title": "删除账号"
       }
     ],
     "DeleteLogDownloadTask": [
@@ -302,12 +334,28 @@
         "title": "InstanceEnumParam"
       }
     ],
+    "DescribeInstanceRoles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceRoles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"Database\": \"admin\",\n    \"RoleType\": [\n        \"builtin_database\"\n    ],\n    \"RoleName\": \"test1\",\n    \"SearchKey\": \"t\",\n    \"OrderBy\": \"RoleName\",\n    \"OrderType\": \"desc\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Roles\": [],\n        \"Total\": 0,\n        \"RequestId\": \"c746232b-75d3-4c34-aeef-60af9fd02ab6\"\n    }\n}",
+        "title": "查询角色"
+      }
+    ],
     "DescribeInstanceSSL": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSSL\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p*******\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertUrl\": \"\",\n        \"ExpiredTime\": \"2027-06-18 07:17:56\",\n        \"Status\": 1,\n        \"RequestId\": \"5cfd65ee-caa6-413f-ad84-c70bff4703db\"\n    }\n}",
         "title": "查看实例SSL开启状态"
+      }
+    ],
+    "DescribeInstanceUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceUsers\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Users\": [\n            {\n                \"ConsolePassUpdateTime\": \"2026-04-14 17:43:04\",\n                \"CreateTime\": \"2026-04-10 15:08:23\",\n                \"Database\": \"admin\",\n                \"Description\": \"测试用\",\n                \"EnablePasswordRotation\": 0,\n                \"Roles\": [\n                    {\n                        \"Database\": \"admin\",\n                        \"RoleName\": \"backup\"\n                    }\n                ],\n                \"UpdateTime\": \"2026-04-14 17:43:41\",\n                \"UserName\": \"mongouser\"\n            }\n        ],\n        \"RequestId\": \"6a80448e-130a-401f-94b4-ec8a74549416\"\n    }\n}",
+        "title": "查询账号"
       }
     ],
     "DescribeLogDownloadTasks": [
@@ -718,6 +766,22 @@
         "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateDBInstances\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-7pje****\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccfe11c0-b1d3-11ea-8b51-552abe435100\"\n    }\n}",
         "title": "包年包月实例退货退费"
+      }
+    ],
+    "UpdateInstanceRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstanceRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-********\",\n    \"RoleName\": \"test1\",\n    \"Database\": \"admin\",\n    \"Privileges\": [\n        {\n            \"Resource\": {\n                \"Cluster\": false,\n                \"Database\": \"db1\"\n            },\n            \"Actions\": [\n                \"find\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4356114,\n        \"RequestId\": \"548ed7f8-9b2d-46ba-8703-ac96d5773edb\"\n    }\n}",
+        "title": "更新角色"
+      }
+    ],
+    "UpdateInstanceUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateInstanceUser\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-14akamap\",\n    \"UserName\": \"mongouser\",\n    \"Database\": \"admin\",\n    \"Password\": \"**********\",\n    \"EncryptedPassword\": \"**************************************************************************G**L*B*************************1*************************a**sl*w*******BYUMjHQyAz*E4+cROBQPEhBicfEUg*****Q*j*vdw9qm*S*s*f**3****8**q*x*L*j*FmWh*AB+V*JLj7*X**Fz****X4*+*o*d*OZ*8*i******GeCfe009yV0gJHa+zyas************3O******O****B*********VnFBRs*******qQRlnZ***********=\",\n    \"Description\": \"测试用\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 1750660112001308,\n        \"RequestId\": \"b6ed29d2-e557-4ca0-a356-548c3d11954e\"\n    }\n}",
+        "title": "更新用户信息"
       }
     ],
     "UpgradeDBInstanceKernelVersion": [

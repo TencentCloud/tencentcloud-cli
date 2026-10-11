@@ -7786,6 +7786,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "unrepaired",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近检测时间</p>",
+          "example": "2026-08-28 14:20:14",
+          "member": "string",
+          "name": "LastCheckTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9912,6 +9932,26 @@
           "name": "AggregationCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "unrepaired",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近检测时间</p>",
+          "example": "2026-09-01 10:00:00",
+          "member": "string",
+          "name": "LastCheckTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

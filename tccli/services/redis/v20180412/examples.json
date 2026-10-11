@@ -960,6 +960,14 @@
         "title": "变更规格"
       }
     ],
+    "UpgradeInstanceProductVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstanceProductVersion\n<公共请求参数>\n\n{\n    \"TargetProductVersion\": \"localv2\",\n    \"SwitchOption\": 2,\n    \"InstanceId\": \"crs-3au1tc75\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"20260810296023340158681\",\n        \"RequestId\": \"e3802a91-5ff8-48a9-aaba-5ba42371ce02\"\n    }\n}",
+        "title": "升级到通用 II 型实例类型"
+      }
+    ],
     "UpgradeInstanceVersion": [
       {
         "document": "升级当前实例至Redis 4.0 集群架构",

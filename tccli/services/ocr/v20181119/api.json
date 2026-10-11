@@ -84,6 +84,13 @@
       "output": "DescribeMarkEssayAgentJobResponse",
       "status": "online"
     },
+    "DescribeMultimodalDocParseJob": {
+      "document": "用于查询异步多模态文档解析任务的执行状态与结果，任务执行成功时返回解析结果包的下载地址，任务执行失败时返回对应错误信息。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n创建任务接口文档地址：https://cloud.tencent.com/document/product/1024/953218\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
+      "input": "DescribeMultimodalDocParseJobRequest",
+      "name": "异步多模态文档解析（查询任务）",
+      "output": "DescribeMultimodalDocParseJobResponse",
+      "status": "online"
+    },
     "DescribeQuestionMarkAgentJob": {
       "document": "用于试题批改Agent查询任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。\n\n默认接口请求并发限制：10张/分钟。",
       "input": "DescribeQuestionMarkAgentJobRequest",
@@ -420,6 +427,13 @@
       "output": "RideHailingTransportLicenseOCRResponse",
       "status": "online"
     },
+    "RunRerank": {
+      "document": "基于知识引擎精调模型技术的 Rerank 模型，支持对多路召回的结果进行重排序，根据查询内容与文档切片内容的相关性，按顺序返回每一条文档内容与查询内容的相关性分数。",
+      "input": "RunRerankRequest",
+      "name": "重排序",
+      "output": "RunRerankResponse",
+      "status": "online"
+    },
     "SealOCR": {
       "document": "本接口支持各类印章主体内容、印章其他内容及形状识别，支持单图多印章识别，包括发票章、财务章等，适用于公文票据等场景。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SealOCRRequest",
@@ -448,6 +462,13 @@
       "output": "SubmitMarkEssayAgentJobResponse",
       "status": "online"
     },
+    "SubmitMultimodalDocParseJob": {
+      "document": "本接口为异步多模态文档解析的任务提交接口，支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），服务端异步执行解析任务，提交后返回任务唯一 ID，可通过「异步多模态文档解析（查询任务）」接口获取最终解析结果。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n查询任务接口文档地址：https://cloud.tencent.com/document/product/1024/953219\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
+      "input": "SubmitMultimodalDocParseJobRequest",
+      "name": "异步多模态文档解析（创建任务）",
+      "output": "SubmitMultimodalDocParseJobResponse",
+      "status": "online"
+    },
     "SubmitQuestionMarkAgentJob": {
       "document": "用于试题批改Agent提交任务。主要面向K12的试题批改产品，支持整卷/单题端到端（试卷切题+题目批改+手写坐标回显）处理，主要聚焦的场景包括试题批改（含手写答案）、试题解析（不含手写答案），其中低年级算式批改效果比线上[数学作业批改](https://cloud.tencent.com/document/product/1004)效果更好。精准输出题目、正误判定、答案对比、错误及知识点等结构化评估结果。\n\n默认接口请求并发限制：10张/分钟。",
       "input": "SubmitQuestionMarkAgentJobRequest",
@@ -456,7 +477,7 @@
       "status": "online"
     },
     "SubmitQuestionSplitJob": {
-      "document": "异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。",
+      "document": "异步试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，是试卷切题的接口补充。主要解决试卷录题这类多页场景、单题跨页场景。需要 SubmitQuestionSplitOCRJob（提交任务）、DescribeQuestionSplitOCRJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n默认接口请求频率限制：5次/秒。",
       "input": "SubmitQuestionSplitJobRequest",
       "name": "异步试卷切题（提交任务）",
       "output": "SubmitQuestionSplitJobResponse",
@@ -3356,6 +3377,103 @@
           "name": "JobStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultimodalDocParseJobRequest": {
+      "document": "DescribeMultimodalDocParseJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>解析任务ID。由创建任务接口返回。</p>",
+          "example": "1493508761820692480",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMultimodalDocParseJobResponse": {
+      "document": "DescribeMultimodalDocParseJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务状态。取值：</p><ul><li>Created：已创建，等待处理</li><li>Processing：处理中</li><li>Success：成功</li><li>Failed：失败</li><li>Unknown：未知</li></ul>",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误码。当任务状态不为 Failed 时，该值为“”。</p>",
+          "example": "InvalidParameterValue.InvalidParameterValueLimit",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务执行错误信息。当任务状态不为 Failed 时，该值为“”。</p>",
+          "example": "未知错误。",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结果的临时下载地址。文件类型为 zip 压缩包，下载链接有效期 30 分钟。压缩包内包含 <em>.md、</em>.json 以及 images 文件夹。仅当任务状态为 Success 时返回该字段。</p>",
+          "example": "https://ocr-smartdoc-1258344699.cos.ap-guangzhou.myqcloud.com/multimodal-doc-parse/result/251138**0/1493508761820692480/result.zip",
+          "member": "string",
+          "name": "ResultUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析失败的页码列表。仅当任务状态为 Success 时返回该字段。</p>",
+          "example": "无",
+          "member": "ReconstructDocumentFailedPage",
+          "name": "FailedPages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析成功页数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessPageNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析失败页数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FailPageNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -13402,7 +13520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>实际使用的推理输出模式：enum 或 string。</p>",
+          "document": "<p>推理输出模式。可选值：enum（枚举值输出）、string（自由文本输出）。<br>enum：VLM 必须从 EnumValues 中选择一个值输出，适用于二值判断或分类决策。<br>string：VLM 输出自由文本，适用于需要自然语言解释的场景。</p>",
           "example": "enum",
           "member": "string",
           "name": "OutputMode",
@@ -13411,8 +13529,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>枚举值集合，仅在 OutputMode=enum 时生效。  VLM 输出必须精确命中此集合中的某个值。</p>",
-          "example": "[\"Tamper\"]",
+          "document": "<p>枚举值集合，仅在 OutputMode=enum 时生效，设置后VLM推理结果必须精确命中此集合中的某个值，否则会返回“输出偏离枚举值”，Prompt中的指令应与枚举值匹配。</p>",
+          "example": "[\"true\", \"false\"]",
           "member": "string",
           "name": "EnumValues",
           "required": false,
@@ -13420,8 +13538,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本输出最大长度，仅在 OutputMode=string 时生效。</p><p>取值范围：[1, 500]</p><p>默认值：200</p>",
-          "example": "30",
+          "document": "<p>文本输出最大长度，仅在 OutputMode=string 时生效。</p><p>取值范围：[1, 500]</p>",
+          "example": "200",
           "member": "int64",
           "name": "MaxLength",
           "required": false,
@@ -13429,7 +13547,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否在推理调用时向 VLM 传入原图进行多模态理解。  true（默认）：VLM 同时接收原图和渲染后的 Prompt，具备多模态理解能力，可直接&quot;看&quot;图片内容进行推理。  false：不传入原图，仅以渲染后的 Prompt（含变量注入值）进行纯文本推理。适用于推理逻辑完全基于结构化出参字段（如水印文字、置信度比较等）的场景，可降低推理延迟和计费成本。  建议：当 ReasoningPrompt 中未涉及&quot;观察图片&quot;、&quot;直接看图&quot;等多模态指令，且推理规则完全基于 ${变量名} 引用的文字结果时，可设为 false 以优化性能。</p>",
+          "document": "<p>是否在推理时向 VLM 传入原图进行多模态理解，不传入时默认为true。<br>true：VLM 同时接收原图和渲染后的 Prompt，具备多模态理解能力，可直接&quot;看&quot;图片内容进行推理。<br>false：不传入原图，仅以渲染后的 Prompt（含变量注入值）进行纯文本推理，适用于推理逻辑完全基于结构化出参字段（如水印文字、置信度比较等）的场景。<br>建议：当 ReasoningPrompt 中未涉及&quot;观察图片&quot;、&quot;分析图片&quot;等多模态指令，推理规则完全基于 ${变量名} 引用的文字结果时，可设为 false 以获得更低的延迟。</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableImageInput",
@@ -13445,7 +13563,7 @@
         {
           "disabled": false,
           "document": "<p>实际使用的推理输出模式：enum 或 string。</p>",
-          "example": "string",
+          "example": "enum",
           "member": "string",
           "name": "OutputMode",
           "output_required": false,
@@ -13454,8 +13572,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，必定命中请求中 EnumValues 的某个值。 若 VLM 输出无法匹配任何枚举值，则返回 <strong>UNCERTAIN</strong>。</p>",
-          "example": "__UNCERTAIN__",
+          "document": "<p>枚举模式下的推理结果值。当 OutputMode=enum 时返回，取值对应请求中配置的 EnumValues。</p>",
+          "example": "true",
           "member": "string",
           "name": "EnumValue",
           "output_required": false,
@@ -13464,8 +13582,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>文本模式下的推理结果值。当 OutputMode=string 时返回。 若 VLM 无法得出结论，则返回 <strong>UNCERTAIN</strong>。</p>",
-          "example": "所有鉴伪项均未触发风险，无水印或水印内容与商户注册业务一致，门头照符合入网审核要求。",
+          "document": "<p>文本模式下的推理结果值。当 OutputMode=string 时返回，以文本形式描述推理结论。</p>",
+          "example": "所有鉴伪项均未触发风险，图片水印用途与第三方支付平台商户注册业务一致，门头照符合入网审核要求。",
           "member": "string",
           "name": "TextValue",
           "output_required": false,
@@ -13474,8 +13592,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>VLM 原始输出文本（未经过结构化校验）。</p>",
-          "example": "所有鉴伪项均未触发风险，无水印或水印内容与商户注册业务一致，门头照符合入网审核要求。",
+          "document": "<p>VLM 原始输出文本（未经过结构化校验）。该字段仅用于调试，生产环境可忽略。</p>",
+          "example": "true",
           "member": "string",
           "name": "RawOutput",
           "output_required": false,
@@ -13484,8 +13602,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>变量替换后的实际 Prompt（脱敏后）。</p>",
-          "example": "请直接观察图片并结合以下检测结果，检测结果：篡改 IsWarn=false（置信度 0）。规则：任一鉴伪项 IsWarn=true 则拒绝并说明原因；如水印内容与商户注册业务不符也拒绝；其余情况通过。",
+          "document": "<p>变量替换后的用户 Prompt 文本。该字段仅用于调试，生产环境可忽略。</p>",
+          "example": "你是商户注册图片审核人员，审核图中水印和OCR结果——商户注册入网专用，水印限定其他业务使用则返回false；无水印、不限用途或用于商户注册则返回true。不得猜测，仅返回true或false。",
           "member": "string",
           "name": "RenderedPrompt",
           "output_required": false,
@@ -15030,6 +15148,23 @@
       ],
       "type": "object"
     },
+    "ReconstructDocumentFailedPage": {
+      "document": "解析失败的页数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>解析失败页数。</p>",
+          "example": "44",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Rect": {
       "document": "矩形坐标",
       "members": [
@@ -15173,6 +15308,32 @@
           "name": "WarnCodes",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RerankResult": {
+      "document": "重排序结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文档在输入 Docs 列表中的索引，从 0 开始，用于回溯原文档。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档与查询内容的相关性得分，数值越大越相关。",
+          "example": "0.98",
+          "member": "float",
+          "name": "Score",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -15887,6 +16048,61 @@
           "name": "ReleaseDate",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunRerankRequest": {
+      "document": "RunRerank请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选择模型。<br>0：Rerank-2b<br>1：Rerank-0.6b</p>",
+          "example": "0",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询内容。用于匹配的query，即用户检索意图。</p>",
+          "example": "多模态文档解析",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档内容列表。</p>",
+          "example": "[\"文档解析大模型\"]",
+          "member": "string",
+          "name": "Docs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RunRerankResponse": {
+      "document": "RunRerank返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>重排序后的结果列表，按相关性得分从高到低排列。</p>",
+          "example": "无",
+          "member": "RerankResult",
+          "name": "Results",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -17099,6 +17315,106 @@
           "name": "JobIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitMultimodalDocParseJobRequest": {
+      "document": "SubmitMultimodalDocParseJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>支持解析的文件类型。取值：</p><ul><li>1：PDF 文档</li><li>2：Word 文档（.doc/.docx）</li><li>3：PPT 演示文稿（.ppt/.pptx）</li><li>4：Excel 表格（.xls/.xlsx）</li><li>5：Markdown 文档（.md）</li><li>6：纯文本文件（.txt）</li><li>7：图片文件（.png/.jpg/.jpeg 等）</li><li>8：WPS 文档<br>支持的文件大小：PDF/WORD/PPT 支持 150M 且 300 页。</li></ul>",
+          "example": "7",
+          "member": "int64",
+          "name": "FileType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件的 Url 地址，支持 FileType 参数对应的文件格式及大小。文件下载时间不超过 3 秒。文件存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议文件存储于腾讯云。非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
+          "example": "http://example.com/doc.pdf",
+          "member": "string",
+          "name": "FileUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件的 Base64 值。支持 FileType 参数对应的文件格式，支持的文件大小不超过 8M。文件下载时间不超过 3 秒。<br>文件的 FileUrl、FileBase64 必须提供一个，如果都提供，只使用 FileUrl。</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
+          "member": "string",
+          "name": "FileBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出格式。<br>1：json格式<br>2：markdown格式<br>3：xml格式<br>9：json+markdown+xml格式</p>",
+          "example": "9",
+          "member": "int64",
+          "name": "ResultType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启子图提取，默认为 false。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSubImg",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档的起始页码。用来指定识别的起始页码，识别的页码包含当前值，不填时默认从文档第一页开始解析。本参数与 FileEndPageNumber 可分开填写，也可只填其中一个。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "FileStartPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档的结束页码。用来指定识别的结束页码，识别的页码包含当前值，不填时默认解析到文档最后一页。本参数与 FileStartPageNumber 可分开填写，也可只填其中一个。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "FileEndPageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型，默认为 0。取值：</p><ul><li>0：默认</li><li>1：Free OCR</li><li>2：OCR</li><li>3：表格识别</li><li>4：代码识别</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubmitMultimodalDocParseJobResponse": {
+      "document": "SubmitMultimodalDocParseJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务唯一 ID。30天内可以通过DescribeMultimodalDocParseJob接口查询TaskId对应的处理结果。</p>",
+          "example": "1491762633211215872",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -23958,7 +24274,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>鉴伪模式，目前支持以下模式，对应支持不同的入参、出参。<br>Image：图像鉴伪模式，根据图像分析输出告警提示，支持推理，支持区域篡改提示、AIGC合成提示、屏幕翻拍提示、截图提示、文字水印提示、水印内容、模板图片提示、VLM 推理结果。每次调用按1次调用计费。<br>Video：视频鉴伪模式，根据视频分析输出告警提示，不支持推理，支持屏幕翻拍提示。每次调用按1次调用计费。<br>Hybrid：混合鉴伪模式，综合图像、视频分析输出告警提示，支持推理，支持区域篡改提示、AIGC合成提示、屏幕翻拍提示、截图提示、文字水印提示、水印内容、模板图片提示、VLM 推理结果。每次调用按2次调用计费。</p>",
+          "document": "<p>鉴伪模式，目前支持以下模式，对应支持不同的入参、出参，默认值为Image。<br>Image：图像鉴伪模式，根据图像分析输出告警提示，支持自定义推理，支持区域篡改提示、AIGC合成提示、屏幕翻拍提示、截图提示、文字水印提示、水印内容、模板图片提示、VLM 推理结果。<strong>每次调用按1次调用计费</strong>。<br>Video：视频鉴伪模式，根据视频分析输出告警提示，不支持自定义推理，支持屏幕翻拍提示。<strong>每次调用按1次调用计费</strong>。<br>Hybrid：混合鉴伪模式，综合图像、视频分析输出告警提示，支持自定义推理，支持区域篡改提示、AIGC合成提示、屏幕翻拍提示、截图提示、文字水印提示、水印内容、模板图片提示、VLM 推理结果。<strong>每次调用按2次调用计费</strong>。</p>",
           "example": "Video",
           "member": "string",
           "name": "Mode",
@@ -23967,7 +24283,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>视频的 Url 地址。格式支持：xxxxxx。要求视频不超过 100M。建议视频时长不小于1s。</p>",
+          "document": "<p>视频的 Url 地址。格式支持：mp4、avi、mov、mkv、webm，要求视频不超过 100M。建议视频时长不小于1s。</p>",
           "example": "https://test-1259232023.cos.ap-chengdu.myqcloud.com/verifySceneVideo/x6HBjTdU46NaycgMzNC4kKUIKpZ43DejkS3pgM0hFdxxQc4INw4d1WnCIsKMXY3iw",
           "member": "string",
           "name": "VideoUrl",
@@ -23994,8 +24310,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–2000 字符</p>",
-          "example": "直接理解图片以及分析水印识别文字：${WatermarkContent}，我们**************************************如\"仅供办理电信开户业务\"判定为 reject，没有异常情况判定为 pass",
+          "document": "<p>推理 Prompt 模板，默认使用 VLM 对图片进行理解推理，同时支持使用 ${变量名} 进行推理。传入该参数即开启推理流程。</p><p>入参限制：长度限制：1–3000 字符</p>",
+          "example": "你是商户注册图片审核人员，审核图中水印和OCR结果——${WatermarkContent}，水印限定其他业务使用则返回false；无水印、不限用途或用于商户注册则返回true。不得猜测，仅返回true或false。",
           "member": "string",
           "name": "ReasoningPrompt",
           "required": false,
@@ -24013,7 +24329,7 @@
         {
           "disabled": false,
           "document": "<p>水印提示排除类型，选择出参“水印提示”排除掉的水印类型，不传的话即代表任意水印都会提示。<br>PhoneCam：手机相机水印<br>WatermarkCam：水印相机水印</p>",
-          "example": "[\"Phone\"]",
+          "example": "[\"PhoneCam\",\"WatermarkCam\"]",
           "member": "string",
           "name": "IgnoreWatermarkCategories",
           "required": false,
