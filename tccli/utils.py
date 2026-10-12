@@ -84,7 +84,9 @@ class Utils(object):
     def dump_json_msg(filename, data):
         file_dir = os.path.split(filename)[0]
         if not os.path.isdir(file_dir):
-            os.makedirs(file_dir)
+            os.makedirs(file_dir, 0o700)
+        elif os.name != "nt" and os.stat(file_dir).st_mode & 0o777 != 0o700:
+            os.chmod(file_dir, 0o700)
 
         temp_file = filename + uuid.uuid4().hex + ".tmp"
         with open(temp_file, "w") as f:
