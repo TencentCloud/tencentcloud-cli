@@ -68,7 +68,7 @@ def verify_login_skey(token, site):
         "Site": site,
         "LoginSkey": token,
     }
-    http_response = requests.post(api_endpoint, json=body)
+    http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
     try:
         resp = http_response.json()
         if "Error" in resp:
@@ -93,7 +93,7 @@ def list_accounts_for_access_assignment(token, site):
             "PageNum": page_num,
             "PageSize": page_size,
         }
-        http_response = requests.post(api_endpoint, json=body)
+        http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
         resp = http_response.json()
         if "Error" in resp:
             raise ValueError(http_response.content)
@@ -126,7 +126,7 @@ def list_role_configurations_for_account(uin, token, site):
             "MaxResults": page_size,
             "NextToken": next_token,
         }
-        http_response = requests.post(api_endpoint, json=body)
+        http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
         try:
             resp = http_response.json()
 
@@ -157,7 +157,7 @@ def gen_saml_response(token, login_type, uin, user_id, conf_id, site):
         "UserId": user_id,
         "RoleConfigurationId": conf_id,
     }
-    http_response = requests.post(api_endpoint, json=body)
+    http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
     try:
         resp = http_response.json()
         if "Error" in resp:
@@ -181,7 +181,7 @@ def assume_role_with_saml(saml_assertion, principal_arn, role_arn, role_ses_name
         "RoleSessionName": role_ses_name,
         "DurationSeconds": dur,
     }
-    http_response = requests.post(api_endpoint, json=body)
+    http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
     try:
         resp = http_response.json()
         if "Error" in resp:
@@ -226,7 +226,7 @@ def check_login_state(state):
         "TraceId": str(uuid.uuid4()),
         "State": state,
     }
-    http_response = requests.post(api_endpoint, json=body)
+    http_response = requests.post(api_endpoint, json=body, verify=Utils.get_ca_bundle())
     try:
         return http_response.json()
     except Exception:
