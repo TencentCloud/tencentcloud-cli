@@ -9,6 +9,7 @@ import tccli.options_define as Options_define
 from collections import OrderedDict
 
 from tccli import credentials
+from tccli.action_caller import get_skip_sign_action_caller
 from tccli.utils import Utils
 from tccli.argument import CLIArgument, CustomArgument, ListArgument, BooleanArgument
 from tccli.exceptions import UnknownArgumentError
@@ -182,6 +183,9 @@ class ServiceCommand(BaseCommand):
             action_model = service_model["actions"][action]
             action_caller = action_model.get("action_caller", None)
             if not action_caller:
+                action_caller = get_skip_sign_action_caller(
+                    self._service_name, self._version, action, action_model)
+            if not action_caller:
                 action_caller = Services.action_caller(self._service_name)()[action]
             cmd = ActionCommand(
                 service_name=self._service_name,
@@ -299,7 +303,8 @@ class ActionCommand(BaseCommand):
             action_parameters = self.cli_unfold_argument.build_action_parameters(parsed_args)
         else:
             action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
-        credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
+        if not getattr(self._action_caller, "skip_credential_refresh", False):
+            credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
         return self._action_caller(action_parameters, vars(parsed_globals))
 
     def _call_with_depth_guard(self, args, parsed_globals):
@@ -360,7 +365,8 @@ class ActionCommand(BaseCommand):
                 parsed_args, extra_unfold_args=extra_unfold_args or None)
         else:
             action_parameters = self._build_action_parameters(parsed_args, self.argument_map)
-        credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
+        if not getattr(self._action_caller, "skip_credential_refresh", False):
+            credentials.maybe_refresh_credential(parsed_globals.profile if parsed_globals.profile else "default")
         return self._action_caller(action_parameters, vars(parsed_globals))
     def create_help_command(self):
         return ActionHelpCommand(self._service_name, self._version, self._action_name)
