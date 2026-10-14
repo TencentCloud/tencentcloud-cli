@@ -77,6 +77,13 @@
       "output": "AttachPolicyResponse",
       "status": "online"
     },
+    "AuditPermissionApplyOrder": {
+      "document": "审批用户权限申请",
+      "input": "AuditPermissionApplyOrderRequest",
+      "name": "审批用户权限申请",
+      "output": "AuditPermissionApplyOrderResponse",
+      "status": "online"
+    },
     "BindOrganizationMemberAuthAccount": {
       "document": "绑定组织成员和组织管理员子账号的授权关系",
       "input": "BindOrganizationMemberAuthAccountRequest",
@@ -1526,6 +1533,70 @@
     "AttachPolicyResponse": {
       "document": "AttachPolicy返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditPermissionApplyOrderRequest": {
+      "document": "AuditPermissionApplyOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "z-a1b2c3d4e5",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请单 ID</p>",
+          "example": "apply-3f5a7c9e1b2d4f6a",
+          "member": "string",
+          "name": "ApplyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批结果</p><p>枚举值：</p><ul><li>Approve： 通过</li><li>Reject： 拒绝</li></ul>",
+          "example": "Reject",
+          "member": "string",
+          "name": "AuditResult",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批意见</p>",
+          "example": "权限范围过大，请拆分后重新申请",
+          "member": "string",
+          "name": "AuditOpinion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AuditPermissionApplyOrderResponse": {
+      "document": "AuditPermissionApplyOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>同步任务列表</p>",
+          "example": "无",
+          "member": "TaskInfo",
+          "name": "Tasks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

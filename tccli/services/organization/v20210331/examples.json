@@ -88,6 +88,14 @@
         "title": "绑定策略"
       }
     ],
+    "AuditPermissionApplyOrder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuditPermissionApplyOrder\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-a1b2c3d4e5\",\n    \"ApplyId\": \"apply-3f5a7c9e1b2d4f6a\",\n    \"AuditResult\": \"Reject\",\n    \"AuditOpinion\": \"权限范围过大，请拆分后重新申请\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [],\n        \"RequestId\": \"43eb5472-38f1-403f-b3a0-592cc5785a05\"\n    }\n}",
+        "title": "审批申请"
+      }
+    ],
     "BindOrganizationMemberAuthAccount": [
       {
         "document": "",

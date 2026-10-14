@@ -94,11 +94,43 @@
         "title": "设备类型错误"
       }
     ],
+    "BatchAddVideoSnapshotConfigChannel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAddVideoSnapshotConfigChannel\n<公共请求参数>\n\n{\n    \"ConfigId\": \"b8ab**5*-*5*3**************07daafd74\",\n    \"Channels\": [\n        \"d436***********************5492cfaa7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e6bef3e1-5a6d-4a2d-a63d-90c06ff75226\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "BatchAssignVLPlanChannels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchAssignVLPlanChannels\n<公共请求参数>\n\n{\n    \"VLPlanId\": \"VP7219*************************6f1\",\n    \"Cmd\": 2,\n    \"ChannelIds\": [\n        \"**********\"\n    ],\n    \"OrganizationIds\": [\n        \"*****\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0f789da-fa63-4fe0-b86a-317ae835ed8c\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "BatchDeleteVideoDownloadTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteVideoDownloadTask\n<公共请求参数>\n\n{\n    \"DownloadTaskIds\": [\n        \"*******\",\n        \"********\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cd92416f-bc75-4d17-91f3-93d7c94d1cf5\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "BatchGetVLPlanSourceFileURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchGetVLPlanSourceFileURL\n<公共请求参数>\n\n{\n    \"VLPlanResultIds\": [\n        \"49be*****************************e15\"\n    ],\n    \"Expire\": 3000\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Expire\": 3000,\n                \"SourceFileURL\": \"https://**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************\",\n                \"VLPlanResultId\": \"49be*****************************e15\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d72b807a-ac35-4003-bd8e-8d107e1de07d\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "BatchGetVideoSnapshotImageUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchGetVideoSnapshotImageUrl\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"9e79************************78dff586\"\n    ],\n    \"ImageUrlExpires\": 600\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ImageUrlExpires\": 600,\n            \"Images\": [\n                {\n                    \"ErrorMessage\": \"\",\n                    \"ImageId\": \"9e798***********************78dff586\",\n                    \"ImageUrl\": \"https://*******************/ipts/image?source=O********BXXILZ********************DI***FU2GEZ*********************WGY3***************************3D**************************3DHE**************************MNBS**********************res=M*********E****************pOzl*************************ZWQwLWRm*****************pires=NjAw*********************xMg&sk=*****W********************FmY*******************&sign=ZT*************************4NzU0**********U\"\n                }\n            ]\n        },\n        \"RequestId\": \"a05843d1-731c-4369-a87c-71c445819830\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -172,11 +204,43 @@
         "title": "无本地录像结果"
       }
     ],
+    "CreateVLPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVLPlan\n<公共请求参数>\n\n{\n    \"Name\": \"明厨亮灶识别计划\",\n    \"VLTemplateId\": \"VTa911*************************6c2\",\n    \"Describe\": \"明厨亮灶识别\",\n    \"FileExpires\": 7,\n    \"Callback\": {\n        \"Url\": \"http://************************\",\n        \"Token\": \"************************************\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Enable\": true,\n                \"Token\": \"************************************\",\n                \"Url\": \"*******************************\"\n            },\n            \"ChannelCount\": 0,\n            \"CreatedAt\": \"2026-07-28 15:49:05\",\n            \"Describe\": \"明厨亮灶识别\",\n            \"FileExpires\": 7,\n            \"Name\": \"明厨亮灶识别计划\",\n            \"UpdatedAt\": \"2026-07-28 15:49:05\",\n            \"VLPlanId\": \"VP6d24*************************6a2\",\n            \"VLTemplateId\": \"VTa911*************************6c2\"\n        },\n        \"RequestId\": \"c50a3279-5c94-429a-a709-c2f80efa77c3\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "CreateVLTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVLTemplate\n<公共请求参数>\n\n{\n    \"AIModel\": \"ivc-vl-1.0\",\n    \"Name\": \"测试模板\",\n    \"Prompt\": \"图片中有什么\",\n    \"AnalysisMode\": \"image\",\n    \"Times\": [\n        {\n            \"BeginTime\": \"00:00:00\",\n            \"EndTime\": \"10:00:00\",\n            \"WeekDay\": 1\n        }\n    ],\n    \"ImageConfig\": {\n        \"Type\": 1,\n        \"Interval\": 10\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AIModel\": \"ivc-vl-1.0\",\n            \"AnalysisMode\": \"image\",\n            \"CreatedAt\": \"2026-08-17 17:23:41\",\n            \"Describe\": \"\",\n            \"ImageConfig\": {\n                \"Interval\": 10,\n                \"MultiMode\": null,\n                \"Type\": 1\n            },\n            \"Name\": \"测试模板\",\n            \"Prompt\": \"图片中有什么\",\n            \"Times\": [\n                {\n                    \"BeginTime\": \"00:00:00\",\n                    \"EndTime\": \"10:00:00\",\n                    \"WeekDay\": 1\n                }\n            ],\n            \"UpdatedAt\": \"2026-08-17 17:23:41\",\n            \"VLTemplateId\": \"VT58c*************************04e3\"\n        },\n        \"RequestId\": \"1676edea-cb77-4629-968b-197833ba8d87\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "CreateVideoDownloadTask": [
       {
         "document": " ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoDownloadTask\n<公共请求参数>\n\n{\n    \"ChannelId\": \"***********\",\n    \"BeginTime\": 1729288800,\n    \"EndTime\": 1729292400,\n    \"Scale\": 1,\n    \"Expire\": 7,\n    \"FileType\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DownloadTaskId\": \"**********\"\n        },\n        \"RequestId\": \"cd92416f-bc75-4d17-91f3-93d7c94d1cf5\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "CreateVideoSnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoSnapshotConfig\n<公共请求参数>\n\n{\n    \"Name\": \"配置1\",\n    \"TemplateId\": \"144*************************e****3d3\",\n    \"FileExpires\": 7,\n    \"Callback\": {\n        \"Url\": \"http://*********************back\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Token\": \"\",\n                \"Url\": \"http:***********************back\"\n            },\n            \"ConfigId\": \"b8a*****************************fd74\",\n            \"CreateTime\": \"2026-01-25 14:55:34\",\n            \"FileExpires\": 7,\n            \"Name\": \"配置1\",\n            \"TemplateId\": \"144****************************7f3d3\",\n            \"Type\": 1,\n            \"UpdateTime\": \"2026-01-25 14:55:34\"\n        },\n        \"RequestId\": \"369e1974-9d68-4a5b-aa68-83629eed416a\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "CreateVideoSnapshotTemplate": [
+      {
+        "document": "实时截帧模板创建",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVideoSnapshotTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"实时截帧模板\",\n    \"Type\": 1,\n    \"Interval\": 120,\n    \"Times\": [\n        {\n            \"BeginTime\": \"9:00:00\",\n            \"EndTime\": \"12:00:00\",\n            \"WeekDay\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": \"2026-01-25 12:10:49\",\n            \"Interval\": 120,\n            \"MultiMode\": {\n                \"Enable\": false,\n                \"Interval\": 0,\n                \"Total\": 0\n            },\n            \"Name\": \"实时截帧模板\",\n            \"TemplateId\": \"b11*********e*******************48c4\",\n            \"Times\": [\n                {\n                    \"BeginTime\": \"9:00:00\",\n                    \"EndTime\": \"12:00:00\",\n                    \"WeekDay\": 1\n                }\n            ],\n            \"Type\": 1,\n            \"UpdateTime\": \"2026-01-25 12:10:49\"\n        },\n        \"RequestId\": \"c8453e1b-2428-4ec3-bfee-3b6412b41de6\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -262,6 +326,38 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserDevice\n<公共请求参数>\n\n{\n    \"DeviceId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"该资源不存在\"\n        },\n        \"RequestId\": \"8f530b9c-dae9-49e7-b30a-403c9a9a2437\"\n    }\n}",
         "title": "设备不存在"
+      }
+    ],
+    "DeleteVLPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVLPlan\n<公共请求参数>\n\n{\n    \"VLPlanId\": \"VPdc05*************************5eb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2411fc87-1f32-4382-8286-de4813590acf\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DeleteVLTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVLTemplate\n<公共请求参数>\n\n{\n    \"VLTemplateId\": \"VT9bce*************************136\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bf3f752f-fd87-4491-b2dd-3c209db54313\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DeleteVideoSnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVideoSnapshotConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"d4b1***b**0*****************d377f02f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1313abcc-537a-4e71-99b9-256884faf9e6\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DeleteVideoSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVideoSnapshotTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"b11*****************************48c4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6b756c6f-73a9-4085-8d97-af645d2c3929\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "DescribeCNAME": [
@@ -466,6 +562,30 @@
         "title": "成功"
       }
     ],
+    "DescribeVLPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVLPlan\n<公共请求参数>\n\n{\n    \"VLPlanId\": \"VPdc05*************************5eb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Enable\": true,\n                \"Token\": \"************************************\",\n                \"Url\": \"http://************************\"\n            },\n            \"ChannelCount\": 0,\n            \"CreatedAt\": \"2026-07-27 17:10:26\",\n            \"Describe\": \"明厨亮灶识别\",\n            \"FileExpires\": 7,\n            \"Name\": \"明厨亮灶识别计划\",\n            \"UpdatedAt\": \"2026-07-27 17:10:26\",\n            \"VLPlanId\": \"VPdc05*************************5eb\",\n            \"VLTemplateId\": \"VTa911*************************6c2\"\n        },\n        \"RequestId\": \"7739d6e5-6e3e-4246-afe8-2fa7a01a9ca6\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeVLPlanResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVLPlanResult\n<公共请求参数>\n\n{\n    \"VLPlanResultId\": \"4537*****************************30b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"BilledFrameCount\": 60,\n            \"ChannelId\": \"319c*****************************d4e\",\n            \"ChannelName\": \"海康PTZ球机**\",\n            \"Content\": \"{\\\"has_fall\\\":false,\\\"fall_events\\\":[],\\\"summary\\\":\\\"视频中未检测到老人跌倒事件。画面全程为静止的办公椅特写，无人员出现或任何动作发生。\\\"}\",\n            \"CreatedAt\": \"2026-10-10 18:51:54\",\n            \"DeviceId\": \"4662*****************************c8c\",\n            \"DeviceName\": \"HikNVR*********\",\n            \"ImageUrl\": \"\",\n            \"ImageUrlExpire\": 300,\n            \"MediaType\": \"video\",\n            \"OrganizationId\": \"236\",\n            \"OrganizationName\": \"西安市\",\n            \"SnapshotTimestamp\": 0,\n            \"UpdatedAt\": \"2026-10-10 18:51:54\",\n            \"VLPlanId\": \"VPe2***************************eec\",\n            \"VLPlanName\": \"\",\n            \"VLPlanResultId\": \"4537*****************************30b\",\n            \"VLResultTimestamp\": 1791629513,\n            \"VideoEndTimestamp\": 1791629460,\n            \"VideoStartTimestamp\": 1791629400\n        },\n        \"RequestId\": \"6e538216-22fe-4e4b-b0be-c03647185ee4\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeVLTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVLTemplate\n<公共请求参数>\n\n{\n    \"VLTemplateId\": \"VT58c*************************04e3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AIModel\": \"ivc-vl-1.0\",\n            \"AnalysisMode\": \"image\",\n            \"CreatedAt\": \"2026-08-17 17:23:42\",\n            \"Describe\": \"\",\n            \"ImageConfig\": {\n                \"Interval\": 10,\n                \"MultiMode\": null,\n                \"Type\": 1\n            },\n            \"Name\": \"测试模板\",\n            \"Prompt\": \"图片中有什么\",\n            \"Times\": [\n                {\n                    \"BeginTime\": \"00:00:00\",\n                    \"EndTime\": \"10:00:00\",\n                    \"WeekDay\": 1\n                }\n            ],\n            \"UpdatedAt\": \"2026-08-17 17:23:42\",\n            \"VLTemplateId\": \"VT58c*************************04e3\"\n        },\n        \"RequestId\": \"6f7a4ac9-7fea-4418-a715-f04fc0a66c83\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeVideoBitRate": [
       {
         "document": "正常响应",
@@ -486,6 +606,22 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoDownloadUrl\n<公共请求参数>\n\n{\n    \"ChannelId\": \"4dfb778c-xxxxxxx\",\n    \"BeginTime\": \"1668996000\",\n    \"EndTime\": \"1668996600\",\n    \"FileType\": \"mp4\",\n    \"IsRespActualTime\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Url\": \"https://userdomain/video.mp4?source=xxxxxx\",\n            \"ActualBeginTime\": \"1668996000\",\n            \"ActualEndTime\": \"1668996600\"\n        },\n        \"RequestId\": \"******************\"\n    }\n}",
         "title": "获取云录像下载URL和实际下载的录像时间"
+      }
+    ],
+    "DescribeVideoSnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoSnapshotConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"b8a**3***********************daafd74\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Token\": \"\",\n                \"Url\": \"http:/****3*************callback\"\n            },\n            \"ConfigId\": \"b8ab03**********************7daafd74\",\n            \"CreateTime\": \"2026-01-25 14:55:34\",\n            \"FileExpires\": 15,\n            \"Name\": \"截图配置1\",\n            \"TemplateId\": \"144d8**********************3ed07f3d3\",\n            \"Type\": 1,\n            \"UpdateTime\": \"2026-01-25 15:12:03\"\n        },\n        \"RequestId\": \"854d322f-f794-4b5f-bda1-aa514020e9e4\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "DescribeVideoSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoSnapshotTemplate\n<公共请求参数>\n\n{\n    \"TemplateId\": \"144*****************************f3d3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"CreateTime\": \"2026-01-25 11:52:57\",\n            \"Interval\": 120,\n            \"MultiMode\": {\n                \"Enable\": false,\n                \"Interval\": 0,\n                \"Total\": 0\n            },\n            \"Name\": \"实时截帧模板\",\n            \"TemplateId\": \"144*****************************f3d3\",\n            \"Times\": [\n                {\n                    \"BeginTime\": \"9:00:00\",\n                    \"EndTime\": \"12:00:00\",\n                    \"WeekDay\": 1\n                }\n            ],\n            \"Type\": 1,\n            \"UpdateTime\": \"2026-01-25 11:52:57\"\n        },\n        \"RequestId\": \"3cc0e68c-58eb-46a0-93d9-a3b749d30a74\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "ListDeviceSnapshots": [
@@ -660,11 +796,51 @@
         "title": "成功"
       }
     ],
+    "ListVLPlans": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVLPlans\n<公共请求参数>\n\n{\n    \"Name\": \"明厨亮灶识别计划\",\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Callback\": {\n                    \"Enable\": true,\n                    \"Token\": \"************************************\",\n                    \"Url\": \"http://************************\"\n                },\n                \"ChannelCount\": 0,\n                \"CreatedAt\": \"2026-07-27 17:19:15\",\n                \"Describe\": \"明厨亮灶识别\",\n                \"FileExpires\": 7,\n                \"Name\": \"明厨亮灶识别计划\",\n                \"UpdatedAt\": \"2026-07-27 17:19:15\",\n                \"VLPlanId\": \"VP7219*************************6f1\",\n                \"VLTemplateId\": \"VTa911*************************6c2\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"16b41217-9532-4fd8-86e7-b333cca1177b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "ListVLTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVLTemplates\n<公共请求参数>\n\n{\n    \"Name\": \"明厨亮灶识别模板\",\n    \"AnalysisMode\": \"image\",\n    \"CaptureType\": \"realtime\",\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AIModel\": \"IVC-G\",\n                \"AnalysisMode\": \"image\",\n                \"CreatedAt\": \"2026-07-27 15:14:28\",\n                \"Describe\": \"厨师帽和口罩识别\",\n                \"ImageConfig\": {\n                    \"Interval\": 10,\n                    \"MultiMode\": null,\n                    \"Type\": 1\n                },\n                \"IsUsed\": false,\n                \"Name\": \"明厨亮灶识别模板\",\n                \"Prompt\": \"你是餐饮后厨着装规范检查模型，仅检查厨师帽、口罩两项。\\n## 合规标准\\n- 厨师帽：佩戴且完全覆盖头发（高筒帽/网帽/布帽均合规）；未戴或发丝外露为不合规\\n- 口罩：覆盖鼻梁至下颌（蓝/白医用口罩、透明面罩均合规）；拉下巴/挂耳朵/仅遮嘴为不合规\\n## 输出\\n紧凑JSON，无markdown/换行/空格。\\n- total_staff：int，后厨人员总数\\n- hat：{\\\"compliant\\\":int,\\\"non_compliant\\\":int,\\\"not_wearing\\\":int}，帽子合规/不规范/未戴人数\\n- mask：{\\\"compliant\\\":int,\\\"non_compliant\\\":int,\\\"not_wearing\\\":int}，口罩合规/不规范/未戴人数\",\n                \"Times\": [\n                    {\n                        \"BeginTime\": \"00:00:00\",\n                        \"EndTime\": \"23:59:59\",\n                        \"WeekDay\": 1\n                    }\n                ],\n                \"UpdatedAt\": \"2026-07-27 15:14:28\",\n                \"VLTemplateId\": \"VTa911*************************6c2\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"75677860-9600-494e-b0d9-ba61cb74cf4d\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "ListVideoDownloadTask": [
       {
         "document": "   ",
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVideoDownloadTask\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"ChannelCode\": \"310****00001320000001\",\n                    \"ChannelId\": \"21098feb-57a4-4fbc-9435-************\",\n                    \"ChannelName\": \"11\",\n                    \"DeviceCode\": \"610*****01180000159\",\n                    \"DeviceName\": \"NVR\",\n                    \"DownloadTaskId\": \"e6651293-b5fa-4dbb-bfe0-************\",\n                    \"DownloadTime\": 7200,\n                    \"EndTime\": \"2024-10-22 12:29:02\",\n                    \"Expire\": 7,\n                    \"FailedReason\": \"\",\n                    \"FileDownloadUrl\": \"https://*********.demo.cn/vds/lr/video.mp4?source=localrecord%2F7%2F21098feb-57a4-4fbc-9435-************%2F20241021%2Fe6651293-b5fa-4dbb-bfe0-************.mp4%3Bivc-test-new-251228313-ap-shanghai-1258344699%3Bap-shanghai%3B21098feb-57a4-4fbc-9435-*********%3B251228313%3B7000003*****9&intranet=0&expires=3600&signtime=1729675136&sign=1f9f2d21eb5e18b088f70f81*********\",\n                    \"Scale\": 2,\n                    \"StartTime\": \"2024-10-22 11:28:36\",\n                    \"Status\": 2,\n                    \"VideoSize\": 967309246,\n                    \"VideoTimeSection\": \"2024-10-21 08:00:00-2024-10-21 10:00:00\"\n                }\n            ],\n            \"TotalCount\": 15\n        },\n        \"RequestId\": \"f5447c9b-a7a6-42d5-b831-9e666bfbe261\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ListVideoSnapshotTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVideoSnapshotTemplate\n<公共请求参数>\n\n{\n    \"Sort\": \"update_time\",\n    \"Order\": \"desc\",\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"CreateTime\": \"2026-01-25 12:15:00\",\n                    \"Interval\": 3600,\n                    \"MultiMode\": {\n                        \"Enable\": true,\n                        \"Interval\": 180,\n                        \"Total\": 5\n                    },\n                    \"Name\": \"低频截帧模板\",\n                    \"TemplateId\": \"035f4**************8*******c1ca5aa4a\",\n                    \"Times\": [\n                        {\n                            \"BeginTime\": \"9:00:00\",\n                            \"EndTime\": \"12:00:00\",\n                            \"WeekDay\": 2\n                        }\n                    ],\n                    \"Type\": 2,\n                    \"UpdateTime\": \"2026-01-25 12:15:00\"\n                }\n            ],\n            \"Order\": \"desc\",\n            \"PageNumber\": 1,\n            \"PageSize\": 20,\n            \"Sort\": \"update_time\",\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"af39813c-96eb-4c48-b07f-1b31cfe5a9d3\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ModifyVLPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVLPlan\n<公共请求参数>\n\n{\n    \"VLPlanId\": \"VP6d24c8b1157d4894b7c74a1ef30cf6a2\",\n    \"FileExpires\": 90,\n    \"VLTemplateId\": \"VTa911*************************6c2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Enable\": true,\n                \"Token\": \"************************************\",\n                \"Url\": \"http://************************\"\n            },\n            \"ChannelCount\": 0,\n            \"CreatedAt\": \"2026-07-28 15:49:06\",\n            \"Describe\": \"明厨亮灶识别\",\n            \"FileExpires\": 90,\n            \"Name\": \"明厨亮灶识别计划\",\n            \"UpdatedAt\": \"2026-07-28 15:51:16\",\n            \"VLPlanId\": \"VP6d24*************************6a2\",\n            \"VLTemplateId\": \"VTa911*************************6c2\"\n        },\n        \"RequestId\": \"e03b018a-5766-4c41-9738-eae93630057f\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "ModifyVideoSnapshotConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVideoSnapshotConfig\n<公共请求参数>\n\n{\n    \"ConfigId\": \"b8a************9****************fd74\",\n    \"Name\": \"截图配置1\",\n    \"FileExpires\": 15\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Callback\": {\n                \"Token\": \"\",\n                \"Url\": \"http:***********************back\"\n            },\n            \"ConfigId\": \"b8a*************************7****d**\",\n            \"CreateTime\": \"2026-01-25 14:55:34\",\n            \"FileExpires\": 15,\n            \"Name\": \"截图配置1\",\n            \"TemplateId\": \"144****1*7*****************3ed**f3d3\",\n            \"Type\": 1,\n            \"UpdateTime\": \"2026-01-25 14:55:34\"\n        },\n        \"RequestId\": \"898d2032-7859-4f12-b41f-f1d2042b9b02\"\n    }\n}",
         "title": "成功"
       }
     ],

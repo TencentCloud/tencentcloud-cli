@@ -48918,7 +48918,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要授权的表名，填 * 代表当前Database下所有表。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。</p>",
+          "document": "<p>需要授权的表名，填 * 代表当前Database有表（TClake场景下暂不支持通配符）。当授权类型为管理员级别时，只允许填“*”，当授权类型为数据连接级别、数据库级别时只允许填空，其他类型下可以任意指定数据表。</p>",
           "example": "test_table",
           "member": "string",
           "name": "Table",
@@ -66831,6 +66831,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>规格详情（profile 完整基础信息，describe 与 list 均返回）.</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WarehouseProfileBriefInfo",
+          "name": "ProfileDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>创建时间（毫秒时间戳）。</p>",
           "example": "1767256876123",
           "member": "int64",
@@ -66935,6 +66945,62 @@
           "example": "{\"spark.executor.instances\":\"2\"}",
           "member": "string",
           "name": "DynamicProperties",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WarehouseProfileBriefInfo": {
+      "document": "Warehouse Profile 对外基础信息（对外 API 精简视图）.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规格编码（常见 XS / S / M / L / XL，租户自定义编码亦合法）.</p>",
+          "example": "M",
+          "member": "string",
+          "name": "ProfileCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格名称.</p>",
+          "example": "Medium",
+          "member": "string",
+          "name": "ProfileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格描述.</p>",
+          "example": "演示用途的配置",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格展示文案（后端渲染后的字符串，如 \"4CU\"；前端直接展示，不做二次拼装）.</p>",
+          "example": "4CU",
+          "member": "string",
+          "name": "Spec",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>适用场景描述.</p>",
+          "example": "交互式分析与临时查询",
+          "member": "string",
+          "name": "Scenario",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

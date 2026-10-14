@@ -29,56 +29,70 @@ Output:
             "AllowIpList": [
                 "0.0.0.0/0"
             ],
-            "Protocol": "xx",
-            "Description": "xx",
+            "Protocol": "",
+            "Description": "",
             "RTPSettings": {
                 "IdleTimeout": 0,
-                "FEC": "xx"
+                "FEC": ""
             },
-            "InputName": "xx",
+            "InputName": "",
             "SRTSettings": {
+                "Mode": "",
                 "Latency": 1000,
                 "PeerLatency": 0,
                 "PbKeyLen": 32,
                 "RecvLatency": 1000,
-                "Passphrase": "xx",
-                "StreamId": "xx",
-                "PeerIdleTimeout": 1000
+                "Passphrase": "",
+                "StreamId": "",
+                "PeerIdleTimeout": 1000,
+                "SourceAddresses": [
+                    {
+                        "Ip": "",
+                        "Port": 1
+                    }
+                ]
             },
             "RTMPSettings": {
-                "StreamKey": "xx",
-                "AppName": "xx"
+                "StreamKey": "",
+                "AppName": ""
             },
             "RTSPPullSettings": {
                 "SourceAddresses": [
                     {
-                        "Url": "xx"
+                        "Url": ""
                     }
                 ]
+            },
+            "ResilientStream": {
+                "Enable": true,
+                "BufferTime": 133
+            },
+            "HLSPullSettings": {
+                "SourceAddresses": []
             },
             "RTMPPullSettings": {
                 "SourceAddresses": [
                     {
-                        "StreamKey": "xx",
-                        "TcUrl": "xx"
+                        "StreamKey": "",
+                        "TcUrl": ""
                     }
                 ]
             },
-            "FailOver": "xx",
-            "InputRegion": "xx",
-            "InputId": "xx",
+            "FailOver": "",
+            "InputRegion": "",
+            "InputId": "",
             "InputAddressList": [
                 {
-                    "Ip": "xx",
+                    "Ip": "",
                     "Port": 1
                 },
                 {
-                    "Ip": "xx",
+                    "Ip": "",
                     "Port": 1
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": ""
     }
 }
 ```

@@ -154,6 +154,13 @@
       "output": "CreateWebSocketTokenResponse",
       "status": "online"
     },
+    "CreateWorkflowRun": {
+      "document": "本接口用来创建工作流的异步运行实例，创建成功后工作流会在后台异步运行，接口返回工作流运行实例ID（WorkflowRunId）等信息。后面可通过调用DescribeWorkflowRun接口查工作流运行的详情。\n注意：工作流的异步运行是基于应用的，需要先把对应的应用配置成“单工作流模式”，才能创建成功。",
+      "input": "CreateWorkflowRunRequest",
+      "name": "创建工作流运行实例",
+      "output": "CreateWorkflowRunResponse",
+      "status": "online"
+    },
     "CreateWorkspaceCredential": {
       "document": "创建工作空间凭证",
       "input": "CreateWorkspaceCredentialRequest",
@@ -511,6 +518,20 @@
       "output": "DescribeMsgRecordListResponse",
       "status": "online"
     },
+    "DescribeNodeBatchRun": {
+      "document": "DescribeNodeBatchRun",
+      "input": "DescribeNodeBatchRunRequest",
+      "name": "获取节点批次运行详情",
+      "output": "DescribeNodeBatchRunResponse",
+      "status": "online"
+    },
+    "DescribeNodeRunDetail": {
+      "document": "查看工作流节点运行详情",
+      "input": "DescribeNodeRunDetailRequest",
+      "name": "查看工作流节点运行详情",
+      "output": "DescribeNodeRunDetailResponse",
+      "status": "online"
+    },
     "DescribePlugin": {
       "document": "获取插件详情",
       "input": "DescribePluginRequest",
@@ -605,7 +626,7 @@
     "DescribeUsageDetailList": {
       "document": "查询资源调用时序明细，支持模型和插件两类资源，按时间顺序返回每条调用记录的详细信息",
       "input": "DescribeUsageDetailListRequest",
-      "name": "查询资源调用时序明细",
+      "name": "查询资源调用明细",
       "output": "DescribeUsageDetailListResponse",
       "status": "online"
     },
@@ -628,6 +649,20 @@
       "input": "DescribeVariableListRequest",
       "name": "获取参数变量列表",
       "output": "DescribeVariableListResponse",
+      "status": "online"
+    },
+    "DescribeWorkflowRun": {
+      "document": "查询工作流运行详情",
+      "input": "DescribeWorkflowRunRequest",
+      "name": "查询工作流运行实例详情",
+      "output": "DescribeWorkflowRunResponse",
+      "status": "online"
+    },
+    "DescribeWorkflowRunSummaryList": {
+      "document": "查询工作流运行实例列表",
+      "input": "DescribeWorkflowRunSummaryListRequest",
+      "name": "查询工作流运行实例列表",
+      "output": "DescribeWorkflowRunSummaryListResponse",
       "status": "online"
     },
     "ExportQA": {
@@ -812,6 +847,13 @@
       "output": "ResumeAppTriggerResponse",
       "status": "online"
     },
+    "ResumeWorkflowRun": {
+      "document": "继续运行等待输入的工作流异步运行实例",
+      "input": "ResumeWorkflowRunRequest",
+      "name": "继续执行等待输入的异步工作流运行实例",
+      "output": "ResumeWorkflowRunResponse",
+      "status": "online"
+    },
     "RetryRelease": {
       "document": "重试发布(发布暂停之后再次重新发布)",
       "input": "RetryReleaseRequest",
@@ -833,11 +875,32 @@
       "output": "RunAppTriggerNowResponse",
       "status": "online"
     },
+    "SaveWorkflowDebugContext": {
+      "document": "SaveWorkflowDebugContext",
+      "input": "SaveWorkflowDebugContextRequest",
+      "name": "保存工作流调试信息",
+      "output": "SaveWorkflowDebugContextResponse",
+      "status": "online"
+    },
+    "SaveWorkflowToolNodeOutput": {
+      "document": "SaveWorkflowToolNodeOutput",
+      "input": "SaveWorkflowToolNodeOutputRequest",
+      "name": "工作流工具节点异步调用回调",
+      "output": "SaveWorkflowToolNodeOutputResponse",
+      "status": "online"
+    },
     "SearchKnowledge": {
       "document": "知识检索",
       "input": "SearchKnowledgeRequest",
       "name": "知识检索",
       "output": "SearchKnowledgeResponse",
+      "status": "online"
+    },
+    "StopWorkflowRunList": {
+      "document": "批量停止正在进行的工作流运行实例。",
+      "input": "StopWorkflowRunListRequest",
+      "name": "批量停止工作流运行实例",
+      "output": "StopWorkflowRunListResponse",
       "status": "online"
     },
     "UnfavoritePlugin": {
@@ -2833,17 +2896,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>应用引用的共享知识库列表</p>",
-          "example": "无",
-          "member": "AppSharedKbInfo",
-          "name": "SharedKbList",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>企业共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CorpShareConfig",
@@ -2851,6 +2903,39 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用引用的共享知识库列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppSharedKbInfo",
+          "name": "SharedKbList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>portal共享配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PortalShareConfig",
+          "name": "PortalShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用挂载云盘</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileVolumeMount",
+          "name": "FileVolumeMountList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -3106,6 +3191,34 @@
       ],
       "usage": "both"
     },
+    "AppFileVolumeMount": {
+      "document": "应用级云盘挂载配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用云盘配置</p>",
+          "example": "无",
+          "member": "FileVolumeMount",
+          "name": "FileVolumeMount",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1：新增 2：修改 3：删除</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AppGreetingConfig": {
       "document": "欢迎语配置",
       "members": [
@@ -3129,6 +3242,45 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppIdentity": {
+      "document": "应用标识",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "2108755******904064",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用名称</p>",
+          "example": "我的智能体应用**",
+          "member": "string",
+          "name": "AppName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用模式</p><p>枚举值：</p><ul><li>1： 标准模式</li><li>2： agent模式</li><li>3： 单工作流模式</li><li>4： ClawAgent模式</li></ul>",
+          "example": "4",
+          "member": "int64",
+          "name": "AppMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3712,7 +3864,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "2060*************20",
           "member": "string",
           "name": "AppId",
@@ -3723,7 +3875,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式",
+          "document": "<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>",
           "example": "2",
           "member": "int64",
           "name": "AppMode",
@@ -3734,7 +3886,7 @@
         },
         {
           "disabled": false,
-          "document": "应用头像",
+          "document": "<p>应用头像</p>",
           "example": "https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png",
           "member": "string",
           "name": "Avatar",
@@ -3745,7 +3897,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "测试的应用信息",
           "member": "string",
           "name": "Name",
@@ -3756,7 +3908,7 @@
         },
         {
           "disabled": false,
-          "document": "操作信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppOperation",
           "name": "OperationInfo",
@@ -3767,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>状态信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppStatusInfo",
           "name": "Status",
@@ -3778,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "子状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子状态信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AppSubStatusInfo",
           "name": "SubStatus",
@@ -3789,13 +3941,24 @@
         },
         {
           "disabled": false,
-          "document": "资源操作权限",
+          "document": "<p>资源操作权限</p>",
           "example": "[\"adpAppEdit\"]",
           "member": "string",
           "name": "PermissionIdList",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用描述信息</p>",
+          "example": "我是应用描述信息",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4876,6 +5039,34 @@
       ],
       "usage": "both"
     },
+    "AppVariableValue": {
+      "document": "AppVariableValue",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>变量ID</p>",
+          "example": "ed7d33fa-c59b-4773-ae99-458c44d9384c",
+          "member": "string",
+          "name": "VariableId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值</p>",
+          "example": "false",
+          "member": "string",
+          "name": "VariableValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AppWebSearchConfig": {
       "document": "联网搜索配置(国际版使用)",
       "members": [
@@ -5282,6 +5473,89 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BatchRunSummary": {
+      "document": "BatchRunSummary",
+      "members": [
+        {
+          "disabled": false,
+          "document": "\t失败数量",
+          "example": "1",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t成功数量",
+          "example": "1",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总批次",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败的下标",
+          "example": "[2]",
+          "member": "int64",
+          "name": "FailedIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\t上一轮完成的批次",
+          "example": "[1]",
+          "member": "int64",
+          "name": "JustCompletedIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行中的下标",
+          "example": "[3]",
+          "member": "int64",
+          "name": "RunningIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功的下标",
+          "example": "[1]",
+          "member": "int64",
+          "name": "SuccessIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5914,12 +6188,40 @@
       ],
       "usage": "both"
     },
+    "ClawAgentChannelContextTimeoutConfig": {
+      "document": "渠道上下文超时清空配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启渠道上下文超时清空</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道上下文超时时长</p><p>取值范围：[1, 99]</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TimeoutHour",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ClawAgentConfig": {
       "document": "ClawAgent配置",
       "members": [
         {
           "disabled": false,
-          "document": "Agent团队协作配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Agent团队协作配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClawAgentAgentTeamConfig",
           "name": "AgentTeamConfig",
@@ -5930,10 +6232,21 @@
         },
         {
           "disabled": false,
-          "document": "长期记忆配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>长期记忆配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ClawAgentLongMemoryConfig",
           "name": "LongMemoryConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道上下文超时清空配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClawAgentChannelContextTimeoutConfig",
+          "name": "ChannelContextTimeoutConfig",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -6790,7 +7103,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI通话配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>AI通话配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AICallConfig",
           "name": "AiCall",
@@ -6801,7 +7114,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图片配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>背景图片配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BackgroundImage",
           "name": "BackgroundImage",
@@ -6812,7 +7125,7 @@
         },
         {
           "disabled": false,
-          "document": "兜底回复开关",
+          "document": "<p>兜底回复开关</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableFallbackReply",
@@ -6823,7 +7136,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用推荐问",
+          "document": "<p>是否使用推荐问</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableRecommended",
@@ -6834,7 +7147,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用联网搜索",
+          "document": "<p>是否使用联网搜索</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableWebSearch",
@@ -6845,7 +7158,7 @@
         },
         {
           "disabled": false,
-          "document": "兜底回复语",
+          "document": "<p>兜底回复语</p>",
           "example": "针对您这个问题，我暂时还无法进行回答，请换一个问题吧。",
           "member": "string",
           "name": "FallbackReply",
@@ -6856,7 +7169,7 @@
         },
         {
           "disabled": false,
-          "document": "输入框配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>输入框配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InputBoxConfig",
           "name": "InputBoxConfig",
@@ -6867,7 +7180,7 @@
         },
         {
           "disabled": false,
-          "document": "输出方式。枚举值: 1:流式, 2:非流式",
+          "document": "<p>输出方式。枚举值: 1:流式, 2:非流式</p>",
           "example": "1",
           "member": "int64",
           "name": "Method",
@@ -6878,12 +7191,145 @@
         },
         {
           "disabled": false,
-          "document": "推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt",
+          "document": "<p>推荐问生成prompt模式。枚举值: 1:仅结合知识库输出推荐问的prompt</p>",
           "example": "0",
           "member": "int64",
           "name": "RecommendPromptMode",
           "output_required": false,
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationFileCollection": {
+      "document": "FileCollection 文件收集信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大文件数量</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "MaxFileCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的文件类型列表</p>",
+          "example": "[\"txt\"]",
+          "member": "string",
+          "name": "SupportedFileTypeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的文件类型列表</p>",
+          "example": "[\"txt\"]",
+          "member": "string",
+          "name": "SupportedFileTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationFileInfo": {
+      "document": "FileInfo 文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件创建时间</p>",
+          "example": "1777541239626",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档业务 ID</p>",
+          "example": "0",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "new.txt",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>",
+          "example": "0",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件类型</p>",
+          "example": "txt",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件下载链接</p>",
+          "example": "https://sandbox-test.adp.cloud.tencent.com/files?path=/workdir/new.txt",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件在沙箱中的原始路径</p>",
+          "example": "/workdir/123.txt",
+          "member": "string",
+          "name": "LocalPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件审核状态</p><p>枚举值：</p><ul><li>1： 审核中</li><li>2： 审核通过</li><li>3： 审核不通过</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "AuditStatus",
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         }
@@ -7373,6 +7819,89 @@
       ],
       "usage": "both"
     },
+    "ConversationWidget": {
+      "document": "Widget 组件内容信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Base64 编码的原始 widget 数据</p>",
+          "example": "ZXhhbXBsZS13aWRnZXQ=",
+          "member": "string",
+          "name": "EncodedWidget",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户上次提交的 payload</p>",
+          "example": "example widget payload",
+          "member": "string",
+          "name": "Payload",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>widget 在正文中的位置</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>widget 状态 JSON 数据</p>",
+          "example": "example widget state",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>widget 视图数据</p>",
+          "example": "example widget view",
+          "member": "string",
+          "name": "View",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件 ID</p>",
+          "example": "widget-1",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件运行 ID</p>",
+          "example": "widget-run-1",
+          "member": "string",
+          "name": "WidgetRunId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConversationWorkspace": {
       "document": "Workspace 工作空间信息",
       "members": [
@@ -7612,7 +8141,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间ID",
+          "document": "<p>空间ID</p>",
           "example": "default_space",
           "member": "string",
           "name": "SpaceId",
@@ -7621,7 +8150,7 @@
         },
         {
           "disabled": false,
-          "document": "应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式",
+          "document": "<p>应用模式。枚举值: 1:标准模式, 2:Agent模式, 3:单工作流模式, 4:ClawAgent模式</p>",
           "example": "1",
           "member": "int64",
           "name": "AppMode",
@@ -7630,7 +8159,7 @@
         },
         {
           "disabled": false,
-          "document": "应用头像",
+          "document": "<p>应用头像</p>",
           "example": "https://cdn.xiaowei.qq.com/static/adp/app-default-avatar.png",
           "member": "string",
           "name": "Avatar",
@@ -7639,7 +8168,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述",
+          "document": "<p>应用描述</p>",
           "example": "我的描述",
           "member": "string",
           "name": "Description",
@@ -7648,7 +8177,7 @@
         },
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "***应用***",
           "member": "string",
           "name": "Name",
@@ -7663,7 +8192,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "app_id",
+          "document": "<p>app_id</p>",
           "example": "20617**********6784",
           "member": "string",
           "name": "AppId",
@@ -8432,6 +8961,15 @@
           "name": "IsPublishAsTemplate",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>portal配置</p>",
+          "example": "无",
+          "member": "PortalShareConfig",
+          "name": "PortalShareConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8918,6 +9456,89 @@
       ],
       "type": "object"
     },
+    "CreateWorkflowRunRequest": {
+      "document": "CreateWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID, 获取方法参看如何获取 <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">AppId</a></p>",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行环境。1:开发域，2:生产域</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Domain",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户输入的内容</p>",
+          "example": "我想订明天的酒店",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>API参数配置</p>",
+          "example": "无",
+          "member": "CustomVariable",
+          "name": "CustomVariableList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户ID</p>",
+          "example": "user-123",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkflowRunResponse": {
+      "document": "CreateWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例的ID</p>",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（毫秒时间戳）</p>",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateWorkspaceCredentialRequest": {
       "document": "CreateWorkspaceCredential请求参数结构体",
       "members": [
@@ -9037,6 +9658,34 @@
           "example": "0 9 * * *",
           "member": "string",
           "name": "Expression",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomVariable": {
+      "document": "工作流的API参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数的值",
+          "example": "张三",
+          "member": "string",
+          "name": "Value",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -10131,7 +10780,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表),CorpShareConfig(企业共享配置)</p>",
+          "document": "<p>字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表),CorpShareConfig(企业共享配置), FileVolumeMountList(云盘挂载列表)</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "FieldMask",
@@ -12515,21 +13164,12 @@
         },
         {
           "disabled": false,
-          "document": "<p>空间ID</p>",
-          "example": "default_space",
-          "member": "string",
-          "name": "SpaceId",
+          "document": "<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
           "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>关键词模糊搜索</p>",
-          "example": "混元",
-          "member": "string",
-          "name": "Query",
-          "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -12551,12 +13191,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件(多个 Filter 之间为 AND, 同一 Filter 多 Values 为 OR)<br>DeveloperName： 模型作者名称<br>ProviderName： 模型提供商名称<br>ProviderType：模型提供商类型</p>",
-          "example": "无",
-          "member": "Filter",
-          "name": "FilterList",
+          "document": "<p>关键词模糊搜索</p>",
+          "example": "混元",
+          "member": "string",
+          "name": "Query",
           "required": false,
-          "type": "list"
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12732,6 +13381,185 @@
           "name": "TotalCount",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeBatchRunRequest": {
+      "document": "DescribeNodeBatchRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "2046434807234765632",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引号</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Index",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流节点ID</p>",
+          "example": "ed5fc56d-224c-387c-ee3f-427fa60bcb48",
+          "member": "string",
+          "name": "NodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子工作流所属节点</p><p>node_id_a.node_id_b[1]</p>",
+          "example": "ed5fc56d-224c-387c-ee3f-427fa60bcb48[1]",
+          "member": "string",
+          "name": "SubWorkflowNodePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行ID</p>",
+          "example": "wfr-c928613c-cb3f-4c49-bbc6-83f862067e7f",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeBatchRunResponse": {
+      "document": "DescribeNodeBatchRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误码</p>",
+          "example": "NodeErr.MQSendMessageFailed",
+          "member": "string",
+          "name": "FailCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误描述</p>",
+          "example": "消息队列生产者发送消息失败: no safe endpoint | 1.检查消息内容的大小是否超过限制。\n2.检查消息的序列化格式是否正确。\n3.检查 MQ 服务端的日志，看是否有接收错误。",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入参数</p>",
+          "example": "{\"age\":3,\"name\":\"hhh\"}",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入参数Cos地址</p>",
+          "example": "https://xxxxxxx/xxx/xxx",
+          "member": "string",
+          "name": "InputRef",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出参数</p>",
+          "example": "{\"age\":3,\"name\":\"hhh\"}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出参数Cos地址</p>",
+          "example": "https://xxxxxxx/xxx/xxx",
+          "member": "string",
+          "name": "OutputRef",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>NODE_BATCH_RUN_STATUS_UNSPECIFIED</td><td>0</td><td>未定义</td></tr><tr><td>NODE_BATCH_RUN_STATUS_INIT</td><td>1</td><td>初始状态</td></tr><tr><td>NODE_BATCH_RUN_STATUS_RUNNING</td><td>2</td><td>运行中</td></tr><tr><td>NODE_BATCH_RUN_STATUS_SUCCESS</td><td>3</td><td>运行成功</td></tr><tr><td>NODE_BATCH_RUN_STATUS_FAILED</td><td>4</td><td>运行失败</td></tr><tr><td>NODE_BATCH_RUN_STATUS_CANCELED</td><td>5</td><td>已取消</td></tr><tr><td>NODE_BATCH_RUN_STATUS_WAITING_INPUT</td><td>6</td><td>待处理</td></tr></tbody></table>",
+          "example": "3",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeRunDetailRequest": {
+      "document": "DescribeNodeRunDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "1963140753734418240",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点运行实例ID</p>",
+          "example": "1dcf5a21-6223-4358-b8a0-b4d6571",
+          "member": "string",
+          "name": "NodeRunId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNodeRunDetailResponse": {
+      "document": "DescribeNodeRunDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点运行实例详情</p>",
+          "example": "无",
+          "member": "NodeRunDetail",
+          "name": "NodeRunDetail",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -13591,7 +14419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>资源类型，限定为 RESOURCE_TYPE_MODEL / RESOURCE_TYPE_PLUGIN</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "document": "<p>资源类型，限定为 RESOURCE_TYPE_MODEL / RESOURCE_TYPE_PLUGIN</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）（预留，暂不支持）</td></tr></tbody></table>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -13683,7 +14511,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>资源类型，限定为 MODEL / PLUGIN / PLATFORM</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "document": "<p>资源类型，限定为 MODEL / PLUGIN / PLATFORM</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_PLATFORM（预留，暂不支持）</td><td>3</td><td>平台功能用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）（预留，暂不支持）</td></tr></tbody></table>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -13915,6 +14743,173 @@
           "name": "Variable",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunRequest": {
+      "document": "DescribeWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID, 获取方法参看如何获取 <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">AppId</a></p>",
+          "example": "1963140753734418240",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例ID</p>",
+          "example": "1dcf5a21-6223-4358-b8a0",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定的子工作流对应的NodePath。 格式：[&lt;node_id&gt;[&lt;index&gt;].]*&lt;node_id&gt;[&lt;index&gt;]  此路径用于定位一个具体的工作流实例（Workflow Run），可以是主工作流实例或某个子工作流节点产生的子实例。 路径由点号（.）分隔的节点标识符组成，每个节点标识符格式为 节点ID[实例索引]。 节点ID (node_id)：子工作流所属的节点的ID。 实例索引 (index)：“实例索引” 在工作流节点的时候为空，循环、批处理节点非空，从1开始。 示例： &quot;&quot; 或 不设置 -&gt; 查询主工作流实例 (父工作流) &quot;node_id_a&quot; -&gt; 查询由主工作流中工作流节点node_id_a对应的子工作流实例 &quot;node_id_a.node_id_b[1]&quot; -&gt; 查询工作流节点node_id_a对应的子工作流的循环节点node_id_b的第1轮循环的子工作流运行状态</p>",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "SubWorkflowNodePath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要返回工作流的流程图配置</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeWorkflowGraph",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunResponse": {
+      "document": "DescribeWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例详情</p>",
+          "example": "无",
+          "member": "WorkflowRun",
+          "name": "WorkflowRun",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点列表</p>",
+          "example": "无",
+          "member": "NodeRun",
+          "name": "NodeRunList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子工作流对应的NodePath</p>",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "SubWorkflowNodePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunSummaryListRequest": {
+      "document": "DescribeWorkflowRunSummaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID, 获取方法参看如何获取 <a href=\"https://cloud.tencent.com/document/product/1759/109469#4eecb8c1-6ce4-45f5-8fa2-b269449d8efa\">AppId</a></p>",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量(取值范围1-200)</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码(必须大于0)</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行环境。1:开发域，2:生产域    -</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Domain",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数过滤</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkflowRunSummaryListResponse": {
+      "document": "DescribeWorkflowRunSummaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例列表</p>",
+          "example": "无",
+          "member": "WorkflowRunSummary",
+          "name": "WorkflowRunSummaryList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -15326,6 +16321,78 @@
       ],
       "usage": "both"
     },
+    "FileVolumeMount": {
+      "document": "应用沙箱中的云盘挂载配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>访问模式：RO=只读，RW=读写；必填。挂载到 /workdir 时只能使用 RW。</p>",
+          "example": "RW",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱内的绝对挂载目录；/workdir 最多挂载一条且只能使用 RW。</p>",
+          "example": "/workspace/reports",
+          "member": "string",
+          "name": "MountPath",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云盘标识</p>",
+          "example": "volume-demo-001",
+          "member": "string",
+          "name": "VolumeId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务端生成的挂载标识，修改保留，新增可不传</p>",
+          "example": "mount-demo-001",
+          "member": "string",
+          "name": "MountId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>相对云盘 data 根目录的路径；空字符串表示挂载整个 data 根目录。</p>",
+          "example": "reports",
+          "member": "string",
+          "name": "RelativePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云盘名称，仅在查询应用配置时由服务端补充，修改时忽略；不可获取时为空且不影响挂载配置</p>",
+          "example": "Y2",
+          "member": "string",
+          "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "列表通用过滤条件（多个 Filter 之间为 AND 关系，同一 Filter 的多个 value_list 为 OR 关系；BETWEEN 时 value_list 必须恰好 2 个元素表示闭区间 [start, end]）",
       "members": [
@@ -15823,6 +16890,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>能否被共享</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanShare",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>是否可查看</p>",
           "example": "true",
           "member": "bool",
@@ -15936,6 +17014,84 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KBShareStatus": {
+      "document": "知识库子状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审批Id</p>",
+          "example": "2102028569658115904",
+          "member": "string",
+          "name": "ApprovalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批/共享状态：1=PENDING 审批中，2=REJECTED 已驳回， 3=APPROVED 同意, 4=CANCELLED 已取消</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "SubStatusList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KBSpaceShare": {
+      "document": "知识库空间共享信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否已被其他空间引用</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSpaceShared",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被引用空间信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Identity",
+          "name": "SharedSpaceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>共享状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KBShareStatus",
+          "name": "SubStatus",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否允许操作</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -16157,6 +17313,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库空间共享信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KBSpaceShare",
+          "name": "SpaceShare",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17152,17 +18319,27 @@
       "usage": "both"
     },
     "Model": {
-      "document": "模型完整信息",
+      "document": "<p>模型完整信息</p>",
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型徽章列表</p>",
+          "document": "<p>模型徽章列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelBadge",
           "name": "BadgeList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型作者信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelDeveloperBasic",
+          "name": "DeveloperInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -17186,23 +18363,23 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型超参配置</p>",
+          "document": "<p>模型超参配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelParameter",
           "name": "ParameterList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "<p>模型属性配置</p>",
+          "document": "<p>模型属性配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelProperty",
           "name": "PropertyList",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -17233,26 +18410,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>模型作者信息</p>",
-          "example": "无",
-          "member": "ModelDeveloperBasic",
-          "name": "DeveloperInfo",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
         }
       ],
       "usage": "out"
     },
     "ModelBadge": {
-      "document": "模型徽章",
+      "document": "<p>模型徽章（对外，用户端可见）：所有文案已渲染为最终展示内容，不暴露模板参数</p>",
       "members": [
         {
           "disabled": false,
-          "document": "展示文案",
+          "document": "<p>展示文案（已渲染为最终文案）</p>",
           "example": "限时免费",
           "member": "string",
           "name": "Text",
@@ -17262,7 +18429,7 @@
         },
         {
           "disabled": false,
-          "document": "样式主题。1-信息（蓝色）, 2-成功（绿色）, 3-警告（橙色）, 4-危险（红色）",
+          "document": "<p>样式主题</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_BADGE_THEME_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_BADGE_THEME_INFO</td><td>1</td><td>信息（蓝色）</td></tr><tr><td>MODEL_BADGE_THEME_SUCCESS</td><td>2</td><td>成功（绿色）</td></tr><tr><td>MODEL_BADGE_THEME_WARNING</td><td>3</td><td>警告（橙色）</td></tr><tr><td>MODEL_BADGE_THEME_DANGER</td><td>4</td><td>危险（红色）</td></tr></table>",
           "example": "2",
           "member": "int64",
           "name": "Theme",
@@ -17272,7 +18439,7 @@
         },
         {
           "disabled": false,
-          "document": "tooltip文案，为空则不展示",
+          "document": "<p>tooltip 文案（已渲染为最终文案），为空则不展示</p>",
           "example": "该模型当前限时免费使用",
           "member": "string",
           "name": "Tips",
@@ -17282,7 +18449,7 @@
         },
         {
           "disabled": false,
-          "document": "徽章类型。1-限时免费, 2-即将下线, 3-新模型, 4-热门",
+          "document": "<p>徽章类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_BADGE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_BADGE_TYPE_FREE_TRIAL</td><td>1</td><td>限时免费</td></tr><tr><td>MODEL_BADGE_TYPE_DEPRECATING</td><td>2</td><td>即将下线</td></tr><tr><td>MODEL_BADGE_TYPE_NEW</td><td>3</td><td>新模型</td></tr><tr><td>MODEL_BADGE_TYPE_HOT</td><td>4</td><td>热门</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -17294,11 +18461,11 @@
       "usage": "out"
     },
     "ModelBasic": {
-      "document": "模型基本信息",
+      "document": "<p>模型基本信息（已弃用，请使用 ModelProfile）</p>",
       "members": [
         {
           "disabled": false,
-          "document": "模型描述",
+          "document": "<p>模型描述</p>",
           "example": "通用大语言模型",
           "member": "string",
           "name": "Description",
@@ -17308,7 +18475,7 @@
         },
         {
           "disabled": false,
-          "document": "模型图标地址",
+          "document": "<p>模型图标地址</p>",
           "example": "https://example.cos.ap-guangzhou.myqcloud.com/public/***/image/***.png",
           "member": "string",
           "name": "IconUrl",
@@ -17318,7 +18485,7 @@
         },
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "DeepSeek-V3.2",
           "member": "string",
           "name": "ModelId",
@@ -17328,7 +18495,7 @@
         },
         {
           "disabled": false,
-          "document": "模型类型。1-LLM模型, 2-Rerank模型, 3-Embedding模型, 4-文档解析模型",
+          "document": "<p>模型类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_TYPE_LLM</td><td>1</td><td>LLM模型</td></tr><tr><td>MODEL_TYPE_RERANK</td><td>2</td><td>Rerank模型</td></tr><tr><td>MODEL_TYPE_EMBEDDING</td><td>3</td><td>Embedding模型</td></tr><tr><td>MODEL_TYPE_FILE_PARSE</td><td>4</td><td>文档解析模型</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "ModelType",
@@ -17338,7 +18505,7 @@
         },
         {
           "disabled": false,
-          "document": "模型名称",
+          "document": "<p>模型名称</p>",
           "example": "DeepSeek-V3.2",
           "member": "string",
           "name": "Name",
@@ -17400,8 +18567,19 @@
       "usage": "both"
     },
     "ModelDeveloperBasic": {
-      "document": "模型作者信息",
+      "document": "<p>模型作者基本信息（已弃用）</p>",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>作者别名</p>",
+          "example": "智谱AI",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "<p>作者标识</p>",
@@ -17412,27 +18590,16 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>作者显示名称</p>",
-          "example": "智谱AI",
-          "member": "string",
-          "name": "Alias",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
     },
     "ModelLimit": {
-      "document": "模型限制信息",
+      "document": "<p>模型限制信息</p>",
       "members": [
         {
           "disabled": false,
-          "document": "模型上下文长度展示文案（如 \"128K\"、\"1000K\"）",
+          "document": "<p>模型上下文长度展示文案（如 128K、1000K）</p>",
           "example": "128K",
           "member": "string",
           "name": "ContextLengthDescription",
@@ -17442,7 +18609,7 @@
         },
         {
           "disabled": false,
-          "document": "模型对话框输入长度字符数限制",
+          "document": "<p>模型对话框输入长度字符数限制</p>",
           "example": "8000",
           "member": "int64",
           "name": "InputLengthLimit",
@@ -17452,7 +18619,27 @@
         },
         {
           "disabled": false,
-          "document": "模型提示词长度字符数限制",
+          "document": "<p>最大输入 Tokens 展示文案（如 960k，服务端格式化，未配置为空串）</p>",
+          "example": "256K",
+          "member": "string",
+          "name": "MaxInputTokensDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大输出 Tokens 展示文案（如 64k，服务端格式化，未配置为空串）</p>",
+          "example": "128K",
+          "member": "string",
+          "name": "MaxOutputTokensDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型提示词长度字符数限制</p>",
           "example": "4000",
           "member": "int64",
           "name": "PromptLengthLimit",
@@ -17668,11 +18855,11 @@
       "usage": "both"
     },
     "ModelProperty": {
-      "document": "模型属性",
+      "document": "<p>模型属性（支持工作流类型/AI 通话类型/是否关闭模型参数/是否支持深度思考/是否限时免费/是否默认模型等）</p>",
       "members": [
         {
           "disabled": false,
-          "document": "属性名称",
+          "document": "<p>属性名称</p>",
           "example": "support_workflow_status",
           "member": "string",
           "name": "Name",
@@ -17682,7 +18869,7 @@
         },
         {
           "disabled": false,
-          "document": "属性值",
+          "document": "<p>属性值</p>",
           "example": "1",
           "member": "string",
           "name": "Value",
@@ -17694,11 +18881,11 @@
       "usage": "out"
     },
     "ModelProviderBasic": {
-      "document": "模型提供商基本信息",
+      "document": "<p>模型提供商基本信息（已弃用，请使用 ModelProviderProfile）</p>",
       "members": [
         {
           "disabled": false,
-          "document": "模型提供商别名",
+          "document": "<p>模型提供商别名</p>",
           "example": "DeepSeek",
           "member": "string",
           "name": "Alias",
@@ -17708,7 +18895,7 @@
         },
         {
           "disabled": false,
-          "document": "模型提供商名称",
+          "document": "<p>模型提供商名称</p>",
           "example": "deepseek",
           "member": "string",
           "name": "Name",
@@ -17718,7 +18905,7 @@
         },
         {
           "disabled": false,
-          "document": "模型提供商类型。1-自有提供商, 2-自定义模型提供商, 3-第三方模型提供商",
+          "document": "<p>模型提供商类型</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>MODEL_PROVIDER_TYPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>MODEL_PROVIDER_TYPE_SELF</td><td>1</td><td>自有提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_CUSTOM</td><td>2</td><td>自定义模型提供商</td></tr><tr><td>MODEL_PROVIDER_TYPE_THIRD</td><td>3</td><td>第三方模型提供商</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "ProviderType",
@@ -17730,11 +18917,11 @@
       "usage": "out"
     },
     "ModelStatus": {
-      "document": "模型状态信息",
+      "document": "<p>模型状态</p>",
       "members": [
         {
           "disabled": false,
-          "document": "专属并发数",
+          "document": "<p>专属并发数</p>",
           "example": "0",
           "member": "int64",
           "name": "Concurrency",
@@ -17744,7 +18931,7 @@
         },
         {
           "disabled": false,
-          "document": "是否专属并发",
+          "document": "<p>是否专属并发</p>",
           "example": "false",
           "member": "bool",
           "name": "IsExclusive",
@@ -17754,12 +18941,42 @@
         },
         {
           "disabled": false,
-          "document": "资源状态。1-资源可用, 2-资源已用尽",
+          "document": "<p>是否支持在智能工作台直接体验（模型广场详情页：依赖 space_id 动态判定；false 时前端置灰「立即体验」按钮）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExperienceSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源状态</p><table><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_STATUS_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>RESOURCE_STATUS_AVAILABLE</td><td>1</td><td>资源可用</td></tr><tr><td>RESOURCE_STATUS_EXHAUSTED</td><td>2</td><td>资源已用尽</td></tr></table>",
           "example": "1",
           "member": "int64",
           "name": "ResourceStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用 RPM 上限（当前账号维度：有配置取配置，无配置取默认；0 表示未获取到）</p>",
+          "example": "10",
+          "member": "string",
+          "name": "RpmLimit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用 TPM 上限（当前账号维度：有配置取配置，无配置取默认；0 表示未获取到）</p>",
+          "example": "10000",
+          "member": "string",
+          "name": "TpmLimit",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -17781,7 +18998,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否默认知识库</p>",
+          "document": "<p>是否默认知识库，仅ResourceType=5（知识库容量）业务下有意义</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDefaultKB",
@@ -18009,7 +19226,16 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：<br>【顶层】Name, Avatar, Description, AppMode, SharedKbIdList<br>【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList<br>【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel<br>【WebSearch】Config.WebSearch<br>【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent<br>【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig, Config.Mode.ClawAgentConfig<br>【Mode.ClawAgentConfig】Config.Mode.ClawAgentConfig.LongMemoryConfig, Config.Mode.ClawAgentConfig.AgentTeamConfig<br>【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced<br>【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch<br>【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman<br>【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility, Config.Experience.Advanced.DialogCustomConfig</p>",
+          "document": "<p>应用挂载云盘</p>",
+          "example": "无",
+          "member": "AppFileVolumeMount",
+          "name": "FileVolumeMountList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：<br>【顶层】Name, Avatar, Description, AppMode, SharedKbIdList, FileVolumeMountList<br>【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList<br>【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel<br>【WebSearch】Config.WebSearch<br>【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent<br>【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig<br>【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced<br>【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch<br>【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman<br>【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "UpdateMask",
@@ -19563,6 +20789,333 @@
       ],
       "usage": "both"
     },
+    "NodeRun": {
+      "document": "节点运行的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点运行的ID",
+          "example": "32d82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "NodeRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点ID",
+          "example": "e60de932",
+          "member": "string",
+          "name": "NodeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "工具节点1",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型。\n1： 开始节点\n2：参数提取节点\n3：大模型节点\n4：知识问答节点\n5：知识检索节点\n6：标签提取节点\n7：代码执行节点\n8：工具节点\n9：逻辑判断节点\n10：回复节点\n11：选项卡节点\n12：循环节点\n13：意图识别节点\n14：工作流节点\n15：插件节点\n16：结束节点\n17: 变量聚合节点数据\n18: 批处理节点\n19: 消息队列节点\n20: 数据库节点\n21: 变量赋值节点数据\n22: 变量转换节点数据\n23: Agent节点\n24: 注释节点\n25: 文件收集节点\n26: 文本收集节点\n27: Widget节点",
+          "example": "8",
+          "member": "uint64",
+          "name": "NodeType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态。1: 初始状态；2: 运行中；3: 运行成功； 4: 运行失败； 5: 已取消",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的总时间（毫秒）",
+          "example": "12000",
+          "member": "int64",
+          "name": "TotalCostMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码",
+          "example": "NodeErr.CallPlu",
+          "member": "string",
+          "name": "FailCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分支下标的列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "BranchIndexList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeRunContent": {
+      "document": "节点运行的内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入变量信息",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "Input",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出变量信息",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始输出信息。部分节点才有值，如工具节点、代码节点",
+          "example": "{\"Name\": \"张三\"}",
+          "member": "string",
+          "name": "OriginalOutput",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点输入的完整内容的链接。（当Input内容超过限制的时候此字段才有值）",
+          "example": "www.cos.com",
+          "member": "string",
+          "name": "InputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点输出的完整内容的链接。（当Output内容超过限制的时候此字段才有值）",
+          "example": "www.cos.com",
+          "member": "string",
+          "name": "OutputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务的原始输出的完整内容的链接。（当TaskOutput内容超过限制的时候此字段才有值）",
+          "example": "www.cos.com",
+          "member": "string",
+          "name": "OriginalOutputRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeRunDetail": {
+      "document": "工作流节点运行详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点运行信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeRun",
+          "name": "NodeRun",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点运行内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeRunContent",
+          "name": "NodeRunContent",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点运行过程</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeRunExecution",
+          "name": "NodeRunExecution",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点运行日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeRunLog",
+          "name": "NodeRunLog",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计信息</p>",
+          "example": "无",
+          "member": "Statistic",
+          "name": "StatisticList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeRunExecution": {
+      "document": "NodeRunExecution",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批次运行汇总</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchRunSummary",
+          "name": "BatchRunSummary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间（毫秒时间戳）</p>",
+          "example": "1783932471280",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间（毫秒时间戳）</p>",
+          "example": "1783932410575",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "NodeRunLog": {
+      "document": "NodeRunLog",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点的日志。</p>",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "Log",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点的日志的完整内容的链接志（当Log内容超过限制的时候才有值）</p>",
+          "example": "\"无\"",
+          "member": "string",
+          "name": "LogRef",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OAuthConfig": {
       "document": "OAuth2.0授权信息",
       "members": [
@@ -20395,6 +21948,23 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PortalShareConfig": {
+      "document": "PortalShareConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业共享开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -21372,6 +22942,95 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>portal配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PortalShareConfig",
+          "name": "PortalShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ReplyContent": {
+      "document": "回复内容的详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>消息内容类型<br>text：文本<br>image：图片<br>file：文件<br>option_cards：选项卡<br>custom_params：用户自定义业务参数<br>sandbox：云桌面<br>custom_variables：自定义输入参数<br>web_search: 网页搜索内容<br>file_collection：文件收集信息<br>widget：widget信息<br>widget_action：用户端widget动作信息</p>",
+          "example": "option_cards",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "请选择",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项卡信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"北京\"]",
+          "member": "string",
+          "name": "OptionCardList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件收集信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationFileCollection",
+          "name": "FileCollection",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Widget信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationWidget",
+          "name": "Widget",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ReplyMessage": {
+      "document": "回复消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息数组，包含多个消息对象",
+          "example": "无",
+          "member": "ReplyContent",
+          "name": "ContentList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -21810,6 +23469,60 @@
       ],
       "type": "object"
     },
+    "ResumeWorkflowRunRequest": {
+      "document": "ResumeWorkflowRun请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "2017209116131141888",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例ID</p>",
+          "example": "wfr-bisjn9hln4e8",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户输入的内容</p>",
+          "example": "北京",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件信息</p>",
+          "example": "无",
+          "member": "ConversationFileInfo",
+          "name": "FileList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeWorkflowRunResponse": {
+      "document": "ResumeWorkflowRun返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RetrievalOption": {
       "document": "检索可选配置",
       "members": [
@@ -21989,6 +23702,116 @@
           "example": "2e41cd4a-39cc-455e-a530-8a543db8ac13",
           "member": "string",
           "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveWorkflowDebugContextRequest": {
+      "document": "SaveWorkflowDebugContext请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "2046434807234765632",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用变量列表</p>",
+          "example": "无",
+          "member": "AppVariableValue",
+          "name": "AppVariableValueList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "096f3add-318c-41b6-883e-87d720d741b9",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义用户ID</p>",
+          "example": "1747547736783716352",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveWorkflowDebugContextResponse": {
+      "document": "SaveWorkflowDebugContext返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveWorkflowToolNodeOutputRequest": {
+      "document": "SaveWorkflowToolNodeOutput请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>回调Token</p><p>Request Header X-ADP-Callback-Token</p>",
+          "example": "wfr-ee494028-1f91-4cf2-89ab-f04e052b9f52..91b257f7-5145-a013-0b32-0a651ce0b18b.1784201278.be167a5ddddf0779e7b362cef7024771d54c321ae3ba8cbf0eac124616044591",
+          "member": "string",
+          "name": "CallbackToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调结果</p>",
+          "example": "{\\\"approval_result\\\":\\\"approved\\\",\\\"approver\\\":\\\"张三\\\",\\\"comment\\\":\\\"同意\\\"}",
+          "member": "string",
+          "name": "Result",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaveWorkflowToolNodeOutputResponse": {
+      "document": "SaveWorkflowToolNodeOutput返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态码</p><p>枚举值：</p><ul><li>0： 成功</li><li>1000： 失败</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误描述</p>",
+          "example": "ok",
+          "member": "string",
+          "name": "Msg",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23062,6 +24885,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用标识</p>",
+          "example": "无",
+          "member": "AppIdentity",
+          "name": "AppIdentity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -23465,6 +25299,134 @@
       ],
       "usage": "both"
     },
+    "Statistic": {
+      "document": "统计信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>首token耗时</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "FirstTokenCostMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入token数量</p>",
+          "example": "1529",
+          "member": "uint64",
+          "name": "InputTokens",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "workflow-light-32b",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出token数量</p>",
+          "example": "118",
+          "member": "uint64",
+          "name": "OutputTokens",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>推理总耗时</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCostMs",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入+输出总token</p>",
+          "example": "1647",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StopWorkflowRunListRequest": {
+      "document": "StopWorkflowRunList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用ID</p>",
+          "example": "2012107019292144576",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例ID列表</p>",
+          "example": "[\"wfr-bev59tniw39c\"]",
+          "member": "string",
+          "name": "WorkflowRunIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopWorkflowRunListResponse": {
+      "document": "StopWorkflowRunList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>停止成功的运行实例ID列表</p>",
+          "example": "[\"wfr-cd6a2j03k5j4\"]",
+          "member": "string",
+          "name": "SuccessIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止失败的运行实例ID列表</p>",
+          "example": "[\"wfr-cd6a2j89k5j4\"]",
+          "member": "string",
+          "name": "FailedIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SummaryListSwitch": {
       "document": "摘要列表查询通用开关配置",
       "members": [
@@ -23487,7 +25449,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件类型描述(如\"文本文档\")",
+          "document": "<p>描述信息</p>",
           "example": "描述信息",
           "member": "string",
           "name": "Description",
@@ -23498,7 +25460,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型(如 txt、pdf、jpg, 建议用扩展名)",
+          "document": "<p>文件类型（如 txt、pdf、jpg，建议用扩展名）</p>",
           "example": "txt",
           "member": "string",
           "name": "FileExt",
@@ -23509,7 +25471,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小限制(单位: 字节)",
+          "document": "<p>文件大小限制（单位：字节）</p>",
           "example": "1000",
           "member": "string",
           "name": "MaxSizeBytes",
@@ -25028,6 +26990,301 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRun": {
+      "document": "工作流运行实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流运行实例基本信息",
+          "example": "无",
+          "member": "WorkflowRunSummary",
+          "name": "WorkflowRunSummary",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例输出信息",
+          "example": "无",
+          "member": "WorkflowRunOutput",
+          "name": "WorkflowRunOutput",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例元数据",
+          "example": "无",
+          "member": "WorkflowRunMetadata",
+          "name": "WorkflowRunMetadata",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunMetadata": {
+      "document": "工作流运行实例元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户的输入",
+          "example": "我想订明天的酒店",
+          "member": "string",
+          "name": "Query",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主模型名称",
+          "example": "workflow-pro",
+          "member": "string",
+          "name": "MainModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API参数配置",
+          "example": "无",
+          "member": "CustomVariable",
+          "name": "CustomVariableList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流的流程图",
+          "example": "{\"WorkflowID\":\"xxx\",\"WorkflowName\":\"qwe\",\"WorkflowDesc\":\"135\",\"Nodes\":[]}",
+          "member": "string",
+          "name": "WorkflowGraph",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunOutput": {
+      "document": "工作流运行实例输出信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作流输出",
+          "example": "{\"LoopTImes\":4,\"Question\":\"你好\"}}",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前的回复消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReplyMessage",
+          "name": "LatestMessage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunProfile": {
+      "document": "工作流运行实例基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "1854548189164339200",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流运行实例的ID\t",
+          "example": "8ad82e0553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流ID",
+          "example": "98cc312553507b4c1ba771fb53029492",
+          "member": "string",
+          "name": "WorkflowId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "订酒店",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunResult": {
+      "document": "工作流运行实例状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运行状态。1: 排队中；2: 运行中；3: 运行成功；4: 运行失败； 5: 已取消",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "工具节点运行失败",
+          "member": "string",
+          "name": "FailMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的token总数",
+          "example": "560",
+          "member": "uint64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunSummary": {
+      "document": "工作流运行实例的基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行环境。1:开发域，2:生产域</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例基本信息</p>",
+          "example": "无",
+          "member": "WorkflowRunProfile",
+          "name": "WorkflowRunProfile",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例结果</p>",
+          "example": "无",
+          "member": "WorkflowRunResult",
+          "name": "WorkflowRunResult",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流运行实例时间信息</p>",
+          "example": "无",
+          "member": "WorkflowRunTime",
+          "name": "WorkflowRunTime",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "WorkflowRunTime": {
+      "document": "工作流运行实例时间信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（毫秒时间戳）",
+          "example": "1744707612000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

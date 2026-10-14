@@ -4064,17 +4064,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问日志配置结构。",
-          "example": "无",
-          "member": "AccessLogConfig",
-          "name": "AccessLogConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "IP 地址版本，取值 IPv4 或 IPv6。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IPv4",
           "member": "string",
@@ -4490,7 +4479,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启修改保护。开启后，可防止实例被意外修改或删除。\n- true：开启修改保护\n- false：关闭修改保护",
+          "document": "<p>是否开启修改保护。开启后，可防止实例被意外修改或删除。</p><ul><li>true：开启修改保护</li><li>false：关闭修改保护</li></ul>",
           "example": "false",
           "member": "bool",
           "name": "ModificationProtectionEnabled",
@@ -4501,7 +4490,7 @@
         },
         {
           "disabled": false,
-          "document": "1238716123",
+          "document": "<p>1238716123</p>",
           "example": "设置修改保护的子账号UIN",
           "member": "string",
           "name": "OperatorUin",
@@ -4512,7 +4501,7 @@
         },
         {
           "disabled": false,
-          "document": "开启修改保护的原因说明。\n长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。",
+          "document": "<p>开启修改保护的原因说明。<br>长度为 1~255 个字符，必须是中文和无害字符串中的字符， 可包含中文、字母、数字、短划线（-）、正斜线（/）、半角句号（.）、下划线（_）。</p>",
           "example": "生产环境实例，防止误操作",
           "member": "string",
           "name": "Reason",

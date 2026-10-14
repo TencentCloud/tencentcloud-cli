@@ -81897,6 +81897,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像关联超级节点数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuperNodeHostCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

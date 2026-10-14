@@ -194,6 +194,14 @@
         "title": "创建WS的token"
       }
     ],
+    "CreateWorkflowRun": [
+      {
+        "document": "创建工作流运行实例",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkflowRun\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"Domain\": 1,\n    \"Query\": \"我想买车\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"1784010161430\",\n        \"WorkflowRunId\": \"wfr-cdcp9hyus1ds\",\n        \"RequestId\": \"9c2def7a-ebdd-45cd-ada5-2898de26bd1d\"\n    }\n}",
+        "title": "创建工作流运行实例"
+      }
+    ],
     "CreateWorkspaceCredential": [
       {
         "document": "",
@@ -614,6 +622,22 @@
         "title": "用例1"
       }
     ],
+    "DescribeNodeBatchRun": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeBatchRun\n<公共请求参数>\n\n{\n    \"AppId\": \"2046434807234765632\",\n    \"Index\": 3,\n    \"NodeId\": \"ed5fc56d-224c-387c-ee3f-427fa60bcb48\",\n    \"WorkflowRunId\": \"wfr-c928613c-cb3f-4c49-bbc6-83f862067e7f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailCode\": \"\",\n        \"FailMessage\": \"\",\n        \"Input\": \"{\\\"age\\\":3,\\\"name\\\":\\\"hhh\\\"}\",\n        \"InputRef\": \"\",\n        \"Output\": \"{\\\"age\\\":3,\\\"name\\\":\\\"hhh\\\"}\",\n        \"OutputRef\": \"\",\n        \"Status\": 3,\n        \"RequestId\": \"9f9d3dc1-ecb3-41de-8a6a-f9ee011d635b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "DescribeNodeRunDetail": [
+      {
+        "document": "查看工作流节点运行详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeRunDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"NodeRunId\": \"nr-9b1b61e9-b4a5-46a7-80b6-89da1c71db00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeRunDetail\": {\n            \"NodeRun\": {\n                \"BranchIndexList\": [],\n                \"FailCode\": \"\",\n                \"FailMessage\": \"\",\n                \"NodeId\": \"d63dfc51-bdc1-721c-0a4b-0be14f75bd62\",\n                \"NodeName\": \"参数提取1\",\n                \"NodeRunId\": \"nr-9b1b61e9-b4a5-46a7-80b6-89da1c71db00\",\n                \"NodeType\": 2,\n                \"Status\": 3,\n                \"TotalCostMs\": 60704,\n                \"TotalTokens\": 1647,\n                \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\"\n            },\n            \"NodeRunContent\": {\n                \"Input\": \"{\\\"对话历史\\\":\\\"用户输入：我想买车\\\\n机器人回答：请问您想买什么品牌的汽车？\\\",\\\"当前时间\\\":\\\"今天是2026年07月13日，星期一。现在时间是：下午4点47分\\\",\\\"用户本轮对话内容\\\":\\\"买奇瑞汽车\\\"}\",\n                \"InputRef\": \"\",\n                \"OriginalOutput\": \"\",\n                \"OriginalOutputRef\": \"\",\n                \"Output\": \"{\\\"汽车品牌\\\":\\\"奇瑞\\\"}\",\n                \"OutputRef\": \"\"\n            },\n            \"NodeRunExecution\": {\n                \"BatchRunSummary\": null,\n                \"EndTime\": \"1783932471280\",\n                \"StartTime\": \"1783932410575\"\n            },\n            \"NodeRunLog\": {\n                \"Log\": \"\",\n                \"LogRef\": \"\"\n            },\n            \"StatisticList\": [\n                {\n                    \"FirstTokenCostMs\": 0,\n                    \"InputTokens\": 1529,\n                    \"ModelName\": \"workflow-light-32b\",\n                    \"OutputTokens\": 118,\n                    \"TotalCostMs\": 0,\n                    \"TotalTokens\": 1647\n                }\n            ]\n        },\n        \"RequestId\": \"6228826a-b0c2-4a58-8597-a7a09e46f2b3\"\n    }\n}",
+        "title": "查看工作流节点运行详情"
+      }
+    ],
     "DescribePlugin": [
       {
         "document": "",
@@ -748,6 +772,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVariableList\n<公共请求参数>\n\n{\n    \"AppId\": \"206*************184\",\n    \"ModuleType\": 1,\n    \"PageNumber\": 0,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"VariableList\": [\n            {\n                \"DefaultFileName\": \"\",\n                \"DefaultValue\": \"2\",\n                \"Description\": \"dd\",\n                \"ModuleType\": 1,\n                \"Name\": \"mmd\",\n                \"Type\": 1,\n                \"VariableId\": \"9cd*****************e*b-2e2fdaf67d5f\"\n            }\n        ],\n        \"RequestId\": \"92e55ece-d96d-41aa-b5cb-a8256174912a\"\n    }\n}",
         "title": "DescribeVariableList"
+      }
+    ],
+    "DescribeWorkflowRun": [
+      {
+        "document": "查询工作流运行实例详情",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkflowRun\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NodeRunList\": [\n            {\n                \"BranchIndexList\": [],\n                \"FailCode\": \"\",\n                \"FailMessage\": \"\",\n                \"NodeId\": \"9e7966a3-43ad-378f-8586-8d5e107a0e2b\",\n                \"NodeName\": \"开始\",\n                \"NodeRunId\": \"nr-6f7aa512-f336-4ee1-b78e-a987f61ffd07\",\n                \"NodeType\": 1,\n                \"Status\": 3,\n                \"TotalCostMs\": 0,\n                \"TotalTokens\": 0,\n                \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\"\n            }\n        ],\n        \"SubWorkflowNodePath\": \"\",\n        \"WorkflowRun\": {\n            \"WorkflowRunMetadata\": {\n                \"CustomVariableList\": [],\n                \"MainModelName\": \"Youtu/youtu-mrc-pro\",\n                \"Query\": \"买奇瑞汽车\",\n                \"WorkflowGraph\": \"\"\n            },\n            \"WorkflowRunOutput\": {\n                \"LatestMessage\": {\n                    \"ContentList\": [\n                        {\n                            \"FileCollection\": null,\n                            \"OptionCardList\": [],\n                            \"Text\": \"欢迎光临\",\n                            \"Type\": \"text\",\n                            \"Widget\": null\n                        }\n                    ]\n                },\n                \"Output\": \"{无}\"\n            },\n            \"WorkflowRunSummary\": {\n                \"Domain\": 1,\n                \"WorkflowRunProfile\": {\n                    \"AppId\": \"2075134221221714816\",\n                    \"Name\": \"买汽车\",\n                    \"WorkflowId\": \"f5d9e1eb-d6c3-4529-93b1-f041ea3347cc\",\n                    \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\"\n                },\n                \"WorkflowRunResult\": {\n                    \"FailMessage\": \"\",\n                    \"Status\": 3,\n                    \"TotalTokens\": 1647\n                },\n                \"WorkflowRunTime\": {\n                    \"CreateTime\": \"1783932410370\",\n                    \"EndTime\": \"1783932471294\",\n                    \"StartTime\": \"1783932410478\"\n                }\n            }\n        },\n        \"RequestId\": \"461b7bb7-ded9-4f02-814e-afb07ee4ffb7\"\n    }\n}",
+        "title": "查询工作流运行实例详情"
+      }
+    ],
+    "DescribeWorkflowRunSummaryList": [
+      {
+        "document": "查询工作流运行实例列表",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkflowRunSummaryList\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"PageSize\": 15,\n    \"PageNumber\": 1,\n    \"Domain\": 1,\n    \"FilterList\": [\n        {\n            \"Name\": \"WorkflowRunId\",\n            \"ValueList\": [\n                \"wfr-cd6a2j03k5j4\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"WorkflowRunSummaryList\": [\n            {\n                \"Domain\": 1,\n                \"WorkflowRunProfile\": {\n                    \"AppId\": \"2075134221221714816\",\n                    \"Name\": \"买汽车\",\n                    \"WorkflowId\": \"f5d9e1eb-d6c3-4529-93b1-f041ea3347cc\",\n                    \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\"\n                },\n                \"WorkflowRunResult\": {\n                    \"FailMessage\": \"\",\n                    \"Status\": 3,\n                    \"TotalTokens\": 1647\n                },\n                \"WorkflowRunTime\": {\n                    \"CreateTime\": \"1783932410370\",\n                    \"EndTime\": \"1783932471294\",\n                    \"StartTime\": \"1783932410478\"\n                }\n            }\n        ],\n        \"RequestId\": \"30fcc9bd-5239-47ce-847a-5cdedf7b50ab\"\n    }\n}",
+        "title": "查询工作流运行实例列表"
       }
     ],
     "ExportQA": [
@@ -958,6 +998,14 @@
         "title": "成功"
       }
     ],
+    "ResumeWorkflowRun": [
+      {
+        "document": "继续执行等待输入的异步工作流运行实例",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeWorkflowRun\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"WorkflowRunId\": \"wfr-cd6a2j03k5j4\",\n    \"Query\": \"买奇瑞汽车\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"956fcc99-f94d-4ad1-87ab-e1f4115577b5\"\n    }\n}",
+        "title": "继续执行等待输入的异步工作流运行实例"
+      }
+    ],
     "RetryRelease": [
       {
         "document": "发布重试",
@@ -982,12 +1030,36 @@
         "title": "成功"
       }
     ],
+    "SaveWorkflowDebugContext": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveWorkflowDebugContext\n<公共请求参数>\n\n{\n    \"AppId\": \"2046434807234765632\",\n    \"AppVariableValueList\": [\n        {\n            \"VariableId\": \"ed7d33fa-c59b-4773-ae99-458c44d9384c\",\n            \"VariableValue\": \"false\"\n        }\n    ],\n    \"SessionId\": \"096f3add-318c-41b6-883e-87d720d741b9\",\n    \"UserId\": \"1747547736783716352\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74a1bbd6-b4cb-42c1-894e-7e68014ff5ae\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "SaveWorkflowToolNodeOutput": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SaveWorkflowToolNodeOutput\n<公共请求参数>\n\n{\n    \"CallbackToken\": \"wfr-ee494028-1f91-4cf2-89ab-f04e052b9f52..91b257f7-5145-a013-0b32-0a651ce0b18b.1784201278.be167a5ddddf0779e7b362cef7024771d54c321ae3ba8cbf0eac124616044591\",\n    \"Result\": \"{\\\\\\\"approval_result\\\\\\\":\\\\\\\"approved\\\\\\\",\\\\\\\"approver\\\\\\\":\\\\\\\"张三\\\\\\\",\\\\\\\"comment\\\\\\\":\\\\\\\"同意\\\\\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Code\": 0,\n        \"Msg\": \"ok\",\n        \"RequestId\": \"a80d6038-9fdd-4df6-967f-6dd3ccc44fc6\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "SearchKnowledge": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchKnowledge\n<公共请求参数>\n\n{\n    \"AdvancedConfig\": {\n        \"FinalRerankConfig\": {\n            \"ModelName\": \"Youtu/youtu-reranker-llm\"\n        },\n        \"KbRetrievalList\": [\n            {\n                \"DbRetrievalConfig\": {\n                    \"Enabled\": true\n                },\n                \"DocRetrievalConfig\": {\n                    \"Confidence\": 0.2,\n                    \"Enabled\": true,\n                    \"TopN\": 5\n                },\n                \"KbId\": \"2067622575842400832\",\n                \"QaRetrievalConfig\": {\n                    \"Confidence\": 0.7,\n                    \"Enabled\": true,\n                    \"TopN\": 3\n                },\n                \"RerankConfig\": {\n                    \"Enabled\": true,\n                    \"ModelName\": \"Youtu/youtu-reranker-llm\"\n                },\n                \"StrategyType\": 0,\n                \"TextToSqlModel\": {\n                    \"Alias\": \"DeepSeek-V4-Flash\",\n                    \"HistoryLimit\": 0,\n                    \"ModelId\": \"Deepseek/deepseek-v4-flash\"\n                }\n            }\n        ],\n        \"KnowledgeType\": 1,\n        \"RecallCount\": 13\n    },\n    \"Input\": {\n        \"Question\": \"什么是肺鱼\"\n    },\n    \"Context\": {\n        \"CallSource\": 5\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"KnowledgeList\": [\n            {\n                \"Confidence\": 0.5791762,\n                \"KnowledgeType\": 2,\n                \"RecallTypeList\": [\n                    2\n                ],\n                \"ResultPayload\": {\n                    \"GraphData\": \"\",\n                    \"ImageUrlList\": [],\n                    \"SheetInfo\": \"\"\n                },\n                \"ResultType\": 0,\n                \"SimilarQuestionExtra\": {\n                    \"Content\": \"\",\n                    \"SimilarQuestionId\": \"0\"\n                },\n                \"SnippetProfile\": {\n                    \"Content\": \"文档名：肺鱼\\n文档片段：肺鱼是一类具有独特生理结构和生存能力的古老鱼类，属于硬骨鱼纲肉鳍鱼亚纲肺鱼目。它们最早出现在距今约4亿年前的泥盆纪时期，是现存最古老的鱼类之一。\\n\\n\\n主要特征\\n\\n\\n呼吸方式：肺鱼具有鳃和肺两个呼吸器官。在水中，它们主要通过鳃呼吸；在水体干涸时，可以利用特化的鱼鳔（称为“肺”）直接呼吸空气。\\n\\n\\n形态结构：肺鱼的体态修长，胸鳍和腹鳍肥厚有力，可以在水底行走。它们的鳞片细小，身体呈鳗状，有助于在水草丛生的环境中灵活穿梭。\\n\\n\\n生存能力：肺鱼能够在干旱的环境中生存。当河水干涸时，它们会钻入泥土中，形成茧状结构，通过肺部和内鼻孔呼吸，等待雨季到来。\\n\\n\\n分布与种类\\n\\n\\n分布：现存的肺鱼主要分布在南美洲、非洲和澳大利亚的淡水环境中。\\n\\n\\n种类：肺鱼目包括两个主要的科——美洲肺鱼科和非洲肺鱼科。其中，澳洲肺鱼、美洲肺鱼和非洲肺鱼是较为常见的种类。\\n\\n\\n生活习性\\n\\n\\n食性：肺鱼以甲壳类、软体动物和蠕虫等为食，具有强大的咬合力，能够捕食带壳的无脊椎动物。\\n\\n\\n繁殖：肺鱼的繁殖方式多样，有的种类会在水生植物中产卵，幼鱼无外鳃，发育无需经过变态；而有的种类则需要经过变态，幼鱼\\n\\n\\n保护现状\\n\\n\\n肺鱼因其独特的生理特性和重要的科研价值，被列入《濒危野生动植物种国际贸易公约附录Ⅰ、附录Ⅱ和附录Ⅲ》，受到国际保护。\\n\",\n                    \"DocId\": \"2079848099272955712\",\n                    \"DocName\": \"肺鱼.txt\",\n                    \"KbId\": \"2079847931153870720\",\n                    \"KnowledgeId\": \"2079848160140695360\",\n                    \"Question\": \"\",\n                    \"Title\": \"肺鱼\"\n                },\n                \"SourceInfo\": {\n                    \"IsBigData\": false,\n                    \"IsShared\": false,\n                    \"KbName\": \"\"\n                }\n            }\n        ],\n        \"TokenUsageList\": [\n            {\n                \"CompletionTokens\": 0,\n                \"ModelName\": \"Youtu/youtu-embedding\",\n                \"PromptTokens\": 16,\n                \"TotalTokens\": 16\n            }\n        ],\n        \"RequestId\": \"e06aa6d0-1811-480b-b21d-900bc835e6da\"\n    }\n}",
         "title": "知识检索"
+      }
+    ],
+    "StopWorkflowRunList": [
+      {
+        "document": "批量停止工作流运行实例",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopWorkflowRunList\n<公共请求参数>\n\n{\n    \"AppId\": \"2075134221221714816\",\n    \"WorkflowRunIdList\": [\n        \"wfr-cd6a2j03k5j4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedIdList\": [],\n        \"SuccessIdList\": [\n            \"wfr-cd6a2j03k5j4\"\n        ],\n        \"RequestId\": \"c126301e-91a7-433c-9b21-a543a03c513f\"\n    }\n}",
+        "title": "批量停止工作流运行实例"
       }
     ],
     "UnfavoritePlugin": [

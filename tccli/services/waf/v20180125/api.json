@@ -294,6 +294,20 @@
       "output": "DeleteIpAccessControlV2Response",
       "status": "online"
     },
+    "DeleteLLMContentRule": {
+      "document": "删除大模型内容防护规则",
+      "input": "DeleteLLMContentRuleRequest",
+      "name": "删除大模型内容防护规则",
+      "output": "DeleteLLMContentRuleResponse",
+      "status": "online"
+    },
+    "DeleteLLMKeywordLibrary": {
+      "document": "删除词库列表",
+      "input": "DeleteLLMKeywordLibraryRequest",
+      "name": "删除关键词列表",
+      "output": "DeleteLLMKeywordLibraryResponse",
+      "status": "online"
+    },
     "DeleteOwaspRuleStatus": {
       "document": "解除门神规则的状态锁",
       "input": "DeleteOwaspRuleStatusRequest",
@@ -693,11 +707,46 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeLLMContentRuleList": {
+      "document": "获取LLM大模型内容防护规则",
+      "input": "DescribeLLMContentRuleListRequest",
+      "name": "获取LLM内容防护规则",
+      "output": "DescribeLLMContentRuleListResponse",
+      "status": "online"
+    },
     "DescribeLLMContentSecCheck": {
       "document": "大模型请求内容和响应内容审核接口",
       "input": "DescribeLLMContentSecCheckRequest",
       "name": "大模型内容审核接口",
       "output": "DescribeLLMContentSecCheckResponse",
+      "status": "online"
+    },
+    "DescribeLLMKeywordLibrary": {
+      "document": "查询关键词列表",
+      "input": "DescribeLLMKeywordLibraryRequest",
+      "name": "查询自定义词库列表",
+      "output": "DescribeLLMKeywordLibraryResponse",
+      "status": "online"
+    },
+    "DescribeLLMSdkAccess": {
+      "document": "查询sdk接入配置",
+      "input": "DescribeLLMSdkAccessRequest",
+      "name": "查询llmsdk接入信息",
+      "output": "DescribeLLMSdkAccessResponse",
+      "status": "online"
+    },
+    "DescribeLLMWafDLPRules": {
+      "document": "查询 DLP 规则",
+      "input": "DescribeLLMWafDLPRulesRequest",
+      "name": "查询llmwaf DLP 规则",
+      "output": "DescribeLLMWafDLPRulesResponse",
+      "status": "online"
+    },
+    "DescribeLLMWafProtectRules": {
+      "document": "查询 LLM 规则请求",
+      "input": "DescribeLLMWafProtectRulesRequest",
+      "name": "查询 waf-LLM 规则推理防护规则",
+      "output": "DescribeLLMWafProtectRulesResponse",
       "status": "online"
     },
     "DescribeLogHistogram": {
@@ -978,6 +1027,13 @@
       "input": "EnableRateLimitsV2Request",
       "name": "批量更改自研版限流规则开关",
       "output": "EnableRateLimitsV2Response",
+      "status": "online"
+    },
+    "ExportLLMKeywordLib": {
+      "document": "导出词库文件",
+      "input": "ExportLLMKeywordLibRequest",
+      "name": "导出用户自定义关键词库",
+      "output": "ExportLLMKeywordLibResponse",
       "status": "online"
     },
     "FreshAntiFakeUrl": {
@@ -1314,6 +1370,48 @@
       "input": "ModifyIpAccessControlRequest",
       "name": "IP黑白名单编辑接口",
       "output": "ModifyIpAccessControlResponse",
+      "status": "online"
+    },
+    "ModifyLLMContentRule": {
+      "document": "更新大模型内容安全规则",
+      "input": "ModifyLLMContentRuleRequest",
+      "name": "更新大模型内容安全防护规则",
+      "output": "ModifyLLMContentRuleResponse",
+      "status": "online"
+    },
+    "ModifyLLMContentRuleStatus": {
+      "document": "切换大模型内容防护规则开关",
+      "input": "ModifyLLMContentRuleStatusRequest",
+      "name": "切换大模型内容防护规则开关",
+      "output": "ModifyLLMContentRuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyLLMKeywordLibrary": {
+      "document": "用户修改自定义词库",
+      "input": "ModifyLLMKeywordLibraryRequest",
+      "name": "修改关键词库",
+      "output": "ModifyLLMKeywordLibraryResponse",
+      "status": "online"
+    },
+    "ModifyLLMStatus": {
+      "document": "修改大模型防护的模块开关状态，支持总开关及各子模块独立开关的开启/关闭操作。开启前需确保实例已购买大模型防护能力，未购买时开启操作会返回 AuthFailure.ErrCodeNoPurchased 错误。",
+      "input": "ModifyLLMStatusRequest",
+      "name": "修改大模型防护开关状态",
+      "output": "ModifyLLMStatusResponse",
+      "status": "online"
+    },
+    "ModifyLLMWafDLPRule": {
+      "document": "修改llmwaf DLP 规则",
+      "input": "ModifyLLMWafDLPRuleRequest",
+      "name": "修改llmwaf DLP 规则",
+      "output": "ModifyLLMWafDLPRuleResponse",
+      "status": "online"
+    },
+    "ModifyLLMWafProtectRule": {
+      "document": "修改 LLM 规则",
+      "input": "ModifyLLMWafProtectRuleRequest",
+      "name": "修改 LLMwaf 推理防护规则",
+      "output": "ModifyLLMWafProtectRuleResponse",
       "status": "online"
     },
     "ModifyModuleStatus": {
@@ -8324,6 +8422,45 @@
       ],
       "usage": "out"
     },
+    "CategoryGroup": {
+      "document": "按分类分组的规则列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类</p>",
+          "example": "sensitive_content",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "9",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则列表</p>",
+          "example": "无",
+          "member": "RuleDetail",
+          "name": "Rules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CdcCluster": {
       "document": "CDC场景下负载均衡WAF的集群信息",
       "members": [
@@ -11744,6 +11881,69 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLLMContentRuleRequest": {
+      "document": "DeleteLLMContentRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Id列表</p>",
+          "example": "[\"110111\", \"110233\"]",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLLMContentRuleResponse": {
+      "document": "DeleteLLMContentRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLLMKeywordLibraryRequest": {
+      "document": "DeleteLLMKeywordLibrary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要删除的词库 id 列表",
+          "example": "[\"100\", \"101\"]",
+          "member": "string",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLLMKeywordLibraryResponse": {
+      "document": "DeleteLLMKeywordLibrary返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -16958,6 +17158,23 @@
       ],
       "type": "object"
     },
+    "DescribeLLMContentRuleListRequest": {
+      "document": "DescribeLLMContentRuleList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLLMContentRuleListResponse": {
+      "document": "DescribeLLMContentRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLLMContentSecCheckRequest": {
       "document": "DescribeLLMContentSecCheck请求参数结构体",
       "members": [
@@ -17092,6 +17309,282 @@
           "name": "Data",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMKeywordLibraryRequest": {
+      "document": "DescribeLLMKeywordLibrary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "词库类型筛选\n枚举值：\ncustom：自定义黑库\nbuiltin：内置词库\nall：全部词库\nwhite：自定义白库",
+          "example": "custom",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量\n取值范围：[0, +∞)\n默认值：0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页返回数量\n取值范围：[1, 1000]\n默认值：10",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段\n枚举值：\nUpdateTime：按更新时间排序\nCreateTime：按创建时间排序\nName：按名称排序\n默认值：UpdateTime",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向\n枚举值：\nASC：升序\nDESC：降序\n默认值：DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMKeywordLibraryResponse": {
+      "document": "DescribeLLMKeywordLibrary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词库列表",
+          "example": "无",
+          "member": "LLMKeywordLibrary",
+          "name": "LibList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词库总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMSdkAccessRequest": {
+      "document": "DescribeLLMSdkAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页的起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页行数",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "支持根据ts排序",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "asc或者desc",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMSdkAccessResponse": {
+      "document": "DescribeLLMSdkAccess返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果中规则数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作结果",
+          "example": "无",
+          "member": "LLMSdkAccessItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMWafDLPRulesRequest": {
+      "document": "DescribeLLMWafDLPRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMWafDLPRulesResponse": {
+      "document": "DescribeLLMWafDLPRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则列表</p>",
+          "example": "无",
+          "member": "RuleDetail",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMWafProtectRulesRequest": {
+      "document": "DescribeLLMWafProtectRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类型</p>",
+          "example": "prompt_injection",
+          "member": "string",
+          "name": "RuleType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMWafProtectRulesResponse": {
+      "document": "DescribeLLMWafProtectRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类别列表</p>",
+          "example": "无",
+          "member": "CategoryGroup",
+          "name": "Categories",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -21578,6 +22071,43 @@
       ],
       "usage": "out"
     },
+    "ExportLLMKeywordLibRequest": {
+      "document": "ExportLLMKeywordLib请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要导出的词库id列表",
+          "example": "[\"52000001\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportLLMKeywordLibResponse": {
+      "document": "ExportLLMKeywordLib返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导出的文件url",
+          "example": "\"http://cos-path-to-excel-file\"",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FieldWriteConfig": {
       "document": "设置哪些字段是否存储或转发",
       "members": [
@@ -25003,6 +25533,100 @@
       ],
       "usage": "out"
     },
+    "LLMKeywordLibrary": {
+      "document": "LLM waf 自定义词库实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "词库名",
+          "example": "关键词库1",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词库描述",
+          "example": "这是对词库的解释",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词库类型，custom 或 builtin",
+          "example": "custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关键词列表",
+          "example": "[\"关键词1\",\"关键词2\"]",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词库规则 id",
+          "example": "10000",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被引用的规则 id 列表",
+          "example": "[\"5200001\", \"5200002\"]",
+          "member": "string",
+          "name": "ReferencedRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1715406671183",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "词库类别：black-黑库(默认)，white-白库；空值按黑库处理",
+          "example": "black",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LLMMonPkg": {
       "document": "有效预付费大模型安全包信息",
       "members": [
@@ -25108,6 +25732,67 @@
       ],
       "usage": "both"
     },
+    "LLMOptionsItem": {
+      "document": "大模型Rule生效条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键",
+          "example": "avg_speed",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": ">",
+          "member": "string",
+          "name": "Op",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "[\"1\", \"2\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Header参数值时使用",
+          "example": "post",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域选择",
+          "example": "无",
+          "member": "Area",
+          "name": "Areas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LLMPkg": {
       "document": "大模型安全「后付费」资源信息（数据源：tb_waf_llm_resource），与 DescribeInstances 的 InstanceDetail.LLMPkg 保持一致",
       "members": [
@@ -25203,6 +25888,210 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LLMSdkAccessItem": {
+      "document": "sdk接入配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务id</p>",
+          "example": "9000002889",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "12342",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "ddp",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>",
+          "example": "tokenhub",
+          "member": "string",
+          "name": "SdkSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "MainStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限速开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LimitRuleStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容安全开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ContentRuleStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1774427652",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "1774427620",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流规则数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LimitRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容安全规则数量</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ContentRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>toolcall防护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ToolCallStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>llm推理防护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "LLMProtectStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容合规检测开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ContentComplianceStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>dlp防护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DLPStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>skills防护开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SkillsStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图识别检测开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IntentStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效规则数量</p>",
+          "example": "91",
+          "member": "int64",
+          "name": "EffectiveRules",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -29513,6 +30402,504 @@
       ],
       "type": "object"
     },
+    "ModifyLLMContentRuleRequest": {
+      "document": "ModifyLLMContentRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test2",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先级</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "Priority",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则开关</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测范围，1：入向，2：出向，3：入向和出向</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CheckType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测内容匹配</p>",
+          "example": "无",
+          "member": "RuleItem",
+          "name": "RuleItem",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配条件</p>",
+          "example": "无",
+          "member": "LLMOptionsItem",
+          "name": "Options",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作，观察monitor，拦截intercept</p>",
+          "example": "22",
+          "member": "string",
+          "name": "ActionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应提示内容</p>",
+          "example": "ceshi",
+          "member": "string",
+          "name": "ResponseText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则需要启用的SessionID</p>",
+          "example": "[\"1312\"]",
+          "member": "string",
+          "name": "SessionApplied",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则ID，新增时填0</p>",
+          "example": "51000001",
+          "member": "string",
+          "name": "RuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拦截页面id</p>",
+          "example": "51000001",
+          "member": "uint64",
+          "name": "PageId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测内容and or表达式,默认为and</p>",
+          "example": "and",
+          "member": "string",
+          "name": "ContentLogicalOp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id，必填项</p>",
+          "example": "\"waf_padriq23131\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代答类型：1-内置可信模型安全代答，2-自定义代答（ActionType=reply时生效</p><p>枚举值：</p><ul><li>1： 内置可信模型安全代答</li><li>2： 自定义代答ActionType=reply时生效</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReplyType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义回答模板</p>",
+          "example": "5000001",
+          "member": "string",
+          "name": "CustomReplyRuleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模态类型：0-文本（默认），1-图片</p><p>枚举值：</p><ul><li>0： 文本</li><li>1： 图片</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ModalType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则类别：black-普通规则(默认)，white-白名单规则；空值按black处理。white时ActionType仅允许pass(放行)，RuleItem支持白名单匹配字段(Key: ip/geo/type/content/chat_id/user_id/tool_name/tool_args/keyword_whitelist；Op: belong/not_belong/equal/not_equal/contain/not_contain/prefix/suffix/wildcard)</p>",
+          "example": "white",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单规则生效范围：多个serviceId/domain列表（Category=white时使用），表示该白名单规则同时生效于哪些域名/serviceId。黑名单规则不使用此字段。</p>",
+          "example": "[\"10011\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加白生效模块type列表（Category=white时使用），表示该白名单规则命中后对哪些防护模块生效(放行)。取值：2-算力消耗规则，3-自定义防护规则，4-ToolCall防护，5-提示词攻击防护，6-内容合规检测，7-敏感数据检测。</p>",
+          "example": "[2]",
+          "member": "uint64",
+          "name": "AppliedModules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMContentRuleResponse": {
+      "document": "ModifyLLMContentRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作的RuleId</p>",
+          "example": "19000001",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMContentRuleStatusRequest": {
+      "document": "ModifyLLMContentRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Id列表</p>",
+          "example": "[\"110111\", \"110233\"]",
+          "member": "string",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMContentRuleStatusResponse": {
+      "document": "ModifyLLMContentRuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMKeywordLibraryRequest": {
+      "document": "ModifyLLMKeywordLibrary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新增的关键词库列表",
+          "example": "无",
+          "member": "LLMKeywordLibrary",
+          "name": "LibList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMKeywordLibraryResponse": {
+      "document": "ModifyLLMKeywordLibrary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功创建的列表id",
+          "example": "[\"100\", \"101\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMStatusRequest": {
+      "document": "ModifyLLMStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开关状态。true：开启，false：关闭。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要操作的域名或者serviceid</p>",
+          "example": "example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关类型，用于指定要操作的防护模块开关。取值如下：<br>1：防护总开关，控制大模型防护功能的全局开启/关闭。<br>2：算力消耗防护规则开关，控制算力消耗限制功能的开启/关闭。<br>3：自定义防护规则开关，控制内容安全自定义规则功能的开启/关闭。<br>4：ToolCall 防护开关，控制工具调用安全检测功能的开启/关闭。<br>5：提示词攻击防护开关，控制提示词注入/越狱攻击检测功能的开启/关闭。<br>6：内容合规检测开关，控制输入输出内容合规检测功能的开启/关闭。<br>7：敏感数据检测开关，控制敏感信息泄露检测（DLP）功能的开启/关闭。<br>8：Skill 安全检测开关，控制 Skill/Plugin 调用安全检测功能的开启/关闭。<br>9：意图行为检测开关，控制用户意图识别与行为检测功能的开启/关闭。<br>10：恶意URL检测开关，控制响应中恶意链接检测功能的开启/关闭。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SwitchType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>WAF 实例 ID，表示当前操作所属的 WAF 实例。可通过 DescribeInstances 接口获取。</p>",
+          "example": "waf_2kxtlbky01b3wceb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMStatusResponse": {
+      "document": "ModifyLLMStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果，成功时返回 &quot;Success&quot;。</p>",
+          "example": "Success",
+          "member": "string",
+          "name": "Res",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMWafDLPRuleRequest": {
+      "document": "ModifyLLMWafDLPRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要修改的规则id列表</p>",
+          "example": "[\"gdl-002\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作</p>",
+          "example": "log",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测方向：1是入向，2是出向，3是入向和出向都检测</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMWafDLPRuleResponse": {
+      "document": "ModifyLLMWafDLPRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMWafProtectRuleRequest": {
+      "document": "ModifyLLMWafProtectRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要修改的规则id列表</p>",
+          "example": "[\"grl-safety-prompt-001\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作</p>",
+          "example": "deny",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测方向：1是入向，2是出向，3是入向和出向都检测</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMWafProtectRuleResponse": {
+      "document": "ModifyLLMWafProtectRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyModuleStatusRequest": {
       "document": "ModifyModuleStatus请求参数结构体",
       "members": [
@@ -33125,6 +34512,150 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleDetail": {
+      "document": "aiguard规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID</p>",
+          "example": "gtc-baseline-025",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则名称</p>",
+          "example": "备份与快照删除破坏阻断",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "拦截批量加密文件、修改扩展名等勒索行为",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>严重度</p>",
+          "example": "medium",
+          "member": "string",
+          "name": "Severity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作</p>",
+          "example": "deny",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>脱敏样例</p>",
+          "example": "****1234",
+          "member": "string",
+          "name": "DesensitizeSample",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测方向</p><p>取值范围：[0, 3]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Direction",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleItem": {
+      "document": "大模型检测内容匹配",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 信息类型",
+          "example": "avg_speed",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 操作符，默认是包含\n",
+          "example": ">",
+          "member": "string",
+          "name": "Op",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息类型",
+          "example": "[\"1\", \"2\"]",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息类",
+          "example": "无",
+          "member": "ValueLevel",
+          "name": "Levels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -36911,6 +38442,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ValueLevel": {
+      "document": "大模型内容安全，不当信息配置中，敏感度配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签，如政治等",
+          "example": "1",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感度",
+          "example": "400",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

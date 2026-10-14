@@ -197,7 +197,7 @@
       "status": "online"
     },
     "VoicePrintEnroll": {
-      "document": "说话人注册接口用于注册一个指定音频，生成一个唯一的说话人id，后续可通过说话人验证接口验证其它音频和已有的说话人ID匹配度，注册时可指定说话人昵称，方便标识说话人ID，  说话人昵称可重复配置。 \n（注: 一个appid最多可以注册10000个说话人ID，一个group最多可容纳20个说话人ID，一个说话人ID仅支持一条音频注册，后续可通过更新接口进行更新）\n\n使用须知\n支持的输入格式：编码文件(PCM, WAV)、16 bit采样位数、单声道（mono）。\n\n支持的音频采样率：16000 Hz。",
+      "document": "说话人注册接口用于注册一个指定音频，生成一个唯一的说话人id，后续可通过说话人验证接口验证其它音频和已有的说话人ID匹配度，注册时可指定说话人昵称，方便标识说话人ID，  说话人昵称可重复配置。 \n（注：一个appid最多可以注册10000个说话人ID，一个group最多可容纳20个说话人ID，一个说话人ID仅支持条音频注册，可通过更新接口进行更新。**当前支持免费注册1000个说话人ID，超出 1000 个的部分，以月底实际存储数量按【0.05 元/个/月】 计费**）\n\n使用须知\n支持的输入格式：编码文件(PCM, WAV)、16 bit采样位数、单声道（mono）。\n\n支持的音频采样率：16000 Hz。",
       "input": "VoicePrintEnrollRequest",
       "name": "说话人注册",
       "output": "VoicePrintEnrollResponse",
@@ -3081,6 +3081,15 @@
           "name": "AudioUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否对注册/更新的音频做质量检测。开启后使用质检专用引擎提取特征，对音频进行多说话人、信噪比、截幅等检查，不合格返回对应错误码；关闭时不做这些检查，沿用常规注册流。默认false</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "QualityCheck",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

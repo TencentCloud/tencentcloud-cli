@@ -56,11 +56,39 @@
       "output": "AddUserDeviceResponse",
       "status": "online"
     },
+    "BatchAddVideoSnapshotConfigChannel": {
+      "document": "批量添加截图配置的通道",
+      "input": "BatchAddVideoSnapshotConfigChannelRequest",
+      "name": "批量添加截图配置的通道",
+      "output": "BatchAddVideoSnapshotConfigChannelResponse",
+      "status": "online"
+    },
+    "BatchAssignVLPlanChannels": {
+      "document": "批量关联视觉理解计划通道",
+      "input": "BatchAssignVLPlanChannelsRequest",
+      "name": "批量关联视觉理解计划通道",
+      "output": "BatchAssignVLPlanChannelsResponse",
+      "status": "online"
+    },
     "BatchDeleteVideoDownloadTask": {
       "document": "用于批量删除本地录像下载失败的任务",
       "input": "BatchDeleteVideoDownloadTaskRequest",
       "name": "批量删除本地录像下载任务",
       "output": "BatchDeleteVideoDownloadTaskResponse",
+      "status": "online"
+    },
+    "BatchGetVLPlanSourceFileURL": {
+      "document": "批量获取视觉理解计划源素材 URL",
+      "input": "BatchGetVLPlanSourceFileURLRequest",
+      "name": "批量获取视觉理解计划源素材 URL",
+      "output": "BatchGetVLPlanSourceFileURLResponse",
+      "status": "online"
+    },
+    "BatchGetVideoSnapshotImageUrl": {
+      "document": "批量获取截图图片URL",
+      "input": "BatchGetVideoSnapshotImageUrlRequest",
+      "name": "批量获取截图图片URL",
+      "output": "BatchGetVideoSnapshotImageUrlResponse",
       "status": "online"
     },
     "BatchOperateDevice": {
@@ -119,11 +147,39 @@
       "output": "ControlRecordTimelineResponse",
       "status": "online"
     },
+    "CreateVLPlan": {
+      "document": "创建视觉理解计划",
+      "input": "CreateVLPlanRequest",
+      "name": "创建视觉理解计划",
+      "output": "CreateVLPlanResponse",
+      "status": "online"
+    },
+    "CreateVLTemplate": {
+      "document": "创建视觉理解模板",
+      "input": "CreateVLTemplateRequest",
+      "name": "创建视觉理解模板",
+      "output": "CreateVLTemplateResponse",
+      "status": "online"
+    },
     "CreateVideoDownloadTask": {
       "document": "创建本地录像下载任务",
       "input": "CreateVideoDownloadTaskRequest",
       "name": "创建本地录像下载任务",
       "output": "CreateVideoDownloadTaskResponse",
+      "status": "online"
+    },
+    "CreateVideoSnapshotConfig": {
+      "document": "创建截图配置",
+      "input": "CreateVideoSnapshotConfigRequest",
+      "name": "创建截图配置",
+      "output": "CreateVideoSnapshotConfigResponse",
+      "status": "online"
+    },
+    "CreateVideoSnapshotTemplate": {
+      "document": "创建截图模板",
+      "input": "CreateVideoSnapshotTemplateRequest",
+      "name": "创建截图模板",
+      "output": "CreateVideoSnapshotTemplateResponse",
       "status": "online"
     },
     "DeleteDomain": {
@@ -187,6 +243,34 @@
       "input": "DeleteUserDeviceRequest",
       "name": "删除设备",
       "output": "DeleteUserDeviceResponse",
+      "status": "online"
+    },
+    "DeleteVLPlan": {
+      "document": "删除视觉理解计划",
+      "input": "DeleteVLPlanRequest",
+      "name": "删除视觉理解计划",
+      "output": "DeleteVLPlanResponse",
+      "status": "online"
+    },
+    "DeleteVLTemplate": {
+      "document": "删除视觉理解模板",
+      "input": "DeleteVLTemplateRequest",
+      "name": "删除视觉理解模板",
+      "output": "DeleteVLTemplateResponse",
+      "status": "online"
+    },
+    "DeleteVideoSnapshotConfig": {
+      "document": "删除截图配置",
+      "input": "DeleteVideoSnapshotConfigRequest",
+      "name": "删除截图配置",
+      "output": "DeleteVideoSnapshotConfigResponse",
+      "status": "online"
+    },
+    "DeleteVideoSnapshotTemplate": {
+      "document": "删除截图模板",
+      "input": "DeleteVideoSnapshotTemplateRequest",
+      "name": "删除截图模板",
+      "output": "DeleteVideoSnapshotTemplateResponse",
       "status": "online"
     },
     "DescribeCNAME": {
@@ -329,6 +413,27 @@
       "output": "DescribeUserDeviceListResponse",
       "status": "online"
     },
+    "DescribeVLPlan": {
+      "document": "查询视觉理解计划详情",
+      "input": "DescribeVLPlanRequest",
+      "name": "查询视觉理解计划详情",
+      "output": "DescribeVLPlanResponse",
+      "status": "online"
+    },
+    "DescribeVLPlanResult": {
+      "document": "查询视觉理解计划结果详情",
+      "input": "DescribeVLPlanResultRequest",
+      "name": "查询视觉理解计划结果详情",
+      "output": "DescribeVLPlanResultResponse",
+      "status": "online"
+    },
+    "DescribeVLTemplate": {
+      "document": "查询视觉理解模板详情",
+      "input": "DescribeVLTemplateRequest",
+      "name": "查询视觉理解模板详情",
+      "output": "DescribeVLTemplateResponse",
+      "status": "online"
+    },
     "DescribeVideoBitRate": {
       "document": "用于获取视频通道的码率信息",
       "input": "DescribeVideoBitRateRequest",
@@ -341,6 +446,20 @@
       "input": "DescribeVideoDownloadUrlRequest",
       "name": "获取云端录像下载URL地址",
       "output": "DescribeVideoDownloadUrlResponse",
+      "status": "online"
+    },
+    "DescribeVideoSnapshotConfig": {
+      "document": "获取截图配置详情",
+      "input": "DescribeVideoSnapshotConfigRequest",
+      "name": "截图配置详情",
+      "output": "DescribeVideoSnapshotConfigResponse",
+      "status": "online"
+    },
+    "DescribeVideoSnapshotTemplate": {
+      "document": "获取截图模板详情",
+      "input": "DescribeVideoSnapshotTemplateRequest",
+      "name": "截图模板详情",
+      "output": "DescribeVideoSnapshotTemplateResponse",
       "status": "online"
     },
     "ListDeviceSnapshots": {
@@ -441,11 +560,46 @@
       "output": "ListTasksResponse",
       "status": "online"
     },
+    "ListVLPlans": {
+      "document": "获取视觉理解计划列表",
+      "input": "ListVLPlansRequest",
+      "name": "获取视觉理解计划列表",
+      "output": "ListVLPlansResponse",
+      "status": "online"
+    },
+    "ListVLTemplates": {
+      "document": "获取视觉理解模板列表",
+      "input": "ListVLTemplatesRequest",
+      "name": "获取视觉理解模板列表",
+      "output": "ListVLTemplatesResponse",
+      "status": "online"
+    },
     "ListVideoDownloadTask": {
       "document": "查询本店里录像下载任务列表",
       "input": "ListVideoDownloadTaskRequest",
       "name": "查询本地录像下载任务列表",
       "output": "ListVideoDownloadTaskResponse",
+      "status": "online"
+    },
+    "ListVideoSnapshotTemplate": {
+      "document": "获取截图模板详情列表",
+      "input": "ListVideoSnapshotTemplateRequest",
+      "name": "截图模板列表",
+      "output": "ListVideoSnapshotTemplateResponse",
+      "status": "online"
+    },
+    "ModifyVLPlan": {
+      "document": "修改视觉理解计划",
+      "input": "ModifyVLPlanRequest",
+      "name": "修改视觉理解计划",
+      "output": "ModifyVLPlanResponse",
+      "status": "online"
+    },
+    "ModifyVideoSnapshotConfig": {
+      "document": "更新截图配置",
+      "input": "ModifyVideoSnapshotConfigRequest",
+      "name": "更新截图配置",
+      "output": "ModifyVideoSnapshotConfigResponse",
       "status": "online"
     },
     "PlayRecord": {
@@ -1877,6 +2031,96 @@
       ],
       "type": "object"
     },
+    "BatchAddVideoSnapshotConfigChannelRequest": {
+      "document": "BatchAddVideoSnapshotConfigChannel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置Id</p>",
+          "example": "b8ab**5*-*5*3**************07daafd74",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道Id列表</p>",
+          "example": "[\"d436***********************5492cfaa7\"]",
+          "member": "string",
+          "name": "Channels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAddVideoSnapshotConfigChannelResponse": {
+      "document": "BatchAddVideoSnapshotConfigChannel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAssignVLPlanChannelsRequest": {
+      "document": "BatchAssignVLPlanChannels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划 ID</p>",
+          "example": "VP7219*************************6f1",
+          "member": "string",
+          "name": "VLPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作命令：1=关联，2=解绑</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cmd",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID 列表，最多 500 个；与 OrganizationIds 至少传一个（Cmd=1 时）</p>",
+          "example": "[\"**********\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织 ID 列表（仅 Cmd=1 时有效，Cmd=2 时不允许传入）；展开该组织下所有通道参与关联，与 ChannelIds 取并集去重</p>",
+          "example": "[\"*****\"]",
+          "member": "string",
+          "name": "OrganizationIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchAssignVLPlanChannelsResponse": {
+      "document": "BatchAssignVLPlanChannels返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "BatchDeleteVideoDownloadTaskRequest": {
       "document": "BatchDeleteVideoDownloadTask请求参数结构体",
       "members": [
@@ -1895,6 +2139,134 @@
     "BatchDeleteVideoDownloadTaskResponse": {
       "document": "BatchDeleteVideoDownloadTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetVLPlanSourceFileURLRequest": {
+      "document": "BatchGetVLPlanSourceFileURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果 ID 列表，最多 200 个</p>",
+          "example": "[\"49be*****************************e15\"]",
+          "member": "string",
+          "name": "VLPlanResultIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL 有效期（秒），范围 [60, 86400]，默认 600</p>",
+          "example": "3000",
+          "member": "int64",
+          "name": "Expire",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetVLPlanSourceFileURLResponse": {
+      "document": "BatchGetVLPlanSourceFileURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>URL 列表</p>",
+          "example": "无",
+          "member": "VLPlanResultSnapshotImageUrlInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetVideoSnapshotImageUrlData": {
+      "document": "批量获取截图图片URL列表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片Url信息</p>",
+          "example": "无",
+          "member": "ImageUrlInfo",
+          "name": "Images",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片Url有效期</p><p>单位：秒</p><p>默认值：600</p>",
+          "example": "600",
+          "member": "int64",
+          "name": "ImageUrlExpires",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchGetVideoSnapshotImageUrlRequest": {
+      "document": "BatchGetVideoSnapshotImageUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片Id</p>",
+          "example": "[\"9e79************************78dff586\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片URL有效期，单位：秒</p><p>取值范围：[60, 86400]</p><p>默认值：600</p>",
+          "example": "600",
+          "member": "int64",
+          "name": "ImageUrlExpires",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchGetVideoSnapshotImageUrlResponse": {
+      "document": "BatchGetVideoSnapshotImageUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图图片URL结果列表</p>",
+          "example": "无",
+          "member": "BatchGetVideoSnapshotImageUrlData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2046,6 +2418,45 @@
         }
       ],
       "type": "object"
+    },
+    "CallbackURL": {
+      "document": "截图结果的回调地址配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片回调地址</p>",
+          "example": "http://somedomain/callback",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token</p>",
+          "example": "mytoken",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ChannelAttrInfo": {
       "document": "通道属性信息",
@@ -2479,6 +2890,170 @@
       ],
       "type": "object"
     },
+    "CreateVLPlanRequest": {
+      "document": "CreateVLPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划名称，仅支持中文/英文/数字/_/-，最长 32 个字符</p>",
+          "example": "明厨亮灶识别计划",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的视觉理解模板 ID</p>",
+          "example": "VTa911*************************6c2",
+          "member": "string",
+          "name": "VLTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划描述，最长 256 个字符</p>",
+          "example": "明厨亮灶识别",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图文件存储天数，范围 [7, 1080]；图片模式必填，视频模式不传</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "FileExpires",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调通知配置</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVLPlanResponse": {
+      "document": "CreateVLPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视觉理解计划信息</p>",
+          "example": "无",
+          "member": "VLPlanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVLTemplateRequest": {
+      "document": "CreateVLTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>AI 模型</p><p>枚举值：</p><ul><li>ivc-vl-1.0： 视图大模型</li></ul>",
+          "example": "ivc-vl-1.0",
+          "member": "string",
+          "name": "AIModel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称，仅支持中文/英文/数字/_/-，最长 32 个字符</p>",
+          "example": "测试模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词，最大 2MB</p>",
+          "example": "图片中有什么",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析模式</p><p>枚举值：</p><ul><li>image： 图片模式</li><li>video： 视频模式</li></ul>",
+          "example": "image",
+          "member": "string",
+          "name": "AnalysisMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时段列表，最多 100 条</p>",
+          "example": "无",
+          "member": "EffectiveTime",
+          "name": "Times",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板描述，最长 256 个字符</p>",
+          "example": "厨师帽和口罩识别",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片场景配置（AnalysisMode=image 时必填）</p>",
+          "example": "无",
+          "member": "ImageSceneInfo",
+          "name": "ImageConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVLTemplateResponse": {
+      "document": "CreateVLTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视觉理解模板信息</p>",
+          "example": "无",
+          "member": "VLTemplateInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateVideoDownloadTaskRequest": {
       "document": "CreateVideoDownloadTask请求参数结构体",
       "members": [
@@ -2558,6 +3133,143 @@
           "member": "VideoDownloadTaskData",
           "name": "Data",
           "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSnapshotConfigRequest": {
+      "document": "CreateVideoSnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置名称</p><p>入参限制：中文、英文、数字、“-”、“_” 长度不超过128个字符</p>",
+          "example": "配置1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "144*************************e****3d3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片文件的热存储天数</p><p>枚举值：</p><ul><li>7： 7天</li><li>15： 15天</li><li>30： 30天</li><li>60： 60天</li><li>90： 90天</li><li>180： 180天</li><li>270： 270天</li><li>360： 360天</li><li>540： 540天</li><li>720： 720天</li><li>900： 900天</li><li>1080： 1080天</li></ul>",
+          "example": "7",
+          "member": "int64",
+          "name": "FileExpires",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图结果回调地址</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSnapshotConfigResponse": {
+      "document": "CreateVideoSnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置信息</p>",
+          "example": "无",
+          "member": "VideoSnapshotConfigInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSnapshotTemplateRequest": {
+      "document": "CreateVideoSnapshotTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称： 中文、英文、数字、“-”、“_” 长度不超过128个字符</p>",
+          "example": "实时截帧模板",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图类型： 1-实时截帧 2-低频截帧<br>注意：实时截帧在生效时段期间一直拉取实时流， 低频截帧在生效时段期间按需拉取实时流，每次拉流的最短持续时间不低于1分钟</p><p>枚举值：</p><ul><li>1： 实时截帧</li><li>2： 低频截帧</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧频率： Type = 1时，取值[5, 180]秒 Type = 2时 取值[30, 36000]秒</p>",
+          "example": "120",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时段，注：数组大小不超过100个且每个时间段不低于1分钟</p>",
+          "example": "无",
+          "member": "EffectiveTime",
+          "name": "Times",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多张模式</p>",
+          "example": "无",
+          "member": "MultiVideoSnapshotMode",
+          "name": "MultiMode",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVideoSnapshotTemplateResponse": {
+      "document": "CreateVideoSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板信息</p>",
+          "example": "无",
+          "member": "VideoSnapshotTemplateInfo",
+          "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2803,6 +3515,114 @@
     },
     "DeleteUserDeviceResponse": {
       "document": "DeleteUserDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVLPlanRequest": {
+      "document": "DeleteVLPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划 ID</p>",
+          "example": "VPdc05*************************5eb",
+          "member": "string",
+          "name": "VLPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVLPlanResponse": {
+      "document": "DeleteVLPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVLTemplateRequest": {
+      "document": "DeleteVLTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID</p>",
+          "example": "VT9bce*************************136",
+          "member": "string",
+          "name": "VLTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVLTemplateResponse": {
+      "document": "DeleteVLTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoSnapshotConfigRequest": {
+      "document": "DeleteVideoSnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置Id</p>",
+          "example": "d4b1***b**0*****************d377f02f",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoSnapshotConfigResponse": {
+      "document": "DeleteVideoSnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoSnapshotTemplateRequest": {
+      "document": "DeleteVideoSnapshotTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "b11*****************************48c4",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVideoSnapshotTemplateResponse": {
+      "document": "DeleteVideoSnapshotTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -4786,6 +5606,117 @@
       ],
       "type": "object"
     },
+    "DescribeVLPlanRequest": {
+      "document": "DescribeVLPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划 ID</p>",
+          "example": "VPdc05*************************5eb",
+          "member": "string",
+          "name": "VLPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVLPlanResponse": {
+      "document": "DescribeVLPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视觉理解计划信息</p>",
+          "example": "无",
+          "member": "VLPlanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVLPlanResultRequest": {
+      "document": "DescribeVLPlanResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果 ID</p>",
+          "example": "4537*****************************30b",
+          "member": "string",
+          "name": "VLPlanResultId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVLPlanResultResponse": {
+      "document": "DescribeVLPlanResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果详情</p>",
+          "example": "无",
+          "member": "VLPlanResultDetailInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVLTemplateRequest": {
+      "document": "DescribeVLTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板 ID</p>",
+          "example": "VT58c*************************04e3",
+          "member": "string",
+          "name": "VLTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVLTemplateResponse": {
+      "document": "DescribeVLTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视觉理解模板信息</p>",
+          "example": "无",
+          "member": "VLTemplateInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVideoBitRateList": {
       "document": "查询视频通道码率的返回结果列表",
       "members": [
@@ -4975,6 +5906,119 @@
       ],
       "type": "object"
     },
+    "DescribeVideoSnapshotConfigRequest": {
+      "document": "DescribeVideoSnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置Id</p>",
+          "example": "b8a**3***********************daafd74",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSnapshotConfigResponse": {
+      "document": "DescribeVideoSnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置详情结果</p>",
+          "example": "无",
+          "member": "VideoSnapshotConfigInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSnapshotTemplateRequest": {
+      "document": "DescribeVideoSnapshotTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "144*****************************f3d3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoSnapshotTemplateResponse": {
+      "document": "DescribeVideoSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板详情</p>",
+          "example": "无",
+          "member": "VideoSnapshotTemplateInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EffectiveTime": {
+      "document": "生效时段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "00:00:00",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p><p>参数格式：hh:mm:ss</p>",
+          "example": "23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重复周期： 1-周一 2-周二 3-周三 4-周四 5-周五 6-周六 7-周日</p><p>取值范围：[1, 7]</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "WeekDay",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GBDeviceSnapInfo": {
       "document": "抓拍结果信息",
       "members": [
@@ -5061,6 +6105,81 @@
           "member": "string",
           "name": "OutputData",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageSceneInfo": {
+      "document": "图片场景配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图类型</p><p>枚举值：</p><ul><li>1：实时截帧</li><li>2：低频截帧</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧频率</p><p>Type=1时取值[5, 180]秒，Type=2时取值[30, 36000]秒</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多张截图模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MultiSnapshotMode",
+          "name": "MultiMode",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageUrlInfo": {
+      "document": "图片下载URL信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>图片Id</p>",
+          "example": "9e79****-****-****-****-**********86",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片Url</p>",
+          "example": "https://xxxx/ipts/image?source=****",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p><p>说明获取图片url失败的原因</p>",
+          "example": "DomainNotFound",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6502,6 +7621,154 @@
       ],
       "type": "object"
     },
+    "ListVLPlansRequest": {
+      "document": "ListVLPlans请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划名称，精确匹配</p>",
+          "example": "明厨亮灶识别计划",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，默认 1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 200</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVLPlansResponse": {
+      "document": "ListVLPlans返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划列表</p>",
+          "example": "无",
+          "member": "VLPlanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVLTemplatesRequest": {
+      "document": "ListVLTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称，精确匹配</p>",
+          "example": "明厨亮灶识别模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析模式过滤，image / video</p>",
+          "example": "image",
+          "member": "string",
+          "name": "AnalysisMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图类型过滤（仅 AnalysisMode=image 时生效）：realtime / low</p>",
+          "example": "realtime",
+          "member": "string",
+          "name": "CaptureType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，默认 1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 200</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVLTemplatesResponse": {
+      "document": "ListVLTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板列表</p>",
+          "example": "无",
+          "member": "VLTemplateInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListVideoDownloadTaskData": {
       "document": "本地录像下载任务列表",
       "members": [
@@ -6645,6 +7912,387 @@
         }
       ],
       "type": "object"
+    },
+    "ListVideoSnapshotTemplateData": {
+      "document": "获取截图模板详情列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序参数</p>",
+          "example": "update_time",
+          "member": "string",
+          "name": "Sort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序顺序</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数目</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板列表</p>",
+          "example": "无",
+          "member": "VideoSnapshotTemplateInfo",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListVideoSnapshotTemplateRequest": {
+      "document": "ListVideoSnapshotTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "test2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图类型</p><p>枚举值：</p><ul><li>1： 实时截帧</li><li>2： 低频截帧</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序参数</p><p>默认值：update_time</p>",
+          "example": "update_time",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序顺序</p><p>枚举值：</p><ul><li>desc： 降序</li><li>asc： 生序</li></ul><p>默认值：desc</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数目</p><p>默认值：20</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVideoSnapshotTemplateResponse": {
+      "document": "ListVideoSnapshotTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板结果列表</p>",
+          "example": "无",
+          "member": "ListVideoSnapshotTemplateData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVLPlanRequest": {
+      "document": "ModifyVLPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划 ID</p>",
+          "example": "VP6d24c8b1157d4894b7c74a1ef30cf6a2",
+          "member": "string",
+          "name": "VLPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新计划名称</p>",
+          "example": "明厨亮灶识别计划",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新计划描述</p>",
+          "example": "明厨亮灶识别",
+          "member": "string",
+          "name": "Describe",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新关联视觉理解模板 ID</p>",
+          "example": "VTa911*************************6c2",
+          "member": "string",
+          "name": "VLTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新存储天数，范围 [7, 1080]，0 表示不修改</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "FileExpires",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新回调配置</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVLPlanResponse": {
+      "document": "ModifyVLPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>视觉理解计划信息</p>",
+          "example": "无",
+          "member": "VLPlanInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVideoSnapshotConfigRequest": {
+      "document": "ModifyVideoSnapshotConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置Id</p>",
+          "example": "b8a************9****************fd74",
+          "member": "string",
+          "name": "ConfigId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图配置名称</p><p>入参限制：中文、英文、数字、“-”、“_” 长度不超过128个字符</p>",
+          "example": "截图配置1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "144d81a1-70a4-4d30-a82a-0793ed07f3d3",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片文件的热存储天数</p><p>枚举值：</p><ul><li>7： 7天</li><li>15： 15天</li><li>30： 30天</li><li>60： 60天</li><li>90： 90天</li><li>180： 180天</li><li>270： 270天</li><li>360： 360天</li><li>540： 540天</li><li>720： 720天</li><li>900： 900天</li><li>1080： 1080天</li></ul>",
+          "example": "15",
+          "member": "int64",
+          "name": "FileExpires",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVideoSnapshotConfigResponse": {
+      "document": "ModifyVideoSnapshotConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置信息</p>",
+          "example": "无",
+          "member": "VideoSnapshotConfigInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MultiSnapshotMode": {
+      "document": "多张截图模式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用多张模式</p><p>false时为单张模式，忽略Interval、Total参数</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧间隔</p><p>取值范围：[10, 600]</p><p>单位：秒</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧张数</p><p>取值范围：[1, 10]</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "MultiVideoSnapshotMode": {
+      "document": "多张模式参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用多张模式， false时，为单张模式，忽略Interval、Total参数</p><p>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧间隔</p><p>取值范围：[10, 600]</p><p>单位：秒</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧张数</p><p>取值范围：[1, 10]</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "OrganizationChannelInfo": {
       "document": "组织目录下的通道信息",
@@ -9088,12 +10736,486 @@
       ],
       "type": "object"
     },
+    "VLPlanInfo": {
+      "document": "视觉理解计划信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>计划ID</p>",
+          "example": "VP2b46972************c199aec9108c5",
+          "member": "string",
+          "name": "VLPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划名称</p>",
+          "example": "明厨亮灶识别计划-new",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划描述</p>",
+          "example": "明厨亮灶识别",
+          "member": "string",
+          "name": "Describe",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视觉理解模板ID</p>",
+          "example": "VTa911ee**************706519c126c2",
+          "member": "string",
+          "name": "VLTemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调通知配置</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件过期时间（秒）</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "FileExpires",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划包含的通道数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "ChannelCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-07-30 16:02:22",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间</p>",
+          "example": "2026-07-30 16:02:22",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VLPlanResultDetailInfo": {
+      "document": "视觉理解计划结果详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果 ID</p>",
+          "example": "49be118*************0bd-340faaaf4e15",
+          "member": "string",
+          "name": "VLPlanResultId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>媒体类型，当前固定为 image</p>",
+          "example": "image",
+          "member": "string",
+          "name": "MediaType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属分析计划 ID</p>",
+          "example": "VP7219c6****************0189f136f1",
+          "member": "string",
+          "name": "VLPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划名称</p>",
+          "example": "明厨亮灶识别计划",
+          "member": "string",
+          "name": "VLPlanName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID</p>",
+          "example": "C3B***VXG4",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道名称</p>",
+          "example": "多场景AI识别",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备 ID</p>",
+          "example": "a67241c9*************5c-754765a0f863",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备名称</p>",
+          "example": "多场景AI识别",
+          "member": "string",
+          "name": "DeviceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属组织 ID</p>",
+          "example": "47316",
+          "member": "string",
+          "name": "OrganizationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属组织名称</p>",
+          "example": "AI场景计划测试",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析时间戳（秒）</p>",
+          "example": "1785160490",
+          "member": "int64",
+          "name": "VLResultTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片模式截图时间戳（秒）</p>",
+          "example": "1785160490",
+          "member": "int64",
+          "name": "SnapshotTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频片段开始时间戳（秒）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoStartTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频片段结束时间戳（秒）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoEndTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频模式计费帧数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BilledFrameCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 分析结果内容（JSON 字符串）</p>",
+          "example": "{\"total_staff\":0,\"hat\":{\"compliant\":0,\"non_compliant\":0,\"not_wearing\":0},\"mask\":{\"compliant\":0,\"non_compliant\":0,\"not_wearing\":0}}",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图临时下载 URL（有效期 300 秒）</p>",
+          "example": "https://**************************************************",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图 URL 有效期（秒）</p>",
+          "example": "300",
+          "member": "int64",
+          "name": "ImageUrlExpire",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-07-27 21:54:53",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-07-27 21:54:53",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VLPlanResultSnapshotImageUrlInfo": {
+      "document": "视觉理解计划源素材 URL 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果 ID</p>",
+          "example": "result-id-1",
+          "member": "string",
+          "name": "VLPlanResultId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源素材下载 URL（失败时为空）</p>",
+          "example": "https://example.com/snapshot.jpg",
+          "member": "string",
+          "name": "SourceFileURL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL 有效期（秒，失败时为 0）</p>",
+          "example": "3000",
+          "member": "int64",
+          "name": "Expire",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息（失败时有值）</p>",
+          "example": "图片不存在",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VLTemplateInfo": {
+      "document": "视觉理解模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模板ID</p>",
+          "example": "VT554a*************************e38",
+          "member": "string",
+          "name": "VLTemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 模型</p><p>枚举值：</p><ul><li>IVC-G： 视图默认大模型</li></ul>",
+          "example": "IVC-G",
+          "member": "string",
+          "name": "AIModel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI场景名称</p>",
+          "example": "明厨亮灶识别模板",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI场景描述</p>",
+          "example": "厨师帽和口罩识别",
+          "member": "string",
+          "name": "Describe",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词</p>",
+          "example": "识别图片中有什么",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析模式</p><p>枚举值：</p><ul><li>image： 图片模式</li><li>video： 视频模式</li></ul>",
+          "example": "image",
+          "member": "string",
+          "name": "AnalysisMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片场景配置</p>",
+          "example": "无",
+          "member": "ImageSceneInfo",
+          "name": "ImageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时段列表</p>",
+          "example": "无",
+          "member": "EffectiveTime",
+          "name": "Times",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-07-28 15:34:51",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间</p>",
+          "example": "2026-07-28 15:34:51",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否关联到视觉理解计划</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUsed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频场景配置</p>",
+          "example": "无",
+          "member": "VideoSceneInfo",
+          "name": "VideoConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VideoDownloadTask": {
       "document": "本地录像下载任务",
       "members": [
         {
           "disabled": false,
-          "document": "下载任务 ID",
+          "document": "<p>下载任务 ID</p>",
           "example": "uuid",
           "member": "string",
           "name": "DownloadTaskId",
@@ -9103,7 +11225,7 @@
         },
         {
           "disabled": false,
-          "document": "通道 ID",
+          "document": "<p>通道 ID</p>",
           "example": "uuid",
           "member": "string",
           "name": "ChannelId",
@@ -9113,7 +11235,7 @@
         },
         {
           "disabled": false,
-          "document": "通道名称",
+          "document": "<p>通道名称</p>",
           "example": "通道1",
           "member": "string",
           "name": "ChannelName",
@@ -9123,7 +11245,7 @@
         },
         {
           "disabled": false,
-          "document": "通道编码",
+          "document": "<p>通道编码</p>",
           "example": "通道编码1",
           "member": "string",
           "name": "ChannelCode",
@@ -9133,7 +11255,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "设备名称1",
           "member": "string",
           "name": "DeviceName",
@@ -9143,7 +11265,7 @@
         },
         {
           "disabled": false,
-          "document": "设备编码",
+          "document": "<p>设备编码</p>",
           "example": "设备编码1",
           "member": "string",
           "name": "DeviceCode",
@@ -9153,7 +11275,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态（0：未执行；1：执行中；2 任务完成；\n3：任务失败）",
+          "document": "<p>任务状态（0：未执行；1：执行中；2 任务完成；<br>3：任务失败）</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -9163,7 +11285,7 @@
         },
         {
           "disabled": false,
-          "document": "下载录像时间段",
+          "document": "<p>下载录像时间段</p>",
           "example": "2024-09-08 14:30:00-2024-09-08 15:30:00",
           "member": "string",
           "name": "VideoTimeSection",
@@ -9173,7 +11295,7 @@
         },
         {
           "disabled": false,
-          "document": "倍速",
+          "document": "<p>倍速</p>",
           "example": "1",
           "member": "int64",
           "name": "Scale",
@@ -9183,7 +11305,7 @@
         },
         {
           "disabled": false,
-          "document": "下载时长",
+          "document": "<p>下载时长</p><p>单位：秒</p>",
           "example": "7200",
           "member": "int64",
           "name": "DownloadTime",
@@ -9193,7 +11315,7 @@
         },
         {
           "disabled": false,
-          "document": "录像大小",
+          "document": "<p>录像大小</p><p>单位：字节（Byte）</p>",
           "example": "182918912",
           "member": "int64",
           "name": "VideoSize",
@@ -9203,7 +11325,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始时间",
+          "document": "<p>任务开始时间</p>",
           "example": "2024-09-08 14:30:00",
           "member": "string",
           "name": "StartTime",
@@ -9213,7 +11335,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间",
+          "document": "<p>任务结束时间</p>",
           "example": "2024-09-08 15:30:00",
           "member": "string",
           "name": "EndTime",
@@ -9223,7 +11345,7 @@
         },
         {
           "disabled": false,
-          "document": "文件下载地址",
+          "document": "<p>文件下载地址</p>",
           "example": "https://domain/vds/******.mp4",
           "member": "string",
           "name": "FileDownloadUrl",
@@ -9233,7 +11355,7 @@
         },
         {
           "disabled": false,
-          "document": "失败原因",
+          "document": "<p>失败原因</p>",
           "example": "下载失败",
           "member": "string",
           "name": "FailedReason",
@@ -9243,7 +11365,7 @@
         },
         {
           "disabled": false,
-          "document": "生命周期规则，热存天数",
+          "document": "<p>生命周期规则，热存天数</p>",
           "example": "7",
           "member": "int64",
           "name": "Expire",
@@ -9253,7 +11375,7 @@
         },
         {
           "disabled": false,
-          "document": "mp4预览地址",
+          "document": "<p>mp4预览地址</p>",
           "example": "https://{userdomain}/ddd",
           "member": "string",
           "name": "PreviewUrl",
@@ -9273,6 +11395,247 @@
           "example": "uuid",
           "member": "string",
           "name": "DownloadTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoSceneInfo": {
+      "document": "视频场景配置（预留）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析间隔（秒）：每隔多少秒触发一次分析（滑动步长）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析片段时长（秒）：单次送入模型的视频窗口长度，范围 [5, 12800]</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>抽帧率，默认 1，范围 [0.1, 1]，每隔 1/Fps 秒抽 1 帧送模型</p>",
+          "example": "1",
+          "member": "float",
+          "name": "Fps",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoSnapshotConfigInfo": {
+      "document": "截图配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图配置Id</p>",
+          "example": "f04418*****3***************21df8a75d",
+          "member": "string",
+          "name": "ConfigId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图配置名称</p>",
+          "example": "截图配置",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "bbb7a**********************2d798077f",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板名称</p>",
+          "example": "实时截帧模板1600_1620",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图类型</p><p>枚举值：</p><ul><li>1： 实时截帧</li><li>2： 低频截帧</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>图片存储天数</p><p>单位：天</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "FileExpires",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调配置</p>",
+          "example": "无",
+          "member": "CallbackURL",
+          "name": "Callback",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图配置关联的通道数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RelatedChannelCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-01-27 17:00:03",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间</p>",
+          "example": "2026-01-27 17:00:03",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VideoSnapshotTemplateInfo": {
+      "document": "截图模板信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>截图模板Id</p>",
+          "example": "dccf7**********************e5cc292e2",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图模板名称</p>",
+          "example": "xy-allday",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图类型</p><p>枚举值：</p><ul><li>1： 实时截帧</li><li>2： 低频截帧</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截帧频率</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Interval",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多张模式</p>",
+          "example": "无",
+          "member": "MultiVideoSnapshotMode",
+          "name": "MultiMode",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时段</p>",
+          "example": "无",
+          "member": "EffectiveTime",
+          "name": "Times",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板关联的配置数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RelatedConfigCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-01-28 20:11:48",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次更新时间</p>",
+          "example": "2026-01-28 20:11:48",
+          "member": "string",
+          "name": "UpdateTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

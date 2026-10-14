@@ -1512,7 +1512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "采集配置名称",
+          "document": "<p>采集配置名称</p>",
           "example": "testnew",
           "member": "string",
           "name": "TargetName",
@@ -1523,7 +1523,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间列表，包括Include包含和Exclude不包含选项，两者都为空时等同于全部命名空间(包含当前所有的以及未来创建的)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>命名空间列表，包括Include包含和Exclude不包含选项，两者都为空时等同于全部命名空间(包含当前所有的以及未来创建的)。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Namespaces",
           "name": "Namespaces",
@@ -1534,7 +1534,7 @@
         },
         {
           "disabled": false,
-          "document": "Pod标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Pod标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PodLabel",
           "name": "PodLabels",
@@ -1545,7 +1545,7 @@
         },
         {
           "disabled": false,
-          "document": "容器名称，支持小写字母、数字、连接符-、下划线_，最多支持63个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>容器名称，支持小写字母、数字、连接符-、下划线_，最多支持63个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nginx",
           "member": "string",
           "name": "ContainerName",
@@ -1556,7 +1556,7 @@
         },
         {
           "disabled": false,
-          "document": "ES索引名称前缀，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称的前缀，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ES索引名称前缀，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称的前缀，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "nginx",
           "member": "string",
           "name": "IndexPrefix",
@@ -1567,7 +1567,7 @@
         },
         {
           "disabled": false,
-          "document": "日志内容过滤，以逗号分隔，支持大小写字母、数字、连接符-、下划线_以及逗号，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志内容过滤，以逗号分隔，支持大小写字母、数字、连接符-、下划线_以及逗号，最多支持50个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "a,b",
           "member": "string",
           "name": "LogFilters",
@@ -1578,7 +1578,7 @@
         },
         {
           "disabled": false,
-          "document": "高级配置，可自定义采集规则，最多支持2048个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高级配置，可自定义采集规则，最多支持2048个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"xx12se\"\"",
           "member": "string",
           "name": "ConfigContent",
@@ -1589,7 +1589,7 @@
         },
         {
           "disabled": false,
-          "document": "Ckafka实例的Topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Ckafka实例的Topic</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_topic",
           "member": "string",
           "name": "KafkaTopic",
@@ -1600,7 +1600,7 @@
         },
         {
           "disabled": false,
-          "document": "ES索引名称，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>ES索引名称，如果当前采集配置下的容器日志输出到ES集群，则使用该字段作为ES索引名称，支持大小写字母、数字、连接符-、下划线_，最多支持50个字符</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "niginx",
           "member": "string",
           "name": "IndexAlias",
@@ -1611,7 +1611,7 @@
         },
         {
           "disabled": false,
-          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>/</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "container",
           "member": "string",
           "name": "InputType",
@@ -1622,7 +1622,7 @@
         },
         {
           "disabled": false,
-          "document": "日志采集host路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志采集host路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/var/log",
           "member": "string",
           "name": "InputPath",
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "inputs.tail_files\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>inputs.tail_files</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "InputsTailFiles",
@@ -1641,6 +1641,72 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关inputs.multitline</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InputsMultiLineEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>inputs.multiline.type</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pattern",
+          "member": "string",
+          "name": "InputsMultiLineType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>inputs.multiline.pattern</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "^\\\\d{4}-\\\\d{2}-\\\\d{2}",
+          "member": "string",
+          "name": "InputsMultiLinePattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>inputs.multiline.negate</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "InputsMultiLineNegate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>inputs.multiline.match</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "after",
+          "member": "string",
+          "name": "InputsMultiLineMatch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>按空间采集时 tke 的采集类型，默认为 container，支持 container、filestream</p>",
+          "example": "container",
+          "member": "string",
+          "name": "TkeCollectType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5038,7 +5104,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例所属可用区，不传则默认所有可用区",
+          "document": "<p>集群实例所属可用区，不传则默认所有可用区</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -5047,8 +5113,8 @@
         },
         {
           "disabled": false,
-          "document": "集群实例ID列表",
-          "example": "es-abcdefgh",
+          "document": "<p>集群实例ID列表</p>",
+          "example": "[\"es-rpqno2ch\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -5056,8 +5122,8 @@
         },
         {
           "disabled": false,
-          "document": "集群实例名称列表",
-          "example": "testnew",
+          "document": "<p>集群实例名称列表</p>",
+          "example": "[\"testnew\"]",
           "member": "string",
           "name": "InstanceNames",
           "required": false,
@@ -5065,7 +5131,7 @@
         },
         {
           "disabled": false,
-          "document": "分页起始值, 默认值0",
+          "document": "<p>分页起始值, 默认值0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5074,7 +5140,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认值20",
+          "document": "<p>分页大小，默认值20</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -5083,7 +5149,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序",
+          "document": "<p>排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序</p>",
           "example": "1",
           "member": "uint64",
           "name": "OrderByKey",
@@ -5092,7 +5158,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序",
+          "document": "<p>排序方式<li>0：升序</li><li>1：降序</li>若传递了orderByKey未传递orderByType, 则默认升序</p>",
           "example": "0",
           "member": "uint64",
           "name": "OrderByType",
@@ -5101,7 +5167,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签信息列表",
+          "document": "<p>节点标签信息列表</p>",
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
@@ -5110,8 +5176,8 @@
         },
         {
           "disabled": false,
-          "document": "私有网络vip列表",
-          "example": "10.2.3.4",
+          "document": "<p>私有网络vip列表</p>",
+          "example": "[\"10.2.3.4\"]",
           "member": "string",
           "name": "IpList",
           "required": false,
@@ -5119,8 +5185,17 @@
         },
         {
           "disabled": false,
-          "document": "可用区列表",
-          "example": "ap-guangzhou-3",
+          "document": "<p>集群节点IP列表</p>",
+          "example": "[\"10.0.255.248\"]",
+          "member": "string",
+          "name": "NodeIps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区列表</p>",
+          "example": "[\"ap-guangzhou-3\"]",
           "member": "string",
           "name": "ZoneList",
           "required": false,
@@ -5128,8 +5203,8 @@
         },
         {
           "disabled": false,
-          "document": "健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知",
-          "example": "0",
+          "document": "<p>健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知</p>",
+          "example": "[0]",
           "member": "int64",
           "name": "HealthStatus",
           "required": false,
@@ -5137,8 +5212,8 @@
         },
         {
           "disabled": false,
-          "document": "Vpc列表 筛选项",
-          "example": "vpc-gz5fa86l",
+          "document": "<p>Vpc列表 筛选项</p>",
+          "example": "[\"vpc-gz5fa86l\"]",
           "member": "string",
           "name": "VpcIds",
           "required": false,
@@ -5146,7 +5221,7 @@
         },
         {
           "disabled": false,
-          "document": "cdc集群id",
+          "document": "<p>cdc集群id</p>",
           "example": "cluster-262n63e8",
           "member": "string",
           "name": "CdcId",
@@ -5161,7 +5236,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回的实例个数",
+          "document": "<p>返回的实例个数</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -5171,8 +5246,8 @@
         },
         {
           "disabled": false,
-          "document": "实例详细信息列表",
-          "example": "[{}]",
+          "document": "<p>实例详细信息列表</p>",
+          "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceList",
           "output_required": true,
@@ -7938,6 +8013,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>事件范围</p><p>枚举值：</p><ul><li>0： 实例级</li><li>1： 账号级</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EventScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8150,6 +8235,78 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FamilyResourceStat": {
+      "document": "机型族下单个机型族的资源可用性明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>机型族，如 &quot;SA5&quot;</p>",
+          "example": "MA2",
+          "member": "string",
+          "name": "InsFamily",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CVM资源是否有货</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CvmAvailable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘资源是否有货</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SysDiskAvailable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该盘型数据盘资源是否有货</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DiskAvailable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>三类资源是否全部有货(可直接购买)</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Purchasable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缺少的资源，取值 CVM/SYSDISK/DISK；为空表示不缺</p>",
+          "example": "[\"CVM\"]",
+          "member": "string",
+          "name": "MissingResources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -11135,7 +11292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格名称",
+          "document": "<p>规格名称</p>",
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "NodeTypeName",
@@ -11145,7 +11302,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可售",
+          "document": "<p>是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "Available",
@@ -11155,7 +11312,7 @@
         },
         {
           "disabled": false,
-          "document": "规格信息",
+          "document": "<p>规格信息</p>",
           "example": "无",
           "member": "NodeTypeInfo",
           "name": "NodeTypeInfo",
@@ -11165,7 +11322,7 @@
         },
         {
           "disabled": false,
-          "document": "SSD盘是否可售",
+          "document": "<p>SSD盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "SsdAvailable",
@@ -11175,7 +11332,7 @@
         },
         {
           "disabled": false,
-          "document": "SSD磁盘取值范围",
+          "document": "<p>SSD磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "SsdDiskSizeRange",
@@ -11185,7 +11342,17 @@
         },
         {
           "disabled": false,
-          "document": "SATA盘是否可售",
+          "document": "<p>SSD云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "SsdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SATA盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "SataAvailable",
@@ -11195,7 +11362,7 @@
         },
         {
           "disabled": false,
-          "document": "SATA磁盘取值范围",
+          "document": "<p>SATA磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "SataDiskSizeRange",
@@ -11205,7 +11372,7 @@
         },
         {
           "disabled": false,
-          "document": "SSD机型售罄原因",
+          "document": "<p>SSD机型售罄原因</p>",
           "example": "缺货",
           "member": "string",
           "name": "SsdSoldOutReason",
@@ -11215,7 +11382,7 @@
         },
         {
           "disabled": false,
-          "document": "SATA机型售罄原因",
+          "document": "<p>SATA机型售罄原因</p>",
           "example": "缺货",
           "member": "string",
           "name": "SataSoldOutReason",
@@ -11225,7 +11392,17 @@
         },
         {
           "disabled": false,
-          "document": "本地盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高性能云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "SataSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本地盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LocalDiskInfo",
           "name": "LocalDiskInfo",
@@ -11235,7 +11412,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘块数取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>云盘块数取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskCountRange",
           "name": "DiskCountRange",
@@ -11245,7 +11422,7 @@
         },
         {
           "disabled": false,
-          "document": "增强型SSD是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>增强型SSD是否可用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "HSsdAvailable",
@@ -11255,7 +11432,7 @@
         },
         {
           "disabled": false,
-          "document": "增强型SSD机型售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>增强型SSD机型售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "缺货",
           "member": "string",
           "name": "HSsdSoldOutReason",
@@ -11265,7 +11442,17 @@
         },
         {
           "disabled": false,
-          "document": "增强型SSD磁盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>增强型SSD售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "HSsdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>增强型SSD磁盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "HSsdDiskSizeRange",
@@ -11275,7 +11462,7 @@
         },
         {
           "disabled": false,
-          "document": "吞吐型云盘是否可用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>吞吐型云盘是否可用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ThroughputAvailable",
@@ -11285,7 +11472,7 @@
         },
         {
           "disabled": false,
-          "document": "吞吐型云盘售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>吞吐型云盘售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "缺货",
           "member": "string",
           "name": "ThroughputSoldOutReason",
@@ -11295,7 +11482,17 @@
         },
         {
           "disabled": false,
-          "document": "吞吐型云盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>吞吐型云硬盘售罄</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "ThroughputSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>吞吐型云盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "ThroughputDiskSizeRange",
@@ -11305,7 +11502,7 @@
         },
         {
           "disabled": false,
-          "document": "BigData盘是否可售\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BigData盘是否可售</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "BigDataAvailable",
@@ -11315,7 +11512,7 @@
         },
         {
           "disabled": false,
-          "document": "BigData盘售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>BigData盘售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "缺货",
           "member": "string",
           "name": "BigDataSoldOutReason",
@@ -11325,7 +11522,17 @@
         },
         {
           "disabled": false,
-          "document": "BigData磁盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>大数据型云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "BigDataSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>BigData磁盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "BigDataDiskSizeRange",
@@ -11335,7 +11542,7 @@
         },
         {
           "disabled": false,
-          "document": "HighIO盘是否可售\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HighIO盘是否可售</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "HighIOAvailable",
@@ -11345,7 +11552,7 @@
         },
         {
           "disabled": false,
-          "document": "HighIO盘售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>HighIO盘售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "缺货",
           "member": "string",
           "name": "HighIOSoldOutReason",
@@ -11355,7 +11562,17 @@
         },
         {
           "disabled": false,
-          "document": "HighIO磁盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高IO型云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "HighIOSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>HighIO磁盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "HighIODiskSizeRange",
@@ -11365,7 +11582,7 @@
         },
         {
           "disabled": false,
-          "document": "Bssd盘是否可售\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bssd盘是否可售</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "BssdAvailable",
@@ -11375,7 +11592,7 @@
         },
         {
           "disabled": false,
-          "document": "Bssd盘售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bssd盘售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "缺货",
           "member": "string",
           "name": "BssdSoldOutReason",
@@ -11385,7 +11602,7 @@
         },
         {
           "disabled": false,
-          "document": "Bssd盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bssd盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "BssdDiskSizeRange",
@@ -11395,7 +11612,17 @@
         },
         {
           "disabled": false,
-          "document": "GpuInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>通用型SSD云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "BssdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>GpuInfo</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GpuInfo",
           "name": "GpuInfo",
@@ -12539,7 +12766,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格名称",
+          "document": "<p>规格名称</p>",
           "example": "node-xxx",
           "member": "string",
           "name": "NodeTypeName",
@@ -12549,7 +12776,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可售",
+          "document": "<p>是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "Available",
@@ -12559,7 +12786,7 @@
         },
         {
           "disabled": false,
-          "document": "规格信息",
+          "document": "<p>规格信息</p>",
           "example": "无",
           "member": "NodeTypeInfo",
           "name": "NodeTypeInfo",
@@ -12569,7 +12796,7 @@
         },
         {
           "disabled": false,
-          "document": "SSD盘是否可售",
+          "document": "<p>SSD盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "SsdAvailable",
@@ -12579,7 +12806,7 @@
         },
         {
           "disabled": false,
-          "document": "SSD磁盘取值范围",
+          "document": "<p>SSD磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "SsdDiskSizeRange",
@@ -12589,27 +12816,7 @@
         },
         {
           "disabled": false,
-          "document": "SATA盘是否可售",
-          "example": "true",
-          "member": "bool",
-          "name": "SataAvailable",
-          "output_required": true,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "SATA磁盘取值范围",
-          "example": "无",
-          "member": "DiskSizeRange",
-          "name": "SataDiskSizeRange",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "SSD机型售罄原因",
+          "document": "<p>SSD机型售罄原因</p>",
           "example": "缺货",
           "member": "string",
           "name": "SsdSoldOutReason",
@@ -12619,7 +12826,37 @@
         },
         {
           "disabled": false,
-          "document": "SATA机型售罄原因",
+          "document": "<p>SSD云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "SsdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SATA盘是否可售</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SataAvailable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SATA磁盘取值范围</p>",
+          "example": "无",
+          "member": "DiskSizeRange",
+          "name": "SataDiskSizeRange",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SATA机型售罄原因</p>",
           "example": "缺货",
           "member": "string",
           "name": "SataSoldOutReason",
@@ -12629,7 +12866,17 @@
         },
         {
           "disabled": false,
-          "document": "本地盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高性能云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "SataSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本地盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LocalDiskInfo",
           "name": "LocalDiskInfo",
@@ -12639,7 +12886,7 @@
         },
         {
           "disabled": false,
-          "document": "云盘块数取值范围",
+          "document": "<p>云盘块数取值范围</p>",
           "example": "无",
           "member": "DiskCountRange",
           "name": "DiskCountRange",
@@ -12649,7 +12896,7 @@
         },
         {
           "disabled": false,
-          "document": "HSSD盘是否可售",
+          "document": "<p>HSSD盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "HSsdAvailable",
@@ -12659,17 +12906,7 @@
         },
         {
           "disabled": false,
-          "document": "HSSD机型售罄原因",
-          "example": "缺货",
-          "member": "string",
-          "name": "HSsdSoldOutReason",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "HSSD磁盘取值范围",
+          "document": "<p>HSSD磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "HSsdDiskSizeRange",
@@ -12679,7 +12916,27 @@
         },
         {
           "disabled": false,
-          "document": "Throughput盘是否可售",
+          "document": "<p>HSSD机型售罄原因</p>",
+          "example": "缺货",
+          "member": "string",
+          "name": "HSsdSoldOutReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>增强型SSD售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "HSsdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Throughput盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "ThroughputAvailable",
@@ -12689,17 +12946,7 @@
         },
         {
           "disabled": false,
-          "document": "Throughput机型售罄原因",
-          "example": "缺货",
-          "member": "string",
-          "name": "ThroughputSoldOutReason",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Throughput磁盘取值范围",
+          "document": "<p>Throughput磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "ThroughputDiskSizeRange",
@@ -12709,7 +12956,27 @@
         },
         {
           "disabled": false,
-          "document": "BigData盘是否可售",
+          "document": "<p>Throughput机型售罄原因</p>",
+          "example": "缺货",
+          "member": "string",
+          "name": "ThroughputSoldOutReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>吞吐型云硬盘售罄</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "ThroughputSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>BigData盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "BigDataAvailable",
@@ -12719,17 +12986,7 @@
         },
         {
           "disabled": false,
-          "document": "BigData盘售罄原因",
-          "example": "缺货",
-          "member": "string",
-          "name": "BigDataSoldOutReason",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "BigData磁盘取值范围",
+          "document": "<p>BigData磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "BigDataDiskSizeRange",
@@ -12739,7 +12996,27 @@
         },
         {
           "disabled": false,
-          "document": "HighIO盘是否可售",
+          "document": "<p>BigData盘售罄原因</p>",
+          "example": "缺货",
+          "member": "string",
+          "name": "BigDataSoldOutReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大数据型云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "BigDataSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>HighIO盘是否可售</p>",
           "example": "true",
           "member": "bool",
           "name": "HighIOAvailable",
@@ -12749,7 +13026,7 @@
         },
         {
           "disabled": false,
-          "document": "HighIO盘售罄原因",
+          "document": "<p>HighIO盘售罄原因</p>",
           "example": "缺货",
           "member": "string",
           "name": "HighIOSoldOutReason",
@@ -12759,7 +13036,7 @@
         },
         {
           "disabled": false,
-          "document": "HighIO磁盘取值范围",
+          "document": "<p>HighIO磁盘取值范围</p>",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "HighIODiskSizeRange",
@@ -12769,7 +13046,17 @@
         },
         {
           "disabled": false,
-          "document": "Bssd盘是否可售\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>高IO型云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "HighIOSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Bssd盘是否可售</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "BssdAvailable",
@@ -12779,17 +13066,7 @@
         },
         {
           "disabled": false,
-          "document": "Bssd盘售罄原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "缺货",
-          "member": "string",
-          "name": "BssdSoldOutReason",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "Bssd盘取值范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bssd盘取值范围</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DiskSizeRange",
           "name": "BssdDiskSizeRange",
@@ -12799,7 +13076,27 @@
         },
         {
           "disabled": false,
-          "document": "节点Gpu信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Bssd盘售罄原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "缺货",
+          "member": "string",
+          "name": "BssdSoldOutReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用型SSD云硬盘售罄明细</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FamilyResourceStat",
+          "name": "BssdSoldOutDetail",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点Gpu信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GpuInfo",
           "name": "GpuInfo",
@@ -13886,7 +14183,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -13895,7 +14192,7 @@
         },
         {
           "disabled": false,
-          "document": "是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false",
+          "document": "<p>是否强制重启<li>true：强制重启</li><li>false：不强制重启</li>默认false</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceRestart",
@@ -13904,7 +14201,7 @@
         },
         {
           "disabled": false,
-          "document": "重启模式：0 滚动重启； 1 全量重启",
+          "document": "<p>重启模式：0 滚动重启； 1 全量重启</p>",
           "example": "0",
           "member": "int64",
           "name": "RestartMode",
@@ -13913,7 +14210,7 @@
         },
         {
           "disabled": false,
-          "document": "重启时选择是否升级内核patch版本",
+          "document": "<p>重启时选择是否升级内核patch版本</p>",
           "example": "false",
           "member": "bool",
           "name": "UpgradeKernel",

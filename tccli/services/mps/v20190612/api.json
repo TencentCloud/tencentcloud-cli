@@ -10691,7 +10691,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>音频编辑类型</p><p>枚举值：</p><ul><li>restore： 修复</li></ul><p>默认值：restore</p>",
+          "document": "<p>音频编辑类型</p><p>枚举值：</p><ul><li>restore： 修复</li></ul><p>开关开启时，必须显式指定枚举值</p>",
           "example": "restore",
           "member": "string",
           "name": "Type",
@@ -14256,7 +14256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan，<br>Hailuo，<br>Kling，<br>Vidu，<br>PixVerse，<br>Mingmou，<br>H2。</p>",
+          "document": "<p>模型名称。<br>当前支持的模型列表:<br>Hunyuan，<br>wand-vega-video，<br>Hailuo，<br>Kling，<br>Vidu，<br>PixVerse，<br>Mingmou，<br>H2。</p>",
           "example": "Hunyuan",
           "member": "string",
           "name": "ModelName",
@@ -14265,7 +14265,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hunyuan，可选 [1.5]。</li><li>Hailuo，可选 [02、2.3、2.3-fast]。</li><li>Kling，可选 [1.6、2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu，可选 [q2、q2-pro、q2-turbo、q3-pro、q3-turbo、q3、q3-mix]。</li><li>PixVerse，可选 [v5.6、v6、c1]。</li><li>H2，可选 [1.0]。</li></ol>",
+          "document": "<p>指定模型特定版本号。默认使用系统当前所支持的模型稳定版本。</p><ol><li>Hunyuan，可选 [1.5]。</li><li>wand-vega-video, 可选[1.0-lite]。</li><li>Hailuo，可选 [02、2.3、2.3-fast]。</li><li>Kling，可选 [1.6、2.0、2.1、2.5、O1、2.6、3.0、3.0-Omni]。</li><li>Vidu，可选 [q2、q2-pro、q2-turbo、q3-pro、q3-turbo、q3、q3-mix]。</li><li>PixVerse，可选 [v5.6、v6、c1]。</li><li>H2，可选 [1.0]。</li></ol>",
           "example": "1.5",
           "member": "string",
           "name": "ModelVersion",
@@ -14319,7 +14319,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>Kling，2.0、O1、3.0、3.0-Omni 支持首尾帧。</li><li>Kling，1.6、2.1、2.5、2.6 在 Resolution:1080P 的情况下支持首尾帧。</li><li>Vidu，q2-pro、q2-turbo、q3-pro、q3-turbo 支持首尾帧。</li><li>PixVerse，v5.6、v6、c1 支持首尾帧。</li><li>Hailuo，02 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>",
+          "document": "<p>模型将以此参数传入的图片作为尾帧画面来生成视频。<br>支持此参数的模型：</p><ol><li>Kling，2.0、O1、3.0、3.0-Omni 支持首尾帧。</li><li>Kling，1.6、2.1、2.5、2.6 在 Resolution:1080P 的情况下支持首尾帧。</li><li>Vidu，q2-pro、q2-turbo、q3-pro、q3-turbo 支持首尾帧。</li><li>PixVerse，v5.6、v6、c1 支持首尾帧。</li><li>Hailuo，02 支持首尾帧。</li><li>wand-vega-video，1.0-lite 支持首尾帧。</li></ol><p>注意：</p><ol><li>推荐图片大小不超过10M，各模型限制不同。</li><li>支持的图片格式：jpeg、png。</li></ol>",
           "example": "https://aigc-xxx-image-1303333058.cos.ap-guangzhou.myqcloud.com/xxx_8655.png",
           "member": "string",
           "name": "LastImageUrl",
@@ -14328,7 +14328,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>包含多张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>Vidu，q2、q2-pro、q3-turbo、q3、q3-mix 支持多图参考生视频。支持上传 1-7 张图片，可通过 ImageInfos 里面的 ReferenceType 作为主体 id 来传入。</li><li>Kling，O1、3.0-Omni、1.6 支持多图参考生视频。<ol><li>Kling 1.6 支持上传 1-4 张图片。</li><li>Kling O1、3.0-Omni 支持上传 1-7 张图片。当有参考视频时，支持上传 0-4 张图片。</li></ol></li><li>PixVerse，v5.6、v6、c1 支持多图参考生视频。支持上传 1-7 张图片，需要通过 ImageInfos 里面的 Text 字段传入图片名称。</li><li>H2，1.0 支持多图参数生视频。支持上传 1-9 张图片。当有参考视频时，支持上传 0-5 张图片。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>",
+          "document": "<p>包含多张素材资源图片的列表，用于描述模型在生成视频时要使用的资源图片。</p><p>支持多图输入的模型：</p><ol><li>Vidu，q2、q2-pro、q3-turbo、q3、q3-mix 支持多图参考生视频。支持上传 1-7 张图片，可通过 ImageInfos 里面的 ReferenceType 作为主体 id 来传入。</li><li>wand-vega-video，1.0-lite支持最多9张参考图。</li><li>Kling，O1、3.0-Omni、1.6 支持多图参考生视频。<ol><li>Kling 1.6 支持上传 1-4 张图片。</li><li>Kling O1、3.0-Omni 支持上传 1-7 张图片。当有参考视频时，支持上传 0-4 张图片。</li></ol></li><li>PixVerse，v5.6、v6、c1 支持多图参考生视频。支持上传 1-7 张图片，需要通过 ImageInfos 里面的 Text 字段传入图片名称。</li><li>H2，1.0 支持多图参数生视频。支持上传 1-9 张图片。当有参考视频时，支持上传 0-5 张图片。</li></ol><p>注意：</p><ol><li>图片大小不超过10M。</li><li>支持的图片格式：jpeg、png。</li></ol>",
           "example": "无",
           "member": "AigcVideoReferenceImageInfo",
           "name": "ImageInfos",
@@ -14364,7 +14364,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>生成视频的时长。<br>注意：</p><ol><li>Kling，默认：5 秒。<ul><li>O1 支持 3-10 秒。</li><li>3.0-Omni 支持 3-15 秒，当使用视频参考时只支持 3-10 秒。</li><li>3.0 支持 3-15 秒。</li><li>其他版本支持 5、10 秒。</li></ul></li><li>Hailuo 的 std 模式可支持 6、10 秒，其他仅 6 秒。默认：6 秒。</li><li>Vidu，默认：5 秒。<ul><li>q3-pro、q3-turbo、q3、q3-mix 支持 3-16 秒。</li><li>q2-pro、q2-turbo、q2 支持 1-10 秒。 </li></ul></li><li>PixVerse，默认：5 秒。<ul><li>v5.6 支持 5、8、10 秒。</li><li>v6、c1 支持 1-15 秒。</li></ul></li><li>H2，支持 3-15 秒，默认 ：5 秒。</li></ol>",
+          "document": "<p>生成视频的时长。<br>注意：</p><ol><li>Kling，默认：5 秒。<ul><li>O1 支持 3-10 秒。</li><li>3.0-Omni 支持 3-15 秒，当使用视频参考时只支持 3-10 秒。</li><li>3.0 支持 3-15 秒。</li><li>其他版本支持 5、10 秒。</li></ul></li><li>wand-vega-video, 1.0-lite支持：4-15秒。</li><li>Hailuo 的 std 模式可支持 6、10 秒，其他仅 6 秒。默认：6 秒。</li><li>Vidu，默认：5 秒。<ul><li>q3-pro、q3-turbo、q3、q3-mix 支持 3-16 秒。</li><li>q2-pro、q2-turbo、q2 支持 1-10 秒。 </li></ul></li><li>PixVerse，默认：5 秒。<ul><li>v5.6 支持 5、8、10 秒。</li><li>v6、c1 支持 1-15 秒。</li></ul></li><li>H2，支持 3-15 秒，默认 ：5 秒。</li></ol>",
           "example": "8",
           "member": "int64",
           "name": "Duration",
@@ -16879,7 +16879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体传输流ID。",
+          "document": "<p>媒体传输流ID。</p>",
           "example": "018f09cc50671eb401a6024fcabc",
           "member": "string",
           "name": "FlowId",
@@ -16888,7 +16888,7 @@
         },
         {
           "disabled": false,
-          "document": "流的输入组。",
+          "document": "<p>流的输入组。</p>",
           "example": "无",
           "member": "CreateInput",
           "name": "InputGroup",
@@ -16903,7 +16903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建的Flow信息。",
+          "document": "<p>创建的Flow信息。</p>",
           "example": "无",
           "member": "DescribeFlow",
           "name": "Info",
@@ -23374,8 +23374,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体传输事件ID。",
-          "example": "eventid",
+          "document": "<p>媒体传输事件ID。</p>",
+          "example": "019377034b0709dc0f3269ca3422",
           "member": "string",
           "name": "EventId",
           "required": true,
@@ -23389,7 +23389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体传输事件的配置信息。",
+          "document": "<p>媒体传输事件的配置信息。</p>",
           "example": "无",
           "member": "DescribeEvent",
           "name": "Info",
@@ -23411,7 +23411,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前页数，默认1。",
+          "document": "<p>当前页数，默认1。</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -23420,7 +23420,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小，默认10。",
+          "document": "<p>每页大小，默认10。</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -23435,7 +23435,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体传输事件的配置信息列表。",
+          "document": "<p>媒体传输事件的配置信息列表。</p>",
           "example": "无",
           "member": "DescribeEvent",
           "name": "Infos",
@@ -23445,7 +23445,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页数。",
+          "document": "<p>当前页数。</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -23455,7 +23455,7 @@
         },
         {
           "disabled": false,
-          "document": "每页大小。",
+          "document": "<p>每页大小。</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -23465,7 +23465,7 @@
         },
         {
           "disabled": false,
-          "document": "总数量。",
+          "document": "<p>总数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalNum",
@@ -23475,7 +23475,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数。",
+          "document": "<p>总页数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalPage",
@@ -26331,8 +26331,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作流 ID 过滤条件，数组长度限制：100。",
-          "example": "[\"78459\\n\"]",
+          "document": "<p>工作流 ID 过滤条件，数组长度限制：100。</p>",
+          "example": "[10001]",
           "member": "int64",
           "name": "WorkflowIds",
           "required": false,
@@ -26340,8 +26340,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流状态，取值范围：\n<li>Enabled：已启用，</li>\n<li>Disabled：已禁用。</li>\n不填此参数，则不区分工作流状态。",
-          "example": "“”",
+          "document": "<p>工作流状态，取值范围：</p><li>Enabled：已启用，</li><li>Disabled：已禁用。</li>不填此参数，则不区分工作流状态。",
+          "example": "Enabled",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -26349,7 +26349,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认值：0。",
+          "document": "<p>分页偏移量，默认值：0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -26358,7 +26358,7 @@
         },
         {
           "disabled": false,
-          "document": "返回记录条数，默认值：10，最大值：100。",
+          "document": "<p>返回记录条数，默认值：10，最大值：100。</p>",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -26373,7 +26373,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合过滤条件的记录总数。",
+          "document": "<p>符合过滤条件的记录总数。</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -26383,7 +26383,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流信息数组。",
+          "document": "<p>工作流信息数组。</p>",
           "example": "无",
           "member": "WorkflowInfo",
           "name": "WorkflowInfoSet",
@@ -26807,7 +26807,7 @@
         {
           "disabled": false,
           "document": "媒体传输安全组ID。",
-          "example": "无",
+          "example": "01888fa327251ea54",
           "member": "string",
           "name": "Id",
           "required": false,
@@ -38092,7 +38092,7 @@
           "example": "无",
           "member": "DescribeInput",
           "name": "Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

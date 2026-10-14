@@ -6127,7 +6127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群实例ID, \"cdwdoris-xxxx\" 字符串类型",
+          "document": "<p>集群实例ID, &quot;cdwdoris-xxxx&quot; 字符串类型</p>",
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -6137,7 +6137,7 @@
         },
         {
           "disabled": false,
-          "document": "集群实例名称",
+          "document": "<p>集群实例名称</p>",
           "example": "clickhouse集群",
           "member": "string",
           "name": "InstanceName",
@@ -6147,7 +6147,7 @@
         },
         {
           "disabled": false,
-          "document": "状态,\nInit  创建中\nServing   运行中\nIsolated   已隔离\nChanging  变更中",
+          "document": "<p>状态,<br>Init  创建中<br>Serving   运行中<br>Isolated   已隔离<br>Changing  变更中</p>",
           "example": "Serving",
           "member": "string",
           "name": "Status",
@@ -6157,7 +6157,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "<p>版本</p>",
           "example": "20.7.2.30",
           "member": "string",
           "name": "Version",
@@ -6167,7 +6167,7 @@
         },
         {
           "disabled": false,
-          "document": "地域, ap-guangzhou",
+          "document": "<p>地域, ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -6177,7 +6177,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区， ap-guangzhou-3",
+          "document": "<p>可用区， ap-guangzhou-3</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -6187,7 +6187,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络名称",
+          "document": "<p>私有网络名称</p>",
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -6197,7 +6197,7 @@
         },
         {
           "disabled": false,
-          "document": "子网名称",
+          "document": "<p>子网名称</p>",
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
@@ -6207,7 +6207,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型，\"hour\", \"prepay\"",
+          "document": "<p>付费类型，&quot;hour&quot;, &quot;prepay&quot;</p>",
           "example": "hour",
           "member": "string",
           "name": "PayMode",
@@ -6217,7 +6217,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2020-01-01 11:11:11",
           "member": "string",
           "name": "CreateTime",
@@ -6227,7 +6227,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间",
+          "document": "<p>过期时间</p>",
           "example": "2020-02-01 11:11:11",
           "member": "string",
           "name": "ExpireTime",
@@ -6237,7 +6237,7 @@
         },
         {
           "disabled": false,
-          "document": "数据节点描述信息",
+          "document": "<p>数据节点描述信息</p>",
           "example": "无",
           "member": "NodesSummary",
           "name": "MasterSummary",
@@ -6247,7 +6247,7 @@
         },
         {
           "disabled": false,
-          "document": "zookeeper节点描述信息",
+          "document": "<p>zookeeper节点描述信息</p>",
           "example": "无",
           "member": "NodesSummary",
           "name": "CoreSummary",
@@ -6257,7 +6257,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用，\"true\" \"false\"",
+          "document": "<p>高可用，&quot;true&quot; &quot;false&quot;</p>",
           "example": "false",
           "member": "string",
           "name": "HA",
@@ -6267,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用类型：\n0：非高可用\n1：读高可用\n2：读写高可用。",
+          "document": "<p>高可用类型：<br>0：非高可用<br>1：读高可用<br>2：读写高可用。</p>",
           "example": "1",
           "member": "int64",
           "name": "HaType",
@@ -6277,7 +6277,7 @@
         },
         {
           "disabled": false,
-          "document": "访问地址，例如 \"10.0.0.1:9000\"",
+          "document": "<p>访问地址，例如 &quot;10.0.0.1:9000&quot;</p>",
           "example": "\"10.0.0.1:9000\"",
           "member": "string",
           "name": "AccessInfo",
@@ -6287,7 +6287,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID，数值型",
+          "document": "<p>记录ID，数值型</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -6297,7 +6297,7 @@
         },
         {
           "disabled": false,
-          "document": "regionId, 表示地域",
+          "document": "<p>regionId, 表示地域</p>",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -6307,7 +6307,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区说明，例如 \"广州三区\"",
+          "document": "<p>可用区说明，例如 &quot;广州三区&quot;</p>",
           "example": "广州三区",
           "member": "string",
           "name": "ZoneDesc",
@@ -6317,7 +6317,7 @@
         },
         {
           "disabled": false,
-          "document": "错误流程说明信息",
+          "document": "<p>错误流程说明信息</p>",
           "example": "error message",
           "member": "string",
           "name": "FlowMsg",
@@ -6327,7 +6327,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述，例如“运行中”等",
+          "document": "<p>状态描述，例如“运行中”等</p>",
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -6337,7 +6337,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标记",
+          "document": "<p>自动续费标记</p>",
           "example": "false",
           "member": "bool",
           "name": "RenewFlag",
@@ -6347,7 +6347,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -6357,7 +6357,7 @@
         },
         {
           "disabled": false,
-          "document": "监控信息",
+          "document": "<p>监控信息</p>",
           "example": "prom-aaaaa",
           "member": "string",
           "name": "Monitor",
@@ -6367,7 +6367,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开通日志",
+          "document": "<p>是否开通日志</p>",
           "example": "true",
           "member": "bool",
           "name": "HasClsTopic",
@@ -6377,7 +6377,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题ID",
+          "document": "<p>日志主题ID</p>",
           "example": "zxdasd-asdasd",
           "member": "string",
           "name": "ClsTopicId",
@@ -6387,7 +6387,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集ID",
+          "document": "<p>日志集ID</p>",
           "example": "seqeas-13q1",
           "member": "string",
           "name": "ClsLogSetId",
@@ -6397,7 +6397,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持xml配置管理",
+          "document": "<p>是否支持xml配置管理</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableXMLConfig",
@@ -6407,7 +6407,7 @@
         },
         {
           "disabled": false,
-          "document": "区域",
+          "document": "<p>区域</p>",
           "example": "广州",
           "member": "string",
           "name": "RegionDesc",
@@ -6417,7 +6417,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性网卡地址",
+          "document": "<p>弹性网卡地址</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Eip",
@@ -6427,7 +6427,7 @@
         },
         {
           "disabled": false,
-          "document": "冷热分层系数",
+          "document": "<p>冷热分层系数</p>",
           "example": "20",
           "member": "int64",
           "name": "CosMoveFactor",
@@ -6437,7 +6437,7 @@
         },
         {
           "disabled": false,
-          "document": "external/local/yunti",
+          "document": "<p>external/local/yunti</p>",
           "example": "yunti",
           "member": "string",
           "name": "Kind",
@@ -6447,7 +6447,7 @@
         },
         {
           "disabled": false,
-          "document": "cos桶",
+          "document": "<p>cos桶</p>",
           "example": "bucketName-cos-apps-cq-12782193",
           "member": "string",
           "name": "CosBucketName",
@@ -6457,7 +6457,7 @@
         },
         {
           "disabled": false,
-          "document": "cbs",
+          "document": "<p>cbs</p>",
           "example": "true",
           "member": "bool",
           "name": "CanAttachCbs",
@@ -6467,7 +6467,7 @@
         },
         {
           "disabled": false,
-          "document": "小版本",
+          "document": "<p>小版本</p>",
           "example": "1.2.3",
           "member": "string",
           "name": "BuildVersion",
@@ -6477,7 +6477,7 @@
         },
         {
           "disabled": false,
-          "document": "组件信息\n注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。",
+          "document": "<p>组件信息<br>注：这里返回类型实际为map[string]struct类型，并非显示的string类型，可以参考“示例值”进行数据的解析。</p>",
           "example": "{   \"BE\": {     \"name\": \"BE\",     \"version\": \"1.0\"   } }",
           "member": "string",
           "name": "Components",
@@ -6487,7 +6487,7 @@
         },
         {
           "disabled": true,
-          "document": "判断审计日志表是否有catalog字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>判断审计日志表是否有catalog字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IfExistCatalog",
@@ -6497,7 +6497,7 @@
         },
         {
           "disabled": false,
-          "document": "页面特性，用于前端屏蔽一些页面入口",
+          "document": "<p>页面特性，用于前端屏蔽一些页面入口</p>",
           "example": "[\"catalog\",\"notthis\"]",
           "member": "string",
           "name": "Characteristic",
@@ -6507,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "超时时间 单位s",
+          "document": "<p>超时时间 单位s</p>",
           "example": "36000",
           "member": "string",
           "name": "RestartTimeout",
@@ -6517,7 +6517,7 @@
         },
         {
           "disabled": false,
-          "document": "内核优雅重启超时时间，如果为-1说明未设置",
+          "document": "<p>内核优雅重启超时时间，如果为-1说明未设置</p>",
           "example": "-1",
           "member": "string",
           "name": "GraceShutdownWaitSeconds",
@@ -6527,7 +6527,7 @@
         },
         {
           "disabled": false,
-          "document": "表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储",
+          "document": "<p>表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储</p>",
           "example": "0",
           "member": "int64",
           "name": "CaseSensitive",
@@ -6537,7 +6537,7 @@
         },
         {
           "disabled": false,
-          "document": "用户是否可以绑定安全组",
+          "document": "<p>用户是否可以绑定安全组</p>",
           "example": "true",
           "member": "bool",
           "name": "IsWhiteSGs",
@@ -6547,7 +6547,7 @@
         },
         {
           "disabled": false,
-          "document": "已绑定的安全组信息",
+          "document": "<p>已绑定的安全组信息</p>",
           "example": "[\"sg-dasda\"]",
           "member": "string",
           "name": "BindSGs",
@@ -6557,7 +6557,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为多可用区",
+          "document": "<p>是否为多可用区</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableMultiZones",
@@ -6567,7 +6567,7 @@
         },
         {
           "disabled": false,
-          "document": "用户可用区和子网信息",
+          "document": "<p>用户可用区和子网信息</p>",
           "example": "subnet-dasd1",
           "member": "string",
           "name": "UserNetworkInfos",
@@ -6577,7 +6577,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用冷热分层。0：未开启 1：已开启",
+          "document": "<p>是否启用冷热分层。0：未开启 1：已开启</p>",
           "example": "0",
           "member": "int64",
           "name": "EnableCoolDown",
@@ -6587,7 +6587,7 @@
         },
         {
           "disabled": false,
-          "document": "冷热分层使用COS桶",
+          "document": "<p>冷热分层使用COS桶</p>",
           "example": "bucketName-cos-apps-cq-1382198",
           "member": "string",
           "name": "CoolDownBucket",
@@ -6597,7 +6597,7 @@
         },
         {
           "disabled": false,
-          "document": "实例扩展信息",
+          "document": "<p>实例扩展信息</p>",
           "example": "无",
           "member": "InstanceDetail",
           "name": "Details",
@@ -6607,7 +6607,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用DLC 0:关闭 1:开启",
+          "document": "<p>是否启用DLC 0:关闭 1:开启</p>",
           "example": "0",
           "member": "int64",
           "name": "EnableDlc",
@@ -6617,7 +6617,7 @@
         },
         {
           "disabled": false,
-          "document": "账户类型 0:普通用户 1:CAM用户",
+          "document": "<p>账户类型 0:普通用户 1:CAM用户</p>",
           "example": "0",
           "member": "int64",
           "name": "AccountType",
@@ -6627,7 +6627,7 @@
         },
         {
           "disabled": false,
-          "document": "监控模式 0: 老监控 1：新监控",
+          "document": "<p>监控模式 0: 老监控 1：新监控</p>",
           "example": "0",
           "member": "int64",
           "name": "MonitorMode",
@@ -6637,7 +6637,7 @@
         },
         {
           "disabled": false,
-          "document": "cn节点信息",
+          "document": "<p>cn节点信息</p>",
           "example": "无",
           "member": "NodesSummary",
           "name": "CNSummary",
@@ -6647,7 +6647,7 @@
         },
         {
           "disabled": false,
-          "document": "计算组个数",
+          "document": "<p>计算组个数</p>",
           "example": "1",
           "member": "int64",
           "name": "ComputeGroupCount",
@@ -6657,7 +6657,7 @@
         },
         {
           "disabled": false,
-          "document": "存算分离cos存储数据",
+          "document": "<p>存算分离cos存储数据</p>",
           "example": "64.3",
           "member": "float",
           "name": "CosStorageSize",
@@ -6667,7 +6667,7 @@
         },
         {
           "disabled": false,
-          "document": "存算分离的指标 当是true 不支持新建计算组",
+          "document": "<p>存算分离的指标 当是true 不支持新建计算组</p>",
           "example": "true",
           "member": "bool",
           "name": "IsMasterNonVM",
@@ -6677,7 +6677,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos容量包大小",
+          "document": "<p>Cos容量包大小</p>",
           "example": "3130",
           "member": "int64",
           "name": "CosPkgCapacity",
@@ -6687,7 +6687,7 @@
         },
         {
           "disabled": false,
-          "document": "集群是否使用托管桶",
+          "document": "<p>集群是否使用托管桶</p>",
           "example": "false",
           "member": "bool",
           "name": "UseManagedBucket",
@@ -6697,7 +6697,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "Master",
           "member": "string",
           "name": "InstanceType",
@@ -6707,7 +6707,7 @@
         },
         {
           "disabled": false,
-          "document": "对应主集群",
+          "document": "<p>对应主集群</p>",
           "example": "cdwdoris-demo",
           "member": "string",
           "name": "MasterInstance",
@@ -6717,7 +6717,7 @@
         },
         {
           "disabled": false,
-          "document": "对应备集群",
+          "document": "<p>对应备集群</p>",
           "example": "[\"cdwdoris-demo\"]",
           "member": "string",
           "name": "SlaveInstances",
@@ -6727,7 +6727,7 @@
         },
         {
           "disabled": false,
-          "document": "ccr服务部署节点ip",
+          "document": "<p>ccr服务部署节点ip</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "SyncerIp",
@@ -6737,7 +6737,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持sql convertor",
+          "document": "<p>是否支持sql convertor</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableSqlConv",
@@ -6747,10 +6747,20 @@
         },
         {
           "disabled": false,
-          "document": "集群时区，默认+08:00",
+          "document": "<p>集群时区，默认+08:00</p>",
           "example": "+08:00",
           "member": "string",
           "name": "TimeZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存盘介质：任一计算组为单副本SSD即ELASTIC_REMOTE_SSD（不支持变配多可用区部署等），否则为默认计算组介质；非存算分离为空</p>",
+          "example": "ELASTIC_REMOTE_SSD",
+          "member": "string",
+          "name": "CacheDiskType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8811,7 +8821,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规格名称，例如“SCH1\"",
+          "document": "<p>规格名称，例如“SCH1&quot;</p>",
           "example": "SCH1",
           "member": "string",
           "name": "Name",
@@ -8821,7 +8831,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu核数",
+          "document": "<p>cpu核数</p>",
           "example": "4",
           "member": "int64",
           "name": "Cpu",
@@ -8831,7 +8841,7 @@
         },
         {
           "disabled": false,
-          "document": "内存大小，单位G",
+          "document": "<p>内存大小，单位G</p>",
           "example": "16",
           "member": "int64",
           "name": "Mem",
@@ -8841,7 +8851,7 @@
         },
         {
           "disabled": false,
-          "document": "分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO",
+          "document": "<p>分类标记，STANDARD/BIGDATA/HIGHIO分别表示标准型/大数据型/高IO</p>",
           "example": "STANDARD",
           "member": "string",
           "name": "Type",
@@ -8851,8 +8861,8 @@
         },
         {
           "disabled": false,
-          "document": "系统盘描述信息",
-          "example": "复杂结构",
+          "document": "<p>系统盘描述信息</p>",
+          "example": "无",
           "member": "DiskSpec",
           "name": "SystemDisk",
           "output_required": true,
@@ -8861,8 +8871,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘描述信息",
-          "example": "复杂结构",
+          "document": "<p>数据盘描述信息</p>",
+          "example": "无",
           "member": "DiskSpec",
           "name": "DataDisk",
           "output_required": true,
@@ -8871,7 +8881,7 @@
         },
         {
           "disabled": false,
-          "document": "最大节点数目限制",
+          "document": "<p>最大节点数目限制</p>",
           "example": "50",
           "member": "int64",
           "name": "MaxNodeSize",
@@ -8881,7 +8891,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可用，false代表售罄",
+          "document": "<p>是否可用，false代表售罄</p>",
           "example": "true",
           "member": "bool",
           "name": "Available",
@@ -8891,7 +8901,7 @@
         },
         {
           "disabled": false,
-          "document": "规格描述信息",
+          "document": "<p>规格描述信息</p>",
           "example": "2核4G",
           "member": "string",
           "name": "ComputeSpecDesc",
@@ -8901,12 +8911,22 @@
         },
         {
           "disabled": false,
-          "document": "cvm库存",
+          "document": "<p>cvm库存</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceQuota",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算组ID自定义后缀。1到8位小写字母、数字或连字符，首尾须为字母或数字；不传则随机生成8位后缀。最终计算组ID格式为实例ID-后缀，同时作为内核计算组名</p>",
+          "example": "etl1",
+          "member": "string",
+          "name": "ComputeGroupSuffix",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

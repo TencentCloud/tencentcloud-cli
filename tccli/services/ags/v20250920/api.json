@@ -112,6 +112,13 @@
       "output": "DeleteDeploymentResponse",
       "status": "online"
     },
+    "DeletePreCacheImage": {
+      "document": "删除预热镜像",
+      "input": "DeletePreCacheImageRequest",
+      "name": "删除镜像预热",
+      "output": "DeletePreCacheImageResponse",
+      "status": "online"
+    },
     "DeleteRegistry": {
       "document": "删除 Registry。",
       "input": "DeleteRegistryRequest",
@@ -180,6 +187,13 @@
       "input": "DescribeEventsRequest",
       "name": "查询事件列表",
       "output": "DescribeEventsResponse",
+      "status": "online"
+    },
+    "DescribePreCacheImageList": {
+      "document": "查询镜像预热列表",
+      "input": "DescribePreCacheImageListRequest",
+      "name": "查询镜像预热列表",
+      "output": "DescribePreCacheImageListResponse",
       "status": "online"
     },
     "DescribePreCacheImageTask": {
@@ -3041,6 +3055,60 @@
       ],
       "type": "object"
     },
+    "DeletePreCacheImageRequest": {
+      "document": "DeletePreCacheImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像地址</p>",
+          "example": "ccr.ccs.tencentyun.com/ags.example/nginx:v1",
+          "member": "string",
+          "name": "Image",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库配置</p>",
+          "example": "sha256:5d5c0a0cd43277b487a0b750ec8a8029b93c3d77eb01ebc5364b1a8cd9e7728a",
+          "member": "string",
+          "name": "ImageDigest",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
+          "example": "personal",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热ID</p>",
+          "example": "pcimg-7k3h2dw2",
+          "member": "string",
+          "name": "PreCacheImageId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePreCacheImageResponse": {
+      "document": "DeletePreCacheImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteRegistryRecordRequest": {
       "document": "DeleteRegistryRecord请求参数结构体",
       "members": [
@@ -3622,6 +3690,90 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageListRequest": {
+      "document": "DescribePreCacheImageList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询过滤条件。支持 Image, ImageDigest, ImageRegistryType, Status, SourceType；不同 Filter 之间为 AND，同一 Filter 的 Values 之间为 OR。</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数据列数</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。</p>",
+          "example": "eyJ2IjoxLCJjIjp7IkNyZWF0ZWRBdCI6IjIwMjYtMDktMTBUMTc6NDk6MDkrMDg6MDAiLCJJRCI6MjE5fSwiZiI6Ijc3MjcxY2M1ZDgzZTUyOTc3ODMxNTkyOTRiOTQxZTc2NTVjOGU5ZWU0MzNjZjA3YWIxM2FhNGM0ZDI0ZjliOTYiLCJ0IjoxMTUsImUiOjE3ODkyMTQ5OTF9.p6SVjzxF7gMvY8p1JjsdKhFt13CthONEa30-dARBH30",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认 false；仅控制是否返回精确总数</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedTotalCount",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageListResponse": {
+      "document": "DescribePreCacheImageList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像预热总数</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热列表</p>",
+          "example": "无",
+          "member": "PreCacheImage",
+          "name": "PreCacheImageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>如果NextToken返回非空字符串 ，表示还有更多可用结果。 NextToken是每个页面唯一的分页令牌。使用返回的令牌再次调用以检索下一页。需要保持所有其他参数不变。</p>",
+          "example": "eyJ2IjoxLCJjIjp7IkNyZWF0ZWRBdCI6IjIwMjYtMDktMjFUMTc6MjU6NTMrMDg6MDAiLCJJRCI6NzU2fSwiZiI6ImMyNGE3N2JhYWRmNTFiZDY3YmY1YWNkZDVlM2JlNzRiODc1Y2ZlODQwMjE2NTVlZDIxYWIxNTM2NmFiMjU3ZTQiLCJlIjoxNzkwNjUzNTQzfQ.6zJRI6AWpXvrnIsXXM8bhllwagfhk2KVWN3HUwBFLXM",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5972,6 +6124,102 @@
       ],
       "usage": "both"
     },
+    "PreCacheImage": {
+      "document": "镜像预热产物",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像地址</p>",
+          "example": "ccr.ccs.tencentyun.com/ags.example/nginx:v1",
+          "member": "string",
+          "name": "Image",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像 Digest</p>",
+          "example": "sha256:d9c56e383f4711392d7202ec08aa1ccebfc5d90dd41feebfecf42a8755f916bb",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库类型：<code>enterprise</code>、<code>personal</code>、<code>custom</code> 。</p><p>枚举值：</p><ul><li>enterprise： tcr 企业容器镜像服务</li><li>personal： ccr 个人容器镜像服务</li></ul>",
+          "example": "custom",
+          "member": "string",
+          "name": "ImageRegistryType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热状态</p>",
+          "example": "DELETED",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热创建时间</p>",
+          "example": "2026-09-10T17:49:08+08:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热ID</p>",
+          "example": "pcimg-j5g2r6he",
+          "member": "string",
+          "name": "PreCacheImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热来源</p><p>枚举值：</p><ul><li>AUTO： Sandbox Tool / Instance 自动预热</li><li>EXPLICIT： 手动预热</li><li>TCR_AUTO： TCR自动预热</li></ul>",
+          "example": "AUTO",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热存储大小</p><p>单位：Byte</p>",
+          "example": "402202624",
+          "member": "int64",
+          "name": "CachedImageSizeBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该预热镜像最近一次被沙箱实例使用时间</p>",
+          "example": "2026-09-11T19:41:14+08:00",
+          "member": "string",
+          "name": "LastUsedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PreviewRegistryRecordRequest": {
       "document": "PreviewRegistryRecord请求参数结构体",
       "members": [
@@ -7135,6 +7383,15 @@
           "example": "43omu725lpaf2ftksrcvexbfhwwu644zztj3bpi4",
           "member": "string",
           "name": "SourceInstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待启动的沙箱快照 ID</p>",
+          "example": "snapshot-019fd56d-51dc-8013-ba8b-23216f003cac",
+          "member": "string",
+          "name": "SnapshotId",
           "required": false,
           "type": "string"
         },

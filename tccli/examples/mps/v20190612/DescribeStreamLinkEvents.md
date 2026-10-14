@@ -16,15 +16,15 @@ Output:
     "Response": {
         "Infos": [
             {
-                "EventName": "abc",
-                "EventId": "abc",
-                "CreateTime": "abc",
-                "Description": "abc",
+                "EventName": "live",
+                "EventId": "0193770a00009dc0f3269ca3439",
+                "CreateTime": "2026-08-01T10:00:00+08:00",
+                "Description": "live_event",
                 "Status": 1,
                 "AttachedFlowGroup": [
                     {
-                        "FlowId": "abc",
-                        "Region": "abc"
+                        "FlowId": "0123456789abcdef",
+                        "Region": "ap-hongkong"
                     }
                 ]
             }
@@ -33,7 +33,7 @@ Output:
         "PageSize": 0,
         "TotalNum": 0,
         "TotalPage": 0,
-        "RequestId": "abc"
+        "RequestId": "3c140219-cfe9-4a60-af06-3ee6e0a1e5f1"
     }
 }
 ```

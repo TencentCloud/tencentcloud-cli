@@ -1365,6 +1365,27 @@
       "output": "DescribeStreamDayPlayInfoListResponse",
       "status": "online"
     },
+    "DescribeStreamPackageIngestStatistics": {
+      "document": "DescribeStreamPackageIngestStatistics",
+      "input": "DescribeStreamPackageIngestStatisticsRequest",
+      "name": "查询媒体包装输入用量信息",
+      "output": "DescribeStreamPackageIngestStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageOutputStatistics": {
+      "document": "查询媒体包装输出用量信息",
+      "input": "DescribeStreamPackageOutputStatisticsRequest",
+      "name": "查询媒体包装输出用量信息",
+      "output": "DescribeStreamPackageOutputStatisticsResponse",
+      "status": "online"
+    },
+    "DescribeStreamPackageRemuxStatistics": {
+      "document": "DescribeStreamPackageRemuxStatistics",
+      "input": "DescribeStreamPackageRemuxStatisticsRequest",
+      "name": "查询媒体包装转封装用量信息",
+      "output": "DescribeStreamPackageRemuxStatisticsResponse",
+      "status": "online"
+    },
     "DescribeStreamPlayInfoList": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n查询播放数据，支持按流名称查询详细播放数据，也可按播放域名查询详细总数据，数据延迟4分钟左右。",
       "input": "DescribeStreamPlayInfoListRequest",
@@ -18052,6 +18073,273 @@
       ],
       "type": "object"
     },
+    "DescribeStreamPackageIngestStatisticsRequest": {
+      "document": "DescribeStreamPackageIngestStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间，RFC3339 格式，如2026-08-24T00:00:00+08:00</p>",
+          "example": "2026-09-23T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，RFC3339 格式，如 2026-08-24T00:00:00+08:00；必须晚于 StartTime</p>",
+          "example": "2026-09-24T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道ID列表，不传则查全部频道</p>",
+          "example": "[\"68774AEC000027733C4C\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道类型过滤，枚举值：LiveChannel、SSAI、FASTChannel</p>",
+          "example": "[\"LiveChannel\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度，false(默认): summary 汇总模式；true: detail 明细模式（按时间拆分），当为false时粒度不生效</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Dimension",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间粒度（分钟），支持5（默认）/ 60 / 1440</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageIngestStatisticsResponse": {
+      "document": "DescribeStreamPackageIngestStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入流量数据</p>",
+          "example": "无",
+          "member": "IngestStatisticsDataInfo",
+          "name": "DataInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总输入用量</p>",
+          "example": "37788778885",
+          "member": "int64",
+          "name": "TotalIngest",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageOutputStatisticsRequest": {
+      "document": "DescribeStreamPackageOutputStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间，RFC3339 格式，如 2026-08-24T00:00:00+08:00</p>",
+          "example": "2026-08-24T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，RFC3339 格式，如 2026-08-24T00:00:00+08:00；必须晚于 StartTime</p>",
+          "example": "2026-08-25T12:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道ID列表，不传则查全部频道</p>",
+          "example": "[\"6A89487440835E3B72CD\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道类型过滤，枚举值：LiveChannel</p>",
+          "example": "[\"LiveChannel\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度，false(默认): summary 汇总模式；true: detail 明细模式（按时间拆分），当为false时粒度不生效</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Dimension",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间粒度（分钟），支持5（默认）/ 60 / 1440</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageOutputStatisticsResponse": {
+      "document": "DescribeStreamPackageOutputStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出流量统计</p>",
+          "example": "无",
+          "member": "OutputStatisticsDataInfo",
+          "name": "DataInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出总用量</p>",
+          "example": "8150075538",
+          "member": "int64",
+          "name": "TotalOutput",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageRemuxStatisticsRequest": {
+      "document": "DescribeStreamPackageRemuxStatistics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间，RFC3339 格式，如 2026-08-24T00:00:00+08:00</p>",
+          "example": "2026-08-24T00:00:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间，RFC3339 格式，如 2026-08-24T00:00:00+08:00；必须晚于 StartTime</p>",
+          "example": "2026-08-25T00:00:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道ID列表，不传则查全部频道</p>",
+          "example": "[\"6A89487440835E3B72CD\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度，false(默认): summary 汇总模式；true: detail 明细模式（按时间拆分），当为false时粒度不生效</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Dimension",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间粒度（分钟），支持5（默认）/ 60 / 1440</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Granularity",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStreamPackageRemuxStatisticsResponse": {
+      "document": "DescribeStreamPackageRemuxStatistics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>封装用量数据</p>",
+          "example": "无",
+          "member": "RemuxStatisticsDataInfo",
+          "name": "DataInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封装总用量</p>",
+          "example": "1461990040036",
+          "member": "int64",
+          "name": "TotalRemux",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeStreamPlayInfoListRequest": {
       "document": "DescribeStreamPlayInfoList请求参数结构体",
       "members": [
@@ -19641,6 +19929,56 @@
         }
       ],
       "usage": "out"
+    },
+    "IngestStatisticsDataInfo": {
+      "document": "IngestStatisticsDataInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输入用量</p>",
+          "example": "134705480",
+          "member": "int64",
+          "name": "Ingest",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间</p>",
+          "example": "2026-09-23T17:00:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道Id</p>",
+          "example": "683923BE0000A988F034",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道类型</p>",
+          "example": "LiveChannel",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "InsertTaskTemporaryFilesRequest": {
       "document": "InsertTaskTemporaryFiles请求参数结构体",
@@ -23668,6 +24006,56 @@
       ],
       "usage": "both"
     },
+    "OutputStatisticsDataInfo": {
+      "document": "OutputStatisticsDataInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>输出用量</p>",
+          "example": "671215",
+          "member": "int64",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间</p>",
+          "example": "2026-09-03T16:45:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道Id</p>",
+          "example": "699989FF000074F72BAC",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "FASTChannel",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PadStreamInfo": {
       "document": "查询当前垫片流的信息",
       "members": [
@@ -25623,6 +26011,45 @@
         }
       ],
       "type": "object"
+    },
+    "RemuxStatisticsDataInfo": {
+      "document": "RemuxStatisticsDataInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转封装用量</p>",
+          "example": "35545189124",
+          "member": "int64",
+          "name": "Remux",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间</p>",
+          "example": "2026-08-24T17:15:00+08:00",
+          "member": "string",
+          "name": "Time",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道Id</p>",
+          "example": "/v1/019810d5882d1ea506ec36a2054bc5",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RestartLivePullStreamTaskRequest": {
       "document": "RestartLivePullStreamTask请求参数结构体",

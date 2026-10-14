@@ -770,6 +770,13 @@
       "output": "DescribeVpcFwGroupSwitchResponse",
       "status": "online"
     },
+    "DescribeVpcFwIpStat": {
+      "document": "查询VPC防火墙下，单IP粒度的流量统计",
+      "input": "DescribeVpcFwIpStatRequest",
+      "name": "查询VPC防火墙下，单IP粒度的流量统计",
+      "output": "DescribeVpcFwIpStatResponse",
+      "status": "online"
+    },
     "ExpandCfwVertical": {
       "document": "防火墙垂直扩容",
       "input": "ExpandCfwVerticalRequest",
@@ -13993,6 +14000,144 @@
       ],
       "type": "object"
     },
+    "DescribeVpcFwIpStatRequest": {
+      "document": "DescribeVpcFwIpStat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移值</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙组ID</p>",
+          "example": "cfwg-11223344",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙的实例id</p>",
+          "example": "cfwnat-e69ad806",
+          "member": "string",
+          "name": "FwInsId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选择的时间区间 1:1小时内，2: 24 小时 ，3：7天， 4：1个月</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件组合</p>",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索的起始时间，可不传</p>",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索的截止时间，可不传</p>",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序所用到的字段</p>",
+          "example": "Ip",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwIpStatResponse": {
+      "document": "DescribeVpcFwIpStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单台cvm峰值带宽统计列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FwGroupIpFlowStat",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步查询状态，1查询执行中，0查询已结束</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DisposalSuggestionItem": {
       "document": "处置建议-条目",
       "members": [
@@ -15436,6 +15581,112 @@
           "name": "FwGroupName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FwGroupIpFlowStat": {
+      "document": "VPC防火墙状态监控图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-a0eksp50",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "andy的实例 ",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPCID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-a0eksp50",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "私有网络名称",
+          "member": "string",
+          "name": "VpcName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "峰值流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1120",
+          "member": "int64",
+          "name": "FlowMax",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "均值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "210",
+          "member": "float",
+          "name": "FlowAvg",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限速状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TcRuleStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-a0eksp50",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 IPV4 , 1 IPV6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IpVersion",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

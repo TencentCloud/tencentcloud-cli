@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mps DescribeStreamLinkEvent --cli-unfold-argument  \
-    --EventId eventid
+    --EventId 019377034b0709dc0f3269ca3422
 ```
 
 Output: 
@@ -14,19 +14,19 @@ Output:
 {
     "Response": {
         "Info": {
-            "EventId": "xx",
+            "EventId": "019377034b0709dc0f3269ca3422",
             "Status": 1,
-            "Description": "xx",
-            "EventName": "xx",
+            "Description": "live",
+            "EventName": "live",
             "AttachedFlowGroup": [
                 {
-                    "FlowId": "xx",
-                    "Region": "xx"
+                    "FlowId": "6658vndj5mg0fsrjzzdfnr",
+                    "Region": "ap-hongkong"
                 }
             ],
-            "CreateTime": "xx"
+            "CreateTime": "2026-08-01T10:00:00+08:00"
         },
-        "RequestId": "xx"
+        "RequestId": "3c140219-cfe9-4a60-af06-3ee6e0a1e5f1"
     }
 }
 ```

@@ -6805,28 +6805,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>",
-          "example": "VPC",
-          "member": "string",
-          "name": "InstanceType",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>实例ID</p>",
-          "example": "vpc-6zgq4gsp",
-          "member": "string",
-          "name": "InstanceId",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>源地址CIDR</p>",
           "example": "10.0.0.0/16",
           "member": "string",
@@ -6856,6 +6834,39 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型[VPC,DIRECTCONNECT,VPNGW]</p>",
+          "example": "VPC",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "vpc-6zgq4gsp",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "InstanceRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

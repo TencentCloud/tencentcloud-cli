@@ -1270,6 +1270,14 @@
         "title": "VPC间防火墙开关列表"
       }
     ],
+    "DescribeVpcFwIpStat": [
+      {
+        "document": "流量示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwIpStat\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Ip\": \"192.168.1.1\",\n                \"InstanceId\": \"ins - a0eksp50\",\n                \"InstanceName\": \"andy的实例\",\n                \"VpcId\": \"vpc - a0eksp50\",\n                \"VpcName\": \"私有网络名称\",\n                \"FlowMax\": 11,\n                \"FlowAvg\": 2222,\n                \"TcRuleStatus\": 1,\n                \"FwInsId\": \"cfwew - a0eksp50\",\n                \"IpVersion\": 1\n            }\n        ],\n        \"RequestId\": \"128c5a96-3656-45a3-968b-14d35529e18e\",\n        \"Total\": 0\n    }\n}",
+        "title": "流量示例"
+      }
+    ],
     "ExpandCfwVertical": [
       {
         "document": "扩容实例",
