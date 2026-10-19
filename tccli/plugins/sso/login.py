@@ -45,10 +45,15 @@ def login(args, profile, language):
 
     cred_path = sso.cred_path_of_profile(profile)
     auth_url = ""
+    last_uin = ""
+    last_role = ""
     if os.path.exists(cred_path):
         with open(cred_path, "r") as cred_file:
             cred_data = json.load(cred_file)
-            auth_url = cred_data.get("sso", {}).get("authUrl", "")
+            sso_data = cred_data.get("sso", {})
+            auth_url = sso_data.get("authUrl", "")
+            last_uin = str(sso_data.get("uin", ""))
+            last_role = sso_data.get("roleConfigurationName", "")
 
     if not auth_url:
         profile_opt = ""
@@ -81,8 +86,9 @@ def login(args, profile, language):
             print_message(_("specified_uin_not_found") % (specified_uin, ",".join(str(x["Uin"]) for x in accounts)))
             return
     else:
+        default_idx = next((i for i, x in enumerate(accounts) if str(x["Uin"]) == last_uin), 0)
         idx = terminal.select_from_items(
-            _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10)
+            _("account_select_prompt"), ["%s:%s" % (x["Name"], x["Uin"]) for x in accounts], 10, default_idx)
         account = accounts[idx]
 
     print_message("uin: %s" % account["Uin"])
@@ -101,8 +107,11 @@ def login(args, profile, language):
                 _("specified_role_not_found") % (specified_role, ",".join(x["RoleConfigurationName"] for x in roles)))
             return
     else:
+        default_idx = 0
+        if str(account["Uin"]) == last_uin:
+            default_idx = next((i for i, x in enumerate(roles) if x["RoleConfigurationName"] == last_role), 0)
         idx = terminal.select_from_items(
-            _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10)
+            _("role_select_prompt"), [x["RoleConfigurationName"] for x in roles], 10, default_idx)
         role = roles[idx]
 
     print_message("role: %s" % role["RoleConfigurationName"])
