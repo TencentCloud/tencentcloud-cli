@@ -899,6 +899,34 @@
       ],
       "type": "object"
     },
+    "Capabilities": {
+      "document": "可以添加到正在运行的容器中或从中移除的 POSIX POSIX capabilities。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要添加的capabilities</p><p>取值参考：[&quot;SYS_ADMIN&quot;]</p>",
+          "example": "[\"SYS_ADMIN\"]",
+          "member": "string",
+          "name": "Add",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>要移除的capabilities</p><p>取值参考：[&quot;ALL&quot;]</p>",
+          "example": "[\"ALL\"]",
+          "member": "string",
+          "name": "Drop",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CfsStorageSource": {
       "document": "文件存储配置",
       "members": [
@@ -2842,6 +2870,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱安全上下文</p>",
+          "example": "无",
+          "member": "SecurityContext",
+          "name": "SecurityContext",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2954,6 +2993,17 @@
           "example": "无",
           "member": "DNSConfig",
           "name": "DNSConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙箱安全上下文</p>",
+          "example": "无",
+          "member": "SecurityContext",
+          "name": "SecurityContext",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -7157,6 +7207,34 @@
       ],
       "usage": "both"
     },
+    "SecurityContext": {
+      "document": "SecurityContext 包含将应用于容器的安全配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启特权</p><p>默认值：true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Privileged",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Capabilities 指的是可以添加到正在运行的容器中或从中移除的 POSIX capabilities。</p>",
+          "example": "无",
+          "member": "Capabilities",
+          "name": "Capabilities",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SessionInfo": {
       "document": "会话信息",
       "members": [
@@ -7547,6 +7625,28 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Volume的引用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeRef",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>VolumeTemplate 的引用以及派生规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeTemplateRef",
+          "name": "VolumeTemplate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8107,6 +8207,62 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VolumeRef": {
+      "document": "对 Volume 的引用，其中 Name 或 Id 之一必须不为空",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "稳定 Volume ID，格式 vol-xxxxxxxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "VolumeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VolumeTemplateRef": {
+      "document": "对 VolumeTemplate 的引用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>VolumeTemplate 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "VolumeTemplateName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>复用键，可为字面量或 ${metadata.xxx}</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ReuseKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

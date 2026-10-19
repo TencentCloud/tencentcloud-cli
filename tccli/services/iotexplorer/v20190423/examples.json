@@ -114,14 +114,6 @@
         "title": "批量绑定子产品"
       }
     ],
-    "BindTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\",\n    \"ProductId\": \"LPIOACT1NG\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ab1ae9a-77b4-4958-b413-b5e0f3b2a6b0\"\n    }\n}",
-        "title": "智能体和产品绑定示例"
-      }
-    ],
     "BindTWeTalkAgent": [
       {
         "document": "",
@@ -548,14 +540,6 @@
         "title": "开通 TWeSee 视频理解高级版"
       }
     ],
-    "CreateTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"Name\": \"示例bot\",\n    \"BotType\": \"mobile_app\",\n    \"RAGConfig\": \"{\\n  \\\"RAGEnabled\\\": true,\\n  \\\"KnowledgeBaseId\\\": \\\"kb-test-001\\\",\\n  \\\"RAGRegion\\\": \\\"ap-guangzhou\\\",\\n  \\\"RAGTopK\\\": 5,\\n  \\\"RAGScoreThreshold\\\": 0.75,\\n  \\\"RAGRoleExternalId\\\": \\\"external-id-demo\\\",\\n  \\\"RAGRoleDurationSeconds\\\": 3600\\n}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BotId\": \"bot-PuzbxMQnHk\",\n        \"RequestId\": \"91229769-ffe1-4a44-963c-9da03517d3ae\"\n    }\n}",
-        "title": "创建智能体"
-      }
-    ],
     "CreateTWeTalkAgent": [
       {
         "document": "",
@@ -776,14 +760,6 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeTasksByCondition\n<公共请求参数>\n\n{\n    \"ProductId\": \"4AHMY9X89Y\",\n    \"DeviceName\": \"dev002\",\n    \"ChannelId\": 0,\n    \"ServiceCategory\": \"COMPREHENSION\",\n    \"Conditions\": [\n        {\n            \"Type\": \"TimeRange\",\n            \"Values\": [\n                \"1776621600,1776636000\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"93651c85-82f1-4214-befa-e737777852eb\"\n    }\n}",
         "title": "按时间范围删除 TWeSee 视觉理解任务"
-      }
-    ],
-    "DeleteTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7f5317d-25c4-42a8-ae76-8b7ed3eec25d\"\n    }\n}",
-        "title": "删除智能体示例"
       }
     ],
     "DeleteTWeTalkAgent": [
@@ -1378,14 +1354,6 @@
         "title": "查询视频理解包年包月基础版用量曲线"
       }
     ],
-    "DescribeTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1TzRAz42oi\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AgentConfig\": {\n                \"GreetingMessage\": \"u4f60u597d\",\n                \"InterruptionEnabled\": true,\n                \"LongTermMemoryEnabled\": true\n            },\n            \"AppId\": 251198731,\n            \"BotId\": \"bot-1TzRAz42oi\",\n            \"CreateTime\": 1764211674,\n            \"Description\": \"LPIOACT1NG\",\n            \"InstanceId\": \"ins-DGAFvpuVF7\",\n            \"Name\": \"LPIOACT1NG\",\n            \"TargetLanguage\": \"zh\",\n            \"Uin\": 100000103009,\n            \"UpdateTime\": 1764211674\n        },\n        \"RequestId\": \"dc2335d2-9c70-4105-900e-60f281defd18\"\n    }\n}",
-        "title": "查询智能体详情"
-      }
-    ],
     "DescribeTWeTalkAgent": [
       {
         "document": "",
@@ -1638,14 +1606,6 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeCallActiveStatus\n<公共请求参数>\n\n{\n    \"DeviceList\": [\n        {\n            \"Sn\": \"productId_deviceName\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4rfv-6yhj-56hjsg\",\n        \"TWeCallActiveInfos\": [\n            {\n                \"ModelId\": \"1qaz\",\n                \"Sn\": \"productid_deviceName\",\n                \"ExpireTime\": 45674345567\n            }\n        ]\n    }\n}",
         "title": "成功获取激活状态"
-      }
-    ],
-    "GetTWeTalkAIBotList": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTWeTalkAIBotList\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-1U0eVzHLHc\",\n    \"IncludeCredentials\": false\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AgentConfig\": {\n                    \"InterruptionEnabled\": true,\n                    \"LongTermMemoryEnabled\": true,\n                    \"SystemPrompt\": \"u4f60u597du554a\"\n                },\n                \"AppId\": 251198731,\n                \"BotId\": \"bot-1U0eVzHLHc\",\n                \"CreateTime\": 1764212694,\n                \"Description\": \"\",\n                \"InstanceId\": \"ins-DGAFvpuVF7\",\n                \"Name\": \"test2\",\n                \"TargetLanguage\": \"\",\n                \"Uin\": 100000103009,\n                \"UpdateTime\": 1764212694\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"303e2b99-f8e0-43c5-a2a5-2eed8139225a\"\n    }\n}",
-        "title": "查询智能体列表示例"
       }
     ],
     "GetTWeTalkActiveRecordList": [
@@ -2156,14 +2116,6 @@
         "title": "设置不通知且手动续费"
       }
     ],
-    "ModifyTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-PuzbxMQnHk\",\n    \"RAGConfig\": \"{\\n  \\\"RAGEnabled\\\": true,\\n  \\\"KnowledgeBaseId\\\": \\\"kb-test-001\\\",\\n  \\\"RAGRegion\\\": \\\"ap-guangzhou\\\",\\n  \\\"RAGTopK\\\": 5,\\n  \\\"RAGScoreThreshold\\\": 0.75,\\n  \\\"RAGRoleExternalId\\\": \\\"external-id-demo\\\",\\n  \\\"RAGRoleDurationSeconds\\\": 1600\\n}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e74b195-eb4b-4335-9693-1cd74bd807c4\"\n    }\n}",
-        "title": "修改智能体"
-      }
-    ],
     "ModifyTWeTalkAgent": [
       {
         "document": "",
@@ -2297,8 +2249,8 @@
     "ResetCloudStorage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"DLLNMAZ***\",\n    \"DeviceName\": \"t01\",\n    \"ChannelId\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5c767a00-5528-47a1-85fd-c71b3987ae6b\"\n    }\n}",
         "title": "ResetCloudStorage"
       }
     ],
@@ -2404,10 +2356,10 @@
     ],
     "TransferCloudStorage": [
       {
-        "document": "用于转移云存服务到新设备",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ToDeviceName\": \"event_36502632_2\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sdfdsf\"\n    }\n}",
-        "title": "转移云存服务"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TransferCloudStorage\n<公共请求参数>\n\n{\n    \"ProductId\": \"YYZRTPM***\",\n    \"DeviceName\": \"***et_test_1\",\n    \"ToDeviceName\": \"***ling_test_4\",\n    \"ToProductId\": \"YYZRTPM***\",\n    \"ChannelId\": 7,\n    \"ToChannelId\": 8\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a5a9190-6c4d-4a21-9538-34c819a1d6cb\"\n    }\n}",
+        "title": "成功示例"
       }
     ],
     "TransferTWeCallDevice": [
@@ -2432,14 +2384,6 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=UnbindProducts\n&GatewayProductId=89FEGTES8\n&ProductIds.0=UJ8HE90G\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"GatewayDeviceNames\": [\n            \"gateway_test1\"\n        ],\n        \"RequestId\": \"32150866-743e-4a1b-ade5-c690ac2cc0b5\"\n    }\n}",
         "title": "批量解绑子产品"
-      }
-    ],
-    "UnbindTWeTalkAIBot": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindTWeTalkAIBot\n<公共请求参数>\n\n{\n    \"BotId\": \"bot-0vVbAeOMxU\",\n    \"ProductId\": \"Q7MZK2V1QR\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b0b81f76-9050-4654-94f7-c215915dc7ac\"\n    }\n}",
-        "title": "解绑智能体示例"
       }
     ],
     "UnbindTWeTalkAgent": [

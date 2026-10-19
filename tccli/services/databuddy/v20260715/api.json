@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddConsoleUsers": {
-      "document": "添加控制台用户",
+      "document": "添加控制台用户，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "AddConsoleUsersRequest",
       "name": "添加控制台用户",
       "output": "AddConsoleUsersResponse",
@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateConsoleGroup": {
-      "document": "创建控制台用户组",
+      "document": "创建控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "CreateConsoleGroupRequest",
       "name": "创建控制台用户组",
       "output": "CreateConsoleGroupResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateWorkspace": {
-      "document": "创建工作空间",
+      "document": "创建工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "CreateWorkspaceRequest",
       "name": "创建工作空间",
       "output": "CreateWorkspaceResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DeleteConsoleGroups": {
-      "document": "删除控制台用户组",
+      "document": "删除控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "DeleteConsoleGroupsRequest",
       "name": "删除控制台用户组",
       "output": "DeleteConsoleGroupsResponse",
@@ -316,14 +316,14 @@
       "status": "online"
     },
     "ListWorkspaces": {
-      "document": "查询工作空间列表",
+      "document": "查询工作空间列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListWorkspacesRequest",
       "name": "查询工作空间列表",
       "output": "ListWorkspacesResponse",
       "status": "online"
     },
     "RemoveConsoleUsers": {
-      "document": "<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准）</p>",
+      "document": "<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准），该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。</p>",
       "input": "RemoveConsoleUsersRequest",
       "name": "批量移除控制台用户",
       "output": "RemoveConsoleUsersResponse",
@@ -372,14 +372,14 @@
       "status": "online"
     },
     "UpdateConsoleGroup": {
-      "document": "修改控制台用户组",
+      "document": "修改控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateConsoleGroupRequest",
       "name": "修改控制台用户组",
       "output": "UpdateConsoleGroupResponse",
       "status": "online"
     },
     "UpdateConsoleUsers": {
-      "document": "修改控制台用户角色",
+      "document": "修改控制台用户角色，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateConsoleUsersRequest",
       "name": "修改控制台用户角色",
       "output": "UpdateConsoleUsersResponse",
@@ -407,7 +407,7 @@
       "status": "online"
     },
     "UpdateWorkspace": {
-      "document": "修改工作空间",
+      "document": "修改工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateWorkspaceRequest",
       "name": "修改工作空间",
       "output": "UpdateWorkspaceResponse",
@@ -456,7 +456,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul><p>可通过 ListConsoleRoles 接口获取</p>",
           "example": "[\"2002\"]",
           "member": "string",
           "name": "RoleIds",
@@ -509,7 +509,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组ID，可通过 ListWorkspaceGroups 接口获取",
+          "document": "<p>用户组ID，可通过 ListConsoleGroups 接口获取</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "GroupIds",
@@ -518,7 +518,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "10001",
           "member": "string",
           "name": "WorkspaceId",
@@ -527,7 +527,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID，可通过 ListWorkspaceRoles 接口获取",
+          "document": "<p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "RoleIds",
@@ -542,7 +542,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加结果",
+          "document": "<p>添加结果</p>",
           "example": "无",
           "member": "PlatformStatusRsp",
           "name": "Data",

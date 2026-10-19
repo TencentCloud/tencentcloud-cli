@@ -2825,6 +2825,15 @@
           "name": "AdvancedOptions",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>NetworkConfig</p>",
+          "example": "NetworkConfig",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10243,6 +10252,15 @@
           "name": "RuntimeEnv",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10548,6 +10566,16 @@
           "name": "IsCustom",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11186,6 +11214,15 @@
           "name": "DispatchStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户自定义网络配置JSON</p>",
+          "example": "{\"AppId\":\"1305424723\",\"Uin\":\"100018379117\",\"UniqVpcId\":\"vpc-c9wbgd6b\",\"SubnetId\":\"subnet-7vmpcxoo\",\"ConnectionId\":\"nc-229e38ddb80949acb89207b99ff92de1\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11564,6 +11601,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"1305424723\",\"Uin\":\"100018379117\",\"UniqVpcId\":\"vpc-c9wbgd6b\",\"SubnetId\":\"subnet-7vmpcxoo\",\"ConnectionId\":\"nc-229e38ddb80949acb89207b99ff92de1\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -11770,6 +11817,15 @@
           "example": "BuiltIn",
           "member": "string",
           "name": "LabImagePullType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "required": false,
           "type": "string"
         }
@@ -12065,6 +12121,16 @@
           "example": "BuiltIn",
           "member": "string",
           "name": "ImagePullType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"26020\",\"Uin\":\"70002501\",\"UniqVpcId\":\"vpc-\",\"SubnetId\":\"subnet\",\"ConnectionId\":\"nc-\",\"ConnectionName\":\"\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13084,6 +13150,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义网络配置</p><p>参数格式：{\"appId\":22,\"uin\":\"111\",\"uniqVpcId\":\"vpc-xxx\",\"subnetId\":\"subnet-xxx\"}</p>",
+          "example": "{\\\"appId\\\":22,\\\"uin\\\":\\\"111\\\",\\\"uniqVpcId\\\":\\\"vpc-xxx\\\",\\\"subnetId\\\":\\\"subnet-xxx\\\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13319,6 +13394,16 @@
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"1414839048\",\"Uin\":\"100047465867\",\"UniqVpcId\":\"vpc-qt0wixg3\",\"SubnetId\":\"subnet-molziyxu\",\"ConnectionId\":\"nc-581bc05010584e51ab01aa27bc4b4613\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -27239,7 +27324,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序字段，支持如下字段类型，create-time（创建时间，默认）、update-time（更新时间）</p>",
+          "document": "<p>排序字段，支持如下字段类型，create-time（创建时间，默认）</p>",
           "example": "create-time",
           "member": "string",
           "name": "SortBy",
@@ -32725,6 +32810,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户自定义网络配置</p>",
+          "example": "{\"Id\":\"subnet-4o0zf456\",\"Name\":\"qzzhu01\",\"Cidr\":\"10.16.0.0/24\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -33077,6 +33172,16 @@
           "example": "BuiltIn",
           "member": "string",
           "name": "ImagePullType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34501,6 +34606,16 @@
           "example": "cf82820d-22a9-458f-ae3f-108137ab55af",
           "member": "string",
           "name": "ResourceConfigId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"1305424723\",\"Uin\":\"100018379117\",\"UniqVpcId\":\"vpc-c9wbgd6b\",\"SubnetId\":\"subnet-7vmpcxoo\",\"ConnectionId\":\"nc-229e38ddb80949acb89207b99ff92de1\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -38601,6 +38716,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络配置，JSON 字符串</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -39232,6 +39358,17 @@
           "example": "4a8814e5ff70429e82ac5e2f7f3d0ec6",
           "member": "string",
           "name": "Token",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -46548,6 +46685,15 @@
           "name": "TuningParams",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"1305424723\",\"Uin\":\"100018379117\",\"UniqVpcId\":\"vpc-c9wbgd6b\",\"SubnetId\":\"subnet-7vmpcxoo\",\"ConnectionId\":\"nc-229e38ddb80949acb89207b99ff92de1\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -50497,6 +50643,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"1414839048\",\"Uin\":\"100047465867\",\"UniqVpcId\":\"vpc-qt0wixg3\",\"SubnetId\":\"subnet-molziyxu\",\"ConnectionId\":\"nc-581bc05010584e51ab01aa27bc4b4613\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -55548,6 +55705,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -55869,6 +56036,16 @@
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-1b86d2f830054c6ca261893d060001fe\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -57102,6 +57279,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -57383,6 +57570,16 @@
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-1b86d2f830054c6ca261893d060001fe\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -57735,6 +57932,15 @@
           "example": "model-test",
           "member": "string",
           "name": "OutputModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "required": false,
           "type": "string"
         }
@@ -61185,6 +61391,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人子账号 UIN（实际提交者）</p>",
+          "example": "700002655693",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人子账号名称（CAM 解析，解析失败为 null）</p>",
+          "example": "700002655693",
+          "member": "string",
+          "name": "SubAccountName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-1b86d2f830054c6ca261893d060001fe\",\"ConnectionName\":\"lyr_test_two\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -63568,6 +63807,15 @@
           "name": "DispatchStrategy",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"\",\"Uin\":\"\",\"UniqVpcId\":\"vpc-\",\"SubnetId\":\"subnet-\",\"ConnectionId\":\"nc-\",\"ConnectionName\":\"\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -63946,6 +64194,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户网络配置 JSON 字符串（跨租户 ENI 注入）</p>",
+          "example": "{\"AppId\":\"\",\"Uin\":\"\",\"UniqVpcId\":\"vpc-\",\"SubnetId\":\"subnet-\",\"ConnectionId\":\"nc-\",\"ConnectionName\":\"\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -64116,6 +64374,15 @@
           "example": "BuiltIn",
           "member": "string",
           "name": "LabImagePullType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
           "required": false,
           "type": "string"
         }
@@ -64386,6 +64653,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -64567,6 +64844,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-1qkot0p1\",\"SubnetId\":\"subnet-0rgfw5zu\",\"ConnectionId\":\"nc-590a8dc5d159406d8f56a58138fb86e8\",\"ConnectionName\":\"qzzhu_three\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -64802,6 +65088,16 @@
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
+          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-1b86d2f830054c6ca261893d060001fe\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

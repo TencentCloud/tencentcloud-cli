@@ -5656,6 +5656,46 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>用户Uin</p>",
+          "example": "1000***499845",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户AppId</p>",
+          "example": "12510243",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-5ne6bjyx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "cynosdbmysql-5ne6bjyx",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-4vdteifv",
           "member": "string",
@@ -5705,12 +5745,52 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>cpu核数</p>",
           "example": "1",
           "member": "int64",
           "name": "InstanceCpu",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cpu</p><p>单位：核</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Cpu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>serverless实例cpu下限</p><p>单位：核</p>",
+          "example": "1.0",
+          "member": "float",
+          "name": "MinCpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>serverless实例cpu上限</p><p>单位：核</p>",
+          "example": "2.0",
+          "member": "float",
+          "name": "MaxCpu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内存</p><p>单位：GB</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "Memory",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5776,16 +5856,6 @@
         },
         {
           "disabled": false,
-          "document": "<p>serverless实例子状态</p>",
-          "example": "pause",
-          "member": "string",
-          "name": "ServerlessStatus",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>实例任务信息</p>",
           "example": "无",
           "member": "ObjectTask",
@@ -5836,12 +5906,382 @@
         },
         {
           "disabled": false,
+          "document": "<p>serverless实例子状态</p>",
+          "example": "pause",
+          "member": "string",
+          "name": "ServerlessStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>AI优化器状态</p>",
           "example": "无",
           "member": "AIOptimizerStatus",
           "name": "AIOptimizerStatus",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在的物理可用区</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "PhysicalZone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>running： 运行中</li><li>isolating： 隔离中</li><li>isolated： 已隔离</li><li>activating： 恢复中</li><li>offlining： 下线中</li><li>offlined： 已下线</li></ul>",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态中文描述</p>",
+          "example": "运行中",
+          "member": "string",
+          "name": "StatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库类型</p>",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库版本</p>",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储量</p><p>单位：GB</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Storage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费存储Id</p>",
+          "example": "cynosmysql-xxxxxxxx",
+          "member": "string",
+          "name": "StorageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储付费类型</p><p>枚举值：</p><ul><li>0： 后付费</li><li>1： 预付费</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "StoragePayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2021-06-08T04:29:25+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "2021-06-08T04:29:25+08:00",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间</p>",
+          "example": "2021-06-08T04:29:25+08:00",
+          "member": "datetime_iso",
+          "name": "IsolateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例销毁时间</p>",
+          "example": "2024-01-04 00:09:10",
+          "member": "string",
+          "name": "DestroyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>销毁期限</p>",
+          "example": "0 天",
+          "member": "string",
+          "name": "DestroyDeadlineText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例过期时间</p>",
+          "example": "2021-06-08T04:29:25+08:00",
+          "member": "datetime_iso",
+          "name": "PeriodEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC网络ID</p>",
+          "example": "vpc-1ptuei0b",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-1tmw9t4o",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例内网IP</p>",
+          "example": "10.0.1.2",
+          "member": "string",
+          "name": "Vip",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例内网端口</p>",
+          "example": "5432",
+          "member": "int64",
+          "name": "Vport",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "NetType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网IP</p>",
+          "example": "12.12.23.3",
+          "member": "string",
+          "name": "WanIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网端口</p>",
+          "example": "5433",
+          "member": "int64",
+          "name": "WanPort",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>外网开启状态</p>",
+          "example": "init",
+          "member": "string",
+          "name": "WanStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例外网域名</p>",
+          "example": "cynosdbpg-bzkxxrmt.wan.domain.com",
+          "member": "string",
+          "name": "WanDomain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的网络信息</p>",
+          "example": "无",
+          "member": "InstanceNetInfo",
+          "name": "InstanceNetInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式</p><p>枚举值：</p><ul><li>0： 后付费</li><li>1： 预付费</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正在处理的任务</p>",
+          "example": "taskDeleteInstance",
+          "member": "string",
+          "name": "ProcessingTask",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标志</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务</p>",
+          "example": "无",
+          "member": "ObjectTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否冻结</p>",
+          "example": "yes",
+          "member": "string",
+          "name": "IsFreeze",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "ResourceTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前实例支持的能力</p>",
+          "example": "无",
+          "member": "InstanceAbility",
+          "name": "InstanceAbility",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例机器类型</p><p>枚举值：</p><ul><li>common： 通用型</li><li>exclusive： 独享型</li></ul>",
+          "example": "exclusive",
+          "member": "string",
+          "name": "DeviceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全球数据库唯一标识</p>",
+          "example": "cynosdbmysql-gdn-cgsxflsb",
+          "member": "string",
+          "name": "GdnId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8478,6 +8918,15 @@
           "name": "LoadBalanceMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "TransAllSplit",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -27251,6 +27700,15 @@
           "name": "LoadBalanceMode",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "TransAllSplit",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -30485,6 +30943,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事务全拆分。在一个事务中将事务写前和写后的读拆分到不同的实例上去执行。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "TransAllSplit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

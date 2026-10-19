@@ -35,7 +35,9 @@ Output:
                 "CpuCachePercentage": "0.2",
                 "MinBlockSizeTf": "10",
                 "SlotNum": "1",
-                "MinBlockSizePt": "3"
+                "MinBlockSizePt": "3",
+                "PipelineArgs": "",
+                "LoraScale": ""
             },
             "ModelAccTaskId": "acc-50rjzj2xtest",
             "AlgorithmFramework": "PYTORCH",
@@ -61,6 +63,8 @@ Output:
             },
             "GPUType": "T4",
             "ModelId": "m-608587242317024640",
+            "ModelInputNum": 0,
+            "ModelInputInfos": [],
             "ErrorMsg": "",
             "Speedup": "4.66x",
             "ChargeType": "FREE",
@@ -68,7 +72,12 @@ Output:
             "TensorInfos": [
                 "input_0:float(1*3*640*640)"
             ],
-            "CreateTime": "2022-11-08 21:52:31"
+            "CreateTime": "2022-11-08 21:52:31",
+            "QATModel": false,
+            "FrameworkVersion": "pytorch1.9.0",
+            "ModelVersionId": "mv-v1-608587242317024641",
+            "ResourceGroupId": "",
+            "ResourceGroupName": ""
         },
         "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }

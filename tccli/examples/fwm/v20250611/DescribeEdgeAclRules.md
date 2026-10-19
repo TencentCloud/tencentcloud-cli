@@ -50,7 +50,9 @@ Output:
                 "TargetContent": "qq.com",
                 "TargetName": "",
                 "TargetType": "domain",
-                "UpdateTime": "2026-04-16 16:16:42"
+                "UpdateTime": "2026-04-16 16:16:42",
+                "HitCount": 58861,
+                "LastHitTime": "2026-09-18 10:54:19"
             },
             {
                 "CityCode": 1,
@@ -82,7 +84,9 @@ Output:
                 "TargetContent": "0.0.0.0/0",
                 "TargetName": "",
                 "TargetType": "net",
-                "UpdateTime": "2026-04-16 16:16:42"
+                "UpdateTime": "2026-04-16 16:16:42",
+                "HitCount": 58861,
+                "LastHitTime": "2026-09-18 10:54:19"
             }
         ],
         "TotalCount": 2

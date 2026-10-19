@@ -5688,7 +5688,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否为默认转发规则。",
+          "document": "<p>是否为默认转发规则。</p>",
           "example": "true",
           "member": "string",
           "name": "IsDefaultRule",
@@ -5698,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "转发规则 ID，格式为 rule- 后接 8 位字母数字。",
+          "document": "<p>转发规则 ID，格式为 rule- 后接 8 位字母数字。</p>",
           "example": "rule-h8cy5gwl",
           "member": "string",
           "name": "RuleId",
@@ -5708,12 +5708,22 @@
         },
         {
           "disabled": false,
-          "document": "目标组健康状态。",
+          "document": "<p>目标组健康状态。</p>",
           "example": "无",
           "member": "TargetGroupHealthInfo",
           "name": "TargetGroupHealthInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先级，值越小优先级越高，取值范围：1~10000。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

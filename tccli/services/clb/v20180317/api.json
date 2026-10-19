@@ -4010,6 +4010,17 @@
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出图片系数</p>",
+          "example": "0",
+          "member": "float",
+          "name": "OutputImageCoefficient",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5673,6 +5684,15 @@
           "example": "无",
           "member": "DecisionsConfig",
           "name": "DecisionsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Images 生图配置</p>",
+          "example": "无",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
           "required": false,
           "type": "object"
         }
@@ -11456,6 +11476,56 @@
       ],
       "usage": "out"
     },
+    "ImageConfig": {
+      "document": "video配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型内路由策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SimpleShuffle",
+          "member": "string",
+          "name": "RoutingStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RoutingStrategyArgs",
+          "name": "RoutingStrategyArgs",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同一模型请求重试次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "NumRetries",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "WaitSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InputKeyInfo": {
       "document": "创建Key的信息",
       "members": [
@@ -15226,6 +15296,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Images 生图配置</p>",
+          "example": "无",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17337,6 +17417,15 @@
           "example": "无",
           "member": "DecisionsConfig",
           "name": "DecisionsConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Images 生图配置</p>",
+          "example": "无",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
           "required": false,
           "type": "object"
         }
@@ -20217,6 +20306,15 @@
           "name": "HealthCheckMethod",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查超时时间</p><p>取值范围：[1, 60]</p><p>单位：秒</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "HealthCheckTimeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -20292,6 +20390,16 @@
           "name": "HealthCheckMethod",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>健康检查超时时间</p><p>单位：秒</p><p>默认值：15</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "HealthCheckTimeout",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

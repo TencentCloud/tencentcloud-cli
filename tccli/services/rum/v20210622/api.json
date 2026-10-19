@@ -371,6 +371,13 @@
       "output": "DescribeFOOMReportListResponse",
       "status": "online"
     },
+    "DescribeFileCertificate": {
+      "document": "获取COS存储的临时密钥，具体到ProjectId",
+      "input": "DescribeFileCertificateRequest",
+      "name": "获取cos鉴权",
+      "output": "DescribeFileCertificateResponse",
+      "status": "online"
+    },
     "DescribeIssuesDistribution": {
       "document": "获取问题分布数据",
       "input": "DescribeIssuesDistributionRequest",
@@ -10031,6 +10038,120 @@
           "name": "Code",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileCertificateRequest": {
+      "document": "DescribeFileCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超时时间，不填默认是 5 分钟",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "bucket类型，不填默认1:web，2:app",
+          "example": "2",
+          "member": "int64",
+          "name": "FileType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "ProjectID",
+          "example": "12000",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "reigon对应的id",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileCertificateResponse": {
+      "document": "DescribeFileCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "临时密钥key",
+          "example": "sfdgfgfgfdf",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥 id",
+          "example": "dfdfdfdgfgfbf",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥临时 token",
+          "example": "asdfdsfdsgg",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间戳",
+          "example": "123787043",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间戳",
+          "example": "23435436565",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桶地址",
+          "example": "ap-guangzhou:rum-app-prod-1258344699",
+          "member": "string",
+          "name": "BucketAddress",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

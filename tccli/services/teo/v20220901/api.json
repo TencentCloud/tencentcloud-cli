@@ -35816,10 +35816,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "EdgeOne 人机校验模式，取值有：<li> Invisible：无感验证；</li><li>Adaptive：自适应交互验证。</li>",
+          "document": "<p>浏览器端 WebView 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Adaptive： 自适应交互验证</li></ul><p>默认值：Invisible</p>",
           "example": "Adaptive",
           "member": "string",
           "name": "CaptchaMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>移动端原生 App 人机校验交互模式。</p><p>枚举值：</p><ul><li>Invisible： 无感验证</li><li>Visible： 交互验证</li></ul><p>默认值：Invisible</p>",
+          "example": "Invisible",
+          "member": "string",
+          "name": "MobileCaptchaMode",
           "output_required": false,
           "required": false,
           "type": "string",

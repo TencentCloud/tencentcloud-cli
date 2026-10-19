@@ -1197,7 +1197,7 @@
       "document": "代理相关应用信息，如集团主企业代子企业操作",
       "members": [
         {
-          "disabled": true,
+          "disabled": false,
           "document": "<p>CA-API应用编号，用于同平台企业下标识不同的CA-API应用</p>",
           "example": "yDtwEU87yrUygaLZxYk2SEaLZxYkodS7",
           "member": "string",
@@ -5436,7 +5436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "document": "<p>执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5445,7 +5445,7 @@
         },
         {
           "disabled": false,
-          "document": "起草要求，范围要求 5-1000 字",
+          "document": "<p>起草要求，范围要求 5-1000 字</p>",
           "example": "我公司（深圳市星辰科技有限公司）需要与北京云端数据服务有限公司签订一份软件开发服务合同。",
           "member": "string",
           "name": "Requirement",
@@ -5454,7 +5454,7 @@
         },
         {
           "disabled": false,
-          "document": "参考模板文件资源id（PDF/Word格式），大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。",
+          "document": "<p>参考模板文件资源id（PDF/Word格式），大小不超过1M，通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\">上传文件</a>接口来获取。</p>",
           "example": "yD3azUUck****n**UEFfm*Wv6Fm7tFzY",
           "member": "string",
           "name": "ReferenceTemplateId",
@@ -5463,7 +5463,7 @@
         },
         {
           "disabled": false,
-          "document": "相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口来获取。",
+          "document": "<p>相关规定文件资源id列表（PDF/Word格式），最多3个文件，每个大小不超过1M，通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\">上传文件</a>接口来获取。</p>",
           "example": "[\"yD3aWUUc*********u5ahO3EgYkkoe1E\"]",
           "member": "string",
           "name": "RequirementFileIds",
@@ -5472,10 +5472,19 @@
         },
         {
           "disabled": false,
-          "document": "起草合同的语言要求（zh，en）默认zh",
+          "document": "<p>起草合同的语言要求（zh，en）默认zh</p>",
           "example": "zh",
           "member": "string",
           "name": "ContractLanguage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审查任务id，仅支持传入1个，通过<a href=\"https://qian.tencent.com/developers/companyApis/%E5%90%88%E5%90%8C%E6%99%BA%E8%83%BD%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3/CreateBatchContractReviewTask/\">批量创建合同审查任务</a>接口来获取。</p>",
+          "example": "yDt*lUUc***qqbuz***RX5**R*QbvrcD",
+          "member": "string",
+          "name": "ReviewTaskId",
           "required": false,
           "type": "string"
         }
@@ -5487,7 +5496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "起草任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>起草任务id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yD3a5UUc*********E3o0MpRNHSEruSi",
           "member": "string",
           "name": "TaskId",

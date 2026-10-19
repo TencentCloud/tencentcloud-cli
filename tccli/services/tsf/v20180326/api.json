@@ -7529,7 +7529,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称，最长60字符",
+          "document": "<p>应用名称，最长60字符</p>",
           "example": "application-user",
           "member": "string",
           "name": "ApplicationName",
@@ -7538,7 +7538,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型，V：虚拟机应用；C：容器应用；S：serverless应用",
+          "document": "<p>应用类型，V：虚拟机应用；C：容器应用；S：serverless应用</p>",
           "example": "C",
           "member": "string",
           "name": "ApplicationType",
@@ -7547,7 +7547,7 @@
         },
         {
           "disabled": false,
-          "document": "应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用",
+          "document": "<p>应用微服务类型，M：service mesh应用；N：普通应用；G：网关应用</p>",
           "example": "N",
           "member": "string",
           "name": "MicroserviceType",
@@ -7556,7 +7556,7 @@
         },
         {
           "disabled": false,
-          "document": "应用描述",
+          "document": "<p>应用描述</p>",
           "example": "应用描述",
           "member": "string",
           "name": "ApplicationDesc",
@@ -7565,7 +7565,7 @@
         },
         {
           "disabled": true,
-          "document": "应用日志配置项，废弃参数",
+          "document": "<p>应用日志配置项，废弃参数</p>",
           "example": "已废弃",
           "member": "string",
           "name": "ApplicationLogConfig",
@@ -7574,7 +7574,7 @@
         },
         {
           "disabled": true,
-          "document": "应用资源类型，废弃参数",
+          "document": "<p>应用资源类型，废弃参数</p>",
           "example": "已废弃",
           "member": "string",
           "name": "ApplicationResourceType",
@@ -7583,7 +7583,7 @@
         },
         {
           "disabled": false,
-          "document": "应用runtime类型",
+          "document": "<p>应用runtime类型</p>",
           "example": "Java 8",
           "member": "string",
           "name": "ApplicationRuntimeType",
@@ -7592,7 +7592,7 @@
         },
         {
           "disabled": false,
-          "document": "【数据集ID】。可通过调用[DescribePrograms](https://cloud.tencent.com/document/product/649/73477)查询已创建的数据集列表或登录[控制台](https://console.cloud.tencent.com/tsf/privilege?rid=1&tab=program&roleId=role-a26486wy)进行查看；也可以调用[CreateProgram](https://cloud.tencent.com/document/product/649/108544)创建新的数据集。",
+          "document": "<p>【数据集ID】。可通过调用<a href=\"https://cloud.tencent.com/document/product/649/73477\">DescribePrograms</a>查询已创建的数据集列表或登录<a href=\"https://console.cloud.tencent.com/tsf/privilege?rid=1&amp;tab=program&amp;roleId=role-a26486wy\">控制台</a>进行查看；也可以调用<a href=\"https://cloud.tencent.com/document/product/649/108544\">CreateProgram</a>创建新的数据集。</p>",
           "example": "program-6a79x94v",
           "member": "string",
           "name": "ProgramId",
@@ -7601,7 +7601,7 @@
         },
         {
           "disabled": false,
-          "document": "服务配置信息列表",
+          "document": "<p>服务配置信息列表</p>",
           "example": "无",
           "member": "ServiceConfig",
           "name": "ServiceConfigList",
@@ -7610,7 +7610,7 @@
         },
         {
           "disabled": false,
-          "document": "忽略创建镜像仓库",
+          "document": "<p>忽略创建镜像仓库</p>",
           "example": "true",
           "member": "bool",
           "name": "IgnoreCreateImageRepository",
@@ -7619,7 +7619,7 @@
         },
         {
           "disabled": false,
-          "document": "数据集id列表",
+          "document": "<p>数据集id列表</p>",
           "example": "[\"program-6a79x94v\"]",
           "member": "string",
           "name": "ProgramIdList",
@@ -7628,7 +7628,7 @@
         },
         {
           "disabled": false,
-          "document": "apm业务系统id",
+          "document": "<p>apm业务系统id</p>",
           "example": "apm-6a79x94v",
           "member": "string",
           "name": "ApmInstanceId",
@@ -7637,7 +7637,7 @@
         },
         {
           "disabled": false,
-          "document": "编程语言:  Java；C/C++；Python；Go；Other",
+          "document": "<p>编程语言:  Java；C/C++；Python；Go；Other</p>",
           "example": "Java",
           "member": "string",
           "name": "ProgramLanguage",
@@ -7646,7 +7646,7 @@
         },
         {
           "disabled": false,
-          "document": "开发框架-SpringCloud/Dubbo/Go-GRPC/Other",
+          "document": "<p>开发框架-SpringCloud/Dubbo/Go-GRPC/Other</p>",
           "example": "SpringCloud",
           "member": "string",
           "name": "FrameworkType",
@@ -7655,7 +7655,7 @@
         },
         {
           "disabled": false,
-          "document": "注册配置治理",
+          "document": "<p>注册配置治理，关闭注册配置治理或者使用北极星注册中心时必须传值</p>",
           "example": "无",
           "member": "ServiceGovernanceConfig",
           "name": "ServiceGovernanceConfig",
@@ -7664,7 +7664,7 @@
         },
         {
           "disabled": false,
-          "document": "是否创建并关联同名镜像仓库",
+          "document": "<p>是否创建并关联同名镜像仓库</p>",
           "example": "true",
           "member": "bool",
           "name": "CreateSameNameImageRepository",
@@ -7679,7 +7679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用ID",
+          "document": "<p>应用ID</p>",
           "example": "application-6a79x94v",
           "member": "string",
           "name": "Result",
@@ -27615,7 +27615,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启服务注册治理",
+          "document": "<p>是否开启服务注册治理</p><p>枚举值：</p><ul><li>true： 使用Consul或者北极星服务注册治理</li><li>false： 不使用服务注册治理</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "EnableGovernance",
@@ -27626,7 +27626,7 @@
         },
         {
           "disabled": false,
-          "document": "服务治理类型（枚举：SHARE表示共享型、EXCLUSIVE表示独占型）",
+          "document": "<p>服务治理类型</p><p>枚举值：</p><ul><li>SHARE： 使用Consul注册中心</li><li>EXCLUSIVE： 使用北极星注册中心</li></ul>",
           "example": "SHARE",
           "member": "string",
           "name": "GovernanceType",
@@ -27637,7 +27637,7 @@
         },
         {
           "disabled": false,
-          "document": "独享实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>北极星实例列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExclusiveInstance",
           "name": "ExclusiveInstances",

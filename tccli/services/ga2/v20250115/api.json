@@ -1284,7 +1284,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>四层获取源IP方式，支持&#39;TOA&#39;, &#39;ProxyProtocol&#39;, &#39;ProxyProtocolV2&#39;。</p><p>需要开启四层获取源IP方式，才填写此参数。</p>",
+          "document": "<p>四层获取源IP方式。</p><p>枚举值：</p><ul><li>TOA： TOA</li><li>ProxyProtocol： ProxyProtocol</li><li>ProxyProtocolV2： ProxyProtocolV2</li></ul><p>需要开启四层获取源IP方式，才填写此参数。</p>",
           "example": "TOA",
           "member": "string",
           "name": "GetRealIpType",
@@ -1559,7 +1559,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -1568,7 +1568,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器ID。",
+          "document": "<p>监听器ID。</p>",
           "example": "lsr-kzjzfs7n",
           "member": "string",
           "name": "ListenerId",
@@ -1577,7 +1577,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID。",
+          "document": "<p>七层转发策略ID。</p>",
           "example": "dm-dz058e4q",
           "member": "string",
           "name": "ForwardingPolicyId",
@@ -1586,7 +1586,7 @@
         },
         {
           "disabled": false,
-          "document": "七层转发规则ID。",
+          "document": "<p>七层转发规则ID。</p>",
           "example": "rule-ioi42kxy",
           "member": "string",
           "name": "ForwardingRuleId",
@@ -1601,7 +1601,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -1632,7 +1632,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>GA实例唯一Id</p>",
+          "document": "<p>全球加速实例ID</p>",
           "example": "ga-rs4cpp5u",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -1705,7 +1705,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全球加速实例ID。",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-ask56kjh",
           "member": "string",
           "name": "GlobalAcceleratorId",
@@ -1714,7 +1714,7 @@
         },
         {
           "disabled": false,
-          "document": "安全策略ID",
+          "document": "<p>访问控制策略ID</p>",
           "example": "sp-1234abcd",
           "member": "string",
           "name": "GlobalAcceleratorAclPolicyId",
@@ -1723,8 +1723,8 @@
         },
         {
           "disabled": false,
-          "document": "Acl规则ID。",
-          "example": "无",
+          "document": "<p>访问规则ID</p>",
+          "example": "[\"sr-00000msx\"]",
           "member": "string",
           "name": "GlobalAcceleratorAclRuleIds",
           "required": true,
@@ -1738,7 +1738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务ID。",
+          "document": "<p>异步任务ID。</p>",
           "example": "e1326769-29a9-43d5-8fbb-6af2e7165328",
           "member": "string",
           "name": "TaskId",
@@ -2137,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。</p>",
+          "document": "<p>过滤条件。  endpoint-group-id- String -（过滤条件）终端节点组实例ID。endpoint-group-type- String -（过滤条件）终端节点组实例类型。listener-id- String -（过滤条件）监听器实例ID。endpoint-group-name- String -（过滤条件）终端节点组名称。</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -2590,7 +2590,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件。<li>global-accelerator-id - String -（过滤条件）全球加速实例ID。</li> <li>global-accelerator-state - String -（过滤条件）全球加速实例状态。</li></p>",
+          "document": "<p>过滤条件。<li>global-accelerator-id - String -（过滤条件）全球加速实例ID。</li> <li>global-accelerator-state - String -（过滤条件）全球加速实例状态。</li><li>global-accelerator-name - String -（过滤条件）全球加速实例名称。</li></p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3328,7 +3328,7 @@
         {
           "disabled": false,
           "document": "属性名称, 若存在多个Filter时，Filter间的关系为逻辑与（AND）关系。",
-          "example": "ga-name",
+          "example": "config-profile-id",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3336,8 +3336,8 @@
         },
         {
           "disabled": false,
-          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。当值类型为布尔类型时，可直接取值为字符串\"TRUE\"或 \"FALSE\"。",
-          "example": "[\"ga-A\"]",
+          "document": "属性值, 若同一个Filter存在多个Values，同一Filter下Values间的关系为逻辑或（OR）关系。",
+          "example": "[\"cp-xxxxxxxx\"]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -4234,7 +4234,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>GA实例唯一Id</p>",
+          "document": "<p>全球加速实例ID。</p>",
           "example": "ga-8sreohed",
           "member": "string",
           "name": "GlobalAcceleratorId",

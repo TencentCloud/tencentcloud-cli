@@ -11202,7 +11202,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>topic名称</p>",
+          "document": "<p>目标日志主题的名称,当DataTransformType=1(前置加工任务)时, 该值和源日志主题名称的值相同.</p>",
           "example": "topic_name_1",
           "member": "string",
           "name": "TopicName",
@@ -11302,7 +11302,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据加工任务名称",
+          "document": "<p>数据加工任务名称</p>",
           "example": "data_transform_name",
           "member": "string",
           "name": "Name",
@@ -11312,7 +11312,7 @@
         },
         {
           "disabled": false,
-          "document": "数据加工任务id",
+          "document": "<p>数据加工任务id</p>",
           "example": "96562452-xxxx-xxxx-9d2b-0b94e379c917",
           "member": "string",
           "name": "TaskId",
@@ -11322,7 +11322,7 @@
         },
         {
           "disabled": false,
-          "document": "任务启用状态，默认为1，正常开启,  2关闭",
+          "document": "<p>任务启用状态，默认为1，正常开启,  2关闭</p>",
           "example": "1",
           "member": "int64",
           "name": "EnableFlag",
@@ -11332,7 +11332,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)",
+          "document": "<p>加工任务类型，1： DSL(使用自定义加工语言的加工任务)， 2：SQL(使用sql的加工任务)</p>",
           "example": "1",
           "member": "int64",
           "name": "Type",
@@ -11342,7 +11342,7 @@
         },
         {
           "disabled": false,
-          "document": "源日志主题",
+          "document": "<p>源日志主题ID,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题的ID值相同.</p>",
           "example": "c6404313-xxxx-xxxx-970d-9654afd08b1f",
           "member": "string",
           "name": "SrcTopicId",
@@ -11352,7 +11352,7 @@
         },
         {
           "disabled": false,
-          "document": "当前加工任务状态（1准备中/2运行中/3停止中/4已停止）",
+          "document": "<p>当前加工任务状态（1准备中/2运行中/3停止中/4已停止）</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -11362,7 +11362,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>创建时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2022-12-08 21:00:35",
           "member": "string",
           "name": "CreateTime",
@@ -11372,7 +11372,7 @@
         },
         {
           "disabled": false,
-          "document": "最近修改时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>最近修改时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2024-03-20 15:51:01",
           "member": "string",
           "name": "UpdateTime",
@@ -11382,7 +11382,7 @@
         },
         {
           "disabled": false,
-          "document": "最后启用时间，如果需要重建集群，修改该时间\n时间格式：yyyy-MM-dd HH:mm:ss",
+          "document": "<p>最后启用时间，如果需要重建集群，修改该时间<br>时间格式：yyyy-MM-dd HH:mm:ss</p>",
           "example": "2024-05-23 19:20:00",
           "member": "string",
           "name": "LastEnableTime",
@@ -11392,7 +11392,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题名称",
+          "document": "<p>源日志主题名称,当DataTransformType=1,代表当前任务的类型是前置加工任务,该值和目标日志主题名称的值相同.</p>",
           "example": "topicname",
           "member": "string",
           "name": "SrcTopicName",
@@ -11402,7 +11402,7 @@
         },
         {
           "disabled": false,
-          "document": "日志集id",
+          "document": "<p>日志集id</p>",
           "example": "logset-1",
           "member": "string",
           "name": "LogsetId",
@@ -11412,7 +11412,7 @@
         },
         {
           "disabled": false,
-          "document": "加工任务目的topic_id以及别名",
+          "document": "<p>加工任务目的topic_id以及别名</p>",
           "example": "无",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
@@ -11422,7 +11422,7 @@
         },
         {
           "disabled": false,
-          "document": "加工逻辑函数。",
+          "document": "<p>加工逻辑函数。</p>",
           "example": "fields_set(\\\\\"111\\\\\",\\\\\"111\\\\\")",
           "member": "string",
           "name": "EtlContent",
@@ -11432,7 +11432,7 @@
         },
         {
           "disabled": false,
-          "document": "兜底topic_id",
+          "document": "<p>兜底topic_id</p>",
           "example": "7b40b0cb-xxxx-xxxx-9477-9386068cede6",
           "member": "string",
           "name": "BackupTopicID",
@@ -11442,7 +11442,7 @@
         },
         {
           "disabled": false,
-          "document": "超限之后是否丢弃日志数据",
+          "document": "<p>超限之后是否丢弃日志数据</p>",
           "example": "false",
           "member": "bool",
           "name": "BackupGiveUpData",
@@ -11452,7 +11452,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启投递服务日志。 1关闭,2开启",
+          "document": "<p>是否开启投递服务日志。 1关闭,2开启</p>",
           "example": "2",
           "member": "uint64",
           "name": "HasServicesLog",
@@ -11462,7 +11462,7 @@
         },
         {
           "disabled": false,
-          "document": "任务目标日志主题数量",
+          "document": "<p>任务目标日志主题数量</p>",
           "example": "1",
           "member": "uint64",
           "name": "TaskDstCount",
@@ -11472,7 +11472,7 @@
         },
         {
           "disabled": false,
-          "document": "数据加工类型。0：标准加工任务；1：前置加工任务。",
+          "document": "<p>数据加工类型。0：标准加工任务；1：前置加工任务。当该值=1时, 源日志主题和目标日志主题的名称和ID相同.</p><p>枚举值：</p><ul><li>1： 前置加工任务</li><li>0： 标准加工任务</li></ul>",
           "example": "0",
           "member": "uint64",
           "name": "DataTransformType",
@@ -11482,7 +11482,7 @@
         },
         {
           "disabled": false,
-          "document": "保留失败日志状态。 1:不保留，2:保留",
+          "document": "<p>保留失败日志状态。 1:不保留，2:保留</p>",
           "example": "1",
           "member": "uint64",
           "name": "KeepFailureLog",
@@ -11492,7 +11492,7 @@
         },
         {
           "disabled": false,
-          "document": "失败日志的字段名称",
+          "document": "<p>失败日志的字段名称</p>",
           "example": "ETLParseFailure",
           "member": "string",
           "name": "FailureLogKey",
@@ -11502,7 +11502,7 @@
         },
         {
           "disabled": false,
-          "document": "指定加工数据的开始时间，秒级时间戳。\n- 日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。",
+          "document": "<p>指定加工数据的开始时间，秒级时间戳。</p><ul><li>日志主题生命周期内的任意时间范围，如果超出了生命周期,只处理生命周期内有数据的部分。</li></ul>",
           "example": "1746686554",
           "member": "uint64",
           "name": "ProcessFromTimestamp",
@@ -11512,7 +11512,7 @@
         },
         {
           "disabled": false,
-          "document": "指定加工数据的结束时间，秒级时间戳。\n1. 不可指定未来的时间\n2. 不填则表示持续执行",
+          "document": "<p>指定加工数据的结束时间，秒级时间戳。</p><ol><li>不可指定未来的时间</li><li>不填则表示持续执行</li></ol>",
           "example": "1746687554",
           "member": "uint64",
           "name": "ProcessToTimestamp",
@@ -11522,7 +11522,7 @@
         },
         {
           "disabled": false,
-          "document": "sql数据源信息",
+          "document": "<p>sql数据源信息</p>",
           "example": "无",
           "member": "DataTransformSqlDataSource",
           "name": "DataTransformSqlDataSources",
@@ -11532,7 +11532,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量",
+          "document": "<p>环境变量</p>",
           "example": "无",
           "member": "EnvInfo",
           "name": "EnvInfos",

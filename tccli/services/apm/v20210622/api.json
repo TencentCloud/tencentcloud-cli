@@ -1103,6 +1103,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Span 状态配置</p>",
+          "example": "无",
+          "member": "SpanStatusConfig",
+          "name": "SpanStatusConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用级自定义 Span 状态开关</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSpanStatusConfig",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2417,6 +2437,16 @@
           "name": "TokenDisplayProtection",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Span 状态配置</p>",
+          "example": "无",
+          "member": "SpanStatusConfig",
+          "name": "SpanStatusConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -5574,6 +5604,34 @@
       ],
       "usage": "out"
     },
+    "ErrorSpanConf": {
+      "document": "具体单个配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>错误类型匹配规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"java.lang.*\"]",
+          "member": "string",
+          "name": "ErrorObjectPatterns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码匹配规则列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"HTTP_420\"]",
+          "member": "string",
+          "name": "ErrorCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询过滤参数",
       "members": [
@@ -6309,6 +6367,24 @@
           "name": "CrossAccountPeerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用级自定义 Span 状态开关</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableSpanStatusConfig",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Span 状态配置</p>",
+          "example": "无",
+          "member": "SpanStatusConfig",
+          "name": "SpanStatusConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -6849,6 +6925,15 @@
           "name": "TokenDisplayProtection",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义 Span 状态配置</p>",
+          "example": "无",
+          "member": "SpanStatusConfig",
+          "name": "SpanStatusConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7844,6 +7929,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpanStatusConfig": {
+      "document": "https://iwiki.woa.com/p/4035597532\n自定义 Span 状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标记为错误规则组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorSpanConf",
+          "name": "MarkAsError",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标记为正常规则组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorSpanConf",
+          "name": "MarkAsOk",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

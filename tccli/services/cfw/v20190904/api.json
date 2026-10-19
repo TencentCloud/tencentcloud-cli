@@ -651,6 +651,13 @@
       "output": "DescribeOfflineExportTemporaryCredentialsResponse",
       "status": "online"
     },
+    "DescribeOverviewResourceQuota": {
+      "document": "查询云防火墙概览页资源与配额详情信息，返回带宽配额、实例与规则配额、日志存储信息及相关能力标识。",
+      "input": "DescribeOverviewResourceQuotaRequest",
+      "name": "资源与配额详情",
+      "output": "DescribeOverviewResourceQuotaResponse",
+      "status": "online"
+    },
     "DescribeResourceGroup": {
       "document": "DescribeResourceGroup资产中心资产树信息",
       "input": "DescribeResourceGroupRequest",
@@ -12586,6 +12593,63 @@
       ],
       "type": "object"
     },
+    "DescribeOverviewResourceQuotaRequest": {
+      "document": "DescribeOverviewResourceQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回视图范围</p><p>默认值：不传该参数时，默认返回完整的资源与配额详情数据</p>",
+          "example": "detail",
+          "member": "string",
+          "name": "Scene",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewResourceQuotaResponse": {
+      "document": "DescribeOverviewResourceQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源与配额详情数据</p><p>包含详情字段和能力标识，具体字段含义见关联数据结构说明。访问控制规则同时提供汇总字段及按互联网边界、NAT边界、VPC边界拆分的字段。</p>",
+          "example": "无",
+          "member": "OverviewResourceQuotaDataLite",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回代码</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回状态字符</p>",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeResourceGroupNewRequest": {
       "document": "DescribeResourceGroupNew请求参数结构体",
       "members": [
@@ -20404,6 +20468,1222 @@
       ],
       "usage": "in"
     },
+    "OverviewBlockListQuota": {
+      "document": "概览封禁列表配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>封禁列表总配额数量。</p>",
+          "example": "20100",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁列表已使用数量。</p>",
+          "example": "4008",
+          "member": "int64",
+          "name": "UsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入站方向已使用的封禁列表记录。</p>",
+          "example": "4005",
+          "member": "int64",
+          "name": "InUsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出方向封禁列表已使用数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "OutUsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewBlockListQuotaDetail": {
+      "document": "概览封禁列表配额详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>封禁列表总配额数量。</p>",
+          "example": "20100",
+          "member": "int64",
+          "name": "TotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁列表已使用数量。</p>",
+          "example": "4009",
+          "member": "int64",
+          "name": "UsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁列表剩余配额数量。</p>",
+          "example": "16091",
+          "member": "int64",
+          "name": "RemainCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础配额总数量。</p>",
+          "example": "20000",
+          "member": "int64",
+          "name": "BaseTotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础配额已使用数量。</p>",
+          "example": "4009",
+          "member": "int64",
+          "name": "BaseUsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基础配额剩余数量。</p>",
+          "example": "15991",
+          "member": "int64",
+          "name": "BaseRemainCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容配额总数量。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "ExtensionTotalCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容配额已使用数量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExtensionUsedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容配额剩余数量。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "ExtensionRemainCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewCommonRuleQuotaDetail": {
+      "document": "概览通用规则配额详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>允许使用的规则总数。</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "AllowedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用规则数量。</p>",
+          "example": "43",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余规则配额数量。</p>",
+          "example": "5057",
+          "member": "int64",
+          "name": "RemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余扩容规则数量。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RemainExtensionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入方向规则总数。</p>",
+          "example": "7",
+          "member": "int64",
+          "name": "InTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入方向启用规则数。</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "InEnableNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出方向规则总数。</p>",
+          "example": "22",
+          "member": "int64",
+          "name": "OutTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出方向启用规则数。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "OutEnableNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewEastWestDetail": {
+      "document": "概览东西向带宽详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>东西向总带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "10240",
+          "member": "int64",
+          "name": "TotalMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已使用流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "265460884",
+          "member": "int64",
+          "name": "UsedBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前带宽使用率。</p><p>单位：%</p>",
+          "example": "0.024722971394658087",
+          "member": "float",
+          "name": "UsagePercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已分配并使用的带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "1124",
+          "member": "int64",
+          "name": "AllocatedBandwidthUsedMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前仍可使用带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "9116",
+          "member": "int64",
+          "name": "CanUsedBandwidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群模式带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "9116",
+          "member": "int64",
+          "name": "ClusterModeWidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主备模式带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "1124",
+          "member": "int64",
+          "name": "MasterSlaveModeWidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同地域防火墙实例 ID。</p>",
+          "example": "cfwew-46cfffdc",
+          "member": "string",
+          "name": "SameRegionFwInsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同地域防火墙实例名称。</p>",
+          "example": "自动化-上海",
+          "member": "string",
+          "name": "SameRegionFwInsName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>同地域防火墙实例峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SameRegionMaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨地域防火墙实例 ID。</p>",
+          "example": "cfwew-46cfffdc",
+          "member": "string",
+          "name": "DiffRegionFwInsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨地域防火墙实例名称。</p>",
+          "example": "自动化-上海",
+          "member": "string",
+          "name": "DiffRegionFwInsName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨地域防火墙实例峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "DiffRegionMaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例组 ID。</p>",
+          "example": "cfwg-8f6785ee",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例组名称。</p>",
+          "example": "自动化",
+          "member": "string",
+          "name": "FwGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例组峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "265460884",
+          "member": "int64",
+          "name": "FwGroupMaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例 ID。</p>",
+          "example": "cfwew-46cfffdc",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例名称。</p>",
+          "example": "自动化-上海",
+          "member": "string",
+          "name": "FwInsName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防火墙实例峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "265460884",
+          "member": "int64",
+          "name": "FwInsMaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 VPC 峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "2352",
+          "member": "int64",
+          "name": "ClusterVpcMaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewLogStorageDetail": {
+      "document": "概览日志存储详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>日志已使用存储容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "480526631",
+          "member": "int64",
+          "name": "UsedBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志总存储容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "5368709120000",
+          "member": "int64",
+          "name": "TotalBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志保留天数。</p><p>单位：天</p>",
+          "example": "365",
+          "member": "int64",
+          "name": "StorageDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NDR 日志保留天数。</p><p>单位：天</p>",
+          "example": "180",
+          "member": "int64",
+          "name": "NDRStorageDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AclSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入侵检测日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "IdsSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "443041617",
+          "member": "int64",
+          "name": "NetFlowSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "37485014",
+          "member": "int64",
+          "name": "OperateSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NDR 风险日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "NDRRiskSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NDR 流量日志占用容量，单位为 Byte。</p><p>单位：Byte</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "NDRNetFlowSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志存储计费模式标识。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否因欠费停止写入日志的状态标识。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ArrearsStopWriting",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewNDRDetail": {
+      "document": "概览 NDR 带宽详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>NDR 能力或服务状态标识。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NDR 总带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "1024",
+          "member": "int64",
+          "name": "TotalMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>入方向峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "22889762",
+          "member": "int64",
+          "name": "InMaxBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>出方向峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "5423500",
+          "member": "int64",
+          "name": "OutMaxBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总体峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "23063818",
+          "member": "int64",
+          "name": "MaxFlowBps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前流量使用率。</p><p>单位：%</p>",
+          "example": "0.021479854360222816",
+          "member": "float",
+          "name": "FlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewNorthSouthDetail": {
+      "document": "概览南北向带宽详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>南北向互联网总带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "384",
+          "member": "float",
+          "name": "InternetBandwidthTotalMbps",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>南北向网络峰值流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "3343542",
+          "member": "float",
+          "name": "NetMaxFlowBps",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>串行接入总带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "90",
+          "member": "int64",
+          "name": "SerialBandwidthTotalMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NAT 防火墙总带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "141",
+          "member": "int64",
+          "name": "NatBandwidthTotalMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅旁路接入带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BypassOnlyBandwidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未使用带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "UnusedBandwidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前仍可使用带宽，单位为 Mbps。</p><p>单位：Mbps</p>",
+          "example": "384",
+          "member": "int64",
+          "name": "CanUsedBandwidthMbps",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>串行链路峰值流量最高的地域名称。</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "MaxSerialRegion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>峰值最高地域的入站流量峰值，单位为 bps。</p><p>单位：bps</p>",
+          "example": "2534367",
+          "member": "int64",
+          "name": "SerialRegionInFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>峰值最高地域的出方向最大流量，单位为 bps。</p><p>单位：bps</p>",
+          "example": "200914",
+          "member": "int64",
+          "name": "SerialRegionOutFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewQuotaDetail": {
+      "document": "概览资源与配额详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>已使用公网 IP 数量。</p>",
+          "example": "17",
+          "member": "int64",
+          "name": "PublicIpUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网 IP 总配额数量。</p>",
+          "example": "924",
+          "member": "int64",
+          "name": "PublicIpTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用实例总配额数量。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "CommonInstanceTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用实例剩余配额数量。</p>",
+          "example": "11",
+          "member": "int64",
+          "name": "CommonInstanceRemain",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用实例已使用数量。</p>",
+          "example": "9",
+          "member": "int64",
+          "name": "CommonInstanceUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制规则已使用数量。</p>",
+          "example": "2657",
+          "member": "int64",
+          "name": "AccessControlRuleUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>访问控制规则总配额数量。</p>",
+          "example": "15000",
+          "member": "int64",
+          "name": "AccessControlRuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用串行地域数量。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "SerialRegionUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用 NAT 防火墙实例数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "NatInstanceUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用 VPC 防火墙实例数量。</p>",
+          "example": "6",
+          "member": "int64",
+          "name": "VpcInstanceUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边界规则配额详情。</p>",
+          "example": "无",
+          "member": "OverviewCommonRuleQuotaDetail",
+          "name": "BorderRuleQuota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NAT 规则配额详情。</p>",
+          "example": "无",
+          "member": "OverviewCommonRuleQuotaDetail",
+          "name": "NatRuleQuota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 规则配额详情。</p>",
+          "example": "无",
+          "member": "OverviewVpcRuleQuotaDetail",
+          "name": "VpcRuleQuota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁列表配额统计信息。</p>",
+          "example": "无",
+          "member": "OverviewBlockListQuota",
+          "name": "BlockListQuota",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁 IP 总数量。</p>",
+          "example": "4008",
+          "member": "int64",
+          "name": "BlockIpCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用封禁 IP 数量。</p>",
+          "example": "4009",
+          "member": "int64",
+          "name": "BlockIpUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁 IP 总配额数量。</p>",
+          "example": "20100",
+          "member": "int64",
+          "name": "BlockIpTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>封禁列表基础包与扩容包配额详情。</p>",
+          "example": "无",
+          "member": "OverviewBlockListQuotaDetail",
+          "name": "BlockListQuotaDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组规则已使用数量。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "SgRuleQuotaUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组规则总配额数量。</p>",
+          "example": "2000",
+          "member": "int64",
+          "name": "SgRuleQuotaTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总扩容资源已使用数量。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalExtensionUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总扩容资源配额数量。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalExtensionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址模板已使用数量。</p>",
+          "example": "502",
+          "member": "int64",
+          "name": "AddressTemplateUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址模板总配额数量。</p>",
+          "example": "500",
+          "member": "int64",
+          "name": "AddressTemplateTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>蜜罐已使用数量。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "HoneyPotUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>蜜罐总配额数量。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "HoneyPotTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewResourceQuotaDataLite": {
+      "document": "资源与配额详情返回数据，包含详情字段和能力标识",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源与配额详情核心数据，包含南北向带宽、东西向带宽、NDR 带宽、资源配额和日志存储信息。</p>",
+          "example": "无",
+          "member": "OverviewResourceQuotaDetail",
+          "name": "Detail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>纯按量计费使用情况</p>",
+          "example": "无",
+          "member": "VolumeUsageDetail",
+          "name": "VolumeUsageDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewResourceQuotaDetail": {
+      "document": "概览资源与配额详情字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>南北向带宽与流量详情数据。</p>",
+          "example": "无",
+          "member": "OverviewNorthSouthDetail",
+          "name": "NorthSouthDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>东西向带宽与流量详情数据。</p>",
+          "example": "无",
+          "member": "OverviewEastWestDetail",
+          "name": "EastWestDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>NDR 带宽与流量详情数据。</p>",
+          "example": "无",
+          "member": "OverviewNDRDetail",
+          "name": "NDRDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号下资源、实例、规则和扩容配额详情数据。</p>",
+          "example": "无",
+          "member": "OverviewQuotaDetail",
+          "name": "QuotaDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志存储使用量、保留天数和各类日志容量详情数据。</p>",
+          "example": "无",
+          "member": "OverviewLogStorageDetail",
+          "name": "LogStorageDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OverviewVpcRuleQuotaDetail": {
+      "document": "概览 VPC 规则配额详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>允许使用的规则总数。</p>",
+          "example": "5000",
+          "member": "int64",
+          "name": "AllowedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用规则数量。</p>",
+          "example": "1726",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余规则配额数量。</p>",
+          "example": "3374",
+          "member": "int64",
+          "name": "RemainQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余扩容规则数量。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "RemainExtensionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全局规则总数。</p>",
+          "example": "1684",
+          "member": "int64",
+          "name": "GlobalRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已启用的全局规则条目。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "GlobalEnableRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边界规则总数。</p>",
+          "example": "42",
+          "member": "int64",
+          "name": "EdgeRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>边界启用规则数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EdgeEnableRuleNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv4 规则总数。</p>",
+          "example": "1726",
+          "member": "int64",
+          "name": "V4RuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已启用的 IPv4 规则条目。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "V4EnableRuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6 规则总数。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "V6RuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已启用的 IPv6 规则条目。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "V6EnableRuleTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 防火墙开关状态标识。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSwitchEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PolicyRoutePreCheckReport": {
       "document": "策略路由预编排配额报告",
       "members": [
@@ -23540,6 +24820,62 @@
         }
       ],
       "type": "object"
+    },
+    "VolumeUsageDetail": {
+      "document": "纯按量计费版本使用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>防护IP数</p><p>默认值：0</p>",
+          "example": "35",
+          "member": "int64",
+          "name": "PublicIpUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护实例数</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "InstanceUsed",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计日期</p>",
+          "example": "2026-07-02",
+          "member": "string",
+          "name": "StatDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>处理流量</p>",
+          "example": "0.12",
+          "member": "float",
+          "name": "TodayTrafficGB",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>防护天数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProtectDays",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VpcDnsInfo": {
       "document": "nat防火墙 vpc dns 开关信息",

@@ -11898,7 +11898,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>模型等级。flagship（默认）、standard</p>",
+          "document": "<p>模式。flagship（高级版，默认）、standard（标准版）、depthcrafter(深度提取)</p>",
           "example": "flagship",
           "member": "string",
           "name": "ModelTier",
@@ -12104,11 +12104,11 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品信息</p>",
+          "document": "<p>产品信息。除深度提取外，其他模式必填</p>",
           "example": "无",
           "member": "CloneViralProduct",
           "name": "Product",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {

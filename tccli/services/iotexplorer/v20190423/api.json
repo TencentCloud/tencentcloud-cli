@@ -84,13 +84,6 @@
       "output": "BindProductsResponse",
       "status": "online"
     },
-    "BindTWeTalkAIBot": {
-      "document": "用于绑定一个产品和智能体。",
-      "input": "BindTWeTalkAIBotRequest",
-      "name": "绑定智能体",
-      "output": "BindTWeTalkAIBotResponse",
-      "status": "online"
-    },
     "BindTWeTalkAgent": {
       "document": "绑定智能体到产品或设备\n- `BindingScope=product` 时，`DeviceName` 必须为空。\n- `BindingScope=device` 时，`DeviceName` 必填。",
       "input": "BindTWeTalkAgentRequest",
@@ -343,13 +336,6 @@
       "output": "CreateTWeSeeSubscriptionResponse",
       "status": "online"
     },
-    "CreateTWeTalkAIBot": {
-      "document": "用于新增TWeTalk智能体。",
-      "input": "CreateTWeTalkAIBotRequest",
-      "name": "新增TWeTalk智能体",
-      "output": "CreateTWeTalkAIBotResponse",
-      "status": "online"
-    },
     "CreateTWeTalkAgent": {
       "document": "新增TWeTalk智能体。",
       "input": "CreateTWeTalkAgentRequest",
@@ -495,13 +481,6 @@
       "input": "DeleteTWeSeeTasksByConditionRequest",
       "name": "删除 TWeSee 任务",
       "output": "DeleteTWeSeeTasksByConditionResponse",
-      "status": "online"
-    },
-    "DeleteTWeTalkAIBot": {
-      "document": "用于删除TWeTalk智能体。",
-      "input": "DeleteTWeTalkAIBotRequest",
-      "name": "删除TWeTalk智能体",
-      "output": "DeleteTWeTalkAIBotResponse",
       "status": "online"
     },
     "DeleteTWeTalkAgent": {
@@ -1001,13 +980,6 @@
       "output": "DescribeTWeSeeTaskStatisticsResponse",
       "status": "online"
     },
-    "DescribeTWeTalkAIBot": {
-      "document": "用于查询TWeTalk智能体详情。",
-      "input": "DescribeTWeTalkAIBotRequest",
-      "name": "获取TWeTalk智能体详情",
-      "output": "DescribeTWeTalkAIBotResponse",
-      "status": "online"
-    },
     "DescribeTWeTalkAgent": {
       "document": "用户查询TWeTalk智能体详情",
       "input": "DescribeTWeTalkAgentRequest",
@@ -1223,13 +1195,6 @@
       "input": "GetTWeCallActiveStatusRequest",
       "name": "查询TWeCall激活状态",
       "output": "GetTWeCallActiveStatusResponse",
-      "status": "online"
-    },
-    "GetTWeTalkAIBotList": {
-      "document": "用于查询TWeTalk智能体列表。",
-      "input": "GetTWeTalkAIBotListRequest",
-      "name": "获取TWeTalk智能体列表",
-      "output": "GetTWeTalkAIBotListResponse",
       "status": "online"
     },
     "GetTWeTalkActiveRecordList": {
@@ -1561,13 +1526,6 @@
       "output": "ModifyTWeSeeSubscriptionRenewFlagResponse",
       "status": "online"
     },
-    "ModifyTWeTalkAIBot": {
-      "document": "用于修改TWeTalk智能体。",
-      "input": "ModifyTWeTalkAIBotRequest",
-      "name": "修改TWeTalk智能体",
-      "output": "ModifyTWeTalkAIBotResponse",
-      "status": "online"
-    },
     "ModifyTWeTalkAgent": {
       "document": "修改TWeTalk智能体",
       "input": "ModifyTWeTalkAgentRequest",
@@ -1776,13 +1734,6 @@
       "input": "UnbindProductsRequest",
       "name": "批量解绑子产品",
       "output": "UnbindProductsResponse",
-      "status": "online"
-    },
-    "UnbindTWeTalkAIBot": {
-      "document": "用于解除一个产品和智能体的绑定。",
-      "input": "UnbindTWeTalkAIBotRequest",
-      "name": "解绑智能体",
-      "output": "UnbindTWeTalkAIBotResponse",
       "status": "online"
     },
     "UnbindTWeTalkAgent": {
@@ -3205,42 +3156,6 @@
     },
     "BindProductsResponse": {
       "document": "BindProducts返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "BindTWeTalkAIBotRequest": {
-      "document": "BindTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-1TzRAz42oi",
-          "member": "string",
-          "name": "BotId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "LPIOACT1NG",
-          "member": "string",
-          "name": "ProductId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "BindTWeTalkAIBotResponse": {
-      "document": "BindTWeTalkAIBot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -7011,142 +6926,6 @@
       ],
       "type": "object"
     },
-    "CreateTWeTalkAIBotRequest": {
-      "document": "CreateTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "示例bot",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "名称",
-          "example": "test1",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "支持的语言，zh-中文；en-英文；默认zh",
-          "example": "zh",
-          "member": "string",
-          "name": "TargetLanguage",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义语音识别配置",
-          "example": "无",
-          "member": "TalkSTTConfigInfo",
-          "name": "STTConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "自定义大模型配置",
-          "example": "无",
-          "member": "TalkLLMConfigInfo",
-          "name": "LLMConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "语音合成配置",
-          "example": "无",
-          "member": "TalkTTSConfigInfo",
-          "name": "TTSConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "智能体配置",
-          "example": "无",
-          "member": "TalkAgentConfigInfo",
-          "name": "AgentConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-3pQQyHNUuu",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义工具配置，最多可创建10个",
-          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
-          "member": "string",
-          "name": "CustomTools",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WebHook工具配置(JSON字符串格式)",
-          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
-          "member": "string",
-          "name": "WebhookTools",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "智能体模板类型",
-          "example": "mobile_app",
-          "member": "string",
-          "name": "BotType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "知识库相关配置(JSON字符串格式)",
-          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 3600\n}",
-          "member": "string",
-          "name": "RAGConfig",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateTWeTalkAIBotResponse": {
-      "document": "CreateTWeTalkAIBot返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-PuzbxMQnHk",
-          "member": "string",
-          "name": "BotId",
-          "output_required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreateTWeTalkAgentRequest": {
       "document": "CreateTWeTalkAgent请求参数结构体",
       "members": [
@@ -8400,33 +8179,6 @@
     },
     "DeleteTWeSeeTasksByConditionResponse": {
       "document": "DeleteTWeSeeTasksByCondition返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTWeTalkAIBotRequest": {
-      "document": "DeleteTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-1TzRAz42oi",
-          "member": "string",
-          "name": "BotId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteTWeTalkAIBotResponse": {
-      "document": "DeleteTWeTalkAIBot返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13715,43 +13467,6 @@
       ],
       "type": "object"
     },
-    "DescribeTWeTalkAIBotRequest": {
-      "document": "DescribeTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-1TzRAz42oi",
-          "member": "string",
-          "name": "BotId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeTWeTalkAIBotResponse": {
-      "document": "DescribeTWeTalkAIBot返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "无",
-          "example": "无",
-          "member": "TalkAIBotInfo",
-          "name": "Data",
-          "output_required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeTWeTalkAgentBindingRequest": {
       "document": "DescribeTWeTalkAgentBinding请求参数结构体",
       "members": [
@@ -17116,107 +16831,6 @@
           "name": "TWeCallActiveInfos",
           "output_required": false,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTWeTalkAIBotListRequest": {
-      "document": "GetTWeTalkAIBotList请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-1U0eVzHLHc",
-          "member": "string",
-          "name": "BotId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "智能体名称",
-          "example": "默认",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "LPIOACT1NG",
-          "member": "string",
-          "name": "ProductId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-DGAFvpuVF7",
-          "member": "string",
-          "name": "InstanceId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "是否脱敏",
-          "example": "false",
-          "member": "bool",
-          "name": "IncludeCredentials",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "1",
-          "example": "1",
-          "member": "uint64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "10",
-          "example": "10",
-          "member": "uint64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "GetTWeTalkAIBotListResponse": {
-      "document": "GetTWeTalkAIBotList返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "无",
-          "example": "无",
-          "member": "TalkAIBotInfo",
-          "name": "Data",
-          "output_required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "1",
-          "example": "1",
-          "member": "int64",
-          "name": "TotalCount",
-          "output_required": false,
-          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -22347,132 +21961,6 @@
       ],
       "type": "object"
     },
-    "ModifyTWeTalkAIBotRequest": {
-      "document": "ModifyTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-PuzbxMQnHk",
-          "member": "string",
-          "name": "BotId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "智能体名称",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "名称",
-          "example": "智能体描述",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "支持的语言，zh-中文；en-英文；默认zh",
-          "example": "zh",
-          "member": "string",
-          "name": "TargetLanguage",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义语音识别配置",
-          "example": "无",
-          "member": "TalkSTTConfigInfo",
-          "name": "STTConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "自定义大模型配置",
-          "example": "无",
-          "member": "TalkLLMConfigInfo",
-          "name": "LLMConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "语音合成配置",
-          "example": "无",
-          "member": "TalkTTSConfigInfo",
-          "name": "TTSConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "智能体配置",
-          "example": "无",
-          "member": "TalkAgentConfigInfo",
-          "name": "AgentConfig",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "自定义工具配置，最多可创建10个",
-          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"type\":\"object\",\"properties\":{\"device_id\":{\"type\":\"string\",\"description\":\"设备ID\"}},\"required\":[\"device_id\"]}}}]",
-          "member": "string",
-          "name": "CustomTools",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "WebHook工具配置(JSON字符串格式)",
-          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"type\":\"string\",\"description\":\"订单ID\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
-          "member": "string",
-          "name": "WebhookTools",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "智能体模板类型",
-          "example": "mobile_app",
-          "member": "string",
-          "name": "BotType",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "知识库相关配置(JSON字符串格式)",
-          "example": "{\n  \"RAGEnabled\": true,\n  \"KnowledgeBaseId\": \"kb-test-001\",\n  \"RAGRegion\": \"ap-guangzhou\",\n  \"RAGTopK\": 5,\n  \"RAGScoreThreshold\": 0.75,\n  \"RAGRoleExternalId\": \"external-id-demo\",\n  \"RAGRoleDurationSeconds\": 1600\n}",
-          "member": "string",
-          "name": "RAGConfig",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyTWeTalkAIBotResponse": {
-      "document": "ModifyTWeTalkAIBot返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyTWeTalkAgentRequest": {
       "document": "ModifyTWeTalkAgent请求参数结构体",
       "members": [
@@ -24654,7 +24142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "H541SOP191",
           "member": "string",
           "name": "ProductId",
@@ -24663,7 +24151,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称",
+          "document": "<p>设备名称</p>",
           "example": "event_36502632_1",
           "member": "string",
           "name": "DeviceName",
@@ -24672,7 +24160,7 @@
         },
         {
           "disabled": false,
-          "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
+          "document": "<p>通道ID 非NVR设备则不填 NVR设备则必填 默认为无</p>",
           "example": "1",
           "member": "uint64",
           "name": "ChannelId",
@@ -24681,10 +24169,19 @@
         },
         {
           "disabled": false,
-          "document": "云存用户Id，为空则为默认云存空间。",
+          "document": "<p>云存用户Id，为空则为默认云存空间。</p>",
           "example": "username",
           "member": "string",
           "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单id</p>",
+          "example": "CS_****",
+          "member": "string",
+          "name": "OrderId",
           "required": false,
           "type": "string"
         }
@@ -27083,221 +26580,6 @@
       ],
       "usage": "both"
     },
-    "TalkAIBotInfo": {
-      "document": "Talk配置信息描述。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "UIN",
-          "example": "100000103009",
-          "member": "int64",
-          "name": "Uin",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "APPID",
-          "example": "251198731",
-          "member": "int64",
-          "name": "AppId",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实例ID",
-          "example": "ins-DGAFvpuVF7",
-          "member": "string",
-          "name": "InstanceId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-0vVbAeOMxU",
-          "member": "string",
-          "name": "BotId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "名称",
-          "example": "test测试",
-          "member": "string",
-          "name": "Name",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "描述",
-          "example": "测试一下",
-          "member": "string",
-          "name": "Description",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "语言",
-          "example": "zh",
-          "member": "string",
-          "name": "TargetLanguage",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "语音识别",
-          "example": "无",
-          "member": "TalkSTTConfigInfo",
-          "name": "STTConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "大模型",
-          "example": "无",
-          "member": "TalkLLMConfigInfo",
-          "name": "LLMConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "语音合成",
-          "example": "无",
-          "member": "TalkTTSConfigInfo",
-          "name": "TTSConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "智能体配置",
-          "example": "无",
-          "member": "TalkAgentConfigInfo",
-          "name": "AgentConfig",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": true,
-          "document": "产品信息列表",
-          "example": "无",
-          "member": "TalkProductInfo",
-          "name": "ProductList",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
-          "example": "1762416705",
-          "member": "int64",
-          "name": "CreateTime",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "更新时间",
-          "example": "1762429312",
-          "member": "int64",
-          "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "已关联产品信息列表",
-          "example": "无",
-          "member": "TalkProductInfo",
-          "name": "BoundProducts",
-          "output_required": false,
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自定义工具列表，最多可创建10个",
-          "example": "[{\"type\":\"function\",\"function\":{\"name\":\"get_battery\",\"description\":\"查询电量\",\"parameters\":{\"properties\":{\"device_id\":{\"description\":\"设备ID\",\"type\":\"string\"}},\"required\":[\"device_id\"],\"type\":\"object\"}}}]",
-          "member": "string",
-          "name": "CustomTools",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "WebHook工具配置(JSON字符串格式)",
-          "example": "[{\"name\":\"query_order\",\"description\":\"查询订单信息\",\"properties\":{\"order_id\":{\"description\":\"订单ID\",\"type\":\"string\"}},\"required\":[\"order_id\"],\"url\":\"https://api.example.com/webhook/order/query\",\"timeout\":30,\"auth\":{\"sign_key\":\"demo-sign-key\"}}]",
-          "member": "string",
-          "name": "WebhookTools",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "智能体模板类型",
-          "example": "mobile_app",
-          "member": "string",
-          "name": "BotType",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "知识库相关配置(JSON字符串格式)",
-          "example": "{\"RAGEnabled\":true,\"KnowledgeBaseId\":\"kb-test-001\",\"RAGRegion\":\"ap-guangzhou\",\"RAGTopK\":5,\"RAGScoreThreshold\":0.75,\"RAGRetrievalMethod\":\"SEMANTIC\",\"RAGRoleExternalId\":\"external-id-demo\",\"RAGRoleDurationSeconds\":3600}",
-          "member": "string",
-          "name": "RAGConfig",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "TalkActivateRecordLogInfo": {
       "document": "Talk激活审计信息。",
       "members": [
@@ -27535,199 +26817,6 @@
           "example": "",
           "member": "int64",
           "name": "UpdateTime",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
-    "TalkAgentConfigInfo": {
-      "document": "智能体配置信息。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "会话超时（秒），指连接会话的时间，例如30秒是指会话在30秒后断开",
-          "example": "7200",
-          "member": "int64",
-          "name": "SessionTimeout",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "允许打断",
-          "example": "true",
-          "member": "bool",
-          "name": "InterruptionEnabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "最大上下文",
-          "example": "3000",
-          "member": "int64",
-          "name": "MaxContextTokens",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "空闲检测配置",
-          "example": "无",
-          "member": "TalkIdleDetectionConfigInfo",
-          "name": "IdleDetection",
-          "output_required": false,
-          "required": false,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否启用情绪识别",
-          "example": "true",
-          "member": "bool",
-          "name": "EmotionEnabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否启用语义vad",
-          "example": "true",
-          "member": "bool",
-          "name": "SemanticVADEnabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "语义vad灵敏度， 1-慢 2-适中 3-快",
-          "example": "2",
-          "member": "int64",
-          "name": "SemanticVADSensitivity",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "VAD 静默检测时间， 当开启语义vad此配置失效",
-          "example": "500",
-          "member": "int64",
-          "name": "SilenceTime",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否启用噪声过滤",
-          "example": "true",
-          "member": "bool",
-          "name": "NoiseFilterEnabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "是否开启长记忆，默认关闭",
-          "example": "true",
-          "member": "bool",
-          "name": "LongTermMemoryEnabled",
-          "output_required": false,
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "系统提示词，仅当未配置LLMConfig时使用",
-          "example": "# 身份与角色 1. 你的名字叫\"QQ鹅仔\"，你是一个陪伴用户的忠实伙伴，内心充满好奇和温暖。 2. 你的目标是成为用户最贴心的朋友，提供情感陪伴和有用的帮助。",
-          "member": "string",
-          "name": "SystemPrompt",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "开机问候语，如果未配置默认不开启",
-          "example": "你好呀，我是\"QQ鹅仔\"，今天过的怎么样呀？",
-          "member": "string",
-          "name": "GreetingMessage",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "系统默认音色，当配置复刻音色时，默认值为200000000",
-          "example": "601015",
-          "member": "int64",
-          "name": "DefaultVoiceType",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "复刻音色",
-          "example": "WATCH-00999345",
-          "member": "string",
-          "name": "FastVoiceType",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "实时字幕回调地址，支持HTTP/HTTPS",
-          "example": "https://aaa.bb.com/callback",
-          "member": "string",
-          "name": "SubtitleCallbackUrl",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回调签名密钥，最大32字符，用于HMAC SHA256签名",
-          "example": "aabbcc key",
-          "member": "string",
-          "name": "SubtitleCallbackSignKey",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "字幕推送超时时间（秒），参考TRTC规范",
-          "example": "5",
-          "member": "int64",
-          "name": "SubtitleCallbackTimeout",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -28732,34 +27821,6 @@
       ],
       "usage": "both"
     },
-    "TalkProductInfo": {
-      "document": "智能体产品信息。",
-      "members": [
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "",
-          "member": "string",
-          "name": "ProductId",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "产品名称",
-          "example": "",
-          "member": "string",
-          "name": "ProductName",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "both"
-    },
     "TalkSTTConfig": {
       "document": "语音识别配置",
       "members": [
@@ -29557,7 +28618,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "H541SOP191",
           "member": "string",
           "name": "ProductId",
@@ -29566,7 +28627,7 @@
         },
         {
           "disabled": false,
-          "document": "已开通云存的设备名称",
+          "document": "<p>已开通云存的设备名称</p>",
           "example": "event_36502632_1",
           "member": "string",
           "name": "DeviceName",
@@ -29575,7 +28636,7 @@
         },
         {
           "disabled": false,
-          "document": "未开通云存的设备名称",
+          "document": "<p>未开通云存的设备名称</p>",
           "example": "event_36502632_2",
           "member": "string",
           "name": "ToDeviceName",
@@ -29584,12 +28645,30 @@
         },
         {
           "disabled": false,
-          "document": "未开通云存的设备产品ID",
+          "document": "<p>未开通云存的设备产品ID</p>",
           "example": "T6YxxxxS8F",
           "member": "string",
           "name": "ToProductId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已开通云存的通道id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>未开通云存的通道id</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "ToChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -29733,42 +28812,6 @@
           "type": "list",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UnbindTWeTalkAIBotRequest": {
-      "document": "UnbindTWeTalkAIBot请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "智能体ID",
-          "example": "bot-0vVbAeOMxU",
-          "member": "string",
-          "name": "BotId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "产品ID",
-          "example": "Q7MZK2V1QR",
-          "member": "string",
-          "name": "ProductId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "UnbindTWeTalkAIBotResponse": {
-      "document": "UnbindTWeTalkAIBot返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

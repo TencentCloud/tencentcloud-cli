@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli fwm CreateEdgeAclRule --cli-unfold-argument  \
-    --GroupId fwmrg_4ae6vv1l7c \
+    --GroupId fwmrg-a47wwiregj \
     --Rules.0.OrderIndex 1 \
     --Rules.0.Direction 1 \
     --Rules.0.SourceContent 0.0.0.0/0 \
@@ -16,27 +16,18 @@ tccli fwm CreateEdgeAclRule --cli-unfold-argument  \
     --Rules.0.Port -1/-1 \
     --Rules.0.Protocol TCP \
     --Rules.0.RuleAction accept \
-    --Rules.0.Description 1212322 \
-    --Rules.0.Scope all \
-    --Rules.1.OrderIndex 2 \
-    --Rules.1.Direction 1 \
-    --Rules.1.SourceContent bj11 \
-    --Rules.1.SourceType location \
-    --Rules.1.TargetContent cfwnat-e366d270 \
-    --Rules.1.TargetType instance \
-    --Rules.1.Port -1/-1 \
-    --Rules.1.Protocol TCP \
-    --Rules.1.RuleAction accept \
-    --Rules.1.Description 3232111 \
-    --Rules.1.Scope all \
-    --Rules.1.BelongMemberId 1300448058
+    --Rules.0.Description 21212 \
+    --Rules.0.Scope all
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1a4f32a7-aee1-4049-9fe0-4ceeb07f55ce"
+        "RuleIds": [
+            "74ae6caf-979c-4528-8187-a389533e6fd8"
+        ],
+        "RequestId": "385384d2-7ece-4151-9aa6-66f8df839614"
     }
 }
 ```

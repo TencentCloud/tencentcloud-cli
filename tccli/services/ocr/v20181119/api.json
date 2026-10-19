@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DescribeMultimodalDocParseJob": {
-      "document": "用于查询异步多模态文档解析任务的执行状态与结果，任务执行成功时返回解析结果包的下载地址，任务执行失败时返回对应错误信息。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n创建任务接口文档地址：https://cloud.tencent.com/document/product/1024/953218\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
+      "document": "用于查询异步多模态文档解析任务的执行状态与结果，任务执行成功时返回解析结果包的下载地址，任务执行失败时返回对应错误信息。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n创建任务接口文档地址：https://cloud.tencent.com/document/product/866/139312\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
       "input": "DescribeMultimodalDocParseJobRequest",
       "name": "异步多模态文档解析（查询任务）",
       "output": "DescribeMultimodalDocParseJobResponse",
@@ -232,11 +232,11 @@
       "status": "online"
     },
     "ImageEnhancement": {
-      "document": "文本图像增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度。\n\n默认接口请求频率限制：10次/秒。",
+      "document": "产品规划\n\n文本图像增强是面向文档类图片提供的图像增强处理能力，包括切边增强、图像矫正、阴影去除、摩尔纹去除等；可以有效优化文档类的图片质量，提升文字的清晰度。\n\n默认接口请求频率限制：10次/秒。",
       "input": "ImageEnhancementRequest",
       "name": "文本图像增强",
       "output": "ImageEnhancementResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "LicensePlateOCR": {
       "document": "本接口支持对中国大陆机动车车牌的自动定位和识别，返回地域编号和车牌号码与车牌颜色信息。 \n\n默认接口请求频率限制：10次/秒。",
@@ -281,7 +281,7 @@
       "status": "online"
     },
     "MultimodalDocParse": {
-      "document": "本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。\n\n支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持70M以内。\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
+      "document": "本接口支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），返回解析后的结果文件下载地址（zip压缩包，包含markdown、json和图片）。\n\n支持的文件大小：PDF/Word/PPT支持150M且300页以内、Excel支持10M以内、TXT支持10M以内、图片文件支持30M以内。\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
       "input": "MultimodalDocParseRequest",
       "name": "多模态文档解析",
       "output": "MultimodalDocParseResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "SubmitMultimodalDocParseJob": {
-      "document": "本接口为异步多模态文档解析的任务提交接口，支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），服务端异步执行解析任务，提交后返回任务唯一 ID，可通过「异步多模态文档解析（查询任务）」接口获取最终解析结果。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n查询任务接口文档地址：https://cloud.tencent.com/document/product/1024/953219\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
+      "document": "本接口为异步多模态文档解析的任务提交接口，支持解析多种类型的文档文件（PDF、Word、PPT、Excel、Markdown、TXT、图片、WPS），服务端异步执行解析任务，提交后返回任务唯一 ID，可通过「异步多模态文档解析（查询任务）」接口获取最终解析结果。需要 SubmitMultimodalDocParseJob（创建任务）、DescribeMultimodalDocParseJob（查询任务）两个接口配套使用，计费发生在提交任务后。\n\n查询任务接口文档地址：https://cloud.tencent.com/document/product/866/139313\n\n默认接口请求频率限制：5 页并发（注：可同时解析5页，且同步和异步接口共享并发资源，支持增购并发）。",
       "input": "SubmitMultimodalDocParseJobRequest",
       "name": "异步多模态文档解析（创建任务）",
       "output": "SubmitMultimodalDocParseJobResponse",
@@ -1776,7 +1776,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片的 Base64 值。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。\n图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。",
+          "document": "<p>图片的 Base64 值。<br>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。<br>支持的图片大小：所下载图片经Base64编码后不超过 7M。图片下载时间不超过 3 秒。<br>图片的 ImageUrl、ImageBase64 必须提供一个，如果都提供，只使用 ImageUrl。</p>",
           "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
@@ -1785,7 +1785,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 地址。\n支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。\n支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。\n图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的 Url 速度和稳定性可能受一定影响。",
+          "document": "<p>图片的 Url 地址。<br>支持的图片格式：PNG、JPG、JPEG，暂不支持 GIF 格式。<br>支持的图片大小：所下载图片经 Base64 编码后不超过 7M。图片下载时间不超过 3 秒。<br>图片存储于腾讯云的 Url 可保障更高的下载速度和稳定性，建议图片存储于腾讯云。<br>非腾讯云存储的 Url 速度和稳定性可能受一定影响。</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -1794,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回告警码，默认为false",
+          "document": "<p>是否返回告警码，默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCopyWarn",
@@ -1803,7 +1803,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回自动拼接的有效期，默认为true",
+          "document": "<p>是否返回自动拼接的有效期，默认为true</p>",
           "example": "false",
           "member": "bool",
           "name": "EnablePeriodComplete",
@@ -1812,7 +1812,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false",
+          "document": "<p>是否支持营业类证件识别（包括营业执照和非营业执照的其他证件），默认为false</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableBusinessCertificate",
@@ -1827,7 +1827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "统一社会信用代码（三合一之前为注册号）",
+          "document": "<p>统一社会信用代码（三合一之前为注册号）</p>",
           "example": "159613",
           "member": "string",
           "name": "RegNum",
@@ -1837,7 +1837,7 @@
         },
         {
           "disabled": false,
-          "document": "公司名称",
+          "document": "<p>公司名称</p>",
           "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "Name",
@@ -1847,7 +1847,7 @@
         },
         {
           "disabled": false,
-          "document": "注册资本",
+          "document": "<p>注册资本</p>",
           "example": "人民币600000万元整",
           "member": "string",
           "name": "Capital",
@@ -1857,7 +1857,7 @@
         },
         {
           "disabled": false,
-          "document": "法定代表人",
+          "document": "<p>法定代表人</p>",
           "example": "艾米",
           "member": "string",
           "name": "Person",
@@ -1867,7 +1867,7 @@
         },
         {
           "disabled": false,
-          "document": "地址",
+          "document": "<p>地址</p>",
           "example": "深圳市南山区高新区高新南一路飞亚达大厦",
           "member": "string",
           "name": "Address",
@@ -1877,7 +1877,7 @@
         },
         {
           "disabled": false,
-          "document": "经营范围",
+          "document": "<p>经营范围</p>",
           "example": "计算机软、硬件的设计、技术开发、销售(不含专营、专控、专卖商品及限制项目);数据库及计算机网络服务;国内商业、物资供销业(不含专营、专控、专卖商品)",
           "member": "string",
           "name": "Business",
@@ -1887,7 +1887,7 @@
         },
         {
           "disabled": false,
-          "document": "主体类型",
+          "document": "<p>主体类型</p>",
           "example": "有限责任公司",
           "member": "string",
           "name": "Type",
@@ -1897,7 +1897,7 @@
         },
         {
           "disabled": false,
-          "document": "营业期限",
+          "document": "<p>营业期限</p>",
           "example": "1998年11月至长期",
           "member": "string",
           "name": "Period",
@@ -1907,7 +1907,7 @@
         },
         {
           "disabled": false,
-          "document": "组成形式",
+          "document": "<p>组成形式</p>",
           "example": "示例",
           "member": "string",
           "name": "ComposingForm",
@@ -1917,7 +1917,7 @@
         },
         {
           "disabled": false,
-          "document": "成立日期",
+          "document": "<p>成立日期</p>",
           "example": "1998年11月",
           "member": "string",
           "name": "SetDate",
@@ -1927,7 +1927,7 @@
         },
         {
           "disabled": false,
-          "document": "Code 告警码列表和释义：\n-9102 黑白复印件告警\n-9104 翻拍件告警",
+          "document": "<p>Code 告警码列表和释义：<br>-9102 黑白复印件告警<br>-9104 翻拍件告警<br>-9108 经营范围识别异常告警（由于文字过小、模糊、反光、遮挡或明显倾斜等情况导致未能正常识别）</p>",
           "example": "[-9102]",
           "member": "int64",
           "name": "RecognizeWarnCode",
@@ -1937,7 +1937,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码说明：\nWARN_COPY_CARD 黑白复印件告警\nWARN_RESHOOT_CARD翻拍件告警",
+          "document": "<p>告警码说明：<br>WARN_COPY_CARD 黑白复印件告警<br>WARN_RESHOOT_CARD翻拍件告警<br>WARN_EARLY_STOP 经营范围识别异常告警</p>",
           "example": "[\"WARN_COPY_CARD\"]",
           "member": "string",
           "name": "RecognizeWarnMsg",
@@ -1947,7 +1947,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为副本。1为是，-1为不是。",
+          "document": "<p>是否为副本。1为是，-1为不是。</p>",
           "example": "-1",
           "member": "int64",
           "name": "IsDuplication",
@@ -1957,7 +1957,7 @@
         },
         {
           "disabled": false,
-          "document": "登记日期",
+          "document": "<p>登记日期</p>",
           "example": "1998年11月13日",
           "member": "string",
           "name": "RegistrationDate",
@@ -1967,7 +1967,7 @@
         },
         {
           "disabled": false,
-          "document": " 图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度\n\n",
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为0度；顺时针为正，角度范围是0-360度</p>",
           "example": "0.09112373739480972",
           "member": "float",
           "name": "Angle",
@@ -1977,7 +1977,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有国徽。false为没有，true为有。",
+          "document": "<p>是否有国徽。false为没有，true为有。</p>",
           "example": "true",
           "member": "bool",
           "name": "NationalEmblem",
@@ -1987,7 +1987,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有二维码。false为没有，true为有。",
+          "document": "<p>是否有二维码。false为没有，true为有。</p>",
           "example": "true",
           "member": "bool",
           "name": "QRCode",
@@ -1997,7 +1997,7 @@
         },
         {
           "disabled": false,
-          "document": "是否有印章。false为没有，true为有。",
+          "document": "<p>是否有印章。false为没有，true为有。</p>",
           "example": "true",
           "member": "bool",
           "name": "Seal",
@@ -2007,7 +2007,7 @@
         },
         {
           "disabled": false,
-          "document": "标题",
+          "document": "<p>标题</p>",
           "example": "个人独资企业营业执照",
           "member": "string",
           "name": "Title",
@@ -2017,7 +2017,7 @@
         },
         {
           "disabled": false,
-          "document": "编号",
+          "document": "<p>编号</p>",
           "example": "示例",
           "member": "string",
           "name": "SerialNumber",
@@ -2027,7 +2027,7 @@
         },
         {
           "disabled": false,
-          "document": "登记机关",
+          "document": "<p>登记机关</p>",
           "example": "广东省工商行政管理局",
           "member": "string",
           "name": "RegistrationAuthority",
@@ -2037,7 +2037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是电子营业执照。false为没有，true为有。",
+          "document": "<p>是否是电子营业执照。false为没有，true为有。</p>",
           "example": "false",
           "member": "bool",
           "name": "Electronic",
@@ -2047,7 +2047,7 @@
         },
         {
           "disabled": false,
-          "document": "非营业执照的营业类证件识别结果，将以结构化形式呈现。",
+          "document": "<p>非营业执照的营业类证件识别结果，将以结构化形式呈现。</p>",
           "example": "无",
           "member": "BusinessCertificateInfo",
           "name": "BusinessCertificate",
@@ -2057,7 +2057,7 @@
         },
         {
           "disabled": false,
-          "document": "重要提示字段",
+          "document": "<p>重要提示字段</p>",
           "example": "五",
           "member": "string",
           "name": "Important",
@@ -14021,7 +14021,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片链接",
+          "document": "<p>图片链接</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/card/IDCardOCR/IDCardOCR1.jpg",
           "member": "string",
           "name": "ImageUrl",
@@ -14030,8 +14030,8 @@
         },
         {
           "disabled": false,
-          "document": "图片base64",
-          "example": "/9j/4AAQSkZJRg.....s97n//2Q==\t",
+          "document": "<p>图片base64</p>",
+          "example": "/9j/4AAQSkZJRg.....s97n//2Q==",
           "member": "string",
           "name": "ImageBase64",
           "required": false,
@@ -14039,7 +14039,7 @@
         },
         {
           "disabled": false,
-          "document": "卡证类型参数，包含以下范围：  \nGeneral：通用卡证\nIDCard：身份证 \nPassport：护照 \nBankCard：银行卡\nVehicleLicense：行驶证\nDriverLicense：驾驶证\nBizLicense：营业执照 \nHmtResidentPermit：港澳台居住证\nForeignPermanentResident：外国人永居证\nMainlandPermit：港澳台来往内地通行证\nSocialSecurityCard：社保卡",
+          "document": "<p>卡证类型参数，选填，不填则默认为General，枚举值：<br>（如输入图片的卡证类型明确，建议填入，可降低请求耗时）</p><p>General：系统自动分类/其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>",
           "example": "General",
           "member": "string",
           "name": "CardType",
@@ -14048,7 +14048,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。",
+          "document": "<p>是否开启PDF识别，默认值为false，开启后可同时支持图片和PDF的识别。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPdf",
@@ -14057,7 +14057,7 @@
         },
         {
           "disabled": false,
-          "document": "需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。",
+          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。</p>",
           "example": "1",
           "member": "uint64",
           "name": "PdfPageNumber",
@@ -14072,8 +14072,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "卡证类型参数，包含以下范围： \nGeneral：通用卡证\nIDCard：身份证 \nPassport：护照 \nBankCard：银行卡\nVehicleLicense：行驶证\nDriverLicense：驾驶证\nBizLicense：营业执照 \nHmtResidentPermit：港澳台居住证\nForeignPermanentResident：外国人永居证\nMainlandPermit：港澳台来往内地通行证\nSocialSecurityCard：社保卡",
-          "example": " 无",
+          "document": "<p>卡证类型参数，枚举值：<br>（如入参CardType未填或填入General，返回自动分类的卡证类型，未能分类的其他类型返回General；如入参CardType填入General以外的值，则不进行自动分类、返回相同的值）</p><p>General：其他类型<br>IDCard：身份证<br>Passport：护照<br>BankCard：银行卡<br>VehicleLicense：行驶证<br>DriverLicense：驾驶证<br>BizLicense：营业执照<br>HmtResidentPermit：港澳台居住证<br>ForeignPermanentResident：外国人永居证<br>MainlandPermit：港澳台来往内地通行证<br>SocialSecurityCard：社保卡</p>",
+          "example": "General",
           "member": "string",
           "name": "CardType",
           "output_required": false,
@@ -14082,7 +14082,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊信息",
+          "document": "<p>模糊信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Blur",
@@ -14092,7 +14092,7 @@
         },
         {
           "disabled": false,
-          "document": "边框不完整信息",
+          "document": "<p>边框不完整信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "BorderIncomplete",
@@ -14102,7 +14102,7 @@
         },
         {
           "disabled": false,
-          "document": "复印件信息",
+          "document": "<p>复印件信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Copy",
@@ -14112,7 +14112,7 @@
         },
         {
           "disabled": false,
-          "document": "ps篡改信息",
+          "document": "<p>ps篡改信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Ps",
@@ -14122,7 +14122,7 @@
         },
         {
           "disabled": false,
-          "document": "反光信息",
+          "document": "<p>反光信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Reflection",
@@ -14132,7 +14132,7 @@
         },
         {
           "disabled": false,
-          "document": "翻拍件信息",
+          "document": "<p>翻拍件信息</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Reprint",
@@ -14142,7 +14142,7 @@
         },
         {
           "disabled": false,
-          "document": "是否截图",
+          "document": "<p>是否截图</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Screenshot",
@@ -14152,7 +14152,7 @@
         },
         {
           "disabled": false,
-          "document": "是否遮挡",
+          "document": "<p>是否遮挡</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Cover",
@@ -14162,7 +14162,7 @@
         },
         {
           "disabled": false,
-          "document": "是否重叠",
+          "document": "<p>是否重叠</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Overlap",
@@ -14172,7 +14172,7 @@
         },
         {
           "disabled": false,
-          "document": "是否水印",
+          "document": "<p>是否水印</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Watermark",
@@ -14182,7 +14182,7 @@
         },
         {
           "disabled": false,
-          "document": "是否电子证照（目前仅支持电子身份证、电子营业执照识别",
+          "document": "<p>是否电子证照（目前仅支持电子身份证、电子营业执照识别</p>",
           "example": "无",
           "member": "GeneralCardWarnInfo",
           "name": "Electron",

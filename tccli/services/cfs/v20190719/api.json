@@ -1034,11 +1034,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书描述，不超过64字符",
+          "document": "<p>证书描述，不超过64字符</p>",
           "example": "用于访问CFS的凭证",
           "member": "string",
           "name": "CertDesc",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证类型</p><p>枚举值：</p><ul><li>ssh： 通用系列文件系统凭证</li><li>gss： Turbo系列文件系统凭证</li></ul><p>默认值：ssh</p>",
+          "example": "gss",
+          "member": "string",
+          "name": "Type",
+          "required": false,
           "type": "string"
         }
       ],
@@ -1049,7 +1058,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭证唯一标识",
+          "document": "<p>凭证唯一标识</p>",
           "example": "cfscert-8bajq3bj",
           "member": "string",
           "name": "CertId",

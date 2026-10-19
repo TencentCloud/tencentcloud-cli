@@ -56,6 +56,13 @@
       "output": "CreateNotebookResponse",
       "status": "online"
     },
+    "CreateNotebookImage": {
+      "document": "保存镜像",
+      "input": "CreateNotebookImageRequest",
+      "name": "保存镜像",
+      "output": "CreateNotebookImageResponse",
+      "status": "online"
+    },
     "CreatePresignedNotebookUrl": {
       "document": "生成Notebook访问链接",
       "input": "CreatePresignedNotebookUrlRequest",
@@ -1473,7 +1480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -1573,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -2395,7 +2402,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -2416,6 +2423,51 @@
     },
     "CreateMountLimitResponse": {
       "document": "CreateMountLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookImageRequest": {
+      "document": "CreateNotebookImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "notebook id",
+          "example": "nb-2162197827623132",
+          "member": "string",
+          "name": "NotebookId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要保存的kernel数组",
+          "example": "[\"pyspark\"]",
+          "member": "string",
+          "name": "Kernels",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNotebookImageResponse": {
+      "document": "CreateNotebookImage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -2735,6 +2787,15 @@
           "member": "string",
           "name": "ReasoningEnvironmentSource",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {
@@ -4459,7 +4520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -4513,7 +4574,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -4793,6 +4854,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "是否同步清理cos",
           "example": "false",
           "member": "bool",
@@ -4834,6 +4904,15 @@
           "member": "string",
           "name": "TrainingModelVersionId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         },
         {
@@ -4919,7 +4998,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -5443,7 +5522,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -5489,7 +5568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -5590,7 +5669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -6135,11 +6214,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型加速任务ID",
+          "document": "<p>模型加速任务ID</p>",
           "example": "acc-783jj121",
           "member": "string",
           "name": "ModelAccTaskId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -6150,7 +6238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型加速任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>模型加速任务详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ModelAccelerateTask",
           "name": "ModelAccelerateTask",
@@ -6160,8 +6248,8 @@
         },
         {
           "disabled": false,
-          "document": "模型加速时长，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>模型加速时长，单位s</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "322",
           "member": "uint64",
           "name": "ModelAccRuntimeInSecond",
           "output_required": true,
@@ -6170,8 +6258,8 @@
         },
         {
           "disabled": false,
-          "document": "模型加速任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>模型加速任务开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-11-08 21:52:31\"",
           "member": "string",
           "name": "ModelAccStartTime",
           "output_required": true,
@@ -6180,8 +6268,8 @@
         },
         {
           "disabled": false,
-          "document": "模型加速任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>模型加速任务结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-11-08 21:57:53\"",
           "member": "string",
           "name": "ModelAccEndTime",
           "output_required": true,
@@ -6200,6 +6288,15 @@
     "DescribeModelAccelerateVersionsRequest": {
       "document": "DescribeModelAccelerateVersions请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "过滤条件\n    Filter.Name: 枚举值: ModelJobName (任务名称)|TrainingModelVersionId (模型版本id)\n    Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100",
@@ -6693,7 +6790,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -6748,7 +6845,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -6813,7 +6910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -7052,6 +7149,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "过滤器,  Name支持ImageId/ImageName/SupportDataPipeline/AllowSaveAllContent/ImageRange，其中ImageRange支持枚举值Train,Inference,Notebook",
           "example": "无",
           "member": "Filter",
@@ -7117,7 +7223,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -7358,11 +7464,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型版本ID",
+          "document": "<p>模型版本ID</p>",
           "example": "version0.1",
           "member": "string",
           "name": "TrainingModelVersionId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -7373,7 +7488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型版本",
+          "document": "<p>模型版本</p>",
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersion",
@@ -7395,7 +7510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型ID",
+          "document": "<p>模型ID</p>",
           "example": "model123",
           "member": "string",
           "name": "TrainingModelId",
@@ -7404,7 +7519,16 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件\nFilter.Name: 枚举值:\n    TrainingModelVersionId (模型版本ID)\n    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)\n    ModelFormat（模型格式）其值Filter.Values支持：\nTORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML\n    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2\nFilter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询\n每次请求的Filters的上限为10，Filter.Values的上限为100",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件<br>Filter.Name: 枚举值:<br>    TrainingModelVersionId (模型版本ID)<br>    ModelVersionType (模型版本类型) 其值支持: NORMAL(通用) ACCELERATE (加速)<br>    ModelFormat（模型格式）其值Filter.Values支持：<br>TORCH_SCRIPT/PYTORCH/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML<br>    AlgorithmFramework (算法框架) 其值Filter.Values支持：TENSORFLOW/PYTORCH/DETECTRON2<br>Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询<br>每次请求的Filters的上限为10，Filter.Values的上限为100</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7419,7 +7543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型版本列表",
+          "document": "<p>模型版本列表</p>",
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersions",
@@ -16314,11 +16438,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型加速任务ID",
-          "example": "无",
+          "document": "<p>模型加速任务ID</p>",
+          "example": "acc-50rjzj2xtest",
           "member": "string",
           "name": "ModelAccTaskId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -16329,8 +16462,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型加速任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>模型加速任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "StopModelAccelerateTask",
           "member": "string",
           "name": "ModelAccTaskId",
           "output_required": true,
@@ -16339,8 +16472,8 @@
         },
         {
           "disabled": false,
-          "document": "异步任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>异步任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task-3wioaushicu8",
           "member": "string",
           "name": "AsyncTaskId",
           "output_required": true,
@@ -17830,7 +17963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -17920,7 +18053,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",

@@ -70,6 +70,13 @@
       "output": "AddDomainWhiteRuleResponse",
       "status": "online"
     },
+    "AddLLMSdkAccess": {
+      "document": "llmwaf-sdk新增接入配置接口",
+      "input": "AddLLMSdkAccessRequest",
+      "name": "创建服务id接口",
+      "output": "AddLLMSdkAccessResponse",
+      "status": "online"
+    },
     "AddSpartaProtection": {
       "document": "添加SaaS型WAF防护域名",
       "input": "AddSpartaProtectionRequest",
@@ -383,6 +390,13 @@
       "input": "DescribeAccessIndexRequest",
       "name": "获取访问日志索引配置信息",
       "output": "DescribeAccessIndexResponse",
+      "status": "online"
+    },
+    "DescribeAfterPayInstances": {
+      "document": "查询后付费实例列表（仅 Edition=llm-sdk-waf）。请求参数与 DescribeInstances 一致；仅返回 tb_instance_conf 基础数据，不含套餐/标签等扩展信息。",
+      "input": "DescribeAfterPayInstancesRequest",
+      "name": "查询后付费实例列表",
+      "output": "DescribeAfterPayInstancesResponse",
       "status": "online"
     },
     "DescribeAntiFakeRules": {
@@ -3084,6 +3098,61 @@
       ],
       "type": "object"
     },
+    "AddLLMSdkAccessRequest": {
+      "document": "AddLLMSdkAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要接入的应用名称",
+          "example": "ddp_test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "waf_2l15df1c09ykwz5v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "这是一个sdk信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddLLMSdkAccessResponse": {
+      "document": "AddLLMSdkAccess返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务id",
+          "example": "9000000002",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddSpartaProtectionRequest": {
       "document": "AddSpartaProtection请求参数结构体",
       "members": [
@@ -3560,6 +3629,265 @@
         }
       ],
       "type": "object"
+    },
+    "AfterPayInstanceInfo": {
+      "document": "后付费实例（Edition=llm-sdk-waf）的基础信息，仅包含 tb_instance_conf 基础字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户appid</p>",
+          "example": "251437166",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例唯一ID</p>",
+          "example": "waf_2l2r0gne0amhqdp3",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "gz-Default",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例对应资源ID，计费使用</p>",
+          "example": "waf_2l2r0gne0amhqdp3",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例版本，后付费实例固定为 llm-sdk-waf</p>",
+          "example": "llm-sdk-waf",
+          "member": "string",
+          "name": "Edition",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所属地域</p>",
+          "example": "gz",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费模式，后付费实例为 0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例过期时间</p>",
+          "example": "2038-01-01 00:00:00",
+          "member": "string",
+          "name": "ValidTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例开始时间</p>",
+          "example": "2026-07-06 16:17:09",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费项</p>",
+          "example": "sv_wsm_waf_llm_prompt_attack",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。<br>0：关闭<br>1：开启</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例套餐版本</p>",
+          "example": "201",
+          "member": "uint64",
+          "name": "Level",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例修改时间</p>",
+          "example": "2026-07-06 16:17:09",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名数量上限</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SubDomainLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主域名数量上限</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MainDomainLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>qps弹性计费上限</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ElasticBilling",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击日志投递开关</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AttackLogPost",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>api安全是否购买</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "APISecurity",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否api 安全试用</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsAPISecurityTrial",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例延期释放标识</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "FreeDelayFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>1是基础2025版本；0不是</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BasicFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型安全「后付费」资源信息，结构与内容与 DescribeInstances 的 InstanceDetail.LLMPkg 保持一致</p>",
+          "example": "无",
+          "member": "LLMPkg",
+          "name": "LLMPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LLM实例当天4个计费模块token消耗量及近7天趋势（仅后付费llm-sdk-waf实例返回）</p>",
+          "example": "无",
+          "member": "LLMTokenUsage",
+          "name": "LLMTokenUsage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AnonymousInfo": {
       "document": "免鉴权信息",
@@ -12529,6 +12857,80 @@
           "name": "ModifyTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAfterPayInstancesRequest": {
+      "document": "DescribeAfterPayInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤数组",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "释放延期标识",
+          "example": "1",
+          "member": "uint64",
+          "name": "FreeDelayFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAfterPayInstancesResponse": {
+      "document": "DescribeAfterPayInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "后付费实例列表",
+          "example": "无",
+          "member": "AfterPayInstanceInfo",
+          "name": "Instances",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -25533,6 +25935,34 @@
       ],
       "usage": "out"
     },
+    "LLMImageTrendItem": {
+      "document": "近7天图片送检趋势的单日数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>YYYYMMDD 格式日期</p>",
+          "example": "20260706",
+          "member": "string",
+          "name": "DayTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当日图片送检量（单位：张）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "ImageUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LLMKeywordLibrary": {
       "document": "LLM waf 自定义词库实体",
       "members": [
@@ -25931,7 +26361,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SDK接入来源，tokenhub 表示通过 TokenHub 创建，空字符串表示通过控制台创建</p>",
+          "document": "<p>SDK接入来源，可不填</p>",
           "example": "tokenhub",
           "member": "string",
           "name": "SdkSource",
@@ -26085,6 +26515,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>恶意URL检测开关</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UrlDetectStatus",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>生效规则数量</p>",
           "example": "91",
           "member": "int64",
@@ -26122,6 +26563,106 @@
         }
       ],
       "usage": "out"
+    },
+    "LLMTokenTrendItem": {
+      "document": "近7天token总量趋势的单日数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>YYYYMMDD 格式日期</p>",
+          "example": "20260706",
+          "member": "string",
+          "name": "DayTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当日token总用量</p>",
+          "example": "3500",
+          "member": "int64",
+          "name": "TokenUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LLMTokenUsage": {
+      "document": "LLM实例当天4个计费模块的token消耗量及近7天趋势（均为实例维度）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>今日提示词攻击防护 token 消耗量</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "PromptUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>今日内容安全文本检测 token 消耗量</p>",
+          "example": "2000",
+          "member": "int64",
+          "name": "ContentTextUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>今日敏感数据检测 token 消耗量</p>",
+          "example": "500",
+          "member": "int64",
+          "name": "SensitiveDataUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>今日图片送检量（单位：张）</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "ContentImageUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该实例近7天token总量趋势（按天，缺失日期补0）</p>",
+          "example": "无",
+          "member": "LLMTokenTrendItem",
+          "name": "TokenTrend",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该实例近7天图片送检趋势（按天，缺失日期补0）</p>",
+          "example": "无",
+          "member": "LLMImageTrendItem",
+          "name": "ImageTrend",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LimitHeader": {
       "document": "限流Header数据结构",

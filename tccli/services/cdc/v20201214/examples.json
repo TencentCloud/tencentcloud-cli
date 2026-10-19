@@ -136,6 +136,14 @@
         "title": "查询专用集群支持的可用区列表"
       }
     ],
+    "DescribeEdgeHostVm": [
+      {
+        "document": "查询指定CDC母机的虚机信息",
+        "input": "POST / HTTP/1.1\nHost: cdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeHostVm\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"17a6160a-db3d-4d04-849d-902b119f93cf\"\n    }\n}",
+        "title": "查询指定CDC母机的虚机信息"
+      }
+    ],
     "DescribeSites": [
       {
         "document": "查询站点列表",

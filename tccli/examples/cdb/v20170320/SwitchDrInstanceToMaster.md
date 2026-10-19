@@ -6,7 +6,8 @@ Input:
 
 ```
 tccli cdb SwitchDrInstanceToMaster --cli-unfold-argument  \
-    --InstanceId cdb-9kq0g26l
+    --InstanceId cdb-9kq0g26l \
+    --IgnoreSyncDelay 10
 ```
 
 Output: 

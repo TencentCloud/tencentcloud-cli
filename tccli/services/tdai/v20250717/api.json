@@ -199,7 +199,7 @@
   },
   "metadata": {
     "apiVersion": "2025-07-17",
-    "api_brief": "腾讯云数据库 AI 服务相关 API 接口主要提供 DatabaseClaw 实例的管控操作。",
+    "api_brief": "腾讯云数据库 AI 服务相关 API 接口主要提供 TencentDB Agent 实例的管控操作。",
     "serviceNameCN": "腾讯云数据库 AI 服务",
     "serviceShortName": "tdai"
   },
@@ -705,6 +705,17 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的 memory（AGM）实例ID（仅免部署实例有值）</p>",
+          "example": "mem-test0001",
+          "member": "string",
+          "name": "MemInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2555,6 +2566,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否开启压缩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Compressed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>Memory 实例的内网访问地址。</p>",
           "example": "https://tdai.apigateway.cd.test.polaris",
           "member": "string",
@@ -3068,6 +3089,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>是否开启压缩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Compressed",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>资源标签</p>",
           "example": "无",
           "member": "ResourceTag",
@@ -3263,6 +3295,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启压缩</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Compressed",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
