@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import json
 import os
-import sys
 
 import pytest
 import six
@@ -383,19 +382,25 @@ def test_octet_stream_header_validation():
 
 
 def test_read_binary_stdin_handles_redirects_and_tty():
-    with mock.patch.object(sys.stdin, "isatty", return_value=True):
+    tty_stdin = mock.Mock()
+    tty_stdin.isatty.return_value = True
+    with mock.patch.object(action_caller.sys, "stdin", tty_stdin):
         with pytest.raises(ParamError):
             GenericActionCaller._read_binary_stdin()
 
     if not six.PY2:
-        with mock.patch.object(sys.stdin, "isatty", return_value=False), \
-                mock.patch.object(sys.stdin.buffer, "read",
-                                  return_value=b"payload"):
+        redirected_stdin = mock.Mock()
+        redirected_stdin.isatty.return_value = False
+        redirected_stdin.buffer.read.return_value = b"payload"
+        with mock.patch.object(
+                action_caller.sys, "stdin", redirected_stdin):
             assert GenericActionCaller._read_binary_stdin() == b"payload"
 
+    py2_stdin = mock.Mock()
+    py2_stdin.isatty.return_value = False
+    py2_stdin.read.return_value = "py2-payload"
     with mock.patch.object(action_caller.six, "PY2", True), \
-            mock.patch.object(sys.stdin, "isatty", return_value=False), \
-            mock.patch.object(sys.stdin, "read", return_value="py2-payload"):
+            mock.patch.object(action_caller.sys, "stdin", py2_stdin):
         assert GenericActionCaller._read_binary_stdin() == "py2-payload"
 
 
