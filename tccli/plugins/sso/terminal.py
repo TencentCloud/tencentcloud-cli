@@ -44,10 +44,10 @@ class Printer(object):
         sys.stdout.write(_CPL)
 
 
-def _select_from_items_unix(prompt, items, page_size):
+def _select_from_items_unix(prompt, items, page_size, default=0):
     p = Printer()
 
-    selection = 0
+    selection = default
     search = ""
 
     while True:
@@ -81,8 +81,9 @@ def _select_from_items_unix(prompt, items, page_size):
         elif ch == _RIGHT_ARROW:
             selection = min(len(filtered_items) - 1, selection + page_size)
         elif ch == _BACKSPACE:
-            search = search[:len(search) - 1] if search else ""
-            selection = 0
+            if search:
+                search = search[:-1]
+                selection = 0
         elif ch == _ENTER:
             idx = 0
             matched = -1
@@ -100,7 +101,7 @@ def _select_from_items_unix(prompt, items, page_size):
             selection = 0
 
 
-def _select_from_items_win(prompt, items, page_size):
+def _select_from_items_win(prompt, items, page_size, default=0):
     print("")
     print("--------------------------------")
     for i in range(len(items)):
@@ -116,8 +117,11 @@ def _select_from_items_win(prompt, items, page_size):
 
     while True:
         try:
-            sys.stdout.write(prompt)
-            idx = int(input_func())
+            sys.stdout.write("%s[%d] " % (prompt, default))
+            value = input_func().strip()
+            if not value:
+                return default
+            idx = int(value)
             if 0 <= idx < len(items):
                 return idx
         except ValueError:
