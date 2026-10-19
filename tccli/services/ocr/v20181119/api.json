@@ -323,7 +323,7 @@
       "status": "online"
     },
     "QuestionSplitOCR": {
-      "document": "试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置。新接入客户请注意UseNewModel选择\n\n默认接口请求频率限制：2次/秒。",
+      "document": "试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置，新接入客户请注意UseNewModel选择。如果涉及多页试卷录入和单题跨页/跨栏问题可以选择使用[异步试卷切题（提交任务）](https://cloud.tencent.com/document/product/866/137427)\n\n默认接口请求频率限制：5次/秒。",
       "input": "QuestionSplitOCRRequest",
       "name": "试卷切题",
       "output": "QuestionSplitOCRResponse",
@@ -1257,6 +1257,42 @@
           "member": "string",
           "name": "TaxAmount",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AnswerElement": {
+      "document": "试题识别结果-答案元素内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>答案是否正确</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCorrect",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>答案分析结果</p>",
+          "example": "首先根据圆的周长公式C=πd求出蒙古包底面周长，减去门宽得到一条围绳的长度，再乘3得到3条围绳的总长，计算可得结果为278.1米。",
+          "member": "string",
+          "name": "AnswerAnalysis",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回正确答案内容</p>",
+          "example": "直径所对的圆周角是直角；同弧所对的圆周角等于圆心角的一半",
+          "member": "string",
+          "name": "RightAnswer",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -3490,7 +3526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID。由服务端生成。\t",
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",
@@ -3505,7 +3541,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "FailedOperation.PDFParseFailed",
           "member": "string",
           "name": "ErrorCode",
@@ -3515,7 +3551,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "PDF解析失败。",
           "member": "string",
           "name": "ErrorMessage",
@@ -3525,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>",
           "example": "DONE",
           "member": "string",
           "name": "JobStatus",
@@ -3535,7 +3571,7 @@
         },
         {
           "disabled": false,
-          "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。",
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>",
           "example": "1.0",
           "member": "float",
           "name": "Angle",
@@ -3545,11 +3581,21 @@
         },
         {
           "disabled": false,
-          "document": "试题批改信息",
+          "document": "<p>试题批改信息  （该字段后续废弃，使用QuestionInfo兼容多页批改场景）</p>",
           "example": "无",
           "member": "MarkInfo",
           "name": "MarkInfos",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>试题批改信息。</p>",
+          "example": "无",
+          "member": "QuestionInfo",
+          "name": "QuestionInfo",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5291,6 +5337,16 @@
           "name": "PageIndex",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>批改时答案的额外数据</p>",
+          "example": "无",
+          "member": "AnswerElement",
+          "name": "AnswerElement",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -12903,6 +12959,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预处理后的图片URL,如果开启了图像切边矫正，后续的坐标都是基于当前图片返回的坐标</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
+          "member": "string",
+          "name": "ReturnImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15873,6 +15939,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回正确答案内容</p>",
+          "example": "B",
+          "member": "string",
+          "name": "RightAnswer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>学科（如语文、数学、英语）</p>",
+          "example": "物理",
+          "member": "string",
+          "name": "Subject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回题目的知识点内容</p>",
+          "example": "[\"圆的基本性质\"]",
+          "member": "string",
+          "name": "KnowledgePoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17449,7 +17545,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要识别的PDF页面的对应页码，仅支持PDF单页识别，默认值为1。</p>",
+          "document": "<p>不传则默认识别整个PDF，如果识别单页则输入指定页码</p>",
           "example": "1",
           "member": "int64",
           "name": "PdfPageNumber",
@@ -17476,7 +17572,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>题目信息输出配置，当key对应为true表示开启配置开关。</p><p>当key为KnowledgePoints value为true 表示输出每道题结构信息中输出知识点内容；<br>当key为TrueAnswer value为true 表示输出每道题的正确答案 ；<br>当key为StepCorrection value为true表示启用步骤级批改；</p><p>当key为DisableAnswerAnalysis value为true表示不输出答案解析；</p><p>当key为OutputSubQuestionsAndCoords value为true表示输出子题干和插图坐标；</p><p>当key为UseCoordAssist value为true表示使用精调坐标辅助模型，false表示默认模型坐标（性能更优）；</p><p>参数格式：{&quot;KnowledgePoints&quot;:true,&quot;TrueAnswer&quot;:true}</p>",
+          "document": "<p>题目信息输出配置，当key对应为true表示开启配置开关。<br>当key为KnowledgePoints value为true 表示输出每道题结构信息中输出知识点内容；<br>当key为TrueAnswer value为true 表示输出每道题的正确答案 ；<br>当key为StepCorrection value为true表示启用步骤级批改；<br>当key为DisableAnswerAnalysis value为true表示不输出答案解析；<br>当key为OutputSubQuestionsAndCoords value为true表示输出子题干和插图坐标；<br>当key为UseCoordAssist value为true表示使用精调坐标辅助模型，false表示默认模型坐标（性能更优）；</p>",
           "example": "{\"KnowledgePoints\":true, \"TrueAnswer\": true}",
           "member": "string",
           "name": "QuestionConfigMap",
@@ -17485,7 +17581,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>仅有单题有效，如果切题有多题则不生效，单题批改的时候作为参考答案输入到批改模型中</p>",
+          "document": "<p>【废除字段】<br>仅有单题有效，如果切题有多题则不生效，单题批改的时候作为参考答案输入到批改模型中</p>",
           "example": "D",
           "member": "string",
           "name": "ReferenceAnswer",
@@ -17494,7 +17590,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>批量base64图片入口，每个base64参考单独ImageBase64参数规则。</p><ol><li>当AssistMarkType为2时，用于提供题目相关的辅助批改图片信息.ImageBase64List.N/ImageUrlList.N来输入答题试卷和含正确解析试卷，最多两张</li><li>当AssistMarkType不为2时，ImageBase64List.N/ImageUrlList.N图片会执行拼接逻辑（解决单题跨页场景）</li></ol>",
+          "document": "<p>批量base64图片入口，每个base64参考单独ImageBase64参数规则。</p><ol><li>当AssistMarkType为2时，用于提供题目相关的辅助批改图片信息.ImageBase64List.N/ImageUrlList.N来输入答题试卷和含正确解析试卷，最多两张</li><li>当AssistMarkType不为2时，ImageBase64List.N/ImageUrlList.N图片会执行多图同时批改逻辑（解决单题跨页场景）</li></ol>",
           "example": "[     \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==\",     \"iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPj/HwADBwIAMCbHYQAAAABJRU5ErkJggg==\"   ]",
           "member": "string",
           "name": "ImageBase64List",
@@ -17503,7 +17599,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>批量ImageUrl图片入口，每个ImageUrl参考单独ImageUrl参数规则。</p><ol><li>当AssistMarkType为2时，用于提供题目相关的辅助批改图片信息.ImageBase64List.N/ImageUrlList.N 来输入答题试卷和含正确解析试卷，最多两张</li><li>当AssistMarkType不为2时，ImageBase64List.N/ImageUrlList.N图片会执行拼接逻辑（解决单题跨页场景）</li></ol>",
+          "document": "<p>批量ImageUrl图片入口，每个ImageUrl参考单独ImageUrl参数规则。</p><ol><li>当AssistMarkType为2时，用于提供题目相关的辅助批改图片信息.ImageBase64List.N/ImageUrlList.N 来输入答题试卷和含正确解析试卷，最多两张</li><li>当AssistMarkType不为2时，ImageBase64List.N/ImageUrlList.N图片会执行多图同时批改逻辑（解决单题跨页场景）</li></ol>",
           "example": "[     \"https://example.com/image1.jpg\",     \"https://example.com/image2.png\"   ]",
           "member": "string",
           "name": "ImageUrlList",
@@ -17527,6 +17623,15 @@
           "name": "AnswerAssistMap",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启<br>示例值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableImageCrop",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17566,7 +17671,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>客户图片url</p>",
+          "document": "<p>废弃字段</p>",
           "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/general/GeneralAccurateOCR/GeneralAccurateOCR1.jpg",
           "member": "string",
           "name": "OriginalImageUrl",
@@ -17612,6 +17717,15 @@
           "name": "ModelType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启切边、弯曲矫正、方向矫正，开启则批改之前先做图片前处理，图片url地址返回在查询接口的QuestionInfo-&gt; ReturnImageUr中l,默认为false不开启</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableImageCrop",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

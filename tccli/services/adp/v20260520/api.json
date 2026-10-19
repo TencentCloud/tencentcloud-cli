@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CallMCPTool": {
+      "document": "用户在 MCP App iframe 内触发的工具调用",
+      "input": "CallMCPToolRequest",
+      "name": "MCP-APP工具调用接口",
+      "output": "CallMCPToolResponse",
+      "status": "online"
+    },
     "CheckLabel": {
       "document": "校验标签",
       "input": "CheckLabelRequest",
@@ -824,6 +831,13 @@
       "input": "PauseAppTriggerRequest",
       "name": "暂停应用触发器",
       "output": "PauseAppTriggerResponse",
+      "status": "online"
+    },
+    "ReadMCPResource": {
+      "document": "读取 MCP UI 资源（HTML），供前端 iframe 加载 MCP App 界面",
+      "input": "ReadMCPResourceRequest",
+      "name": "MCP-APP资源获取接口",
+      "output": "ReadMCPResourceResponse",
       "status": "online"
     },
     "ReleaseSkill": {
@@ -5588,6 +5602,70 @@
         }
       ],
       "usage": "both"
+    },
+    "CallMCPToolRequest": {
+      "document": "CallMCPTool请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力边界：一次请求只能调该 plugin 上的工具</p>",
+          "example": "418eee0b-4aa7-4aef-939b-3c48d404e846",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent-exec 侧 thread</p>",
+          "example": "73251347-32c8-49a1-bea5-32a6aeb82ebc",
+          "member": "string",
+          "name": "ThreadId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具名，用于在 plugin 配置的 tool_list 中定位 tool_id</p>",
+          "example": "overtime_view_state",
+          "member": "string",
+          "name": "ToolName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON：工具入参原文，原样透传给 MCP Server</p>",
+          "example": "{\"viewUUID\":\"72e8f6a9-d87f-4067-b917-b5c7de90154f\"}",
+          "member": "string",
+          "name": "Arguments",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CallMCPToolResponse": {
+      "document": "CallMCPTool返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>JSON：完整 CallToolResult 原文，含 structuredContent / isError / _meta</p>",
+          "example": "{\"content\":[{\"type\":\"text\",\"text\":\"此表单尚未提交。\"}],\"structuredContent\":{\"submitted\":false}}",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CallSource": {
       "document": "调用来源",
@@ -18117,6 +18195,67 @@
       ],
       "usage": "both"
     },
+    "MCPResourceContents": {
+      "document": "MCP ResourceContents，chat-manage 侧不解析内部字段，仅结构透传",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>二进制内容，与 text 二选一</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dGVzdC1ibG9i",
+          "member": "string",
+          "name": "Blob",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON：单个资源的 _meta 原文</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"test\":\"meta\"}",
+          "member": "string",
+          "name": "Meta",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MIME 类型，MCP App 的 HTML 为 text/html;profile=mcp-app</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text/html;profile=mcp-app",
+          "member": "string",
+          "name": "MimeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本内容，与 blob 二选一</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<!DOCTYPE",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源 URI</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ui://overtime-list/overtime-list.html",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MCPToolConfig": {
       "document": "MCPToolConfig",
       "members": [
@@ -22690,6 +22829,71 @@
         }
       ],
       "usage": "both"
+    },
+    "ReadMCPResourceRequest": {
+      "document": "ReadMCPResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>能力边界：一次请求只能读该 plugin 的资源</p>",
+          "example": "418eee0b-4aa7-4aef-939b-3c48d404e846",
+          "member": "string",
+          "name": "PluginId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent-exec 侧 thread</p>",
+          "example": "b18c602d-054d-4f1a-ad9b-f785ba4d69c5",
+          "member": "string",
+          "name": "ThreadId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源 URI，来源 tool 的 _meta.ui.resourceUri</p>",
+          "example": "ui://overtime-list/overtime-list.html",
+          "member": "string",
+          "name": "Uri",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReadMCPResourceResponse": {
+      "document": "ReadMCPResource返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MCP resources/read 返回的资源内容</p>",
+          "example": "无",
+          "member": "MCPResourceContents",
+          "name": "Contents",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JSON：Resource 的 _meta 原文，MCP App 场景 Host 依据 ui.csp 强制 CSP 策略</p>",
+          "example": "<>",
+          "member": "string",
+          "name": "ResourceMeta",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReleaseRecord": {
       "document": "[数据结构定义] 发布记录",

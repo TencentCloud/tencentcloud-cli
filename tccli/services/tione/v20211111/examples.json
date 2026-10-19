@@ -274,9 +274,9 @@
     ],
     "DescribeEvents": [
       {
-        "document": "获取服务相关的事件(k8s事件)信息",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"Service\": \"INFER\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceKind\",\n            \"Values\": [\n                \"Pod\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Id\": \"44b40fe5-9546-42fd-b75d-557802e0029d\",\n                \"Message\": \"Created container sidecar-nginx\",\n                \"FirstTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"LastTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"Count\": 1,\n                \"Type\": \"Normal\",\n                \"ResourceKind\": \"Pod\",\n                \"ResourceName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"090e057a-0d4e-488a-978b-83b1636fee99\"\n    }\n}",
+        "document": "获取任务相关的事件(k8s事件)信息",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"Service\": \"NOTEBOOK\",\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"ServiceId\": \"nb-1694306254472012288-cw0bo5hocmps\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Id\": \"44b40fe5-9546-42fd-b75d-557802e0029d\",\n                \"Message\": \"Created container sidecar-nginx\",\n                \"FirstTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"LastTimestamp\": \"2022-01-10T19:22:04+08:00\",\n                \"Count\": 1,\n                \"Type\": \"Normal\",\n                \"ResourceKind\": \"Pod\",\n                \"ResourceName\": \"nb-1694306254472012288-cw0bo5hocmps\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"090e057a-0d4e-488a-978b-83b1636fee99\"\n    }\n}",
         "title": "获取事件"
       }
     ],
@@ -299,8 +299,8 @@
     "DescribeLogs": [
       {
         "document": "获取TI-ONE 平台各种服务（训练，Notebook，推理等）的日志",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogs\n<公共请求参数>\n\n{\n    \"Service\": \"INFER\",\n    \"StartTime\": \"2022-01-10T12:15:03+08:00\",\n    \"Limit\": 100,\n    \"PodName\": \"ms-cp6rgw9r-1*\",\n    \"EndTime\": \"2022-01-11T12:15:03+08:00\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"77b5d420-73bc-47f2-96ab-3a2b32262ffe\",\n                \"Message\": \"This is a log\",\n                \"PodName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\",\n                \"Timestamp\": \"2022-01-11T04:14:36.348499491Z\"\n            }\n        ],\n        \"RequestId\": \"305ce475-e534-4cad-a4ab-a472a27ca3fd\",\n        \"Context\": \"Y29udGV4dC0wYTdiNTRkMi0xOGI0LTQwNzEtYjIzYy1kZDE4NmM2NDFjNTIxNjQxODc0NTA2MTE5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogs\n<公共请求参数>\n\n{\n    \"Service\": \"NOTEBOOK\",\n    \"ServiceId\": \"nb-1694306254472012288-cw0bo5hocmps\",\n    \"StartTime\": \"2022-01-10T12:15:03+08:00\",\n    \"Limit\": 100,\n    \"EndTime\": \"2022-01-11T12:15:03+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Id\": \"77b5d420-73bc-47f2-96ab-3a2b32262ffe\",\n                \"Message\": \"This is a log\",\n                \"PodName\": \"ms-cp6rgw9r-1-864587bdb4-p5cv6\",\n                \"PkgId\": \"7A905C4E6AD1E8B5-1F\",\n                \"PkgLogId\": \"65536\",\n                \"Timestamp\": \"2022-01-11T04:14:36.348499491Z\"\n            }\n        ],\n        \"RequestId\": \"305ce475-e534-4cad-a4ab-a472a27ca3fd\",\n        \"Context\": \"Y29udGV4dC0wYTdiNTRkMi0xOGI0LTQwNzEtYjIzYy1kZDE4NmM2NDFjNTIxNjQxODc0NTA2MTE5\"\n    }\n}",
         "title": "获取日志"
       }
     ],
@@ -617,7 +617,7 @@
     "UpdateSubAccountLinuxUserInfo": [
       {
         "document": "更新LinuxUser信息",
-        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSubAccountLinuxUserInfo\n<公共请求参数>\n\n{\n    \"SubAccountList\": [\n        {\n            \"Uin\": \"100055132983\",\n            \"SubUin\": \"100033176827\",\n            \"SubUinName\": \"ExampleUser\",\n            \"LinuxUid\": 50000,\n            \"LinuxGid\": 50000,\n            \"LinuxUserName\": \"example_user\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSubAccountLinuxUserInfo\n<公共请求参数>\n\n{\n    \"TiProjectId\": null,\n    \"SubAccountList\": [\n        {\n            \"Uin\": \"100055132983\",\n            \"SubUin\": \"100033176827\",\n            \"SubUinName\": \"ExampleUser\",\n            \"LinuxUid\": 50000,\n            \"LinuxGid\": 50000,\n            \"LinuxUserName\": \"example_user\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"30841715-2516-4a28-a4fa-4b5a62ea9ded\"\n    }\n}",
         "title": "UpdateSubAccountLinuxUserInfo"
       }

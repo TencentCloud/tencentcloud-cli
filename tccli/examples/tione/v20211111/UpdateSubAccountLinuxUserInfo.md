@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli tione UpdateSubAccountLinuxUserInfo --cli-unfold-argument  \
+    --TiProjectId None \
     --SubAccountList.0.Uin 100055132983 \
     --SubAccountList.0.SubUin 100033176827 \
     --SubAccountList.0.SubUinName ExampleUser \

@@ -177,8 +177,8 @@
     "ControlDeviceStream": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlDeviceStream\n<公共请求参数>\n\n{\n    \"ChannelId\": \"12345678-abcd-efgh-ijkl-1234567890abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Flv\": \"https://test.com.cn/live/12345678-abcd-efgh-ijkl-1234567890abcd.live.flv\",\n            \"Hls\": \"https://test.com.cn/live/12345678-abcd-efgh-ijkl-1234567890abcd/hls.m3u8\",\n            \"Rtmp\": \"rtmp://test.com.cn/live/12345678-abcd-efgh-ijkl-1234567890abcd\"\n        },\n        \"RequestId\": \"80913db2-a570-4c81-bd55-526ef3932aea\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlDeviceStream\n<公共请求参数>\n\n{\n    \"ChannelId\": \"df27ec26-812c-443c-b594-f95bf383ef70\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FMp4\": \"https://test-play-gz.***********/live/df27ec26-****-443c-b594-************.live.mp4?token=cms_700000*****9_1791947426_H9MbdKLQZiX7C-a******w\",\n            \"Flv\": \"https://test-play-gz.***********/live/df27ec26-****-443c-b594-************.live.flv?token=cms_700000*****_1791947426_H9MbdKLQZiX7C-********\",\n            \"Hls\": \"https://test-play-gz.***********/.cn/live/df27ec26-812c-******-b594-f95bf383ef70/hls.m3u8?token=cms_700000*****_1791947426_H9MbdKLQZiX7C-******\",\n            \"Rtmp\": \"rtmp://test-play-gz.***********/.cn/live/df27ec26-812c-******-b594-f95bf383ef70?token=cms_700000*****_1791947426_H9MbdKLQZiX7C-******\"\n        },\n        \"RequestId\": \"b62b4c63-0913-4a2b-85c9-4fc61d821530\"\n    }\n}",
         "title": "成功"
       }
     ],
@@ -847,8 +847,8 @@
     "PlayRecord": [
       {
         "document": " ",
-        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PlayRecord\n<公共请求参数>\n\n{\n    \"ChannelId\": \"12345678-abcd-efgh-ijkl-1234567890ab\",\n    \"Start\": 1685611685,\n    \"End\": 1685611785\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Flv\": \"https://test.com.cn/live/12345678-abcd-efgh-ijkl-1234567890ab@aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee.live.flv?start=1685611685&end=1685611785\"\n        },\n        \"RequestId\": \"ba6d7b2e-7ff0-43b2-9f33-56793eee0de7\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PlayRecord\n<公共请求参数>\n\n{\n    \"ChannelId\": \"c03615ed-fb2a-4c0e-9f53-123456789012\",\n    \"Start\": 1791858180,\n    \"End\": 1791858240,\n    \"IsInternal\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FMp4\": \"https://www.demo.cn/live/c03615ed-fb2a-4c0e-9f53-123456789012@675964ad-dd5b-4f5e-af8a-123456789012.live.mp4?start=1791858180&end=1791858240&token=cms_700001111128_1791863756_4uwxnkWB0zCFUhywXjxFPg&type=download\",\n            \"Flv\": \"https://www.demo.cn/live/live/c03615ed-fb2a-4c0e-9f53-123456789012@675964ad-dd5b-4f5e-af8a-123456789012.live.flv?start=1791858180&end=1791858240&token=cms_700001111128_1791863756_4uwxnkWB0zCFUhywXjxFPg\"\n        },\n        \"RequestId\": \"27c53b3a-4482-4e2e-a1e4-009ef89a372e\"\n    }\n}",
         "title": "成功"
       }
     ],

@@ -104,10 +104,10 @@
     ],
     "CreateAccounts": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-f35wr6wj\",\n    \"Password\": \"fsdgfdgfd\",\n    \"Accounts\": [\n        {\n            \"Host\": \"127.0.0.1\",\n            \"User\": \"ajnnw\"\n        }\n    ],\n    \"Description\": \"description\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
-        "title": "创建云数据库的账户"
+        "document": "创建账号",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-lzl4lvov\",\n    \"Password\": \"fsdgfdgfd43564654\",\n    \"MaxUserConnections\": 33\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"5e0fd33e-1afe758f-8bebfc08-e7a9141b\",\n        \"RequestId\": \"4da3ccd3-ac33-4e5a-b733-52cde384f4c4\"\n    }\n}",
+        "title": "创建账号"
       }
     ],
     "CreateAuditLogFile": [
@@ -264,9 +264,9 @@
     ],
     "DeleteAccounts": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-0zgqlqmd\",\n    \"Accounts\": [\n        {\n            \"Host\": \"192.168.1.1\",\n            \"User\": \"user1\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"AsyncRequestId\": \"256117ed-efa08b54-61784d44-91781bbd\"\n    }\n}",
+        "document": "删除云数据库的账号",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-mw6uxcyt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"ae9cf84b-83c5074c-defa82f1-3a49ebe7\",\n        \"RequestId\": \"893a5643-30c7-4168-ab29-9e952092fe14\"\n    }\n}",
         "title": "删除云数据库的账号"
       }
     ],
@@ -360,10 +360,10 @@
     ],
     "DescribeAccounts": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-b1airfvv\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"507f6863-2827-4c2c-9c3b-fbbcc32e1ed4\",\n        \"Items\": [\n            {\n                \"CreateTime\": \"2025-09-04 14:56:31\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2025-09-04 14:56:31\",\n                \"ModifyTime\": \"2025-09-04 14:59:10\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"ching\"\n            },\n            {\n                \"CreateTime\": \"2025-09-02 16:18:42\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2025-09-02 16:18:42\",\n                \"ModifyTime\": \"2025-09-02 16:18:42\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"root\"\n            }\n        ],\n        \"MaxUserConnections\": 10240,\n        \"TotalCount\": 2\n    }\n}",
-        "title": "查询用户所有账号信息"
+        "document": "查询账号列表",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-mw6uxcyt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2026-08-27 10:14:08\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2026-08-27 19:18:07\",\n                \"ModifyTime\": \"2026-08-27 19:18:07\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"root\"\n            },\n            {\n                \"CreateTime\": \"2026-08-27 19:18:36\",\n                \"Host\": \"%\",\n                \"MaxUserConnections\": 0,\n                \"ModifyPasswordTime\": \"2026-08-27 19:18:36\",\n                \"ModifyTime\": \"2026-08-27 19:18:36\",\n                \"Notes\": \"\",\n                \"OpenCam\": false,\n                \"User\": \"testqqq\"\n            }\n        ],\n        \"MaxUserConnections\": 10240,\n        \"RequestId\": \"527dcdb8-9c9b-4fb0-9e47-e8316737e051\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询账号列表"
       }
     ],
     "DescribeAsyncRequestInfo": [

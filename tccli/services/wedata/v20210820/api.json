@@ -3923,7 +3923,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "申请人id",
+          "document": "<p>申请人id</p>",
           "example": "1001252651935",
           "member": "string",
           "name": "ApplicantId",
@@ -3933,7 +3933,7 @@
         },
         {
           "disabled": false,
-          "document": "申请人名称",
+          "document": "<p>申请人名称</p>",
           "example": "\"test_name\"",
           "member": "string",
           "name": "ApplicantName",
@@ -3943,7 +3943,7 @@
         },
         {
           "disabled": false,
-          "document": "审批备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"test\"",
           "member": "string",
           "name": "Remark",
@@ -3953,7 +3953,7 @@
         },
         {
           "disabled": false,
-          "document": "审批分类key",
+          "document": "<p>审批分类key</p>",
           "example": "\"db\"",
           "member": "string",
           "name": "ApproveClassification",
@@ -3963,7 +3963,7 @@
         },
         {
           "disabled": false,
-          "document": "审批单id",
+          "document": "<p>审批单id</p>",
           "example": "1562",
           "member": "string",
           "name": "ApproveId",
@@ -3973,7 +3973,7 @@
         },
         {
           "disabled": false,
-          "document": "审批类型key",
+          "document": "<p>审批类型key</p>",
           "example": "\"db_db\"",
           "member": "string",
           "name": "ApproveType",
@@ -3983,7 +3983,7 @@
         },
         {
           "disabled": false,
-          "document": "申请原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>申请原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"use test\"",
           "member": "string",
           "name": "Reason",
@@ -3993,7 +3993,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "\"2022-04-12T06:15:16+08:00\"",
           "member": "string",
           "name": "CreateTime",
@@ -4003,7 +4003,7 @@
         },
         {
           "disabled": false,
-          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"2022-04-12T06:15:16+08:00\"",
           "member": "string",
           "name": "ApproveTime",
@@ -4013,7 +4013,7 @@
         },
         {
           "disabled": false,
-          "document": "审批分类名称",
+          "document": "<p>审批分类名称</p>",
           "example": "\"库表申请\"",
           "member": "string",
           "name": "ApproveClassificationName",
@@ -4023,7 +4023,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "\"pass\"",
           "member": "string",
           "name": "Status",
@@ -4033,7 +4033,7 @@
         },
         {
           "disabled": false,
-          "document": "审批类型名称",
+          "document": "<p>审批类型名称</p>",
           "example": "\"库申请\"",
           "member": "string",
           "name": "ApproveTypeName",
@@ -4043,7 +4043,7 @@
         },
         {
           "disabled": false,
-          "document": "审批异常或者失败信息",
+          "document": "<p>审批异常或者失败信息</p>",
           "example": "\"错误信息\"",
           "member": "string",
           "name": "ErrorMessage",
@@ -4053,7 +4053,7 @@
         },
         {
           "disabled": false,
-          "document": "申请名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>申请名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_db153562203",
           "member": "string",
           "name": "ApplyName",
@@ -4063,7 +4063,7 @@
         },
         {
           "disabled": false,
-          "document": "审批人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批人id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10065986435",
           "member": "string",
           "name": "ApproverId",
@@ -4073,7 +4073,7 @@
         },
         {
           "disabled": false,
-          "document": "审批人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批人名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"name1\"",
           "member": "string",
           "name": "ApproverName",
@@ -4083,7 +4083,7 @@
         },
         {
           "disabled": false,
-          "document": "审批所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批所属项目</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"project_name\"",
           "member": "string",
           "name": "ApproveProjectName",
@@ -4093,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "审批id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "38179348",
           "member": "string",
           "name": "ApplyId",
@@ -4103,7 +4103,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>扩展字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4672837",
           "member": "string",
           "name": "Metadata",
@@ -4113,7 +4113,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3293819",
           "member": "uint64",
           "name": "CreateTimestamp",
@@ -4123,13 +4123,23 @@
         },
         {
           "disabled": false,
-          "document": "审批时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>审批时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "461871",
           "member": "uint64",
           "name": "ApproveTimestamp",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批扩展码</p>",
+          "example": "SelfApproveDisabled",
+          "member": "string",
+          "name": "ApproveCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -44855,7 +44865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目Id",
+          "document": "<p>项目Id</p>",
           "example": "1461767738399854597",
           "member": "string",
           "name": "ProjectId",
@@ -44864,7 +44874,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "20250317220349191",
           "member": "string",
           "name": "TaskId",
@@ -44873,7 +44883,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟",
+          "document": "<p>执行时间，单位分钟，天/周/月/年调度才有。比如天调度，每天的02:00点执行一次，delayTime就是120分钟</p>",
           "example": "30",
           "member": "int64",
           "name": "DelayTime",
@@ -44882,7 +44892,7 @@
         },
         {
           "disabled": false,
-          "document": "启动时间：该字段已废弃，无需填写",
+          "document": "<p>启动时间：该字段已废弃，无需填写</p>",
           "example": "1",
           "member": "int64",
           "name": "StartupTime",
@@ -44891,7 +44901,7 @@
         },
         {
           "disabled": false,
-          "document": "自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值",
+          "document": "<p>自依赖类型  1:有序串行 一次一个 排队  2: 无序串行 一次一个 不排队 3:并行 一次多个；暂不支持其他值</p>",
           "example": "1",
           "member": "int64",
           "name": "SelfDepend",
@@ -44900,7 +44910,7 @@
         },
         {
           "disabled": false,
-          "document": "生效开始时间，格式 yyyy-MM-dd HH:mm:ss",
+          "document": "<p>生效开始时间，格式 yyyy-MM-dd HH:mm:ss</p>",
           "example": "2025-05-21 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -44909,7 +44919,7 @@
         },
         {
           "disabled": false,
-          "document": "生效结束时间，格式 yyyy-MM-dd HH:mm:ss",
+          "document": "<p>生效结束时间，格式 yyyy-MM-dd HH:mm:ss</p>",
           "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -44918,7 +44928,7 @@
         },
         {
           "disabled": false,
-          "document": "调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。",
+          "document": "<p>调度配置-弹性周期配置，小时/周/月/年调度才有，小时任务指定每天的0点3点4点跑，则为 0,3,4。设置该值时，请把CycleStep字段设置为1（如果原始值不为1）。</p>",
           "example": "1,2",
           "member": "string",
           "name": "TaskAction",
@@ -44927,7 +44937,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离",
+          "document": "<p>周期类型  0:crontab类型, 1:分钟，2:小时，3:天，4:周，5:月，6:一次性，7:用户驱动，10:弹性周期 周,11:弹性周期 月,12:年,13:即时触发Instant类型，与正常周期调度任务逻辑隔离</p>",
           "example": "2",
           "member": "int64",
           "name": "CycleType",
@@ -44936,7 +44946,7 @@
         },
         {
           "disabled": false,
-          "document": "小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。",
+          "document": "<p>小时和分钟任务才有；分钟任务：5、10、15、20、30，表示每隔5【或其他值】分钟执行一次；小时任务：1、2、3、4、5、6、7、8、9、10、11、12，表示每隔1【或其他值】小时执行一次。该值大于1时，请把TaskAction字段设置为空字符串。</p>",
           "example": "5",
           "member": "int64",
           "name": "CycleStep",
@@ -44945,7 +44955,7 @@
         },
         {
           "disabled": false,
-          "document": "cron表达式  周期类型为crontab调度才需要",
+          "document": "<p>cron表达式  周期类型为crontab调度才需要</p>",
           "example": "0 0 0-23/1 * * ?",
           "member": "string",
           "name": "CrontabExpression",
@@ -44954,7 +44964,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效",
+          "document": "<p>执行时间左闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>",
           "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -44963,7 +44973,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效",
+          "document": "<p>执行时间右闭区间，格式：HH:mm  小时调度才有，例如小时任务, 每日固定区间生效</p>",
           "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -44972,7 +44982,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名，该字段废弃，请勿使用该字段重命名任务",
+          "document": "<p>任务名，该字段废弃，请勿使用该字段重命名任务</p>",
           "example": "taskName",
           "member": "string",
           "name": "TaskName",
@@ -44981,7 +44991,7 @@
         },
         {
           "disabled": false,
-          "document": "失败重试间隔,单位分钟，创建任务的时候已经给了默认值",
+          "document": "<p>失败重试间隔,单位分钟，创建任务的时候已经给了默认值</p>",
           "example": "1",
           "member": "int64",
           "name": "RetryWait",
@@ -44990,7 +45000,7 @@
         },
         {
           "disabled": false,
-          "document": "失败重试次数，创建任务的时候已经给了默认值",
+          "document": "<p>失败重试次数，创建任务的时候已经给了默认值</p>",
           "example": "5",
           "member": "int64",
           "name": "TryLimit",
@@ -44999,7 +45009,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值",
+          "document": "<p>是否可重试，0代码不可重试，1代表可以重试；暂不支持其他值</p>",
           "example": "0",
           "member": "int64",
           "name": "Retriable",
@@ -45008,7 +45018,7 @@
         },
         {
           "disabled": false,
-          "document": "运行优先级，4高 5中 6低；暂不支持其他值",
+          "document": "<p>运行优先级，4高 5中 6低；暂不支持其他值</p>",
           "example": "4",
           "member": "int64",
           "name": "RunPriority",
@@ -45017,7 +45027,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的扩展配置",
+          "document": "<p>任务的扩展配置</p>",
           "example": "无",
           "member": "TaskExtInfo",
           "name": "TaskExt",
@@ -45026,7 +45036,7 @@
         },
         {
           "disabled": false,
-          "document": "执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器",
+          "document": "<p>执行资源组Id，需要去资源管理服务上创建调度资源组，并且绑定cvm机器</p>",
           "example": "1",
           "member": "string",
           "name": "ResourceGroup",
@@ -45035,7 +45045,7 @@
         },
         {
           "disabled": false,
-          "document": "资源池队列名称",
+          "document": "<p>资源池队列名称</p>",
           "example": "1",
           "member": "string",
           "name": "YarnQueue",
@@ -45044,7 +45054,7 @@
         },
         {
           "disabled": false,
-          "document": "资源组下具体执行机，any 表示可以跑在任意一台。",
+          "document": "<p>资源组下具体执行机，any 表示可以跑在任意一台。</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "BrokerIp",
@@ -45053,7 +45063,7 @@
         },
         {
           "disabled": false,
-          "document": "责任人，多个责任人请用分号隔开",
+          "document": "<p>责任人，多个责任人请用分号隔开</p>",
           "example": "user1;user2",
           "member": "string",
           "name": "InCharge",
@@ -45062,7 +45072,7 @@
         },
         {
           "disabled": false,
-          "document": "任务备注",
+          "document": "<p>任务备注</p>",
           "example": "note",
           "member": "string",
           "name": "Notes",
@@ -45071,7 +45081,7 @@
         },
         {
           "disabled": false,
-          "document": "任务参数",
+          "document": "<p>任务参数</p>",
           "example": "无",
           "member": "ParamInfo",
           "name": "TaskParamInfos",
@@ -45080,7 +45090,7 @@
         },
         {
           "disabled": false,
-          "document": "源数据源Id",
+          "document": "<p>源数据源Id</p>",
           "example": "9076",
           "member": "string",
           "name": "SourceServer",
@@ -45089,7 +45099,7 @@
         },
         {
           "disabled": false,
-          "document": "目标数据源Id",
+          "document": "<p>目标数据源Id</p>",
           "example": "9075",
           "member": "string",
           "name": "TargetServer",
@@ -45098,7 +45108,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持工作流依赖 yes / no 默认 no",
+          "document": "<p>是否支持工作流依赖 yes / no 默认 no</p>",
           "example": "no",
           "member": "string",
           "name": "DependencyWorkflow",
@@ -45107,7 +45117,7 @@
         },
         {
           "disabled": false,
-          "document": "依赖配置,仅可修改上游任务实例配置方法",
+          "document": "<p>依赖配置,仅可修改上游任务实例配置方法</p>",
           "example": "无",
           "member": "DependencyConfig",
           "name": "DependencyConfigDTOs",
@@ -45116,7 +45126,7 @@
         },
         {
           "disabled": false,
-          "document": "运行耗时超时时间分钟数",
+          "document": "<p>运行耗时超时时间分钟数</p>",
           "example": "5",
           "member": "int64",
           "name": "ExecutionTTL",
@@ -45125,7 +45135,7 @@
         },
         {
           "disabled": false,
-          "document": "脚本是否改变",
+          "document": "<p>脚本是否改变</p>",
           "example": "true",
           "member": "bool",
           "name": "ScriptChange",
@@ -45134,7 +45144,7 @@
         },
         {
           "disabled": false,
-          "document": "任务时区，仅支持整数时区配置",
+          "document": "<p>任务时区，仅支持整数时区配置</p>",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -45143,7 +45153,7 @@
         },
         {
           "disabled": false,
-          "document": "0 正常调度 1 空跑调度；暂不支持其他值",
+          "document": "<p>0 正常调度 1 空跑调度；暂不支持其他值</p>",
           "example": "0",
           "member": "uint64",
           "name": "ScheduleRunType",
@@ -45152,7 +45162,7 @@
         },
         {
           "disabled": false,
-          "document": "0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值",
+          "document": "<p>0 并发度达到上限时，本次排队等待 1 并发度达到上限时，本次不执行，直接kill；暂不支持其他值</p>",
           "example": "0",
           "member": "uint64",
           "name": "ConcurrentStrategy",
@@ -45161,7 +45171,7 @@
         },
         {
           "disabled": false,
-          "document": "shell任务发布事件",
+          "document": "<p>shell任务发布事件</p>",
           "example": "无",
           "member": "RegisterDsEventPublisherReq",
           "name": "RegisterDsEventPublisherRequest",
@@ -45170,12 +45180,21 @@
         },
         {
           "disabled": false,
-          "document": "base64编码后脚本内容",
+          "document": "<p>base64编码后脚本内容</p>",
           "example": "c2VsZWN0IDE7",
           "member": "string",
           "name": "Content",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -45185,7 +45204,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行结果",
+          "document": "<p>执行结果</p>",
           "example": "true",
           "member": "bool",
           "name": "Data",
@@ -50212,8 +50231,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
-          "example": "无",
+          "document": "<p>项目ID</p>",
+          "example": "3424733028183638016",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -50221,8 +50240,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流ID",
-          "example": "无",
+          "document": "<p>工作流ID</p>",
+          "example": "2d93b015-9f13-497d-8c9e-c6dc2b9f3743",
           "member": "string",
           "name": "WorkflowId",
           "required": true,
@@ -50230,8 +50249,8 @@
         },
         {
           "disabled": false,
-          "document": "延迟时间",
-          "example": "无",
+          "document": "<p>延迟时间</p>",
+          "example": "0",
           "member": "uint64",
           "name": "DelayTime",
           "required": false,
@@ -50239,7 +50258,7 @@
         },
         {
           "disabled": false,
-          "document": "启动时间",
+          "document": "<p>启动时间</p>",
           "example": "无",
           "member": "uint64",
           "name": "StartupTime",
@@ -50248,8 +50267,8 @@
         },
         {
           "disabled": false,
-          "document": "任务依赖",
-          "example": "无",
+          "document": "<p>任务依赖</p>",
+          "example": "serial",
           "member": "string",
           "name": "SelfDepend",
           "required": false,
@@ -50257,8 +50276,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "无",
+          "document": "<p>开始时间</p>",
+          "example": "2026-10-09 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -50266,8 +50285,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "无",
+          "document": "<p>结束时间</p>",
+          "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -50275,7 +50294,7 @@
         },
         {
           "disabled": false,
-          "document": "指定运行时间",
+          "document": "<p>指定运行时间</p>",
           "example": "无",
           "member": "string",
           "name": "TaskAction",
@@ -50284,8 +50303,8 @@
         },
         {
           "disabled": false,
-          "document": "调度周期时间单位",
-          "example": "无",
+          "document": "<p>调度周期时间单位</p>",
+          "example": "MINUTE_CYCLE",
           "member": "string",
           "name": "CycleType",
           "required": false,
@@ -50293,8 +50312,8 @@
         },
         {
           "disabled": false,
-          "document": "调度周期",
-          "example": "无",
+          "document": "<p>调度周期</p>",
+          "example": "5",
           "member": "int64",
           "name": "CycleStep",
           "required": false,
@@ -50302,8 +50321,8 @@
         },
         {
           "disabled": false,
-          "document": "执行时间左闭区间",
-          "example": "无",
+          "document": "<p>执行时间左闭区间</p>",
+          "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
           "required": false,
@@ -50311,8 +50330,8 @@
         },
         {
           "disabled": false,
-          "document": "执行时间右闭区间",
-          "example": "无",
+          "document": "<p>执行时间右闭区间</p>",
+          "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
           "required": false,
@@ -50320,7 +50339,7 @@
         },
         {
           "disabled": false,
-          "document": "任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1",
+          "document": "<p>任务初始化策略，T_PLUS_1、T_PLUS_0、T_MINUS_1</p>",
           "example": "无",
           "member": "string",
           "name": "InstanceInitStrategy",
@@ -50329,8 +50348,8 @@
         },
         {
           "disabled": false,
-          "document": "工作流依赖，yes or no",
-          "example": "无",
+          "document": "<p>工作流依赖，yes or no</p>",
+          "example": "no",
           "member": "string",
           "name": "DependencyWorkflow",
           "required": false,
@@ -50338,7 +50357,7 @@
         },
         {
           "disabled": false,
-          "document": "CrontabExpression",
+          "document": "<p>CrontabExpression</p>",
           "example": "无",
           "member": "string",
           "name": "CrontabExpression",
@@ -50347,7 +50366,7 @@
         },
         {
           "disabled": false,
-          "document": "0：不修改\n1：将任务的上游依赖配置改为默认值 ",
+          "document": "<p>0：不修改<br>1：将任务的上游依赖配置改为默认值</p>",
           "example": "0、1",
           "member": "string",
           "name": "ModifyCycleValue",
@@ -50356,8 +50375,8 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日历调度 1 开启 0关闭",
-          "example": "无",
+          "document": "<p>是否开启日历调度 1 开启 0关闭</p>",
+          "example": "0",
           "member": "string",
           "name": "CalendarOpen",
           "required": false,
@@ -50365,7 +50384,7 @@
         },
         {
           "disabled": false,
-          "document": "日历名称",
+          "document": "<p>日历名称</p>",
           "example": "无",
           "member": "string",
           "name": "CalendarName",
@@ -50374,7 +50393,7 @@
         },
         {
           "disabled": false,
-          "document": "日历id",
+          "document": "<p>日历id</p>",
           "example": "无",
           "member": "string",
           "name": "CalendarId",
@@ -50383,8 +50402,8 @@
         },
         {
           "disabled": false,
-          "document": "时区",
-          "example": "无",
+          "document": "<p>时区</p>",
+          "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
           "required": false,
@@ -50392,7 +50411,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动清理不支持的任务链接",
+          "document": "<p>是否自动清理不支持的任务链接</p>",
           "example": "true",
           "member": "bool",
           "name": "ClearLink",
@@ -50401,7 +50420,7 @@
         },
         {
           "disabled": false,
-          "document": "ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度",
+          "document": "<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度</p>",
           "example": "HOUR",
           "member": "string",
           "name": "MainCyclicConfig",
@@ -50410,12 +50429,21 @@
         },
         {
           "disabled": false,
-          "document": "ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围",
+          "document": "<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围</p>",
           "example": "CURRENT_HOUR",
           "member": "string",
           "name": "SubordinateCyclicConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -50425,7 +50453,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BatchResultDs",
           "name": "Data",

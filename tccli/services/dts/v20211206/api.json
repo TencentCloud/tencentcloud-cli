@@ -8645,6 +8645,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过报错的DDL策略</p>",
+          "example": "无",
+          "member": "SkipDdlOnError",
+          "name": "SkipDdlOnError",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -9893,6 +9904,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过报错的DDL策略</p>",
+          "example": "无",
+          "member": "SkipDdlOnError",
+          "name": "SkipDdlOnError",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -10851,6 +10873,34 @@
         }
       ],
       "type": "object"
+    },
+    "SkipDdlOnError": {
+      "document": "跳过报错DDL的策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按表名跳过，支持精确 &quot;db.tbl&quot;、库通配 &quot;db.*&quot;、表通配 &quot;<em>.tbl&quot;、全通配 &quot;</em>&quot;</p>",
+          "example": "[\"osc_db._orders_new\"]",
+          "member": "string",
+          "name": "Tables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 MySQL 错误码（1~65535）跳过</p><p>取值范围：[1, 65535]</p>",
+          "example": "[1050]",
+          "member": "int64",
+          "name": "ErrorCodes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SkipSyncCheckItemRequest": {
       "document": "SkipSyncCheckItem请求参数结构体",

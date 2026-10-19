@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CallMCPTool": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CallMCPTool\n<公共请求参数>\n\n{\n    \"PluginId\": \"418eee0b-4aa7-4aef-939b-3c48d404e846\",\n    \"ThreadId\": \"73251347-32c8-49a1-bea5-32a6aeb82ebc\",\n    \"ToolName\": \"overtime_view_state\",\n    \"Arguments\": \"{\\\"viewUUID\\\":\\\"72e8f6a9-d87f-4067-b917-b5c7de90154f\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"content\\\":[{\\\"type\\\":\\\"text\\\",\\\"text\\\":\\\"此表单尚未提交。\\\"}],\\\"structuredContent\\\":{\\\"submitted\\\":false}}\",\n        \"RequestId\": \"8540d0bc-ed10-4c72-b04a-4bd441917434\"\n    }\n}",
+        "title": "MCP-APP工具调用"
+      }
+    ],
     "CheckLabel": [
       {
         "document": "校验标签",
@@ -972,6 +980,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PauseAppTrigger\n<公共请求参数>\n\n{\n    \"AppId\": \"2075415763781738240\",\n    \"TriggerId\": \"febb4930-0e2b-470b-9e24-04b73f9d773b\",\n    \"UserId\": \"cuiyo******\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"838cb2db-bc54-41db-8008-6d6b4395a90c\"\n    }\n}",
         "title": "成功"
+      }
+    ],
+    "ReadMCPResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReadMCPResource\n<公共请求参数>\n\n{\n    \"PluginId\": \"418eee0b-4aa7-4aef-939b-3c48d404e846\",\n    \"ThreadId\": \"b18c602d-054d-4f1a-ad9b-f785ba4d69c5\",\n    \"Uri\": \"ui://overtime-list/overtime-list.html\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Contents\": [\n            {\n                \"Blob\": null,\n                \"Meta\": \"\",\n                \"MimeType\": \"text/html;profile=mcp-app\",\n                \"Text\": \"<!DOCTYPE \",\n                \"Uri\": \"ui://overtime-list/overtime-list.html\"\n            }\n        ],\n        \"ResourceMeta\": \"<>\",\n        \"RequestId\": \"4be49907-1928-419f-9b26-5c4199ea7967\"\n    }\n}",
+        "title": "获取MCP-APP资源"
       }
     ],
     "ReleaseSkill": [

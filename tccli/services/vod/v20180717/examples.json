@@ -2380,6 +2380,20 @@
         "title": "验证域名解析"
       }
     ],
+    "VideoDepthEstimation": [
+      {
+        "document": "对公网视频做深度估计，产物临时存储 7 天。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VideoDepthEstimation\n<公共请求参数>\n\n{\n    \"SubAppId\": 1490012345,\n    \"Url\": \"https://example.com/video.mp4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d8e9a03-5c01-4a2b-8f3d-7e6c5b4a3d2e\",\n        \"TaskId\": \"1490012345-VideoDepthEstimation-bffb15f07530b57bc1aabb01fac74bcat\"\n    }\n}",
+        "title": "视频深度估计示例（临时存储）"
+      },
+      {
+        "document": "对已有媒资做深度估计，产物写入媒资库并指定名称与过期时间。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VideoDepthEstimation\n<公共请求参数>\n\n{\n    \"SubAppId\": 1490012345,\n    \"Url\": \"vod://5285890799710678156\",\n    \"OutputConfig\": {\n        \"StorageMode\": \"Permanent\",\n        \"MediaName\": \"my-depth-video\",\n        \"ExpireTime\": \"2026-12-31T00:00:00+08:00\"\n    },\n    \"SessionId\": \"SessionId\",\n    \"SessionContext\": \"SessionContext\",\n    \"TasksPriority\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d8e9a03-5c01-4a2b-8f3d-7e6c5b4a3d2e\",\n        \"TaskId\": \"1490012345-VideoDepthEstimation-bffb15f07530b57bc1aabb01fac74bcat\"\n    }\n}",
+        "title": "视频深度估计示例（永久存储）"
+      }
+    ],
     "WeChatMiniProgramPublish": [
       {
         "document": "对 fileId 为 5285485487985271487 的视频发起微信小程序发布任务，且发布视频所对应的转码模板 ID 为 100030。",

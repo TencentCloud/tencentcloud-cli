@@ -4909,7 +4909,7 @@
           "example": "无",
           "member": "Account",
           "name": "Accounts",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -4918,7 +4918,7 @@
           "example": "fsdgfdgfd",
           "member": "string",
           "name": "Password",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -7383,7 +7383,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -7392,11 +7392,11 @@
         },
         {
           "disabled": false,
-          "document": "云数据库账号。",
-          "example": "[{\"User\": \"andy\",\"Host\": \"192.1.1.1\"}]",
+          "document": "<p>云数据库账号。</p>",
+          "example": "无",
           "member": "Account",
           "name": "Accounts",
-          "required": true,
+          "required": false,
           "type": "list"
         }
       ],
@@ -7407,7 +7407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。",
+          "document": "<p>异步任务的请求 ID，可使用此 ID 查询异步任务的执行结果。</p>",
           "example": "256117ed-efa08b54-61784d44-91781bbd",
           "member": "string",
           "name": "AsyncRequestId",
@@ -8003,7 +8003,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-f35wr6wj",
           "member": "string",
           "name": "InstanceId",
@@ -8012,7 +8012,7 @@
         },
         {
           "disabled": false,
-          "document": "记录偏移量，默认值为0。",
+          "document": "<p>记录偏移量，默认值为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -8021,7 +8021,7 @@
         },
         {
           "disabled": false,
-          "document": "单次请求返回的数量，默认值为20，最小值为1，最大值为100。",
+          "document": "<p>单次请求返回的数量，默认值为20，最小值为1，最大值为100。</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -8030,7 +8030,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配账号名的正则表达式，规则同 MySQL 官网。",
+          "document": "<p>匹配账号名的正则表达式，规则同 MySQL 官网。</p>",
           "example": "^[a-zA-Z0-9_]{3,20}$",
           "member": "string",
           "name": "AccountRegexp",
@@ -8039,7 +8039,7 @@
         },
         {
           "disabled": false,
-          "document": "默认无排序，支持：ASC、DESC、asc、desc",
+          "document": "<p>默认无排序，支持：ASC、DESC、asc、desc</p>",
           "example": "desc",
           "member": "string",
           "name": "SortBy",
@@ -8048,7 +8048,7 @@
         },
         {
           "disabled": false,
-          "document": "待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)",
+          "document": "<p>待排序的时间字段，可选：CreateTime(账号创建时间)、ModifyTime(账号更新时间)、ModifyPasswordTime(密码修改时间)</p>",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderBy",
@@ -8057,7 +8057,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网",
+          "document": "<p>匹配账号主机地址（Host）的正则表达式，规则同 MySQL 官网</p>",
           "example": "%",
           "member": "string",
           "name": "HostRegexp",
@@ -8072,7 +8072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合查询条件的账号数量。",
+          "document": "<p>符合查询条件的账号数量。</p>",
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
@@ -8082,7 +8082,7 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件的账号详细信息。",
+          "document": "<p>符合查询条件的账号详细信息。</p>",
           "example": "无",
           "member": "AccountInfo",
           "name": "Items",
@@ -8092,7 +8092,7 @@
         },
         {
           "disabled": false,
-          "document": "用户可设置实例最大连接数。",
+          "document": "<p>用户可设置实例最大连接数。</p>",
           "example": "10240",
           "member": "int64",
           "name": "MaxUserConnections",

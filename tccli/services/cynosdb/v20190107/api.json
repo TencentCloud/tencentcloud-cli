@@ -31321,7 +31321,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件名",
+          "document": "<p>文件名</p>",
           "example": "redo-1ad",
           "member": "string",
           "name": "FileName",
@@ -31331,7 +31331,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小",
+          "document": "<p>文件大小</p>",
           "example": "200",
           "member": "int64",
           "name": "FileSize",
@@ -31341,7 +31341,7 @@
         },
         {
           "disabled": false,
-          "document": "备份时间",
+          "document": "<p>备份时间</p>",
           "example": "2020-2-20",
           "member": "string",
           "name": "BackupTime",
@@ -31351,7 +31351,7 @@
         },
         {
           "disabled": false,
-          "document": "redoLogId",
+          "document": "<p>redoLogId</p>",
           "example": "23331",
           "member": "int64",
           "name": "RedoLogId",
@@ -31361,7 +31361,7 @@
         },
         {
           "disabled": false,
-          "document": "跨地域信息",
+          "document": "<p>跨地域信息</p>",
           "example": "无",
           "member": "BackupRegionAndIds",
           "name": "RedoCrossRegions",
@@ -31371,7 +31371,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -31381,7 +31381,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2020-2-20",
           "member": "string",
           "name": "StartTime",
@@ -31391,7 +31391,7 @@
         },
         {
           "disabled": false,
-          "document": "完成时间",
+          "document": "<p>完成时间</p>",
           "example": "20203-20",
           "member": "string",
           "name": "FinishTime",
@@ -31401,7 +31401,7 @@
         },
         {
           "disabled": false,
-          "document": "保险箱信息",
+          "document": "<p>保险箱信息</p>",
           "example": "无",
           "member": "VaultInfo",
           "name": "VaultInfos",
@@ -31411,7 +31411,7 @@
         },
         {
           "disabled": false,
-          "document": "备份投递状态",
+          "document": "<p>备份投递状态</p>",
           "example": "done",
           "member": "string",
           "name": "CopyStatus",
@@ -31421,7 +31421,7 @@
         },
         {
           "disabled": false,
-          "document": "加密秘钥key",
+          "document": "<p>加密秘钥key</p>",
           "example": "1764ae22-72f0-11f0-8904-52540009df14",
           "member": "string",
           "name": "EncryptKeyId",
@@ -31431,7 +31431,7 @@
         },
         {
           "disabled": false,
-          "document": "加密秘钥地域",
+          "document": "<p>加密秘钥地域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EncryptRegion",

@@ -3203,24 +3203,35 @@
         {
           "disabled": false,
           "document": "<p>匿名登录账号secretId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "id",
+          "example": "secretid",
           "member": "string",
           "name": "SecretId",
           "output_required": false,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "<p>匿名登录账号secretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key",
+          "example": "secretkey",
           "member": "string",
           "name": "SecretKey",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色的资源描述，可在<a href=\"https://console.cloud.tencent.com/cam/role\">访问管理</a>，点击角色名获取。<br>普通角色：<br>qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName<br>服务角色：<br>qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName</p><p>DataSight将扮演此角色，使用此角色的临时密钥来发起API请求。</p>",
+          "example": "qcs::cam::uin/10001:roleName/readOnlyRole",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3306,24 +3317,35 @@
         {
           "disabled": false,
           "document": "<p>Auth角色对应权限SecretId</p>",
-          "example": "id",
+          "example": "secretid",
           "member": "string",
           "name": "SecretId",
           "output_required": true,
-          "required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "<p>Auth角色对应权限SecretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key",
+          "example": "secretkey",
           "member": "string",
           "name": "SecretKey",
           "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色的资源描述，可在<a href=\"https://console.cloud.tencent.com/cam/role\">访问管理</a>，点击角色名获取。<br>普通角色：<br>qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName<br>服务角色：<br>qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName</p><p>DataSight将扮演此角色，使用此角色的临时密钥来发起API请求。</p>",
+          "example": "qcs::cam::uin/10001:roleName/readOnlyRole",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4849,22 +4871,22 @@
         {
           "disabled": false,
           "document": "<p>腾讯云账号SecretId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "id",
+          "example": "secretid",
           "member": "string",
           "name": "SecretId",
-          "output_required": true,
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "<p>腾讯云账号SecretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "key",
+          "example": "secretke",
           "member": "string",
           "name": "SecretKey",
-          "output_required": true,
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4878,6 +4900,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色的资源描述，可在<a href=\"https://console.cloud.tencent.com/cam/role\">访问管理</a>，点击角色名获取。<br>普通角色：<br>qcs::cam::uin/12345678:role/4611686018427397919、qcs::cam::uin/12345678:roleName/testRoleName<br>服务角色：<br>qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::cam::uin/12345678:role/tencentcloudServiceRoleName/testServiceRoleName</p><p>DataSight将扮演此角色，使用此角色的临时密钥来发起API请求。</p>",
+          "example": "qcs::cam::uin/10001:roleName/readOnlyRole",
+          "member": "string",
+          "name": "RoleArn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7009,7 +7042,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>",
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>",
           "example": "无",
           "member": "ConsoleAccount",
           "name": "Accounts",
@@ -7018,7 +7051,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>",
+          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>",
           "example": "无",
           "member": "AnonymousLoginInfo",
           "name": "AnonymousLogin",
@@ -7063,7 +7096,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传</p>",
+          "document": "<p>Auth角色信息</p><p>“第三方认证登录”登录方式必传。<br>SecretId + SecretKey 或 RoleArn需要传其中一种。</p>",
           "example": "无",
           "member": "AuthRoleInfo",
           "name": "AuthRoles",
@@ -24098,7 +24131,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传</p>",
+          "document": "<p>用户账号信息</p><p>“账号密码鉴权”登录方式必传。<br>如果SecretId、SecretKey、RoleArn都不传，表示不修改这部分鉴权信息。</p>",
           "example": "无",
           "member": "ConsoleAccount",
           "name": "Accounts",
@@ -24107,7 +24140,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传</p>",
+          "document": "<p>匿名登录账号信息</p><p>“匿名登录”登录方式必传。<br>如果SecretId、SecretKey、RoleArn都不传，表示不修改这部分鉴权信息。</p>",
           "example": "无",
           "member": "AnonymousLoginInfo",
           "name": "AnonymousLogin",
@@ -24152,7 +24185,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Auth用户角色信息</p><p>“第三方认证登录”登录方式必传</p>",
+          "document": "<p>Auth用户角色信息</p><p>“第三方认证登录”登录方式必传。<br>如果SecretId、SecretKey、RoleArn都不传，表示不修改这部分鉴权信息。</p>",
           "example": "无",
           "member": "AuthRoleInfo",
           "name": "AuthRoles",

@@ -1667,7 +1667,7 @@
       "status": "online"
     },
     "DescribeCSCPayInfo": {
-      "document": "查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。",
+      "document": "查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。\n\n补充说明：\n1. 请求参数 NeedQuotaUsed 默认为 false，此时不采集配额用量，QuotaList 中的 QuotaUsed 恒为 0；需要展示已用量的调用方显式传 true；\n2. NeedQuotaUsed 为 true 时，若配额用量查询失败，接口仍正常返回订单信息，错误提示保存在 QuotaUsedError 字段，此时 QuotaUsed 恒为 0；\n3. 可通过公共参数 MemberId 查询集团成员的计费信息。",
       "input": "DescribeCSCPayInfoRequest",
       "name": "查询合并版计费信息",
       "output": "DescribeCSCPayInfoResponse",
@@ -14471,6 +14471,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义策略情况下策略的appid</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15282,6 +15292,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测的策略列表</p>",
+          "example": "无",
+          "member": "BaselinePolicyBrief",
+          "name": "PolicyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15605,6 +15625,42 @@
         }
       ],
       "usage": "both"
+    },
+    "BaselinePolicyBrief": {
+      "document": "基线策略简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基线策略 ID。</p>",
+          "example": "1015",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基线策略名称。</p>",
+          "example": "sdfsfsf",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为系统内置策略。true 是，false 否（用户自定义策略）。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSystem",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BaselinePolicySubCategoryConf": {
       "document": "子分类维度的检测项命中配置。",
@@ -40968,7 +41024,26 @@
     },
     "DescribeCSCPayInfoRequest": {
       "document": "DescribeCSCPayInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-14**24\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回配额已使用量。默认为 false：不采集用量，QuotaList 中的 QuotaUsed 恒为 0；需要展示已用量的调用方显式传 true。只关心订单状态、到期时间或配额购买数量的调用方无需传入</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedQuotaUsed",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeCSCPayInfoResponse": {
@@ -41112,6 +41187,16 @@
           "name": "QuotaList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额用量查询失败提示。仅请求参数 NeedQuotaUsed 为 true 时可能非空：此时订单信息仍正常返回，QuotaList 中的 QuotaUsed 恒为 0；查询正常或未请求用量时为空字符串</p>",
+          "example": "CSPM query err",
+          "member": "string",
+          "name": "QuotaUsedError",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -53690,6 +53775,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -53700,7 +53794,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p>",
-          "example": "953",
+          "example": "1545",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -76358,6 +76452,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -78505,6 +78609,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -86237,7 +86350,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p>",
-          "example": "1",
+          "example": "3",
           "member": "int64",
           "name": "TotalNum",
           "output_required": true,
@@ -86281,6 +86394,16 @@
           "member": "string",
           "name": "EndTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>",
+          "example": "PURCHASED",
+          "member": "string",
+          "name": "OrderType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -92663,6 +92786,15 @@
           "name": "ConditionMatches",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -98396,33 +98528,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额键</p>",
+          "example": "sv_soccloud_edition_ultimate_hp",
           "member": "string",
           "name": "QuotaKey",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配额总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额总量</p>",
+          "example": "2",
           "member": "int64",
           "name": "QuotaNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配额已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额已使用量（含共享给其他账号的消耗）。仅请求参数 NeedQuotaUsed 为 true 时采集；未传或为 false 时恒为 0；用量查询失败时恒为 0，错误提示见响应 QuotaUsedError 字段</p>",
+          "example": "0",
           "member": "int64",
           "name": "QuotaUsed",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>赠送配额。仅 CSPM 存在赠送额度，其余计费项为 0</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "QuotaGranted",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -101774,6 +101916,56 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleContentFileOperation": {
+      "document": "EDR文件操作规则（ContentType=file_operation，高危命令聚合降噪新增）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前进程命令行信息（可选，未配置时该维度不参与匹配）</p>",
+          "example": "无",
+          "member": "RuleContentProcessInfo",
+          "name": "Process",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>父进程命令行信息（可选，未配置时该维度不参与匹配）</p>",
+          "example": "无",
+          "member": "RuleContentProcessInfo",
+          "name": "ParentProcess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标文件路径（正则）</p>",
+          "example": "/usr/bin/b4f3a1c3",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作列表（多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>",
+          "example": "[\"write\"]",
+          "member": "string",
+          "name": "FileActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -113883,6 +114075,17 @@
           "example": "[\"PENDING\"]",
           "member": "string",
           "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选项</p>",
+          "example": "[\"FIRST\"]",
+          "member": "string",
+          "name": "Options",
           "output_required": false,
           "required": false,
           "type": "list",

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tione DescribeLogs --cli-unfold-argument  \
-    --Service INFER \
+    --Service NOTEBOOK \
+    --ServiceId nb-1694306254472012288-cw0bo5hocmps \
     --StartTime 2022-01-10T12:15:03+08:00 \
     --Limit 100 \
-    --PodName ms-cp6rgw9r-1* \
     --EndTime 2022-01-11T12:15:03+08:00
 ```
 
@@ -22,6 +22,8 @@ Output:
                 "Id": "77b5d420-73bc-47f2-96ab-3a2b32262ffe",
                 "Message": "This is a log",
                 "PodName": "ms-cp6rgw9r-1-864587bdb4-p5cv6",
+                "PkgId": "7A905C4E6AD1E8B5-1F",
+                "PkgLogId": "65536",
                 "Timestamp": "2022-01-11T04:14:36.348499491Z"
             }
         ],

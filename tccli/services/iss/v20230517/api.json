@@ -2677,7 +2677,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "flv 流地址",
+          "document": "<p>flv 流地址</p>",
           "example": "https://www.demo.com/live/f7ca505f-be1b-4ce8-849b-************.live.flv",
           "member": "string",
           "name": "Flv",
@@ -2687,7 +2687,7 @@
         },
         {
           "disabled": false,
-          "document": "hls 流地址",
+          "document": "<p>hls 流地址</p>",
           "example": "https://www.demo.com/live/f7ca505f-be1b-4ce8-849b-************/hls.m3u8",
           "member": "string",
           "name": "Hls",
@@ -2697,11 +2697,21 @@
         },
         {
           "disabled": false,
-          "document": "rtmp 流地址",
+          "document": "<p>rtmp 流地址</p>",
           "example": "rtmp://www.demo.com/live/f7ca505f-be1b-4ce8-849b-************",
           "member": "string",
           "name": "Rtmp",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>fmp4地址</p>",
+          "example": "https://www.demo.com/live/f7ca505f-be1b-4ce8-849b-************.live.flv",
+          "member": "string",
+          "name": "FMp4",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2713,7 +2723,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID（从通道查询接口DescribeDeviceChannel中获取）",
+          "document": "<p>通道 ID（从通道查询接口DescribeDeviceChannel中获取）</p>",
           "example": "f7ca505f-be1b-4ce8-849b-************",
           "member": "string",
           "name": "ChannelId",
@@ -2722,7 +2732,7 @@
         },
         {
           "disabled": false,
-          "document": "流类型（1:主码流；\n2:子码流（不可以和 Resolution 同时下发））",
+          "document": "<p>流类型（1:主码流；<br>2:子码流（不可以和 Resolution 同时下发））</p>",
           "example": "1",
           "member": "string",
           "name": "StreamType",
@@ -2731,7 +2741,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率（1:QCIF；\n2:CIF；\n3:4CIF；\n4:D1；\n5:720P；\n6:1080P/I；\n自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））",
+          "document": "<p>分辨率（1:QCIF；<br>2:CIF；<br>3:4CIF；<br>4:D1；<br>5:720P；<br>6:1080P/I；<br>自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>",
           "example": "19201080",
           "member": "string",
           "name": "Resolution",
@@ -2740,7 +2750,7 @@
         },
         {
           "disabled": false,
-          "document": "是否内网",
+          "document": "<p>是否内网</p>",
           "example": "true",
           "member": "bool",
           "name": "IsInternal",
@@ -2755,7 +2765,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回数据",
+          "document": "<p>返回数据</p>",
           "example": "无",
           "member": "ControlDeviceStreamData",
           "name": "Data",
@@ -8355,11 +8365,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "录像播放地址",
+          "document": "<p>flv录像播放地址</p>",
           "example": "http://192.168.0.1:18080/live/5c46860f-****-41bd-****-a5e47cab08df@c451066b-****-46ba-****-53fc3c7c1d7c.live.flv?start=1656604800&end=1656608400&stream_type=1&resolution=6",
           "member": "string",
           "name": "Flv",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>fmp4录像播放地址</p>",
+          "example": "https://test-play-gz.demo.cn/live/ec252efb-3059-4cad-9da1-2b7830c1b6e1@abb92afc-5898-4bba-8e20-2aadb4f2944d.live.mp4?start=1791545583&end=1791546583&token=cms_700000386669_1791548711_-MvacMzyKAtcZyYd0lHeNA",
+          "member": "string",
+          "name": "FMp4",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8371,7 +8391,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID（从查询通道DescribeDeviceChannel接口中获取）",
+          "document": "<p>通道 ID（从查询通道DescribeDeviceChannel接口中获取）</p>",
           "example": "f7ca505f-be1b-4ce8-849b-************",
           "member": "string",
           "name": "ChannelId",
@@ -8380,7 +8400,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间",
+          "document": "<p>起始时间</p>",
           "example": "1702813300",
           "member": "int64",
           "name": "Start",
@@ -8389,7 +8409,7 @@
         },
         {
           "disabled": false,
-          "document": " 结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1702814300",
           "member": "int64",
           "name": "End",
@@ -8398,7 +8418,7 @@
         },
         {
           "disabled": false,
-          "document": "流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））",
+          "document": "<p>流类型（1:主码流；2:子码流（不可以和 Resolution 同时下发））</p>",
           "example": "1",
           "member": "int64",
           "name": "StreamType",
@@ -8407,7 +8427,7 @@
         },
         {
           "disabled": false,
-          "document": "分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））",
+          "document": "<p>分辨率（1:QCIF；2:CIF； 3:4CIF； 4:D1； 5:720P； 6:1080P/I； 自定义的19201080等等（需设备支持）（不可以和 StreamType 同时下发））</p>",
           "example": "1280720",
           "member": "string",
           "name": "Resolution",
@@ -8416,7 +8436,7 @@
         },
         {
           "disabled": false,
-          "document": "是否内网",
+          "document": "<p>是否内网</p>",
           "example": "true",
           "member": "bool",
           "name": "IsInternal",
@@ -8431,7 +8451,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回结果",
+          "document": "<p>返回结果</p>",
           "example": "无",
           "member": "PlayRecordData",
           "name": "Data",

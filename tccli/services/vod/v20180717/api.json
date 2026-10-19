@@ -1673,6 +1673,13 @@
       "output": "VerifyDomainRecordResponse",
       "status": "online"
     },
+    "VideoDepthEstimation": {
+      "document": "视频深度估计接口。输入视频，输出灰度深度视频，白色为近、黑色为远。深度值为单视频内归一化的相对深度。输出存储由 OutputConfig 控制，默认临时存储 7 天后过期。任务提交成功后返回任务 ID，可通过 DescribeTaskDetail 查询结果",
+      "input": "VideoDepthEstimationRequest",
+      "name": "视频深度估计",
+      "output": "VideoDepthEstimationResponse",
+      "status": "online"
+    },
     "WeChatMiniProgramPublish": {
       "document": "将点播视频发布到微信小程序，供微信小程序播放器播放。\n本接口支持发布原始视频和转码后视频。",
       "input": "WeChatMiniProgramPublishRequest",
@@ -55974,6 +55981,136 @@
         }
       ],
       "usage": "out"
+    },
+    "VideoDepthEstimationOutputConfig": {
+      "document": "视频深度估计输出存储配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储模式。可选值：Temporary（默认，产物临时存储 7 天，不返回 FileId）、Permanent（产物写入当前应用媒资库并返回 FileId）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Permanent",
+          "member": "string",
+          "name": "StorageMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出媒资名称，仅 StorageMode 为 Permanent 时生效，不传默认为 depthVideoGenFile。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "depth2.mp4",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出媒资过期时间，使用 <a href=\"https://cloud.tencent.com/document/product/266/11732#I\">ISO 日期格式</a>，仅 StorageMode 为 Permanent 时生效。不传表示永不过期。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-12-28T00:35:00Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoDepthEstimationRequest": {
+      "document": "VideoDepthEstimation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
+          "example": "1500000001",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输入视频地址，必填。支持三种形态，按前缀自动识别：\nvod://{FileId} —— 引用当前账号下的 VOD 媒资。要求媒资存在且未处于禁用状态，否则将报参数错误。源文件不受影响。\nhttp(s)://... —— 公网可下载的视频地址，长度不超过 8182 字符。\ndata:{mime};base64,{payload} —— Base64 内联媒体，适合小体积素材。解码后大小上限 20 MB，mime 须为视频容器类型（如 video/mp4、video/quicktime）。",
+          "example": "https://example.com/video.mp4",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出存储配置。不传时为临时存储。",
+          "example": "无",
+          "member": "VideoDepthEstimationOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "SessionId",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "SessionContext",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "保留字段，特殊用途时使用。",
+          "example": "{\"ExtParameters\": \"\"}",
+          "member": "string",
+          "name": "ExtInfo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VideoDepthEstimationResponse": {
+      "document": "VideoDepthEstimation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "125xxx65-VideoDepthEstimation-bffb15f07530b57bc1aabb01fac74bcat",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VideoDepthEstimationTask": {
       "document": "视频深度估计任务信息。",

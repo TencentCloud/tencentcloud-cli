@@ -4308,7 +4308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名",
+          "document": "<p>应用名</p>",
           "example": "profile-service",
           "member": "string",
           "name": "ServiceName",
@@ -4317,7 +4317,7 @@
         },
         {
           "disabled": false,
-          "document": "业务系统ID",
+          "document": "<p>业务系统ID</p>",
           "example": "apm-059oXBfTL",
           "member": "string",
           "name": "InstanceId",
@@ -4332,7 +4332,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用配置项",
+          "document": "<p>应用配置项</p>",
           "example": "无",
           "member": "ApmApplicationConfigView",
           "name": "ApmApplicationConfigView",
