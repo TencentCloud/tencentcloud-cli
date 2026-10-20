@@ -393,7 +393,7 @@
       "status": "online"
     },
     "DescribeAfterPayInstances": {
-      "document": "查询后付费实例列表（仅 Edition=llm-sdk-waf）。请求参数与 DescribeInstances 一致；仅返回 tb_instance_conf 基础数据，不含套餐/标签等扩展信息。",
+      "document": "查询后付费实例列表。响应结构与 DescribeInstances 保持一致，全量返回实例字段（含各类套餐包信息），并额外填充 LLMTokenUsage（当天 token 消耗量与近 7 天趋势）。\n\n针对按量后付费基础安全实例（Edition 为 sparta-waf / clb-waf），额外返回实例维度的实时统计，用于控制台「实例管理」页展示：\n1. DomainCount：实时去重后的接入域名数（含云原生防护对象默认虚拟域名）；\n2. ExpertRuleCount：实时开启的专家规则数，口径为接入域名数 × 1；\n3. CustomRuleCount：该实例下所有接入域名的实时自定义规则条数之和。\n\n注意事项：\n- 上述 3 个字段均为调用时刻的实时快照，非按小时的计费计量值；\n- 与账单接口 DescribeWafPostpaidBillDetail 返回的小时计量值（DomainUsage / ExpertUsage / CustomUsage）可能存在差异：账单侧按自然小时计量、包含小时内已删除的规则，且自定义规则在多实例共用同一域名时会平分并向上取整，而本接口不做平分、不含已删除规则；\n- Edition 为 llm-sdk-waf 等非基础安全实例无域名接入与规则概念，上述 3 个字段固定为 0。",
       "input": "DescribeAfterPayInstancesRequest",
       "name": "查询后付费实例列表",
       "output": "DescribeAfterPayInstancesResponse",
@@ -3572,7 +3572,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源</p>",
+          "document": "<p>回源策略。<br>枚举值：<br>0：负载均衡回源（默认值）<br>1：分流回源<br>2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源</p>",
           "example": "0",
           "member": "int64",
           "name": "UpstreamPolicy",
@@ -3631,7 +3631,7 @@
       "type": "object"
     },
     "AfterPayInstanceInfo": {
-      "document": "后付费实例（Edition=llm-sdk-waf）的基础信息，仅包含 tb_instance_conf 基础字段",
+      "document": "后付费实例详情，结构与 DescribeInstances 的 InstanceInfo 保持一致，全量返回实例字段（含各类套餐包信息），并额外填充 LLMTokenUsage；基础安全实例另返回 DomainCount、ExpertRuleCount、CustomRuleCount 实时统计",
       "members": [
         {
           "disabled": false,
@@ -3884,6 +3884,446 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性计费开关。<br>0：关闭<br>1：开启</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已配置域名个数。</p><p>按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回实时去重后的接入域名数，统计范围覆盖SaaS接入域名、云原生防护对象（含默认虚拟域名）与四层REIP接入域名，同一域名多条接入记录只计一次。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "DomainCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已配置主域名个数。</p><p>按接入域名归属的主域名去重统计；未接入任何域名时为0。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MainDomainCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例当前实时开启的专家规则数量。统计口径：接入一个防护对象（域名）即默认计1个专家规则，即等于该实例的实时接入域名数DomainCount；未接入任何对象时为0。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值ExpertUsage可能存在差异。</p>",
+          "example": "17",
+          "member": "uint64",
+          "name": "ExpertRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例下所有接入域名的实时自定义规则条数之和。统计范围包含自定义策略、规则白名单、IP封禁、自定义CC、紧急CC、地域封禁、防信息泄露、防篡改、IP黑白名单等模块；同一条批量规则命中该实例下N个域名时计N条。</p><p>仅按量后付费基础安全实例（Edition为sparta-waf或clb-waf）返回，其余实例类型固定为0。</p><p>该值为实时快照且不做多实例平分，与账单接口DescribeWafPostpaidBillDetail返回的小时计量值CustomUsage可能存在差异。</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "CustomRuleCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例30天内QPS峰值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxQPS",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>qps扩展包信息</p>",
+          "example": "无",
+          "member": "QPSPackageNew",
+          "name": "QPS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名扩展包信息</p>",
+          "example": "无",
+          "member": "DomainPackageNew",
+          "name": "DomainPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务安全包</p>",
+          "example": "无",
+          "member": "FraudPkg",
+          "name": "FraudPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Bot资源包</p>",
+          "example": "无",
+          "member": "BotPkg",
+          "name": "BotPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>bot的qps详情</p>",
+          "example": "无",
+          "member": "BotQPS",
+          "name": "BotQPS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽峰值，单位为B/s(字节每秒)</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MaxBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买的qps规格</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "QpsStandard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>购买的带宽规格</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BandwidthStandard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例沙箱qps值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SandboxQps",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重保包</p>",
+          "example": "无",
+          "member": "MajorEventsPkg",
+          "name": "MajorEventsPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>混合云子节点包</p>",
+          "example": "无",
+          "member": "HybridPkg",
+          "name": "HybridPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>API安全资源包</p>",
+          "example": "无",
+          "member": "ApiPkg",
+          "name": "ApiPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序安全加速包</p>",
+          "example": "无",
+          "member": "MiniPkg",
+          "name": "MiniPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序qps规格</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MiniQpsStandard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序qps峰值</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "MiniMaxQPS",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次超量时间</p>",
+          "example": "0",
+          "member": "string",
+          "name": "LastQpsExceedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序安全接入ID数量扩张包</p>",
+          "example": "无",
+          "member": "MiniExtendPkg",
+          "name": "MiniExtendPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近3天最大qps</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Last3MaxQPS",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近3天最大带宽</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Last3MaxBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>",
+          "example": "1200",
+          "member": "uint64",
+          "name": "Last7MaxMiniBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MiniBandwidthStandard",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>重保增强包</p>",
+          "example": "无",
+          "member": "MajorEventsProPkg",
+          "name": "MajorEventsProPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的网络配置</p>",
+          "example": "无",
+          "member": "NetworkConfig",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RCE设备安全信息包</p>",
+          "example": "无",
+          "member": "RCEPkg",
+          "name": "RCEPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超量策略。0：超量沙箱<br>1：超量限流</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExceedPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性资源Id</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ElasticResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费大模型安全信息包</p>",
+          "example": "无",
+          "member": "LLMMonPkg",
+          "name": "LLMMonPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域id</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BOT安全护航信息</p>",
+          "example": "无",
+          "member": "BotSecurityPkg",
+          "name": "BotSecurityPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>BOT安全监测资源信息</p>",
+          "example": "无",
+          "member": "BotMonitorPkg",
+          "name": "BotMonitorPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>独享ip资源信息</p>",
+          "example": "无",
+          "member": "DedicatedIPPkg",
+          "name": "DedicatedIPPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经配置独享ip的数量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "DedicatedIPCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签结构体</p>",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagInfos",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -4538,7 +4978,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -4604,7 +5044,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -6944,7 +7384,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7010,7 +7450,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "0",
           "member": "uint64",
           "name": "RenewFlag",
@@ -7049,7 +7489,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7126,7 +7566,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志\t",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -7231,7 +7671,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -7823,7 +8263,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -7889,7 +8329,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "0",
           "member": "uint64",
           "name": "RenewFlag",
@@ -9236,12 +9676,22 @@
         },
         {
           "disabled": false,
-          "document": "<p>对象地域</p>",
+          "document": "<p>对象地域<br>对象地域，地域缩写，例如 gz。与 ApRegion 表达同一含义、格式不同</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象所在地域，腾讯云标准地域格式\n参数格式：形如 ap-guangzhou\n与 Region 表达同一含义、格式不同。对象恒为单地域，数组长度恒为 0 或 1\n出参在可识别时填充，无法识别时为空\n枚举值：\nap-guangzhou：广州\nap-shanghai：上海\nap-beijing：北京\nap-chengdu：成都\nap-chongqing：重庆\nap-hongkong：中国香港\nap-nanjing：南京\nap-tianjin：天津\nap-shenzhen：深圳\nap-qingyuan：清远\nap-guangzhou-open：广州Open\nap-shenzhen-fsi：深圳金融\nap-beijing-fsi：北京金融\nap-shanghai-fsi：上海金融\nap-hangzhou-ec：杭州\nap-fuzhou-ec：福州\nap-jinan-ec：济南\nap-wuhan-ec：武汉\nap-changsha-ec：长沙\nap-hefei-ec：合肥\nap-shenyang-ec：沈阳\nap-xian-ec：西安\nap-xibei-ec：西北\nap-shijiazhuang-ec：石家庄\nap-zhengzhou-ec：郑州\nap-qingyuan-xinan：清远信安\nap-shanghai-adc：上海ADC\nap-shanghai-wxp-ops：上海无线城市运营\nap-singapore：新加坡\nap-seoul：首尔\nap-tokyo：东京\nap-osaka：大阪\nap-mumbai：孟买\nap-bangkok：曼谷\nap-jakarta：雅加达\nap-taipei：台北\nap-johorbahru：柔佛巴鲁\neu-frankfurt：法兰克福\neu-moscow：莫斯科\nna-ashburn：弗吉尼亚\nna-siliconvalley：硅谷\nna-toronto：多伦多\nsa-saopaulo：圣保罗\nme-saudi-arabia：沙特阿拉伯",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ApRegion",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12925,7 +13375,7 @@
         },
         {
           "disabled": false,
-          "document": "后付费实例列表",
+          "document": "后付费实例列表（结构与 DescribeInstances 的 InstanceInfo 一致，全量返回实例字段含各类套餐包信息，额外填充 LLMTokenUsage）",
           "example": "无",
           "member": "AfterPayInstanceInfo",
           "name": "Instances",
@@ -16272,7 +16722,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "txwaf.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -16281,7 +16731,7 @@
         },
         {
           "disabled": false,
-          "document": "域名id",
+          "document": "<p>域名id</p>",
           "example": "waf-Lt6LGSlM",
           "member": "string",
           "name": "DomainId",
@@ -16290,7 +16740,7 @@
         },
         {
           "disabled": false,
-          "document": "实例id",
+          "document": "<p>实例id</p>",
           "example": "waf_2kuil1fm02vqm7z3",
           "member": "string",
           "name": "InstanceId",
@@ -16305,8 +16755,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "clb域名详情",
-          "example": "{   \"State\": 0,   \"Domain\": \"txwaf.qcloudwaf.com\",   \"DomainId\": \"waf-Lt6LGSlM\",   \"InstanceId\": \"waf_2kuil1fm02vqm7z3\",   \"Edition\": \"clb-waf\",   \"InstanceName\": \"gz-Default1\",   \"IsCdn\": 0,   \"FlowMode\": 0,   \"CdcClusters\": \"cdc-fsamfs1\",   \"LoadBalancerSet\": [     {       \"ListenerId\": \"lbl-2k0gmnv1\",       \"ListenerName\": \"clbwaf-cd.qcloudwaf.com\",       \"LoadBalancerId\": \"lb-mhb5j9gj\",       \"LoadBalancerName\": \"cd-clbwaf\",       \"Protocol\": \"HTTP\",       \"Region\": \"cd\",       \"Vip\": \"140.143.83.191\",       \"Vport\": 80,       \"Zone\": \"ap-chengdu-1\",       \"NumericalVpcId\": 1140321,       \"LoadBalancerType\": \"OPEN\"     }   ],   \"AlbType\": \"clb\",   \"IpHeaders\": [\"21.23.123.123\"],   \"CloudType\": \"public\",   \"Note\": \"备注\",   \"Labels\": [     \"http80\",     \"http8080\"   ] }",
+          "document": "<p>clb域名详情</p>",
+          "example": "无",
           "member": "ClbDomainsInfo",
           "name": "DomainsClbPartInfo",
           "output_required": true,
@@ -16361,7 +16811,7 @@
         {
           "disabled": false,
           "document": "域名详情",
-          "example": "{\"Domain\":\"randygz2.qcloudwaf.com\",\"DomainId\":\"7d58ebf3db7e5f7e8f91eb017c6a7b31\",\"InstanceId\":\"waf_2kw60zgy0908e8j3\",\"Edition\":\"sparta-waf\",\"InstanceName\":\"广州双栈集群企业版\",\"Cert\":\"\",\"CertType\":2,\"Cls\":1,\"CreateTime\":\"2024-07-18 10:46:12\",\"Cname\":\"dae1cae7d48ec31c7727a86a8cda2a62.qcloudzygj.com\",\"Engine\":1,\"GrayAreas\":[\"\"],\"HttpsRewrite\":0,\"HttpsUpstreamPort\":\"80\",\"IsKeepAlive\":1,\"IsCdn\":1,\"IsGray\":0,\"IsHttp2\":0,\"IsWebsocket\":0,\"LoadBalance\":0,\"Mode\":1,\"PrivateKey\":\"\",\"SSLId\":\"H0LMTjmj\",\"UpstreamDomain\":\"\",\"UpstreamScheme\":\"http\",\"UpstreamType\":0,\"SrcList\":[\"114.132.246.237\"],\"Weights\":[],\"Ports\":[{\"NginxServerId\":231056,\"Port\":\"80\",\"Protocol\":\"http\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"},{\"NginxServerId\":321607,\"Port\":\"443\",\"Protocol\":\"https\",\"UpstreamPort\":\"80\",\"UpstreamProtocol\":\"http\"}],\"ActiveCheck\":0,\"TLSVersion\":3,\"Ciphers\":[],\"CipherTemplate\":2,\"ProxyReadTimeout\":10,\"ProxySendTimeout\":300,\"SniType\":1,\"SniHost\":\"\",\"IpHeaders\":[],\"XFFReset\":0,\"Note\":\"22222\",\"Level\":\"200\",\"UpstreamHost\":\"\",\"ProxyBuffer\":1,\"ProbeStatus\":1,\"GmType\":0,\"GmCertType\":0,\"GmCert\":\"\",\"GmPrivateKey\":\"\",\"GmEncCert\":\"\",\"GmEncPrivateKey\":\"\",\"GmSSLId\":\"\",\"Labels\":[\"\"]}",
+          "example": "无",
           "member": "DomainsPartInfo",
           "name": "DomainsPartInfo",
           "output_required": true,
@@ -17082,7 +17532,7 @@
         {
           "disabled": false,
           "document": "复杂的搜索条件",
-          "example": "{   \"ClsStatus\": 1,   \"Status\": 1,   \"FlowMode\": 1 }",
+          "example": "无",
           "member": "SearchItem",
           "name": "Item",
           "required": false,
@@ -17116,7 +17566,7 @@
         {
           "disabled": false,
           "document": "防护域名的列表",
-          "example": "[{     \"Domain\": \"txcloudwaf.qcloudwaf.com\",     \"DomainId\": \"waf-DhOzNw3D\",     \"MainDomain\": \"qcloudwaf.com\",     \"Mode\": 1,     \"Status\": 1,     \"State\": 1,     \"Engine\": 1,     \"IsCdn\": 1,     \"LoadBalancerSet\": [       {         \"LoadBalancerId\": \"lb-daiu3grtd\",         \"LoadBalancerName\": \"txlb\",         \"ListenerId\": \"lbl-daskhe2\",         \"ListenerName\": \"80httpport\",         \"Vip\": \"35.68.12.3\",         \"Vport\": 1,         \"Region\": \"gz\",         \"Protocol\": \"http\",         \"Zone\": \"ap-guangzhou\",         \"NumericalVpcId\": 3243,         \"LoadBalancerType\": \"open\",         \"LoadBalancerDomain\": \"\"       }     ],     \"Region\": \"gz\",     \"Edition\": \"clb-waf\",     \"FlowMode\": 1,     \"ClsStatus\": 1,     \"Level\": 1,     \"CdcClusters\": [       \"cluster-o41khj88\"     ],     \"AlbType\": \"clb\",     \"IpHeaders\": [       \"x-myreal-ip\"     ],     \"EngineType\": 0,     \"CloudType\": \"public\",     \"Note\": \"备注\"   }]",
+          "example": "无",
           "member": "HostRecord",
           "name": "HostList",
           "output_required": false,
@@ -17156,7 +17606,7 @@
         {
           "disabled": false,
           "document": "过滤数组",
-          "example": "[{\"Name\":\"Region\",\"Values\":[\"ap-chengdu\"],\"ExactMatch\":true},{\"Name\":\"Edition\",\"Values\":[\"sparta-waf\"],\"ExactMatch\":true}]",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -17164,7 +17614,7 @@
         },
         {
           "disabled": false,
-          "document": "释放延期标识",
+          "document": "释放延期标识，0表示不延期，1表示延期释放",
           "example": "1",
           "member": "uint64",
           "name": "FreeDelayFlag",
@@ -17696,6 +18146,24 @@
           "name": "ClientIP",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "多轮历史用户输入，按时间旧到新排列，仅用于提示词注入检测\n入参限制：最多10条，超出保留最新10条；History + Content 拼接后不超过6K字符，超限从最早History开始丢弃",
+          "example": "[\"你好，请问你能做什么\",\"帮我查询一下天气\"]",
+          "member": "string",
+          "name": "History",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "待检测的URL列表，用于恶意URL检测\n入参限制：最多50个，单个URL长度不超过2048字符，超出截断",
+          "example": "[\"http://malicious-example.com/phishing\",\"https://safe-example.com\"]",
+          "member": "string",
+          "name": "Urls",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -17902,7 +18370,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>服务ID</p>",
+          "document": "<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>",
           "example": "9000002874",
           "member": "string",
           "name": "ServiceId",
@@ -17915,6 +18383,33 @@
           "example": "waf_2l15d14809yfq9sf",
           "member": "string",
           "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，当前仅支持 UpdateTime；为空则按规则默认顺序返回</p>",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向：asc(升序)/desc(降序)，默认 desc</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名模式传 Domain（与 ServiceId 二选一）</p>",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Domain",
           "required": false,
           "type": "string"
         }
@@ -17948,7 +18443,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>服务ID</p>",
+          "document": "<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>",
           "example": "9000002874",
           "member": "string",
           "name": "ServiceId",
@@ -17970,6 +18465,15 @@
           "example": "prompt_injection",
           "member": "string",
           "name": "RuleType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名模式传 Domain（与 ServiceId 二选一）</p>",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Domain",
           "required": false,
           "type": "string"
         }
@@ -20803,7 +21307,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;</p>",
+          "document": "<p>地域。<br>&quot;多伦多&quot;: &quot;ca&quot;<br>&quot;广州&quot;: &quot;gz&quot;<br>&quot;成都&quot;: &quot;cd&quot;<br>&quot;福州&quot;: &quot;fzec&quot;<br>&quot;深圳&quot;: &quot;szx&quot;<br>&quot;印度&quot;: &quot;in&quot;<br>&quot;济南&quot;: &quot;jnec&quot;<br>&quot;重庆&quot;: &quot;cq&quot;<br>&quot;天津&quot;: &quot;tsn&quot;<br>&quot;欧洲东北&quot;: &quot;ru&quot;<br>&quot;南京&quot;: &quot;nj&quot;<br>&quot;美国硅谷&quot;: &quot;usw&quot;<br>&quot;泰国&quot;: &quot;th&quot;<br>&quot;广州Open&quot;: &quot;gzopen&quot;<br>&quot;深圳金融&quot;: &quot;szjr&quot;<br>&quot;法兰克福&quot;: &quot;de&quot;<br>&quot;日本&quot;: &quot;jp&quot;<br>&quot;弗吉尼亚&quot;: &quot;use&quot;<br>&quot;北京&quot;: &quot;bj&quot;<br>&quot;中国香港&quot;: &quot;hk&quot;<br>&quot;杭州&quot;: &quot;hzec&quot;<br>&quot;北京金融&quot;: &quot;bjjr&quot;<br>&quot;上海金融&quot;: &quot;shjr&quot;<br>&quot;台北&quot;: &quot;tpe&quot;<br>&quot;首尔&quot;: &quot;kr&quot;<br>&quot;上海&quot;: &quot;sh&quot;<br>&quot;新加坡&quot;: &quot;sg&quot;<br>&quot;清远&quot;: &quot;qy&quot;<br>与 ApRegion 表达同一含义、格式不同：本字段为地域缩写，ApRegion 为腾讯云标准 ap-xxx 格式</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -20942,6 +21446,28 @@
           "output_required": true,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名所在地域，腾讯云标准地域格式\n参数格式：形如 ap-guangzhou\n与 Region 表达同一含义、格式不同：Region 为地域缩写，本字段为标准地域名数组。负载均衡型多地域接入时数组可含多个元素\n出参在可识别时填充，无法识别的地域不返回对应元素\n枚举值：\nap-guangzhou：广州\nap-shanghai：上海\nap-beijing：北京\nap-chengdu：成都\nap-chongqing：重庆\nap-hongkong：中国香港\nap-nanjing：南京\nap-tianjin：天津\nap-shenzhen：深圳\nap-qingyuan：清远\nap-guangzhou-open：广州Open\nap-shenzhen-fsi：深圳金融\nap-beijing-fsi：北京金融\nap-shanghai-fsi：上海金融\nap-hangzhou-ec：杭州\nap-fuzhou-ec：福州\nap-jinan-ec：济南\nap-wuhan-ec：武汉\nap-changsha-ec：长沙\nap-hefei-ec：合肥\nap-shenyang-ec：沈阳\nap-xian-ec：西安\nap-xibei-ec：西北\nap-shijiazhuang-ec：石家庄\nap-zhengzhou-ec：郑州\nap-qingyuan-xinan：清远信安\nap-shanghai-adc：上海ADC\nap-shanghai-wxp-ops：上海无线城市运营\nap-singapore：新加坡\nap-seoul：首尔\nap-tokyo：东京\nap-osaka：大阪\nap-mumbai：孟买\nap-bangkok：曼谷\nap-jakarta：雅加达\nap-taipei：台北\nap-johorbahru：柔佛巴鲁\neu-frankfurt：法兰克福\neu-moscow：莫斯科\nna-ashburn：弗吉尼亚\nna-siliconvalley：硅谷\nna-toronto：多伦多\nsa-saopaulo：圣保罗\nme-saudi-arabia：沙特阿拉伯",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ApRegion",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。\n默认值：\"\"",
+          "example": "dae1cae7d48ec31c7727a86a5c1a2a62.qcloudzygj.cn",
+          "member": "string",
+          "name": "DnssecCname",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -21609,6 +22135,16 @@
           "member": "string",
           "name": "Cname",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNSSEC CNAME 地址。客户开启 DNSSEC CNAME 校验后，将业务域名 CNAME 到该地址即可接入。开关关闭、非 SaaS CNAME 接入或无法映射时为空字符串。<br>默认值：&quot;&quot;</p>",
+          "example": "940f377475e9155caa96623ccad545a78.qcloudwzgj.cn",
+          "member": "string",
+          "name": "DnssecCname",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22556,6 +23092,39 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否投递 response_headers（响应头，完整键值对，原样投递不做过滤/脱敏，超过2KB截断）。1:开启 0/不填:不开启。与 EnableResponse（响应体）完全独立，互不影响。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableResponseHeaders",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否投递 response_length（响应包长度，单位字节）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableResponseLength",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否投递 response_status_line（客户端可见 HTTP 状态行，如 HTTP/1.1 200 OK，超过1KB截断）。1:开启 0/不填:不开启。与 EnableResponse 完全独立，互不影响。拦截/未回源时也会有值，记录的是 WAF 返回给客户端的状态行。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableResponseStatusLine",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -22725,7 +23294,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -22791,7 +23360,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -23863,7 +24432,7 @@
         {
           "disabled": false,
           "document": "绑定的负载均衡器信息列表",
-          "example": "[   {     \"Protocol\": \"HTTP\",     \"Zone\": \"1\",     \"Region\": \"cd\",     \"LoadBalancerName\": \"80lb\",     \"ListenerId\": \"lbl-2k0gmnv1\",     \"Vip\": \"112.12.2.5\",     \"ListenerName\": \"80http\",     \"LoadBalancerId\": \"lb-mhb5j9gt\",     \"Vport\": \"80\"   } ]",
+          "example": "无",
           "member": "LoadBalancer",
           "name": "LoadBalancerSet",
           "output_required": true,
@@ -23873,7 +24442,7 @@
         },
         {
           "disabled": false,
-          "document": "域名绑定的LB的地域，以逗号分割多个地域",
+          "document": "域名绑定的LB的地域，以逗号分割多个地域\n与 ApRegion 表达同一含义、格式不同。本字段为地域缩写，多个地域以英文逗号拼接；入参与 ApRegion 同时传入时以 ApRegion 为准",
           "example": "\"gz\"",
           "member": "string",
           "name": "Region",
@@ -23917,6 +24486,17 @@
         },
         {
           "disabled": false,
+          "document": "域名绑定的负载均衡所在地域，腾讯云标准地域格式\n参数格式：形如 ap-guangzhou\n与 Region 表达同一含义、格式不同：Region 为地域缩写且多个地域以英文逗号拼接，本字段为标准地域名数组\n入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion\n出参在可识别时填充，无法识别的地域不返回对应元素\n枚举值：\nap-guangzhou：广州\nap-shanghai：上海\nap-beijing：北京\nap-chengdu：成都\nap-chongqing：重庆\nap-hongkong：中国香港\nap-nanjing：南京\nap-tianjin：天津\nap-shenzhen：深圳\nap-qingyuan：清远\nap-guangzhou-open：广州Open\nap-shenzhen-fsi：深圳金融\nap-beijing-fsi：北京金融\nap-shanghai-fsi：上海金融\nap-hangzhou-ec：杭州\nap-fuzhou-ec：福州\nap-jinan-ec：济南\nap-wuhan-ec：武汉\nap-changsha-ec：长沙\nap-hefei-ec：合肥\nap-shenyang-ec：沈阳\nap-xian-ec：西安\nap-xibei-ec：西北\nap-shijiazhuang-ec：石家庄\nap-zhengzhou-ec：郑州\nap-qingyuan-xinan：清远信安\nap-shanghai-adc：上海ADC\nap-shanghai-wxp-ops：上海无线城市运营\nap-singapore：新加坡\nap-seoul：首尔\nap-tokyo：东京\nap-osaka：大阪\nap-mumbai：孟买\nap-bangkok：曼谷\nap-jakarta：雅加达\nap-taipei：台北\nap-johorbahru：柔佛巴鲁\neu-frankfurt：法兰克福\neu-moscow：莫斯科\nna-ashburn：弗吉尼亚\nna-siliconvalley：硅谷\nna-toronto：多伦多\nsa-saopaulo：圣保罗\nme-saudi-arabia：沙特阿拉伯",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ApRegion",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "防护等级，可选值100,200,300",
           "example": "100",
           "member": "uint64",
@@ -23929,7 +24509,7 @@
         {
           "disabled": false,
           "document": "域名需要下发到的cdc集群列表。仅CDC场景下填充",
-          "example": "[\"cluster-o41khj88\",\"\t cluster-o41khj99\"]",
+          "example": "[\"cluster-o41khj88\",\"cluster-o41khj99\"]",
           "member": "string",
           "name": "CdcClusters",
           "output_required": false,
@@ -24057,7 +24637,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -24123,10 +24703,21 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可接入弹性节点数。仅 Edition 为 clb-waf 的实例有混合云接入节点；弹性关闭或不满足版本、已购混合云节点条件时为 0；满足时为 1 + floor(弹性计费 QPS 上限 / 5000)，不含已购买节点数",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticNodeNum",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -24730,7 +25321,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>付费模式</p>",
+          "document": "付费模式，0表示后付费（按量计费），1表示预付费（包年包月）",
           "example": "1",
           "member": "uint64",
           "name": "PayMode",
@@ -24983,7 +25574,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>购买的带宽规格</p>",
+          "document": "购买的带宽规格上限，单位：Mbps",
           "example": "500",
           "member": "uint64",
           "name": "BandwidthStandard",
@@ -24994,7 +25585,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例状态</p>",
+          "document": "实例状态，0表示正常，1表示正常使用，2表示隔离期，3表示已销毁",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -25060,7 +25651,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>小程序安全加速包</p>",
+          "document": "<p>小程序安全防护包</p>",
           "example": "无",
           "member": "MiniPkg",
           "name": "MiniPkg",
@@ -25126,7 +25717,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例延期释放标识</p>",
+          "document": "实例延期释放标识，0表示不延期，1表示延期释放",
           "example": "1",
           "member": "uint64",
           "name": "FreeDelayFlag",
@@ -25152,6 +25743,28 @@
           "example": "1000",
           "member": "uint64",
           "name": "Last3MaxBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过去7天小程序流量最大带宽，单位Byte/s，仅开启小程序安全时有值。转换为Mbps请使用 *8/1000/1000（十进制），不要使用MaxBandwidth所用的*8/1024/1024（二进制），否则会有约4.63%的偏差</p>",
+          "example": "1200",
+          "member": "uint64",
+          "name": "Last7MaxMiniBandwidth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>小程序带宽上限，单位Mbps，仅开启小程序安全时有值</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MiniBandwidthStandard",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -25196,6 +25809,17 @@
           "example": "无",
           "member": "RCEPkg",
           "name": "RCEPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>RCE QPS扩展包</p>",
+          "example": "无",
+          "member": "RCEExtendPkg",
+          "name": "RCEExtendPkg",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -25894,6 +26518,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>脱敏后的内容。Action为mask时返回；如果未生成脱敏证据，则返回原文。</p>",
+          "example": "邮箱：89*********@qq.com",
+          "member": "string",
+          "name": "Desensitization",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>图片检测结果</p>",
           "example": "无",
           "member": "ImageResult",
@@ -25928,6 +26562,16 @@
           "example": "无",
           "member": "IntentDetectResult",
           "name": "IntentDetectResult",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>恶意URL检测结果</p>",
+          "example": "无",
+          "member": "UrlDetectResult",
+          "name": "UrlDetectResult",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -26073,7 +26717,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -26239,7 +26883,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>状态</p>",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -27101,7 +27745,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "负载均衡LD的ID",
+          "document": "<p>负载均衡LD的ID</p>",
           "example": "lb-jbtq6mm8",
           "member": "string",
           "name": "LoadBalancerId",
@@ -27112,7 +27756,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡LD的名称",
+          "document": "<p>负载均衡LD的名称</p>",
           "example": "randy-clb-waf",
           "member": "string",
           "name": "LoadBalancerName",
@@ -27123,7 +27767,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡监听器的ID",
+          "document": "<p>负载均衡监听器的ID</p>",
           "example": "lbl-hw2avhk0",
           "member": "string",
           "name": "ListenerId",
@@ -27134,8 +27778,8 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡监听器的名称",
-          "example": "waftest",
+          "document": "<p>负载均衡监听器的名称</p>",
+          "example": "waftestnametest",
           "member": "string",
           "name": "ListenerName",
           "output_required": true,
@@ -27145,7 +27789,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的端口",
+          "document": "<p>负载均衡实例的端口</p>",
           "example": "80",
           "member": "uint64",
           "name": "Vport",
@@ -27156,7 +27800,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡LD的地域",
+          "document": "<p>负载均衡LD的地域<br>与 ApRegion 表达同一含义、格式不同。本字段为地域缩写；入参与 ApRegion 同时传入时以 ApRegion 为准</p>",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -27167,7 +27811,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器协议，http、https",
+          "document": "<p>监听器协议，http、https</p>",
           "example": "http",
           "member": "string",
           "name": "Protocol",
@@ -27178,7 +27822,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡监听器所在的zone",
+          "document": "<p>负载均衡监听器所在的zone</p>",
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
@@ -27189,7 +27833,18 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡实例的IP。域名化CLB VIP可填空。",
+          "document": "<p>负载均衡实例所在地域，腾讯云标准地域格式<br>参数格式：形如 ap-guangzhou<br>与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1<br>入参可选；与 Region 同时传入时以本字段为准；取值不在枚举范围内时返回 UnsupportedRegion<br>出参在可识别时填充，无法识别时为空数组<br>枚举值：<br>ap-guangzhou：广州<br>ap-shanghai：上海<br>ap-beijing：北京<br>ap-chengdu：成都<br>ap-chongqing：重庆<br>ap-hongkong：中国香港<br>ap-nanjing：南京<br>ap-tianjin：天津<br>ap-shenzhen：深圳<br>ap-qingyuan：清远<br>ap-guangzhou-open：广州Open<br>ap-shenzhen-fsi：深圳金融<br>ap-beijing-fsi：北京金融<br>ap-shanghai-fsi：上海金融<br>ap-hangzhou-ec：杭州<br>ap-fuzhou-ec：福州<br>ap-jinan-ec：济南<br>ap-wuhan-ec：武汉<br>ap-changsha-ec：长沙<br>ap-hefei-ec：合肥<br>ap-shenyang-ec：沈阳<br>ap-xian-ec：西安<br>ap-xibei-ec：西北<br>ap-shijiazhuang-ec：石家庄<br>ap-zhengzhou-ec：郑州<br>ap-qingyuan-xinan：清远信安<br>ap-shanghai-adc：上海ADC<br>ap-shanghai-wxp-ops：上海无线城市运营<br>ap-singapore：新加坡<br>ap-seoul：首尔<br>ap-tokyo：东京<br>ap-osaka：大阪<br>ap-mumbai：孟买<br>ap-bangkok：曼谷<br>ap-jakarta：雅加达<br>ap-taipei：台北<br>ap-johorbahru：柔佛巴鲁<br>eu-frankfurt：法兰克福<br>eu-moscow：莫斯科<br>na-ashburn：弗吉尼亚<br>na-siliconvalley：硅谷<br>na-toronto：多伦多<br>sa-saopaulo：圣保罗<br>me-saudi-arabia：沙特阿拉伯</p>",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ApRegion",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>负载均衡实例的IP。域名化CLB VIP可填空。</p>",
           "example": "136.51.67.104",
           "member": "string",
           "name": "Vip",
@@ -27200,7 +27855,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的VPCID，公网为-1，内网按实际填写",
+          "document": "<p>负载均衡的VPCID，公网为-1，内网按实际填写</p>",
           "example": "546585",
           "member": "int64",
           "name": "NumericalVpcId",
@@ -27211,7 +27866,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网",
+          "document": "<p>负载均衡的网络类型。OPEN： 公网 INTERNAL ：内网</p>",
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
@@ -27222,7 +27877,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的域名",
+          "document": "<p>负载均衡的域名</p>",
           "example": "lb-jbtq6mm8-vo1x4syum7jtqz5n.clb.ap-guangzhou.tencentclb.com",
           "member": "string",
           "name": "LoadBalancerDomain",
@@ -27233,7 +27888,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器所属成员id",
+          "document": "<p>监听器所属成员id</p>",
           "example": "251254511",
           "member": "uint64",
           "name": "MemberAppId",
@@ -27244,7 +27899,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器所属成员的uin",
+          "document": "<p>监听器所属成员的uin</p>",
           "example": "700000916577",
           "member": "string",
           "name": "MemberUin",
@@ -27316,7 +27971,7 @@
         },
         {
           "disabled": false,
-          "document": "地区\n    \"多伦多\": \"ca\",\n    \"广州\": \"gz\",\n    \"成都\": \"cd\",\n    \"福州\": \"fzec\",\n    \"深圳\": \"szx\",\n    \"印度\": \"in\",\n    \"济南\": \"jnec\",\n    \"重庆\": \"cq\",\n    \"天津\": \"tsn\",\n    \"欧洲东北\": \"ru\",\n    \"南京\": \"nj\",\n    \"美国硅谷\": \"usw\",\n    \"泰国\": \"th\",\n    \"广州Open\": \"gzopen\",\n    \"深圳金融\": \"szjr\",\n    \"法兰克福\": \"de\",\n    \"日本\": \"jp\",\n    \"弗吉尼亚\": \"use\",\n    \"北京\": \"bj\",\n    \"中国香港\": \"hk\",\n    \"杭州\": \"hzec\",\n    \"北京金融\": \"bjjr\",\n    \"上海金融\": \"shjr\",\n    \"台北\": \"tpe\",\n    \"首尔\": \"kr\",\n    \"上海\": \"sh\",\n    \"新加坡\": \"sg\",\n    \"清远\": \"qy\",\n    \"雅加达\": \"jkt\"",
+          "document": "地区\n    \"多伦多\": \"ca\",\n    \"广州\": \"gz\",\n    \"成都\": \"cd\",\n    \"福州\": \"fzec\",\n    \"深圳\": \"szx\",\n    \"印度\": \"in\",\n    \"济南\": \"jnec\",\n    \"重庆\": \"cq\",\n    \"天津\": \"tsn\",\n    \"欧洲东北\": \"ru\",\n    \"南京\": \"nj\",\n    \"美国硅谷\": \"usw\",\n    \"泰国\": \"th\",\n    \"广州Open\": \"gzopen\",\n    \"深圳金融\": \"szjr\",\n    \"法兰克福\": \"de\",\n    \"日本\": \"jp\",\n    \"弗吉尼亚\": \"use\",\n    \"北京\": \"bj\",\n    \"中国香港\": \"hk\",\n    \"杭州\": \"hzec\",\n    \"北京金融\": \"bjjr\",\n    \"上海金融\": \"shjr\",\n    \"台北\": \"tpe\",\n    \"首尔\": \"kr\",\n    \"上海\": \"sh\",\n    \"新加坡\": \"sg\",\n    \"清远\": \"qy\",\n    \"雅加达\": \"jkt\"\n与 ApRegion 表达同一含义、格式不同：本字段为地域缩写，ApRegion 为腾讯云标准 ap-xxx 格式",
           "example": "gz",
           "member": "string",
           "name": "Region",
@@ -27378,6 +28033,17 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡实例所在地域，腾讯云标准地域格式\n参数格式：形如 ap-guangzhou\n与 Region 表达同一含义、格式不同。监听器恒为单地域，数组长度恒为 0 或 1\n出参在可识别时填充，无法识别时为空数组\n枚举值：\nap-guangzhou：广州\nap-shanghai：上海\nap-beijing：北京\nap-chengdu：成都\nap-chongqing：重庆\nap-hongkong：中国香港\nap-nanjing：南京\nap-tianjin：天津\nap-shenzhen：深圳\nap-qingyuan：清远\nap-guangzhou-open：广州Open\nap-shenzhen-fsi：深圳金融\nap-beijing-fsi：北京金融\nap-shanghai-fsi：上海金融\nap-hangzhou-ec：杭州\nap-fuzhou-ec：福州\nap-jinan-ec：济南\nap-wuhan-ec：武汉\nap-changsha-ec：长沙\nap-hefei-ec：合肥\nap-shenyang-ec：沈阳\nap-xian-ec：西安\nap-xibei-ec：西北\nap-shijiazhuang-ec：石家庄\nap-zhengzhou-ec：郑州\nap-qingyuan-xinan：清远信安\nap-shanghai-adc：上海ADC\nap-shanghai-wxp-ops：上海无线城市运营\nap-singapore：新加坡\nap-seoul：首尔\nap-tokyo：东京\nap-osaka：大阪\nap-mumbai：孟买\nap-bangkok：曼谷\nap-jakarta：雅加达\nap-taipei：台北\nap-johorbahru：柔佛巴鲁\neu-frankfurt：法兰克福\neu-moscow：莫斯科\nna-ashburn：弗吉尼亚\nna-siliconvalley：硅谷\nna-toronto：多伦多\nsa-saopaulo：圣保罗\nme-saudi-arabia：沙特阿拉伯",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "ApRegion",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -27638,7 +28304,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -27704,7 +28370,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -27754,7 +28420,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -27820,7 +28486,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -27898,7 +28564,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -27953,7 +28619,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -27992,7 +28658,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -28047,7 +28713,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -31074,7 +31740,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>代答类型：1-内置可信模型安全代答，2-自定义代答（ActionType=reply时生效</p><p>枚举值：</p><ul><li>1： 内置可信模型安全代答</li><li>2： 自定义代答ActionType=reply时生效</li></ul>",
+          "document": "<p>代答类型：1-内置可信模型安全代答，2-自定义代答(ActionType=reply)时生效</p><p>枚举值：</p><ul><li>1： 内置可信模型安全代答</li><li>2： 自定义代答(ActionType=reply)时生效</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "ReplyType",
@@ -31125,6 +31791,15 @@
           "name": "AppliedModules",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>严重程度：critical-超高危，high-高危，medium-中危(默认)，low-低危。命中该规则时攻击日志按此展示风险等级；不传或空值按medium处理。</p><p>枚举值：</p><ul><li>critical： 超高危</li><li>high： 高危</li><li>medium： 中危(默认)</li><li>low： 低危</li></ul>",
+          "example": "medium",
+          "member": "string",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -32671,7 +33346,7 @@
         },
         {
           "disabled": false,
-          "document": "回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源",
+          "document": "回源策略。\n枚举值：\n0：负载均衡回源（默认值）\n1：分流回源\n2：五元组精准回源，每个服务端口通过 UpstreamIps 单独配置回源 IP。仅高级版及以上可用，且仅支持 IP 回源",
           "example": "0",
           "member": "int64",
           "name": "UpstreamPolicy",
@@ -34686,6 +35361,100 @@
       ],
       "type": "object"
     },
+    "RCEExtendPkg": {
+      "document": "RCE QPS扩展包资源信息。与基础套餐同表，inquire_key为sv_wsm_waf_qps_rce_pack系列。不支持弹性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "waf_2l145gbu09vhma2p_0_rce_extend",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，0表示关闭，1表示开启",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2025-08-19 12:18:32",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2026-08-19 12:18:32",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展包个数，每个包1000 QPS",
+          "example": "2",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项",
+          "example": "sv_wsm_waf_qps_rce_pack",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RCEPkg": {
       "document": "有效REC设备安全包信息",
       "members": [
@@ -34702,7 +35471,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -34768,7 +35537,7 @@
         },
         {
           "disabled": false,
-          "document": "续费标志",
+          "document": "续费标识，0表示手动续费，1表示自动续费，2表示到期不续",
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
@@ -34786,6 +35555,28 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性开关。0表示关闭，1表示开启。没有弹性资源时为0",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性QPS上限，单位QPS。合法区间为10000到300000。开关关闭时仍保留上次设置的上限",
+          "example": "300000",
+          "member": "int64",
+          "name": "ElasticBilling",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -35148,6 +35939,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则修改时间（秒级时间戳）：租户对该规则的最近一次修改时间，从未修改则为0</p>",
+          "example": "1726456800",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -35158,7 +35960,7 @@
         {
           "disabled": false,
           "document": " 信息类型",
-          "example": "avg_speed",
+          "example": "tool_args",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -35169,7 +35971,7 @@
         {
           "disabled": false,
           "document": " 操作符，默认是包含\n",
-          "example": ">",
+          "example": "equal",
           "member": "string",
           "name": "Op",
           "output_required": true,
@@ -35180,7 +35982,7 @@
         {
           "disabled": false,
           "document": "信息类型",
-          "example": "[\"1\", \"2\"]",
+          "example": "[\"/etc/passwd\"]",
           "member": "string",
           "name": "Value",
           "output_required": false,
@@ -35197,6 +35999,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Toolcall工具参数名，支持多层路径(如apiData.operate_op)，仅tool_args信息类型使用",
+          "example": "path",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -38495,6 +39308,61 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UrlDetectResult": {
+      "document": "恶意URL检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中的恶意URL列表</p>",
+          "example": "无",
+          "member": "UrlHitInfo",
+          "name": "HitUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UrlHitInfo": {
+      "document": "恶意URL命中信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中的URL</p>",
+          "example": "96.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的规则ID</p>",
+          "example": "grl-url-illegal",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>命中的规则名称</p>",
+          "example": "违法网站",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

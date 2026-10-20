@@ -27,6 +27,7 @@ Output:
             "Cls": 1,
             "CreateTime": "2024-06-05 11:23:08",
             "Cname": "dc1f8442749285feb56b39ac57049213.qcloudcjgj.com",
+            "DnssecCname": "dc1f8442749285feb56b39ac57049213.qcloudcjgj.cn",
             "Engine": 1,
             "HttpsRewrite": 0,
             "HttpsUpstreamPort": "80",

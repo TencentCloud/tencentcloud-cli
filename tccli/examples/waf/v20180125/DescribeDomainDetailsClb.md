@@ -32,6 +32,9 @@ Output:
                     "LoadBalancerName": "lb-6017c5bd",
                     "Protocol": "HTTP",
                     "Region": "gz",
+                    "ApRegion": [
+                        "ap-guangzhou"
+                    ],
                     "Vip": "203.195.250.6",
                     "Vport": 5803,
                     "NumericalVpcId": 0,

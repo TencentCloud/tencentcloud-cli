@@ -1,59 +1,65 @@
-**Example 1: 获取拨测点组**
+**Example 1: 获取即时拨测拨测点组**
 
-获取拨测点组
-
+获取即时拨测任务中网络质量任务类型，PC类任务的精选拨测点组
 
 Input: 
 
 ```
 tccli cat DescribeNodeGroups --cli-unfold-argument  \
-    --RegionID 1 \
-    --NetServiceID 99
+    --NodeGroupType 0 \
+    --TaskCategory 1 \
+    --IPType 0 \
+    --NodeType 1 2 \
+    --TaskType 5 \
+    --ProbeType 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DistrictList": [
-            {
-                "ID": "0",
-                "Name": "全部"
-            },
-            {
-                "ID": "1100100",
-                "Name": "黑龙江"
-            }
-        ],
+        "DistrictList": [],
         "NetServiceList": [
             {
                 "ID": "0",
                 "Name": "全部"
-            },
-            {
-                "ID": "99",
-                "Name": "其他"
             }
         ],
         "NodeList": [
             {
-                "ID": "1102700",
-                "Content": "黑龙江",
+                "ID": "IDC",
+                "Content": "IDC",
                 "Children": [
                     {
-                        "ID": "1102701",
-                        "Content": "哈尔滨市",
+                        "ID": "560",
+                        "Content": "境内主要城市运营商",
                         "Children": [
                             {
-                                "ID": "11537",
-                                "Content": "黑龙江-哈尔滨市-广电宽带[LM]"
+                                "ID": "10000",
+                                "Content": "北京-北京市-中国电信[IDC]"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "ID": "LastMile",
+                "Content": "LastMile",
+                "Children": [
+                    {
+                        "ID": "27",
+                        "Content": "省会城市-电信(Last Mile)",
+                        "Children": [
+                            {
+                                "ID": "10103",
+                                "Content": "北京-北京市-中国电信[LM]"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "RequestId": "fyy3-g7ujmxbouxshy3plmkmhlnmdbfh"
+        "RequestId": "248cfe54-6cb6-46c7-b73d-9c78108add00"
     }
 }
 ```
@@ -142,68 +148,62 @@ Output:
 }
 ```
 
-**Example 3: 获取即时拨测拨测点组**
+**Example 3: 获取拨测点组**
 
-获取即时拨测任务中网络质量任务类型，PC类任务的精选拨测点组
+获取拨测点组
+
 
 Input: 
 
 ```
 tccli cat DescribeNodeGroups --cli-unfold-argument  \
-    --NodeGroupType 0 \
-    --TaskCategory 1 \
-    --IPType 0 \
-    --NodeType 1 2 \
-    --TaskType 5 \
-    --ProbeType 1
+    --RegionID 1 \
+    --NetServiceID 99
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DistrictList": [],
+        "DistrictList": [
+            {
+                "ID": "0",
+                "Name": "全部"
+            },
+            {
+                "ID": "1100100",
+                "Name": "黑龙江"
+            }
+        ],
         "NetServiceList": [
             {
                 "ID": "0",
                 "Name": "全部"
+            },
+            {
+                "ID": "99",
+                "Name": "其他"
             }
         ],
         "NodeList": [
             {
-                "ID": "IDC",
-                "Content": "IDC",
+                "ID": "1102700",
+                "Content": "黑龙江",
                 "Children": [
                     {
-                        "ID": "560",
-                        "Content": "境内主要城市运营商",
+                        "ID": "1102701",
+                        "Content": "哈尔滨市",
                         "Children": [
                             {
-                                "ID": "10000",
-                                "Content": "北京-北京市-中国电信[IDC]"
-                            }
-                        ]
-                    }
-                ]
-            },
-            {
-                "ID": "LastMile",
-                "Content": "LastMile",
-                "Children": [
-                    {
-                        "ID": "27",
-                        "Content": "省会城市-电信(Last Mile)",
-                        "Children": [
-                            {
-                                "ID": "10103",
-                                "Content": "北京-北京市-中国电信[LM]"
+                                "ID": "11537",
+                                "Content": "黑龙江-哈尔滨市-广电宽带[LM]"
                             }
                         ]
                     }
                 ]
             }
         ],
-        "RequestId": "248cfe54-6cb6-46c7-b73d-9c78108add00"
+        "RequestId": "fyy3-g7ujmxbouxshy3plmkmhlnmdbfh"
     }
 }
 ```

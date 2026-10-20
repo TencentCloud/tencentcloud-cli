@@ -7,7 +7,7 @@ Input:
 ```
 tccli databuddy StopCompute --cli-unfold-argument  \
     --WorkspaceId ws-001 \
-    --ResourceId res-001
+    --ComputeResourceId res-001
 ```
 
 Output: 

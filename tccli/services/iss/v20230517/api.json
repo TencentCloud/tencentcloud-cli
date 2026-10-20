@@ -8376,7 +8376,7 @@
         {
           "disabled": false,
           "document": "<p>fmp4录像播放地址</p>",
-          "example": "https://test-play-gz.demo.cn/live/ec252efb-3059-4cad-9da1-2b7830c1b6e1@abb92afc-5898-4bba-8e20-2aadb4f2944d.live.mp4?start=1791545583&end=1791546583&token=cms_700000386669_1791548711_-MvacMzyKAtcZyYd0lHeNA",
+          "example": "https://test-play-gz.demo.cn/live/ec252efb-3059-****-9da1-2b**********@abb92afc-5898-4bba-****-************.live.mp4?start=1791545583&end=1791546583&token=cms_700000*****9_1791548***_-***********ZyYd****NA",
           "member": "string",
           "name": "FMp4",
           "output_required": false,

@@ -2222,6 +2222,22 @@
         "title": "发布RRPC消息"
       }
     ],
+    "PurchaseImagePackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PurchaseImagePackage\n<公共请求参数>\n\n{\n    \"RetentionDays\": 30,\n    \"ProductId\": \"YYZRTPMCUG\",\n    \"DeviceName\": \"billing_test_7\",\n    \"ValidityPeriod\": \"annual_card\",\n    \"ImageCapacity\": \"300\",\n    \"GoodsNum\": 1,\n    \"ChannelId\": 22\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86c45250-8e08-48b2-8c20-3d668c86b42b\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
+    "PurchaseVideoPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PurchaseVideoPackage\n<公共请求参数>\n\n{\n    \"RetentionDays\": 7,\n    \"RecordingMode\": \"event\",\n    \"Bitrate\": \"1m\",\n    \"ProductId\": \"YYZRTPMCUG\",\n    \"DeviceName\": \"billing_test_7\",\n    \"ValidityPeriod\": \"monthly_card\",\n    \"GoodsNum\": 1,\n    \"Override\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a3d94a07-e0a1-4706-a541-76c201d712cd\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "ReleaseStudioProduct": [
       {
         "document": "发布产品",
@@ -2344,6 +2360,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ShareDeviceToUser\n<公共请求参数>\n\n{\n    \"AppKey\": \"afpMLiFlGYThFpvJe\",\n    \"ProductId\": \"N5DBOST040\",\n    \"DeviceName\": \"nandy_dev3\",\n    \"OwnerOpenID\": \"nandy\",\n    \"ToOpenID\": \"zz\",\n    \"ToNickName\": \"zz\"\n}",
         "output": "{\n    \"Response\": {\n        \"OwnerUserID\": \"195155279497658759\",\n        \"ToUserID\": \"195350446737457359\",\n        \"RequestId\": \"83640ed8-a3a2-44d0-a036-8913d99a3eab\"\n    }\n}",
         "title": "成功示例"
+      }
+    ],
+    "StartPackageUsageReport": [
+      {
+        "document": "启用套餐用量上报请求",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPackageUsageReport\n<公共请求参数>\n\n{\n    \"ProductId\": \"PTROMP3AOB\",\n    \"DeviceName\": \"dev_001\",\n    \"ChannelId\": \"1\",\n    \"ResourceId\": \"ncs-video-7d-m-xxx\",\n    \"Operator\": \"100012345***\",\n    \"Remark\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"RequestId\": \"cf56eccb-3662-4eb3-9f60-ce618e749144\"\n    }\n}",
+        "title": "启用套餐用量上报请求"
+      }
+    ],
+    "StopPackageUsageReport": [
+      {
+        "document": "停用套餐用量上报请求",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPackageUsageReport\n<公共请求参数>\n\n{\n    \"ProductId\": \"PTROMP3AOB\",\n    \"DeviceName\": \"dev_001\",\n    \"ChannelId\": \"1\",\n    \"Operator\": \"100012345678\",\n    \"Remark\": \"\",\n    \"MediaType\": \"video\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"cf56eccb-3662-4eb3-9f60-ce618e749144\"\n    }\n}",
+        "title": "停用套餐用量上报请求"
       }
     ],
     "TerminateTWeSeeSubscription": [

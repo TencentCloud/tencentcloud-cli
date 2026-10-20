@@ -3,15 +3,15 @@
     "CreateProbeTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"TargetAddress\": \"http://www.baidu.com\",\n            \"Name\": \"CDN验证21\"\n        }\n    ],\n    \"Parameters\": \"{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":1,\\\"netDnsTimeout\\\":5,\\\"netDnsQuerymethod\\\":1,\\\"netDnsNs\\\":\\\"\\\",\\\"netDigOn\\\":1,\\\"netDnsServer\\\":2,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":60,\\\"netTracertNum\\\":30,\\\"whiteList\\\":\\\"\\\",\\\"blackList\\\":\\\"\\\",\\\"netIcmpActivexStr\\\":\\\"\\\"}\",\n    \"TaskCategory\": \"1\",\n    \"Interval\": \"5\",\n    \"TaskType\": \"5\",\n    \"Nodes\": [\n        \"12136\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c4977a0-5b9f-469b-84d4-5d6a609e93a3\",\n        \"TaskIDs\": [\n            \"task-h4bcnook\"\n        ]\n    }\n}",
-        "title": "示例1"
-      },
-      {
-        "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"Name\": \"probe\",\n            \"TargetAddress\": \"http://www.baidu.com\"\n        }\n    ],\n    \"Parameters\": \"{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":1,\\\"netDnsTimeout\\\":5,\\\"netDnsQuerymethod\\\":1,\\\"netDnsNs\\\":\\\"\\\",\\\"netDigOn\\\":1,\\\"netDnsServer\\\":2,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":60,\\\"netTracertNum\\\":30,\\\"whiteList\\\":\\\"\\\",\\\"blackList\\\":\\\"\\\",\\\"netIcmpActivexStr\\\":\\\"\\\"}\",\n    \"Interval\": 30,\n    \"TaskCategory\": 1,\n    \"TaskType\": 5,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Cron\": \"* 0-6 * * *\",\n    \"Tag\": [\n        {\n            \"TagKey\": \"运营部门\",\n            \"TagValue\": \"产一\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TaskIDs\": [\n            \"task-abc\"\n        ],\n        \"RequestId\": \"720b3231-5a85-4f05-aaab-c9b9596xxxxx\"\n    }\n}",
         "title": "批量创建拨测任务"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"TargetAddress\": \"http://www.baidu.com\",\n            \"Name\": \"CDN验证21\"\n        }\n    ],\n    \"Parameters\": \"{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":1,\\\"netDnsTimeout\\\":5,\\\"netDnsQuerymethod\\\":1,\\\"netDnsNs\\\":\\\"\\\",\\\"netDigOn\\\":1,\\\"netDnsServer\\\":2,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":60,\\\"netTracertNum\\\":30,\\\"whiteList\\\":\\\"\\\",\\\"blackList\\\":\\\"\\\",\\\"netIcmpActivexStr\\\":\\\"\\\"}\",\n    \"TaskCategory\": 1,\n    \"Interval\": 5,\n    \"TaskType\": 5,\n    \"Nodes\": [\n        \"12136\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c4977a0-5b9f-469b-84d4-5d6a609e93a3\",\n        \"TaskIDs\": [\n            \"task-h4bcnook\"\n        ]\n    }\n}",
+        "title": "示例1"
       }
     ],
     "DeleteProbeTask": [
@@ -34,16 +34,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstantTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": \"1\",\n                \"ProbeTime\": \"1641917822000\",\n                \"TaskCategory\": 1,\n                \"SuccessRate\": 0.0,\n                \"TargetAddress\": \"www.test.com\",\n                \"TaskId\": \"task-xxx\",\n                \"TaskType\": 1,\n                \"NodeCount\": 1\n            }\n        ],\n        \"RequestId\": \"720b3231-5a85-4f05-aaab-c9b9596xxxxx\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": \"1\",\n                \"ProbeTime\": 1641917822000,\n                \"TaskCategory\": 1,\n                \"SuccessRate\": 0,\n                \"TargetAddress\": \"www.test.com\",\n                \"TaskId\": \"task-xxx\",\n                \"TaskType\": 1,\n                \"NodeCount\": 1\n            }\n        ],\n        \"RequestId\": \"720b3231-5a85-4f05-aaab-c9b9596xxxxx\",\n        \"Total\": 1\n    }\n}",
         "title": "获取历史即时拨测任务"
       }
     ],
     "DescribeNodeGroups": [
       {
-        "document": "获取拨测点组\n",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"RegionID\": 1,\n    \"NetServiceID\": 99\n}",
-        "output": "{\n    \"Response\": {\n        \"DistrictList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            },\n            {\n                \"ID\": \"1100100\",\n                \"Name\": \"黑龙江\"\n            }\n        ],\n        \"NetServiceList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            },\n            {\n                \"ID\": \"99\",\n                \"Name\": \"其他\"\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"ID\": \"1102700\",\n                \"Content\": \"黑龙江\",\n                \"Children\": [\n                    {\n                        \"ID\": \"1102701\",\n                        \"Content\": \"哈尔滨市\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"11537\",\n                                \"Content\": \"黑龙江-哈尔滨市-广电宽带[LM]\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"fyy3-g7ujmxbouxshy3plmkmhlnmdbfh\"\n    }\n}",
-        "title": "获取拨测点组"
+        "document": "获取即时拨测任务中网络质量任务类型，PC类任务的精选拨测点组",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"NodeGroupType\": 0,\n    \"TaskCategory\": 1,\n    \"IPType\": 0,\n    \"NodeType\": [\n        1,\n        2\n    ],\n    \"TaskType\": 5,\n    \"ProbeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DistrictList\": [],\n        \"NetServiceList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"ID\": \"IDC\",\n                \"Content\": \"IDC\",\n                \"Children\": [\n                    {\n                        \"ID\": \"560\",\n                        \"Content\": \"境内主要城市运营商\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"10000\",\n                                \"Content\": \"北京-北京市-中国电信[IDC]\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"ID\": \"LastMile\",\n                \"Content\": \"LastMile\",\n                \"Children\": [\n                    {\n                        \"ID\": \"27\",\n                        \"Content\": \"省会城市-电信(Last Mile)\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"10103\",\n                                \"Content\": \"北京-北京市-中国电信[LM]\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"248cfe54-6cb6-46c7-b73d-9c78108add00\"\n    }\n}",
+        "title": "获取即时拨测拨测点组"
       },
       {
         "document": "获取定时任务中网络质量任务类型，PC类任务的可用性拨测点组",
@@ -52,10 +52,10 @@
         "title": "获取定时任务拨测点组"
       },
       {
-        "document": "获取即时拨测任务中网络质量任务类型，PC类任务的精选拨测点组",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"NodeGroupType\": 0,\n    \"TaskCategory\": 1,\n    \"IPType\": 0,\n    \"NodeType\": [\n        1,\n        2\n    ],\n    \"TaskType\": 5,\n    \"ProbeType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"DistrictList\": [],\n        \"NetServiceList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"ID\": \"IDC\",\n                \"Content\": \"IDC\",\n                \"Children\": [\n                    {\n                        \"ID\": \"560\",\n                        \"Content\": \"境内主要城市运营商\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"10000\",\n                                \"Content\": \"北京-北京市-中国电信[IDC]\"\n                            }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"ID\": \"LastMile\",\n                \"Content\": \"LastMile\",\n                \"Children\": [\n                    {\n                        \"ID\": \"27\",\n                        \"Content\": \"省会城市-电信(Last Mile)\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"10103\",\n                                \"Content\": \"北京-北京市-中国电信[LM]\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"248cfe54-6cb6-46c7-b73d-9c78108add00\"\n    }\n}",
-        "title": "获取即时拨测拨测点组"
+        "document": "获取拨测点组\n",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNodeGroups\nX-TC-Language: zh-CN\n<公共请求参数>\n\n{\n    \"RegionID\": 1,\n    \"NetServiceID\": 99\n}",
+        "output": "{\n    \"Response\": {\n        \"DistrictList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            },\n            {\n                \"ID\": \"1100100\",\n                \"Name\": \"黑龙江\"\n            }\n        ],\n        \"NetServiceList\": [\n            {\n                \"ID\": \"0\",\n                \"Name\": \"全部\"\n            },\n            {\n                \"ID\": \"99\",\n                \"Name\": \"其他\"\n            }\n        ],\n        \"NodeList\": [\n            {\n                \"ID\": \"1102700\",\n                \"Content\": \"黑龙江\",\n                \"Children\": [\n                    {\n                        \"ID\": \"1102701\",\n                        \"Content\": \"哈尔滨市\",\n                        \"Children\": [\n                            {\n                                \"ID\": \"11537\",\n                                \"Content\": \"黑龙江-哈尔滨市-广电宽带[LM]\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"fyy3-g7ujmxbouxshy3plmkmhlnmdbfh\"\n    }\n}",
+        "title": "获取拨测点组"
       }
     ],
     "DescribeNodes": [
@@ -93,13 +93,19 @@
     "DescribeProbeTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"TaskIDs\": [\n        \"task-xx\"\n    ],\n    \"TagFilters\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"zhangsan\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"Name\": \"cron测试\",\n                \"TaskId\": \"task-xx\",\n                \"TaskType\": 0,\n                \"Nodes\": [\n                    \"10000\"\n                ],\n                \"NodeIpType\": 0,\n                \"Interval\": 0,\n                \"Parameters\": \"{\\\"ipType\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":\\\"0.5\\\",\\\"netIcmpNum\\\":4,\\\"netIcmpSize\\\":4,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":0,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":20,\\\"netTracertNum\\\":0}\",\n                \"Status\": 0,\n                \"TargetAddress\": \"www.test.com\",\n                \"PayMode\": 0,\n                \"OrderState\": 0,\n                \"TaskCategory\": 0,\n                \"CreatedAt\": \"2024-01-02 16:57:15\",\n                \"Cron\": \"* 0-6 * * *\",\n                \"CronState\": 0,\n                \"TagInfoList\": [\n                    {\n                        \"Key\": \"部门\",\n                        \"Value\": \"部门 1\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"720b3231-5a85-4f05-aaab-c9b9596xxxxx\"\n    }\n}",
+        "title": "查询拨测任务列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81a92494-0fb9-4b10-8ce4-bfa4565cf4eb\",\n        \"TaskSet\": null,\n        \"Total\": 0\n    }\n}",
         "title": "示例2"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"11483de9-9be5-4537-a846-339a57f0e90e\",\n        \"TaskSet\": null,\n        \"Total\": 0\n    }\n}",
         "title": "示例3"
       },
@@ -108,12 +114,6 @@
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7628289-fd3c-4acf-a140-a33dd02b3ff6\",\n        \"TaskSet\": null,\n        \"Total\": 0\n    }\n}",
         "title": "示例5"
-      },
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeTasks\n<公共请求参数>\n\n{\n    \"TaskIDs\": [\n        \"task-xx\"\n    ],\n    \"TagFilters\": [\n        {\n            \"Key\": \"name\",\n            \"Value\": \"zhangsan\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"Name\": \"cron测试\",\n                \"TaskId\": \"task-xx\",\n                \"TaskType\": 0,\n                \"Nodes\": [\n                    \"10000\"\n                ],\n                \"NodeIpType\": 0,\n                \"Interval\": 0,\n                \"Parameters\": \"{\\\"ipType\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":\\\"0.5\\\",\\\"netIcmpNum\\\":4,\\\"netIcmpSize\\\":4,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":0,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":20,\\\"netTracertNum\\\":0}\",\n                \"Status\": 0,\n                \"TargetAddress\": \"www.test.com\",\n                \"PayMode\": 0,\n                \"OrderState\": 0,\n                \"TaskCategory\": 0,\n                \"CreatedAt\": \"2024-01-02 16:57:15\",\n                \"Cron\": \"* 0-6 * * *\",\n                \"CronState\": 0,\n                \"TagInfoList\": [\n                    {\n                        \"Key\": \"部门\",\n                        \"Value\": \"部门 1\"\n                    }\n                ]\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"720b3231-5a85-4f05-aaab-c9b9596xxxxx\"\n    }\n}",
-        "title": "查询拨测任务列表"
       }
     ],
     "ResumeProbeTask": [

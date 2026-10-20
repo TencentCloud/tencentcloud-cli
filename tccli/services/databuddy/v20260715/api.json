@@ -9874,20 +9874,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算资源 ID",
-          "example": "\"res-001\"",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "工作空间 ID",
           "example": "\"ws-001\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致",
+          "example": "\"res-001\"",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "[已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）",
+          "example": "\"res-001\"",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -9936,20 +9945,29 @@
       "members": [
         {
           "disabled": false,
-          "document": "计算资源 ID",
-          "example": "\"res-001\"",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "工作空间 ID",
           "example": "\"ws-001\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）。替代已废弃的 ResourceId；过渡期 ComputeResourceId 与 ResourceId 至少传一个，同时传时必须一致",
+          "example": "\"res-001\"",
+          "member": "string",
+          "name": "ComputeResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "[已废弃，请使用 ComputeResourceId] 计算资源 ID，可通过 ListComputes 接口获取（返回字段 Items[].BasicInfo.ResourceId）",
+          "example": "\"res-001\"",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
           "type": "string"
         }
       ],

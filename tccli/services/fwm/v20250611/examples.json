@@ -250,6 +250,14 @@
         "title": "查询用户所有规则的策略问题"
       }
     ],
+    "DescribeRuleGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleGroups\n<公共请求参数>\n\n{\n    \"Product\": \"enterprise_sg\",\n    \"Filters\": [],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78be528d-83c8-4999-b8a5-432f19493579\",\n        \"RuleGroups\": [\n            {\n                \"AppId\": \"1300448058\",\n                \"GroupId\": \"fwmrg-sygzqi8x\",\n                \"GroupName\": \"测试策略\",\n                \"RuleCount\": 47,\n                \"Product\": \"enterprise_sg\",\n                \"CreateTime\": \"2026-01-08 19:17:48\",\n                \"UpdateTime\": \"2026-02-27 20:01:46\",\n                \"CreateBy\": \"10001161111\",\n                \"CreateName\": \"测试账号\",\n                \"UpdateBy\": \"10001161111\",\n                \"UpdateName\": \"测试账号\",\n                \"ReceiveAccount\": [\n                    {\n                        \"Uin\": \"10001161111\",\n                        \"Nickname\": \"测试账号\"\n                    }\n                ],\n                \"ExecAreas\": [\n                    \"pre\"\n                ]\n            }\n        ],\n        \"TotalCount\": 94\n    }\n}",
+        "title": "查询规则组列表"
+      }
+    ],
     "DescribeSecurityGroupRule": [
       {
         "document": "",

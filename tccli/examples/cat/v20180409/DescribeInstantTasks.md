@@ -17,9 +17,9 @@ Output:
         "Tasks": [
             {
                 "Status": "1",
-                "ProbeTime": "1641917822000",
+                "ProbeTime": 1641917822000,
                 "TaskCategory": 1,
-                "SuccessRate": 0.0,
+                "SuccessRate": 0,
                 "TargetAddress": "www.test.com",
                 "TaskId": "task-xxx",
                 "TaskType": 1,

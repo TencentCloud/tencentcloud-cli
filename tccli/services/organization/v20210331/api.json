@@ -203,6 +203,13 @@
       "output": "CreateRoleConfigurationResponse",
       "status": "online"
     },
+    "CreateRoleConfigurationApplyScope": {
+      "document": "创建权限申请范围，支持批量upsert",
+      "input": "CreateRoleConfigurationApplyScopeRequest",
+      "name": "创建权限申请范围",
+      "output": "CreateRoleConfigurationApplyScopeResponse",
+      "status": "online"
+    },
     "CreateSCIMCredential": {
       "document": "创建SCIM密钥",
       "input": "CreateSCIMCredentialRequest",
@@ -306,6 +313,13 @@
       "input": "DeleteRoleConfigurationRequest",
       "name": "删除权限配置信息",
       "output": "DeleteRoleConfigurationResponse",
+      "status": "online"
+    },
+    "DeleteRoleConfigurationApplyScope": {
+      "document": "删除权限申请范围",
+      "input": "DeleteRoleConfigurationApplyScopeRequest",
+      "name": "删除权限申请范围",
+      "output": "DeleteRoleConfigurationApplyScopeResponse",
       "status": "online"
     },
     "DeleteSCIMCredential": {
@@ -679,6 +693,13 @@
       "output": "ListOrganizationServiceResponse",
       "status": "online"
     },
+    "ListPermissionApplyOrders": {
+      "document": "管理员审批列表",
+      "input": "ListPermissionApplyOrdersRequest",
+      "name": "管理员审批列表",
+      "output": "ListPermissionApplyOrdersResponse",
+      "status": "online"
+    },
     "ListPermissionPoliciesInRoleConfiguration": {
       "document": "获取权限配置中的策略列表",
       "input": "ListPermissionPoliciesInRoleConfigurationRequest",
@@ -705,6 +726,13 @@
       "input": "ListRoleAssignmentsRequest",
       "name": "查询授权列表",
       "output": "ListRoleAssignmentsResponse",
+      "status": "online"
+    },
+    "ListRoleConfigurationApplyScopes": {
+      "document": "权限申请范围列表",
+      "input": "ListRoleConfigurationApplyScopesRequest",
+      "name": "权限申请范围列表",
+      "output": "ListRoleConfigurationApplyScopesResponse",
       "status": "online"
     },
     "ListRoleConfigurationProvisionings": {
@@ -1487,6 +1515,45 @@
         }
       ],
       "type": "object"
+    },
+    "ApplyRoleConfiguration": {
+      "document": "申请的权限配置，包含用户申请权限配置的配置 ID、配置名称、描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>权限配置 ID</p>",
+          "example": "rc-8a1b2c3d",
+          "member": "string",
+          "name": "RoleConfigurationId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限配置名称</p>",
+          "example": "AdministratorAccess",
+          "member": "string",
+          "name": "RoleConfigurationName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>说明</p>",
+          "example": "管理员权限",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AttachPolicyRequest": {
       "document": "AttachPolicy请求参数结构体",
@@ -2535,6 +2602,52 @@
       ],
       "type": "object"
     },
+    "CreateRoleConfigurationApplyScopeRequest": {
+      "document": "CreateRoleConfigurationApplyScope请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户目录</p>",
+          "example": "z-hmdjcgbvm7z2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请范围条目</p>",
+          "example": "无",
+          "member": "RoleAssignmentInfo",
+          "name": "ApplyScopeInfo",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleConfigurationApplyScopeResponse": {
+      "document": "CreateRoleConfigurationApplyScope返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>成功 upsert 的条目数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateRoleConfigurationRequest": {
       "document": "CreateRoleConfiguration请求参数结构体",
       "members": [
@@ -3265,6 +3378,69 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleConfigurationApplyScopeRequest": {
+      "document": "DeleteRoleConfigurationApplyScope请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "z-hmdjcgbvm7z2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限配置 ID 列表</p>",
+          "example": "[\"rc-0lvaff6ddbn4\"]",
+          "member": "string",
+          "name": "RoleConfigurationIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标账号 UIN</p>",
+          "example": "700002529727",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份 ID</p>",
+          "example": "u-dm5nub3hl6ur",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份类型</p><p>枚举值：</p><ul><li>User： 用户</li><li>Group： 用户组</li></ul>",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleConfigurationApplyScopeResponse": {
+      "document": "DeleteRoleConfigurationApplyScope返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7265,6 +7441,119 @@
       ],
       "type": "object"
     },
+    "ListPermissionApplyOrdersRequest": {
+      "document": "ListPermissionApplyOrders请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "z-hmdjcgbvm7z2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索字段</p><p>按用户名 / 用户 ID 搜索</p>",
+          "example": "1122",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态值</p><p>枚举值：</p><ul><li>1： 待审核</li><li>2： 已通过 - 同步中</li><li>3： 已通过 - 同步成功</li><li>4： 已通过 - 同步失败</li><li>5： 已拒绝</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p><p>取值范围：[1, 100]</p><p>默认值：10</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页游标</p>",
+          "example": "eyJPZmZzZXQiOjB9",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPermissionApplyOrdersResponse": {
+      "document": "ListPermissionApplyOrders返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请单列表</p>",
+          "example": "无",
+          "member": "PermissionApplyOrder",
+          "name": "ApplyOrders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页游标</p>",
+          "example": "eyJPZmZzZXQiOjF9",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否还有下一页</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListPermissionPoliciesInRoleConfigurationRequest": {
       "document": "ListPermissionPoliciesInRoleConfiguration请求参数结构体",
       "members": [
@@ -7815,6 +8104,137 @@
           "name": "RoleAssignments",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationApplyScopesRequest": {
+      "document": "ListRoleConfigurationApplyScopes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "z-hmdjcgbvm7z2",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份 ID</p>",
+          "example": "u-dm5nub3hl6ur",
+          "member": "string",
+          "name": "PrincipalId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>身份类型</p><p>枚举值：</p><ul><li>User： 用户</li><li>Group： 用户组</li></ul>",
+          "example": "User",
+          "member": "string",
+          "name": "PrincipalType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标账号 UIN</p>",
+          "example": "700002529727",
+          "member": "int64",
+          "name": "TargetUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "读写",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p><p>取值范围：[1, 100]</p><p>默认值：10</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页游标</p>",
+          "example": "eyJPZmZzZXQiOjB9",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListRoleConfigurationApplyScopesResponse": {
+      "document": "ListRoleConfigurationApplyScopes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请范围列表</p>",
+          "example": "无",
+          "member": "RoleAssignments",
+          "name": "ApplyScopes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCounts",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxResults",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>翻页游标</p>",
+          "example": "eyJPZmZzZXQiOjJ9",
+          "member": "string",
+          "name": "NextToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否被截断</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTruncated",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -10288,6 +10708,122 @@
         }
       ],
       "usage": "out"
+    },
+    "PermissionApplyOrder": {
+      "document": "权限申请单，描述一张完整的权限申请工单，即谁（UserId/UserName）向哪个成员账号（TargetUin/TargetName）申请了哪些权限配置（RoleConfigurations），以及审批进展如何",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>申请单 ID</p>",
+          "example": "apply-20260629-0001",
+          "member": "string",
+          "name": "ApplyId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请人用户 ID</p>",
+          "example": "u-295cm06d274b",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请人用户名</p>",
+          "example": "Yanfei Cai",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标成员账号 UIN</p>",
+          "example": "100026913363",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标成员账号名称</p>",
+          "example": "walmart-prod",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请的权限配置</p>",
+          "example": "无",
+          "member": "ApplyRoleConfiguration",
+          "name": "RoleConfigurations",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>申请单状态</p><p>枚举值：</p><ul><li>1： 待审核</li><li>2： 已通过 - 同步中</li><li>3： 已通过 - 同步成功</li><li>4： 已通过 - 同步失败</li><li>5： 已拒绝</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：YYYY-M-DD hh:mm:ss</p>",
+          "example": "2026-06-29 16:18:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批意见</p>",
+          "example": "待审核",
+          "member": "string",
+          "name": "AuditOpinion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审批时间</p><p>参数格式：YYYY-M-DD hh:mm:ss</p><p>未审批为空</p>",
+          "example": "2026-06-29 16:40:00",
+          "member": "string",
+          "name": "AuditTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PolicyDetail": {
       "document": "策略详情",

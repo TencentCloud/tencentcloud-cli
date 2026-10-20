@@ -29,7 +29,9 @@ tccli waf ModifyHost --cli-unfold-argument  \
     --Host.LoadBalancerSet.0.Vip 127.0.0.1 \
     --Host.LoadBalancerSet.0.Vport 443 \
     --Host.LoadBalancerSet.0.Region cd \
-    --Host.Region cd
+    --Host.LoadBalancerSet.0.ApRegion ap-chengdu \
+    --Host.Region cd \
+    --Host.ApRegion ap-chengdu
 ```
 
 Output: 

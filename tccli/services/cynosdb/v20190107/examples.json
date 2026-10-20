@@ -88,6 +88,14 @@
         "title": "取消计划"
       }
     ],
+    "CancelTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelTask\n<公共请求参数>\n\n{\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"489f2108-0d1c-484f-b1cf-76adc590159b\"\n    }\n}",
+        "title": "取消等待执行的任务"
+      }
+    ],
     "CheckCreateLibraDBInstance": [
       {
         "document": "本接口（CheckCreateLibraDBInstance）用于校验集群是否可以添加只读分析引擎实例",
@@ -982,6 +990,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxySpecs\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"ProxySpecs\": [\n            {\n                \"Mem\": 0,\n                \"Cpu\": 0\n            }\n        ],\n        \"RequestId\": \"request-756112\"\n    }\n}",
         "title": "查询数据库代理规格"
+      }
+    ],
+    "DescribeProxyZoneStocks": [
+      {
+        "document": "查询数据库代理地域库存",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxyZoneStocks\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProxyZoneStockInfos\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"Zone\": \"ap-guangzhou-3\",\n                \"CpuStock\": 124,\n                \"MemStock\": 3192000\n            }\n        ],\n        \"RequestId\": \"bef4efb8-8208-42a7-a007-dc0eda930f68\"\n    }\n}",
+        "title": "查询数据库代理地域库存"
       }
     ],
     "DescribeRedoLogListByVault": [

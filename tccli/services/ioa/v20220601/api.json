@@ -77,6 +77,20 @@
       "output": "DeleteAccountGroupResourcesResponse",
       "status": "online"
     },
+    "DeleteDeliveryServer": {
+      "document": "删除转发服务器，私有化调用path为：capi/LogCenter/DeliveryLog/DeleteDeliveryServer",
+      "input": "DeleteDeliveryServerRequest",
+      "name": "删除转发服务器",
+      "output": "DeleteDeliveryServerResponse",
+      "status": "online"
+    },
+    "DeleteDeliveryStrategy": {
+      "document": "删除转发策略，私有化调用path为：capi/LogCenter/DeliveryLog/DeleteDeliveryStrategy",
+      "input": "DeleteDeliveryStrategyRequest",
+      "name": "删除转发策略",
+      "output": "DeleteDeliveryStrategyResponse",
+      "status": "online"
+    },
     "DeleteDeviceVirtualGroup": {
       "document": "删除终端自定义分组，私有化调用path为：/capi/Assets/Device/DeleteDeviceVirtualGroup",
       "input": "DeleteDeviceVirtualGroupRequest",
@@ -161,6 +175,20 @@
       "output": "DescribeDLPFileDetectTaskResultResponse",
       "status": "online"
     },
+    "DescribeDeliveryServer": {
+      "document": "转发服务器详情，私有化调用path为：capi/LogCenter/DescribeDeliveryServer",
+      "input": "DescribeDeliveryServerRequest",
+      "name": "转发服务器详情",
+      "output": "DescribeDeliveryServerResponse",
+      "status": "online"
+    },
+    "DescribeDeliveryStrategy": {
+      "document": "转发策略详情，私有化调用path为：capi/LogCenter/DeliveryLog/DescribeDeliveryStrategy",
+      "input": "DescribeDeliveryStrategyRequest",
+      "name": "转发策略详情",
+      "output": "DescribeDeliveryStrategyResponse",
+      "status": "online"
+    },
     "DescribeDeviceChildGroups": {
       "document": "查询设备组子分组详情，私有化调用path为：capi/Assets/Device/DescribeDeviceChildGroups",
       "input": "DescribeDeviceChildGroupsRequest",
@@ -229,6 +257,13 @@
       "input": "DescribeProfileFieldsMenuRequest",
       "name": "查询终端描述字段菜单",
       "output": "DescribeProfileFieldsMenuResponse",
+      "status": "online"
+    },
+    "DescribePublicEncryptKey": {
+      "document": "获取用于RSA加密的公钥，对敏感数据进行加密传输。",
+      "input": "DescribePublicEncryptKeyRequest",
+      "name": "获取加密公钥",
+      "output": "DescribePublicEncryptKeyResponse",
       "status": "online"
     },
     "DescribeResourceGrantedAccountGroups": {
@@ -334,6 +369,20 @@
       "input": "ModifyCompanyDirectoryConfigRequest",
       "name": "编辑企业目录配置",
       "output": "ModifyCompanyDirectoryConfigResponse",
+      "status": "online"
+    },
+    "ModifyDeliveryServer": {
+      "document": "创建或编辑日志转发服务器，私有化调用path为：capi/LogCenter/DeliveryLog/ModifyDeliveryServer",
+      "input": "ModifyDeliveryServerRequest",
+      "name": "创建或编辑日志转发服务器",
+      "output": "ModifyDeliveryServerResponse",
+      "status": "online"
+    },
+    "ModifyDeliveryStrategy": {
+      "document": "创建或编辑日志转发策略，私有化调用path为：capi/LogCenter/DeliveryLog/ModifyDeliveryStrategy",
+      "input": "ModifyDeliveryStrategyRequest",
+      "name": "创建或编辑日志转发策略",
+      "output": "ModifyDeliveryStrategyResponse",
       "status": "online"
     },
     "ModifyDeviceTrustStatus": {
@@ -1771,6 +1820,60 @@
       ],
       "type": "object"
     },
+    "DeleteDeliveryServerRequest": {
+      "document": "DeleteDeliveryServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务器id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeliveryServerResponse": {
+      "document": "DeleteDeliveryServer返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeliveryStrategyRequest": {
+      "document": "DeleteDeliveryStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转发策略id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDeliveryStrategyResponse": {
+      "document": "DeleteDeliveryStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteDeviceVirtualGroupRequest": {
       "document": "DeleteDeviceVirtualGroup请求参数结构体",
       "members": [
@@ -1836,6 +1939,321 @@
           "member": "uint64",
           "name": "ResourceId",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeliverServerItem": {
+      "document": "编辑的数据内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务器id  (创建时忽略)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务器名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "log",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发服务器地址类型 4:syslog, 2:kafka, 3:http(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务器描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deliver",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>syslog服务器地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "TargetSyslogAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>syslog协议类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "TargetSyslogProtocol",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>syslog协议端口(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "601",
+          "member": "uint64",
+          "name": "TargetSyslogPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>syslog设备/Facility</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "local0",
+          "member": "string",
+          "name": "SyslogFacility",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Kafka服务器地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "TargetKafkaAddress",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Kafka主题</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ioa",
+          "member": "string",
+          "name": "TargetKafkaTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Kafka版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.8.1",
+          "member": "string",
+          "name": "KafkaVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Kafka sasl用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ioa",
+          "member": "string",
+          "name": "KafkaSaslUserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Kafka sasl密码</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gaeq0cK**imtG*******Vr0FXY9YkZEjWdseJea*e*Mt5p8xZj**mnswhLezoDbf7PZWlHb**cc8LILfY8SKBgSdF+4sG7Mh50xYPX*VnsTOh13nvAs0c7Ydeb",
+          "member": "string",
+          "name": "KafkaSaslPassword",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>http服务器地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "TargetHttpUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>http服务超时时间(只支持32位)</p><p>单位：毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TargetHttpTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接器分组ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "ConnectorGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接器分组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "默认连接器组",
+          "member": "string",
+          "name": "ConnectorGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KAFKA是否启用SSL</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "KafkaSSLEnable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过证书检查</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SSLSkipVerify",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeliveryStrategyData": {
+      "document": "数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliveryStrategyItem",
+          "name": "Data",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DeliveryStrategyItem": {
+      "document": "数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deliver",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发方式 0:syslog, 2:kafka, 3:http(只支持32位)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发日志类型列表 身份安全:&quot;040201000000&quot;,资源访问日志:&quot;040203000000&quot;,客户端操作日志:&quot;040202000000&quot;,终端安全日志:&quot;040205000000&quot;,终端管控日志:&quot;040206000000&quot;,终端合规日志:&quot;040207000000&quot;,license授权日志:&quot;040212000000&quot;</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"040201000000\"]",
+          "member": "string",
+          "name": "LogTypes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发配置服务器名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deliver",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deliver",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发策略id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发服务器id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ConfigId",
+          "output_required": false,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -4309,6 +4727,80 @@
       ],
       "type": "object"
     },
+    "DescribeDeliveryServerRequest": {
+      "document": "DescribeDeliveryServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务器id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryServerResponse": {
+      "document": "DescribeDeliveryServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliverServerItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryStrategyRequest": {
+      "document": "DescribeDeliveryStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转发策略id</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliveryStrategyResponse": {
+      "document": "DescribeDeliveryStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeliveryStrategyData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceChildGroupsRequest": {
       "document": "DescribeDeviceChildGroups请求参数结构体",
       "members": [
@@ -5860,6 +6352,49 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribePublicEncryptKeyData": {
+      "document": "获取公钥加密的key数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回公钥，base64编码后返回，使用需要base64解码</p>",
+          "example": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQ0lqQU5CZ***2MWsyMTJ5S044Q0F3RUFBUT09Ci0tLS0tRU5EIFBVQkxJQyBLRVktLS0tLo",
+          "member": "string",
+          "name": "PublicEncryptKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribePublicEncryptKeyRequest": {
+      "document": "DescribePublicEncryptKey请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePublicEncryptKeyResponse": {
+      "document": "DescribePublicEncryptKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取公钥加密的key数据",
+          "example": "无",
+          "member": "DescribePublicEncryptKeyData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeResourceGrantedAccountGroupsData": {
       "document": "账号分组授权信息",
@@ -9505,6 +10040,168 @@
           "member": "DirectoryConfigResultData",
           "name": "Data",
           "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeliveryServerData": {
+      "document": "修改转发服务器返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务器ID</p>",
+          "example": "2395",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDeliveryServerRequest": {
+      "document": "ModifyDeliveryServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>编辑的数据内容</p>",
+          "example": "无",
+          "member": "DeliverServerItem",
+          "name": "Data",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeliveryServerResponse": {
+      "document": "ModifyDeliveryServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>转发服务器返回内容</p>",
+          "example": "无",
+          "member": "ModifyDeliveryServerData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeliveryStrategyData": {
+      "document": "修改转发策略返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略ID</p>",
+          "example": "1231",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDeliveryStrategyRequest": {
+      "document": "ModifyDeliveryStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "deliver",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发日志类型列表 身份安全:&quot;040201000000&quot;,资源访问日志:&quot;040203000000&quot;,客户端操作日志:&quot;040202000000&quot;,终端安全日志:&quot;040205000000&quot;,终端管控日志:&quot;040206000000&quot;,终端合规日志:&quot;040207000000&quot;,license授权日志:&quot;040212000000&quot;</p>",
+          "example": "[\"040203000000\"]",
+          "member": "string",
+          "name": "LogTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发方式 0:syslog, 2:kafka, 3:http(只支持32位)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发服务器id(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfigId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发策略描述</p>",
+          "example": "deliver",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>转发策略id 创建时传递 编辑时候无需传递(只支持32位)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ID",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeliveryStrategyResponse": {
+      "document": "ModifyDeliveryStrategy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略返回内容</p>",
+          "example": "无",
+          "member": "ModifyDeliveryStrategyData",
+          "name": "Data",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },

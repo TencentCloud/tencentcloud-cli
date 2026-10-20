@@ -36,6 +36,9 @@ Output:
                         "Vip": "23.25.123.23",
                         "Vport": 1,
                         "Region": "gz",
+                        "ApRegion": [
+                            "ap-guangzhou"
+                        ],
                         "Protocol": "http",
                         "Zone": "ap-guangzhou",
                         "NumericalVpcId": 54352,
@@ -43,6 +46,9 @@ Output:
                     }
                 ],
                 "Region": "gz",
+                "ApRegion": [
+                    "ap-guangzhou"
+                ],
                 "Edition": "clb-waf",
                 "FlowMode": 1,
                 "ClsStatus": 1,

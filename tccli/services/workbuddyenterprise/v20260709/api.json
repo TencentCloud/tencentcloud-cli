@@ -1006,7 +1006,7 @@
         },
         {
           "disabled": false,
-          "document": "授权方式列表：NONE / ONEID / OAUTH2_IDP",
+          "document": "授权方式列表：NONE / ONEID / OAUTH2_IDP / API_KEY",
           "example": "[\"ONEID\"]",
           "member": "string",
           "name": "AuthModes",
@@ -1065,6 +1065,17 @@
           "example": "2026-08-26T11:20:44Z",
           "member": "string",
           "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC 网络配置 ID。为空表示该连接器通过公网访问 ServiceUrl。仅绑定 VPC 网络配置时本字段有值。",
+          "example": "2110326474825162752",
+          "member": "string",
+          "name": "VpcConfigId",
           "output_required": false,
           "required": false,
           "type": "string",

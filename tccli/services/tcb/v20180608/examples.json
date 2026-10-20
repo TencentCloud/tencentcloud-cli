@@ -890,6 +890,14 @@
         "title": "查询表-使用MongoDB连接器"
       }
     ],
+    "ModifyAIModelStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAIModelStatus\n<公共请求参数>\n\n{\n    \"EnvId\": \"**************************\",\n    \"GroupName\": \"cloudbase\",\n    \"Models\": [\n        {\n            \"Model\": \"deepseek-v4-pro\",\n            \"Status\": \"ENABLE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"RequestId\": \"6a8f8d31-5bb9-40e4-8d42-04746e1b2cd9\"\n    }\n}",
+        "title": "打开单个模型"
+      }
+    ],
     "ModifyClient": [
       {
         "document": "修改AccessToken和RefreshToken失效时间以及最大在线会话数",

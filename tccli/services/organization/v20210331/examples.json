@@ -232,6 +232,14 @@
         "title": "创建权限配置"
       }
     ],
+    "CreateRoleConfigurationApplyScope": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRoleConfigurationApplyScope\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-hmdjcgbvm7z2\",\n    \"ApplyScopeInfo\": [\n        {\n            \"PrincipalId\": \"u-dm5nub3hl6ur\",\n            \"PrincipalType\": \"User\",\n            \"TargetUin\": 700002529727,\n            \"TargetType\": \"MemberUin\",\n            \"RoleConfigurationId\": \"rc-0lvaff6ddbn4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 2,\n        \"RequestId\": \"b08547f2-52ee-4489-afac-833c62b1a8f7\"\n    }\n}",
+        "title": "创建权限申请范围"
+      }
+    ],
     "CreateSCIMCredential": [
       {
         "document": "创建SCIM密钥",
@@ -350,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-2jsoi3ms\",\n    \"RoleConfigurationId\": \"rc-ais2ismwo2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "删除权限配置信息"
+      }
+    ],
+    "DeleteRoleConfigurationApplyScope": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRoleConfigurationApplyScope\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-hmdjcgbvm7z2\",\n    \"RoleConfigurationIds\": [\n        \"rc-0lvaff6ddbn4\"\n    ],\n    \"TargetUin\": 700002529727,\n    \"PrincipalId\": \"u-dm5nub3hl6ur\",\n    \"PrincipalType\": \"User\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d4625a9e-0620-4b16-b906-d00b132e62e0\"\n    }\n}",
+        "title": "删除权限配置范围"
       }
     ],
     "DeleteSCIMCredential": [
@@ -776,6 +792,14 @@
         "title": "获取集团服务设置列表"
       }
     ],
+    "ListPermissionApplyOrders": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPermissionApplyOrders\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-hmdjcgbvm7z2\",\n    \"SearchValue\": \"1122\",\n    \"Status\": 1,\n    \"MaxResults\": 20,\n    \"NextToken\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplyOrders\": [],\n        \"IsTruncated\": false,\n        \"MaxResults\": 20,\n        \"NextToken\": \"\",\n        \"TotalCounts\": 0,\n        \"RequestId\": \"42be7cae-eb66-4fde-821b-e28bee186edf\"\n    }\n}",
+        "title": "查询管理员审批列表"
+      }
+    ],
     "ListPermissionPoliciesInRoleConfiguration": [
       {
         "document": "获取权限配置中的策略列表",
@@ -806,6 +830,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleAssignments\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-ssmdsowm**\",\n    \"RoleConfigurationId\": \"rc2-as245usjsm\",\n    \"MaxResults\": 30,\n    \"NextToken\": \"\",\n    \"TargetType\": \"MemeberUin\",\n    \"TargetUin\": 10000000002,\n    \"PrincipalType\": \"User\",\n    \"PrincipalId\": \"u-ss342md**\"\n}",
         "output": "{\n    \"Response\": {\n        \"NextToken\": \"xgt******\",\n        \"TotalCounts\": 30,\n        \"MaxResults\": 10,\n        \"IsTruncated\": true,\n        \"RoleAssignments\": [\n            {\n                \"RoleConfigurationId\": \"ec-swidn****\",\n                \"RoleConfigurationName\": \"conf1\",\n                \"TargetUin\": 10000000002,\n                \"TargetType\": \"MemberUin\",\n                \"TargetName\": \"user1\",\n                \"PrincipalId\": \"u-ssiisn***\",\n                \"PrincipalType\": \"User\",\n                \"PrincipalName\": \"testConfig\",\n                \"CreateTime\": \"2024-01-01 12:12:12\",\n                \"UpdateTime\": \"2024-01-01 12:12:12\"\n            }\n        ],\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
         "title": "查询授权列表"
+      }
+    ],
+    "ListRoleConfigurationApplyScopes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRoleConfigurationApplyScopes\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-hmdjcgbvm7z2\",\n    \"PrincipalId\": \"u-dm5nub3hl6ur\",\n    \"PrincipalType\": \"User\",\n    \"TargetUin\": 700002529727,\n    \"Filter\": \"\",\n    \"MaxResults\": 20,\n    \"NextToken\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplyScopes\": [\n            {\n                \"CreateTime\": \"2026-07-03 15:09:13\",\n                \"PrincipalId\": \"u-dm5nub3hl6ur\",\n                \"PrincipalName\": \"1122\",\n                \"PrincipalType\": \"User\",\n                \"RoleConfigurationId\": \"rc-0lvaff6ddbn4\",\n                \"RoleConfigurationName\": \"RoleConfig04\",\n                \"TargetName\": \"smz23\",\n                \"TargetType\": \"MemberUin\",\n                \"TargetUin\": 700002529727,\n                \"UpdateTime\": \"2026-07-03 15:09:13\"\n            }\n        ],\n        \"IsTruncated\": false,\n        \"MaxResults\": 20,\n        \"NextToken\": \"\",\n        \"TotalCounts\": 1,\n        \"RequestId\": \"0510fe32-9815-4db9-ae15-da9c3c43ee01\"\n    }\n}",
+        "title": "查询指定用户申请范围列表"
       }
     ],
     "ListRoleConfigurationProvisionings": [

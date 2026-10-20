@@ -14,6 +14,7 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.LoadBalancerSet.0.Protocol HTTP \
     --Host.LoadBalancerSet.0.Zone  \
     --Host.LoadBalancerSet.0.Region gz \
+    --Host.LoadBalancerSet.0.ApRegion ap-guangzhou \
     --Host.LoadBalancerSet.0.LoadBalancerName 门户 \
     --Host.LoadBalancerSet.0.ListenerId lbl-87vxk85 \
     --Host.LoadBalancerSet.0.Vip 172.16.49.53 \
@@ -25,6 +26,7 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.Level 1 \
     --Host.MainDomain snv.vom \
     --Host.Region cd \
+    --Host.ApRegion ap-chengdu \
     --Host.FlowMode 1 \
     --Host.State 1 \
     --Host.ClsStatus 1 \
@@ -59,6 +61,7 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.LoadBalancerSet.0.Protocol HTTP \
     --Host.LoadBalancerSet.0.Zone  \
     --Host.LoadBalancerSet.0.Region gz \
+    --Host.LoadBalancerSet.0.ApRegion ap-guangzhou \
     --Host.LoadBalancerSet.0.LoadBalancerName 门户 \
     --Host.LoadBalancerSet.0.ListenerId lbl-87vxk72 \
     --Host.LoadBalancerSet.0.Vip 127.0.0.1 \
@@ -68,6 +71,7 @@ tccli waf CreateHost --cli-unfold-argument  \
     --Host.Level 1 \
     --Host.MainDomain snv.vom \
     --Host.Region cd \
+    --Host.ApRegion ap-chengdu \
     --Host.FlowMode 1 \
     --Host.State 1 \
     --Host.ClsStatus 1 \

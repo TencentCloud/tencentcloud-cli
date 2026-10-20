@@ -108,7 +108,45 @@ Output:
 }
 ```
 
-**Example 4: 意图检测用例**
+**Example 4: 恶意URL检测示例**
+
+传入Urls进行恶意URL检测
+
+Input: 
+
+```
+tccli waf DescribeLLMContentSecCheck --cli-unfold-argument  \
+    --ServiceId 9000002874 \
+    --Type 1 \
+    --InstanceId waf_2l15d14809yfq9sf \
+    --Urls 96.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "Action": "log",
+            "Payload": "风险类型:恶意URL-违法网站,风险内容:96.com",
+            "RuleId": "grl-url-illegal",
+            "RuleName": "违法网站",
+            "UrlDetectResult": {
+                "HitUrls": [
+                    {
+                        "Url": "96.com",
+                        "RuleId": "grl-url-illegal",
+                        "RuleName": "违法网站"
+                    }
+                ]
+            }
+        },
+        "RequestId": "9d77297e-ec48-4da6-8be4-625823856c45"
+    }
+}
+```
+
+**Example 5: 意图检测用例**
 
 
 
