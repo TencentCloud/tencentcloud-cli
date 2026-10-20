@@ -677,6 +677,15 @@
           "name": "CustomImage",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。",
+          "example": "1.7.28",
+          "member": "string",
+          "name": "RuntimeVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

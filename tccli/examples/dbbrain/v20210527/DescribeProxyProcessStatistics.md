@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dbbrain DescribeProxyProcessStatistics --cli-unfold-argument  \
-    --InstanceId redis-test \
+    --InstanceId crs-2gtest \
     --Product redis \
     --Limit 20 \
     --InstanceProxyId b237ff3c5f30b0

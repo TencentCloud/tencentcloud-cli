@@ -980,6 +980,36 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "session",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分析近3天告警历史",
+          "member": "string",
+          "name": "SourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览摘要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "本任务分析了资源地图xyytest（coll-pvgzghqj）内3个CVM实例近1天的告警历史分布。通过按实例逐一调用DescribeAlarmHistories精确查询，确认3个实例报告已生成并输出至制品目录。",
+          "member": "string",
+          "name": "ExecutionSummary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3457,6 +3487,24 @@
           "example": "DESC",
           "member": "string",
           "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字分身ID</p>",
+          "example": "agt-ibbsmc8n",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模糊搜索制品信息</p>",
+          "example": "alarmhistory",
+          "member": "string",
+          "name": "NameKeyword",
           "required": false,
           "type": "string"
         }

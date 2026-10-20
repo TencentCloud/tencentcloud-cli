@@ -3,8 +3,8 @@
     "CreateImageModerationAsyncTask": [
       {
         "document": "创建异步审核任务示例",
-        "input": "POST / HTTP/1.1\nHost: ims.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageModerationAsyncTask\n<公共请求参数>\n\n{\n    \"DataId\": \"test_data\",\n    \"BizType\": \"brookyu_console_test\",\n    \"FileUrl\": \"https://test.jpg\",\n    \"CallbackUrl\": \"http://xxx.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"193101e1-e9b6-4a9b-b29e-6e37db58beef\",\n        \"DataId\": \"test_data\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ims.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImageModerationAsyncTask\n<公共请求参数>\n\n{\n    \"BizType\": \"TencentCloudDefault\",\n    \"FileUrl\": \"https://test.jpg\",\n    \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\",\n    \"CallbackUrl\": \"https://callback.example.com/tencnet/callback\",\n    \"Type\": \"IMAGE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"193101e1-e9b6-4a9b-b29e-6e37db58beef\",\n        \"DataId\": \"a61237dd-c2a0-43e7-a3da-d27022d39ba7\"\n    }\n}",
         "title": "创建异步审核任务示例"
       }
     ],

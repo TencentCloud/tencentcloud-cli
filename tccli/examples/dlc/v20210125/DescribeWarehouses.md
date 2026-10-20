@@ -30,6 +30,13 @@ Output:
                 "PartitionCode": "dlc-p-nwruuglc",
                 "PartitionName": "spark-demo-partition",
                 "QueueName": "root.default",
+                "ProfileDetail": {
+                    "ProfileCode": "M",
+                    "ProfileName": "Medium",
+                    "Description": "演示用途的配置",
+                    "Spec": "4CU",
+                    "Scenario": "交互式分析与临时查询"
+                },
                 "CreateTime": 1767256876123,
                 "UpdateTime": 1767256876123,
                 "ActiveClusters": 1,

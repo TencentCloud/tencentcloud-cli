@@ -1,16 +1,15 @@
 **Example 1: 获取事件**
 
-获取服务相关的事件(k8s事件)信息
+获取任务相关的事件(k8s事件)信息
 
 Input: 
 
 ```
 tccli tione DescribeEvents --cli-unfold-argument  \
-    --Service INFER \
+    --Service NOTEBOOK \
     --Limit 10 \
     --Offset 0 \
-    --Filters.0.Name ResourceKind \
-    --Filters.0.Values Pod
+    --ServiceId nb-1694306254472012288-cw0bo5hocmps
 ```
 
 Output: 
@@ -26,7 +25,7 @@ Output:
                 "Count": 1,
                 "Type": "Normal",
                 "ResourceKind": "Pod",
-                "ResourceName": "ms-cp6rgw9r-1-864587bdb4-p5cv6"
+                "ResourceName": "nb-1694306254472012288-cw0bo5hocmps"
             }
         ],
         "TotalCount": 1,

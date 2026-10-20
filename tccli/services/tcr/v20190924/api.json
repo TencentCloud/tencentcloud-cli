@@ -2595,7 +2595,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 Id",
+          "document": "<p>实例 Id</p>",
           "example": "tcr-7s2d14fn",
           "member": "string",
           "name": "RegistryId",
@@ -2604,7 +2604,7 @@
         },
         {
           "disabled": false,
-          "document": "触发器参数",
+          "document": "<p>触发器参数</p>",
           "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
@@ -2613,11 +2613,29 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "someNs",
           "member": "string",
           "name": "Namespace",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称，非空时创建的 webhook 将被隐藏</p>",
+          "example": "ags",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PreheatRegion",
+          "required": false,
           "type": "string"
         }
       ],
@@ -2628,7 +2646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "新建的触发器",
+          "document": "<p>新建的触发器</p>",
           "example": "无",
           "member": "WebhookTrigger",
           "name": "Trigger",
@@ -9137,6 +9155,24 @@
           "name": "Namespace",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名称，非空时创建的 webhook 将被隐藏</p>",
+          "example": "ags",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "PreheatRegion",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12542,6 +12578,28 @@
           "example": "ns1",
           "member": "string",
           "name": "NamespaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发器所属产品类型：ags 为镜像预热，apparate 为镜像加速，普通 webhook 为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ags",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预热目标地域，AGS 镜像预热的目标地域，非 AGS 触发器为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "PreheatRegion",
           "output_required": false,
           "required": false,
           "type": "string",

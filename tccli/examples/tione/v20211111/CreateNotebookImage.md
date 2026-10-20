@@ -6,20 +6,20 @@ Input:
 
 ```
 tccli tione CreateNotebookImage --cli-unfold-argument  \
-    --Kernels abc \
-    --ImageInfo.ImageType abc \
-    --ImageInfo.ImageUrl abc \
-    --ImageInfo.RegistryRegion abc \
-    --ImageInfo.RegistryId abc \
+    --Kernels  \
+    --ImageInfo.ImageType  \
+    --ImageInfo.ImageUrl  \
+    --ImageInfo.RegistryRegion  \
+    --ImageInfo.RegistryId  \
     --ImageInfo.AllowSaveAllContent True \
-    --NotebookId abc
+    --NotebookId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": ""
     }
 }
 ```

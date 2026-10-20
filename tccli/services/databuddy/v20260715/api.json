@@ -1,7 +1,7 @@
 {
   "actions": {
     "AddConsoleUsers": {
-      "document": "添加控制台用户",
+      "document": "添加控制台用户，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "AddConsoleUsersRequest",
       "name": "添加控制台用户",
       "output": "AddConsoleUsersResponse",
@@ -29,7 +29,7 @@
       "status": "online"
     },
     "CreateConsoleGroup": {
-      "document": "创建控制台用户组",
+      "document": "创建控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "CreateConsoleGroupRequest",
       "name": "创建控制台用户组",
       "output": "CreateConsoleGroupResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateWorkspace": {
-      "document": "创建工作空间",
+      "document": "创建工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "CreateWorkspaceRequest",
       "name": "创建工作空间",
       "output": "CreateWorkspaceResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DeleteConsoleGroups": {
-      "document": "删除控制台用户组",
+      "document": "删除控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "DeleteConsoleGroupsRequest",
       "name": "删除控制台用户组",
       "output": "DeleteConsoleGroupsResponse",
@@ -316,14 +316,14 @@
       "status": "online"
     },
     "ListWorkspaces": {
-      "document": "查询工作空间列表",
+      "document": "查询工作空间列表，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "ListWorkspacesRequest",
       "name": "查询工作空间列表",
       "output": "ListWorkspacesResponse",
       "status": "online"
     },
     "RemoveConsoleUsers": {
-      "document": "<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准）</p>",
+      "document": "<p>批量移除控制台用户（单次最多10个；前置校验任一不满足整体拒绝；执行阶段单个失败不中断后续删除，成败以 SuccessUins/FailItems 为准），该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。</p>",
       "input": "RemoveConsoleUsersRequest",
       "name": "批量移除控制台用户",
       "output": "RemoveConsoleUsersResponse",
@@ -372,14 +372,14 @@
       "status": "online"
     },
     "UpdateConsoleGroup": {
-      "document": "修改控制台用户组",
+      "document": "修改控制台用户组，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateConsoleGroupRequest",
       "name": "修改控制台用户组",
       "output": "UpdateConsoleGroupResponse",
       "status": "online"
     },
     "UpdateConsoleUsers": {
-      "document": "修改控制台用户角色",
+      "document": "修改控制台用户角色，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateConsoleUsersRequest",
       "name": "修改控制台用户角色",
       "output": "UpdateConsoleUsersResponse",
@@ -407,7 +407,7 @@
       "status": "online"
     },
     "UpdateWorkspace": {
-      "document": "修改工作空间",
+      "document": "修改工作空间，该接口为控制台级接口，仅支持在中心地域调用：国内站请传入 ap-guangzhou，国际站请传入 ap-singapore；其他地域调用将返回 UnsupportedRegion。",
       "input": "UpdateWorkspaceRequest",
       "name": "修改工作空间",
       "output": "UpdateWorkspaceResponse",
@@ -456,7 +456,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul>",
+          "document": "<p>角色 ID 列表</p><p>枚举值：</p><ul><li>2001： 控制台管理员</li><li>2002： 控制台成员</li></ul><p>可通过 ListConsoleRoles 接口获取</p>",
           "example": "[\"2002\"]",
           "member": "string",
           "name": "RoleIds",
@@ -509,7 +509,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户组ID，可通过 ListWorkspaceGroups 接口获取",
+          "document": "<p>用户组ID，可通过 ListConsoleGroups 接口获取</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "GroupIds",
@@ -518,7 +518,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间ID",
+          "document": "<p>工作空间ID</p>",
           "example": "10001",
           "member": "string",
           "name": "WorkspaceId",
@@ -527,7 +527,7 @@
         },
         {
           "disabled": false,
-          "document": "角色ID，可通过 ListWorkspaceRoles 接口获取",
+          "document": "<p>角色ID，可通过 ListWorkspaceRoles 接口获取</p>",
           "example": "[\"1001\"]",
           "member": "string",
           "name": "RoleIds",
@@ -542,7 +542,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "添加结果",
+          "document": "<p>添加结果</p>",
           "example": "无",
           "member": "PlatformStatusRsp",
           "name": "Data",
@@ -2587,7 +2587,7 @@
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -2884,7 +2884,7 @@
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -4401,7 +4401,7 @@
           "example": "17697667906247629",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -4508,7 +4508,7 @@
           "example": "17697667906247629",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -7052,6 +7052,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>最大结果条数</p>",
           "example": "1",
           "member": "int64",
@@ -7065,15 +7074,6 @@
           "example": "eyJvZmZzZXQiOjd9",
           "member": "string",
           "name": "PageToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>调用时所在workspace唯一id</p>",
-          "example": "17697667906247629",
-          "member": "string",
-          "name": "WorkspaceId",
           "required": false,
           "type": "string"
         },
@@ -7178,6 +7178,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>最大结果条数</p>",
           "example": "1",
           "member": "int64",
@@ -7191,15 +7200,6 @@
           "example": "eyJvZmZzZXQiOjMwfQ==",
           "member": "string",
           "name": "PageToken",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>调用时所在workspace唯一id</p>",
-          "example": "231434145236852",
-          "member": "string",
-          "name": "WorkspaceId",
           "required": false,
           "type": "string"
         },
@@ -7313,7 +7313,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流ID，精确匹配。非必填，单值</p>",
+          "document": "<p>工作流ID，精确匹配。非必填，单值</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1835/138002\">ListWorkflows</a> 返回值 <code>Data</code></p>",
           "example": "8e8a8cd9-633f-4fae-b5fa-f376a4d31da7",
           "member": "string",
           "name": "WorkflowId",
@@ -7693,7 +7693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>工作流ID，精确匹配。非必填，多选（多个值之间为 OR 关系）</p>",
+          "document": "<p>工作流ID，精确匹配。非必填，多选（多个值之间为 OR 关系）</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/1835/138002\">ListWorkflows</a> 返回值 <code>Data</code></p>",
           "example": "[\"f4ec3e79-7368-44c9-8b04-031fad7f1a76\"]",
           "member": "string",
           "name": "WorkflowIds",
@@ -7729,7 +7729,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>快速筛选类型。非必填，单值</p><p>对齐老云 API（wedata/2025-10-10）文档示例值：</p><ul><li>MY_FAVORITE：我收藏的</li><li>MY_OWNER：我负责的</li><li>MY_AUTHORITY：我有权限</li><li>WorkflowId：支持多个工作流ID筛选</li></ul><p>后端实现现状：当前仅 MY_FAVORITE 生效（设置 favoriteUserUin 过滤当前用户收藏），MY_OWNER / MY_AUTHORITY 暂未在 Service 层实现，传入会被忽略（按全量返回）。</p>",
+          "document": "<p>快速筛选类型。非必填，单值，当前仅支持 MY_FAVORITE（我收藏的）</p>",
           "example": "MY_FAVORITE",
           "member": "string",
           "name": "QuickSelectionType",
@@ -7738,7 +7738,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>排序条件，多个之间按数组顺序表示优先级。非必填。<br>可排序字段白名单：CreateTime</p>",
+          "document": "<p>排序条件，多个之间按数组顺序表示优先级。非必填。可排序字段白名单：CreateTime</p>",
           "example": "无",
           "member": "OrderBy",
           "name": "OrderBys",
@@ -10191,7 +10191,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签值ID",
+          "document": "<p>标签值ID。ID 模式写接口（UpdateWorkspaceUsersTags / UpdateWorkspaceGroupsTags）中必填，可通过 ListTags 接口出参 Items[].TagValues[].TagValueId 获取，也可通过 CreateTagValues 创建后获取；按名称模式接口（AttachWorkspaceUserTags / DetachWorkspaceUserTags）中无需传入；查询接口出参中回填。ID 不存在或已删除时接口报错 TagValueNotExist</p>",
           "example": "17676143448574812",
           "member": "string",
           "name": "TagValueId",
@@ -10202,7 +10202,7 @@
         },
         {
           "disabled": false,
-          "document": "标签值内容，查询时填充，写入时不传",
+          "document": "<p>标签值内容。按名称模式接口（AttachWorkspaceUserTags / DetachWorkspaceUserTags）中必填；ID 模式写接口（UpdateWorkspaceUsersTags / UpdateWorkspaceGroupsTags）中无需传入，服务端忽略；查询接口出参中回填</p>",
           "example": "value1",
           "member": "string",
           "name": "TagValue",
@@ -10213,7 +10213,7 @@
         },
         {
           "disabled": false,
-          "document": "标签来源，参考 web_enum_standard.proto -> TagSource：0=未指定 1=用户直绑 2=用户组继承 3=两者都有，查询时填充，写入时不传",
+          "document": "<p>标签来源，枚举值：0=未指定 1=用户直绑 2=用户组继承 3=两者都有。仅查询接口出参中返回；所有写接口均无需传入，服务端忽略</p>",
           "example": "1",
           "member": "int64",
           "name": "Source",
@@ -10224,7 +10224,7 @@
         },
         {
           "disabled": false,
-          "document": "继承来源的用户组名称列表，Source=1 时为空，查询时填充，写入时不传",
+          "document": "<p>继承来源的用户组名称列表（标签来源 Source=1 用户直绑时为空）。仅查询接口出参中返回；所有写接口均无需传入，服务端忽略</p>",
           "example": "[\"example1\"]",
           "member": "string",
           "name": "GroupNames",
@@ -11349,7 +11349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>标签维度ID</p>",
+          "document": "<p>标签维度ID。ID 模式写接口（UpdateWorkspaceUsersTags / UpdateWorkspaceGroupsTags）中必填，可通过 ListTags 接口出参 Items[].TagId 获取，也可通过 CreateTags 创建后获取；按名称模式接口（AttachWorkspaceUserTags / DetachWorkspaceUserTags）中无需传入；查询接口出参中回填。ID 不存在或已删除时接口报错 TagNotExist</p>",
           "example": "17847100285324356",
           "member": "string",
           "name": "TagId",
@@ -11360,7 +11360,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>标签名称，查询时填充，写入时不传</p>",
+          "document": "<p>标签名称。按名称模式接口（AttachWorkspaceUserTags / DetachWorkspaceUserTags）中必填；ID 模式写接口（UpdateWorkspaceUsersTags / UpdateWorkspaceGroupsTags）中无需传入，服务端忽略；查询接口出参中回填</p>",
           "example": "my_tag",
           "member": "string",
           "name": "TagName",
@@ -11371,7 +11371,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该维度下绑定的所有标签值</p>",
+          "document": "<p>该标签维度下绑定的标签值集合，元素结构见 TagValueInfo。ID 模式写接口中元素 TagValueId 必填；按名称模式接口中元素 TagValue 必填；查询接口出参中回填</p>",
           "example": "无",
           "member": "TagValueInfo",
           "name": "Values",

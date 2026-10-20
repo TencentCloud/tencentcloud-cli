@@ -192,6 +192,14 @@
         "title": "查询当前地域用户设置的备份文件的下载来源限制。"
       }
     ],
+    "DescribeBackupEncryptConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupEncryptConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-lpj0rplv\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupEncrypt\": true,\n        \"EncryptKeyType\": 0,\n        \"KmsKeyId\": \"b2f531ee-59a6-11f1-b8b2-5254008764f7\",\n        \"KmsRegion\": \"ap-guangzhou\",\n        \"RequestId\": \"e15c50dc-2147-4c6d-adb1-6a3d7c3cf9dc\"\n    }\n}",
+        "title": "获取备份加密配置"
+      }
+    ],
     "DescribeBackupUrl": [
       {
         "document": "通过该接口查询备份文件的 Rdb下载地址。",
@@ -704,6 +712,14 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupDownloadRestriction\n<公共请求参数>\n\n{\n    \"LimitType\": \"Customize\",\n    \"VpcComparisonSymbol\": \"In\",\n    \"IpComparisonSymbol\": \"NotIn\",\n    \"LimitVpc\": [\n        {\n            \"VpcList\": [\n                \"vpc-5og4fwm9\",\n                \"vpc-03dsikyx\"\n            ],\n            \"Region\": \"ap-guangzho\"\n        }\n    ],\n    \"LimitIp\": [\n        \"10.1.0.13\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"489f7bc7-e0e0-4e6f-a5c4-97c5fcf7ea8b\"\n    }\n}",
         "title": "修改备份文件下载地址。"
+      }
+    ],
+    "ModifyBackupEncrypt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupEncrypt\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-h09vd2w3\",\n    \"BackupEncrypt\": true,\n    \"EncryptKeyType\": 0,\n    \"KmsRegion\": \"ap-region\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f555a58-c415-48d0-babb-90f3bd17a2e6\"\n    }\n}",
+        "title": "开启备份加密"
       }
     ],
     "ModifyConnectionConfig": [

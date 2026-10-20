@@ -4312,7 +4312,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。",
+          "document": "<p>资源组名称。创建通用资源组的名称，必须以字母开头，可包含字母、数字、下划线（_），最多 64 个字符。</p>",
           "example": "test8",
           "member": "string",
           "name": "Name",
@@ -4321,7 +4321,7 @@
         },
         {
           "disabled": false,
-          "document": "开通的资源组信息",
+          "document": "<p>开通的资源组信息</p>",
           "example": "无",
           "member": "ResourceType",
           "name": "Type",
@@ -4330,7 +4330,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动续费",
+          "document": "<p>是否自动续费</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoRenewEnabled",
@@ -4339,7 +4339,7 @@
         },
         {
           "disabled": false,
-          "document": "购买时长，单位月",
+          "document": "<p>购买时长，单位月</p>",
           "example": "1",
           "member": "int64",
           "name": "PurchasePeriod",
@@ -4348,7 +4348,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcId",
+          "document": "<p>vpcId</p>",
           "example": "vpc-kprq42xxx",
           "member": "string",
           "name": "VpcId",
@@ -4357,7 +4357,7 @@
         },
         {
           "disabled": false,
-          "document": "子网",
+          "document": "<p>子网</p>",
           "example": "subnet-ga23jxxxx",
           "member": "string",
           "name": "SubNet",
@@ -4366,7 +4366,7 @@
         },
         {
           "disabled": false,
-          "document": "资源购买地域",
+          "document": "<p>资源购买地域</p>",
           "example": "ap-singapore",
           "member": "string",
           "name": "ResourceRegion",
@@ -4375,7 +4375,7 @@
         },
         {
           "disabled": false,
-          "document": "关联项目空间项目id",
+          "document": "<p>关联项目空间项目id</p>",
           "example": "1357924680",
           "member": "string",
           "name": "AssociatedProjectId",
@@ -4384,12 +4384,21 @@
         },
         {
           "disabled": false,
-          "document": "资源组描述",
+          "document": "<p>资源组描述</p>",
           "example": "this is description",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "无",
+          "member": "ResourceTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4399,7 +4408,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启成功",
+          "document": "<p>是否开启成功</p>",
           "example": "无",
           "member": "ResourceResult",
           "name": "Data",
@@ -5175,6 +5184,15 @@
           "example": "1",
           "member": "int64",
           "name": "AllowDownstreamDependency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
           "required": false,
           "type": "int"
         }
@@ -11794,6 +11812,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字段名（本次请求携带的字段名，用于聚合）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "SourceColumnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前结果字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "name",
+          "member": "string",
+          "name": "ColumnName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -19976,6 +20014,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>项目状态枚举：ENABLED 正常、UNABLED 已禁用、ENABLING 启用中、UNABLING 禁用中、REMOVING 删除中、DELETED 已删除</p>",
+          "example": "ENABLED",
+          "member": "string",
+          "name": "DisplayStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>项目模式，SIMPLE：简单模式 STANDARD：标准模式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SIMPLE",
           "member": "string",
@@ -25125,6 +25173,34 @@
       ],
       "usage": "out"
     },
+    "ResourceTag": {
+      "document": "资源组标签数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签键</p>",
+          "example": "ceshi",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值</p>",
+          "example": "hello",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceType": {
       "document": "开通的资源组信息",
       "members": [
@@ -28931,6 +29007,17 @@
           "example": "1",
           "member": "int64",
           "name": "AllowDownstreamDependency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -34593,7 +34680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>时区</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -34603,7 +34690,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型：支持的类型为\nONEOFF_CYCLE: 一次性\nYEAR_CYCLE: 年\nMONTH_CYCLE: 月\nWEEK_CYCLE: 周\nDAY_CYCLE: 天\nHOUR_CYCLE: 小时\nMINUTE_CYCLE: 分钟\nCRONTAB_CYCLE: crontab表达式类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HOUR_CYCLE",
           "member": "string",
           "name": "CycleType",
@@ -34613,7 +34700,7 @@
         },
         {
           "disabled": false,
-          "document": "自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "serial",
           "member": "string",
           "name": "SelfDepend",
@@ -34623,7 +34710,7 @@
         },
         {
           "disabled": false,
-          "document": "生效开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生效开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2025-09-11 00:00:00",
           "member": "string",
           "name": "StartTime",
@@ -34633,7 +34720,7 @@
         },
         {
           "disabled": false,
-          "document": "生效结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生效结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -34643,7 +34730,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流依赖，yes or no\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>工作流依赖，yes or no</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
           "member": "string",
           "name": "DependencyWorkflow",
@@ -34653,7 +34740,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间左闭区间，示例：00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间左闭区间，示例：00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -34663,7 +34750,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间右闭区间，示例：23:59\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>执行时间右闭区间，示例：23:59</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -34673,7 +34760,7 @@
         },
         {
           "disabled": false,
-          "document": "cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>cron表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0 0 0 * * ?",
           "member": "string",
           "name": "CrontabExpression",
@@ -34683,7 +34770,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日历调度 1 开启 0关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否开启日历调度 1 开启 0关闭</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "CalendarOpen",
@@ -34693,7 +34780,7 @@
         },
         {
           "disabled": false,
-          "document": "日历名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日历名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "交易所日历",
           "member": "string",
           "name": "CalendarName",
@@ -34703,12 +34790,22 @@
         },
         {
           "disabled": false,
-          "document": "日历id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日历id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "105",
           "member": "string",
           "name": "CalendarId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -34719,7 +34816,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "时区",
+          "document": "<p>时区</p>",
           "example": "UTC+8",
           "member": "string",
           "name": "ScheduleTimeZone",
@@ -34728,7 +34825,7 @@
         },
         {
           "disabled": false,
-          "document": "周期类型：支持的类型为\nONEOFF_CYCLE: 一次性\nYEAR_CYCLE: 年\nMONTH_CYCLE: 月\nWEEK_CYCLE: 周\nDAY_CYCLE: 天\nHOUR_CYCLE: 小时\nMINUTE_CYCLE: 分钟\nCRONTAB_CYCLE: crontab表达式类型",
+          "document": "<p>周期类型：支持的类型为<br>ONEOFF_CYCLE: 一次性<br>YEAR_CYCLE: 年<br>MONTH_CYCLE: 月<br>WEEK_CYCLE: 周<br>DAY_CYCLE: 天<br>HOUR_CYCLE: 小时<br>MINUTE_CYCLE: 分钟<br>CRONTAB_CYCLE: crontab表达式类型</p>",
           "example": "HOUR_CYCLE",
           "member": "string",
           "name": "CycleType",
@@ -34737,7 +34834,7 @@
         },
         {
           "disabled": false,
-          "document": "自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)",
+          "document": "<p>自依赖, 默认值 serial, 取值为：parallel(并行), serial(串行), orderly(有序)</p>",
           "example": "serial",
           "member": "string",
           "name": "SelfDepend",
@@ -34746,7 +34843,7 @@
         },
         {
           "disabled": false,
-          "document": "生效开始时间",
+          "document": "<p>生效开始时间</p>",
           "example": "2025-09-04 16:00:17",
           "member": "string",
           "name": "StartTime",
@@ -34755,7 +34852,7 @@
         },
         {
           "disabled": false,
-          "document": "生效结束时间",
+          "document": "<p>生效结束时间</p>",
           "example": "2099-12-31 23:59:59",
           "member": "string",
           "name": "EndTime",
@@ -34764,7 +34861,7 @@
         },
         {
           "disabled": false,
-          "document": "cron表达式",
+          "document": "<p>cron表达式</p>",
           "example": "0 0 0 * * ?",
           "member": "string",
           "name": "CrontabExpression",
@@ -34773,7 +34870,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流依赖，yes or no",
+          "document": "<p>工作流依赖，yes or no</p>",
           "example": "no",
           "member": "string",
           "name": "DependencyWorkflow",
@@ -34782,7 +34879,7 @@
         },
         {
           "disabled": false,
-          "document": "0：不修改 1：将任务的上游依赖配置改为默认值",
+          "document": "<p>0：不修改 1：将任务的上游依赖配置改为默认值</p>",
           "example": "1",
           "member": "string",
           "name": "ModifyCycleValue",
@@ -34791,7 +34888,7 @@
         },
         {
           "disabled": false,
-          "document": "工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系",
+          "document": "<p>工作流存在跨工作流依赖且使用cron表达式调度。如果保存统一调度，会断开不支持的依赖关系</p>",
           "example": "true",
           "member": "bool",
           "name": "ClearLink",
@@ -34800,7 +34897,7 @@
         },
         {
           "disabled": false,
-          "document": "ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：\n* CRONTAB\n* DAY\n* HOUR\n* LIST_DAY\n* LIST_HOUR\n* LIST_MINUTE\n* MINUTE\n* MONTH\n* RANGE_DAY\n* RANGE_HOUR\n* RANGE_MINUTE\n* WEEK\n* YEAR\n\nhttps://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo",
+          "document": "<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-时间维度，取值为：</p><ul><li>CRONTAB</li><li>DAY</li><li>HOUR</li><li>LIST_DAY</li><li>LIST_HOUR</li><li>LIST_MINUTE</li><li>MINUTE</li><li>MONTH</li><li>RANGE_DAY</li><li>RANGE_HOUR</li><li>RANGE_MINUTE</li><li>WEEK</li><li>YEAR</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>",
           "example": "HOUR",
           "member": "string",
           "name": "MainCyclicConfig",
@@ -34809,7 +34906,7 @@
         },
         {
           "disabled": false,
-          "document": "ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围\n取值为：\n* ALL_DAY_OF_YEAR\n* ALL_MONTH_OF_YEAR\n* CURRENT\n* CURRENT_DAY\n* CURRENT_HOUR\n* CURRENT_MINUTE\n* CURRENT_MONTH\n* CURRENT_WEEK\n* CURRENT_YEAR\n* PREVIOUS_BEGIN_OF_MONTH\n* PREVIOUS_DAY\n* PREVIOUS_DAY_LATER_OFFSET_HOUR\n* PREVIOUS_DAY_LATER_OFFSET_MINUTE\n* PREVIOUS_END_OF_MONTH\n* PREVIOUS_FRIDAY\n* PREVIOUS_HOUR\n* PREVIOUS_HOUR_CYCLE\n* PREVIOUS_HOUR_LATER_OFFSET_MINUTE\n* PREVIOUS_MINUTE_CYCLE\n* PREVIOUS_MONTH\n* PREVIOUS_WEEK\n* PREVIOUS_WEEKEND\n* RECENT_DATE\n\nhttps://capi.woa.com/object/detail?product=wedata&env=api_dev&version=2025-08-06&name=WorkflowSchedulerConfigurationInfo",
+          "document": "<p>ModifyCycleValue为1的时候生效，表示默认修改的上游依赖-实例范围<br>取值为：</p><ul><li>ALL_DAY_OF_YEAR</li><li>ALL_MONTH_OF_YEAR</li><li>CURRENT</li><li>CURRENT_DAY</li><li>CURRENT_HOUR</li><li>CURRENT_MINUTE</li><li>CURRENT_MONTH</li><li>CURRENT_WEEK</li><li>CURRENT_YEAR</li><li>PREVIOUS_BEGIN_OF_MONTH</li><li>PREVIOUS_DAY</li><li>PREVIOUS_DAY_LATER_OFFSET_HOUR</li><li>PREVIOUS_DAY_LATER_OFFSET_MINUTE</li><li>PREVIOUS_END_OF_MONTH</li><li>PREVIOUS_FRIDAY</li><li>PREVIOUS_HOUR</li><li>PREVIOUS_HOUR_CYCLE</li><li>PREVIOUS_HOUR_LATER_OFFSET_MINUTE</li><li>PREVIOUS_MINUTE_CYCLE</li><li>PREVIOUS_MONTH</li><li>PREVIOUS_WEEK</li><li>PREVIOUS_WEEKEND</li><li>RECENT_DATE</li></ul><p>https://capi.woa.com/object/detail?product=wedata&amp;env=api_dev&amp;version=2025-08-06&amp;name=WorkflowSchedulerConfigurationInfo</p>",
           "example": "CURRENT_HOUR",
           "member": "string",
           "name": "SubordinateCyclicConfig",
@@ -34818,7 +34915,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入",
+          "document": "<p>执行时间左闭区间，示例：00:00，只有周期类型为MINUTE_CYCLE才需要填入</p>",
           "example": "00:00",
           "member": "string",
           "name": "ExecutionStartTime",
@@ -34827,7 +34924,7 @@
         },
         {
           "disabled": false,
-          "document": "执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入",
+          "document": "<p>执行时间右闭区间，示例：23:59，只有周期类型为MINUTE_CYCLE才需要填入</p>",
           "example": "23:59",
           "member": "string",
           "name": "ExecutionEndTime",
@@ -34836,7 +34933,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启日历调度 1 开启 0关闭",
+          "document": "<p>是否开启日历调度 1 开启 0关闭</p>",
           "example": "1",
           "member": "string",
           "name": "CalendarOpen",
@@ -34845,12 +34942,21 @@
         },
         {
           "disabled": false,
-          "document": "日历id",
+          "document": "<p>日历id</p>",
           "example": "105",
           "member": "string",
           "name": "CalendarId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分钟任务相位偏移</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "MinuteOffset",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

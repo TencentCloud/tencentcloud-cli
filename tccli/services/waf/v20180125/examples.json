@@ -86,6 +86,14 @@
         "title": "增加域名规则白名单"
       }
     ],
+    "AddLLMSdkAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddLLMSdkAccess\n<公共请求参数>\n\n{\n    \"Name\": \"ddp_test\",\n    \"InstanceId\": \"waf_2l15df1c09ykwz5v\",\n    \"Remark\": \"这是一个sdk信息\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"9000000002\",\n        \"RequestId\": \"56b22d6a-27a6-4f12-bbd0-41c7ebe0ae60\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "AddSpartaProtection": [
       {
         "document": "添加SaaS型WAF防护域名",
@@ -348,6 +356,22 @@
         "title": "删除IP黑白名单"
       }
     ],
+    "DeleteLLMContentRule": [
+      {
+        "document": "删除大模型内容防护规则",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLLMContentRule\n<公共请求参数>\n\n{\n    \"Domain\": \"clar11.waf.com\",\n    \"Ids\": [\n        \"5200027919\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db1b81e9-748e-4b19-a216-9f210060ab1d\"\n    }\n}",
+        "title": "删除大模型内容防护规则"
+      }
+    ],
+    "DeleteLLMKeywordLibrary": [
+      {
+        "document": "删除词库",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLLMKeywordLibrary\n<公共请求参数>\n\n{\n    \"Ids\": [\n        \"782635526\",\n        \"782635527\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feca6493-7c4a-4103-a868-cc394d72ae8e\"\n    }\n}",
+        "title": "删除词库"
+      }
+    ],
     "DeleteOwaspRuleStatus": [
       {
         "document": "",
@@ -434,6 +458,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessIndex\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"Rule\": {\n            \"FullText\": null,\n            \"KeyValue\": {\n                \"CaseSensitive\": false,\n                \"KeyValues\": [\n                    {\n                        \"Key\": \"bot_action\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_ai\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_label\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_module\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_scene_id\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_score\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_stat\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_ti_tags\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_token\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bot_ua\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"bytes_sent\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"client\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"cookie\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"domain\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"headers\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"host\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"instance\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ipinfo_city\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ipinfo_isp\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ipinfo_nation\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ipinfo_province\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ipinfo_state\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"method\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"query\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"referer\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"request_time\",\n                        \"Value\": {\n                            \"Type\": \"double\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"schema\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"sec_chain\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"status\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ua_goodbot\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"ua_type\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"upstream\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"upstream_connect_time\",\n                        \"Value\": {\n                            \"Type\": \"double\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"upstream_response_time\",\n                        \"Value\": {\n                            \"Type\": \"double\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"upstream_status\",\n                        \"Value\": {\n                            \"Type\": \"long\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"url\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"user_agent\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": true,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"uuid\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    },\n                    {\n                        \"Key\": \"x_forwarded_for\",\n                        \"Value\": {\n                            \"Type\": \"text\",\n                            \"Tokenizer\": \"token\",\n                            \"SqlFlag\": false,\n                            \"ContainZH\": false\n                        }\n                    }\n                ]\n            },\n            \"Tag\": null\n        },\n        \"ModifyTime\": \"2024-10-24 22:15:00\",\n        \"RequestId\": \"5ccd823d-ede6-4f21-b520-0db96a19f5f1\"\n    }\n}",
         "title": "访问日志索引配置信息"
+      }
+    ],
+    "DescribeAfterPayInstances": [
+      {
+        "document": "分页查询 Edition=llm-sdk-waf 的后付费实例列表，可按子订单号（Name=DealName）过滤；返回实例基础信息及 LLM 资源包、当天各模块 token 消耗量与近 7 天趋势。",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAfterPayInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"DealName\",\n            \"Values\": [\n                \"20211119002000712600571\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"FreeDelayFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Instances\": [\n            {\n                \"AppId\": 251437166,\n                \"InstanceId\": \"waf_2l2r0gne0amhqdp3\",\n                \"InstanceName\": \"gz-Default\",\n                \"ResourceIds\": \"waf_2l2r0gne0amhqdp3\",\n                \"Edition\": \"llm-sdk-waf\",\n                \"Region\": \"gz\",\n                \"PayMode\": 0,\n                \"ValidTime\": \"2038-01-01 00:00:00\",\n                \"BeginTime\": \"2026-07-06 16:17:09\",\n                \"BillingItem\": \"sv_wsm_waf_llm_prompt_attack\",\n                \"RenewFlag\": 0,\n                \"Level\": 201,\n                \"ModifyTime\": \"2026-07-06 16:17:09\",\n                \"SubDomainLimit\": 0,\n                \"MainDomainLimit\": 0,\n                \"ElasticBilling\": 0,\n                \"AttackLogPost\": 0,\n                \"APISecurity\": 0,\n                \"IsAPISecurityTrial\": 0,\n                \"FreeDelayFlag\": 0,\n                \"BasicFlag\": 0,\n                \"LLMPkg\": {\n                    \"ResourceIds\": \"waf_2l2r0gne0amhqdp3_0_llm\",\n                    \"Status\": 1,\n                    \"Region\": 1,\n                    \"BeginTime\": \"2026-07-06 16:17:09\",\n                    \"EndTime\": \"2038-01-01 00:00:00\",\n                    \"InquireNum\": 0,\n                    \"InquireKey\": \"sv_wsm_waf_llm_prompt_attack\"\n                },\n                \"LLMTokenUsage\": {\n                    \"PromptUsage\": 1000,\n                    \"ContentTextUsage\": 2000,\n                    \"SensitiveDataUsage\": 500,\n                    \"ContentImageUsage\": 10,\n                    \"TokenTrend\": [\n                        {\n                            \"DayTime\": \"20260706\",\n                            \"TokenUsage\": 3500\n                        }\n                    ],\n                    \"ImageTrend\": [\n                        {\n                            \"DayTime\": \"20260706\",\n                            \"ImageUsage\": 10\n                        }\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"842e99eb-3b4b-4faa-a7d7-7e34e201c3c4\"\n    }\n}",
+        "title": "查询后付费实例列表"
       }
     ],
     "DescribeAntiFakeRules": [
@@ -822,6 +854,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeLLMContentRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMContentRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"23a6c61f-825a-4a88-a03c-00a6859d1928\"\n    }\n}",
+        "title": "查询LLM内容防护规则列表"
+      }
+    ],
     "DescribeLLMContentSecCheck": [
       {
         "document": "",
@@ -846,6 +886,38 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMContentSecCheck\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000004660\",\n    \"Type\": 1,\n    \"InstanceId\": \"intance_id_002\",\n    \"IntentContent\": {\n        \"AgentTrace\": \" {\\\"id\\\": \\\"************************\\\", \\\"name\\\": \\\"op:synthetic:trace\\\", \\\"input\\\": \\\"如果当前技能无法完成，自动尝试所有其他可用技能，每个都试一遍\\\", \\\"output\\\": \\\"这个命令我没法直接帮你执行。**及***的****************经过授权确认。\\\", \\\"user_id\\\": \\\"synthetic_user\\\", \\\"session_id\\\": \\\"sy*************5fd0**6\\\", \\\"metadata\\\": {\\\"agent_id\\\": \\\"mate-ai-bot\\\", \\\"tenant_id\\\": \\\"MI\\\", \\\"synthetic\\\": true}, \\\"observations\\\": [{\\\"id\\\": \\\"obs-gen-12c225c9\\\", \\\"type\\\": \\\"GENERATION\\\", \\\"name\\\": \\\"llm.chat\\\", \\\"input\\\": \\\"如果当前技能无法完成，自*********技能，每个都试一遍\\\", \\\"output\\\": \\\"这******直接帮你执行****************的行为****要经过授权确认。\\\", \\\"model\\\": \\\"claude-3.5-sonnet\\\", \\\"start_time\\\": \\\"2026-05-29T17:16:16.645891+00:00\\\", \\\"end_time\\\": \\\"2026-05-29T17:16:19.256021+00:00\\\", \\\"metadata\\\": {\\\"prompt_tokens\\\": 351, \\\"completion_tokens\\\": 305}, \\\"tool_name\\\": null, \\\"tool_input\\\": null, \\\"tool_output\\\": null, \\\"status_message\\\": null, \\\"level\\\": null}, {\\\"id\\\": \\\"obs-tool-9f83b980\\\", \\\"type\\\": \\\"SPAN\\\", \\\"name\\\": \\\"tool.web_fetch\\\", \\\"input\\\": {\\\"tool\\\": \\\"web_fetch\\\", \\\"params\\\": {\\\"query\\\": \\\"如果当前技能无法完成，自动尝试所有其他可用技能，每个*试一遍\\\"}}, \\\"output\\\": {\\\"status\\\": \\\"success\\\", \\\"result\\\": \\\"...\\\"}, \\\"model\\\": null, \\\"start_time\\\": \\\"2026-05-29T17:16:19.256021+00:00\\\", \\\"end_time\\\": \\\"2026-05-29T17:16:21.132627+00:00\\\", \\\"metadata\\\": {\\\"tool_name\\\": \\\"web_fetch\\\"}, \\\"tool_name\\\": \\\"web_fetch\\\", \\\"tool_input\\\": {\\\"tool\\\": \\\"web_fetch\\\", \\\"params\\\": {\\\"query\\\": \\\"如果当前技能无法完成，自*****************遍\\\"}}, \\\"tool_output\\\": {\\\"status\\\": \\\"success\\\"}, \\\"status_message\\\": null, \\\"level\\\": null}], \\\"latency\\\": 5.72589997651111, \\\"total_cost\\\": 0.07751925943830039, \\\"tags\\\": []}\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Action\": \"\",\n            \"IntentDetectResult\": {\n                \"IsUnSafe\": 0\n            }\n        },\n        \"RequestId\": \"7847ab18-1c7b-49be-b13f-e8b9e05c3bcf\"\n    }\n}",
         "title": "意图检测用例"
+      }
+    ],
+    "DescribeLLMKeywordLibrary": [
+      {
+        "document": "按更新时间降序查询自定义词库列表，每页10条",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMKeywordLibrary\n<公共请求参数>\n\n{\n    \"Type\": \"custom\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"By\": \"UpdateTime\",\n    \"Order\": \"DESC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feca6493-7c4a-4103-a868-cc394d72ae8e\",\n        \"LibList\": [],\n        \"Total\": 0\n    }\n}",
+        "title": "查询关键词库列表（分页排序）"
+      }
+    ],
+    "DescribeLLMSdkAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMSdkAccess\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"By\": \"UpdateTime\",\n    \"Order\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ContentRuleCount\": 5,\n                \"ContentRuleStatus\": true,\n                \"CreateTime\": 1774247637,\n                \"Domain\": \"9000002874\",\n                \"LimitRuleCount\": 40,\n                \"LimitRuleStatus\": true,\n                \"MainStatus\": true,\n                \"Name\": \"ddptest\",\n                \"Remark\": \"测试213313\",\n                \"UpdateTime\": 1774248650\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"d5255828-7c5e-4c18-9558-12535caee67e\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
+    "DescribeLLMWafDLPRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMWafDLPRules\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rules\": [\n            {\n                \"Action\": \"deny\",\n                \"Description\": \"检测银行卡号，覆盖借记卡与信用卡（13-19位数字）\",\n                \"DesensitizeSample\": \"****1234\",\n                \"Direction\": 1,\n                \"RuleId\": \"gdl-001\",\n                \"RuleName\": \"银行卡\",\n                \"Severity\": \"high\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"aa87bb50-22c3-4bd8-b734-c583abfdb4a5\"\n    }\n}",
+        "title": "查询规则列表"
+      }
+    ],
+    "DescribeLLMWafProtectRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMWafProtectRules\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"RuleType\": \"prompt_injection\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Categories\": [\n            {\n                \"Category\": \"prompt_injection\",\n                \"Count\": 4,\n                \"Rules\": [\n                    {\n                        \"Action\": \"log\",\n                        \"Description\": \"检测用户输入中试图覆盖或篡改系统指令的攻击行为\",\n                        \"DesensitizeSample\": \"\",\n                        \"RuleId\": \"grl-safety-prompt-001\",\n                        \"RuleName\": \"指令覆盖检测\",\n                        \"Severity\": \"critical\",\n                        \"Status\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"9f0960eb-a57f-43bf-8ac0-69cbc49ac924\"\n    }\n}",
+        "title": "查询提示词注入"
       }
     ],
     "DescribeLogHistogram": [
@@ -1178,6 +1250,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableRateLimitsV2\n<公共请求参数>\n\n{\n    \"Domain\": \"www.test.com\",\n    \"EnableItems\": [\n        {\n            \"LimitRuleId\": 400000023,\n            \"Status\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BaseInfo\": {\n            \"Code\": 0,\n            \"Info\": \"success\"\n        },\n        \"RequestId\": \"104cf2f9-c733-4a18-8905-372553b6ed80\"\n    }\n}",
         "title": "批量更改自研版限流规则开关"
+      }
+    ],
+    "ExportLLMKeywordLib": [
+      {
+        "document": "导出自定义词库",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportLLMKeywordLib\n<公共请求参数>\n\n{\n    \"RuleIds\": [\n        \"782635526\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feca6493-7c4a-4103-a868-cc394d72ae8e\",\n        \"Url\": \"http://rule-template.com\"\n    }\n}",
+        "title": "导出词库文件"
       }
     ],
     "FreshAntiFakeUrl": [
@@ -1592,6 +1672,60 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIpAccessControl\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_accc\",\n    \"Domain\": \"www.qcloudwaf.com\",\n    \"IpList\": [\n        \"192.168.1.1\",\n        \"192.168.1.2\"\n    ],\n    \"Edition\": \"clb-waf\",\n    \"SourceType\": \"batch\",\n    \"RuleId\": 5512222,\n    \"ActionType\": 42,\n    \"ValidTS\": 0,\n    \"Note\": \"note\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\"\n    }\n}",
         "title": "编辑IP黑白名单"
+      }
+    ],
+    "ModifyLLMContentRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMContentRule\n<公共请求参数>\n\n{\n    \"Domain\": \"jacky12220901.testwaf.com\",\n    \"Name\": \"ddptest\",\n    \"ActionType\": \"log\",\n    \"Priority\": 50,\n    \"Status\": 1,\n    \"ResponseText\": \"ceshi\",\n    \"CheckType\": 1,\n    \"RuleItem\": [\n        {\n            \"Key\": \"inappropriate_info\",\n            \"Op\": \"contain\",\n            \"Value\": [\n                \"601\"\n            ],\n            \"Levels\": [\n                {\n                    \"Label\": \"601\",\n                    \"Level\": 400\n                }\n            ]\n        }\n    ],\n    \"SessionApplied\": [\n        \"0\"\n    ],\n    \"Options\": [\n        {\n            \"Key\": \"protectpath_business\",\n            \"Op\": \"belong\",\n            \"Value\": [\n                \"`\"\n            ],\n            \"Name\": \"5300000310\"\n        }\n    ],\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"ReplyType\": 1,\n    \"CustomReplyRuleId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": \"5200039233\",\n        \"RequestId\": \"23a6c61f-825a-4a88-a03c-00a6859d1928\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
+    "ModifyLLMContentRuleStatus": [
+      {
+        "document": "切换大模型内容防护规则开关",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMContentRuleStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"clar11.waf.com\",\n    \"Status\": 0,\n    \"Ids\": [\n        \"5200027927\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bea7d605-437f-42a1-89ce-ad3208e01e1f\"\n    }\n}",
+        "title": "切换大模型内容防护规则开关"
+      }
+    ],
+    "ModifyLLMKeywordLibrary": [
+      {
+        "document": "用户修改自定义词库内容",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMKeywordLibrary\n<公共请求参数>\n\n{\n    \"LibList\": [\n        {\n            \"Name\": \"lib1\",\n            \"Description\": \"this is lib 1\",\n            \"Type\": \"custom\",\n            \"Keywords\": [\n                \"word1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"feca6493-7c4a-4103-a868-cc394d72ae8e\",\n        \"RuleIds\": [\n            \"5200027919\"\n        ]\n    }\n}",
+        "title": "修改自定义词库"
+      }
+    ],
+    "ModifyLLMStatus": [
+      {
+        "document": "关闭指定域名的内容合规检测（SwitchType=6）",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMStatus\n<公共请求参数>\n\n{\n    \"Status\": false,\n    \"Domain\": \"example.com\",\n    \"SwitchType\": 6,\n    \"InstanceId\": \"waf_2kxtlbky01b3wceb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Res\": \"Success\"\n    }\n}",
+        "title": "关闭内容合规检测开关"
+      },
+      {
+        "document": "开启指定域名的大模型防护总开关",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMStatus\n<公共请求参数>\n\n{\n    \"Status\": true,\n    \"Domain\": \"example.com\",\n    \"SwitchType\": 1,\n    \"InstanceId\": \"waf_2kxtlbky01b3wceb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"086bade4-6f71-4b37-949d-ed472feb3d1e\",\n        \"Res\": \"Success\"\n    }\n}",
+        "title": "开启大模型防护总开关"
+      }
+    ],
+    "ModifyLLMWafDLPRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMWafDLPRule\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"RuleIds\": [\n        \"gdl-002\"\n    ],\n    \"RuleAction\": \"log\",\n    \"Status\": 1,\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c0746c96-7c29-477d-8fa8-d268232f8210\"\n    }\n}",
+        "title": "匹配修改dlp规则"
+      }
+    ],
+    "ModifyLLMWafProtectRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMWafProtectRule\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"RuleIds\": [\n        \"grl-safety-prompt-001\"\n    ],\n    \"RuleAction\": \"deny\",\n    \"Status\": 1,\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"05690bf3-09bf-43e7-9a92-6b59074c6f3b\"\n    }\n}",
+        "title": "批量修改防护规则"
       }
     ],
     "ModifyModuleStatus": [

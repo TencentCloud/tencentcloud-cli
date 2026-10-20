@@ -1,42 +1,42 @@
-**Example 1: 查询用户所有账号信息**
+**Example 1: 查询账号列表**
 
-
+查询账号列表
 
 Input: 
 
 ```
 tccli cdb DescribeAccounts --cli-unfold-argument  \
-    --InstanceId cdb-b1airfvv
+    --InstanceId cdb-mw6uxcyt
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "507f6863-2827-4c2c-9c3b-fbbcc32e1ed4",
         "Items": [
             {
-                "CreateTime": "2025-09-04 14:56:31",
+                "CreateTime": "2026-08-27 10:14:08",
                 "Host": "%",
                 "MaxUserConnections": 0,
-                "ModifyPasswordTime": "2025-09-04 14:56:31",
-                "ModifyTime": "2025-09-04 14:59:10",
-                "Notes": "",
-                "OpenCam": false,
-                "User": "ching"
-            },
-            {
-                "CreateTime": "2025-09-02 16:18:42",
-                "Host": "%",
-                "MaxUserConnections": 0,
-                "ModifyPasswordTime": "2025-09-02 16:18:42",
-                "ModifyTime": "2025-09-02 16:18:42",
+                "ModifyPasswordTime": "2026-08-27 19:18:07",
+                "ModifyTime": "2026-08-27 19:18:07",
                 "Notes": "",
                 "OpenCam": false,
                 "User": "root"
+            },
+            {
+                "CreateTime": "2026-08-27 19:18:36",
+                "Host": "%",
+                "MaxUserConnections": 0,
+                "ModifyPasswordTime": "2026-08-27 19:18:36",
+                "ModifyTime": "2026-08-27 19:18:36",
+                "Notes": "",
+                "OpenCam": false,
+                "User": "testqqq"
             }
         ],
         "MaxUserConnections": 10240,
+        "RequestId": "527dcdb8-9c9b-4fb0-9e47-e8316737e051",
         "TotalCount": 2
     }
 }

@@ -572,7 +572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -583,7 +583,7 @@
         },
         {
           "disabled": false,
-          "document": "消费组名称",
+          "document": "<p>消费组名称</p>",
           "example": "group1",
           "member": "string",
           "name": "ConsumerGroup",
@@ -594,7 +594,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启消费",
+          "document": "<p>是否开启消费</p>",
           "example": "true",
           "member": "bool",
           "name": "ConsumeEnable",
@@ -605,7 +605,7 @@
         },
         {
           "disabled": false,
-          "document": "顺序投递：true\n并发投递：false",
+          "document": "<p>顺序投递：true<br>并发投递：false</p>",
           "example": "true",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
@@ -616,7 +616,7 @@
         },
         {
           "disabled": false,
-          "document": "最大重试次数",
+          "document": "<p>最大重试次数</p>",
           "example": "3",
           "member": "int64",
           "name": "MaxRetryTimes",
@@ -627,7 +627,7 @@
         },
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "remark1",
           "member": "string",
           "name": "Remark",
@@ -638,7 +638,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的集群ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cluster1",
           "member": "string",
           "name": "ClusterIdV4",
@@ -649,7 +649,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namespace",
           "member": "string",
           "name": "NamespaceV4",
@@ -660,7 +660,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的消费组名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "group1",
           "member": "string",
           "name": "ConsumerGroupV4",
@@ -671,7 +671,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的完整命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "namespace",
           "member": "string",
           "name": "FullNamespaceV4",
@@ -682,7 +682,7 @@
         },
         {
           "disabled": false,
-          "document": "订阅的主题个数",
+          "document": "<p>订阅的主题个数</p>",
           "example": "10",
           "member": "int64",
           "name": "SubscribeTopicNum",
@@ -693,7 +693,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1753153590",
           "member": "int64",
           "name": "CreateTime",
@@ -704,7 +704,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的标签列表",
+          "document": "<p>绑定的标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagList",
@@ -715,13 +715,35 @@
         },
         {
           "disabled": false,
-          "document": "重试策略",
+          "document": "<p>重试策略</p>",
           "example": "无",
           "member": "RetryPolicy",
           "name": "RetryPolicy",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费模式，枚举值如下：</p><ul><li>CLUSTERING：集群/广播消费</li><li>LITE：LiteTopic 消费</li></ul>",
+          "example": "CLUSTERING",
+          "member": "string",
+          "name": "ConsumeModel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义的死信Topic名称</p>",
+          "example": "test_custom_dlq_topic",
+          "member": "string",
+          "name": "DeadLetterTargetTopic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -1181,6 +1203,15 @@
           "example": "parent_topic",
           "member": "string",
           "name": "LiteTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义死信 Topic</p><p>非必选，死信消息默认投递到系统死信 Topic</p>",
+          "example": "custom_dlq_topic",
+          "member": "string",
+          "name": "DeadLetterTargetTopic",
           "required": false,
           "type": "string"
         }
@@ -1736,7 +1767,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型，枚举值如下：\n\n- NORMAL: 普通消息\n- FIFO: 顺序消息\n- DELAY: 延时消息\n- TRANSACTION: 事务消息\n- LITE: 轻量消息",
+          "document": "<p>主题类型</p><p>枚举值：</p><ul><li>NORMAL： 普通消息</li><li>FIFO： 顺序消息</li><li>DELAY： 延迟消息</li><li>TRANSACTION： 事务消息</li><li>LITE： 轻量消息</li><li>PRIORITY： 优先级消息</li></ul>",
           "example": "NORMAL",
           "member": "string",
           "name": "TopicType",
@@ -1745,7 +1776,7 @@
         },
         {
           "disabled": false,
-          "document": "队列数量，取值范围3～16",
+          "document": "<p>队列数量，取值范围3～16</p>",
           "example": "3",
           "member": "int64",
           "name": "QueueNum",
@@ -1754,7 +1785,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息，最多 128 个字符",
+          "document": "<p>备注信息，最多 128 个字符</p>",
           "example": "测试主题",
           "member": "string",
           "name": "Remark",
@@ -1763,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长（单位：小时）",
+          "document": "<p>消息保留时长（单位：小时）</p>",
           "example": "72",
           "member": "int64",
           "name": "MsgTTL",
@@ -1772,7 +1803,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagList",
@@ -1781,7 +1812,7 @@
         },
         {
           "disabled": false,
-          "document": "是否过期自动删除（仅针对轻量主题类型）",
+          "document": "<p>是否过期自动删除（仅针对轻量主题类型）</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoExpireDelete",
@@ -1790,7 +1821,7 @@
         },
         {
           "disabled": false,
-          "document": "过期时间，单位：秒（仅针对轻量主题类型）",
+          "document": "<p>过期时间，单位：秒（仅针对轻量主题类型）</p>",
           "example": "1800",
           "member": "int64",
           "name": "AutoExpireTime",
@@ -1805,7 +1836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -1815,7 +1846,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名",
+          "document": "<p>主题名</p>",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -2701,6 +2732,16 @@
           "example": "test_lite_topic",
           "member": "string",
           "name": "LiteTopic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义死信Topic</p>",
+          "example": "test_topic",
+          "member": "string",
+          "name": "DeadLetterTargetTopic",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4150,6 +4191,24 @@
           "name": "QueryDelayMessage",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为重试消息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryRetryMessage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询重试消息时，需要指定具体的消费组名称</p>",
+          "example": "group-order-pro",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5085,6 +5144,16 @@
           "name": "TopicType",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>队列数量</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "QueueNum",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -6565,7 +6634,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启消费",
+          "document": "<p>是否开启消费</p>",
           "example": "true",
           "member": "bool",
           "name": "ConsumeEnable",
@@ -6574,7 +6643,7 @@
         },
         {
           "disabled": false,
-          "document": "顺序投递：true\n并发投递：false",
+          "document": "<p>顺序投递：true<br>并发投递：false</p>",
           "example": "true",
           "member": "bool",
           "name": "ConsumeMessageOrderly",
@@ -6592,7 +6661,7 @@
         },
         {
           "disabled": false,
-          "document": "最大重试次数，取值范围0～1000",
+          "document": "<p>最大重试次数，取值范围0～1000</p>",
           "example": "3",
           "member": "int64",
           "name": "MaxRetryTimes",
@@ -6601,7 +6670,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息，最多 128 个字符",
+          "document": "<p>备注信息，最多 128 个字符</p>",
           "example": "测试修改",
           "member": "string",
           "name": "Remark",
@@ -6610,12 +6679,21 @@
         },
         {
           "disabled": false,
-          "document": "重试策略",
+          "document": "<p>重试策略</p>",
           "example": "无",
           "member": "RetryPolicy",
           "name": "RetryPolicy",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义死信Topic</p>",
+          "example": "test_topic",
+          "member": "string",
+          "name": "DeadLetterTargetTopic",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7882,7 +7960,7 @@
         },
         {
           "disabled": false,
-          "document": "消息内容",
+          "document": "<p>消息内容</p>",
           "example": "This is a normal message for Apache RocketMQ.",
           "member": "string",
           "name": "MsgBody",
@@ -7891,7 +7969,7 @@
         },
         {
           "disabled": false,
-          "document": "消息Key",
+          "document": "<p>消息Key</p>",
           "example": "test_key",
           "member": "string",
           "name": "MsgKey",
@@ -7900,7 +7978,7 @@
         },
         {
           "disabled": false,
-          "document": "消息Tag",
+          "document": "<p>消息Tag</p>",
           "example": "test_tag",
           "member": "string",
           "name": "MsgTag",
@@ -7909,12 +7987,21 @@
         },
         {
           "disabled": false,
-          "document": "轻量主题",
+          "document": "<p>轻量主题</p>",
           "example": "test_lite_topic",
           "member": "string",
           "name": "LiteTopic",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定队列优先级</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7924,7 +8011,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息ID",
+          "document": "<p>消息ID</p>",
           "example": "1EAE3915000721B8D17C2C5BB31638D1",
           "member": "string",
           "name": "MsgId",
@@ -8537,7 +8624,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "rmq-72mo3a9o",
           "member": "string",
           "name": "InstanceId",
@@ -8548,7 +8635,7 @@
         },
         {
           "disabled": false,
-          "document": "主题名称",
+          "document": "<p>主题名称</p>",
           "example": "test_topic",
           "member": "string",
           "name": "Topic",
@@ -8559,7 +8646,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\nNORMAL:普通消息,\nFIFO:顺序消息,\nDELAY:延时消息,\nTRANSACTION:事务消息",
+          "document": "<p>主题类型<br>NORMAL:普通消息,<br>FIFO:顺序消息,<br>DELAY:延时消息,<br>TRANSACTION:事务消息</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "TopicType",
@@ -8570,7 +8657,7 @@
         },
         {
           "disabled": false,
-          "document": "队列数量",
+          "document": "<p>队列数量</p>",
           "example": "3",
           "member": "int64",
           "name": "QueueNum",
@@ -8581,7 +8668,7 @@
         },
         {
           "disabled": false,
-          "document": "备注信息",
+          "document": "<p>备注信息</p>",
           "example": "test_remark",
           "member": "string",
           "name": "Remark",
@@ -8592,7 +8679,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的集群id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "rocketmq-7drjznvjqzee",
           "member": "string",
           "name": "ClusterIdV4",
@@ -8603,7 +8690,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_namespace",
           "member": "string",
           "name": "NamespaceV4",
@@ -8614,7 +8701,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的主题名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test_topic_4x",
           "member": "string",
           "name": "TopicV4",
@@ -8625,7 +8712,7 @@
         },
         {
           "disabled": false,
-          "document": "4.x的完整命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>4.x的完整命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MQ_INST_rocketmq7drjznvjqzee_test_namespace",
           "member": "string",
           "name": "FullNamespaceV4",
@@ -8636,7 +8723,7 @@
         },
         {
           "disabled": false,
-          "document": "消息保留时长",
+          "document": "<p>消息保留时长</p>",
           "example": "72",
           "member": "int64",
           "name": "MsgTTL",
@@ -8647,7 +8734,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的标签列表",
+          "document": "<p>绑定的标签列表</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagList",
@@ -8655,6 +8742,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LITE 类型 Topic 专用：是否开启自动过期删除</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoExpireDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>LITE 类型 Topic 专用：自动过期时间</p><p>单位：分钟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "AutoExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

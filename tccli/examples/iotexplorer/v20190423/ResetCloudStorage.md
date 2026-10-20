@@ -6,15 +6,16 @@ Input:
 
 ```
 tccli iotexplorer ResetCloudStorage --cli-unfold-argument  \
-    --DeviceName event_36502632_1 \
-    --ProductId H541SOP191
+    --ProductId DLLNMAZ*** \
+    --DeviceName t01 \
+    --ChannelId 3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "5c767a00-5528-47a1-85fd-c71b3987ae6b"
     }
 }
 ```

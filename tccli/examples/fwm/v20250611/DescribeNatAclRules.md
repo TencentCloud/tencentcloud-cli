@@ -43,7 +43,9 @@ Output:
                 "SourceType": "net",
                 "TargetContent": "0.0.0.0/0",
                 "TargetType": "net",
-                "UpdateTime": "2026-04-07 18:15:05"
+                "UpdateTime": "2026-04-07 18:15:05",
+                "HitCount": 1548,
+                "LastHitTime": "2026-09-18 09:14:38"
             }
         ],
         "TotalCount": 1

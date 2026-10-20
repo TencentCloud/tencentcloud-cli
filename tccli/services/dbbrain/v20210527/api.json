@@ -210,11 +210,25 @@
       "output": "DescribeAuditLogFilesResponse",
       "status": "online"
     },
+    "DescribeBlockingLogs": {
+      "document": "查询指定实例在时间窗口内的阻塞日志扁平明细列表，不建阻塞树。每一条Item对应一次blocked_process_report（一条blocker→blocked边）在某一次monitorLoop内被lock monitor捕获的瞬时数据。支持按ReportTime / DurationMs / BlockedWaitTimeMs / BlockingWaitTimeMs升降序排序，并支持根因、数据库名、头SQL / 被阻塞SQL MD5、会话ID、登录名、客户端主机 / 应用、被阻塞锁模式、等待时长范围过滤与分页。适合普通表格展示与二次过滤；若需查看某个采集点的完整链路拓扑，请透传返回的MonitorLoop调用DescribeBlockingLockTree。注意：同一blocker→blocked会话对跨monitorLoop连续采集场景下会产生多条明细行，若需统计发生多少次阻塞请按(BlockingSessionId, BlockedSessionId, BlockedWaitResource)自行去重。时间字段按服务端时区UTC+8解析，建议单次查询跨度≤7天。",
+      "input": "DescribeBlockingLogsRequest",
+      "name": "查询SQL Server阻塞日志扁平明细列表",
+      "output": "DescribeBlockingLogsResponse",
+      "status": "online"
+    },
     "DescribeDBAuditLogTopSqls": {
       "document": "按照Sql模板+schema的聚合方式，统计排序指定时间段内的top慢sql。",
       "input": "DescribeDBAuditLogTopSqlsRequest",
       "name": "获取审计日志TOP SQL模板列表",
       "output": "DescribeDBAuditLogTopSqlsResponse",
+      "status": "online"
+    },
+    "DescribeDBAuditLogs": {
+      "document": "查询指定实例在时间窗口内的审计日志明细，支持按 SQL 类型、执行耗时、错误码、关键词等多条件过滤。当前仅支持 dcdb、mariadb 产品（cdb、cynosdb 已切至中台）。注意 Filter.MultiSql 与 Filter.ExcludeMultiSql 需以 JSON 字符串形式传递二维数组内容，例如 [[\"a\",\"b\"]] 表示 (a OR b)，服务端会自动解析。",
+      "input": "DescribeDBAuditLogsRequest",
+      "name": "获取数据库审计日志",
+      "output": "DescribeDBAuditLogsResponse",
       "status": "online"
     },
     "DescribeDBAutonomyAction": {
@@ -299,6 +313,13 @@
       "input": "DescribeDatabaseAutonomyStatusRequest",
       "name": "查询数据库自治功能状态",
       "output": "DescribeDatabaseAutonomyStatusResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseObjectV2": {
+      "document": "查询指定 SELECT SQL 在实例上的执行计划，常用于慢 SQL 分析、SQL 优化等场景。仅支持 SELECT 类语句",
+      "input": "DescribeDatabaseObjectV2Request",
+      "name": "查询数据库表信息V2",
+      "output": "DescribeDatabaseObjectV2Response",
       "status": "online"
     },
     "DescribeDeadLockLogs": {
@@ -983,6 +1004,302 @@
       ],
       "usage": "in"
     },
+    "AuditDBLogItem": {
+      "document": "DB 层审计日志单条明细。字段由 DruidCommonUtil#changeLogsTdsqlDB 和 BusinessCodeUtils 固定输出。LogType=All 时额外追加 FlowTime。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行时间点（格式化字符串，yyyy-MM-dd HH:mm:ss）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2024-10-10 10:00:00",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdsqlxrdaw-xawf",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "AffectRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "CheckRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 耗时（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21",
+          "member": "int64",
+          "name": "CpuTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端 Set Host（源字段 dbHost）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "299",
+          "member": "string",
+          "name": "SetHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行所在的数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1232",
+          "member": "string",
+          "name": "DBName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行返回的错误码，0 表示成功。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "string",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行耗时（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "ExecTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端来源 IP。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21.4.5.1",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Set 名称（源字段 instanceId）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdsqldawfw-fawfaw",
+          "member": "string",
+          "name": "SetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IO 等待时间（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "231",
+          "member": "int64",
+          "name": "IoWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>锁等待时间（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "122",
+          "member": "int64",
+          "name": "LockWaitTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间（纳秒级时间戳）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2345432",
+          "member": "int64",
+          "name": "SqlStartTimeNs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询 ID（用于关联查询）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "121",
+          "member": "string",
+          "name": "QueryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询序号（同一事务内 SQL 的序列号）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "121",
+          "member": "int64",
+          "name": "QueryNo",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回行数（扫描结果集行数）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "SentRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行的 SQL 语句原文。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select * from iordwe;",
+          "member": "string",
+          "name": "Sql",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 模板 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1023432321",
+          "member": "string",
+          "name": "SqlTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 类型（如 Select、Insert、Update、Delete 等）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Select",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>涉及的表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "iordwe",
+          "member": "string",
+          "name": "Tables",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>线程 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "ThreadId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间（毫秒级时间戳）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10234323211",
+          "member": "int64",
+          "name": "SqlStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事务存活时间（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10234323211",
+          "member": "int64",
+          "name": "TrxLivingTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 SQL 的数据库用户名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>事务 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1011",
+          "member": "string",
+          "name": "TrxId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部 XID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1422",
+          "member": "string",
+          "name": "InternalXId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务码（由业务侧 SQL 注释中 i/o/p 等 KV 提取）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关流转耗时（毫秒），仅 LogType=All 时由 Gateway 日志关联后返回；LogType=DB 时该字段不下发。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2364",
+          "member": "int64",
+          "name": "FlowTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AuditInstance": {
       "document": "实例详细信息",
       "members": [
@@ -1355,6 +1672,529 @@
       ],
       "usage": "in"
     },
+    "AuditLogQueryFilter": {
+      "document": "审计日志查询过滤条件集合。所有字段均可选。注意：MultiSql 、 ExcludeMultiSql 以 JSON 字符串承载二维数组（云 API 平台不支持二维数组），示例：[[a,b]] 表示 (a OR b)。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SQL 类型列表，取值如 SELECT、INSERT、UPDATE、DELETE 等。</p>",
+          "example": "[\"SELECT\"]",
+          "member": "string",
+          "name": "SqlType",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行耗时范围（毫秒），长度为 2 的数组：[最小值, 最大值]。</p>",
+          "example": "[12121]",
+          "member": "int64",
+          "name": "ExecTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IO 等待耗时范围（毫秒），长度为 2 的数组。</p>",
+          "example": "[122]",
+          "member": "int64",
+          "name": "IoWaitTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 耗时范围（毫秒），长度为 2 的数组。</p>",
+          "example": "[112]",
+          "member": "int64",
+          "name": "CpuTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>锁等待耗时范围（毫秒），长度为 2 的数组。</p>",
+          "example": "[234]",
+          "member": "int64",
+          "name": "LockWaitTime",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行错误码，例如 0 表示成功。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ErrCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "Wrong",
+          "member": "string",
+          "name": "ErrInfo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名列表。</p>",
+          "example": "[\"information_schema\"]",
+          "member": "string",
+          "name": "DBName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户名列表。</p>",
+          "example": "[\"shine\"]",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源 IP 列表。</p>",
+          "example": "[\"9.130.154.56\"]",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>线程 ID 列表。</p>",
+          "example": "[\"728799049\"]",
+          "member": "string",
+          "name": "ThreadId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代理节点 Host 列表。</p>",
+          "example": "[\"30.122.175.73:24717\"]",
+          "member": "string",
+          "name": "ProxyHostList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端 Set Host 列表。</p>",
+          "example": "[\"12.23.1.2\"]",
+          "member": "string",
+          "name": "SetHostList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端 Set ID 列表。</p>",
+          "example": "[\"12\"]",
+          "member": "string",
+          "name": "SetIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多 SQL 关键词条件，JSON 字符串，内部为二维数组：第一级为 AND，第二级为 OR。注意云 API 平台不支持二维数组，此处用字符串承载，服务端自动解析。</p>",
+          "example": "[[\"show\"], [\"tables\"]]",
+          "member": "string",
+          "name": "MultiSql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除的多 SQL 关键词条件，JSON 字符串，结构同 MultiSql。</p>",
+          "example": "[\"1231\"]",
+          "member": "string",
+          "name": "ExcludeMultiSql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 模板 ID。</p>",
+          "example": "-89754391074401398071",
+          "member": "string",
+          "name": "SqlTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间，示例：2026-10-10 11:05:06.002211</p><p>参数格式：YYYY-MM-DD hh:mm:ss.SSSSSS</p>",
+          "example": "2026-10-10 18:18:22.222233",
+          "member": "string",
+          "name": "SqlStartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询 ID，关联查询时使用（LogType=All 时必填）。</p>",
+          "example": "11",
+          "member": "string",
+          "name": "QueryId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditProxyLogItem": {
+      "document": "Proxy 层审计日志单条明细。字段由 DruidCommonUtil#changeLogsTdsqlProxy 和 BusinessCodeUtils 固定输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行时间点（格式化字符串，yyyy-MM-dd HH:mm:ss）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-10 19:21:45",
+          "member": "string",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID（dcdb/mariadb 集群标识，与 InstanceId 相同）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tdsqlshard-garh4omb",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AffectRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动提交。1 表示开启，0 表示关闭。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Autocommit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MySQL 网络协议命令类型（如 COM_QUERY、COM_CONNECT 等）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "COM_QUERY",
+          "member": "string",
+          "name": "ComType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>新建连接耗时。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnTc",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端 DB 实例地址（多个用英文逗号分隔）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.52.172.35:4222",
+          "member": "string",
+          "name": "DBHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行所在的数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "information_schema",
+          "member": "string",
+          "name": "DBName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行返回的错误码，0 表示成功。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1044",
+          "member": "string",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Access denied for user 'shine'@'%' to database 'test'",
+          "member": "string",
+          "name": "ErrInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 执行耗时（微秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExecTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求结束后仍占用的连接数（非事务请求通常为 0）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "HoldConns",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端来源 IP。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.131.27.125",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启全局一致性读（0 否、1 是）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Mc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间（微秒精度中的微秒部分）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45876",
+          "member": "int64",
+          "name": "SqlStartTimeUs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次请求新建的连接数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "NewConnNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 代理节点地址。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.52.172.35:24221",
+          "member": "string",
+          "name": "ProxyHost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12342",
+          "member": "string",
+          "name": "ProxyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询 ID（用于关联查询）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4568366-1791631301-1",
+          "member": "string",
+          "name": "QueryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回行数（扫描结果集行数）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "108",
+          "member": "int64",
+          "name": "SentRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为 Proxy 改写后的查询：0 原始查询，1 改写后查询。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Splited",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行的 SQL 语句原文。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SELECT @@max_allowed_packet",
+          "member": "string",
+          "name": "Sql",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select table_name from information_schema.tables where table_schema = ? and table_type = ? and table_name like ? limit ? offset ?",
+          "member": "string",
+          "name": "SqlTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 模板 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "string",
+          "name": "SqlTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 类型（如 Select、Insert、Create、Login、Set 等）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Show",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>涉及的表（多表以英文逗号分隔）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "information_schema.tables",
+          "member": "string",
+          "name": "Tables",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>线程 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1310703804",
+          "member": "string",
+          "name": "ThreadId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间（毫秒级时间戳）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1791631305045",
+          "member": "int64",
+          "name": "SqlStartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行 SQL 的数据库用户名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "shine",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户端连接的 HostPort。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "string",
+          "name": "HostPort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 节点处理线程 ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60224",
+          "member": "string",
+          "name": "ProxyThread",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>后端 DB Host 数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "DbHostNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务码（由业务侧 SQL 注释中 i/o/p 等 KV 提取）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "i=121ea724,o=100047808302,p=dmc",
+          "member": "string",
+          "name": "BusinessCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务标签（根据业务码后置补齐）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101",
+          "member": "string",
+          "name": "BusinessTag",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AutonomyActionVo": {
       "document": "redis自治事件任务详情",
       "members": [
@@ -1609,6 +2449,412 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BlockingLogItem": {
+      "document": "阻塞日志扁平明细行：一次blocked_process_report（blocker→blocked边）在某一次monitorLoop内被lock monitor捕获的瞬时数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本条明细行上报时间（事件时间，__time；时区UTC+8），格式：yyyy-MM-dd HH:mm:ss。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 19:37:44",
+          "member": "string",
+          "name": "ReportTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控轮次ID（同一实例内唯一标识一次采集快照，可透传至DescribeBlockingLockTree下钻查看完整阻塞树）。文本承载数值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "451059",
+          "member": "string",
+          "name": "MonitorLoop",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞方的等待时长（毫秒）。来源：Kafka顶层Fields.duration÷1000（微秒→毫秒），来自SQL Server内核XEvent事件的duration字段。与BlockedWaitTimeMs来源不同但通常非常接近（非严格相等，两者为同一事件的两个独立快照）；仅为OrderBy=durationMs排序别名保留。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "405164",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞发生所在的数据库名称。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_lock",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞发生所在的数据库 ID（Fields.database_id，对应 SQL Server sys.databases.database_id）。可配合 DatabaseName 使用：ID 稳定、Name 易读；Name 在重命名场景下会变化，ID 则不会。采样为空时该字段不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17",
+          "member": "int64",
+          "name": "DatabaseId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞锁资源归属的对象 ID（Fields.object_id，对应 SQL Server sys.objects.object_id）。标识具体的表/视图/存储过程等用户对象；可结合 sys.objects 元数据查询对象名。采样为空时该字段不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "254",
+          "member": "int64",
+          "name": "ObjectId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞锁资源归属的索引 ID（Fields.index_id，对应 SQL Server sys.indexes.index_id）。常见取值：0=堆（无聚集索引）、1=聚集索引、&gt;1=非聚集索引；&gt;250 通常为系统内部索引（如全文/XML/空间索引），诊断时按&quot;是否为用户索引&quot;判断即可。采样为空时该字段不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "256",
+          "member": "int64",
+          "name": "IndexId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因分类（与枚举BlockingRootCause一一对应）。取值：C1_LONG_QUERY=长查询正常运行阻塞；C2_SLEEPING_UNCOMMITTED=休眠会话且存在未提交事务；C3_CLIENT_NOT_FETCHING=客户端未取完结果行；C4_APP_DEADLOCK=应用层分布式死锁；C5_ROLLBACK=会话正在rollback；C6_ORPHAN_TRANSACTION=孤立事务；UNKNOWN=未识别。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C4_APP_DEADLOCK",
+          "member": "string",
+          "name": "RootCause",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因分类的可读中文描述（服务端已完成中文化，前端可直接展示；与RootCause代号一一对应，例如C1_LONG_QUERY→&quot;长查询正常运行阻塞，考虑优化SQL/索引&quot;，未识别或空值统一返回&quot;未识别&quot;）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "应用层分布式死锁，检查同一进程内的多连接协作模式",
+          "member": "string",
+          "name": "RootCauseDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话 ID（对应 SQL Server sys.dm_exec_sessions.session_id，即 SPID）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "79",
+          "member": "int64",
+          "name": "BlockingSessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话数据库用户。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_g",
+          "member": "string",
+          "name": "BlockingLoginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话客户端主机。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VM-0-7-tencentos",
+          "member": "string",
+          "name": "BlockingHostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话客户端应用名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "BlockingClientApp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话运行时状态（SQL Server sys.dm_exec_sessions.status文本），常见取值：running / sleeping / suspended / background。sleeping+trancount&gt;0是C2_SLEEPING_UNCOMMITTED（休眠会话持未提交事务）的直接证据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "runnable",
+          "member": "string",
+          "name": "BlockingStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话事务隔离级别（SQL Server原生取值：read uncommitted / read committed / repeatable read / serializable / snapshot）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "serializable (4)",
+          "member": "string",
+          "name": "BlockingIsolationLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话当前显式事务名（XEvent transactionname，如user_transaction / implicit_transaction）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "daw",
+          "member": "string",
+          "name": "BlockingTransactionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话当前显式事务嵌套层数（XEvent trancount）。&gt;0表示持有显式事务；与BlockingStatus=sleeping组合是C2_SLEEPING_UNCOMMITTED（休眠会话持未提交事务）的直接证据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "BlockingTranCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话显式事务BEGIN TRAN时刻（XEvent lasttranstarted，SQL Server服务端本地时区的ISO 8601字符串，无时区后缀）。该字段代表事务持锁开始时刻：ReportTime-BlockingLastTranStarted≈事务持锁时长，用于C1_LONG_QUERY / C6_ORPHAN_TRANSACTION根因复核；在多语句事务场景下比lastbatchstarted更稳定（不会被每个新batch刷新）。值为空表示XML未提供该属性（blocking-process侧常见）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-21 22:14:13",
+          "member": "string",
+          "name": "BlockingLastTranStarted",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话正在执行的SQL原文（对应DBCC INPUTBUFFER返回内容，单条最长16KB，超长截断）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链2A */ WAITFOR DELAY '01:00:00'",
+          "member": "string",
+          "name": "BlockingInputBuffer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞SQL归一化模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链?B */ UPDATE DBO.T_KEY SET V=? WHERE ID=?",
+          "member": "string",
+          "name": "BlockingSqlTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞SQL模板MD5。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "76726ca5d47c99696d3c7021eb467dd4",
+          "member": "string",
+          "name": "BlockingSqlMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话持有或请求的锁模式（SQL Server原生lock_mode枚举；blocker通常不处于等锁状态，该字段多为空）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "X",
+          "member": "string",
+          "name": "BlockingLockMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话自身的等待时长（毫秒）。多数场景为0。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "399155",
+          "member": "int64",
+          "name": "BlockingWaitTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话 ID（对应 SQL Server sys.dm_exec_sessions.session_id，即 SPID）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "92",
+          "member": "int64",
+          "name": "BlockedSessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话事务ID（SQL Server transaction_id，bigint）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "533097142",
+          "member": "int64",
+          "name": "BlockedTransactionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话等待时长（毫秒）。来源：XML &lt;blocked-process&gt;&lt;process waittime&gt;属性（来自ys.dm_os_waiting_tasks.wait_duration_ms在report生成瞬间的快照）。与DurationMs来源不同但通常非常接近；仅为OrderBy=blockedWaitTimeMs排序别名保留。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "405164",
+          "member": "int64",
+          "name": "BlockedWaitTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话正在等待的锁模式（SQL Server原生lock_mode枚举，常见取值：S、U、X、IS、IU、IX、SIU、SIX、UIX、Sch-S、Sch-M）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Sch-S",
+          "member": "string",
+          "name": "BlockedLockMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话等待资源。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "KEY: 7:72057594054574080 (d08358b1108f)",
+          "member": "string",
+          "name": "BlockedWaitResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话数据库用户。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_g",
+          "member": "string",
+          "name": "BlockedLoginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话客户端主机。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VM-0-7-tencentos",
+          "member": "string",
+          "name": "BlockedHostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话客户端应用名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "BlockedClientApp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话运行时状态（SQL Server sys.dm_exec_sessions.status文本），常见取值：running / sleeping / suspended / background。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "suspended",
+          "member": "string",
+          "name": "BlockedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话事务隔离级别（SQL Server原生取值：read uncommitted / read committed / repeatable read / serializable / snapshot）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "repeatable read (3)",
+          "member": "string",
+          "name": "BlockedIsolationLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话当前显式事务名（XEvent transactionname）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user_transaction",
+          "member": "string",
+          "name": "BlockedTransactionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话当前显式事务嵌套层数（XEvent trancount）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "BlockedTranCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话显式事务BEGIN TRAN时刻（XEvent lasttranstarted，SQL Server服务端本地时区的ISO 8601字符串，无时区后缀）。该字段代表事务开始时刻，在多语句事务场景下比lastbatchstarted更稳定。咨视值1900-01-01T00:00:00表示未知。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19T19:31:16.757",
+          "member": "string",
+          "name": "BlockedLastTranStarted",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话正在执行的SQL原文（对应DBCC INPUTBUFFER返回内容，单条最长16KB，超长截断）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链3C */ UPDATE dbo.t_key SET v=11 WHERE id=10",
+          "member": "string",
+          "name": "BlockedInputBuffer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞SQL归一化模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链?C */ UPDATE DBO.T_KEY SET V=? WHERE ID=?",
+          "member": "string",
+          "name": "BlockedSqlTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞SQL模板MD5。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c7408be2a23aacd53d3e1a9cf53ce075",
+          "member": "string",
+          "name": "BlockedSqlMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞方 blocked_process_report 原始 XML 文本（含完整执行计划、等待链、死锁明细等原始现场；字段体积较大，KB 级起步）。仅当请求参数 WithXml=true 时才返回；默认 false 时该字段省略，不出现在响应体中。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<blocked-process-report monitorLoop=\"8465555\"> <blocked-process>  <process id=\"process81fc16293e\" taskpriority=\"0\" logused=\"0\" waitresource=\"RID: 4:15:911381:45",
+          "member": "string",
+          "name": "BlockedProcessXml",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4279,6 +5525,260 @@
       ],
       "type": "object"
     },
+    "DescribeBlockingLogsRequest": {
+      "document": "DescribeBlockingLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "mssql-15rso1sb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型，固定为sqlserver。</p>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间（服务端时区 UTC+8），格式：yyyy-MM-dd HH:mm:ss。必须在最近 30 天内，否则返回 InvalidParameterValue。</p>",
+          "example": "2026-10-15 21:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间（服务端时区 UTC+8），格式：yyyy-MM-dd HH:mm:ss，需大于 StartTime。单次查询跨度必须 ≤ 1 天（24 小时），否则返回 InvalidParameterValue。大跨度趋势场景请改用 DescribeBlockingTrend。</p>",
+          "example": "2026-10-15 21:15:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因过滤（可选），支持：C1_LONG_QUERY=长事务查询持锁；C2_SLEEP_UNCOMMITTED=sleeping会话持未提交事务；C3_LOCK_ESCALATION=锁升级；C4_HIGH_CONCURRENCY=高并发争用；C5_INDEX_MISS=索引缺失导致大范围锁；C6_ORPHAN_TRAN=孤儿事务。</p>",
+          "example": "C2_SLEEPING_UNCOMMITTED",
+          "member": "string",
+          "name": "RootCause",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头SQL（blocker）MD5过滤（可选）。</p>",
+          "example": "5de54dd3b0ebe66a69262a59721986e3",
+          "member": "string",
+          "name": "BlockingSqlMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞SQL（blocked）MD5过滤（可选）。</p>",
+          "example": "6f89b5ae86f5ccba7252cf7a70697776",
+          "member": "string",
+          "name": "BlockedSqlMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名列表过滤（可选），按阻塞事件所在数据库名过滤；列表内任意匹配即命中，最多50项。多库实例场景下推荐用本字段定位阻塞所在库。</p>",
+          "example": "[\"test_lock\"]",
+          "member": "string",
+          "name": "DatabaseNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话 ID（SPID）列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[170]",
+          "member": "int64",
+          "name": "BlockingSessionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话 ID（SPID）列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[72]",
+          "member": "int64",
+          "name": "BlockedSessionIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞登录名列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"NT SERVICE\\\\SQLAgent$S24\"]",
+          "member": "string",
+          "name": "BlockingLoginNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞登录名列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"report_svc\"]",
+          "member": "string",
+          "name": "BlockedLoginNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞客户端主机列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"TEN-4DUQ5CVE6R\"]",
+          "member": "string",
+          "name": "BlockingHostNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞客户端主机列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"TEN-4DUQ5CVE6R\"]",
+          "member": "string",
+          "name": "BlockedHostNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞客户端应用列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"python-pymssql\"]",
+          "member": "string",
+          "name": "BlockingClientApps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞客户端应用列表过滤（可选），列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"python-pymssql\"]",
+          "member": "string",
+          "name": "BlockedClientApps",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞方等待锁模式列表过滤（可选），SQL Server原生lock_mode枚举，常见取值（非穷尽）：S、U、X、IS、IU、IX、SIU、SIX、UIX、Sch-S、Sch-M；serializable隔离级别下还可能出现RangeS-S / RangeS-U / RangeX-X / RangeI-N系列。列表内任意匹配即命中，最多50项。</p>",
+          "example": "[\"X\"]",
+          "member": "string",
+          "name": "BlockedLockModes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞方等待时长下限（毫秒，含），用于筛选慢阻塞（可选）。</p>",
+          "example": "13356",
+          "member": "int64",
+          "name": "DurationMsMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞方等待时长上限（毫秒，含），用于筛选阻塞时长不超过某值的记录（可选）。</p>",
+          "example": "13356",
+          "member": "int64",
+          "name": "DurationMsMax",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段（可选），支持reportTime（按明细行上报时间，默认）/ durationMs（按链路阻塞时长）/ blockedWaitTimeMs（按被阻塞方等待时长）/ blockingWaitTimeMs（按头阻塞自身等待时长）。</p>",
+          "example": "DurationMs",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向（可选），支持desc（默认，倒序）/ asc（正序）。</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回条数上限，默认20，最大100。</p>",
+          "example": "100000",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认 0。</p>",
+          "example": "18",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回原始 blocked_process_report XML（可选，默认 false 不返回）。该字段体积较大（KB 级起步，含完整执行计划/等待链/死锁明细等原始上下文），常规列表展示不需要，仅在需要查看完整 XML 现场（如线下诊断、离线分析）时将本参数置为 true 按需拉取。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "WithXml",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockingLogsResponse": {
+      "document": "DescribeBlockingLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>满足条件的阻塞明细总条数。</p>",
+          "example": "63",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞明细行列表（按OrderBy / OrderDirection排序）。</p>",
+          "example": "无",
+          "member": "BlockingLogItem",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBAuditLogTopSqlsRequest": {
       "document": "DescribeDBAuditLogTopSqls请求参数结构体",
       "members": [
@@ -4422,6 +5922,172 @@
           "member": "TopSqlTpl",
           "name": "TopSqls",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAuditLogsRequest": {
+      "document": "DescribeDBAuditLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。当前  云 API 仅支持：dcdb、mariadb（cdb、cynosdb 已切至中台）。</p>",
+          "example": "mariadb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间，格式 yyyy-MM-dd HH:mm:ss。</p>",
+          "example": "2026-10-10 18:19:21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，格式 yyyy-MM-dd HH:mm:ss。</p>",
+          "example": "2026-10-10 18:20:21",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID，必填。dcdb、mariadb 场景以实例维度查询审计日志。</p>",
+          "example": "tdsql-1zsrqfdkh4",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>日志类型：Proxy 代理日志，DB 数据库日志，All 全部。</p>",
+          "example": "Proxy",
+          "member": "string",
+          "name": "LogType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段，默认 Timestamp。</p>",
+          "example": "Timestamp",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式：ASC 升序，DESC 降序。默认 DESC。</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认 20，最大 100。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL 开始时间（毫秒级时间戳），根据 QueryId 关联查询时使用。</p>",
+          "example": "123454323",
+          "member": "int64",
+          "name": "SqlStartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志查询过滤条件集合。</p>",
+          "example": "无",
+          "member": "AuditLogQueryFilter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 ID，dcdb 产品以集群维度查询审计日志</p>",
+          "example": "tdsqlshard-garh4omb",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBAuditLogsResponse": {
+      "document": "DescribeDBAuditLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>满足条件的总条数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤后记录数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FilteredRecords",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Proxy 层审计日志列表。LogType=Proxy 或 All 时返回，字段结构参见 AuditProxyLogItem。</p>",
+          "example": "无",
+          "member": "AuditProxyLogItem",
+          "name": "ProxyLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DB 层审计日志列表。LogType=DB 或 All 时返回，字段结构参见 AuditDBLogItem。</p>",
+          "example": "无",
+          "member": "AuditDBLogItem",
+          "name": "DBLogs",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5563,6 +7229,119 @@
       ],
       "type": "object"
     },
+    "DescribeDatabaseObjectV2Request": {
+      "document": "DescribeDatabaseObjectV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型。取值：sqlserver（云数据库 Sqlserver）。</p>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询对象类型。</p><p>枚举值：</p><ul><li>TableDDL： 建表+索引DDL</li><li>TableStatistics： 表空间统计</li></ul>",
+          "example": "TableStatistics",
+          "member": "string",
+          "name": "ObjectType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例 ID。SQLServer: mssql-xxxx。</p>",
+          "example": "mssql-15rso1sb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>库名（catalog）。TableStatistics 时必填；TableDDL 时可选。</p>",
+          "example": "test_object",
+          "member": "string",
+          "name": "TableSchema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>当产品为sqlserver时，表名/视图名，支持 schema.table 格式，未带 schema 默认 dbo</p>",
+          "example": "sales.t_obj_dup",
+          "member": "string",
+          "name": "TableName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseObjectV2Response": {
+      "document": "DescribeDatabaseObjectV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>索引 DDL 列表，每项为一条 CREATE INDEX 语句，无索引时为空数组。</p>",
+          "example": "无",
+          "member": "IndexDDLInfo",
+          "name": "IndexDDLs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>建表 DDL 语句，对象不存在时为空串。</p>",
+          "example": "CREATE TABLE [dbo].[t_big_index] (  [id] INT IDENTITY(1,1) NOT NULL,  [c1] VARCHAR(100) NOT NULL,  CONSTRAINT [PK__t_big_in__3213E83F9B8B29CF] PRIMARY KEY ([id]));",
+          "member": "string",
+          "name": "TableDDL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名。</p>",
+          "example": "t_obj_dup",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>库名。</p>",
+          "example": "test_object",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表空间统计。</p>",
+          "example": "无",
+          "member": "TableStatistics",
+          "name": "TableStatistics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeadLockLogsRequest": {
       "document": "DescribeDeadLockLogs请求参数结构体",
       "members": [
@@ -6621,7 +8400,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID 。",
+          "document": "实例 ID。可通过 [DescribeDiagDBInstances](https://cloud.tencent.com/document/api/1130/57798) 接口获取。",
           "example": "\"crs-2gtest\"",
           "member": "string",
           "name": "InstanceId",
@@ -6666,7 +8445,7 @@
         },
         {
           "disabled": false,
-          "document": "按照某字段排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。",
+          "document": "按照某字段排序。支持值包括：\"AllConn\"，\"ActiveConn\"，\"Ip\"。\n其中：\n\n- AllConn ：表示总连接数（活跃连接 + 非活跃连接）\n- ActiveConn：表示活跃连接数\n- Ip：表示 IP 地址",
           "example": "\"AllConn\"",
           "member": "string",
           "name": "SortBy",
@@ -6675,7 +8454,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方向。支持值包括：\"DESC\"，\"ASC\"。",
+          "document": "排序方向。支持值包括：\"DESC\"，\"ASC\"。\n其中：\n\n- DESC：降序\n- ASC：升序",
           "example": "\"DESC\"",
           "member": "string",
           "name": "OrderDirection",
@@ -9814,6 +11593,32 @@
           "example": "\"V2\"",
           "member": "string",
           "name": "HealthLevelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IndexDDLInfo": {
+      "document": "索引详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>索引名称。</p>",
+          "example": "idx_v",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建索引语句。</p>",
+          "example": "CREATE NONCLUSTERED INDEX [idx_v] ON [dbo].[t_slow] ([v]);",
+          "member": "string",
+          "name": "DDL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -14300,6 +16105,132 @@
           "name": "SeriesData",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TableStatistics": {
+      "document": "表统计信息明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表名。</p>",
+          "example": "t_slow",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Schema 名。</p>",
+          "example": "sales",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>库名（catalog）。</p>",
+          "example": "test_slowlog",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储引擎。</p>",
+          "example": "SqlServer",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据空间。</p><p>单位：MB</p>",
+          "example": "163.38",
+          "member": "float",
+          "name": "DataLength",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引空间。</p><p>单位：MB</p>",
+          "example": "8.72",
+          "member": "float",
+          "name": "IndexLength",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总分配空间。</p><p>单位：MB</p>",
+          "example": "172.2",
+          "member": "float",
+          "name": "TotalLength",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已用空间。</p><p>单位：MB</p>",
+          "example": "172.1",
+          "member": "float",
+          "name": "UsedLength",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片空间。</p><p>单位：MB</p>",
+          "example": "0.1",
+          "member": "float",
+          "name": "DataFree",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>行数。</p>",
+          "example": "500000",
+          "member": "int64",
+          "name": "TableRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片率（%）。</p>",
+          "example": "0.06",
+          "member": "float",
+          "name": "FragRatio",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>物理文件大小。</p><p>单位：MB</p>",
+          "example": "172.2",
+          "member": "float",
+          "name": "PhysicalFileSize",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

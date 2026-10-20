@@ -1667,7 +1667,7 @@
       "status": "online"
     },
     "DescribeCSCPayInfo": {
-      "document": "查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。",
+      "document": "查询当前账号的合并版计费信息，包括订单状态、付费模式以及配额等详细信息。\n\n补充说明：\n1. 请求参数 NeedQuotaUsed 默认为 false，此时不采集配额用量，QuotaList 中的 QuotaUsed 恒为 0；需要展示已用量的调用方显式传 true；\n2. NeedQuotaUsed 为 true 时，若配额用量查询失败，接口仍正常返回订单信息，错误提示保存在 QuotaUsedError 字段，此时 QuotaUsed 恒为 0；\n3. 可通过公共参数 MemberId 查询集团成员的计费信息。",
       "input": "DescribeCSCPayInfoRequest",
       "name": "查询合并版计费信息",
       "output": "DescribeCSCPayInfoResponse",
@@ -14471,6 +14471,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义策略情况下策略的appid</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15282,6 +15292,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测的策略列表</p>",
+          "example": "无",
+          "member": "BaselinePolicyBrief",
+          "name": "PolicyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15605,6 +15625,42 @@
         }
       ],
       "usage": "both"
+    },
+    "BaselinePolicyBrief": {
+      "document": "基线策略简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基线策略 ID。</p>",
+          "example": "1015",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基线策略名称。</p>",
+          "example": "sdfsfsf",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为系统内置策略。true 是，false 否（用户自定义策略）。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSystem",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BaselinePolicySubCategoryConf": {
       "document": "子分类维度的检测项命中配置。",
@@ -40968,7 +41024,26 @@
     },
     "DescribeCSCPayInfoRequest": {
       "document": "DescribeCSCPayInfo请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-14**24\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回配额已使用量。默认为 false：不采集用量，QuotaList 中的 QuotaUsed 恒为 0；需要展示已用量的调用方显式传 true。只关心订单状态、到期时间或配额购买数量的调用方无需传入</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedQuotaUsed",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "DescribeCSCPayInfoResponse": {
@@ -41112,6 +41187,16 @@
           "name": "QuotaList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额用量查询失败提示。仅请求参数 NeedQuotaUsed 为 true 时可能非空：此时订单信息仍正常返回，QuotaList 中的 QuotaUsed 恒为 0；查询正常或未请求用量时为空字符串</p>",
+          "example": "CSPM query err",
+          "member": "string",
+          "name": "QuotaUsedError",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -53690,6 +53775,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -53700,7 +53794,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p>",
-          "example": "953",
+          "example": "1545",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -72887,6 +72981,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>日志审计禁止开通时的详细说明</p>",
+          "example": "数据库版本不支持",
+          "member": "string",
+          "name": "LogDeliveryDisableMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>在线日志的起始时间戳，精确到秒</p>",
           "example": "1773123242",
           "member": "uint64",
@@ -72974,6 +73078,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库版本</p>",
+          "example": "MySQL 8.0",
+          "member": "string",
+          "name": "DbVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -74758,7 +74872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "待处理风险个数",
+          "document": "<p>待处理风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "UnprocessedRisk",
@@ -74768,7 +74882,7 @@
         },
         {
           "disabled": true,
-          "document": "配置风险个数",
+          "document": "<p>配置风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "ConfigurationRisk",
@@ -74778,7 +74892,7 @@
         },
         {
           "disabled": true,
-          "document": "基线风险个数",
+          "document": "<p>基线风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "BaselineDeviation",
@@ -74788,7 +74902,7 @@
         },
         {
           "disabled": true,
-          "document": "泄露风险个数",
+          "document": "<p>泄露风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "LeakDetection",
@@ -74798,7 +74912,7 @@
         },
         {
           "disabled": false,
-          "document": "SQL行为异常风险个数",
+          "document": "<p>SQL行为异常风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "SQLBehaviorAnomaly",
@@ -74808,7 +74922,7 @@
         },
         {
           "disabled": false,
-          "document": "权限异常风险个数",
+          "document": "<p>权限异常风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "PermissionAnomaly",
@@ -74818,7 +74932,7 @@
         },
         {
           "disabled": false,
-          "document": "登录行为异常风险个数",
+          "document": "<p>登录行为异常风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "LoginBehaviorAnomaly",
@@ -74828,7 +74942,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击面风险个数",
+          "document": "<p>攻击面风险个数</p>",
           "example": "0",
           "member": "int64",
           "name": "AttackSurfaceRisk",
@@ -74838,7 +74952,7 @@
         },
         {
           "disabled": false,
-          "document": "账号敏感操作个数",
+          "document": "<p>账号敏感操作个数</p>",
           "example": "0",
           "member": "int64",
           "name": "AccountSensitiveOperation",
@@ -74848,7 +74962,7 @@
         },
         {
           "disabled": false,
-          "document": "待处理告警个数",
+          "document": "<p>待处理告警个数</p>",
           "example": "0",
           "member": "int64",
           "name": "UnprocessedAlarm",
@@ -74858,7 +74972,7 @@
         },
         {
           "disabled": false,
-          "document": "新增事件告警",
+          "document": "<p>新增事件告警</p>",
           "example": "0",
           "member": "int64",
           "name": "NumOfNewAlarmEvent",
@@ -74868,10 +74982,30 @@
         },
         {
           "disabled": false,
-          "document": "新增配置风险",
+          "document": "<p>新增配置风险</p>",
           "example": "0",
           "member": "int64",
           "name": "NumOfNewConfigRisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号风险条数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AccountRisk",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配置风险条数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ConfigRisk",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -76317,6 +76451,16 @@
           "name": "TagItems",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -78465,6 +78609,15 @@
           "name": "By",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -81896,6 +82049,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像关联超级节点数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SuperNodeHostCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -86186,7 +86350,7 @@
         {
           "disabled": false,
           "document": "<p>总数</p>",
-          "example": "1",
+          "example": "3",
           "member": "int64",
           "name": "TotalNum",
           "output_required": true,
@@ -86230,6 +86394,16 @@
           "member": "string",
           "name": "EndTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单类型</p><p>枚举值：</p><ul><li>PURCHASED： 正式订单</li><li>TRIAL： 试用订单</li></ul>",
+          "example": "PURCHASED",
+          "member": "string",
+          "name": "OrderType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -92612,6 +92786,15 @@
           "name": "ConditionMatches",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件操作规则，ContentType=file_operation 时填充（文件路径正则 AND 动作多选或）</p>",
+          "example": "无",
+          "member": "RuleContentFileOperation",
+          "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -98345,33 +98528,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "配额键\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额键</p>",
+          "example": "sv_soccloud_edition_ultimate_hp",
           "member": "string",
           "name": "QuotaKey",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配额总量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额总量</p>",
+          "example": "2",
           "member": "int64",
           "name": "QuotaNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "配额已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>配额已使用量（含共享给其他账号的消耗）。仅请求参数 NeedQuotaUsed 为 true 时采集；未传或为 false 时恒为 0；用量查询失败时恒为 0，错误提示见响应 QuotaUsedError 字段</p>",
+          "example": "0",
           "member": "int64",
           "name": "QuotaUsed",
-          "required": false,
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>赠送配额。仅 CSPM 存在赠送额度，其余计费项为 0</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "QuotaGranted",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -98657,7 +98850,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成员账号Uin",
+          "document": "<p>成员账号Uin</p>",
           "example": "100000001",
           "member": "string",
           "name": "Uin",
@@ -98667,7 +98860,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号名称",
+          "document": "<p>成员账号名称</p>",
           "example": "名称",
           "member": "string",
           "name": "NickName",
@@ -98677,7 +98870,7 @@
         },
         {
           "disabled": false,
-          "document": "部门节点名称，账号所属部门",
+          "document": "<p>部门节点名称，账号所属部门</p>",
           "example": "部门名",
           "member": "string",
           "name": "NodeName",
@@ -98687,7 +98880,7 @@
         },
         {
           "disabled": false,
-          "document": "资产数量",
+          "document": "<p>资产数量</p>",
           "example": "10",
           "member": "int64",
           "name": "AssetCount",
@@ -98697,7 +98890,7 @@
         },
         {
           "disabled": false,
-          "document": "风险数量",
+          "document": "<p>风险数量</p>",
           "example": "10",
           "member": "int64",
           "name": "RiskCount",
@@ -98707,7 +98900,7 @@
         },
         {
           "disabled": false,
-          "document": "攻击数量",
+          "document": "<p>攻击数量</p>",
           "example": "10",
           "member": "int64",
           "name": "AttackCount",
@@ -98717,7 +98910,7 @@
         },
         {
           "disabled": false,
-          "document": "Member/Admin/;成员或者管理员",
+          "document": "<p>Member/Admin/;成员或者管理员</p>",
           "example": "Member",
           "member": "string",
           "name": "Role",
@@ -98727,7 +98920,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号id",
+          "document": "<p>成员账号id</p>",
           "example": "mem-au8xh56",
           "member": "string",
           "name": "MemberId",
@@ -98737,7 +98930,7 @@
         },
         {
           "disabled": false,
-          "document": "成员账号Appid",
+          "document": "<p>成员账号Appid</p>",
           "example": "125000000",
           "member": "string",
           "name": "AppId",
@@ -98747,7 +98940,7 @@
         },
         {
           "disabled": false,
-          "document": "账号加入方式,create/invite",
+          "document": "<p>账号加入方式,create/invite</p>",
           "example": "create",
           "member": "string",
           "name": "JoinType",
@@ -98757,7 +98950,7 @@
         },
         {
           "disabled": false,
-          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "document": "<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>",
           "example": "common",
           "member": "string",
           "name": "CFWProtect",
@@ -98767,7 +98960,7 @@
         },
         {
           "disabled": false,
-          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "document": "<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>",
           "example": "common",
           "member": "string",
           "name": "WAFProtect",
@@ -98777,7 +98970,7 @@
         },
         {
           "disabled": false,
-          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本",
+          "document": "<p>空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本</p>",
           "example": "common",
           "member": "string",
           "name": "CWPProtect",
@@ -98787,7 +98980,7 @@
         },
         {
           "disabled": false,
-          "document": "1启用，0未启用",
+          "document": "<p>1启用，0未启用</p>",
           "example": "1",
           "member": "int64",
           "name": "Enable",
@@ -98797,7 +98990,7 @@
         },
         {
           "disabled": false,
-          "document": "\"Free\"       //免费版  \"Advanced\"   //高级版 \"Enterprise\" //企业版 \"Ultimate\"   //旗舰版",
+          "document": "<p>&quot;Free&quot;       //免费版  &quot;Advanced&quot;   //高级版 &quot;Enterprise&quot; //企业版 &quot;Ultimate&quot;   //旗舰版</p>",
           "example": "Advanced",
           "member": "string",
           "name": "CSIPProtect",
@@ -98807,7 +99000,7 @@
         },
         {
           "disabled": false,
-          "document": "1为配额消耗者",
+          "document": "<p>1为配额消耗者</p>",
           "example": "1",
           "member": "int64",
           "name": "QuotaConsumer",
@@ -98817,7 +99010,7 @@
         },
         {
           "disabled": false,
-          "document": "账户类型，0为腾讯云账户，1为AWS账户",
+          "document": "<p>账户类型，0为腾讯云账户，1为AWS账户</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudType",
@@ -98827,7 +99020,7 @@
         },
         {
           "disabled": false,
-          "document": "0为缺省值，1为10分钟，2为1小时，3为24小时",
+          "document": "<p>0为缺省值，1为10分钟，2为1小时，3为24小时</p>",
           "example": "0",
           "member": "int64",
           "name": "SyncFrequency",
@@ -98837,7 +99030,7 @@
         },
         {
           "disabled": false,
-          "document": "多云账户是否过期",
+          "document": "<p>多云账户是否过期</p>",
           "example": "false",
           "member": "bool",
           "name": "IsExpired",
@@ -98847,8 +99040,8 @@
         },
         {
           "disabled": false,
-          "document": "多云账户 权限列表",
-          "example": "[\"ReadHost\",\"ReadNetwork\"]\"]",
+          "document": "<p>多云账户 权限列表</p>",
+          "example": "[\"ReadHost\",\"ReadNetwork\"]",
           "member": "string",
           "name": "PermissionList",
           "output_required": false,
@@ -98857,8 +99050,8 @@
         },
         {
           "disabled": false,
-          "document": "1",
-          "example": "账户权限类型",
+          "document": "<p>账户权限类型</p><p>枚举值：</p><ul><li>1： 认证类型-Root账号AKSK</li><li>2： 认证类型-子账号AKSK</li><li>3： 认证类型-角色</li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "AuthType",
           "output_required": false,
@@ -98867,7 +99060,7 @@
         },
         {
           "disabled": false,
-          "document": "0 腾讯云集团账户\n1 腾讯云接入账户\n2 非腾讯云",
+          "document": "<p>0 腾讯云集团账户<br>1 腾讯云接入账户<br>2 非腾讯云</p>",
           "example": "0",
           "member": "int64",
           "name": "TcMemberType",
@@ -98877,7 +99070,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号数量",
+          "document": "<p>子账号数量</p>",
           "example": "5",
           "member": "int64",
           "name": "SubUserCount",
@@ -98887,12 +99080,32 @@
         },
         {
           "disabled": false,
-          "document": "加入方式详细信息",
+          "document": "<p>加入方式详细信息</p>",
           "example": "密钥托管 子账号:100001",
           "member": "string",
           "name": "JoinTypeInfo",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被共享模块列表</p><p>枚举值：</p><ul><li>AKSK： 云API异常监测</li><li>SDL： 日志分析</li><li>CSPM： 云安全态势管理</li><li>CWP： 主机安全</li><li>COS_AUDIT： COS审计</li><li>IMAGE_SCAN： 容器镜像扫描</li><li>SKILL_SCAN： Skill安全检测</li><li>SKILL_SCAN_POST： Skill安全检测(后付费)</li><li>DSPM： 数据安全态势管理</li></ul><p>默认值：[]</p>",
+          "example": "[\"AKSK\"]",
+          "member": "string",
+          "name": "SharedModules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全分</p>",
+          "example": "99",
+          "member": "int64",
+          "name": "SecurityScore",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -101703,6 +101916,56 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleContentFileOperation": {
+      "document": "EDR文件操作规则（ContentType=file_operation，高危命令聚合降噪新增）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前进程命令行信息（可选，未配置时该维度不参与匹配）</p>",
+          "example": "无",
+          "member": "RuleContentProcessInfo",
+          "name": "Process",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>父进程命令行信息（可选，未配置时该维度不参与匹配）</p>",
+          "example": "无",
+          "member": "RuleContentProcessInfo",
+          "name": "ParentProcess",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标文件路径（正则）</p>",
+          "example": "/usr/bin/b4f3a1c3",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作列表（多选为或关系）：read-读 write-写 rename-重命名 delete-删除 truncate-清空内容</p>",
+          "example": "[\"write\"]",
+          "member": "string",
+          "name": "FileActions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -109450,7 +109713,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "APPID",
+          "document": "<p>APPID</p>",
           "example": "1300276595",
           "member": "int64",
           "name": "AppID",
@@ -109460,7 +109723,7 @@
         },
         {
           "disabled": false,
-          "document": "UIN",
+          "document": "<p>UIN</p>",
           "example": "700001201675",
           "member": "string",
           "name": "Uin",
@@ -109470,7 +109733,7 @@
         },
         {
           "disabled": false,
-          "document": "账号昵称",
+          "document": "<p>账号昵称</p>",
           "example": "腾讯集团",
           "member": "string",
           "name": "NickName",
@@ -109480,7 +109743,7 @@
         },
         {
           "disabled": false,
-          "document": "账号下数据库资产数量",
+          "document": "<p>账号下数据库资产数量</p>",
           "example": "5",
           "member": "int64",
           "name": "AssetNum",
@@ -109490,7 +109753,7 @@
         },
         {
           "disabled": false,
-          "document": "账号下开启安全分析数据库资产数量",
+          "document": "<p>账号下开启安全分析数据库资产数量</p>",
           "example": "2",
           "member": "int64",
           "name": "UsedAssetNum",
@@ -109500,7 +109763,7 @@
         },
         {
           "disabled": false,
-          "document": "是否被共享，1-被共享，2-未被共享",
+          "document": "<p>是否被共享，1-被共享，2-未被共享</p>",
           "example": "0",
           "member": "int64",
           "name": "IsShared",
@@ -109510,7 +109773,7 @@
         },
         {
           "disabled": false,
-          "document": "是否单独购买，1-单独购买，2-未单独购买",
+          "document": "<p>是否单独购买，1-单独购买，2-未单独购买</p>",
           "example": "1",
           "member": "int64",
           "name": "IsSelfBuy",
@@ -109520,7 +109783,7 @@
         },
         {
           "disabled": false,
-          "document": "配额来源账号",
+          "document": "<p>配额来源账号</p>",
           "example": "0",
           "member": "int64",
           "name": "ShareFromAppID",
@@ -109530,7 +109793,7 @@
         },
         {
           "disabled": false,
-          "document": "云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）",
+          "document": "<p>云类型（0：腾讯云 1:亚马逊云 2:微软云 3:谷歌云 4:阿里云 5:华为云）</p>",
           "example": "0",
           "member": "int64",
           "name": "CloudType",
@@ -109540,7 +109803,7 @@
         },
         {
           "disabled": false,
-          "document": "账号是否隔离中",
+          "document": "<p>账号是否隔离中</p>",
           "example": "true",
           "member": "bool",
           "name": "IsIsolating",
@@ -109550,12 +109813,32 @@
         },
         {
           "disabled": false,
-          "document": "是否正在数据清理",
+          "document": "<p>是否正在数据清理</p>",
           "example": "true",
           "member": "bool",
           "name": "IsDataCleaning",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号角色（member-普通成员/admin-管理员/delegatedAdmin-委派管理员），非集团账号为空</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属部门名称，未分配部门或非集团账号为空</p>",
+          "example": "Root",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -113792,6 +114075,17 @@
           "example": "[\"PENDING\"]",
           "member": "string",
           "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选项</p>",
+          "example": "[\"FIRST\"]",
+          "member": "string",
+          "name": "Options",
           "output_required": false,
           "required": false,
           "type": "list",

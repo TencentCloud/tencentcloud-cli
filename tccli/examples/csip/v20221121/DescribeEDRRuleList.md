@@ -14,47 +14,45 @@ Output:
         "AttackStageCounts": [
             {
                 "AttackStage": "TA0002",
-                "Count": 218
+                "Count": 310
             }
         ],
-        "DetectTypeCounts": [
-            {
-                "Count": 688,
-                "DetectType": 0
-            }
-        ],
+        "DetectTypeCounts": [],
         "List": [
             {
-                "Action": 0,
-                "AttackStage": "TA0009",
+                "Action": 2,
+                "AppID": 260199983,
+                "AttackStage": "TA0002",
                 "CWPScope": 1,
+                "ClusterIDs": [],
+                "ConditionMatches": [],
                 "Confidence": 1,
-                "ContentType": "cmdline",
-                "CreateTime": "2026-03-02T15:11:09+08:00",
-                "Description": "检测yapi应用中使用cat、head、tail、tac、less、more、vi、vim、nano、getent、vipw、vigr等命令查看/etc/passwd、/etc/shadow等/etc敏感文件或authorized_keys、bash_history等用户认证文件的行为",
+                "ContentType": "dns",
+                "CreateTime": "2026-04-05 15:35:33",
+                "Description": "腾讯云恶意域名库",
                 "DetectMode": 0,
-                "DetectType": 0,
+                "DetectType": 1,
+                "ExcludeClusterIDs": [],
                 "ExcludeImageIDs": [],
+                "ExcludeInstanceIDs": [],
                 "ExcludeQUUIDS": [],
                 "ImageIDs": [],
                 "ImageNamesRegex": "",
-                "Level": 2,
-                "ModifyTime": "2026-03-02T15:11:09+08:00",
-                "Name": "yapi应用查看敏感文件",
+                "InstanceIDs": [],
+                "Level": 1,
+                "ModifyTime": "2026-08-11 22:38:07",
+                "Name": "恶意请求",
                 "QUUIDS": [],
-                "RuleID": "383",
+                "RuleID": "sys_malicious_request",
                 "RuleType": 0,
                 "Status": 0,
-                "SupportBlock": 0,
+                "SupportBlock": 1,
                 "TCSSScope": 1,
-                "ClusterIDs": [
-                    "cls-8c5v0u8k"
-                ],
-                "ExcludeClusterIDs": []
+                "TagItems": []
             }
         ],
-        "TotalCount": 688,
-        "RequestId": "de366fc1-5524-4d68-a1fa-ab3ecebb6c02"
+        "TotalCount": 1545,
+        "RequestId": "43758f26-985a-4f9f-abd5-8b6aa5dae30e"
     }
 }
 ```

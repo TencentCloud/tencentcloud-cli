@@ -9899,6 +9899,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂靠的宿主集群</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-owner",
+          "member": "string",
+          "name": "ClusterGroupSerialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

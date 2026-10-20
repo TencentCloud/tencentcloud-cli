@@ -23,7 +23,8 @@ tccli ess CreateDraftContractByPromptsTask --cli-unfold-argument  \
  \
     --ReferenceTemplateId yD3azUUck****n**UEFfm*Wv6Fm7tFzY \
     --RequirementFileIds yD3aWUUc*********u5ahO3EgYkkoe1E \
-    --ContractLanguage zh
+    --ContractLanguage zh \
+    --ReviewTaskId yDt*lUUc***qqbuz***RX5**R*QbvrcD
 ```
 
 Output: 

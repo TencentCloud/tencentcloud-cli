@@ -152,6 +152,20 @@
         "title": "删除 Deployment"
       }
     ],
+    "DeletePreCacheImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePreCacheImage\n<公共请求参数>\n\n{\n    \"Image\": \"ccr.ccs.tencentyun.com/ags.example/nginx:v1\",\n    \"ImageDigest\": \"sha256:d9c56e383f4711392************************41feebfecf42a8755f916bb\",\n    \"ImageRegistryType\": \"personal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aedbad4c-ede8-46f9-bb02-c693c6a2d6dc\"\n    }\n}",
+        "title": "按镜像三元组卸载镜像预热"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePreCacheImage\n<公共请求参数>\n\n{\n    \"PreCacheImageId\": \"pcimg-7k******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd94bec3-6f82-4338-b650-bde4fda32dfd\"\n    }\n}",
+        "title": "按预热镜像ID卸载镜像预热"
+      }
+    ],
     "DeleteRegistry": [
       {
         "document": "响应只带 RequestId。",
@@ -236,6 +250,32 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"SpaceId\": \"space-198577ac-324e-4e1b-bfda-f75a2365c9df\",\n    \"UserId\": \"customer-32874234\",\n    \"SessionId\": \"9e527749-0313-4871-85dc-4b9055561c06\"\n}",
         "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Actions\": {\n                    \"StateDelta\": \"{\\\"currentTask\\\":\\\"refund_status_lookup\\\",\\\"user:lastChannel\\\":\\\"web\\\"}\"\n                },\n                \"Author\": \"user\",\n                \"Content\": {\n                    \"Parts\": [\n                        {\n                            \"FunctionCall\": \"null\",\n                            \"FunctionResponse\": \"null\",\n                            \"Text\": \"Please help me check the refund status for my order.\"\n                        }\n                    ],\n                    \"Role\": \"user\"\n                },\n                \"EventId\": \"event-refund-status-20260817-0001\",\n                \"Extensions\": \"{\\\"Source\\\":\\\"customer-portal\\\"}\",\n                \"InvocationId\": \"invocation-order-assistance-20260817-0001\",\n                \"Metadata\": \"{\\\"Channel\\\":\\\"web\\\",\\\"TurnComplete\\\":true}\",\n                \"Timestamp\": \"2026-08-17T09:28:54.216Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"909e1ece-2cea-426f-ad67-d98b0393c676\"\n    }\n}",
         "title": "查询事件列表"
+      }
+    ],
+    "DescribePreCacheImageList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageList\n<公共请求参数>\n\n{\n    \"NeedTotalCount\": false,\n    \"NextToken\": \"eyJ2IjoxLCJjIjp7IkNyZWF0ZWRBdCI6IjIwMjYtMDktMTBUMTc6NDk6MDcrMDg6MDAiLCJJRCI6MTk5f*********************************************************************************kxMTVhMWUzOTIiLCJlIjoxNzg5MjE0Njc2fQ.eQLovNAMZZnzPhegzuFjUM6VWhI2Sm-iOjbqtNq5b0M\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"eyJ***********************************************************************************************************************************************************************************************************************************************\",\n        \"PreCacheImageList\": [\n            {\n                \"CachedImageSizeBytes\": 71188480,\n                \"CreateTime\": \"2026-09-11T19:41:18+08:00\",\n                \"Image\": \"***.ccs.tencentyun.c***************************:***********\",\n                \"ImageDigest\": \"sha256:****************************************************************\",\n                \"ImageRegistryType\": \"personal\",\n                \"PreCacheImageId\": \"pcimg-jt******\",\n                \"SourceType\": \"AUTO\",\n                \"Status\": \"DELETED\"\n            }\n        ],\n        \"RequestId\": \"5581962d-4948-45a3-a3c1-16a5ac776798\"\n    }\n}",
+        "title": "不显示列表总数"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"DELETED\"\n            ]\n        }\n    ],\n    \"NeedTotalCount\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"\",\n        \"PreCacheImageList\": [\n            {\n                \"CachedImageSizeBytes\": 71188480,\n                \"CreateTime\": \"2026-09-11T19:41:18+08:00\",\n                \"Image\": \"***.ccs.tencentyun.c***************************:***********\",\n                \"ImageDigest\": \"sha256:****************************************************************\",\n                \"ImageRegistryType\": \"personal\",\n                \"PreCacheImageId\": \"pcimg-jt******\",\n                \"SourceType\": \"AUTO\",\n                \"Status\": \"DELETED\"\n            }\n        ],\n        \"TotalCount\": 12,\n        \"RequestId\": \"34a02fac-3510-4287-9d8b-39dcf9716fa9\"\n    }\n}",
+        "title": "使用FIlters过滤被卸载的预热镜像"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageList\n<公共请求参数>\n\n{\n    \"MaxResults\": 30,\n    \"NextToken\": \"eyJ2IjoxLCJjIjp7IkNyZWF0ZWRBdCI6IjIwMjYtMDktMTBUMTc6NDk6MDcrMDg6MDAiLCJJRCI6MTk5fSwiZiI6Ijk0ZjNkNmExYmM3MTBkNjFlZjE0NWQ0N2M1MGVlNDUzNTgwYTlkM2Y5NzFmODlhMzE2NDQ2YzkxMTVhMWUzOTIiLCJlIjoxNzg5MjE0Njc2fQ.eQLovNAMZZnzPhegzuFjUM6VWhI2Sm-iOjbqtNq5b0M\",\n    \"NeedTotalCount\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"ey************************************************************************************************************************************************************************************************************************************************\",\n        \"PreCacheImageList\": [\n            {\n                \"CachedImageSizeBytes\": 23498752,\n                \"CreateTime\": \"2026-09-10T17:49:06+08:00\",\n                \"Image\": \"***.ccs.tencentyun.com/***********/**************:***********************\",\n                \"ImageDigest\": \"sha256:fa48016d02709c6cc************************a0b3a4bd89c993eff799d3b\",\n                \"ImageRegistryType\": \"personal\",\n                \"PreCacheImageId\": \"pcimg-38******\",\n                \"SourceType\": \"EXPLICIT\",\n                \"Status\": \"SUCCESS\"\n            }\n        ],\n        \"RequestId\": \"505d7fed-369a-4f99-a53f-5e7212a569d7\"\n    }\n}",
+        "title": "使用NextToken进行翻页"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageList\n<公共请求参数>\n\n{\n    \"NeedTotalCount\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"NextToken\": \"ey**********************************************************************************************************************************************************************************************************************************************************\",\n        \"PreCacheImageList\": [\n            {\n                \"CachedImageSizeBytes\": 71188480,\n                \"CreateTime\": \"2026-09-11T19:41:18+08:00\",\n                \"Image\": \"ccr.ccs.tencentyun.c********************che-e2e:template-v1\",\n                \"ImageDigest\": \"sha256:d7796f8d4270158b2************************49607bdd8a95ebd606c4047\",\n                \"ImageRegistryType\": \"personal\",\n                \"PreCacheImageId\": \"pcimg*****6yra\",\n                \"SourceType\": \"AUTO\",\n                \"Status\": \"DELETED\"\n            }\n        ],\n        \"TotalCount\": 115,\n        \"RequestId\": \"4ef2fa42-5e15-49ab-9708-eccc415fe1c5\"\n    }\n}",
+        "title": "显示列表总数"
       }
     ],
     "DescribePreCacheImageTask": [

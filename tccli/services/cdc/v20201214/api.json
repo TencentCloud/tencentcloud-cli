@@ -119,6 +119,13 @@
       "output": "DescribeDedicatedSupportedZonesResponse",
       "status": "online"
     },
+    "DescribeEdgeHostVm": {
+      "document": "查询专属集群宿主机上的虚机信息",
+      "input": "DescribeEdgeHostVmRequest",
+      "name": "查询CDC指定母机的虚机",
+      "output": "DescribeEdgeHostVmResponse",
+      "status": "online"
+    },
     "DescribeSites": {
       "document": "查询站点列表",
       "input": "DescribeSitesRequest",
@@ -2373,6 +2380,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeHostVmRequest": {
+      "document": "DescribeEdgeHostVm请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEdgeHostVmResponse": {
+      "document": "DescribeEdgeHostVm返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -1596,6 +1596,30 @@
         "title": "请求示例"
       }
     ],
+    "DescribeStreamPackageIngestStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageIngestStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-09-23T00:00:00+08:00\",\n    \"EndTime\": \"2026-09-24T00:00:00+08:00\",\n    \"ChannelIds\": [\n        \"68774AEC000027733C4C\"\n    ],\n    \"Types\": [\n        \"LiveChannel\"\n    ],\n    \"Dimension\": true,\n    \"Granularity\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"ChannelId\": \"68774AEC000027733C4C\",\n                \"Ingest\": 137081471,\n                \"Time\": \"2026-09-23T00:00:00+08:00\",\n                \"Type\": \"LiveChannel\"\n            }\n        ],\n        \"TotalIngest\": 37788778885,\n        \"RequestId\": \"22ffc5ce-b418-4bb8-b8a8-9c1c413e55b3\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageOutputStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageOutputStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-08-24T00:00:00+08:00\",\n    \"EndTime\": \"2026-08-25T12:00:00+08:00\",\n    \"Types\": [\n        \"LiveChannel\"\n    ],\n    \"Dimension\": false,\n    \"Granularity\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"ChannelId\": \"/v1/019fcbc0910a1eb828202c302ebdb8\",\n                \"Output\": 506988117,\n                \"Type\": \"LiveChannel\"\n            }\n        ],\n        \"TotalOutput\": 8150075538,\n        \"RequestId\": \"a987670e-11fb-41e1-a060-ceb09d2a9a51\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeStreamPackageRemuxStatistics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mdp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamPackageRemuxStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-08-24T00:00:00+08:00\",\n    \"EndTime\": \"2026-08-25T00:00:00+08:00\",\n    \"Dimension\": false,\n    \"Granularity\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"DataInfoList\": [\n            {\n                \"ChannelId\": \"/v1/019810d5882d1ea506ec36a2054bc5\",\n                \"Remux\": 35545189124\n            }\n        ],\n        \"TotalRemux\": 1461990040036,\n        \"RequestId\": \"d7f31029-c8a3-4fe5-b5bd-85810bcc22b6\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeStreamPlayInfoList": [
       {
         "document": "查询流的播放信息列表",

@@ -5950,7 +5950,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产ID集合",
+          "document": "<p>资产ID集合</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "IdSet",
@@ -5959,7 +5959,7 @@
         },
         {
           "disabled": false,
-          "document": "资产名或资产IP，模糊查询",
+          "document": "<p>资产名或资产IP，模糊查询</p>",
           "example": "运维主机",
           "member": "string",
           "name": "Name",
@@ -5968,7 +5968,7 @@
         },
         {
           "disabled": false,
-          "document": "暂未使用",
+          "document": "<p>暂未使用</p>",
           "example": "192.168.0.3",
           "member": "string",
           "name": "Ip",
@@ -5977,7 +5977,7 @@
         },
         {
           "disabled": false,
-          "document": "地域码集合",
+          "document": "<p>地域码集合</p>",
           "example": "[\"ap-guangzhou\"]",
           "member": "string",
           "name": "ApCodeSet",
@@ -5986,7 +5986,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
+          "document": "<p>操作系统类型, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>",
           "example": "1",
           "member": "uint64",
           "name": "Kind",
@@ -5995,7 +5995,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移位置，默认值为0",
+          "document": "<p>分页偏移位置，默认值为0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6004,7 +6004,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条目数量，默认20",
+          "document": "<p>每页条目数量</p><p>取值范围：[0, 500]</p><p>默认值：20</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -6013,7 +6013,7 @@
         },
         {
           "disabled": false,
-          "document": "有该资产访问权限的用户ID集合",
+          "document": "<p>有该资产访问权限的用户ID集合</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "AuthorizedUserIdSet",
@@ -6022,7 +6022,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，资产绑定的堡垒机服务ID集合",
+          "document": "<p>过滤条件，资产绑定的堡垒机服务ID集合</p>",
           "example": "[\"bh-saas-test\"]",
           "member": "string",
           "name": "ResourceIdSet",
@@ -6031,7 +6031,7 @@
         },
         {
           "disabled": false,
-          "document": "可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer",
+          "document": "<p>可提供按照多种类型过滤, 1 - Linux, 2 - Windows, 3 - MySQL, 4 - SQLServer</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "KindSet",
@@ -6040,7 +6040,7 @@
         },
         {
           "disabled": false,
-          "document": "资产是否包含托管账号。1，包含；0，不包含",
+          "document": "<p>资产是否包含托管账号。1，包含；0，不包含</p>",
           "example": "root",
           "member": "string",
           "name": "ManagedAccount",
@@ -6049,7 +6049,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，可按照部门ID进行过滤",
+          "document": "<p>过滤条件，可按照部门ID进行过滤</p>",
           "example": "1.2.3",
           "member": "string",
           "name": "DepartmentId",
@@ -6058,7 +6058,7 @@
         },
         {
           "disabled": false,
-          "document": "资产所属云账号id",
+          "document": "<p>资产所属云账号id</p>",
           "example": "[2,3]",
           "member": "uint64",
           "name": "AccountIdSet",
@@ -6067,7 +6067,7 @@
         },
         {
           "disabled": false,
-          "document": "云厂商类型，1-腾讯云，2-阿里云",
+          "document": "<p>云厂商类型，1-腾讯云，2-阿里云</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "ProviderTypeSet",
@@ -6076,7 +6076,7 @@
         },
         {
           "disabled": false,
-          "document": "同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期",
+          "document": "<p>同步的云资产状态，标记同步的资产的状态情况，0-已删除,1-正常,2-已隔离,3-已过期</p>",
           "example": "[1,2]",
           "member": "uint64",
           "name": "CloudDeviceStatusSet",
@@ -6085,7 +6085,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系",
+          "document": "<p>过滤条件，可按照标签键、标签进行过滤。如果同时指定标签键和标签过滤条件，它们之间为“AND”的关系</p>",
           "example": "无",
           "member": "TagFilter",
           "name": "TagFilters",
@@ -6094,10 +6094,19 @@
         },
         {
           "disabled": false,
-          "document": "过滤数组。支持的Name：\nBindingStatus 绑定状态",
+          "document": "<p>过滤数组。支持的Name：<br>BindingStatus 绑定状态</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属成员 AppId</p>",
+          "example": "[1305350016]",
+          "member": "uint64",
+          "name": "OwnerAppIds",
           "required": false,
           "type": "list"
         }
@@ -6109,7 +6118,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资产总数",
+          "document": "<p>资产总数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
@@ -6119,7 +6128,7 @@
         },
         {
           "disabled": false,
-          "document": "资产信息列表",
+          "document": "<p>资产信息列表</p>",
           "example": "无",
           "member": "Device",
           "name": "DeviceSet",
@@ -6681,7 +6690,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域码, 如: ap-guangzhou",
+          "document": "<p>地域码, 如: ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ApCode",
@@ -6690,7 +6699,7 @@
         },
         {
           "disabled": false,
-          "document": "按照堡垒机开通的 VPC 实例ID查询",
+          "document": "<p>按照堡垒机开通的 VPC 实例ID查询</p>",
           "example": "vpc-9juy78n",
           "member": "string",
           "name": "VpcId",
@@ -6699,7 +6708,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId",
+          "document": "<p>资源ID集合，当传入ID集合时忽略 ApCode 和 VpcId</p>",
           "example": "[\"bh-saas-8jy7jg\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -6708,7 +6717,7 @@
         },
         {
           "disabled": false,
-          "document": "每页条目数量",
+          "document": "<p>每页条目数量</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6717,7 +6726,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移位置",
+          "document": "<p>分页偏移位置</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6732,8 +6741,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "堡垒机资源列表",
-          "example": "[{\"ResourceId\":\"bh-saas-iu8j2n\"}]",
+          "document": "<p>堡垒机资源列表</p>",
+          "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
           "output_required": true,
@@ -6742,7 +6751,7 @@
         },
         {
           "disabled": false,
-          "document": "堡垒机资源数量",
+          "document": "<p>堡垒机资源数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -7586,6 +7595,36 @@
           "name": "SyncCloudDeviceStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属账号 AppId</p>",
+          "example": "1480406120",
+          "member": "uint64",
+          "name": "OwnerAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属账号 UIN</p>",
+          "example": "100018268486",
+          "member": "string",
+          "name": "OwnerAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属账号展示名</p>",
+          "example": "堡垒机内部测试账号",
+          "member": "string",
+          "name": "OwnerAccountName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -11556,6 +11595,16 @@
           "name": "ResourceZoneSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多账号额度</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OrgAccountQuota",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -36,7 +36,9 @@ Output:
                 "Sequence": 3,
                 "SourceContent": "::/0",
                 "SourceType": "net",
-                "UpdateTime": "2026-04-15 11:05:06"
+                "UpdateTime": "2026-04-15 11:05:06",
+                "HitCount": 88,
+                "LastHitTime": "2026-09-17 07:30:00"
             }
         ],
         "TotalCount": 1

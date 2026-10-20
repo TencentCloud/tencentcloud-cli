@@ -50,7 +50,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "3deaf1ac-6319-4eb6-a989-0b9a13054616"
+        "RequestId": "3deaf1ac-6319-4eb6-a989-0b9a13054616",
+        "RuleIds": [
+            "0c6f266d-38f4-4c87-b524-70721b2c66e8",
+            "24fc4d0c-2890-40b4-bca9-c9712366fbc7"
+        ]
     }
 }
 ```

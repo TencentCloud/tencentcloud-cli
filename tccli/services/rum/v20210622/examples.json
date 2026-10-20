@@ -472,6 +472,14 @@
         "title": "foom 个例列表"
       }
     ],
+    "DescribeFileCertificate": [
+      {
+        "document": "获取COS鉴权认证",
+        "input": "https://rum.tencentcloudapi.com/?Action=DescribeFileCertificate\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"dahfldaflndfdfdsf\",\n        \"SecretID\": \"asdkadalsdlsafk\",\n        \"SessionToken\": \"fdslkfjdkjfldsjfdfdf\",\n        \"StartTime\": 1232132132,\n        \"ExpiredTime\": 123212143434,\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\",\n        \"BucketAddress\": \"ap-guangzhou:rum-app-prod-1258344699\"\n    }\n}",
+        "title": "获取COS鉴权认证"
+      }
+    ],
     "DescribeIssuesDistribution": [
       {
         "document": "",

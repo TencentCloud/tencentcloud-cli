@@ -27,166 +27,178 @@ Output:
 {
     "Response": {
         "Info": {
-            "FlowId": "018f09cc50671eb401a6024fcabc",
-            "FlowName": "test",
-            "State": "",
-            "MaxBandwidth": 0,
+            "FlowId": "01937702ecc509dc0f3269ca3420",
+            "FlowName": "live-srt-shanghai",
+            "State": "RUNNING",
+            "MaxBandwidth": 20000000,
             "InputGroup": [
                 {
-                    "InputId": "",
-                    "InputName": "",
-                    "Description": "",
-                    "Protocol": "",
+                    "InputId": "019377034b0709dc0f3269ca3422",
+                    "InputName": "srt-input-shanghai",
+                    "Description": "上海 SRT 推流输入",
+                    "Protocol": "SRT",
                     "InputAddressList": [
                         {
-                            "Ip": "",
-                            "Port": 0
+                            "Ip": "1.1.1.1",
+                            "Port": 9000
                         }
                     ],
                     "AllowIpList": [
-                        ""
+                        "1.1.1.1"
                     ],
                     "SRTSettings": {
-                        "Mode": "",
-                        "StreamId": "",
-                        "Latency": 0,
-                        "RecvLatency": 0,
-                        "PeerLatency": 0,
-                        "PeerIdleTimeout": 0,
-                        "Passphrase": "",
-                        "PbKeyLen": 0,
+                        "Mode": "LISTENER",
+                        "StreamId": "#!::r=live/stream1,m=publish",
+                        "Latency": 120,
+                        "RecvLatency": 120,
+                        "PeerLatency": 120,
+                        "PeerIdleTimeout": 5000,
+                        "Passphrase": "0123456789abcdef",
+                        "PbKeyLen": 16,
                         "SourceAddresses": [
                             {
-                                "Ip": "",
-                                "Port": 0
+                                "Ip": "1.1.1.1",
+                                "Port": 9000
                             }
                         ]
                     },
                     "RTPSettings": {
-                        "FEC": "",
-                        "IdleTimeout": 0
+                        "FEC": "NONE",
+                        "IdleTimeout": 5000
                     },
-                    "InputRegion": "",
+                    "InputRegion": "ap-shanghai",
                     "RTMPSettings": {
-                        "AppName": "",
-                        "StreamKey": ""
+                        "AppName": "live",
+                        "StreamKey": "stream1"
                     },
-                    "FailOver": "",
+                    "FailOver": "ENABLE",
+                    "Zones": [
+                        "ap-shanghai-2"
+                    ],
                     "RTMPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "TcUrl": "",
-                                "StreamKey": ""
+                                "TcUrl": "rtmp://1.1.1.1/live",
+                                "StreamKey": "stream1"
                             }
                         ]
                     },
                     "RTSPPullSettings": {
                         "SourceAddresses": [
                             {
-                                "Url": ""
+                                "Url": "rtsp://1.1.1.1:554/live/stream1"
                             }
                         ]
                     },
                     "HLSPullSettings": {
                         "SourceAddresses": [
                             {
-                                "Url": ""
+                                "Url": "https://origin.example.com/live/stream1/index.m3u8"
                             }
                         ]
                     },
                     "ResilientStream": {
                         "Enable": true,
-                        "BufferTime": 1
-                    }
+                        "BufferTime": 1000
+                    },
+                    "SecurityGroupIds": [
+                        "sg-1a2b3c4d"
+                    ]
                 }
             ],
             "OutputGroup": [
                 {
-                    "OutputId": "",
-                    "OutputName": "",
-                    "OutputType": "",
-                    "Description": "",
-                    "Protocol": "",
+                    "OutputId": "019377034c0709dc0f3269ca3430",
+                    "OutputName": "srt-output-beijing",
+                    "OutputType": "SRT",
+                    "Description": "北京 SRT 拉流输出",
+                    "Protocol": "SRT",
                     "OutputAddressList": [
                         {
-                            "Ip": ""
+                            "Ip": "1.1.1.1"
                         }
                     ],
-                    "OutputRegion": "",
+                    "OutputRegion": "ap-beijing",
                     "SRTSettings": {
                         "Destinations": [
                             {
-                                "Ip": "",
-                                "Port": 0
+                                "Ip": "1.1.1.1",
+                                "Port": 10080
                             }
                         ],
-                        "StreamId": "",
-                        "Latency": 0,
-                        "RecvLatency": 0,
-                        "PeerLatency": 0,
-                        "PeerIdleTimeout": 0,
-                        "Passphrase": "",
-                        "PbKeyLen": 0,
-                        "Mode": "",
+                        "StreamId": "#!::r=live/stream1,m=request",
+                        "Latency": 120,
+                        "RecvLatency": 120,
+                        "PeerLatency": 120,
+                        "PeerIdleTimeout": 5000,
+                        "Passphrase": "0123456789abcdef",
+                        "PbKeyLen": 16,
+                        "Mode": "LISTENER",
                         "SourceAddresses": [
                             {
-                                "Ip": "",
-                                "Port": 0
+                                "Ip": "1.1.1.1",
+                                "Port": 9000
                             }
                         ]
                     },
                     "RTPSettings": {
                         "Destinations": [
                             {
-                                "Ip": "",
-                                "Port": 0
+                                "Ip": "1.1.1.1",
+                                "Port": 5004
                             }
                         ],
-                        "FEC": "",
-                        "IdleTimeout": 0
+                        "FEC": "NONE",
+                        "IdleTimeout": 5000
                     },
                     "RTMPSettings": {
-                        "IdleTimeout": 0,
-                        "ChunkSize": 0,
+                        "IdleTimeout": 3000,
+                        "ChunkSize": 4096,
                         "Destinations": [
                             {
-                                "Url": "",
-                                "StreamKey": ""
+                                "Url": "rtmp://1.1.1.1/live",
+                                "StreamKey": "stream1"
                             }
                         ]
                     },
                     "RTMPPullSettings": {
                         "ServerUrls": [
                             {
-                                "TcUrl": "",
-                                "StreamKey": ""
+                                "TcUrl": "rtmp://1.1.1.1/live",
+                                "StreamKey": "stream1"
                             }
                         ]
                     },
                     "AllowIpList": [
-                        ""
+                        "1.1.1.1"
                     ],
                     "RTSPPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": ""
+                                "Url": "rtsp://1.1.1.1:554/live/stream1"
                             }
                         ]
                     },
                     "HLSPullSettings": {
                         "ServerUrls": [
                             {
-                                "Url": ""
+                                "Url": "https://origin.example.com/live/stream1/index.m3u8"
                             }
                         ]
                     },
-                    "MaxConcurrent": 1
+                    "MaxConcurrent": 5,
+                    "SecurityGroupIds": [
+                        "sg-1a2b3c4d"
+                    ],
+                    "Zones": [
+                        "ap-beijing-1"
+                    ]
                 }
             ],
-            "EventId": "",
-            "Region": ""
+            "EventId": "0193770a00009dc0f3269ca3439",
+            "Region": "ap-shanghai"
         },
-        "RequestId": ""
+        "RequestId": "3c140219-cfe9-4a60-af06-3ee6e0a1e5f1"
     }
 }
 ```

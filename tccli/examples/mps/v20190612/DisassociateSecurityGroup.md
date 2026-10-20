@@ -6,18 +6,18 @@ Input:
 
 ```
 tccli mps DisassociateSecurityGroup --cli-unfold-argument  \
-    --Id abc \
-    --UnattachInOutInfos.0.FlowId abc \
-    --UnattachInOutInfos.0.InOutId abc \
-    --UnattachInOutInfos.0.InOutType abc \
-    --UnattachInOutInfos.0.FlowRegion abc
+    --Id 018d0be70ed7 \
+    --UnattachInOutInfos.0.FlowId 01888fa3c8ce1ea \
+    --UnattachInOutInfos.0.InOutId 5578a028fa7a0 \
+    --UnattachInOutInfos.0.InOutType Input \
+    --UnattachInOutInfos.0.FlowRegion ap-shanghai
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "01888fa3xxce1ea5578a0209a7yy"
     }
 }
 ```

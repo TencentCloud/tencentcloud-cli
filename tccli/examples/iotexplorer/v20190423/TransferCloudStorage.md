@@ -1,21 +1,24 @@
-**Example 1: 转移云存服务**
+**Example 1: 成功示例**
 
-用于转移云存服务到新设备
+
 
 Input: 
 
 ```
 tccli iotexplorer TransferCloudStorage --cli-unfold-argument  \
-    --ToDeviceName event_36502632_2 \
-    --DeviceName event_36502632_1 \
-    --ProductId H541SOP191
+    --ProductId YYZRTPM*** \
+    --DeviceName ***et_test_1 \
+    --ToDeviceName ***ling_test_4 \
+    --ToProductId YYZRTPM*** \
+    --ChannelId 7 \
+    --ToChannelId 8
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "sdfdsf"
+        "RequestId": "7a5a9190-6c4d-4a21-9538-34c819a1d6cb"
     }
 }
 ```

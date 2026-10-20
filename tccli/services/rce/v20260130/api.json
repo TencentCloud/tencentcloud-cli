@@ -43,6 +43,21 @@
     "serviceShortName": "rce"
   },
   "objects": {
+    "AccountSecurityEvent": {
+      "document": "账号安全详情（账号保护）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>与RCE约定的定制化信息，为K:V 格式的对象数组，示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "AddFriendEvent": {
       "document": "添加好友事件详情",
       "members": [
@@ -826,6 +841,48 @@
           "name": "Recipient",
           "required": false,
           "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BookingEvent": {
+      "document": "预约事件详情（营销保护）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>预约场景。例如：预订机票、预订酒店</p>",
+          "example": "hotel_tpl_booking_001",
+          "member": "string",
+          "name": "BookingScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预约时间。要求符合ISO-8601标准的带时区的毫秒级时间，格式&quot;YYYY-MM-DDTHH:mm:ss.sssZ&quot; ，例如&quot;2025-10-19T09:11:10.145+08:00&quot;。</p>",
+          "example": "2026-10-01T15:30:00.123+08:00",
+          "member": "string",
+          "name": "BookingTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预约单唯一ID。</p>",
+          "example": "tpl_booking_001",
+          "member": "string",
+          "name": "BookingId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。<br>示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2129,6 +2186,33 @@
           "example": "无",
           "member": "ModifyGuildEvent",
           "name": "ModifyGuild",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索</p>",
+          "example": "无",
+          "member": "SearchEvent",
+          "name": "Search",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预约</p>",
+          "example": "无",
+          "member": "BookingEvent",
+          "name": "Booking",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号安全</p>",
+          "example": "无",
+          "member": "AccountSecurityEvent",
+          "name": "AccountSecurity",
           "required": false,
           "type": "object"
         }
@@ -4065,6 +4149,57 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchEvent": {
+      "document": "查询事件详情（营销保护）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询场景。例如：查询航班、查询库存等。</p>",
+          "example": "searchflight",
+          "member": "string",
+          "name": "SearchScene",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询参数。查询时输入的参数。</p>",
+          "example": "beijing",
+          "member": "string",
+          "name": "SearchParam",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一个网页URL</p>",
+          "example": "http://xxx",
+          "member": "string",
+          "name": "ReferPageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>游客账号ID</p>",
+          "example": "g-1234",
+          "member": "string",
+          "name": "GuestId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>与RCE-PRO约定的定制化信息。为K:V 格式的对象数组。<br>示例：[{&quot;Key&quot;: &quot;ApproverName&quot;, &quot;Value&quot;: &quot;bob&quot;},{&quot;Key&quot;:&quot;ApproverPhone&quot;,&quot;Value&quot;: &quot;+86131****5678&quot;}]</p>",
+          "example": "无",
+          "member": "Cust",
+          "name": "Cust",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "SecurityVerificationEvent": {
       "document": "安全验证事件详情",

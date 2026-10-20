@@ -42,6 +42,13 @@
       "output": "CreateNatAclRuleGroupResponse",
       "status": "online"
     },
+    "CreateRuleGroup": {
+      "document": "创建一个不含规则的规则组，归属产品由 Product 指定。规则组是四类防火墙产品共用的资源，落库于 fwm_rule_group 并以 product 字段区分归属；规则需另行通过 CreateSecurityGroupRule / CreateVpcAclRule / CreateNatAclRule / CreateEdgeAclRule 追加。规则组的查询/修改/删除已由 DescribeRuleGroup / DescribeRuleGroups / ModifyRuleGroup / DeleteRuleGroup 统一承载，本接口补齐创建侧，供 Terraform 等需要「建组」与「建规则」分离的资源模型使用。返回新规则组 ID（fwmrg- 前缀），初始 RuleCount 为 0。注意：创建空规则组同样计入规则组配额，且三墙（VPC/NAT/Edge）受预付费写门禁约束，企业安全组不受该门禁约束。",
+      "input": "CreateRuleGroupRequest",
+      "name": "创建规则组",
+      "output": "CreateRuleGroupResponse",
+      "status": "online"
+    },
     "CreateSecurityGroupRule": {
       "document": "规则组编辑时添加规则（规则组管理）",
       "input": "CreateSecurityGroupRuleRequest",
@@ -1243,7 +1250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组ID",
+          "document": "<p>规则组ID</p>",
           "example": "fwmrg_abc123xyz",
           "member": "string",
           "name": "GroupId",
@@ -1252,7 +1259,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "EdgeAclRuleInfo",
           "name": "Rules",
@@ -1265,6 +1272,16 @@
     "CreateEdgeAclRuleResponse": {
       "document": "CreateEdgeAclRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则Id列表</p>",
+          "example": "[\"74ae6caf-979c-4528-8187-a389533e6fd8\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1334,7 +1351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组ID",
+          "document": "<p>规则组ID</p>",
           "example": "fwmrg_abc123xyz",
           "member": "string",
           "name": "GroupId",
@@ -1343,7 +1360,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "NatAclRule",
           "name": "Rules",
@@ -1356,6 +1373,62 @@
     "CreateNatAclRuleResponse": {
       "document": "CreateNatAclRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则Id列表</p>",
+          "example": "[\"6861c5e2-1848-4183-95e0-aedcbe5fc43a\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleGroupRequest": {
+      "document": "CreateRuleGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则组名称，不可为空，最长50字符（按字符数计，中文按1个字符计）</p>",
+          "example": "cecece",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则组归属产品。enterprise_sg-企业安全组，cfw_vpc_acl-VPC边界防火墙，cfw_nat_acl-NAT边界防火墙，cfw_edge_acl-互联网边界防火墙。必填，不接受 all</p>",
+          "example": "cfw_edge_acl",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRuleGroupResponse": {
+      "document": "CreateRuleGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功的规则组唯一标识，fwmrg- 前缀</p>",
+          "example": "fwmrg-gdhhiywh3w",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1425,7 +1498,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组Id",
+          "document": "<p>规则组Id</p>",
           "example": "RG-SEF32",
           "member": "string",
           "name": "GroupId",
@@ -1434,7 +1507,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "SecurityGroupRule",
           "name": "Rules",
@@ -1447,6 +1520,16 @@
     "CreateSecurityGroupRuleResponse": {
       "document": "CreateSecurityGroupRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则Id列表</p>",
+          "example": "[\"00b4416a-efd3-4326-a19c-c1c333184e05\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1461,7 +1544,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "<p>产品类型</p>",
           "example": "1",
           "member": "string",
           "name": "Product",
@@ -1470,7 +1553,7 @@
         },
         {
           "disabled": false,
-          "document": "下发账号",
+          "document": "<p>下发账号</p>",
           "example": "[\"10000000698\",\"10000000697\"]",
           "member": "string",
           "name": "ReceiveAccount",
@@ -1479,7 +1562,7 @@
         },
         {
           "disabled": false,
-          "document": "前区规则组",
+          "document": "<p>前区规则组</p>",
           "example": "无",
           "member": "StrategyReq",
           "name": "PreStrategy",
@@ -1488,7 +1571,7 @@
         },
         {
           "disabled": false,
-          "document": "后区规则组",
+          "document": "<p>后区规则组</p>",
           "example": "无",
           "member": "StrategyReq",
           "name": "PostStrategy",
@@ -1497,7 +1580,7 @@
         },
         {
           "disabled": false,
-          "document": "下发账号组",
+          "document": "<p>下发账号组</p>",
           "example": "[\"10000000698\",\"10000000697\"]",
           "member": "string",
           "name": "ReceiveGroup",
@@ -1510,6 +1593,16 @@
     "CreateStrategyResponse": {
       "document": "CreateStrategy返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略Id列表</p>",
+          "example": "[\"fwms-r7glwuuy\"]",
+          "member": "string",
+          "name": "StrategyIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1579,7 +1672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则组ID",
+          "document": "<p>规则组ID</p>",
           "example": "fwmrg_abc123xyz",
           "member": "string",
           "name": "GroupId",
@@ -1588,7 +1681,7 @@
         },
         {
           "disabled": false,
-          "document": "规则列表",
+          "document": "<p>规则列表</p>",
           "example": "无",
           "member": "VpcAclRule",
           "name": "Rules",
@@ -1601,6 +1694,16 @@
     "CreateVpcAclRuleResponse": {
       "document": "CreateVpcAclRule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则Id列表</p>",
+          "example": "[\"4bf3f7c5-9b0b-45c6-ae6e-3641848a93a1\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3489,6 +3592,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0",
+          "example": "58861",
+          "member": "int64",
+          "name": "HitCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 \"-\"",
+          "example": "2026-09-18 10:54:19",
+          "member": "string",
+          "name": "LastHitTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4486,6 +4609,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0",
+          "example": "58861",
+          "member": "int64",
+          "name": "HitCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 \"-\"",
+          "example": "2026-09-18 10:54:19",
+          "member": "string",
+          "name": "LastHitTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -4711,7 +4854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团名称",
+          "document": "<p>集团名称</p>",
           "example": "腾讯云集团",
           "member": "string",
           "name": "GroupName",
@@ -4721,7 +4864,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员账号信息",
+          "document": "<p>管理员账号信息</p>",
           "example": "无",
           "member": "MemberInfo",
           "name": "AdminInfo",
@@ -4731,7 +4874,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员/委派管理员数量",
+          "document": "<p>管理员/委派管理员数量</p>",
           "example": "2",
           "member": "int64",
           "name": "AdminCount",
@@ -4741,7 +4884,7 @@
         },
         {
           "disabled": false,
-          "document": "已接入成员数",
+          "document": "<p>已接入成员数</p>",
           "example": "10",
           "member": "int64",
           "name": "JoinedMemberCount",
@@ -4751,7 +4894,7 @@
         },
         {
           "disabled": false,
-          "document": "接入成员上限（-1表示无上限）",
+          "document": "<p>接入成员上限（-1表示无上限）</p>",
           "example": "100",
           "member": "int64",
           "name": "MemberLimit",
@@ -4761,7 +4904,7 @@
         },
         {
           "disabled": false,
-          "document": "接入成员上限显示",
+          "document": "<p>接入成员上限显示</p>",
           "example": "100",
           "member": "string",
           "name": "MemberLimitDisplay",
@@ -4771,7 +4914,7 @@
         },
         {
           "disabled": false,
-          "document": "规格共享者数量",
+          "document": "<p>规格共享者数量</p>",
           "example": "3",
           "member": "int64",
           "name": "CfwSharerCount",
@@ -4781,7 +4924,7 @@
         },
         {
           "disabled": false,
-          "document": "规格使用者数量",
+          "document": "<p>规格使用者数量</p>",
           "example": "5",
           "member": "int64",
           "name": "CfwUserCount",
@@ -4791,7 +4934,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称列表",
+          "document": "<p>部门名称列表</p>",
           "example": "[\"root\"]",
           "member": "string",
           "name": "Departments",
@@ -4801,7 +4944,7 @@
         },
         {
           "disabled": false,
-          "document": "纳管账号数",
+          "document": "<p>纳管账号数</p>",
           "example": "1",
           "member": "int64",
           "name": "ManagedMemberCount",
@@ -4811,7 +4954,7 @@
         },
         {
           "disabled": false,
-          "document": "纳管产品数",
+          "document": "<p>纳管产品数</p>",
           "example": "1",
           "member": "int64",
           "name": "ManagedProductCount",
@@ -4821,10 +4964,20 @@
         },
         {
           "disabled": false,
-          "document": "纳管账号数",
+          "document": "<p>纳管账号数</p>",
           "example": "2",
           "member": "int64",
           "name": "CfwManageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格共享总配额</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "FwmShareUserQuota",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5486,13 +5639,13 @@
         },
         {
           "disabled": false,
-          "document": "<p>域名解析的IP统计</p>",
+          "document": "<p>域名解析的IP统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SgDnsParseCount",
           "name": "DnsParseCount",
           "output_required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -6657,6 +6810,26 @@
           "example": "ccn-klt3mzot",
           "member": "string",
           "name": "FwGroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中次数。该规则在所有已下发成员账号下的累计命中次数合计，直接采用云防火墙返回值，不做时间窗口换算；从未命中时为 0",
+          "example": "58861",
+          "member": "int64",
+          "name": "HitCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近命中时间。取该规则在所有已下发成员账号中最新的命中时间；从未命中时为 \"-\"",
+          "example": "2026-09-18 10:54:19",
+          "member": "string",
+          "name": "LastHitTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
