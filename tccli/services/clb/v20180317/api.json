@@ -204,7 +204,7 @@
       "status": "online"
     },
     "CreateUserGroup": {
-      "document": "在指定模型路由实例下创建一个用户组。用户组是介于模型路由实例与 Key 之间的一层可选分组，可为组内 Key 统一配置模型白名单，并通过关联 Budget 统一管理额度。创建为异步操作，接口会同步返回用户组ID，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询创建进度。",
+      "document": "在指定模型路由实例下创建一个用户组。用户组是介于模型路由实例与 Key 之间的一层可选分组，可为组内 Key 统一配置模型白名单，并通过关联 Budget 统一管理额度。创建为异步操作，接口会同步返回用户组ID，可凭返回的 RequestId 调用 DescribeAsyncJobs 查询创建进度。支持建组时绑定 Prompt：传入 PromptId 与 PromptVersion 后，组内 Key 的请求将按该版本 Prompt 的 Content 与 RewriteStrategy 注入或改写 system 内容，并受该版本 MaxTokens 约束；不传则默认不绑定 Prompt，建组后可通过 ModifyUserGroupPrompt 绑定、更换版本或解绑。仅传入 PromptId 或 PromptVersion 其一时返回 InvalidParameter；PromptId 不存在时返回 ResourceNotFound.Prompt；PromptVersion 不存在于该 Prompt 的历史版本中时返回 ResourceNotFound.PromptVersion。",
       "input": "CreateUserGroupRequest",
       "name": "创建用户组",
       "output": "CreateUserGroupResponse",
@@ -6113,6 +6113,24 @@
           "example": "budget-1a2b3c4d",
           "member": "string",
           "name": "BudgetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>建组时绑定的 Prompt 资源 ID（pmt-xxx，须为该实例下已存在的 Prompt）。与 PromptVersion 必须成对传入，仅传其一将返回错误。不传表示默认不绑定 Prompt，可建组后再调用 ModifyUserGroupPrompt 绑定或更换版本。绑定后，组内 Key 的请求将按该版本 Prompt 的 Content 与 RewriteStrategy 注入或改写 system 内容。</p>",
+          "example": "pmt-a1b2c3d4",
+          "member": "string",
+          "name": "PromptId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的 Prompt 版本号（如 v1、v2，由 CreatePrompt / CreatePromptVersion 生成，长度不超过16个字符），与 PromptId 必须成对传入，须为该 Prompt 下已存在的版本。版本为不可变快照，Prompt 后续新增版本不会自动生效于已绑定的用户组，需显式重新绑定新版本。一个用户组同时只关联一份 Prompt 的一个版本，重复绑定即为替换。</p>",
+          "example": "v2",
+          "member": "string",
+          "name": "PromptVersion",
           "required": false,
           "type": "string"
         },

@@ -426,7 +426,7 @@
       {
         "document": "创建 HTTP 回调目标",
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTWeSeeCallback\n<公共请求参数>\n\n{\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://example.qq.com/twesee-callback\",\n    \"CallbackToken\": \"your-token-here\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CallbackId\": \"callback-iak6g98u\",\n        \"RequestId\": \"f81b1003-d7e9-4899-9f72-4c6d4f6b4f78\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CallbackId\": \"cb-sn****67\",\n        \"RequestId\": \"f81b1003-d7e9-4899-9f72-4c6d4f6b4f78\"\n    }\n}",
         "title": "创建 TWeSee 回调目标"
       }
     ],
@@ -715,7 +715,7 @@
     "DeleteTWeSeeCallback": [
       {
         "document": "删除指定回调目标",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"cb-qu****bu\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c190696-3fd7-43c6-bb8b-5f484d07b0cf\"\n    }\n}",
         "title": "删除 TWeSee 回调目标"
       }
@@ -2035,7 +2035,7 @@
     "ModifyTWeSeeCallback": [
       {
         "document": "修改指定回调目标",
-        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"callback-iak6g98u\",\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://example.qq.com/twesee-callback?v=2\",\n    \"CallbackToken\": \"token-456\"\n}",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTWeSeeCallback\n<公共请求参数>\n\n{\n    \"CallbackId\": \"cb-qu****bu\",\n    \"Type\": \"http\",\n    \"CallbackUrl\": \"https://example.qq.com/twesee-callback?v=2\",\n    \"CallbackToken\": \"token-456\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"07e32598-feb4-45ee-b0bf-fcc67ef0ec1a\"\n    }\n}",
         "title": "修改 TWeSee 回调目标"
       }

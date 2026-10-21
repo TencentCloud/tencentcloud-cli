@@ -25179,7 +25179,7 @@
         {
           "disabled": false,
           "document": "<p>标签键</p>",
-          "example": "ceshi",
+          "example": "cost_center",
           "member": "string",
           "name": "TagKey",
           "output_required": false,

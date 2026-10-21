@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer DeleteTWeSeeCallback --cli-unfold-argument  \
-    --CallbackId callback-iak6g98u
+    --CallbackId cb-qu****bu
 ```
 
 Output: 

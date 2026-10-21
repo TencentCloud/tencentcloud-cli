@@ -4270,6 +4270,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主题扩展信息</p>",
+          "example": "无",
+          "member": "TopicExtendInfo",
+          "name": "Extends",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

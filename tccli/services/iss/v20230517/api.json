@@ -1687,7 +1687,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "鉴权配置ID（uuid）",
+          "document": "<p>鉴权配置ID（uuid）</p>",
           "example": "e8317c5b-7087-4126-bca0-************",
           "member": "string",
           "name": "Id",
@@ -1697,7 +1697,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开播放鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开播放鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PullState",
@@ -1707,8 +1707,8 @@
         },
         {
           "disabled": false,
-          "document": "播放密钥（仅支持字母数字，长度0-10位）",
-          "example": "aaaaaa",
+          "document": "<p>播放密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "aaacaaa",
           "member": "string",
           "name": "PullSecret",
           "output_required": true,
@@ -1717,7 +1717,7 @@
         },
         {
           "disabled": false,
-          "document": "播放过期时间（单位：分钟）",
+          "document": "<p>播放过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PullExpired",
@@ -1727,7 +1727,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推流鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开启推流鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PushState",
@@ -1737,8 +1737,8 @@
         },
         {
           "disabled": false,
-          "document": "推流密钥（仅支持字母数字，长度0-10位）",
-          "example": "bbbbbb",
+          "document": "<p>推流密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "bbbcbbb",
           "member": "string",
           "name": "PushSecret",
           "output_required": true,
@@ -1747,7 +1747,7 @@
         },
         {
           "disabled": false,
-          "document": "推流过期时间（单位：分钟）",
+          "document": "<p>推流过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PushExpired",
@@ -1757,12 +1757,22 @@
         },
         {
           "disabled": false,
-          "document": "用户ID",
-          "example": "1300***012",
+          "document": "<p>用户ID</p>",
+          "example": "1300000012",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不生效推流鉴权的域名 ID 列表</p>",
+          "example": "[\"e8317c5b-7087-4126-bca0-************\"]",
+          "member": "string",
+          "name": "ExcludePushDomainIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1773,7 +1783,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "鉴权配置ID（uuid）",
+          "document": "<p>鉴权配置ID（uuid）</p>",
           "example": "e8317c5b-7087-4126-bca0-************",
           "member": "string",
           "name": "Id",
@@ -1782,7 +1792,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开播放鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开播放鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PullState",
@@ -1791,8 +1801,8 @@
         },
         {
           "disabled": false,
-          "document": "播放密钥（仅支持字母数字，长度0-10位）",
-          "example": "aaaaaaaaaa",
+          "document": "<p>播放密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "aaaabaaaaa",
           "member": "string",
           "name": "PullSecret",
           "required": true,
@@ -1800,7 +1810,7 @@
         },
         {
           "disabled": false,
-          "document": "播放过期时间（单位：分钟）",
+          "document": "<p>播放过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PullExpired",
@@ -1809,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推流鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开启推流鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PushState",
@@ -1818,8 +1828,8 @@
         },
         {
           "disabled": false,
-          "document": "推流密钥（仅支持字母数字，长度0-10位）",
-          "example": "bbbbbbbbbb",
+          "document": "<p>推流密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "bbbbcbbbbb",
           "member": "string",
           "name": "PushSecret",
           "required": true,
@@ -1827,12 +1837,21 @@
         },
         {
           "disabled": false,
-          "document": "推流过期时间（单位：分钟）",
+          "document": "<p>推流过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PushExpired",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>不生效推流鉴权的域名 ID 列表</p>",
+          "example": "[\"e8317c5b-7087-4126-bca0-************\"]",
+          "member": "string",
+          "name": "ExcludePushDomainIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1842,7 +1861,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设置推拉流鉴权返回数据",
+          "document": "<p>设置推拉流鉴权返回数据</p>",
           "example": "无",
           "member": "AddStreamAuthData",
           "name": "Data",
@@ -5397,7 +5416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "鉴权配置ID（uuid）",
+          "document": "<p>鉴权配置ID（uuid）</p>",
           "example": "e8317c5b-7087-4126-bca0-************",
           "member": "string",
           "name": "Id",
@@ -5407,7 +5426,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开播放鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开播放鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PullState",
@@ -5417,8 +5436,8 @@
         },
         {
           "disabled": false,
-          "document": "播放密钥（仅支持字母数字，长度0-10位）",
-          "example": "abcdefg",
+          "document": "<p>播放密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "abhcdefg",
           "member": "string",
           "name": "PullSecret",
           "output_required": true,
@@ -5427,7 +5446,7 @@
         },
         {
           "disabled": false,
-          "document": "播放过期时间（单位：分钟）",
+          "document": "<p>播放过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PullExpired",
@@ -5437,7 +5456,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启推流鉴权（1:开启,0:关闭）",
+          "document": "<p>是否开启推流鉴权（1:开启,0:关闭）</p>",
           "example": "1",
           "member": "int64",
           "name": "PushState",
@@ -5447,8 +5466,8 @@
         },
         {
           "disabled": false,
-          "document": "推流密钥（仅支持字母数字，长度0-10位）",
-          "example": "abcdefg",
+          "document": "<p>推流密钥（仅支持字母数字，长度0-10位）</p>",
+          "example": "abchdefg",
           "member": "string",
           "name": "PushSecret",
           "output_required": true,
@@ -5457,7 +5476,7 @@
         },
         {
           "disabled": false,
-          "document": "推流过期时间（单位：分钟）",
+          "document": "<p>推流过期时间（单位：分钟）</p>",
           "example": "10",
           "member": "int64",
           "name": "PushExpired",
@@ -5467,12 +5486,22 @@
         },
         {
           "disabled": false,
-          "document": "用户ID",
-          "example": "1300***012",
+          "document": "<p>用户ID</p>",
+          "example": "1000000002",
           "member": "int64",
           "name": "AppId",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不生效推流鉴权的域名 ID 列表</p>",
+          "example": "[\"e8317c5b-7087-4126-bca0-************\"]",
+          "member": "string",
+          "name": "ExcludePushDomainIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

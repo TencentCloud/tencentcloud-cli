@@ -26,9 +26,51 @@ Output:
 }
 ```
 
-**Example 2: 创建目的地为AWS S3 兼容存储桶的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的七层访问日志**
+**Example 2: 创建目的地为AWS 的 S3 对象存储，使用 IAM 角色授权配置信息的日志投递任务**
 
-创建目的地为AWS S3 兼容存储桶的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的、请求最终安全处置方式为拦截或挑战的七层访问日志，包含字段有 RequestID、ClientIP、RequestTime，不开启日志采样，开启日志投递压缩，并且在投递日志时携带自定义请求头 Vendor，值固定为 EdgeOne，存储桶选择的是 腾讯云的 COS。
+创建目的地为AWS 的 S3 对象存储的配置信息的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的七层访问日志。
+
+Input: 
+
+```
+tccli teo CreateRealtimeLogDeliveryTask --cli-unfold-argument  \
+    --ZoneId zone-3qcox8or8ccl \
+    --Area mainland \
+    --LogType l7-access-logs \
+    --TaskName awss3_test_log_task \
+    --TaskType aws_s3 \
+    --EntityList domain.example.com \
+    --Fields RequestID \
+    --Sample 0 \
+    --LogFormat.FormatType json \
+    --LogFormat.BatchPrefix  \
+    --LogFormat.BatchSuffix  \
+    --LogFormat.RecordPrefix { \
+    --LogFormat.RecordSuffix } \
+    --LogFormat.RecordDelimiter 
+ \
+    --LogFormat.RecordTemplate  \
+    --LogFormat.FieldDelimiter , \
+    --AWSS3.Endpoint s3.ap-south-1.amazonaws.com \
+    --AWSS3.BucketName example-bucket \
+    --AWSS3.Path edgeone/realtime-log/l7-access-logs \
+    --AWSS3.RoleARN arn:aws:iam::123456789101:role/EdgeOneRealtimeLogRole \
+    --AWSS3.CompressType gzip
+```
+
+Output: 
+```
+{
+    "Response": {
+        "TaskId": "e5556fff-63ce-4dec-9d89-0520d1352433",
+        "RequestId": "5ae35a33-fb0f-499d-8ec1-2c5b8719d308"
+    }
+}
+```
+
+**Example 3: 创建目的地为S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的七层访问日志**
+
+创建目的地为S3 兼容（兼容 SigV4 鉴权算法）的对象存储的配置信息的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的、请求最终安全处置方式为拦截或挑战的七层访问日志，包含字段有 RequestID、ClientIP、RequestTime，不开启日志采样，开启日志投递压缩，并且在投递日志时携带自定义请求头 Vendor，值固定为 EdgeOne，存储桶选择的是 腾讯云的 COS。
 
 Input: 
 
@@ -63,7 +105,7 @@ Output:
 }
 ```
 
-**Example 3: 创建目的地为腾讯云 CLS 的日志投递任务**
+**Example 4: 创建目的地为腾讯云 CLS 的日志投递任务**
 
 创建目的地为腾讯云 CLS 的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的七层访问日志，包含字段有 RequestID、ClientIP、RequestTime 以及从 Accept-Language 请求头中提取的字段值和使用自定义表达式字段命名为 content_type 的字段，配置采样比例为 60.5%。
 
@@ -99,7 +141,7 @@ Output:
 }
 ```
 
-**Example 4: 创建目的地为自定义 HTTP 服务的日志投递任务**
+**Example 5: 创建目的地为自定义 HTTP 服务的日志投递任务**
 
 创建目的地为自定义 HTTP 服务的日志投递任务，投递数据范围为 domain.example.com 在中国大陆境内产生的、请求最终安全处置方式为拦截或挑战的七层访问日志，包含字段有 RequestID、ClientIP、RequestTime，不开启日志采样，开启日志投递压缩，并且在投递日志时携带自定义请求头 Vendor，值固定为 EdgeOne。
 

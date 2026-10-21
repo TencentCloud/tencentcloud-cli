@@ -4210,6 +4210,15 @@
           "name": "AirflowGitCredential",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多安全组绑定</p>",
+          "example": "[\"sg-xxx\"]",
+          "member": "string",
+          "name": "SgIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

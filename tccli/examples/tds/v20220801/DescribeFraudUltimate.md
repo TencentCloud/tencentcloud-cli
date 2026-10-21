@@ -11,8 +11,8 @@ tccli tds DescribeFraudUltimate --cli-unfold-argument  \
     --UserId user1 \
     --EventTime 1666684836384 \
     --ElapsedTime 1 \
-    --WeChatOpenId oEsXuszxxxxxxxxxxxxxxxx4qvEk \
-    --PhoneNumber 15800000000 \
+    --WeChatOpenId oOn8**hm7************0vlzm \
+    --PhoneNumber 15********* \
     --ClientIP 223.73.63.151 \
     --QQOpenId ECA1B7XXXXXXXXXXXXXXXXXXXX06625D \
     --DataAuthorization.DataProviderName 某某有限公司 \

@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "CallbackId": "callback-iak6g98u",
+        "CallbackId": "cb-sn****67",
         "RequestId": "f81b1003-d7e9-4899-9f72-4c6d4f6b4f78"
     }
 }

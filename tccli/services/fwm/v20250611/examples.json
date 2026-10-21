@@ -8,6 +8,14 @@
         "title": "取消忽略风险"
       }
     ],
+    "CreateAccountGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccountGroup\n<公共请求参数>\n\n{\n    \"GroupName\": \"生产账号组\",\n    \"Description\": \"生产账号组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"acg-rwqqudnm\",\n        \"RequestId\": \"a819e93f-ecf6-4ea0-8f85-1403562fc329\"\n    }\n}",
+        "title": "创建账户组"
+      }
+    ],
     "CreateAnalyzePolicyTask": [
       {
         "document": "",
@@ -102,6 +110,14 @@
         "title": "创建 vpc 规则组"
       }
     ],
+    "DeleteAccountGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccountGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"acg-fei1tdqz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"81023b3f-3565-4d60-8092-41ab0b00c459\"\n    }\n}",
+        "title": "删除账户组"
+      }
+    ],
     "DeleteEdgeAclRule": [
       {
         "document": "",
@@ -148,6 +164,14 @@
         "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcAclRule\n<公共请求参数>\n\n{\n    \"GroupId\": \"fwmrg_aussbmarr2\",\n    \"RuleIds\": [\n        \"e8314eac-7313-4be5-83fc-1a2e05362f1d\",\n        \"1293a7fa-b6ee-4243-9429-8e690ce92057\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c4dc364-63dc-4ed1-9c17-b2dba1c9e1de\"\n    }\n}",
         "title": "删除VPC 规则"
+      }
+    ],
+    "DescribeAccountGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccountGroups\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccountGroups\": [\n            {\n                \"CreateTime\": \"2026-03-18 22:39:17\",\n                \"Description\": \"生产账号组\",\n                \"GroupId\": \"acg-rwqqudnm\",\n                \"GroupName\": \"生产账号组1组\",\n                \"MemberCount\": 1\n            }\n        ],\n        \"RequestId\": \"01e1ef16-2d81-4555-879a-24774b388dda\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取账户组列表"
       }
     ],
     "DescribeEdgeAclRules": [
@@ -330,6 +354,36 @@
         "title": "忽略策略问题"
       }
     ],
+    "ModifyAccountGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccountGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"acg-rwqqudnm\",\n    \"GroupName\": \"生产账号组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6cfb1ac0-0db8-4118-9176-e26f2d84b007\"\n    }\n}",
+        "title": "修改账户组名称"
+      }
+    ],
+    "ModifyCfwManaged": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCfwManaged\n<公共请求参数>\n\n{\n    \"MemberId\": \"mem-1300846651-100037509558\",\n    \"CfwManaged\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9cfa9a92-b81d-4c86-87da-4165f6d1519b\"\n    }\n}",
+        "title": "设置防火墙纳管开关"
+      }
+    ],
+    "ModifyCfwShareRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCfwShareRole\n<公共请求参数>\n\n{\n    \"CfwShareRole\": \"user\",\n    \"UserMemberId\": \"mem-1300846651-100037509558\",\n    \"SharerMemberId\": \"mem-1300846651-100011616646\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"818d5e2f-35ac-49a0-ba8c-3cdc4247e0eb\"\n    }\n}",
+        "title": "将成员设置为使用者"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCfwShareRole\n<公共请求参数>\n\n{\n    \"CfwShareRole\": \"sharer\",\n    \"UserMemberId\": \"mem-1300846651-100011616646\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b2a220ad-d9f6-4bec-b4ee-da7d1dba98e6\"\n    }\n}",
+        "title": "将成员设置为共享者"
+      }
+    ],
     "ModifyEdgeAclRule": [
       {
         "document": "",
@@ -344,6 +398,20 @@
         "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeAclRuleSequence\n<公共请求参数>\n\n{\n    \"Direction\": 1,\n    \"GroupId\": \"fwmrg_4ae6vv1l7c\",\n    \"Sequences\": [\n        {\n            \"OrderIndex\": 1,\n            \"NewOrderIndex\": 2\n        },\n        {\n            \"OrderIndex\": 2,\n            \"NewOrderIndex\": 3\n        },\n        {\n            \"OrderIndex\": 3,\n            \"NewOrderIndex\": 4\n        },\n        {\n            \"OrderIndex\": 4,\n            \"NewOrderIndex\": 1\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"025c3756-bf58-408e-b806-2e68ead7f6a0\"\n    }\n}",
         "title": "互联网边界规则组内规则快速排序"
+      }
+    ],
+    "ModifyMemberGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMemberGroup\n<公共请求参数>\n\n{\n    \"UserMemberId\": \"mem-1300846651-100011616646\",\n    \"GroupId\": \"acg-rwqqudnm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0ba0f23-a0c7-4749-b2b7-936fec906aab\"\n    }\n}",
+        "title": "设置成员账户组"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: fwm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMemberGroup\n<公共请求参数>\n\n{\n    \"UserMemberId\": \"mem-1300846651-100011616646\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"086e2336-1a1f-47ad-a919-1b99cf0cbb33\"\n    }\n}",
+        "title": "移除账号组成员"
       }
     ],
     "ModifyNatAclRule": [

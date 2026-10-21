@@ -7,6 +7,13 @@
       "output": "CancelIgnorePolicyRiskResponse",
       "status": "online"
     },
+    "CreateAccountGroup": {
+      "document": "创建账户组",
+      "input": "CreateAccountGroupRequest",
+      "name": "创建账户组",
+      "output": "CreateAccountGroupResponse",
+      "status": "online"
+    },
     "CreateAnalyzePolicyTask": {
       "document": "创建策略风险分析任务",
       "input": "CreateAnalyzePolicyTaskRequest",
@@ -84,6 +91,13 @@
       "output": "CreateVpcAclRuleGroupResponse",
       "status": "online"
     },
+    "DeleteAccountGroup": {
+      "document": "删除账户组，账户组下有成员时不可删除",
+      "input": "DeleteAccountGroupRequest",
+      "name": "删除账户组",
+      "output": "DeleteAccountGroupResponse",
+      "status": "online"
+    },
     "DeleteEdgeAclRule": {
       "document": "批量删除互联网边界ACL规则。支持一次删除多条规则。",
       "input": "DeleteEdgeAclRuleRequest",
@@ -124,6 +138,13 @@
       "input": "DeleteVpcAclRuleRequest",
       "name": "删除VPC边界规则",
       "output": "DeleteVpcAclRuleResponse",
+      "status": "online"
+    },
+    "DescribeAccountGroups": {
+      "document": "获取账户组列表，支持分页和关键词搜索",
+      "input": "DescribeAccountGroupsRequest",
+      "name": "获取账户组列表",
+      "output": "DescribeAccountGroupsResponse",
       "status": "online"
     },
     "DescribeEdgeAclRules": {
@@ -252,6 +273,27 @@
       "output": "IgnorePolicyRiskResponse",
       "status": "online"
     },
+    "ModifyAccountGroup": {
+      "document": "修改账户组名称",
+      "input": "ModifyAccountGroupRequest",
+      "name": "修改账户组名称",
+      "output": "ModifyAccountGroupResponse",
+      "status": "online"
+    },
+    "ModifyCfwManaged": {
+      "document": "设置成员账号的云防火墙纳管状态",
+      "input": "ModifyCfwManagedRequest",
+      "name": "设置云防火墙纳管",
+      "output": "ModifyCfwManagedResponse",
+      "status": "online"
+    },
+    "ModifyCfwShareRole": {
+      "document": "设置集团成员的云防火墙共享角色（sharer/user/none）。共享者全集团唯一；共享者→使用者禁止直接变更，需先将角色改为 none；设为使用者时必须指定共享者 SharerAppId。仅管理员可操作。",
+      "input": "ModifyCfwShareRoleRequest",
+      "name": "设置云防火墙共享角色",
+      "output": "ModifyCfwShareRoleResponse",
+      "status": "online"
+    },
     "ModifyEdgeAclRule": {
       "document": "修改互联网边界ACL规则。Rule 参数中必须包含 RuleId 用于指定要修改的规则。",
       "input": "ModifyEdgeAclRuleRequest",
@@ -264,6 +306,13 @@
       "input": "ModifyEdgeAclRuleSequenceRequest",
       "name": "修改互联网边界规则序号",
       "output": "ModifyEdgeAclRuleSequenceResponse",
+      "status": "online"
+    },
+    "ModifyMemberGroup": {
+      "document": "设置成员所属账户组，GroupId为空字符串表示移出账户组",
+      "input": "ModifyMemberGroupRequest",
+      "name": "设置成员所属账户组",
+      "output": "ModifyMemberGroupResponse",
       "status": "online"
     },
     "ModifyNatAclRule": {
@@ -415,6 +464,78 @@
         }
       ],
       "usage": "out"
+    },
+    "AccountGroup": {
+      "document": "账户组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组ID",
+          "example": "ag-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户组名称",
+          "example": "生产环境组",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "生产环境使用的账户组",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员数量",
+          "example": "5",
+          "member": "int64",
+          "name": "MemberCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2024-01-15 10:30:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可删除",
+          "example": "true",
+          "member": "bool",
+          "name": "CanDelete",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AccountGroupInfo": {
       "document": "账户组信息",
@@ -1151,6 +1272,52 @@
       ],
       "usage": "both"
     },
+    "CreateAccountGroupRequest": {
+      "document": "CreateAccountGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组名称",
+          "example": "生产环境组",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述（可选）",
+          "example": "生产环境使用的账户组",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAccountGroupResponse": {
+      "document": "CreateAccountGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建账户组ID",
+          "example": "ag-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAnalyzePolicyTaskRequest": {
       "document": "CreateAnalyzePolicyTask请求参数结构体",
       "members": [
@@ -1720,6 +1887,33 @@
       ],
       "type": "object"
     },
+    "DeleteAccountGroupRequest": {
+      "document": "DeleteAccountGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组ID",
+          "example": "ag-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountGroupResponse": {
+      "document": "DeleteAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteEdgeAclRuleRequest": {
       "document": "DeleteEdgeAclRule请求参数结构体",
       "members": [
@@ -1909,6 +2103,89 @@
     "DeleteVpcAclRuleResponse": {
       "document": "DeleteVpcAclRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountGroupsRequest": {
+      "document": "DescribeAccountGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词搜索（可选）",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认20",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移，默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "顺序",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "MemberCount",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccountGroupsResponse": {
+      "document": "DescribeAccountGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户组列表",
+          "example": "无",
+          "member": "AccountGroup",
+          "name": "AccountGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3812,6 +4089,123 @@
       ],
       "usage": "both"
     },
+    "ModifyAccountGroupRequest": {
+      "document": "ModifyAccountGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "账户组ID",
+          "example": "ag-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户组名称",
+          "example": "新名称",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAccountGroupResponse": {
+      "document": "ModifyAccountGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCfwManagedRequest": {
+      "document": "ModifyCfwManaged请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标成员 Id",
+          "example": "mem-1300846651-100037509558",
+          "member": "string",
+          "name": "MemberId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云防火墙纳管：0-关闭，1-开启",
+          "example": "1",
+          "member": "int64",
+          "name": "CfwManaged",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCfwManagedResponse": {
+      "document": "ModifyCfwManaged返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCfwShareRoleRequest": {
+      "document": "ModifyCfwShareRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云防火墙共享角色，取值：sharer（共享者）、user（使用者）、none（无共享角色）。共享者→使用者禁止直接变更，需先设为 none",
+          "example": "sharer",
+          "member": "string",
+          "name": "CfwShareRole",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用者Id",
+          "example": "mem-1300846651-100028671395",
+          "member": "string",
+          "name": "UserMemberId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "共享者账号ID，CfwShareRole 为 user 时必填",
+          "example": "mem-1300846651-100011616646",
+          "member": "string",
+          "name": "SharerMemberId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCfwShareRoleResponse": {
+      "document": "ModifyCfwShareRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEdgeAclRuleRequest": {
       "document": "ModifyEdgeAclRule请求参数结构体",
       "members": [
@@ -3883,6 +4277,42 @@
     },
     "ModifyEdgeAclRuleSequenceResponse": {
       "document": "ModifyEdgeAclRuleSequence返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemberGroupRequest": {
+      "document": "ModifyMemberGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标成员 AppId",
+          "example": "mem-1300846651-100011616646",
+          "member": "string",
+          "name": "UserMemberId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户组ID（空字符串表示移出账户组）",
+          "example": "acg-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMemberGroupResponse": {
+      "document": "ModifyMemberGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

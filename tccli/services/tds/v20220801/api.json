@@ -162,8 +162,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>",
-          "example": "15000000000",
+          "document": "<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>",
+          "example": "15*********",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,
@@ -764,8 +764,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>手机号码（注：不需要带国家代码 例如：13430421011）。可以传入原文或MD5</p>",
-          "example": "15000000000",
+          "document": "<p>手机号码（注：不需要带国家代码 例如：15xxxxxxxxx）。可以传入原文、MD5或SHA256</p>",
+          "example": "15*********",
           "member": "string",
           "name": "PhoneNumber",
           "required": false,

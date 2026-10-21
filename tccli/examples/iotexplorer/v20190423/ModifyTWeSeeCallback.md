@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli iotexplorer ModifyTWeSeeCallback --cli-unfold-argument  \
-    --CallbackId callback-iak6g98u \
+    --CallbackId cb-qu****bu \
     --Type http \
     --CallbackUrl https://example.qq.com/twesee-callback?v=2 \
     --CallbackToken token-456

@@ -21982,7 +21982,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。",
+          "document": "<p>实例 ID。</p>",
           "example": "cdb-rqd2jndd",
           "member": "string",
           "name": "InstanceId",
@@ -21991,7 +21991,7 @@
         },
         {
           "disabled": false,
-          "document": "目标从实例。可选值：\"first\" - 第一备机；\"second\" - 第二备机。默认值为 \"first\"，仅多可用区实例支持设置为 \"second\"。",
+          "document": "<p>目标从实例。可选值：&quot;first&quot; - 第一备机；&quot;second&quot; - 第二备机；&quot;third&quot; - 第三备机。默认值为 &quot;first&quot;，仅多可用区实例支持设置为 &quot;second&quot;。</p>",
           "example": "first",
           "member": "string",
           "name": "DstSlave",
@@ -22000,7 +22000,7 @@
         },
         {
           "disabled": true,
-          "document": "是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。",
+          "document": "<p>是否强制切换。默认为 False。注意，若设置强制切换为 True，实例存在丢失数据的风险，请谨慎使用。</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceSwitch",
@@ -22009,7 +22009,7 @@
         },
         {
           "disabled": false,
-          "document": "是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。",
+          "document": "<p>是否时间窗内切换。默认为 False，即不在时间窗内切换。注意，如果设置了 ForceSwitch 参数为 True，则该参数不生效。</p>",
           "example": "false",
           "member": "bool",
           "name": "WaitSwitch",
@@ -22018,10 +22018,28 @@
         },
         {
           "disabled": false,
-          "document": "集群版实例指定节点 ID 发起主从切换。",
+          "document": "<p>集群版实例指定节点 ID 发起主从切换。</p>",
           "example": "dbn-iql06r1s",
           "member": "string",
           "name": "DstNodeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>等待主备位点差收敛到阈值以内的最长时间,范围：30s-3600s</p>",
+          "example": "30",
+          "member": "int64",
+          "name": "SyncTimeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>slave 执行位点和读到位点差值，在最长等待时间内，位点差需小于该值才启动切换</p>",
+          "example": "1048576",
+          "member": "string",
+          "name": "SyncDistance",
           "required": false,
           "type": "string"
         }
@@ -22033,7 +22051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务 ID。",
+          "document": "<p>异步任务 ID。</p>",
           "example": "a6040589-3b098df5-b551d9e5-81c6bfdc",
           "member": "string",
           "name": "AsyncRequestId",

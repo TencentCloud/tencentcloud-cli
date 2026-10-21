@@ -6075,7 +6075,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调类型。可选值：\\n- `http` HTTP 回调",
+          "document": "<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>",
           "example": "http",
           "member": "string",
           "name": "Type",
@@ -6084,19 +6084,37 @@
         },
         {
           "disabled": false,
-          "document": "回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口",
+          "document": "<p>回调 URL。要求 http 或 https 协议，仅支持 80 或 443 端口</p>",
           "example": "https://example.qq.com/twesee-callback",
           "member": "string",
           "name": "CallbackUrl",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "回调签名 Token。最大长度 128",
+          "document": "<p>回调签名 Token。最大长度 128</p>",
           "example": "your-token-here",
           "member": "string",
           "name": "CallbackToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调 CKafka 配置</p>",
+          "example": "无",
+          "member": "SeeCallbackCKafkaConfig",
+          "name": "CallbackCKafka",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要创建回调目标的产品 ID</p>",
+          "example": "default",
+          "member": "string",
+          "name": "ProductId",
           "required": false,
           "type": "string"
         }
@@ -6108,8 +6126,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调目标 ID",
-          "example": "callback-iak6g98u",
+          "document": "<p>回调目标 ID</p>",
+          "example": "cb-sn****67",
           "member": "string",
           "name": "CallbackId",
           "output_required": true,
@@ -8015,8 +8033,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调目标 ID，格式为 `callback-` + 8 位小写字母数字",
-          "example": "callback-iak6g98u",
+          "document": "<p>回调目标 ID</p>",
+          "example": "cb-qu****bu",
           "member": "string",
           "name": "CallbackId",
           "required": true,
@@ -21525,8 +21543,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "回调目标 ID，格式为 `callback-` + 8 位小写字母数字",
-          "example": "callback-iak6g98u",
+          "document": "<p>回调目标 ID</p>",
+          "example": "cb-qu****bu",
           "member": "string",
           "name": "CallbackId",
           "required": true,
@@ -21534,16 +21552,7 @@
         },
         {
           "disabled": false,
-          "document": "回调 URL，需要可访问并通过 Echo 校验",
-          "example": "https://example.qq.com/twesee-callback?v=2",
-          "member": "string",
-          "name": "CallbackUrl",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "回调类型。当前仅支持：`http`",
+          "document": "<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>",
           "example": "http",
           "member": "string",
           "name": "Type",
@@ -21552,12 +21561,30 @@
         },
         {
           "disabled": false,
-          "document": "回调签名 token，最大长度 128",
+          "document": "<p>回调 URL，需要可访问并通过 Echo 校验</p>",
+          "example": "https://example.qq.com/twesee-callback?v=2",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调签名 token，最大长度 128</p>",
           "example": "token-456",
           "member": "string",
           "name": "CallbackToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调 CKafka 配置</p>",
+          "example": "无",
+          "member": "SeeCallbackCKafkaConfig",
+          "name": "CallbackCKafka",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -24888,13 +24915,52 @@
       ],
       "type": "object"
     },
+    "SeeCallbackCKafkaConfig": {
+      "document": "TWeSee CKafka 回调配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CKafka 实例 ID</p>",
+          "example": "ckafka-5k****bv",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CKafka 实例中的 Topic 名</p>",
+          "example": "twesee-callback",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CKafka 实例所在的地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "SeeCallbackInfo": {
       "document": "TWeSee 回调目标信息",
       "members": [
         {
           "disabled": false,
-          "document": "回调目标 ID",
-          "example": "callback-iak6g98u",
+          "document": "<p>回调目标 ID</p>",
+          "example": "cb-sn****67",
           "member": "string",
           "name": "CallbackId",
           "output_required": true,
@@ -24903,37 +24969,7 @@
         },
         {
           "disabled": false,
-          "document": "回调签名 token",
-          "example": "your-token-here",
-          "member": "string",
-          "name": "CallbackToken",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回调 URL",
-          "example": "https://example.qq.com/twesee-callback",
-          "member": "string",
-          "name": "CallbackUrl",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间（秒级时间戳）",
-          "example": "1738827748",
-          "member": "int64",
-          "name": "CreateTime",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "回调类型",
+          "document": "<p>回调类型</p><p>枚举值：</p><ul><li>none： 不回调</li><li>http： HTTP 回调</li><li>ckafka： 投递 CKafka Topic</li></ul>",
           "example": "http",
           "member": "string",
           "name": "Type",
@@ -24943,7 +24979,47 @@
         },
         {
           "disabled": false,
-          "document": "更新时间（秒级时间戳）",
+          "document": "<p>回调 URL</p>",
+          "example": "https://example.qq.com/twesee-callback",
+          "member": "string",
+          "name": "CallbackUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调签名 token</p>",
+          "example": "your-token-here",
+          "member": "string",
+          "name": "CallbackToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调 CKafka 配置</p>",
+          "example": "无",
+          "member": "SeeCallbackCKafkaConfig",
+          "name": "CallbackCKafka",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间（秒级时间戳）</p>",
+          "example": "1738827748",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间（秒级时间戳）</p>",
           "example": "1738827789",
           "member": "int64",
           "name": "UpdateTime",
