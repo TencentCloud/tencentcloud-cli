@@ -829,7 +829,50 @@ def test_E4_servicecommand_get_command_map_lazy():
         _Services.action_caller = saved
 
 
-def test_E5_servicecommand_create_parser_returns_action_parser():
+def test_E5_servicecommand_routes_skip_sign_metadata_to_common_caller():
+    """E5: skip_sign=true 使用免签 caller，false 使用原生成 caller。"""
+    sc = object.__new__(ServiceCommand)
+    sc._service_name = "sts"
+    sc._version = "2018-08-13"
+    sc._command_map = None
+    sc._cli_data = Loader()
+    service_model = {
+        "metadata": {},
+        "actions": {
+            "AssumeRoleWithSAML": {
+                "input": "EmptyRequest",
+                "output": "EmptyResponse",
+                "name": "AssumeRoleWithSAML",
+                "skip_sign": True,
+            },
+            "GetCallerIdentity": {
+                "input": "EmptyRequest",
+                "output": "EmptyResponse",
+                "name": "GetCallerIdentity",
+                "skip_sign": False,
+            },
+        },
+        "objects": {"EmptyRequest": {"members": []}},
+    }
+    sc._get_service_model = lambda: service_model
+
+    generated_caller = lambda *a, **kw: None
+    import tccli.services as _Services
+    saved = _Services.action_caller
+    _Services.action_caller = lambda service: (lambda: {
+        "AssumeRoleWithSAML": generated_caller,
+        "GetCallerIdentity": generated_caller,
+    })
+    try:
+        command_map = sc._build_command_map()
+    finally:
+        _Services.action_caller = saved
+
+    assert command_map["AssumeRoleWithSAML"]._action_caller.skip_credential_refresh is True
+    assert command_map["GetCallerIdentity"]._action_caller is generated_caller
+
+
+def test_E6_servicecommand_create_parser_returns_action_parser():
     """E5: _create_parser 返回 ActionArgParser 实例 + 注入 help。"""
     from tccli.argparser import ActionArgParser
     import tccli.services as _Services
@@ -846,8 +889,8 @@ def test_E5_servicecommand_create_parser_returns_action_parser():
         _Services.action_caller = saved
 
 
-def test_E6_servicecommand_create_help_command():
-    """E6: create_help_command 返回 ServiceHelpCommand 实例。"""
+def test_E7_servicecommand_create_help_command():
+    """E7: create_help_command 返回 ServiceHelpCommand 实例。"""
     from tccli.help_command import ServiceHelpCommand
     if not os.path.isdir(os.path.join(Loader().get_services_path(), "cvm")):
         pytest.skip("cvm service missing")
@@ -985,6 +1028,66 @@ def test_F5_action_caller_is_invoked_in_normal_mode():
         assert captured["params"]["RuleList"]["RuleDetail"]["RuleKey"] == "tag"
     finally:
         credentials.maybe_refresh_credential = saved
+
+
+def test_F6_skip_sign_caller_skips_credential_refresh():
+    """F6: 标记为免签的 caller 不触发 OAuth/SSO 凭证刷新。"""
+    captured = {}
+
+    class FakeSkipSignCaller(object):
+        skip_credential_refresh = True
+
+        def __call__(self, action_parameters, parsed_globals):
+            captured["params"] = action_parameters
+            return "ok"
+
+    ac = ActionCommand(
+        service_name="sts",
+        version="2018-08-13",
+        action_name="AssumeRoleWithSAML",
+        action_model={"input": "AssumeRoleWithSAMLRequest", "name": "AssumeRoleWithSAML"},
+        action_caller=FakeSkipSignCaller(),
+    )
+    refresh_calls = []
+    from tccli import credentials
+    saved = credentials.maybe_refresh_credential
+    credentials.maybe_refresh_credential = lambda profile: refresh_calls.append(profile)
+    try:
+        g = _make_globals(profile="default")
+        result = ac([
+            "--SAMLAssertion", "assertion",
+            "--PrincipalArn", "principal",
+            "--RoleArn", "role",
+            "--RoleSessionName", "session",
+        ], g)
+    finally:
+        credentials.maybe_refresh_credential = saved
+
+    assert result == "ok"
+    assert refresh_calls == []
+    assert captured["params"]["SAMLAssertion"] == "assertion"
+
+
+def test_F7_regular_caller_keeps_credential_refresh():
+    """F7: 未标记的普通 caller 继续执行原凭证刷新逻辑。"""
+    ac = ActionCommand(
+        service_name="sts",
+        version="2018-08-13",
+        action_name="GetCallerIdentity",
+        action_model={"input": "GetCallerIdentityRequest", "name": "GetCallerIdentity"},
+        action_caller=lambda *a, **kw: "ok",
+    )
+    refresh_calls = []
+    from tccli import credentials
+    saved = credentials.maybe_refresh_credential
+    credentials.maybe_refresh_credential = lambda profile: refresh_calls.append(profile)
+    try:
+        result = ac([], _make_globals(profile="default"))
+    finally:
+        credentials.maybe_refresh_credential = saved
+
+    assert result == "ok"
+    assert refresh_calls == ["default"]
 
 
 # ============================================================

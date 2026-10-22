@@ -46,7 +46,6 @@ def main():
         log.exception(e)
         return 255
     except ConfigurationError as e:
-        sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.exception(e)
@@ -75,7 +74,6 @@ def main():
         log.exception(e)
         return 255
     except TencentCloudSDKException as e:
-        sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.error(e)
