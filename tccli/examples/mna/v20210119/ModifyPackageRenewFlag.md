@@ -1,4 +1,4 @@
-**Example 1: 示例1**
+**Example 1: 修改流量包自动续费标识示例**
 
 
 
@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli mna ModifyPackageRenewFlag --cli-unfold-argument  \
-    --ResourceId 56d11777-50f7-4c60-9c89-e7076c8529a9-0 \
+    --ResourceId mpe-00jaa4u_3M2Shh7kWh3 \
     --RenewFlag False
 ```
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1206563f-f13f-4647-aaa8-37fa86954cc4-1"
+        "RequestId": "4053d08c-c574-4c3e-b64b-bf364e7c1d1b"
     }
 }
 ```

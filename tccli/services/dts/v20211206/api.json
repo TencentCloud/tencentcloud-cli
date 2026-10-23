@@ -9001,7 +9001,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "迁移任务 Id，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。",
+          "document": "<p>迁移任务 Id，可通过<a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a>接口获取。</p>",
           "example": "dts-saasxa",
           "member": "string",
           "name": "JobId",
@@ -9010,7 +9010,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务全量导出线程数、有效值为 1-16",
+          "document": "<p>迁移任务全量导出线程数、有效值为 1-16</p>",
           "example": "8",
           "member": "int64",
           "name": "DumpThread",
@@ -9019,7 +9019,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移全量导出的 Rps 限制、需要大于 0",
+          "document": "<p>迁移全量导出的 Rps 限制、需要大于 0</p>",
           "example": "400000",
           "member": "int64",
           "name": "DumpRps",
@@ -9028,7 +9028,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务全量导入线程数、有效值为 1-16",
+          "document": "<p>迁移任务全量导入线程数、有效值为 1-16</p>",
           "example": "8",
           "member": "int64",
           "name": "LoadThread",
@@ -9037,7 +9037,7 @@
         },
         {
           "disabled": false,
-          "document": "迁移任务增量导入线程数、有效值为 1-128",
+          "document": "<p>迁移任务增量导入线程数、有效值为 1-128</p>",
           "example": "32",
           "member": "int64",
           "name": "SinkerThread",
@@ -9046,7 +9046,7 @@
         },
         {
           "disabled": false,
-          "document": "全量导入Rps限制",
+          "document": "<p>全量导入Rps限制</p>",
           "example": "400000",
           "member": "int64",
           "name": "LoadRps",

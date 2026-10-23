@@ -5855,6 +5855,34 @@
       ],
       "type": "object"
     },
+    "FailedAccount": {
+      "document": "失败账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>下发失败的成员账号 UIN</p>",
+          "example": "700003086465",
+          "member": "int64",
+          "name": "TargetUin",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下发失败的成员账号名</p>",
+          "example": "testCIC2",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetExternalSAMLIdentityProviderRequest": {
       "document": "GetExternalSAMLIdentityProvider请求参数结构体",
       "members": [
@@ -11357,7 +11385,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限配置配置ID。",
+          "document": "<p>权限配置配置ID。</p>",
           "example": "rc-3334342dws****",
           "member": "string",
           "name": "RoleConfigurationId",
@@ -11368,7 +11396,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置配名称。",
+          "document": "<p>权限配置配名称。</p>",
           "example": "conf1",
           "member": "string",
           "name": "RoleConfigurationName",
@@ -11379,7 +11407,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置的描述。",
+          "document": "<p>权限配置的描述。</p>",
           "example": "this is role configuration",
           "member": "string",
           "name": "Description",
@@ -11390,7 +11418,7 @@
         },
         {
           "disabled": false,
-          "document": "会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。\n单位：秒。",
+          "document": "<p>会话持续时间。CIC 用户使用访问配置访问成员账号时，会话最多保持的时间。<br>单位：秒。</p>",
           "example": "900",
           "member": "int64",
           "name": "SessionDuration",
@@ -11401,7 +11429,7 @@
         },
         {
           "disabled": false,
-          "document": "初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。",
+          "document": "<p>初始访问页面。CIC 用户使用访问配置访问成员账号时，初始访问的页面地址。</p>",
           "example": "https://console.cloud.tencent.com/",
           "member": "string",
           "name": "RelayState",
@@ -11412,7 +11440,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置的创建时间。",
+          "document": "<p>权限配置的创建时间。</p>",
           "example": "2019-01-01 12:12:12",
           "member": "string",
           "name": "CreateTime",
@@ -11423,7 +11451,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置的更新时间。",
+          "document": "<p>权限配置的更新时间。</p>",
           "example": "2019-01-01 12:12:12",
           "member": "string",
           "name": "UpdateTime",
@@ -11434,13 +11462,57 @@
         },
         {
           "disabled": false,
-          "document": "如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。",
+          "document": "<p>如果有入参FilterTargets查询成员账号是否配置过权限，配置了返回true，否则返回false。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsSelected",
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话时长应用状态</p><p>枚举值：</p><ul><li>Success： 全部账号应用成功</li><li>Failed： 存在失败账号</li><li>Applying： 任务在途</li><li>Unknown： 已部署账号超查询上限</li></ul>",
+          "example": "Success",
+          "member": "string",
+          "name": "ApplyStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前已真实下发到 CAM 的会话时长</p><p>取值范围：[900, 43200]</p><p>单位：秒</p>",
+          "example": "19999",
+          "member": "uint64",
+          "name": "AppliedSessionDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次成功下发时间</p><p>参数格式： YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-08-29 15:03:58",
+          "member": "string",
+          "name": "SessionDurationUpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>未成功应用的账号明细</p><p>仅 Failed 态返回</p>",
+          "example": "无",
+          "member": "FailedAccount",
+          "name": "FailedAccounts",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -13185,7 +13257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间 ID",
+          "document": "<p>空间 ID</p>",
           "example": "z-29n23ien",
           "member": "string",
           "name": "ZoneId",
@@ -13194,7 +13266,7 @@
         },
         {
           "disabled": false,
-          "document": "权限配置 ID",
+          "document": "<p>权限配置 ID</p>",
           "example": "rc-so2msow",
           "member": "string",
           "name": "RoleConfigurationId",
@@ -13203,7 +13275,7 @@
         },
         {
           "disabled": false,
-          "document": "新的权限配置描述。  长度：最大 1024 个字符。",
+          "document": "<p>新的权限配置描述。  长度：最大 1024 个字符。</p>",
           "example": "this is role configuration",
           "member": "string",
           "name": "NewDescription",
@@ -13212,7 +13284,7 @@
         },
         {
           "disabled": false,
-          "document": "新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。",
+          "document": "<p>新的会话持续时间。  CIC 用户使用权限配置访问集团账号目标账号时，会话最多保持的时间。  单位：秒。  取值范围：900-43200（15 分钟-12 小时）。</p>",
           "example": "900",
           "member": "int64",
           "name": "NewSessionDuration",
@@ -13221,12 +13293,21 @@
         },
         {
           "disabled": false,
-          "document": "新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。",
+          "document": "<p>新的初始访问页面。  CIC 用户使用权限配置访问集团账号目标账号时，初始访问的页面地址。  该页面必须是腾讯云控制台页面。</p>",
           "example": "https://console.cloud.tencent.com",
           "member": "string",
           "name": "NewRelayState",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>true=保存并应用（立即下发）；false/缺省=仅保存</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsApply",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13236,7 +13317,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限配置详情",
+          "document": "<p>权限配置详情</p>",
           "example": "无",
           "member": "RoleConfiguration",
           "name": "RoleConfigurationInfo",

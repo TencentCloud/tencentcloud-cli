@@ -1012,7 +1012,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "物理专线的名称。",
+          "document": "<p>物理专线的名称。</p>",
           "example": "北京航信物理专线1",
           "member": "string",
           "name": "DirectConnectName",
@@ -1021,7 +1021,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线所在的接入点。\n您可以通过调用[DescribeAccessPoints](https://cloud.tencent.com/document/product/216/34827)接口获取接入点ID。",
+          "document": "<p>物理专线所在的接入点。<br>您可以通过调用<a href=\"https://cloud.tencent.com/document/product/216/34827\">DescribeAccessPoints</a>接口获取接入点ID。</p>",
           "example": "ap-cn-beijing-hx",
           "member": "string",
           "name": "AccessPointId",
@@ -1030,7 +1030,7 @@
         },
         {
           "disabled": false,
-          "document": "提供接入物理专线的运营商。\nChinaTelecom：中国电信； \nChinaMobile：中国移动；\nChinaUnicom：中国联通；\n In-houseWiring：楼内线；\nChinaOther：中国其他；\n InternationalOperator：境外其他。",
+          "document": "<p>提供接入物理专线的运营商。<br>ChinaTelecom：中国电信；<br>ChinaMobile：中国移动；<br>ChinaUnicom：中国联通；<br> In-houseWiring：楼内线；<br>ChinaOther：中国其他；<br> InternationalOperator：境外其他。</p>",
           "example": "ChinaMobile",
           "member": "string",
           "name": "LineOperator",
@@ -1039,7 +1039,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线接入端口类型，取值：\n100Base-T：百兆电口；\n1000Base-T（默认值）：千兆电口；\n1000Base-LX：千兆单模光口（10千米）；\n10GBase-T：万兆电口；\n10GBase-LR（默认值）：万兆单模光口（10千米）。",
+          "document": "<p>物理专线接入端口类型，取值：<br>100Base-T：百兆电口；<br>1000Base-T（默认值）：千兆电口；<br>1000Base-LX：千兆单模光口（10千米）；<br>10GBase-T：万兆电口；<br>10GBase-LR（默认值）：万兆单模光口（10千米）。</p>",
           "example": "1000Base-LX",
           "member": "string",
           "name": "PortType",
@@ -1048,7 +1048,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商或者服务商为物理专线提供的电路编码。",
+          "document": "<p>运营商或者服务商为物理专线提供的电路编码。</p>",
           "example": "北京航信ANE0348NP",
           "member": "string",
           "name": "CircuitCode",
@@ -1057,7 +1057,7 @@
         },
         {
           "disabled": false,
-          "document": "本地数据中心的地理位置。",
+          "document": "<p>本地数据中心的地理位置。</p>",
           "example": "北京市海淀区西格玛A大厦14楼",
           "member": "string",
           "name": "Location",
@@ -1066,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。",
+          "document": "<p>物理专线接入接口带宽，单位为Mbps，默认值为1000，取值范围为 [2, 10240]。</p>",
           "example": "1000",
           "member": "int64",
           "name": "Bandwidth",
@@ -1075,7 +1075,7 @@
         },
         {
           "disabled": false,
-          "document": "冗余物理专线的ID。",
+          "document": "<p>冗余物理专线的ID。</p>",
           "example": "dc-12345678",
           "member": "string",
           "name": "RedundantDirectConnectId",
@@ -1084,7 +1084,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线调试VLAN。默认开启VLAN，自动分配VLAN。",
+          "document": "<p>物理专线调试VLAN。默认开启VLAN，自动分配VLAN。</p>",
           "example": "100",
           "member": "int64",
           "name": "Vlan",
@@ -1093,7 +1093,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线调试腾讯侧互联 IP。默认自动分配。",
+          "document": "<p>物理专线调试腾讯侧互联 IP。默认自动分配。</p>",
           "example": "IP地址",
           "member": "string",
           "name": "TencentAddress",
@@ -1102,7 +1102,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线调试用户侧互联 IP。默认自动分配。",
+          "document": "<p>物理专线调试用户侧互联 IP。默认自动分配。</p>",
           "example": "客户端IP地址",
           "member": "string",
           "name": "CustomerAddress",
@@ -1111,7 +1111,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线申请者姓名。默认从账户体系获取。",
+          "document": "<p>物理专线申请者姓名。默认从账户体系获取。</p>",
           "example": "张三",
           "member": "string",
           "name": "CustomerName",
@@ -1120,7 +1120,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线申请者联系邮箱。默认从账户体系获取。",
+          "document": "<p>物理专线申请者联系邮箱。默认从账户体系获取。</p>",
           "example": "12345@qq.com",
           "member": "string",
           "name": "CustomerContactMail",
@@ -1129,7 +1129,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线申请者联系号码。默认从账户体系获取。",
+          "document": "<p>物理专线申请者联系号码。默认从账户体系获取。</p>",
           "example": "180XXXXXXXX",
           "member": "string",
           "name": "CustomerContactNumber",
@@ -1138,7 +1138,7 @@
         },
         {
           "disabled": false,
-          "document": "报障联系人。",
+          "document": "<p>报障联系人。</p>",
           "example": "李四",
           "member": "string",
           "name": "FaultReportContactPerson",
@@ -1147,7 +1147,7 @@
         },
         {
           "disabled": false,
-          "document": "报障联系电话。",
+          "document": "<p>报障联系电话。</p>",
           "example": "181XXXXXXXX",
           "member": "string",
           "name": "FaultReportContactNumber",
@@ -1156,7 +1156,7 @@
         },
         {
           "disabled": false,
-          "document": "报障联系邮箱。",
+          "document": "<p>报障联系邮箱。</p>",
           "example": "lisi@tencent.com",
           "member": "string",
           "name": "FaultReportContactEmail",
@@ -1165,8 +1165,8 @@
         },
         {
           "disabled": false,
-          "document": "物理专线申请者是否签署了用户使用协议。默认已签署。",
-          "example": "是",
+          "document": "<p>物理专线申请者是否签署了用户使用协议。默认已签署。</p>",
+          "example": "true",
           "member": "bool",
           "name": "SignLaw",
           "required": false,
@@ -1174,7 +1174,7 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对",
+          "document": "<p>标签键值对</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -1183,7 +1183,7 @@
         },
         {
           "disabled": false,
-          "document": "是否MACsec需求",
+          "document": "<p>是否MACsec需求</p>",
           "example": "true",
           "member": "bool",
           "name": "IsMacSec",
@@ -1198,7 +1198,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "物理专线的ID。",
+          "document": "<p>物理专线的ID。</p>",
           "example": "[\"dc-abcdefgh\"]",
           "member": "string",
           "name": "DirectConnectIdSet",

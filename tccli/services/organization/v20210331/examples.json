@@ -1051,8 +1051,8 @@
     "UpdateRoleConfiguration": [
       {
         "document": "修改权限配置信息",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-22m23mo2\",\n    \"RoleConfigurationId\": \"rc-ai3n9si2m\",\n    \"NewDescription\": \"this is role configuration\",\n    \"NewSessionDuration\": 900,\n    \"NewRelayState\": \"https://console.cloud.tencent.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"RoleConfigurationId\": \"rc-s2ns92ns***\",\n            \"RoleConfigurationName\": \"conf1\",\n            \"Description\": \"this is role configuration\",\n            \"SessionDuration\": 900,\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"CreateTime\": \"2019-01-01 12:12:12\",\n            \"UpdateTime\": \"2019-01-01 12:12:12\"\n        },\n        \"RequestId\": \"e297543a-80de-4039-83c8-9d324545\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRoleConfiguration\n<公共请求参数>\n\n{\n    \"ZoneId\": \"z-6yd36d1vqmy0\",\n    \"RoleConfigurationId\": \"rc-c03cbnjbbzyb\",\n    \"NewDescription\": \"this is role configuration\",\n    \"NewSessionDuration\": 900,\n    \"NewRelayState\": \"https://console.cloud.tencent.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RoleConfigurationInfo\": {\n            \"CreateTime\": \"2026-08-25 15:02:46\",\n            \"Description\": \"this is role configuration\",\n            \"RelayState\": \"https://console.cloud.tencent.com\",\n            \"RoleConfigurationId\": \"rc-c03cbnjbbzyb\",\n            \"RoleConfigurationName\": \"session-duration-rc\",\n            \"SessionDuration\": 900,\n            \"UpdateTime\": \"2026-08-27 11:26:24\"\n        },\n        \"RequestId\": \"d2e38d16-a94d-4687-8f51-760c28c368be\"\n    }\n}",
         "title": "修改权限配置信息"
       }
     ],

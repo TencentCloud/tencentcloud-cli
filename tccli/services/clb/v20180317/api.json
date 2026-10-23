@@ -17320,6 +17320,51 @@
           "name": "EndpointPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属厂商</p>",
+          "example": "anthropic",
+          "member": "string",
+          "name": "ModelProvider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>协议</p>",
+          "example": "openai",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>所使用的CMR 私网管道 ID</p>",
+          "example": "pnt-1bf6f527",
+          "member": "string",
+          "name": "CMRPrivateNetworkTunnelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>携带的Host Header</p>",
+          "example": "new.invalid",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要进行ssl校验</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "VerifySSL",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -17689,6 +17734,24 @@
           "name": "InputModalities",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的上游模型名称</p>",
+          "example": "be-70251-2c812903c6-m2",
+          "member": "string",
+          "name": "NewModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新的对外模型名称</p>",
+          "example": "be-92514-2d41b28193-n",
+          "member": "string",
+          "name": "NewModelAlias",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -20921,6 +20984,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>",
+          "example": "1800",
+          "member": "uint64",
+          "name": "TimeoutSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

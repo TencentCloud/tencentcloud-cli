@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli organization UpdateRoleConfiguration --cli-unfold-argument  \
-    --ZoneId z-22m23mo2 \
-    --RoleConfigurationId rc-ai3n9si2m \
+    --ZoneId z-6yd36d1vqmy0 \
+    --RoleConfigurationId rc-c03cbnjbbzyb \
     --NewDescription this is role configuration \
     --NewSessionDuration 900 \
     --NewRelayState https://console.cloud.tencent.com
@@ -18,15 +18,15 @@ Output:
 {
     "Response": {
         "RoleConfigurationInfo": {
-            "RoleConfigurationId": "rc-s2ns92ns***",
-            "RoleConfigurationName": "conf1",
+            "CreateTime": "2026-08-25 15:02:46",
             "Description": "this is role configuration",
-            "SessionDuration": 900,
             "RelayState": "https://console.cloud.tencent.com",
-            "CreateTime": "2019-01-01 12:12:12",
-            "UpdateTime": "2019-01-01 12:12:12"
+            "RoleConfigurationId": "rc-c03cbnjbbzyb",
+            "RoleConfigurationName": "session-duration-rc",
+            "SessionDuration": 900,
+            "UpdateTime": "2026-08-27 11:26:24"
         },
-        "RequestId": "e297543a-80de-4039-83c8-9d324545"
+        "RequestId": "d2e38d16-a94d-4687-8f51-760c28c368be"
     }
 }
 ```

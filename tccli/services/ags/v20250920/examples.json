@@ -368,6 +368,14 @@
         "title": "查询沙箱实例列表"
       }
     ],
+    "DescribeSandboxInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"wvhtuasdgdg2fh5accrhr5g62v26yt6epmd54kx6\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"AuthMode\": \"DEFAULT\",\n                \"CreateTime\": \"2026-08-25T17:00:27+08:00\",\n                \"CustomConfiguration\": {\n                    \"Resources\": {\n                        \"CPU\": \"2000m\",\n                        \"Memory\": \"1000Mi\",\n                        \"Storage\": \"\"\n                    }\n                },\n                \"ExpiresAt\": \"2026-08-25T17:05:19+08:00\",\n                \"InstanceId\": \"wvhtuasdgdg2fh5accrhr5g62v26yt6epmd54kx6\",\n                \"NetworkMode\": \"PUBLIC\",\n                \"Persistent\": false,\n                \"Status\": \"STOPPED\",\n                \"TimeoutSeconds\": 300,\n                \"ToolId\": \"sdt-an98k9md\",\n                \"ToolName\": \"e2e-test-2f86f215\",\n                \"UpdateTime\": \"2026-08-25T17:00:28+08:00\"\n            }\n        ],\n        \"RequestId\": \"23950fb8-761b-4dc1-b843-4c5d6d04977b\"\n    }\n}",
+        "title": "按照实例id查询"
+      }
+    ],
     "DescribeSandboxSnapshotList": [
       {
         "document": "",

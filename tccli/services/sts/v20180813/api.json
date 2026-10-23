@@ -12,16 +12,16 @@
       "input": "AssumeRoleWithSAMLRequest",
       "name": "根据 SAML 断言申请角色临时访问凭证",
       "output": "AssumeRoleWithSAMLResponse",
-      "status": "online",
-      "skip_sign": true
+      "skip_sign": true,
+      "status": "online"
     },
     "AssumeRoleWithWebIdentity": {
       "document": "申请OIDC角色临时访问凭证。\n\n注意：当使用签名方法 V3 调用本接口时，请求头无须传入 X-TC-Token, 但 Authorization 需要传入值 SKIP。",
       "input": "AssumeRoleWithWebIdentityRequest",
       "name": "申请OIDC角色临时访问凭证",
       "output": "AssumeRoleWithWebIdentityResponse",
-      "status": "online",
-      "skip_sign": true
+      "skip_sign": true,
+      "status": "online"
     },
     "GetCallerIdentity": {
       "document": "获取当前调用者的身份信息。\n\n接口支持主账号，子账号长期密钥以及AssumeRole，GetFederationToken生成的临时访问凭证身份获取。",

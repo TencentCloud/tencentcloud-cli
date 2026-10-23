@@ -161,6 +161,13 @@
       "output": "CreateUserResponse",
       "status": "online"
     },
+    "CreateUserKey": {
+      "document": "用户创建集成",
+      "input": "CreateUserKeyRequest",
+      "name": "用户创建集成",
+      "output": "CreateUserKeyResponse",
+      "status": "online"
+    },
     "DeleteAIModel": {
       "document": "删除 AI 模型配置分组，支持批量删除。内置分组无法删除。分组删除后，该分组下的所有模型配置将同步移除，针对该分组模型的请求将会失败，请在删除前确认业务侧已停止对该分组的调用。\n\n注意：\n此操作不可逆，删除后数据无法恢复，请谨慎操作。\n\n删除前建议通过 [DescribeAIModelList]() 接口确认分组当前状态。",
       "input": "DeleteAIModelRequest",
@@ -229,6 +236,13 @@
       "input": "DeleteTableRequest",
       "name": "删除文档型数据库表",
       "output": "DeleteTableResponse",
+      "status": "online"
+    },
+    "DeleteUserKey": {
+      "document": "用户删除集成",
+      "input": "DeleteUserKeyRequest",
+      "name": "用户删除集成",
+      "output": "DeleteUserKeyResponse",
       "status": "online"
     },
     "DeleteUsers": {
@@ -609,11 +623,25 @@
       "output": "GetFunctionResponse",
       "status": "online"
     },
+    "GetOneUserKey": {
+      "document": "用户获取集成详情",
+      "input": "GetOneUserKeyRequest",
+      "name": "用户获取指定集成的详情信息",
+      "output": "GetOneUserKeyResponse",
+      "status": "online"
+    },
     "GetProviders": {
       "document": "查询指定云开发环境下的身份认证源列表。返回该环境已配置的所有身份认证源信息，包括第三方登录（OAuth、OIDC、SAML）、微信小程序登录、自定义登录和邮箱登录等。返回结果包含认证源基本信息、关联应用、配置状态及启用情况。若自定义登录或邮箱登录的身份源尚未创建，接口会自动追加一个默认关闭状态的身份源记录。",
       "input": "GetProvidersRequest",
       "name": "获取三方认证源列表",
       "output": "GetProvidersResponse",
+      "status": "online"
+    },
+    "GetUserKeyList": {
+      "document": "用户获取集成列表",
+      "input": "GetUserKeyListRequest",
+      "name": "用户获取集成列表",
+      "output": "GetUserKeyListResponse",
       "status": "online"
     },
     "ListFunctions": {
@@ -859,6 +887,13 @@
       "input": "UpdateTableRequest",
       "name": "修改文档型数据库表索引信息",
       "output": "UpdateTableResponse",
+      "status": "online"
+    },
+    "UpdateUserKey": {
+      "document": "用户更新集成信息",
+      "input": "UpdateUserKeyRequest",
+      "name": "用户更新集成信息",
+      "output": "UpdateUserKeyResponse",
       "status": "online"
     },
     "UpgradePGInstanceToDedicated": {
@@ -1113,6 +1148,132 @@
       ],
       "usage": "both"
     },
+    "APIsUserKeyInfo": {
+      "document": "用户密钥对管理",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户创建的集成的名称</p>",
+          "example": "集成名称1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户对创建的集成的描述</p>",
+          "example": "这是一个集成",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集成ID，用户创建的集成的标识id，前半部分用户填写，后半部分平台按照一定规则生成</p>",
+          "example": "afas_asdfFfa879asfd34a",
+          "member": "string",
+          "name": "KeyID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>额外信息,根据集成类型不同，ext会有不同的子结构</p>",
+          "example": "json_encode的字符串",
+          "member": "string",
+          "name": "Ext",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集成类型Code</p>",
+          "example": "adfad",
+          "member": "string",
+          "name": "AuthTypeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "已发布",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用该集成的服务列表</p>",
+          "example": "无",
+          "member": "BindServiceList",
+          "name": "BindServiceList",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AuthTypeName 和AuthType 分别1-1对应</p>",
+          "example": "公众号开放服务",
+          "member": "string",
+          "name": "AuthTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>github、gitlab、gitee、腾讯会议等oauth类型的，需要传这个ticket_id，创建的密钥对跟auth_ticket_token(对于github、gitlab、gitee)、weda_ticket_token(对于腾讯会议)关联起来</p>",
+          "example": "8AbPfb4ydj1F944fdfkM",
+          "member": "string",
+          "name": "TicketID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户在创建(weixinmp、wxvirtualpay、weixin-store、channels、weixinpaydc)这五种之一时创建的关联的示例代码云函数的函数名</p>",
+          "example": "functionname1",
+          "member": "string",
+          "name": "DemoCodeFunctionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：2026-05-25T11:18:28+08:00</p>",
+          "example": "2026-05-25T11:18:28+08:00",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：2026-05-25T11:18:28+08:00</p>",
+          "example": "2026-05-25T11:18:28+08:00",
+          "member": "string",
+          "name": "UpdateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AddProviderRequest": {
       "document": "AddProvider请求参数结构体",
       "members": [
@@ -1248,6 +1409,89 @@
       ],
       "type": "object"
     },
+    "AgentRuntimeCode": {
+      "document": "Agent 云函数代码",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象存储桶名称",
+          "example": "bucket",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储中代码包文件路径，以/开头",
+          "example": "object",
+          "member": "string",
+          "name": "CosObjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "包含函数代码文件及其依赖项的 zip 格式文件，zip包大小上限为 50MB，使用该接口时要求将 zip 文件的内容转成 base64 编码",
+          "example": "\"codefile-base64\"",
+          "member": "string",
+          "name": "ZipFile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象存储的地域，地域为北京时需要传入ap-beijing,北京一区时需要传递ap-beijing-1，其他的地域不需要传递。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "CosBucketRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果是从TempCos创建的话，需要传入TempCosObjectName",
+          "example": "/2025-10-13/1257473911/xxx.zip",
+          "member": "string",
+          "name": "TempCosObjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像部署时配置TCR镜像信息",
+          "example": "无",
+          "member": "AgentRuntimeCodeImageConfig",
+          "name": "ImageConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云函数DemoId",
+          "example": "DemoId",
+          "member": "string",
+          "name": "DemoId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentRuntimeCodeImageConfig": {
       "document": "Agent 创建云函数镜像配置",
       "members": [
@@ -1315,6 +1559,161 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentRuntimeConfig": {
+      "document": "Agent 云函数配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "函数代码. 注意：不能同时指定Cos和ZipFile",
+          "example": "无",
+          "member": "AgentRuntimeCode",
+          "name": "Code",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数运行环境，默认Python2.7\n目前支持的运行环境：\n- Python2.7\n- Python3.6\n- Python3.7\n- Python3.9\n- Python3.10\n- Nodejs6.10\n- Nodejs8.9\n- Nodejs10.15\n- Nodejs12.16\n- Nodejs14.18\n- Nodejs16.13\n- Nodejs18.15\n- Php5.6\n- Php7(7.2版本)\n- Php7.4\n- Php8.0\n- Go1\n- Java8\n- CustomRuntime",
+          "example": "Nodejs18.15",
+          "member": "string",
+          "name": "Runtime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数运行时内存大小，默认为 128M，可选范围 64、128MB-3072MB，并且以 128MB 为阶梯",
+          "example": "128",
+          "member": "int64",
+          "name": "MemorySize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数是否自动安装依赖",
+          "example": "false",
+          "member": "bool",
+          "name": "InstallDependency",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数最长执行时间，单位为秒，可选值范围 1-900 秒，默认为 3 秒",
+          "example": "3",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数的环境变量，满足json格式",
+          "example": "{/\"key/\":/\"value/\"}",
+          "member": "string",
+          "name": "Environment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Agent Session 配置",
+          "example": "无",
+          "member": "AgentRuntimeSessionConfig",
+          "name": "SessionConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentRuntimeSessionConfig": {
+      "document": "Agent 运行时 Session 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "单实例并发数最大值。取值范围 [1,100]",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 来源，三选一：'HEADER', 'COOKIE', 'QUERY_STRING'",
+          "example": "HEADER",
+          "member": "string",
+          "name": "SessionSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session 名称，以字母开头，非首字母可包含数字、字母、下划线、中划线，长度5-40个字符",
+          "example": "x-test-",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大并发会话数",
+          "example": "1",
+          "member": "int64",
+          "name": "MaximumConcurrencySessionPerInstance",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生命周期",
+          "example": "1800",
+          "member": "int64",
+          "name": "MaximumTTLInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空闲时长",
+          "example": "1800",
+          "member": "int64",
+          "name": "MaximumIdleTimeInSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1797,6 +2196,84 @@
         }
       ],
       "type": "object"
+    },
+    "BindService": {
+      "document": "ID:服务标识ID，Name:服务名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务标识",
+          "example": "afad_asdfad",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景，云托管、云函数、aibuilder等",
+          "example": "cloudfun",
+          "member": "string",
+          "name": "Scene",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindServiceList": {
+      "document": "密钥对绑定的mcp服务列表和apis服务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密钥对绑定的mcp服务列表",
+          "example": "无",
+          "member": "BindService",
+          "name": "Mcp",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密钥对绑定的apis服务列表",
+          "example": "无",
+          "member": "BindService",
+          "name": "Apis",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登记哪个资源下的哪个场景使用了密钥对",
+          "example": "无",
+          "member": "BindService",
+          "name": "Other",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "BindStorageSourceRequest": {
       "document": "BindStorageSource请求参数结构体",
@@ -4444,6 +4921,124 @@
       ],
       "type": "object"
     },
+    "CreateUserKeyRequest": {
+      "document": "CreateUserKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "asf2342-afds",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户创建的集成名称，或者密钥名称</p>",
+          "example": "集成名称1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户创建的集成ID，集成表示，或者密钥对标识，前半部分用户填写，后半部分平台按照一定规则生成</p>",
+          "example": "poiuas8-098asdfaf",
+          "member": "string",
+          "name": "KeyID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集成描述</p>",
+          "example": "这是个集成描述",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集成类型，或者授权类型码，对应GetUserKeyTemplateList接口的AuthTypeCode字段，比如github、gitlab、gitee、meeting、PublicAccountOpenService等</p>",
+          "example": "github",
+          "member": "string",
+          "name": "AuthTypeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据集成类型的不同，ext会有不同的子结构，具体每种授权类型的ext需要填写的信息，可以通过GetUserKeyTemplateList获取</p>",
+          "example": "{\"a\":\"b\"}",
+          "member": "string",
+          "name": "Ext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>github、gitlab、gitee、腾讯会议等oauth类型的，需要传这个ticket_id，创建的密钥对跟auth_ticket_token(对于github、gitlab、gitee)、weda_ticket_token(对于腾讯会议)关联起来</p>",
+          "example": "Zw3NdqeHfhInWHkNFq49",
+          "member": "string",
+          "name": "TicketID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务类型，integration：从集成中心来的，默认为空，表示是从授权管理中心来的</p>",
+          "example": "integration",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建demo代码云函数需要的参数信息</p><p>入参限制：当Business为integration，且AuthTypeCode为(weixinmp、wxvirtualpay、weixin-store、channels、weixinpaydc)之一时必填</p>",
+          "example": "无",
+          "member": "AgentRuntimeConfig",
+          "name": "RuntimeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建集成时创建关联的示例代码云函数的名称，当Business为integration，且AuthTypeCode为(weixinmp、wxvirtualpay、weixin-store、channels、weixinpaydc)之一时必填</p>",
+          "example": "wx-pay-04y48gfh-demo-scfweb",
+          "member": "string",
+          "name": "DemoCodeFunctionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateUserKeyResponse": {
+      "document": "CreateUserKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建成功记录条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CreateResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateUserRequest": {
       "document": "CreateUser请求参数结构体",
       "members": [
@@ -5250,6 +5845,52 @@
     "DeleteTableResponse": {
       "document": "DeleteTable返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserKeyRequest": {
+      "document": "DeleteUserKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "asf2342-afds",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户密钥对标识，前半部分用户填写，后半部分平台按照一定规则生成",
+          "example": "poiuas8_098asdfaf",
+          "member": "string",
+          "name": "KeyID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteUserKeyResponse": {
+      "document": "DeleteUserKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除记录条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeleteResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -11573,6 +12214,70 @@
       ],
       "type": "object"
     },
+    "GetOneUserKeyRequest": {
+      "document": "GetOneUserKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "asf2342-afds",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密钥对标识，前半部分用户填写，后半部分平台按照一定规则生成</p>",
+          "example": "poiuas8_098asdfaf",
+          "member": "string",
+          "name": "KeyID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务场景来源，默认不传，表示来源授权中心，integration表示来源集成中心，当从集成中心请求时必传integration</p>",
+          "example": "integration",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否需要加密字段的值，true：是，false：否，默认不传，不需要</p><p>默认值：false</p><p>当为true时，返回加密字段的值，前端进行按约定解密</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedPwd",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOneUserKeyResponse": {
+      "document": "GetOneUserKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>单个密钥对详情页</p>",
+          "example": "无",
+          "member": "APIsUserKeyInfo",
+          "name": "UserKeyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetProvidersRequest": {
       "document": "GetProviders请求参数结构体",
       "members": [
@@ -11610,6 +12315,98 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserKeyListRequest": {
+      "document": "GetUserKeyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "asf2342-afds",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的offset，从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页的每页多少条</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据集成名称模糊查询，name</p>",
+          "example": "这是个集成明朝",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集成类型映射码</p>",
+          "example": "asdf",
+          "member": "string",
+          "name": "AuthTypeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务类型，integration：从集成中心来的，默认为空，表示是从授权管理中心来的</p>",
+          "example": "integration",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserKeyListResponse": {
+      "document": "GetUserKeyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户密钥对列表</p>",
+          "example": "无",
+          "member": "APIsUserKeyInfo",
+          "name": "UserKeyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据记录条数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -18790,6 +19587,115 @@
     "UpdateTableResponse": {
       "document": "UpdateTable返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserKeyRequest": {
+      "document": "UpdateUserKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境ID</p>",
+          "example": "asf2342-afds",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密钥名称</p>",
+          "example": "密钥对1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户密钥对标识，前半部分用户填写，后半部分平台按照一定规则生成</p>",
+          "example": "poiuas8_098asdfaf",
+          "member": "string",
+          "name": "KeyID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥对描述</p>",
+          "example": "这是个密钥对",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权类型code</p>",
+          "example": "asdfd",
+          "member": "string",
+          "name": "AuthTypeCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>根据授权类型的不同，ext会有不同的子结构</p>",
+          "example": "{\"aa\":\"bb\"}",
+          "member": "string",
+          "name": "Ext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务类型，integration：从集成中心来的，默认为空，表示是从授权管理中心来的</p>",
+          "example": "integration",
+          "member": "string",
+          "name": "Business",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建集成时创建对应的示例代码云函数需要的参数</p>",
+          "example": "无",
+          "member": "AgentRuntimeConfig",
+          "name": "RuntimeConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建集成时创建对应的示例代码云函数需要的函数名</p>",
+          "example": "wx-pay-test-f6j0jhst-demo-scfweb",
+          "member": "string",
+          "name": "DemoCodeFunctionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUserKeyResponse": {
+      "document": "UpdateUserKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新记录条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "UpdateResult",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -1262,6 +1262,20 @@
         "title": "查询日志分析日志下载任务列表"
       }
     ],
+    "DescribeLogAnalysisStatistics": [
+      {
+        "document": "查询站点（ZoneId = zone-3qcox8or8ccl）中国大陆的七层访问日志在 2026-07-14T00:00:00Z ～ 2026-07-18T00:00:00Z 的统计结果，统计语句是: select EdgeCacheStatus as status, count(*) as cnt group by status limit 2，过滤条件是 缓存状态 = 未命中 或 其他。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogAnalysisStatistics\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3qcox8or8ccl\",\n    \"Area\": \"mainland\",\n    \"LogType\": \"l7-access-logs\",\n    \"StartTime\": \"2026-07-14T00:00:00Z\",\n    \"EndTime\": \"2026-07-18T00:00:00Z\",\n    \"Query\": \"${EdgeCacheStatus} in ['miss','other'] | select EdgeCacheStatus as status, count(*) as cnt group by status limit 2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Columns\": [\n            \"status\"\n        ],\n        \"Records\": [\n            {\n                \"Record\": [\n                    \"miss\"\n                ]\n            }\n        ],\n        \"RequestId\": \"6d5d22a3-7977-4fb9-b649-c796fd9cf358\"\n    }\n}",
+        "title": "查询指定站点一段时间范围内日志分析按缓存状态分组的统计结果"
+      },
+      {
+        "document": "查询站点（ZoneId = zone-3qcox8or8ccl）中国大陆的七层访问日志在 2026-07-14T00:00:00Z ～ 2026-07-18T00:00:00Z 的统计结果，统计语句是: select count(*) as cnt，无过滤条件。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogAnalysisStatistics\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3qcox8or8ccl\",\n    \"Area\": \"mainland\",\n    \"LogType\": \"l7-access-logs\",\n    \"StartTime\": \"2026-07-14T00:00:00Z\",\n    \"EndTime\": \"2026-07-18T00:00:00Z\",\n    \"Query\": \"* | select count(*) as cnt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Columns\": [\n            \"cnt\"\n        ],\n        \"Records\": [\n            {\n                \"Record\": [\n                    \"5\"\n                ]\n            }\n        ],\n        \"RequestId\": \"d3c0b5e3-b3fa-433e-97e5-9274c5d3167f\"\n    }\n}",
+        "title": "查询指定站点一段时间范围内日志分析日志总数"
+      }
+    ],
     "DescribeMultiPathGateway": [
       {
         "document": "查询站点 ID 为 zone-27q0p0bal192 下，网关 ID 为 mpgw-9d65563y6p 的详细信息。",

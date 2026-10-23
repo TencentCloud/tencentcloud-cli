@@ -259,6 +259,13 @@
       "output": "DescribeSandboxInstanceListResponse",
       "status": "online"
     },
+    "DescribeSandboxInstances": {
+      "document": "查询沙箱实例",
+      "input": "DescribeSandboxInstancesRequest",
+      "name": "查询沙箱实例",
+      "output": "DescribeSandboxInstancesResponse",
+      "status": "online"
+    },
     "DescribeSandboxSnapshotList": {
       "document": "查询沙箱快照\n该接口属于 Runtime Snapshot API ，当前为预览版本（Beta）。接口后续可能发生不兼容变更或被弃用，不保证向后兼容。请关注后续版本及变更说明，并根据需要调整调用代码。",
       "input": "DescribeSandboxSnapshotListRequest",
@@ -4666,6 +4673,43 @@
       ],
       "type": "object"
     },
+    "DescribeSandboxInstancesRequest": {
+      "document": "DescribeSandboxInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例ID列表，指定要查询的实例。如果为空则查询所有实例。最大支持100个ID</p>",
+          "example": "[\"wvhtuasdgdg2fh5accrhr5g62v26yt6epmd54kx6\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSandboxInstancesResponse": {
+      "document": "DescribeSandboxInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>沙箱实例列表</p>",
+          "example": "无",
+          "member": "SandboxInstance",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSandboxSnapshotListRequest": {
       "document": "DescribeSandboxSnapshotList请求参数结构体",
       "members": [
@@ -8216,8 +8260,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>Volume 名称；服务端在当前认证 AppId 下解析为稳定 VolumeId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "workbuddy-data-c7n7wcuulm4va7aubcctgmqlvob*************",
           "member": "string",
           "name": "VolumeName",
           "output_required": false,
@@ -8227,8 +8271,8 @@
         },
         {
           "disabled": false,
-          "document": "稳定 Volume ID，格式 vol-xxxxxxxx\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "<p>稳定 Volume ID，格式 vol-xxxxxxxx</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vol-01a014e0-b281-8013-9bad-1e**********",
           "member": "string",
           "name": "VolumeId",
           "output_required": false,
@@ -8245,7 +8289,7 @@
         {
           "disabled": false,
           "document": "<p>VolumeTemplate 名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "user-workspace",
           "member": "string",
           "name": "VolumeTemplateName",
           "output_required": false,
@@ -8256,7 +8300,7 @@
         {
           "disabled": false,
           "document": "<p>复用键，可为字面量或 ${metadata.xxx}</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "user-10086",
           "member": "string",
           "name": "ReuseKey",
           "output_required": false,

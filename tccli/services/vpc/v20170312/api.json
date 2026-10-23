@@ -3467,7 +3467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`EIP`的`ID`，是`EIP`的唯一标识。",
+          "document": "<p><code>EIP</code>的<code>ID</code>，是<code>EIP</code>的唯一标识。</p>",
           "example": "eip-ip9ongec",
           "member": "string",
           "name": "AddressId",
@@ -3477,7 +3477,7 @@
         },
         {
           "disabled": false,
-          "document": "`EIP`名称。",
+          "document": "<p><code>EIP</code>名称。</p>",
           "example": "未命名",
           "member": "string",
           "name": "AddressName",
@@ -3487,7 +3487,7 @@
         },
         {
           "disabled": false,
-          "document": "`EIP`状态，包含'CREATING'(创建中),'BINDING'(绑定中),'BIND'(已绑定),'UNBINDING'(解绑中),'UNBIND'(已解绑),'OFFLINING'(释放中),'BIND_ENI'(绑定悬空弹性网卡)",
+          "document": "<p><code>EIP</code>状态，包含&#39;CREATING&#39;(创建中),&#39;BINDING&#39;(绑定中),&#39;BIND&#39;(已绑定),&#39;UNBINDING&#39;(解绑中),&#39;UNBIND&#39;(已解绑),&#39;OFFLINING&#39;(释放中),&#39;BIND_ENI&#39;(绑定悬空弹性网卡)</p>",
           "example": "UNBIND",
           "member": "string",
           "name": "AddressStatus",
@@ -3497,7 +3497,7 @@
         },
         {
           "disabled": false,
-          "document": "外网IP地址",
+          "document": "<p>外网IP地址</p>",
           "example": "100.10.1.1",
           "member": "string",
           "name": "AddressIp",
@@ -3507,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源实例`ID`。可能是一个`CVM`，`NAT`。",
+          "document": "<p>绑定的资源实例<code>ID</code>。可能是一个<code>CVM</code>，<code>NAT</code>。</p>",
           "example": "ins-xxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -3517,7 +3517,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。按照`ISO8601`标准表示，并且使用`UTC`时间。格式为：`YYYY-MM-DDThh:mm:ssZ`。",
+          "document": "<p>创建时间。按照<code>ISO8601</code>标准表示，并且使用<code>UTC</code>时间。格式为：<code>YYYY-MM-DDThh:mm:ssZ</code>。</p>",
           "example": "2021-05-19T08:37:53Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
@@ -3527,7 +3527,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的弹性网卡ID，null表示没有绑定弹性网卡。",
+          "document": "<p>绑定的弹性网卡ID，null表示没有绑定弹性网卡。</p>",
           "example": "null",
           "member": "string",
           "name": "NetworkInterfaceId",
@@ -3537,7 +3537,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定的资源内网ip，null表示没有绑定资源内网ip。",
+          "document": "<p>绑定的资源内网ip，null表示没有绑定资源内网ip。</p>",
           "example": "null",
           "member": "string",
           "name": "PrivateAddressIp",
@@ -3547,7 +3547,7 @@
         },
         {
           "disabled": false,
-          "document": "资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态",
+          "document": "<p>资源隔离状态。true表示eip处于隔离状态，false表示资源处于未隔离状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IsArrears",
@@ -3557,7 +3557,7 @@
         },
         {
           "disabled": false,
-          "document": "资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态",
+          "document": "<p>资源封堵状态。true表示eip处于封堵状态，false表示eip处于未封堵状态</p>",
           "example": "false",
           "member": "bool",
           "name": "IsBlocked",
@@ -3567,7 +3567,7 @@
         },
         {
           "disabled": false,
-          "document": "eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式",
+          "document": "<p>eip是否支持直通模式。true表示eip支持直通模式，false表示资源不支持直通模式</p>",
           "example": "false",
           "member": "bool",
           "name": "IsEipDirectConnection",
@@ -3577,7 +3577,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：`CalcIP` 表示设备 IP，`WanIP` 表示普通公网 IP，`EIP` 表示弹性公网 IP，`AnycastEIP` 表示加速 EIP，`AntiDDoSEIP`表示高防EIP。",
+          "document": "<p>EIP 资源类型，包括CalcIP、WanIP、EIP和AnycastEIP、高防EIP。其中：<code>CalcIP</code> 表示设备 IP，<code>WanIP</code> 表示普通公网 IP，<code>EIP</code> 表示弹性公网 IP，<code>AnycastEIP</code> 表示加速 EIP，<code>AntiDDoSEIP</code>表示高防EIP。</p>",
           "example": "EIP",
           "member": "string",
           "name": "AddressType",
@@ -3587,7 +3587,7 @@
         },
         {
           "disabled": false,
-          "document": "eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放",
+          "document": "<p>eip是否在解绑后自动释放。true表示eip将会在解绑后自动释放，false表示eip在解绑后不会自动释放</p>",
           "example": "false",
           "member": "bool",
           "name": "CascadeRelease",
@@ -3597,7 +3597,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP ALG开启的协议类型。",
+          "document": "<p>EIP ALG开启的协议类型。</p>",
           "example": "无",
           "member": "AlgType",
           "name": "EipAlgType",
@@ -3607,7 +3607,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP的运营商信息，当前可能返回值包括\"CMCC\"(移动),\"CTCC\"(电信),\"CUCC\"(联通),\"BGP\"(常规BGP)。",
+          "document": "<p>弹性公网IP的运营商信息，当前可能返回值包括&quot;CMCC&quot;(移动),&quot;CTCC&quot;(电信),&quot;CUCC&quot;(联通),&quot;BGP&quot;(常规BGP)。</p>",
           "example": "BGP",
           "member": "string",
           "name": "InternetServiceProvider",
@@ -3617,7 +3617,7 @@
         },
         {
           "disabled": false,
-          "document": "是否本地带宽EIP，可选值：\n<li>true：本地带宽EIP</li>\n<li>false：非本地带宽EIP</li>",
+          "document": "<p>是否本地带宽EIP，可选值：</p><li>true：本地带宽EIP</li><li>false：非本地带宽EIP</li>",
           "example": "false",
           "member": "bool",
           "name": "LocalBgp",
@@ -3627,7 +3627,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性公网IP的带宽值。注意，传统账户类型账户的弹性公网IP没有带宽属性，值为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Bandwidth",
@@ -3637,7 +3637,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。\n注意：此字段可能返回 null，表示取不到有效值。\n包括：\n<li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li>\n<p style=\"padding-left: 30px;\">表示包月带宽预付费。</p>\n<li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li>\n<p style=\"padding-left: 30px;\">表示按小时流量后付费。</p>\n<li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li>\n<p style=\"padding-left: 30px;\">表示按小时带宽后付费。</p>\n<li><strong>BANDWIDTH_PACKAGE</strong></li>\n<p style=\"padding-left: 30px;\">表示共享带宽包。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>弹性公网IP的网络计费模式。注意，传统账户类型账户的弹性公网IP没有网络计费模式属性，值为空。<br>注意：此字段可能返回 null，表示取不到有效值。<br>包括：</p><li><strong>BANDWIDTH_PREPAID_BY_MONTH</strong></li><p style=\"padding-left: 30px;\">表示包月带宽预付费。</p><li><strong>TRAFFIC_POSTPAID_BY_HOUR</strong></li><p style=\"padding-left: 30px;\">表示按小时流量后付费。</p><li><strong>BANDWIDTH_POSTPAID_BY_HOUR</strong></li><p style=\"padding-left: 30px;\">表示按小时带宽后付费。</p><li><strong>BANDWIDTH_PACKAGE</strong></li><p style=\"padding-left: 30px;\">表示共享带宽包。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TRAFFIC_POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InternetChargeType",
@@ -3647,7 +3647,7 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IP关联的标签列表。",
+          "document": "<p>弹性公网IP关联的标签列表。</p>",
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
@@ -3657,7 +3657,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费包月带宽IP到期时间。\n时间格式：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>预付费包月带宽IP到期时间。<br>时间格式：YYYY-MM-DDThh:mm:ssZ</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2024-10-06",
           "member": "date",
           "name": "DeadlineDate",
@@ -3667,7 +3667,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP绑定的实例类型。可选值：\n<li>CVM：云服务器</li>\n<li>NAT：NAT 网关</li>\n<li>HAVIP：高可用虚拟IP</li>\n<li>ENI：弹性网卡</li>\n<li>CLB：内网CLB</li>\n<li>DHCPIP：弹性内网IP</li>\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>EIP绑定的实例类型。可选值：</p><li>CVM：云服务器</li><li>NAT：NAT 网关</li><li>HAVIP：高可用虚拟IP</li><li>ENI：弹性网卡</li><li>CLB：内网CLB</li><li>DHCPIP：弹性内网IP</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CVM",
           "member": "string",
           "name": "InstanceType",
@@ -3677,7 +3677,7 @@
         },
         {
           "disabled": false,
-          "document": "静态单线IP网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>静态单线IP网络出口</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "center_egress1",
           "member": "string",
           "name": "Egress",
@@ -3687,7 +3687,7 @@
         },
         {
           "disabled": false,
-          "document": "高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.",
+          "document": "<p>高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.</p>",
           "example": "bgp-fod89fe8",
           "member": "string",
           "name": "AntiDDoSPackageId",
@@ -3697,7 +3697,7 @@
         },
         {
           "disabled": false,
-          "document": "当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:\n<li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>\n",
+          "document": "<p>当前EIP是否自动续费，只有按月带宽预付费的EIP才会显示该字段，具体值示例如下:</p><li>NOTIFY_AND_MANUAL_RENEW:正常续费</li><li>NOTIFY_AND_AUTO_RENEW:自动续费</li><li>DISABLE_NOTIFY_AND_MANUAL_RENEW:到期不续费 </li>",
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
@@ -3707,7 +3707,7 @@
         },
         {
           "disabled": false,
-          "document": "当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前公网IP所关联的带宽包ID，如果该公网IP未使用带宽包计费，则返回为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bwp-ki2fa60h",
           "member": "string",
           "name": "BandwidthPackageId",
@@ -3717,7 +3717,7 @@
         },
         {
           "disabled": false,
-          "document": "传统弹性公网IPv6所属vpc唯一ID",
+          "document": "<p>传统弹性公网IPv6所属vpc唯一ID</p>",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "UnVpcId",
@@ -3727,12 +3727,22 @@
         },
         {
           "disabled": false,
-          "document": "CDC唯一ID",
+          "document": "<p>CDC唯一ID</p>",
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "DedicatedClusterId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>eip是否在网卡上可见。true表示支持，false表示不支持</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -29248,7 +29258,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "标识 EIP 的唯一 ID。EIP 唯一 ID 形如：`eip-11112222`。可以使用[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取AddressId。",
+          "document": "<p>标识 EIP 的唯一 ID。EIP 唯一 ID 形如：<code>eip-11112222</code>。可以使用<a href=\"https://cloud.tencent.com/document/product/215/16702\">DescribeAddresses</a>接口获取AddressId。</p>",
           "example": "eip-p2x6wxc0",
           "member": "string",
           "name": "AddressId",
@@ -29257,7 +29267,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符\"-\"和下划线\"\\_\"，不能包含空格。",
+          "document": "<p>修改后的 EIP 名称。长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>",
           "example": "test_eip",
           "member": "string",
           "name": "AddressName",
@@ -29266,12 +29276,21 @@
         },
         {
           "disabled": false,
-          "document": "设定EIP是否直通，\"TRUE\"表示直通，\"FALSE\"表示非直通。\n注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。",
+          "document": "<p>设定EIP是否直通，&quot;TRUE&quot;表示直通，&quot;FALSE&quot;表示非直通。<br>注意：该参数仅对 EIP 直通功能可见的用户可以设定，EIP 必须为绑定状态，绑定的对象为 CVM 。</p>",
           "example": "FALSE",
           "member": "string",
           "name": "EipDirectConnection",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设定EIP是否在网卡可见</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -30535,7 +30554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "弹性公网IPv6唯一ID列表。可以使用[DescribeIPv6Addresses](https://cloud.tencent.com/document/api/215/113677)接口获取IPv6AddressIds。",
+          "document": "<p>弹性公网IPv6唯一ID列表。可以使用<a href=\"https://cloud.tencent.com/document/api/215/113677\">DescribeIPv6Addresses</a>接口获取IPv6AddressIds。</p>",
           "example": "[\"eipv6-2ucdpy9t\"]",
           "member": "string",
           "name": "IPv6AddressIds",
@@ -30544,12 +30563,21 @@
         },
         {
           "disabled": false,
-          "document": "弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符\"-\"和下划线\"_\"，不能包含空格。",
+          "document": "<p>弹性公网IPv6地址名称，长度上限为128个字符，允许使用大小写字母、汉字、数字、连字符&quot;-&quot;和下划线&quot;_&quot;，不能包含空格。</p>",
           "example": "demo",
           "member": "string",
           "name": "IPv6AddressName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启弹性公网IPv6地址网卡可见</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EipVisibleOnEni",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
