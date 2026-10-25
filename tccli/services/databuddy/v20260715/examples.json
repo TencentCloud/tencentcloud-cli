@@ -56,12 +56,44 @@
         "title": "示例"
       }
     ],
+    "CreateLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLocation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "创建存储位置"
+      }
+    ],
+    "CreateModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModel\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Comment\": \"这是一个模型\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Model\": {\n                \"Name\": \"my_model\",\n                \"Comment\": \"这是一个模型\"\n            }\n        }\n    }\n}",
+        "title": "创建模型"
+      }
+    ],
+    "CreateModelVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateModelVersion\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"Uri\": \"cos://my-bucket/model/v1\",\n    \"Comment\": \"模型版本v1\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Created\": true\n        }\n    }\n}",
+        "title": "创建模型版本"
+      }
+    ],
     "CreateSchema": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"Name\": \"my_schema\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Comment\": \"这是一个Schema\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Schema\": {\n                \"Name\": \"my_schema\",\n                \"Comment\": \"这是一个Schema\"\n            }\n        }\n    }\n}",
         "title": "创建Schema"
+      }
+    ],
+    "CreateVolume": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVolume\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"VolumeName\": \"my_volume\",\n    \"StorageLocation\": \"cos://my-bucket/path/\",\n    \"Type\": \"MANAGED\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Comment\": \"这是一个数据卷\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Volume\": {\n                \"Name\": \"my_volume\",\n                \"StorageLocation\": \"cos://my-bucket/path/\"\n            }\n        }\n    }\n}",
+        "title": "创建数据卷"
       }
     ],
     "CreateWorkflow": [
@@ -120,6 +152,22 @@
         "title": "示例"
       }
     ],
+    "DeleteLocation": [
+      {
+        "document": "删除指定的存储位置",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLocation\n<公共请求参数>\n\n{\n    \"LocationName\": \"tmp_test_location\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Deleted\": true\n        },\n        \"RequestId\": \"063bb982-28b3-4e92-b683-94ed2da0d6f4\"\n    }\n}",
+        "title": "删除存储位置"
+      }
+    ],
+    "DeleteModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteModel\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "删除模型"
+      }
+    ],
     "DeleteSchema": [
       {
         "document": "",
@@ -134,6 +182,22 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTable\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"TableName\": \"my_table\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
         "title": "删除表"
+      }
+    ],
+    "DeleteView": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteView\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ViewName\": \"my_view\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "删除视图"
+      }
+    ],
+    "DeleteVolume": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVolume\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"VolumeName\": \"my_volume\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Result\": true\n        }\n    }\n}",
+        "title": "删除数据卷"
       }
     ],
     "DeleteWorkflow": [
@@ -184,6 +248,30 @@
         "title": "示例"
       }
     ],
+    "GetLocation": [
+      {
+        "document": "根据存储位置名获取单个存储位置的详细信息",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetLocation\n<公共请求参数>\n\n{\n    \"LocationName\": \"test_1\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Location\": {\n                \"LocationName\": \"test_1\",\n                \"LocationUri\": \"cos://bucket-30-251436191\",\n                \"Comment\": \"test comment\",\n                \"Properties\": [],\n                \"Audit\": {\n                    \"Creator\": \"700002164618\",\n                    \"LastModifier\": \"700002164618\",\n                    \"CreatedAt\": \"1776307158970\",\n                    \"LastModifiedAt\": \"1785843769668\"\n                }\n            }\n        },\n        \"RequestId\": \"5e78a312-212a-4108-9c18-39d4c5ad0ec0\"\n    }\n}",
+        "title": "查询存储位置详情"
+      }
+    ],
+    "GetModel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModel\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Model\": {\n                \"Name\": \"my_model\",\n                \"Comment\": \"这是一个模型\"\n            }\n        }\n    }\n}",
+        "title": "获取模型详情"
+      }
+    ],
+    "GetModelVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetModelVersion\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"ModelVersion\": 1,\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"ModelVersion\": {\n                \"Version\": \"1\",\n                \"Uri\": \"cos://my-bucket/model/v1\"\n            }\n        }\n    }\n}",
+        "title": "获取模型版本详情"
+      }
+    ],
     "GetSchema": [
       {
         "document": "查询schema详情",
@@ -206,6 +294,22 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTables\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697667906247629\",\n    \"FullNames\": [\n        \"my_catalog.my_schema.my_table\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AssetGuid\": \"tccatalog.v1.xxx\",\n                    \"Name\": \"my_table\"\n                }\n            ]\n        }\n    }\n}",
         "title": "批量获取表元数据"
+      }
+    ],
+    "GetView": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetView\n<公共请求参数>\n\n{\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"default\",\n    \"ViewName\": \"order_partition_view\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5a9e27a-358e-45f1-89c5-c56ce24d10df\",\n        \"Data\": {\n            \"View\": {\n                \"Audit\": {\n                    \"CreatedAt\": \"1761055227671\",\n                    \"Creator\": \"1290245077@qq.com\",\n                    \"LastModifiedAt\": \"0\",\n                    \"LastModifier\": \"\"\n                },\n                \"Columns\": [\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"order_id_col\",\n                        \"Type\": \"long\"\n                    },\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"customer_id_col\",\n                        \"Type\": \"long\"\n                    },\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"quantity_col\",\n                        \"Type\": \"integer\"\n                    }\n                ],\n                \"Comment\": \"订单分区视图\",\n                \"MetaOwner\": {\n                    \"FullName\": \"DataLakeCatalog.default.order_partition_view\",\n                    \"Owner\": \"1290245077@qq.com\",\n                    \"OwnerType\": \"user\"\n                },\n                \"Name\": \"order_partition_view\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"comment\",\n                        \"Value\": \"订单分区视图\"\n                    },\n                    {\n                        \"Key\": \"create_engine_version\",\n                        \"Value\": \"Spark 3.5.3-dlc\"\n                    },\n                    {\n                        \"Key\": \"engine_version\",\n                        \"Value\": \"Spark 3.5.3-dlc\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+        "title": "查询view详情"
+      }
+    ],
+    "GetVolume": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVolume\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"VolumeName\": \"my_volume\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Volume\": {\n                \"Name\": \"my_volume\",\n                \"StorageLocation\": \"cos://my-bucket/path/\"\n            }\n        }\n    }\n}",
+        "title": "获取数据卷详情"
       }
     ],
     "GetWorkflow": [
@@ -260,6 +364,14 @@
         "title": "终止所有运行中的实例"
       }
     ],
+    "ListCatalogNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListCatalogNames\n<公共请求参数>\n\n{\n    \"MaxResults\": \"1000\",\n    \"WorkspaceId\": \"17899589369776893\",\n    \"PageToken\": \"1:\",\n    \"Types\": [\n        \"TABLE\"\n    ],\n    \"CatalogSources\": [\n        \"METALAKE\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"xzp_test\",\n                    \"Namespace\": [],\n                    \"CatalogSource\": \"SETATS\"\n                }\n            ],\n            \"NextPageToken\": \"\"\n        },\n        \"RequestId\": \"61c7184f-7f22-486f-9ca3-4d91a7fcd655\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "ListCatalogs": [
       {
         "document": "根据类型筛选示例",
@@ -300,12 +412,44 @@
         "title": "示例1"
       }
     ],
+    "ListFeatureTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFeatureTables\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697667906247629\",\n    \"MaxResults\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"FullName\": \"my_catalog.my_schema.my_table\",\n                    \"Name\": \"my_table\"\n                }\n            ],\n            \"NextPageToken\": \"\"\n        }\n    }\n}",
+        "title": "查询特征表列表"
+      }
+    ],
     "ListFiles": [
       {
         "document": "获取文件夹和文件列表",
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListFiles\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697****0**47629\",\n    \"Parent\": {\n        \"FolderId\": \"86553********46400\"\n    },\n    \"NameKeyword\": \"071*****\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Creator\": {\n                        \"Nickname\": \"we***a*************t.com\",\n                        \"UserName\": \"weda**3**********ent.com\",\n                        \"UserTag\": \"0\",\n                        \"UserUin\": \"70*******618\"\n                    },\n                    \"DeleteTime\": \"\",\n                    \"GitConfig\": null,\n                    \"Node\": {\n                        \"AllowActions\": [\n                            \"MANAGE\"\n                        ],\n                        \"CreateTime\": \"1784168588000\",\n                        \"FileId\": \"865539****5***5136\",\n                        \"FileName\": \"07161023.ipynb\",\n                        \"FileType\": \"NOTEBOOK_FILE\",\n                        \"IsFavorite\": false,\n                        \"IsSystemGenerated\": false,\n                        \"PathName\": \"/Workspace/Users/weda********@tenc***************64618/0716/07161023.ipynb\",\n                        \"UpdateTime\": \"1784168790000\"\n                    },\n                    \"NodeType\": \"\",\n                    \"OriginPath\": \"\",\n                    \"Owner\": {\n                        \"Nickname\": \"\",\n                        \"UserName\": \"\",\n                        \"UserTag\": \"\",\n                        \"UserUin\": \"700*******18\"\n                    },\n                    \"Parent\": {\n                        \"AllowActions\": [],\n                        \"CreateTime\": \"\",\n                        \"FileId\": \"86553*********6400\",\n                        \"FileName\": \"\",\n                        \"FileType\": \"\",\n                        \"IsFavorite\": false,\n                        \"IsSystemGenerated\": false,\n                        \"PathName\": \"\",\n                        \"UpdateTime\": \"\"\n                    }\n                }\n            ],\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"TotalCount\": 1,\n            \"TotalPageNumber\": 1\n        },\n        \"RequestId\": \"6decf098-7409-4899-8018-a563aa53fa73\"\n    }\n}",
         "title": "ListFiles"
+      }
+    ],
+    "ListLocations": [
+      {
+        "document": "分页查询存储位置列表",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListLocations\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Locations\": [\n                {\n                    \"Audit\": {\n                        \"CreatedAt\": \"1776757339732\",\n                        \"Creator\": \"********4619\",\n                        \"CreatorName\": \"*******0**e******n*e**.***\",\n                        \"LastModifiedAt\": \"1777380384696\",\n                        \"LastModifier\": \"********4619\",\n                        \"LastModifierName\": \"********-t****@*e*****.com\"\n                    },\n                    \"Comment\": \"编辑描述123123123\",\n                    \"LocationName\": \"bucunzaibucunzai\",\n                    \"LocationUri\": \"***://*ta*n*ti**c**y*******************p***a**z**u********9*\",\n                    \"Properties\": []\n                }\n            ],\n            \"SnapshotId\": \"\",\n            \"TotalCount\": 11\n        },\n        \"RequestId\": \"e9bf167d-c38f-4de4-a6eb-0c7e19bdc0ff\"\n    }\n}",
+        "title": "查询存储位置列表"
+      }
+    ],
+    "ListModels": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListModels\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"MaxResults\": 10,\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"my_model\",\n                    \"Comment\": \"这是一个模型\"\n                }\n            ],\n            \"TotalCount\": \"1\",\n            \"NextPageToken\": \"\"\n        }\n    }\n}",
+        "title": "分页获取模型列表"
+      }
+    ],
+    "ListSchemaNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSchemaNames\n<公共请求参数>\n\n{\n    \"MaxResults\": \"1000\",\n    \"WorkspaceId\": \"17899589369776893\",\n    \"CatalogName\": \"xzp_test\",\n    \"CatalogSource\": \"SETATS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"0924_demo\",\n                    \"Namespace\": [],\n                    \"CatalogSource\": \"SETATS\"\n                }\n            ],\n            \"NextPageToken\": \"\"\n        },\n        \"RequestId\": \"05890671-4e3a-4168-80b1-14fb10c872ea\"\n    }\n}",
+        "title": "1"
       }
     ],
     "ListSchemas": [
@@ -316,12 +460,44 @@
         "title": "获取schema列表"
       }
     ],
+    "ListTableNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTableNames\n<公共请求参数>\n\n{\n    \"CatalogName\": \"lsj_test\",\n    \"SchemaName\": \"default\",\n    \"WorkspaceId\": \"17678671667189298\",\n    \"MaxResults\": \"10\",\n    \"CatalogSource\": \"METALAKE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CatalogSource\": \"METALAKE\",\n                    \"Name\": \"wen_shu_idc__shu_ju_yang_li\",\n                    \"Namespace\": [\n                        \"lsj_test\"\n                    ],\n                    \"Status\": \"0\"\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjEwfQ==\"\n        },\n        \"RequestId\": \"117797e6-c0ed-495c-bdcc-31a014857a0f\"\n    }\n}",
+        "title": "1"
+      }
+    ],
     "ListTables": [
       {
         "document": "获取table列表",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTables\n<公共请求参数>\n\n{\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"default\",\n    \"MaxResults\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Audit\": {\n                        \"CreatedAt\": \"1761055196090\",\n                        \"Creator\": \"1290245077@qq.com\",\n                        \"LastModifiedAt\": \"1761055196633\",\n                        \"LastModifier\": \"1290245077@qq.com\"\n                    },\n                    \"Columns\": [\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"order_id_col\",\n                            \"Type\": \"long\"\n                        },\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"customer_id_col\",\n                            \"Type\": \"long\"\n                        },\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"order_date_col\",\n                            \"Type\": \"timestamp_tz(6)\"\n                        },\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"product_id_col\",\n                            \"Type\": \"integer\"\n                        },\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"product_name_col\",\n                            \"Type\": \"string\"\n                        },\n                        {\n                            \"Comment\": \"\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"quantity_col\",\n                            \"Type\": \"integer\"\n                        }\n                    ],\n                    \"Comment\": \"订单信息托管表（按订单日期分区）\",\n                    \"Indexes\": [],\n                    \"MetaOwner\": {\n                        \"FullName\": \"DataLakeCatalog.default.order_managed_table\",\n                        \"Owner\": \"1290245077@qq.com\",\n                        \"OwnerType\": \"user\"\n                    },\n                    \"Name\": \"order_managed_table\",\n                    \"Partitioning\": [\n                        {\n                            \"DayPartitioning\": {\n                                \"FieldName\": \"order_date_col\"\n                            },\n                            \"Strategy\": \"day\"\n                        }\n                    ],\n                    \"Properties\": [\n                        {\n                            \"Key\": \"owner\",\n                            \"Value\": \"root\"\n                        },\n                        {\n                            \"Key\": \"write.parquet.compression-codec\",\n                            \"Value\": \"zstd\"\n                        },\n                        {\n                            \"Key\": \"current-snapshot-summary\",\n                            \"Value\": \"{\\\"spark.app.id\\\":\\\"spark-b4e930acee7a446888167a444b7f292c\\\",\\\"added-data-files\\\":\\\"1\\\",\\\"added-records\\\":\\\"1\\\",\\\"added-files-size\\\":\\\"3246\\\",\\\"changed-partition-count\\\":\\\"1\\\",\\\"total-records\\\":\\\"1\\\",\\\"total-files-size\\\":\\\"3246\\\",\\\"total-data-files\\\":\\\"1\\\",\\\"total-delete-files\\\":\\\"0\\\",\\\"total-position-deletes\\\":\\\"0\\\",\\\"total-equality-deletes\\\":\\\"0\\\"}\"\n                        },\n                        {\n                            \"Key\": \"write.metadata.delete-after-commit.enabled\",\n                            \"Value\": \"true\"\n                        },\n                        {\n                            \"Key\": \"tccatalog.identifier\",\n                            \"Value\": \"tccatalog.v1.uid4204782243991625654\"\n                        },\n                        {\n                            \"Key\": \"write.metadata.metrics.default\",\n                            \"Value\": \"full\"\n                        },\n                        {\n                            \"Key\": \"format\",\n                            \"Value\": \"iceberg/parquet\"\n                        },\n                        {\n                            \"Key\": \"format-version\",\n                            \"Value\": \"2\"\n                        },\n                        {\n                            \"Key\": \"uuid\",\n                            \"Value\": \"2bdf0344-5b4d-4d58-a230-da913481d7fa\"\n                        },\n                        {\n                            \"Key\": \"provider\",\n                            \"Value\": \"iceberg\"\n                        },\n                        {\n                            \"Key\": \"write.metadata.previous-versions-max\",\n                            \"Value\": \"100\"\n                        },\n                        {\n                            \"Key\": \"current-snapshot-id\",\n                            \"Value\": \"7665350655544053728\"\n                        },\n                        {\n                            \"Key\": \"lakehouse.storage.type\",\n                            \"Value\": \"lakefs\"\n                        },\n                        {\n                            \"Key\": \"current-snapshot-timestamp-ms\",\n                            \"Value\": \"1761055200681\"\n                        },\n                        {\n                            \"Key\": \"metadata_location\",\n                            \"Value\": \"cosn://dlc4634-700001601851-1740545216-700001779129-251301051/1300298608/warehouse/default.db/order_managed_table.1761055194894/metadata/00001-8ed6ace3-fc7e-410d-9dbd-b0e9fc7b984f.metadata.json\"\n                        },\n                        {\n                            \"Key\": \"location\",\n                            \"Value\": \"cosn://dlc4634-700001601851-1740545216-700001779129-251301051/1300298608/warehouse/default.db/order_managed_table.1761055194894\"\n                        },\n                        {\n                            \"Key\": \"write.distribution-mode\",\n                            \"Value\": \"hash\"\n                        }\n                    ],\n                    \"TableFormat\": \"订单信息托管表（按订单日期分区）\"\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjF9\"\n        },\n        \"RequestId\": \"e74936a8-4226-4bdf-b24d-d1c8484cf410\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTables\n<公共请求参数>\n\n{\n    \"MaxResults\": 20,\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"ericpuwang_test\",\n    \"WorkspaceId\": \"17678671667189298\",\n    \"FetchOption\": {\n        \"FetchOwners\": false,\n        \"FetchUserInfo\": false,\n        \"FetchFeatureTableDetail\": true,\n        \"FetchPermissions\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"lyw_wine_0203_v1\",\n                    \"Comment\": \"\",\n                    \"Columns\": [\n                        {\n                            \"Name\": \"wine_id\",\n                            \"Type\": \"integer\",\n                            \"Comment\": \"红酒样本ID\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Tags\": []\n                        }\n                    ],\n                    \"Properties\": [\n                        {\n                            \"Key\": \"feature_engine_name\",\n                            \"Value\": \"\"\n                        }\n                    ],\n                    \"Partitioning\": [],\n                    \"Indexes\": [],\n                    \"Audit\": {\n                        \"Creator\": \"700002164619\",\n                        \"LastModifier\": \"700002164619\",\n                        \"CreatedAt\": \"1770090803564\",\n                        \"LastModifiedAt\": \"1770090804293\",\n                        \"CreatorName\": \"700002164619\",\n                        \"LastModifierName\": \"700002164619\"\n                    },\n                    \"TableFormat\": \"TCIceberg\",\n                    \"AssetGuid\": \"tccatalog.v1.uid2130426800038882810@260073493_ap-guangzhou_TABLE\",\n                    \"TableType\": \"Managed\",\n                    \"FilesSize\": \"\",\n                    \"FilesCount\": \"\",\n                    \"FeatureTableType\": \"Offline\",\n                    \"FeatureTableDetail\": {\n                        \"PrimaryKeys\": [\n                            \"wine_id\"\n                        ],\n                        \"TimestampField\": \"event_timestamp\",\n                        \"SourceTableName\": \"\",\n                        \"WorkflowId\": \"\",\n                        \"OnlineTableName\": \"\"\n                    },\n                    \"PermissionDetail\": {\n                        \"Permissions\": [\n                            \"ALL_PRIVILEGES\"\n                        ],\n                        \"CatalogWorkspacePrivilege\": \"WORKSPACE_READWRITE\",\n                        \"DenyPrivilegeList\": []\n                    },\n                    \"Tags\": []\n                }\n            ],\n            \"NextPageToken\": \"eyJvZmZzZXQiOjIwfQ==\"\n        },\n        \"RequestId\": \"c7839865-7824-4b29-986f-176470dc22d8\"\n    }\n}",
         "title": "获取table列表"
+      }
+    ],
+    "ListViewNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListViewNames\n<公共请求参数>\n\n{\n    \"CatalogName\": \"lsj_test\",\n    \"SchemaName\": \"default\",\n    \"WorkspaceId\": \"17678671667189298\",\n    \"MaxResults\": \"10\",\n    \"CatalogSource\": \"METALAKE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"NextPageToken\": \"\"\n        },\n        \"RequestId\": \"a1b85c4d-67e1-4915-9822-9f1cb88ed4f3\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "ListViews": [
+      {
+        "document": "获取view列表",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListViews\n<公共请求参数>\n\n{\n    \"CatalogName\": \"s***a*0710\",\n    \"SchemaName\": \"information_schema\",\n    \"MaxResults\": 100,\n    \"WorkspaceId\": \"17836526087487468\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"AssetGuid\": \"tcc***l*g.v1.uid32789*23*359412846*@**00734**_ap-*ua*gzhou_VIEW\",\n                    \"Audit\": {\n                        \"CreatedAt\": \"1783652632924\",\n                        \"Creator\": \"70000*1***1*\",\n                        \"CreatorName\": \"**dat**0******@tencent.com\",\n                        \"LastModifiedAt\": \"1783652640433\",\n                        \"LastModifier\": \"700*0**64***\",\n                        \"LastModifierName\": \"*e*ata30*****1@tencent.com\"\n                    },\n                    \"Columns\": [\n                        {\n                            \"Comment\": \"metalake name\",\n                            \"FieldSetting\": \"\",\n                            \"IsPrimaryKey\": false,\n                            \"Name\": \"metalake_name\",\n                            \"Tags\": [],\n                            \"Type\": \"string\"\n                        }\n                    ],\n                    \"Comment\": \"catalog_privileges\",\n                    \"MetaOwner\": {\n                        \"FullName\": \"svmgao0710.information_schema.catalog_privileges\",\n                        \"Owner\": \"700*0*1*4*1*\",\n                        \"OwnerName\": \"***********st1@tencent.com\",\n                        \"OwnerType\": \"user\"\n                    },\n                    \"Name\": \"catalog_privileges\",\n                    \"Properties\": [\n                        {\n                            \"Key\": \"tccatalog.identifier\",\n                            \"Value\": \"tccatalog.v1.uid3278902383594128462\"\n                        }\n                    ],\n                    \"Tags\": []\n                }\n            ],\n            \"NextPageToken\": \"\"\n        },\n        \"RequestId\": \"20704381-273a-431f-bc1d-ecaa5923314f\"\n    }\n}",
+        "title": "获取view列表"
+      }
+    ],
+    "ListVolumes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVolumes\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"MaxResults\": 10,\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Name\": \"my_volume\",\n                    \"StorageLocation\": \"cos://my-bucket/path/\"\n                }\n            ],\n            \"TotalCount\": \"1\",\n            \"NextPageToken\": \"\"\n        }\n    }\n}",
+        "title": "分页获取数据卷列表"
       }
     ],
     "ListWorkflowRuns": [
@@ -418,6 +594,14 @@
         "title": "运行工作流"
       }
     ],
+    "SearchAsset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchAsset\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"MaxResults\": 1,\n    \"Keyword\": \"order\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"Aliases\": [],\n                    \"AssetGuid\": \"hooke.zhangyue_test.order_detail_0@*********_ap-guangzhou_TABLE\",\n                    \"AssetId\": \"hooke.zhangyue_test.order_detail_0\",\n                    \"AssetName\": \"order_detail_0\",\n                    \"AssetType\": \"TABLE\",\n                    \"CatalogSource\": \"CONNECTION\",\n                    \"Comment\": \"\",\n                    \"FieldInfo\": [\n                        {\n                            \"Comment\": \"\",\n                            \"Content\": \"\",\n                            \"Lang\": \"\",\n                            \"Name\": \"order_id\",\n                            \"SampleValues\": [],\n                            \"Type\": \"long\"\n                        }\n                    ],\n                    \"FieldTags\": [],\n                    \"FullName\": \"hooke.zhangyue_test.order_detail_0\",\n                    \"HighlightingInfo\": {\n                        \"AliasFragments\": [],\n                        \"AssetName\": \"<em>order</em>_detail_0\",\n                        \"CodeFragments\": [],\n                        \"Comment\": \"\",\n                        \"FullName\": \"\",\n                        \"TagFragments\": [],\n                        \"TextFragments\": [\n                            {\n                                \"Comment\": \"\",\n                                \"Content\": \"\",\n                                \"Lang\": \"\",\n                                \"Name\": \"<em>order</em>_id\",\n                                \"Type\": \"long\"\n                            }\n                        ]\n                    },\n                    \"ModifiedTime\": \"1790129153387\",\n                    \"Owner\": {\n                        \"Type\": 0,\n                        \"UserId\": \"\",\n                        \"UserName\": \"\"\n                    },\n                    \"Popularity\": \"1\",\n                    \"PopularityQuantity\": \"0\",\n                    \"Properties\": [],\n                    \"Tags\": [],\n                    \"UserActivityInfo\": {\n                        \"IsFavorite\": false,\n                        \"LastViewTime\": \"\"\n                    },\n                    \"WorkspaceId\": \"\",\n                    \"WorkspacePath\": \"\"\n                }\n            ],\n            \"NextPageToken\": \"eyJzZWFyY2hBZnRlclZhbHVlcyI6WzE4LjE5NTgxNiwiaG9va2Uuemhhbmd5dWVfdGVzdC5vcmRlcl9kZXRhaWxfMEAyNjAwNzM0OTNfYXAtZ3Vhbmd6aG91X1RBQkxFIl19\"\n        },\n        \"RequestId\": \"14c44330-20d2-441e-95f7-12c3b56d56e0\"\n    }\n}",
+        "title": "资产统一搜索"
+      }
+    ],
     "StartCompute": [
       {
         "document": "",
@@ -440,6 +624,14 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindWorkflowBundle\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17697667906247629\",\n    \"WorkflowId\": \"3ad17013-7f55-44fe-beb7-9bc17e37a93a\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"67a322c0-198c-4d22-a07b-d193f14f1a27\"\n    }\n}",
         "title": "解绑工作流Bundle信息"
+      }
+    ],
+    "UpdateCatalog": [
+      {
+        "document": "修改数据目录的注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCatalog\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"NewComment\": \"updated catalog comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true\n        },\n        \"RequestId\": \"d10bdfbd-8f87-4ce4-9172-023775de61f9\"\n    }\n}",
+        "title": "修改数据目录信息"
       }
     ],
     "UpdateConsoleGroup": [
@@ -472,6 +664,78 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFolder\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17799542221324491\",\n    \"Folder\": {\n        \"FolderId\": \"872499382026919936\"\n    },\n    \"OperationType\": \"1\",\n    \"FolderName\": \"new-folder\"\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"ed726c83-df5e-401f-948a-47b25831b463\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "UpdateFunction": [
+      {
+        "document": "修改函数的注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFunction\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"FunctionName\": \"my_function\",\n    \"NewComment\": \"updated function comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Function\": {\n                \"Name\": \"my_function\",\n                \"Comment\": \"updated function comment\",\n                \"Tags\": []\n            }\n        },\n        \"RequestId\": \"b612b753-ec7e-4fda-9eec-76f85ebd06b7\"\n    }\n}",
+        "title": "修改函数信息"
+      }
+    ],
+    "UpdateLocation": [
+      {
+        "document": "修改存储位置的名称、描述或属性信息",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLocation\n<公共请求参数>\n\n{\n    \"LocationName\": \"test_1\",\n    \"Updates\": [\n        {\n            \"UpdateType\": \"modify_location_comment\",\n            \"NewComment\": \"updated comment\"\n        }\n    ],\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Location\": {\n                \"LocationName\": \"test_1\",\n                \"LocationUri\": \"cos://bucket-30-251436191\",\n                \"Comment\": \"updated comment\"\n            }\n        },\n        \"RequestId\": \"ea139f3f-cbf7-46b4-8ef3-a1a99bf2b655\"\n    }\n}",
+        "title": "修改存储位置信息"
+      }
+    ],
+    "UpdateModel": [
+      {
+        "document": "修改模型的名称或注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateModel\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"ModelName\": \"my_model\",\n    \"NewComment\": \"updated model comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Model\": {\n                \"Name\": \"my_model\",\n                \"Comment\": \"updated model comment\",\n                \"LatestVersion\": \"1\"\n            }\n        },\n        \"RequestId\": \"e477710a-7700-4b1d-9d5a-1f33e520f4ef\"\n    }\n}",
+        "title": "修改模型信息"
+      }
+    ],
+    "UpdateModelVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateModelVersion\n<公共请求参数>\n\n{\n    \"CatalogName\": \"marvin\",\n    \"SchemaName\": \"abe\",\n    \"ModelName\": \"hhhhhhaa\",\n    \"ModelVersion\": 1,\n    \"WorkspaceId\": \"17678671667189298\",\n    \"AddedAliases\": [\n        \"ac\"\n    ],\n    \"RemovedAliases\": [\n        \"ab\"\n    ],\n    \"NewComment\": \"该模型组织和管理相关数据内容，提供业务语义和技术定义。包含输入数据源、输出结果及特定算法类型。适用于数据分析团队进行业务洞察和决策支持等场景。2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ModelVersion\": {\n                \"Aliases\": [\n                    \"ac\"\n                ],\n                \"AssetGuid\": \"tccatalog.v1.uid2125395121961709862@260073493_ap-guangzhou_MODEL_VERSION\",\n                \"Audit\": {\n                    \"CreatedAt\": \"1770100017934\",\n                    \"Creator\": \"700002164619\",\n                    \"CreatorName\": \"wedata30-test1@tencent.com\",\n                    \"LastModifiedAt\": \"1787643835034\",\n                    \"LastModifier\": \"700002164619\",\n                    \"LastModifierName\": \"wedata30-test1@tencent.com\"\n                },\n                \"CatalogName\": \"\",\n                \"Comment\": \"该模型组织和管理相关数据内容，提供业务语义和技术定义。包含输入数据源、输出结果及特定算法类型。适用于数据分析团队进行业务洞察和决策支持等场景。2\",\n                \"ModelName\": \"\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"tclake.mlflow.copy_from\",\n                        \"Value\": \"marvin.abe.m0119:4\"\n                    }\n                ],\n                \"SchemaName\": \"\",\n                \"Tags\": [],\n                \"Uri\": \"cos://aa/bb/cc\",\n                \"Version\": \"1\"\n            }\n        },\n        \"RequestId\": \"c424cace-886b-4980-889a-9c8f7104a7ae\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "UpdateSchema": [
+      {
+        "document": "修改Schema的注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSchema\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"NewComment\": \"updated schema comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Schema\": {\n                \"Name\": \"my_schema\",\n                \"Comment\": \"updated schema comment\"\n            }\n        },\n        \"RequestId\": \"4a28103f-b91d-4cc9-b359-7fa6ec0e058d\"\n    }\n}",
+        "title": "修改Schema信息"
+      }
+    ],
+    "UpdateTable": [
+      {
+        "document": "修改表的名称或注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTable\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"TableName\": \"my_table\",\n    \"NewComment\": \"updated table comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Table\": {\n                \"Name\": \"my_table\",\n                \"Comment\": \"updated table comment\"\n            }\n        },\n        \"RequestId\": \"c7553f90-800d-47d0-be3f-f84ed3686718\"\n    }\n}",
+        "title": "修改表信息"
+      }
+    ],
+    "UpdateTableColumn": [
+      {
+        "document": "修改表中一个或多个字段的注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTableColumn\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"TableName\": \"my_table\",\n    \"WorkspaceId\": \"17697667906247629\",\n    \"Columns\": [\n        {\n            \"Name\": \"col1\",\n            \"Comment\": \"updated column comment\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Result\": true,\n            \"FailedColumns\": []\n        },\n        \"RequestId\": \"dc612ad6-cce7-440c-a53f-b6335c43a0ef\"\n    }\n}",
+        "title": "修改表字段描述"
+      }
+    ],
+    "UpdateView": [
+      {
+        "document": "修改视图的注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateView\n<公共请求参数>\n\n{\n    \"CatalogName\": \"c4\",\n    \"SchemaName\": \"ss\",\n    \"ViewName\": \"c3\",\n    \"NewComment\": \"capi auto test view\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"View\": {\n                \"Name\": \"c3\",\n                \"Comment\": \"capi auto test view\"\n            }\n        },\n        \"RequestId\": \"f77a3fc4-7bff-4a3b-8e58-d4d7ccc0bc25\"\n    }\n}",
+        "title": "修改视图信息"
+      }
+    ],
+    "UpdateVolume": [
+      {
+        "document": "修改数据卷的名称或注释",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVolume\n<公共请求参数>\n\n{\n    \"CatalogName\": \"my_catalog\",\n    \"SchemaName\": \"my_schema\",\n    \"VolumeName\": \"my_volume\",\n    \"NewComment\": \"updated volume comment\",\n    \"WorkspaceId\": \"17697667906247629\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Volume\": {\n                \"Name\": \"my_volume\",\n                \"Comment\": \"updated volume comment\",\n                \"Type\": \"EXTERNAL\",\n                \"StorageLocation\": \"cos://bucket-30-251436191/volume_test\"\n            }\n        },\n        \"RequestId\": \"eb32265a-bf2d-4da5-a3e5-683a1abf6197\"\n    }\n}",
+        "title": "修改数据卷信息"
       }
     ],
     "UpdateWorkflow": [

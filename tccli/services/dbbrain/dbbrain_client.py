@@ -76,7 +76,7 @@ def doDescribeMySqlProcessList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateProxySessionKillTask(args, parsed_globals):
+def doCreateMailProfile(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -110,11 +110,11 @@ def doCreateProxySessionKillTask(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateProxySessionKillTaskRequest()
+    model = models.CreateMailProfileRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateProxySessionKillTask(model)
+        rsp = client.CreateMailProfile(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -874,6 +874,63 @@ def doDescribeRedisTopKeyPrefixList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCancelDBAutonomyAction(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CancelDBAutonomyActionRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CancelDBAutonomyAction(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doModifyAlarmPolicy(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -1045,7 +1102,7 @@ def doDescribeIndexRecommendAggregationSlowLogs(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCancelDBAutonomyAction(args, parsed_globals):
+def doDescribeBlockingTrend(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1079,11 +1136,11 @@ def doCancelDBAutonomyAction(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CancelDBAutonomyActionRequest()
+    model = models.DescribeBlockingTrendRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CancelDBAutonomyAction(model)
+        rsp = client.DescribeBlockingTrend(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1654,6 +1711,63 @@ def doCreateRedisBigKeyAnalysisTask(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.CreateRedisBigKeyAnalysisTask(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeBlockingLockTree(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeBlockingLockTreeRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeBlockingLockTree(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2509,6 +2623,63 @@ def doUpdateAgentSwitch(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.UpdateAgentSwitch(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeTableSpaceDataV2(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeTableSpaceDataV2Request()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeTableSpaceDataV2(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4465,7 +4636,7 @@ def doDescribeDBDiagEvents(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeRedisTopHotKeys(args, parsed_globals):
+def doDeleteRedisBigKeyAnalysisTasks(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4499,11 +4670,11 @@ def doDescribeRedisTopHotKeys(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeRedisTopHotKeysRequest()
+    model = models.DeleteRedisBigKeyAnalysisTasksRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeRedisTopHotKeys(model)
+        rsp = client.DeleteRedisBigKeyAnalysisTasks(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4636,7 +4807,7 @@ def doDescribeUserSqlAdvice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMailProfile(args, parsed_globals):
+def doCreateProxySessionKillTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4670,11 +4841,11 @@ def doCreateMailProfile(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMailProfileRequest()
+    model = models.CreateProxySessionKillTaskRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateMailProfile(model)
+        rsp = client.CreateProxySessionKillTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4693,7 +4864,7 @@ def doCreateMailProfile(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteRedisBigKeyAnalysisTasks(args, parsed_globals):
+def doDescribeRedisTopHotKeys(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4727,11 +4898,11 @@ def doDeleteRedisBigKeyAnalysisTasks(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteRedisBigKeyAnalysisTasksRequest()
+    model = models.DescribeRedisTopHotKeysRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteRedisBigKeyAnalysisTasks(model)
+        rsp = client.DescribeRedisTopHotKeys(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5562,7 +5733,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeMySqlProcessList": doDescribeMySqlProcessList,
-    "CreateProxySessionKillTask": doCreateProxySessionKillTask,
+    "CreateMailProfile": doCreateMailProfile,
     "CancelKillTask": doCancelKillTask,
     "DescribeDBAutonomyAction": doDescribeDBAutonomyAction,
     "CreateSecurityAuditLogExportTask": doCreateSecurityAuditLogExportTask,
@@ -5576,10 +5747,11 @@ ACTION_MAP = {
     "DescribeDBDiagEvent": doDescribeDBDiagEvent,
     "ModifyUserAutonomyProfile": doModifyUserAutonomyProfile,
     "DescribeRedisTopKeyPrefixList": doDescribeRedisTopKeyPrefixList,
+    "CancelDBAutonomyAction": doCancelDBAutonomyAction,
     "ModifyAlarmPolicy": doModifyAlarmPolicy,
     "AddUserContact": doAddUserContact,
     "DescribeIndexRecommendAggregationSlowLogs": doDescribeIndexRecommendAggregationSlowLogs,
-    "CancelDBAutonomyAction": doCancelDBAutonomyAction,
+    "DescribeBlockingTrend": doDescribeBlockingTrend,
     "CreateKillTask": doCreateKillTask,
     "DescribeNoPrimaryKeyTables": doDescribeNoPrimaryKeyTables,
     "DescribeMetricTopProxies": doDescribeMetricTopProxies,
@@ -5590,6 +5762,7 @@ ACTION_MAP = {
     "DescribeDeadLockLogs": doDescribeDeadLockLogs,
     "DescribeIndexRecommendInfo": doDescribeIndexRecommendInfo,
     "CreateRedisBigKeyAnalysisTask": doCreateRedisBigKeyAnalysisTask,
+    "DescribeBlockingLockTree": doDescribeBlockingLockTree,
     "DescribeDatabaseAutonomyStatus": doDescribeDatabaseAutonomyStatus,
     "DescribeTopSpaceTableTimeSeries": doDescribeTopSpaceTableTimeSeries,
     "DescribeSlowLogUserHostStats": doDescribeSlowLogUserHostStats,
@@ -5605,6 +5778,7 @@ ACTION_MAP = {
     "DescribeBlockingLogs": doDescribeBlockingLogs,
     "DescribeRedisSlowLogTopSqls": doDescribeRedisSlowLogTopSqls,
     "UpdateAgentSwitch": doUpdateAgentSwitch,
+    "DescribeTableSpaceDataV2": doDescribeTableSpaceDataV2,
     "DescribeAuditLogFiles": doDescribeAuditLogFiles,
     "KillMySqlThreads": doKillMySqlThreads,
     "VerifyUserAccount": doVerifyUserAccount,
@@ -5639,11 +5813,11 @@ ACTION_MAP = {
     "ModifyDiagDBInstanceConf": doModifyDiagDBInstanceConf,
     "DeleteAuditLogFile": doDeleteAuditLogFile,
     "DescribeDBDiagEvents": doDescribeDBDiagEvents,
-    "DescribeRedisTopHotKeys": doDescribeRedisTopHotKeys,
+    "DeleteRedisBigKeyAnalysisTasks": doDeleteRedisBigKeyAnalysisTasks,
     "DescribeMongoDBProcessList": doDescribeMongoDBProcessList,
     "DescribeUserSqlAdvice": doDescribeUserSqlAdvice,
-    "CreateMailProfile": doCreateMailProfile,
-    "DeleteRedisBigKeyAnalysisTasks": doDeleteRedisBigKeyAnalysisTasks,
+    "CreateProxySessionKillTask": doCreateProxySessionKillTask,
+    "DescribeRedisTopHotKeys": doDescribeRedisTopHotKeys,
     "CancelRedisBigKeyAnalysisTasks": doCancelRedisBigKeyAnalysisTasks,
     "ModifyAuditService": doModifyAuditService,
     "DescribeRedisTopCostCommands": doDescribeRedisTopCostCommands,

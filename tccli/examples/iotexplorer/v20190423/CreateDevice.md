@@ -1,31 +1,4 @@
-**Example 1: 创建设备**
-
-创建设备
-
-Input: 
-
-```
-tccli iotexplorer CreateDevice --cli-unfold-argument  \
-    --ProductId LJ0INDNU7Us \
-    --DeviceName device2
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Data": {
-            "DeviceCert": "",
-            "DeviceName": "device2",
-            "DevicePrivateKey": "",
-            "DevicePsk": "dvFeQr1zhBS2CDyYlN31XA=="
-        },
-        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5fd91"
-    }
-}
-```
-
-**Example 2: 创建 LoRa 设备**
+**Example 1: 创建 LoRa 设备**
 
 
 
@@ -57,7 +30,7 @@ Output:
 }
 ```
 
-**Example 3: 创建手动指定psk的设备**
+**Example 2: 创建手动指定psk的设备**
 
 
 
@@ -81,6 +54,33 @@ Output:
             "DevicePsk": "1231"
         },
         "RequestId": "fee15c53-91sac-488d-855d-c02d9f53d91"
+    }
+}
+```
+
+**Example 3: 创建设备**
+
+创建设备
+
+Input: 
+
+```
+tccli iotexplorer CreateDevice --cli-unfold-argument  \
+    --ProductId LJ0INDNU7Us \
+    --DeviceName device2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Data": {
+            "DeviceCert": "",
+            "DeviceName": "device2",
+            "DevicePrivateKey": "",
+            "DevicePsk": "dvFeQr1zhBS2CDyYlN31XA=="
+        },
+        "RequestId": "fee15c53-91sac-488d-855d-c02d9f5fd91"
     }
 }
 ```

@@ -1676,8 +1676,8 @@
     ],
     "DescribeBillUsage": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"20240901\",\n    \"EndTime\": \"20240930\",\n    \"QuotaType\": \"CloudEnterprise\"\n}",
+        "document": "获取指定企业套餐使用汇总信息",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"20240901\",\n    \"EndTime\": \"20240930\",\n    \"QuotaType\": \"CloudEnterprise\",\n    \"Operator\": {\n        \"UserId\": \"yDxoQxxxxxxxxxxxxxxxxxx1h2hnnR\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1729129053894358080\",\n        \"SubOrgSummary\": [],\n        \"Summary\": [\n            {\n                \"Available\": 9967,\n                \"QuotaType\": \"CloudEnterprise\",\n                \"Total\": 412505,\n                \"Used\": 32\n            }\n        ]\n    }\n}",
         "title": "查询企业版合同套餐使用"
       }

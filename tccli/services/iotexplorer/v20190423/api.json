@@ -259,6 +259,13 @@
       "output": "CreatePositionSpaceResponse",
       "status": "online"
     },
+    "CreatePrivateCA": {
+      "document": "创建私有CA证书",
+      "input": "CreatePrivateCARequest",
+      "name": "创建私有CA证书",
+      "output": "CreatePrivateCAResponse",
+      "status": "online"
+    },
     "CreateProject": {
       "document": "为用户提供新建项目的能力，用于集中管理产品和应用。",
       "input": "CreateProjectRequest",
@@ -439,6 +446,20 @@
       "input": "DeletePositionSpaceRequest",
       "name": "删除位置空间",
       "output": "DeletePositionSpaceResponse",
+      "status": "online"
+    },
+    "DeletePrivateCA": {
+      "document": "删除私有CA证书",
+      "input": "DeletePrivateCARequest",
+      "name": "删除私有CA证书",
+      "output": "DeletePrivateCAResponse",
+      "status": "online"
+    },
+    "DeleteProductPrivateCA": {
+      "document": "删除产品绑定的CA证书",
+      "input": "DeleteProductPrivateCARequest",
+      "name": "删除产品绑定的CA证书",
+      "output": "DeleteProductPrivateCAResponse",
       "status": "online"
     },
     "DeleteProject": {
@@ -866,6 +887,34 @@
       "input": "DescribePositionFenceListRequest",
       "name": "获取围栏列表",
       "output": "DescribePositionFenceListResponse",
+      "status": "online"
+    },
+    "DescribePrivateCA": {
+      "document": "查询私有化CA信息",
+      "input": "DescribePrivateCARequest",
+      "name": "查询私有CA证书详情",
+      "output": "DescribePrivateCAResponse",
+      "status": "online"
+    },
+    "DescribePrivateCABindedProducts": {
+      "document": "查询私有CA绑定的产品列表",
+      "input": "DescribePrivateCABindedProductsRequest",
+      "name": "查询私有CA绑定的产品列表",
+      "output": "DescribePrivateCABindedProductsResponse",
+      "status": "online"
+    },
+    "DescribePrivateCAs": {
+      "document": "查询私有CA证书列表",
+      "input": "DescribePrivateCAsRequest",
+      "name": "查询私有CA证书列表",
+      "output": "DescribePrivateCAsResponse",
+      "status": "online"
+    },
+    "DescribeProductCA": {
+      "document": "查询产品绑定的CA证书",
+      "input": "DescribeProductCARequest",
+      "name": "查询产品绑定的CA证书",
+      "output": "DescribeProductCAResponse",
       "status": "online"
     },
     "DescribeProductCloudStorageAIService": {
@@ -1804,6 +1853,20 @@
       "input": "UpdateOtaTaskStatusRequest",
       "name": "更新固件升级任务状态",
       "output": "UpdateOtaTaskStatusResponse",
+      "status": "online"
+    },
+    "UpdatePrivateCA": {
+      "document": "更新私有CA证书",
+      "input": "UpdatePrivateCARequest",
+      "name": "更新私有CA证书",
+      "output": "UpdatePrivateCAResponse",
+      "status": "online"
+    },
+    "UpdateProductPrivateCA": {
+      "document": "更新产品的私有CA",
+      "input": "UpdateProductPrivateCARequest",
+      "name": "更新产品绑定的CA证书",
+      "output": "UpdateProductPrivateCAResponse",
       "status": "online"
     },
     "UploadFirmware": {
@@ -3666,6 +3729,100 @@
       ],
       "usage": "both"
     },
+    "CertInfo": {
+      "document": "X509证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称</p>",
+          "example": "regress-ca1-1008172600",
+          "member": "string",
+          "name": "CertName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书序列号</p>",
+          "example": "1782169b280fac6198638cd5ec8f2e73da01ae9",
+          "member": "string",
+          "name": "CertSN",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书颁发者名称（颁发机构的 CN）</p>",
+          "example": "CN=RegressCA1,O=CaE2ETest,C=CN",
+          "member": "string",
+          "name": "IssuerName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书主题，即证书持有者信息</p>",
+          "example": "CN=RegressCA1,O=CaE2ETest,C=CN",
+          "member": "string",
+          "name": "Subject",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书创建时间，Unix 时间戳，</p><p>单位：秒</p>",
+          "example": "1792519969",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书生效时间，Unix 时间戳，</p><p>单位：秒</p>",
+          "example": "1791173394",
+          "member": "uint64",
+          "name": "EffectiveTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书过期时间，Unix 时间戳，</p><p>单位：秒</p>",
+          "example": "2106533394",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书内容，PEM 格式文本</p>",
+          "example": "-----BEGIN CERTIFICATE-----****-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertText",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ChangeP2PRouteRequest": {
       "document": "ChangeP2PRoute请求参数结构体",
       "members": [
@@ -4955,7 +5112,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID。",
+          "document": "<p>产品ID。</p>",
           "example": "LJ0INDNU7Us",
           "member": "string",
           "name": "ProductId",
@@ -4964,7 +5121,7 @@
         },
         {
           "disabled": false,
-          "document": "设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。",
+          "document": "<p>设备名称。命名规则：[a-zA-Z0-9:_-]{1,48}。</p>",
           "example": "device2",
           "member": "string",
           "name": "DeviceName",
@@ -4973,7 +5130,7 @@
         },
         {
           "disabled": false,
-          "document": "LoRaWAN 设备地址",
+          "document": "<p>LoRaWAN 设备地址</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "DevAddr",
@@ -4982,7 +5139,7 @@
         },
         {
           "disabled": false,
-          "document": "LoRaWAN 应用密钥",
+          "document": "<p>LoRaWAN 应用密钥</p>",
           "example": "3ef0ifgtg",
           "member": "string",
           "name": "AppKey",
@@ -4991,7 +5148,7 @@
         },
         {
           "disabled": false,
-          "document": "LoRaWAN 设备唯一标识",
+          "document": "<p>LoRaWAN 设备唯一标识</p>",
           "example": "3ef0ifg6y",
           "member": "string",
           "name": "DevEUI",
@@ -5000,7 +5157,7 @@
         },
         {
           "disabled": false,
-          "document": "LoRaWAN 应用会话密钥",
+          "document": "<p>LoRaWAN 应用会话密钥</p>",
           "example": "3ef05tg",
           "member": "string",
           "name": "AppSKey",
@@ -5009,7 +5166,7 @@
         },
         {
           "disabled": false,
-          "document": "LoRaWAN 网络会话密钥",
+          "document": "<p>LoRaWAN 网络会话密钥</p>",
           "example": "3ef45gn7",
           "member": "string",
           "name": "NwkSKey",
@@ -5018,10 +5175,19 @@
         },
         {
           "disabled": false,
-          "document": "手动指定设备的PSK密钥",
+          "document": "<p>手动指定设备的PSK密钥</p>",
           "example": "NTBiMmNlZThiZTM5YjU0YjNmZWI2NjVxxxU0Njc0OTU=",
           "member": "string",
           "name": "DefinedPsk",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设备证书。第三方CA证书认证的产品下必填；腾讯云CA证书产品传入会报错；非证书认证产品传入会被忽略</p>",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIDazCCAlOgAwIBAgIUQ...（略）...\\n-----END CERTIFICATE-----\\n",
+          "member": "string",
+          "name": "TlsCrt",
           "required": false,
           "type": "string"
         }
@@ -5033,7 +5199,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "设备参数描述。",
+          "document": "<p>设备参数描述。</p>",
           "example": "无",
           "member": "DeviceData",
           "name": "Data",
@@ -5851,6 +6017,51 @@
       ],
       "type": "object"
     },
+    "CreatePrivateCARequest": {
+      "document": "CreatePrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称，长度 1~32 个字符。</p>",
+          "example": "mqtt-ca2-1020144606",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书内容，PEM 格式文本，需为 CA 证书。</p>",
+          "example": "-----BEGIN CERTIFICATE-----****-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证证书内容，PEM 格式文本。须由所上传的 CA 签发，且 CN 为 sha256(&quot;iothub_主账号Uin&quot;) 的小写十六进制值，用于验证您持有 CA 私钥。</p>",
+          "example": "-----BEGIN CERTIFICATE-----****-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "VerifyCertText",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrivateCAResponse": {
+      "document": "CreatePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateProjectRequest": {
       "document": "CreateProject请求参数结构体",
       "members": [
@@ -5911,7 +6122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}",
+          "document": "<p>产品名称，名称不能和已经存在的产品名称重复。命名规则：[a-zA-Z0-9:_-]{1,32}</p>",
           "example": "name",
           "member": "string",
           "name": "ProductName",
@@ -5920,7 +6131,7 @@
         },
         {
           "disabled": false,
-          "document": "产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)",
+          "document": "<p>产品分组模板ID , ( 自定义模板填写1 , 控制台调用会使用预置的其他ID)</p>",
           "example": "10",
           "member": "int64",
           "name": "CategoryId",
@@ -5929,7 +6140,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型 填写 ( 0 普通产品 ， 5 网关产品)",
+          "document": "<p>产品类型 填写 ( 0 普通产品 ， 5 网关产品)</p>",
           "example": "0",
           "member": "int64",
           "name": "ProductType",
@@ -5938,7 +6149,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型 ，1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
+          "document": "<p>设备认证方式 ，1表示证书认证，2表示密钥认证</p><p>枚举值：</p><ul><li>1： 证书认证(X.509证书认证)</li><li>2： 密钥认证</li></ul>",
           "example": "1",
           "member": "string",
           "name": "EncryptionType",
@@ -5947,7 +6158,7 @@
         },
         {
           "disabled": false,
-          "document": "连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh",
+          "document": "<p>连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh</p>",
           "example": "wifi",
           "member": "string",
           "name": "NetType",
@@ -5956,7 +6167,7 @@
         },
         {
           "disabled": false,
-          "document": "数据协议 (1 使用物模型 2 为自定义)",
+          "document": "<p>数据协议 (1 使用物模型，即使用腾讯云物联网开发平台制定的物模型协议 2 自定义透传，即用户自由定义MQTT协议Payload部分)</p>",
           "example": "1",
           "member": "int64",
           "name": "DataProtocol",
@@ -5965,7 +6176,7 @@
         },
         {
           "disabled": false,
-          "document": "产品描述",
+          "document": "<p>产品描述</p>",
           "example": "desc",
           "member": "string",
           "name": "ProductDesc",
@@ -5974,7 +6185,7 @@
         },
         {
           "disabled": false,
-          "document": "产品的项目ID",
+          "document": "<p>产品所在的项目ID，可从产品管理页的当前URL中获取project_id的值</p>",
           "example": "prj-zunfat46",
           "member": "string",
           "name": "ProjectId",
@@ -5983,7 +6194,7 @@
         },
         {
           "disabled": false,
-          "document": "平均传输速率",
+          "document": "<p>平均传输速率</p>",
           "example": "1_0_mbps",
           "member": "string",
           "name": "Rate",
@@ -5992,10 +6203,19 @@
         },
         {
           "disabled": false,
-          "document": "期限",
-          "example": "1_year",
+          "document": "<p>期限</p>",
+          "example": "5_year",
           "member": "string",
           "name": "Period",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方CA证书名称。空/不传 = 腾讯云默认CA证书；非空 = 使用该证书（须为当前账号已上传的 CA，不存在会报错）</p>",
+          "example": "my-private-ca",
+          "member": "string",
+          "name": "PrivateCAName",
           "required": false,
           "type": "string"
         }
@@ -6007,7 +6227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品描述",
+          "document": "<p>产品描述</p>",
           "example": "无",
           "member": "ProductEntry",
           "name": "Product",
@@ -7964,6 +8184,60 @@
     },
     "DeletePositionSpaceResponse": {
       "document": "DeletePositionSpace返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateCARequest": {
+      "document": "DeletePrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称。</p>",
+          "example": "e2e-ca-1020-144010",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrivateCAResponse": {
+      "document": "DeletePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductPrivateCARequest": {
+      "document": "DeleteProductPrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品ID</p>",
+          "example": "DFTLHRQ9OL",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProductPrivateCAResponse": {
+      "document": "DeleteProductPrivateCA返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -12380,6 +12654,162 @@
           "name": "Total",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCABindedProductsRequest": {
+      "document": "DescribePrivateCABindedProducts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称，长度 1~32 个字符。</p>",
+          "example": "smoke-not-exist",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p><p>取值范围：[0, 5000000]</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单次返回的数量。</p><p>取值范围：[1, 200]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCABindedProductsResponse": {
+      "document": "DescribePrivateCABindedProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>绑定了该 CA 证书的产品列表。</p>",
+          "example": "无",
+          "member": "PrivateCABindProductInfo",
+          "name": "Products",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCARequest": {
+      "document": "DescribePrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称。</p>",
+          "example": "probe-upd-1022223352",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCAResponse": {
+      "document": "DescribePrivateCA返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>CA 证书信息。</p>",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CA",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrivateCAsRequest": {
+      "document": "DescribePrivateCAs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePrivateCAsResponse": {
+      "document": "DescribePrivateCAs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品绑定的 CA 证书信息列表。产品绑定了第三方 CA 时,返回该 CA 的证书信息;产品未绑定第三方 CA 时,返回平台默认 CA;产品未绑定 CA 时为空数组。</p>",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CAs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductCARequest": {
+      "document": "DescribeProductCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品ID。</p>",
+          "example": "SAGKS1EZQ2",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductCAResponse": {
+      "document": "DescribeProductCA返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品绑定的 CA 证书信息列表。产品绑定了第三方 CA 时,返回该 CA 的证书信息;产品未绑定第三方 CA 时,返回平台默认 CA;产品未绑定 CA 时为空数组。</p>",
+          "example": "无",
+          "member": "CertInfo",
+          "name": "CAs",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -23033,6 +23463,42 @@
       ],
       "usage": "out"
     },
+    "PrivateCABindProductInfo": {
+      "document": "子产品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品ID</p>",
+          "example": "ABCDE1",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品名</p>",
+          "example": "abc123",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品创建时间</p><p>单位：秒</p>",
+          "example": "1791445934",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ProductDevicesPositionItem": {
       "document": "产品设备位置信息",
       "members": [
@@ -23074,7 +23540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "1",
           "member": "string",
           "name": "ProductId",
@@ -23084,7 +23550,7 @@
         },
         {
           "disabled": false,
-          "document": "产品名称",
+          "document": "<p>产品名称</p>",
           "example": "1",
           "member": "string",
           "name": "ProductName",
@@ -23094,7 +23560,7 @@
         },
         {
           "disabled": false,
-          "document": "产品分组模板ID",
+          "document": "<p>产品分组模板ID</p>",
           "example": "0",
           "member": "int64",
           "name": "CategoryId",
@@ -23104,7 +23570,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式",
+          "document": "<p>加密类型。1表示证书认证，2表示密钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式</p>",
           "example": "0",
           "member": "string",
           "name": "EncryptionType",
@@ -23114,7 +23580,7 @@
         },
         {
           "disabled": false,
-          "document": "连接类型。如：\nwifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh",
+          "document": "<p>连接类型。如：<br>wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh</p>",
           "example": "0",
           "member": "string",
           "name": "NetType",
@@ -23124,7 +23590,7 @@
         },
         {
           "disabled": false,
-          "document": "数据协议 (1 使用物模型 2 为自定义类型)",
+          "document": "<p>数据协议 (1 使用物模型 2 为自定义类型)</p>",
           "example": "0",
           "member": "int64",
           "name": "DataProtocol",
@@ -23134,7 +23600,7 @@
         },
         {
           "disabled": false,
-          "document": "产品描述",
+          "document": "<p>产品描述</p>",
           "example": "0",
           "member": "string",
           "name": "ProductDesc",
@@ -23144,7 +23610,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 如：all 全部, dev 开发中, audit 审核中 released 已发布",
+          "document": "<p>状态 如：all 全部, dev 开发中, audit 审核中 released 已发布</p>",
           "example": "0",
           "member": "string",
           "name": "DevStatus",
@@ -23154,7 +23620,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "0",
           "member": "uint64",
           "name": "CreateTime",
@@ -23164,7 +23630,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "0",
           "member": "uint64",
           "name": "UpdateTime",
@@ -23174,7 +23640,7 @@
         },
         {
           "disabled": false,
-          "document": "区域",
+          "document": "<p>区域</p>",
           "example": "0",
           "member": "string",
           "name": "Region",
@@ -23184,7 +23650,7 @@
         },
         {
           "disabled": false,
-          "document": "产品类型。如： 0 普通产品 ， 5 网关产品",
+          "document": "<p>产品类型。如： 0 普通产品 ， 5 网关产品</p>",
           "example": "0",
           "member": "int64",
           "name": "ProductType",
@@ -23194,7 +23660,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -23204,7 +23670,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ModuleId",
+          "document": "<p>产品ModuleId</p>",
           "example": "0",
           "member": "int64",
           "name": "ModuleId",
@@ -23214,7 +23680,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用脚本进行二进制转json功能 可以取值 true / false",
+          "document": "<p>是否使用脚本进行二进制转json功能 可以取值 true / false</p>",
           "example": "1",
           "member": "string",
           "name": "EnableProductScript",
@@ -23224,7 +23690,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人 UinId",
+          "document": "<p>创建人 UinId</p>",
           "example": "1",
           "member": "int64",
           "name": "CreateUserId",
@@ -23234,7 +23700,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者昵称",
+          "document": "<p>创建者昵称</p>",
           "example": "1",
           "member": "string",
           "name": "CreatorNickName",
@@ -23244,7 +23710,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定策略（1：强踢；2：非强踢；0：表示无意义）",
+          "document": "<p>绑定策略（1：强踢；2：非强踢；0：表示无意义）</p>",
           "example": "1",
           "member": "uint64",
           "name": "BindStrategy",
@@ -23254,7 +23720,7 @@
         },
         {
           "disabled": false,
-          "document": "设备数量",
+          "document": "<p>设备数量</p>",
           "example": "1",
           "member": "int64",
           "name": "DeviceCount",
@@ -23264,7 +23730,7 @@
         },
         {
           "disabled": false,
-          "document": "平均传输速率",
+          "document": "<p>平均传输速率</p>",
           "example": "1_0_mbps",
           "member": "string",
           "name": "Rate",
@@ -23274,7 +23740,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期",
+          "document": "<p>有效期</p>",
           "example": "5_year",
           "member": "string",
           "name": "Period",
@@ -23284,12 +23750,122 @@
         },
         {
           "disabled": false,
-          "document": "互联互通标识",
+          "document": "<p>互联互通标识</p>",
           "example": "1",
           "member": "int64",
           "name": "IsInterconnection",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>UIN</p>",
+          "example": "700002364696",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AppID</p>",
+          "example": "260083750",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的第三方CA名称；空 = 腾讯云CA证书</p>",
+          "example": "my-private-ca",
+          "member": "string",
+          "name": "PrivateCAName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>true = 第三方CA</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsPrivateCA",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CA 证书名称</p>",
+          "example": "my-private-ca",
+          "member": "string",
+          "name": "CertName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书序列号</p>",
+          "example": "4a2f8b1c9d3e5f7a6b8c9d0e1f2a3b4c",
+          "member": "string",
+          "name": "CertSN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>颁发者</p>",
+          "example": "CN=TestThirdPartyCA,O=TestCA,C=CN",
+          "member": "string",
+          "name": "IssuerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书主题</p>",
+          "example": "CN=TestThirdPartyCA,O=TestCA,C=CN",
+          "member": "string",
+          "name": "Subject",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时间（Unix 秒）</p><p>单位：秒</p>",
+          "example": "1790121600",
+          "member": "int64",
+          "name": "EffectiveTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间（Unix 秒）</p><p>单位：秒</p>",
+          "example": "2105481600",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CA 证书 PEM 全文</p>",
+          "example": "-----BEGIN CERTIFICATE-----\\n...",
+          "member": "string",
+          "name": "CertText",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -29639,6 +30215,87 @@
     },
     "UpdateOtaTaskStatusResponse": {
       "document": "UpdateOtaTaskStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrivateCARequest": {
+      "document": "UpdatePrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书名称。</p>",
+          "example": "probe-upd-1022223352",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书内容，PEM 格式文本，需为 CA 证书。</p>",
+          "example": "-----BEGIN CERTIFICATE-----***-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertText",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>验证证书内容，PEM 格式文本。须由所上传的 CA 签发，且 CN 为 sha256(&quot;iothub_主账号Uin&quot;) 的小写十六进制值，用于验证您持有 CA 私钥。</p>",
+          "example": "-----BEGIN CERTIFICATE-----****-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "VerifyCertText",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrivateCAResponse": {
+      "document": "UpdatePrivateCA返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductPrivateCARequest": {
+      "document": "UpdateProductPrivateCA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品ID。</p>",
+          "example": "DFTLHRQ9OL",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书名称，长度 1~32 个字符。</p>",
+          "example": "mqtt-ca2-1020144606",
+          "member": "string",
+          "name": "CertName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateProductPrivateCAResponse": {
+      "document": "UpdateProductPrivateCA返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

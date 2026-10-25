@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFieldTransformRule\n<公共请求参数>\n\n{\n    \"ProjectId\": 146662,\n    \"TargetField\": \"page_url\",\n    \"MatchType\": \"exact1\",\n    \"MatchPattern\": \"mall\",\n    \"TransformAction\": \"replace\",\n    \"Name\": \"replace\",\n    \"ReplaceValue\": \"m**l\",\n    \"Priority\": 1,\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"invalid match_type: exact1, allowed: exact, prefix, contains, regex\\\"}\",\n        \"RequestId\": \"96774c45-9e84-4d48-8f5d-3c4d09f2007c\"\n    }\n}",
+        "title": "CreateFieldTransformRule示例"
+      }
+    ],
     "CreateReleaseFile": [
       {
         "document": "",
@@ -16,6 +24,46 @@
         "title": "添加星标应用"
       }
     ],
+    "CreateTDEMApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDEMApplication\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-LgSqrGWEdgsx\",\n    \"Name\": \"测试 RUM 应用\",\n    \"Type\": \"web\",\n    \"Desc\": \"测试应用描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"app-TFf7aQLVJL4f\",\n        \"ProjectKey\": \"hmDJY7XJbiCx\",\n        \"RequestId\": \"81ac3779-f084-4dbf-8cb8-f9af431db6ef\"\n    }\n}",
+        "title": "创建应用"
+      }
+    ],
+    "CreateTDEMBusinessSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDEMBusinessSystem\n<公共请求参数>\n\n{\n    \"InstanceName\": \"测试业务系统\",\n    \"InstanceDesc\": \"这是测试业务系统\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"rum-LgSqrGWEdgsx\",\n        \"RequestId\": \"739a7a6d-fef7-4781-8c64-9940fcea47d2\"\n    }\n}",
+        "title": "创建业务系统"
+      }
+    ],
+    "CreateTDEMDialTask": [
+      {
+        "document": "创建一个按固定频率执行的 ICMP 拨测任务。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDEMDialTask\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"TaskName\": \"capi-selftest-0930\",\n    \"Type\": \"icmp\",\n    \"ExecutionTime\": \"realtime\",\n    \"TimeoutMs\": 3000,\n    \"PeriodMs\": 60000,\n    \"PackageCount\": 3,\n    \"DialDomain\": \"www.qq.com\",\n    \"FrequencyMs\": 60000,\n    \"PackageSize\": 64\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2089c4d-6e56-456e-80d0-908a4a01b91c\"\n    }\n}",
+        "title": "创建拨测任务"
+      }
+    ],
+    "CreateTDEMFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDEMFieldTransformRule\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"TargetField\": \"user_id\",\n    \"MatchType\": \"prefix\",\n    \"MatchPattern\": \"test_\",\n    \"TransformAction\": \"mask\",\n    \"Name\": \"脱敏用户 ID\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Rule\": {\n            \"AppId\": \"11\",\n            \"CreatedAt\": \"2026-09-22 11:16:11\",\n            \"CreatedBy\": \"7**********6\",\n            \"Enabled\": true,\n            \"Id\": 32,\n            \"MatchPattern\": \"test_\",\n            \"MatchType\": \"prefix\",\n            \"Name\": \"脱敏用户 ID\",\n            \"Priority\": 0,\n            \"ReplaceValue\": \"\",\n            \"TargetField\": \"user_id\",\n            \"TransformAction\": \"mask\",\n            \"UpdatedAt\": \"2026-09-22 11:16:11\",\n            \"UpdatedBy\": \"700001860566\"\n        },\n        \"RequestId\": \"19ea6869-84dd-44ca-9f49-a6edae4cec0a\"\n    }\n}",
+        "title": "创建字段值替换规则"
+      }
+    ],
+    "CreateTDEMFunnel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTDEMFunnel\n<公共请求参数>\n\n{\n    \"AppId\": \"1****2\",\n    \"FunnelName\": \"下单支付\",\n    \"Steps\": [\n        {\n            \"StepName\": \"进入首页\",\n            \"PagePattern\": \"进入首页\",\n            \"PageMatchMode\": \"exact\"\n        }\n    ],\n    \"Description\": \"enter page\",\n    \"Status\": \"active\",\n    \"Source\": \"manual\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"步骤数必须在2到20之间\\\"}\",\n        \"RequestId\": \"62b1ae8e-b233-4248-b948-bb972ead0db0\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateWhitelist": [
       {
         "document": "",
@@ -30,12 +78,28 @@
         "title": "创建白名单"
       }
     ],
+    "DeleteFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFieldTransformRule\n<公共请求参数>\n\n{\n    \"Id\": 11,\n    \"ProjectId\": 146662\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Deleted\\\":true,\\\"Id\\\":11,\\\"Message\\\":\\\"rule deleted successfully\\\"}\",\n        \"RequestId\": \"98fb76b8-d5e6-47ca-af1c-e8e8c619f88b\"\n    }\n}",
+        "title": "DeleteFieldTransformRule示例"
+      }
+    ],
     "DeleteInstance": [
       {
         "document": "删除 RUM 业务系统",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "删除 RUM 业务系统"
+      }
+    ],
+    "DeleteMiniProgramReplayPack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteMiniProgramReplayPack\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"PackId\": \"mpr_1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"AppId\\\":\\\"1****7\\\",\\\"PackId\\\":\\\"mpr_1\\\",\\\"Deleted\\\":true}\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteProject": [
@@ -60,6 +124,54 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteStarProject\n<公共请求参数>\n\n{\n    \"InstanceID\": \"****-1793\",\n    \"ID\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "删除星标应用"
+      }
+    ],
+    "DeleteSymbolArtifact": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSymbolArtifact\n<公共请求参数>\n\n{\n    \"Kind\": \"js_sourcemap\",\n    \"ArtifactId\": \"sma_123e1a8f7d5d3e8aca92b35ca8cd1b5eaef86c7c12f5d336\",\n    \"AppId\": \"146683\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"artifact_id\\\":\\\"****************************************************\\\",\\\"deleted_at\\\":\\\"2026-07-09T07:31:22.004165362Z\\\",\\\"status\\\":\\\"deleted\\\"}\",\n        \"RequestId\": \"b9c88351-28af-446a-9b15-3a84b09134b8\"\n    }\n}",
+        "title": "删除符号制品"
+      }
+    ],
+    "DeleteTDEMApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTDEMApplication\n<公共请求参数>\n\n{\n    \"AppId\": \"app-8drfG6abVX9u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"app-8drfG6abVX9u\",\n        \"RequestId\": \"12ab639d-be67-4148-b9d4-b45abd4e27a1\"\n    }\n}",
+        "title": "删除应用"
+      }
+    ],
+    "DeleteTDEMBusinessSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTDEMBusinessSystem\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-8keWPF5DgrKP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"rum-8keWPF5DgrKP\",\n        \"RequestId\": \"90c73a51-8e7e-4351-8f78-8ed31c045b5f\"\n    }\n}",
+        "title": "删除业务系统"
+      }
+    ],
+    "DeleteTDEMDialTask": [
+      {
+        "document": "把任务标记为已删除。已上报的探测记录仍保留。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTDEMDialTask\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"1\",\n        \"RequestId\": \"a21efbfa-e8d8-489e-b238-224a78d0721b\"\n    }\n}",
+        "title": "删除拨测任务"
+      }
+    ],
+    "DeleteTDEMFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTDEMFieldTransformRule\n<公共请求参数>\n\n{\n    \"Id\": 31,\n    \"AppId\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deleted\": true,\n        \"Id\": 31,\n        \"Message\": \"rule deleted successfully\",\n        \"RequestId\": \"b8a13563-3114-45bd-a7b8-980b880aea5e\"\n    }\n}",
+        "title": "删除字段值替换规则"
+      }
+    ],
+    "DeleteTDEMFunnel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTDEMFunnel\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"76808ee1-5643-4671-8d84-190f7bd82c29\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Deleted\\\":true}\",\n        \"RequestId\": \"983aa8d1-6b98-4f7d-8fef-c559d885fd3a\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DeleteWhitelist": [
@@ -472,12 +584,92 @@
         "title": "foom 个例列表"
       }
     ],
+    "DescribeFieldTransformRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFieldTransformRules\n<公共请求参数>\n\n{\n    \"ProjectId\": 146662,\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"FieldTransformRuleSet\\\":[{\\\"CreatedAt\\\":\\\"2026-04-11T14:32:25Z\\\",\\\"CreatedBy\\\":\\\"600000563898\\\",\\\"Enabled\\\":true,\\\"Id\\\":1,\\\"MatchPattern\\\":\\\"abc\\\",\\\"MatchType\\\":\\\"contains\\\",\\\"Name\\\":\\\"abc\\\",\\\"Priority\\\":0,\\\"ProjectId\\\":146662,\\\"ReplaceValue\\\":\\\"ddd\\\",\\\"TargetField\\\":\\\"page_url\\\",\\\"TransformAction\\\":\\\"replace\\\",\\\"UpdatedAt\\\":\\\"2026-04-11T14:40:52Z\\\",\\\"UpdatedBy\\\":\\\"600000563898\\\"},{\\\"CreatedAt\\\":\\\"2026-04-11T14:35:00Z\\\",\\\"CreatedBy\\\":\\\"600000563898\\\",\\\"Enabled\\\":true,\\\"Id\\\":2,\\\"MatchPattern\\\":\\\"abcde\\\",\\\"MatchType\\\":\\\"contains\\\",\\\"Name\\\":\\\"page_url包含abc替换为xxx\\\",\\\"Priority\\\":0,\\\"ProjectId\\\":146662,\\\"ReplaceValue\\\":\\\"xxxx\\\",\\\"TargetField\\\":\\\"page_url\\\",\\\"TransformAction\\\":\\\"replace\\\",\\\"UpdatedAt\\\":\\\"2026-04-11T14:35:00Z\\\",\\\"UpdatedBy\\\":\\\"600000563898\\\"}],\\\"TotalCount\\\":2}\",\n        \"RequestId\": \"01d1fd6f-99d9-40b3-9c83-14ce72fbf096\"\n    }\n}",
+        "title": "DescribeFieldTransformRules示例"
+      }
+    ],
+    "DescribeFieldValues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFieldValues\n<公共请求参数>\n\n{\n    \"AppId\": \"146662\",\n    \"StartTime\": 123,\n    \"EndTime\": 3545,\n    \"FieldName\": \"app_version\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Total\\\":0,\\\"Values\\\":[]}\",\n        \"RequestId\": \"5493d519-23b0-4c53-bf70-43404dc71b8d\"\n    }\n}",
+        "title": "DescribeFieldValues示例"
+      }
+    ],
     "DescribeFileCertificate": [
       {
         "document": "获取COS鉴权认证",
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeFileCertificate\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"SecretKey\": \"dahfldaflndfdfdsf\",\n        \"SecretID\": \"asdkadalsdlsafk\",\n        \"SessionToken\": \"fdslkfjdkjfldsjfdfdf\",\n        \"StartTime\": 1232132132,\n        \"ExpiredTime\": 123212143434,\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\",\n        \"BucketAddress\": \"ap-guangzhou:rum-app-prod-1258344699\"\n    }\n}",
         "title": "获取COS鉴权认证"
+      }
+    ],
+    "DescribeIssueAffectedUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueAffectedUsers\n<公共请求参数>\n\n{\n    \"AppId\": \"sGPZPBrHhKxe\",\n    \"IssueId\": \"9fd1ac8fd9b45044\",\n    \"Page\": 1,\n    \"PageSize\": 20,\n    \"AppVersion\": \"\",\n    \"Keyword\": \"\",\n    \"OrderKey\": \"last_seen\",\n    \"StartTime\": 1791820800000,\n    \"EndTime\": 1792425599999,\n    \"OrderBy\": \"desc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Data\\\":{\\\"Users\\\":[],\\\"Total\\\":0,\\\"Page\\\":1,\\\"PageSize\\\":20}}\",\n        \"RequestId\": \"f1cb7fcf-a0ac-4805-af51-881b5190e9e1\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeIssueBreadcrumbs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueBreadcrumbs\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"IssueId\": \"0f5f040e0c3d999eb9557bdb3adcd18253d64785594e80785d443d222d3abe1f\",\n    \"EventId\": \"evt_1782809888621_krrt7d\",\n    \"Before\": 60,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Data\\\":{\\\"session_id\\\":\\\"bce090071fdf4aa9a5d5ef4f242dd4f1\\\",\\\"items\\\":[{\\\"ts\\\":1782809888515,\\\"category\\\":\\\"behavior\\\",\\\"event_type\\\":\\\"click\\\",\\\"message\\\":\\\"触发JS错误\\\",\\\"data\\\":{\\\"target_class\\\":\\\"test-button danger-button\\\",\\\"target_id\\\":\\\"\\\"}}]}}\",\n        \"RequestId\": \"a841adcc-60a0-48e0-992c-10c0e7ddc61f\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssueCrashLogDownloadURL": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueCrashLogDownloadURL\n<公共请求参数>\n\n{\n    \"AppId\": \"19920\",\n    \"IssueId\": \"adfafasaf\",\n    \"EventId\": \"fadfaea\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidAction\\\",\\\"Message\\\":\\\"action DescribeIssueCrashLogDownloadURL not found\\\"}\",\n        \"RequestId\": \"9bc16812-7eb8-4599-89b9-c27f5a71816e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssueDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"IssueId\": \"ca5ac1fb1f4d2993581ea232a73d4575e69579f254f110460c544117ae275\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InternalError\\\",\\\"Message\\\":\\\"sql: no rows in result set\\\"}\",\n        \"RequestId\": \"9bfc17d6-66e9-4405-ae0f-6a9474067712\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssueEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueEventDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"IssueId\": \"ca5ac1fb1f4d2993581ea232a73d4575e69579f254f110460c544117ae275fd9\",\n    \"EventId\": \"evt_1781682085980_diyxj1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Data\\\":{\\\"event_id\\\":\\\"evt_1781682085980_diyxj1\\\",\\\"event_time\\\":1781682085980,\\\"session_id\\\":\\\"663f56e2a6554b959cc7d432b16bcd3f\\\",\\\"trace_id\\\":\\\"\\\",\\\"event_type\\\":\\\"promise_error\\\",\\\"error_type\\\":\\\"Error\\\",\\\"error_value\\\":\\\"这是一个测试Promise异常\\\",\\\"block_duration_ms\\\":0,\\\"block_threshold_ms\\\":0,\\\"symbolication_status\\\":\\\"\\\",\\\"crash_thread_id\\\":\\\"\\\",\\\"stack_trace\\\":[{\\\"function\\\":\\\"testPromiseError\\\",\\\"file\\\":\\\"mall-demo.html\\\",\\\"line\\\":818,\\\"in_app\\\":true},{\\\"function\\\":\\\"HTMLButtonElement.onclick\\\",\\\"file\\\":\\\"mall-demo.html\\\",\\\"line\\\":291,\\\"in_app\\\":true}],\\\"context\\\":{\\\"app_version\\\":\\\"2.0.4\\\",\\\"crash_thread_id\\\":\\\"\\\",\\\"environment\\\":\\\"test\\\",\\\"error_type\\\":\\\"Error\\\",\\\"error_value\\\":\\\"这是一个测试Promise异常\\\",\\\"event_type\\\":\\\"promise_error\\\",\\\"os\\\":\\\"Mac OS X\\\",\\\"process_type\\\":\\\"\\\",\\\"release\\\":\\\"2.0.4\\\",\\\"session_id\\\":\\\"663f56e2a6554b959cc7d432b16bcd3f\\\",\\\"symbolication_status\\\":\\\"\\\",\\\"trace_id\\\":\\\"\\\"}}}\",\n        \"RequestId\": \"ed98dbb5-a6d9-4067-a64f-4b191548d8fd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssueEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueEvents\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"IssueId\": \"ca5ac1fb1f4d2993581ea232a73d4575e69579f254f110460c544117ae275fd9\",\n    \"StartTime\": 1781420460000,\n    \"EndTime\": 1781689660000,\n    \"Keyword\": \"这是\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"app_version\\\",\\\"Op\\\":\\\"eq\\\",\\\"Values\\\":\\\"2.0.4\\\"}]\",\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"Filters JSON 解析失败: json: cannot unmarshal string into Go struct field CAPIFilter.Values of type []string\\\"}\",\n        \"RequestId\": \"af852781-2f64-4cde-bb80-919c5df34531\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssueTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssueTrend\n<公共请求参数>\n\n{\n    \"AppId\": \"14669\",\n    \"IssueId\": \"0f5f040e0c3d999eb9557bdb3adcd18253d64785594e80785d443d222de1f\",\n    \"StartTime\": 1782717720000,\n    \"EndTime\": 1782976920000,\n    \"Bucket\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"bucket 参数无效\\\"}\",\n        \"RequestId\": \"8c427f4d-c5da-41bb-8592-df2a60d75428\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeIssues": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIssues\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"StartTime\": 1781420460000,\n    \"EndTime\": 1781679660000,\n    \"Env\": \"prod\",\n    \"IssueTypes\": [\n        \"js_error\"\n    ],\n    \"Statuses\": [\n        \"Unresolved\"\n    ],\n    \"Keyword\": \"mall\",\n    \"SortBy\": \"last_seen\",\n    \"SortOrder\": \"desc\",\n    \"Page\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Items\\\":[],\\\"Total\\\":0}\",\n        \"RequestId\": \"d102e023-2bcf-44f6-a237-2705afcfdb46\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeIssuesDistribution": [
@@ -534,6 +726,30 @@
         "title": "anr关联卡顿列表"
       }
     ],
+    "DescribeMiniProgramReplayPack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMiniProgramReplayPack\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"BundleHash\": \"a1b2c3d4e5f67890\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"PackId\\\":\\\"mpr_1\\\",\\\"AppId\\\":\\\"1****7\\\",\\\"BundleHash\\\":\\\"a1b2c3d4e5f67890\\\",\\\"Status\\\":\\\"ready\\\",\\\"Pack\\\":{}}\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeMiniProgramReplayPacks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMiniProgramReplayPacks\n<公共请求参数>\n\n{\n    \"AppId\": \"146723\",\n    \"Status\": \"compiling\",\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Items\\\":[],\\\"NextCursor\\\":\\\"\\\"}\",\n        \"RequestId\": \"118a6091-0e3a-4d0d-af30-3e5d34d21cd0\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribePerformanceMetrics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePerformanceMetrics\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"StartTime\": 1778923333000,\n    \"EndTime\": 1779182533000,\n    \"Platform\": \"web\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"normalized_page_url\\\",\\\"Op\\\"\\\\:\\\"in\\\",\\\"Values\\\":[\\\"商城首页\\\"]}]\",\n    \"Quantile\": 0.75\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"Filters JSON 解析失败: invalid character '\\\\\\\\\\\\\\\\' after object key\\\"}\",\n        \"RequestId\": \"7811f99b-5837-4b2a-aa5b-6806c3cec284\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeProjectLimits": [
       {
         "document": "获取应用上报抽样信息",
@@ -578,6 +794,30 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReleaseFiles\n<公共请求参数>\n\n{\n    \"ProjectID\": 137889,\n    \"IgnoreDefaultTimeRange\": true\n}",
         "output": "{\n    \"Response\": {\n        \"Files\": [],\n        \"RequestId\": \"71a4b54e-5f6f-4d5b-b5f6-6a11458f8e6c\"\n    }\n}",
         "title": "查询Sourcemap"
+      }
+    ],
+    "DescribeReplayData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplayData\n<公共请求参数>\n\n{\n    \"AppId\": \"1****2\",\n    \"ReplayId\": \"cd745a80dc454d1ea5f482758c36ca30\",\n    \"SessionId\": \"427f1ec920614e579aafc99f726af883\",\n    \"SegmentId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Events\\\":[{\\\"data\\\":{\\\"height\\\":1080,\\\"href\\\":\\\"https://app.example.com/user/profile\\\",\\\"width\\\":1920},\\\"timestamp\\\":1776651631842,\\\"type\\\":4},{\\\"data\\\":{\\\"node\\\":{\\\"childNodes\\\":[{\\\"name\\\":\\\"html\\\",\\\"publicId\\\":\\\"\\\",\\\"systemId\\\":\\\"\\\",\\\"type\\\":1},{\\\"attributes\\\":{\\\"lang\\\":\\\"zh-CN\\\"},\\\"childNodes\\\":[{\\\"attributes\\\":{},\\\"childNodes\\\":[],\\\"id\\\":3,\\\"tagName\\\":\\\"head\\\",\\\"type\\\":2},{\\\"attributes\\\":{},\\\"childNodes\\\":[{\\\"attributes\\\":{\\\"id\\\":\\\"app\\\"},\\\"childNodes\\\":[{\\\"id\\\":6,\\\"textContent\\\":\\\"TDEM-cont_**_00828\\\",\\\"type\\\":3}],\\\"id\\\":5,\\\"tagName\\\":\\\"div\\\",\\\"type\\\":2}],\\\"id\\\":4,\\\"tagName\\\":\\\"body\\\",\\\"type\\\":2}],\\\"id\\\":2,\\\"tagName\\\":\\\"html\\\",\\\"type\\\":2}],\\\"id\\\":1,\\\"type\\\":0}},\\\"timestamp\\\":1776651631942,\\\"type\\\":2}],\\\"Platform\\\":\\\"web\\\",\\\"ReplayFormat\\\":\\\"rrweb\\\",\\\"ReplayId\\\":\\\"cd745a80dc454d1ea5f482758c36ca30\\\",\\\"SegmentId\\\":0}\",\n        \"RequestId\": \"1c48154d-15a6-42af-99c4-5f9cb563f184\"\n    }\n}",
+        "title": "DescribeReplayData示例"
+      }
+    ],
+    "DescribeReplayDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplayDetails\n<公共请求参数>\n\n{\n    \"AppId\": \"146662\",\n    \"SessionId\": \"e6f1ecbeb640423496f11bf1bfa1501a\",\n    \"ReplayId\": \"rep_7e9d242b7cde49ac65e7f680c40d8aeb\",\n    \"Categories\": \"all\",\n    \"Limit\": 3,\n    \"Cursor\": 3,\n    \"StartOffsetMs\": 20,\n    \"EndOffsetMs\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InternalError\\\",\\\"Message\\\":\\\"查询失败\\\"}\",\n        \"RequestId\": \"99490db4-46de-4b15-89d1-09ab1fda7922\"\n    }\n}",
+        "title": "DescribeReplayDetails示例"
+      }
+    ],
+    "DescribeReplayMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReplayMeta\n<公共请求参数>\n\n{\n    \"AppId\": \"146662\",\n    \"ReplayId\": \"daf\",\n    \"SessionId\": \"dafa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Platform\\\":\\\"unknown\\\",\\\"ReplayFormat\\\":\\\"rrweb\\\",\\\"ReplayId\\\":\\\"daf\\\",\\\"SegmentCount\\\":0,\\\"Segments\\\":null}\",\n        \"RequestId\": \"8b4ebd10-d218-4b65-ac72-aca69d8ae2b4\"\n    }\n}",
+        "title": "DescribeReplayMeta示例"
       }
     ],
     "DescribeRumGroupLog": [
@@ -698,6 +938,14 @@
         "title": "success"
       }
     ],
+    "DescribeSampleRate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleRate\n<公共请求参数>\n\n{\n    \"ProjectId\": 146662\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"CreatedAt\\\":\\\"2026-04-10T05:37:17Z\\\",\\\"ProjectId\\\":146662,\\\"ReplaySampleRate\\\":50,\\\"SampleRate\\\":100,\\\"UpdatedAt\\\":\\\"2026-04-19T04:56:21Z\\\"}\",\n        \"RequestId\": \"d2fd9986-aaf5-4e6c-bafb-40fcfbf93f66\"\n    }\n}",
+        "title": "DescribeSampleRate示例"
+      }
+    ],
     "DescribeScores": [
       {
         "document": "获取首页Score",
@@ -712,6 +960,316 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScoresV2\n\n{\n    \"StartTime\": \"2025080100\",\n    \"EndTime\": \"2025081000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1dfa1684-d91f-479e-899b-b3a14c09afd9\",\n        \"ScoreSet\": [\n            {\n                \"ProjectID\": 124708,\n                \"Score\": 0,\n                \"ApiPerformanceScore\": 0,\n                \"ApiAvailableScore\": 0,\n                \"ApiNum\": 0,\n                \"ApiFail\": 0,\n                \"ApiDuration\": 0,\n                \"PagePerformanceScore\": 0,\n                \"PagePv\": 0,\n                \"PageUv\": 0,\n                \"PageError\": 0,\n                \"PageDuration\": 0,\n                \"PageLCP\": 0,\n                \"PageFID\": 0,\n                \"PageCLS\": 0,\n                \"PageFCP\": 0,\n                \"PageINP\": 0,\n                \"JsErrorScore\": 0,\n                \"StaticAvailableScore\": 0,\n                \"StaticPerformanceScore\": 0,\n                \"StaticNum\": 0,\n                \"StaticFail\": 0,\n                \"StaticDuration\": 0\n            }\n        ]\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeSessionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionList\n<公共请求参数>\n\n{\n    \"AppId\": \"146662\",\n    \"StartTime\": 1776403015595,\n    \"EndTime\": 1776417415595,\n    \"SessionType\": \"all\",\n    \"Page\": 1,\n    \"PageSize\": 20,\n    \"AppVersions\": [\n        \"1.0.0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Page\\\":1,\\\"PageSize\\\":20,\\\"Sessions\\\":[{\\\"SessionId\\\":\\\"c5116f619aba47d2b224a861297a06a9\\\",\\\"UserId\\\":\\\"700001860566\\\",\\\"StartTime\\\":1776415224792,\\\"EndTime\\\":1776417510956,\\\"Duration\\\":2286164,\\\"EventCount\\\":319,\\\"ErrorCount\\\":86,\\\"HasError\\\":true,\\\"PageCount\\\":34,\\\"FirstPageUrl\\\":\\\"https://console.cloud.tencent.com/monitor/rum/dem-config\\\",\\\"DeviceType\\\":\\\"desktop\\\",\\\"Platform\\\":\\\"web\\\",\\\"AppVersion\\\":\\\"1.0.0\\\",\\\"Os\\\":\\\"macOS\\\",\\\"Browser\\\":\\\"Chrome\\\",\\\"Country\\\":\\\"中国\\\",\\\"Region\\\":\\\"广东\\\",\\\"StruggleScore\\\":1.0099667774086378,\\\"StruggleRank\\\":\\\"Good\\\",\\\"StruggleCount\\\":18,\\\"Lcp\\\":7899,\\\"Inp\\\":77.33333333333333,\\\"Cls\\\":0.5419550882850751,\\\"LatestReplayId\\\":\\\"rep_40a4ed58d205567aeec2df89dba832d4\\\"},{\\\"SessionId\\\":\\\"d6db9fe86ef34d6aaf399673626947b5\\\",\\\"UserId\\\":\\\"700001860566\\\",\\\"StartTime\\\":1776414983628,\\\"EndTime\\\":1776415187481,\\\"Duration\\\":203853,\\\"EventCount\\\":58,\\\"ErrorCount\\\":12,\\\"HasError\\\":true,\\\"PageCount\\\":8,\\\"FirstPageUrl\\\":\\\"https://console.cloud.tencent.com/monitor/rum\\\",\\\"DeviceType\\\":\\\"desktop\\\",\\\"Platform\\\":\\\"web\\\",\\\"AppVersion\\\":\\\"1.0.0\\\",\\\"Os\\\":\\\"macOS\\\",\\\"Browser\\\":\\\"Chrome\\\",\\\"Country\\\":\\\"中国\\\",\\\"Region\\\":\\\"广东\\\",\\\"StruggleScore\\\":1.3333333333333333,\\\"StruggleRank\\\":\\\"Good\\\",\\\"StruggleCount\\\":4,\\\"Lcp\\\":4464,\\\"Inp\\\":248,\\\"Cls\\\":0.08204904981830531,\\\"LatestReplayId\\\":\\\"rep_92d583b03c8c0e6d0c9dedf2cabfe551\\\"},{\\\"SessionId\\\":\\\"f1f1a7c657ce4435b64652a8cf4f7589\\\",\\\"UserId\\\":\\\"700001860566\\\",\\\"StartTime\\\":1776414526253,\\\"EndTime\\\":1776415153800,\\\"Duration\\\":627547,\\\"EventCount\\\":45,\\\"ErrorCount\\\":10,\\\"HasError\\\":true,\\\"PageCount\\\":12,\\\"FirstPageUrl\\\":\\\"https://console.cloud.tencent.com/monitor/rum/session\\\",\\\"DeviceType\\\":\\\"desktop\\\",\\\"Platform\\\":\\\"web\\\",\\\"AppVersion\\\":\\\"1.0.0\\\",\\\"Os\\\":\\\"Mac OS X\\\",\\\"Browser\\\":\\\"Electron\\\",\\\"Country\\\":\\\"中国\\\",\\\"Region\\\":\\\"广东\\\",\\\"StruggleScore\\\":2.3,\\\"StruggleRank\\\":\\\"Fair\\\",\\\"StruggleCount\\\":5,\\\"Lcp\\\":9269.5,\\\"Inp\\\":112,\\\"Cls\\\":0.18938273533709518,\\\"LatestReplayId\\\":\\\"rep_d60d0e616614f42122f8b95ed04b4d7b\\\"},{\\\"SessionId\\\":\\\"3bb07f568f3c4e56bfb857a16faaa072\\\",\\\"UserId\\\":\\\"700001860566\\\",\\\"StartTime\\\":1776413382865,\\\"EndTime\\\":1776414511785,\\\"Duration\\\":1128920,\\\"EventCount\\\":70,\\\"ErrorCount\\\":21,\\\"HasError\\\":true,\\\"PageCount\\\":12,\\\"FirstPageUrl\\\":\\\"https://console.cloud.tencent.com/monitor/rum\\\",\\\"DeviceType\\\":\\\"desktop\\\",\\\"Platform\\\":\\\"web\\\",\\\"AppVersion\\\":\\\"1.0.0\\\",\\\"Os\\\":\\\"Mac OS X\\\",\\\"Browser\\\":\\\"Electron\\\",\\\"Country\\\":\\\"中国\\\",\\\"Region\\\":\\\"广东\\\",\\\"StruggleScore\\\":1.9682539682539681,\\\"StruggleRank\\\":\\\"Fair\\\",\\\"StruggleCount\\\":7,\\\"Lcp\\\":8452.649999976158,\\\"Inp\\\":8,\\\"Cls\\\":0.40992709039594166,\\\"LatestReplayId\\\":\\\"rep_baacc4b1ac519ae6bc922270462fa9a8\\\"}],\\\"Total\\\":4}\",\n        \"RequestId\": \"3e5887b4-cf01-4958-a8d7-42146dc4690b\"\n    }\n}",
+        "title": "DescribeSessionList"
+      }
+    ],
+    "DescribeStruggleDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStruggleDistribution\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"StartTime\": 1778916553000,\n    \"EndTime\": 1779175753000,\n    \"Platform\": \"web\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"normalized_page_url\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"商品列表页\\\"]}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Items\\\":[{\\\"Type\\\":\\\"back_forward\\\",\\\"Count\\\":26}],\\\"Total\\\":26}\",\n        \"RequestId\": \"ac4681b0-1443-4ce3-87a8-42c16a220f8b\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeSymbolArtifactUploadCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSymbolArtifactUploadCredential\n<公共请求参数>\n\n{\n    \"Kind\": \"js_sourcemap\",\n    \"FileName\": \"demo.min.js\",\n    \"AppId\": \"******\",\n    \"Release\": \"npm-demo-1.0.6-ip202\",\n    \"MinifiedUrl\": \"http://127.0.0.1:4173/demo.min.js\",\n    \"FileType\": \"minified\",\n    \"ContentType\": \"application/json\",\n    \"ProjectId\": \"******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"bucket\\\":\\\"***************\\\",\\\"cos_key\\\":\\\"sourcemaps/146683/npm************ip202/_/dbff70a41************41998988***************\\\",\\\"cos_url\\\":\\\"https://*********************************************/sourcemaps/**************************************************************************\\\",\\\"expiration\\\":\\\"2026-07-09T07:27:12Z\\\",\\\"expired_time\\\":1783582032,\\\"region\\\":\\\"ap-guangzhou\\\",\\\"session_token\\\":\\\"Ei1QfCjWZztAZjAQ5rCjGh3UhKCuOXEac820d4ce2306e4254c91e150f5f4d86agyNg2CfPAt14Y8ptEsPGv5IlhYPGDMDhR3k6x42eaCbnTWE7NH2ywBHGj8tAwbEDl4i4xP26mo_yA3PlHOldoG6mI-RsqaKl70lYMDk3f2bjFbiYuXs3e-mEo4VA-28u97axxVo_kdBjTSzTzV1EJgfmXlf1wsOHel2889OoFoNX4J9phsQXR0K2HCdkRshVKtiod6isuqYKQ0UEhPasRzK38bykpgRt_CS3LgWwlIwSEdyOtlnW8L5nVBgpcYfLVqwF2YflB_unCTjSIrgvAUSQxSzOH08VaLcUhUlns1LeAO3OO4DOMnxovOlGcKUXBbXsC0IYTwWgvZjSGa6QpOwNewq_14mygI7oKHXkxOjIT7PahynTGnxFjBXxomz9gyPPpD0ebmvt5mjOofL_8RyJFWm89eVzzBkU2nHiRxxFnQbx8m8p9L2aOaMOvN_GWhHVZySnkyn8PfE5mLz3FSsVERgULcK4iVYgW5Lfd8qrx9u3Nc1IroWHaemYXNGUBQGseutONRoNUyvGdivNpHCKXxhH_rQ7n6wZn5_WsimzYlJyNdXtjxt_H4_XIXonDEzTqK5sXXkgfDNq8IThGkOp9gH_BwwjGxzktRgOzMeGt8FAj_7QEDW1SFRPlvyr2F9_WeMDQZEKByDKIqA2vF8v5xWrOQc_OAISp1LQ5Wbsb21GC-zyOVGi6BEKLL1RktxwAE1RDtk0ZZVWA8hOSg\\\",\\\"start_time\\\":1783581132,\\\"sts_request_id\\\":\\\"d8d12df1-40c4-4ad8-9187-041cfae1b8f7\\\",\\\"tmp_secret_id\\\":\\\"********************************************************************\\\",\\\"tmp_secret_key\\\":\\\"********************************************\\\"}\",\n        \"RequestId\": \"7101c383-3be4-4cd1-85d3-5d8f94e59882\"\n    }\n}",
+        "title": "获取上传凭证"
+      }
+    ],
+    "DescribeSymbolArtifacts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSymbolArtifacts\n<公共请求参数>\n\n{\n    \"Kind\": \"js_sourcemap\",\n    \"AppId\": \"******\",\n    \"Release\": \"npm-demo-1.0.6-ip202\",\n    \"Status\": \"active\",\n    \"Limit\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"artifacts\\\":[{\\\"app_id\\\":\\\"******\\\",\\\"artifact_id\\\":\\\"s***************************a8*********************6\\\",\\\"content_type\\\":\\\"application/json\\\",\\\"created_at\\\":\\\"2026-07-06T19:50:55+08:00\\\",\\\"file_name\\\":\\\"demo.min.js\\\",\\\"file_size\\\":455508,\\\"file_type\\\":\\\"minified\\\",\\\"kind\\\":\\\"js_sourcemap\\\",\\\"minified_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"normalized_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"release\\\":\\\"npm-demo-1.0.6-ip202\\\",\\\"sha256\\\":\\\"bb407a9734b1f0ea190637a7c8dedef3c86ce10dea87926d7dfb008b59e830c4\\\",\\\"status\\\":\\\"active\\\",\\\"updated_at\\\":\\\"2026-07-09T15:21:42+08:00\\\",\\\"uploaded_by\\\":\\\"600000563044\\\",\\\"validation_status\\\":\\\"valid\\\"},{\\\"app_id\\\":\\\"146683\\\",\\\"artifact_id\\\":\\\"sma_ea0a032e91330af8ce3961dd4b4b095742441f329d051da8\\\",\\\"content_type\\\":\\\"application/json\\\",\\\"created_at\\\":\\\"2026-07-06T16:56:57+08:00\\\",\\\"file_name\\\":\\\"demo.min.js.map\\\",\\\"file_size\\\":1834677,\\\"file_type\\\":\\\"sourcemap\\\",\\\"kind\\\":\\\"js_sourcemap\\\",\\\"minified_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"normalized_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"release\\\":\\\"npm-demo-1.0.6-ip202\\\",\\\"sha256\\\":\\\"d336575e1877360a7758f0b7d9bd8c5b59b215e80eb037514135a9c5a10b3a84\\\",\\\"status\\\":\\\"active\\\",\\\"updated_at\\\":\\\"2026-07-09T15:10:00+08:00\\\",\\\"uploaded_by\\\":\\\"700001793941\\\",\\\"validation_status\\\":\\\"valid\\\"}],\\\"next_cursor\\\":\\\"\\\",\\\"total\\\":2}\",\n        \"RequestId\": \"0eee0ba3-98f5-4ef5-beb1-73a67ff8ce60\"\n    }\n}",
+        "title": "查询符号制品"
+      }
+    ],
+    "DescribeTDEMApplications": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMApplications\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"AppId\": \"app-9qPVpy9i2zF2\",\n                \"CreatedAt\": \"2026-09-21 20:32:09\",\n                \"Desc\": \"测试应用描述\",\n                \"ExcludeIgnoredErrors\": false,\n                \"InstanceId\": \"rum-LgSqrGWEdgsx\",\n                \"InstanceName\": \"修改业务系统名称\",\n                \"Name\": \"测试应用\",\n                \"ProjectKey\": \"v2n3KR2s9axu\",\n                \"Status\": 2,\n                \"Type\": \"web\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"8f61090b-6a6d-435c-b738-13bf16ed249c\"\n    }\n}",
+        "title": "查询应用列表"
+      }
+    ],
+    "DescribeTDEMBusinessSystems": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMBusinessSystems\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"BusinessSystemSet\": [\n            {\n                \"CreatedAt\": \"2026-09-15 12:22:07\",\n                \"InstanceId\": \"rum-8keWPF5DgrKP\",\n                \"InstanceName\": \"11\",\n                \"Status\": 2,\n                \"UpdatedAt\": \"2026-09-15 12:26:41\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"d5fb62a1-7e58-4bc7-ba7a-686ddb2af191\"\n    }\n}",
+        "title": "删除业务系统"
+      }
+    ],
+    "DescribeTDEMDialDimensions": [
+      {
+        "document": "按指定维度拆分拨测次数、时延和丢包率。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialDimensions\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"StartTime\": 1789026600000,\n    \"EndTime\": 1791618600000,\n    \"Dimension\": \"country\",\n    \"TaskId\": \"16\",\n    \"Platform\": \"android\",\n    \"AppVersion\": \"1.0.0\",\n    \"Device\": \"sdk_gphone64_arm64\",\n    \"NetType\": \"wifi\",\n    \"Operator\": \"电信\",\n    \"ClientRegion\": \"广东\",\n    \"TargetIp\": \"183.2.172.177\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Dimension\": \"country\",\n        \"Items\": [\n            {\n                \"Value\": \"中国\",\n                \"ExecutionCount\": 1571,\n                \"SuccessCount\": 1275,\n                \"FailCount\": 296,\n                \"AvgDuration\": 260.36431372549015,\n                \"AvgLoss\": 0\n            }\n        ],\n        \"RequestId\": \"27fca02a-cbe6-4c4d-b13b-4cbc14c3ca4b\"\n    }\n}",
+        "title": "查询拨测维度分布"
+      }
+    ],
+    "DescribeTDEMDialExecutionDetail": [
+      {
+        "document": "按应用、任务、批次和时间窗查询这一批探测的连通性与路由追踪。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialExecutionDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"StartTime\": 1790092800000,\n    \"EndTime\": 1790784000000,\n    \"TaskId\": \"1\",\n    \"TaskSessionId\": \"selftest-no-exec\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppVersion\": \"\",\n        \"AvgDuration\": 0,\n        \"Device\": \"\",\n        \"NetType\": \"\",\n        \"Operator\": \"\",\n        \"Platform\": \"\",\n        \"Probes\": [],\n        \"Region\": \"\",\n        \"SessionId\": \"\",\n        \"StartTime\": 0,\n        \"Success\": false,\n        \"TargetIps\": [],\n        \"TaskId\": \"1\",\n        \"TaskName\": \"capi-selftest-0930-mod\",\n        \"TaskSessionId\": \"selftest-no-exec\",\n        \"RequestId\": \"fa3f3918-e88d-4327-b1fb-0818de977b79\"\n    }\n}",
+        "title": "查询拨测批次详情"
+      }
+    ],
+    "DescribeTDEMDialExecutionList": [
+      {
+        "document": "按时间窗分页查询拨测批次，一批次对应一行。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialExecutionList\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"StartTime\": 1788852300000,\n    \"EndTime\": 1791444300000,\n    \"TaskId\": \"9\",\n    \"Platform\": \"android\",\n    \"AppVersion\": \"1.0.0\",\n    \"Device\": \"sdk_gphone64_arm64\",\n    \"NetType\": \"wifi\",\n    \"Operator\": \"电信\",\n    \"ClientRegion\": \"广东\",\n    \"TargetIp\": \"183.2.172.177\",\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Success\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 516,\n        \"ExecutionSet\": [\n            {\n                \"TaskId\": \"9\",\n                \"TaskName\": \"android-audience-user\",\n                \"TaskSessionId\": \"6b37f3fe-0b2c-43c5-8bc1-a8cad1a60202\",\n                \"StartTime\": 1791444282154,\n                \"Platform\": \"android\",\n                \"AppVersion\": \"1.0.0\",\n                \"Device\": \"sdk_gphone64_arm64\",\n                \"NetType\": \"\",\n                \"Operator\": \"电信\",\n                \"Region\": \"广东\",\n                \"TargetIps\": [\n                    \"183.2.172.177\"\n                ],\n                \"TargetIpGeo\": [\n                    {\n                        \"Ip\": \"183.2.172.177\",\n                        \"Region\": \"广东\",\n                        \"Operator\": \"电信\"\n                    }\n                ],\n                \"Success\": true,\n                \"AvgDuration\": 132.1,\n                \"HasMTR\": false,\n                \"SessionId\": \"bbd4851f-d07b-4de0-ad5a-3d04f68e3f84\"\n            }\n        ],\n        \"RequestId\": \"4e67667d-7540-4efb-956c-28dcc82b58f1\"\n    }\n}",
+        "title": "查询拨测执行记录"
+      }
+    ],
+    "DescribeTDEMDialOverview": [
+      {
+        "document": "按时间窗汇总执行次数、成功次数、失败次数、平均时延和丢包率。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialOverview\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"StartTime\": 1790092800000,\n    \"EndTime\": 1790784000000,\n    \"TaskId\": \"1\",\n    \"Platform\": \"android\",\n    \"AppVersion\": \"1.0.0\",\n    \"Device\": \"sdk_gphone64_arm64\",\n    \"NetType\": \"wifi\",\n    \"Operator\": \"电信\",\n    \"ClientRegion\": \"广东\",\n    \"TargetIp\": \"183.2.172.177\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvgDuration\": 0,\n        \"AvgLoss\": 0,\n        \"ExecutionCount\": 0,\n        \"FailCount\": 0,\n        \"SuccessCount\": 0,\n        \"TaskCount\": 0,\n        \"RequestId\": \"2928f594-d8fc-49cd-a80f-e424320bba15\"\n    }\n}",
+        "title": "查询拨测概览"
+      }
+    ],
+    "DescribeTDEMDialTasks": [
+      {
+        "document": "查询应用下未删除的拨测任务。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialTasks\n<公共请求参数>\n\n{\n    \"AppId\": \"5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"7\",\n                \"TaskName\": \"android-after-dns\",\n                \"Status\": \"active\",\n                \"Type\": \"icmp\",\n                \"ExecutionTime\": \"after_dns_slow\",\n                \"WatchDomain\": \"postman-echo.com\",\n                \"DialDomain\": \"ldns\",\n                \"TimeoutMs\": 3000,\n                \"PeriodMs\": 200,\n                \"PackageCount\": 3,\n                \"PackageSize\": 64,\n                \"NeedMTR\": 0,\n                \"SlowThresholdMs\": 1,\n                \"CreatedBy\": \"700001860566\",\n                \"CreatedAt\": \"2026-09-30 15:37:46\",\n                \"UpdatedAt\": \"2026-09-30 15:59:37\"\n            }\n        ],\n        \"RequestId\": \"bfb4b198-c80e-4564-b18e-1e1c59b4882a\"\n    }\n}",
+        "title": "查询拨测任务列表"
+      }
+    ],
+    "DescribeTDEMDialTrend": [
+      {
+        "document": "按小时或天返回拨测执行趋势。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMDialTrend\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"StartTime\": 1789026600000,\n    \"EndTime\": 1791618600000,\n    \"TaskId\": \"16\",\n    \"Platform\": \"android\",\n    \"AppVersion\": \"1.0.0\",\n    \"Device\": \"sdk_gphone64_arm64\",\n    \"NetType\": \"wifi\",\n    \"Operator\": \"电信\",\n    \"ClientRegion\": \"广东\",\n    \"TargetIp\": \"183.2.172.177\",\n    \"Granularity\": \"hour\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Points\": [\n            {\n                \"Time\": \"2026-09-30 15:00:00\",\n                \"ExecutionCount\": 6,\n                \"SuccessCount\": 6,\n                \"FailCount\": 0,\n                \"AvgDuration\": 6.333333333333333\n            }\n        ],\n        \"RequestId\": \"34e659ef-11d5-4dbf-aac5-ec4474c3d633\"\n    }\n}",
+        "title": "查询拨测趋势"
+      }
+    ],
+    "DescribeTDEMEventDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMEventDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"EventId\": \"evt_1789718605688_bcsks3\",\n    \"Date\": \"2026-09-18\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Event\": {\n            \"AppId\": \"11\",\n            \"AppVersion\": \"1.0.0\",\n            \"Browser\": \"Safari\",\n            \"City\": \"深圳\",\n            \"Country\": \"中国\",\n            \"Date\": \"2026-09-18\",\n            \"DeviceType\": \"mobile\",\n            \"EventCategory\": \"error\",\n            \"EventId\": \"evt_1789718605688_bcsks3\",\n            \"EventProperties\": [\n                {\n                    \"Key\": \"symbolication_status\",\n                    \"Value\": \"missing\"\n                }\n            ],\n            \"EventType\": \"js_error\",\n            \"ExceptionFrames\": [\n                {\n                    \"AbsPath\": \"http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0\",\n                    \"ColNo\": 515376,\n                    \"Filename\": \"WASubContext.js?t=wechat&v=3.17.0\",\n                    \"Function\": \"J\",\n                    \"InApp\": 1,\n                    \"LineNo\": 1\n                }\n            ],\n            \"ExceptionStacks\": [\n                {\n                    \"MechanismHandled\": 0,\n                    \"MechanismType\": \"onError\",\n                    \"Type\": \"Error\",\n                    \"Value\": \"MiniProgramError\\nmodule 'pages/order/components/selectCoupons/dayjs.js' is not defined, require args is 'dayjs'\\nError: module 'pages/order/components/selectCoupons/dayjs.js' is not defined, require args is 'dayjs'\\n    at J (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:515376)\\n    at n (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:514430)\\n    at weapp:///pages/order/components/selectCoupons/selectCoupons.js:6:37\\n    at Module.f (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:170668)\\n    at A (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:506628)\\n    at http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:515766\\n    at f.runWith (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:504835)\\n    at J (http://127.0.0.1:44584/__dev__/WASubContext.js?t=wechat&v=3.17.0:1:515748)\\n    at <anonymous>:8:5\\n    at evaIuateRes (ide:///extensions/appservice/index.js:1:110144)\"\n                }\n            ],\n            \"Fingerprint\": \"11|js_error|Error|MiniProgramError module 'pages/order/components/selectCoupons/dayjs.js' is not defined, require args is 'dayjs' Error: module 'pages/order/components/selectCoupons/dayjs.js' is not defined, require args is 'dayjs' at J (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at n (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at weapp:///pages/order/components/selectCoupons/selectCoupons.js: : at Module.f (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at A (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : at f.runWith (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at J (http:// . . . : /__dev__/WASubContext.js?t=wechat&v= . . : : ) at <anonymous>: : at evaIuateRes (ide:///extensions/appservice/index.js: : )|WASubContext.js:J|WASubContext.js:n|selectCoupons.js:(anonymous)\",\n            \"Ip\": \"59.******.48\",\n            \"IsSourceMapped\": 0,\n            \"Isp\": \"电信\",\n            \"IssueId\": \"3e79f9c562973037\",\n            \"Measurements\": [],\n            \"NormalizedPageUrl\": \"pages%2Forder%2Forder-confirm%2Findex%3Ftype%3Dcart\",\n            \"Os\": \"iPhone OS\",\n            \"PageUrl\": \"pages%2Forder%2Forder-confirm%2Findex%3Ftype%3Dcart\",\n            \"Platform\": \"miniprogram\",\n            \"Province\": \"广东\",\n            \"SdkVersion\": \"1.0.0\",\n            \"SessionId\": \"mp_81069b302d52d8396753e1c442276bfd\",\n            \"Tags\": [\n                {\n                    \"Key\": \"source\",\n                    \"Value\": \"on-error\"\n                }\n            ],\n            \"Timestamp\": \"2026-09-18T08:03:25.688Z\",\n            \"UserId\": \"***********\"\n        },\n        \"Symbolicated\": {\n            \"SymbolicationStatus\": \"missing\"\n        },\n        \"RequestId\": \"bc078fe8-5404-4f9a-a07c-4ef1c9be2062\"\n    }\n}",
+        "title": "查询事件详情"
+      }
+    ],
+    "DescribeTDEMEventRank": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMEventRank\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1787404860000,\n    \"EndTime\": 1789996860000,\n    \"Kind\": \"api\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Count\": 70,\n                \"Duration\": 458.09171540396557,\n                \"URL\": \"https:******************************************\"\n            }\n        ],\n        \"RequestId\": \"41829edb-5f4e-43d1-9afa-9ce22fa55f3e\"\n    }\n}",
+        "title": "查询事件排行"
+      },
+      {
+        "document": "按精确半开时间窗查询Web OS异常分布，返回完整主项、0计数及页面不存在包含项；主项计总，包含项不重复计总。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMEventRank\n<公共请求参数>\n\n{\n    \"AppId\": \"17\",\n    \"StartTime\": 1789660800000,\n    \"EndTime\": 1792252800000,\n    \"Kind\": \"exception_dimension\",\n    \"GroupBy\": \"os\",\n    \"ProjectType\": \"web\",\n    \"CategoryKeys\": [\n        \"js_error\",\n        \"promise_error\",\n        \"api_error.http\",\n        \"api_error.business\",\n        \"resource_error.script\",\n        \"resource_error.image\",\n        \"resource_error.stylesheet\",\n        \"resource_error.media\",\n        \"resource_error.lazy_load\",\n        \"blank_screen\",\n        \"log.report\",\n        \"js_error.page_not_found\"\n    ],\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"ExceptionDistribution\": {\n            \"Rows\": [\n                {\n                    \"Items\": [\n                        {\n                            \"Count\": 51,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"js_error\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": false,\n                            \"Key\": \"js_error.page_not_found\",\n                            \"ParentKey\": \"js_error\"\n                        },\n                        {\n                            \"Count\": 49,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"promise_error\"\n                        },\n                        {\n                            \"Count\": 282,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"api_error.http\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"api_error.business\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"resource_error.script\"\n                        },\n                        {\n                            \"Count\": 54,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"resource_error.image\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"resource_error.stylesheet\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"resource_error.media\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"resource_error.lazy_load\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"blank_screen\"\n                        },\n                        {\n                            \"Count\": 0,\n                            \"IncludedInTotal\": true,\n                            \"Key\": \"log.report\"\n                        }\n                    ],\n                    \"RowKey\": \"exd1.b3JkaW5hcnk6d2Vi.b3M.TWFjIE9TIFg\",\n                    \"TotalCount\": 436,\n                    \"Value\": \"Mac OS X\"\n                }\n            ]\n        },\n        \"Items\": [],\n        \"RequestId\": \"1095ed90-eb47-4bc0-a9c1-a038dbae5f90\"\n    }\n}",
+        "title": "查询异常维度完整分类与包含项"
+      }
+    ],
+    "DescribeTDEMEventSearch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMEventSearch\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1787404860000,\n    \"EndTime\": 1789996860000,\n    \"Category\": \"lag\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"AppVersion\": \"1.0.4\",\n                \"Browser\": \"***%**C**es\",\n                \"City\": \"北京\",\n                \"Country\": \"中国\",\n                \"DeviceType\": \"iPhone18,1\",\n                \"EventCategory\": \"performance\",\n                \"EventId\": \"33C06D53-C870-4276-8942-D8A970D16475\",\n                \"EventProperties\": [\n                    {\n                        \"Key\": \"app_state\",\n                        \"Value\": \"active\"\n                    }\n                ],\n                \"EventType\": \"lag_detected\",\n                \"ExceptionStacks\": [\n                    {\n                        \"MechanismHandled\": 1,\n                        \"MechanismType\": \"hybrid_frame_watchdog\",\n                        \"Type\": \"MainThreadStall\",\n                        \"Value\": \"main_thread_unresponsive\"\n                    }\n                ],\n                \"Ip\": \"223.******.23\",\n                \"Isp\": \"移动/基站WiFi\",\n                \"Measurements\": [\n                    {\n                        \"Key\": \"cumulative_frame_delay_ms\",\n                        \"Value\": 150.024917\n                    }\n                ],\n                \"NormalizedPageUrl\": \"launch\",\n                \"Os\": \"iOS\",\n                \"PageUrl\": \"launch\",\n                \"Platform\": \"ios\",\n                \"Province\": \"北京\",\n                \"SessionId\": \"8B771143-FC48-4E11-B3BC-E328A2337CBC\",\n                \"Timestamp\": 1789636841337,\n                \"UserId\": \"tdem_test_2ab8d5\"\n            }\n        ],\n        \"Page\": 1,\n        \"PageSize\": 20,\n        \"Total\": 3410,\n        \"RequestId\": \"c3971020-ac30-49f0-a02c-8942700aaa43\"\n    }\n}",
+        "title": "搜索事件列表"
+      }
+    ],
+    "DescribeTDEMEventSearchSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMEventSearchSummary\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"StartTime\": 1787404860000,\n    \"EndTime\": 1789996860000,\n    \"Category\": \"error\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryCounts\": [\n            {\n                \"Key\": \"session\",\n                \"Value\": 1\n            }\n        ],\n        \"IntervalSec\": 3600,\n        \"Series\": [\n            {\n                \"Count\": 5,\n                \"Timestamp\": 1789718400000\n            }\n        ],\n        \"Total\": 5,\n        \"Users\": 1,\n        \"Visitors\": 1,\n        \"RequestId\": \"12301d55-901b-42b4-9755-a261e934477d\"\n    }\n}",
+        "title": "查询探索事件汇总"
+      }
+    ],
+    "DescribeTDEMFieldTransformRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFieldTransformRules\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"Offset\": 0,\n    \"Limit\": 200\n}",
+        "output": "{\n    \"Response\": {\n        \"FieldTransformRuleSet\": [\n            {\n                \"AppId\": \"11\",\n                \"CreatedAt\": \"2026-09-22 11:16:06\",\n                \"CreatedBy\": \"7**********6\",\n                \"Enabled\": true,\n                \"Id\": 31,\n                \"MatchPattern\": \"test_\",\n                \"MatchType\": \"prefix\",\n                \"Name\": \"脱敏用户 ID\",\n                \"Priority\": 0,\n                \"ReplaceValue\": \"\",\n                \"TargetField\": \"user_id\",\n                \"TransformAction\": \"mask\",\n                \"UpdatedAt\": \"2026-09-22 11:16:06\",\n                \"UpdatedBy\": \"7**********6\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"ab1bbef2-387b-4df1-811f-79644a4c2ff6\"\n    }\n}",
+        "title": "查询字段值替换规则"
+      }
+    ],
+    "DescribeTDEMFunnelDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelDetail\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"11ca34ce-2747-41b4-b52d-e18310e45d43\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"CreatedBy\\\":\\\"\\\",\\\"Description\\\":\\\"\\\",\\\"FunnelId\\\":\\\"11ca34ce-2747-41b4-b52d-e18310e45d43\\\",\\\"FunnelName\\\":\\\"进入购物车\\\",\\\"Source\\\":\\\"manual\\\",\\\"Status\\\":\\\"active\\\",\\\"StepCount\\\":3,\\\"Steps\\\":[{\\\"ActionType\\\":\\\"\\\",\\\"PageMatchMode\\\":\\\"exact\\\",\\\"PagePattern\\\":\\\"商城首页\\\",\\\"Selector\\\":\\\"\\\",\\\"StepName\\\":\\\"进入首页\\\",\\\"VisualName\\\":\\\"\\\"},{\\\"ActionType\\\":\\\"\\\",\\\"PageMatchMode\\\":\\\"exact\\\",\\\"PagePattern\\\":\\\"商品列表页\\\",\\\"Selector\\\":\\\"\\\",\\\"StepName\\\":\\\"进入列表页\\\",\\\"VisualName\\\":\\\"\\\"},{\\\"ActionType\\\":\\\"\\\",\\\"PageMatchMode\\\":\\\"exact\\\",\\\"PagePattern\\\":\\\"购物车页\\\",\\\"Selector\\\":\\\"\\\",\\\"StepName\\\":\\\"进入购物车\\\",\\\"VisualName\\\":\\\"\\\"}],\\\"UpdatedAt\\\":\\\"2026-05-12 07:12:03\\\"}\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMFunnelDimensions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelDimensions\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"c746a2b16a3bda58e\",\n    \"StartTime\": 1778574700198,\n    \"EndTime\": 1779179500198,\n    \"Dimension\": \"os\",\n    \"Platform\": \"web\",\n    \"DeviceType\": \"desktop\",\n    \"Browser\": \"Chrome\",\n    \"OS\": \"Max OS X\",\n    \"Country\": \"中国\",\n    \"Referrer\": \"unknown\",\n    \"AppVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"ResourceNotFound\\\",\\\"Message\\\":\\\"漏斗不存在\\\"}\",\n        \"RequestId\": \"daa50b58-793a-4c55-bc04-3b583cf08d68\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMFunnelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelList\n<公共请求参数>\n\n{\n    \"AppId\": \"1****2\",\n    \"Keyword\": \"下单\",\n    \"Status\": \"active1\",\n    \"Page\": 1,\n    \"PageSize\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"Status 仅支持 active 或 inactive\\\"}\",\n        \"RequestId\": \"fc8ec2b7-0ccf-4b98-8d88-b167b5a5f4ac\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMFunnelReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelReport\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"c746a247-4927-40b7-9a7e-8b16a3bda58\",\n    \"StartTime\": 1778574700198,\n    \"EndTime\": 1779179500198,\n    \"Platform\": \"web\",\n    \"DeviceType\": \"desktop\",\n    \"Browser\": \"Chrome\",\n    \"OS\": \"Mac OS X\",\n    \"Country\": \"中国\",\n    \"Referrer\": \"unknown\",\n    \"AppVersion\": \"2.0.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"ResourceNotFound\\\",\\\"Message\\\":\\\"漏斗不存在\\\"}\",\n        \"RequestId\": \"344ca442-775f-4334-876d-2d451c3e7a43\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMFunnelStepSessionList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelStepSessionList\n<公共请求参数>\n\n{\n    \"AppId\": \"146667\",\n    \"FunnelId\": \"324\",\n    \"StartTime\": 1778574700198,\n    \"EndTime\": 1779179500198,\n    \"StepIndex\": 1,\n    \"DrillType\": \"pass_through\",\n    \"Page\": 1,\n    \"PageSize\": 20,\n    \"Platform\": \"web\",\n    \"AppVersion\": \"2.0.0\",\n    \"DeviceType\": \"desktop\",\n    \"Browser\": \"Chrome\",\n    \"OS\": \"Mac OS X\",\n    \"Country\": \"中国\",\n    \"Referrer\": \"unknown\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"ResourceNotFound\\\",\\\"Message\\\":\\\"漏斗不存在\\\"}\",\n        \"RequestId\": \"aaccceef-565d-40e8-8722-09d1c0bc6bf9\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMFunnelTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMFunnelTrend\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"c746a247-4927-40b7-9a7e-8b16a3bda58\",\n    \"StartTime\": 1778574700198,\n    \"EndTime\": 1779179500198,\n    \"Interval\": \"day\",\n    \"Platform\": \"web\",\n    \"AppVersion\": \"2.0.0\",\n    \"DeviceType\": \"desktop\",\n    \"Browser\": \"Chrome\",\n    \"OS\": \"Mac OS X\",\n    \"Country\": \"中国\",\n    \"Referrer\": \"页面来源\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"ResourceNotFound\\\",\\\"Message\\\":\\\"漏斗不存在\\\"}\",\n        \"RequestId\": \"de184bb1-7941-4447-afb7-3370fa5b151c\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMMetricDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMMetricDistribution\n<公共请求参数>\n\n{\n    \"AppId\": \"1\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710086400000,\n    \"EventType\": \"js_error\",\n    \"Metrics\": [\n        \"count\"\n    ],\n    \"GroupBy\": \"os\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"RequestId\": \"0ebcf212-a711-4685-9721-1dbd3be27be0\"\n    }\n}",
+        "title": "查询错误事件"
+      }
+    ],
+    "DescribeTDEMMetricSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMMetricSummary\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1790050740000,\n    \"EndTime\": 1790054340000,\n    \"EventType\": \"api_call\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"environment\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"production\\\"]}]\",\n    \"Metrics\": [\n        \"avg\"\n    ],\n    \"MeasurementKey\": \"duration\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Metrics\": [\n            {\n                \"Name\": \"Avg\",\n                \"Value\": 0\n            }\n        ],\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询分析指标合计"
+      }
+    ],
+    "DescribeTDEMMetricTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMMetricTrend\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1790050740000,\n    \"EndTime\": 1790054340000,\n    \"Granularity\": \"1h\",\n    \"EventType\": \"crash\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"environment\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"production\\\"]}]\",\n    \"Metrics\": [\n        \"count\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Granularity\": \"1h\",\n        \"RequestId\": \"26594b06-cbdb-4844-9b38-d70ae8b88f19\"\n    }\n}",
+        "title": "查询分析指标趋势"
+      }
+    ],
+    "DescribeTDEMOverviewScores": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMOverviewScores\n<公共请求参数>\n\n{\n    \"AppIds\": [\n        \"7\"\n    ],\n    \"StartTime\": 1787404860000,\n    \"EndTime\": 1789996860000\n}",
+        "output": "{\n    \"Response\": {\n        \"Scores\": [\n            {\n                \"AppId\": \"7\",\n                \"Items\": [\n                    {\n                        \"Key\": \"crash\",\n                        \"Score\": 0,\n                        \"Value\": 0.03333333333333333\n                    }\n                ],\n                \"Platform\": \"iOS\",\n                \"TotalScore\": 6.8\n            }\n        ],\n        \"RequestId\": \"709cb6d7-0284-4cef-9e5b-fadaaafcf113\"\n    }\n}",
+        "title": "查询总览分数"
+      }
+    ],
+    "DescribeTDEMRelatedEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMRelatedEvents\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"StartTime\": 1787404860000,\n    \"EndTime\": 1789996860000,\n    \"Mode\": \"timeline\",\n    \"SessionId\": \"mp_81069b302d52d8396753e1c442276bfd\",\n    \"Offset\": 0,\n    \"Limit\": 200,\n    \"Category\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CategoryCounts\": [\n            {\n                \"Key\": \"all\",\n                \"Value\": 147\n            }\n        ],\n        \"Events\": [\n            {\n                \"AppVersion\": \"1.0.0\",\n                \"Browser\": \"Safari\",\n                \"City\": \"深圳\",\n                \"Country\": \"中国\",\n                \"DeviceType\": \"mobile\",\n                \"EventCategory\": \"custom\",\n                \"EventId\": \"evt_1789718558702_n1402f\",\n                \"EventName\": \"set_data_timing\",\n                \"EventType\": \"custom\",\n                \"Ip\": \"59.37.125.48\",\n                \"Isp\": \"电信\",\n                \"Measurements\": [\n                    {\n                        \"Key\": \"duration\",\n                        \"Value\": 36\n                    }\n                ],\n                \"NormalizedPageUrl\": \"pages/home/home\",\n                \"Os\": \"iPhone OS\",\n                \"PageUrl\": \"pages/home/home\",\n                \"Platform\": \"miniprogram\",\n                \"Province\": \"广东\",\n                \"SessionId\": \"mp_81069b302d52d8396753e1c442276bfd\",\n                \"Timestamp\": 1789718558702,\n                \"UserId\": \"tdesigndemo\"\n            }\n        ],\n        \"HasMore\": false,\n        \"Limit\": 200,\n        \"Offset\": 0,\n        \"RequestId\": \"bd646822-8130-4d52-85df-31ba0fdc1ace\"\n    }\n}",
+        "title": "查询相关事件"
+      }
+    ],
+    "DescribeTDEMSSEDimensions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSSEDimensions\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710003600000,\n    \"Filters\": \"[{\\\"Key\\\":\\\"model_version\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"gpt-4o\\\"]}]\",\n    \"Metric\": \"first_message_delay\",\n    \"Dimension\": \"region\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Rows\": [\n            {\n                \"DimensionValue\": \"中国 / 广东\",\n                \"ConversationCount\": 8,\n                \"Value\": 510\n            }\n        ],\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询大模型体验多维分析"
+      }
+    ],
+    "DescribeTDEMSSEDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSSEDistribution\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710003600000,\n    \"Filters\": \"[{\\\"Key\\\":\\\"model_version\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"gpt-4o\\\"]}]\",\n    \"Metric\": \"fluency\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bins\": [\n            {\n                \"Start\": 0,\n                \"End\": 1,\n                \"Overflow\": false,\n                \"Count\": 4,\n                \"Rate\": 33.3\n            }\n        ],\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询大模型体验分布"
+      }
+    ],
+    "DescribeTDEMSSEPercentile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSSEPercentile\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710003600000,\n    \"Filters\": \"[{\\\"Key\\\":\\\"model_version\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"gpt-4o\\\"]}]\",\n    \"Metric\": \"first_message_delay\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntervalSec\": 3600,\n        \"Average\": 420,\n        \"P50\": 380,\n        \"P75\": 510,\n        \"P95\": 2400,\n        \"P99\": 8000,\n        \"Points\": [\n            {\n                \"Time\": 1710000000000,\n                \"Average\": 400,\n                \"P50\": 360,\n                \"P75\": 500,\n                \"P95\": 2100,\n                \"P99\": 7600\n            }\n        ],\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询大模型体验分位"
+      }
+    ],
+    "DescribeTDEMSSESummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSSESummary\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710003600000,\n    \"Filters\": \"[{\\\"Key\\\":\\\"model_version\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"gpt-4o\\\"]}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ConversationCount\": 12,\n        \"TotalTokenCount\": 3400,\n        \"TokenThroughput\": 18.5,\n        \"FirstMessageDelay\": 420,\n        \"ErrorRate\": 8.3,\n        \"StallRate\": 0,\n        \"Fluency\": 76.2,\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询大模型体验汇总"
+      }
+    ],
+    "DescribeTDEMSSETrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSSETrend\n<公共请求参数>\n\n{\n    \"AppId\": \"7\",\n    \"StartTime\": 1710000000000,\n    \"EndTime\": 1710003600000,\n    \"Filters\": \"[{\\\"Key\\\":\\\"model_version\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"gpt-4o\\\"]}]\",\n    \"Metric\": \"token_throughput\",\n    \"Dimension\": \"overall\",\n    \"TopN\": 7\n}",
+        "output": "{\n    \"Response\": {\n        \"IntervalSec\": 60,\n        \"Points\": [\n            {\n                \"Time\": 1710000000000,\n                \"ConversationCount\": 3,\n                \"Value\": 18.5\n            }\n        ],\n        \"Series\": [],\n        \"RequestId\": \"37858f63-fa66-42f2-86af-52a83f742841\"\n    }\n}",
+        "title": "查询大模型体验趋势"
+      }
+    ],
+    "DescribeTDEMSampleConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSampleConfig\n<公共请求参数>\n\n{\n    \"AppId\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"AppId\\\":\\\"10\\\",\\\"Event\\\":{\\\"Enabled\\\":true,\\\"Types\\\":{}},\\\"Replay\\\":{\\\"Enabled\\\":false,\\\"ExperienceSampleRate\\\":0,\\\"ErrorTraceback\\\":false,\\\"ErrorSampleRate\\\":100},\\\"UpdatedAt\\\":null}\",\n        \"RequestId\": \"3ee31b9c-5583-40dd-987c-51b38f4951b6\"\n    }\n}",
+        "title": "1"
+      }
+    ],
+    "DescribeTDEMSampleRate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSampleRate\n<公共请求参数>\n\n{\n    \"AppId\": \"11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"11\",\n        \"CreatedAt\": \"2026-09-17 19:25:27\",\n        \"ReplaySampleRate\": 100,\n        \"SampleRate\": 100,\n        \"UpdatedAt\": \"2026-09-17 19:25:27\",\n        \"RequestId\": \"35d0085e-5d4a-4b64-a76d-ec8fffc8202e\"\n    }\n}",
+        "title": "查询应用采样率"
+      }
+    ],
+    "DescribeTDEMSessionReplayTimeline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMSessionReplayTimeline\n<公共请求参数>\n\n{\n    \"AppId\": \"1****2\",\n    \"SessionId\": \"c4d4b78baf9f467cb393cc4cdf123389\",\n    \"Limit\": 10000,\n    \"Cursor\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"HasMore\\\":false,\\\"NextCursor\\\":0,\\\"Replays\\\":[{\\\"ReplayId\\\":\\\"rep_7b043a235812c2df4f5fad22fa3db880\\\",\\\"StartTime\\\":1778843329995,\\\"EndTime\\\":1778843393978,\\\"FirstPageUrl\\\":\\\"http://9.135.33.202/\\\",\\\"FirstPageTitle\\\":\\\"\\\",\\\"EventCount\\\":239},{\\\"ReplayId\\\":\\\"rep_4b7410e51a0f8f605980866a8a462be0\\\",\\\"StartTime\\\":1778843337473,\\\"EndTime\\\":1778843359976,\\\"FirstPageUrl\\\":\\\"http://9.135.33.202/item/SN000004\\\",\\\"FirstPageTitle\\\":\\\"\\\",\\\"EventCount\\\":225},{\\\"ReplayId\\\":\\\"rep_34d62d906f726c899a4ad2bed3e48d4d\\\",\\\"StartTime\\\":1778843399978,\\\"EndTime\\\":1778843447024,\\\"FirstPageUrl\\\":\\\"http://9.135.33.202/\\\",\\\"FirstPageTitle\\\":\\\"\\\",\\\"EventCount\\\":342}],\\\"SessionEndTime\\\":1778843447024,\\\"SessionId\\\":\\\"c4d4b78baf9f467cb393cc4cdf123389\\\",\\\"SessionStartTime\\\":1778843329995,\\\"Timeline\\\":[],\\\"Truncated\\\":false}\",\n        \"RequestId\": \"9fe18bc7-ac48-4d35-a953-f28b0a0fd814\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeTDEMUsageDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMUsageDetail\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-09-15 00:00:00\",\n    \"EndTime\": \"2026-09-22 13:00:00\",\n    \"Keyword\": \"****测试\\t\",\n    \"Offset\": 0,\n    \"Limit\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"DetailSet\": [\n            {\n                \"AppId\": \"17\",\n                \"AppName\": \"*********\",\n                \"AppStatus\": 2,\n                \"AppType\": \"electron\",\n                \"ByDate\": [\n                    {\n                        \"ReportVolume\": 0,\n                        \"Time\": \"2026-09-15 00:00:00\"\n                    }\n                ],\n                \"InstanceId\": \"rum-jqtz5UaeVyXZ\",\n                \"InstanceName\": \"测试环境测试\",\n                \"InstanceStatus\": 2,\n                \"Percent\": 88.67616164561716,\n                \"ReportVolume\": 3782902\n            }\n        ],\n        \"ReportVolume\": 4265974,\n        \"TotalCount\": 13,\n        \"RequestId\": \"eb103256-daa6-4e89-a36a-3c0fb226fec5\"\n    }\n}",
+        "title": "查询用量明细"
+      }
+    ],
+    "DescribeTDEMUsageSummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTDEMUsageSummary\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-09-15 00:00:00\",\n    \"EndTime\": \"2026-09-22 13:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ByDate\": [\n            {\n                \"ReportVolume\": 50987,\n                \"Time\": \"2026-09-15 00:00:00\"\n            }\n        ],\n        \"Granularity\": \"day\",\n        \"ReportVolume\": 4265974,\n        \"ResourceCount\": 13,\n        \"RequestId\": \"8b95c45e-1fe0-46b3-bbf6-3e0aeebebb05\"\n    }\n}",
+        "title": "查询用量合计"
       }
     ],
     "DescribeTawAreas": [
@@ -746,6 +1304,14 @@
         "title": "拉取top的问题列表"
       }
     ],
+    "DescribeUserJourneySanKey": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserJourneySanKey\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"StartTime\": 1779167512144,\n    \"EndTime\": 1779181912144,\n    \"Platform\": \"all\",\n    \"Filters\": \"[{\\\"Key\\\":\\\"country\\\",\\\"Op\\\":\\\"in\\\",\\\"Values\\\":[\\\"中国\\\"]}]\",\n    \"TopPagesPerStep\": 5,\n    \"MinSessionThreshold\": 1,\n    \"StartPage\": \"商城首页\",\n    \"EndPage\": \"购物车页\",\n    \"HasStruggle\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Data\\\":{\\\"Nodes\\\":[],\\\"Links\\\":[],\\\"StepSummaries\\\":[],\\\"Stats\\\":{\\\"TotalSessions\\\":0,\\\"TotalUsers\\\":0,\\\"MaxStepLevel\\\":0,\\\"AvgPathDepth\\\":0,\\\"OverallExitRate\\\":0,\\\"StruggleSessions\\\":0,\\\"StruggleRate\\\":0,\\\"AvgStruggleScore\\\":0,\\\"IsTruncated\\\":false,\\\"HiddenNodeCount\\\":0,\\\"HiddenSessionCount\\\":0}}}\",\n        \"RequestId\": \"c6c2468e-621d-476a-be4c-a148452851fe\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeUvList": [
       {
         "document": "",
@@ -762,12 +1328,36 @@
         "title": "获取白名单列表"
       }
     ],
+    "ModifyFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFieldTransformRule\n<公共请求参数>\n\n{\n    \"Id\": 4,\n    \"ProjectId\": 146662,\n    \"Name\": \"fieldName\",\n    \"TargetField\": \"page_url\",\n    \"MatchType\": \"contains\",\n    \"MatchPattern\": \"mall\",\n    \"TransformAction\": \"replace\",\n    \"ReplaceValue\": \"replace\",\n    \"Priority\": 1,\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"Rule\\\":{\\\"CreatedAt\\\":\\\"2026-04-12T08:38:03Z\\\",\\\"CreatedBy\\\":\\\"700001860566\\\",\\\"Enabled\\\":true,\\\"Id\\\":4,\\\"MatchPattern\\\":\\\"mall\\\",\\\"MatchType\\\":\\\"contains\\\",\\\"Name\\\":\\\"fieldName\\\",\\\"Priority\\\":1,\\\"ProjectId\\\":146662,\\\"ReplaceValue\\\":\\\"replace\\\",\\\"TargetField\\\":\\\"page_url\\\",\\\"TransformAction\\\":\\\"replace\\\",\\\"UpdatedAt\\\":\\\"2026-04-20T16:48:30.65+08:00\\\",\\\"UpdatedBy\\\":\\\"600000563898\\\"}}\",\n        \"RequestId\": \"60381ca9-6934-4eb8-9ae4-c9ef2cbc0193\"\n    }\n}",
+        "title": "ModifyFieldTransformRule示例"
+      }
+    ],
     "ModifyInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"taw-12345678\",\n    \"InstanceName\": \"新实例名称\",\n    \"InstanceDesc\": \"新实例描述\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"411c8d9d-9cea-4d1d-906d-6f1e076ded28\"\n    }\n}",
         "title": "修改实例信息"
+      }
+    ],
+    "ModifyIssueStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIssueStatus\n<公共请求参数>\n\n{\n    \"AppId\": \"146692\",\n    \"IssueId\": \"0f5f040e0c3d999eb9557bdb3adcd18253d64785594e80785d443d222d3abe1f\",\n    \"IssueAction\": \"resolv\",\n    \"ResolvedRelease\": \"1.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"{\\\"Code\\\":\\\"InvalidParameter\\\",\\\"Message\\\":\\\"INVALID_TRANSITION\\\"}\",\n        \"RequestId\": \"ec9bceb1-7ff8-4346-bb9d-6bd01f06ee12\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyMiniProgramReplayPack": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMiniProgramReplayPack\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"PackId\": \"mpr_1\",\n    \"Release\": \"1.2.4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"PackId\\\":\\\"mpr_1\\\",\\\"AppId\\\":\\\"1****7\\\",\\\"Release\\\":\\\"1.2.4\\\",\\\"Status\\\":\\\"ready\\\"}\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "ModifyProject": [
@@ -792,6 +1382,78 @@
         "title": "新增修改限流"
       }
     ],
+    "ModifySampleRate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySampleRate\n<公共请求参数>\n\n{\n    \"ProjectId\": 2,\n    \"SampleRate\": 99.9\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"ProjectId\\\":2,\\\"SampleRate\\\":99.9,\\\"UpdatedAt\\\":\\\"2026-04-14T13:53:36.672+08:00\\\"}\",\n        \"RequestId\": \"1b67da78-db46-4c1a-9394-65dd85404b35\"\n    }\n}",
+        "title": "ModifySampleRate示例"
+      }
+    ],
+    "ModifyTDEMApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMApplication\n<公共请求参数>\n\n{\n    \"AppId\": \"app-9qPVpy9i2zF2\",\n    \"Name\": \"修改应用名\",\n    \"Desc\": \"修改应用描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"app-9qPVpy9i2zF2\",\n        \"RequestId\": \"8ce34720-5f85-4658-9af7-e1a31eb3e9fd\"\n    }\n}",
+        "title": "修改应用"
+      }
+    ],
+    "ModifyTDEMBusinessSystem": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMBusinessSystem\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rum-LgSqrGWEdgsx\",\n    \"InstanceName\": \"修改业务系统名称\",\n    \"InstanceDesc\": \"修改业务系统描述\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"rum-LgSqrGWEdgsx\",\n        \"RequestId\": \"8b242561-789d-40ad-bf8b-07cd0c1d164f\"\n    }\n}",
+        "title": "修改业务系统"
+      }
+    ],
+    "ModifyTDEMDialTask": [
+      {
+        "document": "修改任务定义。暂停或恢复时把 Status 设为 paused 或 active。",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMDialTask\n<公共请求参数>\n\n{\n    \"AppId\": \"5\",\n    \"TaskId\": \"1\",\n    \"TaskName\": \"capi-selftest-0930-mod\",\n    \"Status\": \"active\",\n    \"Type\": \"icmp\",\n    \"ExecutionTime\": \"realtime\",\n    \"WatchDomain\": \"postman-echo.com\",\n    \"DialDomain\": \"www.qq.com\",\n    \"Port\": 443,\n    \"FrequencyMs\": 60000,\n    \"TimeoutMs\": 3000,\n    \"PeriodMs\": 60000,\n    \"PackageCount\": 3,\n    \"PackageSize\": 64,\n    \"NeedMTR\": 0,\n    \"MTRTimeoutMs\": 10000,\n    \"MTRMaxHop\": 30,\n    \"MTRPingCount\": 5,\n    \"SlowThresholdMs\": 2000,\n    \"ErrorType\": \"5xx\",\n    \"Regions\": \"广东省\",\n    \"Operators\": \"中国电信\",\n    \"UserIds\": \"demo_user_001\",\n    \"DeviceIds\": \"d86001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7b8fd8c6-5bf3-4a8d-9165-0bbd7980af9b\"\n    }\n}",
+        "title": "修改拨测任务"
+      }
+    ],
+    "ModifyTDEMFieldTransformRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMFieldTransformRule\n<公共请求参数>\n\n{\n    \"Id\": 31,\n    \"AppId\": \"11\",\n    \"TargetField\": \"user_id\",\n    \"MatchType\": \"prefix\",\n    \"MatchPattern\": \"test2_\",\n    \"TransformAction\": \"mask\",\n    \"Name\": \"修改名称\",\n    \"ReplaceValue\": \"*\",\n    \"Enabled\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Rule\": {\n            \"AppId\": \"11\",\n            \"CreatedAt\": \"2026-09-22 11:16:06\",\n            \"CreatedBy\": \"7**********6\",\n            \"Enabled\": true,\n            \"Id\": 31,\n            \"MatchPattern\": \"test2_\",\n            \"MatchType\": \"prefix\",\n            \"Name\": \"修改名称\",\n            \"Priority\": 0,\n            \"ReplaceValue\": \"*\",\n            \"TargetField\": \"user_id\",\n            \"TransformAction\": \"mask\",\n            \"UpdatedAt\": \"2026-09-22 11:22:38\",\n            \"UpdatedBy\": \"7**********6\"\n        },\n        \"RequestId\": \"820f8d13-00a1-4998-918e-80e4bf657595\"\n    }\n}",
+        "title": "修改字段值替换规则"
+      }
+    ],
+    "ModifyTDEMFunnel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMFunnel\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"FunnelId\": \"0ebd8927-7db4-46ca-a0b2-4befe75e08c8\",\n    \"FunnelName\": \"进入购物车页面\",\n    \"Steps\": [\n        {\n            \"StepName\": \"进入首页\",\n            \"PagePattern\": \"商城首页\",\n            \"PageMatchMode\": \"exact\"\n        }\n    ],\n    \"Description\": \"enter page\",\n    \"Status\": \"active\",\n    \"Source\": \"manual\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"FunnelId\\\":\\\"0ebd8927-7db4-46ca-a0b2-4befe75e08c8\\\"}\",\n        \"RequestId\": \"1dff6c0c-1962-4c14-9a44-5881b70b6e89\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyTDEMSampleConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMSampleConfig\n<公共请求参数>\n\n{\n    \"AppId\": \"10\",\n    \"Event\": \"{\\\"Enabled\\\":true,\\\"Types\\\":{}}\",\n    \"Replay\": \"{\\\"Enabled\\\":false,\\\"ExperienceSampleRate\\\":0,\\\"ErrorTraceback\\\":false,\\\"ErrorSampleRate\\\":100}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"AppId\\\":\\\"10\\\",\\\"Event\\\":{\\\"Enabled\\\":true,\\\"Types\\\":{}},\\\"Replay\\\":{\\\"Enabled\\\":false,\\\"ExperienceSampleRate\\\":0,\\\"ErrorTraceback\\\":false,\\\"ErrorSampleRate\\\":100},\\\"UpdatedAt\\\":\\\"2026-10-14T16:39:21.436+08:00\\\"}\",\n        \"RequestId\": \"464ed07f-7ebc-409a-896c-ab04b3a12df8\"\n    }\n}",
+        "title": "测试1"
+      }
+    ],
+    "ModifyTDEMSampleRate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTDEMSampleRate\n<公共请求参数>\n\n{\n    \"AppId\": \"11\",\n    \"SampleRate\": 50,\n    \"ReplaySampleRate\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"11\",\n        \"ReplaySampleRate\": 50,\n        \"SampleRate\": 50,\n        \"UpdatedAt\": \"2026-09-22 11:35:51\",\n        \"RequestId\": \"09c24f77-a3e3-4d56-a4b2-49db017bdc55\"\n    }\n}",
+        "title": "修改应用采样率"
+      }
+    ],
+    "PreviewTDEMFunnelReport": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: PreviewTDEMFunnelReport\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"StartTime\": \"1718294400000\",\n    \"EndTime\": \"1718380800000\",\n    \"Steps\": \"[{\\\"StepName\\\":\\\"首页\\\",\\\"PagePattern\\\":\\\"/\\\",\\\"PageMatchMode\\\":\\\"exact\\\",\\\"ActionType\\\":\\\"page_view\\\"},{\\\"StepName\\\":\\\"结算页\\\",\\\"PagePattern\\\":\\\"/checkout\\\",\\\"PageMatchMode\\\":\\\"prefix\\\",\\\"ActionType\\\":\\\"\\\"}]\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"FunnelId\\\": \\\"\\\", \\\"FunnelName\\\": \\\"\\\", \\\"Summary\\\": {\\\"TotalSessions\\\": 1000, \\\"ConversionRatio\\\": 0.5}, \\\"Steps\\\": [], \\\"Chart\\\": []}\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ResumeInstance": [
       {
         "document": "",
@@ -808,6 +1470,14 @@
         "title": "恢复 RUM 应用"
       }
     ],
+    "ResumeTDEMApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeTDEMApplication\n<公共请求参数>\n\n{\n    \"AppId\": \"app-9qPVpy9i2zF2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"app-9qPVpy9i2zF2\",\n        \"Status\": 2,\n        \"RequestId\": \"c789f819-4d51-4d14-a731-a1b3e3f68264\"\n    }\n}",
+        "title": "恢复应用"
+      }
+    ],
     "StopInstance": [
       {
         "document": "停止后，业务系统内所有应用将无法上报数据",
@@ -822,6 +1492,30 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2c56dbc9-2b99-437a-9a5e-51ed6dcba7e5\"\n    }\n}",
         "title": "停止应用上报"
+      }
+    ],
+    "StopTDEMApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopTDEMApplication\n<公共请求参数>\n\n{\n    \"AppId\": \"app-9qPVpy9i2zF2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"app-9qPVpy9i2zF2\",\n        \"Status\": 6,\n        \"RequestId\": \"3548920e-e05e-4eaa-9ada-836bd3d91679\"\n    }\n}",
+        "title": "停止应用"
+      }
+    ],
+    "UploadMiniProgramSource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadMiniProgramSource\n<公共请求参数>\n\n{\n    \"AppId\": \"1****7\",\n    \"Release\": \"1.0.0\",\n    \"FileBase64\": \"UEsDBAoAAAAAA\",\n    \"FileName\": \"mp-source.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"PackId\\\":\\\"mpr_1\\\",\\\"AppId\\\":\\\"1****7\\\",\\\"BundleHash\\\":\\\"a1b2c3d4e5f67890\\\",\\\"Status\\\":\\\"ready\\\",\\\"Idempotent\\\":false}\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"c3ede0ff-9a91-4312-ac09-b2d8f7c597c7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "UploadSymbolArtifact": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadSymbolArtifact\n<公共请求参数>\n\n{\n    \"Kind\": \"js_sourcemap\",\n    \"FileSize\": 455508,\n    \"Sha256\": \"bb407a9734b1f0ea190637a7c8dedef3c86ce10dea87926d7dfb008b59e830c4\",\n    \"COSUrl\": \"https://tdem-1253358381.cos.ap-guangzhou.myqcloud.com/sourcemaps/146683/npm-demo-1.0.6-ip202/_/4330b986dc15a63594826576800499ba/demo.min.js\",\n    \"AppId\": \"146683\",\n    \"Release\": \"npm-demo-1.0.6-ip202\",\n    \"MinifiedUrl\": \"http://127.0.0.1:4173/demo.min.js\",\n    \"FileType\": \"minified\",\n    \"FileName\": \"demo.min.js\",\n    \"ContentType\": \"application/json\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"{\\\"app_id\\\":\\\"******\\\",\\\"artifact_id\\\":\\\"***************d3e8aca92***************86c7c12f5d336\\\",\\\"content_type\\\":\\\"application/json\\\",\\\"created_at\\\":\\\"2026-07-06T19:50:55+08:00\\\",\\\"file_name\\\":\\\"********.js\\\",\\\"file_size\\\":455508,\\\"file_type\\\":\\\"minified\\\",\\\"idempotent\\\":true,\\\"kind\\\":\\\"js_sourcemap\\\",\\\"minified_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"normalized_url\\\":\\\"http://127.0.0.1:4173/demo.min.js\\\",\\\"release\\\":\\\"npm-demo-1.0.6-ip202\\\",\\\"sha256\\\":\\\"bb407a9734b1f0ea190637a7c8dedef3c86ce10dea87926d7dfb008b59e830c4\\\",\\\"status\\\":\\\"active\\\",\\\"updated_at\\\":\\\"2026-07-09T15:21:43.862917077+08:00\\\",\\\"uploaded_by\\\":\\\"600000563044\\\",\\\"validation_status\\\":\\\"valid\\\"}\",\n        \"RequestId\": \"0b0cac0a-6b41-4bf1-930e-6b82dd8515f5\"\n    }\n}",
+        "title": "登记符号制品"
       }
     ]
   },

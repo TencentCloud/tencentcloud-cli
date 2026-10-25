@@ -9225,7 +9225,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤器，Name取值：</p><ul><li>ModelName：按照模型名称过滤。</li><li>ServiceProviderId：按照BYOK ID过滤。</li><li>InputModalitiesUnion：按照模态过滤。</li></ul>",
+          "document": "<p>过滤器，Name取值：</p><ul><li>ModelName：按照模型名称过滤。</li><li>ServiceProviderId：按照BYOK ID过滤。</li><li>InputModalitiesUnion：按照输入模态过滤。</li><li>Capability：按照输出模态过滤。</li></ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -11903,6 +11903,17 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选定的分类决策模型名，不传递表示随机选用。</p>",
+          "example": "jev-*****************",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -14502,7 +14513,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>该模型最大可支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul>",
+          "document": "<p>该模型最大可支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalitiesUnion",
@@ -14558,7 +14569,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>该模型所有健康BYOK实例下支持的输入多模态能力的并集。模型不健康时返回空列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul>",
+          "document": "<p>该模型所有健康BYOK实例下支持的输入多模态能力的并集。模型不健康时返回空列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
@@ -14639,7 +14650,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该模型当前支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul><p>默认值：text</p>",
+          "document": "<p>该模型当前支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul><p>默认值：text</p>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
@@ -14931,7 +14942,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该模型最大可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul>",
+          "document": "<p>该模型最大可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalitiesUnion",
@@ -15321,6 +15332,16 @@
           "example": "无",
           "member": "ImageConfig",
           "name": "ImageConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例重定向配置</p>",
+          "example": "无",
+          "member": "RedirectConfig",
+          "name": "RedirectConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -16083,6 +16104,16 @@
           "example": "无",
           "member": "ModelRouterBillingConfigOutput",
           "name": "BillingConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例重定向配置</p>",
+          "example": "无",
+          "member": "RedirectConfig",
+          "name": "RedirectConfig",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -17491,6 +17522,33 @@
           "name": "ImageConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例重定向配置</p>",
+          "example": "无",
+          "member": "RedirectConfig",
+          "name": "RedirectConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网络协议</p>",
+          "example": "HTTPS",
+          "member": "string",
+          "name": "Schema",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>监听端口</p><p>取值范围：[1, 65535]</p>",
+          "example": "887",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -18220,7 +18278,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>附件类型</p><p>枚举值：</p><ul><li>image： 图像</li><li>pdf： pdf（文件）</li></ul>",
+          "document": "<p>附件类型</p><p>枚举值：</p><ul><li>image： 图像</li><li>pdf： pdf（文件）</li><li>video： 视频</li></ul>",
           "example": "image",
           "member": "string",
           "name": "Type",
@@ -18506,6 +18564,34 @@
           "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RedirectConfig": {
+      "document": "重定向配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>重定向状态码</p><p>枚举值：</p><ul><li>301： 永久重定向</li><li>302： 临时重定向</li><li>303： 查看其他位置</li><li>307： 临时重定向（保留请求方法）</li><li>308： 永久重定向（保留请求方法）</li></ul>",
+          "example": "302",
+          "member": "uint64",
+          "name": "StatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标地址，填写为空表示关闭重定向。不支持路径填写。</p>",
+          "example": "https://www.qq.com/",
+          "member": "string",
+          "name": "TargetUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -20170,7 +20256,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单个byok实例下该模型可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li></ul>",
+          "document": "<p>单个byok实例下该模型可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
@@ -20540,7 +20626,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该byok实例下该模型可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li></ul>",
+          "document": "<p>该byok实例下该模型可支持的输入多模态能力列表。</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>image： 支持图像输入</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
@@ -20988,7 +21074,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>会话粘性的超时时间（秒），取值范围 1–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[1, 86400]</p><p>单位：秒</p><p>默认值：1800</p>",
+          "document": "<p>会话粘性的超时时间（秒），取值范围 180–86400。创建时默认为 1800；修改时若不设置该字段，则保留原有值。</p><p>取值范围：[180, 21600]</p><p>单位：秒</p><p>默认值：1800</p>",
           "example": "1800",
           "member": "uint64",
           "name": "TimeoutSeconds",
@@ -22054,7 +22140,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该模型确认支持的输入模态列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul><p>收到上游大模型对于输入模态的响应即为“确认支持”</p>",
+          "document": "<p>该模型确认支持的输入模态列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul><p>收到上游大模型对于输入模态的响应即为“确认支持”</p>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "SupportedModalities",

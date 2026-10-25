@@ -49,11 +49,39 @@
       "output": "CreateFolderResponse",
       "status": "online"
     },
+    "CreateLocation": {
+      "document": "创建存储位置\n使用场景：在数据湖仓库中创建新的存储位置",
+      "input": "CreateLocationRequest",
+      "name": "创建存储位置",
+      "output": "CreateLocationResponse",
+      "status": "online"
+    },
+    "CreateModel": {
+      "document": "创建模型接口",
+      "input": "CreateModelRequest",
+      "name": "创建模型",
+      "output": "CreateModelResponse",
+      "status": "online"
+    },
+    "CreateModelVersion": {
+      "document": "创建模型版本",
+      "input": "CreateModelVersionRequest",
+      "name": "创建模型版本",
+      "output": "CreateModelVersionResponse",
+      "status": "online"
+    },
     "CreateSchema": {
       "document": "创建schema",
       "input": "CreateSchemaRequest",
       "name": "创建Schema",
       "output": "CreateSchemaResponse",
+      "status": "online"
+    },
+    "CreateVolume": {
+      "document": "创建数据卷接口",
+      "input": "CreateVolumeRequest",
+      "name": "创建数据卷",
+      "output": "CreateVolumeResponse",
       "status": "online"
     },
     "CreateWorkflow": {
@@ -105,6 +133,20 @@
       "output": "DeleteFolderResponse",
       "status": "online"
     },
+    "DeleteLocation": {
+      "document": "删除存储位置\n使用场景：删除指定的存储位置\n前置条件：存储位置名称必须存在\n错误码：MetaLakeNotFound - 存储位置不存在",
+      "input": "DeleteLocationRequest",
+      "name": "删除存储位置",
+      "output": "DeleteLocationResponse",
+      "status": "online"
+    },
+    "DeleteModel": {
+      "document": "删除模型",
+      "input": "DeleteModelRequest",
+      "name": "删除模型",
+      "output": "DeleteModelResponse",
+      "status": "online"
+    },
     "DeleteSchema": {
       "document": "删除schema",
       "input": "DeleteSchemaRequest",
@@ -117,6 +159,20 @@
       "input": "DeleteTableRequest",
       "name": "删除table",
       "output": "DeleteTableResponse",
+      "status": "online"
+    },
+    "DeleteView": {
+      "document": "删除view",
+      "input": "DeleteViewRequest",
+      "name": "删除view",
+      "output": "DeleteViewResponse",
+      "status": "online"
+    },
+    "DeleteVolume": {
+      "document": "删除数据卷",
+      "input": "DeleteVolumeRequest",
+      "name": "删除数据卷",
+      "output": "DeleteVolumeResponse",
       "status": "online"
     },
     "DeleteWorkflow": {
@@ -161,6 +217,27 @@
       "output": "GetFolderResponse",
       "status": "online"
     },
+    "GetLocation": {
+      "document": "查询存储位置详情\n使用场景：根据存储位置名获取单个存储位置的详细信息\n前置条件：存储位置名称必须存在\n错误码：MetaLakeNotFound - 存储位置不存在",
+      "input": "GetLocationRequest",
+      "name": "查询存储位置详情",
+      "output": "GetLocationResponse",
+      "status": "online"
+    },
+    "GetModel": {
+      "document": "获取模型详情",
+      "input": "GetModelRequest",
+      "name": "获取模型详情",
+      "output": "GetModelResponse",
+      "status": "online"
+    },
+    "GetModelVersion": {
+      "document": "获取模型版本详情",
+      "input": "GetModelVersionRequest",
+      "name": "获取模型版本详情",
+      "output": "GetModelVersionResponse",
+      "status": "online"
+    },
     "GetSchema": {
       "document": "查询schema详情",
       "input": "GetSchemaRequest",
@@ -180,6 +257,20 @@
       "input": "GetTablesRequest",
       "name": "批量获取表的元数据",
       "output": "GetTablesResponse",
+      "status": "online"
+    },
+    "GetView": {
+      "document": "查询view详情",
+      "input": "GetViewRequest",
+      "name": "查询view详情",
+      "output": "GetViewResponse",
+      "status": "online"
+    },
+    "GetVolume": {
+      "document": "获取模型详情",
+      "input": "GetVolumeRequest",
+      "name": "获取数据卷详情",
+      "output": "GetVolumeResponse",
       "status": "online"
     },
     "GetWorkflow": {
@@ -217,6 +308,13 @@
       "output": "KillWorkflowRunResponse",
       "status": "online"
     },
+    "ListCatalogNames": {
+      "document": "分页查询数据目录名称列表",
+      "input": "ListCatalogNamesRequest",
+      "name": "获取数据目录名称列表",
+      "output": "ListCatalogNamesResponse",
+      "status": "online"
+    },
     "ListCatalogs": {
       "document": "分页获取数据目录列表",
       "input": "ListCatalogsRequest",
@@ -252,11 +350,39 @@
       "output": "ListConsoleUsersResponse",
       "status": "online"
     },
+    "ListFeatureTables": {
+      "document": "查询特征表列表",
+      "input": "ListFeatureTablesRequest",
+      "name": "查询特征表列表",
+      "output": "ListFeatureTablesResponse",
+      "status": "online"
+    },
     "ListFiles": {
       "document": "获取文件夹和文件列表",
       "input": "ListFilesRequest",
       "name": "获取文件夹和文件列表",
       "output": "ListFilesResponse",
+      "status": "online"
+    },
+    "ListLocations": {
+      "document": "分页查询存储位置列表\n使用场景：分页查询数据湖仓库中的存储位置详情列表，支持模式匹配和快照分页",
+      "input": "ListLocationsRequest",
+      "name": "分页查询存储位置列表",
+      "output": "ListLocationsResponse",
+      "status": "online"
+    },
+    "ListModels": {
+      "document": "分页获取模型信息",
+      "input": "ListModelsRequest",
+      "name": "分页获取模型列表",
+      "output": "ListModelsResponse",
+      "status": "online"
+    },
+    "ListSchemaNames": {
+      "document": "分页查询数据库名称列表",
+      "input": "ListSchemaNamesRequest",
+      "name": "获取数据库名称列表",
+      "output": "ListSchemaNamesResponse",
       "status": "online"
     },
     "ListSchemas": {
@@ -266,11 +392,39 @@
       "output": "ListSchemasResponse",
       "status": "online"
     },
+    "ListTableNames": {
+      "document": "分页查询数据表名称列表",
+      "input": "ListTableNamesRequest",
+      "name": "获取数据表名称列表",
+      "output": "ListTableNamesResponse",
+      "status": "online"
+    },
     "ListTables": {
       "document": "获取table列表",
       "input": "ListTablesRequest",
       "name": "查询table列表",
       "output": "ListTablesResponse",
+      "status": "online"
+    },
+    "ListViewNames": {
+      "document": "分页查询视图名称列表",
+      "input": "ListViewNamesRequest",
+      "name": "获取视图名称列表",
+      "output": "ListViewNamesResponse",
+      "status": "online"
+    },
+    "ListViews": {
+      "document": "获取view列表",
+      "input": "ListViewsRequest",
+      "name": "查询view列表",
+      "output": "ListViewsResponse",
+      "status": "online"
+    },
+    "ListVolumes": {
+      "document": "分页获取数据卷信息",
+      "input": "ListVolumesRequest",
+      "name": "分页获取数据卷列表",
+      "output": "ListVolumesResponse",
       "status": "online"
     },
     "ListWorkflowRuns": {
@@ -350,6 +504,13 @@
       "output": "RunWorkflowResponse",
       "status": "online"
     },
+    "SearchAsset": {
+      "document": "资产统一搜索",
+      "input": "SearchAssetRequest",
+      "name": "资产统一搜索",
+      "output": "SearchAssetResponse",
+      "status": "online"
+    },
     "StartCompute": {
       "document": "启动计算资源",
       "input": "StartComputeRequest",
@@ -369,6 +530,13 @@
       "input": "UnbindWorkflowBundleRequest",
       "name": "解绑工作流Bundle信息",
       "output": "UnbindWorkflowBundleResponse",
+      "status": "online"
+    },
+    "UpdateCatalog": {
+      "document": "修改数据目录信息\n使用场景：修改数据目录的注释，按需传入NewComment字段\n前置条件：数据目录必须存在",
+      "input": "UpdateCatalogRequest",
+      "name": "修改数据目录信息",
+      "output": "UpdateCatalogResponse",
       "status": "online"
     },
     "UpdateConsoleGroup": {
@@ -397,6 +565,69 @@
       "input": "UpdateFolderRequest",
       "name": "更新文件夹（支持文件夹重命名、移动文件夹）",
       "output": "UpdateFolderResponse",
+      "status": "online"
+    },
+    "UpdateFunction": {
+      "document": "修改函数信息\n使用场景：修改函数的注释，按需传入NewComment字段\n前置条件：函数必须存在",
+      "input": "UpdateFunctionRequest",
+      "name": "修改函数信息",
+      "output": "UpdateFunctionResponse",
+      "status": "online"
+    },
+    "UpdateLocation": {
+      "document": "修改存储位置\n使用场景：修改存储位置的名称、描述或属性信息\n前置条件：存储位置名称必须存在\n错误码：MetaLakeNotFound - 存储位置不存在",
+      "input": "UpdateLocationRequest",
+      "name": "修改存储位置",
+      "output": "UpdateLocationResponse",
+      "status": "online"
+    },
+    "UpdateModel": {
+      "document": "修改模型信息\n使用场景：修改模型的名称或注释，按需传入NewName/NewComment字段\n前置条件：模型必须存在",
+      "input": "UpdateModelRequest",
+      "name": "修改模型信息",
+      "output": "UpdateModelResponse",
+      "status": "online"
+    },
+    "UpdateModelVersion": {
+      "document": "修改模型版本信息\n使用场景：修改模型版本的别名或注释，按需传入对应字段\n前置条件：模型版本必须存在",
+      "input": "UpdateModelVersionRequest",
+      "name": "修改模型版本信息",
+      "output": "UpdateModelVersionResponse",
+      "status": "online"
+    },
+    "UpdateSchema": {
+      "document": "修改schema信息\n使用场景：修改schema的注释，按需传入NewComment字段\n前置条件：schema必须存在",
+      "input": "UpdateSchemaRequest",
+      "name": "修改schema信息",
+      "output": "UpdateSchemaResponse",
+      "status": "online"
+    },
+    "UpdateTable": {
+      "document": "修改表信息\n使用场景：修改表的名称或注释，按需传入NewName/NewComment字段\n前置条件：表必须存在",
+      "input": "UpdateTableRequest",
+      "name": "修改表信息",
+      "output": "UpdateTableResponse",
+      "status": "online"
+    },
+    "UpdateTableColumn": {
+      "document": "修改表字段描述\n使用场景：修改表中一个或多个字段的注释\n前置条件：用户需对目标表有写权限；字段名必须存在于目标表中",
+      "input": "UpdateTableColumnRequest",
+      "name": "修改表字段描述",
+      "output": "UpdateTableColumnResponse",
+      "status": "online"
+    },
+    "UpdateView": {
+      "document": "修改视图信息\n使用场景：修改视图的名称或注释，按需传入NewName/NewComment字段\n前置条件：视图必须存在",
+      "input": "UpdateViewRequest",
+      "name": "修改视图信息",
+      "output": "UpdateViewResponse",
+      "status": "online"
+    },
+    "UpdateVolume": {
+      "document": "修改数据卷信息\n使用场景：修改数据卷的名称或注释，按需传入NewName/NewComment字段\n前置条件：数据卷必须存在",
+      "input": "UpdateVolumeRequest",
+      "name": "修改数据卷信息",
+      "output": "UpdateVolumeResponse",
       "status": "online"
     },
     "UpdateWorkflow": {
@@ -803,6 +1034,166 @@
       ],
       "usage": "both"
     },
+    "AssetTagVote": {
+      "document": "资产标签投票记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产类型，取值参考AssetType定义，如CATALOG、SCHEMA、TABLE、VIEW、MODEL、VOLUME、FUNCTION等",
+          "example": "catalog",
+          "member": "string",
+          "name": "PropertyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产ID",
+          "example": "1",
+          "member": "string",
+          "name": "PropertyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "1",
+          "member": "string",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签名称",
+          "example": "test1",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值ID",
+          "example": "1",
+          "member": "string",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "test2",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建人",
+          "example": "tester",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改者",
+          "example": "tester",
+          "member": "string",
+          "name": "Modifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "156",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "156",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有者账号",
+          "example": "198",
+          "member": "string",
+          "name": "OwnerAccount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签类型，取值：0=未知，1=治理标签，2=自定义标签，3=属性标签，4=脱敏标签",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否删除",
+          "example": "false",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AsyncActionRsp": {
       "document": "批量异步操作的逐项结果",
       "members": [
@@ -1159,6 +1550,73 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ColumnBrief": {
+      "document": "字段简要信息，用于批量修改表字段描述时传入",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "field1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述配置",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ColumnErrorMessages": {
+      "document": "字段描述更新失败信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "field1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误原因",
+          "example": "字段不存在",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1634,7 +2092,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "catalog名称",
+          "document": "<p>catalog名称</p>",
           "example": "mico_catalog_1025",
           "member": "string",
           "name": "Name",
@@ -1643,7 +2101,7 @@
         },
         {
           "disabled": false,
-          "document": "catalog类型, 可选值TABLE、MODEL、VOLUME",
+          "document": "<p>catalog类型, 可选值TABLE、MODEL、VOLUME</p>",
           "example": "TABLE",
           "member": "string",
           "name": "Type",
@@ -1652,7 +2110,7 @@
         },
         {
           "disabled": false,
-          "document": "工作空间唯一id",
+          "document": "<p>工作空间唯一id</p>",
           "example": "default",
           "member": "string",
           "name": "WorkspaceId",
@@ -1661,7 +2119,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "test create",
           "member": "string",
           "name": "Comment",
@@ -1670,7 +2128,7 @@
         },
         {
           "disabled": false,
-          "document": "connection 的 ID",
+          "document": "<p>connection 的 ID，通过ListConnections接口获取</p>",
           "example": "1",
           "member": "string",
           "name": "ConnectionId",
@@ -1679,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理",
+          "document": "<p>数据目录来源，可选（融合版新增字段），取值参考 CatalogSourceEnum：METALAKE（专业版）/ CONNECTION（分析版），不传时默认按 METALAKE 处理</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -1688,7 +2146,7 @@
         },
         {
           "disabled": false,
-          "document": "连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。",
+          "document": "<p>连接侧数据目录名或数据库名，三段式数据源必填，二段式数据源（如 MySQL）不填。Doris/StarRocks/TChouse-D 等 MySQL 内核三段式数据源填写 external catalog 名称；PostgreSQL/Tencent PG/GaussDB/Hologres 等 PG 内核三段式数据源填写 databaseName；MySQL 等二段式数据源不填。</p>",
           "example": "my_catalog",
           "member": "string",
           "name": "ConnectionCatalogName",
@@ -1703,7 +2161,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建catalog响应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建catalog响应</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateCatalogRsp",
           "name": "Data",
@@ -2006,13 +2464,30 @@
       ],
       "usage": "both"
     },
-    "CreateSchemaRequest": {
-      "document": "CreateSchema请求参数结构体",
+    "CreateLocationRequest": {
+      "document": "CreateLocation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateLocationResponse": {
+      "document": "CreateLocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelRequest": {
+      "document": "CreateModel请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "catalog名称",
-          "example": "mico_test_1018",
+          "document": "catalog 信息",
+          "example": "my_catalog",
           "member": "string",
           "name": "CatalogName",
           "required": true,
@@ -2020,10 +2495,19 @@
         },
         {
           "disabled": false,
-          "document": "schema名称",
-          "example": "mico_schema_1027",
+          "document": "schema 信息",
+          "example": "my_schema",
           "member": "string",
-          "name": "Name",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
           "required": true,
           "type": "string"
         },
@@ -2038,7 +2522,214 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "描述信息",
+          "example": "一个描述",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelResponse": {
+      "document": "CreateModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建返回模型信息",
+          "example": "无",
+          "member": "CreateModelRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelRsp": {
+      "document": "创建模型返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型信息",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateModelVersionRequest": {
+      "document": "CreateModelVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地址</p>",
+          "example": "cos://example-bucket/model/v1",
+          "member": "string",
+          "name": "Uri",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名列表</p>",
+          "example": "[\"Aliases\"]",
+          "member": "string",
+          "name": "Aliases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "这是模型版本描述",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展信息</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelVersionResponse": {
+      "document": "CreateModelVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建返回结果</p>",
+          "example": "无",
+          "member": "CreateModelVersionRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateModelVersionRsp": {
+      "document": "创建模型版本返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Created",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CreateSchemaRequest": {
+      "document": "CreateSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>catalog名称</p>",
+          "example": "mico_test_1018",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "mico_schema_1027",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
           "example": "test create schema",
           "member": "string",
           "name": "Comment",
@@ -2047,7 +2738,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。分析版catalog不支持创建schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持创建schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -2056,7 +2747,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -2071,7 +2762,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "schema信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>schema信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateSchemaRsp",
           "name": "Data",
@@ -2103,6 +2794,123 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateVolumeRequest": {
+      "document": "CreateVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "catalog 信息",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema 信息",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据卷名称",
+          "example": "my_volume",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "这是数据卷描述",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "存储位置",
+          "example": "cson://xxx.xxx",
+          "member": "string",
+          "name": "StorageLocation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据卷类型",
+          "example": "MANAGED",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVolumeResponse": {
+      "document": "CreateVolume返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建返回数据卷信息",
+          "example": "无",
+          "member": "CreateVolumeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVolumeRsp": {
+      "document": "创建模型返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据卷信息",
+          "example": "无",
+          "member": "Volume",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateWorkflowRequest": {
       "document": "CreateWorkflow请求参数结构体",
@@ -2574,7 +3382,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "mico_catalog_1025_update",
           "member": "string",
           "name": "CatalogName",
@@ -2583,7 +3391,7 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
@@ -2592,7 +3400,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -2601,7 +3409,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -2616,7 +3424,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeleteCatalogRsp",
           "name": "Data",
@@ -2857,12 +3665,156 @@
       ],
       "usage": "both"
     },
+    "DeleteLocationRequest": {
+      "document": "DeleteLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置名，必填",
+          "example": "tmp_test_loc",
+          "member": "string",
+          "name": "LocationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLocationResponse": {
+      "document": "DeleteLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "DeleteLocationRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLocationRsp": {
+      "document": "删除存储位置响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功删除",
+          "example": "true",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DeleteModelRequest": {
+      "document": "DeleteModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelResponse": {
+      "document": "DeleteModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除结果</p>",
+          "example": "无",
+          "member": "DeleteModelRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteModelRsp": {
+      "document": "删除模型结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteSchemaRequest": {
       "document": "DeleteSchema请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "c1",
           "member": "string",
           "name": "CatalogName",
@@ -2871,7 +3823,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "s1",
           "member": "string",
           "name": "SchemaName",
@@ -2880,7 +3832,7 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
@@ -2889,7 +3841,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除schema，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -2898,7 +3850,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -2913,7 +3865,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeleteSchemaRsp",
           "name": "Data",
@@ -2951,7 +3903,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据目录名",
+          "document": "<p>数据目录名</p>",
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "CatalogName",
@@ -2960,7 +3912,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名",
+          "document": "<p>数据库名</p>",
           "example": "default",
           "member": "string",
           "name": "SchemaName",
@@ -2969,7 +3921,7 @@
         },
         {
           "disabled": false,
-          "document": "表名",
+          "document": "<p>表名</p>",
           "example": "create_table_2",
           "member": "string",
           "name": "TableName",
@@ -2978,7 +3930,7 @@
         },
         {
           "disabled": false,
-          "document": "调用时所在workspace唯一id",
+          "document": "<p>调用时所在workspace唯一id</p>",
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
@@ -2987,7 +3939,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除表，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。分析版catalog不支持删除表，传入非空时服务端返回ANA_CATALOG_NOT_SUPPORTED错误。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -2996,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -3011,7 +3963,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DeleteTableRsp",
           "name": "Data",
@@ -3043,6 +3995,167 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteViewRequest": {
+      "document": "DeleteView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名",
+          "example": "luffyshi",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "View名称",
+          "example": "luffyshi_view1",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteViewResponse": {
+      "document": "DeleteView返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DeleteViewRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteViewRsp": {
+      "document": "删除view的响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteVolumeRequest": {
+      "document": "DeleteVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据卷名称</p>",
+          "example": "my_volume",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeResponse": {
+      "document": "DeleteVolume返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除结果</p>",
+          "example": "无",
+          "member": "DeleteVolumeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVolumeRsp": {
+      "document": "删除模型结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteWorkflowRequest": {
       "document": "DeleteWorkflow请求参数结构体",
@@ -3307,12 +4420,118 @@
       ],
       "usage": "both"
     },
+    "FeatureTable": {
+      "document": "特征表定义",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "dlc_t1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全称",
+          "example": "catalog.schema.table",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "表描述",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "schema",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，iso8601格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-27T18:00:00.000",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，iso8601格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-27T18:00:00.000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Owner",
+          "name": "Owner",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "w1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "guid1",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FeatureTableDetail": {
       "document": "catalog特征表详情",
       "members": [
         {
           "disabled": false,
-          "document": "特征表主键字段列表",
+          "document": "<p>特征表主键字段列表</p>",
           "example": "[\"user_id\"]",
           "member": "string",
           "name": "PrimaryKeys",
@@ -3323,7 +4542,7 @@
         },
         {
           "disabled": false,
-          "document": "特征表时间戳字段名称",
+          "document": "<p>特征表时间戳字段名称</p>",
           "example": "timestamp",
           "member": "string",
           "name": "TimestampField",
@@ -3334,7 +4553,7 @@
         },
         {
           "disabled": false,
-          "document": "在线特征表对应的来源表名称（离线表）",
+          "document": "<p>在线特征表对应的来源表名称（离线表）</p>",
           "example": "source_table_1",
           "member": "string",
           "name": "SourceTableName",
@@ -3345,7 +4564,7 @@
         },
         {
           "disabled": false,
-          "document": "在线特征表关联的工作流ID",
+          "document": "<p>在线特征表关联的工作流ID</p>",
           "example": "ws-12345",
           "member": "string",
           "name": "WorkflowId",
@@ -3356,10 +4575,32 @@
         },
         {
           "disabled": false,
-          "document": "离线特征表对应生成的在线特征表名称",
+          "document": "<p>离线特征表对应生成的在线特征表名称</p>",
           "example": "online_table_1",
           "member": "string",
           "name": "OnlineTableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线特征表对应生成的在线特征表类型，取值：TENCENT_POSTGRESQL | REDIS），缺省 TENCENT_POSTGRESQL</p>",
+          "example": "TENCENT_POSTGRESQL",
+          "member": "string",
+          "name": "OnlineTableType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>离线特征表对应生成的在线特征表ConnectionId</p>",
+          "example": "33b7c82f-805b-4bf3-9a1b-856f9042fe2b",
+          "member": "string",
+          "name": "ConnectionId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3457,6 +4698,155 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FieldInfo": {
+      "document": "统一搜索字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字段名称</p>",
+          "example": "user_id",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段描述</p>",
+          "example": "柠檬酸",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段类型</p>",
+          "example": "float",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>语言类型</p>",
+          "example": "python",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段内容或代码片段</p>",
+          "example": "print(\"xzp_tes\")c = 1 + 'a3'",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段采样值</p>",
+          "example": "[\"user4573\"]",
+          "member": "string",
+          "name": "SampleValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FieldTagInfo": {
+      "document": "字段级标签信息，用于资产打标时指定字段维度的标签（入参+出参共用）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称（必填）；清除标记场景（LabelId=-1）下为待清除字段名",
+          "example": "id_card_no",
+          "member": "string",
+          "name": "FieldName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID</p><p>特殊值：-1 表示「清除标记」，仅在 BatchAttachAssetTag 接口中生效：服务端会清除该 FieldName 下所有已有字段标签。使用 -1 时 FieldName 必填，其余字段可留空。</p>",
+          "example": "30",
+          "member": "string",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签名称（可选）",
+          "example": "身份证号",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签类型</p><p>枚举值：</p><ul><li>1：GOVERNANCE_LABEL：治理标签</li><li>2：CUSTOM_LABEL：自定义标签</li><li>3：PROPERTY_LABEL：属性标签</li><li>4：DESENSITIZATION_LABEL：脱敏标签</li></ul><p>字段打标规则：非脱敏标签（1/2/3）时 LabelValue 必填；脱敏标签（4）时 LabelValue 可为空</p>",
+          "example": "4",
+          "member": "int64",
+          "name": "LabelType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型（可选），如 string、int、bigint 等",
+          "example": "string",
+          "member": "string",
+          "name": "FieldType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值ID（可选）；非脱敏标签（LabelType!=4）建议填充；属性标签（LabelType=3）可为0；脱敏标签（LabelType=4）及清除标记（LabelId=-1）场景可留空",
+          "example": "0",
+          "member": "string",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值；非脱敏标签（LabelType!=4）必填，例如治理/自定义/属性标签均需携带业务语义值；脱敏标签（LabelType=4）及清除标记（LabelId=-1）场景可为空",
+          "example": "val1",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -4131,6 +5521,228 @@
       ],
       "usage": "both"
     },
+    "Fragment": {
+      "document": "代码片段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字段类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表字段描述",
+          "example": "名字",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片段内容",
+          "example": "import pandas as pddf = pd.read_csv('scores.csv')",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片段语言",
+          "example": "Python",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FunctionInfo": {
+      "document": "函数详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>函数名</p>",
+          "example": "f2",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数类型，取值如JAVA、SCALA、PYTHON、SQL等",
+          "example": "java",
+          "member": "string",
+          "name": "FunctionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，取值如SPARK、HIVE、PRESTO等",
+          "example": "spark",
+          "member": "string",
+          "name": "EngineType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>类名</p>",
+          "example": "com.example.udf.ExampleUDF",
+          "member": "string",
+          "name": "ClassName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>函数依赖的资源</p>",
+          "example": "无",
+          "member": "FunctionResource",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "函数f2",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>属性</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计信息</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>owner信息</p>",
+          "example": "无",
+          "member": "MetaOwner",
+          "name": "MetaOwner",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产全局唯一ID</p>",
+          "example": "tccatalog.v1.uid2400198492404164041@260073493_ap-guangzhou_FUNCTION",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户对该实体的权限信息</p>",
+          "example": "无",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息列表。注意：仅当请求中 FetchTags=true 时返回，默认不返回</p>",
+          "example": "无",
+          "member": "CommonTagInfo",
+          "name": "Tags",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FunctionResource": {
+      "document": "函数资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型，取值如file(文件)、jar(jar包)、archive(归档文件)等",
+          "example": "file",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源路径",
+          "example": "cos://bucket/path/resource.py",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetCatalogRequest": {
       "document": "GetCatalog请求参数结构体",
       "members": [
@@ -4172,7 +5784,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径</p>",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -4270,7 +5882,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件版本 ID。来源：ListFileVersions 接口返回的 VersionId。不传则读取最新版本</p>",
+          "document": "<p>文件版本 ID。来源：ListCodeFileVersions 接口返回的 VersionId。不传则读取最新版本</p>",
           "example": "872595707510808576",
           "member": "string",
           "name": "VersionId",
@@ -4374,6 +5986,249 @@
       ],
       "usage": "both"
     },
+    "GetLocationRequest": {
+      "document": "GetLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置名，必填",
+          "example": "test_1",
+          "member": "string",
+          "name": "LocationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLocationResponse": {
+      "document": "GetLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "GetLocationRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetLocationRsp": {
+      "document": "查询存储位置详情响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置详情",
+          "example": "无",
+          "member": "LocationInfo",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetModelRequest": {
+      "document": "GetModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelResponse": {
+      "document": "GetModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>获取模型结果</p>",
+          "example": "无",
+          "member": "GetModelRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelRsp": {
+      "document": "获取模型结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型详情",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "GetModelVersionRequest": {
+      "document": "GetModelVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelVersionResponse": {
+      "document": "GetModelVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>获取模型结果</p>",
+          "example": "无",
+          "member": "GetModelVersionRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetModelVersionRsp": {
+      "document": "获取模型版本结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型详情",
+          "example": "无",
+          "member": "ModelVersionInfo",
+          "name": "ModelVersion",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetSchemaRequest": {
       "document": "GetSchema请求参数结构体",
       "members": [
@@ -4415,7 +6270,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -4424,7 +6279,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -4522,7 +6377,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -4531,7 +6386,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -4611,7 +6466,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，要求所有FullNames属于同一catalog（分析版额外约束）；空/缺省→走专业版TcLake路径",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，要求所有FullNames属于同一catalog（分析版额外约束）；空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -4620,7 +6475,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -4665,6 +6520,185 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GetViewRequest": {
+      "document": "GetView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名</p>",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>View名称</p>",
+          "example": "order_partition_view",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetViewResponse": {
+      "document": "GetView返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>view详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GetViewRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetViewRsp": {
+      "document": "获取view详情的响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "view详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewInfo",
+          "name": "View",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GetVolumeRequest": {
+      "document": "GetVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据卷名称</p>",
+          "example": "my_volume",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVolumeResponse": {
+      "document": "GetVolume返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>获取volume详情</p>",
+          "example": "无",
+          "member": "GetVolumeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVolumeRsp": {
+      "document": "volume返回详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "volume详情",
+          "example": "无",
+          "member": "Volume",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5577,6 +7611,128 @@
       ],
       "usage": "out"
     },
+    "Highlighting": {
+      "document": "搜索命中的高亮",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "1",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "片段",
+          "example": "无",
+          "member": "Fragment",
+          "name": "TextFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HighlightingInfo": {
+      "document": "高亮信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<em>user_info_data</em>",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产全名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "<em>xzp_test.information_schema.udfs</em>",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "该<em>表</em>记录了零<em>",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码片段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Fragment",
+          "name": "CodeFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本片段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Fragment",
+          "name": "TextFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签(废弃)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "TagFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名高亮片段列表。使用场景：资产别名命中关键词时，返回带 <em></em> 标签的高亮片段供前端渲染</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"<em>别名</em>1\"]",
+          "member": "string",
+          "name": "AliasFragments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Index": {
       "document": "索引结构",
       "members": [
@@ -6174,6 +8330,107 @@
           "example": "f4ec3e79-7368-44c9-8b04-031fad7f1a76",
           "member": "string",
           "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ListCatalogNamesRequest": {
+      "document": "ListCatalogNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>workspace唯一id，必填</p>",
+          "example": "17899589369776893",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，可选，默认10</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "MaxResults",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息(base64编码，包含offset、snapshotId等)</p>",
+          "example": "1:",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>catalog类型，参考CatalogType(当前支持：TABLE、MODEL、VOLUME)，可选，不填默认查询所有类型</p>",
+          "example": "[\"TABLE\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源筛选，取值参考CatalogSourceEnum(METALAKE/CONNECTION/SETATS)</p>",
+          "example": "[\"METALAKE\"]",
+          "member": "string",
+          "name": "CatalogSources",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCatalogNamesResponse": {
+      "document": "ListCatalogNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListCatalogNamesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListCatalogNamesRsp": {
+      "document": "获取数据目录名称列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下页分页token信息(base64编码，包含offset、snapshotId等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token123",
+          "member": "string",
+          "name": "NextPageToken",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -6806,6 +9063,142 @@
       ],
       "usage": "out"
     },
+    "ListFeatureTableResp": {
+      "document": "ListFeatureTableResp返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FeatureTable",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下一页token，为空表示没有更多数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token123",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListFeatureTablesRequest": {
+      "document": "ListFeatureTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字</p>",
+          "example": "table1",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Catalog目录列表</p>",
+          "example": "[\"catalog\"]",
+          "member": "string",
+          "name": "CatalogNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "[\"tag1\"]",
+          "member": "string",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>我负责的</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OwnerMe",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，可选，取值1～50</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息(base64编码)，可选</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序，Name(CreateTime/ModifiedTime), Direction(Desc/Asc)</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ListFeatureTablesResponse": {
+      "document": "ListFeatureTables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListFeatureTableResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListFilesRequest": {
       "document": "ListFiles请求参数结构体",
       "members": [
@@ -6971,6 +9364,248 @@
       ],
       "usage": "out"
     },
+    "ListLocationsRequest": {
+      "document": "ListLocations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储位置名匹配模式，支持SQL LIKE语法</p>",
+          "example": "%",
+          "member": "string",
+          "name": "LocationNamePattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否基于快照分页</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SnapshotBased",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照ID</p>",
+          "example": "snapshot123",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，可选，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，取值范围 1~500</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLocationsResponse": {
+      "document": "ListLocations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "ListLocationsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListLocationsRsp": {
+      "document": "分页查询存储位置列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置详情列表",
+          "example": "无",
+          "member": "LocationInfo",
+          "name": "Locations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果总条数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "快照ID",
+          "example": "token123",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListModelsRequest": {
+      "document": "ListModels请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，默认10，取值1~10000</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页信息</p>",
+          "example": "xxxx-xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListModelsResponse": {
+      "document": "ListModels返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>",
+          "example": "无",
+          "member": "ListModelsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListModelsRsp": {
+      "document": "模型列表返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型列表",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "1000",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页令牌",
+          "example": "xxxx-xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ListPartition": {
       "document": "列表分区",
       "members": [
@@ -7034,6 +9669,116 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ListSchemaNamesRequest": {
+      "document": "ListSchemaNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名，必填</p>",
+          "example": "xzp_test",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17899589369776893",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，可选，默认10</p>",
+          "example": "1000",
+          "member": "string",
+          "name": "MaxResults",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息(base64编码，包含offset、snapshotId等)</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选（融合版新增字段）</p>",
+          "example": "a1b85c4d-67e1-4915-9822-9f1cb88ed4f3",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，取值参考CatalogSourceEnum：METALAKE/CONNECTION/SETATS</p>",
+          "example": "SETATS",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSchemaNamesResponse": {
+      "document": "ListSchemaNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListSchemaNamesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSchemaNamesRsp": {
+      "document": "获取数据库名称列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下页分页token信息(base64编码，包含offset、snapshotId等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token123",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7155,6 +9900,125 @@
       ],
       "usage": "out"
     },
+    "ListTableNamesRequest": {
+      "document": "ListTableNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名，必填</p>",
+          "example": "lsj_test",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名，必填</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，可选，默认10</p>",
+          "example": "10",
+          "member": "string",
+          "name": "MaxResults",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息(base64编码，包含offset、snapshotId等)</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选（融合版新增字段）</p>",
+          "example": "a1b85c4d-67e1-4915-9822-9f1cb88ed4f3",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，取值参考CatalogSourceEnum：METALAKE/CONNECTION/SETATS</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTableNamesResponse": {
+      "document": "ListTableNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListTableNamesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTableNamesRsp": {
+      "document": "获取数据表名称列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表名数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下页分页token信息(base64编码，包含offset、snapshotId等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token123",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ListTablesRequest": {
       "document": "ListTables请求参数结构体",
       "members": [
@@ -7170,7 +10034,7 @@
         {
           "disabled": false,
           "document": "<p>数据库名</p>",
-          "example": "default",
+          "example": "ericpuwang_test",
           "member": "string",
           "name": "SchemaName",
           "required": true,
@@ -7179,7 +10043,7 @@
         {
           "disabled": false,
           "document": "<p>调用时所在workspace唯一id</p>",
-          "example": "231434145236852",
+          "example": "17678671667189298",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -7188,7 +10052,7 @@
         {
           "disabled": false,
           "document": "<p>最大结果条数</p>",
-          "example": "1",
+          "example": "20",
           "member": "int64",
           "name": "MaxResults",
           "required": false,
@@ -7214,7 +10078,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径",
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。通过ListConnections接口获取</p>",
           "example": "capi_test_connection",
           "member": "string",
           "name": "ConnectionId",
@@ -7223,7 +10087,7 @@
         },
         {
           "disabled": false,
-          "document": "数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource > 非空ConnectionId（视为CONNECTION）> 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。",
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
           "example": "METALAKE",
           "member": "string",
           "name": "CatalogSource",
@@ -7280,6 +10144,372 @@
         }
       ],
       "usage": "out"
+    },
+    "ListViewNamesRequest": {
+      "document": "ListViewNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名，必填</p>",
+          "example": "lsj_test",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名，必填</p>",
+          "example": "default",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，可选，默认10</p>",
+          "example": "10",
+          "member": "string",
+          "name": "MaxResults",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息(base64编码，包含offset、snapshotId等)</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选（融合版新增字段）</p>",
+          "example": "a1b85c4d-67e1-4915-9822-9f1cb88ed4f3",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，取值参考CatalogSourceEnum：METALAKE/CONNECTION/SETATS</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewNamesResponse": {
+      "document": "ListViewNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListViewNamesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewNamesRsp": {
+      "document": "获取视图名称列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视图名数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NameIdentifier",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下页分页token信息(base64编码，包含offset、snapshotId等)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "token123",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ListViewsRequest": {
+      "document": "ListViews请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名</p>",
+          "example": "s***a*0710",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名</p>",
+          "example": "information_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "17836526087487468",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，默认10</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token</p>",
+          "example": "eyJvZmZzZXQiOjd9",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选（融合版新增字段）。非空→走分析版路径，空/缺省→走专业版TcLake路径。可通过 ListConnections 获取</p>",
+          "example": "capi_test_connection",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewsResponse": {
+      "document": "ListViews返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListViewsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListViewsRsp": {
+      "document": "获取view列表响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "view列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ViewInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下页分页token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eyJvZmZzZXQiOjB9",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListVolumesRequest": {
+      "document": "ListVolumes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取数量</p>",
+          "example": "10000",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id</p>",
+          "example": "231434145236852",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页信息</p>",
+          "example": "xxxx-xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据获取选项，可选，控制是否返回权限信息及按权限过滤</p>",
+          "example": "无",
+          "member": "FetchOption",
+          "name": "FetchOption",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVolumesResponse": {
+      "document": "ListVolumes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>接口返回信息</p>",
+          "example": "无",
+          "member": "ListVolumesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVolumesRsp": {
+      "document": "数据卷返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据卷信息",
+          "example": "无",
+          "member": "Volume",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数据卷数量",
+          "example": "1000",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页信息",
+          "example": "xxxx-xxxx-xxxx-xxxx",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ListWorkflowRunsRequest": {
       "document": "ListWorkflowRuns请求参数结构体",
@@ -8511,6 +11741,128 @@
       ],
       "usage": "both"
     },
+    "LocationInfo": {
+      "document": "存储位置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置名",
+          "example": "my_location",
+          "member": "string",
+          "name": "LocationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储位置URI",
+          "example": "https://example.com",
+          "member": "string",
+          "name": "LocationUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储位置描述",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储位置属性",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计信息",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LocationUpdate": {
+      "document": "更新location的操作单元，通过 UpdateType 指定操作类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新类型，取值：modify_location_name、modify_location_comment、modify_location_properties",
+          "example": "modify_location_name",
+          "member": "string",
+          "name": "UpdateType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新的备注，可选，UpdateType 为 modify_location_comment 时使用",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新增/修改的属性键值对列表，可选，UpdateType 为 modify_location_properties 时使用",
+          "example": "无",
+          "member": "KVPair",
+          "name": "SetProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "要移除的属性key列表，可选，UpdateType 为 modify_location_properties 时使用",
+          "example": "[\"key1\"]",
+          "member": "string",
+          "name": "RemoveProperties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "新的名称，可选，UpdateType 为 modify_location_name 时使用",
+          "example": "my_location",
+          "member": "string",
+          "name": "NewName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MetaOwner": {
       "document": "元数据责任人信息数据结构",
       "members": [
@@ -8557,6 +11909,282 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据目录来源，取值参考 CatalogSourceEnum：METALAKE / CONNECTION / SETATS。ListMetaOwners 走新参数 Catalogs 查询时，按入参回填；走旧参数 FullNames 查询时，按请求顶层 CatalogSource 回填（默认 METALAKE）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelInfo": {
+      "document": "模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>catalog信息</p>",
+          "example": "CatalogName",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema 信息</p>",
+          "example": "SchemaName",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "一个描述",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本号</p>",
+          "example": "110111121",
+          "member": "string",
+          "name": "LatestVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展数据</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计数据</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>责任人信息</p>",
+          "example": "无",
+          "member": "MetaOwner",
+          "name": "MetaOwner",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>id</p>",
+          "example": "xxxx-xxxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产全局唯一ID</p>",
+          "example": "tccatalog.v1.uid3742685767363361395@1300055887_ap-guangzhou_MODEL",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户对该实体的权限信息</p>",
+          "example": "无",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息列表。注意：仅当请求中 FetchTags=true 时返回，默认不返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonTagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModelVersionInfo": {
+      "document": "模型版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模型版本uri",
+          "example": "Uri",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "Comment",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展参数",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "别名",
+          "example": "[\"别名1\",\"别名2\"]",
+          "member": "string",
+          "name": "Aliases",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计信息",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Catalog Name",
+          "example": "CatalogName",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Schema Name",
+          "example": "SchemaName",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Model Name",
+          "example": "ModelName",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "AssetTagVote",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产全局唯一ID",
+          "example": "tccatalog.v1.uid3742685767363361395@1300055887_ap-guangzhou_MODEL_VERSION",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8639,6 +12267,56 @@
       ],
       "usage": "both"
     },
+    "NameIdentifier": {
+      "document": "名称标识符，用于各层级（catalog/schema/table/view等）名称列表接口的返回条目",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"lsj_test\"]",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>元数据来源，取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。响应体始终返回具体来源值，不会返回CATALOG_SOURCE_ALL。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCLAKE Catalog取值：（注册中0，待测试1，连接成功2，连接失败3，删除中4，已删除5）<br>SETATS Catalog取值：（Creating=30, Available=31, Deleted=32, Scaling=33, Isolated=34, Failed=35，未知=0）</p>",
+          "example": "31",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "OrderBy": {
       "document": "排序字段",
       "members": [
@@ -8662,6 +12340,45 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Owner": {
+      "document": "责任人",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user1",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 0:USER, 1:GROUP",
+          "example": "0",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -9763,6 +13480,422 @@
       ],
       "usage": "both"
     },
+    "SearchAssetRequest": {
+      "document": "SearchAsset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大结果条数，默认30，可选30～50</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxResults",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字</p>",
+          "example": "order",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型列表，类型参见ListEntityTypeMetas的返回</p>",
+          "example": "[\"shecha\"]",
+          "member": "string",
+          "name": "AssetTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页token信息，取上一页返回NextPageToken</p>",
+          "example": "token123",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按资产负责人检索</p><ul><li>my 我负责的(包含my时其他uin不生效)</li><li>uin 指定用户uin</li></ul>",
+          "example": "[\"my\"]",
+          "member": "string",
+          "name": "Owner",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签IDs，可通过 ListTags 获取</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值IDs，可通过 ListTags 获取</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TagValueIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间，13位时间戳</p>",
+          "example": "1764228776000",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录列表</p>",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "CatalogNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间路径筛选(非catalog类资产)</p>",
+          "example": "[\"/path/to/workspace\"]",
+          "member": "string",
+          "name": "WorkspacePaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启混合搜索</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHybridSearch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段标签ID列表（可选）。使用场景：根据字段上打的标签检索资产（表），返回包含该字段标签的资产。与 TagIds 的区别：TagIds 是表级标签过滤，FieldTagIds 是字段级标签过滤。规格要求：int64 数组，最多支持 20 个标签 ID 同时过滤。可通过 ListTags 获取</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "FieldTagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序，为空时默认按相关度倒排序</p><p>Name:<br>PopularityQuantity 热度</p><p>Direction:<br>Desc 降序<br>Asc 升序</p>",
+          "example": "无",
+          "member": "OrderBy",
+          "name": "OrderBys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAssetResponse": {
+      "document": "SearchAsset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchAssetRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchAssetRsp": {
+      "document": "统一搜索出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchResult",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页token，不为空时表示还有下一页数据，作为参数PageToken传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "a1",
+          "member": "string",
+          "name": "NextPageToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchResult": {
+      "document": "统一搜索返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产全名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "FullName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产全局ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>各资产类别下的唯一ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AssetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AssetName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型，参见ListEntityTypeMetas返回的EntityType</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CATALOG",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户活动</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserActivityInfo",
+          "name": "UserActivityInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>热度，值范围：[1,2,3,4]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Popularity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>责任人</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Owner",
+          "name": "Owner",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近更新时间，毫秒时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间文件夹路径（废弃）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "WorkspaceFolderPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮(废弃)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Highlighting",
+          "name": "Highlighting",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>各类资产扩展信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间文件夹路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/Workspace/Users/wedata30-dev@tencent.com@700002164618/erinhong",
+          "member": "string",
+          "name": "WorkspacePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldInfo",
+          "name": "FieldInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>废弃</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SignalLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>热度值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "PopularityQuantity",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>高亮</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HighlightingInfo",
+          "name": "HighlightingInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段标签列表，返回资产下所有字段上打的标签信息，用于展示字段级标签；每项包含 LabelId、LabelName、LabelType、FieldName、FieldType</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FieldTagInfo",
+          "name": "FieldTags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产别名列表。使用场景：仅指标、语义模型等业务资产支持多别名，其他资产类型返回空列表。前端可选择在资产名后面以【别名1、别名2】的形式展示</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"别名1\",\"别名2\"]",
+          "member": "string",
+          "name": "Aliases",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产元数据来源。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。仅catalog类资产（CATALOG/SCHEMA/TABLE/VIEW/MODEL/VOLUME/FUNCTION/TABLE_COLUMN）返回该字段，非catalog类资产该字段为空字符串。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SingleFieldPartitioning": {
       "document": "单字段分区",
       "members": [
@@ -10204,6 +14337,128 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tag-value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签类型，参考 LabelType 枚举：0=未知，1=治理标签，2=自定义标签，3=属性标签，4=脱敏标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TagInfo": {
+      "document": "标签信息，入参时用于指定打标标签，出参时返回资产已打的标签（入参+出参共用）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID（入参必填）",
+          "example": "3",
+          "member": "string",
+          "name": "LabelId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签名称（入参必填）",
+          "example": "test1",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签类型（入参必填）</p><p>枚举值：</p><ul><li>1：GOVERNANCE_LABEL：治理标签（标签管理页手动创建）</li><li>2：CUSTOM_LABEL：自定义标签（打标时自动创建）</li><li>3：PROPERTY_LABEL：属性标签（Key-Value键值对）</li><li>4：DESENSITIZATION_LABEL：脱敏标签（与脱敏策略绑定）</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值ID（可选）；属性标签可为0；LabelType=4（脱敏标签）时非必填",
+          "example": "0",
+          "member": "string",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值（可选）；LabelType=4（脱敏标签）时非必填",
+          "example": "val1",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "【仅出参，入参无需填写】标签是否已被物理删除（true=已删除）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsDeleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "【仅入参，出参不返回】是否自动创建自定义标签（可选，默认 false）；true=当 LabelName 非空且标签不存在时，自动创建 LabelType=2（CUSTOM_LABEL）的自定义标签；false=仅使用已有标签打标，标签不存在时报错",
+          "example": "false",
+          "member": "bool",
+          "name": "CreateCustomLabel",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "TagValueInfo": {
       "document": "标签值信息",
       "members": [
@@ -10601,6 +14856,96 @@
       ],
       "usage": "both"
     },
+    "UpdateCatalogRequest": {
+      "document": "UpdateCatalog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称，必填</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新描述，可选，为空表示不修改注释</p>",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选。分析版catalog不支持写操作，传入非空时返回错误。</p>",
+          "example": "e557125f-9240-4b5c-bdb4-873acac3311f",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCatalogResponse": {
+      "document": "UpdateCatalog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateCatalogRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCatalogRsp": {
+      "document": "修改数据目录信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateConsoleGroupRequest": {
       "document": "UpdateConsoleGroup请求参数结构体",
       "members": [
@@ -10978,6 +15323,917 @@
       ],
       "usage": "both"
     },
+    "UpdateFunctionRequest": {
+      "document": "UpdateFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名称，必填",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "schema名称，必填",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数名称，必填",
+          "example": "my_function",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新描述，可选，为空表示不修改注释",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionResponse": {
+      "document": "UpdateFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "UpdateFunctionRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFunctionRsp": {
+      "document": "修改函数信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的函数信息",
+          "example": "无",
+          "member": "FunctionInfo",
+          "name": "Function",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateLocationRequest": {
+      "document": "UpdateLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储位置名，必填",
+          "example": "test_1",
+          "member": "string",
+          "name": "LocationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新location的操作列表，必填",
+          "example": "无",
+          "member": "LocationUpdate",
+          "name": "Updates",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLocationResponse": {
+      "document": "UpdateLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "UpdateLocationRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateLocationRsp": {
+      "document": "修改存储位置响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改后的存储位置详情",
+          "example": "无",
+          "member": "LocationInfo",
+          "name": "Location",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateModelRequest": {
+      "document": "UpdateModel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目录名称，必填",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式名称，必填",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型名称，必填",
+          "example": "my_model",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新名称，可选，为空表示不修改名称",
+          "example": "new_model_name",
+          "member": "string",
+          "name": "NewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新注释，可选，为空表示不修改注释",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateModelResponse": {
+      "document": "UpdateModel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "UpdateModelRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateModelRsp": {
+      "document": "修改模型信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的模型信息",
+          "example": "无",
+          "member": "ModelInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateModelVersionRequest": {
+      "document": "UpdateModelVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>目录名称，必填</p>",
+          "example": "marvin",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模式名称，必填</p>",
+          "example": "abe",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称，必填</p>",
+          "example": "hhhhhhaa",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本号，必填</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelVersion",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要添加的别名，可选</p>",
+          "example": "[\"ac\"]",
+          "member": "string",
+          "name": "AddedAliases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要移除的别名，可选</p>",
+          "example": "[\"ab\"]",
+          "member": "string",
+          "name": "RemovedAliases",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新注释，可选，为空表示不修改注释</p>",
+          "example": "该模型组织和管理相关数据内容，提供业务语义和技术定义。包含输入数据源、输出结果及特定算法类型。适用于数据分析团队进行业务洞察和决策支持等场景。2",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateModelVersionResponse": {
+      "document": "UpdateModelVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateModelVersionRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateModelVersionRsp": {
+      "document": "修改模型版本信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的模型版本信息",
+          "example": "无",
+          "member": "ModelVersionInfo",
+          "name": "ModelVersion",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateSchemaRequest": {
+      "document": "UpdateSchema请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称，必填</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema名称，必填</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新描述，可选，为空表示不修改注释</p>",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选。分析版catalog不支持写操作，传入非空时返回错误。可通过 ListConnections 获取</p>",
+          "example": "4a28103f-b91d-4cc9-b359-7fa6ec0e058d",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSchemaResponse": {
+      "document": "UpdateSchema返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateSchemaRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSchemaRsp": {
+      "document": "修改 schema 信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>更新后的 schema 信息</p>",
+          "example": "无",
+          "member": "Schema",
+          "name": "Schema",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateTableColumnRequest": {
+      "document": "UpdateTableColumn请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称，必填</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称，必填</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名，必填</p>",
+          "example": "my_table",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字段描述列表，必填</p>",
+          "example": "无",
+          "member": "ColumnBrief",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选。分析版catalog不支持写操作，传入非空时返回错误。可通过 ListConnections 获取</p>",
+          "example": "dc612ad6-cce7-440c-a53f-b6335c43a0ef",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableColumnResponse": {
+      "document": "UpdateTableColumn返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateTableColumnRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableColumnRsp": {
+      "document": "修改表字段描述响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "整体结果，true表示全部成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败的字段列表（部分成功场景），全部成功时为空",
+          "example": "无",
+          "member": "ColumnErrorMessages",
+          "name": "FailedColumns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateTableRequest": {
+      "document": "UpdateTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录名称，必填</p>",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名称，必填</p>",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名，必填</p>",
+          "example": "my_table",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用时所在workspace唯一id，必填</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新名称，可选，为空表示不修改名称</p>",
+          "example": "new_table_name",
+          "member": "string",
+          "name": "NewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新描述，可选，为空表示不修改注释</p>",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源连接ID，可选。分析版catalog不支持写操作，传入非空时返回错误。可通过 ListConnections 获取</p>",
+          "example": "c7553f90-800d-47d0-be3f-f84ed3686718",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据目录来源，可选（Setats融合新增字段）。取值：METALAKE（专业版tclake）/ CONNECTION（分析版Linked Catalog）/ SETATS（Setats元数据）。路由优先级：显式非空CatalogSource &gt; 非空ConnectionId（视为CONNECTION）&gt; 默认METALAKE；CatalogSource非空时ConnectionId将被忽略。</p>",
+          "example": "METALAKE",
+          "member": "string",
+          "name": "CatalogSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableResponse": {
+      "document": "UpdateTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "UpdateTableRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateTableRsp": {
+      "document": "修改表信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的表信息",
+          "example": "无",
+          "member": "TableInfo",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateViewRequest": {
+      "document": "UpdateView请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据目录名称，必填",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称，必填",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "View名，必填",
+          "example": "my_view",
+          "member": "string",
+          "name": "ViewName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新名称，可选，为空表示不修改名称",
+          "example": "new_view_name",
+          "member": "string",
+          "name": "NewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新描述，可选，为空表示不修改注释",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateViewResponse": {
+      "document": "UpdateView返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "UpdateViewRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateViewRsp": {
+      "document": "修改视图信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的视图信息",
+          "example": "无",
+          "member": "ViewInfo",
+          "name": "View",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "UpdateVolumeRequest": {
+      "document": "UpdateVolume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目录名称，必填",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式名称，必填",
+          "example": "my_schema",
+          "member": "string",
+          "name": "SchemaName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据卷名称，必填",
+          "example": "my_volume",
+          "member": "string",
+          "name": "VolumeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时所在workspace唯一id，必填",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新名称，可选，为空表示不修改名称",
+          "example": "new_volume_name",
+          "member": "string",
+          "name": "NewName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新注释，可选，为空表示不修改注释",
+          "example": "这是描述信息",
+          "member": "string",
+          "name": "NewComment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVolumeResponse": {
+      "document": "UpdateVolume返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "UpdateVolumeRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateVolumeRsp": {
+      "document": "修改数据卷信息响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新后的数据卷信息",
+          "example": "无",
+          "member": "Volume",
+          "name": "Volume",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateWorkflowRequest": {
       "document": "UpdateWorkflow请求参数结构体",
       "members": [
@@ -11312,6 +16568,34 @@
       ],
       "type": "object"
     },
+    "UserActivityInfo": {
+      "document": "用户对资产的操作信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否收藏\n- true  是\n- false 否",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFavorite",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次查看时间",
+          "example": "1",
+          "member": "string",
+          "name": "LastViewTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UserInfo": {
       "document": "用户基本信息",
       "members": [
@@ -11397,6 +16681,249 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ViewInfo": {
+      "document": "视图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "view_1",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "view_1 desc",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColumnInfo",
+          "name": "Columns",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "属性值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编辑者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "owner信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetaOwner",
+          "name": "MetaOwner",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产全局唯一ID",
+          "example": "tccatalog.v1.uid3742685767363361395@1300055887_ap-guangzhou_VIEW",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前用户对该实体的权限信息",
+          "example": "无",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息列表。注意：仅当请求中 FetchTags=true 时返回，默认不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonTagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Volume": {
+      "document": "数据卷信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>catalog信息</p>",
+          "example": "CatalogName",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>schema 信息</p>",
+          "example": "SchemaName",
+          "member": "string",
+          "name": "SchemaName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型描述</p>",
+          "example": "Comment",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储位置</p>",
+          "example": "StorageLocation",
+          "member": "string",
+          "name": "StorageLocation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展数据</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Properties",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计数据</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据卷类型，取值：MANAGED(内部管理)、EXTERNAL(外部存储)",
+          "example": "Type",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>责任人信息</p>",
+          "example": "无",
+          "member": "MetaOwner",
+          "name": "MetaOwner",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产全局唯一ID</p>",
+          "example": "tccatalog.v1.uid3742685767363361395@1300055887_ap-guangzhou_VOLUME",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户对该实体的权限信息</p>",
+          "example": "无",
+          "member": "PermissionDetail",
+          "name": "PermissionDetail",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息列表。注意：仅当请求中 FetchTags=true 时返回，默认不返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CommonTagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

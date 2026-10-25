@@ -210,11 +210,25 @@
       "output": "DescribeAuditLogFilesResponse",
       "status": "online"
     },
+    "DescribeBlockingLockTree": {
+      "document": "根据指定快照 token 查询该快照时刻的完整阻塞树（多层嵌套，根节点为头 blocker，支持多叉/多层展开）。支持两种定位方式，任选其一：(1) 优先 MonitorLoop（精确，lock monitor 一次扫描快照的唯一标识），可从 DescribeBlockingTimeRange / DescribeBlockingLogs / DescribeBlockingTrend 返回获取；(2) 兑底 BlockingTime（近似，任意阻塞时间点），后端会在该时间点±1分钟范围内找到最接近的 MonitorLoop 再下钻其阻塞树。当 MonitorLoop 不为空时优先采用；为空时回退使用 BlockingTime；两者都为空则返回参数错误。一个 MonitorLoop 可包含多棵独立阻塞树（若该快照内存在多组互不相干的阻塞链路）。对标 dbaas-pfs 的 DescribeLockTree。",
+      "input": "DescribeBlockingLockTreeRequest",
+      "name": "查询SQL Server指定MonitorLoop或BlockingTime下的锁阻塞树",
+      "output": "DescribeBlockingLockTreeResponse",
+      "status": "online"
+    },
     "DescribeBlockingLogs": {
       "document": "查询指定实例在时间窗口内的阻塞日志扁平明细列表，不建阻塞树。每一条Item对应一次blocked_process_report（一条blocker→blocked边）在某一次monitorLoop内被lock monitor捕获的瞬时数据。支持按ReportTime / DurationMs / BlockedWaitTimeMs / BlockingWaitTimeMs升降序排序，并支持根因、数据库名、头SQL / 被阻塞SQL MD5、会话ID、登录名、客户端主机 / 应用、被阻塞锁模式、等待时长范围过滤与分页。适合普通表格展示与二次过滤；若需查看某个采集点的完整链路拓扑，请透传返回的MonitorLoop调用DescribeBlockingLockTree。注意：同一blocker→blocked会话对跨monitorLoop连续采集场景下会产生多条明细行，若需统计发生多少次阻塞请按(BlockingSessionId, BlockedSessionId, BlockedWaitResource)自行去重。时间字段按服务端时区UTC+8解析，建议单次查询跨度≤7天。",
       "input": "DescribeBlockingLogsRequest",
       "name": "查询SQL Server阻塞日志扁平明细列表",
       "output": "DescribeBlockingLogsResponse",
+      "status": "online"
+    },
+    "DescribeBlockingTrend": {
+      "document": "查询指定实例在时间窗口内按时间粒度聚合的阻塞计数时序，用于前端绘制阻塞趋势图。返回每个粒度 bucket 的 (StartTime, EndTime, LockCount, MonitorLoopCount)，实际聚合区间为前闭后开 [StartTime, EndTime)。为稠密时序：时间窗口内每个粒度 bucket 都返回一个点，无数据的 bucket 补零（LockCount=0, MonitorLoopCount=0），前端可直接绘制连续趋势图。粒度自动按时间跨度 deltaMs = EndTime - StartTime 决定（右开上界判定）：deltaMs≤5min→SECONDS(1s)，deltaMs≤1h→MINUTES(1min)，deltaMs≤3h→FIVE_MINUTES(5min)，deltaMs≤6h→TEN_MINUTES(10min)，deltaMs≤12h→FIFTEEN_MINUTES(15min)，deltaMs≤24h→THIRTY_MINUTES(30min)，deltaMs>24h→HOUR(1h)。底层走 Druid timeseries 原生聚合，服务端完成聚合，适合高频前端刷新。",
+      "input": "DescribeBlockingTrendRequest",
+      "name": "查询SQL Server阻塞趋势时序",
+      "output": "DescribeBlockingTrendResponse",
       "status": "online"
     },
     "DescribeDBAuditLogTopSqls": {
@@ -551,6 +565,13 @@
       "input": "DescribeSqlTemplateRequest",
       "name": "查询SQL模板",
       "output": "DescribeSqlTemplateResponse",
+      "status": "online"
+    },
+    "DescribeTableSpaceDataV2": {
+      "document": "表空间数据查询（融合接口，多产品统一入口）。按入参 TableSchema + TableName（PG 系额外需 TableCatalog）定位单张表/集合，返回该表的空间使用明细。支持产品：mysql（云数据库 MySQL）、cynosdb（TDSQL-C MySQL 版）、mongodb（云数据库 MongoDB）、postgres（云数据库 PostgreSQL）、sqlserver（SQL Server）、dcdb（TDSQL MySQL 版）、tdsql（TDSQL）、mariadb（云数据库 MariaDB）。返回值按产品隔离：MySQL 系列返回 MysqlTableSpaceData；PostgreSQL 返回 PostgresTableSpaceData；MongoDB 返回 MongodbTableSpaceData（含集合明细列表 SpaceSchemas 和外层 Timestamp）；SQL Server 返回 SqlServerTableSpaceData。注意：只读实例（CDB RO / RO 组 / CynosDB RO / TDSQL-C 集群 RO）不支持空间分析，调用将直接报错。",
+      "input": "DescribeTableSpaceDataV2Request",
+      "name": "查询单表（单集合）空间明细（融合接口）",
+      "output": "DescribeTableSpaceDataV2Response",
       "status": "online"
     },
     "DescribeTopSpaceSchemaTimeSeries": {
@@ -2453,6 +2474,428 @@
       ],
       "usage": "out"
     },
+    "BlockingChainNode": {
+      "document": "阻塞树节点，表示一个被阻塞会话。若该会话又阻塞了其它会话，则通过children递归表达。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话 ID（对应 SQL Server sys.dm_exec_sessions.session_id，即 SPID）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "88",
+          "member": "int64",
+          "name": "BlockedSessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话事务ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "533091540",
+          "member": "int64",
+          "name": "BlockedTransactionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话等待时长（毫秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2677100",
+          "member": "int64",
+          "name": "BlockedWaitTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话正在等待的锁模式（SQL Server原生lock_mode枚举，常见取值：S、U、X、IS、IU、IX、SIU、SIX、UIX、Sch-S、Sch-M）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "X",
+          "member": "string",
+          "name": "BlockedLockMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话等待资源。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "KEY: 7:72057594054574080 (8194443284a0)",
+          "member": "string",
+          "name": "BlockedWaitResource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话数据库用户。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app_user",
+          "member": "string",
+          "name": "BlockedLoginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话客户端主机。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VM-0-7-tencentos",
+          "member": "string",
+          "name": "BlockedHostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话客户端应用名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "BlockedClientApp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话运行时状态（SQL Server sys.dm_exec_sessions.status 文本），常见取值：running / sleeping / suspended / background。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "suspended",
+          "member": "string",
+          "name": "BlockedStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话事务隔离级别（SQL Server 原生取值：read uncommitted / read committed / repeatable read / serializable / snapshot）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "serializable (4)",
+          "member": "string",
+          "name": "BlockedIsolationLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话当前显式事务名（XEvent transactionname）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UPDATE",
+          "member": "string",
+          "name": "BlockedTransactionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话当前显式事务嵌套层数（XEvent trancount）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "BlockedTranCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话显式事务 BEGIN TRAN 时刻（XEvent lasttranstarted，SQL Server 服务端本地时区的 ISO 8601 字符串，无时区后缀）。多语句事务场景下比 lastbatchstarted 更稳定。咨视值 1900-01-01T00:00:00 表示未知。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19T19:30:55.733",
+          "member": "string",
+          "name": "BlockedLastTranStarted",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞会话正在执行的 SQL 原文（对应 DBCC INPUTBUFFER 返回内容，单条最长 16KB，超长截断）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链1B */ UPDATE dbo.t_key SET v=2 WHERE id=1",
+          "member": "string",
+          "name": "BlockedInputBuffer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞SQL归一化模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/* BLK_20261019_193052_链?B */ UPDATE DBO.T_KEY SET V=? WHERE ID=?",
+          "member": "string",
+          "name": "BlockedSqlTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞SQL模板MD5。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "76726ca5d47c99696d3c7021eb467dd4",
+          "member": "string",
+          "name": "BlockedSqlMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因分类（继承自所属报告的rootCause）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C4_APP_DEADLOCK",
+          "member": "string",
+          "name": "RootCause",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本节点上报事件时间（__time），格式：yyyy-MM-dd HH:mm:ss。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 20:15:32",
+          "member": "string",
+          "name": "ReportTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本节点又阻塞的下级会话（可能为空）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlockingChainNode",
+          "name": "Children",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BlockingChainTree": {
+      "document": "阻塞树，一棵阻塞链的完整视图。一棵树的定义：同一(instanceId, monitorLoop)下，通过blocker/blocked边可达构成的一个连通分量。根节点是入度为0的会话（即从未被任何会话阻塞的头blocker）。一个monitorLoop可能对应多棵独立阻塞树。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>监控轮次ID（同一实例内唯一标识一次采集快照，同一快照可包含多棵独立阻塞树）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "451511",
+          "member": "string",
+          "name": "MonitorLoop",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞发生所在的数据库名称（整条链路隶属同一 database，放在树级返回一次即可）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "orders",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话ID（对应 SQL Server sys.dm_exec_sessions.session_id，即 SPID）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "78",
+          "member": "int64",
+          "name": "BlockingSessionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话事务ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "533091540",
+          "member": "int64",
+          "name": "BlockingTransactionId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话数据库用户。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "app_user",
+          "member": "string",
+          "name": "BlockingLoginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话客户端主机。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VM-0-7-tencentos",
+          "member": "string",
+          "name": "BlockingHostName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话客户端应用名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pymssql=2.1.5",
+          "member": "string",
+          "name": "BlockingClientApp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话运行时状态（SQL Server sys.dm_exec_sessions.status 文本），常见取值：running / sleeping / suspended / background。sleeping + BlockingTranCount&gt;0 是 C2_SLEEPING_UNCOMMITTED（休眠会话持未提交事务）的直接证据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "suspended",
+          "member": "string",
+          "name": "BlockingStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话事务隔离级别（SQL Server 原生取值：read uncommitted / read committed / repeatable read / serializable / snapshot）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "read committed (2)",
+          "member": "string",
+          "name": "BlockingIsolationLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话当前显式事务嵌套层数（XEvent trancount）。&gt;0 表示持有显式事务；与 BlockingStatus=sleeping 组合是 C2_SLEEPING_UNCOMMITTED（休眠会话持未提交事务）的直接证据。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "BlockingTranCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话正在执行的 SQL 原文（对应 DBCC INPUTBUFFER 返回内容，单条最长 16KB，超长截断）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXEC ****S*_*O*G***CK_HOLDER @hold_minutes = **",
+          "member": "string",
+          "name": "BlockingInputBuffer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞SQL归一化模板。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "EXEC ***.***REBUILD_INDEX @TABLENAME = *",
+          "member": "string",
+          "name": "BlockingSqlTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞SQL模板MD5。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1672456936b4d6dcf87672c07704fcad",
+          "member": "string",
+          "name": "BlockingSqlMd5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>头阻塞会话自身的等待时长（毫秒，来自XML blocking-process/process的waittime属性）。多数场景为0。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2680102",
+          "member": "int64",
+          "name": "BlockingWaitTimeMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因分类。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "C4_APP_DEADLOCK",
+          "member": "string",
+          "name": "RootCause",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>根因分类的可读中文描述（服务端已完成中文化，前端可直接展示；与 RootCause 代号一一对应；未识别或空值统一返回“未识别”）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "应用层分布式死锁，检查同一进程内的多连接协作模式",
+          "member": "string",
+          "name": "RootCauseDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该链路阻塞事件的起始时间（该树内__time最小值），格式：yyyy-MM-dd HH:mm:ss。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 20:15:32",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该链路阻塞事件的结束时间（该树内__time最大值），格式：yyyy-MM-dd HH:mm:ss。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 20:15:32",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该链路最长等待时长（毫秒），作为链路影响时长。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2677100",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该链路被阻塞会话数（等价于树节点数-1，即受影响会话数）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ChainLength",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>树深度（根节点为0，最长路径的深度）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "ChainDepth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>被阻塞节点子树（可能为空，也可能多叉或多层）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlockingChainNode",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BlockingLogItem": {
       "document": "阻塞日志扁平明细行：一次blocked_process_report（blocker→blocked边）在某一次monitorLoop内被lock monitor捕获的瞬时数据。",
       "members": [
@@ -2854,6 +3297,52 @@
           "name": "BlockedProcessXml",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BlockingTrendPoint": {
+      "document": "阻塞趋势时序点，表示某个粒度 bucket 的阻塞聚合统计。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该 bucket 的实际聚合区间左端（含），格式：yyyy-MM-dd HH:mm:ss。聚合区间为前闭后开 [StartTime, EndTime)。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 20:15:01",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该 bucket 的实际聚合区间右端（不含），格式：yyyy-MM-dd HH:mm:ss。即 StartTime + GranularityMs。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-19 20:15:01",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该 bucket 内的阻塞 report 行数（底层 blocked_process_report 事件数），无数据 bucket 返回 0。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "LockCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>该 bucket 内观测到的不同 monitorLoop 数量（lock monitor 扫描快照数），无数据 bucket 返回 0。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MonitorLoopCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5525,6 +6014,70 @@
       ],
       "type": "object"
     },
+    "DescribeBlockingLockTreeRequest": {
+      "document": "DescribeBlockingLockTree请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "mssql-15rso1sb",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型，固定为sqlserver。</p>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>lock monitor 扫描轮次 ID（可从 DescribeBlockingTimeRange 返回的 MonitorLoops 列表选择，也可从 DescribeBlockingLogs / DescribeBlockingTrees 返回的 MonitorLoop 字段获取）。与 BlockingTime 二选一，MonitorLoop 优先。</p>",
+          "example": "1000782",
+          "member": "string",
+          "name": "MonitorLoop",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞时间点，格式：yyyy-MM-dd HH:mm:ss。当 MonitorLoop 为空时使用该字段定位：后端会在该时间点±1分钟范围内寻找最接近的 MonitorLoop 并下钻其阻塞树。与 MonitorLoop 二选一。BlockingTime 必须在最近 30 天内，否则返回 InvalidParameterValue。</p>",
+          "example": "2026-10-19 20:15:32",
+          "member": "string",
+          "name": "BlockingTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockingLockTreeResponse": {
+      "document": "DescribeBlockingLockTree返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>阻塞树列表（同一 MonitorLoop 下可能存在多棵独立阻塞树，按链路影响时长倒序）。若按 BlockingTime 定位时未找到附近 MonitorLoop，返回空列表。</p>",
+          "example": "无",
+          "member": "BlockingChainTree",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBlockingLogsRequest": {
       "document": "DescribeBlockingLogs请求参数结构体",
       "members": [
@@ -5766,6 +6319,90 @@
           "example": "无",
           "member": "BlockingLogItem",
           "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockingTrendRequest": {
+      "document": "DescribeBlockingTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "mssql-qte20qje",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型，固定为sqlserver。</p>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询起始时间（服务端时区 UTC+8），格式：yyyy-MM-dd HH:mm:ss。必须在最近 30 天内，否则返回 InvalidParameterValue。</p>",
+          "example": "2026-10-19 20:15:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结束时间（服务端时区 UTC+8），格式：yyyy-MM-dd HH:mm:ss，需大于 StartTime。单次查询跨度必须 ≤ 7 天（Trend 走 Druid 原生聚合，跨度比明细类接口更宽泛），否则返回 InvalidParameterValue。</p>",
+          "example": "2026-10-19 20:16:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBlockingTrendResponse": {
+      "document": "DescribeBlockingTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>使用的粒度名称，取值：SECONDS / MINUTES / FIVE_MINUTES / TEN_MINUTES / FIFTEEN_MINUTES / THIRTY_MINUTES / HOUR。时间窗口 ≤ 1 分钟时自动采用 SECONDS（1 秒）粒度。</p>",
+          "example": "SECONDS",
+          "member": "string",
+          "name": "Granularity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>粒度对应的毫秒值（SECONDS=1000，MINUTES=60000，... HOUR=3600000）。</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "GranularityMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>阻塞趋势时序点列表（按 ReportTime 升序，稠密时序：窗口内每个 bucket 都返回一个点，无数据 bucket 补零）。</p>",
+          "example": "无",
+          "member": "BlockingTrendPoint",
+          "name": "DataPoints",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10408,6 +11045,155 @@
       ],
       "type": "object"
     },
+    "DescribeTableSpaceDataV2Request": {
+      "document": "DescribeTableSpaceDataV2请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID。</p>",
+          "example": "postgres-40b08oij",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务产品类型（用于云 API 平台路由到对应产品后端）。取值：mysql / cynosdb / mariadb / postgres / mongodb / sqlserver 等。</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库名（PG 系产品的 schema 名；MongoDB 为 database 名；MySQL / CynosDB / SqlServer 为库名）。PostgreSQL / MySQL / CynosDB / SqlServer 必传；MongoDB 可不传（底层使用 optString(&quot;&quot;), 不传时按空库名查询）。</p>",
+          "example": "public",
+          "member": "string",
+          "name": "TableSchema",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名（MongoDB 场景下为 collection 名，如 oplog.rs）。PostgreSQL / MySQL / CynosDB / SqlServer 必传；MongoDB 可不传（底层对该字段为空时直接返回空列表而非报错）。</p>",
+          "example": "tencentdb_tbl_dial_test_long_1q9b045f8w1",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>表所在的 Catalog（数据库目录）名。PostgreSQL / TBase 等 PG 系产品必传（例如 postgres），用于唯一定位 (catalog, schema, name) 三元组；MySQL / CynosDB / MongoDB / SqlServer 等非 PG 系产品可不传。</p>",
+          "example": "postgres",
+          "member": "string",
+          "name": "TableCatalog",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询日期，格式：yyyy-MM-dd。MySQL / CynosDB / PostgreSQL / SqlServer 可选（默认当天）；MongoDB 本接口不读取该字段（底层通过 dbbrain.collInfo 直接查询实时集合空间，不区分日期）。</p>",
+          "example": "2026-10-22",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。本接口（单表/单集合明细查询）均为可选：MySQL / CynosDB 可选，默认按 total_length 排序；PostgreSQL 可选，默认按 relation_size 排序；SqlServer 本接口不消费该字段的值；MongoDB 本接口完全不读取该字段。如需在 Top 表/库场景使用排序，请改用 DescribeTopSpaceTablesV2 / DescribeTopSpaceSchemasV2 接口。</p>",
+          "example": "total_length",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回条数上限，默认 20，最大 100。MySQL / CynosDB / PostgreSQL 本接口会读取该参数控制明细条数；MongoDB 本接口不读取该字段（底层按入参 TableName 精确匹配返回集合明细，不受 Limit 控制）；SqlServer 本接口会校验但不消费其值。</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MongoDB 专用——表名/集合名是否按正则模糊匹配。默认 true。其他产品忽略该字段。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Regex",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableSpaceDataV2Response": {
+      "document": "DescribeTableSpaceDataV2返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>MySQL 系列产品表空间数据。当产品为 mysql/cynosdb/tdsql/dcdb/mariadb 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MysqlSpaceObjectItem",
+          "name": "MysqlTableSpaceData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>PostgreSQL 产品表空间数据。当产品为 postgres 时返回。字段语义与 MySQL 不同：使用 RelationSize / TableSize / IndexSize / TotalRelationSize / TableBloat 等 PG 特有指标。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PostgresSpaceObjectItem",
+          "name": "PostgresTableSpaceData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>MongoDB 产品表空间数据。当产品为 mongodb 时返回。包含集合级明细数组 SpaceSchemas 以及外层采集时间戳 Timestamp（秒级）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongodbSpaceObjectItem",
+          "name": "MongodbTableSpaceData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQL Server 产品表空间数据。当产品为 sqlserver 时返回。字段结构与 MysqlSpaceObjectItem 同构，无 FragRatio / PhysicalFileSize。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SqlServerSpaceObjectItem",
+          "name": "SqlServerTableSpaceData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据采集时间戳（秒）。可能为空（部分产品分支/异常场景下不保证返回），调用方请做空值兼容。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1792598400",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopSpaceSchemaTimeSeriesRequest": {
       "document": "DescribeTopSpaceSchemaTimeSeries请求参数结构体",
       "members": [
@@ -13040,7 +13826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>集合命名空间，格式为 db.collection。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合命名空间，格式为 db.collection。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "local.oplog.rs",
           "member": "string",
           "name": "CollStats",
@@ -13051,7 +13837,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集合逻辑大小（字节，未压缩）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合逻辑大小（字节，未压缩）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "55166402",
           "member": "int64",
           "name": "CollectionSize",
@@ -13062,7 +13848,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集合已分配但未使用的空间（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合已分配但未使用的空间（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "671744",
           "member": "int64",
           "name": "DataFree",
@@ -13073,7 +13859,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>空间利用率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "空间利用率（百分比字符串）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "95.0%",
           "member": "string",
           "name": "SpaceRatio",
@@ -13084,7 +13870,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>碎片率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "碎片率（百分比字符串）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9.18%",
           "member": "string",
           "name": "FragRatio",
@@ -13095,7 +13881,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集合数据大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合数据大小（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "55166402",
           "member": "int64",
           "name": "Size",
@@ -13106,7 +13892,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>所有索引占用大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "所有索引占用大小（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "TotalIndexSize",
@@ -13117,7 +13903,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>平均文档大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "平均文档大小（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "313",
           "member": "int64",
           "name": "AvgObjSize",
@@ -13128,7 +13914,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集合实际占用存储大小（字节，压缩后）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合实际占用存储大小（字节，压缩后）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7319552",
           "member": "int64",
           "name": "StorageSize",
@@ -13139,7 +13925,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文档数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "文档数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "175794",
           "member": "int64",
           "name": "Count",
@@ -13150,7 +13936,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>压缩率（百分比字符串）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "压缩率（百分比字符串）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "87.0%",
           "member": "string",
           "name": "CompressionRatio",
@@ -13161,7 +13947,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>可复用文件空间（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "可复用文件空间（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "671744",
           "member": "int64",
           "name": "FileReuseBytes",
@@ -13382,11 +14168,11 @@
       "usage": "out"
     },
     "MongoDBTableSpaceItem": {
-      "document": "MongoDB 产品表级（集合级）空间对象项，描述单个集合的空间使用统计信息。",
+      "document": "MongoDB 产品集合级空间对象项，包含顶层标识字段与嵌套 Collection 明细。",
       "members": [
         {
           "disabled": false,
-          "document": "<p>应用 Id（AppId）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "应用 Id（AppId）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1360064893",
           "member": "int64",
           "name": "AppId",
@@ -13397,7 +14183,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例 Id。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实例 Id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cmgo-rk83lmar",
           "member": "string",
           "name": "InstanceId",
@@ -13408,7 +14194,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "local",
           "member": "string",
           "name": "Db",
@@ -13419,7 +14205,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据采集时间戳（毫秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据采集时间戳（毫秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1787673677200",
           "member": "int64",
           "name": "Timestamp",
@@ -13430,7 +14216,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>磁盘占用大小（字节）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "磁盘占用大小（字节）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7696384",
           "member": "int64",
           "name": "SizeOnDisk",
@@ -13441,13 +14227,41 @@
         },
         {
           "disabled": false,
-          "document": "<p>集合级空间使用明细。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集合级空间使用明细。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MongoCollectionDetail",
           "name": "Collection",
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MongodbSpaceObjectItem": {
+      "document": "MongoDB 产品表空间数据对象。对应 V1 底层返回的顶层包装结构，包含集合级空间明细数组 SpaceSchemas 与外层采集时间戳 Timestamp。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集合级空间明细数组。每项含顶层标识字段（AppId/InstanceId/Db/Timestamp/SizeOnDisk）与嵌套 Collection 明细。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MongoDBTableSpaceItem",
+          "name": "SpaceSchemas",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据采集时间戳（秒）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1792725099",
+          "member": "int64",
+          "name": "Timestamp",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -13674,7 +14488,7 @@
       "usage": "out"
     },
     "MysqlSpaceObjectItem": {
-      "document": "MySQL 系列产品空间对象项。库级查询时不包含 TableName/Engine 字段；表级查询时包含全部字段。",
+      "document": "MySQL 系列产品空间对象项（单表明细）。",
       "members": [
         {
           "disabled": false,
@@ -13707,6 +14521,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -13909,7 +14734,7 @@
       "usage": "out"
     },
     "PostgresSpaceObjectItem": {
-      "document": "PostgreSQL 产品空间对象项。字段语义与 MySQL 不同：使用 pg_relation_size / pg_total_relation_size 等 PG 特有指标。库级查询时不包含 TableSchema/TableName 字段；表级查询时包含全部字段。",
+      "document": "PostgreSQL 产品空间对象项（单表明细）。字段语义与 MySQL 不同：使用 pg_relation_size / pg_total_relation_size 等 PG 特有指标。",
       "members": [
         {
           "disabled": false,
@@ -13942,6 +14767,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TableStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -15805,6 +16641,111 @@
         }
       ],
       "usage": "out"
+    },
+    "SqlServerSpaceObjectItem": {
+      "document": "SQL Server 产品空间对象项（单表明细）。字段命名与 MySQL 同构（TableSchema/TableName/Engine/TableRows/TotalLength/DataLength/IndexLength/DataFree，单位 MB），无 FragRatio / PhysicalFileSize。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据库名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_lock",
+          "member": "string",
+          "name": "TableSchema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名（库内限定名 schema.table，如 dbo.users）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbo.dl_b",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储引擎标识，固定为 SqlServer。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SqlServer",
+          "member": "string",
+          "name": "Engine",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表状态（仅单表查询 DescribeTableSpaceDataV2 返回；取值：-1 表示库表最新一次采集不到或实例超限不拉取，0 正在拉取，1 拉取完成；该字段仅针对实例级别）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>行数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TableRows",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>总使用空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "TotalLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "DataLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>索引空间（MB）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "IndexLength",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>碎片空间（MB），对应保留空洞 reserved-used。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.1",
+          "member": "float",
+          "name": "DataFree",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StatDimension": {
       "document": "会话统计的维度信息,可以多个维度",

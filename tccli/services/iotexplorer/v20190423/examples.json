@@ -284,12 +284,6 @@
     ],
     "CreateDevice": [
       {
-        "document": "创建设备",
-        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"dvFeQr1zhBS2CDyYlN31XA==\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f5fd91\"\n    }\n}",
-        "title": "创建设备"
-      },
-      {
         "document": "",
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7U\n&DeviceName=light1\n&DevAddr=01865bd9\n&AppKey=00000000000000010000000000000001\n&DevEUI=0100000000000021\n&AppSKey=bc97ea1ff62e7a3490135d989aae6bca\n&NwkSKey=bc97ea1ff62e7a3490135d989aae6bca\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"dd1\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"GTnp7I+yckhF3LrmHRtYBQ==\"\n        },\n        \"RequestId\": \"1e99faaf-a0f0-4c49-9d85-7f09f2b7f74e\"\n    }\n}",
@@ -300,6 +294,12 @@
         "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&DefinedPsk=1231\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"1231\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f53d91\"\n    }\n}",
         "title": "创建手动指定psk的设备"
+      },
+      {
+        "document": "创建设备",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=CreateDevice\n&ProductId=LJ0INDNU7Us\n&DeviceName=device2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DeviceCert\": \"\",\n            \"DeviceName\": \"device2\",\n            \"DevicePrivateKey\": \"\",\n            \"DevicePsk\": \"dvFeQr1zhBS2CDyYlN31XA==\"\n        },\n        \"RequestId\": \"fee15c53-91sac-488d-855d-c02d9f5fd91\"\n    }\n}",
+        "title": "创建设备"
       }
     ],
     "CreateDeviceChannel": [
@@ -396,6 +396,14 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePositionSpace\n<公共请求参数>\n\n{\n    \"ProjectId\": \"ProjectId\",\n    \"ProductIdList\": [\n        \"ProductId\"\n    ],\n    \"SpaceName\": \"space\",\n    \"Description\": \"service\",\n    \"Icon\": \"http://www.example.com\",\n    \"AuthorizeType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"SpaceId\": \"SpaceId\",\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "创建位置空间示例"
+      }
+    ],
+    "CreatePrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrivateCA\n<公共请求参数>\n\n{\n    \"CertName\": \"mqtt-ca2-1020144606\",\n    \"CertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDgDCCAmigAwIBAgIUTh254+8BJdWO3hyNrjIhgGX2n3wwDQYJKoZIhvcNAQEL\\nBQAwPTELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEaMBgGA1UEAwwR\\nTXF0dENBMjEwMjAxNDQ2MDYwHhcNMjYxMDIwMDY0NjA3WhcNMzYxMDE3MDY0NjA3\\nWjA9MQswCQYDVQQGEwJDTjESMBAGA1UECgwJQ2FFMkVUZXN0MRowGAYDVQQDDBFN\\ncXR0Q0EyMTAyMDE0NDYwNjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\\nAKiAj1uZ35NvSgsSSsuBf2Lga+uT7NJuj4lwpcpdKa8rAPiyDT9Bi9aBtarqWtRz\\n4iasBtXcvG09QyX/FcNAHXVo2vmpzCnfRLJ/ojpd/aUNU7apFe7/FLFRVBYqO7SF\\nNdqupxdT+2H2Do+CO7wa+fLyXwjSdmxiu8a9WjxKQinQ7NpKOKeSUB7CWWqiv45o\\nTGek0B1lH4ulM1q8W74GDX8Cq24mK2/aVma4cCIEBJ+dT+tryShgjb9R/FGF4zRE\\nCVPQao1l3CuajbvWNlWwM6xDqzu77jUbKHHM9mRDO7SPs07X0kaCrbYekkj9FOGX\\n2cz7GluEwOIWEJpp8zxKCScCAwEAAaN4MHYwHQYDVR0OBBYEFDCFtWaXvKyu+paW\\nkUQ0Vo/sNCs3MB8GA1UdIwQYMBaAFDCFtWaXvKyu+paWkUQ0Vo/sNCs3MA8GA1Ud\\nEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgEGMBMGA1UdJQQMMAoGCCsGAQUFBwMC\\nMA0GCSqGSIb3DQEBCwUAA4IBAQBYFrQx3eEE2uYm2bvpDJLQIjYRjZNZQanapDU3\\nc2zLuFi78zrUfINJs6BO3D85Rwhg2GLMKjsf3fSiAKJNeQ2G5v/10kWAoCyAr0Hw\\nnI7a4PDfc3wcZJjbnb4JubouafzIzhGSTRWCwq2i+bzEMdrjPmS4I0Tgwjgq6zup\\nUNYzlH9Z9QV+a7CV0ugZqytxxx5ZCN31PUmn0l5Kt9q7ywJ50uBP3/DYtq2KsocF\\nIBUgN5gr5pNaNRgjraXH4Ky9EZRYobLeYjm0L/+51vPomGs/gyJ/SzWlYVQ/qnPx\\ncWU6oSdxf0jJsgxDRYqdGldL1OcrNznFqvSJoTZzo4zDyfGm\\n-----END CERTIFICATE-----\\n\",\n    \"VerifyCertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDDzCCAfcCFE/E8wg3P1iEcQlmq+Zw4aPvtN84MA0GCSqGSIb3DQEBCwUAMD0x\\nCzAJBgNVBAYTAkNOMRIwEAYDVQQKDAlDYUUyRVRlc3QxGjAYBgNVBAMMEU1xdHRD\\nQTIxMDIwMTQ0NjA2MB4XDTI2MTAyMDA2NDYwN1oXDTI3MTAyMDA2NDYwN1owSzFJ\\nMEcGA1UEAwxANTVhZjc0ZTEwMGZiYWVlM2EwYmQ3YzRhMzk5ZDQzNzYxOGVkMmY3\\nZTc1OWE4ODMyYzJlMGI5NDM4MzEwMTQ0YjCCASIwDQYJKoZIhvcNAQEBBQADggEP\\nADCCAQoCggEBANCyCYm+WmxUWJtFdafta3aXbgx4L8AhgR67jt+10yMBjxpAk8P8\\nv5wRguTvdzMp6ddi8H7F1Ew9tWulJoz3hbxGWrsp9xOrWwVt4BQ5HAKdpCrL0uTj\\nupzG6Sk9rm1IuJ9kFy0Kw2fXCpC/eelmdPNm5V+x6w9EGKnSUwYA3jk4pl+SHvlB\\nW2vVDLnQ4wbGgGQWTVg9ZgnUo6WdGjpiiupIAzeAUpwAn6WCsARHVfq6vWIGJl6z\\nqwCV+Tpu5/RDiDjA8jnQzo0s094dfzWL2Ji8p9iATFfTsmk5SYhifNSWwQkwJST4\\nIsmIWyiW5THjsj87non3BJCXJkVQYIDf+fMCAwEAATANBgkqhkiG9w0BAQsFAAOC\\nAQEAGEBdVCgwzkf5SdGWSO9Vvp1F4mY0Pb2fGwCNFCm6dMlUumxmMI79TnggUV9Z\\nZTn5a//6t2/V086eE0//xq5jv6JWf2VnZZCV2W7U94ewC4CaB3ZI+nwf/409UZoy\\nDIH6gynAL/gHvIkxRxHs9RU5WiGqTSSXIbkS8NjpntJakR3n1cXxDfKyfF5ouOZU\\nSYUJSeE9VzMHHteG7C4UIwzwpmdIuF9lyHVJXw0LWxXX22BxYVpdF3X2qZOUHMIO\\nMgv3LhTno4fcDaMaqaOZo1DSd0k8Btt4/2OnLqrsVQQA+SEYdI5aCMB9lN+CyQNM\\n2lc7/LNu4ifSg4q9LkeDGniVmQ==\\n-----END CERTIFICATE-----\\n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4794f908-1381-4ff6-93b1-c50ee9309278\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "CreateProject": [
@@ -694,6 +702,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePositionSpace\n<公共请求参数>\n\n{\n    \"SpaceId\": \"Id\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f92406b3-5a9a-4fe8-bc43-45e3d794bb68\"\n    }\n}",
         "title": "DeletePositionSpace"
+      }
+    ],
+    "DeletePrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateCA\n<公共请求参数>\n\n{\n    \"CertName\": \"e2e-ca-1020-144010\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c55535bf-3900-4654-b035-0149a32918ec\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DeleteProductPrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProductPrivateCA\n<公共请求参数>\n\n{\n    \"ProductId\": \"DFTLHRQ9OL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fce38cd2-b60b-40ef-ac37-c54da9c96c8a\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DeleteProject": [
@@ -1212,6 +1236,38 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePositionFenceList\n<公共请求参数>\n\n{\n    \"SpaceId\": \"5bf5407370cc40848f39a2896a2ab052\",\n    \"Limit\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"GeoFence\": {\n                    \"FenceId\": 6,\n                    \"SpaceId\": \"5bf5407370cc40848f39a2896a2ab052\",\n                    \"FenceName\": \"TestFence\",\n                    \"FenceDesc\": \"TT\",\n                    \"FenceArea\": \"{\\\"type\\\":\\\"FeatureCollection\\\",\\\"features\\\":[{\\\"type\\\":\\\"Feature\\\",\\\"geometry\\\":{\\\"type\\\":\\\"Polygon\\\",\\\"coordinates\\\":[[[113.9498,22.5319],[113.9709,22.5319],[113.9709,22.5723],[113.9498,22.5723],[113.9498,22.5319]]]},\\\"properties\\\":null}]}\"\n                },\n                \"CreateTime\": 1604030296579,\n                \"UpdateTime\": 1604030296579\n            },\n            {\n                \"GeoFence\": {\n                    \"FenceId\": 17,\n                    \"SpaceId\": \"5bf5407370cc40848f39a2896a2ab052\",\n                    \"FenceName\": \"TestFence1116\",\n                    \"FenceDesc\": \"1116\",\n                    \"FenceArea\": \"{\\\"type\\\":\\\"FeatureCollection\\\",\\\"features\\\":[{\\\"type\\\":\\\"Feature\\\",\\\"geometry\\\":{\\\"type\\\":\\\"Polygon\\\",\\\"coordinates\\\":[[[113.9498,22.5319],[113.9709,22.5319],[113.9709,22.5723],[113.9498,22.5723],[113.9498,22.5319]]]},\\\"properties\\\":null}]}\"\n                },\n                \"CreateTime\": 1605510338840,\n                \"UpdateTime\": 1605510338840\n            },\n            {\n                \"GeoFence\": {\n                    \"FenceId\": 38,\n                    \"SpaceId\": \"5bf5407370cc40848f39a2896a2ab052\",\n                    \"FenceName\": \"TestFence1117\",\n                    \"FenceDesc\": \"1117\",\n                    \"FenceArea\": \"{\\\"type\\\":\\\"FeatureCollection\\\",\\\"features\\\":[{\\\"type\\\":\\\"Feature\\\",\\\"geometry\\\":{\\\"type\\\":\\\"Polygon\\\",\\\"coordinates\\\":[[[113.9498,22.5319],[113.9709,22.5319],[113.9709,22.5723],[113.9498,22.5723],[113.9498,22.5319]]]},\\\"properties\\\":null}]}\"\n                },\n                \"CreateTime\": 1605584593250,\n                \"UpdateTime\": 1605584593250\n            }\n        ],\n        \"RequestId\": \"f7b5e3e8-5089-4f11-b999-9a4c5952c4c5\",\n        \"Total\": 3\n    }\n}",
         "title": "获取围栏列表"
+      }
+    ],
+    "DescribePrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateCA\n<公共请求参数>\n\n{\n    \"CertName\": \"probe-upd-1022223352\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CA\": {\n            \"CertName\": \"probe-upd-1022223352\",\n            \"CertSN\": \"21a8de82e8ca9ffffd40cef063bb900d46a4d45a\",\n            \"CertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDdjCCAl6gAwIBAgIUIajegujKn//9QM7wY7uQDUak1FowDQYJKoZIhvcNAQEL\\nBQAwODELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEVMBMGA1UEAwwM\\nQ2FVcGRUZXN0LXYxMB4XDTI2MTAyMjE0MzM1MloXDTM2MTAxOTE0MzM1MlowODEL\\nMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEVMBMGA1UEAwwMQ2FVcGRU\\nZXN0LXYxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvN/smQoAQIzU\\ncKalHq014CLjF+FFh83meeUh5jKo8ok1DoO9JSwoSlwJNXRG01QygDiAC82rPbxs\\neYnREZUBaTX2viHg2sdPkx9C5+UTPHZ+KclC4p5JlYxPn56aYSTeycRBOb6AGuyu\\n3ijnsogwFCGLDNVc7zEwnWxzC3wiBJqQYvkClV53iU4ZIsvSuGADlRp6RN0jxMCg\\nNMhj/F4AQ2/yH/6R+nWWaalSIsZ7Dze9+q+U7N0E4Nozr+GuD0AvMGP1X3LBp2Kh\\ny6wbTur13gWcxAyNlWeJfX4hDRj78jPA7CMpQSWBK4uIbBDXlzQQT/kiieHzVjns\\n9lckY06gjwIDAQABo3gwdjAdBgNVHQ4EFgQUE/iqcAaY73sASz1F2+PL35fIOxUw\\nHwYDVR0jBBgwFoAUE/iqcAaY73sASz1F2+PL35fIOxUwDwYDVR0TAQH/BAUwAwEB\\n/zAOBgNVHQ8BAf8EBAMCAQYwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcN\\nAQELBQADggEBAI9WVG1HsuZ0na3MdK+Mgyq+yt2xg7l2VU7GNReaOOHlTwsBVQlK\\n5oOO/P89oD8PrXmaqMbv9N4eCv7SO49jr3rjmZGsAe5JNHIERZ49JPwlUH0TnQPk\\nNMR2q7wslcLt7Zv3p5V2I9/WJIViwsidABVA4bXZYsF9SRuJCJMFMn4xuABHJFVD\\nnHv7r+Dzya2fpJTJtOxwJ22Ek9j1T5av12rxbV5NsO7am5k+Zenp8I+rstBGoCSl\\nWDXGBbICLnHUk2zN4iiDMrmaEjEYgUrC+7ahxiMQGKMfZaNxZiFYerJW3A2YvWdp\\nbrzwbSh5zjBfeCzJxuEOfB6isqvwkVWbkic=\\n-----END CERTIFICATE-----\\n\",\n            \"CreateTime\": 1792679635,\n            \"EffectiveTime\": 1792679632,\n            \"ExpireTime\": 2108039632,\n            \"IssuerName\": \"CN=CaUpdTest-v1,O=CaE2ETest,C=CN\",\n            \"Subject\": \"CN=CaUpdTest-v1,O=CaE2ETest,C=CN\"\n        },\n        \"RequestId\": \"abde230f-33e0-4a7c-b0b8-52cdf171f48a\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribePrivateCABindedProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateCABindedProducts\n<公共请求参数>\n\n{\n    \"CertName\": \"smoke-not-exist\",\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Products\": [],\n        \"RequestId\": \"302cf46d-c4d3-4ae4-bb9f-201f7a364566\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribePrivateCAs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrivateCAs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CAs\": [\n            {\n                \"CertName\": \"e2e-ca-1020-143848\",\n                \"CertSN\": \"1782169b280fac6198638cd5ec8f2e73da01ae9\",\n                \"CertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDiDCCAnCgAwIBAgIUAXghabKA+sYZhjjNXsjy5z2gGukwDQYJKoZIhvcNAQEL\\nBQAwQTELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEeMBwGA1UEAwwV\\nQ2FFMkVUZXN0VGhpcmRQYXJ0eUNBMB4XDTI2MTAwNTA0MDk1NFoXDTM2MTAwMjA0\\nMDk1NFowQTELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEeMBwGA1UE\\nAwwVQ2FFMkVUZXN0VGhpcmRQYXJ0eUNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A\\nMIIBCgKCAQEAwAad2PJ+mfLvLfooCPa8BpNCjcHyLpPv7qWJa2oJ1juJgPTgNabS\\niCtVueltP0ytmrr3FdIb9cAJVKqAz93ppIKyCyQ1ICFHxtzawI/2jsw6yetIYIDO\\neUhBhG5ggQXxr/dB1z1H+TBzKc6cL6vlrothOkwtLOxF2S4LuEwjiUY8U7AMUU61\\nz5TWsG65uhBnbaoZPUK1fscqW6y83NrJ8KpkPQWN0TdN9Tddt6ByKjW0T/uY0uc5\\n+BALa1WXLqzTQ3B0TL3vaOG6RrmwOpXSN9PsKPss9J8VZZMoANgiGf2FN4xEMxGN\\nOyM4YXuH4GF1c17VWrSU/9wKG10NEcpMhQIDAQABo3gwdjAdBgNVHQ4EFgQU/McC\\nnAm9cZj90Q8fBHJtK4ecUN0wHwYDVR0jBBgwFoAU/McCnAm9cZj90Q8fBHJtK4ec\\nUN0wDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYwEwYDVR0lBAwwCgYI\\nKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAE38mvFumBJPm6Fc0w0KGSUoODsB\\nR6uKUtAq/FGA7dH0EV3U2KyR8ZtMy8+dh6EyZlu7lSv5gISp1zXx4Z6kysBaMK3C\\nqCNQnXrQiqriSdvUURHns1zG2BNkGkP/kZLnj9yGtFJsE0JS65zplKvGEzsBkbKz\\nYkfnwIjLW5AjXXFcmvJMKb1AskPHhpObJq1baahKXfRxKs7DQ/F83709Qct7d14f\\nzGzd1MsNxNWbyr2YFRfYzhHeiS6jL5+Gz7B5ywpUNCOHPbG++6lMqZc/G9xUJNoz\\nqTvLoN7TzY3wLssCwgmnjCJ1Hk/pXxgI5bzVRnJdByAW0+dxBGNNEqAFMDg=\\n-----END CERTIFICATE-----\\n\",\n                \"CreateTime\": 1792519969,\n                \"EffectiveTime\": 1791173394,\n                \"ExpireTime\": 2106533394,\n                \"IssuerName\": \"CN=CaE2ETestThirdPartyCA,O=CaE2ETest,C=CN\",\n                \"Subject\": \"CN=CaE2ETestThirdPartyCA,O=CaE2ETest,C=CN\"\n            }\n        ],\n        \"RequestId\": \"841ad301-b89d-4a4a-9bb9-4ac57f7bb29b\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "DescribeProductCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductCA\n<公共请求参数>\n\n{\n    \"ProductId\": \"SAGKS1EZQ2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CAs\": [\n            {\n                \"CertName\": \"e2e-ghost-ca-1020143925\",\n                \"CertSN\": \"2806882401fe3864819d495da651e6e52e64567e\",\n                \"CertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDiDCCAnCgAwIBAgIUKAaIJAH+OGSBnUldplHm5S5kVn4wDQYJKoZIhvcNAQEL\\nBQAwQTELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEeMBwGA1UEAwwV\\nQ2FFMkVUZXN0VGhpcmRQYXJ0eUNBMB4XDTI2MTAyMDA2MzkyNVoXDTM2MTAxNzA2\\nMzkyNVowQTELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEeMBwGA1UE\\nAwwVQ2FFMkVUZXN0VGhpcmRQYXJ0eUNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A\\nMIIBCgKCAQEAvcUC25CJb6Lb6z9LBYlY4CJg8Hpx8QloBbhG36rBo9Cr5v22cGd6\\nQqFv3B+o4bo3lkKajyyCYSXF6JpdqWYBPl1KKMijml5EV6taMUzkh8T8J82OgZuX\\npO2lIxoC3Pn8ySzuZ7BRjp0cUiKoWEM+3OVVeB84i6TprlxsovwUspknjkqIPHO0\\nMN30m6mc4flqBYitj3rDo8YioAuyklmtK6BNHeu/SFiH2g6/0BdlefWbpLhiB0zz\\nmTAykE9gTFJhaKnGVpOG43D1OwtBB8PkJBzu81wL6B+joMnPJ3GoJP31bL4MN02/\\nyX+O9uJyMoziox+NixsVW5JiverZpWKyQQIDAQABo3gwdjAdBgNVHQ4EFgQUZZcw\\nNDuQWD0BMrTpIF/GTH+kaQMwHwYDVR0jBBgwFoAUZZcwNDuQWD0BMrTpIF/GTH+k\\naQMwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMCAQYwEwYDVR0lBAwwCgYI\\nKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBALyrHmQaxSNTZIEA22v690lh9olt\\nEGQs32FjAtzwd7mwsdc1t4E/USz6/trKBL6UUCEhQkSoL/b4PsLxsY5El45q8KvL\\n8sfzKma1ycZMeSbZuY44m/XosgrdBivIxj1yDtFxFKSrhDR9dR2GMJskDQVyYeAF\\nJZ2Slum57ZqzvaW7SAUF7T0cvgD3CnIWZhvsTtB6i8uEoFgJ7IfaFN+Ggm+SpBle\\nu7cznyN7QD2x7j3Lk9iinhEk/w6qrWOBEw4u7WtwJzQIgfYd/2GgWchMOP7OCjDN\\na6k2Nx1Kg2mRPy24f9dumwSFB8JJLBzTHbn/aWWwDKdv4Ww44hOCz5+xWlw=\\n-----END CERTIFICATE-----\\n\",\n                \"CreateTime\": 1792478367,\n                \"EffectiveTime\": 1792478365,\n                \"ExpireTime\": 2107838365,\n                \"IssuerName\": \"CN=CaE2ETestThirdPartyCA,O=CaE2ETest,C=CN\",\n                \"Subject\": \"CN=CaE2ETestThirdPartyCA,O=CaE2ETest,C=CN\"\n            }\n        ],\n        \"RequestId\": \"22da84d3-4928-47d1-9552-f4e8b142016f\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "DescribeProductCloudStorageAIService": [
@@ -2464,6 +2520,22 @@
         "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOtaTaskStatus\n<公共请求参数>\n\n{\n    \"ProductId\": \"ABCDE12345\",\n    \"TaskId\": 11001,\n    \"Status\": 6\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"sjalifekj-dsakfjleija-3dskjf-sdaklfj\"\n    }\n}",
         "title": "修改固件升级任务状态为取消状态"
+      }
+    ],
+    "UpdatePrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrivateCA\n<公共请求参数>\n\n{\n    \"CertName\": \"probe-upd-1022223352\",\n    \"CertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDdjCCAl6gAwIBAgIUT2A6w2M901NpNe7NR6Bt34xmIgkwDQYJKoZIhvcNAQEL\\nBQAwODELMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEVMBMGA1UEAwwM\\nQ2FVcGRUZXN0LXYyMB4XDTI2MTAyMjE0MzM1M1oXDTM2MTAxOTE0MzM1M1owODEL\\nMAkGA1UEBhMCQ04xEjAQBgNVBAoMCUNhRTJFVGVzdDEVMBMGA1UEAwwMQ2FVcGRU\\nZXN0LXYyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoy+bUuKHRJsJ\\n5y5udgQ74Nc68CKgM6o/cmnp6kIxGstG/ihxJpzpM+H5NdXxF5mc1FBwVmB8KA9C\\n+2M9va2g8lC3pES5SZ/24qLoNfoeo/oJB8yiICmaAQ6Qpa2zSRscbPxoZ3zCgZZI\\ndtR1BAIE7j96ZHN10egvo7DMPFXoCEdh5swiArXt6ERKMVjUKNCtf98pyVGvMnEW\\n8zObBbeiHcunHSLmOdB3aEJ/Psib0yE/+DvimmhzMO+lrvPNra6dj8XhoC+cdXeE\\noD20q4gVfg/cl8rusjRUJINVIVL+U9vIDAeL2N2xT0UiytY+mHqNyl/MpbDycLpw\\nADElXA7IEwIDAQABo3gwdjAdBgNVHQ4EFgQUxzZ79XAL20AqzcIOo1LVkHCdHLMw\\nHwYDVR0jBBgwFoAUxzZ79XAL20AqzcIOo1LVkHCdHLMwDwYDVR0TAQH/BAUwAwEB\\n/zAOBgNVHQ8BAf8EBAMCAQYwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcN\\nAQELBQADggEBAILgK/9EVE5q2YahPOV+1OfwrSLDvTe51+WXElFmK/DF98FU8BZh\\nf8Z4xVgF5PnAmU+wByzbPWFR3zSSp5UDwgleLvD2dbgwzlwgTrWHs/GtcLh5pJDt\\nxq9exhLJ/YhvLEpXYpZhtuZcnlDB9y4Nm82tC4omV42HjoQ31pGhe2KfpUigv9Af\\n3/7NdJYZKdaDieJCbS1hiKo6wUXkfS4qeXluRvQ+JuPN3V/gA5LmlZZKbz+VeiKm\\nRLk28DDWgqy2HOqYF73JQZyneQZSPoxG43i1m9DYlMbFYC0GpWWEOnnJNtriNzSN\\npZ1izhZQxhaagT5OIb3QDyeBgnKLk0BH8as=\\n-----END CERTIFICATE-----\\n\",\n    \"VerifyCertText\": \"-----BEGIN CERTIFICATE-----\\nMIIDCjCCAfICFHwZU/XlitPdBDlxF86vKc//r18BMA0GCSqGSIb3DQEBCwUAMDgx\\nCzAJBgNVBAYTAkNOMRIwEAYDVQQKDAlDYUUyRVRlc3QxFTATBgNVBAMMDENhVXBk\\nVGVzdC12MjAeFw0yNjEwMjIxNDMzNTRaFw0zNjEwMTkxNDMzNTRaMEsxSTBHBgNV\\nBAMMQDU1YWY3NGUxMDBmYmFlZTNhMGJkN2M0YTM5OWQ0Mzc2MThlZDJmN2U3NTlh\\nODgzMmMyZTBiOTQzODMxMDE0NGIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK\\nAoIBAQCyeFeHuChUcB5LE5XhjUhS1U+d0QKTH19eaMke0WrXFYtzyoVf8DsxtlhU\\nX+3+ZIhgE5lKXh0Z89tuV68uw63uvr2QhAW+4sSGQUQxL7+5+I0nVC5KeXn2n1oX\\nvy9KA0UXpUAyb8bRbD+0IURI8RNLZYdOKZ2jsLPVwzjkiJzqmiyCBUQqeQ4ZwX4C\\nx8uTL6KP24xp/fyXfKJIg96BVyxu5BwVVzSZK6pk7i5MEPiG/CMJc1YD7snLTfGn\\nLKOQ/vJr88qh3hasCmzBr+dyWLdjNSCDEBDcHEOI/r14Pvb3gTiWpiA/7+NuP1rM\\nCyFzYLeGGCEuv5OEcWbXUtdsGVulAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAJsj\\nJo7p8XiYWULG6pVoq3HPG3bCJshSCMiBpud7WLF70xjGDhQGVLswyJFVi/GRM+7s\\nUB4qoRjr290HUMXzhBdrWePGKCwwdEPQchDuRZp4QLeaGkMAKnSoELJFjSfTQl+9\\nTmRIfn+iGI36+kQF8dMRyBradn3+BKk0LMDDHFl9OVOWYkygf8ry0H0oiqTg+AD3\\n2FwbG0eO2Wk0relwDCN+RphzY6o7Ay30+z7yYoU37VKp2hCxIhQUaoRR3n7RcG0Z\\nCQMH/DiSNyDf2JL8d65TgZ5gPvy6o1dQJZ1fpGBh9zaKBuOY88s+qLNeoTs/pBGw\\nhVBRVKul5olFjAN95y4=\\n-----END CERTIFICATE-----\\n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8c994b59-1c0a-4cbb-94ba-994ed0dcf86f\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "UpdateProductPrivateCA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProductPrivateCA\n<公共请求参数>\n\n{\n    \"ProductId\": \"DFTLHRQ9OL\",\n    \"CertName\": \"mqtt-ca2-1020144606\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"465e57ee-d97d-4624-9948-f6e7e5800d1b\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "UploadFirmware": [

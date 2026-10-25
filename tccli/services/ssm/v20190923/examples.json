@@ -24,6 +24,14 @@
         "title": "创建新的凭据信息"
       }
     ],
+    "CreateService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ssm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateService\n<公共请求参数>\n\n{\n    \"PayMode\": \"PostPay\",\n    \"ClientToken\": \"123344\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderId\": \"20260918311023705882391\",\n        \"ResourceId\": \"ssm_260210396\",\n        \"RequestId\": \"444eec98-00e2-42a1-87fe-8304b7500aa9\"\n    }\n}",
+        "title": "开通 ssm 服务"
+      }
+    ],
     "DeleteSecret": [
       {
         "document": "",

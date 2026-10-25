@@ -4043,25 +4043,25 @@
         },
         {
           "disabled": false,
-          "document": "限制下载的vpc设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限制下载的vpc设置",
           "example": "[{\"Region\": \"ap-guangzhou\", \"VpcList\": [\"vpc-kas1\"] } ]",
           "member": "BackupLimitVpcItem",
           "name": "LimitVpcs",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "限制下载的ip设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "限制下载的ip设置",
           "example": "[127.0.0.1,127.0.0.2]",
           "member": "string",
           "name": "LimitIps",
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -13763,7 +13763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-mwg7121e",
           "member": "string",
           "name": "ClusterId",
@@ -13772,7 +13772,7 @@
         },
         {
           "disabled": false,
-          "document": "备份ID",
+          "document": "<p>备份ID</p>",
           "example": "1883726",
           "member": "int64",
           "name": "BackupId",
@@ -13781,7 +13781,7 @@
         },
         {
           "disabled": false,
-          "document": "备份下载来源限制条件",
+          "document": "<p>备份下载来源限制条件</p>",
           "example": "无",
           "member": "BackupLimitRestriction",
           "name": "DownloadRestriction",
@@ -13796,7 +13796,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份下载地址",
+          "document": "<p>备份下载地址</p>",
           "example": "https://ncdb-bj-pitr-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/data/mysqldump/****9fd2-691a-11ef-b99a-b02628437590/2024-10-28/1879681/data_backup_1879681_20241028022147.xb?q-sign-algorithm=sha1&q-ak=************&q-sign-time=1730079993%3B1730123193",
           "member": "string",
           "name": "DownloadUrl",
@@ -14423,7 +14423,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-mwg7121e",
           "member": "string",
           "name": "ClusterId",
@@ -14432,7 +14432,7 @@
         },
         {
           "disabled": false,
-          "document": "Binlog文件ID",
+          "document": "<p>Binlog文件ID</p>",
           "example": "100",
           "member": "int64",
           "name": "BinlogId",
@@ -14441,7 +14441,7 @@
         },
         {
           "disabled": false,
-          "document": "备份下载来源限制条件",
+          "document": "<p>备份下载来源限制条件</p>",
           "example": "无",
           "member": "BackupLimitRestriction",
           "name": "DownloadRestriction",
@@ -14456,7 +14456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "下载地址",
+          "document": "<p>下载地址</p>",
           "example": "https://ncdb-cdc-bj-1258***699.cos.ap-beijing.myqcloud.com/cynosdb/cdc/BinlogCapture/71***d45-8cfd-11ef-b99a-b02628437590/29.18.12.168_20650_1/mysql-bin.001002/file?q-sign-algorithm=sha1&q-ak=**************&q-sign-time=17300***57%3B1730123657",
           "member": "string",
           "name": "DownloadUrl",

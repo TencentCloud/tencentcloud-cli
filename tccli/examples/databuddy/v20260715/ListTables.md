@@ -6,9 +6,14 @@ Input:
 
 ```
 tccli databuddy ListTables --cli-unfold-argument  \
+    --MaxResults 20 \
     --CatalogName DataLakeCatalog \
-    --SchemaName default \
-    --MaxResults 1
+    --SchemaName ericpuwang_test \
+    --WorkspaceId 17678671667189298 \
+    --FetchOption.FetchOwners False \
+    --FetchOption.FetchUserInfo False \
+    --FetchOption.FetchFeatureTableDetail True \
+    --FetchOption.FetchPermissions True
 ```
 
 Output: 
@@ -18,148 +23,62 @@ Output:
         "Data": {
             "Items": [
                 {
-                    "Audit": {
-                        "CreatedAt": "1761055196090",
-                        "Creator": "1290245077@qq.com",
-                        "LastModifiedAt": "1761055196633",
-                        "LastModifier": "1290245077@qq.com"
-                    },
+                    "Name": "lyw_wine_0203_v1",
+                    "Comment": "",
                     "Columns": [
                         {
-                            "Comment": "",
+                            "Name": "wine_id",
+                            "Type": "integer",
+                            "Comment": "红酒样本ID",
                             "FieldSetting": "",
                             "IsPrimaryKey": false,
-                            "Name": "order_id_col",
-                            "Type": "long"
-                        },
-                        {
-                            "Comment": "",
-                            "FieldSetting": "",
-                            "IsPrimaryKey": false,
-                            "Name": "customer_id_col",
-                            "Type": "long"
-                        },
-                        {
-                            "Comment": "",
-                            "FieldSetting": "",
-                            "IsPrimaryKey": false,
-                            "Name": "order_date_col",
-                            "Type": "timestamp_tz(6)"
-                        },
-                        {
-                            "Comment": "",
-                            "FieldSetting": "",
-                            "IsPrimaryKey": false,
-                            "Name": "product_id_col",
-                            "Type": "integer"
-                        },
-                        {
-                            "Comment": "",
-                            "FieldSetting": "",
-                            "IsPrimaryKey": false,
-                            "Name": "product_name_col",
-                            "Type": "string"
-                        },
-                        {
-                            "Comment": "",
-                            "FieldSetting": "",
-                            "IsPrimaryKey": false,
-                            "Name": "quantity_col",
-                            "Type": "integer"
-                        }
-                    ],
-                    "Comment": "订单信息托管表（按订单日期分区）",
-                    "Indexes": [],
-                    "MetaOwner": {
-                        "FullName": "DataLakeCatalog.default.order_managed_table",
-                        "Owner": "1290245077@qq.com",
-                        "OwnerType": "user"
-                    },
-                    "Name": "order_managed_table",
-                    "Partitioning": [
-                        {
-                            "DayPartitioning": {
-                                "FieldName": "order_date_col"
-                            },
-                            "Strategy": "day"
+                            "Tags": []
                         }
                     ],
                     "Properties": [
                         {
-                            "Key": "owner",
-                            "Value": "root"
-                        },
-                        {
-                            "Key": "write.parquet.compression-codec",
-                            "Value": "zstd"
-                        },
-                        {
-                            "Key": "current-snapshot-summary",
-                            "Value": "{\"spark.app.id\":\"spark-b4e930acee7a446888167a444b7f292c\",\"added-data-files\":\"1\",\"added-records\":\"1\",\"added-files-size\":\"3246\",\"changed-partition-count\":\"1\",\"total-records\":\"1\",\"total-files-size\":\"3246\",\"total-data-files\":\"1\",\"total-delete-files\":\"0\",\"total-position-deletes\":\"0\",\"total-equality-deletes\":\"0\"}"
-                        },
-                        {
-                            "Key": "write.metadata.delete-after-commit.enabled",
-                            "Value": "true"
-                        },
-                        {
-                            "Key": "tccatalog.identifier",
-                            "Value": "tccatalog.v1.uid4204782243991625654"
-                        },
-                        {
-                            "Key": "write.metadata.metrics.default",
-                            "Value": "full"
-                        },
-                        {
-                            "Key": "format",
-                            "Value": "iceberg/parquet"
-                        },
-                        {
-                            "Key": "format-version",
-                            "Value": "2"
-                        },
-                        {
-                            "Key": "uuid",
-                            "Value": "2bdf0344-5b4d-4d58-a230-da913481d7fa"
-                        },
-                        {
-                            "Key": "provider",
-                            "Value": "iceberg"
-                        },
-                        {
-                            "Key": "write.metadata.previous-versions-max",
-                            "Value": "100"
-                        },
-                        {
-                            "Key": "current-snapshot-id",
-                            "Value": "7665350655544053728"
-                        },
-                        {
-                            "Key": "lakehouse.storage.type",
-                            "Value": "lakefs"
-                        },
-                        {
-                            "Key": "current-snapshot-timestamp-ms",
-                            "Value": "1761055200681"
-                        },
-                        {
-                            "Key": "metadata_location",
-                            "Value": "cosn://dlc4634-700001601851-1740545216-700001779129-251301051/1300298608/warehouse/default.db/order_managed_table.1761055194894/metadata/00001-8ed6ace3-fc7e-410d-9dbd-b0e9fc7b984f.metadata.json"
-                        },
-                        {
-                            "Key": "location",
-                            "Value": "cosn://dlc4634-700001601851-1740545216-700001779129-251301051/1300298608/warehouse/default.db/order_managed_table.1761055194894"
-                        },
-                        {
-                            "Key": "write.distribution-mode",
-                            "Value": "hash"
+                            "Key": "feature_engine_name",
+                            "Value": ""
                         }
                     ],
-                    "TableFormat": "订单信息托管表（按订单日期分区）"
+                    "Partitioning": [],
+                    "Indexes": [],
+                    "Audit": {
+                        "Creator": "700002164619",
+                        "LastModifier": "700002164619",
+                        "CreatedAt": "1770090803564",
+                        "LastModifiedAt": "1770090804293",
+                        "CreatorName": "700002164619",
+                        "LastModifierName": "700002164619"
+                    },
+                    "TableFormat": "TCIceberg",
+                    "AssetGuid": "tccatalog.v1.uid2130426800038882810@260073493_ap-guangzhou_TABLE",
+                    "TableType": "Managed",
+                    "FilesSize": "",
+                    "FilesCount": "",
+                    "FeatureTableType": "Offline",
+                    "FeatureTableDetail": {
+                        "PrimaryKeys": [
+                            "wine_id"
+                        ],
+                        "TimestampField": "event_timestamp",
+                        "SourceTableName": "",
+                        "WorkflowId": "",
+                        "OnlineTableName": ""
+                    },
+                    "PermissionDetail": {
+                        "Permissions": [
+                            "ALL_PRIVILEGES"
+                        ],
+                        "CatalogWorkspacePrivilege": "WORKSPACE_READWRITE",
+                        "DenyPrivilegeList": []
+                    },
+                    "Tags": []
                 }
             ],
-            "NextPageToken": "eyJvZmZzZXQiOjF9"
+            "NextPageToken": "eyJvZmZzZXQiOjIwfQ=="
         },
-        "RequestId": "e74936a8-4226-4bdf-b24d-d1c8484cf410"
+        "RequestId": "c7839865-7824-4b29-986f-176470dc22d8"
     }
 }
 ```

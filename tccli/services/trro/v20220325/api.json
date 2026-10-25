@@ -3290,6 +3290,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务下各状态处理项的数量分布，JSON 格式字符串</p>",
+          "example": "{\"1\":2,\"6\":8}",
+          "member": "string",
+          "name": "TaskStatusCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -3898,9 +3908,31 @@
         {
           "disabled": false,
           "document": "<p>标注处理模式，预留字段</p>",
-          "example": "*********************",
+          "example": "ego_semantic",
           "member": "string",
           "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标注档位</p>",
+          "example": "standard",
+          "member": "string",
+          "name": "Edition",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用扩展参数，json格式字符串</p>",
+          "example": "{\"camera\":{\"model\":\"fisheye\",\"camera_matrix\":[[1456.5,0,640],[0,1456.5,360],[0,0,1]],\"distortion_coefficients\":[0.05,0.01,0.003,0.002],\"image_size\":[1280,720]}}",
+          "member": "string",
+          "name": "ExtraParams",
           "output_required": false,
           "required": false,
           "type": "string",
