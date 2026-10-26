@@ -38,7 +38,28 @@ Output:
             "ModelServiceId": "d0742b86605340438a8018c658156622",
             "ModelServiceName": "openai_test",
             "MatchHeaders": [],
-            "EnableCrossServiceFallback": false
+            "EnableCrossServiceFallback": false,
+            "ConsumerDirectModelScopes": [
+                {
+                    "PrincipalId": "consumer-example",
+                    "PrincipalName": "示例消费者",
+                    "ModelScope": {
+                        "ScopeType": "ALLOWLIST",
+                        "AllowList": [
+                            "claude-haiku-4-5"
+                        ]
+                    },
+                    "EffectiveModelNames": [
+                        "claude-haiku-4-5"
+                    ]
+                }
+            ],
+            "ModelNameRoute": {
+                "ModelNames": [
+                    "claude-haiku-4-5"
+                ]
+            },
+            "StandardModelName": "claude-haiku-4-5"
         },
         "RequestId": "f1234567-89ab-cdef-0123-456789abcdef"
     }

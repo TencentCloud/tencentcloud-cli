@@ -194,10 +194,10 @@
     ],
     "DescribeExtendEndpointList": [
       {
-        "document": "获取出站终端节点列表",
-        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendEndpointList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3a0ce2a9-d277-4fb9-9f58-93f78aa375c1\"\n    }\n}",
-        "title": "获取出站终端节点列表"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendEndpointList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"OutboundEndpointSet\": [\n            {\n                \"EndpointId\": \"eid-c8acd39e68d6\",\n                \"EndpointName\": \"huyue1\",\n                \"EndpointServiceSet\": [\n                    {}\n                ],\n                \"ForwardLinkArch\": \"V2R\",\n                \"Region\": \"ap-guangzhou\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 25,\n        \"RequestId\": \"279903da-3f6a-44cb-9c31-cad8d018b198\"\n    }\n}",
+        "title": "查询出站终端节点列表"
       }
     ],
     "DescribeForwardRuleList": [

@@ -97040,6 +97040,15 @@
           "name": "TagIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>优先使用腾讯云软件源</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PreferCloudSource",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

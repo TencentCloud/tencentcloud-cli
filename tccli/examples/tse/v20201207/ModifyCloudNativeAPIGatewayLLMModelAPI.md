@@ -15,11 +15,14 @@ tccli tse ModifyCloudNativeAPIGatewayLLMModelAPI --cli-unfold-argument  \
     --ModelServiceRoute.SelectedTypes Weighted \
     --ModelServiceRoute.WeightedConfig.0.ModelServiceId 39bced9f01d3462e903d1a5ba8f9221e \
     --ModelServiceRoute.WeightedConfig.0.Weight 10 \
+    --ModelServiceRoute.WeightedConfig.0.StandardModelName claude-haiku-4-5 \
     --EnableCrossServiceFallback False \
     --LogConfig.EnableRequestLogPayloads False \
     --LogConfig.EnableResponseLogPayloads False \
     --SensitiveWordRoute.Enabled True \
-    --SensitiveWordRoute.ModelServiceRefs b14f1d835fe240d593c9d0befd31aacc
+    --SensitiveWordRoute.ModelServiceRefs b14f1d835fe240d593c9d0befd31aacc \
+    --SensitiveWordRoute.StandardModelName claude-haiku-4-5 \
+    --StandardModelName claude-haiku-4-5
 ```
 
 Output: 

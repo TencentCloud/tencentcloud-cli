@@ -34,3 +34,39 @@ Output:
 }
 ```
 
+**Example 2: 查询密钥详情并返回创建来源信息**
+
+示例仅展示相关字段；实际返回保留原有字段。省略 IncludeCreationInfo 或传 false 时不增加三个创建来源字段。示例 ID 不是实际资源。
+
+Input: 
+
+```
+tccli cngw DescribeCloudNativeAPIGatewaySecretKey --cli-unfold-argument  \
+    --GatewayId gateway-example \
+    --SecretKeyId secret-example \
+    --IncludeCreationInfo True
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": {
+            "SecretKeyId": "secret-example",
+            "Name": "auto-team-a1B2",
+            "ResourceType": "Consumer",
+            "SecretType": "ApiKey",
+            "GenerateType": "System",
+            "Status": "Enable",
+            "SecretValue": "sk-****123",
+            "CreateTime": "2026-09-28 16:00:00",
+            "ModifyTime": "2026-09-28 16:00:00",
+            "CredentialGenerateType": "System",
+            "CreationSource": "Batch",
+            "BatchId": "keybatch-example"
+        },
+        "RequestId": "req-example"
+    }
+}
+```
+

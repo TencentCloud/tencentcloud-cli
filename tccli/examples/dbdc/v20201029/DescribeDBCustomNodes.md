@@ -132,3 +132,69 @@ Output:
 }
 ```
 
+**Example 3: 查询 DB Custom 节点列表(包含磁盘ID)**
+
+
+
+Input: 
+
+```
+tccli dbdc DescribeDBCustomNodes --cli-unfold-argument  \
+    --Limit 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "NodeSet": [
+            {
+                "AutoRenew": 1,
+                "CPU": 32,
+                "ChargeType": "PREPAID",
+                "ClusterId": "",
+                "CreatedTime": "2026-08-12T02:30:04Z",
+                "DataDisks": [
+                    {
+                        "DiskId": "disk-m447xu3b",
+                        "DiskName": "DataDisk",
+                        "DiskSize": 200,
+                        "DiskType": "CLOUD_HSSD"
+                    }
+                ],
+                "DisasterRecoverGroupId": "",
+                "EniIP": "",
+                "ExpireTime": "2026-08-05T02:30:04Z",
+                "HostIp": "",
+                "ImageId": "img-1tmhysjj",
+                "IsolatedTime": "2026-08-02T03:12:45Z",
+                "LanIP": "10.0.0.1",
+                "LatestRunningTaskType": "",
+                "Memory": 128,
+                "NetworkMode": "privatelink",
+                "NodeId": "dbcn-a3ik6qc0",
+                "NodeName": "dbcn-a3ik6qc0",
+                "NodeType": "DB.SA5.2XLARGE32",
+                "OsName": "TencentOS Server 3.2 with Driver",
+                "RackId": "",
+                "SSHEndpoint": "10.0.0.100:22",
+                "SecurityGroupIds": [],
+                "Status": "Running",
+                "SubnetId": "subnet-qqgp4e31",
+                "SwitchId": "",
+                "SystemDisk": {
+                    "DiskId": "disk-zj773km4",
+                    "DiskSize": 100,
+                    "DiskType": "CLOUD_HSSD"
+                },
+                "Tags": null,
+                "VpcId": "vpc-alj2c14k",
+                "Zone": "ap-shanghai-5"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "1a1c1cc4-a498-43a0-b02d-2af3c37df39c"
+    }
+}
+```
+

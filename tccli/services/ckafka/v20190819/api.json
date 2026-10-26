@@ -2841,6 +2841,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间时区, 默认 UTC+08:00</p><p>参数格式：UTC+08:00</p>",
+          "example": "UTC+08:00",
+          "member": "string",
+          "name": "Timezone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源数据解析格式</p><p>枚举值：</p><ul><li>JSON： JSON格式</li><li>Debezium： Debezium格式</li></ul>",
+          "example": "JSON",
+          "member": "string",
+          "name": "SourceDataFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6746,7 +6768,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "变配类型",
+          "document": "<p>变配类型</p>",
           "example": "1",
           "member": "int64",
           "name": "ModifyType",
@@ -6756,7 +6778,7 @@
         },
         {
           "disabled": false,
-          "document": "是否迁移标志",
+          "document": "<p>是否迁移标志</p>",
           "example": "true",
           "member": "bool",
           "name": "MigrateFlag",
@@ -14379,7 +14401,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id",
+          "document": "<p>Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id</p>",
           "example": "ckafka-test",
           "member": "string",
           "name": "Resource",
@@ -14390,7 +14412,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为自建集群",
+          "document": "<p>是否为自建集群</p>",
           "example": "true",
           "member": "bool",
           "name": "SelfBuilt",
@@ -14401,7 +14423,7 @@
         },
         {
           "disabled": false,
-          "document": "是否更新到关联的Dip任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否更新到关联的Dip任务</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsUpdate",
@@ -14412,7 +14434,7 @@
         },
         {
           "disabled": false,
-          "document": "Kafka连接的broker地址, NetworkType=PUBLIC公网时必填",
+          "document": "<p>Kafka连接的broker地址, NetworkType=PUBLIC公网时必填</p>",
           "example": "10.0.0.30:9092,10.0.0.31:9092",
           "member": "string",
           "name": "BrokerAddress",
@@ -14423,7 +14445,7 @@
         },
         {
           "disabled": false,
-          "document": "CKafka连接源的实例资源地域, 跨地域时必填",
+          "document": "<p>CKafka连接源的实例资源地域, 跨地域时必填</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -14434,7 +14456,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型：PUBLIC公网；VPC",
+          "document": "<p>网络类型：PUBLIC公网；VPC</p>",
           "example": "PUBLIC",
           "member": "string",
           "name": "NetworkType",
@@ -14445,7 +14467,7 @@
         },
         {
           "disabled": false,
-          "document": "vpcId，NetworkType=VPC时必传",
+          "document": "<p>vpcId，NetworkType=VPC时必传</p>",
           "example": "vpc-test",
           "member": "string",
           "name": "UniqVpcId",
@@ -14456,7 +14478,7 @@
         },
         {
           "disabled": false,
-          "document": "vip，NetworkType=VPC时必传",
+          "document": "<p>vip，NetworkType=VPC时必传</p>",
           "example": "10.0.0.5",
           "member": "string",
           "name": "ServiceVip",
@@ -14467,7 +14489,7 @@
         },
         {
           "disabled": false,
-          "document": "端口，NetworkType=VPC时必传",
+          "document": "<p>端口，NetworkType=VPC时必传</p>",
           "example": "9092",
           "member": "int64",
           "name": "Port",
@@ -14478,7 +14500,7 @@
         },
         {
           "disabled": false,
-          "document": "跨云同步下需要客户传递唯一Id标志一组资源",
+          "document": "<p>跨云同步下需要客户传递唯一Id标志一组资源</p>",
           "example": "id-test",
           "member": "string",
           "name": "CrossNetResourceUniqueId",
@@ -14489,10 +14511,21 @@
         },
         {
           "disabled": false,
-          "document": "跨云子网ID",
+          "document": "<p>跨云子网ID</p>",
           "example": "subnet-test",
           "member": "string",
           "name": "CrossNetVpcSubNetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户输入原始broker接入点地址</p>",
+          "example": "10.0.0.3:9092,10.0.0.3:9093",
+          "member": "string",
+          "name": "OriginalBrokerAddresses",
           "output_required": false,
           "required": false,
           "type": "string",

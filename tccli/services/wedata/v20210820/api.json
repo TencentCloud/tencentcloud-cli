@@ -38804,6 +38804,50 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发记录来源 (仅嵌套工作流触发场景有值, 取值以 SUB_PROCESS_ 开头时表示由嵌套工作流生成运行记录触发</p><p>枚举值：</p><ul><li>SUB_PROCESS_MAKEUP： 补录</li><li>SUB_PROCESS_TRIGGER： 调度触发</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUB_PROCESS_TRIGGER",
+          "member": "string",
+          "name": "TriggerSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>父 嵌套工作流任务 ID (仅触发记录来源为嵌套工作流时有值)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20260815184558289",
+          "member": "string",
+          "name": "ParentSpTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>父嵌套工作流实例名称 (仅触发记录来源为嵌套工作流时有值)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_67890",
+          "member": "string",
+          "name": "ParentSpInstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>父嵌套工作流实例数据时间 (仅触发记录来源为嵌套工作流时有值)</p><p>参数格式：2026-10-12 00:00:00</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-12 00:00:00",
+          "member": "string",
+          "name": "ParentSpInstanceDataTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

@@ -6,32 +6,58 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayLLMModelAPIs --cli-unfold-argument  \
-    --GatewayId gateway-04b00666 \
-    --Limit 10 \
-    --Offset None \
-    --Filters.0.Name Name \
-    --Filters.0.Values openai \
-    --Keyword openai \
-    --ConsumerId 048e0c69-ffb2-4ec7-aaaa-97c1e11f****
+    --GatewayId gateway-9a766f25 \
+    --SecretKeyId secret-8fe776ce194dab
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "959caf3b-f74c-4cd1-9260-3b7713e55604",
         "Result": {
             "DataList": [
                 {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:16:59",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "9ab0f08a1bab42699c85839fda1461c1",
-                    "ModifyTime": "2025-11-26 10:16:59",
-                    "Name": "openai_chat_测试4",
-                    "RequestProtocol": "OpenAI",
+                    "BasePath": "/x",
+                    "CreateTime": "2026-08-14 21:29:19",
+                    "Description": "",
+                    "EnableCrossServiceFallback": false,
+                    "Id": "c733a200d1c14f53b9fa81a3bb6008fa",
+                    "LogConfig": {
+                        "EnableRequestLogPayloads": false,
+                        "EnableResponseLogPayloads": false,
+                        "RequestLogPayloadMaxSize": 8192,
+                        "RequestLogPayloadMode": "raw",
+                        "RequestLogPayloadTruncationPolicy": "Bounded",
+                        "ResponseLogPayloadMaxSize": 8192,
+                        "ResponseLogPayloadMode": "raw",
+                        "ResponseLogPayloadTruncationPolicy": "Bounded"
+                    },
+                    "MaxDocumentsConfig": {
+                        "EnableMaxDocuments": false,
+                        "MaxDocumentValue": 0
+                    },
+                    "ModelServiceId": "c7e480f4bea0437085b224d1b7db23d2",
+                    "ModelServiceName": "deep-x02",
+                    "ModelServiceRoute": {
+                        "SelectedTypes": [
+                            "Weighted"
+                        ],
+                        "WeightedConfig": [
+                            {
+                                "ModelServiceId": "5168ae1f1ba440e396251a95ea61e4e9",
+                                "Weight": 30,
+                                "StandardModelName": "claude-haiku-4-5"
+                            }
+                        ]
+                    },
+                    "ModifyTime": "2026-08-14 21:33:16",
+                    "Name": "deep-x",
+                    "RequestProtocol": "openai",
                     "RouteList": [
                         {
+                            "Methods": [
+                                "POST"
+                            ],
                             "Name": "base",
                             "Paths": [
                                 "/v1/chat/completions"
@@ -39,68 +65,48 @@ Output:
                         }
                     ],
                     "SceneType": "Chat",
-                    "StripPath": false
-                },
-                {
-                    "BasePath": "/base",
-                    "CreateTime": "2025-11-26 10:16:16",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "769ebd672acb4640b0a35a31bd429de9",
-                    "ModifyTime": "2025-11-26 10:16:16",
-                    "Name": "openai_chat_测试3",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
+                    "SecretKeyModelScopes": [
                         {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
+                            "EffectiveModelNames": [
+                                "deepseek-v4-flash"
+                            ],
+                            "ModelScope": {
+                                "AllowList": [
+                                    "deepseek-v4-flash"
+                                ],
+                                "ScopeType": "ALLOWLIST"
+                            },
+                            "PrincipalId": "secret-8fe776ce194dab",
+                            "PrincipalName": "deep-sk"
+                        }
+                    ],
+                    "StripPath": true,
+                    "ConsumerDirectModelScopes": [
+                        {
+                            "PrincipalId": "consumer-example",
+                            "PrincipalName": "示例消费者",
+                            "ModelScope": {
+                                "ScopeType": "ALLOWLIST",
+                                "AllowList": [
+                                    "claude-haiku-4-5"
+                                ]
+                            },
+                            "EffectiveModelNames": [
+                                "claude-haiku-4-5"
                             ]
                         }
                     ],
-                    "SceneType": "Chat",
-                    "StripPath": true
-                },
-                {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:15:18",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "66ae5965beed4196966876a778c28995",
-                    "ModifyTime": "2025-11-26 10:15:18",
-                    "Name": "openai_chat_测试2",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
-                        {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
-                            ]
-                        }
-                    ],
-                    "SceneType": "Chat",
-                    "StripPath": false
-                },
-                {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:13:16",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "b529dd8141ea4234a4c4d87930108f68",
-                    "ModifyTime": "2025-11-26 10:13:16",
-                    "Name": "openai_chat_测试",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
-                        {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
-                            ]
-                        }
-                    ],
-                    "SceneType": "Chat",
-                    "StripPath": false
+                    "ModelNameRoute": {
+                        "ModelNames": [
+                            "claude-haiku-4-5"
+                        ]
+                    },
+                    "StandardModelName": "claude-haiku-4-5"
                 }
             ],
-            "TotalCount": 4
-        }
+            "TotalCount": 1
+        },
+        "RequestId": "bfe6b00c-612d-43d1-99ba-f062eb971a6c"
     }
 }
 ```

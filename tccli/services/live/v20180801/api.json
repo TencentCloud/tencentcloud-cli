@@ -8357,7 +8357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -8366,7 +8366,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 应用 ID。",
+          "document": "<p>Cos 应用 ID。</p>",
           "example": "9654125",
           "member": "int64",
           "name": "CosAppId",
@@ -8375,7 +8375,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。",
+          "document": "<p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。</p>",
           "example": "bucket",
           "member": "string",
           "name": "CosBucket",
@@ -8384,7 +8384,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos地区。",
+          "document": "<p>Cos地区。</p>",
           "example": "beijing",
           "member": "string",
           "name": "CosRegion",
@@ -8393,7 +8393,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -8402,7 +8402,7 @@
         },
         {
           "disabled": false,
-          "document": "截图间隔，单位s，默认10s。\n范围： 2s ~ 300s。",
+          "document": "<p>截图间隔，单位s，默认10s。<br>范围： 2s ~ 300s。</p>",
           "example": "10",
           "member": "int64",
           "name": "SnapshotInterval",
@@ -8411,7 +8411,7 @@
         },
         {
           "disabled": false,
-          "document": "截图宽度。默认：0（原始宽）。\n范围：0-3000 。",
+          "document": "<p>截图宽度。默认：0（原始宽）。<br>范围：0-3000 。</p>",
           "example": "250",
           "member": "int64",
           "name": "Width",
@@ -8420,7 +8420,7 @@
         },
         {
           "disabled": false,
-          "document": "截图高度。默认：0（原始高）。\n范围：0-2000 。",
+          "document": "<p>截图高度。默认：0（原始高）。<br>范围：0-2000 。</p>",
           "example": "250",
           "member": "int64",
           "name": "Height",
@@ -8429,7 +8429,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴黄，0：不开启，1：开启。默认：0。",
+          "document": "<p>是否开启鉴黄，0：不开启，1：开启。默认：0。</p>",
           "example": "0",
           "member": "int64",
           "name": "PornFlag",
@@ -8438,7 +8438,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket文件夹前缀。\n如不传，实际按默认值\n/{Year}-{Month}-{Day}\n生效",
+          "document": "<p>Cos Bucket文件夹前缀。<br>如不传，实际按默认值<br>/{Year}-{Month}-{Day}<br>生效</p>",
           "example": "12",
           "member": "string",
           "name": "CosPrefix",
@@ -8447,7 +8447,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 文件名称。\n如不传，实际按默认值\n{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}\n生效",
+          "document": "<p>Cos 文件名称。<br>如不传，实际按默认值<br>{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}<br>生效</p>",
           "example": "{StreamID}-screenshot-{Hour}-{Minute}-{Second}-{Width}x{Height}{Ext}",
           "member": "string",
           "name": "CosFileName",
@@ -8462,7 +8462,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -22716,7 +22716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板 ID。",
+          "document": "<p>模板 ID。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -22725,7 +22725,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 应用 ID。\n**注：此参数现在须必选。**",
+          "document": "<p>Cos 应用 ID。<br><strong>注：此参数现在须必选。</strong></p>",
           "example": "854625",
           "member": "int64",
           "name": "CosAppId",
@@ -22734,7 +22734,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket名称。\n注：CosBucket参数值不能包含-[appid] 部分。\n**注：此参数现在须必选。**",
+          "document": "<p>Cos Bucket名称。<br>注：CosBucket参数值不能包含-[appid] 部分。<br><strong>注：此参数现在须必选。</strong></p>",
           "example": "bucket",
           "member": "string",
           "name": "CosBucket",
@@ -22743,7 +22743,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 地域。\n**注：此参数现在须必选。**",
+          "document": "<p>Cos 地域。<br><strong>注：此参数现在须必选。</strong></p>",
           "example": "beijing",
           "member": "string",
           "name": "CosRegion",
@@ -22752,7 +22752,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。",
+          "document": "<p>模板名称。<br>长度上限：255字节。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -22761,7 +22761,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n长度上限：1024字节。",
+          "document": "<p>描述信息。<br>长度上限：1024字节。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -22770,7 +22770,7 @@
         },
         {
           "disabled": false,
-          "document": "截图间隔，单位s，默认10s。\n范围： 5s ~ 300s。",
+          "document": "<p>截图间隔，单位s，默认10s。<br>范围： 5s ~ 300s。</p>",
           "example": "10",
           "member": "int64",
           "name": "SnapshotInterval",
@@ -22779,7 +22779,7 @@
         },
         {
           "disabled": false,
-          "document": "截图宽度。默认：0（原始宽）。",
+          "document": "<p>截图宽度。默认：0（原始宽）。</p>",
           "example": "250",
           "member": "int64",
           "name": "Width",
@@ -22788,7 +22788,7 @@
         },
         {
           "disabled": false,
-          "document": "截图高度。默认：0（原始高）。",
+          "document": "<p>截图高度。默认：0（原始高）。</p>",
           "example": "250",
           "member": "int64",
           "name": "Height",
@@ -22797,7 +22797,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴黄，默认 0 。\n0：不开启。\n1：开启。",
+          "document": "<p>是否开启鉴黄，默认 0 。<br>0：不开启。<br>1：开启。</p>",
           "example": "0",
           "member": "int64",
           "name": "PornFlag",
@@ -22806,7 +22806,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket文件夹前缀。",
+          "document": "<p>Cos Bucket文件夹前缀。</p>",
           "example": "12",
           "member": "string",
           "name": "CosPrefix",
@@ -22815,7 +22815,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 文件名称。",
+          "document": "<p>Cos 文件名称。</p>",
           "example": "12",
           "member": "string",
           "name": "CosFileName",
@@ -26846,7 +26846,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板 ID。",
+          "document": "<p>模板 ID。</p>",
           "example": "85421",
           "member": "int64",
           "name": "TemplateId",
@@ -26856,7 +26856,7 @@
         },
         {
           "disabled": false,
-          "document": "模板名称。",
+          "document": "<p>模板名称。</p>",
           "example": "templatename",
           "member": "string",
           "name": "TemplateName",
@@ -26866,7 +26866,7 @@
         },
         {
           "disabled": false,
-          "document": "截图时间间隔，5-300秒。",
+          "document": "<p>截图时间间隔，5-300秒。</p>",
           "example": "5",
           "member": "int64",
           "name": "SnapshotInterval",
@@ -26876,7 +26876,7 @@
         },
         {
           "disabled": false,
-          "document": "截图宽度，范围：0-3000。 \n0：原始宽度并适配原始比例。",
+          "document": "<p>截图宽度，范围：0-3000。<br>0：原始宽度并适配原始比例。</p>",
           "example": "5",
           "member": "int64",
           "name": "Width",
@@ -26886,7 +26886,7 @@
         },
         {
           "disabled": false,
-          "document": "截图高度，范围：0-2000。\n0：原始高度并适配原始比例。",
+          "document": "<p>截图高度，范围：0-2000。<br>0：原始高度并适配原始比例。</p>",
           "example": "5",
           "member": "int64",
           "name": "Height",
@@ -26896,7 +26896,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启鉴黄，0：不开启，1：开启。",
+          "document": "<p>是否开启鉴黄，0：不开启，1：开启。</p>",
           "example": "0",
           "member": "int64",
           "name": "PornFlag",
@@ -26906,7 +26906,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 应用 ID。",
+          "document": "<p>Cos 应用 ID。</p>",
           "example": "746113",
           "member": "int64",
           "name": "CosAppId",
@@ -26916,7 +26916,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket名称。",
+          "document": "<p>Cos Bucket名称。</p>",
           "example": "cosbucket",
           "member": "string",
           "name": "CosBucket",
@@ -26926,7 +26926,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos 地域。",
+          "document": "<p>Cos 地域。</p>",
           "example": "ap-nanjing",
           "member": "string",
           "name": "CosRegion",
@@ -26936,7 +26936,7 @@
         },
         {
           "disabled": false,
-          "document": "模板描述。",
+          "document": "<p>模板描述。</p>",
           "example": "测试模板",
           "member": "string",
           "name": "Description",
@@ -26946,7 +26946,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Bucket文件夹前缀。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Cos Bucket文件夹前缀。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "prefix_",
           "member": "string",
           "name": "CosPrefix",
@@ -26956,13 +26956,33 @@
         },
         {
           "disabled": false,
-          "document": "Cos 文件名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Cos 文件名称。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testname",
           "member": "string",
           "name": "CosFileName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方存储时账号的SecretId</p>",
+          "example": "test cosSecretId",
+          "member": "string",
+          "name": "CosSecretId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>第三方存储时，账号的SecretKey</p><p>当查询时，该值返回为<code>******</code></p>",
+          "example": "******",
+          "member": "string",
+          "name": "CosSecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

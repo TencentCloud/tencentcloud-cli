@@ -2194,6 +2194,36 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>订单ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"123a45\"]",
+          "member": "string",
+          "name": "BigDealIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"12a345\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>交易ID</p>",
+          "example": "\"12a34\"",
+          "member": "string",
+          "name": "TranId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -21814,7 +21844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区,每个地域提供最佳实践",
+          "document": "<p>可用区,每个地域提供最佳实践</p>",
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
@@ -21823,7 +21853,7 @@
         },
         {
           "disabled": false,
-          "document": "实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS",
+          "document": "<p>实例购买类型，可选值为：PREPAID, POSTPAID, SERVERLESS</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstancePayMode",
@@ -21832,7 +21862,7 @@
         },
         {
           "disabled": false,
-          "document": "存储购买类型，可选值为：PREPAID, POSTPAID",
+          "document": "<p>存储购买类型，可选值为：PREPAID, POSTPAID</p>",
           "example": "POSTPAID",
           "member": "string",
           "name": "StoragePayMode",
@@ -21841,7 +21871,7 @@
         },
         {
           "disabled": false,
-          "document": "商品规格",
+          "document": "<p>商品规格</p>",
           "example": "无",
           "member": "GoodsSpec",
           "name": "GoodsSpecs",
@@ -21856,7 +21886,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "商品价格",
+          "document": "<p>商品价格</p>",
           "example": "无",
           "member": "GoodsPrice",
           "name": "GoodsPrice",
@@ -35763,7 +35793,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源集群Id",
+          "document": "<p>源集群Id</p>",
           "example": "cynosdbmysql-drpy5ppk",
           "member": "string",
           "name": "ClusterId",
@@ -35772,7 +35802,7 @@
         },
         {
           "disabled": false,
-          "document": "目标可用区",
+          "document": "<p>目标可用区</p>",
           "example": "ap-guangzhou-4",
           "member": "string",
           "name": "DstZone",
@@ -35781,7 +35811,7 @@
         },
         {
           "disabled": false,
-          "document": "跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)",
+          "document": "<p>跨可用区迁移主从数据延迟校验阈值，单位毫秒(ms)</p>",
           "example": "10",
           "member": "int64",
           "name": "MaxLag",
@@ -35790,7 +35820,7 @@
         },
         {
           "disabled": false,
-          "document": "Immediate:立即执行，InMaintain:时间窗口执行",
+          "document": "<p>Immediate:立即执行，InMaintain:时间窗口执行</p>",
           "example": "Immediate",
           "member": "string",
           "name": "TransferType",
@@ -35799,7 +35829,7 @@
         },
         {
           "disabled": false,
-          "document": "多可用区备区",
+          "document": "<p>多可用区备区</p>",
           "example": "ap-guangzhou-7",
           "member": "string",
           "name": "DstSlaveZone",
@@ -35808,7 +35838,7 @@
         },
         {
           "disabled": false,
-          "document": "proxy迁移的目标可用区信息",
+          "document": "<p>proxy迁移的目标可用区信息</p>",
           "example": "无",
           "member": "ProxyZone",
           "name": "ProxyZones",
@@ -35823,7 +35853,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步任务id",
+          "document": "<p>异步任务id</p>",
           "example": "123",
           "member": "int64",
           "name": "TaskId",

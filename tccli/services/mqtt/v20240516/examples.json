@@ -371,8 +371,8 @@
     "DescribeMessageByTopic": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"Topic\": \"abc/1\",\n    \"StartTime\": 1769419861944\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"client-1\",\n                \"MessageId\": \"1539703B00486587524C8485D83769D5\",\n                \"OriginTopic\": \"abc/1\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": 1769420164152\n            }\n        ],\n        \"RequestId\": \"242a41d4-65f2-4a6d-863e-8d8b7b00f0fb\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageByTopic\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mwe5jvvr\",\n    \"Topic\": \"home/room/1\",\n    \"StartTime\": 1776739183514,\n    \"MaxNumber\": 1024,\n    \"FilterExpression\": \"LmxldmVsID09ICJFUlJPUiI=\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ClientId\": \"client-1\",\n                \"MessageId\": \"155A50E000486587524C6954F59CD00C\",\n                \"OriginTopic\": \"home/room/1\",\n                \"Qos\": \"1\",\n                \"StoreTimestamp\": 1776739975581\n            }\n        ],\n        \"RequestId\": \"795c52c7-ff55-4cb4-8371-387789a41265\"\n    }\n}",
         "title": "示例"
       }
     ],

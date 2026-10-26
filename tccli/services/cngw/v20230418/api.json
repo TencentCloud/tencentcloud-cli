@@ -15,7 +15,7 @@
       "status": "online"
     },
     "BindCloudNativeAPIGatewaySecretKey": {
-      "document": "添加密钥与资源的引用关系接口",
+      "document": "添加密钥与资源的引用关系接口\n【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】ResourceType=Consumer 时与批量预留共用实例写锁，单消费者绑定配额使用当前锁定读。仍按原 SecretKeyId、ResourceIds 绑定；消费者目标最多一个，单密钥不能同时绑定多个消费者，成功仍返回 Result=true。此入口不新增 OperationDenied.BatchKeyPending；该错误属于下述四个变更入口的保护逻辑。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "BindCloudNativeAPIGatewaySecretKeyRequest",
       "name": "绑定AI网关密钥",
       "output": "BindCloudNativeAPIGatewaySecretKeyResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "CreateCloudNativeAPIGatewaySecretKey": {
-      "document": "创建消费者密钥。",
+      "document": "创建消费者密钥。\n【消费者批量自动分配 API Key｜修改：内部并发/配额逻辑，字段不变】消费者密钥单条创建在事务中使用与批量预留相同的实例写锁，配额检查使用当前锁定读，避免单条与批量并发绕过配额。仍是单条创建；原 GenerateType、请求字段、既有配额错误语义及 Result.Success/ID 不变，不增加 ConsumerIds/ClientToken。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "CreateCloudNativeAPIGatewaySecretKeyRequest",
       "name": "创建AI网关密钥",
       "output": "CreateCloudNativeAPIGatewaySecretKeyResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayConsumerGroup": {
-      "document": "删除AI网关消费者组",
+      "document": "删除AI网关消费者组\n\n同步组仅在 soft_deleted 状态且全部依赖已清理后允许手动硬删除；ConsumerGroupId 使用组织 UUID。存在配额规则时须先删除规则，单纯停用不能解除依赖。硬删除时重新校验，依赖变化可能导致删除失败。",
       "input": "DeleteCloudNativeAPIGatewayConsumerGroupRequest",
       "name": "删除AI网关消费者组",
       "output": "DeleteCloudNativeAPIGatewayConsumerGroupResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewaySecretKey": {
-      "document": "删除消费者密钥（被绑定时需先解绑）。",
+      "document": "删除消费者密钥（被绑定时需先解绑）。\n【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，删除返回 OperationDenied.BatchKeyPending。完成后仍执行原绑定/依赖删除检查；原 GatewayId/SecretKeyId 不变，成功不新增业务 Result。删除已生成密钥不改写批次历史成功，后续批次明文读取返回逐项 ResourceNotFound.SecretKey。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "DeleteCloudNativeAPIGatewaySecretKeyRequest",
       "name": "删除AI网关密钥",
       "output": "DeleteCloudNativeAPIGatewaySecretKeyResponse",
@@ -183,14 +183,14 @@
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayAIQuota": {
-      "document": "查询AI网关配额",
+      "document": "查询AI网关配额\n\n支持 ConsumerGroup 配额，返回 ConsumerGroupPath、ConsumerGroupActive 及实际用量；失效组的规则仍可查询。",
       "input": "DescribeCloudNativeAPIGatewayAIQuotaRequest",
       "name": "查询AI配额配置详情",
       "output": "DescribeCloudNativeAPIGatewayAIQuotaResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayAIQuotaList": {
-      "document": "查询AI配额配置列表",
+      "document": "查询AI配额配置列表\n\n支持按 ConsumerGroup 查询组自身配额，默认仍只查询 Consumer；返回组路径、有效状态及实际用量。上下级关联配额请使用 DescribeAIGWConsumerGroupAIQuotaList。",
       "input": "DescribeCloudNativeAPIGatewayAIQuotaListRequest",
       "name": "查询AI网关配额配置列表",
       "output": "DescribeCloudNativeAPIGatewayAIQuotaListResponse",
@@ -204,14 +204,14 @@
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayConsumer": {
-      "document": "查询云原生消费者详情",
+      "document": "查询云原生消费者详情\n\n组织架构扩展：保留原消费者详情与完整字段，ConsumerGroups 补齐对应组织成员关系；同步成员保持目录归属隔离。",
       "input": "DescribeCloudNativeAPIGatewayConsumerRequest",
       "name": "查询AI网关消费者详情",
       "output": "DescribeCloudNativeAPIGatewayConsumerResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayConsumerGroup": {
-      "document": "查询消费者组详情。",
+      "document": "查询消费者组详情。\n\n组织架构扩展：ConsumerGroupId 同时支持原 cg-* 和组织部门 UUID；保留状态、数量、时间和描述逻辑。原普通组状态为 Enable/Disable，目录部门状态为 active/disabled/soft_deleted。",
       "input": "DescribeCloudNativeAPIGatewayConsumerGroupRequest",
       "name": "查询AI网关消费者分组",
       "output": "DescribeCloudNativeAPIGatewayConsumerGroupResponse",
@@ -344,14 +344,14 @@
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewaySecretKey": {
-      "document": "查询密钥详情（SecretValue 字段会被掩码）。",
+      "document": "查询密钥详情（SecretValue 字段会被掩码）。\n普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。协议：https://iwiki.woa.com/p/4042678235。\n【消费者批量自动分配 API Key｜修改：可选参数及可选出参】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；省略/false 保持旧响应。原字段、SecretValue 脱敏和单条详情结构不变。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "DescribeCloudNativeAPIGatewaySecretKeyRequest",
       "name": "查询AI网关密钥详情",
       "output": "DescribeCloudNativeAPIGatewaySecretKeyResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewaySecretKeyList": {
-      "document": "查询密钥列表。",
+      "document": "查询密钥列表。\n普通版批量新建密钥的生成来源扩展：新页面按需 IncludeCreationInfo=true，省略/false 保持原响应字段。原 GenerateType 不新增 Batch；批量记录仍为 System。协议：https://iwiki.woa.com/p/4042678235。\n【消费者批量自动分配 API Key｜修改：可选参数、可选出参及筛选】增加可选 IncludeCreationInfo（默认 false）。仅 true 且 ResourceType=Consumer 时在原 Result.SecretKeys[] 增加 CredentialGenerateType、CreationSource、BatchId 三个非必返字段；Result.TotalCount/SecretKeys 结构不变。Filters 新增 CredentialGenerateType、CreationSource，先过滤后计数分页，与是否返回来源字段独立；保留原 GenerateType 枚举和原分页上限。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "DescribeCloudNativeAPIGatewaySecretKeyListRequest",
       "name": "查询AI网关密钥列表",
       "output": "DescribeCloudNativeAPIGatewaySecretKeyListResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "ModifyCloudNativeAPIGatewaySecretKey": {
-      "document": "修改AI网关密钥",
+      "document": "修改AI网关密钥\n【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，编辑返回 OperationDenied.BatchKeyPending，提示等待批次完成。其他情况继续原编辑校验和行为；原 GatewayId/SecretKeyId/Name/Description 不变，成功不新增业务 Result。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "ModifyCloudNativeAPIGatewaySecretKeyRequest",
       "name": "修改AI网关密钥",
       "output": "ModifyCloudNativeAPIGatewaySecretKeyResponse",
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "UnbindCloudNativeAPIGatewaySecretKey": {
-      "document": "解绑密钥",
+      "document": "解绑密钥\n【消费者批量自动分配 API Key｜修改：新增未完成批次保护，字段不变】目标密钥属于批次且对应项处于 Pending/Running/Reconciling 时，解绑返回 OperationDenied.BatchKeyPending。完成后继续原解绑；原 GatewayId/SecretKeyId/ResourceType/ResourceIds 不变，成功不新增业务 Result。解绑不改写批次历史成功，后续批次明文读取返回逐项 OperationDenied.BindingChanged。 完整接口清单与逐项说明：https://iwiki.woa.com/p/4042678235（第 2、2.4 节）。",
       "input": "UnbindCloudNativeAPIGatewaySecretKeyRequest",
       "name": "解绑AI网关密钥",
       "output": "UnbindCloudNativeAPIGatewaySecretKeyResponse",
@@ -766,7 +766,7 @@
         {
           "disabled": false,
           "document": "<p>消费者组名称</p>",
-          "example": "test-consumer-group-1",
+          "example": "平台组",
           "member": "string",
           "name": "Name",
           "output_required": true,
@@ -776,12 +776,22 @@
         {
           "disabled": false,
           "document": "<p>消费者组Id</p>",
-          "example": "cg-3155bd3c9fd0df",
+          "example": "00000000-0000-0000-0000-000000000012",
           "member": "string",
           "name": "ConsumerGroupId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组（组织节点）的当前展示路径，可选。TokenUsageList 在网关版本不低于 3.9.8 时，从 Kong CP 当前目录补齐，用于展示当前直接所属组的位置；多父节点使用确定性路径。更早版本、无可用路径或未补齐此元数据的接口可省略；前端缺省时回退 Name。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义组织架构 / 研发部 / 平台组",
+          "member": "string",
+          "name": "ConsumerGroupPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1046,6 +1056,172 @@
       ],
       "usage": "both"
     },
+    "AIGWGatewayVerifyConfig": {
+      "document": "AI 网关 MCP Server 网关验签配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启网关验签</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关验签类型</p><p>枚举值：</p><ul><li>OAuth： OAuth2</li></ul>",
+          "example": "OAuth",
+          "member": "string",
+          "name": "VerifyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>OAuth2验签配置</p>",
+          "example": "无",
+          "member": "AIGWGatewayVerifyOAuthConfig",
+          "name": "OAuthConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWGatewayVerifyOAuthConfig": {
+      "document": "AI 网关 MCP Server OAuth2 验签配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>令牌校验方式</p><p>枚举值：</p><ul><li>JWTJWKS： JWTJWKS</li><li>Introspection： Introspection</li></ul><p>切换方式后另一方式专属字段不生效</p>",
+          "example": "Introspection",
+          "member": "string",
+          "name": "VerifyMethod",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>令牌签发者，校验 iss；VerifyMethod=JWTJWKS 时必填</p>",
+          "example": "http://***************",
+          "member": "string",
+          "name": "Issuer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JWKS 地址</p><p>入参限制：VerifyMethod=JWTJWKS 时必填</p>",
+          "example": "http://***************/.well-known/jwks.json",
+          "member": "string",
+          "name": "JwksUri",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验 aud</p>",
+          "example": "mcp-gateway",
+          "member": "string",
+          "name": "Audience",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>JWKS 缓存秒数，默认 3600，必须大于 0</p><p>默认值：3600</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "JwksCacheTtl",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>令牌内省端点</p><p>入参限制：VerifyMethod=Introspection 时必填</p>",
+          "example": "http://***************/",
+          "member": "string",
+          "name": "IntrospectionEndpoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用内省端点的 Client ID</p><p>入参限制：VerifyMethod=Introspection 时必填</p>",
+          "example": "client",
+          "member": "string",
+          "name": "IntrospectionClientId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用内省端点的 Client Secret</p><p>入参限制：VerifyMethod=Introspection 时必填</p><p>加密落库，查询时无论 Enable 状态均脱敏</p>",
+          "example": "********",
+          "member": "string",
+          "name": "IntrospectionClientSecret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内省结果缓存秒数</p><p>默认值：60</p><p>0 表示不缓存</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "IntrospectionCacheTtl",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>逗号分隔的 scope 白名单；令牌需命中其一，否则 401</p>",
+          "example": "mcp.read",
+          "member": "string",
+          "name": "ScopeWhitelist",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>读取调用方令牌的 Header 名</p><p>默认值：Authorization</p>",
+          "example": "Authorization",
+          "member": "string",
+          "name": "TokenHeader",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWHeaderRule": {
       "document": "MCP路由 Header规则对象",
       "members": [
@@ -1214,6 +1390,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认路由目标 DefaultModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "DefaultStandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行意图识别的 IntentModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "IntentStandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -1238,6 +1436,39 @@
           "example": "d6015302e11b4a1f83dd3adb88180716",
           "member": "string",
           "name": "ModelServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图ID</p>",
+          "example": "4620f05a565b419998026523b9d2ec5c",
+          "member": "string",
+          "name": "IntentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>意图名称</p>",
+          "example": "航班改签退票",
+          "member": "string",
+          "name": "IntentName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前意图路由规则中目标 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1607,6 +1838,32 @@
       ],
       "usage": "both"
     },
+    "AIGWLLMResourceDimension": {
+      "document": "AI网关成本报表列表维度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>维度Key</p>",
+          "example": "ConsumerId",
+          "member": "string",
+          "name": "Key",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>维度值</p>",
+          "example": "[\"ba3ffabd-e6ee-42e6-ba25-64f202248da8\"]",
+          "member": "string",
+          "name": "Values",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AIGWLLMTokenUsageItem": {
       "document": "单个消费者 Token 用量查询结果",
       "members": [
@@ -1632,7 +1889,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消费者组信息列表</p>",
+          "document": "<p>消费者当前直接所属组列表。网关版本不低于 3.9.8 时，从 Kong CP 当前目录补齐全部直接所属组的 ID、名称和 ConsumerGroupPath，不按 IsPrimary 筛选；无所属组为 []。更早版本保留原消费者组信息且省略路径。</p>",
           "example": "无",
           "member": "AIGWConsumerGroupBrief",
           "name": "ConsumerGroups",
@@ -1729,6 +1986,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按 Dimension 聚合的维度键值；未传 Dimension 的二维列表不使用此字段。</p><p>Key 顺序：</p><ul><li>SecretKey：SecretKeyId、SecretKeyName</li><li>Model：ModelName</li><li>ModelAPI：ModelAPIId、ModelAPIName</li><li>ModelService：ModelServiceId、ModelServiceName</li><li>Consumer：ConsumerId、ConsumerName、ConsumerGroupId、ConsumerGroupName、ConsumerGroupPath</li><li>ConsumerGroup 组行：ConsumerGroupId、ConsumerGroupName、MemberCount、ConsumerGroupPath</li></ul><p>3.9.8 起，消费者行的 ConsumerGroupId、ConsumerGroupName、ConsumerGroupPath 数组按同一下标对应，表示当前全部直接所属组，不按 IsPrimary 筛选；无所属组为 []。组行的 MemberCount 是当前节点及下属存在且未软删消费者的去重人数，不是历史活跃人数；人数已知为零时为 [\"0\"]，未知为 []。路径来自 Kong CP 当前目录，多父节点使用确定性展示路径；元数据缺失时名称回退 ID，路径为 []。更早版本保留原字段，省略 ConsumerGroupPath。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AIGWLLMResourceDimension",
+          "name": "DimensionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1738,7 +2005,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>Token用量明细返回结果列表</p>",
+          "document": "<p>网关版本不低于 3.9.8 且 Dimension=ConsumerGroup 时，未指定节点筛选则列出 Kong CP 当前目录的全部真实节点，包含同步、自定义、禁用及保留中的软删节点，排除合成展示节点。按当前名称、节点 UUID 升序，先分页节点再查询历史指标；无调用节点仍返回，Token 与请求数补零。节点指标包含历史下属，同一请求可计入多个组行，不能逐行相加作为网关总量。</p>",
           "example": "无",
           "member": "AIGWLLMTokenUsageItem",
           "name": "DataList",
@@ -1748,13 +2015,23 @@
         },
         {
           "disabled": false,
-          "document": "<p>结果总数</p>",
+          "document": "<p>筛选后的结果总数。新版 ConsumerGroup 查询为候选节点总数，包含无调用节点，不受 Limit / Offset 影响。</p>",
           "example": "6",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "OrgAttributionIncomplete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1824,13 +2101,33 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询时间范围内成本最高的消费者</p>",
+          "document": "<p>未传 Dimension 时返回原消费者排行；传入 Dimension 时为 []。ConsumerGroup 汇总不逐组拆分。</p>",
           "example": "无",
           "member": "AIGWTopConsumersItem",
           "name": "TopConsumers",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询时间范围内原始 total_tokens 累计</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织归属是否不完整。网关版本不低于 3.9.8，使用 ConsumerGroup 维度或 ConsumerGroupId / ConsumerGroupName 筛选时返回，其余请求省略。true 表示时间及业务筛选范围内存在组归属未知的日志；检查不受组筛选条件遮蔽，空结果也执行检查。组范围统计仅计入可归因日志。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "OrgAttributionIncomplete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1886,6 +2183,34 @@
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWLengthLimitConfig": {
+      "document": "AI 网关模型服务单次请求输入字符长度限制。只拒绝超限输入，不做截断。计量为整个请求 JSON 的 Unicode 字符数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启输入长度限制</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableInputLimit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大输入长度字符数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "MaxInputChars",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -1957,7 +2282,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>请求 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>",
+          "document": "<p>请求 payload access log 输出模式。MCP情况下不需要传入</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始请求</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>",
           "example": "raw",
           "member": "string",
           "name": "RequestLogPayloadMode",
@@ -1968,7 +2293,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上游原始 payload access log 输出模式</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>",
+          "document": "<p>上游原始 payload access log 输出模式。MCP情况下不需要传入</p><p>枚举值：</p><ul><li>raw： access log 中 body 记录客户端原始上游响应</li><li>processed： access log 中 body 记录 AI 网关协议适配、改写、归一化后的 OpenAI-compatible 内容</li></ul>",
           "example": "raw",
           "member": "string",
           "name": "ResponseLogPayloadMode",
@@ -2484,6 +2809,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务级参数重写规则</p>",
+          "example": "无",
+          "member": "AIGWMCPServerParamRewriteConfig",
+          "name": "ParamRewriteConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网关验签配置</p>",
+          "example": "无",
+          "member": "AIGWGatewayVerifyConfig",
+          "name": "GatewayVerifyConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -2604,6 +2951,90 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWMCPServerParamRewriteConfig": {
+      "document": "AI 网关 HTTP 转 MCP 参数改写配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启服务级参数重写</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务级请求参数重写配置</p>",
+          "example": "无",
+          "member": "AIGWMCPServerRequestRewriteConfig",
+          "name": "Request",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWMCPServerParamRewriteRule": {
+      "document": "AI 网关 MCP Server 参数改写规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>操作方式</p>",
+          "example": "Rename",
+          "member": "string",
+          "name": "Operate",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>键</p>",
+          "example": "Authorization",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值</p>",
+          "example": "X-Auth-Token",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWMCPServerRequestRewriteConfig": {
+      "document": "AI 网关 HTTP 转 MCP 请求阶段参数改写配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>头部重写规则</p>",
+          "example": "无",
+          "member": "AIGWMCPServerParamRewriteRule",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3086,6 +3517,23 @@
       ],
       "usage": "both"
     },
+    "AIGWModelNameRoute": {
+      "document": "AI网关入口按模型名称路由",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称和别名列表；对象存在即启用</p>",
+          "example": "[\"claude-haiku-4-5\"]",
+          "member": "string",
+          "name": "ModelNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWModelRewriteRule": {
       "document": "模型名字重写规则",
       "members": [
@@ -3430,6 +3878,23 @@
       ],
       "usage": "both"
     },
+    "AIGWPriorityScheduleConfig": {
+      "document": "模型API请求优先级调度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启优先级调度</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AIGWQueryParamCredentialConfig": {
       "document": "AI网关 Query Param 凭证物料配置",
       "members": [
@@ -3584,7 +4049,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>",
+          "document": "<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>",
           "example": "Reject",
           "member": "string",
           "name": "ExceedAction",
@@ -3602,6 +4067,138 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "ExceedPercentage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SetExceedPercentage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Consumer粒度某资源对象的配额范围，支持：全部模型服务（all）、指定模型服务（specified）</p><p>枚举值：</p><ul><li>All： 全部</li><li>Specified： 指定</li></ul><p>默认值：All</p>",
+          "example": "All",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Consumer粒度配额的资源类型，如“模型服务”</p><p>枚举值：</p><ul><li>ModelService： 模型服务</li></ul><p>默认值：ModelService</p>",
+          "example": "ModelService",
+          "member": "string",
+          "name": "SubResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Consumer粒度配额若支持指定子资源配额，则该项为子资源配额个数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SubResourceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>",
+          "example": "DefaultConsumerGroup/test",
+          "member": "string",
+          "name": "ConsumerGroupPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConsumerGroupActive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>兼容用量字段。Cost 为向下取整的整数元；TotalToken 单位为 token；RequestCount 单位为次。精确显示优先使用 UsedExact。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。",
+          "example": "0",
+          "member": "int64",
+          "name": "Used",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "UsedExact",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>使用率</p> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。",
+          "example": "0",
+          "member": "float",
+          "name": "UsageRate",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预警级别</p><p>枚举值：</p><ul><li>Normal： 正常</li><li>Warning： 预警</li><li>NearLimit： 临近超限</li><li>Exceeded： 超限</li></ul> 仅支持用量查询的实际规则返回；旧 Consumer 网关和 DefaultPolicy 模板可省略。",
+          "example": "Normal",
+          "member": "string",
+          "name": "AlarmLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联消费者密钥数量。ConsumerGroup 规则固定为 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "SecretKeyCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -3701,7 +4298,7 @@
         {
           "disabled": false,
           "document": "<p>用量</p>",
-          "example": "-1",
+          "example": "52",
           "member": "int64",
           "name": "Used",
           "output_required": false,
@@ -3712,7 +4309,7 @@
         {
           "disabled": false,
           "document": "<p>使用率</p>",
-          "example": "-1",
+          "example": "1.127",
           "member": "float",
           "name": "UsageRate",
           "output_required": false,
@@ -3744,8 +4341,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝请求</li><li>AllowOverage： 允许超支</li></ul>",
-          "example": "Reject",
+          "document": "<p>配额超限行为</p><p>枚举值：</p><ul><li>Reject： 拒绝消费者请求</li><li>AllowOverage： 允许超限</li></ul>",
+          "example": "AllowOverage",
           "member": "string",
           "name": "ExceedAction",
           "output_required": false,
@@ -3785,6 +4382,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否设置超限百分比</p><p>仅 Consumer 的 AllowOverage 场景可用，指定模型服务的配额必须为 false；ConsumerGroup 必须为 false。</p><p>枚举值：</p><ul><li>true： 设置超限百分比</li><li>false： 不设置超限百分比，即不设上限</li></ul><p>默认值：false</p><p>当ExceedAction=AllowOverage时，条件必选。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SetExceedPercentage",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超限百分比</p><p>默认值：0</p><p>Consumer 的超量百分比，指定模型服务配额默认为 0；ConsumerGroup 固定为 0。</p><p>举例：20，超出设置额度的20%，可用额度为（1+20%）*QuotaLimit。当SetExceedPercentage=true时，条件必选。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ExceedPercentage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>精确使用量。Cost 单位为元，保留 1e-7 元精度；TotalToken 单位为 token；RequestCount 单位为次。旧版插件不提供精确值时省略，调用方可回退使用 Used；该值已换算为业务单位，不要再除以 ValueScale。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "52",
+          "member": "float",
+          "name": "UsedExact",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组完整层级路径。仅 ResourceType=ConsumerGroup 返回，未知时为空字符串；Consumer 行省略。</p>",
+          "example": "自定义组织架构 / QuotaDP-Root-0926 / QuotaDP-B-0926",
+          "member": "string",
+          "name": "ConsumerGroupPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者组是否有效。仅 ResourceType=ConsumerGroup 返回；组不存在或非 active 时为 false。与配额规则 Enabled 区分，字段省略与 false 含义不同。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "ConsumerGroupActive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额规则中，某资源对象的指定子资源配额信息。如资源对象“模型服务”的“指定模型服务”的配额信息。</p>",
+          "example": "无",
+          "member": "AIGWQuotaSubItem",
+          "name": "SubResources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -3812,6 +4475,34 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWQuotaSubItem": {
+      "document": "配额规则中，某资源对象的指定子资源信息。如资源对象“模型服务”的“指定模型服务”的信息。当Scope=Specified 必填（1~50 项，msvc_id 不重复，QuotaLimit>0）；Scope=All 必须为空。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子资源 ID（如：模型服务 ID）</p>",
+          "example": "ae6ecdc754e34ef59718f3160b8e664b",
+          "member": "string",
+          "name": "SubResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该子资源独立配额上限，必须 &gt; 0；单位与 QuotaType 对齐（Cost=元 TotalToken=tokens RequestCount=次）</p>",
+          "example": "30",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -4002,6 +4693,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感词路由单模型直选时的标准模型名称。仅在 Enabled=true、SelectedTypes 为空且 ModelServiceRefs 只有一个模型服务时可设置；使用 Weighted 或 ModelName 策略时应在相应配置条目中填写。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4059,6 +4761,23 @@
           "example": "2026-09-03 14:11:05",
           "member": "string",
           "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AIGWSmartBalanceConfig": {
+      "document": "智能负载均衡配置，仅服务来源（ServiceSource，SourceId 非空）场景生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>负载均衡类型</p><p>枚举值：</p><ul><li>LeastRequests： 最少运行请求</li><li>LeastQueued： 最少排队请求</li><li>LeastTTFT： 最少TTFT</li><li>LeastTPOT： 最少TPOT</li></ul>",
+          "example": "LeastQueued",
+          "member": "string",
+          "name": "Algorithm",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -4356,6 +5075,34 @@
         }
       ],
       "type": "object"
+    },
+    "AutoSecretKey": {
+      "document": "新建消费者时为消费者自动绑定API密钥时自动生成密钥的参数体。仅当 SecretBindType=\"AutoGenerate\" 时必填，其他分支禁止携带，否则返回 InvalidParameterValue.CreateError。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>密钥名称，2-60 字符。</p><p>字符集与「密钥管理-新建密钥」一致（中英文、数字、下划线、短横线），禁止 -share 后缀，同网关内不可重名。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "even",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥描述。长度 ≤ 200，可为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "BindCloudNativeAPIGatewaySecretKeyRequest": {
       "document": "BindCloudNativeAPIGatewaySecretKey请求参数结构体",
@@ -4733,6 +5480,72 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者展示名称；目录同步对象可与登录名不同。</p>",
+          "example": "c1",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者登录名称。</p>",
+          "example": "c1",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>目录消费者状态：active / disabled / soft_deleted。保留存量接口原始值，不转换为 AIGW 枚举。</p>",
+          "example": "active",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者来源：manual / sync；保留目录隔离和同步对象只读规则。</p>",
+          "example": "manual",
+          "member": "string",
+          "name": "Origin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产生该消费者的同步源 ID；手工消费者可为空。</p>",
+          "example": "even-222",
+          "member": "string",
+          "name": "SyncSourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对象在外部目录中的稳定标识；手工消费者可为空。</p>",
+          "example": "even-111",
+          "member": "string",
+          "name": "ExternalId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -4845,6 +5658,17 @@
           "example": "v2",
           "member": "string",
           "name": "SyncedVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>只读保留的组织部门外部标识，仅 SoftDeleted 对象返回；用于后续删除检查，不在基础信息页面展示。</p>",
+          "example": "even-111",
+          "member": "string",
+          "name": "ExternalId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -5768,6 +6592,39 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。凭证内容生成方式：System 自动生成、Custom 自定义、KMS。旧 GenerateType=AutoWithConsumer 映射为 System；其他值保持原 GenerateType，未知值由前端显示“未知”。不改写原 GenerateType。</p>",
+          "example": "System",
+          "member": "string",
+          "name": "CredentialGenerateType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。创建来源：Manual 手动新建、AutoWithConsumer 随消费者自动新建、Batch 批量新建。按持久化 BatchId 和原 GenerateType 判定，不按名称前缀猜测。</p>",
+          "example": "AutoWithConsumer",
+          "member": "string",
+          "name": "CreationSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选返回字段，仅 IncludeCreationInfo=true 且 ResourceType=Consumer 时存在。批量创建填原批次 ID，非批量为空字符串。来源关联随密钥保留，不因批次结果过期而消失；此字段不表示批次结果或明文仍可读取。</p>",
+          "example": "keybatch-d1cc0404-5a7a-4b55-a523-ccaed70a529c",
+          "member": "string",
+          "name": "BatchId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6231,6 +7088,72 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者模型范围</p>",
+          "example": "无",
+          "member": "AIGWAuthModelScopeItem",
+          "name": "ConsumerDirectModelScopes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消费者密钥模型范围</p>",
+          "example": "无",
+          "member": "AIGWAuthModelScopeItem",
+          "name": "SecretKeyModelScopes",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求优先级配置</p>",
+          "example": "无",
+          "member": "AIGWPriorityScheduleConfig",
+          "name": "PriorityScheduleConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型API是否支持Playground调试</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "PlaygroundAvailable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API 当前配置的入口模型名路由规则，根据请求体顶层 model 字段匹配 ModelNames 中的名称或别名；未配置时不启用该入口路由规则。</p>",
+          "example": "无",
+          "member": "AIGWModelNameRoute",
+          "name": "ModelNameRoute",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单模型 API 当前配置的顶层标准模型名称，仅适用于其关联的 TIONE 模型服务；为空表示未配置。多模型场景的标准模型名称在各路由或降级条目中返回。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -6756,6 +7679,28 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容长度限制配置</p>",
+          "example": "无",
+          "member": "AIGWLengthLimitConfig",
+          "name": "LengthLimitConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能负载均衡配置。</p>",
+          "example": "无",
+          "member": "AIGWSmartBalanceConfig",
+          "name": "SmartBalance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6878,6 +7823,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前模型名称匹配路由条目中 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6905,6 +7861,17 @@
           "output_required": true,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前权重路由条目中 ModelServiceId 对应的标准模型名称；为空表示未配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -7079,7 +8046,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>消费者组名称，最长 60 字符。同一网关下唯一。</p>",
+          "document": "<p>消费者组名称，最长 60 字符。同一网关下唯一。</p><p>CustomOrganization 时非空、最大 255 字符；Legacy 原规则不变。</p>",
           "example": "testgroup",
           "member": "string",
           "name": "Name",
@@ -7088,7 +8055,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul>",
+          "document": "<p>启用状态。</p><p>枚举值：</p><ul><li>Enable：启用</li><li>Disable：禁用</li></ul><p>CustomOrganization 时传 Active 或 Disabled；保持 Status 必填。Legacy 原 Enable/Disable 不变。</p>",
           "example": "Enable",
           "member": "string",
           "name": "Status",
@@ -7097,12 +8064,30 @@
         },
         {
           "disabled": false,
-          "document": "<p>消费者组描述。最长 200 字符。</p>",
+          "document": "<p>消费者组描述。最长 200 字符。</p><p>CustomOrganization 时最大 500 字符；Legacy 原规则不变。</p>",
           "example": "创建消费者分组",
           "member": "string",
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>",
+          "example": "Legacy",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 CustomOrganization 使用。1–32 个当前网关自定义父部门 UUID，完整保留多父关系；省略时挂自定义根，空数组非法。不得使用同步部门或未归属组。Legacy 不使用此字段。</p>",
+          "example": "[]",
+          "member": "string",
+          "name": "ParentConsumerGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7167,6 +8152,42 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>",
+          "example": "Legacy",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仅 CustomOrganization 使用 Active 或 Disabled，默认 Active。Legacy 不新增状态行为。</p>",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥关联方式，三选一枚举。不传时兼容老逻辑（等价于 None 或 Existing，取决于是否传 SecretKeyId）</p><p>枚举值：</p><ul><li>Existing： 选择已有密钥</li><li>AutoGenerate： 自动生成并关联密钥</li><li>None： 暂不关联密钥</li></ul><p>默认值：None</p>",
+          "example": "Existing",
+          "member": "string",
+          "name": "SecretBindType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动生成密钥的参数体。仅当 SecretBindType=&quot;AutoGenerate&quot; 时必填，其他分支禁止携带，否则返回 InvalidParameterValue.CreateError。</p>",
+          "example": "无",
+          "member": "AutoSecretKey",
+          "name": "AutoSecretKey",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7339,6 +8360,33 @@
           "name": "SensitiveWordRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求优先级调度配置</p>",
+          "example": "无",
+          "member": "AIGWPriorityScheduleConfig",
+          "name": "PriorityScheduleConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按请求体顶层 model 字段选择模型 API 的入口路由配置。传入对象即启用，ModelNames 须为非空列表；不传表示不启用。仅用于 Chat 场景下受支持的 POST 路由：openai 协议的 /v1/chat/completions、/v1/responses，或 anthropic 协议的 /v1/messages。公有云要求网关版本不低于 3.9.8，TCS 要求不低于 3.9.6。</p>",
+          "example": "无",
+          "member": "AIGWModelNameRoute",
+          "name": "ModelNameRoute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单模型 API 的顶层标准模型名称。仅当 ListModelServiceId 包含一个模型服务且未配置 ModelServiceRoute 时可设置；多模型场景应在对应路由或降级条目中配置。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7674,6 +8722,24 @@
           "name": "LoadBalanceConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能负载均衡配置</p>",
+          "example": "无",
+          "member": "AIGWSmartBalanceConfig",
+          "name": "SmartBalance",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容长度限制配置</p>",
+          "example": "无",
+          "member": "AIGWLengthLimitConfig",
+          "name": "LengthLimitConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7954,6 +9020,15 @@
           "example": "无",
           "member": "AIGWLogConfig",
           "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务级参数改写规则</p>",
+          "example": "无",
+          "member": "AIGWMCPServerParamRewriteConfig",
+          "name": "ParamRewriteConfig",
           "required": false,
           "type": "object"
         }
@@ -8345,11 +9420,20 @@
         },
         {
           "disabled": false,
-          "document": "消费者组ID",
+          "document": "消费者组ID<p>CustomOrganization 时必须为当前网关自定义部门 UUID，保留系统节点、子部门、成员与授权/MCP 依赖检查。Legacy 原 cg-* 及已有 UUID 兼容行为不变。成功响应不新增 Result。</p>",
           "example": "cg-xxx",
           "member": "string",
           "name": "ConsumerGroupId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>",
+          "example": "Legacy",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8381,11 +9465,20 @@
         },
         {
           "disabled": false,
-          "document": "消费者ID",
+          "document": "消费者ID<p>CustomOrganization 仅允许手工/存量消费者，拒绝目录来源、非空 SyncSourceId、Public 和只读保留对象，即使原源已删除也不借此入口清理。删除复用原依赖检查及全归属/凭证/授权清理，Legacy 原行为不变。成功响应不新增 Result。</p>",
           "example": "50ec02a9-3e96-47b4-a275-22f402e15e21",
           "member": "string",
           "name": "ConsumerId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调用业务来源，可选 Legacy 或 CustomOrganization；省略或空串按 Legacy。Legacy 保持原行为，CustomOrganization 用于自定义组织架构。该字段不替代鉴权，不改变资源归属，不覆盖 RequestSource。来源保存在操作记录请求内容中。</p>",
+          "example": "Legacy",
+          "member": "string",
+          "name": "OperationSource",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8826,7 +9919,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件</p>",
+          "document": "可选过滤条件，不同 Name 为 AND，同一 Values 为 OR。支持 ResourceType（单值 Consumer 或 ConsumerGroup，省略默认 Consumer）、ResourceId（资源 ID，1～100 项）、ConsumerId（仅 Consumer 可用）、Source（Manual / Default / DefaultPolicy）、QuotaId、QuotaType（RequestCount / TotalToken / Cost）、PeriodUnit（Day / Week / Month / Year / Unlimit）。Values 不得为空，QuotaId、QuotaType、PeriodUnit 各为 1～100 项。ConsumerGroup 使用 ResourceId，不使用 ConsumerId；不自动展开上下级。Source 省略时排除 DefaultPolicy。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -9129,8 +10222,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关 id。",
-          "example": "gateway-4eb46023",
+          "document": "<p>网关 id。</p>",
+          "example": "gateway-9a766f25",
           "member": "string",
           "name": "GatewayId",
           "required": true,
@@ -9198,6 +10291,15 @@
           "name": "ConsumerId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥ID</p>",
+          "example": "secret-8fe776ce194dab",
+          "member": "string",
+          "name": "SecretKeyId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9207,7 +10309,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模型 API 列表。",
+          "document": "<p>模型 API 列表。</p>",
           "example": "无",
           "member": "ListCloudNativeAPIGatewayLLMModelAPI",
           "name": "Result",
@@ -10276,6 +11378,15 @@
           "name": "UseToBind",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeCreationInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10322,6 +11433,15 @@
           "name": "SecretKeyId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选 Boolean，默认 false。仅传 true 且返回记录 ResourceType=Consumer 时，额外返回 CredentialGenerateType、CreationSource、BatchId；省略或 false 时不返回这三个字段，原字段和返回结构保持不变。此参数只控制展示字段，不控制 Filters 是否生效。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IncludeCreationInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -11590,6 +12710,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>按请求体顶层 model 字段匹配模型 API 的全量最终态配置。要保留现值必须提交完整对象；省略或 null 表示清空。</p>",
+          "example": "无",
+          "member": "AIGWModelNameRoute",
+          "name": "ModelNameRoute",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>是否启用跨服务 Fallback。</p>",
           "example": "false",
           "member": "bool",
@@ -11641,6 +12770,24 @@
           "name": "SensitiveWordRoute",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求优先级配置</p>",
+          "example": "无",
+          "member": "AIGWPriorityScheduleConfig",
+          "name": "PriorityScheduleConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单模型 API 的顶层标准模型名称。不传保留原值，传空字符串清空，传非空字符串设置新值；仅单模型场景可设置。已配置顶层标准模型名时，需先清空该字段再切换多模型路由。仅对应 TIONE 模型服务时可配置。非空值最长 256 字节，支持中文、英文、数字、下划线和短横线，须以中文、英文或数字开头。同一网关内不同模型 API 不得使用相同的标准模型名称；同一模型 API 内同一模型服务在多处配置时须保持一致。</p>",
+          "example": "claude-haiku-4-5",
+          "member": "string",
+          "name": "StandardModelName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11937,6 +13084,15 @@
           "example": "无",
           "member": "AIGWLoadBalanceConfig",
           "name": "LoadBalanceConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能负载均衡配置</p>",
+          "example": "无",
+          "member": "AIGWSmartBalanceConfig",
+          "name": "SmartBalance",
           "required": false,
           "type": "object"
         }
@@ -12380,6 +13536,15 @@
           "example": "无",
           "member": "AIGWLogConfig",
           "name": "LogConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务级参数改写配置</p>",
+          "example": "无",
+          "member": "AIGWMCPServerParamRewriteConfig",
+          "name": "ParamRewriteConfig",
           "required": false,
           "type": "object"
         }

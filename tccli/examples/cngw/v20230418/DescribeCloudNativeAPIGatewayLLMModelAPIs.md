@@ -6,31 +6,57 @@ Input:
 
 ```
 tccli cngw DescribeCloudNativeAPIGatewayLLMModelAPIs --cli-unfold-argument  \
-    --GatewayId gateway-04b00666 \
-    --Limit 10 \
-    --Offset 0 \
-    --Filters.0.Name Name \
-    --Filters.0.Values openai \
-    --Keyword openai
+    --GatewayId gateway-9a766f25 \
+    --SecretKeyId secret-8fe776ce194dab
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "959caf3b-f74c-4cd1-9260-3b7713e55604",
         "Result": {
             "DataList": [
                 {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:16:59",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "gpt4-model-api-id-xxxxxxxxxx",
-                    "ModifyTime": "2025-11-26 10:16:59",
-                    "Name": "openai_chat_gpt4",
-                    "RequestProtocol": "OpenAI",
+                    "BasePath": "/x",
+                    "CreateTime": "2026-08-14 21:29:19",
+                    "Description": "",
+                    "EnableCrossServiceFallback": false,
+                    "Id": "c733a200d1c14f53b9fa81a3bb6008fa",
+                    "LogConfig": {
+                        "EnableRequestLogPayloads": false,
+                        "EnableResponseLogPayloads": false,
+                        "RequestLogPayloadMaxSize": 8192,
+                        "RequestLogPayloadMode": "raw",
+                        "RequestLogPayloadTruncationPolicy": "Bounded",
+                        "ResponseLogPayloadMaxSize": 8192,
+                        "ResponseLogPayloadMode": "raw",
+                        "ResponseLogPayloadTruncationPolicy": "Bounded"
+                    },
+                    "MaxDocumentsConfig": {
+                        "EnableMaxDocuments": false,
+                        "MaxDocumentValue": 0
+                    },
+                    "ModelServiceId": "c7e480f4bea0437085b224d1b7db23d2",
+                    "ModelServiceName": "deep-x02",
+                    "ModelServiceRoute": {
+                        "SelectedTypes": [
+                            "Weighted"
+                        ],
+                        "WeightedConfig": [
+                            {
+                                "ModelServiceId": "5168ae1f1ba440e396251a95ea61e4e9",
+                                "Weight": 30
+                            }
+                        ]
+                    },
+                    "ModifyTime": "2026-08-14 21:33:16",
+                    "Name": "deep-x",
+                    "RequestProtocol": "openai",
                     "RouteList": [
                         {
+                            "Methods": [
+                                "POST"
+                            ],
                             "Name": "base",
                             "Paths": [
                                 "/v1/chat/completions"
@@ -38,68 +64,27 @@ Output:
                         }
                     ],
                     "SceneType": "Chat",
-                    "StripPath": false
-                },
-                {
-                    "BasePath": "/base",
-                    "CreateTime": "2025-11-26 10:16:16",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "claude-model-api-id-xxxxxxxxxx",
-                    "ModifyTime": "2025-11-26 10:16:16",
-                    "Name": "openai_chat_claude",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
+                    "SecretKeyModelScopes": [
                         {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
-                            ]
+                            "EffectiveModelNames": [
+                                "deepseek-v4-flash"
+                            ],
+                            "ModelScope": {
+                                "AllowList": [
+                                    "deepseek-v4-flash"
+                                ],
+                                "ScopeType": "ALLOWLIST"
+                            },
+                            "PrincipalId": "secret-8fe776ce194dab",
+                            "PrincipalName": "deep-sk"
                         }
                     ],
-                    "SceneType": "Chat",
                     "StripPath": true
-                },
-                {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:15:18",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "gemini-model-api-id-xxxxxxxxxx",
-                    "ModifyTime": "2025-11-26 10:15:18",
-                    "Name": "openai_chat_gemini",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
-                        {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
-                            ]
-                        }
-                    ],
-                    "SceneType": "Chat",
-                    "StripPath": false
-                },
-                {
-                    "BasePath": "",
-                    "CreateTime": "2025-11-26 10:13:16",
-                    "Description": "OpenAI 格式模型 API",
-                    "Id": "deepseek-model-api-id-xxxxxxxxxx",
-                    "ModifyTime": "2025-11-26 10:13:16",
-                    "Name": "openai_chat_deepseek",
-                    "RequestProtocol": "OpenAI",
-                    "RouteList": [
-                        {
-                            "Name": "base",
-                            "Paths": [
-                                "/v1/chat/completions"
-                            ]
-                        }
-                    ],
-                    "SceneType": "Chat",
-                    "StripPath": false
                 }
             ],
-            "TotalCount": 4
-        }
+            "TotalCount": 1
+        },
+        "RequestId": "4d827ae9-c629-42f2-9992-f00c1d83c722"
     }
 }
 ```

@@ -1,4 +1,4 @@
-**Example 1: 创建成功**
+**Example 1: 正常**
 
 
 
@@ -6,27 +6,32 @@ Input:
 
 ```
 tccli tse CreateCloudNativeAPIGatewayLLMModelAPI --cli-unfold-argument  \
-    --GatewayId gateway-50c27c7d \
-    --Name test-qwen-openai-2-anthropic-1 \
+    --GatewayId gateway-ad373895 \
+    --Name klklklklkdfadfasdfa \
     --SceneType Chat \
     --RequestProtocol openai \
-    --ListModelServiceId e2cf2576114348ec9cc6fbf52358e180 \
+    --ListModelServiceId 950a45404f214b779224861333471ba4 \
     --RouteList.0.Name base \
     --RouteList.0.Methods POST \
     --RouteList.0.Paths /v1/chat/completions \
-    --BasePath /qwen1 \
+    --BasePath /klklklfadfadsfadsf \
     --EnableCrossServiceFallback False \
     --LogConfig.EnableRequestLogPayloads False \
-    --LogConfig.EnableResponseLogPayloads False
+    --LogConfig.EnableResponseLogPayloads False \
+    --SensitiveWordRoute.Enabled False \
+    --SensitiveWordRoute.StandardModelName claude-haiku-4-5 \
+    --PriorityScheduleConfig.Enabled True \
+    --ModelNameRoute.ModelNames claude-haiku-4-5 \
+    --StandardModelName claude-haiku-4-5
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ModelAPIId": "c565b61e67c64c35b9e4600758bb3f4c",
+        "ModelAPIId": "de9adcc59aa54394ae7318bdf11a77c9",
         "Result": true,
-        "RequestId": "9eb31679-b192-40df-90c6-2fbfb1e0527c"
+        "RequestId": "97e2a048-2f31-4ec7-b513-70beef815519"
     }
 }
 ```

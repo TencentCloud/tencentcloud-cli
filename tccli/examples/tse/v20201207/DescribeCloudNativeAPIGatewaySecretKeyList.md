@@ -9,7 +9,13 @@ tccli tse DescribeCloudNativeAPIGatewaySecretKeyList --cli-unfold-argument  \
     --GatewayId gateway-c7fb18e4 \
     --Limit 10 \
     --Offset 0 \
-    --ResourceType Consumer
+    --ResourceType Consumer \
+    --UseToBind None \
+    --Filters.0.Name GenerateType \
+    --Filters.0.Values System \
+    --Filters.1.Name Status \
+    --Filters.1.Values Enable \
+    --Keyword 密钥
 ```
 
 Output: 

@@ -848,7 +848,7 @@
       "status": "online"
     },
     "ResetConversation": {
-      "document": "重置会话\n注意：当前Claw模式应用会话不支持重置",
+      "document": "该接口用于重置会话上下文。会话上下文重置后，对话处理中不会携带重置前的历史对话内容",
       "input": "ResetConversationRequest",
       "name": "重置会话",
       "output": "ResetConversationResponse",
@@ -7298,6 +7298,17 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新消息中断正在进行的消息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableNewMessageInterrupt",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -21360,7 +21371,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>资源 ID</p>",
+          "document": "资源 ID",
           "example": "2097223869533083840",
           "member": "string",
           "name": "Id",
@@ -21371,7 +21382,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>失败原因（succeeded=false 时填充）</p>",
+          "document": "失败原因（succeeded=false 时填充）",
           "example": "450141-ErrAttributeLabelAttrHasUsed",
           "member": "string",
           "name": "Reason",
@@ -21382,7 +21393,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否成功</p>",
+          "document": "是否成功",
           "example": "true",
           "member": "bool",
           "name": "Succeeded",

@@ -1,17 +1,33 @@
-**Example 1: 获取出站终端节点列表**
+**Example 1: 查询出站终端节点列表**
 
-获取出站终端节点列表
+
 
 Input: 
 
 ```
-tccli privatedns DescribeExtendEndpointList --cli-unfold-argument ```
+tccli privatedns DescribeExtendEndpointList --cli-unfold-argument  \
+    --Offset 0 \
+    --Limit 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3a0ce2a9-d277-4fb9-9f58-93f78aa375c1"
+        "OutboundEndpointSet": [
+            {
+                "EndpointId": "eid-c8acd39e68d6",
+                "EndpointName": "huyue1",
+                "EndpointServiceSet": [
+                    {}
+                ],
+                "ForwardLinkArch": "V2R",
+                "Region": "ap-guangzhou",
+                "Tags": []
+            }
+        ],
+        "TotalCount": 25,
+        "RequestId": "279903da-3f6a-44cb-9c31-cad8d018b198"
     }
 }
 ```

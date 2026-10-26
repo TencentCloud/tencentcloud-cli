@@ -19,3 +19,30 @@ Output:
 }
 ```
 
+**Example 2: 查询 DB Custom 节点重启任务状态**
+
+
+
+Input: 
+
+```
+tccli dbdc DescribeDBCustomTaskStatus --cli-unfold-argument  \
+    --TaskId 490
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ResourceStatusSet": [
+            {
+                "ResourceId": "dbcn-tnjzxz3n",
+                "Status": "Succeeded"
+            }
+        ],
+        "Status": "Succeeded",
+        "RequestId": "9cbb9215-6b2c-4e84-a9bd-a1afdd299b41"
+    }
+}
+```
+

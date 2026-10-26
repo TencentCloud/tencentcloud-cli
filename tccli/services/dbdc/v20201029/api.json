@@ -1711,6 +1711,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点所属的业务类型</p><p>枚举值：</p><ul><li>sqlserver： 腾讯云 SQL Server 数据库实例 Custom 形态的节点</li></ul>",
+          "example": "sqlserver",
+          "member": "string",
+          "name": "BusinessType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -2058,6 +2068,50 @@
           "example": "ImageDisk",
           "member": "string",
           "name": "DiskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据盘是否加密</p><p>枚举值：</p><ul><li>false： 不加密</li><li>true： 加密</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "Encrypt",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘ID</p><p>入参限制：该参数目前仅用于 DescribeDBCustomNodes 等查询类接口的返回参数，不可用于 CreateDBCustomNodes 等写接口的入参。</p>",
+          "example": "disk-mjrobfi9",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据盘快照ID</p><p>入参限制：选择的数据盘快照大小需小于数据盘大小</p>",
+          "example": "snap-j2d5xgc0",
+          "member": "string",
+          "name": "SnapshotId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义的数据盘标识（如 data / log / backup）</p>",
+          "example": "log",
+          "member": "string",
+          "name": "ClientDiskKey",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -3084,6 +3138,16 @@
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务所操作的每个资源的执行结果</p>",
+          "example": "无",
+          "member": "TaskResourceStatus",
+          "name": "ResourceStatusSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -6028,6 +6092,17 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘ID</p>",
+          "example": "disk-zj773km4",
+          "member": "string",
+          "name": "DiskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6098,6 +6173,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TaskResourceStatus": {
+      "document": "DB Custom 资源任务状态信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源ID。如节点ID dbcn-tnjzxz3n</p>",
+          "example": "dbcn-tnjzxz3n",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>Running： 运行中</li><li>Succeeded： 成功</li><li>Failed： 失败</li></ul>",
+          "example": "Succeeded",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ZoneInfo": {
       "document": "可用区信息。",

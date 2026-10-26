@@ -7532,7 +7532,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cdwdoris-xxx",
           "member": "string",
           "name": "InstanceId",
@@ -7541,7 +7541,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名",
+          "document": "<p>用户名</p>",
           "example": "user",
           "member": "string",
           "name": "UserName",
@@ -7550,16 +7550,16 @@
         },
         {
           "disabled": false,
-          "document": "用户权限",
+          "document": "<p>用户权限</p>",
           "example": "无",
           "member": "UpdateUserPrivileges",
           "name": "UserPrivileges",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
           "disabled": false,
-          "document": "用户链接来自的 IP\t",
+          "document": "<p>用户链接来自的 IP</p>",
           "example": "10.0.0.2",
           "member": "string",
           "name": "WhiteHost",
@@ -7568,7 +7568,7 @@
         },
         {
           "disabled": false,
-          "document": "更新类型，默认0，1为更新绑定计算组，2为更新默认计算组",
+          "document": "<p>更新类型，默认0，1为更新绑定计算组，2为更新默认计算组，4 为 GrantPrivileges, RevokePrivileges 接口专用批量授权</p><p>枚举值：</p><ul><li>0： 默认</li><li>1： 更新绑定计算组</li><li>2： 更新默认计算组</li><li>4： GrantPrivileges, RevokePrivileges 接口专用批量授权</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "UpdateType",
@@ -7577,7 +7577,7 @@
         },
         {
           "disabled": false,
-          "document": "需绑定计算组列表",
+          "document": "<p>需绑定计算组列表</p>",
           "example": "[\"cp1\"]",
           "member": "string",
           "name": "UpdateComputeGroups",
@@ -7586,7 +7586,7 @@
         },
         {
           "disabled": false,
-          "document": "默认计算组",
+          "document": "<p>默认计算组</p>",
           "example": "tchd-ekwold58-gdviogwc",
           "member": "string",
           "name": "DefaultComputeGroup",
@@ -7595,12 +7595,30 @@
         },
         {
           "disabled": false,
-          "document": "0: 灵活场景 1: 固定场景",
+          "document": "<p>0: 灵活场景 1: 固定场景</p>",
           "example": "1",
           "member": "int64",
           "name": "ComputeGroupType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次新增授权的库表，仅 UpdateType=4 时生效</p>",
+          "example": "无",
+          "member": "UpdateUserPrivileges",
+          "name": "GrantPrivileges",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次取消授权的库表，仅 UpdateType=4 时生效</p>",
+          "example": "无",
+          "member": "UpdateUserPrivileges",
+          "name": "RevokePrivileges",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -7610,7 +7628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误信息，为空就是没有错误",
+          "document": "<p>错误信息，为空就是没有错误</p>",
           "example": "error message",
           "member": "string",
           "name": "ErrorMsg",
@@ -7620,12 +7638,22 @@
         },
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cdwdoris-xx",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>因库/表已删除而被跳过的目标；ErrorMsg 为空时不代表失败，前端需弹窗提示</p>",
+          "example": "无",
+          "member": "SkippedPrivilegeItem",
+          "name": "SkippedItems",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -9627,6 +9655,52 @@
         }
       ],
       "usage": "in"
+    },
+    "SkippedPrivilegeItem": {
+      "document": "增量授权（UpdateType=4）时因库/表已被物理删除而被跳过的目标，后端已自动清理其残留权限，前端需弹窗提示用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数据目录（catalog）名称</p>",
+          "example": "catalog",
+          "member": "string",
+          "name": "CatalogName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>库名</p>",
+          "example": "db1",
+          "member": "string",
+          "name": "Database",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表名；库级条目被跳过时该字段为空（Go 定义带 omitempty，为空时响应里整个字段不出现）</p>",
+          "example": "tbl",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跳过原因，如 table not found, maybe already dropped、database not found, maybe already dropped、existence check failed, granting  skipped this round, please retry</p>",
+          "example": "table not found, maybe already dropped",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SlowQueryRecord": {
       "document": "慢查询记录",
