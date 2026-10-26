@@ -4,6 +4,23 @@ from tccli.exceptions import ParamError
 from tccli.loaders import CLI_BASE_TYPE
 
 
+def _escape_help_string(text):
+    """Escape '%' characters in help strings for argparse compatibility.
+
+    Python 3.14 changed argparse to raise a ValueError ("badly formed help
+    string") when help strings contain bare '%' characters that are not valid
+    '%(name)s' format specifiers.  API documentation often contains literal
+    percent signs (e.g. "100%", URL-encoded strings like "%3A").
+
+    We replace every '%' with '%%' so that argparse's HelpFormatter renders
+    the original text unchanged, while no longer tripping over unrecognized
+    format specifiers.
+    """
+    if not text:
+        return text
+    return text.replace('%', '%%')
+
+
 def str_to_bool(value):
     if isinstance(value, bool):
         return value
@@ -143,7 +160,7 @@ class CustomArgument(BaseArgument):
 
     @property
     def documentation(self):
-        return self._help
+        return _escape_help_string(self._help)
 
     @property
     def cli_type(self):
@@ -205,7 +222,7 @@ class CLIArgument(BaseArgument):
 
     @property
     def documentation(self):
-        return self._documentation
+        return _escape_help_string(self._documentation)
 
     @documentation.setter
     def documentation(self, value):
