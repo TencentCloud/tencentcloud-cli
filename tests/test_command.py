@@ -51,6 +51,7 @@ import tccli.plugin as _plg
 _plg.import_plugins = lambda: {}
 
 import tccli.options_define as Options_define
+from tccli.action_caller import GenericActionCaller
 from tccli.command import (
     BaseCommand, CLICommand, ServiceCommand, ActionCommand,
 )
@@ -782,7 +783,7 @@ def _make_service_command_in_memory():
     """构造一个不触碰真实 SDK / 磁盘的 ServiceCommand。
 
     注入内存 service_model（含 1 个自引用 action + 1 个普通 action），
-    并 mock Services.action_caller，避免 import 真实 tencentcloud SDK 模块。
+    使用 GenericActionCaller，避免调用真实腾讯云 API。
     """
     sc = object.__new__(ServiceCommand)
     sc._service_name = "svc"
@@ -812,30 +813,24 @@ def _make_service_command_in_memory():
 
 def test_E4_servicecommand_get_command_map_lazy():
     """E4: _get_command_map 懒加载，并为自引用 action 注入 _is_self_ref 标记。"""
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
-    try:
-        sc = _make_service_command_in_memory()
-        cmap1 = sc._get_command_map()
-        cmap2 = sc._get_command_map()
-        assert cmap1 is cmap2  # 懒加载：同一对象
-        assert set(cmap1.keys()) == {"Tree", "Flat"}
-        # 本次改动：自引用 action 被打标，普通 action 不打标
-        assert cmap1["Tree"]._is_self_ref is True
-        assert cmap1["Flat"]._is_self_ref is False
-    finally:
-        _Services.action_caller = saved
+    sc = _make_service_command_in_memory()
+    cmap1 = sc._get_command_map()
+    cmap2 = sc._get_command_map()
+    assert cmap1 is cmap2  # 懒加载：同一对象
+    assert set(cmap1.keys()) == {"Tree", "Flat"}
+    # 本次改动：自引用 action 被打标，普通 action 不打标
+    assert cmap1["Tree"]._is_self_ref is True
+    assert cmap1["Flat"]._is_self_ref is False
 
 
 def test_E5_servicecommand_routes_skip_sign_metadata_to_common_caller():
-    """E5: skip_sign=true 使用免签 caller，false 使用原生成 caller。"""
+    """自定义、免签和普通 Action 使用正确的 caller。"""
     sc = object.__new__(ServiceCommand)
     sc._service_name = "sts"
     sc._version = "2018-08-13"
     sc._command_map = None
     sc._cli_data = Loader()
+    custom_caller = object()
     service_model = {
         "metadata": {},
         "actions": {
@@ -851,42 +846,36 @@ def test_E5_servicecommand_routes_skip_sign_metadata_to_common_caller():
                 "name": "GetCallerIdentity",
                 "skip_sign": False,
             },
+            "CustomAction": {
+                "input": "EmptyRequest",
+                "output": "EmptyResponse",
+                "name": "CustomAction",
+                "action_caller": custom_caller,
+            },
         },
         "objects": {"EmptyRequest": {"members": []}},
     }
     sc._get_service_model = lambda: service_model
 
-    generated_caller = lambda *a, **kw: None
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "AssumeRoleWithSAML": generated_caller,
-        "GetCallerIdentity": generated_caller,
-    })
-    try:
-        command_map = sc._build_command_map()
-    finally:
-        _Services.action_caller = saved
+    command_map = sc._build_command_map()
 
-    assert command_map["AssumeRoleWithSAML"]._action_caller.skip_credential_refresh is True
-    assert command_map["GetCallerIdentity"]._action_caller is generated_caller
+    skip_sign_caller = command_map["AssumeRoleWithSAML"]._action_caller
+    signed_caller = command_map["GetCallerIdentity"]._action_caller
+    assert isinstance(skip_sign_caller, GenericActionCaller)
+    assert skip_sign_caller.skip_credential_refresh is True
+    assert isinstance(signed_caller, GenericActionCaller)
+    assert signed_caller.skip_credential_refresh is False
+    assert command_map["CustomAction"]._action_caller is custom_caller
 
 
 def test_E6_servicecommand_create_parser_returns_action_parser():
     """E5: _create_parser 返回 ActionArgParser 实例 + 注入 help。"""
     from tccli.argparser import ActionArgParser
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "Tree": (lambda *a, **kw: None), "Flat": (lambda *a, **kw: None)})
-    try:
-        sc = _make_service_command_in_memory()
-        cmap = sc._get_command_map()
-        parser = sc._create_parser(cmap)
-        assert isinstance(parser, ActionArgParser)
-        assert "help" in cmap
-    finally:
-        _Services.action_caller = saved
+    sc = _make_service_command_in_memory()
+    cmap = sc._get_command_map()
+    parser = sc._create_parser(cmap)
+    assert isinstance(parser, ActionArgParser)
+    assert "help" in cmap
 
 
 def test_E7_servicecommand_create_help_command():

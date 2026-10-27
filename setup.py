@@ -5,7 +5,7 @@ from tccli import __version__
 
 
 def main():
-    dep_sdk = "tencentcloud-sdk-python >= %s" % __version__.rsplit(".", 1)[0]
+    dep_sdk = "tencentcloud-sdk-python-common >= 3.1.180"
     setup(
         name='tccli',
         install_requires=[
