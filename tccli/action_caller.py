@@ -68,8 +68,8 @@ class GenericActionCaller(object):
             cred = None
         elif g_param[options_define.UseCVMRole.replace('-', '_')]:
             cred = credential.CVMRoleCredential()
-        elif g_param[options_define.RoleArn.replace('-', '_')] and g_param[
-                options_define.RoleSessionName.replace('-', '_')]:
+        elif (g_param[options_define.RoleArn.replace('-', '_')] and
+              g_param[options_define.RoleSessionName.replace('-', '_')]):
             cred = credential.STSAssumeRoleCredential(
                 g_param[options_define.SecretId], g_param[options_define.SecretKey],
                 g_param[options_define.RoleArn.replace('-', '_')],

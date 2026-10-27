@@ -917,3 +917,29 @@ def test_parse_global_arg_encodes_text_when_py2(tmpdir):
 
     assert parsed[options_define.Region] == b"ap-guangzhou"
     assert parsed[options_define.UseCVMRole.replace("-", "_")] is False
+
+
+def test_plugin_add_command_uses_common_client(capsys):
+    from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+    from tccli.plugins.test.add import add_command
+
+    with mock.patch("tccli.plugins.test.add.credential.Credential") as cred, \
+            mock.patch("tccli.plugins.test.add.CommonClient") as client:
+        client.return_value.call.return_value = {"TotalCount": 0}
+        add_command(
+            {"number1": 1, "number2": 2},
+            {"secretId": "id", "secretKey": "key", "token": None, "region": None},
+        )
+        cred.assert_called_once()
+        client.return_value.call.assert_called_once_with(
+            "DescribeInstances", {"Limit": 10})
+        client.return_value.call.side_effect = TencentCloudSDKException(
+            "code", "msg")
+        add_command(
+            {"number1": 1, "number2": 2},
+            {"secretId": "id", "secretKey": "key", "token": None,
+             "region": "ap-guangzhou"},
+        )
+    out = capsys.readouterr().out
+    assert "1 + 2 = 3" in out
+    assert "TotalCount" in out

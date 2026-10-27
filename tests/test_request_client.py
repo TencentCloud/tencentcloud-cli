@@ -190,7 +190,7 @@ class _FakeCommonClient(object):
         _FakeCommonClient.captured_profile = profile
         self._sdkVersion = "SDK_PYTHON_FAKE"
 
-    def call_json(self, action, params):
+    def call_json(self, action, params, options=None):
         return {"Response": {"RequestId": "fake"}}
 
 
