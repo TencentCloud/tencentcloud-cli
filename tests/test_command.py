@@ -51,6 +51,7 @@ import tccli.plugin as _plg
 _plg.import_plugins = lambda: {}
 
 import tccli.options_define as Options_define
+from tccli.action_caller import GenericActionCaller
 from tccli.command import (
     BaseCommand, CLICommand, ServiceCommand, ActionCommand,
 )
@@ -823,12 +824,13 @@ def test_E4_servicecommand_get_command_map_lazy():
 
 
 def test_E5_servicecommand_routes_skip_sign_metadata_to_common_caller():
-    """E5: skip_sign=true 使用免签 caller，false 使用原生成 caller。"""
+    """自定义、免签和普通 Action 使用正确的 caller。"""
     sc = object.__new__(ServiceCommand)
     sc._service_name = "sts"
     sc._version = "2018-08-13"
     sc._command_map = None
     sc._cli_data = Loader()
+    custom_caller = object()
     service_model = {
         "metadata": {},
         "actions": {
@@ -844,25 +846,26 @@ def test_E5_servicecommand_routes_skip_sign_metadata_to_common_caller():
                 "name": "GetCallerIdentity",
                 "skip_sign": False,
             },
+            "CustomAction": {
+                "input": "EmptyRequest",
+                "output": "EmptyResponse",
+                "name": "CustomAction",
+                "action_caller": custom_caller,
+            },
         },
         "objects": {"EmptyRequest": {"members": []}},
     }
     sc._get_service_model = lambda: service_model
 
-    generated_caller = lambda *a, **kw: None
-    import tccli.services as _Services
-    saved = _Services.action_caller
-    _Services.action_caller = lambda service: (lambda: {
-        "AssumeRoleWithSAML": generated_caller,
-        "GetCallerIdentity": generated_caller,
-    })
-    try:
-        command_map = sc._build_command_map()
-    finally:
-        _Services.action_caller = saved
+    command_map = sc._build_command_map()
 
-    assert command_map["AssumeRoleWithSAML"]._action_caller.skip_credential_refresh is True
-    assert command_map["GetCallerIdentity"]._action_caller is generated_caller
+    skip_sign_caller = command_map["AssumeRoleWithSAML"]._action_caller
+    signed_caller = command_map["GetCallerIdentity"]._action_caller
+    assert isinstance(skip_sign_caller, GenericActionCaller)
+    assert skip_sign_caller.skip_credential_refresh is True
+    assert isinstance(signed_caller, GenericActionCaller)
+    assert signed_caller.skip_credential_refresh is False
+    assert command_map["CustomAction"]._action_caller is custom_caller
 
 
 def test_E6_servicecommand_create_parser_returns_action_parser():
