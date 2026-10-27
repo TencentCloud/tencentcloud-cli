@@ -1,0 +1,401 @@
+{
+  "actions": {
+    "AssociateSecurityGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroup\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FailureSet\": [\n            \"cdi-we28ecmsdsy\"\n        ],\n        \"SuccessSet\": [\n            \"cdi-wed21w12cdsq\"\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "AssociateSecurityGroup"
+      }
+    ],
+    "BindInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindInstances\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"usera\"\n    ],\n    \"InstanceIds\": [\n        \"cdi-a\"\n    ],\n    \"InstanceType\": \"S1L.LARGE8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindInfoList\": [\n            {\n                \"InstanceId\": \"cdi-a\",\n                \"BindStatus\": \"BOUND\",\n                \"DisplayName\": \"cdi-a\",\n                \"UserName\": \"usera\",\n                \"UserId\": \"usera\"\n            }\n        ],\n        \"RequestId\": \"rid\"\n    }\n}",
+        "title": "BindInstances"
+      }
+    ],
+    "CreateCommandTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Command\": \"aXBjb25maWc=\",\n    \"Type\": \"PowerShellScript\",\n    \"RunAsBoundUser\": false,\n    \"RunForeground\": false,\n    \"InstanceIds\": [\n        \"cdi-i71kxu6t60auxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"CommandId\": \"ac5b1e88-9862-423e-9595-10f2998096b5\"\n    }\n}",
+        "title": "CreateCommandTask"
+      }
+    ],
+    "CreateDataDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDataDisk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-ubnpcatzru20umw\",\n    \"DiskType\": \"CLOUD_SSD\",\n    \"DiskSize\": 50\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c2c80067-8289-434c-ad4c-789269a4f7a8\"\n    }\n}",
+        "title": "实例新增数据盘"
+      }
+    ],
+    "CreateDomainControlPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainControlPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"test-policy\",\n    \"Description\": \"test policy\",\n    \"Type\": \"WHITE\",\n    \"DetailSet\": [\n        {\n            \"Domain\": \"*.testcvd.com\",\n            \"Address\": \"10.0.10.12\",\n            \"Description\": \"test domain\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"cdi-r4j5k6ras6zgtrw\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": \"domain-wd8d7hdy\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "CreateDomainControlPolicy"
+      }
+    ],
+    "CreateImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateImage\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-v2fpex***y3y6wd\",\n    \"ImageName\": \"test-*******data\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageId\": \"pvtimg-my***lve\",\n        \"RequestId\": \"c9142a6c-320a-46f0-99b7-8b5dd122a92e\"\n    }\n}",
+        "title": "创建自定义镜像"
+      }
+    ],
+    "CreateInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S1L.LARGE8\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_SSD\",\n        \"DiskSize\": 50\n    },\n    \"ImageId\": \"img-40kyb7sr\",\n    \"VirtualPrivateCloud\": {\n        \"VpcId\": \"vpc-1f99gocg\",\n        \"SubnetId\": \"subnet-a2f56ctb\"\n    },\n    \"ChargeType\": \"POSTPAID_BY_HOUR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"cdi-th8c2dtr6c4tjqy\"\n        ],\n        \"RequestId\": \"11212ab3-2a95-4f46-9644-019bb237e6e2\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
+    "CreatePolicy": [
+      {
+        "document": "CreatePolicy",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"UserIds\": [\n        \"tom\"\n    ],\n    \"PolicyInfoList\": [\n        {\n            \"PolicyValue\": 0,\n            \"PolicyType\": 0\n        }\n    ],\n    \"Name\": \"policy\",\n    \"Description\": \"policy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "CreatePolicy"
+      }
+    ],
+    "DeleteCommandTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"CommandId\",\n            \"Values\": [\n                \"ac5b1e88-9862-423e-9595-10f2998096b5\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DeleteCommandTasks"
+      }
+    ],
+    "DeleteDomainControlPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"PolicyId\": \"domain-vds78dtf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DeleteDomainControlPolicy"
+      }
+    ],
+    "DeleteImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-rlg4dxrh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"308a0c9b-7b46-4bbf-8945-2eddee56b237\"\n    }\n}",
+        "title": "删除镜像"
+      }
+    ],
+    "DescribeCommandTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCommandTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"Total\": 1,\n        \"Status\": \"FINISHED\",\n        \"CommandDetails\": [\n            {\n                \"Uin\": \"100000077643\",\n                \"AppId\": 13846212,\n                \"Status\": \"RUNNING\",\n                \"Command\": \"aXBjb25maWc\",\n                \"CommandId\": \"ac5b1e88-9862-423e-9595-10f2998096b5\",\n                \"CreateTime\": \"2025-04-22 14:01:23\",\n                \"Invocations\": []\n            }\n        ]\n    }\n}",
+        "title": "DescribeCommandTasks"
+      }
+    ],
+    "DescribeImages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeImages\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceType\",\n            \"Values\": [\n                \"G6L.8XLARGE96\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Images\": [\n            {\n                \"CoreType\": \"GPU_GC50\",\n                \"CreateTime\": \"2026-07-03 16:15:01\",\n                \"CvmImageId\": \"img-***g3fob\",\n                \"DataDiskSize\": 0,\n                \"Description\": \"\",\n                \"ImageID\": \"img-***g3fob\",\n                \"ImageName\": \"********Windows Server 2019 数据中心版 64位中文版\",\n                \"ImageSize\": 50,\n                \"ImageState\": \"NORMAL\",\n                \"ImageType\": \"PUBLIC_IMAGE\",\n                \"IsWhole\": false,\n                \"OsName\": \"Windows Server 2019-64位\",\n                \"Region\": \"ap-shanghai\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"308a0c9b-7b46-4bbf-8945-2eddee56b237\"\n    }\n}",
+        "title": "DescribeImages"
+      }
+    ],
+    "DescribeInstanceFetchMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceFetchMsg\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-a\",\n    \"Force\": true,\n    \"DesktopName\": \"desk-a\",\n    \"UserId\": \"usera\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtocolVersion\": \"version\",\n        \"FetchStatusTicket\": \"status\",\n        \"RequestId\": \"rid\",\n        \"FetchUrl\": \"url\",\n        \"FetchTicket\": \"ticket\"\n    }\n}",
+        "title": "DescribeInstanceFetchMsg"
+      }
+    ],
+    "DescribeInstanceGraphData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceGraphData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-l0c69nmim85j8t1\",\n    \"StartTime\": \"2025-06-16T16:10:39+08:00\",\n    \"EndTime\": \"2025-06-16T17:10:39+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2025-06-16T17:10:39+08:00\",\n        \"MetricName\": \"disk_usage\",\n        \"Partitions\": [\n            {\n                \"Name\": \"vda2\",\n                \"Total\": 49.11,\n                \"Usage\": 16.15\n            }\n        ],\n        \"Period\": 0,\n        \"RequestId\": \"825576a2-9356-444c-b15c-35e1b5a02c81\",\n        \"StartTime\": \"2025-06-16T16:10:39+08:00\"\n    }\n}",
+        "title": "查询实例磁盘分区数据"
+      }
+    ],
+    "DescribeInstanceLoginMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceLoginMsg\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-a\",\n    \"Force\": true,\n    \"DesktopName\": \"deskname\",\n    \"UserId\": \"usera\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid\",\n        \"LoginMsg\": \"gdsfhdskfJldsfadsFNBVB\"\n    }\n}",
+        "title": "DescribeInstanceLoginMsg"
+      }
+    ],
+    "DescribeInstanceMonitorData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceMonitorData\n<公共请求参数>\n\n{\n    \"NameSpace\": \"QCE/CVM\",\n    \"MetricName\": \"CpuUsage\",\n    \"Period\": 300,\n    \"Instances\": [\n        {\n            \"Dimensions\": [\n                {\n                    \"Name\": \"InstanceId\",\n                    \"Value\": \"cdi-xxxx\"\n                }\n            ]\n        }\n    ],\n    \"StartTime\": \"2018-09-22T19:23:07+08:00\",\n    \"EndTime\": \"2018-09-22T20:23:07+08:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"StartTime\": \"2018-09-22T19:20:00+08:00\",\n        \"EndTime\": \"2018-09-22T20:20:00+08:00\",\n        \"Period\": 300,\n        \"MetricName\": \"CpuUseRate\",\n        \"DataPoints\": [\n            {\n                \"Dimensions\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"cdi-xxxx\"\n                    }\n                ],\n                \"Timestamps\": [],\n                \"Values\": []\n            }\n        ],\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "DescribeInstanceMonitorData"
+      }
+    ],
+    "DescribeInstanceRegionDistribution": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceRegionDistribution\n<公共请求参数>\n\n{\n    \"Regions\": [\n        \"ap-guangzhou\"\n    ],\n    \"Types\": [\n        \"S1\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\",\n        \"DistributionInfo\": [\n            {\n                \"Count\": 1,\n                \"Region\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "title": "DescribeInstanceRegionDistribution"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"Region\"\n            ],\n            \"Name\": \"ap-shanghai\"\n        }\n    ],\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"InstanceId\": \"cdi-0s9hw\",\n                \"Name\": \"0s9hw\",\n                \"Status\": \"STOPPED\",\n                \"UserName\": \"xxa\",\n                \"UserId\": \"xxa\",\n                \"InstanceType\": \"S1LARGE8\",\n                \"SysDisk\": {\n                    \"DiskType\": \"CLOUD_SSD\",\n                    \"DiskSize\": 0,\n                    \"DiskId\": \"disk1\"\n                },\n                \"DataDiskList\": [\n                    {\n                        \"DiskType\": \"CLOUD_SSD\",\n                        \"DiskSize\": 0,\n                        \"DiskId\": \"disk2\"\n                    }\n                ],\n                \"Region\": \"ap-shanghai\",\n                \"ChargeType\": \"POSTPAID_BY_HOUR\",\n                \"AutoRenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"ExpiredTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"\",\n                \"HostName\": \"0s9hw\",\n                \"DisplayName\": \"0s9hw\",\n                \"BindStatus\": \"UNBOUND\",\n                \"ImageId\": \"image-1\",\n                \"UserVpcId\": \"vpc-1\",\n                \"UserSubnetId\": \"subnet-1\",\n                \"UserPrivateIp\": \"0.0.0.0\",\n                \"IsolatedTime\": \"2020-09-22T00:00:00+00:00\",\n                \"LastStatusChangeReason\": \"\",\n                \"LatestOperation\": \"\",\n                \"LatestOperationState\": \"\",\n                \"LatestOperationRequestID\": \"\",\n                \"OsName\": \"Windows Server\",\n                \"SetId\": \"\",\n                \"AppId\": 0,\n                \"Uin\": \"1******43\",\n                \"SecurityGroups\": [\n                    \"sg1\"\n                ]\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc-avc\"\n    }\n}",
+        "title": "DescribeInstances"
+      }
+    ],
+    "DescribeInstancesBindStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesBindStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-dew2fd3wf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceBindStatusList\": [\n            {\n                \"InstanceId\": \"cdi-dew2fd3wf\",\n                \"BindStatus\": \"BINGING\"\n            }\n        ],\n        \"RequestId\": \"c9142a6c-320a-46f0-99b7-8b5dd122a92e\"\n    }\n}",
+        "title": "DescribeInstancesBindStatus"
+      }
+    ],
+    "DescribeInstancesStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-yrsgnf7sza3b0n3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceStatusList\": [\n            {\n                \"IdleSeconds\": 0,\n                \"InstanceId\": \"cdi-yrsgnf7sza3b0n3\",\n                \"LatestOperation\": \"BindInstances\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"SessionState\": 2,\n                \"Status\": \"RUNNING\",\n                \"StatusChangeTime\": 1791970839\n            }\n        ],\n        \"RequestId\": \"fc9bfb93-de2b-4bcf-a7e0-161bdf2be43e\"\n    }\n}",
+        "title": "DescribeInstancesStatus"
+      }
+    ],
+    "DescribeInvocationDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocationDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-234r32ad\",\n    \"OutputLinesOffset\": 1,\n    \"OutputLinesLimit\": 1,\n    \"InvokeId\": \"23sfc-324-s11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Status\": \"Finished\",\n            \"Output\": {\n                \"Encoding\": \"PlainText\",\n                \"Lines\": [\n                    \"23radef\"\n                ],\n                \"AllLinesOffset\": 1,\n                \"LinesOffset\": 1,\n                \"AllLinesNum\": 1,\n                \"LinesNum\": 1\n            },\n            \"InvokeId\": \"23sfc-324-s11\",\n            \"ErrorCode\": \"\",\n            \"ErrorInfo\": \"\"\n        },\n        \"RequestId\": \"a4c33d6d-d6a2-47d3-9a19-940ead9f8752\"\n    }\n}",
+        "title": "查询任务执行的详细情况"
+      }
+    ],
+    "DescribeInvocations": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvocations\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-232fsacsef11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ccadfb61-c65f-4e17-b7d0-a477fce19f10\",\n        \"Invocations\": [\n            {\n                \"Status\": \"Finished\",\n                \"Output\": null,\n                \"InvokeId\": \"23sfc-324-s11\",\n                \"ErrorCode\": \"\",\n                \"ErrorInfo\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询云桌面上的任务列表"
+      }
+    ],
+    "DescribePolicyDetail": [
+      {
+        "document": "DescribePolicyDetail",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"PolicyList\": [\n            {\n                \"ClipPolicyId\": 3,\n                \"Description\": \"默认策略\",\n                \"DrivePolicyId\": 3,\n                \"FilePolicyId\": 1,\n                \"IsDefault\": true,\n                \"PolicyId\": \"policy-100075468\",\n                \"PolicyName\": \"默认策略\",\n                \"TotalUser\": 136,\n                \"Uin\": \"100016775468\",\n                \"UserIds\": [\n                    \"cdi-fyl5yyug93s\"\n                ],\n                \"WaterMarkPolicyId\": 0\n            }\n        ],\n        \"RequestId\": \"cedb425a-adfb-4150-8986-8bd108194184\",\n        \"Total\": 10\n    }\n}",
+        "title": "DescribePolicyDetail"
+      }
+    ],
+    "DescribeSecurityGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroups\n<公共请求参数>\n\n{\n    \"PageSize\": 20,\n    \"PageNumber\": \"1\",\n    \"SecurityGroupRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DescribeSecurityGroups"
+      }
+    ],
+    "DescribeSnapshots": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSnapshots\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"disk-nyz5l4i0\"\n            ],\n            \"Name\": \"DiskId\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 20,\n    \"SnapshotRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SnapshotList\": [\n            {\n                \"LastRollbackTime\": \"2026-10-10 02:00:00\",\n                \"IsPermanent\": true,\n                \"DeadlineTime\": \"2026-10-24 02:00:00\",\n                \"Percent\": 100,\n                \"CreateType\": \"AutoSnapshot\",\n                \"LastRollbackState\": \"SUCCESS\",\n                \"DiskId\": \"disk-nyz5l4i0\",\n                \"DiskUsage\": \"SYSTEM_DISK\",\n                \"SnapshotId\": \"snap-1mehmi29\",\n                \"CreateTime\": \"2026-10-21 02:14:52\",\n                \"SnapshotState\": \"SUCCESS\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "DescribeSnapshots"
+      }
+    ],
+    "DescribeUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsage\n<公共请求参数>\n\n{\n    \"PageSize\": 20,\n    \"PageNumber\": 1,\n    \"StartTime\": 1735660800,\n    \"EndTime\": \"1735747200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UsageSet\": [\n            {\n                \"InstanceId\": \"cdi-sd8dhw8osu0jcw6\",\n                \"Name\": \"test-cvd\",\n                \"Status\": \"RUNNING\",\n                \"UserName\": \"test-user\",\n                \"ChargeType\": \"PREPAID\",\n                \"InstanceType\": \"S1L.LARGE8\",\n                \"OsName\": \"Windows Server 2019\",\n                \"ActiveTime\": \"00:20:20\",\n                \"IdleTime\": \"00:01:00\"\n            }\n        ],\n        \"Total\": 1,\n        \"QueryKey\": \"d298-4c88-b7ff-0eabf528d566\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DescribeUsage"
+      }
+    ],
+    "DescribeUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUsers\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Users\": [\n            {\n                \"Status\": \"ACTIVE\",\n                \"DisplayName\": \"tom\",\n                \"Name\": \"tom\",\n                \"PhoneNum\": \"1234567890\",\n                \"DepartmentId\": \"sale\",\n                \"Mail\": \"123456@qq.com\",\n                \"StrategyId\": \"str-123456\",\n                \"Id\": \"us-02a7aa5b2ae94e028d2304f3ecceb614\",\n                \"StrategyName\": \"管理策略\"\n            }\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "DescribeUsers"
+      }
+    ],
+    "DisassociateSecurityGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisassociateSecurityGroup\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"SuccessSet\": [\n            \"cdi-sqdwdw123sdd\"\n        ],\n        \"FailureSet\": [\n            \"cdi-sqdwdw123sss\"\n        ]\n    }\n}",
+        "title": "DisassociateSecurityGroup"
+      }
+    ],
+    "ModifyDiskConfiguration": [
+      {
+        "document": "实例系统盘扩容",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDiskConfiguration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-krxgg2id76erx4f\",\n    \"NewSystemDisk\": {\n        \"DiskType\": \"CLOUD_SSD\",\n        \"DiskSize\": 70,\n        \"DiskId\": \"disk-oalp79e1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bd1ccd0-74c6-48c3-a525-3dfc3637d9ee\"\n    }\n}",
+        "title": "实例系统盘扩容示例"
+      }
+    ],
+    "ModifyImageAttrs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageAttrs\n<公共请求参数>\n\n{\n    \"Attrs\": [\n        {\n            \"Name\": \"attr-name\",\n            \"Value\": \"attr-value\"\n        }\n    ],\n    \"ImageId\": \"img-12sdefw2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "ModifyImageAttrs"
+      }
+    ],
+    "ModifyInstanceBasicAttribute": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceBasicAttribute\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-a\",\n    \"AttributeInfoList\": [\n        {\n            \"Name\": \"Name\",\n            \"Value\": \"new_name\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid\"\n    }\n}",
+        "title": "ModifyInstanceBasicAttribute"
+      }
+    ],
+    "ModifyInstancesType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesType\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-krxgg2id76erx4f\",\n        \"cdi-hd1vj94so0f5eju\"\n    ],\n    \"InstanceType\": \"S1L.LARGE16\",\n    \"ChargeType\": \"POSTPAID_BY_HOUR\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2afb2d3-e969-457a-b21b-417827b9b56f\"\n    }\n}",
+        "title": "后付费变配示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesType\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-k7ay0fg1oru3zoa\",\n        \"cdi-p1xzld22kkvwmoj\"\n    ],\n    \"InstanceType\": \"S3L.2XLARGE16\",\n    \"ChargeType\": \"PREPAID\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a22a66f9-21c5-47f7-a7e0-9ff40e6daa9d\"\n    }\n}",
+        "title": "预付费变配示例"
+      }
+    ],
+    "ModifyInstancesVpc": [
+      {
+        "document": "迁移私有网络和子网",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesVpc\n<公共请求参数>\n\n{\n    \"SubnetId\": \"subnet-test1\",\n    \"VpcId\": \"vpc-test1\",\n    \"InstanceIds\": [\n        \"cdi-bx7b2lfkv1zplsf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "迁移私有网络和子网"
+      }
+    ],
+    "RebootInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-l0c69nmim85j8t1\"\n    ],\n    \"Force\": true,\n    \"InstanceRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"265f2116-8f9c-47eb-9e12-70289909de2b\"\n    }\n}",
+        "title": "RebootInstances"
+      }
+    ],
+    "RemoveDataDisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-i71kxu6t60auxxxx\",\n    \"DataDiskIds\": [\n        \"disk-swefdwdw\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "RemoveDataDisks"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveDataDisks\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-ubnpcatzru20umw\",\n    \"DataDiskIds\": [\n        \"disk-c913zt0p\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a0f470bc-70f1-4da1-83b6-7d5bd3f9bf6c\"\n    }\n}",
+        "title": "卸载数据盘示例"
+      }
+    ],
+    "RemovePolicy": [
+      {
+        "document": "RemovePolicy",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemovePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"policy-12dfew3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "RemovePolicy"
+      }
+    ],
+    "RenewInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cvd-l0c69nmim85j8t1\"\n    ],\n    \"ChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc93710c-a2f9-4ebb-a62e-99eb38f57198\"\n    }\n}",
+        "title": "实例续费"
+      }
+    ],
+    "ResetInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetInstances\n<公共请求参数>\n\n{\n    \"InstanceRegion\": \"ap-shanghai\",\n    \"IsUnbind\": true,\n    \"InstanceIds\": [\n        \"cdi-a\"\n    ],\n    \"ImageId\": \"img-a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid\"\n    }\n}",
+        "title": "ResetInstances"
+      }
+    ],
+    "RunCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunCommand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-nqj1mqcjmirynr7\",\n    \"Content\": \"cGluZyAtbiA0IDEyNy4wLjAuMQ==\",\n    \"WaitUntilDone\": true,\n    \"Type\": \"PowerShellScript\",\n    \"ContentEncoding\": \"Base64\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"Status\": \"Finished\",\n            \"Output\": {\n                \"Encoding\": \"PlainText\",\n                \"Lines\": [\n                    \"\\n\"\n                ],\n                \"AllLinesOffset\": 1,\n                \"LinesOffset\": 1,\n                \"AllLinesNum\": 1,\n                \"LinesNum\": 1\n            },\n            \"InvokeId\": \"cdi-nqj1mqcjmirynr7-ecdfe348-cc7b-4594-98d6-37cf5f84969f\",\n            \"ErrorCode\": \"\",\n            \"ErrorInfo\": \"\"\n        },\n        \"RequestId\": \"a4c33d6d-d6a2-47d3-9a19-940ead9f8752\",\n        \"InvokeId\": \"cdi-nqj1mqcjmirynr7-ecdfe348-cc7b-4594-98d6-37cf5f84969f\"\n    }\n}",
+        "title": "在指定的云桌面实例上执行脚本任务"
+      }
+    ],
+    "StartInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-l0c69nmim85j8t1\"\n    ],\n    \"InstanceRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e2ff345-ad1b-47b3-9709-2a901abbe7b1\"\n    }\n}",
+        "title": "StartInstances"
+      }
+    ],
+    "StopCommandTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopCommandTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"CommandId\",\n            \"Values\": [\n                \"ac5b1e88-9862-423e-9595-10f2998096b5\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "StopCommandTasks"
+      }
+    ],
+    "StopInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cdi-l0c69nmim85j8t1\"\n    ],\n    \"Force\": true,\n    \"InstanceRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dff7e997-1fe4-40e3-a825-fab13fb602d0\"\n    }\n}",
+        "title": "StopInstances"
+      }
+    ],
+    "StopInvocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInvocation\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdi-s2axeo0k93c1r\",\n    \"InvokeId\": \"23sfc-324-s11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4c33d6d-d6a2-47d3-9a19-940ead9f8752\"\n    }\n}",
+        "title": "停止脚本任务的执行"
+      }
+    ],
+    "StopSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSession\n<公共请求参数>\n\n{\n    \"IsDisconnect\": true,\n    \"HostName\": \"uxqdqmeu53u6iiy\",\n    \"UserId\": \"dev\",\n    \"InstanceRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9142a6c-320a-46f0-99b7-8b5dd122a92e\"\n    }\n}",
+        "title": "StopSession"
+      }
+    ],
+    "TerminateInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"cvd-a\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c4ca787-1b82-4988-9d89-2dac293e18fa\"\n    }\n}",
+        "title": "主动退还实例"
+      }
+    ],
+    "UnbindInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindInstances\n<公共请求参数>\n\n{\n    \"BindInfos\": [\n        {\n            \"InstanceId\": \"cdi-a\",\n            \"UserId\": \"usera\"\n        }\n    ],\n    \"InstanceRegion\": \"ap-shanghai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"rid\"\n    }\n}",
+        "title": "UnbindInstances"
+      }
+    ],
+    "UpdatePolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cvd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"policy-12dfew3\",\n    \"PolicyInfoList\": [\n        {\n            \"PolicyValue\": 0,\n            \"PolicyType\": 0\n        }\n    ],\n    \"Name\": \"policy\",\n    \"Description\": \"policy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2bcfe8b7-8ea8-4488-9d17-f1aeb106eecd\"\n    }\n}",
+        "title": "UpdatePolicy"
+      }
+    ]
+  },
+  "version": "1.0"
+}

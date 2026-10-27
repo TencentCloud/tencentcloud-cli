@@ -1943,6 +1943,23 @@
       ],
       "usage": "in"
     },
+    "BuildRunner": {
+      "document": "构建运行配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建服务所需 CPU 规格</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "Cpus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BuildSecret": {
       "document": "构建密钥",
       "members": [
@@ -3325,8 +3342,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>部署类型</p>",
-          "example": "custom",
+          "document": "<p>部署类型</p><p>枚举值：</p><ul><li>statis-hosting： 静态托管应用</li><li>custom： 自定义流水线</li></ul>",
+          "example": "static-hosting",
           "member": "string",
           "name": "DeployType",
           "required": true,
@@ -3475,6 +3492,15 @@
           "name": "PostDeployCommand",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流水线运行配置</p>",
+          "example": "无",
+          "member": "BuildRunner",
+          "name": "Runner",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

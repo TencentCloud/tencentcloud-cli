@@ -26,7 +26,8 @@ Output:
                 "Description": "代码评审机器人",
                 "IconUrl": "https://example.com/icon.png",
                 "Endpoint": "https://a2a.example.com/server",
-                "A2AVersion": "1.0",
+                "A2AVersion": "default",
+                "LatestVersionName": "test-1",
                 "A2ASkillSet": [
                     {
                         "A2ASkillId": "review",

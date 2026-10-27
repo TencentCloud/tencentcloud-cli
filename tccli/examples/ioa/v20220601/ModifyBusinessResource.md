@@ -5,13 +5,23 @@
 Input: 
 
 ```
-tccli ioa ModifyBusinessResource --cli-unfold-argument ```
+tccli ioa ModifyBusinessResource --cli-unfold-argument  \
+    --AreaId 1 \
+    --Protocol 2 \
+    --ServiceName oa-oss \
+    --Levels 5000 \
+    --ServiceType domain \
+    --ServicePort all \
+    --ServiceId 1 \
+    --ServiceAddress *.ss.sf-express.com \
+    --DirectConn 1
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1658370416.5806396"
+        "RequestId": "75f5b618-59d2-4648-abfd-b90796292265"
     }
 }
 ```

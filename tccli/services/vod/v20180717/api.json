@@ -1597,7 +1597,7 @@
       "status": "online"
     },
     "SearchMediaBySemantics": {
-      "document": "使用自然语言对媒体进行语义搜索。",
+      "document": "使用自然语言对媒体进行语义搜索。\n仅支持文搜视频、文搜图、图搜图，图搜视频请使用SearchMediaBySemanticsAsync.",
       "input": "SearchMediaBySemanticsRequest",
       "name": "按语义搜索媒体",
       "output": "SearchMediaBySemanticsResponse",
@@ -17937,6 +17937,24 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul><p>默认值：Semantic</p>",
+          "example": "DNA",
+          "member": "string",
+          "name": "IndexType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul><p>默认值：Video</p>",
+          "example": "Video",
+          "member": "string",
+          "name": "MediaType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -18026,6 +18044,15 @@
           "example": "无",
           "member": "LLMComprehendFaceRecognition",
           "name": "FaceRecognition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNA解析配置</p>",
+          "example": "无",
+          "member": "LLMComprehendDNA",
+          "name": "DNA",
           "required": false,
           "type": "object"
         }
@@ -19928,6 +19955,158 @@
           "name": "VoiceInfo",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DNATask": {
+      "document": "DNA查重估计任务信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID。</p>",
+          "example": "224123-CreateDnaTask-39d5481533107b8478e8b3e4dad79f11t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态。</p><p>枚举值：</p><ul><li>WAITING： 等待中</li><li>PROCESSING： 处理中</li><li>FINISH： 已完成</li></ul>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码，0 表示成功，其他值表示失败：</p><p>40000：输入参数不合法，请检查输入参数；<br>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；<br>70000：内部服务错误，建议重试。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码，空字符串表示成功，其他值表示失败，取值请参考 <a href=\"https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81\">视频处理类错误码</a> 列表。</p>",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "InternalError",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>被检测的媒资 FileId。</p>",
+          "example": "966263619269398720",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查重命中列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DNATaskOutput",
+          "name": "Output",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DNATaskOutput": {
+      "document": "DNA查重任务输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>命中的参考媒资 FileId。</p>",
+          "example": "966263619269398720",
+          "member": "string",
+          "name": "RefFileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询媒资命中片段起始时间。</p><p>单位：秒</p>",
+          "example": "0",
+          "member": "float",
+          "name": "QueryStartSec",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询媒资命中片段结束时间。</p><p>单位：秒</p>",
+          "example": "141",
+          "member": "float",
+          "name": "QueryEndSec",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考媒资对应片段起始时间。</p><p>单位：秒</p>",
+          "example": "0",
+          "member": "float",
+          "name": "RefStartSec",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参考媒资对应片段结束时间。</p><p>单位：秒</p>",
+          "example": "141",
+          "member": "float",
+          "name": "RefEndSec",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>匹配置信度。</p><p>取值范围：[0, 1]</p>",
+          "example": "1",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>变速比（1.0 表示原速，非 1 表示加速或者减速）。</p>",
+          "example": "1",
+          "member": "float",
+          "name": "SpeedRatio",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -26393,6 +26572,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>DNA查重任务，仅当TaskType为CreateDnaTask，该字段有值。</p>",
+          "example": "无",
+          "member": "DNATask",
+          "name": "DNATask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步按语义搜索媒体任务，仅当TaskType为SearchMediaBySemanticsAsync，该字段有值。</p>",
+          "example": "无",
+          "member": "SearchMediaBySemanticsAsync",
+          "name": "SearchMediaBySemanticsAsync",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -32256,6 +32455,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>知识库的索引类型</p><p>枚举值：</p><ul><li>Semantic： 语义索引</li><li>DNA： DNA 索引</li></ul>",
+          "example": "Semantic",
+          "member": "string",
+          "name": "IndexType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>允许入库的媒体类型</p><p>枚举值：</p><ul><li>Video： 视频</li><li>Image： 图片</li></ul>",
+          "example": "Video",
+          "member": "string",
+          "name": "MediaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>知识库状态。</p><p>枚举值：</p><ul><li>creating： 创建中</li><li>active： 正常</li><li>deleting： 删除中</li></ul>",
           "example": "creating",
           "member": "string",
@@ -32344,6 +32563,23 @@
         }
       ],
       "usage": "in"
+    },
+    "LLMComprehendDNA": {
+      "document": "大模型解析DNA解析配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DNA解析任务开关</p><p>枚举值：</p><ul><li>ON： 开启DNA解析任务</li><li>OFF： 关闭DNA解析任务</li></ul><p>默认值：OFF</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "LLMComprehendFaceRecognition": {
       "document": "大模型解析人脸识别配置",
@@ -32588,6 +32824,16 @@
           "example": "无",
           "member": "LLMComprehendFaceRecognition",
           "name": "FaceRecognition",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNA解析配置</p>",
+          "example": "无",
+          "member": "LLMComprehendDNA",
+          "name": "DNA",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -40253,6 +40499,15 @@
           "example": "无",
           "member": "LLMComprehendFaceRecognitionForUpdate",
           "name": "FaceRecognition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DNA解析配置</p>",
+          "example": "无",
+          "member": "LLMComprehendDNA",
+          "name": "DNA",
           "required": false,
           "type": "object"
         }
@@ -51267,13 +51522,89 @@
       ],
       "usage": "both"
     },
+    "SearchMediaBySemanticsAsync": {
+      "document": "异步按语义搜索媒体任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2*****-SearchMediaBySemanticsAsync-0**************0****************t",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态，取值：<li>PROCESSING：处理中；</li><li>FINISH：已完成。</li></p>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误码。源异常时返回非0错误码，返回0时请使用各个具体任务的 ErrCode。</p>",
+          "example": "70000",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展错误码。</p>",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息。</p>",
+          "example": "type:framework, code:101, msg:tcp client transport ReadFrame, cost: 3.000162139s, caused by read tcp4 11.141.77.191:33366->21.196.236.88:9000: i/o timeout",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次查询文本（图片查询时为空）。</p>",
+          "example": "一幅人物画像",
+          "member": "string",
+          "name": "QueryText",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>召回列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SemanticsSearchResult",
+          "name": "SearchResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SearchMediaBySemanticsRequest": {
       "document": "SearchMediaBySemantics请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "<p><b>点播<a href=\"/document/product/266/14574\">应用</a> ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b></p>",
-          "example": "1500035838",
+          "example": "1000000000",
           "member": "uint64",
           "name": "SubAppId",
           "required": true,
@@ -51281,16 +51612,34 @@
         },
         {
           "disabled": false,
-          "document": "<p>需要进行搜索的内容</p>",
+          "document": "<p>需要进行搜索的文本内容。</p><p>入参限制：与 <code>FileId</code>、<code>Url</code> <strong>三选一且互斥</strong>。</p>",
           "example": "包含夕阳的海边视频",
           "member": "string",
           "name": "Text",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "<p>知识库ID，留空时将使用默认知识库</p>",
+          "document": "<p>需要进行搜索的图片FileId。</p><p>入参限制：必须是<strong>图片</strong>类型媒资，且与 <code>Text</code>、<code>Url</code> <strong>三选一且互斥</strong>。</p>",
+          "example": "9****************1",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要进行搜索的图片Url。 </p><p>入参限制：必须是<strong>图片</strong>Url，且与 <code>Text</code>、<code>FileId</code> <strong>三选一且互斥</strong>。</p>",
+          "example": "https://******************.cos.ap-shanghai.myqcloud.com/***********.png",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库ID，留空时将使用默认知识库。<br>当输入为图片时，必须选择MediaType=Image的知识库。</p>",
           "example": "kb-**********",
           "member": "string",
           "name": "KnowledgeBaseId",

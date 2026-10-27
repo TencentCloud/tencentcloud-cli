@@ -23553,7 +23553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的域名，所有域名使用all",
+          "document": "<p>查询的域名，所有域名使用all</p>",
           "example": "test.com",
           "member": "string",
           "name": "Domain",
@@ -23562,7 +23562,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间",
+          "document": "<p>查询起始时间</p>",
           "example": "2020-08-28 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -23571,7 +23571,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间",
+          "document": "<p>查询结束时间</p>",
           "example": "2020-08-28 00:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -23580,7 +23580,7 @@
         },
         {
           "disabled": false,
-          "document": "Lucene语法",
+          "document": "<p>Lucene语法</p>",
           "example": "attack_ip:127.0.0.1",
           "member": "string",
           "name": "QueryString",
@@ -23595,8 +23595,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "统计详情",
-          "example": "[{\"Count\":0,\"TimeStamp\":1598544000},{\"Count\":0,\"TimeStamp\":1598545800}]",
+          "document": "<p>统计详情</p>",
+          "example": "无",
           "member": "LogHistogramInfo",
           "name": "Data",
           "output_required": true,
@@ -23605,7 +23605,7 @@
         },
         {
           "disabled": false,
-          "document": "时间段大小",
+          "document": "<p>时间段大小</p><p>单位：秒</p>",
           "example": "60",
           "member": "uint64",
           "name": "Period",
@@ -23615,7 +23615,7 @@
         },
         {
           "disabled": false,
-          "document": "统计的条目数",
+          "document": "<p>统计的条目数</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",

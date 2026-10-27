@@ -1,0 +1,5098 @@
+{
+  "actions": {
+    "AssociateSecurityGroup": {
+      "document": "安全组批量关联云桌面",
+      "input": "AssociateSecurityGroupRequest",
+      "name": "安全组批量关联云桌面",
+      "output": "AssociateSecurityGroupResponse",
+      "status": "online"
+    },
+    "BindInstances": {
+      "document": "绑定桌面",
+      "input": "BindInstancesRequest",
+      "name": "绑定桌面",
+      "output": "BindInstancesResponse",
+      "status": "online"
+    },
+    "CreateCommandTask": {
+      "document": "创建批量脚本任务",
+      "input": "CreateCommandTaskRequest",
+      "name": "创建脚本任务",
+      "output": "CreateCommandTaskResponse",
+      "status": "online"
+    },
+    "CreateDataDisk": {
+      "document": "实例新增数据盘",
+      "input": "CreateDataDiskRequest",
+      "name": "实例新增数据盘",
+      "output": "CreateDataDiskResponse",
+      "status": "online"
+    },
+    "CreateDomainControlPolicy": {
+      "document": "新建域名访问控制策略",
+      "input": "CreateDomainControlPolicyRequest",
+      "name": "新建域名访问控制策略",
+      "output": "CreateDomainControlPolicyResponse",
+      "status": "online"
+    },
+    "CreateImage": {
+      "document": "创建自定义镜像。",
+      "input": "CreateImageRequest",
+      "name": "创建自定义镜像",
+      "output": "CreateImageResponse",
+      "status": "online"
+    },
+    "CreateInstances": {
+      "document": "创建云桌面实例",
+      "input": "CreateInstancesRequest",
+      "name": "创建云桌面实例",
+      "output": "CreateInstancesResponse",
+      "status": "online"
+    },
+    "CreatePolicy": {
+      "document": "创建策略",
+      "input": "CreatePolicyRequest",
+      "name": "创建策略",
+      "output": "CreatePolicyResponse",
+      "status": "online"
+    },
+    "DeleteCommandTasks": {
+      "document": "删除命令任务",
+      "input": "DeleteCommandTasksRequest",
+      "name": "删除脚本任务",
+      "output": "DeleteCommandTasksResponse",
+      "status": "online"
+    },
+    "DeleteDomainControlPolicy": {
+      "document": "删除域名访问控制策略",
+      "input": "DeleteDomainControlPolicyRequest",
+      "name": "删除域名访问控制策略",
+      "output": "DeleteDomainControlPolicyResponse",
+      "status": "online"
+    },
+    "DeleteImages": {
+      "document": "用于删除一个或多个自定义镜像。单次最大删除5个。",
+      "input": "DeleteImagesRequest",
+      "name": "删除自定义镜像",
+      "output": "DeleteImagesResponse",
+      "status": "online"
+    },
+    "DescribeCommandTasks": {
+      "document": "拉取命令任务详情",
+      "input": "DescribeCommandTasksRequest",
+      "name": "查询脚本任务详情",
+      "output": "DescribeCommandTasksResponse",
+      "status": "online"
+    },
+    "DescribeImages": {
+      "document": "获取云桌面镜像详细信息",
+      "input": "DescribeImagesRequest",
+      "name": "获取云桌面镜像详细信息",
+      "output": "DescribeImagesResponse",
+      "status": "online"
+    },
+    "DescribeInstanceFetchMsg": {
+      "document": "获取指定实例的登录Fetch信息",
+      "input": "DescribeInstanceFetchMsgRequest",
+      "name": "获取指定实例的登录Fetch信息",
+      "output": "DescribeInstanceFetchMsgResponse",
+      "status": "online"
+    },
+    "DescribeInstanceGraphData": {
+      "document": "获取实例磁盘分区监控数据",
+      "input": "DescribeInstanceGraphDataRequest",
+      "name": "查询实例磁盘分区图数据",
+      "output": "DescribeInstanceGraphDataResponse",
+      "status": "online"
+    },
+    "DescribeInstanceLoginMsg": {
+      "document": "获取指定实例的登录login信息",
+      "input": "DescribeInstanceLoginMsgRequest",
+      "name": "获取指定实例的登录login信息",
+      "output": "DescribeInstanceLoginMsgResponse",
+      "status": "online"
+    },
+    "DescribeInstanceMonitorData": {
+      "document": "查询实例监控数据",
+      "input": "DescribeInstanceMonitorDataRequest",
+      "name": "获取实例监控数据",
+      "output": "DescribeInstanceMonitorDataResponse",
+      "status": "online"
+    },
+    "DescribeInstanceRegionDistribution": {
+      "document": "获取用户在各个区域云桌面实例个数",
+      "input": "DescribeInstanceRegionDistributionRequest",
+      "name": "获取用户在各个区域云桌面实例个数",
+      "output": "DescribeInstanceRegionDistributionResponse",
+      "status": "online"
+    },
+    "DescribeInstances": {
+      "document": "获取云桌面实例详细信息",
+      "input": "DescribeInstancesRequest",
+      "name": "获取云桌面实例详细信息",
+      "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeInstancesBindStatus": {
+      "document": "获取桌面实例绑定状态",
+      "input": "DescribeInstancesBindStatusRequest",
+      "name": "获取桌面实例绑定状态",
+      "output": "DescribeInstancesBindStatusResponse",
+      "status": "online"
+    },
+    "DescribeInstancesStatus": {
+      "document": "获取桌面实例状态",
+      "input": "DescribeInstancesStatusRequest",
+      "name": "获取桌面实例状态",
+      "output": "DescribeInstancesStatusResponse",
+      "status": "online"
+    },
+    "DescribeInvocationDetail": {
+      "document": "查询脚本任务执行的详细情况。",
+      "input": "DescribeInvocationDetailRequest",
+      "name": "查询任务执行的详细情况",
+      "output": "DescribeInvocationDetailResponse",
+      "status": "online"
+    },
+    "DescribeInvocations": {
+      "document": "查询指定云桌面上的任务列表。",
+      "input": "DescribeInvocationsRequest",
+      "name": "查询云桌面上的任务列表",
+      "output": "DescribeInvocationsResponse",
+      "status": "online"
+    },
+    "DescribePolicyDetail": {
+      "document": "拉取租户策略列表 ",
+      "input": "DescribePolicyDetailRequest",
+      "name": "拉取租户策略列表",
+      "output": "DescribePolicyDetailResponse",
+      "status": "online"
+    },
+    "DescribeSecurityGroups": {
+      "document": "拉取云桌面关联的安全组信息",
+      "input": "DescribeSecurityGroupsRequest",
+      "name": "拉取云桌面关联的安全组信息",
+      "output": "DescribeSecurityGroupsResponse",
+      "status": "online"
+    },
+    "DescribeSnapshots": {
+      "document": "拉取快照列表",
+      "input": "DescribeSnapshotsRequest",
+      "name": "拉取快照列表",
+      "output": "DescribeSnapshotsResponse",
+      "status": "online"
+    },
+    "DescribeUsage": {
+      "document": "拉取实例使用时长详情",
+      "input": "DescribeUsageRequest",
+      "name": "查询桌面使用时长详情",
+      "output": "DescribeUsageResponse",
+      "status": "online"
+    },
+    "DescribeUsers": {
+      "document": "拉取用户列表",
+      "input": "DescribeUsersRequest",
+      "name": "拉取用户列表",
+      "output": "DescribeUsersResponse",
+      "status": "online"
+    },
+    "DisassociateSecurityGroup": {
+      "document": "安全组批量解关联云桌面",
+      "input": "DisassociateSecurityGroupRequest",
+      "name": "安全组批量解关联安全组",
+      "output": "DisassociateSecurityGroupResponse",
+      "status": "online"
+    },
+    "ModifyDiskConfiguration": {
+      "document": "实例硬盘扩容",
+      "input": "ModifyDiskConfigurationRequest",
+      "name": "实例硬盘扩容",
+      "output": "ModifyDiskConfigurationResponse",
+      "status": "online"
+    },
+    "ModifyImageAttrs": {
+      "document": "修改镜像属性",
+      "input": "ModifyImageAttrsRequest",
+      "name": "修改镜像属性",
+      "output": "ModifyImageAttrsResponse",
+      "status": "online"
+    },
+    "ModifyInstanceBasicAttribute": {
+      "document": "修改桌面实例属性",
+      "input": "ModifyInstanceBasicAttributeRequest",
+      "name": "修改桌面实例属性",
+      "output": "ModifyInstanceBasicAttributeResponse",
+      "status": "online"
+    },
+    "ModifyInstancesType": {
+      "document": "调整实例机型配置",
+      "input": "ModifyInstancesTypeRequest",
+      "name": "实例变配",
+      "output": "ModifyInstancesTypeResponse",
+      "status": "online"
+    },
+    "ModifyInstancesVpc": {
+      "document": "调整实例私有网络",
+      "input": "ModifyInstancesVpcRequest",
+      "name": "调整私有网络",
+      "output": "ModifyInstancesVpcResponse",
+      "status": "online"
+    },
+    "RebootInstances": {
+      "document": "重启实例",
+      "input": "RebootInstancesRequest",
+      "name": "重启实例",
+      "output": "RebootInstancesResponse",
+      "status": "online"
+    },
+    "RemoveDataDisks": {
+      "document": "卸载实例数据盘",
+      "input": "RemoveDataDisksRequest",
+      "name": "卸载数据盘",
+      "output": "RemoveDataDisksResponse",
+      "status": "online"
+    },
+    "RemovePolicy": {
+      "document": "删除策略",
+      "input": "RemovePolicyRequest",
+      "name": "删除策略",
+      "output": "RemovePolicyResponse",
+      "status": "online"
+    },
+    "RenewInstances": {
+      "document": "实例续费",
+      "input": "RenewInstancesRequest",
+      "name": "实例续费",
+      "output": "RenewInstancesResponse",
+      "status": "online"
+    },
+    "ResetInstances": {
+      "document": "实例重置",
+      "input": "ResetInstancesRequest",
+      "name": "实例重置",
+      "output": "ResetInstancesResponse",
+      "status": "online"
+    },
+    "RunCommand": {
+      "document": "在指定的云桌面实例上执行脚本任务。",
+      "input": "RunCommandRequest",
+      "name": "执行脚本任务",
+      "output": "RunCommandResponse",
+      "status": "online"
+    },
+    "StartInstances": {
+      "document": "开启实例",
+      "input": "StartInstancesRequest",
+      "name": "开启实例",
+      "output": "StartInstancesResponse",
+      "status": "online"
+    },
+    "StopCommandTasks": {
+      "document": "停止命令任务",
+      "input": "StopCommandTasksRequest",
+      "name": "停止脚本任务",
+      "output": "StopCommandTasksResponse",
+      "status": "online"
+    },
+    "StopInstances": {
+      "document": "关闭实例",
+      "input": "StopInstancesRequest",
+      "name": "关闭实例",
+      "output": "StopInstancesResponse",
+      "status": "online"
+    },
+    "StopInvocation": {
+      "document": "停止脚本任务的执行。",
+      "input": "StopInvocationRequest",
+      "name": "停止脚本任务的执行",
+      "output": "StopInvocationResponse",
+      "status": "online"
+    },
+    "StopSession": {
+      "document": "注销或者断开机器当前会话",
+      "input": "StopSessionRequest",
+      "name": "注销或者断开机器当前会话",
+      "output": "StopSessionResponse",
+      "status": "online"
+    },
+    "TerminateInstances": {
+      "document": "主动退还、销毁退还实例。 \n<li>包年包月实例首次调用本接口，且参数DestroyImmediately为false时，实例进入隔离期，再次调用本接口，实例将被销毁，且不可恢复。</li>\n<li>包年包月实例，如果参数DestroyImmediately为true来调用此接口，则实例将被直接销毁，且不可恢复。</li>\n<li>按量计费实例调用本接口将被直接销毁，且不可恢复。</li>",
+      "input": "TerminateInstancesRequest",
+      "name": "主动退还实例",
+      "output": "TerminateInstancesResponse",
+      "status": "online"
+    },
+    "UnbindInstances": {
+      "document": "解除用户和机器绑定关系",
+      "input": "UnbindInstancesRequest",
+      "name": "解除机器绑定",
+      "output": "UnbindInstancesResponse",
+      "status": "online"
+    },
+    "UpdatePolicy": {
+      "document": "更新策略",
+      "input": "UpdatePolicyRequest",
+      "name": "更新策略",
+      "output": "UpdatePolicyResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-11-04",
+    "api_brief": "介绍如何使用API进行桌面发布、用户绑定、策略实现等内容",
+    "serviceNameCN": "云桌面",
+    "serviceShortName": "cvd"
+  },
+  "objects": {
+    "AssociateSecurityGroupRequest": {
+      "document": "AssociateSecurityGroup请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AssociateSecurityGroupResponse": {
+      "document": "AssociateSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联成功的桌面列表",
+          "example": "[\"cdi-sdsflwq1df89hs\", \"cdi-sswdswe232\"]",
+          "member": "string",
+          "name": "SuccessSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联失败的桌面列表",
+          "example": "[\"cdi-sdsflwq1df89hs\", \"cdi-sswdswe232\"]",
+          "member": "string",
+          "name": "FailureSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttributeInfo": {
+      "document": "实例属性key--value结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例属性名</p>",
+          "example": "attr-name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例属性值</p>",
+          "example": "attr-value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "BindInfo": {
+      "document": "绑定关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例绑定的用户ID</p>",
+          "example": "\"user-rfc\"",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"cdi-deffg2342sdfg\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindInstancesRequest": {
+      "document": "BindInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定得到云桌面用户id</p>",
+          "example": "[\"usera\",\"userb\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分配桌面实例id</p>",
+          "example": "[\"cdi-a\",\"cdi-b\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分配桌面类型</p>",
+          "example": "\"S1L.LARGE8\"",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待分配桌面所在区域</p>",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindInstancesResponse": {
+      "document": "BindInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待分配桌面状态</p>",
+          "example": "无",
+          "member": "BindStatusInfo",
+          "name": "BindInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindStatusInfo": {
+      "document": "桌面实例绑定状态详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>桌面实例id</p>",
+          "example": "\"cdi-a\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例的绑定状态。取值：<br>UNBOUND - 未绑定<br>BINDING - 绑定中<br>BOUND - 绑定<br>UNBINDING-解绑中</p>",
+          "example": "\"BINDING\"",
+          "member": "string",
+          "name": "BindStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的用户id【BOUND状态不允许为空】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"user-1\"",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定用户名称【BOUND状态不允许为空】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"username-1\"",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定用户显示名称【BOUND状态不允许为空】</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"displayname-1\"",
+          "member": "string",
+          "name": "DisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChargePrepaid": {
+      "document": "预付费模式，即包年包月相关参数。包括购买时长和自动续费逻辑等。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Period",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_AUTO_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CommandDetail": {
+      "document": "任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "租户 Uin",
+          "example": "100000077643",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户 APPID",
+          "example": "13846212",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型，取值有：\nPowerShellScript\nBat",
+          "example": "任务类型",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "RUNNING - 执行中；FINISHED - 执行完成",
+          "example": "任务状态",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务脚本，Base64 编码",
+          "example": "aXBjb25maWc=",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务唯一 ID",
+          "example": "ac5b1e88-9862-423e-9595-10f2998096b5",
+          "member": "string",
+          "name": "CommandId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务完成时间",
+          "example": "2025-04-22 14:01:23",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2025-04-22 14:01:23",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "各实例运行结果集",
+          "example": "无",
+          "member": "InvocationDetail",
+          "name": "Invocations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否以绑定用户运行任务，默认 false：system 用户执行",
+          "example": "false",
+          "member": "bool",
+          "name": "RunAsBoundUser",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否前台运行任务，默认 false：后台运行任务",
+          "example": "false",
+          "member": "bool",
+          "name": "RunForeground",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateCommandTaskRequest": {
+      "document": "CreateCommandTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脚本任务，需要 Base64 编码",
+          "example": "aXBjb25maWc=",
+          "member": "string",
+          "name": "Command",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "脚本任务类型：windows 桌面可选有：    PowerShellScript — powershell脚本    BatScript — Bat 脚本",
+          "example": "PowerShellScript",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行脚本任务的实例列表",
+          "example": "[\"cdi-i71kxu6t60auxxxx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否以绑定用户身份执行，默认 System身份运行false： System身份运行，默认行为true：以绑定用户身份执行",
+          "example": "false",
+          "member": "bool",
+          "name": "RunAsBoundUser",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否前台运行false：后台运行，默认行为true：前台运行",
+          "example": "false",
+          "member": "bool",
+          "name": "RunForeground",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCommandTaskResponse": {
+      "document": "CreateCommandTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脚本任务唯一 ID",
+          "example": "ac5b1e88-9862-423e-9595-10f2998096b5",
+          "member": "string",
+          "name": "CommandId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataDiskRequest": {
+      "document": "CreateDataDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cdi-xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘类型，有效值CLOUD_SSD/CLOUD_PREMIUM",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘大小",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "硬盘快照id",
+          "example": "id-xx",
+          "member": "string",
+          "name": "SnapShotId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDataDiskResponse": {
+      "document": "CreateDataDisk返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainControlPolicyRequest": {
+      "document": "CreateDomainControlPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "test-one",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "test policy",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略类型，取值范围[&quot;WHITE&quot;,&quot;BLACK&quot;]，WHITE - 白名单策略；BLACK - 黑名单策略；默认 值为BLACK</p>",
+          "example": "BLACK",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名控制规则详情</p>",
+          "example": "无",
+          "member": "DomainControlDetail",
+          "name": "DetailSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP控制规则详情</p>",
+          "example": "无",
+          "member": "IpControlDetail",
+          "name": "IpDetailSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作用到的实例列表</p>",
+          "example": "[\"cdi-r4j76wrhhnp7tdr\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainControlPolicyResponse": {
+      "document": "CreateDomainControlPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略唯一ID</p>",
+          "example": "domain-vds78dtf",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageRequest": {
+      "document": "CreateImage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云桌面实例ID。</p>",
+          "example": "cdi-v2fpex3xyy3y6wd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像名称。只支持中文、字母、数字或连接符号&quot;-&quot;，且最多60个字符。<br>默认值：空。</p>",
+          "example": "测试镜像",
+          "member": "string",
+          "name": "ImageName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像的描述信息。支持英文或中文字符，最多60个字符。<br>默认值：空。</p>",
+          "example": "description",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>基于实例创建整机镜像时，指定包含在镜像里的数据盘ID。</p>",
+          "example": "[\"disk-87afu9ag\"]",
+          "member": "string",
+          "name": "DataDiskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateImageResponse": {
+      "document": "CreateImage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像ID。</p>",
+          "example": "img-mqxn7nyy",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesRequest": {
+      "document": "CreateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型。<li>  S3L.MEDIUM4: 云桌面-标准S3_2核4G </li><li> S3L.LARGE8: 云桌面-标准S3_4核8G </li><li> S3L.LARGE16: 云桌面-标准S3_4核16G </li><li> S3L.2XLARGE16: 云桌面-标准S3_8核16G </li><li> S1L.LARGE8：云桌面-标准S1_4核8G </li><li> S1L.LARGE16：标准S1_4核16G </li><li> S2L.2XLARGE16：标准S2_8核16G </li><li> G1L.LARGE16：图形G1_4核16G  </li><li> G1L.2XLARGE32：图形G1_8核32G </li><li> G1L.4XLARGE64：图形G1_16核64G </li><li> G2L.LARGE24: 云桌面-图形G2_6核24G </li><li> G2L.3XLARGE58: 云桌面-图形G2_14核58G </li><li> G2L.3XLARGE44: 云桌面-图形G2_12核44G </li><li> G3L.LARGE16: 云桌面-图形G3_4核16G </li><li> G3L.5XMEDIUM40: 云桌面-图形G3_10核40G </li><li> G3L.5XLARGE80: 云桌面-图形G3_20核80G </li><li> G4L.5XMEDIUM40: 云桌面-图形G4_10核40G </li><li> G4L.11XMEDIUM80: 云桌面-图形G4_22核80G </li><li> G4L.11XLARGE160: 云桌面-图形G4_44核160G </li><li> G5L.5XMEDIUM40: 云桌面-图形G5_10核40G </li><li> G5L.5XLARGE80: 云桌面-图形G5_22核80G </li><li> G5L.21XMEDIUM160: 云桌面-图形G5_42核160G </li><li> G5L.21XLARGE320: 云桌面-图形G5_84核320G </li>",
+          "example": "S1.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "系统盘信息",
+          "example": "无",
+          "member": "Disk",
+          "name": "SystemDisk",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像ID",
+          "example": "img-xxx",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。",
+          "example": "无",
+          "member": "VirtualPrivateCloud",
+          "name": "VirtualPrivateCloud",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例显示名称。\n<li> 如果该字段为空，则采用默认格式：云桌面型号+月日+三位随机数+镜像ID。</li>\n<li> 购买多台实例，如果指定模式串{R:x}，表示生成数字[x, x+n-1]，其中n表示购买实例的数量，例如server_{R:3}，购买1台时，实例显示名称为server_3；购买2台时，实例显示名称分别为server_3，server_4。支持指定多个模式串{R:x}。</li>\n<li> 购买多台实例，如果不指定模式串，则在实例显示名称添加后缀1、2...n，其中n表示购买实例的数量，例如server_，购买2台时，实例显示名称分别为server_1，server_2。</li>\n<li> 最多支持60个字符（包含模式串）。</li>",
+          "example": "myComputer",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。取值范围[1,50]。默认为1",
+          "example": "5",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘信息。目前只支持一块数据盘。",
+          "example": "无",
+          "member": "Disk",
+          "name": "DataDisks",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例计费类型。\n<li> PREPAID：预付费，即包年包月</li>\n<li> POSTPAID_BY_HOUR：按小时后付费</li>\n默认为PREPAID",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
+          "example": "无",
+          "member": "ChargePrepaid",
+          "name": "ChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否只预检此次请求。\n<li> true：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和库存。\n如果检查通过，则返回的错误码为DryRunOperation；如果返回其他错误码表示检查没有通过；</li>\n<li> false（默认）：发送正常请求，通过检查后直接创建实例</li>",
+          "example": "false",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "允许绑定用户前的匿名访问。默认值：false。",
+          "example": "false",
+          "member": "bool",
+          "name": "AnonymousAccess",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "关联的安全组ID列表",
+          "example": "[\"sg-sdh123b\"]",
+          "member": "string",
+          "name": "SecurityGroups",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "桌面池ID",
+          "example": "pol-1234",
+          "member": "string",
+          "name": "PoolId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名管控策略ID",
+          "example": "[\"domain-sdjh36g\"]",
+          "member": "string",
+          "name": "DomainControlPolicies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签，最多10个",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-shanghai-5",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstancesResponse": {
+      "document": "CreateInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当通过本接口来创建实例时会返回该参数，表示一个或多个实例ID。返回实例ID列表并不代表实例创建成功。通过进一步查询返回的InstancesSet中对应实例的ID的状态来判断创建是否完成；如果实例状态由“准备中”变为“正在运行”，则为创建成功。",
+          "example": "[\"cdi-1vogaxgk\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "policy",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略详情</p>",
+          "example": "无",
+          "member": "PolicyInfo",
+          "name": "PolicyInfoList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>",
+          "example": "policy",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略作用的用户id</p>",
+          "example": "[\"tom\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DataPoint": {
+      "document": "监控数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例对象维度组合</p>",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>时间戳数组</p>",
+          "example": "[1535079000, 1535079300]",
+          "member": "float",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>监控值数组，与Timestamps一一对应</p>",
+          "example": "[2.566,2.283]",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MaxValues 最大值数组，与Timestamps一一对应</p>",
+          "example": "[5.0]",
+          "member": "float",
+          "name": "MaxValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MinValues 最小值数组，与Timestamps一一对应</p>",
+          "example": "[1.0]",
+          "member": "float",
+          "name": "MinValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AvgValues 平均值数组，与Timestamps一一对应</p>",
+          "example": "[3.0]",
+          "member": "float",
+          "name": "AvgValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteCommandTasksRequest": {
+      "document": "DeleteCommandTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除命令任务条件<br>Filter.name 目前支持 CommandId</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCommandTasksResponse": {
+      "document": "DeleteCommandTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainControlPolicyRequest": {
+      "document": "DeleteDomainControlPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略唯一ID",
+          "example": "domain-vds78dtf",
+          "member": "string",
+          "name": "PolicyId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainControlPolicyResponse": {
+      "document": "DeleteDomainControlPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagesRequest": {
+      "document": "DeleteImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>准备删除的镜像Id列表</p>",
+          "example": "[\"img-rlg4dxrh\"]",
+          "member": "string",
+          "name": "ImageIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteImagesResponse": {
+      "document": "DeleteImages返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommandTasksRequest": {
+      "document": "DescribeCommandTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认 20，最大 100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>拉取任务的过滤器 ，Filter.Name 取值：CommandId - 任务 lD；Staus - 任务状态， RUNNING - 执行中；FINISHED - 执行完成（不代表成功，只表示任务执行完成）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCommandTasksResponse": {
+      "document": "DescribeCommandTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>拉取任务详情数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>",
+          "example": "无",
+          "member": "CommandDetail",
+          "name": "CommandDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态，RUNNING -执行中；FINISHED-执行完成； STOPPED-终止任务</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesRequest": {
+      "document": "DescribeImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>拉取页号</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页拉取个数</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Name取值：[&quot;ImageID&quot;,&quot;Name&quot;,&quot;ImageType&quot;,&quot;ImageState&quot;,&quot;Region&quot;,&quot;InstanceType&quot;]<br>注意：filter中没有ImageID或ImageState过滤条件，后台默认不返回INVISIBLE的镜像信息</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeImagesResponse": {
+      "document": "DescribeImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回查询到的所有镜像信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "Images",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回当前查询到的镜像总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceFetchMsgRequest": {
+      "document": "DescribeInstanceFetchMsg请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "\"cdi-a\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定实例的UserID，为后续多会话预留参数",
+          "example": "\"usera\"",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拉取桌面title，用户可自行定义，默认为云桌面实例名称",
+          "example": "\"hosta\"",
+          "member": "string",
+          "name": "DesktopName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否抢占桌面，即桌面使用过程中，抢占登录。\ntrue：抢占登录\nfalse：非抢占登录\n默认为抢占登录",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网登录桌面",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceFetchMsgResponse": {
+      "document": "DescribeInstanceFetchMsg返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桌面登录ticket状态描述",
+          "example": "\"status\"",
+          "member": "string",
+          "name": "FetchStatusTicket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面登录ticket描述",
+          "example": "\"ticket\"",
+          "member": "string",
+          "name": "FetchTicket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面登录launch url",
+          "example": "\"url\"",
+          "member": "string",
+          "name": "FetchUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面传输协议",
+          "example": "\"version\"",
+          "member": "string",
+          "name": "ProtocolVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceGraphDataRequest": {
+      "document": "DescribeInstanceGraphData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云桌面实例ID",
+          "example": "cdi-l0c69nmim85j8t1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始时间",
+          "example": "2025-06-16T16:10:39+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "2025-06-16T17:10:39+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceGraphDataResponse": {
+      "document": "DescribeInstanceGraphData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始时间",
+          "example": "2025-06-16T16:10:39+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "2025-06-16T17:10:39+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期",
+          "example": "0",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标名",
+          "example": "disk_usage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例磁盘数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Partition",
+          "name": "Partitions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceLoginMsgRequest": {
+      "document": "DescribeInstanceLoginMsg请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "\"cdi-a\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定实例的UserID，为后续多会话预留参数",
+          "example": "\"usera\"",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拉取桌面title，用户可自行定义，默认为云桌面实例名称",
+          "example": "\"deskname\"",
+          "member": "string",
+          "name": "DesktopName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否抢占桌面，即桌面使用过程中，抢占登录。\ntrue：抢占登录\nfalse：非抢占登录\n默认为抢占登录",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否内网方式",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInternal",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceLoginMsgResponse": {
+      "document": "DescribeInstanceLoginMsg返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桌面登录login信息",
+          "example": "\"msg\"",
+          "member": "string",
+          "name": "LoginMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceMonitorDataRequest": {
+      "document": "DescribeInstanceMonitorData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例维度组合数组</p>",
+          "example": "无",
+          "member": "Instance",
+          "name": "Instances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>命名空间。如QCE/CVM、QCE/BLOCK_STORAGE等</p>",
+          "example": "QCE/CVM",
+          "member": "string",
+          "name": "NameSpace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指标名</p>",
+          "example": "CPUUsage",
+          "member": "string",
+          "name": "MetricName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计周期(时间粒度), 单位s。</p>",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2019-03-24T10:50:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2019-03-24T20:50:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多种统计方式数据。avg, max, min (1,2,4)可以自由组合</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SpecifyStatistics",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceMonitorDataResponse": {
+      "document": "DescribeInstanceMonitorData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指标名</p>",
+          "example": "CPUUsage",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>统计周期</p>",
+          "example": "300",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2019-03-24T10:50:00+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2019-03-24T20:50:00+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据点数组</p>",
+          "example": "无",
+          "member": "DataPoint",
+          "name": "DataPoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>message信息</p>",
+          "example": "ok",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRegionDistributionRequest": {
+      "document": "DescribeInstanceRegionDistribution请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询区域列表</p>",
+          "example": "[\"ap-guangzhou\"]",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询实例类型列表</p>",
+          "example": "[\"S1\"]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询用户拥有的云桌面地域分布信息</p>",
+          "example": "tom",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRegionDistributionResponse": {
+      "document": "DescribeInstanceRegionDistribution返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>各区域实例个数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributionInfo",
+          "name": "DistributionInfo",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesBindStatusRequest": {
+      "document": "DescribeInstancesBindStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>拉取的桌面id列表</p>",
+          "example": "[\"cdi-dew2fd3wf\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例所在区域</p>",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesBindStatusResponse": {
+      "document": "DescribeInstancesBindStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>桌面实例状态列表</p>",
+          "example": "无",
+          "member": "BindStatusInfo",
+          "name": "InstanceBindStatusList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesRequest": {
+      "document": "DescribeInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "拉取页号",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页拉取个数",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Name取值范围：\"InstanceId\"      按照云桌面ID搜索，云桌面ID示例：cdi-l0dfy594htvbn37\"Name\"     按照云桌面名称搜索 \"Region\"     按照云桌面所在地域搜索，目前云桌面所支持的地域：        ap-beijing：北京        ap-shanghai：上海        ap-guangzhou：广州        ap-shanghai-adc：上海自动驾驶云\"Type\"    按照云桌面类型搜索，类型取值：        S3L.MEDIUM4：云桌面-标准S3_2核4G        S3L.LARGE8：云桌面-标准S3_4核8G        S3L.LARGE16：云桌面-标准S3_4核16G        S3L.2XLARGE16：云桌面-标准S3_8核16G        S1L.LARGE8：云桌面-标准S1_4核8G        S1L.LARGE16：云桌面-标准S1_4核16G        S2L.2XLARGE16：云桌面-标准S2_8核16G        G1L.LARGE16：云桌面-图形G1_4核16G        G1L.2XLARGE32：云桌面-图形G1_8核32G        G1L.4XLARGE64：云桌面-图形G1_16核64G        G2L.LARGE24：云桌面-图形G2_6核24G        G2L.3XLARGE58：云桌面-图形G2_14核58G\t        G2L.3XLARGE44：云桌面-图形G2_12核44G         G3L.LARGE16：云桌面-图形G3_4核16G\t        G3L.5XMEDIUM40：云桌面-图形G3_10核40G\t        G3L.5XLARGE80：云桌面-图形G3_20核80G        G4L.5XMEDIUM40：云桌面-图形G4_10核40G        G4L.11XMEDIUM80：云桌面-图形G4_22核80G        G4L.11XLARGE160：云桌面-图形G4_44核160G        G5L.5XMEDIUM40：云桌面-图形G5_10核40G\t        G5L.5XLARGE80：云桌面-图形G5_22核80G        G5L.21XMEDIUM160：云桌面-图形G5_42核160G        G5L.21XLARGE320：云桌面-图形G5_84核320G\t\"ImageId\"    按照镜像ID搜索，镜像ID示例：img-ed892xcd2\"ChargeType\"    按着计费模式搜索，目前支持的计费模式为：         PREPAID：包年包月        POSTPAID_BY_HOUR：按量计费 \"HostName\"    按照云桌面机器名称搜索，云桌面机器名示例：l0dfy594htvbn37\"Status\"    按照桌面状态搜索，云桌面状态：        PENDING：创建中        STARTING：开机中        REBOOTING：重启中        ROLLBACKING：回滚中        RESETTING：重置中        STOPPING：关机中        TERMINATING：销毁中        RUNNING：运行中        USING：使用中        STOPPED：关机        ISOLATING ：隔离中，只返回最近24小时数据        SHUTDOWN：销毁，只返回最近24小时数据        DELETED：销毁和SHUTDOWN意义一致，只返回最近24小时数据        LAUNCH_FAILED：创建失败，只返回最近24小时数据\"UserId\"    按照绑定的用户ID搜索，用户ID示例: us-6b36f283c302481bb83bsdswdefqdqwerqw\"UserVpcId\"    按照云桌面所属vpc搜索，VPCID示例: vpc-0ji679xf\"UserSubnetId\"    按照云桌面所属子网搜索，SubnetID示例: subnet-0ji679xf\"UserPrivateIp\"    按照云桌面IP搜索\"Keyword\"    按照云桌面绑定的用户名搜索，Values每次只取第一个值\"SecurityGroupId\"    按照云桌面关联安全组搜索，Values每次只取第一个值,安全组ID实例：sg-0ji679xf\"AssociateSG\"    按照可以关联安全组搜索，Values每次只取第一个值,安全组ID实例：sg-0ji679xf\"DomainControlPolicyId\"    按照云桌面关联域名管控策略搜索，Values每次只取第一个值,安全组ID实例：domain-0ji679xf \"AssociateDomainControlPolicy\"    按照可以关联域名策略搜索        ①若已有域名策略关联桌面情况：Values每次只取第一个值,安全组ID实例：domain-0ji679xf         ②若新建域名策略关联桌面情况，Values传空\"Uin\"    外部租户请勿使用\"AppId\"    外部租户请勿使用\"ImageName\"    废弃",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesResponse": {
+      "document": "DescribeInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回查询到的所有实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回当前查询到的实例总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesStatusRequest": {
+      "document": "DescribeInstancesStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>查询的实例id列表</p>",
+          "example": "[\"cdi-yrsgnf7sza3b0n3\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancesStatusResponse": {
+      "document": "DescribeInstancesStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例状态列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceStatus",
+          "name": "InstanceStatusList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationDetailRequest": {
+      "document": "DescribeInvocationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云桌面实例ID。</p>",
+          "example": "cdi-234r32ad",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "23sfc-324-s11",
+          "member": "string",
+          "name": "InvokeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要返回的任务输出行号起始索引。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "OutputLinesOffset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要返回的任务输出行数。</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "OutputLinesLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的输出内容是否合并成一个字符串。默认为true。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "MergeOutputLines",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationDetailResponse": {
+      "document": "DescribeInvocationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例上任务执行的详细情况。</p>",
+          "example": "无",
+          "member": "Invocation",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationsRequest": {
+      "document": "DescribeInvocations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云桌面实例ID。</p>",
+          "example": "cdi-232fsacsef11",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInvocationsResponse": {
+      "document": "DescribeInvocations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>该实例上的任务列表。不会返回Output字段。</p>",
+          "example": "无",
+          "member": "Invocation",
+          "name": "Invocations",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyDetailRequest": {
+      "document": "DescribePolicyDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>拉取页号</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页最大显示个数，最大值不超过100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询条件（暂时无效，保留字段）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyDetailResponse": {
+      "document": "DescribePolicyDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略详细信息列表</p>",
+          "example": "无",
+          "member": "PolicyDetail",
+          "name": "PolicyList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前查询到的策略总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupsRequest": {
+      "document": "DescribeSecurityGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页号，从1开始</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页最大展示数量，默认20，最大100</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "SecurityGroupRegion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityGroupsResponse": {
+      "document": "DescribeSecurityGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsRequest": {
+      "document": "DescribeSnapshots请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>快照所在的地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "SnapshotRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页号</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，最大100，默认20</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索条件，Filter的name取值：<br>InstanceId：实例ID，返回当前实例挂载的云硬盘关联的快照信息<br>DiskId：云硬盘ID，返回当前云硬盘关联的快照信息</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSnapshotsResponse": {
+      "document": "DescribeSnapshots返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前检索条件可查询到的快照总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照明细列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SnapshotInfo",
+          "name": "SnapshotList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageRequest": {
+      "document": "DescribeUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始时间，最小不能超过当前时间 90 天前，取 unix 时间戳",
+          "example": "1735660800",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询截止时间，取 unix 时间戳",
+          "example": "1735747200",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页查询信息条数，默认 20，最大 100",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页号，起始页为 1，不填默认为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询key，每次查询会返回",
+          "example": "-d298-4c88-b7ff-0eabf528d566",
+          "member": "string",
+          "name": "QueryKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件，Name可选为：\nInstanceId按照实例ID搜索\nUserName按照绑定的用户搜索，只取Values的第一个值\nChareType按照计费类型搜索\nInstanceType按照实例类型搜索",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定的排序方式，默认不排序\n1:使用时间，升序\n2:使用时间，降序\n3:空闲时间，升序\n4:空闲时间，降序",
+          "example": "0",
+          "member": "int64",
+          "name": "SortType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsageResponse": {
+      "document": "DescribeUsage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检索出相关使用详情总数",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询 key，作为翻页查询入参",
+          "example": "-d298-4c88-b7ff-0eabf528d566",
+          "member": "string",
+          "name": "QueryKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "使用时长详情",
+          "example": "无",
+          "member": "Usage",
+          "name": "UsageSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersRequest": {
+      "document": "DescribeUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>搜索关键字。</p>",
+          "example": "tom",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页面编号。从1开始</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页面大小。默认20，不超过100。</p>",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部门ID。</p>",
+          "example": "sale",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUsersResponse": {
+      "document": "DescribeUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的用户个数。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户列表。</p>",
+          "example": "无",
+          "member": "User",
+          "name": "Users",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Dimension": {
+      "document": "实例对象的维度组合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例维度名称",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例维度值",
+          "example": "cdi-zvxnv9y9s31dd4h",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DisassociateSecurityGroupRequest": {
+      "document": "DisassociateSecurityGroup请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DisassociateSecurityGroupResponse": {
+      "document": "DisassociateSecurityGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "解关联失败的云桌面列表",
+          "example": "[\"cdi-sqdwdw123s\"]",
+          "member": "string",
+          "name": "FailureSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解关联成功的云桌面列表",
+          "example": "[\"cdi-sqdwdw123s\"]",
+          "member": "string",
+          "name": "SuccessSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Disk": {
+      "document": "桌面实例挂载磁盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>磁盘类型：<br>CLOUD_SSD：SSD云硬盘<br>CLOUD_PREMIUM：高性能云硬盘</p>",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘大小（单位G）<br>系统盘最小值50，最大值500<br>数据盘最小值10，最大值32000。最小调整步长为10G</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>磁盘id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "disk-de925des1",
+          "member": "string",
+          "name": "DiskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DistributionInfo": {
+      "document": "各地域实例个数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域描述</p>",
+          "example": "ap-singapore",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例个数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DomainControlDetail": {
+      "document": "域名控制策略详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置域名",
+          "example": "*.testcvd.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "此参数必填，新版本无异议，请求包和回包强制填写空字符串,做校验",
+          "example": "11.10.0.11,11.10.0.12",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试域名",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Filter": {
+      "document": "查询因子",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要匹配的参数名",
+          "example": "\"Name\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要匹配的参数值",
+          "example": "[\"A\",\"B\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageInfo": {
+      "document": "云桌面镜像信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像id</p>",
+          "example": "img-dc2467",
+          "member": "string",
+          "name": "ImageID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像名称</p>",
+          "example": "imge test",
+          "member": "string",
+          "name": "ImageName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像类型：<br>PUBLIC_IMAGE-公共镜像<br>PRIVATE_IMAGE-自定义镜像<br>TENCENT_OFFICE_IMAGE-腾讯办公镜像</p>",
+          "example": "PRIVATE_IMAGE",
+          "member": "string",
+          "name": "ImageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像状态：<br>CREATING-创建中<br>NORMAL-正常<br>CREATEFAILED-创建失败<br>USING-使用中<br>SYNCING-同步中<br>IMPORTING-导入中<br>IMPORTFAILED-导入失败<br>INVISIBLE-淘汰的镜像<br>DELETIING-删除中<br>DELETED-删除的</p>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ImageState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像操作系统</p>",
+          "example": "Window Server 2019",
+          "member": "string",
+          "name": "OsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像大小（单位G）</p>",
+          "example": "50",
+          "member": "int64",
+          "name": "ImageSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像描述</p>",
+          "example": "test image",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像所在区域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内核类型：<br>CPU<br>GPU<br>GPU_A10<br>GPU_RTX6000<br>GPU_2080Ti<br>GPU_3080Ti</p>",
+          "example": "CPU",
+          "member": "string",
+          "name": "CoreType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cvm侧镜像id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "img-test1234",
+          "member": "string",
+          "name": "CvmImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是整机镜像，整机镜像无法用于桌面重置<br>true：整机镜像<br>false: 不是整机镜像</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsWhole",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>整机镜像中数据盘大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "DataDiskSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Instance": {
+      "document": "实例维度组合数组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例的维度组合\n",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "InstanceInfo": {
+      "document": "云桌面实例详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "\"cdi-a\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称</p>",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例状态<br>PENDING：表示创建中<br>LAUNCH_FAILED：表示创建失败<br>RUNNING：表示运行中<br>STOPPED：表示关机<br>STARTING：表示开机中<br>STOPPING：表示关机中<br>REBOOTING：表示重启中<br>SHUTDOWN：表示停止待销毁<br>TERMINATING：表示销毁中<br>DELETED：表示资源已经销毁，这个状态是业务层面的状态，cvm如果销毁了，在cvm侧资源已经不存在了<br>FAILED：表示资源创建失败.这个是业务层面的状态<br>ROLLBACKING：表示回滚中<br>USING：表示使用中<br>RESETTING：表示重置中.</p>",
+          "example": "\"RUNNING\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例拥有者名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例规格<br>S1.LARGE8：4VCPU 2.5GHZ主频 8G内存 无显卡<br>S1.LARGE16：4VCPU 2.5GHZ主频 16G内存 无显卡<br>S2.2XLARGE16：8VCPU 3.2GHZ主频 16G内存 无显卡<br>G1.LARGE16：4VCPU 2.5GHZ主频 16G内存 1/4 NVIDIA T4<br>G1.2XLARGE32：8VCPU 2.5GHZ主频 32G内存 1/2 NVIDIA T4<br>G1.4XLARGE64：16VCPU 2.5GHZ主频 64G内存 1 NVIDIA T4</p>",
+          "example": "\"S1.LARGE8\"",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>系统盘信息</p>",
+          "example": "无",
+          "member": "Disk",
+          "name": "SysDisk",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载的数据盘信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Disk",
+          "name": "DataDiskList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面实例所在的区域</p>",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面计费类型</p>",
+          "example": "\"POSTPAID_BY_HOUR\"",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。取值范围：<br>NOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费<br>NOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费<br>DISABLE_NOTIFY_AND_MANUAL_RENEW：表示不通知即将过期，也不自动续费。</p><p>注意：后付费模式本项为null</p>",
+          "example": "\"NOTIFY_AND_MANUAL_RENEW\"",
+          "member": "string",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面创建时间</p>",
+          "example": "2021-04-27T08:49:34Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面过期时间</p>",
+          "example": "2022-04-27T08:49:34Z",
+          "member": "datetime_iso",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "示例数据",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面hostname</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "HostName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面拥有者显示名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"a\"",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定状态。取值：<br>UNBOUND - 未绑定<br>BINDING - 绑定中<br>BOUND - 绑定</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"BOUND\"",
+          "member": "string",
+          "name": "BindStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建桌面的镜像id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"image-a\"",
+          "member": "string",
+          "name": "ImageId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户桌面vpc id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"vpc-a\"",
+          "member": "string",
+          "name": "UserVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户桌面子网 id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"subnet-a\"",
+          "member": "string",
+          "name": "UserSubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户桌面ip</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"x.x.x.x\"",
+          "member": "string",
+          "name": "UserPrivateIp",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器回收站到期时间，只有机器状态为SHUTDOWN该值才有意义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"0001-01-01T00:00:00.000Z\"",
+          "member": "string",
+          "name": "IsolatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次状态变更原因, AUTO:被动变更,如欠费,如包月实例到期, MANUAL:主动变更,如主动退还实例，当前只有机器处于ISOLATING、SHUTDOWN、TERMINATING、DELETED该字段有意义</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"AUTO\"",
+          "member": "string",
+          "name": "LastStatusChangeReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器最近一次操作</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "StartInstance",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器最近一次操作状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器最近一次操作请求ReqId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "requestid",
+          "member": "string",
+          "name": "LatestOperationRequestID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器操作系统名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Windows",
+          "member": "string",
+          "name": "OsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例逻辑set</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai_1",
+          "member": "string",
+          "name": "SetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>账号id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"189132\"",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的安全组ID列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sg-sddf12s\"]",
+          "member": "string",
+          "name": "SecurityGroups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费实例降配次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "DownGradeTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定的域名策略ID列表，最多五个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"domain-data1\",\"domain-data2\"]",
+          "member": "string",
+          "name": "DomainControlPolicies",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定的水印策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "watermark-qyui135",
+          "member": "string",
+          "name": "WaterMarkPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定的录屏策略ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "srpolicy-k53h3sy9",
+          "member": "string",
+          "name": "ScreenRecordingPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>WHITE --- 白名单策略<br>BLACK --- 黑名单策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "WHITE",
+          "member": "string",
+          "name": "DomainControlPolicyType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定的运行管控策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "appctl-run-10001",
+          "member": "string",
+          "name": "RunControlPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面绑定的安装管控策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "appctl-install-10001",
+          "member": "string",
+          "name": "InstallControlPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>桌面是否绑定匿名用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AnonymousAccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例绑定的标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceStatus": {
+      "document": "实例状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "\"cvd-abc\"",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\nPENDING：表示创建中\nLAUNCH_FAILED：表示创建失败\nRUNNING：表示运行中\nSTOPPED：表示关机\nSTARTING：表示开机中\nSTOPPING：表示关机中\nREBOOTING：表示重启中\nSHUTDOWN：表示停止待销毁\nTERMINATING：表示销毁中\nDELETED：表示资源已经销毁，这个状态是业务层面的状态，cvm如果销毁了，在cvm测资源已经不存在了\nFAILED：表示资源创建失败.这个是业务层面的状态\nROLLBACKING：表示机器正在回滚中\nRESETTING：表示机器正在重置中\nUSING：表示机器正在使用中",
+          "example": "\"RUNNING\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只有在Status为RUNNING时候，当前值才有意义\n取值范围：\n0:Unknown\n1:Connected \n2:Disconnected \n3:Terminated\n4:PreparingSession\n5:Active\n6:Reconnecting\n7:NonBrokeredSession\n8:Other\n9:Pending\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SessionState",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此字段只有在Status为USING时，才有效。\n字段意义：表示桌面当前session空闲时间（客户没有鼠标，键盘等操作），单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.00",
+          "member": "float",
+          "name": "IdleSeconds",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前状态改变的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1600000",
+          "member": "int64",
+          "name": "StatusChangeTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例最近一次操作类型",
+          "example": "\"TerminateInstances\"",
+          "member": "string",
+          "name": "LatestOperation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最近一次操作状态",
+          "example": "\"SUCCESS\"",
+          "member": "string",
+          "name": "LatestOperationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Invocation": {
+      "document": "脚本执行情况。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>脚本执行ID。</p>",
+          "example": "96c8ae74-20af-4b89-a0bf-3506c4533756",
+          "member": "string",
+          "name": "InvokeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行状态。<li> Running：正在执行</li> <li>Finished：已经完成</li> <li>Failed：失败</li>  <li> Stopped：已停止</li></p>",
+          "example": "Finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务输出。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InvocationOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务失败时的错误码。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InternalError",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务失败时的错误信息描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Failed",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务退出状态码</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InvocationDetail": {
+      "document": "实例执行脚本任务结果详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 id",
+          "example": "cdi-fffwjoi5ichjxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "桌面",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所在区域，目前支持的区域有：ap-beijing、ap-shanghai、ap-guangzhou、ap-shanghai-adc",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "脚本任务执行状态，取值有：\nRunning-执行中\nFinished-完成\nFailed-失败\nStopped-终止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例上任务唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d70252ef-9d50-4d6d-a85d-1fbe6bd52222",
+          "member": "string",
+          "name": "InvokeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脚本任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ok",
+          "member": "string",
+          "name": "Output",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务退出码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ExitCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行任务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "no",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InvocationOutput": {
+      "document": "任务执行的标准输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务的标准输出。</p>",
+          "example": "[\"\\n\"]",
+          "member": "string",
+          "name": "Lines",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次返回的输出第一行对应的索引编号。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "LinesOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次返回的输出的行数。</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "LinesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出的编码方式：<br>&lt;li&gt;PlainText 未经过Base64编码。</p>",
+          "example": "PlainText",
+          "member": "string",
+          "name": "Encoding",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前有效的输出起始编号，从0开始。输出过多，会冲掉旧的输出。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AllLinesOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前有效的标准输出总行数。</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "AllLinesNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IpControlDetail": {
+      "document": "IP控制策略详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>配置的IP。支持单IP和CIDR，暂不支持IP范围</p>",
+          "example": "180.101.49.44",
+          "member": "string",
+          "name": "Ip",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP的描述</p>",
+          "example": "baidu ip 1",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyDiskConfigurationRequest": {
+      "document": "ModifyDiskConfiguration请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cdi-aaa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新系统盘配置</p>",
+          "example": "无",
+          "member": "Disk",
+          "name": "NewSystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新数据盘配置</p>",
+          "example": "无",
+          "member": "Disk",
+          "name": "NewDataDisks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDiskConfigurationResponse": {
+      "document": "ModifyDiskConfiguration返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImageAttrsRequest": {
+      "document": "ModifyImageAttrs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像id</p>",
+          "example": "img-12sdefw2",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持修改的属性列表为：{ImageName}</p>",
+          "example": "无",
+          "member": "AttributeInfo",
+          "name": "Attrs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyImageAttrsResponse": {
+      "document": "ModifyImageAttrs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceBasicAttributeRequest": {
+      "document": "ModifyInstanceBasicAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云桌面实例id",
+          "example": "cdi-a",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改云桌面实例的属性信息",
+          "example": "无",
+          "member": "AttributeInfo",
+          "name": "AttributeInfoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceBasicAttributeResponse": {
+      "document": "ModifyInstanceBasicAttribute返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesTypeRequest": {
+      "document": "ModifyInstancesType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例id数组</p>",
+          "example": "[\"cdi-k7ay0fg1o\", \"cdi-p1xzld22k\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>变更的实例类型</p>",
+          "example": "S1L.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费类型</p>",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesTypeResponse": {
+      "document": "ModifyInstancesType返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesVpcRequest": {
+      "document": "ModifyInstancesVpc请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID数组</p>",
+          "example": "[\"cdi-aghau7towv752cx\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID</p>",
+          "example": "vpc-c4827cue",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-gbattek3",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>租户vpc的dns</p><p>参数格式：“189.0.01”</p>",
+          "example": "[\"183.60.83.19\"]",
+          "member": "string",
+          "name": "DnsServerSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstancesVpcResponse": {
+      "document": "ModifyInstancesVpc返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Partition": {
+      "document": "磁盘分区数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "磁盘名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "c:",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总容量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "49.97",
+          "member": "float",
+          "name": "Total",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用量,39.31%\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "39.31",
+          "member": "float",
+          "name": "Usage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyDetail": {
+      "document": "策略详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略id</p>",
+          "example": "policy-343fwf2",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名称</p>",
+          "example": "policy",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "policy",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略作用用户id列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tom\"]",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略的租户uin</p>",
+          "example": "234452234",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件重定向策略id。取值范围：<br>1：读写<br>2：只读<br>3：禁止读写</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FilePolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>剪切板重定向策略id。取值范围：<br>1：开启云桌面到客户端<br>2：开启客户端到云桌面<br>3：双向开启<br>4：禁用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ClipPolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>外设重定向策略id。取值范围：<br>1：允许usb重定向<br>2：允许端口重定向<br>3：允许usb和端口重定向<br>4：禁用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "DrivePolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>水印重定向策略id。取值范围（离散值）：<br>4:   当前时间，居中策略<br>10: 当前时间，平铺策略<br>15:  云桌面ID， 居中策略<br>16:  云桌面ID+当前时间， 居中策略<br>17:  云桌面ID， 平铺策略<br>18:  云桌面ID+当前时间， 平铺策略</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "WaterMarkPolicyId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是默认策略</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注意：默认策略的当前值无效</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalUser",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PolicyInfo": {
+      "document": "创建策略详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略类型。取值：\n1：文件重定向策略\n2：剪切板重定向策略\n3：外设重定向策略\n4：水印策略",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略值。取值：\nPolicyType对应个子取值范围：\n\t①：PolicyType为1-文件重定向策略\t\n\t\t\t\t\t1：读写\n\t\t\t\t\t2：只读\n\t\t\t\t\t3：禁止读写\n\t②：剪切板重定向策略\n\t\t\t\t\t1：开启云桌面到客户端\n\t\t\t\t\t2：开启客户端到云桌面\n\t\t\t\t\t3：双向开启\n\t\t\t\t\t4：禁用\n\t③：外设重定向策略\n\t\t\t\t\t1：允许usb重定向\n\t\t\t\t\t2：允许端口重定向\n\t\t\t\t\t3：允许usb和端口重定向\n\t\t\t\t\t4：禁用\n\t④：水印策略\n\t\t\t\t\t4:   当前时间，居中策略\n\t\t\t\t\t10: 当前时间，平铺策略\n\t\t\t\t\t15:  云桌面ID， 居中策略\n                                        16:  云桌面ID+当前时间， 居中策略\n                                        17:  云桌面ID， 平铺策略\n                                        18:  云桌面ID+当前时间， 平铺策略",
+          "example": "0",
+          "member": "int64",
+          "name": "PolicyValue",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RebootInstancesRequest": {
+      "document": "RebootInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "重启实例id列表",
+          "example": "[\"cdi-l0c69nmim85j8t1\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在区域，保证传入的列表在统一区域，否则报错",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否在正常重启失败后选择强制重启实例。取值范围：\nTRUE：表示在正常重启失败后进行强制重启\nFALSE：表示在正常重启失败后不进行强制重启\n\n默认取值：FALSE。",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "重启是否需要预登录",
+          "example": "true",
+          "member": "bool",
+          "name": "PreLogin",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootInstancesResponse": {
+      "document": "RebootInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveDataDisksRequest": {
+      "document": "RemoveDataDisks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID",
+          "example": "cdi-xxqa1po6kumydrq",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据盘磁盘 ID，可以通过 DescribeInstances 查下实例数据盘",
+          "example": "[\"disk-edsd11d\"]",
+          "member": "string",
+          "name": "DataDiskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveDataDisksResponse": {
+      "document": "RemoveDataDisks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemovePolicyRequest": {
+      "document": "RemovePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待删除策略id</p>",
+          "example": "policy-12dfew3",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemovePolicyResponse": {
+      "document": "RemovePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstancesRequest": {
+      "document": "RenewInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一个或多个待操作的实例ID。每次请求批量实例的上限为50。",
+          "example": "[\"cdi-l0c69nmim85j8t1\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。包年包月实例该参数为必传参数。",
+          "example": "无",
+          "member": "ChargePrepaid",
+          "name": "ChargePrepaid",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewInstancesResponse": {
+      "document": "RenewInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancesRequest": {
+      "document": "ResetInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要重置的实例id列表",
+          "example": "[\"cdi-a\",\"cdi-b\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "重置的目标镜像id",
+          "example": "\"img-a\"",
+          "member": "string",
+          "name": "ImageId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "重置实例的区域",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否解绑机器原有绑定关系",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUnbind",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetInstancesResponse": {
+      "document": "ResetInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunCommandRequest": {
+      "document": "RunCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云桌面实例ID。</p>",
+          "example": "cdi-nqj1mqcjmirynr7",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行的脚本内容，编码方式由ContentEncoding指定。<br>&lt;li&gt;脚本内容在Base64编码后的大小不能超过16 KB。</p>",
+          "example": "cGluZyAtbiA1IDEyNy4wLjAuMQ==",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>脚本种类。取值有：&lt;li&gt;PowerShellScript Powershell脚本 &lt;li&gt;BatScript Bat脚本</p>",
+          "example": "BatScript",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否同步等待脚本的执行结果。&lt;li&gt;false为异步模式，通过此接口触发任务的执行，之后异步获取执行结果。默认为false。此为推荐的模式。&lt;li&gt;true为同步等待执行结果，只有当脚本执行时间在4秒之内时，才适合将该参数置为true。如果接口返回时任务尚未执行完毕的话，也需要通过异步接口来获取执行结果。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WaitUntilDone",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Content的编码。&lt;li&gt;Base64 Base64编码。 默认为Base64</p>",
+          "example": "Base64",
+          "member": "string",
+          "name": "ContentEncoding",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的输出内容是否合并成一个字符串。&lt;li&gt;true表示所有的输出行拼接在一起。默认为true。&lt;li&gt;false表示输出内容通过数组返回,数组的每一个元素为一行。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "MergeOutputLines",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行任务的用户ID。&lt;li&gt;由SYSTEM身份执行。此场景下不需要指定该字段，这是默认情况。&lt;li&gt;需要以绑定到实例的用户执行任务，通过该字段指定用户ID。 &lt;li&gt;匿名访问，需要以实际登录系统的用户执行的场景，该字段填实例ID。</p>",
+          "example": "userid",
+          "member": "string",
+          "name": "RunAs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务是否为前台运行。仅在RunAs场景下有效。仅当任务会呼起图形界面时有意义。&lt;li&gt;true表示用户可以看到图形窗口。&lt;li&gt;false表示图形窗口不可见。默认为false。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RunForeground",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunCommandResponse": {
+      "document": "RunCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次任务对应的任务ID。方便异步查询执行状态。</p>",
+          "example": "cdi-nqj1mqcjmirynr7-ecdfe348-cc7b-4594-98d6-37cf5f84969f",
+          "member": "string",
+          "name": "InvokeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行详细情况。WaitUntilDone为true，在接口返回时的执行状态。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Invocation",
+          "name": "Detail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SnapshotInfo": {
+      "document": "快照信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>快照唯一ID</p>",
+          "example": "snap-1mehmi29",
+          "member": "string",
+          "name": "SnapshotId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照对应的云硬盘ID</p>",
+          "example": "disk-nyz5l4i0",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照状态，取值如下：<br>NORMAL：正常<br>CREATING：创建中<br>ROLLBACKING：回滚中<br>COPYING_FROM_REMOTE：跨地域复制中<br>CHECKING_COPIED：复制校验中<br>TORECYCLE：待回收。</p>",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "SnapshotState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建此快照的云硬盘类型。取值范围：<br>SYSTEM_DISK：系统盘<br>DATA_DISK：数据盘。</p>",
+          "example": "SYSTEM_DISK",
+          "member": "string",
+          "name": "DiskUsage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照创建的时间</p>",
+          "example": "2026-10-21 02:14:52",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照到期时间。如果快照为永久保留，此字段为空。</p>",
+          "example": "2026-10-24 02:00:00",
+          "member": "string",
+          "name": "DeadlineTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照创建进度百分比，快照创建成功后此字段恒为100。</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "Percent",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为永久快照。取值范围：<br>true：永久快照<br>false：非永久快照。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPermanent",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照创建方式，取值:<br>ManualSnapshot：手动创建<br>AutoSnapshot：快照策略自动创建</p>",
+          "example": "AutoSnapshot",
+          "member": "string",
+          "name": "CreateType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一次快照回滚完成时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-10 02:00:00",
+          "member": "string",
+          "name": "LastRollbackTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>上一次快照回滚状态，取值：<br>成功：SUCCESS<br>失败：FAILED</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "LastRollbackState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StartInstancesRequest": {
+      "document": "StartInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要开启的实例id列表",
+          "example": "[\"cdi-l0c69nmim85j8t1\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在区域，保证传入的列表再统一区域，否则报错",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstancesResponse": {
+      "document": "StartInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCommandTasksRequest": {
+      "document": "StopCommandTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除命令任务条件<br>Filter.name 目前支持 CommandId</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopCommandTasksResponse": {
+      "document": "StopCommandTasks返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstancesRequest": {
+      "document": "StopInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要重启的实例id列表",
+          "example": "[\"cdi-l0c69nmim85j8t1\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例所在区域，保证传入的列表在统一区域，否则报错",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否在正常重启失败后选择强制重启实例。取值范围：\nTRUE：表示在正常重启失败后进行强制重启\nFALSE：表示在正常重启失败后不进行强制重启\n\n默认取值：FALSE。",
+          "example": "true",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstancesResponse": {
+      "document": "StopInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInvocationRequest": {
+      "document": "StopInvocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>云桌面实例ID。</p>",
+          "example": "cdi-s2axeo0k93c1r",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "23sfc-324-s11",
+          "member": "string",
+          "name": "InvokeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInvocationResponse": {
+      "document": "StopInvocation返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSessionRequest": {
+      "document": "StopSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>机器所在区域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器hostname</p>",
+          "example": "uxqdqmeu53u6iiy",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IsDisconnect为true，表示断开当前会话<br>IsDisconnect为false，表示注销当前会话</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDisconnect",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>选填，为多会话预留字段</p>",
+          "example": "dev",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopSessionResponse": {
+      "document": "StopSession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Tag": {
+      "document": "Tag",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "key1",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "value1",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TerminateInstancesRequest": {
+      "document": "TerminateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>一个或多个待操作的实例ID。每次请求批量实例的上限为10。</p>",
+          "example": "[\"cvd-a\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否立即销毁实例。默认false。 立即销毁的实例不会进入隔离期。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "DestroyImmediately",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesResponse": {
+      "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindInstancesRequest": {
+      "document": "UnbindInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例所在地域",
+          "example": "\"ap-shanghai\"",
+          "member": "string",
+          "name": "InstanceRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "解除绑定关系列表",
+          "example": "无",
+          "member": "BindInfo",
+          "name": "BindInfos",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UnbindInstancesResponse": {
+      "document": "UnbindInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待更新策略id</p>",
+          "example": "policy-12dfew3",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新策略后策略名称</p>",
+          "example": "policy",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新策略后策略描述</p>",
+          "example": "policy",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新策略的具体修改值（全集）</p>",
+          "example": "无",
+          "member": "PolicyInfo",
+          "name": "PolicyInfoList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>新增绑定用户列表</p>",
+          "example": "[\"tom\"]",
+          "member": "string",
+          "name": "BindUserIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>移除绑定的用户列表</p>",
+          "example": "[\"jack\"]",
+          "member": "string",
+          "name": "RemoveUserIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Usage": {
+      "document": "桌面使用时长详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "桌面实例 ID",
+          "example": "cdi-xdu11f8osd72cyf",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面名称",
+          "example": "test-cvd",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面当前状态",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面绑定的用户名，若未绑定，为空",
+          "example": "test-user",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面计费类型",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面类型",
+          "example": "S1L.LARGE8",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面操作系统",
+          "example": "Windows Server 2019",
+          "member": "string",
+          "name": "OsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面使用时长，h:m:s",
+          "example": "00:20:25",
+          "member": "string",
+          "name": "ActiveTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "桌面空闲时长，h:m:s",
+          "example": "00:00:50",
+          "member": "string",
+          "name": "IdleTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否匿名访问",
+          "example": "false",
+          "member": "bool",
+          "name": "AnonymousAccess",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户ID。</p>",
+          "example": "us-02a7aa5b2ae94e028d2304f3ecceb614",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名字。</p>",
+          "example": "dn-user",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>显示名字。</p>",
+          "example": "dn-user",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>邮箱。</p>",
+          "example": "dn-user@123.com",
+          "member": "string",
+          "name": "Mail",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>手机号。</p>",
+          "example": "*",
+          "member": "string",
+          "name": "PhoneNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态。<br>ACTIVE:启用<br>PENDING_ACTIVATE:待激活<br>PENDING_ONBOARD:待启用<br>SUSPENDED:已停用<br>INACTIVE:已离职<br>PASSWORD_RESET:重置密码<br>LOCKED_OUT:锁定</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部门ID。</p>",
+          "example": "*",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略ID。</p>",
+          "example": "*",
+          "member": "string",
+          "name": "StrategyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略名称。</p>",
+          "example": "默认策略",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户是否绑定桌面，true：绑定，false：未绑定任何桌面</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "BindStatus",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VirtualPrivateCloud": {
+      "document": "私有网络相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID。</p>",
+          "example": "vpc-hugyy71o",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络子网ID。</p>",
+          "example": "subnet-eoak5ntj",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    }
+  },
+  "version": "1.0"
+}

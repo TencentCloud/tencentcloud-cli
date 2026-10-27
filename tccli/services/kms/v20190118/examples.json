@@ -64,6 +64,14 @@
         "title": "创建主密钥示例"
       }
     ],
+    "CreateKmsInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: kms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateKmsInstance\n<公共请求参数>\n\n{\n    \"InstanceChargeType\": \"PREPAID\",\n    \"ProductVersion\": \"professional\",\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": 1\n    },\n    \"ClientToken\": \"9a4d46f4-c223-4652-af87-610d21a606aq\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"department\",\n            \"TagValue\": \"development\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"BillId\": \"\",\n        \"DealName\": \"20260921********0569371\",\n        \"InstanceId\": \"KMS-Pre*******nkr28g\",\n        \"RequestId\": \"54d52fdc-fa20-4efa-87e8-3092246a0a26\"\n    }\n}",
+        "title": "创建kms实例"
+      }
+    ],
     "CreateWhiteBoxKey": [
       {
         "document": "",

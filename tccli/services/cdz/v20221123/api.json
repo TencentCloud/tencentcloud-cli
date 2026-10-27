@@ -195,7 +195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专属可用区ID ",
+          "document": "<p>专属可用区ID</p>",
           "example": "cdz-xxxxxxxx",
           "member": "string",
           "name": "CloudDedicatedZoneID",
@@ -204,8 +204,8 @@
         },
         {
           "disabled": false,
-          "document": "一个或多个Host面的CVM实例信息。最大支持查询100台Host。",
-          "example": "xxxxx-xxxxx-xxxxx",
+          "document": "<p>一个或多个Host面的CVM实例信息。最大支持查询100台Host。</p>",
+          "example": "[\"7eb2b1a6-4009-4ff2-9511-xxx\"]",
           "member": "string",
           "name": "HostUuids",
           "required": false,
@@ -213,8 +213,8 @@
         },
         {
           "disabled": false,
-          "document": "查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。",
-          "example": "ins-xxxxxxxx",
+          "document": "<p>查询一个实例或者多个实例所在的Host上面的CVM实例信息。最大支持查询100台实例。</p>",
+          "example": "[\"ins-55h74xxx\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -222,7 +222,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。",
+          "document": "<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -231,7 +231,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。",
+          "document": "<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。该参数仅与CloudDedicatedZoneID有关，传递了HostUuids和InstanceIds则会失效。</p>",
           "example": "5",
           "member": "uint64",
           "name": "Limit",
@@ -246,12 +246,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回Host和Host上部署的实例信息之间的关系",
-          "example": "[       {         \"HostUuid\": \"9e6b54d0-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",         \"InstancesInfo\": [           \"ins-xxxxxxxx\"         ]       }     ]",
+          "document": "<p>返回Host和Host上部署的实例信息之间的关系</p>",
+          "example": "无",
           "member": "CloudDedicatedZoneHostsInfo",
           "name": "CloudDedicatedZoneHostsInfoSet",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>母机总数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

@@ -1936,6 +1936,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CKAFKA路由信息</p>",
+          "example": "{\"Vip\":\"127.0.0.1\",\"Vport\":\"27655\"}",
+          "member": "string",
+          "name": "CkafkaRoute",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

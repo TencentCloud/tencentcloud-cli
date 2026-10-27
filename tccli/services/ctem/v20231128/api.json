@@ -14,6 +14,13 @@
       "output": "CreateAssetResponse",
       "status": "online"
     },
+    "CreateCheck": {
+      "document": "检查修复状况",
+      "input": "CreateCheckRequest",
+      "name": "检查修复状况",
+      "output": "CreateCheckResponse",
+      "status": "online"
+    },
     "CreateCustomer": {
       "document": "创建企业",
       "input": "CreateCustomerRequest",
@@ -61,6 +68,13 @@
       "input": "CreatePortRequest",
       "name": "添加端口服务资产",
       "output": "CreatePortResponse",
+      "status": "online"
+    },
+    "CreateScan": {
+      "document": "扫描巡检",
+      "input": "CreateScanRequest",
+      "name": "扫描巡检",
+      "output": "CreateScanResponse",
       "status": "online"
     },
     "CreateSeeds": {
@@ -203,6 +217,13 @@
       "output": "DescribeAssetsResponse",
       "status": "online"
     },
+    "DescribeBannerAssetData": {
+      "document": "相关资产",
+      "input": "DescribeBannerAssetDataRequest",
+      "name": "相关资产",
+      "output": "DescribeBannerAssetDataResponse",
+      "status": "online"
+    },
     "DescribeConfigs": {
       "document": "查看目录爆破数据",
       "input": "DescribeConfigsRequest",
@@ -280,6 +301,13 @@
       "output": "DescribeHttpsResponse",
       "status": "online"
     },
+    "DescribeIntelligences": {
+      "document": "查询情报列表",
+      "input": "DescribeIntelligencesRequest",
+      "name": "查看情报列表",
+      "output": "DescribeIntelligencesResponse",
+      "status": "online"
+    },
     "DescribeJobRecordDetails": {
       "document": "查看链路详情",
       "input": "DescribeJobRecordDetailsRequest",
@@ -327,6 +355,13 @@
       "input": "DescribeNetDisksRequest",
       "name": "查看网盘泄露数据",
       "output": "DescribeNetDisksResponse",
+      "status": "online"
+    },
+    "DescribePocAssetData": {
+      "document": "实际受影响资产",
+      "input": "DescribePocAssetDataRequest",
+      "name": "实际受影响资产",
+      "output": "DescribePocAssetDataResponse",
       "status": "online"
     },
     "DescribePorts": {
@@ -653,6 +688,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCheckRequest": {
+      "document": "CreateCheck请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>漏洞情报ID</p>",
+          "example": "SC-2025-3267",
+          "member": "string",
+          "name": "VulId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "100010",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCheckResponse": {
+      "document": "CreateCheck返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1532,6 +1603,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScanRequest": {
+      "document": "CreateScan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>漏洞情报ID</p>",
+          "example": "SC-2025-3267",
+          "member": "string",
+          "name": "VulId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业ID</p>",
+          "example": "10010",
+          "member": "int64",
+          "name": "CustomerId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScanResponse": {
+      "document": "CreateScan返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3219,6 +3326,71 @@
           "name": "List",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBannerAssetDataRequest": {
+      "document": "DescribeBannerAssetData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>漏洞情报ID</p>",
+          "example": "SC-2023-0677",
+          "member": "string",
+          "name": "VulId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBannerAssetDataResponse": {
+      "document": "DescribeBannerAssetData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数组</p>",
+          "example": "无",
+          "member": "IntelligenceResult",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -4928,6 +5100,51 @@
       ],
       "type": "object"
     },
+    "DescribeIntelligencesRequest": {
+      "document": "DescribeIntelligences请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询数组",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIntelligencesResponse": {
+      "document": "DescribeIntelligences返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobRecordDetailsRequest": {
       "document": "DescribeJobRecordDetails请求参数结构体",
       "members": [
@@ -5868,6 +6085,71 @@
           "name": "List",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePocAssetDataRequest": {
+      "document": "DescribePocAssetData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>漏洞情报ID</p>",
+          "example": "SC-2023-0677",
+          "member": "string",
+          "name": "VulId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePocAssetDataResponse": {
+      "document": "DescribePocAssetData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>数组</p>",
+          "example": "无",
+          "member": "IntelligenceResult",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -11146,6 +11428,82 @@
         }
       ],
       "type": "object"
+    },
+    "IntelligenceResult": {
+      "document": "漏洞情报扫描结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>客户ID</p>",
+          "example": "100150",
+          "member": "int64",
+          "name": "CustomerId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>客户名称</p>",
+          "example": "腾讯公司",
+          "member": "string",
+          "name": "CustomerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标题</p>",
+          "example": "测试漏洞",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>指纹</p>",
+          "example": "cGhwIHNlcnZpY2U=",
+          "member": "string",
+          "name": "Banner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图预览</p>",
+          "example": "https://test.com/a.png",
+          "member": "string",
+          "name": "ScreenshotUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否受影响</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAffected",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>网址</p>",
+          "example": "https://test.com/a.html",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "JobRecordProgress": {
       "document": "子任务进度",

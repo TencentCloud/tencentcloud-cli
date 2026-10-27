@@ -1,21 +1,11 @@
-**Example 1: 获取业务资源**
+**Example 1: 查询资源列表**
 
-Path : /capi/GatewayResource/DescribeBusinessResources
+
 
 Input: 
 
 ```
-tccli ioa DescribeBusinessResources --cli-unfold-argument  \
-    --AreaId 108 \
-    --ServiceName 名称 \
-    --Keywords 资源 \
-    --StartTime 2002-01-02 15:04:05 \
-    --EndTime 2022-07-02 15:04:05 \
-    --Condition.Sort.Field Level \
-    --Condition.Sort.Order desc \
-    --Condition.PageNum 0 \
-    --Condition.PageSize 10
-```
+tccli ioa DescribeBusinessResources --cli-unfold-argument ```
 
 Output: 
 ```
@@ -24,29 +14,60 @@ Output:
         "Data": {
             "Items": [
                 {
-                    "Levels": 5000,
-                    "SmartGateNames": "网关名称",
-                    "CreateTime": "2022-07-21 10:24:43",
+                    "APISecretId": 0,
+                    "AccessType": 0,
+                    "AreaId": 8,
+                    "AreaName": "sjntest",
+                    "BackendPath": "",
+                    "BackendScheme": "",
+                    "CertificateId": 0,
+                    "CnameStatus": 0,
+                    "ConnectorGroupId": "d9unlkvpf1kbvg5841og",
+                    "ConnectorGroupName": "国际站test",
+                    "ConnectorGroupType": "native",
+                    "CreateTime": "2026-08-13 17:39:59",
+                    "CustomDomain": "",
+                    "CustomHost": "",
+                    "DependentAddr": "",
+                    "DetectInfo": "**",
                     "DetectState": 1,
-                    "DetectInfo": "[]",
-                    "DetectTime": "2022-07-21 10:24:43",
-                    "AreaId": 108,
-                    "ServiceId": 62,
-                    "ServiceName": "资源名称",
-                    "ServiceType": "domain",
-                    "ServiceAddress": "*.baidu.com",
+                    "DetectTime": "2026-08-13 17:39:59",
                     "DirectConn": 0,
-                    "ServicePort": "all",
-                    "UpdateTime": "2022-07-21 10:24:43",
+                    "DisableFront": 0,
+                    "DomainSuffix": "260210447.global.renwox.com",
+                    "EnableDependentAddr": 0,
+                    "FrontHost": "",
+                    "FrontPath": "",
+                    "FrontPort": 0,
+                    "FrontScheme": "",
+                    "Levels": 5000,
+                    "Protocol": 2,
+                    "ReachableState": 0,
+                    "ReachableTime": "",
                     "Remark": "",
+                    "SSLCertId": "",
+                    "ServiceAddress": "*.qq.com",
+                    "ServiceId": 15,
+                    "ServiceName": "测sjntest",
+                    "ServicePort": "all",
+                    "ServiceType": "domain",
                     "SmartGateIds": [
-                        1
+                        6
                     ],
-                    "Protocol": 2
+                    "SmartGateNames": "smartgate;",
+                    "UpdateTime": "2026-08-13 17:40:00",
+                    "WebGwNoAuth": 1,
+                    "WebGwResourceType": 0
                 }
-            ]
+            ],
+            "Page": {
+                "PageCount": 1,
+                "PageNum": 1,
+                "PageSize": 10,
+                "Total": 6
+            }
         },
-        "RequestId": "1658370329.784533"
+        "RequestId": "00fbdd4b-9f36-431e-8c68-cb811c931c53"
     }
 }
 ```

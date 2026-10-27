@@ -2289,9 +2289,21 @@
     "SearchMediaBySemantics": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMediaBySemantics\n<公共请求参数>\n\n{\n    \"SubAppId\": 1500035838,\n    \"Text\": \"包含夕阳的海边视频\",\n    \"KnowledgeBaseId\": \"kb-**********\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e7aa7b9-0f92-4fbb-9ca2-6aebdfb31543\",\n        \"SearchResults\": [\n            {\n                \"EndTimeOffset\": 159.07,\n                \"FileId\": \"966263618841114024\",\n                \"Score\": 0.58276,\n                \"StartTimeOffset\": 109.908\n            },\n            {\n                \"EndTimeOffset\": 109.708,\n                \"FileId\": \"966263618841114024\",\n                \"Score\": 0.58201,\n                \"StartTimeOffset\": 83.141\n            },\n            {\n                \"EndTimeOffset\": 82.741,\n                \"FileId\": \"966263618841114024\",\n                \"Score\": 0.46496,\n                \"StartTimeOffset\": 10.222\n            }\n        ]\n    }\n}",
-        "title": "搜索"
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMediaBySemantics\n<公共请求参数>\n\n{\n    \"SubAppId\": 1000000000,\n    \"Text\": \"关于冬天的视频\",\n    \"KnowledgeBaseId\": \"kb-**********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SearchResults\": [\n            {\n                \"EndTimeOffset\": 46.758,\n                \"FileId\": \"966263618988054694\",\n                \"Score\": 0.17525,\n                \"StartTimeOffset\": 1.9729999999999999\n            }\n        ],\n        \"RequestId\": \"c82ee200-498a-4def-9985-809e43b7e16b\"\n    }\n}",
+        "title": "按文本在知识库中进行搜索"
+      },
+      {
+        "document": "注意：KnowledgeBaseId对应的知识库必须为图片知识库",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMediaBySemantics\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"FileId\": \"9****************1\",\n    \"KnowledgeBaseId\": \"kb-**********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SearchResults\": [\n            {\n                \"EndTimeOffset\": 0,\n                \"FileId\": \"9****************1\",\n                \"Score\": 1,\n                \"StartTimeOffset\": 0,\n                \"Title\": \"\"\n            }\n        ],\n        \"RequestId\": \"71e66da3-abd4-4024-91e1-a596df4f719b\"\n    }\n}",
+        "title": "按图片FileId在知识库中进行搜索"
+      },
+      {
+        "document": "注意：KnowledgeBaseId对应的知识库必须为图片知识库",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMediaBySemantics\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"Url\": \"https://******************.cos.ap-shanghai.myqcloud.com/***********.png\",\n    \"KnowledgeBaseId\": \"kb-**********\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SearchResults\": [\n            {\n                \"EndTimeOffset\": 0,\n                \"FileId\": \"9****************1\",\n                \"Score\": 1,\n                \"StartTimeOffset\": 0,\n                \"Title\": \"\"\n            }\n        ],\n        \"RequestId\": \"dccae516-7f4e-4972-90dc-36a5c22361d3\"\n    }\n}",
+        "title": "按图片Url在知识库中进行搜索"
       }
     ],
     "SetCLSPushTarget": [

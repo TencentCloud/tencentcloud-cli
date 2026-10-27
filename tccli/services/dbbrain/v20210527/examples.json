@@ -672,6 +672,14 @@
         "title": "获取Top库的空间统计信息"
       }
     ],
+    "DescribeTopSpaceSchemasV2": [
+      {
+        "document": "pg数据库空间分析",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopSpaceSchemasV2\n<公共请求参数>\n\n{\n    \"InstanceId\": \"postgres-gq5k0y66\",\n    \"Product\": \"postgres\",\n    \"Date\": \"2026-08-25\",\n    \"SortBy\": \"TotalRelationSize\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"PostgresObjects\": [\n            {\n                \"IndexSize\": 11.8,\n                \"RelationSize\": 74.2,\n                \"TableBloat\": 1,\n                \"TableCatalog\": \"postgres\",\n                \"TableRows\": 200002,\n                \"TableSize\": 74.6,\n                \"TotalRelationSize\": 86.5\n            }\n        ],\n        \"Timestamp\": 1787587210,\n        \"RequestId\": \"4b914074-1f96-4d8d-8177-aa103d1b7754\"\n    }\n}",
+        "title": "pg数据库空间分析"
+      }
+    ],
     "DescribeTopSpaceTableTimeSeries": [
       {
         "document": "",

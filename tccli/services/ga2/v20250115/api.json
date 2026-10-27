@@ -542,7 +542,7 @@
           "disabled": false,
           "document": "<p>加速地域信息。一次最多创建10组加速地域。</p>",
           "example": "无",
-          "member": "AcceleratorAreas",
+          "member": "CreateAcceleratorAreasInfo",
           "name": "AcceleratorAreas",
           "required": true,
           "type": "list"
@@ -571,6 +571,48 @@
         }
       ],
       "type": "object"
+    },
+    "CreateAcceleratorAreasInfo": {
+      "document": "创建加速地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速地域</p>",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "AccelerateRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网质量类型</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>QUALITY_BGP： 精品BGP</li><li>STATIC_IP： 三网</li></ul><p>默认值：BGP</p>",
+          "example": "BGP",
+          "member": "string",
+          "name": "IspType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 地址协议</p><p>枚举值：</p><ul><li>IPv4： IPv4</li></ul><p>默认值：IPv4</p>",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IpVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CreateEndpointGroupRequest": {
       "document": "CreateEndpointGroup请求参数结构体",
@@ -2211,7 +2253,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回数量，默认为20，最大值为100。</p>",
+          "document": "<p>返回数量，默认为20，最大值为200。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2303,7 +2345,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回数量，默认为20，最大值为100。</p>",
+          "document": "<p>返回数量，默认为20，最大值为200。</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -2386,7 +2428,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>返回数量。</p><p>取值范围：[0, 200]</p>",
+          "document": "<p>返回数量。</p><p>取值范围：[1, 200]</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -4165,6 +4207,48 @@
       ],
       "usage": "out"
     },
+    "ModifyAccelerateAreasInfo": {
+      "document": "修改加速地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>加速地域</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "AccelerateRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽</p><p>单位：Mbps</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>公网质量类型</p><p>枚举值：</p><ul><li>BGP： BGP</li><li>QUALITY_BGP： 精品BGP</li><li>STATIC_IP： 三网</li></ul>",
+          "example": "BGP",
+          "member": "string",
+          "name": "IspType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 地址协议</p><p>枚举值：</p><ul><li>IPv4： IPv4</li></ul>",
+          "example": "IPv4",
+          "member": "string",
+          "name": "IpVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ModifyAccelerateAreasRequest": {
       "document": "ModifyAccelerateAreas请求参数结构体",
       "members": [
@@ -4181,7 +4265,7 @@
           "disabled": false,
           "document": "<p>加速地域信息。</p><p>入参限制：数组长度不能超过10。</p>",
           "example": "无",
-          "member": "AcceleratorAreas",
+          "member": "ModifyAccelerateAreasInfo",
           "name": "AcceleratorAreas",
           "required": true,
           "type": "list"

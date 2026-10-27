@@ -556,6 +556,12 @@
     ],
     "UpdateSandboxInstance": [
       {
+        "document": "传入空对象撤销当前实例的实例级访问策略，实例随后仅受 Sandbox Tool 关联的访问策略约束。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2c491e8-6db5-4f02-96c3-f710ed025ba4\"\n    }\n}",
+        "title": "撤销实例级访问策略"
+      },
+      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"gw524aigytlvl2qwzsgw5yud5cjuiq3worjeir57\",\n    \"Timeout\": \"30m\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0846f2dc-f1d2-465a-93a2-d1873c66f715\"\n    }\n}",
@@ -566,12 +572,6 @@
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f8be2d7-b47c-4f55-95c8-1739fcd4e7a1\"\n    }\n}",
         "title": "替换实例级访问策略"
-      },
-      {
-        "document": "传入空对象撤销当前实例的实例级访问策略，实例随后仅受 Sandbox Tool 关联的访问策略约束。",
-        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSandboxInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"953e15d3655e4daab120b885c908edf7\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a2c491e8-6db5-4f02-96c3-f710ed025ba4\"\n    }\n}",
-        "title": "撤销实例级访问策略"
       }
     ],
     "UpdateSandboxTool": [

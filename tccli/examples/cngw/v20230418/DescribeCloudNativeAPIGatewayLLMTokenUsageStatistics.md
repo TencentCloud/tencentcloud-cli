@@ -111,3 +111,36 @@ Output:
 }
 ```
 
+**Example 4: 成功-消费者组（组织节点）维度**
+
+按消费者组（组织节点）汇总 Token 用量；适用于网关版本不低于 3.9.8。
+
+Input: 
+
+```
+tccli cngw DescribeCloudNativeAPIGatewayLLMTokenUsageStatistics --cli-unfold-argument  \
+    --GatewayId gateway-0663f44f \
+    --StartTime 1789603200 \
+    --EndTime 1789689600 \
+    --Dimension ConsumerGroup
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": {
+            "TotalRequestCount": 10,
+            "TotalInputTokens": 10000,
+            "TotalOutputTokens": 3000,
+            "TotalCachedReadInputTokens": 2000,
+            "TotalTokens": 13000,
+            "Currency": "CNY",
+            "TopConsumers": [],
+            "OrgAttributionIncomplete": false
+        },
+        "RequestId": "request-example"
+    }
+}
+```
+

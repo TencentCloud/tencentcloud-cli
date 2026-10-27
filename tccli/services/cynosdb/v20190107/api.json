@@ -5259,6 +5259,89 @@
       ],
       "type": "object"
     },
+    "CertDetail": {
+      "document": "证书详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>证书ID</p>",
+          "example": "bsHZTsfi",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书备注名</p>",
+          "example": "ssl证书",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书绑定的主域名</p>",
+          "example": "test.example.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书来源</p>",
+          "example": "upload",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期结束（秒级时间戳）</p><p>单位：秒</p>",
+          "example": "1819868190",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书到期剩余天数</p>",
+          "example": "310",
+          "member": "int64",
+          "name": "RemainDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书状态，1为已通过</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CertStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CheckCreateLibraDBInstanceRequest": {
       "document": "CheckCreateLibraDBInstance请求参数结构体",
       "members": [
@@ -19489,7 +19572,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
@@ -19498,7 +19581,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-bzxxrmtq",
           "member": "string",
           "name": "InstanceId",
@@ -19513,7 +19596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "yes-开启，no-关闭",
+          "document": "<p>yes-开启，no-关闭</p>",
           "example": "no",
           "member": "string",
           "name": "IsOpenSSL",
@@ -19523,12 +19606,32 @@
         },
         {
           "disabled": false,
-          "document": "证书下载地址",
+          "document": "<p>证书下载地址</p>",
           "example": "https://tencentdb-user-crt-54163.cos.ap-nanjing.myqclouda.com/cluster.zip",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书类型</p><p>枚举值：</p><ul><li>platform： 云端证书</li><li>custom： 自定义证书</li></ul>",
+          "example": "custom",
+          "member": "string",
+          "name": "CertType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义证书详情，仅 CertType=custom 时有值。</p>",
+          "example": "无",
+          "member": "CertDetail",
+          "name": "CertDetail",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -29361,7 +29464,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
@@ -29370,10 +29473,28 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cynosdbmysql-ins-bzxxrmtq",
           "member": "string",
           "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书类型</p><p>枚举值：</p><ul><li>platform： 云端证书</li><li>custom： 自定义证书</li></ul><p>默认值：platform</p>",
+          "example": "custom",
+          "member": "string",
+          "name": "CertType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书ID，CertType=custom 时必传</p>",
+          "example": "bbyGSycd",
+          "member": "string",
+          "name": "CertId",
           "required": false,
           "type": "string"
         }
@@ -29385,7 +29506,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流ID",
+          "document": "<p>任务流ID</p>",
           "example": "147285",
           "member": "int64",
           "name": "FlowId",
@@ -29395,7 +29516,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "148726",
           "member": "int64",
           "name": "TaskId",

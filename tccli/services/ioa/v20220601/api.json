@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CreateBusinessResource": {
-      "document": "创建业务资源，会对一些必填参数进行校验和参数合法性校验，创建业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。创建时也会做校验，但没有返回对应的异常信息，私有化调用path为：capi/GatewayResource/CreateBusinessResource",
+      "document": "创建业务资源",
       "input": "CreateBusinessResourceRequest",
       "name": "创建业务资源",
       "output": "CreateBusinessResourceResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "DescribeBusinessResources": {
-      "document": "获取业务资源列表,支持分页，如果分页信息不传递会有默认分页，支持排序，不传排序字段，按业务资源创建时间排序,私有化调用path为：capi/GatewayResource/DescribeBusinessResources",
+      "document": "获取业务资源列表",
       "input": "DescribeBusinessResourcesRequest",
       "name": "获取业务资源列表",
       "output": "DescribeBusinessResourcesResponse",
@@ -358,7 +358,7 @@
       "status": "online"
     },
     "ModifyBusinessResource": {
-      "document": "修改业务资源，会对一些必填参数进行校验和参数合法性校验，修改业务资源时，先调用下校验相同业务资源接口，看资源是不是有冲突。修改时也会做校验，但没有返回对应的异常信息,私有化调用path为：capi/GatewayResource/ModifyBusinessResource",
+      "document": "修改业务资源",
       "input": "ModifyBusinessResourceRequest",
       "name": "修改业务资源",
       "output": "ModifyBusinessResourceResponse",
@@ -1103,6 +1103,7 @@
           "example": "-",
           "member": "int64",
           "name": "ServiceId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1115,8 +1116,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务资源所在的模块id，没有资源模块先创建资源模块(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源所在的模块id，没有资源模块先创建资源模块(只支持32位)</p>",
+          "example": "1213",
           "member": "int64",
           "name": "AreaId",
           "required": true,
@@ -1124,8 +1125,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源协议类型, 1:UDP, 2:TCP, 3:所有协议(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源协议类型, 1:UDP, 2:TCP, 3:所有协议(只支持32位)</p>",
+          "example": "3",
           "member": "int64",
           "name": "Protocol",
           "required": true,
@@ -1133,8 +1134,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源名称，同一个资源模块下面不可重复",
-          "example": "无",
+          "document": "<p>业务资源名称，同一个资源模块下面不可重复</p>",
+          "example": "内部资源",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -1142,8 +1143,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源类型:ip,domain,ip_section，对应ip、域名、ip段",
-          "example": "无",
+          "document": "<p>业务资源类型:ip,domain,ip_section，对应ip、域名、ip段</p>",
+          "example": "ip",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -1151,8 +1152,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源端口 all,1-65535",
-          "example": "无",
+          "document": "<p>业务资源端口 all,1-65535</p>",
+          "example": "8080",
           "member": "string",
           "name": "ServicePort",
           "required": true,
@@ -1160,8 +1161,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源优先级 1-65535(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源优先级 1-65535(只支持32位)</p>",
+          "example": "5000",
           "member": "int64",
           "name": "Levels",
           "required": true,
@@ -1169,8 +1170,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源地址(ip、域名、ip段)",
-          "example": "无",
+          "document": "<p>业务资源地址(ip、域名、ip段)</p>",
+          "example": "9.23.12.43",
           "member": "string",
           "name": "ServiceAddress",
           "required": true,
@@ -1178,12 +1179,102 @@
         },
         {
           "disabled": false,
-          "document": "是否走代理,该参数不传，默认为0, 2：内外网直连，1：内网直连， 0：不启用代理配置(只支持32位)",
-          "example": "无",
+          "document": "<p>是否走代理,该参数不传，默认为0, 2：内外网直连，1：内网直连， 0：不启用代理配置(只支持32位)</p>",
+          "example": "1",
           "member": "int64",
           "name": "DirectConn",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectivityCheckSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>",
+          "example": "1000",
+          "member": "int64",
+          "name": "ConnectivityCheckInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>",
+          "example": "hours",
+          "member": "string",
+          "name": "ConnectivityCheckIntervalUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源网络类型：1-内网资源 2-外网资源，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceNetwork",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用L3网络：1-不启用 2-启用，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "WireGuardTunnel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源描述</p>",
+          "example": "内部系统",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计开关：0-关闭 1-开启，默认0</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "URLAuditState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计证书ID列表，多个用分号分隔</p>",
+          "example": "cert_162561831",
+          "member": "string",
+          "name": "URLAuditId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计路径，多个用分号分隔</p>",
+          "example": "/api/doc",
+          "member": "string",
+          "name": "URLPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书Id</p>",
+          "example": "cert0025",
+          "member": "string",
+          "name": "SSLCertId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1193,10 +1284,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建业务资源响应的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建业务资源响应的数据</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CreateBusinessResourceData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4042,78 +4134,35 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务资源列表数据对象集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "-",
-          "member": "DescribeBusinessResourceData",
-          "name": "Items",
+          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Paging",
+          "name": "Page",
+          "output_required": true,
           "required": false,
-          "type": "list",
+          "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "分页公共对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务资源列表数据对象集合\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
-          "member": "Paging",
-          "name": "Page",
+          "member": "DescribeBusinessResourceData",
+          "name": "Items",
+          "output_required": true,
           "required": false,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeBusinessResourcesRequest": {
       "document": "DescribeBusinessResources请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "资源模块Id",
-          "example": "无",
-          "member": "int64",
-          "name": "AreaId",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "搜索的业务资源名称",
-          "example": "无",
-          "member": "string",
-          "name": "ServiceName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "获取业务资源列表的开始时间，时间格式：2006-01-02",
-          "example": "无",
-          "member": "string",
-          "name": "StartTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "搜索关键字",
-          "example": "无",
-          "member": "string",
-          "name": "Keywords",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "获取业务资源列表的结束时间，时间格式：2006-01-02",
-          "example": "无",
-          "member": "string",
-          "name": "EndTime",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "滤条件、分页参数。分页内容不传，默认获取第1页，10条数据\n排序条件\n<li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li>\n<li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li>\n<li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>",
+          "document": "<p>滤条件、分页参数。分页内容不传，默认获取第1页，10条数据<br>排序条件</p><li>CreateTime - string - 是否必填：否 - 排序支持：是 - 按业务资源创建时间排序。</li><li>Levels - int - 是否必填：否 - 排序支持：是 - 按业务资源优先级排序。</li><li>ReachableState - int - 是否必填：否 - 排序支持：是 - 按业务资源连通性排序(私有化版本不支持)。</li>",
           "example": "无",
           "member": "Condition",
           "name": "Condition",
@@ -4122,8 +4171,53 @@
         },
         {
           "disabled": false,
-          "document": "资源类型",
-          "example": "无",
+          "document": "<p>资源模块Id</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "AreaId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务名称</p>",
+          "example": "HR系统",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>搜索关键字</p>",
+          "example": "HR",
+          "member": "string",
+          "name": "Keywords",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取业务资源列表的开始时间，时间格式：2006-01-02</p>",
+          "example": "2026-09-03 00:02:41",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>获取业务资源列表的结束时间，时间格式：2006-01-02</p>",
+          "example": "2026-09-03 23:02:41",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "domain",
           "member": "string",
           "name": "AccessType",
           "required": false,
@@ -4131,8 +4225,8 @@
         },
         {
           "disabled": false,
-          "document": "web资源前端地址",
-          "example": "无",
+          "document": "<p>web资源前端地址</p>",
+          "example": "*",
           "member": "string",
           "name": "FrontAddr",
           "required": false,
@@ -4146,11 +4240,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务资源分页返回对象\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>业务资源分页返回对象</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DescribeBusinessResourcePageRsp",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9831,8 +9925,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "业务资源所在的模块id，没有资源模块先创建资源模块(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源所在的模块id，没有资源模块先创建资源模块(只支持32位)</p>",
+          "example": "11",
           "member": "int64",
           "name": "AreaId",
           "required": true,
@@ -9840,8 +9934,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源协议类型,3：所有,2：UDP，1：TCP(只支持32位)</p>",
+          "example": "3",
           "member": "int64",
           "name": "Protocol",
           "required": true,
@@ -9849,8 +9943,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源名称，同一个资源模块下面不可重复",
-          "example": "无",
+          "document": "<p>业务资源名称，同一个资源模块下面不可重复</p>",
+          "example": "内部资源",
           "member": "string",
           "name": "ServiceName",
           "required": true,
@@ -9858,8 +9952,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源优先级 1-65535(只支持32位)",
-          "example": "无",
+          "document": "<p>业务资源优先级 1-65535(只支持32位)</p>",
+          "example": "5000",
           "member": "int64",
           "name": "Levels",
           "required": true,
@@ -9867,8 +9961,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源类型:ip,domain,ip_section，对应ip、域名、ip段",
-          "example": "无",
+          "document": "<p>业务资源类型:ip,domain,ip_section，对应ip、域名、ip段</p>",
+          "example": "ip",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -9876,8 +9970,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源端口 all,1-65535",
-          "example": "无",
+          "document": "<p>业务资源端口 all,1-65535</p>",
+          "example": "8080",
           "member": "string",
           "name": "ServicePort",
           "required": true,
@@ -9885,8 +9979,8 @@
         },
         {
           "disabled": false,
-          "document": "修改业务资源的id(只支持32位)",
-          "example": "无",
+          "document": "<p>修改业务资源的id(只支持32位)</p>",
+          "example": "1325",
           "member": "int64",
           "name": "ServiceId",
           "required": true,
@@ -9894,8 +9988,8 @@
         },
         {
           "disabled": false,
-          "document": "业务资源地址(ip、域名、ip段)",
-          "example": "无",
+          "document": "<p>业务资源地址(ip、域名、ip段)</p>",
+          "example": "9.134.233.20",
           "member": "string",
           "name": "ServiceAddress",
           "required": true,
@@ -9903,12 +9997,93 @@
         },
         {
           "disabled": false,
-          "document": "是否走代理,该参数不传，默认为0, 2：内外网直连，1：内网直连， 0：不启用代理配置(只支持32位)",
-          "example": "无",
+          "document": "<p>是否走代理,该参数不传，默认为0, 2：内外网直连，1：内网直连， 0：不启用代理配置(只支持32位)</p>",
+          "example": "1",
           "member": "int64",
           "name": "DirectConn",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查开关，0-关闭 1-开启，默认1(只支持32位)</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ConnectivityCheckSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔数值，最小为1，默认1(只支持32位)</p>",
+          "example": "24",
+          "member": "int64",
+          "name": "ConnectivityCheckInterval",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>连通性检查测试间隔单位 minutes/hours/days，默认hours</p>",
+          "example": "hours",
+          "member": "string",
+          "name": "ConnectivityCheckIntervalUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源网络类型：1-内网资源 2-外网资源，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ServiceNetwork",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用L3网络：1-不启用 2-启用，默认1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "WireGuardTunnel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源描述</p>",
+          "example": "内部资源",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计开关：0-关闭 1-开启，默认0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "URLAuditState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计证书ID列表，多个用分号分隔</p>",
+          "example": "cert121",
+          "member": "string",
+          "name": "URLAuditId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>URL审计路径，多个用分号分隔</p>",
+          "example": "/api/inner",
+          "member": "string",
+          "name": "URLPath",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -1,4 +1,4 @@
-**Example 1: 搜索**
+**Example 1: 按文本在知识库中进行搜索**
 
 
 
@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli vod SearchMediaBySemantics --cli-unfold-argument  \
-    --SubAppId 1500035838 \
-    --Text 包含夕阳的海边视频 \
+    --SubAppId 1000000000 \
+    --Text 关于冬天的视频 \
     --KnowledgeBaseId kb-**********
 ```
 
@@ -15,27 +15,77 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "1e7aa7b9-0f92-4fbb-9ca2-6aebdfb31543",
         "SearchResults": [
             {
-                "EndTimeOffset": 159.07,
-                "FileId": "966263618841114024",
-                "Score": 0.58276,
-                "StartTimeOffset": 109.908
-            },
-            {
-                "EndTimeOffset": 109.708,
-                "FileId": "966263618841114024",
-                "Score": 0.58201,
-                "StartTimeOffset": 83.141
-            },
-            {
-                "EndTimeOffset": 82.741,
-                "FileId": "966263618841114024",
-                "Score": 0.46496,
-                "StartTimeOffset": 10.222
+                "EndTimeOffset": 46.758,
+                "FileId": "966263618988054694",
+                "Score": 0.17525,
+                "StartTimeOffset": 1.9729999999999999
             }
-        ]
+        ],
+        "RequestId": "c82ee200-498a-4def-9985-809e43b7e16b"
+    }
+}
+```
+
+**Example 2: 按图片FileId在知识库中进行搜索**
+
+注意：KnowledgeBaseId对应的知识库必须为图片知识库
+
+Input: 
+
+```
+tccli vod SearchMediaBySemantics --cli-unfold-argument  \
+    --SubAppId 200000 \
+    --FileId 9****************1 \
+    --KnowledgeBaseId kb-**********
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SearchResults": [
+            {
+                "EndTimeOffset": 0,
+                "FileId": "9****************1",
+                "Score": 1,
+                "StartTimeOffset": 0,
+                "Title": ""
+            }
+        ],
+        "RequestId": "71e66da3-abd4-4024-91e1-a596df4f719b"
+    }
+}
+```
+
+**Example 3: 按图片Url在知识库中进行搜索**
+
+注意：KnowledgeBaseId对应的知识库必须为图片知识库
+
+Input: 
+
+```
+tccli vod SearchMediaBySemantics --cli-unfold-argument  \
+    --SubAppId 200000 \
+    --Url https://******************.cos.ap-shanghai.myqcloud.com/***********.png \
+    --KnowledgeBaseId kb-**********
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SearchResults": [
+            {
+                "EndTimeOffset": 0,
+                "FileId": "9****************1",
+                "Score": 1,
+                "StartTimeOffset": 0,
+                "Title": ""
+            }
+        ],
+        "RequestId": "dccae516-7f4e-4972-90dc-36a5c22361d3"
     }
 }
 ```

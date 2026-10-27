@@ -16,6 +16,14 @@
         "title": "添加主机资产"
       }
     ],
+    "CreateCheck": [
+      {
+        "document": "检查修复状况",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCheck\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"VulId\": \"SC-2023-0677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7418a4b9-dfe8-47dc-8bda-3eb7d5e5cd84\"\n    }\n}",
+        "title": "检查修复状况"
+      }
+    ],
     "CreateCustomer": [
       {
         "document": "添加企业",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePort\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"Port\": 3306,\n    \"Asset\": \"db.test.com\",\n    \"IsHighRisk\": true,\n    \"Ip\": \"1.1.1.1\",\n    \"App\": \"mysql\",\n    \"Service\": \"mysql\"\n}",
         "output": "{\n    \"Response\": {\n        \"Id\": 24838,\n        \"RequestId\": \"d4f06b4b-cc0c-431c-9314-75a0b6d4a760\"\n    }\n}",
         "title": "添加端口服务资产"
+      }
+    ],
+    "CreateScan": [
+      {
+        "document": "扫描巡检",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScan\n<公共请求参数>\n\n{\n    \"CustomerId\": 100081,\n    \"VulId\": \"SC-2023-0677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0e464e10-3635-4aeb-adeb-9ccb5e7d70f2\"\n    }\n}",
+        "title": "扫描巡检"
       }
     ],
     "CreateSeeds": [
@@ -232,6 +248,14 @@
         "title": "查看主机资产"
       }
     ],
+    "DescribeBannerAssetData": [
+      {
+        "document": "相关资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBannerAssetData\n<公共请求参数>\n\n{\n    \"VulId\": \"SC-2023-0677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [],\n        \"RequestId\": \"bd241067-9951-44a8-bd27-c95dbfc1e7c9\",\n        \"Total\": 0\n    }\n}",
+        "title": "相关资产"
+      }
+    ],
     "DescribeConfigs": [
       {
         "document": "查看目录爆破数据",
@@ -320,6 +344,14 @@
         "title": "查询网站资产"
       }
     ],
+    "DescribeIntelligences": [
+      {
+        "document": "查看漏洞情报",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntelligences\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9766fffd-a415-46c2-8a70-a6405d4f0e0d\"\n    }\n}",
+        "title": "查看漏洞情报"
+      }
+    ],
     "DescribeJobRecordDetails": [
       {
         "document": "",
@@ -374,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetDisks\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Content\": \"baidu.com\\npwd:5d#248\",\n                \"DisplayToolCommon\": {\n                    \"CreateAt\": \"2024-06-07 11:43:18\",\n                    \"CustomerId\": 100081,\n                    \"CustomerName\": \"腾讯test\",\n                    \"Detail\": \"\",\n                    \"EnterpriseName\": \"\",\n                    \"EnterpriseUid\": \"\",\n                    \"Ignored\": false,\n                    \"JobId\": 0,\n                    \"JobRecordId\": 0,\n                    \"JobStageId\": 0,\n                    \"Md5\": \"fbecc76ff52943c9bff65515521dc0de\",\n                    \"UpdateAt\": \"2024-06-07 11:43:18\"\n                },\n                \"Id\": 32,\n                \"MatchedKeywords\": \"td#248\",\n                \"Platform\": \"baidu.com\",\n                \"Status\": \"\",\n                \"Url\": \"http://test.cn\"\n            }\n        ],\n        \"RequestId\": \"b440b23c-5f8f-4150-b806-07d7a57ade2a\",\n        \"Total\": 1\n    }\n}",
         "title": "查看网盘泄露数据"
+      }
+    ],
+    "DescribePocAssetData": [
+      {
+        "document": "实际受影响资产",
+        "input": "POST / HTTP/1.1\nHost: ctem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePocAssetData\n<公共请求参数>\n\n{\n    \"VulId\": \"SC-2023-0677\"\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Banner\": \"\",\n                \"CustomerId\": 100150,\n                \"CustomerName\": \"腾讯公司\",\n                \"IsAffected\": true,\n                \"ScreenshotUrl\": \"\",\n                \"Title\": \"测试网站\",\n                \"Url\": \"1.1.1.1:2095\"\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"eae76a33-a923-4ed0-a6b8-9641a744d365\"\n    }\n}",
+        "title": "实际受影响资产"
       }
     ],
     "DescribePorts": [
