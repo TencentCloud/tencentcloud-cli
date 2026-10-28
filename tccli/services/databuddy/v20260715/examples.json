@@ -578,6 +578,14 @@
         "title": "RemoveWorkspaceGroups"
       }
     ],
+    "RemoveWorkspaceUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveWorkspaceUsers\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"700003439148\"\n    ],\n    \"WorkspaceId\": \"17700183032157854\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"FailItems\": [\n                {\n                    \"FailReason\": \"uin 700003439148 cannot be removed\",\n                    \"Item\": \"700003439148\"\n                }\n            ],\n            \"Status\": true,\n            \"SuccessUins\": [\n                \"700002562959\"\n            ]\n        },\n        \"RequestId\": \"9d1644ec-d6a7-470d-9cd9-5d9ade676b8e\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "RerunWorkflowRun": [
       {
         "document": "重跑工作流",
@@ -768,6 +776,14 @@
         "title": "demo"
       }
     ],
+    "UpdateWorkspaceGroupsTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspaceGroupsTags\n<公共请求参数>\n\n{\n    \"GroupIds\": [\n        \"3001\"\n    ],\n    \"WorkspaceId\": \"17841832994128461\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"0bdc5d3f-5581-4797-a2bf-73c7483a2e03\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "UpdateWorkspaceRole": [
       {
         "document": "更新工作空间角色",
@@ -782,6 +798,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspaceUsersRoles\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"600000561778\"\n    ],\n    \"WorkspaceId\": \"17621416814092400\",\n    \"RoleIds\": [\n        \"3001\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"d2fb6b6b-5319-440d-beb0-d92ea6af44e7\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "UpdateWorkspaceUsersTags": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspaceUsersTags\n<公共请求参数>\n\n{\n    \"UserUins\": [\n        \"700002164618\"\n    ],\n    \"WorkspaceId\": \"17629560095472114\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Status\": true\n        },\n        \"RequestId\": \"67a38273-9223-4e14-925f-8dcc8dff7ecf\"\n    }\n}",
+        "title": "示例"
       }
     ]
   },

@@ -25494,7 +25494,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "空间id",
+          "document": "<p>空间id</p>",
           "example": "default_space",
           "member": "string",
           "name": "SpaceId",
@@ -25505,7 +25505,7 @@
         },
         {
           "disabled": false,
-          "document": "空间名称",
+          "document": "<p>空间名称</p>",
           "example": "名称",
           "member": "string",
           "name": "Name",
@@ -25516,7 +25516,7 @@
         },
         {
           "disabled": false,
-          "document": "空间描述",
+          "document": "<p>空间描述</p>",
           "example": "空间描述",
           "member": "string",
           "name": "Description",
@@ -25527,13 +25527,35 @@
         },
         {
           "disabled": false,
-          "document": "空间权限",
+          "document": "<p>空间权限</p>",
           "example": "[\"adpSpace.ModifySpace\"]",
           "member": "string",
           "name": "PermissionIdList",
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：秒时间戳</p>",
+          "example": "1783059379",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：秒时间戳</p>",
+          "example": "1776433043",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

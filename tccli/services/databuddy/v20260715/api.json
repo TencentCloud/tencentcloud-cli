@@ -490,6 +490,13 @@
       "output": "RemoveWorkspaceGroupsResponse",
       "status": "online"
     },
+    "RemoveWorkspaceUsers": {
+      "document": "<p>批量移除工作空间用户（单次最多10个；单个 UIN 失败不影响其他 UIN 移除，成败以 SuccessUins/FailItems 为准）</p>",
+      "input": "RemoveWorkspaceUsersRequest",
+      "name": "批量移除工作空间用户",
+      "output": "RemoveWorkspaceUsersResponse",
+      "status": "online"
+    },
     "RerunWorkflowRun": {
       "document": "重跑工作流",
       "input": "RerunWorkflowRunRequest",
@@ -651,6 +658,13 @@
       "output": "UpdateWorkspaceGroupsRolesResponse",
       "status": "online"
     },
+    "UpdateWorkspaceGroupsTags": {
+      "document": "修改工作空间用户组标签",
+      "input": "UpdateWorkspaceGroupsTagsRequest",
+      "name": "修改工作空间用户组标签",
+      "output": "UpdateWorkspaceGroupsTagsResponse",
+      "status": "online"
+    },
     "UpdateWorkspaceRole": {
       "document": "更新工作空间角色",
       "input": "UpdateWorkspaceRoleRequest",
@@ -663,6 +677,13 @@
       "input": "UpdateWorkspaceUsersRolesRequest",
       "name": "修改工作空间用户角色",
       "output": "UpdateWorkspaceUsersRolesResponse",
+      "status": "online"
+    },
+    "UpdateWorkspaceUsersTags": {
+      "document": "修改工作空间用户标签\n本接口为整体覆盖式修改：每次调用以请求中的 Tags 为准，替换指定用户的全部直绑标签，而非增量追加。\n1、传入 Tags（含 TagId/TagValueId）：替换为该批标签\n2、不传 Tags 或传入空数组（\"Tags\": []）：将清除 UserUins 中所有用户的全部直绑标签，且操作不可逆，请谨慎调用\n3、多个用户将共享同一批 Tags；仅修改单个用户时，UserUins 请只传该用户\n4、仅清除用户直绑（Source=1）的标签，用户从用户组继承的标签（Source=2）不受影响",
+      "input": "UpdateWorkspaceUsersTagsRequest",
+      "name": "修改工作空间用户标签",
+      "output": "UpdateWorkspaceUsersTagsResponse",
       "status": "online"
     }
   },
@@ -12836,6 +12857,88 @@
       ],
       "type": "object"
     },
+    "RemoveWorkspaceUsersRequest": {
+      "document": "RemoveWorkspaceUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，待移除的用户 UIN 列表，用户 UIN 可通过 ListWorkspaceUsers 接口获取，单次最多10个</p>",
+          "example": "[\"700003439148\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17700183032157854",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceUsersResponse": {
+      "document": "RemoveWorkspaceUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>批量移除工作空间用户结果</p>",
+          "example": "无",
+          "member": "RemoveWorkspaceUsersRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveWorkspaceUsersRsp": {
+      "document": "批量移除工作空间用户响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求已完成处理；即使部分失败也为 true，逐个结果以 SuccessUins/FailItems 为准</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>移除成功的用户 UIN 列表</p>",
+          "example": "[\"10001\"]",
+          "member": "string",
+          "name": "SuccessUins",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败项列表（Item 为用户 UIN，FailReason 为失败原因）</p>",
+          "example": "无",
+          "member": "CommonFailItem",
+          "name": "FailItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RerunWorkflowRunRequest": {
       "document": "RerunWorkflowRun请求参数结构体",
       "members": [
@@ -16370,6 +16473,78 @@
       ],
       "type": "object"
     },
+    "UpdateWorkspaceGroupsTagsRequest": {
+      "document": "UpdateWorkspaceGroupsTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，用户组ID列表，单次最多100个；可通过 ListWorkspaceGroups 接口获取</p>",
+          "example": "[\"3001\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填，工作空间ID</p>",
+          "example": "17841832994128461",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表，覆盖写用户组的标签；传即覆盖更新，不传或为空则清除全部标签</p>",
+          "example": "无",
+          "member": "UserTagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceGroupsTagsResponse": {
+      "document": "UpdateWorkspaceGroupsTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改工作空间用户组标签响应</p>",
+          "example": "无",
+          "member": "UpdateWorkspaceGroupsTagsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceGroupsTagsRsp": {
+      "document": "修改工作空间用户组标签响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "UpdateWorkspaceRequest": {
       "document": "UpdateWorkspace请求参数结构体",
       "members": [
@@ -16567,6 +16742,78 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateWorkspaceUsersTagsRequest": {
+      "document": "UpdateWorkspaceUsersTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>必填，用户UIN列表，单次最多100个</p>",
+          "example": "[\"700002164618\"]",
+          "member": "string",
+          "name": "UserUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>必填，工作空间ID</p>",
+          "example": "17629560095472114",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待更新的标签集合（标签维度及标签值通过 ID 指定），覆盖更新语义：传入后将被覆盖为目标用户的全部直绑标签，不传或传空数组则清空目标用户的所有直绑标签。每个元素中 TagId 必填，Values[].TagValueId 必填；传入的 TagValue、Source、GroupNames 服务端不读取，无需传入。标签维度与标签值可先通过 CreateTags / CreateTagValues 创建，再通过 ListTags 获取 ID（TagId 取 Items[].TagId，TagValueId 取 Items[].TagValues[].TagValueId）。</p>",
+          "example": "无",
+          "member": "UserTagInfo",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceUsersTagsResponse": {
+      "document": "UpdateWorkspaceUsersTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改工作空间用户标签响应</p>",
+          "example": "无",
+          "member": "UpdateWorkspaceUsersTagsRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceUsersTagsRsp": {
+      "document": "修改工作空间用户标签响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "UserActivityInfo": {
       "document": "用户对资产的操作信息",

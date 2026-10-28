@@ -386,6 +386,18 @@
     ],
     "DescribeSandboxToolList": [
       {
+        "document": "按关联的访问策略 ID 反向查询沙箱工具。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxToolList\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"access-policy-id\",\n            \"Values\": [\n                \"ap-2j6p7q8r\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"SandboxToolSet\": [\n            {\n                \"ToolId\": \"sdt-policy123\",\n                \"ToolName\": \"browser-policy-sandbox\",\n                \"ToolType\": \"browser\",\n                \"Status\": \"ACTIVE\",\n                \"Description\": \"浏览器沙箱环境\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"req-describe-tool-policy-example\"\n    }\n}",
+        "title": "按访问策略查询沙箱工具"
+      },
+      {
+        "document": "返回 Tool 当前声明的 L1 入口上限。",
+        "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxToolList\n<公共请求参数>\n\n{\n    \"ToolIds\": [\n        \"sdt-k4m8q2vz\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SandboxToolSet\": [\n            {\n                \"ToolId\": \"sdt-k4m8q2vz\",\n                \"ToolName\": \"private-browser-sandbox\",\n                \"ToolType\": \"browser\",\n                \"Status\": \"ACTIVE\",\n                \"Description\": \"私网浏览器沙箱\",\n                \"Tags\": []\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"0d58d01d-67d3-466e-84e2-a4375c728b9c\"\n    }\n}",
+        "title": "查询沙箱工具入口配置"
+      },
+      {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ags.<region>.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSandboxToolList\n<公共请求参数>\n\n{\n    \"ToolIds\": [\n        \"sdt-ee4ywozw\",\n        \"sdt-another123\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"SandboxToolSet\": [\n            {\n                \"ToolId\": \"sdt-ee4ywozw\",\n                \"ToolName\": \"browser-sandbox\",\n                \"ToolType\": \"browser\",\n                \"Status\": \"ACTIVE\",\n                \"Description\": \"浏览器沙箱环境\",\n                \"Tags\": [],\n                \"CreateTime\": \"2024-01-15T10:30:00Z\",\n                \"UpdateTime\": \"2024-01-15T10:30:00Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"custom-request-id-123\"\n    }\n}",

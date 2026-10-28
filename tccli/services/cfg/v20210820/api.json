@@ -42,6 +42,13 @@
       "output": "DescribeActionLibraryListResponse",
       "status": "online"
     },
+    "DescribeInstanceAgentList": {
+      "document": "查询探针列表，换为OTeam探针版本",
+      "input": "DescribeInstanceAgentListRequest",
+      "name": "查询探针列表-新",
+      "output": "DescribeInstanceAgentListResponse",
+      "status": "online"
+    },
     "DescribeObjectTypeList": {
       "document": "查询对象类型列表",
       "input": "DescribeObjectTypeListRequest",
@@ -105,6 +112,13 @@
       "output": "ExecuteTaskInstanceResponse",
       "status": "online"
     },
+    "InstallAgentOpenApi": {
+      "document": "安装探针接口",
+      "input": "InstallAgentOpenApiRequest",
+      "name": "安装混沌探针",
+      "output": "InstallAgentOpenApiResponse",
+      "status": "online"
+    },
     "ModifyTaskRunStatus": {
       "document": "修改任务运行状态",
       "input": "ModifyTaskRunStatusRequest",
@@ -117,6 +131,13 @@
       "input": "TriggerPolicyRequest",
       "name": "触发护栏策略",
       "output": "TriggerPolicyResponse",
+      "status": "online"
+    },
+    "UninstallAgentOpenApi": {
+      "document": "卸载探针",
+      "input": "UninstallAgentOpenApiRequest",
+      "name": "卸载混沌探针",
+      "output": "UninstallAgentOpenApiResponse",
       "status": "online"
     }
   },
@@ -490,6 +511,30 @@
         }
       ],
       "usage": "out"
+    },
+    "AgentFilter": {
+      "document": "筛选符合条件的Agent",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询key",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询value",
+          "example": "[\"ins-xxxx\", \"ins-111\"]",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "ApmServiceInfo": {
       "document": "应用性能监控产品中应用信息",
@@ -921,6 +966,89 @@
           "member": "uint64",
           "name": "Total",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAgentListRequest": {
+      "document": "DescribeInstanceAgentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1:CVM<br>2.TKE</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选条件</p>",
+          "example": "无",
+          "member": "AgentFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询探针场景</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AgentScene",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceAgentListResponse": {
+      "document": "DescribeInstanceAgentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回InstnaceAgent详情</p>",
+          "example": "无",
+          "member": "InstanceAgent",
+          "name": "InstanceAgent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总条目数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1613,6 +1741,97 @@
         }
       ],
       "type": "object"
+    },
+    "InstallAgentOpenApiRequest": {
+      "document": "InstallAgentOpenApi请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1:CVM<br>2:TKE</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装探针实例列表</p>",
+          "example": "[\"ins-********\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "InstallAgentOpenApiResponse": {
+      "document": "InstallAgentOpenApi返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>状态异常提示用户</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"The current status of instance(s) ins-test001 is 卸载中, installation is not allowed.\"]",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InstanceAgent": {
+      "document": "添加探针的参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "添加InstanceAgent的参数名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceAgentItem",
+          "name": "InstanceAgentItem",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InstanceAgentItem": {
+      "document": "添加探针入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>添加参数Key的名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>添加参数的Value</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyTaskRunStatusRequest": {
       "document": "ModifyTaskRunStatus请求参数结构体",
@@ -4445,6 +4664,52 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallAgentOpenApiRequest": {
+      "document": "UninstallAgentOpenApi请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>1: CVM<br>2: TKE</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要卸载的instance_id</p>",
+          "example": "[\"ins-********\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallAgentOpenApiResponse": {
+      "document": "UninstallAgentOpenApi返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示用户状态不正确无法安装字段</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"error message\"]",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

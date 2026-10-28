@@ -336,6 +336,14 @@
         "title": "为 DB Custom 节点修改标签"
       }
     ],
+    "ModifyDBCustomNodeType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBCustomNodeType\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-j9ndp0ij\",\n    \"NodeType\": \"DB.SA5.8XLARGE128\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100,\n        \"RequestId\": \"569f3207-47fc-4772-9b87-8de255444783\"\n    }\n}",
+        "title": "修改节点配置示例"
+      }
+    ],
     "ModifyDBCustomNodesDisasterRecoverGroup": [
       {
         "document": "",
@@ -352,6 +360,14 @@
         "title": "修改独享集群实例名称"
       }
     ],
+    "RebootDBCustomNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootDBCustomNodes\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-679g2lfs\"\n    ],\n    \"StopType\": \"SOFT_FIRST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 491,\n        \"RequestId\": \"5a598d1b-5e7c-4fe7-b07c-f7599cdf8a07\"\n    }\n}",
+        "title": "重启 DB Custom 节点"
+      }
+    ],
     "RemoveNodesFromDBCustomCluster": [
       {
         "document": "",
@@ -366,6 +382,38 @@
         "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDBCustomNode\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-wamuy21e\",\n    \"Period\": 1,\n    \"AutoRenew\": 2,\n    \"AutoVoucher\": 1,\n    \"VoucherIds\": [\n        \"OZRCGNAVHYEQPQUVPZWIHD\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"55246970-8cf2-4a5a-a817-ef71d6777d08\"\n    }\n}",
         "title": "续费 DB Custom 节点"
+      }
+    ],
+    "ResetDBCustomNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetDBCustomNode\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-lqzvz9er\",\n    \"LoginSettings\": {\n        \"Password\": \"paWD@123\"\n    },\n    \"ImageId\": \"img-7rqxtnh9\",\n    \"HostName\": \"host-name-reset-node\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4062,\n        \"RequestId\": \"afe969e0-42ac-493b-a4e0-b1bfb0140059\"\n    }\n}",
+        "title": "重装 DB Custom 节点的操作系统"
+      }
+    ],
+    "ResizeDBCustomNodeDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDBCustomNodeDisk\n<公共请求参数>\n\n{\n    \"NodeId\": \"dbcn-j9ndp0ij\",\n    \"DiskId\": \"disk-amssxe16\",\n    \"DiskSize\": 1024\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 100,\n        \"RequestId\": \"cabb3448-d331-4ef4-9ee9-a259d1cc3416\"\n    }\n}",
+        "title": "调整节点磁盘容量示例"
+      }
+    ],
+    "StartDBCustomNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartDBCustomNodes\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-lqzvz9er\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4073,\n        \"RequestId\": \"f76b56f4-8e65-49a1-870e-b3e502e02add\"\n    }\n}",
+        "title": "启动 DB Custom 节点"
+      }
+    ],
+    "StopDBCustomNodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbdc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDBCustomNodes\n<公共请求参数>\n\n{\n    \"NodeIds\": [\n        \"dbcn-lqzvz9er\"\n    ],\n    \"StopType\": \"HARD\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4072,\n        \"RequestId\": \"1288251d-7831-46ed-9a49-c1ea2c122767\"\n    }\n}",
+        "title": "关闭 DB Custom 节点"
       }
     ]
   },

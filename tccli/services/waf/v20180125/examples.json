@@ -372,6 +372,14 @@
         "title": "删除词库"
       }
     ],
+    "DeleteLLMSdkAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLLMSdkAccess\n<公共请求参数>\n\n{\n    \"Domain\": \"5501528206\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21a3921c-f343-4ca1-80c7-d308986804fe\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "DeleteOwaspRuleStatus": [
       {
         "document": "",

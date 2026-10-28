@@ -273,6 +273,13 @@
       "output": "ModifyDBCustomNodeTagsResponse",
       "status": "online"
     },
+    "ModifyDBCustomNodeType": {
+      "document": "该接口（ModifyDBCustomNodeType）用于修改 DB Custom 节点配置。\n修改节点配置过程中会重启节点。",
+      "input": "ModifyDBCustomNodeTypeRequest",
+      "name": "修改节点配置",
+      "output": "ModifyDBCustomNodeTypeResponse",
+      "status": "online"
+    },
     "ModifyDBCustomNodesDisasterRecoverGroup": {
       "document": "该接口（ModifyDBCustomNodesDisasterRecoverGroup）用于修改 DB Custom 节点的置放群组。",
       "input": "ModifyDBCustomNodesDisasterRecoverGroupRequest",
@@ -287,6 +294,13 @@
       "output": "ModifyInstanceNameResponse",
       "status": "online"
     },
+    "RebootDBCustomNodes": {
+      "document": "该接口（RebootDBCustomNodes）用于重启 DB Custom 节点。",
+      "input": "RebootDBCustomNodesRequest",
+      "name": "重启节点",
+      "output": "RebootDBCustomNodesResponse",
+      "status": "online"
+    },
     "RemoveNodesFromDBCustomCluster": {
       "document": "该接口（RemoveNodesFromDBCustomCluster）用于从 DB Custom 集群移出节点。",
       "input": "RemoveNodesFromDBCustomClusterRequest",
@@ -299,6 +313,34 @@
       "input": "RenewDBCustomNodeRequest",
       "name": "续费或解隔离节点",
       "output": "RenewDBCustomNodeResponse",
+      "status": "online"
+    },
+    "ResetDBCustomNode": {
+      "document": "该接口（ResetDBCustomNode）用于重装 DB Custom 节点的操作系统。",
+      "input": "ResetDBCustomNodeRequest",
+      "name": "重装节点操作系统",
+      "output": "ResetDBCustomNodeResponse",
+      "status": "online"
+    },
+    "ResizeDBCustomNodeDisk": {
+      "document": "该接口（ResizeDBCustomNodeDisk）用于调整 DB Custom 节点磁盘容量。",
+      "input": "ResizeDBCustomNodeDiskRequest",
+      "name": "调整节点磁盘容量",
+      "output": "ResizeDBCustomNodeDiskResponse",
+      "status": "online"
+    },
+    "StartDBCustomNodes": {
+      "document": "该接口（StartDBCustomNodes）用于开机 DB Custom 节点。",
+      "input": "StartDBCustomNodesRequest",
+      "name": "开机节点",
+      "output": "StartDBCustomNodesResponse",
+      "status": "online"
+    },
+    "StopDBCustomNodes": {
+      "document": "该接口（StopDBCustomNodes）用于关机 DB Custom 节点。",
+      "input": "StopDBCustomNodesRequest",
+      "name": "关机节点",
+      "output": "StopDBCustomNodesResponse",
       "status": "online"
     }
   },
@@ -5634,6 +5676,52 @@
       ],
       "type": "object"
     },
+    "ModifyDBCustomNodeTypeRequest": {
+      "document": "ModifyDBCustomNodeType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p>",
+          "example": "dbcn-j9ndp0ij",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点机型</p>",
+          "example": "DB.SA5.8XLARGE128",
+          "member": "string",
+          "name": "NodeType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBCustomNodeTypeResponse": {
+      "document": "ModifyDBCustomNodeType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改节点配置的任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBCustomNodesDisasterRecoverGroupRequest": {
       "document": "ModifyDBCustomNodesDisasterRecoverGroup请求参数结构体",
       "members": [
@@ -5811,6 +5899,52 @@
       ],
       "usage": "out"
     },
+    "RebootDBCustomNodesRequest": {
+      "document": "RebootDBCustomNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p>",
+          "example": "[\"dbcn-679g2lfs\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关机类型</p><p>枚举值：</p><ul><li>SOFT： 软关机</li><li>HARD： 硬关机</li><li>SOFT_FIRST： 优先软关机，失败再执行硬关机</li></ul><p>默认值：SOFT</p>",
+          "example": "SOFT_FIRST",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RebootDBCustomNodesResponse": {
+      "document": "RebootDBCustomNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "491",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RegionInfo": {
       "document": "地域信息。",
       "members": [
@@ -5964,6 +6098,125 @@
       ],
       "type": "object"
     },
+    "ResetDBCustomNodeRequest": {
+      "document": "ResetDBCustomNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p><p>参数格式：dbcn-hq98qjym</p>",
+          "example": "dbcn-lqzvz9er",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。</p><p>入参限制：若选择密钥方式，KeyIds 仅支持单个 ID。三种方式必须且仅可以设置其中一种。</p>",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重设的操作系统镜像ID</p><p>取值参考：可通过&quot;DescribeDBCustomImages&quot;接口获取支持的镜像。</p>",
+          "example": "img-7rqxtnh9",
+          "member": "string",
+          "name": "ImageId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>重装系统时，可以指定修改节点的主机名。</p><p>入参限制：- 点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</p><ul><li>Windows ：主机名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><li>Linux：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li></ul><p>注意：节点在没有加入到集群之前才支持修改主机 HostName。</p>",
+          "example": "host-name-reset-node",
+          "member": "string",
+          "name": "HostName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetDBCustomNodeResponse": {
+      "document": "ResetDBCustomNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4062",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDBCustomNodeDiskRequest": {
+      "document": "ResizeDBCustomNodeDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点ID</p>",
+          "example": "dbcn-j9ndp0ij",
+          "member": "string",
+          "name": "NodeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点磁盘ID</p>",
+          "example": "disk-amssxe16",
+          "member": "string",
+          "name": "DiskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调整后的磁盘容量大小</p><p>单位：GB</p><p>必须大于当前硬盘大小。系统盘小于2048，数据盘小于32000</p>",
+          "example": "1024",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDBCustomNodeDiskResponse": {
+      "document": "ResizeDBCustomNodeDisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>调整节点磁盘容量的任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResourceTag": {
       "document": "标签对象，包含tagKey & tagValue",
       "members": [
@@ -6067,6 +6320,89 @@
         }
       ],
       "usage": "out"
+    },
+    "StartDBCustomNodesRequest": {
+      "document": "StartDBCustomNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p>",
+          "example": "[\"dbcn-lqzvz9er\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StartDBCustomNodesResponse": {
+      "document": "StartDBCustomNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4073",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDBCustomNodesRequest": {
+      "document": "StopDBCustomNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>节点 ID 列表</p><p>入参限制：最多支持 100 个</p>",
+          "example": "[\"dbcn-lqzvz9er\"]",
+          "member": "string",
+          "name": "NodeIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关机类型</p><p>枚举值：</p><ul><li>SOFT： 软关机</li><li>HARD： 硬关机</li><li>SOFT_FIRST： 优先软关机，失败再执行硬关机</li></ul><p>默认值：SOFT</p>",
+          "example": "HARD",
+          "member": "string",
+          "name": "StopType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopDBCustomNodesResponse": {
+      "document": "StopDBCustomNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4072",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SystemDisk": {
       "document": "DB Custom 节点系统盘信息。",

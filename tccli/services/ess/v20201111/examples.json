@@ -1736,6 +1736,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractDiffTaskWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw9iUUgyg36ykr3Ux4GQpt1FPWYQOZC\"\n    },\n    \"TaskId\": \"yDttgUUckpxxat41UyoAic6CrjE7K0x2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1748918302614730295\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/contract-compare?embed=1&code=yDt3RUUckpx9s4h8UuFSuGdR9VDNF2lh&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF&businessType=TASK_ID&businessId=yDttgUUckpxxat41UyoAic6CrjE7K0x2\"\n    }\n}",
         "title": "获取合同对比结果web页面"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeContractDiffTaskWebUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDw9iUUgyg36ykr3Ux4GQpt1FPWYQOZC\"\n    },\n    \"TaskId\": \"yDttgUUckpxxat41UyoAic6CrjE7K0x2\",\n    \"FormatConfigs\": {\n        \"Values\": [\n            1,\n            2\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1748918302614730295\",\n        \"WebUrl\": \"https://embed.test.qian.tencent.cn/contract-compare?embed=1&code=yDt3RUUckpx9s4h8UuFSuGdR9VDNF2lh&channel=TENCENTCLOUD&embedType=CONTRACT_DIFF&businessType=TASK_ID&businessId=yDttgUUckpxxat41UyoAic6CrjE7K0x2&shortKey=yDIxiU8PVxoazzWGdva1\"\n    }\n}",
+        "title": "获取合同对比结果web页面并过滤对比项"
       }
     ],
     "DescribeContractReviewChecklist": [

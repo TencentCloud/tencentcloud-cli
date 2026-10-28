@@ -110,6 +110,14 @@
         "title": "创建扫描规则"
       }
     ],
+    "CreateUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaType\": \"UID\",\n    \"QuotaObjectName\": \"40002\",\n    \"QuotaSizeLimit\": \"100G\",\n    \"QuotaFilesLimit\": \"1000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaId\": \"quota_1754029945731\",\n        \"RequestId\": \"4693f5a8-3060-4658-aa43-a80de6ecd620\"\n    }\n}",
+        "title": "CreateUserQuota"
+      }
+    ],
     "DeleteCrossVpcSubnetSupportForClientNode": [
       {
         "document": "为客户端节点删除跨vpc子网访问能力",
@@ -148,6 +156,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicyRule\n<公共请求参数>\n\n{\n    \"RuleId\": \"1785919964984\",\n    \"FileSystemId\": \"x-c60-0q62fdo7\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"48fc7a43-2c3c-45f4-8be7-b6014780c7b9\"\n    }\n}",
         "title": "删除规则"
+      }
+    ],
+    "DeleteUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaId\": \"quota_1754029945731\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a5a697c9-475b-4a74-8371-e667a4ec1bba\"\n    }\n}",
+        "title": "DeleteUserQuota"
       }
     ],
     "DescribeClientNodes": [
@@ -252,6 +268,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyRuleExecuteRecord\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-0q62fdo7\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"RuleId\": \"1786019949985\"\n}",
         "output": "{\n    \"Response\": {\n        \"RuleExecuteList\": [\n            {\n                \"Capacity\": 588,\n                \"EndTime\": \"2026-08-06T20:40:11+08:00\",\n                \"FileCount\": 111105,\n                \"ManifestUrl\": \"https://goosefsx-test-**********.cos.ap-shanghai.myqcloud.com/policy/scan_policy_all_1786019949985_1786020001688.list.gfsx\",\n                \"RecordId\": \"1786020001688\",\n                \"StartTime\": \"2026-08-06T20:40:06+08:00\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"b0cde05c-ef51-4489-9999-6031a4921e02\"\n    }\n}",
         "title": "查询执行记录"
+      }
+    ],
+    "DescribeUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QuotaList\": [\n            {\n                \"CreateTime\": \"2025-08-01T14:27:40+08:00\",\n                \"ModifyTime\": \"2025-08-01T14:27:40+08:00\",\n                \"QuotaFilesLimit\": \"100\",\n                \"QuotaFilesUsed\": \"0\",\n                \"QuotaFilesUsedPercent\": \"0%\",\n                \"QuotaId\": \"quota_1754029660656\",\n                \"QuotaObjectName\": \"40001\",\n                \"QuotaSizeLimit\": \"10G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0%\",\n                \"QuotaType\": \"UID\",\n                \"Status\": \"active\"\n            },\n            {\n                \"CreateTime\": \"2025-08-01T14:32:25+08:00\",\n                \"ModifyTime\": \"2025-08-01T14:32:25+08:00\",\n                \"QuotaFilesLimit\": \"1000000\",\n                \"QuotaFilesUsed\": \"0\",\n                \"QuotaFilesUsedPercent\": \"0%\",\n                \"QuotaId\": \"quota_1754029945731\",\n                \"QuotaObjectName\": \"40002\",\n                \"QuotaSizeLimit\": \"100G\",\n                \"QuotaSizeUsed\": \"0K\",\n                \"QuotaSizeUsedPercent\": \"0%\",\n                \"QuotaType\": \"UID\",\n                \"Status\": \"active\"\n            }\n        ],\n        \"RequestId\": \"2465b710-dbee-4254-86d5-9ef9972ed550\"\n    }\n}",
+        "title": "DescribeUserQuota"
       }
     ],
     "DetachFileSystemBucket": [
@@ -364,6 +388,14 @@
         "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateLoadTaskPriority\n<公共请求参数>\n\n{\n    \"ClusterId\": \"g_cvm_36brs5g2\",\n    \"TaskId\": \"2c4a3356-28d5-4f87-98c3-78745b5d6bbf\",\n    \"Priority\": 666\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2650658c-e716-4ba0-b96a-2f9cfbcb5cb1\"\n    }\n}",
         "title": "修改目标预热任务优先级"
+      }
+    ],
+    "UpdateUserQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: goosefs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserQuota\n<公共请求参数>\n\n{\n    \"FileSystemId\": \"x-c60-4lu862qo\",\n    \"QuotaId\": \"quota_1754029660656\",\n    \"QuotaSizeLimit\": \"20G\",\n    \"QuotaFilesLimit\": \"500000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cc66d787-9919-4bba-9ed7-ccd94812939e\"\n    }\n}",
+        "title": "UpdateUserQuota"
       }
     ]
   },

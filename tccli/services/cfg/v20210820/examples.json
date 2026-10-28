@@ -48,6 +48,14 @@
         "title": "动作库列表查询"
       }
     ],
+    "DescribeInstanceAgentList": [
+      {
+        "document": "探针详情列表展示返回",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAgentList\n<公共请求参数>\n\n{\n    \"InstanceType\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"InstanceId\",\n            \"Value\": [\n                \"***\"\n            ]\n        }\n    ],\n    \"Page\": 1,\n    \"PageSize\": 1,\n    \"AgentScene\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceAgent\": [\n            {\n                \"InstanceAgentItem\": [\n                    {\n                        \"Name\": \"InstanceId\",\n                        \"Value\": \"ins-********\"\n                    },\n                    {\n                        \"Name\": \"Version\",\n                        \"Value\": \"tchaos-cvm-1.0\"\n                    },\n                    {\n                        \"Name\": \"Status\",\n                        \"Value\": \"2\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"f5eac377-07f6-4f49-8e4e-44c9f92b08e7\",\n        \"TotalCount\": 4\n    }\n}",
+        "title": "DescribeInstanceAgentList 返回示例"
+      }
+    ],
     "DescribeObjectTypeList": [
       {
         "document": "",
@@ -138,6 +146,14 @@
         "title": "示例"
       }
     ],
+    "InstallAgentOpenApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallAgentOpenApi\n<公共请求参数>\n\n{\n    \"InstanceType\": 1,\n    \"InstanceIds\": [\n        \"ins-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": [\n            \"The current status of instance(s) ins-test001 is 卸载中, installation is not allowed.\"\n        ],\n        \"RequestId\": \"fa8f4db3-f763-4c1d-aec7-8e1ca381c003\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ModifyTaskRunStatus": [
       {
         "document": "",
@@ -158,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerPolicy\n<公共请求参数>\n\n{\n    \"TaskId\": 5491,\n    \"Name\": \"触发护栏测试\",\n    \"Content\": \"触发护栏测试内容\",\n    \"TriggerType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1050e4e3-ef1a-4e2f-b100-c68dfd38fc75\",\n        \"Success\": true,\n        \"TaskId\": 5491\n    }\n}",
         "title": "1"
+      }
+    ],
+    "UninstallAgentOpenApi": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallAgentOpenApi\n<公共请求参数>\n\n{\n    \"InstanceType\": 1,\n    \"InstanceIds\": [\n        \"ins-********\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": [\n            \"****\"\n        ],\n        \"RequestId\": \"00e98201-a159-429d-9078-647c478413d9\"\n    }\n}",
+        "title": "示例"
       }
     ]
   },
