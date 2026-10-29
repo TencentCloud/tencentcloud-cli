@@ -830,6 +830,14 @@
         "title": "获取云函数地址并下载zip包"
       }
     ],
+    "EnablePGDocumentExt": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnablePGDocumentExt\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-demo-xxxyyyzzz\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Enabled\": true,\n        \"RequestId\": \"9b94b78e-eb60-4986-9b57-8b9d7a48dd61\"\n    }\n}",
+        "title": "开启文档插件能力"
+      }
+    ],
     "ExecutePGSql": [
       {
         "document": "",

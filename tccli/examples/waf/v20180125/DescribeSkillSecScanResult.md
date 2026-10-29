@@ -22,9 +22,9 @@ Output:
                     "Name": "命令执行"
                 }
             ],
-            "ContentHash": "sha256:efbc9937af7cd8fa4835908d753dd6272a521da849b2cfdb58b5f5f281c79a4a",
+            "ContentHash": "sha256:*********f7cd8fa4835908d753******a521****9b2cfdb58b5f5f281c79a4a",
             "EngineVersion": 40400,
-            "ReportUrl": "http://test-static-ai-scan.woa.com/html-reports/2026/05/07/125821_16d02efc38ccc323445bbcc0c97bb050.html",
+            "ReportUrl": "http:/***********************************epor*********5/07/125821_16d02efc38ccc323445bbcc0c97bb050.html",
             "RiskLevel": "malicious",
             "RuleCatalog": [
                 {

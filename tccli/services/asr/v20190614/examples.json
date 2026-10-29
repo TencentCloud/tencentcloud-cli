@@ -94,16 +94,22 @@
         "title": "轮询结果——任务成功"
       },
       {
+        "document": "用户通过轮询方式获取识别结果，任务执行中，说明任务已经开始识别，请用户耐心等候。",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 1,\n            \"StatusStr\": \"doing\",\n            \"AudioDuration\": 0,\n            \"Result\": \"\",\n            \"ErrorMsg\": \"\",\n            \"ResultDetail\": []\n        }\n    }\n}",
+        "title": "轮询结果——任务执行中"
+      },
+      {
         "document": "用户通过轮询方式获取识别结果，任务等待，说明任务还在识别队列中，请用户耐心等候。",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 0,\n            \"StatusStr\": \"waiting\",\n            \"AudioDuration\": 0,\n            \"Result\": \"\",\n            \"ErrorMsg\": \"\",\n            \"ResultDetail\": []\n        }\n    }\n}",
         "title": "轮询结果——任务等待"
       },
       {
-        "document": "用户通过轮询方式获取识别结果，任务执行中，说明任务已经开始识别，请用户耐心等候。",
+        "document": "使用大模型后处理能力总结识别文本",
         "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: DescribeTaskStatus\nX-TC-Timestamp: 1599142563\nAuthorization: TC3-HMAC-SHA256 Credential=************************************************************/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=6647fa852c9329ac5aa355c68c838358139c2d941f4ed175dd5858978f5d79c8\nContent-Length: 21\n<公共请求参数>\n\n{\n    \"TaskId\": 522931820\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8824366f-0e8f-4bd4-8924-af5e84127caa\",\n        \"Data\": {\n            \"TaskId\": 522931820,\n            \"Status\": 1,\n            \"StatusStr\": \"doing\",\n            \"AudioDuration\": 0,\n            \"Result\": \"\",\n            \"ErrorMsg\": \"\",\n            \"ResultDetail\": []\n        }\n    }\n}",
-        "title": "轮询结果——任务执行中"
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AudioDuration\": 4.06,\n            \"ErrorMsg\": \"\",\n            \"LlmResults\": [\n                {\n                    \"Feature\": \"Summary\",\n                    \"Result\": \"核心信息即说话人对北京科技馆的提及，未展开更多情节或细节内容。\",\n                    \"Success\": true\n                }\n            ],\n            \"Result\": \"[0:1.040,0:2.980]  北京科技馆。\\n\",\n            \"ResultDetail\": [\n                {\n                    \"EmotionType\": [\n                        \"disabled\"\n                    ],\n                    \"EmotionalEnergy\": 0,\n                    \"EndMs\": 2980,\n                    \"FinalSentence\": \"北京科技馆。\",\n                    \"SilenceTime\": 0,\n                    \"SliceSentence\": \"北京 科技馆\",\n                    \"SpeakerId\": 0,\n                    \"SpeechSpeed\": 2.6,\n                    \"StartMs\": 1040,\n                    \"Words\": [\n                        {\n                            \"OffsetEndMs\": 575,\n                            \"OffsetStartMs\": 0,\n                            \"Word\": \"北京\"\n                        }\n                    ],\n                    \"WordsNum\": 2,\n                    \"WrittenText\": \"\"\n                }\n            ],\n            \"Status\": 2,\n            \"StatusStr\": \"success\",\n            \"TaskId\": 1000866475\n        },\n        \"RequestId\": \"2b179325-cf7f-4c18-8e34-bd5b72fa9601\"\n    }\n}",
+        "title": "轮询结果——大模型后处理"
       }
     ],
     "DownloadAsrVocab": [
