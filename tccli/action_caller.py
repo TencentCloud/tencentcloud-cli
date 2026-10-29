@@ -86,7 +86,8 @@ class GenericActionCaller(object):
             reqTimeout=60 if g_param[options_define.Timeout] is None else int(g_param[options_define.Timeout]),
             reqMethod="POST",
             endpoint=g_param[options_define.Endpoint],
-            proxy=g_param[options_define.HttpsProxy.replace('-', '_')]
+            proxy=g_param[options_define.HttpsProxy.replace('-', '_')],
+            certification=Utils.get_ca_bundle()
         )
         cpf = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
         cpf.request_client = "_CLI_" + __version__
