@@ -3,7 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-exclude = ["tccli/examples"]
+exclude = [
+  "tccli/examples",
+  "/tccli/services/**/*_client.py",
+]
 
 [project]
 name = "tccli"
