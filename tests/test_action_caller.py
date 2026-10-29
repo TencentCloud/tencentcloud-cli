@@ -164,7 +164,11 @@ def test_create_client_uses_no_credential_and_preserves_profile_options():
 
     caller = GenericActionCaller(
         "sts", "AssumeRoleWithSAML", skip_sign=True)
-    with mock.patch.object(action_caller, "CommonClient", FakeCommonClient):
+    ca_bundle = "/tmp/test-ca-bundle.pem"
+    with mock.patch.object(action_caller, "CommonClient", FakeCommonClient), \
+            mock.patch.object(
+                action_caller.Utils, "get_ca_bundle",
+                return_value=ca_bundle):
         client = caller._create_client(g_param)
 
     assert captured["service"] == "sts"
@@ -174,6 +178,7 @@ def test_create_client_uses_no_credential_and_preserves_profile_options():
     assert captured["profile"].httpProfile.endpoint == "sts.test.tencentcloudapi.com"
     assert captured["profile"].httpProfile.reqTimeout == 12
     assert captured["profile"].httpProfile.proxy == "http://proxy.example"
+    assert captured["profile"].httpProfile.certification == ca_bundle
     assert captured["profile"].language == "zh-CN"
     assert captured["profile"].request_client.endswith("; unit-test")
     assert client is not None
