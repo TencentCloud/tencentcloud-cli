@@ -14,6 +14,62 @@ from tccli import oauth
 from tccli.plugins.auth import login as login_module
 
 
+class TestOAuthHttpsVerification(unittest.TestCase):
+    """OAuth 网络请求必须校验服务端 HTTPS 证书。"""
+
+    @staticmethod
+    def _response(data):
+        response = mock.Mock()
+        response.json.return_value = data
+        return response
+
+    def test_refresh_user_token_enables_certificate_verification(self):
+        response = self._response({
+            "AccessToken": "new-access-token",
+            "ExpiresAt": 123456,
+        })
+        with mock.patch.object(
+                oauth.requests, "post", return_value=response) as post:
+            result = oauth.refresh_user_token(
+                "refresh-token", "open-id", "cn")
+
+        args, kwargs = post.call_args
+        self.assertEqual(
+            args[0], oauth._API_ENDPOINT + "/refresh_user_token")
+        self.assertIs(kwargs["verify"], True)
+        self.assertEqual(kwargs["json"]["RefreshToken"], "refresh-token")
+        self.assertEqual(kwargs["json"]["OpenId"], "open-id")
+        self.assertEqual(kwargs["json"]["Site"], "cn")
+        self.assertEqual(result, {
+            "accessToken": "new-access-token",
+            "expiresAt": 123456,
+        })
+
+    def test_get_temp_cred_enables_certificate_verification(self):
+        response = self._response({
+            "SecretId": "secret-id",
+            "SecretKey": "secret-key",
+            "Token": "token",
+            "ExpiresAt": 123456,
+        })
+        with mock.patch.object(
+                oauth.requests, "post", return_value=response) as post:
+            result = oauth.get_temp_cred("access-token", "cn")
+
+        args, kwargs = post.call_args
+        self.assertEqual(
+            args[0], oauth._API_ENDPOINT + "/get_temp_cred")
+        self.assertIs(kwargs["verify"], True)
+        self.assertEqual(kwargs["json"]["AccessToken"], "access-token")
+        self.assertEqual(kwargs["json"]["Site"], "cn")
+        self.assertEqual(result, {
+            "secretId": "secret-id",
+            "secretKey": "secret-key",
+            "token": "token",
+            "expiresAt": 123456,
+        })
+
+
 class TestOAuthCredentialReplacement(unittest.TestCase):
     """OAuth 登录成功后原子替换旧 credential。"""
 

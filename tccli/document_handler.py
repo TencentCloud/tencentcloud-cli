@@ -343,8 +343,10 @@ class ActionDocumentHandler(BaseDocumentHandler):
         self.doc.style.dedent()
 
     def example(self):
-        self.doc.style.h2('Examples')
         examples = self._cli_data.generate_cli_example(self._service, self._version, self._action)
+        if not examples:
+            return
+        self.doc.style.h2('Examples')
         self.doc.style.indent()
         for idx, example in enumerate(examples):
             self.doc.style.new_line()
