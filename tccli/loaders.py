@@ -705,10 +705,17 @@ class Loader(object):
 
     def get_action_example_model(self, service, version, action):
         services_path = self.get_services_path()
-        version = "v" + version.replace('-', '')
-        example_path = os.path.join(services_path, service, version, "examples.json")
+        version_dir = "v" + version.replace('-', '')
+        example_path = os.path.join(services_path, service, version_dir, "examples.json")
+
         if not os.path.exists(example_path):
-            raise Exception("Not find service:%s version:%s model" % (service, version))
+            plugin_spec = plugin.import_plugins().get(service, {}).get(version, {})
+            plugin_action = plugin_spec.get("actions", {}).get(action)
+            if plugin_action is not None:
+                return []
+            raise Exception(
+                "Cannot find model for service:%s version:%s"
+                % (service, version))
 
         with open(example_path, 'r') as f:
             examples = json.load(f)
