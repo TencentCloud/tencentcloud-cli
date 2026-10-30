@@ -59,7 +59,7 @@ def refresh_user_token(ref_token, open_id, site):
         "OpenId": open_id,
         "Site": site,
     }
-    http_response = requests.post(api_endpoint, json=body, verify=False)
+    http_response = requests.post(api_endpoint, json=body, verify=True)
     resp = http_response.json()
 
     if "Error" in resp:
@@ -78,7 +78,7 @@ def get_temp_cred(access_token, site):
         "AccessToken": access_token,
         "Site": site,
     }
-    http_response = requests.post(api_endpoint, json=body, verify=False)
+    http_response = requests.post(api_endpoint, json=body, verify=True)
     resp = http_response.json()
 
     if "Error" in resp:
