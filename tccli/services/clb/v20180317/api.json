@@ -4127,6 +4127,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否有视频输入</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasInputVideo",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -17786,7 +17797,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>该模型支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li></ul>",
+          "document": "<p>该模型支持的输入多模态能力列表</p><p>枚举值：</p><ul><li>text： 支持文本输入</li><li>image： 支持图像输入</li><li>file： 支持文件输入（当前仅支持pdf）</li><li>video： 支持视频输入</li></ul>",
           "example": "[\"text\"]",
           "member": "string",
           "name": "InputModalities",
@@ -17810,6 +17821,15 @@
           "name": "NewModelAlias",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上游模型灰度操作，支持 Set、Promote、Rollback。</p><p>入参限制：未传时沿用普通属性编辑；显式 null、空对象及未知字段拒绝。与显式传入的 NewModelName、NewModelAlias、InputModalities 互斥，包括 null 和空别名。</p><p>Set 必须提供候选 ModelName 和 1～99 的整数 Weight，可调整同一候选的比例；相同配置在资源可编辑时成功且不重复下发。Promote、Rollback 仅传 Operation，分别全量切换到候选或恢复主模型并结束灰度。外层 ModelName 定位当前主模型；响应仍为 RequestId，任务通过 DescribeAsyncJobs 查询。</p>",
+          "example": "无",
+          "member": "UpstreamRolloutOperation",
+          "name": "UpstreamRollout",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -22388,6 +22408,39 @@
         }
       ],
       "usage": "out"
+    },
+    "UpstreamRolloutOperation": {
+      "document": "BYOK 上游模型灰度操作。Set 开启灰度或调整同一候选比例，Promote 全量切换，Rollback 结束灰度并恢复主模型。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>上游模型灰度操作类型。Set：开始灰度或调整同一候选的比例；Promote：全量切换到候选模型并结束灰度；Rollback：保留当前主模型并结束灰度。</p><p>入参限制：仅支持 Set、Promote、Rollback，区分大小写。Promote 和 Rollback 仅允许在灰度中使用，且禁止携带 ModelName、Weight。</p>",
+          "example": "Rollback",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>候选上游模型的原始名称，保留名称中的斜杠。</p><p>入参限制：Operation 为 Set 时必填，非空且最长 128 个字符；不能与当前主模型相同，不能占用同一 BYOK 的其他主模型或有效灰度候选名称。Promote、Rollback 禁止传入。</p>",
+          "example": "rollout-7f6f100adcc9-image-b",
+          "member": "string",
+          "name": "ModelName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>候选上游模型的灰度流量比例。</p><p>取值范围：[1, 99]</p><p>单位：%</p><p>Set 时必填，无默认值，必须为整数；拒绝 0、100、小数、布尔值及字符串。Promote、Rollback 禁止传入。比例只影响需要重新选择上游的请求，已有有效 Sticky 绑定不迁移，实际流量占比不保证等于配置比例。</p>",
+          "example": "80",
+          "member": "int64",
+          "name": "Weight",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "UserGroupInfo": {
       "document": "用户组信息。",

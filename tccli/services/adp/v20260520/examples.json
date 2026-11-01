@@ -154,6 +154,14 @@
         "title": "CreateRelease"
       }
     ],
+    "CreateSSEToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSEToken\n<公共请求参数>\n\n{\n    \"LoginUin\": \"60001000\",\n    \"LoginSubAccountUin\": \"70001000\",\n    \"AppId\": \"2082383600861081408\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"6ced781e-c8f8-4010-b059-644548d7950a\",\n        \"RequestId\": \"e7f5d5c8-6c6e-4764-9e61-bf43aa0476a4\"\n    }\n}",
+        "title": "创建 SSE Token"
+      }
+    ],
     "CreateSimilarQuestion": [
       {
         "document": "创建相似问生成任务",

@@ -5231,6 +5231,15 @@
           "name": "EnableResourceLink",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符串数组，tagstag里面的key</p>",
+          "example": "[\"gen_ai.current_input\"]",
+          "member": "string",
+          "name": "FilterTagKeys",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
