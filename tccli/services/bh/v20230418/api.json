@@ -2301,7 +2301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "id",
+          "document": "<p>id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -2311,7 +2311,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "ops-test1",
           "member": "string",
           "name": "OperationId",
@@ -2321,7 +2321,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名",
+          "document": "<p>任务名</p>",
           "example": "运维改密任务",
           "member": "string",
           "name": "TaskName",
@@ -2331,7 +2331,7 @@
         },
         {
           "disabled": false,
-          "document": "所属部门信息",
+          "document": "<p>所属部门信息</p>",
           "example": "无",
           "member": "Department",
           "name": "Department",
@@ -2341,7 +2341,7 @@
         },
         {
           "disabled": false,
-          "document": "改密方式。1：使用执行账号。2：修改自身密码",
+          "document": "<p>改密方式。1：使用执行账号。2：修改自身密码</p>",
           "example": "1",
           "member": "uint64",
           "name": "ChangeMethod",
@@ -2351,7 +2351,7 @@
         },
         {
           "disabled": false,
-          "document": "执行账号",
+          "document": "<p>执行账号</p>",
           "example": "root",
           "member": "string",
           "name": "RunAccount",
@@ -2361,7 +2361,7 @@
         },
         {
           "disabled": false,
-          "document": "密码生成策略",
+          "document": "<p>密码生成策略</p>",
           "example": "1",
           "member": "uint64",
           "name": "AuthGenerationStrategy",
@@ -2371,7 +2371,7 @@
         },
         {
           "disabled": false,
-          "document": "密码长度",
+          "document": "<p>密码长度</p>",
           "example": "12",
           "member": "uint64",
           "name": "PasswordLength",
@@ -2381,7 +2381,7 @@
         },
         {
           "disabled": false,
-          "document": "包含小写字母",
+          "document": "<p>包含小写字母</p>",
           "example": "1",
           "member": "uint64",
           "name": "SmallLetter",
@@ -2391,7 +2391,7 @@
         },
         {
           "disabled": false,
-          "document": "包含大写字母",
+          "document": "<p>包含大写字母</p>",
           "example": "1",
           "member": "uint64",
           "name": "BigLetter",
@@ -2401,7 +2401,7 @@
         },
         {
           "disabled": false,
-          "document": "包含数字",
+          "document": "<p>包含数字</p>",
           "example": "1",
           "member": "uint64",
           "name": "Digit",
@@ -2411,7 +2411,7 @@
         },
         {
           "disabled": false,
-          "document": "包含的特殊字符，入参base64",
+          "document": "<p>包含的特殊字符，入参base64</p>",
           "example": "bh-test-symbol",
           "member": "string",
           "name": "Symbol",
@@ -2421,7 +2421,7 @@
         },
         {
           "disabled": false,
-          "document": "改密完成通知。0-通知，1-不通知",
+          "document": "<p>改密完成通知。0-通知，1-不通知</p>",
           "example": "1",
           "member": "uint64",
           "name": "CompleteNotify",
@@ -2431,7 +2431,7 @@
         },
         {
           "disabled": false,
-          "document": "通知人邮箱",
+          "document": "<p>通知人邮箱</p>",
           "example": "[\"113***1@qq.com\",\"bh@qq.com\"]",
           "member": "string",
           "name": "NotifyEmails",
@@ -2441,7 +2441,7 @@
         },
         {
           "disabled": false,
-          "document": "加密附件密码",
+          "document": "<p>加密附件密码</p>",
           "example": "jkl789",
           "member": "string",
           "name": "FilePassword",
@@ -2451,7 +2451,7 @@
         },
         {
           "disabled": false,
-          "document": "需要改密的账户",
+          "document": "<p>需要改密的账户</p>",
           "example": "[\"ubuntu\",\"account\"]",
           "member": "string",
           "name": "AccountSet",
@@ -2461,7 +2461,7 @@
         },
         {
           "disabled": false,
-          "document": "需要改密的主机",
+          "document": "<p>需要改密的主机</p>",
           "example": "无",
           "member": "Device",
           "name": "DeviceSet",
@@ -2471,7 +2471,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：4手动，5自动",
+          "document": "<p>任务类型：4手动，5自动</p>",
           "example": "4",
           "member": "uint64",
           "name": "Type",
@@ -2481,7 +2481,7 @@
         },
         {
           "disabled": false,
-          "document": "周期",
+          "document": "<p>周期</p>",
           "example": "7",
           "member": "uint64",
           "name": "Period",
@@ -2491,7 +2491,7 @@
         },
         {
           "disabled": false,
-          "document": "首次执行时间",
+          "document": "<p>首次执行时间</p>",
           "example": "2020-12-20T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "FirstTime",
@@ -2501,7 +2501,7 @@
         },
         {
           "disabled": false,
-          "document": "下次执行时间",
+          "document": "<p>下次执行时间</p>",
           "example": "2020-12-27T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "NextTime",
@@ -2511,7 +2511,7 @@
         },
         {
           "disabled": false,
-          "document": "上次执行时间",
+          "document": "<p>上次执行时间</p>",
           "example": "2020-12-27T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "LastTime",
@@ -2521,10 +2521,40 @@
         },
         {
           "disabled": false,
-          "document": "改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时",
+          "document": "<p>改密任务状态，0-待执行，1-执行完成，2-执行失败，3-执行中，4-执行超时</p>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型改密任务</li><li>1： Windows 类型改密任务</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Category",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务协议类型</p><p>枚举值：</p><ul><li>0： 未定义，Linux 改密任务类型默认值</li><li>1： Windows OpenSSH 协议</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密协议端口号. Linux 改密协议类型端口号值为0</p><p>默认值：0</p>",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -3293,7 +3323,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务名",
+          "document": "<p>任务名</p>",
           "example": "周期改密任务",
           "member": "string",
           "name": "TaskName",
@@ -3302,7 +3332,7 @@
         },
         {
           "disabled": false,
-          "document": "资产id数组",
+          "document": "<p>资产id数组</p>",
           "example": "[1]",
           "member": "uint64",
           "name": "DeviceIdSet",
@@ -3311,8 +3341,8 @@
         },
         {
           "disabled": false,
-          "document": "修改的账户数组",
-          "example": "[\"root\",\"test\"]",
+          "document": "<p>修改的账户数组</p>",
+          "example": "[\"root\"]",
           "member": "string",
           "name": "AccountSet",
           "required": true,
@@ -3320,7 +3350,7 @@
         },
         {
           "disabled": false,
-          "document": "改密方式。1：使用执行账号修改密码；2：修改自身密码",
+          "document": "<p>改密方式。1：使用执行账号修改密码；2：修改自身密码</p>",
           "example": "1",
           "member": "int64",
           "name": "ChangeMethod",
@@ -3329,7 +3359,7 @@
         },
         {
           "disabled": false,
-          "document": "认证生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码",
+          "document": "<p>认证生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthGenerationStrategy",
@@ -3338,7 +3368,7 @@
         },
         {
           "disabled": false,
-          "document": "执行账号",
+          "document": "<p>执行账号</p>",
           "example": "root",
           "member": "string",
           "name": "RunAccount",
@@ -3347,7 +3377,7 @@
         },
         {
           "disabled": false,
-          "document": "手动指定密码时必传",
+          "document": "<p>手动指定密码时必传</p>",
           "example": "1a****3f",
           "member": "string",
           "name": "Password",
@@ -3356,7 +3386,7 @@
         },
         {
           "disabled": false,
-          "document": "密码限制长度，长度大于 12 位",
+          "document": "<p>密码限制长度，长度大于 12 位</p>",
           "example": "12",
           "member": "int64",
           "name": "PasswordLength",
@@ -3365,7 +3395,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含小写字母。0：否，1：是",
+          "document": "<p>密码包含小写字母。0：否，1：是</p>",
           "example": "1",
           "member": "int64",
           "name": "SmallLetter",
@@ -3374,7 +3404,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含大写字母。0：否，1：是",
+          "document": "<p>密码包含大写字母。0：否，1：是</p>",
           "example": "1",
           "member": "int64",
           "name": "BigLetter",
@@ -3383,7 +3413,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含数字。0：否，1：是",
+          "document": "<p>密码包含数字。0：否，1：是</p>",
           "example": "1",
           "member": "int64",
           "name": "Digit",
@@ -3392,7 +3422,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$",
+          "document": "<p>密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$</p>",
           "example": "ISMkJQ==",
           "member": "string",
           "name": "Symbol",
@@ -3401,7 +3431,7 @@
         },
         {
           "disabled": false,
-          "document": "改密完成通知。0：不通知 \n  1：通知",
+          "document": "<p>改密完成通知。0：不通知<br>  1：通知</p>",
           "example": "0",
           "member": "int64",
           "name": "CompleteNotify",
@@ -3410,7 +3440,7 @@
         },
         {
           "disabled": false,
-          "document": "通知邮箱",
+          "document": "<p>通知邮箱</p>",
           "example": "[\"123@qq.com\",\"234@qq.com\"]",
           "member": "string",
           "name": "NotifyEmails",
@@ -3419,7 +3449,7 @@
         },
         {
           "disabled": false,
-          "document": "加密压缩文件密码",
+          "document": "<p>加密压缩文件密码</p>",
           "example": "testFilePwd",
           "member": "string",
           "name": "FilePassword",
@@ -3428,7 +3458,7 @@
         },
         {
           "disabled": false,
-          "document": "所属部门id。“1.2.3”",
+          "document": "<p>所属部门id。“1.2.3”</p>",
           "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
@@ -3437,7 +3467,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型  4-手工执行  5-周期自动执行",
+          "document": "<p>任务类型  4-手工执行  5-周期自动执行</p>",
           "example": "4",
           "member": "uint64",
           "name": "Type",
@@ -3446,7 +3476,7 @@
         },
         {
           "disabled": false,
-          "document": "执行周期，单位天（大于等于 1，小于等于 365）",
+          "document": "<p>执行周期，单位天（大于等于 1，小于等于 365）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Period",
@@ -3455,12 +3485,39 @@
         },
         {
           "disabled": false,
-          "document": "周期任务首次执行时间",
+          "document": "<p>周期任务首次执行时间</p>",
           "example": "2020-12-20T19:51:23+08:00",
           "member": "string",
           "name": "FirstTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型改密任务</li><li>1： Windows 类型改密任务</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Category",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务协议类型</p><p>枚举值：</p><ul><li>0： 未定义，Linux改密任务类型默认值</li><li>1： Windows OpenSSH 协议</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Protocol",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密协议端口号. Linux 改密类型协议端口号需设置为0</p><p>取值范围：[0, 65535]</p><p>默认值：0</p>",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3470,7 +3527,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "<p>任务id</p>",
           "example": "ops-changepwd1",
           "member": "string",
           "name": "OperationId",
@@ -9294,7 +9351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "改密任务id",
+          "document": "<p>改密任务id</p>",
           "example": "ops-111111",
           "member": "string",
           "name": "OperationId",
@@ -9303,7 +9360,7 @@
         },
         {
           "disabled": false,
-          "document": "改密资产id列表",
+          "document": "<p>改密资产id列表</p>",
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "DeviceIdSet",
@@ -9312,8 +9369,8 @@
         },
         {
           "disabled": false,
-          "document": "改密资产的账号列表",
-          "example": "[\"root\",\"user\"]",
+          "document": "<p>改密资产的账号列表</p>",
+          "example": "[\"root\"]",
           "member": "string",
           "name": "AccountSet",
           "required": true,
@@ -9321,7 +9378,7 @@
         },
         {
           "disabled": false,
-          "document": "修改类型：1：修改任务信息  2：关联任务资产账号",
+          "document": "<p>修改类型：1：修改任务信息  2：关联任务资产账号</p>",
           "example": "1",
           "member": "uint64",
           "name": "ModifyType",
@@ -9330,7 +9387,7 @@
         },
         {
           "disabled": false,
-          "document": "改密方式。1：使用执行账号修改密码；2：修改自身密码",
+          "document": "<p>改密方式。1：使用执行账号修改密码；2：修改自身密码</p>",
           "example": "1",
           "member": "int64",
           "name": "ChangeMethod",
@@ -9339,7 +9396,7 @@
         },
         {
           "disabled": false,
-          "document": "密码生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码",
+          "document": "<p>密码生成方式。 1:自动生成相同密码 2:自动生成不同密码 3:手动指定相同密码</p>",
           "example": "1",
           "member": "int64",
           "name": "AuthGenerationStrategy",
@@ -9348,7 +9405,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "<p>任务名称</p>",
           "example": "bh-task",
           "member": "string",
           "name": "TaskName",
@@ -9357,7 +9414,7 @@
         },
         {
           "disabled": false,
-          "document": "所属部门ID，\"1,2,3\"",
+          "document": "<p>所属部门ID，&quot;1,2,3&quot;</p>",
           "example": "1.2",
           "member": "string",
           "name": "DepartmentId",
@@ -9366,7 +9423,7 @@
         },
         {
           "disabled": false,
-          "document": "任务的执行账号\t",
+          "document": "<p>任务的执行账号</p>",
           "example": "root",
           "member": "string",
           "name": "RunAccount",
@@ -9375,7 +9432,7 @@
         },
         {
           "disabled": false,
-          "document": "密码，手动指定密码时必传。",
+          "document": "<p>密码，手动指定密码时必传。</p>",
           "example": "pwd",
           "member": "string",
           "name": "Password",
@@ -9384,7 +9441,7 @@
         },
         {
           "disabled": false,
-          "document": "密码限制长度，自动生成密码必传。\t",
+          "document": "<p>密码限制长度，自动生成密码必传。</p>",
           "example": "12",
           "member": "int64",
           "name": "PasswordLength",
@@ -9393,7 +9450,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含小写字母，0：否，1：是。",
+          "document": "<p>密码包含小写字母，0：否，1：是。</p>",
           "example": "1",
           "member": "int64",
           "name": "SmallLetter",
@@ -9402,7 +9459,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含大写字母，0：否，1：是。",
+          "document": "<p>密码包含大写字母，0：否，1：是。</p>",
           "example": "1",
           "member": "int64",
           "name": "BigLetter",
@@ -9411,7 +9468,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含数字，0：否，1：是。",
+          "document": "<p>密码包含数字，0：否，1：是。</p>",
           "example": "1",
           "member": "int64",
           "name": "Digit",
@@ -9420,7 +9477,7 @@
         },
         {
           "disabled": false,
-          "document": "密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$",
+          "document": "<p>密码包含的特殊字符（base64编码），包含：^[-_#();%~!+=]*$</p>",
           "example": "ISMkJQ==",
           "member": "string",
           "name": "Symbol",
@@ -9429,7 +9486,7 @@
         },
         {
           "disabled": false,
-          "document": "改密完成通知。0：不通知 1：通知",
+          "document": "<p>改密完成通知。0：不通知 1：通知</p>",
           "example": "1",
           "member": "int64",
           "name": "CompleteNotify",
@@ -9438,7 +9495,7 @@
         },
         {
           "disabled": false,
-          "document": "通知邮箱",
+          "document": "<p>通知邮箱</p>",
           "example": "[\"123@qq.com\",\"234@qq.com\"]",
           "member": "string",
           "name": "NotifyEmails",
@@ -9447,7 +9504,7 @@
         },
         {
           "disabled": false,
-          "document": "加密压缩文件密码",
+          "document": "<p>加密压缩文件密码</p>",
           "example": "filepwd",
           "member": "string",
           "name": "FilePassword",
@@ -9456,7 +9513,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型， 4：手工执行  5：周期自动执行",
+          "document": "<p>任务类型， 4：手工执行  5：周期自动执行</p>",
           "example": "4",
           "member": "uint64",
           "name": "Type",
@@ -9465,7 +9522,7 @@
         },
         {
           "disabled": false,
-          "document": "周期任务周期，单位天（大于等于 1，小于等于 365）",
+          "document": "<p>周期任务周期，单位天（大于等于 1，小于等于 365）</p>",
           "example": "7",
           "member": "uint64",
           "name": "Period",
@@ -9474,12 +9531,39 @@
         },
         {
           "disabled": false,
-          "document": "周期任务首次执行时间",
+          "document": "<p>周期任务首次执行时间</p>",
           "example": "2020-12-20T19:51:23+08:00",
           "member": "datetime_iso",
           "name": "FirstTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型改密任务</li><li>1： Windows 类型改密任务</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Category",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密任务协议类型</p><p>枚举值：</p><ul><li>0： 未定义，Linux 改密任务类型默认值</li><li>1： Windows OpenSSH 协议</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Protocol",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>改密协议端口号，Linux 改密类型协议端口号需设置为0</p><p>取值范围：[0, 65535]</p><p>默认值：0</p>",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -14263,7 +14347,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "运维任务结果日志ID",
+          "document": "<p>运维任务结果日志ID</p>",
           "example": "dfac9070-8b23-499e-83b2-a50e3ca0",
           "member": "string",
           "name": "Id",
@@ -14273,7 +14357,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务ID",
+          "document": "<p>运维任务ID</p>",
           "example": "ops-1a2b3c",
           "member": "string",
           "name": "OperationId",
@@ -14283,7 +14367,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务名称",
+          "document": "<p>运维任务名称</p>",
           "example": "运维任务",
           "member": "string",
           "name": "Name",
@@ -14293,7 +14377,7 @@
         },
         {
           "disabled": false,
-          "document": "执行任务来源IP",
+          "document": "<p>执行任务来源IP</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "FromIp",
@@ -14303,7 +14387,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务所属用户",
+          "document": "<p>运维任务所属用户</p>",
           "example": "zhangsan",
           "member": "string",
           "name": "UserName",
@@ -14313,7 +14397,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务所属用户的姓名",
+          "document": "<p>运维任务所属用户的姓名</p>",
           "example": "张三",
           "member": "string",
           "name": "RealName",
@@ -14323,7 +14407,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务执行状态 1 - 执行中，2 - 成功，3 - 失败，4 - 部分失败",
+          "document": "<p>运维任务执行状态 1 - 执行中，2 - 成功，3 - 失败，4 - 部分失败</p>",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -14333,7 +14417,7 @@
         },
         {
           "disabled": false,
-          "document": "运维任务开始时间",
+          "document": "<p>运维任务开始时间</p>",
           "example": "2022-04-13T19:44:57+08:00",
           "member": "string",
           "name": "StartTime",
@@ -14343,12 +14427,22 @@
         },
         {
           "disabled": false,
-          "document": "运维任务结束时间",
+          "document": "<p>运维任务结束时间</p>",
           "example": "2022-04-13T19:45:57+08:00",
           "member": "string",
           "name": "EndTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类别</p><p>枚举值：</p><ul><li>0： Linux 类型任务（默认类型）</li><li>1： Windows 类型任务</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Category",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

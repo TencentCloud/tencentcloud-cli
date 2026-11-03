@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "SecretKey": "b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=",
+        "SecretKey": "b8**************************************qGY=",
         "RequestId": "9153aae4-26b1-4580-adc3-fa7cd4d32bf5"
     }
 }

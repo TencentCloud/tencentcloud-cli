@@ -10063,6 +10063,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响仓库镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AffectedRegistryImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响CICD镜像数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectedCICDImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20597,6 +20619,26 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群普通节点数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "NormalNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志开关失败信息，只在 AuditLogSwitchStatus 为 2（开启失败）或 3（关闭失败）时非空。</p>",
+          "example": "网络连接超时",
+          "member": "string",
+          "name": "AuditLogFailedInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -21795,6 +21837,23 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ContainerAutoScaleConfig": {
+      "document": "容器安全模块自动扩容配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>容器自动扩容开关</p><p>枚举值：</p><ul><li>OFF： 关</li><li>ON： 开</li></ul>",
+          "example": "OFF",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -39122,7 +39181,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>通用过滤条件。支持的 Name：ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）、Name（检测项名称，模糊搜索）、RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）、PolicyName（所属基线/策略名称，模糊搜索）。</p>",
+          "document": "<p>通用过滤条件。支持的 Name：<br>ResultStatus（结果状态 PASS/NOT_PASS/CHECKING/CHECK_FAILED/NOT_INVOLVED）<br>Name（检测项名称，模糊搜索）<br>RiskLevel（风险等级 CRITICAL/HIGH/MEDIUM/LOW）<br>ClusterCaMD5（集群CaMD5，精准搜索）<br>ClusterId（集群Id，精准搜索）</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -39528,7 +39587,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>通用过滤条件。支持的 Name：ResultStatus（通过状态，Values: PASS/NOT_PASS）、AssetName（资产名称/ID，模糊搜索）、IP（IP地址，模糊搜索）、Tag（资产标签，模糊搜索）。</p>",
+          "document": "<p>通用过滤条件。支持的 Name：<br>ResultStatus（通过状态，Values: PASS/NOT_PASS）<br>AssetName（资产名称/ID，模糊搜索）<br>IP（IP地址，模糊搜索）<br>Tag（资产标签，模糊搜索）<br>ClusterCaMD5 (集群ca-md5,精确匹配)<br>ClusterId (集群Id,精确匹配)</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -45883,6 +45942,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>普通节点总数</p>",
+          "example": "100",
+          "member": "uint64",
+          "name": "NormalNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -51735,7 +51804,7 @@
         {
           "disabled": false,
           "document": "<p>非结构化测试内容</p>",
-          "example": "kyrie@tencent.com",
+          "example": "*****@*******.com",
           "member": "string",
           "name": "UnStructuredTestContent",
           "required": false,
@@ -57041,6 +57110,66 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>有风险的镜像数</p>",
+          "example": "284",
+          "member": "uint64",
+          "name": "RiskImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CICD镜像数</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "CICDImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CICD已扫描镜数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CICDImageScannedCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>有风险的CICD镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskCICDImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感文件数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SecretFileCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建风险数</p>",
+          "example": "1349",
+          "member": "uint64",
+          "name": "BuildRiskCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -59467,7 +59596,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防护模式 0 标准 1 重保</p>",
+          "document": "<p>防护模式 0 标准 1 重保  2-自定义隔离</p>",
           "example": "0",
           "member": "int64",
           "name": "ProtectMode",
@@ -59553,6 +59682,26 @@
           "name": "Timeout",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隔离模式已保存的告警类型Code列表</p>",
+          "example": "[\"Trojan\"]",
+          "member": "string",
+          "name": "QuaraTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警类型字典（灰度规则下发，供前端渲染勾选项）</p>",
+          "example": "无",
+          "member": "QuaraTypeDictItem",
+          "name": "QuaraTypeDict",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -76155,7 +76304,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>",
+          "document": "<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network, k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>",
           "example": "md5",
           "member": "string",
           "name": "ContentType",
@@ -76489,6 +76638,16 @@
           "example": "无",
           "member": "RuleContentFileOperation",
           "name": "FileOperationRules",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>K8s API 规则，ContentType=k8s_api 的自定义规则填充</p>",
+          "example": "无",
+          "member": "RuleContentK8sAPI",
+          "name": "K8sApiRule",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -77176,7 +77335,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE）</p>",
+          "document": "<p>告警大类（英文枚举：VIRUS_TROJAN/ABNORMAL_LOGIN/HOST_BEHAVIOR/NETWORK_BEHAVIOR/LINK_ENGINE/K8S_API）</p>",
           "example": "VIRUS_TROJAN",
           "member": "string",
           "name": "AlertCategory",
@@ -77341,7 +77500,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群ID（保留字段，恒为空串）</p>",
+          "document": "<p>集群ID。容器告警和 K8s API 异常请求告警有值</p>",
           "example": "mock-cluster-id-0001",
           "member": "string",
           "name": "ClusterId",
@@ -77385,7 +77544,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network</p>",
+          "document": "<p>内容类型: md5/cmdline/dns/ip_inbound/ip_outbound/custom_file/process_network/k8s_api</p><p>枚举值：</p><ul><li>k8s_api： k8s api告警类型</li></ul>",
           "example": "md5",
           "member": "string",
           "name": "ContentType",
@@ -80222,7 +80381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机自动扩容开关\n枚举值：\nON：开启\nOFF：关闭\n补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch",
+          "document": "<p>主机自动扩容开关<br>枚举值：<br>ON：开启<br>OFF：关闭<br>补充说明：不传则不修改；映射底层自动加购开关 auto_repurchase_switch</p>",
           "example": "ON",
           "member": "string",
           "name": "Switch",
@@ -80233,13 +80392,35 @@
         },
         {
           "disabled": false,
-          "document": "扩容版本\n枚举值：\nPRO：专业版\nULTIMATE：旗舰版\n补充说明：不传则不修改",
+          "document": "<p>扩容版本<br>枚举值：<br>PRO：专业版<br>ULTIMATE：旗舰版<br>补充说明：不传则不修改</p>",
           "example": "ULTIMATE",
           "member": "string",
           "name": "ProtectType",
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩容资产范围</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>BY_TAG： 按标签扩容</li></ul>",
+          "example": "ALL",
+          "member": "string",
+          "name": "AssetRange",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签ID列表</p>",
+          "example": "[1001,2100]",
+          "member": "int64",
+          "name": "TagIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -81130,6 +81311,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描失败原因</p>",
+          "example": "文件格式解析失败",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扫描失败解决方案</p>",
+          "example": "请检查文件格式是否正确",
+          "member": "string",
+          "name": "FailSolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -81582,6 +81785,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感文件数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SecretFileCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建风险数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BuildRiskCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -82005,6 +82230,96 @@
           "example": "431",
           "member": "uint64",
           "name": "ScanTaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CICD名</p>",
+          "example": "*************-1",
+          "member": "string",
+          "name": "CICDName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CICD Id</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CICDId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是CICD镜像</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsCICD",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感文件数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SecretFileCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建风险数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BuildRiskCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高危敏感文件数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "HighLevelSecretFileCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>严重敏感文件数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CriticalLevelSecretFileCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高危构建风险数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "HighLevelBuildRiskCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>严重构建风险数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CriticalLevelBuildRiskCnt",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -82607,6 +82922,28 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>敏感文件数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "SecretFileCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建风险数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "BuildRiskCnt",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -84052,6 +84389,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响仓库镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AffectedRegistryImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响CICD镜像数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectedCICDImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -84427,6 +84786,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AffectedImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响仓库镜像数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "AffectedRegistryImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响CICD镜像数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectedCICDImageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -84539,6 +84931,17 @@
           "example": "测试木马白名单",
           "member": "string",
           "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单Md5</p>",
+          "example": "d7adf79e79bb768414edde9412a04893",
+          "member": "string",
+          "name": "Md5",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -85042,6 +85445,26 @@
           "example": "13",
           "member": "uint64",
           "name": "ID",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响仓库镜像数</p>",
+          "example": "7",
+          "member": "uint64",
+          "name": "AffectedRegistryImageCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响CICD镜像数</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectedCICDImageCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -92594,7 +93017,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network</p>",
+          "document": "<p>内容类型 / Content Type: md5-文件MD5/File MD5, cmdline-命令行/Command Line, dns-DNS, ip_inbound-入站IP/Inbound IP, ip_outbound-出站IP/Outbound IP, custom_file-自定义文件/Custom File, process_network-进程网络/Process Network,k8s_api-K8s API/K8s API</p><p>枚举值：</p><ul><li>md5-文件MD5： File MD5</li></ul>",
           "example": "ip_outbound",
           "member": "string",
           "name": "ContentType",
@@ -92823,6 +93246,15 @@
           "example": "无",
           "member": "RuleContentFileOperation",
           "name": "FileOperationRules",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ContentType=k8s_api 时传入的 K8s API 规则，各非空字段的值需要 Base64 编码，k8s_api 规则只按集群生效</p>",
+          "example": "无",
+          "member": "RuleContentK8sAPI",
+          "name": "K8sApiRule",
           "required": false,
           "type": "object"
         }
@@ -94643,7 +95075,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防护模式 0 标准 1重保</p>",
+          "document": "<p>防护模式 0 标准 1重保  2-自定义隔离</p>",
           "example": "0",
           "member": "int64",
           "name": "ProtectMode",
@@ -94721,6 +95153,15 @@
           "name": "Timeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隔离模式的告警类型Code列表（ProtectMode=2时必填，Code取自Describe返回的QuaraTypeDict）</p>",
+          "example": "[\"Packed\"]",
+          "member": "string",
+          "name": "QuaraTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -95256,10 +95697,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "主机安全模块自动扩容配置\n补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段",
+          "document": "<p>主机安全模块自动扩容配置<br>补充说明：不传则不修改主机配置；本期至少需传本模块。后续可扩展 ContainerConfig / AIAgentConfig 命名模块字段</p>",
           "example": "无",
           "member": "HostAutoScaleConfig",
           "name": "HostConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容器安全模块自动扩容配置，不传则不修改</p>",
+          "example": "无",
+          "member": "ContainerAutoScaleConfig",
+          "name": "ContainerConfig",
           "required": false,
           "type": "object"
         }
@@ -100023,6 +100473,52 @@
       ],
       "usage": "in"
     },
+    "QuaraTypeDictItem": {
+      "document": "自定义隔离模式的告警类型字典条目（灰度规则系统下发）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警类型标识，与 QuaraTypes 取值一致</p>",
+          "example": "Macro-Virus",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示类型名</p>",
+          "example": "宏病毒",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否推荐隔离</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Recommend",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述和建议</p>",
+          "example": "漏洞探测、端口扫描、密码破解、流量嗅探或网络攻击的专用工具。企业运维及安全测试也可能使用同类工具",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RaspLicenseList": {
       "document": "重保授权包列表对象",
       "members": [
@@ -102005,6 +102501,133 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RuleContentK8sAPI": {
+      "document": "EDR K8s API 异常请求规则内容。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求资源</p>",
+          "example": "exec",
+          "member": "string",
+          "name": "RequestURI",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>操作类型</p>",
+          "example": "create",
+          "member": "string",
+          "name": "Verb",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>发起请求用户</p>",
+          "example": "system:anonymous",
+          "member": "string",
+          "name": "RequestUser",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户代理</p>",
+          "example": "kubectl",
+          "member": "string",
+          "name": "UserAgent",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源 IP</p>",
+          "example": "172.16.0.10",
+          "member": "string",
+          "name": "SourceIPS",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应状态码</p>",
+          "example": "101",
+          "member": "string",
+          "name": "ResponseStatusCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求数据</p>",
+          "example": "privileged",
+          "member": "string",
+          "name": "RequestObject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>响应数据</p>",
+          "example": "secret",
+          "member": "string",
+          "name": "ResponseObject",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>挂载宿主机目录</p>",
+          "example": "/etc",
+          "member": "string",
+          "name": "MountHostDir",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Pod 名称或 IP</p>",
+          "example": "nginx",
+          "member": "string",
+          "name": "PodNameIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计日志 ID</p>",
+          "example": "7ff64758-45ec-4eec-b31d-90db11f85c9e",
+          "member": "string",
+          "name": "AuditID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

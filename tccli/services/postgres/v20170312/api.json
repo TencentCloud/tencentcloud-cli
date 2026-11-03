@@ -4734,7 +4734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "DNS域名",
+          "document": "<p>DNS域名</p>",
           "example": "cd-postgres-xxxxxxxx.sql.tencentcdb.com",
           "member": "string",
           "name": "Address",
@@ -4744,7 +4744,7 @@
         },
         {
           "disabled": false,
-          "document": "IP地址",
+          "document": "<p>IP地址</p>",
           "example": "111.111.11.11",
           "member": "string",
           "name": "Ip",
@@ -4754,7 +4754,7 @@
         },
         {
           "disabled": false,
-          "document": "连接Port地址",
+          "document": "<p>连接Port地址</p>",
           "example": "5432",
           "member": "uint64",
           "name": "Port",
@@ -4764,7 +4764,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；",
+          "document": "<p>网络类型，1、inner（基础网络内网地址）；2、private（私有网络内网地址）；3、public（基础网络或私有网络的外网地址）；</p>",
           "example": "private",
           "member": "string",
           "name": "NetType",
@@ -4774,7 +4774,7 @@
         },
         {
           "disabled": false,
-          "document": "网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；",
+          "document": "<p>网络连接状态，1、initing（未开通）；2、opened（已开通）；3、closed（已关闭）；4、opening（开通中）；5、closing（关闭中）；</p>",
           "example": "opened",
           "member": "string",
           "name": "Status",
@@ -4784,7 +4784,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID",
+          "document": "<p>私有网络ID</p>",
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
@@ -4794,7 +4794,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
@@ -4804,7 +4804,7 @@
         },
         {
           "disabled": false,
-          "document": "连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）",
+          "document": "<p>连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）</p>",
           "example": "postgresql",
           "member": "string",
           "name": "ProtocolType",
@@ -9866,7 +9866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例的磁盘大小，单位GB",
+          "document": "<p>实例的磁盘大小，单位GB</p>",
           "example": "500",
           "member": "int64",
           "name": "Storage",
@@ -9875,7 +9875,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的内存大小，单位GB",
+          "document": "<p>实例的内存大小，单位GB</p>",
           "example": "4",
           "member": "int64",
           "name": "Memory",
@@ -9884,7 +9884,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID，形如postgres-hez4fh0v。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID，形如postgres-hez4fh0v。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-6fego161",
           "member": "string",
           "name": "DBInstanceId",
@@ -9893,7 +9893,7 @@
         },
         {
           "disabled": true,
-          "document": "实例计费类型。",
+          "document": "<p>实例计费类型。</p>",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -9902,7 +9902,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的Cpu大小，单位Core。\n不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。",
+          "document": "<p>实例的Cpu大小，单位Core。<br>不传入此参数时，默认根据Memory确定的售卖规格所对应的Cpu进行设置。如Memory为2，支持的售卖规格有1核2GiB，则不传入Cpu时，Cpu默认为1。</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -9917,7 +9917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "刊例价费用",
+          "document": "<p>刊例价费用</p>",
           "example": "1300",
           "member": "int64",
           "name": "OriginalPrice",
@@ -9927,7 +9927,7 @@
         },
         {
           "disabled": false,
-          "document": "折后实际付款金额",
+          "document": "<p>折后实际付款金额</p>",
           "example": "1300",
           "member": "int64",
           "name": "Price",
@@ -9937,7 +9937,7 @@
         },
         {
           "disabled": false,
-          "document": "币种。例如，CNY：人民币。",
+          "document": "<p>币种。例如，CNY：人民币。</p>",
           "example": "CNY",
           "member": "string",
           "name": "Currency",

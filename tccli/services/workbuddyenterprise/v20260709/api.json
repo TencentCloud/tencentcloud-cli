@@ -35,11 +35,25 @@
       "output": "CreateAgentVersionFromSourceResponse",
       "status": "online"
     },
+    "CreateScheduledTask": {
+      "document": "创建自动化任务。AgentConfig 由上游传入，managed-agent 仅做协议透传。",
+      "input": "CreateScheduledTaskRequest",
+      "name": "创建自动化任务",
+      "output": "CreateScheduledTaskResponse",
+      "status": "online"
+    },
     "DeleteAgent": {
       "document": "删除指定的 Agent 及其所有版本。删除后不可恢复。",
       "input": "DeleteAgentRequest",
       "name": "删除 Agent",
       "output": "DeleteAgentResponse",
+      "status": "online"
+    },
+    "DeleteScheduledTask": {
+      "document": "删除指定的自动化任务。删除后不可恢复。",
+      "input": "DeleteScheduledTaskRequest",
+      "name": "删除自动化任务",
+      "output": "DeleteScheduledTaskResponse",
       "status": "online"
     },
     "DescribeAgent": {
@@ -126,6 +140,34 @@
       "output": "DescribeMessageEventListResponse",
       "status": "online"
     },
+    "DescribeScheduledTask": {
+      "document": "查询单个自动化任务的详细信息。",
+      "input": "DescribeScheduledTaskRequest",
+      "name": "查询自动化任务详情",
+      "output": "DescribeScheduledTaskResponse",
+      "status": "online"
+    },
+    "DescribeScheduledTaskList": {
+      "document": "分页查询自动化任务列表，支持按任务名称、状态、Agent 过滤。",
+      "input": "DescribeScheduledTaskListRequest",
+      "name": "查询自动化任务列表",
+      "output": "DescribeScheduledTaskListResponse",
+      "status": "online"
+    },
+    "DescribeScheduledTaskLog": {
+      "document": "查询单条自动化任务执行日志的详细信息。",
+      "input": "DescribeScheduledTaskLogRequest",
+      "name": "查询自动化任务执行日志详情",
+      "output": "DescribeScheduledTaskLogResponse",
+      "status": "online"
+    },
+    "DescribeScheduledTaskLogList": {
+      "document": "分页查询自动化任务执行日志列表，支持状态和时间范围过滤，可选返回聚合统计。",
+      "input": "DescribeScheduledTaskLogListRequest",
+      "name": "查询自动化任务执行日志列表",
+      "output": "DescribeScheduledTaskLogListResponse",
+      "status": "online"
+    },
     "DescribeSkillList": {
       "document": "分页查询 Skill 列表，支持关键词、分类、发布状态过滤。",
       "input": "DescribeSkillListRequest",
@@ -173,6 +215,20 @@
       "input": "ModifyAgentVersionRequest",
       "name": "修改 Agent 版本",
       "output": "ModifyAgentVersionResponse",
+      "status": "online"
+    },
+    "ModifyScheduledTask": {
+      "document": "部分更新自动化任务配置（Patch 语义：仅传递需要更新的字段），支持启停状态切换。",
+      "input": "ModifyScheduledTaskRequest",
+      "name": "修改自动化任务",
+      "output": "ModifyScheduledTaskResponse",
+      "status": "online"
+    },
+    "TriggerScheduledTask": {
+      "document": "手动触发一次自动化任务执行，返回执行日志 ID。",
+      "input": "TriggerScheduledTaskRequest",
+      "name": "手动触发自动化任务",
+      "output": "TriggerScheduledTaskResponse",
       "status": "online"
     },
     "UnbindExternalAgent": {
@@ -332,6 +388,34 @@
           "example": "负责数据查询与分析技能",
           "member": "string",
           "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AgentConfig": {
+      "document": "任务关联的 Agent 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行 Prompt（必填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "每天上午",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 唯一标识（引用 CreateAgent 创建的 Managed Agent，必填）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01M5W4SQM878XNW9CW0065EJH0",
+          "member": "string",
+          "name": "AgentId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1748,6 +1832,136 @@
       ],
       "type": "object"
     },
+    "CreateScheduledTaskRequest": {
+      "document": "CreateScheduledTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "测试任务",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务关联的 Agent 配置</p>",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>",
+          "example": "0 00 09 * * *",
+          "member": "string",
+          "name": "CronExpr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>",
+          "example": "用于测试验证的任务",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度类型：CRON（按 Cron 周期执行，默认）或 ONCE（单次执行）</p>",
+          "example": "CRON",
+          "member": "string",
+          "name": "FrequencyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期开始时间（YYYY-MM-DD 格式），可选，不传时不限制开始时间</p>",
+          "example": "2026-11-02",
+          "member": "string",
+          "name": "EffectiveStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期结束时间（YYYY-MM-DD 格式），可选，不传时不限制结束时间</p>",
+          "example": "2026-11-07",
+          "member": "string",
+          "name": "EffectiveEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递目标集合（BOT_CHANNEL / WEBHOOK 可并存）</p>",
+          "example": "无",
+          "member": "DeliveryTarget",
+          "name": "DeliveryTargetSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateScheduledTaskResponse": {
+      "document": "CreateScheduledTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117225257277648896",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务唯一标识</p>",
+          "example": "3f4d2f99-7e50-4c1d-be53-a91e8ae22b59",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：ACTIVE（启用）/ PAUSED（暂停）/ DISABLED（停用）</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次执行时间</p>",
+          "example": "2026-11-03T09:00:46+08:00",
+          "member": "string",
+          "name": "NextRunTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAgentRequest": {
       "document": "DeleteAgent请求参数结构体",
       "members": [
@@ -1774,6 +1988,72 @@
         }
       ],
       "type": "object"
+    },
+    "DeleteScheduledTaskRequest": {
+      "document": "DeleteScheduledTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117229891349585920",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteScheduledTaskResponse": {
+      "document": "DeleteScheduledTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeliveryTarget": {
+      "document": "投递目标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>投递类型：BOT_CHANNEL（IM 渠道投递）或 WEBHOOK（自定义回调）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BOT_CHANNEL",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用此投递目标</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递配置，按 Type 不同</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TargetOptions",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DescribeAgentListRequest": {
       "document": "DescribeAgentList请求参数结构体",
@@ -3016,6 +3296,537 @@
       ],
       "type": "object"
     },
+    "DescribeScheduledTaskListRequest": {
+      "document": "DescribeScheduledTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，缺省为 20，最大 100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系。支持的 Filter.Name：TaskName（模糊）、Status（精确 0/1）、AgentId（精确）</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskListResponse": {
+      "document": "DescribeScheduledTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务列表（分页后）</p>",
+          "example": "无",
+          "member": "ScheduledTaskSummary",
+          "name": "ScheduledTaskSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskLogListRequest": {
+      "document": "DescribeScheduledTaskLogList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2114705373313343488",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，缺省为 20，最大 100</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回聚合统计（Stats）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "WithStats",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组，多个 Filter 之间为 AND 关系，同一 Filter 内多个 Values 为 OR 关系</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskLogListResponse": {
+      "document": "DescribeScheduledTaskLogList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行日志列表（分页后）</p>",
+          "example": "无",
+          "member": "ScheduledTaskLogSummary",
+          "name": "ScheduledTaskLogSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>聚合统计（WithStats=true 时返回）</p>",
+          "example": "无",
+          "member": "ScheduledTaskLogStats",
+          "name": "Stats",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskLogRequest": {
+      "document": "DescribeScheduledTaskLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117224391753601024",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行日志 ID</p>",
+          "example": "2117226823644610560",
+          "member": "string",
+          "name": "LogId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskLogResponse": {
+      "document": "DescribeScheduledTaskLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行日志 ID</p>",
+          "example": "2117226823644610560",
+          "member": "string",
+          "name": "LogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117224391753601024",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务唯一标识</p>",
+          "example": "63697e12-4201-4ff1-a25f-b9c0fe679894",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联会话 ID</p>",
+          "example": "2117226825508405248",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发类型：MANUAL（手动）/ CRON（定时）</p>",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行状态</p>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次执行 Prompt</p>",
+          "example": "今天天气如何？",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行输出内容（完整结果；列表接口 DescribeScheduledTaskLogList 仅返回前 50 字符预览）</p>",
+          "example": "{\"sessionId\":\"2117226825508405248\"}",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-11-02T20:06:25+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-10-27T15:05:39+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行时长（毫秒）</p>",
+          "example": "34741",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态</p>",
+          "example": "SKIPPED",
+          "member": "string",
+          "name": "DeliveryStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递错误信息</p>",
+          "example": "投递失败",
+          "member": "string",
+          "name": "DeliveryError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-11-02T20:06:25+08:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>",
+          "example": "执行失败",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话名称（AgentOS 侧生成的 AI 标题 / 用户改名）；缺失时为空，调用方可兜底展示 SessionId 后缀</p>",
+          "example": "automation-2114619362015465472-2117226823644610560",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskRequest": {
+      "document": "DescribeScheduledTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2114705373313343488",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScheduledTaskResponse": {
+      "document": "DescribeScheduledTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2114705373313343488",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d473a076-7d74-4d39-9f93-6ff0e7a4dc1a",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试任务",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "用于测试验证的任务",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01M5VHJW2HX156559S17SVRN92",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 00 09 * * *",
+          "member": "string",
+          "name": "CronExpr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：ACTIVE（启用）/ PAUSED（暂停）/ DISABLED（停用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T19:45:05+08:00",
+          "member": "string",
+          "name": "LastRunTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-27T09:02:58+08:00",
+          "member": "string",
+          "name": "NextRunTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T21:07:04+08:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T21:09:41+08:00",
+          "member": "string",
+          "name": "ModifiedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 Agent 配置（Prompt/Model/AgentId）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期开始时间（YYYY-MM-DD 格式），不传时不限制开始时间</p>",
+          "example": "2026-11-02T00:00:00+08:00",
+          "member": "string",
+          "name": "EffectiveStart",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期结束时间（YYYY-MM-DD 格式），不传时不限制结束时间</p>",
+          "example": "2026-11-07T23:59:59+08:00",
+          "member": "string",
+          "name": "EffectiveEnd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递目标集合（BOT_CHANNEL / WEBHOOK 可并存）</p>",
+          "example": "无",
+          "member": "DeliveryTarget",
+          "name": "DeliveryTargetSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSkillListRequest": {
       "document": "DescribeSkillList请求参数结构体",
       "members": [
@@ -3440,6 +4251,34 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Header": {
+      "document": "自定义请求头键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求头名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Authorization",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求头值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Bearer token",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4375,6 +5214,105 @@
       ],
       "type": "object"
     },
+    "ModifyScheduledTaskRequest": {
+      "document": "ModifyScheduledTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117224391753601024",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "测试任务",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务描述</p>",
+          "example": "用于测试验证的任务",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务关联的 Agent 配置</p>",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>",
+          "example": "0 00 09 * * *",
+          "member": "string",
+          "name": "CronExpr",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：ACTIVE（启用）/ PAUSED（暂停）/ DISABLED（停用）</p>",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期开始时间（YYYY-MM-DD 格式），传空串清除，不传保持原值</p>",
+          "example": "2026-11-02",
+          "member": "string",
+          "name": "EffectiveStart",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效日期结束时间（YYYY-MM-DD 格式），传空串清除，不传保持原值</p>",
+          "example": "2026-11-07",
+          "member": "string",
+          "name": "EffectiveEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递目标集合（部分更新时整体替换）</p>",
+          "example": "无",
+          "member": "DeliveryTarget",
+          "name": "DeliveryTargetSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyScheduledTaskResponse": {
+      "document": "ModifyScheduledTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "RoutingItem": {
       "document": "路由项",
       "members": [
@@ -4398,6 +5336,310 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledTaskLogStats": {
+      "document": "定时任务执行聚合统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总执行次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>成功次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败次数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "FailedCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>平均执行时长（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AvgDurationMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledTaskLogSummary": {
+      "document": "定时任务执行日志列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>执行日志 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2114705928236544000",
+          "member": "string",
+          "name": "LogId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d473a076-7d74-4d39-9f93-6ff0e7a4dc1a",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发类型：MANUAL（手动）/ CRON（定时）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANUAL",
+          "member": "string",
+          "name": "TriggerType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T21:09:17+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-27T15:05:39+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行时长（毫秒）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "34741",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>投递状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SKIPPED",
+          "member": "string",
+          "name": "DeliveryStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联会话 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2114705929132331008",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "skipped: task not found at dispatch time",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话名称（AgentOS 侧生成的 AI 标题 / 用户改名）；缺失时为空，调用方可兜底展示 SessionId 后缀</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "automation-2114703867875184640-2114705928236544000",
+          "member": "string",
+          "name": "SessionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行结果预览（前 50 字符），仅用于列表页展示；完整结果请调用 DescribeScheduledTaskLog</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"sessionId\": \"2114705929132331008\"}",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledTaskSummary": {
+      "document": "定时任务列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2114706665523884032",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "038a93de-b092-4ae7-8278-5f78331f3941",
+          "member": "string",
+          "name": "TaskKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试任务",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联 Agent ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "01M5W4SQM878XNW9CW0065EJH0",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Cron 表达式</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 00 09 * * *",
+          "member": "string",
+          "name": "CronExpr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：ACTIVE（启用）/ PAUSED（暂停）/ DISABLED（停用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T23:55:13+08:00",
+          "member": "string",
+          "name": "LastRunTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次执行时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-27T09:02:52+08:00",
+          "member": "string",
+          "name": "NextRunTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-10-26T21:12:13+08:00",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务 Agent 配置（Prompt/Model/AgentId）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AgentConfig",
+          "name": "AgentConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -4696,6 +5938,78 @@
       ],
       "usage": "both"
     },
+    "TargetOptions": {
+      "document": "投递目标配置，按 Type 选用不同字段组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>渠道类型（BOT_CHANNEL 必填）：FEISHU / DINGTALK / QQ / WECOM_NEW / WECOM_AIBOT / WECHAT_KF</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QQ",
+          "member": "string",
+          "name": "ChannelType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>渠道标识（BOT_CHANNEL 必填）：飞书 appId / 钉钉 appKey / QQ appId / 企微 corpId:agentId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1905657364",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>回调 URL（WEBHOOK 必填）：仅允许 http/https，禁止内网地址（SSRF 防护）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://webhook.site/2caa360b-be93-4367-b5b8-a455cb594c90",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义请求头列表，与默认 Content-Type: application/json 合并</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Header",
+          "name": "Headers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>HMAC-SHA256 签名密钥（WEBHOOK 可选）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secret",
+          "member": "string",
+          "name": "Secret",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>接收目标 ID 集合（群 ID / 用户 ID / 频道 ID），BOT_CHANNEL 模式必填，至少一个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"4D1D111309B0E0FBC945B4C9C03502F6\"]",
+          "member": "string",
+          "name": "RecipientIdSet",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TokenUsage": {
       "document": "Token用量",
       "members": [
@@ -4745,6 +6059,52 @@
         }
       ],
       "usage": "both"
+    },
+    "TriggerScheduledTaskRequest": {
+      "document": "TriggerScheduledTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务 ID</p>",
+          "example": "2117224391753601024",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>覆盖 Prompt，为空则使用任务原 Prompt</p>",
+          "example": "明天天气",
+          "member": "string",
+          "name": "OverridePrompt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerScheduledTaskResponse": {
+      "document": "TriggerScheduledTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次触发产生的执行日志 ID</p>",
+          "example": "2117226823644610560",
+          "member": "string",
+          "name": "LogId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UnbindExternalAgentRequest": {
       "document": "UnbindExternalAgent请求参数结构体",

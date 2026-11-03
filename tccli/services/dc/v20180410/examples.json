@@ -79,7 +79,7 @@
     "DeleteDirectConnect": [
       {
         "document": "删除物理专线",
-        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnect\r\n&DirectConnectId=dc-abcdefgh\r\n&<公共请求参数>",
+        "input": "https://dc.tencentcloudapi.com/?Action=DeleteDirectConnect\n&DirectConnectId=dc-abcdefgh\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除物理专线"
       }

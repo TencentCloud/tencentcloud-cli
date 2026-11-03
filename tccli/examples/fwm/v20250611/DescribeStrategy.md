@@ -6,37 +6,33 @@ Input:
 
 ```
 tccli fwm DescribeStrategy --cli-unfold-argument  \
-    --StrategyId fwms-kmbf8avt
+    --StrategyId fwms-x8cvhqlj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "209ce0d3-c47f-49b9-936c-c35aa2966910",
         "Strategy": {
-            "CreateBy": "100011616646",
-            "CreateName": "天空之蓝",
-            "CreateTime": "2026-02-27 19:22:44",
+            "CreateBy": "700000363112",
+            "CreateName": "cfw-test",
+            "CreateTime": "2026-10-28 14:44:49",
             "ErrMsg": "",
             "ErrorType": "",
             "ExecArea": "pre",
-            "GroupId": "fwmrg-5gxybcnr",
-            "GroupName": "gl测试构造风险",
-            "ReceiveAccount": [
-                {
-                    "Nickname": "天空之蓝",
-                    "Uin": "100011616646"
-                }
-            ],
-            "RuleCount": 11,
-            "RuleStatus": 1,
+            "GroupId": "fwmrg-bds51sjghb",
+            "GroupName": "不影响云防测试rename",
+            "Product": "cfw_edge_acl",
+            "ReceiveAccount": [],
+            "RuleCount": 5,
+            "RuleStatus": 4,
             "Sequence": 1,
-            "StrategyId": "fwms-kmbf8avt",
-            "UpdateBy": "100011616646",
-            "UpdateName": "天空之蓝",
-            "UpdateTime": "2026-02-27 19:52:50"
-        }
+            "StrategyId": "fwms-x8cvhqlj",
+            "UpdateBy": "700000363112",
+            "UpdateName": "cfw-test",
+            "UpdateTime": "2026-10-28 15:38:01"
+        },
+        "RequestId": "9cc25e15-e146-46d5-b860-df7828aae7c0"
     }
 }
 ```

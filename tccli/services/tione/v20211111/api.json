@@ -8351,7 +8351,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段名称",
+          "document": "<p>过滤字段名称</p>",
           "example": "Name",
           "member": "string",
           "name": "Name",
@@ -8361,8 +8361,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤字段取值",
-          "example": "{\"ss\",\"sss\"}",
+          "document": "<p>过滤字段取值</p>",
+          "example": "[\"rsg-kl2rvtnr\"]",
           "member": "string",
           "name": "Values",
           "required": false,
@@ -8371,7 +8371,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启反向查询",
+          "document": "<p>是否开启反向查询</p>",
           "example": "false",
           "member": "bool",
           "name": "Negative",
@@ -8381,7 +8381,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启模糊匹配",
+          "document": "<p>是否开启模糊匹配</p>",
           "example": "false",
           "member": "bool",
           "name": "Fuzzy",

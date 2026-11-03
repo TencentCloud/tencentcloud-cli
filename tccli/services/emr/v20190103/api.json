@@ -8389,7 +8389,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群筛选策略。取值范围：<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li><li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li><li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li>",
+          "document": "<p>集群筛选策略。取值范围：<li>clusterList：表示查询除了已销毁集群之外的集群列表。</li><li>monitorManage：表示查询除了已销毁、创建中以及创建失败的集群之外的集群列表。</li><li>cloudHardwareManage/componentManage：目前这两个取值为预留取值，暂时和monitorManage表示同样的含义。</li></p>",
           "example": "clusterList",
           "member": "string",
           "name": "DisplayStrategy",
@@ -8398,7 +8398,7 @@
         },
         {
           "disabled": false,
-          "document": "页编号，默认值为0，表示第一页。",
+          "document": "<p>页编号，默认值为0，表示第一页。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -8407,7 +8407,7 @@
         },
         {
           "disabled": false,
-          "document": "每页返回数量，默认值为100，最大值为100。\n如果limit和offset都为0，则查询全部记录；",
+          "document": "<p>每页返回数量，默认值为100，最大值为100。<br>如果limit和offset都为0，则查询全部记录；</p>",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
@@ -8416,7 +8416,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。取值范围：<li>clusterId：表示按照实例ID排序。</li><li>addTime：表示按照实例创建时间排序。</li><li>status：表示按照实例的状态码排序。</li>",
+          "document": "<p>排序字段。取值范围：<li>clusterId：表示按照实例ID排序。</li><li>addTime：表示按照实例创建时间排序。</li><li>status：表示按照实例的状态码排序。</li></p>",
           "example": "clusterid",
           "member": "string",
           "name": "OrderField",
@@ -8425,7 +8425,7 @@
         },
         {
           "disabled": false,
-          "document": "按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。",
+          "document": "<p>按照OrderField升序或者降序进行排序。取值范围：<li>0：表示升序。</li><li>1：表示降序。</li>默认值为0。</p>",
           "example": "0",
           "member": "int64",
           "name": "Asc",
@@ -8434,7 +8434,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义查询过滤器。示例：<li>根据ClusterId过滤实例：[{\"Name\":\"ClusterId\",\"Values\":[\"emr-xxxxxxxx\"]}]</li><li>根据clusterName过滤实例：[{\"Name\": \"ClusterName\",\"Values\": [\"cluster_name\"]}]</li><li>根据ClusterStatus过滤实例：[{\"Name\": \"ClusterStatus\",\"Values\": [\"2\"]}]</li>",
+          "document": "<p>自定义查询过滤器。示例：<li>根据ClusterId过滤实例：[{&quot;Name&quot;:&quot;ClusterId&quot;,&quot;Values&quot;:[&quot;emr-xxxxxxxx&quot;]}]</li><li>根据clusterName过滤实例：[{&quot;Name&quot;: &quot;ClusterName&quot;,&quot;Values&quot;: [&quot;cluster_name&quot;]}]</li><li>根据ClusterStatus过滤实例：[{&quot;Name&quot;: &quot;ClusterStatus&quot;,&quot;Values&quot;: [&quot;2&quot;]}]</li></p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -8443,12 +8443,21 @@
         },
         {
           "disabled": false,
-          "document": "默认0为普通集群，2为tke集群",
+          "document": "<p>默认0为普通集群，2为tke集群</p>",
           "example": "0",
           "member": "int64",
           "name": "ClusterType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回需要密码信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedMcpPasswordInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8458,7 +8467,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的实例总数。",
+          "document": "<p>符合条件的实例总数。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCnt",
@@ -8468,7 +8477,7 @@
         },
         {
           "disabled": false,
-          "document": "集群实例列表",
+          "document": "<p>集群实例列表</p>",
           "example": "无",
           "member": "EmrListInstance",
           "name": "InstancesList",
@@ -11794,7 +11803,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "emr-xxxx",
           "member": "string",
           "name": "ClusterId",
@@ -11804,7 +11813,7 @@
         },
         {
           "disabled": false,
-          "document": "常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除",
+          "document": "<p>常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除</p>",
           "example": "集群运行中",
           "member": "string",
           "name": "StatusDesc",
@@ -11814,7 +11823,7 @@
         },
         {
           "disabled": false,
-          "document": "集群名字",
+          "document": "<p>集群名字</p>",
           "example": "集群名字",
           "member": "string",
           "name": "ClusterName",
@@ -11824,7 +11833,7 @@
         },
         {
           "disabled": false,
-          "document": "集群地域",
+          "document": "<p>集群地域</p>",
           "example": "1",
           "member": "uint64",
           "name": "ZoneId",
@@ -11834,7 +11843,7 @@
         },
         {
           "disabled": false,
-          "document": "用户APPID",
+          "document": "<p>用户APPID</p>",
           "example": "663622",
           "member": "uint64",
           "name": "AppId",
@@ -11844,7 +11853,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "创建时间",
           "member": "string",
           "name": "AddTime",
@@ -11854,7 +11863,7 @@
         },
         {
           "disabled": false,
-          "document": "运行时间",
+          "document": "<p>运行时间</p>",
           "example": "运行时间",
           "member": "string",
           "name": "RunTime",
@@ -11864,7 +11873,7 @@
         },
         {
           "disabled": false,
-          "document": "集群IP",
+          "document": "<p>集群IP</p>",
           "example": "集群ID",
           "member": "string",
           "name": "MasterIp",
@@ -11874,7 +11883,7 @@
         },
         {
           "disabled": false,
-          "document": "集群版本",
+          "document": "<p>集群版本</p>",
           "example": "集群版本",
           "member": "string",
           "name": "EmrVersion",
@@ -11884,7 +11893,7 @@
         },
         {
           "disabled": false,
-          "document": "集群计费类型",
+          "document": "<p>集群计费类型</p>",
           "example": "0",
           "member": "uint64",
           "name": "ChargeType",
@@ -11894,7 +11903,7 @@
         },
         {
           "disabled": false,
-          "document": "emr ID",
+          "document": "<p>emr ID</p>",
           "example": "23321",
           "member": "uint64",
           "name": "Id",
@@ -11904,7 +11913,7 @@
         },
         {
           "disabled": false,
-          "document": "产品ID",
+          "document": "<p>产品ID</p>",
           "example": "44333",
           "member": "uint64",
           "name": "ProductId",
@@ -11914,7 +11923,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "4555",
           "member": "uint64",
           "name": "ProjectId",
@@ -11924,7 +11933,7 @@
         },
         {
           "disabled": false,
-          "document": "区域",
+          "document": "<p>区域</p>",
           "example": "4552",
           "member": "uint64",
           "name": "RegionId",
@@ -11934,7 +11943,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "3422",
           "member": "uint64",
           "name": "SubnetId",
@@ -11944,7 +11953,7 @@
         },
         {
           "disabled": false,
-          "document": "网络ID",
+          "document": "<p>网络ID</p>",
           "example": "45666",
           "member": "uint64",
           "name": "VpcId",
@@ -11954,7 +11963,7 @@
         },
         {
           "disabled": false,
-          "document": "地区",
+          "document": "<p>地区</p>",
           "example": "zone",
           "member": "string",
           "name": "Zone",
@@ -11964,7 +11973,7 @@
         },
         {
           "disabled": false,
-          "document": "状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)",
+          "document": "<p>状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)</p>",
           "example": "2",
           "member": "uint64",
           "name": "Status",
@@ -11974,7 +11983,7 @@
         },
         {
           "disabled": false,
-          "document": "实例标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -11984,7 +11993,7 @@
         },
         {
           "disabled": false,
-          "document": "告警信息",
+          "document": "<p>告警信息</p>",
           "example": "告警信息",
           "member": "string",
           "name": "AlarmInfo",
@@ -11994,7 +12003,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是woodpecker集群",
+          "document": "<p>是否是woodpecker集群</p>",
           "example": "1",
           "member": "uint64",
           "name": "IsWoodpeckerCluster",
@@ -12004,7 +12013,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc中文",
+          "document": "<p>Vpc中文</p>",
           "example": "emr",
           "member": "string",
           "name": "VpcName",
@@ -12014,7 +12023,7 @@
         },
         {
           "disabled": false,
-          "document": "子网中文",
+          "document": "<p>子网中文</p>",
           "example": "emr",
           "member": "string",
           "name": "SubnetName",
@@ -12024,7 +12033,7 @@
         },
         {
           "disabled": false,
-          "document": "字符串VpcId",
+          "document": "<p>字符串VpcId</p>",
           "example": "vpc-lzd3w8jz",
           "member": "string",
           "name": "UniqVpcId",
@@ -12034,7 +12043,7 @@
         },
         {
           "disabled": false,
-          "document": "字符串子网",
+          "document": "<p>字符串子网</p>",
           "example": "subnet-3d73yezg",
           "member": "string",
           "name": "UniqSubnetId",
@@ -12044,7 +12053,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "spark",
           "member": "string",
           "name": "ClusterClass",
@@ -12054,7 +12063,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为跨AZ集群",
+          "document": "<p>是否为跨AZ集群</p>",
           "example": "true",
           "member": "bool",
           "name": "IsMultiZoneCluster",
@@ -12064,7 +12073,7 @@
         },
         {
           "disabled": false,
-          "document": "是否手戳集群",
+          "document": "<p>是否手戳集群</p>",
           "example": "false",
           "member": "bool",
           "name": "IsHandsCluster",
@@ -12074,7 +12083,7 @@
         },
         {
           "disabled": false,
-          "document": "体外客户端组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>体外客户端组件信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SoftDependInfo",
           "name": "OutSideSoftInfo",
@@ -12084,7 +12093,7 @@
         },
         {
           "disabled": false,
-          "document": "当前集群的应用场景是否支持体外客户端",
+          "document": "<p>当前集群的应用场景是否支持体外客户端</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSupportOutsideCluster",
@@ -12094,7 +12103,7 @@
         },
         {
           "disabled": false,
-          "document": "是否专有集群场景集群",
+          "document": "<p>是否专有集群场景集群</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDedicatedCluster",
@@ -12104,12 +12113,42 @@
         },
         {
           "disabled": false,
-          "document": "集群支持克隆",
+          "document": "<p>集群支持克隆</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSupportClone",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群包含的组件</p>",
+          "example": "[\"hdfs-2.8.5\"]",
+          "member": "string",
+          "name": "Soft",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启了实例保护</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsTerminateProtection",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>mcp密码信息</p>",
+          "example": "无",
+          "member": "McpPasswordInfo",
+          "name": "McpPasswordInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -16174,6 +16213,32 @@
         }
       ],
       "usage": "both"
+    },
+    "McpPasswordInfo": {
+      "document": "mcp是否需要密码",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>hive是否需要密码</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HivePasswordRequired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>trino是否需要密码</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TrinoPasswordRequired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "MetaDbInfo": {
       "document": "元数据库信息",

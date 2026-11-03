@@ -69,9 +69,9 @@
     "DescribeProbeMetricData": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeMetricData\n<公共请求参数>\n\n{\n    \"AnalyzeTaskType\": \"AnalyzeTaskType_Transport\",\n    \"MetricType\": \"gauge\",\n    \"Field\": \"sum(\\\"error_count\\\")\",\n    \"Filter\": null,\n    \"GroupBy\": \"time(60m)\",\n    \"Filters\": [\n        \"\\\"host\\\" = 'https://www.test.com'\",\n        \"time >= now()-1h\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSet\": \"[{\\\"name\\\":\\\"port_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"sum(error_count)\\\"],\\\"values\\\":[[1781679600,0],[1781683200,null]],\\\"tags\\\":null}]\",\n        \"RequestId\": \"xxxxx-xxxxx-xxxxx\"\n    }\n}",
-        "title": "DescribeProbeMetricData接口调用示例"
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProbeMetricData\n<公共请求参数>\n\n{\n    \"AnalyzeTaskType\": \"AnalyzeTaskType_Network\",\n    \"MetricType\": \"gauge\",\n    \"Field\": \"avg(\\\"query_time\\\")\",\n    \"GroupBy\": \"time(365d)\",\n    \"Filters\": [\n        \"\\\"host\\\" = 'www.qq.com'\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSet\": \"[{\\\"name\\\":\\\"netenv_request_gauge\\\",\\\"columns\\\":[\\\"time\\\",\\\"avg(query_time)\\\"],\\\"values\\\":[[1765987200,**.*************]],\\\"tags\\\":null}]\",\n        \"RequestId\": \"144fa926-567c-4d91-9852-b1d226115adb\"\n    }\n}",
+        "title": "查询www.qq.com任务指标"
       }
     ],
     "DescribeProbeMetricTagValues": [

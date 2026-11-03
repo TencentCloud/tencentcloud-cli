@@ -16,7 +16,7 @@ tccli cngw CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
     --EnableModelParamCheck True \
     --ModelParamCheckRule.AllowModelList gpt-5.1 gpt-5-mini \
     --ModelParamCheckRule.ModelValidationFailureStrategy Return404 \
-    --Description OpenAI 透传模型服务 \
+    --Description OpenAI透传模型服务 \
     --UpstreamURL https://api.openai.com \
     --ConnectTimeout 10000 \
     --WriteTimeout 60000 \
@@ -52,7 +52,7 @@ tccli cngw CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
     --DefaultModel claude-sonnet-4-20250514 \
     --EnableModelFallback True \
     --ModelFallbackRule.FallbackModels claude-3-5-haiku-20241022 claude-opus-4-20250514 \
-    --Description Anthropic Claude 模型服务 \
+    --Description Claude模型服务 \
     --UpstreamURL https://api.anthropic.com \
     --ConnectTimeout 10000 \
     --WriteTimeout 60000 \
@@ -70,6 +70,35 @@ Output:
         "Result": true,
         "ModelServiceId": "ms-abcdef123456",
         "RequestId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+    }
+}
+```
+
+**Example 3: 创建模型服务并关闭上游压缩协商**
+
+为 deepseek 创建指定模型的 LLM 模型服务，并请求上游返回未压缩响应。
+
+Input: 
+
+```
+tccli cngw CreateCloudNativeAPIGatewayLLMModelService --cli-unfold-argument  \
+    --GatewayId gateway-aeb0be15 \
+    --Name deepseek-sse \
+    --ServiceType LLMService \
+    --ModelProvider deepseek \
+    --ModelProtocol OpenAI/V1 \
+    --ModelSelector Specify \
+    --DefaultModel deepseek-chat \
+    --UpstreamURL https://api.deepseek.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Result": true,
+        "ModelServiceId": "model-service-123",
+        "RequestId": "req-123"
     }
 }
 ```

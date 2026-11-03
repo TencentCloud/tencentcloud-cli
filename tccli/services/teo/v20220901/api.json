@@ -16143,7 +16143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "zone-27q0p0bal192",
           "member": "string",
           "name": "ZoneId",
@@ -16158,8 +16158,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "接入密钥。",
-          "example": "b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=",
+          "document": "<p>接入密钥。</p>",
+          "example": "b8**************************************qGY=",
           "member": "string",
           "name": "SecretKey",
           "output_required": true,
@@ -23116,7 +23116,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容器运行时的环境变量。最多支持 10 个变量。</p>",
+          "document": "<p>容器运行时的环境变量。最多支持 50 个变量。</p>",
           "example": "无",
           "member": "InferenceEnvironmentVariable",
           "name": "EnvironmentVariables",
@@ -23160,7 +23160,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>容器运行时的环境变量。最多支持 10 个变量。</p>",
+          "document": "<p>容器运行时的环境变量。最多支持 50 个变量。</p>",
           "example": "无",
           "member": "InferenceEnvironmentVariable",
           "name": "EnvironmentVariables",

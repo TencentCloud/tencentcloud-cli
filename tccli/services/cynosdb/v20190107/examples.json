@@ -1690,8 +1690,8 @@
       {
         "document": "任何场景",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterReadOnlyInstanceGroupAccess\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-abcd1234\",\n    \"Port\": \"3306\",\n    \"SecurityGroupIds\": [\n        \"SecurityGroupIds1\",\n        \"SecurityGroupIds2\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"147287\",\n        \"RequestId\": \"51169b54-61d4-4604-a07e-e519a5527923\"\n    }\n}",
-        "title": "ex:"
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 147287,\n        \"RequestId\": \"51169b54-61d4-4604-a07e-e519a5527923\"\n    }\n}",
+        "title": "开通集群只读组接入地址"
       }
     ],
     "OpenClusterTransparentEncrypt": [

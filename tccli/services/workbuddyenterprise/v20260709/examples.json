@@ -40,12 +40,28 @@
         "title": "基于源版本创建 Agent 版本"
       }
     ],
+    "CreateScheduledTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScheduledTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"每日晨报\",\n    \"Description\": \"工作日报\",\n    \"AgentConfig\": {\n        \"Prompt\": \"总结昨天的项目进展\",\n        \"AgentId\": \"ag-xxx\"\n    },\n    \"FrequencyType\": \"CRON\",\n    \"CronExpr\": \"0 0 9 * * *\",\n    \"DeliveryTargetSet\": [\n        {\n            \"Type\": \"BOT_CHANNEL\",\n            \"Enabled\": true,\n            \"Options\": {\n                \"ChannelType\": \"QQ\",\n                \"ChannelId\": \"1905263717\",\n                \"RecipientIdSet\": [\n                    \"oc_xxx\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1001,\n        \"TaskKey\": \"task-20260720090000-a1b2c3\",\n        \"Status\": \"ACTIVE\",\n        \"NextRunTime\": \"2026-07-21T09:00:00+08:00\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "创建任务"
+      }
+    ],
     "DeleteAgent": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAgent\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
         "title": "删除 Agent"
+      }
+    ],
+    "DeleteScheduledTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteScheduledTask\n<公共请求参数>\n\n{\n    \"TaskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "删除定时任务"
       }
     ],
     "DescribeAgent": [
@@ -150,6 +166,38 @@
         "title": "查询消息事件列表"
       }
     ],
+    "DescribeScheduledTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledTask\n<公共请求参数>\n\n{\n    \"TaskId\": 1001\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1001,\n        \"TaskKey\": \"task-20260720090000-a1b2c3\",\n        \"TaskName\": \"每日晨报\",\n        \"Description\": \"工作日报\",\n        \"AgentId\": \"ag-xxx\",\n        \"CronExpr\": \"0 0 9 * * *\",\n        \"DeliveryTargetSet\": [\n            {\n                \"Type\": \"BOT_CHANNEL\",\n                \"Enabled\": true,\n                \"Options\": {\n                    \"ChannelType\": \"QQ\",\n                    \"ChannelId\": \"1905263717\",\n                    \"RecipientIdSet\": [\n                        \"oc_xxx\"\n                    ]\n                }\n            }\n        ],\n        \"Status\": \"ACTIVE\",\n        \"LastRunTime\": \"\",\n        \"NextRunTime\": \"2026-07-21T09:00:00+08:00\",\n        \"CreatedTime\": \"2026-07-20T09:00:00+08:00\",\n        \"ModifiedTime\": \"2026-07-20T09:00:00+08:00\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\",\n        \"AgentConfig\": {\n            \"Prompt\": \"总结昨天的项目进展\",\n            \"AgentId\": \"ag-xxx\"\n        }\n    }\n}",
+        "title": "查看任务详情"
+      }
+    ],
+    "DescribeScheduledTaskList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledTaskList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"\",\n            \"Values\": [\n                \"\"\n            ],\n            \"ExactMatch\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduledTaskSet\": [\n            {\n                \"TaskId\": 0,\n                \"TaskKey\": \"\",\n                \"TaskName\": \"\",\n                \"AgentId\": \"\",\n                \"CronExpr\": \"\",\n                \"Status\": 0,\n                \"LastRunTime\": \"\",\n                \"NextRunTime\": \"\",\n                \"CreatedTime\": \"\",\n                \"AgentConfig\": {\n                    \"Prompt\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询定时任务列表"
+      }
+    ],
+    "DescribeScheduledTaskLog": [
+      {
+        "document": "按 TaskId + LogId 查询单条执行日志详情（示例为部分成功 + 投递失败场景，所有字段均有值）",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledTaskLog\n<公共请求参数>\n\n{\n    \"TaskId\": \"736918400000000001\",\n    \"LogId\": \"736919300000000001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": \"736919300000000001\",\n        \"TaskId\": \"736918400000000001\",\n        \"TaskKey\": \"task_daily_report\",\n        \"SessionId\": \"sess_a1b2c3d4\",\n        \"SessionName\": \"每日日报\",\n        \"TriggerType\": \"CRON\",\n        \"Status\": \"PARTIAL\",\n        \"Prompt\": \"请汇总今日数据并生成日报\",\n        \"Result\": \"今日汇总如下：一、运营数据……二、告警概览……\",\n        \"ErrorMessage\": \"上游模型调用部分超时，已输出 3/5 个板块\",\n        \"StartTime\": \"2026-09-18 10:00:00\",\n        \"EndTime\": \"2026-09-18 10:00:05\",\n        \"DurationMs\": 5000,\n        \"DeliveryStatus\": \"FAILED\",\n        \"DeliveryError\": \"企微群机器人 Webhook 返回 410 Gone，请更新机器人配置\",\n        \"CreatedTime\": \"2026-09-18 10:00:00\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询执行日志详情"
+      }
+    ],
+    "DescribeScheduledTaskLogList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledTaskLogList\n<公共请求参数>\n\n{\n    \"TaskId\": 0,\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"WithStats\": false,\n    \"Filters\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduledTaskLogSet\": [\n            {\n                \"LogId\": 0,\n                \"TaskKey\": \"\",\n                \"TriggerType\": \"\",\n                \"Status\": \"\",\n                \"StartTime\": \"\",\n                \"EndTime\": \"\",\n                \"DurationMs\": 0,\n                \"DeliveryStatus\": \"\",\n                \"SessionId\": \"\"\n            }\n        ],\n        \"Stats\": {\n            \"TotalCount\": 0,\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"AvgDurationMs\": 0\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "查询定时任务执行日志列表"
+      }
+    ],
     "DescribeSkillList": [
       {
         "document": "",
@@ -204,6 +252,22 @@
         "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAgentVersion\n<公共请求参数>\n\n{\n    \"AgentId\": \"736918300000000001\",\n    \"VersionId\": \"2087791755109965827\",\n    \"Model\": \"hunyuan-turbos-latest\",\n    \"Description\": \"调整系统提示词，收紧回答范围\"\n}",
         "output": "{\n    \"Response\": {\n        \"VersionId\": \"2087791755109965827\",\n        \"AgentId\": \"736918300000000001\",\n        \"VersionName\": \"default\",\n        \"VersionType\": \"DEFAULT\",\n        \"Description\": \"调整系统提示词，收紧回答范围\",\n        \"Model\": \"hunyuan-turbos-latest\",\n        \"Manifest\": \"{\\\"version\\\":\\\"2.0\\\",\\\"system_prompt\\\":\\\"你是数据分析助手，负责汇总运营数据。\\\"}\",\n        \"Status\": \"ENABLED\",\n        \"CreatedTime\": \"2026-07-20T07:10:00Z\",\n        \"ModifiedTime\": \"2026-08-10T15:30:00Z\",\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
         "title": "修改 Agent 版本"
+      }
+    ],
+    "ModifyScheduledTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyScheduledTask\n<公共请求参数>\n\n{\n    \"TaskId\": 1001,\n    \"TaskName\": \"每日晨报v2\",\n    \"DeliveryTargetSet\": [\n        {\n            \"Type\": \"BOT_CHANNEL\",\n            \"Enabled\": true,\n            \"Options\": {\n                \"ChannelType\": \"QQ\",\n                \"ChannelId\": \"1905263717\",\n                \"RecipientIdSet\": [\n                    \"oc_xxx\",\n                    \"oc_yyy\"\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "修改任务"
+      }
+    ],
+    "TriggerScheduledTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerScheduledTask\n<公共请求参数>\n\n{\n    \"TaskId\": 0,\n    \"OverridePrompt\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 0,\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "title": "手动触发定时任务"
       }
     ],
     "UnbindExternalAgent": [

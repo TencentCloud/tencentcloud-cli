@@ -29153,7 +29153,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防护模式 0 标准 1 重保</p>",
+          "document": "<p>防护模式 0 标准 1 重保 2自定义隔离</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectMode",
@@ -29199,6 +29199,26 @@
           "name": "QuaraScope",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隔离模式已保存的告警类型Code列表</p>",
+          "example": "[\"Backdoor\"]",
+          "member": "string",
+          "name": "QuaraTypes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警类型字典（灰度规则下发，供前端渲染勾选项）</p>",
+          "example": "无",
+          "member": "QuaraTypeDictItem",
+          "name": "QuaraTypeDict",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -50664,7 +50684,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防护模式 0 标准 1重保</p>",
+          "document": "<p>防护模式 0 标准 1重保 2自定义隔离</p>",
           "example": "0",
           "member": "uint64",
           "name": "ProtectMode",
@@ -50706,6 +50726,15 @@
           "name": "ProductType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义隔离模式的告警类型Code列表（ProtectMode=2时必填，Code取自Describe返回的QuaraTypeDict）</p>",
+          "example": "[\"Backdoor\"]",
+          "member": "string",
+          "name": "QuaraTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -54588,6 +54617,52 @@
           "name": "Num",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QuaraTypeDictItem": {
+      "document": "自定义隔离模式的告警类型字典条目（灰度规则系统下发）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>告警类型标识，与 QuaraTypes 取值一致</p>",
+          "example": "Backdoor",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示类型名</p>",
+          "example": "常规后门",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否推荐隔离</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Recommend",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述和建议</p>",
+          "example": "攻击者入侵后植入的特权访问通道，可在隐蔽状态下远程控制主机、窃取数据或执行恶意命令。属高危恶意程序，建议立即隔离",
+          "member": "string",
+          "name": "Desc",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

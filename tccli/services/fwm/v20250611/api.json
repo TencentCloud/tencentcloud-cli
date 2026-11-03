@@ -1238,7 +1238,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "筛选字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>筛选字段名。支持：SecurityGroupId、FwGroupId、IP（IP地址模糊搜索）、InstanceName（实例名称模糊搜索）、VpcId（VPC ID精确搜索）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Domain",
           "member": "string",
           "name": "Name",
@@ -1249,8 +1249,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选值列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "document": "<p>筛选值列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"mem-tencent-11de15c0d038a7f2\"]",
           "member": "string",
           "name": "Values",
           "output_required": false,
@@ -1260,7 +1260,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型：1=精确匹配，7=in，9=模糊匹配\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>操作类型。1=等于，7=in，9=模糊匹配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7",
           "member": "int64",
           "name": "OperatorType",
@@ -2422,7 +2422,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选",
+          "document": "<p>搜索过滤条件列表，支持按成员 ID、账号名称、身份、纳管状态等字段筛选</p>",
           "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
@@ -2431,7 +2431,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，默认 20",
+          "document": "<p>分页大小，默认 20</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -2440,7 +2440,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移量，默认 0",
+          "document": "<p>分页偏移量，默认 0</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -2449,7 +2449,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段，如 MemberCreateTime",
+          "document": "<p>排序字段，如 MemberCreateTime</p>",
           "example": "MemberCreateTime",
           "member": "string",
           "name": "By",
@@ -2458,7 +2458,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式：asc 升序，desc 降序",
+          "document": "<p>排序方式：asc 升序，desc 降序</p>",
           "example": "desc",
           "member": "string",
           "name": "Order",
@@ -2473,7 +2473,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集团成员总数",
+          "document": "<p>集团成员总数</p>",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -2483,7 +2483,7 @@
         },
         {
           "disabled": false,
-          "document": "集团成员列表",
+          "document": "<p>集团成员列表</p>",
           "example": "无",
           "member": "OrganMemberItem",
           "name": "Members",
@@ -3126,7 +3126,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "产品类型",
+          "document": "<p>产品类型</p>",
           "example": "secgroup",
           "member": "string",
           "name": "Product",
@@ -3135,7 +3135,7 @@
         },
         {
           "disabled": false,
-          "document": "执行区域：pre是前区，post 是后区",
+          "document": "<p>执行区域：pre是前区，post 是后区</p>",
           "example": "pre",
           "member": "string",
           "name": "ExecArea",
@@ -3144,7 +3144,7 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件",
+          "document": "<p>筛选条件</p>",
           "example": "无",
           "member": "CommonFilter",
           "name": "Filters",
@@ -3153,7 +3153,7 @@
         },
         {
           "disabled": false,
-          "document": "条数限制",
+          "document": "<p>条数限制</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -3162,7 +3162,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量",
+          "document": "<p>偏移量</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -3177,7 +3177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总数",
+          "document": "<p>总数</p>",
           "example": "102",
           "member": "uint64",
           "name": "TotalCount",
@@ -3187,7 +3187,7 @@
         },
         {
           "disabled": false,
-          "document": "策略列表",
+          "document": "<p>策略列表</p>",
           "example": "无",
           "member": "StrategyResp",
           "name": "Strategies",
@@ -3362,7 +3362,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略Id",
+          "document": "<p>策略Id</p>",
           "example": "SID-133",
           "member": "string",
           "name": "StrategyId",
@@ -3377,7 +3377,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略详情",
+          "document": "<p>策略详情</p>",
           "example": "无",
           "member": "StrategyResp",
           "name": "Strategy",
@@ -5297,6 +5297,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>共享者MemberId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mem-tencent-e4f32cfd87465a17",
+          "member": "string",
+          "name": "CfwSharerMemberId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>云防火墙计费实例 ID，非空表示已购买云防火墙</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "cfwins-abc12345",
           "member": "string",
@@ -5371,6 +5381,16 @@
           "example": "1",
           "member": "int64",
           "name": "IsCfwPostPay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业安全组免费额度领取态：0-未领用，1-已领用（永久领取态）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SgFreeClaimed",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -6963,7 +6983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略Id",
+          "document": "<p>策略Id</p>",
           "example": "SID-2JSS",
           "member": "string",
           "name": "StrategyId",
@@ -6973,7 +6993,7 @@
         },
         {
           "disabled": false,
-          "document": "规则组Id",
+          "document": "<p>规则组Id</p>",
           "example": "RG-10KJk",
           "member": "string",
           "name": "GroupId",
@@ -6983,7 +7003,17 @@
         },
         {
           "disabled": false,
-          "document": "规则组名称",
+          "document": "<p>产品类型</p>",
+          "example": "cfw_edge_acl",
+          "member": "string",
+          "name": "Product",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则组名称</p>",
           "example": "重保规则组1",
           "member": "string",
           "name": "GroupName",
@@ -6993,7 +7023,7 @@
         },
         {
           "disabled": false,
-          "document": "规则数",
+          "document": "<p>规则数</p>",
           "example": "2",
           "member": "int64",
           "name": "RuleCount",
@@ -7003,7 +7033,7 @@
         },
         {
           "disabled": false,
-          "document": "策略状态",
+          "document": "<p>策略状态</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleStatus",
@@ -7013,7 +7043,7 @@
         },
         {
           "disabled": false,
-          "document": "下发账号",
+          "document": "<p>下发账号</p>",
           "example": "无",
           "member": "ReceiveAccount",
           "name": "ReceiveAccount",
@@ -7023,7 +7053,7 @@
         },
         {
           "disabled": false,
-          "document": "优先级",
+          "document": "<p>优先级</p>",
           "example": "1",
           "member": "int64",
           "name": "Sequence",
@@ -7033,7 +7063,7 @@
         },
         {
           "disabled": false,
-          "document": "下发失败原因",
+          "document": "<p>下发失败原因</p>",
           "example": "配额不足",
           "member": "string",
           "name": "ErrMsg",
@@ -7043,7 +7073,7 @@
         },
         {
           "disabled": false,
-          "document": "下发失败原因类型",
+          "document": "<p>下发失败原因类型</p>",
           "example": "SG_QUOTA_LIMIT",
           "member": "string",
           "name": "ErrorType",
@@ -7053,7 +7083,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2025-10-14 11:23:32",
           "member": "string",
           "name": "UpdateTime",
@@ -7063,7 +7093,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人",
+          "document": "<p>创建人</p>",
           "example": "cfw-test@123",
           "member": "string",
           "name": "CreateBy",
@@ -7073,7 +7103,7 @@
         },
         {
           "disabled": false,
-          "document": "更新人",
+          "document": "<p>更新人</p>",
           "example": "cfw-test@123",
           "member": "string",
           "name": "UpdateBy",
@@ -7083,7 +7113,7 @@
         },
         {
           "disabled": false,
-          "document": "执行区域",
+          "document": "<p>执行区域</p>",
           "example": "post",
           "member": "string",
           "name": "ExecArea",
@@ -7093,7 +7123,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人名称",
+          "document": "<p>创建人名称</p>",
           "example": "天空之蓝",
           "member": "string",
           "name": "CreateName",
@@ -7103,7 +7133,7 @@
         },
         {
           "disabled": false,
-          "document": "更新人名称",
+          "document": "<p>更新人名称</p>",
           "example": "天空之蓝",
           "member": "string",
           "name": "UpdateName",
@@ -7113,7 +7143,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2025-10-14 11:23:32",
           "member": "string",
           "name": "CreateTime",

@@ -1437,11 +1437,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "物理专线的ID。",
+          "document": "<p>物理专线的ID。</p>",
           "example": "dc-xxxxxxxx",
           "member": "string",
           "name": "DirectConnectId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预计裁撤时间</p>",
+          "example": "2026-09-15",
+          "member": "string",
+          "name": "PlannedRepealDate",
+          "required": false,
           "type": "string"
         }
       ],

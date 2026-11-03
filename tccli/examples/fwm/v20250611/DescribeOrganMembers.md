@@ -124,3 +124,51 @@ Output:
 }
 ```
 
+**Example 2: 根据成员Id查询集团成员信息**
+
+
+
+Input: 
+
+```
+tccli fwm DescribeOrganMembers --cli-unfold-argument  \
+    --Filters.0.Name MemberId \
+    --Filters.0.Values mem-tencent-e4f32cfd87465a17 \
+    --Filters.0.OperatorType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Members": [
+            {
+                "AccountGroup": null,
+                "AppId": "1300448058",
+                "CfwCapable": 1,
+                "CfwInstanceId": "cfw-xd187r139omunry8u9",
+                "CfwManaged": 1,
+                "CfwPayStatus": 2,
+                "CfwShareRole": "sharer",
+                "CfwShareRoleDisplay": "sharer",
+                "CfwSharerAppId": "",
+                "IsCfwPostPay": 0,
+                "JoinType": "Invite",
+                "MemberCreateTime": "2025-11-13 11:08:53",
+                "MemberId": "mem-tencent-e4f32cfd87465a17",
+                "Nickname": "天空之蓝",
+                "NodeName": "Root",
+                "PolicyAnalysisEnabled": 0,
+                "Role": "admin",
+                "RoleDisplay": "admin",
+                "SgManaged": 1,
+                "SubAccountCount": 0,
+                "Uin": "100011616646"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "685b9a3f-5501-4caf-b72d-b730cd576b92"
+    }
+}
+```
+

@@ -1330,7 +1330,7 @@
       {
         "document": "查询指定站点（ ZoneId 为 zone-27q0p0bal192 ）下，多通道安全加速网关的接入密钥。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMultiPathGatewaySecretKey\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bal192\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"b8sfnemqzF5TNCwwtshVmG/gyCJVi/rP+7A+jsBwqGY=\",\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretKey\": \"b8**************************************qGY=\",\n        \"RequestId\": \"9153aae4-26b1-4580-adc3-fa7cd4d32bf5\"\n    }\n}",
         "title": "查询多通道安全加速网关接入密钥"
       }
     ],

@@ -12,7 +12,7 @@ tccli csip DescribeDspmIdentifyRuleTestResult --cli-unfold-argument  \
     --MemberId mem-12e1wq1e \
     --StructuredTestContent.0.Name field_name \
     --StructuredTestContent.0.Value email \
-    --UnStructuredTestContent kyrie@tencent.com
+    --UnStructuredTestContent *****@*******.com
 ```
 
 Output: 

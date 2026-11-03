@@ -1388,7 +1388,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAIScheduleList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"Status\": 0,\n    \"ScheduleId\": \"a156***************************29702\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ScheduleSet\": [\n            {\n                \"CreateTime\": 1776841342887,\n                \"CurrentFireCount\": 0,\n                \"EndTime\": 0,\n                \"Identity\": {\n                    \"AppId\": 260083796,\n                    \"BotId\": \"aibn2Vz1_iZ1R2B5mGjZ5o9ph3SmfjdLEQO\",\n                    \"Channel\": \"wecom\",\n                    \"ChatId\": \"T70030002A\",\n                    \"SubUin\": \"\",\n                    \"Uin\": \"700002365149\",\n                    \"UserId\": \"T70030002A\"\n                },\n                \"MaxFireCount\": 0,\n                \"Name\": \"CSIP周报定时发送\",\n                \"Prompts\": \"生成云安全中心周报，整理成PDF和PPT，通过email技能发送到rainewang@tencent.com\",\n                \"ScheduleId\": \"586ecd9e-d140-45bb-889e-3476efaa4b50\",\n                \"StartTime\": 0,\n                \"Status\": 1,\n                \"Triggers\": [\n                    {\n                        \"TriggerId\": \"8a09c63b-a324-4707-a0e5-3a6722c20da1\",\n                        \"TriggerType\": 1\n                    }\n                ],\n                \"UpdateTime\": 1776841342887\n            }\n        ],\n        \"TotalCount\": 7,\n        \"RequestId\": \"666d1958-ca82-47a4-b3d9-dd49b2caa6c8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ScheduleSet\": [\n            {\n                \"CreateTime\": 1776841342887,\n                \"CurrentFireCount\": 0,\n                \"EndTime\": 0,\n                \"Identity\": {\n                    \"AppId\": 260083796,\n                    \"BotId\": \"aibn2Vz1_iZ1R2B5mGjZ5o9ph3SmfjdLEQO\",\n                    \"Channel\": \"wecom\",\n                    \"ChatId\": \"T70030002A\",\n                    \"SubUin\": \"\",\n                    \"Uin\": \"700002365149\",\n                    \"UserId\": \"T70030002A\"\n                },\n                \"MaxFireCount\": 0,\n                \"Name\": \"CSIP周报定时发送\",\n                \"Prompts\": \"生成云安全中心周报，整理成PDF和PPT，通过email技能发送到*********@*******.com\",\n                \"ScheduleId\": \"586ecd9e-d140-45bb-889e-3476efaa4b50\",\n                \"StartTime\": 0,\n                \"Status\": 1,\n                \"Triggers\": [\n                    {\n                        \"TriggerId\": \"8a09c63b-a324-4707-a0e5-3a6722c20da1\",\n                        \"TriggerType\": 1\n                    }\n                ],\n                \"UpdateTime\": 1776841342887\n            }\n        ],\n        \"TotalCount\": 7,\n        \"RequestId\": \"666d1958-ca82-47a4-b3d9-dd49b2caa6c8\"\n    }\n}",
         "title": "1"
       }
     ],
@@ -2979,7 +2979,7 @@
     "DescribeDspmIdentifyRuleTestResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleTestResult\n<公共请求参数>\n\n{\n    \"RuleType\": \"Structured\",\n    \"RuleContent\": \"{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"or\\\",\\\"RuleInfos\\\":[],\\\"Nodes\\\":[{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"and\\\",\\\"RuleInfos\\\":[{\\\"DataSourceType\\\":\\\"field_name\\\",\\\"RuleMethod\\\":\\\"match\\\",\\\"RuleType\\\":\\\"keyword\\\",\\\"RuleContent\\\":\\\"email\\\"}],\\\"Nodes\\\":[]}]}\",\n    \"RuleId\": 5807,\n    \"MemberId\": [\n        \"mem-12e1wq1e\"\n    ],\n    \"StructuredTestContent\": [\n        {\n            \"Name\": \"field_name\",\n            \"Value\": \"email\"\n        }\n    ],\n    \"UnStructuredTestContent\": \"kyrie@tencent.com\"\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmIdentifyRuleTestResult\n<公共请求参数>\n\n{\n    \"RuleType\": \"Structured\",\n    \"RuleContent\": \"{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"or\\\",\\\"RuleInfos\\\":[],\\\"Nodes\\\":[{\\\"NodeType\\\":\\\"operator\\\",\\\"OptType\\\":\\\"and\\\",\\\"RuleInfos\\\":[{\\\"DataSourceType\\\":\\\"field_name\\\",\\\"RuleMethod\\\":\\\"match\\\",\\\"RuleType\\\":\\\"keyword\\\",\\\"RuleContent\\\":\\\"email\\\"}],\\\"Nodes\\\":[]}]}\",\n    \"RuleId\": 5807,\n    \"MemberId\": [\n        \"mem-12e1wq1e\"\n    ],\n    \"StructuredTestContent\": [\n        {\n            \"Name\": \"field_name\",\n            \"Value\": \"email\"\n        }\n    ],\n    \"UnStructuredTestContent\": \"*****@*******.com\"\n}",
         "output": "{\n    \"Response\": {\n        \"IsMatch\": true,\n        \"RequestId\": \"f78a4edb-b592-48f6-b2af-04ebfde252be\"\n    }\n}",
         "title": "DescribeDspmIdentifyRuleTestResult"
       }
@@ -5602,16 +5602,16 @@
     ],
     "ModifyPayConfig": [
       {
-        "document": "计费配置弹窗开启主机自动扩容并选择旗舰版",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPayConfig\n<公共请求参数>\n\n{\n    \"HostConfig\": {\n        \"Switch\": \"ON\",\n        \"ProtectType\": \"ULTIMATE\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd96106-1d72-466c-9bcf-9876543210ab\"\n    }\n}",
-        "title": "开启主机自动扩容并选择旗舰版"
-      },
-      {
         "document": "计费配置弹窗关闭主机自动扩容",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPayConfig\n<公共请求参数>\n\n{\n    \"HostConfig\": {\n        \"Switch\": \"OFF\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d479fbf3-9840-4dd3-c5f9-9f5395ba4c52\"\n    }\n}",
         "title": "关闭主机自动扩容"
+      },
+      {
+        "document": "计费配置弹窗开启主机自动扩容并选择旗舰版",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPayConfig\n<公共请求参数>\n\n{\n    \"HostConfig\": {\n        \"Switch\": \"ON\",\n        \"ProtectType\": \"ULTIMATE\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd96106-1d72-466c-9bcf-9876543210ab\"\n    }\n}",
+        "title": "开启主机自动扩容并选择旗舰版"
       }
     ],
     "ModifyPolicyStatus": [

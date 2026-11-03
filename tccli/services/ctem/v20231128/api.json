@@ -1653,7 +1653,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1",
           "member": "int64",
           "name": "CustomerId",
@@ -1662,7 +1662,7 @@
         },
         {
           "disabled": false,
-          "document": "ip种子数组",
+          "document": "<p>ip种子数组</p>",
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Ips",
@@ -1671,7 +1671,7 @@
         },
         {
           "disabled": false,
-          "document": "icon种子数组",
+          "document": "<p>icon种子数组</p>",
           "example": "[\"http://test.com/a.icon\"]",
           "member": "string",
           "name": "Icons",
@@ -1680,7 +1680,7 @@
         },
         {
           "disabled": false,
-          "document": "主域名种子数组",
+          "document": "<p>主域名种子数组</p>",
           "example": "[\"test.com\"]",
           "member": "string",
           "name": "Domains",
@@ -1689,7 +1689,7 @@
         },
         {
           "disabled": false,
-          "document": "title种子数组",
+          "document": "<p>title种子数组</p>",
           "example": "[\"测试网站\"]",
           "member": "string",
           "name": "Titles",
@@ -1698,7 +1698,7 @@
         },
         {
           "disabled": false,
-          "document": "子域名种子数组",
+          "document": "<p>子域名种子数组</p>",
           "example": "[\"a.test.com\"]",
           "member": "string",
           "name": "SubDomains",
@@ -1707,7 +1707,7 @@
         },
         {
           "disabled": false,
-          "document": "关键词种子数组",
+          "document": "<p>关键词种子数组</p>",
           "example": "[\"keyword1\"]",
           "member": "string",
           "name": "Keywords",
@@ -1716,10 +1716,19 @@
         },
         {
           "disabled": false,
-          "document": "母公司种子数组",
+          "document": "<p>母公司种子数组</p>",
           "example": "[\"tencent\"]",
           "member": "string",
           "name": "ParentCompanies",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词用途：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号，不填=全部用途</p>",
+          "example": "[\"leakage_code\"]",
+          "member": "string",
+          "name": "KeywordPurposes",
           "required": false,
           "type": "list"
         }
@@ -10090,7 +10099,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主键ID",
+          "document": "<p>主键ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -10100,7 +10109,7 @@
         },
         {
           "disabled": false,
-          "document": "企业ID",
+          "document": "<p>企业ID</p>",
           "example": "1001",
           "member": "int64",
           "name": "CustomerId",
@@ -10110,7 +10119,7 @@
         },
         {
           "disabled": false,
-          "document": "分类，包括：domain(主域名)、icon(图标)、ip(IP)、\nkeyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)",
+          "document": "<p>分类，包括：domain(主域名)、icon(图标)、ip(IP)、<br>keyword(关键词)、parent_company(母公司)、sub_domain(子域名)、title(标题)</p>",
           "example": "domain",
           "member": "string",
           "name": "Category",
@@ -10120,7 +10129,7 @@
         },
         {
           "disabled": false,
-          "document": "值",
+          "document": "<p>值</p>",
           "example": "test.com",
           "member": "string",
           "name": "Value",
@@ -10130,7 +10139,7 @@
         },
         {
           "disabled": false,
-          "document": "md5值",
+          "document": "<p>md5值</p>",
           "example": "数据的hash值",
           "member": "string",
           "name": "Md5",
@@ -10140,7 +10149,7 @@
         },
         {
           "disabled": false,
-          "document": "来源",
+          "document": "<p>来源</p>",
           "example": "人工",
           "member": "string",
           "name": "Source",
@@ -10150,7 +10159,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-01-01 00:00:00",
           "member": "string",
           "name": "CreateAt",
@@ -10160,13 +10169,23 @@
         },
         {
           "disabled": false,
-          "document": "是否可信",
+          "document": "<p>是否可信</p>",
           "example": "true",
           "member": "bool",
           "name": "IsValid",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词用途，可多选：leakage_code代码泄露/leakage_data其他泄露/wechat_applet微信小程序/wechat_official_account微信公众号；不填=全部用途</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"leakage_code\"]",
+          "member": "string",
+          "name": "Purposes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

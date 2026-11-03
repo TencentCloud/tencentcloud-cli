@@ -26,7 +26,10 @@ tccli bh ModifyChangePwdTask --cli-unfold-argument  \
     --FilePassword filepwd \
     --Type 5 \
     --Period 16 \
-    --FirstTime 2023-06-01T00:00:00Z
+    --FirstTime 2023-06-01T00:00:00Z \
+    --Category 0 \
+    --Protocol 0 \
+    --Port 0
 ```
 
 Output: 

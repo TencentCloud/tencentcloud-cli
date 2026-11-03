@@ -60,6 +60,7 @@ Output:
                         "Memory": "80"
                     }
                 ],
+                "RoleStatuses": [],
                 "RunningReplicas": 1,
                 "SecurityType": "STANDARD",
                 "ServiceId": "svc-a1b0nsvq",

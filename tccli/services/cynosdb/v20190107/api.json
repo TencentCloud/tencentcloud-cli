@@ -15043,7 +15043,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群id",
+          "document": "<p>集群id</p>",
           "example": "cynosdbmysql-ck8fmk11",
           "member": "string",
           "name": "ClusterId",
@@ -15052,7 +15052,16 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "<p>DB库名（支持模糊匹配）</p>",
+          "example": "[\"database\"]",
+          "member": "string",
+          "name": "FuzzyDBNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -15061,7 +15070,7 @@
         },
         {
           "disabled": false,
-          "document": "分页限制数量",
+          "document": "<p>分页限制数量</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15076,7 +15085,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "总条数",
+          "document": "<p>总条数</p>",
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
@@ -15086,7 +15095,7 @@
         },
         {
           "disabled": false,
-          "document": "分页偏移",
+          "document": "<p>分页偏移</p>",
           "example": "1",
           "member": "int64",
           "name": "Offset",
@@ -15096,7 +15105,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库列表",
+          "document": "<p>数据库列表</p>",
           "example": "[\"database_1\",\"database_2\"]",
           "member": "string",
           "name": "Databases",
@@ -15106,7 +15115,7 @@
         },
         {
           "disabled": false,
-          "document": "分页限制数",
+          "document": "<p>分页限制数</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -29254,7 +29263,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-12345678",
           "member": "string",
           "name": "ClusterId",
@@ -29263,7 +29272,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "3306",
           "member": "string",
           "name": "Port",
@@ -29272,8 +29281,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID ",
-          "example": " [\"sg-nm4bjh11\",\"sg-nm4bjh22\"]",
+          "document": "<p>安全组ID</p>",
+          "example": "[\"sg-nm4bjh11\",\"sg-nm4bjh22\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -29287,7 +29296,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开启流程ID",
+          "document": "<p>开启流程ID</p>",
           "example": "147287",
           "member": "int64",
           "name": "FlowId",

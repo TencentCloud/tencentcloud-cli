@@ -8,6 +8,14 @@
         "title": "免费证书申请"
       }
     ],
+    "BatchDeleteCSR": [
+      {
+        "document": "删除",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteCSR\n<公共请求参数>\n\n{\n    \"CSRIds\": [\n        11,\n        22,\n        33\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Success\": [\n            22,\n            33\n        ],\n        \"RequestId\": \"5779b652-9c64-45b3-a6f4-641db7376a2e\"\n    }\n}",
+        "title": "删除"
+      }
+    ],
     "CancelAuditCertificate": [
       {
         "document": "",
@@ -90,6 +98,14 @@
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CompleteCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"gdLGWRev\"\n}",
         "output": "{\n    \"Response\": {\n        \"CertificateId\": \"gdLGWRev\",\n        \"RequestId\": \"0b39eaa4-f938-476d-9b26-19fb07b80936\"\n    }\n}",
         "title": "主动触发证书验证"
+      }
+    ],
+    "CreateCSR": [
+      {
+        "document": "申请CSR",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCSR\n<公共请求参数>\n\n{\n    \"Domain\": \"www.***.com\",\n    \"Organization\": \"Tencent\",\n    \"Department\": \"It\",\n    \"Email\": \"abc@qq.com\",\n    \"Province\": \"Hunan\",\n    \"City\": \"Changsha\",\n    \"Country\": \"China\",\n    \"EncryptAlgo\": \"ECC\",\n    \"KeyParameter\": \"prime256v1\",\n    \"Generate\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 733,\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
+        "title": "申请CSR"
       }
     ],
     "CreateCertificate": [
@@ -240,6 +256,22 @@
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployCertificateRecordRollback\n<公共请求参数>\n\n{\n    \"DeployRecordId\": 1737382\n}",
         "output": "{\n    \"Response\": {\n        \"DeployRecordId\": 885943,\n        \"RequestId\": \"14727a68-3b90-4408-99c9-dea6d7de9456\"\n    }\n}",
         "title": "云资源部署一键回滚"
+      }
+    ],
+    "DescribeCSR": [
+      {
+        "document": "查询CSR",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCSR\n<公共请求参数>\n\n{\n    \"CSRId\": 12344\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 12344,\n        \"OwnerUin\": \"6489626\",\n        \"Domain\": \"zz.zz.cn\",\n        \"Organization\": \"yunzhi\",\n        \"Department\": \"Light\",\n        \"Email\": \"171008474@qq.com\",\n        \"Province\": \"Hunan\",\n        \"City\": \"changsha\",\n        \"Country\": \"CN\",\n        \"EncryptAlgo\": \"RSA\",\n        \"KeyParameter\": \"2048\",\n        \"Remarks\": \"\",\n        \"Status\": 1,\n        \"KeyPassword\": \"123abcccaa\",\n        \"CreateTime\": \"2023-08-25 09:48:47\",\n        \"CSR\": \"-----BEGIN CERTIFICATE REQUEST-----\\r\\nMIICnjCCAYYCAQAwWTEWMBQGA1UEAwwNenouSGF0aGxpbS5jbjEPMA0GA1UECgwG\\r\\neXVuemhpMREwDwYDVQQHDAhjaGFuZ3NoYTEOMAwGA1UECAwFSHVuYW4xCzAJBgNV\\r\\nBAYTAkNOMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs8Wumn7cUG2d\\r\\n8ARiCg7rRtnNfonamdivha7bcm/xX4otKkI6f9TOjdO5TLQT2Qd55Iu8gVsGdFQ6\\r\\ntQwD/a3Koo2lD8XvBVI8R0LuGoK1jfChzglJo/FWwGyZjkMlUY6WisAk6utUYCSg\\r\\ncynZXDOkllEfwlkhsI4NbFG2ZrV7Ksj8Ed1e+Ki0GStVAb5j9qh/e4WeqE3IuZXG\\r\\ndofd/kEnvtprIasXgR+qpwwBTGpRwiqNhyP6z/xxM706eEhcnqh4oZi4abGCC2JM\\r\\nNJuVffFdmDiLaUKBrouk8WqZacB4nH1Uuk4y5eGGpxpX5UF+xgm/Sz0iI242dZFY\\r\\nDtqaSE8ZhwIDAQABoAAwDQYJKoZIhvcNAQEFBQADggEBAG8CES6epieMDaiXrEin\\r\\n2cVFxJUzrZf2aDm5YK4mAEz3h1kCQINDymtnQ4A4lFeQw+Le7xblS7qdMVT/5ecn\\r\\n64KbmfrThEaH/dTYOsbV7CipNfXiKH/SoD1Wz9bowNIxtXvy1t5Rlz3s8CBjKCKO\\r\\nj6vG+pUwh/mdAhpYlzh9VnfpMDAAtnBbxFhhLXqubiGe5YKqwuf3OwHov46g4+64\\r\\nPy8gmVbcqHy212Ea5wdOC+l54scm/b6bTdqo6Fv62bvepQI1mT5f198KTdKp1jCt\\r\\nw3gsfyY6WyL4zSvRgdbQyyWwys+rjsaNzqShSKxZ3xGKpdoOnK0uQX2RLfBB1nCi\\r\\nW9s=\\r\\n-----END CERTIFICATE REQUEST-----\\r\\n\",\n        \"PrivateKey\": null,\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
+        "title": "查询CSR"
+      }
+    ],
+    "DescribeCSRSet": [
+      {
+        "document": "列表",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCSRSet\n<公共请求参数>\n\n{\n    \"Limit\": 2,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 5,\n        \"Set\": [\n            {\n                \"Id\": 123,\n                \"OwnerUin\": \"16373784\",\n                \"Domain\": \"zz.Hathlim.cn\",\n                \"Organization\": \"yunzhi\",\n                \"Department\": \"Light\",\n                \"Email\": \"171008474@qq.com\",\n                \"Province\": \"Hunan\",\n                \"City\": \"changsha\",\n                \"Country\": \"CN\",\n                \"EncryptAlgo\": \"RSA\",\n                \"KeyParameter\": \"2048\",\n                \"Remarks\": \"\",\n                \"Status\": 1,\n                \"CreateTime\": \"2023-08-25 09:48:47\"\n            },\n            {\n                \"Id\": 5555,\n                \"OwnerUin\": \"2526378488\",\n                \"Domain\": \"zz.Hathlim.cn\",\n                \"Organization\": \"yunzhi\",\n                \"Department\": \"Light\",\n                \"Email\": \"171008474@qq.com\",\n                \"Province\": \"Hunan\",\n                \"City\": \"changsha\",\n                \"Country\": \"CN\",\n                \"EncryptAlgo\": \"RSA\",\n                \"KeyParameter\": \"2048\",\n                \"Remarks\": \"\",\n                \"Status\": 0,\n                \"CreateTime\": \"2023-08-25 09:43:59\"\n            }\n        ],\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
+        "title": "列表"
       }
     ],
     "DescribeCertificate": [
@@ -578,6 +610,14 @@
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadCertificate\n<公共请求参数>\n\n{\n    \"CertificateId\": \"hehx***hshj\"\n}",
         "output": "{\n    \"Response\": {\n        \"Content\": \"UEsD......vAAA\",\n        \"ContentType\": \"application/zip\",\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "下载证书"
+      }
+    ],
+    "ModifyCSR": [
+      {
+        "document": "修改CSR",
+        "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCSR\n<公共请求参数>\n\n{\n    \"CSRId\": 662,\n    \"Generate\": false,\n    \"Domain\": \"hywh**.com\",\n    \"Organization\": \"tencent\",\n    \"Department\": \"it\",\n    \"Email\": \"heysh**hhe@qq.com\",\n    \"Province\": \"hunan\",\n    \"City\": \"changsha\",\n    \"Country\": \"china\",\n    \"EncryptAlgo\": \"RSA\",\n    \"KeyParameter\": \"2048\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Id\": 662,\n        \"RequestId\": \"f00f136b-c0c8-476a-8097-b1bdfc9d330f\"\n    }\n}",
+        "title": "修改CSR"
       }
     ],
     "ModifyCertificateAlias": [

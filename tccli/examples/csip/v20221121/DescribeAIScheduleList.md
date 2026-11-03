@@ -32,7 +32,7 @@ Output:
                 },
                 "MaxFireCount": 0,
                 "Name": "CSIP周报定时发送",
-                "Prompts": "生成云安全中心周报，整理成PDF和PPT，通过email技能发送到rainewang@tencent.com",
+                "Prompts": "生成云安全中心周报，整理成PDF和PPT，通过email技能发送到*********@*******.com",
                 "ScheduleId": "586ecd9e-d140-45bb-889e-3476efaa4b50",
                 "StartTime": 0,
                 "Status": 1,
