@@ -38518,7 +38518,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用`DescribeSecurityGroupPolicies`获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。",
+          "document": "<p>安全组规则索引号，值会随着安全组规则的变更动态变化。使用PolicyIndex时，请先调用<code>DescribeSecurityGroupPolicies</code>获取到规则的PolicyIndex，并且结合返回值中的Version一起使用处理规则。</p>",
           "example": "0",
           "member": "int64",
           "name": "PolicyIndex",
@@ -38529,7 +38529,7 @@
         },
         {
           "disabled": false,
-          "document": "协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。",
+          "document": "<p>协议, 取值: TCP,UDP,ICMP,ICMPv6,ALL。</p>",
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
@@ -38540,7 +38540,7 @@
         },
         {
           "disabled": false,
-          "document": "端口(all, 离散port,  range)。\n说明：如果Protocol设置为ALL，则Port也需要设置为all。",
+          "document": "<p>端口(all, 离散port,  range)。<br>说明：如果Protocol设置为ALL，则Port也需要设置为all。</p>",
           "example": "22",
           "member": "string",
           "name": "Port",
@@ -38551,8 +38551,8 @@
         },
         {
           "disabled": false,
-          "document": "协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。",
-          "example": "ppm-8g7k5qfq",
+          "document": "<p>协议端口ID或者协议端口组ID。ServiceTemplate和Protocol+Port互斥。</p>",
+          "example": "无",
           "member": "ServiceTemplateSpecification",
           "name": "ServiceTemplate",
           "output_required": false,
@@ -38562,7 +38562,7 @@
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IP地址。",
+          "document": "<p>网段或IP(互斥)，特殊说明：0.0.0.0/n 都会映射为0.0.0.0/0。作为入参时，可使用字符串<code>MY_PUBLIC_IP</code>指代发起请求的公网IP地址。</p>",
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "CidrBlock",
@@ -38573,7 +38573,7 @@
         },
         {
           "disabled": false,
-          "document": "网段或IPv6(互斥)。作为入参时，可使用字符串`MY_PUBLIC_IP`指代发起请求的公网IPv6地址。",
+          "document": "<p>网段或IPv6(互斥)。作为入参时，可使用字符串<code>MY_PUBLIC_IP</code>指代发起请求的公网IPv6地址。</p>",
           "example": "::/0",
           "member": "string",
           "name": "Ipv6CidrBlock",
@@ -38584,8 +38584,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-ohuuioma。",
-          "example": "sg-ohuuioma",
+          "document": "<p>安全组实例ID，例如：sg-ohuuioma。</p>",
+          "example": "sg-********",
           "member": "string",
           "name": "SecurityGroupId",
           "output_required": false,
@@ -38595,8 +38595,8 @@
         },
         {
           "disabled": false,
-          "document": "IP地址ID或者IP地址组ID。",
-          "example": "ipm-p5sf61yj",
+          "document": "<p>IP地址ID或者IP地址组ID。</p>",
+          "example": "无",
           "member": "AddressTemplateSpecification",
           "name": "AddressTemplate",
           "output_required": false,
@@ -38606,7 +38606,7 @@
         },
         {
           "disabled": false,
-          "document": "ACCEPT 或 DROP。",
+          "document": "<p>ACCEPT 或 DROP。</p>",
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
@@ -38617,7 +38617,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。",
+          "document": "<p>安全组规则描述。作为入参时，当未传递该参数或值为空，且参数CidrBlock或Ipv6CidrBlock值为MY_PUBLIC_IP时，该参数的值将会被自动填充为Replaced-From-MY_PUBLIC_IP。</p>",
           "example": "demo",
           "member": "string",
           "name": "PolicyDescription",
@@ -38628,7 +38628,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组最近修改时间。",
+          "document": "<p>安全组最近修改时间。</p>",
           "example": "2021-03-02 14:41:15",
           "member": "string",
           "name": "ModifyTime",
@@ -38639,8 +38639,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用`DescribeSecurityGroupPolicies`获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。",
-          "example": "",
+          "document": "<p>安全组规则优先级，值会随着安全组规则的变更动态变化。使用Priority时，请先调用<code>DescribeSecurityGroupPolicies</code>获取到规则的Priority，并且结合返回值中的Version一起使用处理规则。</p>",
+          "example": "1",
           "member": "int64",
           "name": "Priority",
           "output_required": false,

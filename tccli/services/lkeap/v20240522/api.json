@@ -917,7 +917,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "说明：解析任务ID\n备注：仅支持单个任务ID",
+          "document": "<p>说明：解析任务ID<br>备注：仅支持单个任务ID</p>",
           "example": "25adcef61750343903609",
           "member": "string",
           "name": "TaskId",
@@ -932,7 +932,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态。\n- `Success`：执行完成\n- `Processing`：执行中\n-  `Pause`: 暂停\n-  `Failed`：执行失败\n-  `WaitExecute`：等待执行",
+          "document": "<p>任务状态。</p><ul><li><code>Success</code>：执行完成</li><li><code>Processing</code>：执行中</li><li><code>Pause</code>: 暂停</li><li><code>Failed</code>：执行失败</li><li><code>WaitExecute</code>：等待执行</li></ul>",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -942,8 +942,8 @@
         },
         {
           "disabled": false,
-          "document": "解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟",
-          "example": "https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/example/example.zip",
+          "document": "<p>解析结果的临时下载地址。文件类型为zip压缩包，下载链接有效期30分钟</p>",
+          "example": "https://example.cos.ap-guangzhou.myqcloud.com/public/example/example.zip",
           "member": "string",
           "name": "DocumentRecognizeResultUrl",
           "output_required": false,
@@ -952,7 +952,7 @@
         },
         {
           "disabled": false,
-          "document": "文档解析失败的页码",
+          "document": "<p>文档解析失败的页码</p>",
           "example": "无",
           "member": "ReconstructDocumentFailedPage",
           "name": "FailedPages",
@@ -962,7 +962,7 @@
         },
         {
           "disabled": false,
-          "document": "文档拆分任务的用量\t",
+          "document": "<p>文档拆分任务的用量</p>",
           "example": "无",
           "member": "DocumentUsage",
           "name": "Usage",
@@ -971,11 +971,21 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息",
+          "disabled": true,
+          "document": "<p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>",
           "example": "无",
           "member": "ErrorInfo",
           "name": "Error",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档解析任务失败错误信息，当文档解析任务失败会返回具体的错误信息</p>",
+          "example": "无",
+          "member": "TaskErrInfo",
+          "name": "TaskErrInfo",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -1562,6 +1572,11 @@
           "value_allowed_null": true
         }
       ],
+      "usage": "out"
+    },
+    "TaskErrInfo": {
+      "document": "文档解析/拆分任务失败原因",
+      "members": [],
       "usage": "out"
     },
     "Thinking": {

@@ -105,7 +105,7 @@
     "CreateAccounts": [
       {
         "document": "创建账号",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-lzl4lvov\",\n    \"Password\": \"fsdgfdgfd43564654\",\n    \"MaxUserConnections\": 33\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-lzl4lvov\",\n    \"CreateAccounts\": [\n        {\n            \"User\": \"api_ssm_concurrent_test\",\n            \"Host\": \"%\",\n            \"SSMInfos\": {\n                \"IsOpenSSM\": true,\n                \"IsRotationAccount\": false,\n                \"SecretName\": \"api_ssm_concurrent_test\",\n                \"EncryptType\": 1,\n                \"EnableRotation\": false\n            }\n        }\n    ],\n    \"Password\": \"fsdgfdgfd43564654\",\n    \"MaxUserConnections\": 33\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"5e0fd33e-1afe758f-8bebfc08-e7a9141b\",\n        \"RequestId\": \"4da3ccd3-ac33-4e5a-b733-52cde384f4c4\"\n    }\n}",
         "title": "创建账号"
       }
@@ -265,7 +265,7 @@
     "DeleteAccounts": [
       {
         "document": "删除云数据库的账号",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-mw6uxcyt\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccounts\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-mw6uxcyt\",\n    \"DeleteAccounts\": [\n        {\n            \"User\": \"account_a\",\n            \"Host\": \"%\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"ae9cf84b-83c5074c-defa82f1-3a49ebe7\",\n        \"RequestId\": \"893a5643-30c7-4168-ab29-9e952092fe14\"\n    }\n}",
         "title": "删除云数据库的账号"
       }

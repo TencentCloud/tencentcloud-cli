@@ -142,6 +142,14 @@
         "title": "查询版本详情"
       }
     ],
+    "InitializeCloudRunResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InitializeCloudRunResource\n<公共请求参数>\n\n{\n    \"EnvType\": \"baas\",\n    \"EnvId\": \"env-test\",\n    \"Source\": \"cloud\",\n    \"Channel\": \"cloud\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvId\": \"env-test\",\n        \"TranId\": \"4587629c-83ff-47fd-b701-85f4d68cbfb7\",\n        \"RequestId\": \"4587629c-83ff-47fd-b701-85f4d68cbfb7\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "OperateServerManage": [
       {
         "document": "",

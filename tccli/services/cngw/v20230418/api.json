@@ -9320,10 +9320,55 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>网关实例 id</p>",
+          "example": "gateway-99761825",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>MCP Server Id</p>",
+          "example": "5483b23c-690f-494b-949c-a2a969e02561",
+          "member": "string",
+          "name": "ServerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>内容类型</p>",
           "example": "application/json",
           "member": "string",
           "name": "ContentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名字</p>",
+          "example": "echo_500",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>方法</p><p>枚举值：</p><ul><li>GET： GET</li><li>POST： POST</li><li>PUT： PUT</li><li>DELETE： DELETE</li><li>PATCH： PATCH</li></ul>",
+          "example": "POST",
+          "member": "string",
+          "name": "Method",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路径</p>",
+          "example": "/echo500",
+          "member": "string",
+          "name": "Path",
           "required": true,
           "type": "string"
         },
@@ -9342,6 +9387,24 @@
           "example": "4e141ac6-f0cd-4d35-80f0-75e47f5d56a6",
           "member": "string",
           "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入</p>",
+          "example": "无",
+          "member": "CNAPIGwMCPToolParam",
+          "name": "InputParams",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "echo tool for echo_500",
+          "member": "string",
+          "name": "Description",
           "required": false,
           "type": "string"
         }

@@ -1071,6 +1071,20 @@
       "output": "DeleteImageVulWhitelistResponse",
       "status": "online"
     },
+    "DeleteLoginWhiteCustomEDR": {
+      "document": "批量删除 CSC 异常登录自定义白名单（软删 status=2），支持跨页全选。Ids 与 SelectAll 二选一，均为空时返回 InvalidParameter；跨页全选总量超过 100000 条时整体拒绝。",
+      "input": "DeleteLoginWhiteCustomEDRRequest",
+      "name": "删除异常登录自定义白名单",
+      "output": "DeleteLoginWhiteCustomEDRResponse",
+      "status": "online"
+    },
+    "DeleteLoginWhiteLearnEDR": {
+      "document": "批量删除 CSC 异常登录自学习白名单规则组（整组软删 enable=0），传入组内任一行 ID 即可定位整组，支持跨页全选（上限 100000 个规则组）。删除后不会被自动重学，需重新开关自学习刷新学习锚点；本接口不回扫历史告警。",
+      "input": "DeleteLoginWhiteLearnEDRRequest",
+      "name": "删除异常登录自学习白名单",
+      "output": "DeleteLoginWhiteLearnEDRResponse",
+      "status": "online"
+    },
     "DeleteLoginWhiteList": {
       "document": "本接口用于删除异地登录白名单规则。",
       "input": "DeleteLoginWhiteListRequest",
@@ -2807,6 +2821,13 @@
       "output": "DescribeEdrLogCollectPathsResponse",
       "status": "online"
     },
+    "DescribeEdrMalwareFile": {
+      "document": "按 EDR 告警标识定位恶意文件告警，返回其恶意样本的下载链接。仅 alert_sub_type=1（恶意文件）的告警允许下载，其它子类型按资源不存在处理。公有云返回 COS 预签名 URL（1 小时有效）；非公有云且导出开关打开时返回 base64 DataURL 并同时返回 FileName。跨账号场景由 TargetAppId 指定告警所属账号，会做归属校验（fail-close，无权限返回 InvalidParameter）。",
+      "input": "DescribeEdrMalwareFileRequest",
+      "name": "获取EDR恶意文件告警的样本下载链接",
+      "output": "DescribeEdrMalwareFileResponse",
+      "status": "online"
+    },
     "DescribeExportJobDownloadURL": {
       "document": "导出任务结果下载URL",
       "input": "DescribeExportJobDownloadURLRequest",
@@ -3220,11 +3241,25 @@
       "output": "DescribeLoginWhiteCombinedListResponse",
       "status": "online"
     },
+    "DescribeLoginWhiteCustomListEDR": {
+      "document": "查询 CSC 异常登录自定义白名单列表。多账号场景按 MemberId 解析出全部成员 AppId 后一次聚合查询。按 ModifyTime DESC 分页返回，出参切片字段恒为 [] 不会为 null。",
+      "input": "DescribeLoginWhiteCustomListEDRRequest",
+      "name": "查询异常登录自定义白名单列表",
+      "output": "DescribeLoginWhiteCustomListEDRResponse",
+      "status": "online"
+    },
     "DescribeLoginWhiteHostList": {
       "document": "查询合并后白名单机器列表",
       "input": "DescribeLoginWhiteHostListRequest",
       "name": "查询合并后白名单机器列表",
       "output": "DescribeLoginWhiteHostListResponse",
+      "status": "online"
+    },
+    "DescribeLoginWhiteLearnListEDR": {
+      "document": "查询 CSC 异常登录自学习白名单列表（规则组）。规则组按 (AppId, 常用登录地) 聚合，Id 为组内最小行 ID；出参 SrcIp/UserName/StartTime/EndTime 恒为空。AutoLearnEnable 返回自学习开关状态，供前端空态展示判断是否跳转开启。",
+      "input": "DescribeLoginWhiteLearnListEDRRequest",
+      "name": "查询异常登录自学习白名单列表",
+      "output": "DescribeLoginWhiteLearnListEDRResponse",
       "status": "online"
     },
     "DescribeMachineClearHistory": {
@@ -4709,6 +4744,20 @@
       "input": "ModifyImageVulWhitelistRequest",
       "name": "修改容器镜像漏洞白名单",
       "output": "ModifyImageVulWhitelistResponse",
+      "status": "online"
+    },
+    "ModifyLoginWhiteCustomEDR": {
+      "document": "修改 CSC 异常登录自定义白名单，全量覆盖保存（未传字段视为清空）。本接口不触发历史告警回扫；查重时排除自身；规则不存在返回 ResourceNotFound。",
+      "input": "ModifyLoginWhiteCustomEDRRequest",
+      "name": "修改异常登录自定义白名单",
+      "output": "ModifyLoginWhiteCustomEDRResponse",
+      "status": "online"
+    },
+    "ModifyLoginWhiteLearnEDR": {
+      "document": "修改 CSC 异常登录自学习白名单规则组，按 (AppId, 常用登录地) 定位整组。约束：不支持新建、不支持按标签生效（TagIDs 必须为空）；仅支持 Scope=0 直接选择 与 Scope=1 全部资产+剔除；规则组行数超过 5000 时拒绝；单事务先插后删；编辑后最长一个缓存周期（默认 120s）内生效。本接口不回扫历史告警。",
+      "input": "ModifyLoginWhiteLearnEDRRequest",
+      "name": "修改异常登录自学习白名单",
+      "output": "ModifyLoginWhiteLearnEDRResponse",
       "status": "online"
     },
     "ModifyLoginWhiteRecord": {
@@ -35269,6 +35318,190 @@
       ],
       "type": "object"
     },
+    "DeleteLoginWhiteCustomEDRRequest": {
+      "document": "DeleteLoginWhiteCustomEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8ff\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>显式勾选的规则ID列表，最多 1000 个；与 SelectAll 二选一</p>",
+          "example": "[3]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跨页全选：true-删除符合 Filters 的全部规则（此时 Filters 必填） false-仅删除 Ids</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SelectAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多账号目标账号 AppId 列表，最多 1000 个；为空表示仅当前账号；传入但全部无权限时返回 InvalidParameter</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除的规则ID列表，最多1000个</p>",
+          "example": "[246]",
+          "member": "int64",
+          "name": "ExcludeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全选条件下的筛选条件</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoginWhiteCustomEDRResponse": {
+      "document": "DeleteLoginWhiteCustomEDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除的规则条数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DeletedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除失败的账号 AppId 列表；仅当全部失败时才返回错误</p>",
+          "example": "[256]",
+          "member": "uint64",
+          "name": "FailedAppIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoginWhiteLearnEDRRequest": {
+      "document": "DeleteLoginWhiteLearnEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8ff\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>显式勾选的规则ID列表，最多 1000 个；与 SelectAll 二选一</p>",
+          "example": "[39781688]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否跨页全选：true-删除符合 Filters 的全部规则（此时 Filters 必填） false-仅删除 Ids</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SelectAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>多账号目标账号 AppId 列表，最多 1000 个；为空表示仅当前账号；传入但全部无权限时返回 InvalidParameter</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排除的规则ID列表</p>",
+          "example": "[39781721]",
+          "member": "int64",
+          "name": "ExcludeIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全选条件下的筛选条件</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteLoginWhiteLearnEDRResponse": {
+      "document": "DeleteLoginWhiteLearnEDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除的主机记录行数（一个规则组可能含多行，与自定义白名单接口按规则条数统计的口径不同）</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DeletedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除失败的账号 AppId 列表；仅当全部失败时才返回错误</p>",
+          "example": "[256]",
+          "member": "uint64",
+          "name": "FailedAppIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteLoginWhiteListRequest": {
       "document": "DeleteLoginWhiteList请求参数结构体",
       "members": [
@@ -54946,6 +55179,71 @@
       ],
       "type": "object"
     },
+    "DescribeEdrMalwareFileRequest": {
+      "document": "DescribeEdrMalwareFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>EDR 告警唯一标识，必填，最长 34 字符</p>",
+          "example": "321b43909fba435d1adedd5648805a36",
+          "member": "string",
+          "name": "AlertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-6f5795752f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警所属账号 AppId（跨账号场景由前端透传成员 AppId）；为 0 或省略时回退为登录账号 AppId</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "TargetAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdrMalwareFileResponse": {
+      "document": "DescribeEdrMalwareFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>样本下载链接。公有云为 COS 预签名 URL（1 小时过期）；非公有云且导出开关打开时为 data:application/octet-stream;base64,&lt;zip 的 base64&gt;</p>",
+          "example": "http://xxx.com/test",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出文件名，形如 &lt;name&gt;.zip；仅非公有云 base64 分支返回，其余场景不返回该字段</p>",
+          "example": "文件名",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExportJobDownloadURLRequest": {
       "document": "DescribeExportJobDownloadURL请求参数结构体",
       "members": [
@@ -58909,6 +59207,98 @@
       ],
       "type": "object"
     },
+    "DescribeLoginWhiteCustomListEDRRequest": {
+      "document": "DescribeLoginWhiteCustomListEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组（多个 Filter 间为 AND 关系）。支持 Name：Keyword（SrcIp/UserName/Locations/Remark 模糊）、SrcIp、UserName、Location、Remark、ModifyBeginTime、ModifyEndTime（时间格式 2006-01-02 15:04:05）；未知 Name 忽略不报错</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小，默认 10，上限 100；传 0 或大于 100 时按默认/上限返回</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移，默认 0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向：ASC-正序 DESC-倒序（大小写不敏感），默认 DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段：CreateTime-创建时间 ModifyTime-修改时间，默认 ModifyTime；传非法值返回 InvalidParameter</p>",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginWhiteCustomListEDRResponse": {
+      "document": "DescribeLoginWhiteCustomListEDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合筛选条件的规则总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义白名单规则列表（Type 恒为 Custom），为空时返回 []</p>",
+          "example": "无",
+          "member": "LoginWhiteItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLoginWhiteHostListRequest": {
       "document": "DescribeLoginWhiteHostList请求参数结构体",
       "members": [
@@ -58981,6 +59371,108 @@
           "name": "Hosts",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginWhiteLearnListEDRRequest": {
+      "document": "DescribeLoginWhiteLearnListEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件数组（多个 Filter 间为 AND 关系）。支持 Name：Keyword 或 Location（常用登录地模糊）、Remark、ModifyBeginTime、ModifyEndTime（时间格式 2006-01-02 15:04:05）；未知 Name 忽略不报错</p>",
+          "example": "无",
+          "member": "EDRFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小，默认 10，上限 100；传 0 或大于 100 时按默认/上限返回</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移，默认 0</p>",
+          "example": "9",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向：ASC-正序 DESC-倒序（大小写不敏感），默认 DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段：CreateTime-创建时间 ModifyTime-修改时间，默认 ModifyTime；传非法值返回 InvalidParameter</p>",
+          "example": "ModifyTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLoginWhiteLearnListEDRResponse": {
+      "document": "DescribeLoginWhiteLearnListEDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则组总数（按 AppId + 常用登录地聚合）</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自学习白名单规则组列表（Type 恒为 Learn），为空时返回 []</p>",
+          "example": "无",
+          "member": "LoginWhiteItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自学习白名单开关状态；多账号时取当前账号，供前端空态提示前往开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoLearnEnable",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -88105,6 +88597,281 @@
       ],
       "usage": "out"
     },
+    "LoginWhiteItem": {
+      "document": "异常登录白名单规则项（自定义与自学习共用，以 Type 区分）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>白名单类型：Custom-自定义白名单 Learn-自学习白名单</p>",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则所属账号 AppId，多账号场景下用于区分与后续编辑定位</p>",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则ID；自学习为规则组ID（组内最小行ID）</p>",
+          "example": "39781688",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录源IP（逗号分隔）；自学习白名单恒为空</p>",
+          "example": "1.1.1.2",
+          "member": "string",
+          "name": "SrcIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户名（逗号分隔）；自学习白名单恒为空</p>",
+          "example": "place",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录时段起始 HH:MM；自学习白名单恒为空</p>",
+          "example": "08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录时段结束 HH:MM；自学习白名单恒为空</p>",
+          "example": "10:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>常用登录地列表</p>",
+          "example": "无",
+          "member": "LoginWhitePlace",
+          "name": "Places",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>常用登录地展示文案（逗号分隔），供列表直接展示</p>",
+          "example": "中国-广东-韶关市",
+          "member": "string",
+          "name": "Locations",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效资产范围：0-指定主机（主机或标签命中） 1-全部主机</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Scope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效主机 QUUID 列表（与 InstanceIDs 一一对应）</p>",
+          "example": "[\"1a528cc3-1083-4edc-8732-ff7a0588c018\"]",
+          "member": "string",
+          "name": "QUUIDS",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效主机实例ID列表（与 QUUIDS 一一对应）</p>",
+          "example": "[\"ins-fsjclbic\"]",
+          "member": "string",
+          "name": "InstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除主机 QUUID 列表</p>",
+          "example": "[\"1a528cc3-1083-4edc-8732-ff7a0588c018\"]",
+          "member": "string",
+          "name": "ExcludeQUUIDS",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除主机实例ID列表</p>",
+          "example": "[\"1a528cc3-1083-4edc-8732-ff7a0588c018\"]",
+          "member": "string",
+          "name": "ExcludeInstanceIDs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效标签详情列表</p>",
+          "example": "无",
+          "member": "EDRRuleTagItem",
+          "name": "TagItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机数：自定义为指定主机数（Scope=1 时为 0，前端展示全部主机）；自学习为组内去重主机数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "HostCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>",
+          "example": "备注",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-10-23 15:41:53",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-10-23 15:49:03",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginWhitePlace": {
+      "document": "常用登录地（出参）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>国家ID</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CountryId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份ID；99999 表示全部省份</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProvinceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市ID；99999 表示全部城市</p>",
+          "example": "198",
+          "member": "int64",
+          "name": "CityId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地点展示文案，服务端按 Language 生成，如 中国-广东-深圳</p>",
+          "example": "中国-广东-韶关市",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LoginWhitePlaceInput": {
+      "document": "常用登录地（入参）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>国家ID，当前仅支持国内：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CountryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>省份ID；99999 表示全部省份</p>",
+          "example": "17",
+          "member": "int64",
+          "name": "ProvinceId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>城市ID；99999 表示全部城市</p>",
+          "example": "190",
+          "member": "int64",
+          "name": "CityId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "Machine": {
       "document": "主机列表",
       "members": [
@@ -94506,6 +95273,259 @@
         }
       ],
       "usage": "both"
+    },
+    "ModifyLoginWhiteCustomEDRRequest": {
+      "document": "ModifyLoginWhiteCustomEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID；自学习为规则组ID（组内最小行ID）</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录源IP，多个以逗号分隔；支持单个IP、区间(a-b)、CIDR，支持 IPv4 与 IPv6；最长 2048 字符</p>",
+          "example": "127.0.0.0",
+          "member": "string",
+          "name": "SrcIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录用户名，多个以逗号分隔；最长 1024 字符</p>",
+          "example": "place",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录时段起始 HH:MM；与 EndTime 必须同时填写或同时为空</p>",
+          "example": "08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>登录时段结束 HH:MM；与 StartTime 必须同时填写或同时为空</p>",
+          "example": "10:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>常用登录地列表，最多 200 个；ProvinceId/CityId 传 99999 表示全部省份/全部城市</p>",
+          "example": "无",
+          "member": "LoginWhitePlaceInput",
+          "name": "Places",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注，最长 255 字符</p>",
+          "example": "备注3",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效资产范围：0-指定主机（主机或标签命中） 1-全部主机</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机（实例ID 形态）列表，最多 10000 项；服务端经 idmap 翻译为 QUUID 后与 QUUIDSWithAppId 合并去重</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除主机（实例ID 形态）列表，最多 10000 项</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全中心标签ID列表，最多 100 个；Scope=0 时与主机为或关系；自学习白名单不支持按标签生效（传非空将被拒绝）</p>",
+          "example": "[\"56\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标appid</p>",
+          "example": "[260199983]",
+          "member": "uint64",
+          "name": "TargetAppIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否加白历史告警</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "DealOldEvents",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoginWhiteCustomEDRResponse": {
+      "document": "ModifyLoginWhiteCustomEDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>失败的账号</p>",
+          "example": "[2446]",
+          "member": "uint64",
+          "name": "FailedAppIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoginWhiteLearnEDRRequest": {
+      "document": "ModifyLoginWhiteLearnEDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>规则ID；自学习为规则组ID（组内最小行ID）</p>",
+          "example": "39781687",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>常用登录地列表，必填，1-200 个；为自学习规则唯一的内容维度</p>",
+          "example": "无",
+          "member": "LoginWhitePlaceInput",
+          "name": "Places",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-e74488e0ba0cd8fe\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则所属账号 AppId（取列表出参 AppId）；为空取当前账号；非当前账号需通过归属校验</p>",
+          "example": "260199983",
+          "member": "uint64",
+          "name": "RuleAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注，最长 255 字符</p>",
+          "example": "备注2",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效资产范围：0-指定主机（主机或标签命中） 1-全部主机</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Scope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定主机（实例ID 形态）列表，最多 10000 项；服务端经 idmap 翻译为 QUUID 后与 QUUIDSWithAppId 合并去重</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "InstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除主机（实例ID 形态）列表，最多 10000 项</p>",
+          "example": "无",
+          "member": "InstanceIDWithAppIdItem",
+          "name": "ExcludeInstanceIDsWithAppId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全中心标签ID列表，最多 100 个；Scope=0 时与主机为或关系；自学习白名单不支持按标签生效（传非空将被拒绝）</p>",
+          "example": "[\"246\"]",
+          "member": "string",
+          "name": "TagIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLoginWhiteLearnEDRResponse": {
+      "document": "ModifyLoginWhiteLearnEDR返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyLoginWhiteRecordRequest": {
       "document": "ModifyLoginWhiteRecord请求参数结构体",

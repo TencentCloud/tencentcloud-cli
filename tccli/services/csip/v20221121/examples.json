@@ -1224,6 +1224,22 @@
         "title": "删除容器镜像漏洞白名单"
       }
     ],
+    "DeleteLoginWhiteCustomEDR": [
+      {
+        "document": "批量删除异常登录自定义白名单",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoginWhiteCustomEDR\n<公共请求参数>\n\n{\n    \"Ids\": [\n        101,\n        102\n    ],\n    \"SelectAll\": false,\n    \"TargetAppIDs\": []\n}",
+        "output": "{\n    \"Response\": {\n        \"DeletedCount\": 2,\n        \"FailedAppIds\": [],\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "DeleteLoginWhiteCustomEDR"
+      }
+    ],
+    "DeleteLoginWhiteLearnEDR": [
+      {
+        "document": "删除异常登录自学习白名单规则组",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteLoginWhiteLearnEDR\n<公共请求参数>\n\n{\n    \"Ids\": [\n        42383278\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeletedCount\": 3,\n        \"FailedAppIds\": [],\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "DeleteLoginWhiteLearnEDR"
+      }
+    ],
     "DeleteLoginWhiteList": [
       {
         "document": "",
@@ -3262,6 +3278,26 @@
         "title": "示例"
       }
     ],
+    "DescribeEdrMalwareFile": [
+      {
+        "document": "非公有云且导出开关打开时返回 base64 DataURL 与文件名",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdrMalwareFile\n<公共请求参数>\n\n{\n    \"AlertId\": \"edr-alert-8f3c1a2b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrl\": \"data:application/octet-stream;base64,UEsDBBQ...\",\n        \"FileName\": \"evil.bin.zip\",\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "获取EDR恶意文件样本下载链接（base64 DataURL）"
+      },
+      {
+        "document": "单账号场景（不传 TargetAppId）下载恶意样本",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdrMalwareFile\n<公共请求参数>\n\n{\n    \"AlertId\": \"edr-alert-8f3c1a2b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrl\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/samples/6f1e9c...?q-sign-time=...\",\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "获取EDR恶意文件样本下载链接（公有云预签名URL）"
+      },
+      {
+        "document": "集团账号下载成员账号告警的恶意样本",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdrMalwareFile\n<公共请求参数>\n\n{\n    \"TargetAppId\": 1250000001,\n    \"AlertId\": \"edr-alert-8f3c1a2b\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FileUrl\": \"https://xxx.cos.ap-guangzhou.myqcloud.com/samples/6f1e9c...?q-sign-time=...\",\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "获取EDR恶意文件样本下载链接（跨账号）"
+      }
+    ],
     "DescribeExportJobDownloadURL": [
       {
         "document": "",
@@ -3740,12 +3776,28 @@
         "title": "获取登录审计白名单列表-支持新版本筛选"
       }
     ],
+    "DescribeLoginWhiteCustomListEDR": [
+      {
+        "document": "查询异常登录自定义白名单列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginWhiteCustomListEDR\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppId\": 260199983,\n                \"CreateTime\": \"2026-10-23 15:38:40\",\n                \"EndTime\": \"\",\n                \"ExcludeInstanceIDs\": [],\n                \"ExcludeQUUIDS\": [],\n                \"HostCount\": 0,\n                \"Id\": 3,\n                \"InstanceIDs\": [],\n                \"Locations\": \"\",\n                \"ModifyTime\": \"2026-10-23 15:38:40\",\n                \"Places\": [],\n                \"QUUIDS\": [],\n                \"Remark\": \"\",\n                \"Scope\": 1,\n                \"SrcIp\": \"1.1.1.2\",\n                \"StartTime\": \"\",\n                \"TagItems\": [],\n                \"Type\": \"Custom\",\n                \"UserName\": \"place\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"51c542e6-5cde-4adf-8f01-4e21e027cf20\"\n    }\n}",
+        "title": "DescribeLoginWhiteCustomListEDR"
+      }
+    ],
     "DescribeLoginWhiteHostList": [
       {
         "document": "编辑登录审计白名单",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginWhiteHostList\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Id\": 1,\n    \"Offset\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Hosts\": [\n            {\n                \"MachineName\": \"机器名称\",\n                \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"MachineWanIp\": \"1.1.1.1\",\n                \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"MachineIp\": \"1.1.1.1\",\n                \"Tags\": [\n                    {\n                        \"Name\": \"cwp\",\n                        \"TagId\": 1,\n                        \"Rid\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"be6f6eec-0825-4e67-ab9a-c8568bbf736c\"\n    }\n}",
         "title": "编辑登录审计白名单"
+      }
+    ],
+    "DescribeLoginWhiteLearnListEDR": [
+      {
+        "document": "查询异常登录自学习白名单列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLoginWhiteLearnListEDR\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AutoLearnEnable\": true,\n        \"List\": [\n            {\n                \"Type\": \"Learn\",\n                \"AppId\": 1250000000,\n                \"Id\": 42383278,\n                \"SrcIp\": \"\",\n                \"UserName\": \"\",\n                \"StartTime\": \"\",\n                \"EndTime\": \"\",\n                \"Places\": [\n                    {\n                        \"CountryId\": 1,\n                        \"ProvinceId\": 19,\n                        \"CityId\": 197,\n                        \"Location\": \"中国-广东-深圳\"\n                    },\n                    {\n                        \"CountryId\": 1,\n                        \"ProvinceId\": 99999,\n                        \"CityId\": 99999,\n                        \"Location\": \"中国-全部省份\"\n                    }\n                ],\n                \"Locations\": \"中国-广东-深圳,中国-全部省份\",\n                \"Scope\": 0,\n                \"QUUIDS\": [\n                    \"cd7eba4e-3a35-4e3d-aa41-8fce6c46e8ff\"\n                ],\n                \"InstanceIDs\": [\n                    \"ins-xxxxxxxx\"\n                ],\n                \"ExcludeQUUIDS\": [],\n                \"ExcludeInstanceIDs\": [],\n                \"TagItems\": [],\n                \"HostCount\": 1,\n                \"Remark\": \"\",\n                \"CreateTime\": \"2026-10-20 09:00:00\",\n                \"ModifyTime\": \"2026-10-21 09:00:00\"\n            }\n        ],\n        \"RequestId\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\"\n    }\n}",
+        "title": "DescribeLoginWhiteLearnListEDR"
       }
     ],
     "DescribeMachineClearHistory": [
@@ -5472,6 +5524,22 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageVulWhitelist\n<公共请求参数>\n\n{\n    \"RuleId\": 1,\n    \"MemberId\": [\n        \"mem-12e1se11\"\n    ],\n    \"PocId\": \"tvd736\",\n    \"ImageIds\": [\n        \"1\"\n    ],\n    \"Scope\": 1,\n    \"Status\": 1,\n    \"Remark\": \"漏洞白名单\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c3c0132-cfb2-4ceb-872a-90a7cc8110c2\"\n    }\n}",
         "title": "修改容器镜像漏洞白名单"
+      }
+    ],
+    "ModifyLoginWhiteCustomEDR": [
+      {
+        "document": "修改异常登录自定义白名单（全量覆盖，不回扫）",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginWhiteCustomEDR\n<公共请求参数>\n\n{\n    \"Id\": 2,\n    \"Places\": [\n        {\n            \"CountryId\": 1,\n            \"ProvinceId\": 1,\n            \"CityId\": 1\n        }\n    ],\n    \"Remark\": \"备注3\",\n    \"Scope\": 0,\n    \"InstanceIDsWithAppId\": [\n        {\n            \"AppId\": 260199983,\n            \"InstanceID\": \"ins-2zltluch\"\n        }\n    ],\n    \"TargetAppIDs\": [\n        260199983\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedAppIds\": [],\n        \"RequestId\": \"356104a2-3d15-49aa-baed-106a76dbaf2c\"\n    }\n}",
+        "title": "ModifyLoginWhiteCustomEDR"
+      }
+    ],
+    "ModifyLoginWhiteLearnEDR": [
+      {
+        "document": "修改异常登录自学习白名单（全部资产 + 剔除主机）",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginWhiteLearnEDR\n<公共请求参数>\n\n{\n    \"Id\": 39781687,\n    \"Places\": [\n        {\n            \"CountryId\": 1,\n            \"ProvinceId\": 1,\n            \"CityId\": 1\n        }\n    ],\n    \"RuleAppId\": 260199983,\n    \"Remark\": \"备注2\",\n    \"Scope\": 0,\n    \"InstanceIDsWithAppId\": [\n        {\n            \"AppId\": 260199983,\n            \"InstanceID\": \"ins-2zltluch\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f81cb29-2f49-49e3-b27b-f7062ea5841e\"\n    }\n}",
+        "title": "ModifyLoginWhiteLearnEDR"
       }
     ],
     "ModifyLoginWhiteRecord": [

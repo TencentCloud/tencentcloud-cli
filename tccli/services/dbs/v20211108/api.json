@@ -73,6 +73,7 @@
           "example": "id",
           "member": "string",
           "name": "ColumnName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -83,6 +84,7 @@
           "example": "new_id",
           "member": "string",
           "name": "NewColumnName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -99,6 +101,7 @@
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -109,6 +112,7 @@
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -116,9 +120,10 @@
         {
           "disabled": false,
           "document": "用户名。",
-          "example": "user_test",
+          "example": "backup_user",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -129,6 +134,7 @@
           "example": "user_paawd",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -139,6 +145,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -149,6 +156,7 @@
           "example": "others",
           "member": "string",
           "name": "Supplier",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -159,6 +167,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -169,6 +178,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -179,6 +189,7 @@
           "example": "cdb-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -189,6 +200,7 @@
           "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "CvmInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -199,6 +211,7 @@
           "example": "dcg-xxxxxxxx",
           "member": "string",
           "name": "UniqDcgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -209,6 +222,7 @@
           "example": "vpngw-xxxxxxx",
           "member": "string",
           "name": "UniqVpnGwId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -219,6 +233,7 @@
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -229,6 +244,7 @@
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -239,6 +255,7 @@
           "example": "ccn-xxxxxxxx",
           "member": "string",
           "name": "CcnId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -249,6 +266,7 @@
           "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -259,6 +277,7 @@
           "example": "mariadb",
           "member": "string",
           "name": "DBKernel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -275,6 +294,7 @@
           "example": "all",
           "member": "string",
           "name": "ObjectMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -285,6 +305,7 @@
           "example": "无",
           "member": "BackupObjectItem",
           "name": "ObjectItems",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -301,6 +322,7 @@
           "example": "db1",
           "member": "string",
           "name": "DBName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -311,6 +333,7 @@
           "example": "new_db1",
           "member": "string",
           "name": "NewDBName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -321,6 +344,7 @@
           "example": "schema1",
           "member": "string",
           "name": "SchemaName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -331,6 +355,7 @@
           "example": "new_schema1",
           "member": "string",
           "name": "NewSchemaName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -341,6 +366,7 @@
           "example": "all",
           "member": "string",
           "name": "DbMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -351,6 +377,7 @@
           "example": "all",
           "member": "string",
           "name": "TableMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -361,6 +388,7 @@
           "example": "无",
           "member": "BackupTableItem",
           "name": "Tables",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -377,6 +405,7 @@
           "example": "Weekly",
           "member": "string",
           "name": "PeriodType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -387,6 +416,7 @@
           "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
           "member": "string",
           "name": "Day",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -579,6 +609,7 @@
           "example": "02:00",
           "member": "string",
           "name": "BackupStartTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -589,6 +620,7 @@
           "example": "无",
           "member": "StorageStrategy",
           "name": "StorageStrategy",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -599,6 +631,7 @@
           "example": "无",
           "member": "BackupPeriod",
           "name": "BackupPeriod",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
@@ -609,6 +642,7 @@
           "example": "logical",
           "member": "string",
           "name": "BackupMethod",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -619,6 +653,7 @@
           "example": "period",
           "member": "string",
           "name": "StrategyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -629,6 +664,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableIncrement",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -645,6 +681,7 @@
           "example": "t1",
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -655,6 +692,7 @@
           "example": "new_t1",
           "member": "string",
           "name": "NewTableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -665,6 +703,7 @@
           "example": "无",
           "member": "BackupColumnItem",
           "name": "Columns",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -912,7 +951,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID。",
+          "document": "备份计划 ID 列表。单次最多返回 10 个。",
           "example": "[\"dbs-3enedogk\"]",
           "member": "string",
           "name": "BackupPlanIds",
@@ -1253,6 +1292,7 @@
           "example": "system",
           "member": "string",
           "name": "StorageType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1263,6 +1303,7 @@
           "example": "SSE-COS",
           "member": "string",
           "name": "Encryption",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -1273,6 +1314,7 @@
           "example": "30",
           "member": "int64",
           "name": "BackupRetentionPeriod",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1289,6 +1331,7 @@
           "example": "key",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1299,6 +1342,7 @@
           "example": "value",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

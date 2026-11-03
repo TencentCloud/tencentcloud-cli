@@ -6,9 +6,18 @@ Input:
 
 ```
 tccli cngw CreateCloudNativeAPIGatewayMCPTool --cli-unfold-argument  \
+    --GatewayId gateway-99761825 \
+    --ServerId 5483b23c-690f-494b-949c-a2a969e02561 \
+    --Name echo_500 \
+    --Description echo tool for echo_500 \
+    --Method POST \
+    --Path /echo500 \
     --ContentType application/json \
-    --DisplayName 获取用户信息 \
-    --ServiceId 4e141ac6-f0cd-4d35-80f0-75e47f5d56a6
+    --InputParams.0.Name note \
+    --InputParams.0.Type string \
+    --InputParams.0.Required False \
+    --InputParams.0.Position query \
+    --InputParams.0.Description optional note
 ```
 
 Output: 
@@ -16,10 +25,10 @@ Output:
 {
     "Response": {
         "Result": {
-            "ID": "2e86a9fb-0354-441f-a25f-0e58814a4807",
-            "Success": true
+            "Success": true,
+            "ID": "7fae6228-c9c6-4d8a-9a63-8b4cd678f3f4"
         },
-        "RequestId": "51b02dbf-98d8-4a91-8f7c-2e73ae2b0182"
+        "RequestId": "09f1adda-fdfd-4cb7-848d-5d6dfdeb2819"
     }
 }
 ```

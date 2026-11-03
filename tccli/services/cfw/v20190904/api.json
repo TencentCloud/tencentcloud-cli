@@ -3606,7 +3606,7 @@
       "usage": "out"
     },
     "CommonFilter": {
-      "document": "通用的列表检索过滤选项",
+      "document": "通用的列表检索过滤选项.",
       "members": [
         {
           "disabled": false,
@@ -17355,8 +17355,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则",
-          "example": "{\"Comment\":\"最新放通\",\"CustomRule\":{\"DstIP\":\"10.12.21.1\",\"IdsRuleId\":\"2001\",\"IdsRuleName\":\"规则误报\",\"SrcIP\":\"10.12.21.2\"},\"DirectionList\":\"1\",\"EndTime\":\"2024-11-02 18:44:21\",\"Ioc\":\"80.94.95.81\"}",
+          "document": "<p>规则</p>",
+          "example": "无",
           "member": "BanAndAllowRule",
           "name": "Rule",
           "required": true,
@@ -17364,11 +17364,20 @@
         },
         {
           "disabled": false,
-          "document": "RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则",
+          "document": "<p>RuleType: 1放通列表 2外部IP 3域名 4情报 5资产 6自定义规则  7入侵防御规则</p>",
           "example": "1",
           "member": "int64",
           "name": "RuleType",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>冲突选择</p><p>枚举值：</p><ul><li>1： 删除对端写入</li><li>0： 跳过写入</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "CoverDuplicate",
+          "required": false,
           "type": "int"
         }
       ],
@@ -26063,7 +26072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问目的。RuleType=2：本字段与 SrcIP 两个字段中恰好填写一个，值为精确 IP；RuleType=5：本字段与 SrcIP 两个字段中恰好填写一个，值为资产 instance_id；RuleType=6：与 SrcIP 至少一项为具体 IP，另一项可省略或使用同 IP 版本的 0.0.0.0/0、::/0，两项均为具体 IP 时使用相同 IP 版本；FwType=16 时具体目的 IPv4 可带端口。RuleType=8：IP、CIDR、IP:端口或 CIDR:端口，可与 SrcIP 组合；RuleType=9：IP、CIDR 或带端口地址，可与 NDR 专属条件组合；搭配 IdsRuleId 时使用 IPv4 或 IPv4:端口。IPv6 带端口时使用 [IPv6]:端口；已选字段的多值用逗号分隔。",
+          "document": "<p>访问目的。RuleType=2：本字段与 SrcIP 两个字段中恰好填写一个，值为精确 IP；RuleType=5：本字段与 SrcIP 两个字段中恰好填写一个，值为资产 instance_id；RuleType=6：与 SrcIP 至少一项为具体 IP，另一项可省略或使用同 IP 版本的 0.0.0.0/0、::/0，两项均为具体 IP 时使用相同 IP 版本；FwType=16 时具体目的 IPv4 可带端口。RuleType=8：IP、CIDR、IP:端口或 CIDR:端口，可与 SrcIP 组合；RuleType=9：IP、CIDR 或带端口地址，可与 NDR 专属条件组合；搭配 IdsRuleId 时使用 IPv4 或 IPv4:端口。IPv6 带端口时使用 [IPv6]:端口；已选字段的多值用逗号分隔。</p>",
           "example": "11.2.33.2",
           "member": "string",
           "name": "DstIP",
@@ -26074,7 +26083,7 @@
         },
         {
           "disabled": false,
-          "document": "文件 MD5，仅 RuleType=9。32 位十六进制；多值逗号分隔，最多 10 个。",
+          "document": "<p>文件 MD5，仅 RuleType=9。32 位十六进制；多值逗号分隔，最多 10 个。</p>",
           "example": "ac7006fcb5cf46ed866f707c7428f5bd",
           "member": "string",
           "name": "FileMd5",
@@ -26085,7 +26094,7 @@
         },
         {
           "disabled": false,
-          "document": "文件名，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；多值用逗号分隔，最多 10 个。",
+          "document": "<p>文件名，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；多值用逗号分隔，最多 10 个。</p>",
           "example": "readme.txt",
           "member": "string",
           "name": "FileName",
@@ -26096,7 +26105,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP Host，仅 RuleType=9；填写主机名或 IP，支持 ?、* 通配符并区分大小写；多值用逗号分隔。",
+          "document": "<p>HTTP Host，仅 RuleType=9；填写主机名或 IP，支持 ?、* 通配符并区分大小写；多值用逗号分隔。</p>",
           "example": "qq.com",
           "member": "string",
           "name": "HostName",
@@ -26107,7 +26116,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端内部字段。",
+          "document": "<p>服务端内部字段。</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -26118,7 +26127,7 @@
         },
         {
           "disabled": false,
-          "document": "IPS 规则 ID，取自 DescribeIpsRuleListNew.Data[].RuleID。RuleType=6 必填；RuleType=9 可选，填写时同时填写 SrcIP 或 DstIP。",
+          "document": "<p>IPS 规则 ID，取自 DescribeIpsRuleListNew.Data[].RuleID。RuleType=6 必填；RuleType=9 可选，填写时同时填写 SrcIP 或 DstIP。</p>",
           "example": "20015",
           "member": "string",
           "name": "IdsRuleId",
@@ -26129,7 +26138,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端保留字段。",
+          "document": "<p>服务端保留字段。</p>",
           "example": "敏感信息泄露",
           "member": "string",
           "name": "IdsRuleName",
@@ -26140,7 +26149,7 @@
         },
         {
           "disabled": false,
-          "document": "RuleType=3 填一个合法域名；RuleType=4 填情报 IP、CIDR 或域名。",
+          "document": "<p>RuleType=3 填一个合法域名；RuleType=4 填情报 IP、CIDR 或域名。</p>",
           "example": "pool.com",
           "member": "string",
           "name": "Ioc",
@@ -26151,7 +26160,7 @@
         },
         {
           "disabled": false,
-          "document": "访问源。RuleType=2：本字段与 DstIP 两个字段中恰好填写一个，值为精确 IP；RuleType=5：本字段与 DstIP 两个字段中恰好填写一个，值为资产 instance_id；RuleType=6：与 DstIP 至少一项为具体 IP，另一项可省略或使用同 IP 版本的 0.0.0.0/0、::/0，两项均为具体 IP 时使用相同 IP 版本；RuleType=8：IP 或 CIDR；RuleType=9：IP 或 CIDR，可与 NDR 专属条件组合；搭配 IdsRuleId 时使用 IPv4。源地址使用无端口格式；已选字段的多值用逗号分隔。",
+          "document": "<p>访问源。RuleType=2：本字段与 DstIP 两个字段中恰好填写一个，值为精确 IP；RuleType=5：本字段与 DstIP 两个字段中恰好填写一个，值为资产 instance_id；RuleType=6：与 DstIP 至少一项为具体 IP，另一项可省略或使用同 IP 版本的 0.0.0.0/0、::/0，两项均为具体 IP 时使用相同 IP 版本；RuleType=8：IP 或 CIDR；RuleType=9：IP 或 CIDR，可与 NDR 专属条件组合；搭配 IdsRuleId 时使用 IPv4。源地址使用无端口格式；已选字段的多值用逗号分隔。</p>",
           "example": "11.2.33.1",
           "member": "string",
           "name": "SrcIP",
@@ -26162,7 +26171,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP URL，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；多值用逗号分隔，最多 10 个。",
+          "document": "<p>HTTP URL，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；多值用逗号分隔，最多 10 个。</p>",
           "example": "/index.html",
           "member": "string",
           "name": "Url",
@@ -26173,7 +26182,7 @@
         },
         {
           "disabled": false,
-          "document": "HTTP User-Agent，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；单值少于 255 个字符，最多 2 个，多值用 <#cfw-splite#> 分隔。",
+          "document": "<p>HTTP User-Agent，仅 RuleType=9；支持精确匹配及 ?、* 通配符，区分大小写；单值少于 255 个字符，最多 2 个，多值用 &lt;#cfw-splite#&gt; 分隔。</p>",
           "example": "Friefox",
           "member": "string",
           "name": "UserAgent",
@@ -26184,7 +26193,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单策略唯一 ID。",
+          "document": "<p>白名单策略唯一 ID。</p>",
           "example": "wl-88dadc",
           "member": "string",
           "name": "WhiteId",
@@ -26195,10 +26204,21 @@
         },
         {
           "disabled": false,
-          "document": "HTTP X-Forwarded-For，仅 RuleType=9；精确 IP，多值逗号分隔，最多 50 个。",
+          "document": "<p>HTTP X-Forwarded-For，仅 RuleType=9；精确 IP，多值逗号分隔，最多 50 个。</p>",
           "example": "101.1.2.3",
           "member": "string",
           "name": "XForwardedFor",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>风险事件类型</p>",
+          "example": "dataleak",
+          "member": "string",
+          "name": "RiskEventType",
           "output_required": false,
           "required": false,
           "type": "string",

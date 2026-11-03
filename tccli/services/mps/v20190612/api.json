@@ -5093,7 +5093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解说视频路径。",
+          "document": "<p>解说视频路径。</p>",
           "example": "/output/dub-result-0.mp4",
           "member": "string",
           "name": "VideoPath",
@@ -5103,7 +5103,7 @@
         },
         {
           "disabled": false,
-          "document": "解说视频路径列表。\n\n**注意**：\n1. 当返回一个文件时，`VideoPath `返回一个文件路径，`VideoPaths `也会填充同样路径的一个元素。\n2. 当返回多个文件时，`VideoPath `返回为空字符串，`VideoPaths `返回多文件路径列表。",
+          "document": "<p>解说视频路径列表。</p><p><strong>注意</strong>：</p><ol><li>当返回一个文件时，<code>VideoPath</code>返回一个文件路径，<code>VideoPaths</code>也会填充同样路径的一个元素。</li><li>当返回多个文件时，<code>VideoPath</code>返回为空字符串，<code>VideoPaths</code>返回多文件路径列表。</li></ol>",
           "example": "[\"/output/dub-result-0.mp4\", \"/output/dub-result-1.mp4\"]",
           "member": "string",
           "name": "VideoPaths",
@@ -5113,7 +5113,7 @@
         },
         {
           "disabled": false,
-          "document": "脚本文件路径\n",
+          "document": "<p>脚本文件路径</p>",
           "example": "/output/dub-result-0.json",
           "member": "string",
           "name": "ScriptPath",
@@ -5123,12 +5123,42 @@
         },
         {
           "disabled": false,
-          "document": "解说视频存储位置。",
+          "document": "<p>多个脚本文件路径</p>",
+          "example": "[\"/output/dub-result-0.json\", \"/output/dub-result-1.json\"]",
+          "member": "string",
+          "name": "ScriptPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解说视频存储位置。</p>",
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出视频字幕文件</p>",
+          "example": "/output/subtitle-result-0.json",
+          "member": "string",
+          "name": "OutputSubtitlePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>多个输出视频字幕文件，与输出的VideoPaths对应</p>",
+          "example": "[\"/output/subtitle-result-0.json\", \"/output/subtitle-result-1.json\"]",
+          "member": "string",
+          "name": "OutputSubtitlePaths",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

@@ -4938,6 +4938,15 @@
           "name": "MaxUserConnections",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建账号时的完整信息</p>",
+          "example": "无",
+          "member": "CreateDBAccount",
+          "name": "CreateAccounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5934,6 +5943,45 @@
         }
       ],
       "type": "object"
+    },
+    "CreateDBAccount": {
+      "document": "创建账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>账号名称</p>",
+          "example": "user_a",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名</p>",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始SSM托管的相关信息</p>",
+          "example": "无",
+          "member": "SSMCreateAccountInfos",
+          "name": "SSMInfos",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateDBImportJobRequest": {
       "document": "CreateDBImportJob请求参数结构体",
@@ -7398,6 +7446,15 @@
           "name": "Accounts",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待删除账号的完整信息。</p>",
+          "example": "无",
+          "member": "DeleteDBAccount",
+          "name": "DeleteAccounts",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7585,6 +7642,67 @@
         }
       ],
       "type": "object"
+    },
+    "DeleteDBAccount": {
+      "document": "删除账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>用户名</p>",
+          "example": "account_a",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机名</p>",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>",
+          "example": "sec-testa",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>保留时间，0表示立即删除(最大30天)</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RecoveryWindowInDays",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除模式</p><p>枚举值：</p><ul><li>0： 仅删除凭据</li><li>1： 删除凭据+账号</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "DeleteMode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "DeleteDatabaseRequest": {
       "document": "DeleteDatabase请求参数结构体",
@@ -19132,6 +19250,56 @@
       ],
       "usage": "both"
     },
+    "PrivilegeGroup": {
+      "document": "权限组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "DatabasePrivilege",
+          "name": "DatabasePrivileges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "TablePrivilege",
+          "name": "TablePrivileges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ColumnPrivilege",
+          "name": "ColumnPrivileges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ProxyAddress": {
       "document": "数据库代理地址信息",
       "members": [
@@ -21168,6 +21336,111 @@
         }
       ],
       "usage": "out"
+    },
+    "SSMCreateAccountInfos": {
+      "document": "创建SSM账号相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启SSM托管</p><p>枚举值：</p><ul><li>true： 开启托管</li><li>false： 不开启托管</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsOpenSSM",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否创建轮转账号</p><p>枚举值：</p><ul><li>true： 创建轮转账号</li><li>false： 创建非轮转账号</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsRotationAccount",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "efewfewfw",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>KMS CMK ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "'ebd94668-80f8-11f1-8e8f-525400373676'31da3478-85b2-11f1-9b54-525400f44230",
+          "member": "string",
+          "name": "KmsKeyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥类型</p><p>枚举值：</p><ul><li>0： KMS密码</li><li>1： 软件密钥</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EncryptType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启轮转</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRotation",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>轮转周期</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "31",
+          "member": "int64",
+          "name": "RotationFrequency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrivilegeGroup",
+          "name": "PrivilegesList",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>独享版 KMS 集群 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ebd94668-80f8-11f1-8e8f-525400373676",
+          "member": "string",
+          "name": "KmsHsmClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SecurityGroup": {
       "document": "安全组详情",

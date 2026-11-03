@@ -462,6 +462,13 @@
       "output": "ListWorkspaceGroupsResponse",
       "status": "online"
     },
+    "ListWorkspaceRoles": {
+      "document": "查询工作空间角色列表",
+      "input": "ListWorkspaceRolesRequest",
+      "name": "查询工作空间角色列表",
+      "output": "ListWorkspaceRolesResponse",
+      "status": "online"
+    },
     "ListWorkspaceUsers": {
       "document": "查询工作空间用户列表",
       "input": "ListWorkspaceUsersRequest",
@@ -4015,7 +4022,7 @@
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -5847,7 +5854,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>数据目录id</p>",
+          "document": "<p>数据目录id，通过ListCatalogs接口获取</p>",
           "example": "0c4b0b0f-522c-4039-9d7a-63473f85b779",
           "member": "string",
           "name": "CatalogId",
@@ -6652,7 +6659,7 @@
           "example": "231434145236852",
           "member": "string",
           "name": "WorkspaceId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -11500,6 +11507,126 @@
       ],
       "usage": "both"
     },
+    "ListWorkspaceRolesRequest": {
+      "document": "ListWorkspaceRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17623497097012366",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键字，支持按角色名称模糊搜索</p>",
+          "example": "工作空间",
+          "member": "string",
+          "name": "NameKeyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，从1开始，默认1</p><p>默认值：1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小，默认10，取值范围为 [1,100]，越界时自动收敛到边界值</p><p>默认值：10</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListWorkspaceRolesResponse": {
+      "document": "ListWorkspaceRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间角色结果</p>",
+          "example": "无",
+          "member": "ListWorkspaceRolesRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListWorkspaceRolesRsp": {
+      "document": "查询工作空间角色列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "Role",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页大小</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总记录数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总页数</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalPageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ListWorkspaceUsersRequest": {
       "document": "ListWorkspaceUsers请求参数结构体",
       "members": [
@@ -13178,6 +13305,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Role": {
+      "document": "角色完整信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色基本信息</p>",
+          "example": "无",
+          "member": "RoleBasicInfo",
+          "name": "BasicInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色权限</p>",
+          "example": "无",
+          "member": "RolePermission",
+          "name": "Permissions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RoleBasicInfo": {
       "document": "角色基础信息",

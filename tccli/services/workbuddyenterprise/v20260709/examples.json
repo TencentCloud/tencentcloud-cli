@@ -64,6 +64,14 @@
         "title": "删除定时任务"
       }
     ],
+    "DeleteSessionArtifactList": [
+      {
+        "document": "删除会话产物，如果 SessionId 存在，则删除 SessionId 对应会话内的所有产物，如果 ArtifactIds 有元素，会批量删除指定 ArtifactId 对应的产物记录。",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSessionArtifactList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1364edc5-1428-4e03-8ada-517b4133a990\"\n    }\n}",
+        "title": "删除会话产物"
+      }
+    ],
     "DescribeAgent": [
       {
         "document": "",
@@ -196,6 +204,22 @@
         "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScheduledTaskLogList\n<公共请求参数>\n\n{\n    \"TaskId\": 0,\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"WithStats\": false,\n    \"Filters\": []\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ScheduledTaskLogSet\": [\n            {\n                \"LogId\": 0,\n                \"TaskKey\": \"\",\n                \"TriggerType\": \"\",\n                \"Status\": \"\",\n                \"StartTime\": \"\",\n                \"EndTime\": \"\",\n                \"DurationMs\": 0,\n                \"DeliveryStatus\": \"\",\n                \"SessionId\": \"\"\n            }\n        ],\n        \"Stats\": {\n            \"TotalCount\": 0,\n            \"SuccessCount\": 0,\n            \"FailedCount\": 0,\n            \"AvgDurationMs\": 0\n        },\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
         "title": "查询定时任务执行日志列表"
+      }
+    ],
+    "DescribeSessionArtifactDownloadUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactDownloadUrl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a1eb38a-7991-49c1-9732-4f9e7577da3b\"\n    }\n}",
+        "title": "获取目标产物ID的下载地址"
+      }
+    ],
+    "DescribeSessionArtifactList": [
+      {
+        "document": "查询指定会话（SessionID）产物列表，可从 Offset 开始筛选共计 Limit 个产物，并返回产物列表。",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a4d3e20-a6f2-453d-b723-485a427caa51\"\n    }\n}",
+        "title": "查询指定Session的产物列表"
       }
     ],
     "DescribeSkillList": [

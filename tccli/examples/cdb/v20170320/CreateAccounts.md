@@ -7,6 +7,13 @@ Input:
 ```
 tccli cdb CreateAccounts --cli-unfold-argument  \
     --InstanceId cdb-lzl4lvov \
+    --CreateAccounts.0.User api_ssm_concurrent_test \
+    --CreateAccounts.0.Host % \
+    --CreateAccounts.0.SSMInfos.IsOpenSSM True \
+    --CreateAccounts.0.SSMInfos.IsRotationAccount False \
+    --CreateAccounts.0.SSMInfos.SecretName api_ssm_concurrent_test \
+    --CreateAccounts.0.SSMInfos.EncryptType 1 \
+    --CreateAccounts.0.SSMInfos.EnableRotation False \
     --Password fsdgfdgfd43564654 \
     --MaxUserConnections 33
 ```

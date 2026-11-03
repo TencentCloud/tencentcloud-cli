@@ -9313,6 +9313,85 @@
       ],
       "usage": "out"
     },
+    "AigcModelQuota": {
+      "document": "AIGC 单配额模型。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "Hunyuan",
+          "member": "string",
+          "name": "ModelName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的配额数。</p><p>单位：张/秒。</p><ul><li>当 QuotaType 为 Image 时，单位为张；</li><li>当 QuotaType 为 Video 时，单位为秒；</li></ul>",
+          "example": "10",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本。</p>",
+          "example": "3.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "AigcModelQuotaWithUsage": {
+      "document": "AIGC 单模型配额与用量信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型名称。</p>",
+          "example": "Hunyuan",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本。</p>",
+          "example": "3.0",
+          "member": "string",
+          "name": "ModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务的配额数。</p><p>单位：张/秒。</p><ul><li>当 QuotaType 为 Image 时，单位为张；</li><li>当 QuotaType 为 Video 时，单位为秒；</li></ul>",
+          "example": "10",
+          "member": "uint64",
+          "name": "QuotaLimit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已经使用的用量数</p><p>单位：</p><ul><li>当QuotaLimit=Image时，单位为张</li><li>当QuotaLimit=Video时，单位为秒</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Usage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AigcQuotaItem": {
       "document": "AIGC 配额",
       "members": [
@@ -9354,6 +9433,46 @@
           "name": "Usage",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>",
+          "example": "Month",
+          "member": "string",
+          "name": "QuotaPeriod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "ResetDay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul><p>默认值：OFF</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "ModelQuotaSwitch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>",
+          "example": "无",
+          "member": "AigcModelQuotaWithUsage",
+          "name": "ModelQuotas",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -16191,6 +16310,42 @@
           "name": "ApiToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>",
+          "example": "Month",
+          "member": "string",
+          "name": "QuotaPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "ResetDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "ModelQuotaSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>",
+          "example": "无",
+          "member": "AigcModelQuota",
+          "name": "ModelQuotas",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -39457,6 +39612,42 @@
           "name": "ApiToken",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>配额重置周期。</p><p>枚举值：</p><ul><li>Day： 每天重置。</li><li>Month： 每月指定日期重置。</li><li>Total： 永不重置，QuotaLimit参数即为总额度。</li></ul>",
+          "example": "Month",
+          "member": "string",
+          "name": "QuotaPeriod",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每月配额的重置日期，仅QuotaPeriod=Month时有效。</p><p>如果当月无所选日期时，顺延至次月 1 日 00:00 重置。</p>",
+          "example": "15",
+          "member": "uint64",
+          "name": "ResetDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启按单个模型设置配额</p><p>枚举值：</p><ul><li>ON： 打开</li><li>OFF： 关闭</li></ul>",
+          "example": "OFF",
+          "member": "string",
+          "name": "ModelQuotaSwitch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按单个模型设置的配额，仅ModelQuotaSwitch=ON时有效。</p>",
+          "example": "无",
+          "member": "AigcModelQuota",
+          "name": "ModelQuotas",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -51284,8 +51475,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480p、720p、1080p、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480p、720p；</li><li>当 Model 是 character_scene_fast 时，支持 720p。</li></ul>",
-          "example": "720p",
+          "document": "<p>分辨率。仅当角色场景时有效。取值如下：</p><ul><li>当 Model 是 character_scene_standard 时，支持 480P、720P、1080P、4K；</li><li>当 Model 是 character_scene_mini 时，支持 480P、720P；</li><li>当 Model 是 character_scene_fast 时，支持 720P。</li></ul>",
+          "example": "720P",
           "member": "string",
           "name": "Resolution",
           "output_required": false,
@@ -56416,6 +56607,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保留原视频音频，默认不保留原视频音频。</p><p>枚举值：</p><ul><li>ON： 保留音频</li><li>OFF： 不保留音频</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "KeepAudio",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
