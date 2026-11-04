@@ -11,17 +11,17 @@
     "BindAutoBackupPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAutoBackupPolicy\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0fd9fa5b-b6a1-4461-a596-0d976253b927\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindAutoBackupPolicy\n<公共请求参数>\n\n{\n    \"AutoBackupPolicyId\": \"abp-5c5l02gj\",\n    \"InstanceIds\": [\n        \"ins-8p8fqd0i\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51104b5a-44d6-4158-a502-e86fbe0daa9a\"\n    }\n}",
         "title": "绑定定期备份策略"
       }
     ],
     "CreateAutoBackupPolicy": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoBackupPolicy\n<公共请求参数>\n\n{\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                5\n            ],\n            \"Hour\": [\n                2,\n                3\n            ],\n            \"IntervalDays\": 3\n        }\n    ],\n    \"IsPermanent\": false,\n    \"AutoBackupPolicyName\": \"test-policy\",\n    \"IsActivated\": true,\n    \"RetentionDays\": 3,\n    \"StorageType\": \"VAULT\",\n    \"VaultId\": \"vault-qjhn63ku\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AutoBackupPolicyId\": \"abp-p5ylj73z\",\n        \"RequestId\": \"7b50a8c7-1685-4136-96fe-f18fcde35414\"\n    }\n}",
-        "title": "创建备份库备份策略"
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAutoBackupPolicy\n<公共请求参数>\n\n{\n    \"Policy\": [\n        {\n            \"DayOfWeek\": [\n                1\n            ],\n            \"Hour\": [\n                3\n            ]\n        }\n    ],\n    \"IsPermanent\": false,\n    \"AutoBackupPolicyName\": \"test策略\",\n    \"IsActivated\": true,\n    \"RetentionDays\": 7,\n    \"RetentionMonths\": 0,\n    \"RetentionAmount\": 0,\n    \"StorageType\": \"COMMON\",\n    \"VaultId\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoBackupPolicyId\": \"abp-5zukg4nz\",\n        \"RequestId\": \"4d34cfa0-104e-4db7-8da8-6d1dd794fa75\"\n    }\n}",
+        "title": "创建备份策略"
       }
     ],
     "CreateBackupGroup": [
@@ -67,9 +67,9 @@
     "CreateFileBackup": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackup\n<公共请求参数>\n\n{\n    \"ResourceId\": \"ins-0dl6ai18\",\n    \"BackupPaths\": [\n        \"/var/log\"\n    ],\n    \"ExcludeSystemDirectories\": true,\n    \"BackupStorageId\": \"vault-ivsapm9k\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupId\": \"fb-hjyz84u8\",\n        \"RequestId\": \"4fcb2255-91b4-466b-98a1-1169ede37e8f\"\n    }\n}",
-        "title": "创建文件备份点"
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileBackup\n<公共请求参数>\n\n{\n    \"ResourceId\": \"brc-eva1-260095320\",\n    \"BackupStorageId\": \"vault-66sdscu3\",\n    \"BackupName\": \"test-acl\",\n    \"ResourceType\": \"COS_AGENT\",\n    \"EnableObjectAcl\": true,\n    \"EnableObjectTags\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupId\": \"cosbk-bgp33lr1\",\n        \"RequestId\": \"3debff38-aeb0-436f-84be-14a445b1ed82\"\n    }\n}",
+        "title": "创建cos备份"
       }
     ],
     "CreateFileBackupPlan": [
@@ -83,8 +83,8 @@
     "CreateFileRestoreTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileRestoreTask\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7dfb24b7-5b67-43c0-842d-1e184256fec5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFileRestoreTask\n<公共请求参数>\n\n{\n    \"BackupId\": \"fb-f8jabpvo\",\n    \"TargetResourceId\": \"ins-0dl6ai18\",\n    \"TargetLocation\": \"/tmp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"frt-r9za3tji\",\n        \"RequestId\": \"7dfb24b7-5b67-43c0-842d-1e184256fec5\"\n    }\n}",
         "title": "创建文件备份恢复任务"
       }
     ],
@@ -244,7 +244,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupOverviewGeneral\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"BackupPolicyOverview\": {\n            \"BoundCount\": 8,\n            \"TotalCount\": 45,\n            \"UnboundCount\": 37\n        },\n        \"BackupVaultOverview\": {\n            \"TotalCount\": 16,\n            \"TotalSizeMb\": 118031\n        },\n        \"FileBackupOverview\": {\n            \"BackupCount\": 20,\n            \"BackupResourceCount\": 5,\n            \"BackupSizeMb\": 118031,\n            \"CreatingBackupCount\": 3,\n            \"FailedBackupCount\": 0,\n            \"RestoringBackupCount\": 1,\n            \"SuccessBackupCount\": 16\n        },\n        \"InstanceBackupOverview\": {\n            \"BackupCount\": 217,\n            \"BackupResourceCount\": 9,\n            \"BackupSizeMb\": 67225600,\n            \"CreatingBackupCount\": 0,\n            \"FailedBackupCount\": 0,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 217\n        },\n        \"ProtectedResourceOverview\": {\n            \"CFS\": {\n                \"ProtectedCount\": 12,\n                \"TotalCount\": 8\n            },\n            \"Cvm\": {\n                \"ProtectedCount\": 9,\n                \"TotalCount\": 8\n            },\n            \"TotalProtectedCount\": 21,\n            \"TotalResourceCount\": 16\n        },\n        \"RequestId\": \"89bb101d-133d-48a9-abec-98c857e031aa\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupPolicyOverview\": {\n            \"BoundCount\": 21,\n            \"TotalCount\": 146,\n            \"UnboundCount\": 125\n        },\n        \"BackupVaultOverview\": {\n            \"TotalCount\": 50,\n            \"TotalSizeMb\": 8\n        },\n        \"CFSAgentBackupOverview\": {\n            \"BackupCount\": 182,\n            \"BackupResourceCount\": 0,\n            \"BackupSizeMb\": 0,\n            \"CreatingBackupCount\": 1,\n            \"FailedBackupCount\": 154,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 16\n        },\n        \"COSAgentBackupOverview\": {\n            \"BackupCount\": 228,\n            \"BackupResourceCount\": 7,\n            \"BackupSizeMb\": 8,\n            \"CreatingBackupCount\": 0,\n            \"FailedBackupCount\": 73,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 153\n        },\n        \"FileBackupOverview\": {\n            \"BackupCount\": 15,\n            \"BackupResourceCount\": 0,\n            \"BackupSizeMb\": 0,\n            \"CreatingBackupCount\": 3,\n            \"FailedBackupCount\": 8,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 2\n        },\n        \"InstanceBackupOverview\": {\n            \"BackupCount\": 246,\n            \"BackupResourceCount\": 12,\n            \"BackupSizeMb\": 67319528,\n            \"CreatingBackupCount\": 0,\n            \"FailedBackupCount\": 0,\n            \"RestoringBackupCount\": 0,\n            \"SuccessBackupCount\": 246\n        },\n        \"ProtectedResourceOverview\": {\n            \"CFS\": {\n                \"ProtectedCount\": 10,\n                \"TotalCount\": 12\n            },\n            \"CFSAgent\": {\n                \"ProtectedCount\": 3,\n                \"TotalCount\": 14\n            },\n            \"COSAgent\": {\n                \"ProtectedCount\": 15,\n                \"TotalCount\": 31\n            },\n            \"Cvm\": {\n                \"ProtectedCount\": 12,\n                \"TotalCount\": 12\n            },\n            \"TotalProtectedCount\": 40,\n            \"TotalResourceCount\": 69\n        },\n        \"RequestId\": \"0f99c423-ef91-4c77-9c07-58ad635e2095\"\n    }\n}",
         "title": "查询备份概览信息"
       }
     ],
@@ -371,8 +371,8 @@
     "DescribeFileBackupObjects": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackupObjects\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ab4775a-68fc-4194-aecf-f4d920eb17b1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackupObjects\n<公共请求参数>\n\n{\n    \"BackupId\": \"cosbk-kh0666nx\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"DirList\": [\n            {\n                \"ChangeTime\": 28800,\n                \"ModifyTime\": 1789491427,\n                \"Path\": \"/ali\",\n                \"Size\": 29723016,\n                \"Type\": \"dir\"\n            }\n        ],\n        \"FileList\": [\n            {\n                \"ChangeTime\": 28800,\n                \"ModifyTime\": 1788890030,\n                \"Path\": \"/容灾中心AI应用调研.pdf\",\n                \"Size\": 476487,\n                \"Type\": \"file\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"127b9b0a-19ce-4ca0-b0b2-1d5d5a72e27b\"\n    }\n}",
         "title": "浏览备份目录文件信息"
       }
     ],
@@ -388,8 +388,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: bdrc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileBackups\n<公共请求参数>\n\n{\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"AspInstanceId\": \"\",\n                \"BackupFileCount\": 1351200,\n                \"BackupId\": \"fb-m9nvo7l4\",\n                \"BackupName\": \"\",\n                \"BackupPaths\": [\n                    \"/data\"\n                ],\n                \"BackupSize\": 40205298693,\n                \"BackupSizeFormatted\": \"37.44 GiB\",\n                \"CreatedTime\": \"2026-04-01T15:00:34\",\n                \"EndTime\": \"\",\n                \"ExcludePatterns\": null,\n                \"ExcludeSystemDirectories\": true,\n                \"IncludeFileTypes\": null,\n                \"JobId\": \"j-20260401070034-a018b0d8\",\n                \"PlanId\": null,\n                \"Progress\": 34.14,\n                \"ResourceId\": \"ins-7630gzfm\",\n                \"ScannedFileCount\": 4000000,\n                \"ScannedSize\": 117760571686,\n                \"ScannedSizeFormatted\": \"109.67 GiB\",\n                \"StartTime\": \"2026-04-01T15:01:44\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"c7ffb5b2-1000-400c-806a-ce2bd1ae86c8\",\n        \"TotalCount\": 28\n    }\n}",
-        "title": "查询备份列表详情"
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": [\n            {\n                \"AspInstanceId\": \"abp-adr398np\",\n                \"BackupFileCount\": 0,\n                \"BackupId\": \"fb-85u51cp0\",\n                \"BackupName\": \"auto_ins-an553jqi_20260820_04\",\n                \"BackupPaths\": [\n                    \"/data\"\n                ],\n                \"BackupSize\": 0,\n                \"BackupSizeFormatted\": \"0 B\",\n                \"CreatedTime\": \"2026-08-20T04:00:06\",\n                \"Deadline\": \"\",\n                \"EndTime\": \"\",\n                \"ExcludePatterns\": [],\n                \"ExcludeSystemDirectories\": true,\n                \"FailReason\": \"\",\n                \"IncludeFileTypes\": [],\n                \"IsPermanent\": false,\n                \"JobId\": \"j-20260819200007-a7961c9b\",\n                \"NonExistSourcePaths\": [],\n                \"PlanId\": \"fbp-k6jm18un\",\n                \"Progress\": 0,\n                \"ResourceId\": \"ins-an553jqi\",\n                \"ResourceType\": \"CVM_AGENT\",\n                \"ScannedFileCount\": 0,\n                \"ScannedSize\": 0,\n                \"ScannedSizeFormatted\": \"0 B\",\n                \"StartTime\": \"\",\n                \"Status\": 1,\n                \"VaultId\": \"vault-hrvkughn\"\n            }\n        ],\n        \"TotalCount\": 462,\n        \"RequestId\": \"81695377-1d73-44e0-a121-e5855b3b938b\"\n    }\n}",
+        "title": "查询备份列表"
       }
     ],
     "DescribeFileBackupsDeniedActions": [

@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateFileRestoreTask": {
-      "document": "创建恢复任务",
+      "document": "创建恢复任务。",
       "input": "CreateFileRestoreTaskRequest",
       "name": "创建文件备份恢复任务",
       "output": "CreateFileRestoreTaskResponse",
@@ -763,7 +763,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "定期备份策略是否激活。",
+          "document": "<p>定期备份策略是否激活。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsActivated",
@@ -773,7 +773,7 @@
         },
         {
           "disabled": false,
-          "document": "使用该定期备份策略创建出来的备份是否永久保留。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>使用该定期备份策略创建出来的备份是否永久保留。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsPermanent",
@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "使用该定期备份策略创建出来的备份是否永久保留。",
+          "document": "<p>使用该定期备份策略创建出来的备份是否永久保留。</p>",
           "example": "2026-03-27T13:04:45+08:00",
           "member": "datetime_iso",
           "name": "NextTriggerTime",
@@ -793,7 +793,7 @@
         },
         {
           "disabled": false,
-          "document": "NORMAL",
+          "document": "<p>NORMAL</p>",
           "example": "定期备份策略的状态。取值范围：<br><li>NORMAL：正常<br><li>ISOLATED：已隔离。",
           "member": "string",
           "name": "AutoBackupPolicyState",
@@ -803,7 +803,7 @@
         },
         {
           "disabled": false,
-          "document": "备份策略的名称。",
+          "document": "<p>备份策略的名称。</p>",
           "example": "备份策略1",
           "member": "string",
           "name": "AutoBackupPolicyName",
@@ -813,7 +813,7 @@
         },
         {
           "disabled": false,
-          "document": "定期备份的执行策略。",
+          "document": "<p>定期备份的执行策略。</p>",
           "example": "无",
           "member": "Policy",
           "name": "Policy",
@@ -823,7 +823,7 @@
         },
         {
           "disabled": false,
-          "document": "备份策略ID。",
+          "document": "<p>备份策略ID。</p>",
           "example": "abp-4od7o75f",
           "member": "string",
           "name": "AutoBackupPolicyId",
@@ -833,7 +833,7 @@
         },
         {
           "disabled": false,
-          "document": "备份策略的创建时间。",
+          "document": "<p>备份策略的创建时间。</p>",
           "example": "2026-02-27T13:04:45+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -843,7 +843,7 @@
         },
         {
           "disabled": false,
-          "document": "使用该定期备份策略创建出来的备份保留天数。",
+          "document": "<p>使用该定期备份策略创建出来的备份保留天数。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionDays",
@@ -853,7 +853,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId。",
+          "document": "<p>用户AppId。</p>",
           "example": "1255000110",
           "member": "uint64",
           "name": "AppId",
@@ -863,7 +863,7 @@
         },
         {
           "disabled": false,
-          "document": "定期备份策略绑定的实例ID列表。",
+          "document": "<p>定期备份策略绑定的实例ID列表。</p>",
           "example": "[\"ins-2kpmcdl4\"]",
           "member": "string",
           "name": "InstanceIdSet",
@@ -873,7 +873,7 @@
         },
         {
           "disabled": false,
-          "document": "该定期快照创建的快照最大保留月数",
+          "document": "<p>使用该定期备份策略创建的备份最大保留月数</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionMonths",
@@ -883,7 +883,7 @@
         },
         {
           "disabled": false,
-          "document": "该定期快照创建的快照最大保留数量",
+          "document": "<p>使用该定期备份策略创建的备份最大保留数量</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionAmount",
@@ -893,7 +893,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin",
           "member": "string",
           "name": "AccountName",
@@ -903,7 +903,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号uin。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"110000000197\"",
           "member": "string",
           "name": "AccountUin",
@@ -913,7 +913,7 @@
         },
         {
           "disabled": false,
-          "document": "子账号uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>子账号uin。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"110000000197\"",
           "member": "string",
           "name": "SubAccountUin",
@@ -923,7 +923,7 @@
         },
         {
           "disabled": false,
-          "document": "策略存储类型",
+          "document": "<p>策略存储类型</p>",
           "example": "COMMON",
           "member": "string",
           "name": "StorageType",
@@ -933,7 +933,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份库ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "VaultId",
@@ -943,13 +943,23 @@
         },
         {
           "disabled": false,
-          "document": "高级保留策略",
+          "document": "<p>高级保留策略</p>",
           "example": "无",
           "member": "AdvancedRetentionPolicy",
           "name": "AdvancedRetentionPolicy",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份资源信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupResourceInfo",
+          "name": "BackupResourceInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1374,7 +1384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份点ID",
+          "document": "<p>备份点ID</p>",
           "example": "fb-i9j0k1l2",
           "member": "string",
           "name": "BackupId",
@@ -1384,7 +1394,7 @@
         },
         {
           "disabled": false,
-          "document": "备份名称",
+          "document": "<p>备份名称</p>",
           "example": "file-admin",
           "member": "string",
           "name": "BackupName",
@@ -1394,7 +1404,7 @@
         },
         {
           "disabled": false,
-          "document": "所属计划ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属计划ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fbp-x1y2z3w4",
           "member": "string",
           "name": "PlanId",
@@ -1404,7 +1414,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID",
+          "document": "<p>策略ID</p>",
           "example": "asp-m1n2o3p4",
           "member": "string",
           "name": "AspInstanceId",
@@ -1414,7 +1424,7 @@
         },
         {
           "disabled": false,
-          "document": "资源ID",
+          "document": "<p>资源ID</p>",
           "example": "ins-abc12345",
           "member": "string",
           "name": "ResourceId",
@@ -1424,7 +1434,7 @@
         },
         {
           "disabled": false,
-          "document": "备份状态，取值如下：\n0 备份完成\n1 创建中（备份进行中）\n2 部分成功（指定的备份路径中部分目录不存在）\n3 恢复中（该备份点正在被恢复任务使用）\n92  已取消\n98 创建失败\n99 已删除\n100 删除中\n",
+          "document": "<p>备份状态，取值如下：<br>0 备份完成<br>1 创建中（备份进行中）<br>2 部分成功（指定的备份路径中部分目录不存在）<br>3 恢复中（该备份点正在被恢复任务使用）<br>92  已取消<br>98 创建失败<br>99 已删除<br>100 删除中</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -1434,7 +1444,7 @@
         },
         {
           "disabled": false,
-          "document": "备份路径",
+          "document": "<p>备份路径</p>",
           "example": "[\"/\"]",
           "member": "string",
           "name": "BackupPaths",
@@ -1444,7 +1454,7 @@
         },
         {
           "disabled": false,
-          "document": "包含文件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包含文件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\".log\"]",
           "member": "string",
           "name": "IncludeFileTypes",
@@ -1454,7 +1464,7 @@
         },
         {
           "disabled": false,
-          "document": "排除路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排除路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"/sys\"]",
           "member": "string",
           "name": "ExcludePatterns",
@@ -1464,7 +1474,7 @@
         },
         {
           "disabled": false,
-          "document": "是否排除系统目录",
+          "document": "<p>是否排除系统目录</p>",
           "example": "true",
           "member": "bool",
           "name": "ExcludeSystemDirectories",
@@ -1474,7 +1484,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID",
+          "document": "<p>备份库ID</p>",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "VaultId",
@@ -1484,7 +1494,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描文件数",
+          "document": "<p>扫描文件数</p>",
           "example": "15000",
           "member": "int64",
           "name": "ScannedFileCount",
@@ -1494,7 +1504,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描大小(字节)",
+          "document": "<p>扫描大小(字节)</p>",
           "example": "5368709120",
           "member": "int64",
           "name": "ScannedSize",
@@ -1504,7 +1514,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描大小(格式化)",
+          "document": "<p>扫描大小(格式化)</p>",
           "example": "\"5.00 GB\"",
           "member": "string",
           "name": "ScannedSizeFormatted",
@@ -1514,7 +1524,7 @@
         },
         {
           "disabled": false,
-          "document": "已备份文件数量",
+          "document": "<p>已备份文件数量</p>",
           "example": "14800",
           "member": "int64",
           "name": "BackupFileCount",
@@ -1524,7 +1534,7 @@
         },
         {
           "disabled": false,
-          "document": "已备份大小(字节)",
+          "document": "<p>已备份大小(字节)</p>",
           "example": "2147483648",
           "member": "int64",
           "name": "BackupSize",
@@ -1534,7 +1544,7 @@
         },
         {
           "disabled": false,
-          "document": "已备份大小(格式化)",
+          "document": "<p>已备份大小(格式化)</p>",
           "example": "\"2.00 GB\"",
           "member": "string",
           "name": "BackupSizeFormatted",
@@ -1544,7 +1554,7 @@
         },
         {
           "disabled": false,
-          "document": "备份进度(0-100)",
+          "document": "<p>备份进度(0-100)</p>",
           "example": "100",
           "member": "float",
           "name": "Progress",
@@ -1554,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "\"job-e5f6g7h8\"",
           "member": "string",
           "name": "JobId",
@@ -1564,7 +1574,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2026-03-30T02:00:00",
           "member": "string",
           "name": "StartTime",
@@ -1574,7 +1584,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2026-03-30T02:35:00",
           "member": "string",
           "name": "EndTime",
@@ -1584,7 +1594,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-30T02:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -1594,7 +1604,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为永久保留",
+          "document": "<p>是否为永久保留</p>",
           "example": "true",
           "member": "bool",
           "name": "IsPermanent",
@@ -1604,7 +1614,7 @@
         },
         {
           "disabled": false,
-          "document": "到期时间",
+          "document": "<p>到期时间</p>",
           "example": "2026-12-01 00:00:00",
           "member": "string",
           "name": "Deadline",
@@ -1614,7 +1624,7 @@
         },
         {
           "disabled": false,
-          "document": "不存在的路径信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>不存在的路径信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"/data1\"]",
           "member": "string",
           "name": "NonExistSourcePaths",
@@ -1624,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "备份失败原因",
+          "document": "<p>备份失败原因</p>",
           "example": "Fatal: nothing to backup, please specify source files/dirs",
           "member": "string",
           "name": "FailReason",
@@ -1634,7 +1644,7 @@
         },
         {
           "disabled": false,
-          "document": "备份所属AppId",
+          "document": "<p>备份所属AppId</p>",
           "example": "260095320",
           "member": "int64",
           "name": "AppId",
@@ -1644,13 +1654,63 @@
         },
         {
           "disabled": false,
-          "document": "备份类型",
+          "document": "<p>备份类型</p>",
           "example": "cvm_agent",
           "member": "string",
           "name": "ResourceType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos备份场景使用，标识是否清单生成中</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsInventoryPending",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableObjectAcl",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableObjectTags",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>云上资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfs-rqjuaqls",
+          "member": "string",
+          "name": "CloudResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SD",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1660,7 +1720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例绑定的定期备份策略列表。",
+          "document": "<p>实例绑定的定期备份策略列表。</p>",
           "example": "[\"abp-4od7o75f\"]",
           "member": "string",
           "name": "AutoBackupPolicyIdSet",
@@ -1670,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID。",
+          "document": "<p>实例ID。</p>",
           "example": "ins-2kpmcdl4",
           "member": "string",
           "name": "InstanceId",
@@ -1680,7 +1740,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId。",
+          "document": "<p>用户AppId。</p>",
           "example": "1255000110",
           "member": "uint64",
           "name": "AppId",
@@ -1690,7 +1750,7 @@
         },
         {
           "disabled": false,
-          "document": "实例最新备份时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例最新备份时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-03-31T12:18:11+08:00",
           "member": "datetime_iso",
           "name": "LatestBackupTime",
@@ -1700,7 +1760,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的备份组ID列表。",
+          "document": "<p>实例的备份组ID列表。</p>",
           "example": "[\"cbackup-n00m2307\"]",
           "member": "string",
           "name": "BackupGroupIdSet",
@@ -1710,7 +1770,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>修改时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-03-26T22:19:45+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -1720,7 +1780,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-26T22:19:45+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1730,13 +1790,23 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "admin-cvm",
           "member": "string",
           "name": "InstanceName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份数据量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1993",
+          "member": "int64",
+          "name": "BackupSizeMb",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1858,6 +1928,32 @@
           "name": "UnboundCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupResourceInfo": {
+      "document": "文件备份资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>COS_AGENT： COS备份</li><li>CFS_AGENT： CFS文件备份</li><li>INSTANCE： CVM整机备份</li></ul>",
+          "example": "INSTANCE",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "[\"ins-854ejfk6\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -2042,7 +2138,26 @@
     },
     "BindAutoBackupPolicyRequest": {
       "document": "BindAutoBackupPolicy请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份策略ID</p>",
+          "example": "abp-5c5l02gj",
+          "member": "string",
+          "name": "AutoBackupPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID列表</p>",
+          "example": "[\"ins-8p8fqd0i\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "BindAutoBackupPolicyResponse": {
@@ -2632,7 +2747,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "定期备份的执行策略。",
+          "document": "<p>定期备份的执行策略。</p>",
           "example": "无",
           "member": "Policy",
           "name": "Policy",
@@ -2641,7 +2756,7 @@
         },
         {
           "disabled": false,
-          "document": "通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。",
+          "document": "<p>通过该定期备份策略创建的备份是否永久保留。false表示非永久保留，true表示永久保留，默认为false。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPermanent",
@@ -2650,7 +2765,7 @@
         },
         {
           "disabled": false,
-          "document": "定期备份策略的名称。",
+          "document": "<p>定期备份策略的名称。</p>",
           "example": "备份策略1",
           "member": "string",
           "name": "AutoBackupPolicyName",
@@ -2659,7 +2774,7 @@
         },
         {
           "disabled": false,
-          "document": "是否激活定期备份策略。",
+          "document": "<p>是否激活定期备份策略。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsActivated",
@@ -2668,7 +2783,7 @@
         },
         {
           "disabled": false,
-          "document": "通过定期备份策略创建出的备份保留时间。",
+          "document": "<p>通过定期备份策略创建出的备份保留时间。本参数与 RetentionMonths、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionDays",
@@ -2677,7 +2792,7 @@
         },
         {
           "disabled": false,
-          "document": "该定期备份策略创建的备份可以保留的月数，该参数不可与IsPermanent/RetentionDays参数冲突。",
+          "document": "<p>该定期备份策略创建的备份可以保留的月数。本参数与 RetentionDays、RetentionAmount 互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionMonths",
@@ -2686,7 +2801,7 @@
         },
         {
           "disabled": false,
-          "document": "通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份，该参数不可与IsPermanent参数冲突。",
+          "document": "<p>通过该定期备份策略最多保留的备份个数，超过该个数限制后自动删除最先创建的备份。本参数与 RetentionDays、RetentionMonths互斥，不可同时传入。当 IsPermanent 为 false 或不传时，RetentionDays / RetentionMonths / RetentionAmount / AdvancedRetentionPolicy 必须传入至少一项有效值。</p>",
           "example": "3",
           "member": "uint64",
           "name": "RetentionAmount",
@@ -2695,7 +2810,7 @@
         },
         {
           "disabled": false,
-          "document": "备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON",
+          "document": "<p>备份存储类型。COMMON表示走普通模式（不需要备份库），VAULT表示走备份库（必须关联一个备份库）。默认为COMMON</p>",
           "example": "VAULT",
           "member": "string",
           "name": "StorageType",
@@ -2704,7 +2819,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。",
+          "document": "<p>备份库ID，创建agent备份策略时必须指定。当StorageType为VAULT时必传。</p>",
           "example": "vault-eerw78dd",
           "member": "string",
           "name": "VaultId",
@@ -2713,7 +2828,7 @@
         },
         {
           "disabled": false,
-          "document": "定期备份高级保留策略，该参数不可与IsPermanent参数冲突。",
+          "document": "<p>定期备份高级保留策略，该参数不可与 IsPermanent 参数冲突。当 IsPermanent 为 false 或不传、且未传入 RetentionDays / RetentionMonths / RetentionAmount 时，必须传入本参数。</p>",
           "example": "无",
           "member": "AdvancedRetentionPolicy",
           "name": "AdvancedRetentionPolicy",
@@ -2728,7 +2843,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "定期备份策略ID。",
+          "document": "<p>定期备份策略ID。</p>",
           "example": "abp-4od7o75f",
           "member": "string",
           "name": "AutoBackupPolicyId",
@@ -3150,7 +3265,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>实例配置列表，[1,20]</p>",
+          "document": "<p>实例配置列表，1~20 项，此参数必填。</p>",
           "example": "无",
           "member": "ResourcePlan",
           "name": "Resources",
@@ -3196,7 +3311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID列表",
+          "document": "<p>资源ID列表</p>",
           "example": "ins-eej84hs4",
           "member": "string",
           "name": "ResourceId",
@@ -3205,7 +3320,7 @@
         },
         {
           "disabled": false,
-          "document": "计划ID",
+          "document": "<p>计划ID</p>",
           "example": "fbp-9odiqj9d",
           "member": "string",
           "name": "PlanId",
@@ -3214,7 +3329,7 @@
         },
         {
           "disabled": false,
-          "document": "备份路径列表，1~20 个",
+          "document": "<p>备份路径列表，1~20 个</p>",
           "example": "[\"/data\"]",
           "member": "string",
           "name": "BackupPaths",
@@ -3223,7 +3338,7 @@
         },
         {
           "disabled": false,
-          "document": "包含文件类型，0~20 个",
+          "document": "<p>包含文件类型，0~20 个</p>",
           "example": "[\"*.log\"]",
           "member": "string",
           "name": "IncludeFileTypes",
@@ -3232,7 +3347,7 @@
         },
         {
           "disabled": false,
-          "document": "排除文件路径列表，0~20 个",
+          "document": "<p>排除文件路径列表，0~20 个</p>",
           "example": "[\"/sys\"]",
           "member": "string",
           "name": "ExcludePatterns",
@@ -3241,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "是否排除系统目录",
+          "document": "<p>是否排除系统目录</p>",
           "example": "true",
           "member": "bool",
           "name": "ExcludeSystemDirectories",
@@ -3250,7 +3365,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID",
+          "document": "<p>备份库ID，此参数必填。</p>",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "BackupStorageId",
@@ -3259,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "备份到期时间",
+          "document": "<p>备份到期时间</p>",
           "example": "2026-03-31 08:00:00",
           "member": "string",
           "name": "Deadline",
@@ -3268,12 +3383,39 @@
         },
         {
           "disabled": false,
-          "document": "备份名称",
+          "document": "<p>备份名称</p>",
           "example": "backup-name",
           "member": "string",
           "name": "BackupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>",
+          "example": "CVM_AGENT",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectAcl",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3283,7 +3425,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份Id",
+          "document": "<p>备份Id</p>",
           "example": "fb-diakqif9",
           "member": "string",
           "name": "BackupId",
@@ -3305,7 +3447,43 @@
       "members": [
         {
           "disabled": false,
-          "document": "冲突处理策略：skip-跳过/\"         \"overwrite-覆盖/newer-保留较新的版本/\"         \"if_changed-内容变化时覆盖，默认overwrite",
+          "document": "<p>待恢复的备份ID</p>",
+          "example": "fb-qzqwicsm",
+          "member": "string",
+          "name": "BackupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标实例ID</p>",
+          "example": "ins-0dl6ai18",
+          "member": "string",
+          "name": "TargetResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<ol><li>恢复路径列表（1-500项）；2. CVM和CFS文件备份不传则使用备份点中所有路径，COS备份该参数必填；3. 必须是绝对路径；</li></ol>",
+          "example": "[\"/BackupPath/backup1/\"]",
+          "member": "string",
+          "name": "RestorePaths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标位置</p><ol><li>不传则恢复到原始路径</li><li>cos恢复时不能以【/】开头</li></ol>",
+          "example": "/target1/target4/",
+          "member": "string",
+          "name": "TargetLocation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>冲突处理策略：skip-跳过/&quot;         &quot;overwrite-覆盖/newer-保留较新的版本/&quot;         &quot;if_changed-内容变化时覆盖，默认overwrite</p>",
           "example": "always",
           "member": "string",
           "name": "ConflictStrategy",
@@ -3318,6 +3496,16 @@
     "CreateFileRestoreTaskResponse": {
       "document": "CreateFileRestoreTask返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>恢复任务ID</p>",
+          "example": "frt-r9za3tji",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4161,7 +4349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份点 ID 列表",
+          "document": "<p>备份计划 ID 列表</p>",
           "example": "[\"fbp-9dikizkd\"]",
           "member": "string",
           "name": "PlanIds",
@@ -4277,7 +4465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。支持以下过滤条件：\\n\"              \"auto-backup-policy-id - 定期快照策略ID，如asp-xxx。\\n\"              \"auto-backup-policy-state - 定期快照策略状态。\\n\"              \"auto-backup-policy-name - 定期快照策略名称，支持模糊匹配。\\n\"              \"tag - 按标签键值对过滤，需包含Key和/或Value。\\n\"              \"tag-key - 按标签键过滤。\\n\"              \"tag-value - 按标签值过滤。\\n\"              \"tag:tag-key - 按指定标签键的标签值过滤。\\n\"              \"vault-id - 备份库ID过滤。\\n\"              \"storage-type - 存储类型过滤\"              \"（COMMON：普通模式，VAULT：备份库模式）。",
+          "document": "<p>过滤条件，支持以下Name：</p><ul><li>auto-backup-policy-id - 按定期备份策略ID过滤，如abp-xxx。</li><li>auto-backup-policy-state - 按定期备份策略状态过滤，如NORMAL。</li><li>auto-backup-policy-name - 按定期备份策略名称过滤，支持模糊匹配。</li><li>tag - 按标签键值对过滤，需包含Key和/或Value。</li><li>tag-key - 按标签键过滤。</li><li>tag-value - 按标签值过滤。</li><li>tag:tag-key - 按指定标签键的标签值过滤。</li><li>vault-id - 按备份库ID过滤。</li><li>storage-type - 按存储类型过滤：COMMON（普通模式）、VAULT（备份库模式）。</li></ul>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -4286,7 +4474,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4295,7 +4483,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大1000",
+          "document": "<p>返回数量，默认20，最大1000</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4304,7 +4492,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -4313,7 +4501,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4328,7 +4516,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的总数量。",
+          "document": "<p>符合条件的总数量。</p>",
           "example": "12",
           "member": "uint64",
           "name": "TotalCount",
@@ -4338,7 +4526,7 @@
         },
         {
           "disabled": false,
-          "document": "备份策略列表详情。",
+          "document": "<p>备份策略列表详情。</p>",
           "example": "无",
           "member": "AutoBackupPolicy",
           "name": "AutoBackupPolicySet",
@@ -4360,7 +4548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件，支持恢复任务ID（task-id）、备份组ID（backup-group-id）、源实例ID（source-instance-id）、目标实例ID（target-instance-id）、恢复状态（status）和回滚类型（rollback-type）过滤",
+          "document": "<p>过滤条件，支持恢复任务ID（task-id）、备份组ID（backup-group-id）、源实例ID（source-instance-id）、目标实例ID（target-instance-id）、恢复状态（status）和回滚类型（rollback-type）过滤</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -4369,7 +4557,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4378,7 +4566,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大1000",
+          "document": "<p>返回数量，默认20，最大1000</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4387,7 +4575,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -4396,7 +4584,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4411,7 +4599,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的总数量。",
+          "document": "<p>符合条件的总数量。</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -4421,7 +4609,7 @@
         },
         {
           "disabled": false,
-          "document": "备份组恢复详情。",
+          "document": "<p>备份组恢复详情。</p>",
           "example": "无",
           "member": "BackupGroupRollbackTask",
           "name": "RollbackTaskSet",
@@ -4507,7 +4695,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -4516,7 +4704,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段。目前支持CREATE_TIME。",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4563,7 +4751,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。;instance-id - Array of String - 是否必填：否 -（过滤条件）按实例ID过滤。;auto-backup-policy-id - Array of String - 是否必填：否 -（过滤条件）按照实例绑定的定期备份策略过滤。;auto-backup-policy-name - Array of String - 是否必填：否 -（过滤条件）按照云硬盘绑定的定期备份策略名称过滤。",
+          "document": "<p>过滤条件。;instance-id - Array of String - 是否必填：否 -（过滤条件）按实例ID过滤。;auto-backup-policy-id - Array of String - 是否必填：否 -（过滤条件）按照实例绑定的定期备份策略过滤。;auto-backup-policy-name - Array of String - 是否必填：否 -（过滤条件）按照云硬盘绑定的定期备份策略名称过滤。</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -4572,7 +4760,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4581,7 +4769,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大500",
+          "document": "<p>返回数量，默认20，最大500</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4590,7 +4778,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -4599,7 +4787,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4614,7 +4802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的受保护实例总数量",
+          "document": "<p>符合条件的受保护实例总数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
@@ -4624,7 +4812,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的受保护实例详情",
+          "document": "<p>符合条件的受保护实例详情</p>",
           "example": "无",
           "member": "BackupInstance",
           "name": "BackupInstanceSet",
@@ -4671,7 +4859,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件备份概览数据</p>",
+          "document": "<p>CVM文件备份概览数据</p>",
           "example": "无",
           "member": "FileBackupOverview",
           "name": "FileBackupOverview",
@@ -4705,6 +4893,26 @@
           "example": "无",
           "member": "ProtectedResourceOverview",
           "name": "ProtectedResourceOverview",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CFS文件备份概览数据</p>",
+          "example": "无",
+          "member": "FileBackupOverview",
+          "name": "CFSAgentBackupOverview",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS备份概览数据</p>",
+          "example": "无",
+          "member": "FileBackupOverview",
+          "name": "COSAgentBackupOverview",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4750,7 +4958,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "ASC",
           "member": "string",
           "name": "Order",
@@ -4759,7 +4967,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4843,7 +5051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份库ID列表",
+          "document": "<p>备份库ID列表</p>",
           "example": "[\"vault-qjhn63ku\"]",
           "member": "string",
           "name": "VaultIds",
@@ -4852,7 +5060,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，支持instance-id和auto-backup-policy-id",
+          "document": "<p>过滤条件，支持vault-id、vault-name、status</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -4861,7 +5069,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -4870,7 +5078,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大1000",
+          "document": "<p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -4879,7 +5087,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -4888,7 +5096,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -4903,7 +5111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的总数量。",
+          "document": "<p>符合条件的总数量。</p>",
           "example": "29",
           "member": "uint64",
           "name": "TotalCount",
@@ -4913,7 +5121,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库列表详情。",
+          "document": "<p>备份库列表详情。</p>",
           "example": "无",
           "member": "BackupVault",
           "name": "BackupVaultSet",
@@ -5046,7 +5254,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>过滤条件，详见过滤条件表。支持的Name：disaster-recovery-site-pair-id、target-resource-id、source-resource-id、copy-pair-id、copy-pair-name</p>",
+          "document": "<p>过滤条件。支持的Name：disaster-recovery-site-pair-id、target-resource-id、source-resource-id、copy-pair-id、copy-pair-name</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -5313,7 +5521,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的容灾保护组产品类型，枚举值：DISK / INSTANCE / CFS。",
+          "document": "<p>要查询的容灾保护组产品类型，枚举值：DISK / INSTANCE / CFS。</p>",
           "example": "INSTANCE",
           "member": "string",
           "name": "ProtectGroupType",
@@ -5322,7 +5530,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的容灾保护组ID列表。",
+          "document": "<p>要查询的容灾保护组ID列表。</p>",
           "example": "[\"pg-xxxxxxxx\"]",
           "member": "string",
           "name": "ProtectGroupIds",
@@ -5331,7 +5539,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件（过滤项由 core handler 定义，如 disaster-recovery-protect-group-id 等）。",
+          "document": "<p>过滤条件（过滤项由 core handler 定义，如 disaster-recovery-protect-group-id 等）。</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -5340,7 +5548,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "document": "<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5349,7 +5557,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "document": "<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5358,7 +5566,7 @@
         },
         {
           "disabled": false,
-          "document": "输出结果按升序还是降序",
+          "document": "<p>输出结果按升序还是降序</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5367,7 +5575,7 @@
         },
         {
           "disabled": false,
-          "document": "输出结果的排序字段",
+          "document": "<p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -5382,7 +5590,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的容灾保护组总数",
+          "document": "<p>符合条件的容灾保护组总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -5392,7 +5600,7 @@
         },
         {
           "disabled": false,
-          "document": "容灾保护组列表",
+          "document": "<p>容灾保护组列表</p>",
           "example": "无",
           "member": "ProtectGroup",
           "name": "ProtectGroupSet",
@@ -5451,7 +5659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的容灾策略产品类型。取值范围：DISK / INSTANCE / CFS。",
+          "document": "<p>要查询的容灾策略产品类型。取值范围：INSTANCE 。</p><p>枚举值：</p><ul><li>INSTANCE： CVM站点对</li></ul>",
           "example": "INSTANCE",
           "member": "string",
           "name": "SitePairType",
@@ -5460,7 +5668,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的容灾策略ID列表。",
+          "document": "<p>要查询的容灾策略ID列表。</p>",
           "example": "[\"sitepair-30dhh7lb\"]",
           "member": "string",
           "name": "SitePairIds",
@@ -5469,7 +5677,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详见定期快照过滤条件表。",
+          "document": "<p>过滤条件，详见定期快照过滤条件表。</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -5478,7 +5686,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "document": "<p>偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。</p>",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5487,7 +5695,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "document": "<p>返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。</p>",
           "example": "20",
           "member": "int64",
           "name": "Limit",
@@ -5496,7 +5704,7 @@
         },
         {
           "disabled": false,
-          "document": "输出结果按升序还是降序，DESC表示降序，ASC表示升序",
+          "document": "<p>输出结果按升序还是降序，DESC表示降序，ASC表示升序</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5505,7 +5713,7 @@
         },
         {
           "disabled": false,
-          "document": "输出结果的排序字段",
+          "document": "<p>输出结果的排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -5520,7 +5728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "有效的容灾策略数量。",
+          "document": "<p>有效的容灾策略数量。</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -5530,7 +5738,7 @@
         },
         {
           "disabled": false,
-          "document": "容灾策略列表。",
+          "document": "<p>容灾策略列表。</p>",
           "example": "无",
           "member": "SitePair",
           "name": "SitePairSet",
@@ -5719,7 +5927,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详见定期快照过滤条件表。",
+          "document": "过滤条件。",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -5799,7 +6007,71 @@
     },
     "DescribeFileBackupObjectsRequest": {
       "document": "DescribeFileBackupObjects请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份实例ID</p>",
+          "example": "cosbk-kh0666nx",
+          "member": "string",
+          "name": "BackupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>浏览路径</p>",
+          "example": "/backup",
+          "member": "string",
+          "name": "Path",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，默认0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量，默认50，最大1000</p>",
+          "example": "50",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>name： 文件名称</li></ul><p>默认值：name</p>",
+          "example": "name",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>asc： 升序排序</li><li>desc： 降序排序</li></ul><p>默认值：asc</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回模式</p><p>枚举值：</p><ul><li>all： 返回目录和文件</li><li>dir： 仅返回目录</li><li>file： 仅返回文件（含符号连接）</li></ul>",
+          "example": "all",
+          "member": "string",
+          "name": "ObjectType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeFileBackupObjectsResponse": {
@@ -5807,7 +6079,27 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前路径下包含的目录及文件总数",
+          "document": "<p>当前路径下包含的目录信息</p>",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "DirList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前路径下包含的文件信息</p>",
+          "example": "无",
+          "member": "FileInfo",
+          "name": "FileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前路径下包含的目录及文件总数</p>",
           "example": "49",
           "member": "uint64",
           "name": "TotalCount",
@@ -5829,7 +6121,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5838,7 +6130,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大500",
+          "document": "<p>返回数量，默认20，最大100</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5847,7 +6139,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li><li>CreatedTime： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -5856,7 +6148,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5865,12 +6157,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。支持: instance-id, plan-id, plan-name, status, auto-backup-policy-id",
+          "document": "<p>过滤条件。支持: instance-id, plan-id, plan-name, status, auto-backup-policy-id</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM 文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>",
+          "example": "CVM_AGENT",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5880,7 +6181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的计划总数量",
+          "document": "<p>符合条件的计划总数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "TotalCount",
@@ -5890,7 +6191,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的计划详情",
+          "document": "<p>符合条件的计划详情</p>",
           "example": "无",
           "member": "PlanInfo",
           "name": "PlanSet",
@@ -5949,7 +6250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5958,7 +6259,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大500",
+          "document": "<p>返回数量，默认20，最大100</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5967,7 +6268,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CreatedTime： 创建时间</li><li>CREATE_TIME： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -5976,7 +6277,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>DESC： 降序排序</li><li>ASC： 升序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -5985,12 +6286,21 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。支持: backup-id, plan-id, instance-id, status, backup-type, auto-backup-policy-id",
+          "document": "<p>过滤条件。支持: backup-id, plan-id, instance-id, status, backup-type, auto-backup-policy-id</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>",
+          "example": "CVM_AGENT",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6000,7 +6310,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的备份点总数量",
+          "document": "<p>符合条件的备份点总数量</p>",
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
@@ -6010,7 +6320,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的备份点详情",
+          "document": "<p>符合条件的备份点详情</p>",
           "example": "无",
           "member": "BackupInfo",
           "name": "BackupSet",
@@ -6032,7 +6342,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。支持: backup-id, task-id, instance-id, \"         \"target-instance-id, status",
+          "document": "<p>过滤条件。支持: backup-id, task-id, instance-id, &quot;         &quot;target-instance-id, status</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -6041,7 +6351,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6050,7 +6360,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大500",
+          "document": "<p>返回数量，默认20，最大100</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6059,7 +6369,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -6068,10 +6378,19 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li><li>CreatedTime： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>CVM_AGENT： CVM 文件备份</li><li>CFS_AGENT： 文件系统备份</li><li>COS_AGENT： COS备份</li></ul><p>默认值：CVM_AGENT</p>",
+          "example": "CVM_AGENT",
+          "member": "string",
+          "name": "ResourceType",
           "required": false,
           "type": "string"
         }
@@ -6083,7 +6402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的总数量。",
+          "document": "<p>符合条件的总数量。</p>",
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
@@ -6093,7 +6412,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复任务列表详情。",
+          "document": "<p>恢复任务列表详情。</p>",
           "example": "无",
           "member": "RestoreTask",
           "name": "RestoreTaskSet",
@@ -6206,7 +6525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "偏移量，默认0",
+          "document": "<p>偏移量，默认0</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -6215,7 +6534,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认20，最大500",
+          "document": "<p>返回数量，默认20，最大100</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -6224,7 +6543,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段",
+          "document": "<p>排序字段</p><p>枚举值：</p><ul><li>CREATE_TIME： 创建时间</li><li>CreatedTime： 创建时间</li></ul><p>默认值：CREATE_TIME</p>",
           "example": "CREATE_TIME",
           "member": "string",
           "name": "OrderField",
@@ -6233,7 +6552,7 @@
         },
         {
           "disabled": false,
-          "document": "排序方式",
+          "document": "<p>排序方式</p><p>枚举值：</p><ul><li>ASC： 升序排序</li><li>DESC： 降序排序</li></ul><p>默认值：DESC</p>",
           "example": "DESC",
           "member": "string",
           "name": "Order",
@@ -6242,7 +6561,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。支持: instance-id, agent-status",
+          "document": "<p>过滤条件。支持: instance-id, agent-status</p>",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -6257,7 +6576,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "符合条件的受保护实例总数量",
+          "document": "<p>符合条件的受保护实例总数量</p>",
           "example": "9",
           "member": "uint64",
           "name": "TotalCount",
@@ -6267,7 +6586,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的受保护实例详情",
+          "document": "<p>符合条件的受保护实例详情</p>",
           "example": "无",
           "member": "ProtectInstance",
           "name": "InstanceSet",
@@ -6298,7 +6617,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详见过滤条件表。支持的Name：src-security-group-id、target-security-group-id",
+          "document": "过滤条件。支持的Name：src-security-group-id、target-security-group-id",
           "example": "无",
           "member": "FilterModel",
           "name": "Filters",
@@ -7402,7 +7721,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "整机备份点总数",
+          "document": "<p>备份点总数</p>",
           "example": "2",
           "member": "int64",
           "name": "BackupCount",
@@ -7412,7 +7731,7 @@
         },
         {
           "disabled": false,
-          "document": "创建中数量",
+          "document": "<p>创建中数量</p>",
           "example": "41",
           "member": "int64",
           "name": "CreatingBackupCount",
@@ -7422,7 +7741,7 @@
         },
         {
           "disabled": false,
-          "document": "失败数量",
+          "document": "<p>失败数量</p>",
           "example": "4",
           "member": "int64",
           "name": "FailedBackupCount",
@@ -7432,7 +7751,7 @@
         },
         {
           "disabled": false,
-          "document": "已完成数量",
+          "document": "<p>已完成数量</p>",
           "example": "5",
           "member": "int64",
           "name": "SuccessBackupCount",
@@ -7442,7 +7761,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复中的总数量",
+          "document": "<p>恢复中的总数量</p>",
           "example": "1",
           "member": "int64",
           "name": "RestoringBackupCount",
@@ -7452,7 +7771,7 @@
         },
         {
           "disabled": false,
-          "document": "整机备份总容量",
+          "document": "<p>备份总容量</p>",
           "example": "7",
           "member": "int64",
           "name": "BackupSizeMb",
@@ -7462,7 +7781,7 @@
         },
         {
           "disabled": false,
-          "document": "受保护 CVM 资源数",
+          "document": "<p>受保护资源数</p>",
           "example": "7",
           "member": "int64",
           "name": "BackupResourceCount",
@@ -7473,12 +7792,68 @@
       ],
       "usage": "out"
     },
+    "FileInfo": {
+      "document": "文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "a.json",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位是Bytes",
+          "example": "1049251",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件mtime",
+          "example": "1776953781144178018",
+          "member": "int64",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件ctime",
+          "example": "1776953781144178018",
+          "member": "int64",
+          "name": "ChangeTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型。取值包含\"dir\"、\"file\"、\"symlink\"",
+          "example": "file",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "FilterModel": {
       "document": "过滤条件",
       "members": [
         {
           "disabled": false,
-          "document": "过滤器名",
+          "document": "过滤器名，此参数必填。",
           "example": "backup-id",
           "member": "string",
           "name": "Name",
@@ -7487,7 +7862,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器值",
+          "document": "过滤器值，此参数必填。",
           "example": "[\"fb-qox9q9sk\"]",
           "member": "string",
           "name": "Values",
@@ -8145,7 +8520,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份计划ID",
+          "document": "<p>备份计划ID，此参数必填。</p>",
           "example": "fbp-abc12345",
           "member": "string",
           "name": "PlanId",
@@ -8154,7 +8529,7 @@
         },
         {
           "disabled": true,
-          "document": "备份策略ID",
+          "document": "<p>备份策略ID</p>",
           "example": "asp-67890xyz",
           "member": "string",
           "name": "PolicyId",
@@ -8163,7 +8538,7 @@
         },
         {
           "disabled": false,
-          "document": "计划名称",
+          "document": "<p>计划名称</p>",
           "example": "daily-file-backup",
           "member": "string",
           "name": "PlanName",
@@ -8172,7 +8547,7 @@
         },
         {
           "disabled": false,
-          "document": "备份路径列表，1~20 个",
+          "document": "<p>备份路径列表，1~20 个</p>",
           "example": "[\"/home\", \"/var/log\"]",
           "member": "string",
           "name": "BackupPaths",
@@ -8181,7 +8556,7 @@
         },
         {
           "disabled": false,
-          "document": "包含文件类型，0~20 个",
+          "document": "<p>包含文件类型，0~20 个</p>",
           "example": "[\"*.log\", \"*.conf\"]",
           "member": "string",
           "name": "IncludeFileTypes",
@@ -8190,7 +8565,7 @@
         },
         {
           "disabled": false,
-          "document": "排除文件路径列表，0~20 个",
+          "document": "<p>排除文件路径列表，0~20 个</p>",
           "example": "[\"/backup/temp\", \"/tmp/cache\"]",
           "member": "string",
           "name": "ExcludePatterns",
@@ -8199,7 +8574,7 @@
         },
         {
           "disabled": false,
-          "document": "是否排除系统目录",
+          "document": "<p>是否排除系统目录</p>",
           "example": "true",
           "member": "bool",
           "name": "ExcludeSystemDirectories",
@@ -8208,7 +8583,7 @@
         },
         {
           "disabled": true,
-          "document": "备份库ID",
+          "document": "<p>备份库ID</p>",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "BackupStorageId",
@@ -8217,12 +8592,30 @@
         },
         {
           "disabled": false,
-          "document": "计划状态，可选值：normal（正常）、paused（暂停）",
+          "document": "<p>计划状态，可选值：normal（正常）、paused（暂停）</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableObjectAcl",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectTags",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8367,7 +8760,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份计划ID",
+          "document": "<p>备份计划ID</p>",
           "example": "fbp-9diaocuk",
           "member": "string",
           "name": "PlanId",
@@ -8377,7 +8770,7 @@
         },
         {
           "disabled": false,
-          "document": "计划关联的实例ID",
+          "document": "<p>计划关联的实例ID</p>",
           "example": "[\"ins-adikqikz\"]",
           "member": "string",
           "name": "ResourceIds",
@@ -8387,7 +8780,7 @@
         },
         {
           "disabled": false,
-          "document": "计划名称",
+          "document": "<p>计划名称</p>",
           "example": "backup-plan",
           "member": "string",
           "name": "PlanName",
@@ -8397,7 +8790,7 @@
         },
         {
           "disabled": false,
-          "document": "备份路径列表，1~20 个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份路径列表，1~20 个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"/data\", \"/home\"]",
           "member": "string",
           "name": "BackupPaths",
@@ -8407,7 +8800,7 @@
         },
         {
           "disabled": false,
-          "document": "包含文件类型，0~20 个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>包含文件类型，0~20 个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\".log\", \".txt\"]",
           "member": "string",
           "name": "IncludeFileTypes",
@@ -8417,7 +8810,7 @@
         },
         {
           "disabled": false,
-          "document": "排除文件路径列表，0~20 个\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>排除文件路径列表，0~20 个</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"/sys\"]",
           "member": "string",
           "name": "ExcludePatterns",
@@ -8427,7 +8820,7 @@
         },
         {
           "disabled": false,
-          "document": "是否排除系统目录",
+          "document": "<p>是否排除系统目录</p>",
           "example": "true",
           "member": "bool",
           "name": "ExcludeSystemDirectories",
@@ -8437,7 +8830,7 @@
         },
         {
           "disabled": false,
-          "document": "备份库ID",
+          "document": "<p>备份库ID</p>",
           "example": "vault-qjhn63ku",
           "member": "string",
           "name": "VaultId",
@@ -8447,7 +8840,7 @@
         },
         {
           "disabled": false,
-          "document": "备份计划状态",
+          "document": "<p>备份计划状态</p>",
           "example": "normal",
           "member": "string",
           "name": "Status",
@@ -8457,7 +8850,7 @@
         },
         {
           "disabled": false,
-          "document": "策略ID",
+          "document": "<p>策略ID</p>",
           "example": "asp-19dkdsiq",
           "member": "string",
           "name": "AspId",
@@ -8467,7 +8860,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称",
+          "document": "<p>策略名称</p>",
           "example": "backup-policy",
           "member": "string",
           "name": "AspName",
@@ -8477,7 +8870,7 @@
         },
         {
           "disabled": false,
-          "document": "策略详情",
+          "document": "<p>策略详情</p>",
           "example": "无",
           "member": "AspInfo",
           "name": "AspPolicy",
@@ -8487,7 +8880,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次执行时间",
+          "document": "<p>最近一次执行时间</p>",
           "example": "2026-03-31 08:00:00",
           "member": "string",
           "name": "LastExecuteTime",
@@ -8497,7 +8890,7 @@
         },
         {
           "disabled": false,
-          "document": "下次触发时间",
+          "document": "<p>下次触发时间</p>",
           "example": "2026-04-01 08:00:00",
           "member": "string",
           "name": "NextTriggerTime",
@@ -8507,7 +8900,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-31 06:00:00",
           "member": "string",
           "name": "CreatedTime",
@@ -8517,7 +8910,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次执行错误信息",
+          "document": "<p>最近一次执行错误信息</p>",
           "example": "\"over trade\"",
           "member": "string",
           "name": "LastTriggerError",
@@ -8527,7 +8920,7 @@
         },
         {
           "disabled": false,
-          "document": "备份数量",
+          "document": "<p>备份数量</p>",
           "example": "5",
           "member": "int64",
           "name": "BackupCount",
@@ -8537,13 +8930,43 @@
         },
         {
           "disabled": false,
-          "document": "流控信息",
+          "document": "<p>流控信息</p>",
           "example": "无",
           "member": "FlowControlRule",
           "name": "FlowControlSettings",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象ACL（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableObjectAcl",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否备份对象标签（仅COS备份支持）</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectTags",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SD",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8895,7 +9318,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "ins-abc12345",
           "member": "string",
           "name": "InstanceId",
@@ -8905,7 +9328,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端ID",
+          "document": "<p>客户端ID</p>",
           "example": "ins-abc12345",
           "member": "string",
           "name": "AgentId",
@@ -8915,7 +9338,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端版本",
+          "document": "<p>客户端版本</p>",
           "example": "1.2.0",
           "member": "string",
           "name": "AgentVersion",
@@ -8925,7 +9348,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端状态",
+          "document": "<p>客户端状态</p>",
           "example": "online",
           "member": "string",
           "name": "AgentStatus",
@@ -8935,7 +9358,7 @@
         },
         {
           "disabled": false,
-          "document": "最后心跳时间",
+          "document": "<p>最后心跳时间</p>",
           "example": "2026-03-31T10:30:00",
           "member": "string",
           "name": "LastHeartbeatTime",
@@ -8945,7 +9368,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-31T09:30:00\",",
           "member": "string",
           "name": "CreatedTime",
@@ -8955,7 +9378,7 @@
         },
         {
           "disabled": false,
-          "document": "最新备份点中记录的 CVM 基础信息",
+          "document": "<p>最新备份点中记录的 CVM 基础信息</p>",
           "example": "\"{\\\"OsType\\\":\\\"linux\\\",\\\"OsVersion\\\":\\\"CentOS 7.9\\\",\\\"PrivateIp\\\":\\\"10.0.0.1\\\"}\"",
           "member": "string",
           "name": "ExtraInfo",
@@ -8965,7 +9388,7 @@
         },
         {
           "disabled": false,
-          "document": "该实例可用备份点数量",
+          "document": "<p>该实例可用备份点数量</p>",
           "example": "5",
           "member": "uint64",
           "name": "BackupCount",
@@ -8975,7 +9398,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实例名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin-cvm",
           "member": "string",
           "name": "InstanceName",
@@ -8985,7 +9408,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次备份时间",
+          "document": "<p>最近一次备份时间</p>",
           "example": "2026-10-02 00:00:00",
           "member": "string",
           "name": "LatestBackupTime",
@@ -8995,13 +9418,33 @@
         },
         {
           "disabled": false,
-          "document": "离线原因",
+          "document": "<p>离线原因</p>",
           "example": "Heartbeat timeout",
           "member": "string",
           "name": "OfflineReason",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份数据量，单位为字节</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1456",
+          "member": "int64",
+          "name": "BackupSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SD",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9037,7 +9480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "受保护资源总数",
+          "document": "<p>受保护资源总数</p>",
           "example": "4",
           "member": "int64",
           "name": "TotalProtectedCount",
@@ -9047,7 +9490,7 @@
         },
         {
           "disabled": false,
-          "document": "总资源数",
+          "document": "<p>总资源数</p>",
           "example": "5",
           "member": "int64",
           "name": "TotalResourceCount",
@@ -9057,7 +9500,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM 受保护统计",
+          "document": "<p>CVM整机备份受保护统计</p>",
           "example": "无",
           "member": "ResourceProtectStat",
           "name": "Cvm",
@@ -9067,13 +9510,33 @@
         },
         {
           "disabled": false,
-          "document": "CFS 受保护统计",
+          "document": "<p>CVM文件备份受保护统计</p>",
           "example": "无",
           "member": "ResourceProtectStat",
           "name": "CFS",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CFS文件备份受保护统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceProtectStat",
+          "name": "CFSAgent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS备份受保护统计</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceProtectStat",
+          "name": "COSAgent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9160,7 +9623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云服务器实例 ID",
+          "document": "<p>云服务器实例 ID</p>",
           "example": "ins-q9xiskqi",
           "member": "string",
           "name": "ResourceId",
@@ -9169,7 +9632,7 @@
         },
         {
           "disabled": false,
-          "document": "备份路径，[0,20]",
+          "document": "<p>备份路径，[0,20]</p>",
           "example": "[\"/var/log\", \"/etc/nginx\"]",
           "member": "string",
           "name": "BackupPaths",
@@ -9178,7 +9641,7 @@
         },
         {
           "disabled": false,
-          "document": "包含文件类型，[0,20]",
+          "document": "<p>包含文件类型，[0,20]</p>",
           "example": "[\"*.log\"]",
           "member": "string",
           "name": "IncludeFileTypes",
@@ -9187,7 +9650,7 @@
         },
         {
           "disabled": false,
-          "document": "排除路径，[0,20]",
+          "document": "<p>排除路径，[0,20]</p>",
           "example": "[\"/home/app/tmp\"]",
           "member": "string",
           "name": "ExcludePatterns",
@@ -9196,7 +9659,7 @@
         },
         {
           "disabled": false,
-          "document": "是否排除系统目录",
+          "document": "<p>是否排除系统目录</p>",
           "example": "true",
           "member": "bool",
           "name": "ExcludeSystemDirectories",
@@ -9205,10 +9668,28 @@
         },
         {
           "disabled": false,
-          "document": "是否立即触发全量备份",
+          "document": "<p>是否立即触发全量备份</p>",
           "example": "false",
           "member": "bool",
           "name": "ExecuteImmediately",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos备份是否备份ACL</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectAcl",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>cos备份是否备份tag</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableObjectTags",
           "required": false,
           "type": "bool"
         }

@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli bdrc BindAutoBackupPolicy --cli-unfold-argument ```
+tccli bdrc BindAutoBackupPolicy --cli-unfold-argument  \
+    --AutoBackupPolicyId abp-5c5l02gj \
+    --InstanceIds ins-8p8fqd0i
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "0fd9fa5b-b6a1-4461-a596-0d976253b927"
+        "RequestId": "51104b5a-44d6-4158-a502-e86fbe0daa9a"
     }
 }
 ```

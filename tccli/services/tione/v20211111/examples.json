@@ -80,6 +80,14 @@
         "title": "生成Notebook访问链接"
       }
     ],
+    "CreateRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRole\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\",\n    \"RoleName\": \"zoeytest2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da6244a0-e50e-4919-9eab-e84e20401325\",\n        \"RoleId\": \"role-1467898336381296896\"\n    }\n}",
+        "title": "创建角色"
+      }
+    ],
     "CreateTrainingModel": [
       {
         "document": "",
@@ -160,6 +168,14 @@
         "title": "删除Notebook"
       }
     ],
+    "DeleteRole": [
+      {
+        "document": "权限管理 - 删除权限角色",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRole\n<公共请求参数>\n\n{\n    \"RoleId\": \"d36815f8-8dad-4e44-89ae-dfd3a0c87c3e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d36815f8-8dad-4e44-89ae-dfd3a0c87c3e\"\n    }\n}",
+        "title": "权限管理 - 删除权限角色"
+      }
+    ],
     "DeleteTrainingModel": [
       {
         "document": "",
@@ -182,6 +198,14 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTrainingTask\n<公共请求参数>\n\n{\n    \"Id\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fdsfdsa-dfsaf\"\n    }\n}",
         "title": "删除训练任务"
+      }
+    ],
+    "DescribeAccessRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessRules\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessRules\": [\n            {\n                \"ActionType\": [\n                    \"ModifyWorkspace\",\n                    \"DeleteWorkspace\"\n                ],\n                \"ActionTypeName\": [\n                    \"编辑工作空间\",\n                    \"删除工作空间\"\n                ],\n                \"DataActionType\": [],\n                \"Module\": \"Workspace\"\n            }\n        ],\n        \"RequestId\": \"30ddd0f0-89e9-43ea-a176-60c4cefae586\"\n    }\n}",
+        "title": "查询当前用户权限"
       }
     ],
     "DescribeAnnotatedTaskList": [
@@ -430,6 +454,30 @@
         "title": "查询公共算法版本列表"
       }
     ],
+    "DescribeRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRole\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\",\n    \"RoleId\": \"admin\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessRules\": [\n            {\n                \"ActionType\": [\n                    \"ModifyWorkspace\",\n                    \"DeleteWorkspace\"\n                ],\n                \"ActionTypeName\": [],\n                \"DataActionType\": [],\n                \"Module\": \"Workspace\"\n            }\n        ],\n        \"CreateTime\": \"2025-11-24T18:32:39+08\",\n        \"Description\": \"\",\n        \"RequestId\": \"410a1ff4-99f6-44b5-ae98-01a8950f5907\",\n        \"RoleId\": \"admin\",\n        \"RoleName\": \"管理员\",\n        \"RoleType\": \"SYSTEM\"\n    }\n}",
+        "title": "查询角色详情"
+      }
+    ],
+    "DescribeRoleUsers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleUsers\n<公共请求参数>\n\n{\n    \"RoleId\": \"admin\",\n    \"TiProjectId\": \"1889353273052233728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cdc6790f-7e17-474d-89ef-994642f721e7\",\n        \"TotalCount\": 2,\n        \"Users\": [\n            {\n                \"CreateTime\": \"\",\n                \"NickName\": \"user1\",\n                \"Roles\": [],\n                \"SubUin\": \"100038358153\"\n            },\n            {\n                \"CreateTime\": \"\",\n                \"NickName\": \"user2\",\n                \"Roles\": [],\n                \"SubUin\": \"100040160851\"\n            }\n        ]\n    }\n}",
+        "title": "查询角色绑定的用户"
+      }
+    ],
+    "DescribeRoles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoles\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb976db7-c2ad-40d9-b1f1-407887eeab4b\",\n        \"Roles\": [\n            {\n                \"CreateTime\": \"\",\n                \"Description\": \"\",\n                \"RoleId\": \"admin\",\n                \"RoleName\": \"管理员\",\n                \"RoleType\": \"SYSTEM\",\n                \"UserCount\": 0\n            },\n            {\n                \"CreateTime\": \"\",\n                \"Description\": \"\",\n                \"RoleId\": \"developer\",\n                \"RoleName\": \"开发人员\",\n                \"RoleType\": \"SYSTEM\",\n                \"UserCount\": 0\n            },\n            {\n                \"CreateTime\": \"2025-12-04T19:50:50+08\",\n                \"Description\": \"\",\n                \"RoleId\": \"role-1467545446382887168\",\n                \"RoleName\": \"test_数据权限\",\n                \"RoleType\": \"CUSTOM\",\n                \"UserCount\": 0\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询角色列表"
+      }
+    ],
     "DescribeSubAccountLinuxUserInfos": [
       {
         "document": "批量查询子账号Linux用户信息",
@@ -484,6 +532,38 @@
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrainingTasks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"string\"\n            ],\n            \"Name\": \"string\",\n            \"Negative\": true\n        }\n    ],\n    \"TagFilters\": [\n        {\n            \"TagValues\": [\n                \"string\"\n            ],\n            \"TagKey\": \"string\"\n        }\n    ],\n    \"Limit\": 1,\n    \"OrderField\": \"string\",\n    \"Offset\": 1,\n    \"Order\": \"string\"\n}",
         "output": "{\n    \"Response\": {\n        \"TrainingTaskSet\": [\n            {\n                \"Id\": \"train-fd\",\n                \"Name\": \"testname\",\n                \"FrameworkName\": \"pytorch\",\n                \"FrameworkVersion\": \"v1\",\n                \"FrameworkEnvironment\": \"testenv\",\n                \"ChargeType\": \"PREPAID\",\n                \"ChargeStatus\": \"PAID\",\n                \"ResourceGroupId\": \"rsg-dfs\",\n                \"ResourceConfigInfos\": [\n                    {\n                        \"Role\": \"worker\",\n                        \"Cpu\": 1,\n                        \"Memory\": 1,\n                        \"GpuType\": \"A100\",\n                        \"Gpu\": 1,\n                        \"InstanceType\": \"instype-a\",\n                        \"InstanceNum\": 1,\n                        \"InstanceTypeAlias\": \"instype-ab\",\n                        \"RDMAConfig\": {\n                            \"Enable\": true\n                        }\n                    }\n                ],\n                \"TrainingMode\": \"DDP\",\n                \"Status\": \"RUNNING\",\n                \"RuntimeInSeconds\": 1,\n                \"CreateTime\": \"2025-11-21 00:00:00\",\n                \"StartTime\": \"2025-11-21 00:00:00\",\n                \"EndTime\": \"2025-11-21 01:00:00\",\n                \"Output\": {\n                    \"Bucket\": \"testbucket\",\n                    \"Region\": \"ap-nanjing\",\n                    \"Paths\": [\n                        \"/\"\n                    ]\n                },\n                \"FailureReason\": \"\",\n                \"UpdateTime\": \"2025-11-21 00:00:00\",\n                \"BillingInfo\": \"\",\n                \"ResourceGroupName\": \"rsg-fsdf\",\n                \"ImageInfo\": {\n                    \"ImageType\": \"TCR\",\n                    \"ImageUrl\": \"image/url\",\n                    \"RegistryRegion\": \"ap-nanjing\",\n                    \"RegistryId\": \"tcr-234\"\n                },\n                \"Message\": \"test message\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"key\",\n                        \"TagValue\": \"value\"\n                    }\n                ],\n                \"CallbackUrl\": \"callback/url\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fdsljfl-dfsafds-xxf\"\n    }\n}",
         "title": "训练任务列表"
+      }
+    ],
+    "DescribeWorkspace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspace\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2025-11-24T18:32:39+08\",\n        \"Description\": \"\",\n        \"Name\": \"测试空间\",\n        \"RequestId\": \"a64d69ac-afb5-4c15-a404-ba4db9d74de8\",\n        \"TiProjectId\": \"1889353273052233728\"\n    }\n}",
+        "title": "查询工作空间详情"
+      }
+    ],
+    "DescribeWorkspaceMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceMembers\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\",\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Members\": [\n            {\n                \"CreateTime\": \"2025-12-04T22:15:50+08\",\n                \"NickName\": \"user1\",\n                \"Roles\": [],\n                \"SubUin\": \"100032950128\"\n            },\n            {\n                \"CreateTime\": \"2025-12-04T16:41:05+08\",\n                \"NickName\": \"user2\",\n                \"Roles\": [],\n                \"SubUin\": \"100037061107\"\n            }\n        ],\n        \"RequestId\": \"8b1fe2e4-80e5-4c79-9fcc-3a7a14316bb9\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询工作空间成员列表"
+      }
+    ],
+    "DescribeWorkspaceQuotaUsage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceQuotaUsage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eff27b47-46d7-45a6-bbc2-43c24c5025bc\"\n    }\n}",
+        "title": "查询开发机配额用量"
+      }
+    ],
+    "DescribeWorkspaceQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceQuotas\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"793ca0de-8551-4d48-a51f-66a482c69533\"\n    }\n}",
+        "title": "查询开发机配额"
       }
     ],
     "DescribeWorkspaces": [
@@ -542,12 +622,52 @@
         "title": "修改Notebook标签"
       }
     ],
+    "ModifyRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRole\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\",\n    \"RoleId\": \"role-1460274636924390144\",\n    \"RoleName\": \"test1\",\n    \"Description\": \"test1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bca045b1-8e2f-4526-b6e2-ef56f6c11f27\"\n    }\n}",
+        "title": "更新角色信息"
+      }
+    ],
+    "ModifyRoleAccessRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoleAccessRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb75102b-c20a-4d59-9e36-6664fc28aabb\"\n    }\n}",
+        "title": "更新角色权限"
+      }
+    ],
+    "ModifyRoleUserGrant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRoleUserGrant\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\",\n    \"RoleIds\": [\n        \"developer\"\n    ],\n    \"SubUins\": [\n        \"100032950128\"\n    ],\n    \"Grant\": \"BIND\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"558ac640-ea9f-4080-9fa8-6fd120c30cdd\"\n    }\n}",
+        "title": "更新用户角色绑定"
+      }
+    ],
     "ModifyServiceGroupWeights": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyServiceGroupWeights\n<公共请求参数>\n\n{\n    \"ServiceGroupId\": \"ms-fdsfsd\",\n    \"Weights\": [\n        {\n            \"ServiceId\": \"ms-j7jlxfwk-2\",\n            \"Weight\": 0\n        },\n        {\n            \"ServiceId\": \"ms-j7jlxfwk-1\",\n            \"Weight\": 100\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ServiceGroup\": null,\n        \"RequestId\": \"cccc13d6-b255-48cd-b189-2a17d4b236af\"\n    }\n}",
         "title": "测试"
+      }
+    ],
+    "ModifyUserGrant": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGrant\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"-1\",\n    \"SubUins\": [\n        \"100032950128\"\n    ],\n    \"RoleIds\": [\n        \"Superadmin\"\n    ],\n    \"Grant\": \"REFRESH\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fd70c4f-b15e-46e1-85df-0a37cb8833c6\"\n    }\n}",
+        "title": "更新用户角色"
+      }
+    ],
+    "ModifyWorkspaceMembers": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkspaceMembers\n<公共请求参数>\n\n{\n    \"TiProjectId\": \"1889353273052233728\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af7836ec-e02b-4b44-9e77-5f7986c4eb6b\"\n    }\n}",
+        "title": "更新工作空间成员"
       }
     ],
     "PushTrainingMetrics": [

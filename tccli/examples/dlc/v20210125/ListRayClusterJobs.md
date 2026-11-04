@@ -18,6 +18,7 @@ Output:
         "Items": [],
         "Page": 1,
         "PageSize": 100,
+        "Total": 0,
         "TotalPages": 0,
         "RequestId": "6f5d03c4-3ffc-4443-866f-c5d659fe481e"
     }

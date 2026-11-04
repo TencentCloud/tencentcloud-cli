@@ -6738,6 +6738,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书下载格式类型，不传时默认 nginx。仅对自定义证书（CertSource=1）生效</p><p>枚举值：</p><ul><li>nginx： nginx可用</li><li>apache： apache可用</li><li>tomcat： tomcat可用</li><li>iis： iis可用</li></ul>",
+          "example": "nginx",
+          "member": "string",
+          "name": "ServiceType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6811,6 +6820,86 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "EncryptAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥来源</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 自定义证书</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "CertSource",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书有效性</p><p>枚举值：</p><ul><li>0： 有效</li><li>1： 即将过期（30天内）</li><li>2： 已过期</li><li>404： 证书已被删除</li><li>500： 查询异常</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "CertStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>",
+          "example": "QL*****M",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书别名</p>",
+          "example": "redis测试自定义证书1",
+          "member": "string",
+          "name": "CertAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书到期时间</p><p>参数格式：时间格式YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2046-05-15 17:53:58",
+          "member": "string",
+          "name": "CertExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书关联域名（SAN）</p><p>包括了IP</p>",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低 TLS 版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>",
+          "example": "TLSv1.2",
+          "member": "string",
+          "name": "SSLMinVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul>",
+          "example": "required",
+          "member": "string",
+          "name": "EncryptionMode",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -8580,7 +8669,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称。",
+          "document": "<p>参数名称。</p>",
           "example": "maxmemory-policy",
           "member": "string",
           "name": "ParamName",
@@ -8590,7 +8679,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型，例如：Enum。",
+          "document": "<p>参数类型，例如：Enum。</p>",
           "example": "Emun",
           "member": "string",
           "name": "ValueType",
@@ -8600,7 +8689,7 @@
         },
         {
           "disabled": false,
-          "document": "参数值修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "document": "<p>参数值修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>",
           "example": "false",
           "member": "string",
           "name": "NeedRestart",
@@ -8610,7 +8699,7 @@
         },
         {
           "disabled": false,
-          "document": "参数默认值。",
+          "document": "<p>参数默认值。</p>",
           "example": "noeviction",
           "member": "string",
           "name": "DefaultValue",
@@ -8620,8 +8709,8 @@
         },
         {
           "disabled": false,
-          "document": "参数当前运行值。",
-          "example": "noeviction ",
+          "document": "<p>参数当前运行值。</p>",
+          "example": "noeviction",
           "member": "string",
           "name": "CurrentValue",
           "output_required": true,
@@ -8630,7 +8719,7 @@
         },
         {
           "disabled": false,
-          "document": "参数说明。",
+          "document": "<p>参数说明。</p>",
           "example": "How Redis will select what to remove when maxmemory is reached",
           "member": "string",
           "name": "Tips",
@@ -8640,8 +8729,8 @@
         },
         {
           "disabled": false,
-          "document": "参数可取的值。",
-          "example": "[“volatile-lru”,\"volatile-lfu\",\"allkeys-lru\",\"allkeys-lfu\",\"volatile-random\",\"allkeys-random\",\"volatile-ttl\",\"noeviction\"]",
+          "document": "<p>参数可取的值。</p>",
+          "example": "[\"volatile-lru\",\"volatile-lfu\",\"allkeys-lru\",\"allkeys-lfu\",\"volatile-random\",\"allkeys-random\",\"volatile-ttl\",\"noeviction\"]",
           "member": "string",
           "name": "EnumValue",
           "output_required": true,
@@ -8650,12 +8739,62 @@
         },
         {
           "disabled": false,
-          "document": "参数修改状态。\n- 1: 修改中。\n- 2：修改完成。",
+          "document": "<p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>",
+          "example": "redis-interface",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前实例是否支持该特性</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FeatureSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>",
+          "example": "2026-08-20",
+          "member": "string",
+          "name": "NewFeatureOnlineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正则校验规则</p>",
+          "example": "^$|^[a-zA-Z]+( +[a-zA-Z0-9]+)*( *, *[a-zA-Z]+( +[a-zA-Z0-9]+)*)*$",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入格式描述</p>",
+          "example": "Comma-separated rules. Each rule: command name (letters only) optionally followed by space-separated parameters (letters and digits)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8771,7 +8910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名",
+          "document": "<p>参数名</p>",
           "example": "cluster-node-timeout",
           "member": "string",
           "name": "ParamName",
@@ -8781,7 +8920,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型：integer",
+          "document": "<p>参数类型：integer</p>",
           "example": "integer",
           "member": "string",
           "name": "ValueType",
@@ -8791,7 +8930,7 @@
         },
         {
           "disabled": false,
-          "document": "修改后是否需要重启：true，false",
+          "document": "<p>修改后是否需要重启：true，false</p>",
           "example": "false",
           "member": "string",
           "name": "NeedRestart",
@@ -8801,7 +8940,7 @@
         },
         {
           "disabled": false,
-          "document": "参数默认值",
+          "document": "<p>参数默认值</p>",
           "example": "15000",
           "member": "string",
           "name": "DefaultValue",
@@ -8811,7 +8950,7 @@
         },
         {
           "disabled": false,
-          "document": "当前运行参数值",
+          "document": "<p>当前运行参数值</p>",
           "example": "15000",
           "member": "string",
           "name": "CurrentValue",
@@ -8821,7 +8960,7 @@
         },
         {
           "disabled": false,
-          "document": "参数说明",
+          "document": "<p>参数说明</p>",
           "example": "集群模式下当节点在指定时间内(毫秒)不可达则被认为处于失败状态",
           "member": "string",
           "name": "Tips",
@@ -8831,7 +8970,7 @@
         },
         {
           "disabled": false,
-          "document": "参数最小值",
+          "document": "<p>参数最小值</p>",
           "example": "15000",
           "member": "string",
           "name": "Min",
@@ -8841,7 +8980,7 @@
         },
         {
           "disabled": false,
-          "document": "参数最大值",
+          "document": "<p>参数最大值</p>",
           "example": "120000",
           "member": "string",
           "name": "Max",
@@ -8851,7 +8990,7 @@
         },
         {
           "disabled": false,
-          "document": "参数状态, 1: 修改中， 2：修改完成",
+          "document": "<p>参数状态, 1: 修改中， 2：修改完成</p>",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -8861,11 +9000,61 @@
         },
         {
           "disabled": false,
-          "document": "参数单位",
+          "document": "<p>参数单位</p>",
           "example": "ms",
           "member": "string",
           "name": "Unit",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis：  tendis支持的参数</li></ul>",
+          "example": "redis-interface",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前实例是否支持该特性</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FeatureSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>",
+          "example": "2026-08-20",
+          "member": "string",
+          "name": "NewFeatureOnlineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正则校验规则</p>",
+          "example": "^$|^[a-zA-Z]+( +[a-zA-Z0-9]+)*( *, *[a-zA-Z]+( +[a-zA-Z0-9]+)*)*$",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入格式描述</p>",
+          "example": "Comma-separated rules. Each rule: command name (letters only) optionally followed by space-separated parameters (letters and digits)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8877,7 +9066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称。",
+          "document": "<p>参数名称。</p>",
           "example": "InstanceMultiParam",
           "member": "string",
           "name": "ParamName",
@@ -8887,7 +9076,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型。例如：multi。",
+          "document": "<p>参数类型。例如：multi。</p>",
           "example": "multi",
           "member": "string",
           "name": "ValueType",
@@ -8897,7 +9086,7 @@
         },
         {
           "disabled": false,
-          "document": "参数修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "document": "<p>参数修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>",
           "example": "false",
           "member": "string",
           "name": "NeedRestart",
@@ -8907,7 +9096,7 @@
         },
         {
           "disabled": false,
-          "document": "参数默认值。",
+          "document": "<p>参数默认值。</p>",
           "example": "“\\\"\\\"”",
           "member": "string",
           "name": "DefaultValue",
@@ -8917,7 +9106,7 @@
         },
         {
           "disabled": false,
-          "document": "当前运行参数值。",
+          "document": "<p>当前运行参数值。</p>",
           "example": "“\\\"\\\"”",
           "member": "string",
           "name": "CurrentValue",
@@ -8927,7 +9116,7 @@
         },
         {
           "disabled": false,
-          "document": "参数说明。",
+          "document": "<p>参数说明。</p>",
           "example": "commands in such config will not be allowed to run in this instance,you can config multi commands like this 'flushdb,keys'",
           "member": "string",
           "name": "Tips",
@@ -8937,8 +9126,8 @@
         },
         {
           "disabled": false,
-          "document": "参数枚举值。",
-          "example": "\"flushall\",\"flushdb\",\"keys\",\"hgetall\",\"eval\",\"evalsha\",\"script\",\"scan\",\"psetex\",\"set\",\"hmset\",\"hset\",\"lpush\",\"rpush\",\"sadd\",\"zadd\",\"del\",\"mget\",\"mset\",\"bitop\",\"exists\",\"msetnx\",\"blpop\",\"brpop\",\"rpoplpush\",\"brpoplpush\",\"smove\",\"sunion\",\"sinter\",\"sdiff\",\"sunionstore\",\"sinterstore\",\"sdiffstore\",\"zunionstore\",\"zinterstore\",\"pfmerge\",\"pfcount\"",
+          "document": "<p>参数枚举值。</p>",
+          "example": "[\"flushall\",\"flushdb\",\"keys\",\"hgetall\",\"eval\",\"evalsha\",\"script\",\"scan\",\"psetex\",\"set\",\"hmset\",\"hset\",\"lpush\",\"rpush\",\"sadd\",\"zadd\",\"del\",\"mget\",\"mset\",\"bitop\",\"exists\",\"msetnx\",\"blpop\",\"brpop\"]",
           "member": "string",
           "name": "EnumValue",
           "output_required": true,
@@ -8947,12 +9136,62 @@
         },
         {
           "disabled": false,
-          "document": "参数修改的状态。\n- 1：修改中。\n- 2：修改完成。",
+          "document": "<p>参数修改的状态。</p><ul><li>1：修改中。</li><li>2：修改完成。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>",
+          "example": "redis-interface",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前实例是否支持该特性</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FeatureSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新特性上线日期</p><p>参数格式：参数格式：时间格式YYYY-MM-DD</p>",
+          "example": "2026-08-20",
+          "member": "string",
+          "name": "NewFeatureOnlineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正则校验规则</p>",
+          "example": "^$|^[a-zA-Z]+( +[a-zA-Z0-9]+)*( *, *[a-zA-Z]+( +[a-zA-Z0-9]+)*)*$",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入格式描述</p>",
+          "example": "Comma-separated rules. Each rule: command name (letters only) optionally followed by space-separated parameters (letters and digits)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9893,7 +10132,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "参数名称。",
+          "document": "<p>参数名称。</p>",
           "example": "UserPasswordSeparate",
           "member": "string",
           "name": "ParamName",
@@ -9903,7 +10142,7 @@
         },
         {
           "disabled": false,
-          "document": "参数类型。例如：text。",
+          "document": "<p>参数类型。例如：text。</p>",
           "example": "text",
           "member": "string",
           "name": "ValueType",
@@ -9913,7 +10152,7 @@
         },
         {
           "disabled": false,
-          "document": "参数修改后是否需要重启。\n- true：需要。\n- false：不需要。",
+          "document": "<p>参数修改后是否需要重启。</p><ul><li>true：需要。</li><li>false：不需要。</li></ul>",
           "example": "false",
           "member": "string",
           "name": "NeedRestart",
@@ -9923,7 +10162,7 @@
         },
         {
           "disabled": false,
-          "document": "参数默认值。",
+          "document": "<p>参数默认值。</p>",
           "example": "\"@\"",
           "member": "string",
           "name": "DefaultValue",
@@ -9933,7 +10172,7 @@
         },
         {
           "disabled": false,
-          "document": "参数当前运行值。",
+          "document": "<p>参数当前运行值。</p>",
           "example": "\"@\"",
           "member": "string",
           "name": "CurrentValue",
@@ -9943,7 +10182,7 @@
         },
         {
           "disabled": false,
-          "document": "参数说明。",
+          "document": "<p>参数说明。</p>",
           "example": "Specify password connection symbols for custom accounts",
           "member": "string",
           "name": "Tips",
@@ -9953,8 +10192,8 @@
         },
         {
           "disabled": false,
-          "document": "参数可取值。",
-          "example": "\"@\",\":\"",
+          "document": "<p>参数可取值。</p>",
+          "example": "[\"@\",\":\"]",
           "member": "string",
           "name": "TextValue",
           "output_required": true,
@@ -9963,12 +10202,62 @@
         },
         {
           "disabled": false,
-          "document": "参数修改状态。\n- 1: 修改中。\n- 2：修改完成。",
+          "document": "<p>参数修改状态。</p><ul><li>1: 修改中。</li><li>2：修改完成。</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "Status",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>参数类型</p><p>枚举值：</p><ul><li>redis： cache节点支持的参数</li><li>redis-interface： 代理proxy支持的参数</li><li>tendis： tendis支持的参数</li></ul>",
+          "example": "redis-interface",
+          "member": "string",
+          "name": "ParamType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前实例是否支持该特性</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "FeatureSupported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>新特性上线日期</p><p>参数格式：时间格式YYYY-MM-DD</p>",
+          "example": "2026-08-20",
+          "member": "string",
+          "name": "NewFeatureOnlineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正则校验规则</p>",
+          "example": "^$|^[a-zA-Z]+( +[a-zA-Z0-9]+)*( *, *[a-zA-Z]+( +[a-zA-Z0-9]+)*)*$",
+          "member": "string",
+          "name": "Pattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入格式描述</p>",
+          "example": "Comma-separated rules. Each rule: command name (letters only) optionally followed by space-separated parameters (letters and digits)",
+          "member": "string",
+          "name": "InputDescription",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -10577,6 +10866,17 @@
           "example": "client error",
           "member": "string",
           "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>proxy的节点ID</p>",
+          "example": "f5b7112",
+          "member": "string",
+          "name": "Node",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -12220,6 +12520,51 @@
           "name": "AddressType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义证书</li></ul><p>默认值：0</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CertSource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "<p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段。</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>",
+          "example": "2",
+          "member": "int64",
+          "name": "SwitchOption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>",
+          "example": "QL*****M",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低TLS版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>",
+          "example": "TLSv1.0",
+          "member": "string",
+          "name": "SSLMinVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul><p>默认值：flexible</p>",
+          "example": "required",
+          "member": "string",
+          "name": "EncryptionMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -2747,6 +2747,26 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持透明加密</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportTDE",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否支持密码复杂度</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupportPasswordComplexity",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8505,6 +8525,16 @@
           "name": "Explain",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>执行计划树</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-> Batched key access inner join  (cost=1250.25 rows=10000)\\n    -> Batch input rows\\n    -> Multi-range index lookup on c using PRIMARY (customer_id=o.customer_id)  (cost=0.25 rows=1)",
+          "member": "string",
+          "name": "ExplainTree",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

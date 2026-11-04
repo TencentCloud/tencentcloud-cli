@@ -14131,12 +14131,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "document": "<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>",
           "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略删除保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SkipTerminationProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -30410,7 +30419,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "`HAVIP`唯一`ID`，形如：`havip-9o233uri`。",
+          "document": "<p><code>HAVIP</code>唯一<code>ID</code>，形如：<code>havip-9o233uri</code>。</p>",
           "example": "havip-9o233uri",
           "member": "string",
           "name": "HaVipId",
@@ -30419,12 +30428,30 @@
         },
         {
           "disabled": false,
-          "document": "`HAVIP`名称，可任意命名，但不得超过60个字符。",
+          "document": "<p><code>HAVIP</code>名称，可任意命名，但不得超过60个字符。</p>",
           "example": "demo",
           "member": "string",
           "name": "HaVipName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminationProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>流量保护。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TrafficProtection",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

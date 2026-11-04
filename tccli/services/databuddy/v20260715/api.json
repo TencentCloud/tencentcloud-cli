@@ -4940,6 +4940,89 @@
       ],
       "usage": "both"
     },
+    "FileArrivalConfig": {
+      "document": "文件到达触发信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>运行命中的文件所在COS桶名</p><p>举例：dlc-sh-store-139153****</p><p>入参不填，如果填写则忽略；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dlc-sh-store-139153****",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行命中的文件所在COS地域</p><p>举例：ap-shanghai</p><p>入参不填，如果填写则忽略；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件存储路径</p><p>举例：cosn://dlc-sh-store-139153****/test/</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cosn://wedata3-lineage-260073493/mico/",
+          "member": "string",
+          "name": "FileStoragePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名匹配规则</p><p>举例：</p><ul><li>空: 当前监听范围内的全部文件</li><li><code>*.csv: 任意以 .csv 结尾的文件名</code></li><li><code>orders_*.csv: orders_ 开头且以 .csv 结尾的文件名</code></li><li>orders.csv: 精确匹配 orders.csv</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "orders.csv",
+          "member": "string",
+          "name": "FileNamePattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含子目录</p><p>默认值：false</p><p>是否递归匹配子目录，默认 false</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Recursive",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最小触发间隔时间</p><p>参数格式：数字</p><p>默认值：300</p><p>单位：秒；默认 300秒（5 分钟）；60-86400 秒（1–1440 分钟）；两次触发之间的最小间隔。期间内到达的文件，需等待该时间结束后才会触发运行。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "120",
+          "member": "string",
+          "name": "MinTriggerIntervalTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>批次等待时间</p><p>参数格式：数字</p><p>默认值：120</p><p>单位：秒；默认 120秒（2 分钟）；60-3600 秒（1–60 分钟）；文件到达后等待该时长才触发运行。若等待期间再次有新文件到达，则重新开始计时。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "string",
+          "name": "BatchWaitTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "FileConfig": {
       "document": "文件运行配置",
       "members": [
@@ -7546,6 +7629,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流调度文件到达方式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileArrivalConfig",
+          "name": "FileArrivalConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8248,7 +8342,7 @@
       "usage": "both"
     },
     "InnerWorkflowTaskRunListOption": {
-      "document": "内嵌工作流任务运行列表选项（仅限 FOR_EACH 任务使用）",
+      "document": "<p>嵌套工作流任务运行的查询选项。<br>PageNumber：页码，从 1 开始<br>PageSize：每页数量，最大 200<br>RunStates：按运行状态过滤，如 [\"SUCCESS\"]</p>",
       "members": [
         {
           "disabled": false,
@@ -15004,7 +15098,7 @@
       "usage": "both"
     },
     "TaskType": {
-      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | ----------------------- |\n| Source       | 来源              | 只支持填2或5,来源 2:GIT, 5:工作空间    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                    | 是否必需 |\n| --------------------- | -------------------- | --------------------------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                    | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                          | 是否必需             |\n| --------------- | ----------- | --------------------------------------------- | -------------------- |\n| Source          | 来源        | 只支持填2或5,来源 2:GIT, 5:工作空间               | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                   | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedQueries）接口获取 | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n\n### 5. PYTHON 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | -------- |\n| Source     | 来源           | 只支持填2或5,来源 2:GIT, 5:工作空间        | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | 是       |\n\n### 6. DATA_QUALITY（质量监控）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| SourceUniqueId | 质量监控ID       | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n\n### 7. IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | 是否必需 |\n| ---------- | -------- | --------------- | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | 是       |\n\n### 8. FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | 是       |\n\n### 9. RAY_JOB（Ray作业）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称             | 描述                               | 是否必需 |\n| -------------- | -------------------- | ---------------------------------- | -------- |\n| RunMode        | 运行方式             | 运行方式，取值：SERVERLESS（按需拉起集群）/ DEDICATED（提交到指定集群）。默认 DEDICATED | 是 |\n| Entrypoint     | 入口指令             | 入口指令                           | 是       |\n| JobConfig      | 任务配置             | 如存储配置 + 计算环境。传值请参考前端页面保存Ray作业任务时调用UpdateWorkflow。Image请调用DLC接口ListImages接口Url字段获取 | RunMode 为 SERVERLESS 时，必填 |\n| ClusterId      | Ray 集群             | 需从所选计算资源下已配置的 Ray 集群（引擎）列表中选择，可通过计算资源相关接口获取 | RunMode 为 DEDICATED 时，必填 |\n| Source         | 任务来源             | 任务来源，取值：1（本地文件）/ 5（工作空间） | 是 |\n| JobPackage     | 任务来源文件地址     | 任务来源路径：Source 为 1 时存本地上传文件的 COS 地址（支持 .zip / .py 文件）；Source 为 5 时存所选工作空间文件/文件夹路径 | 是 |\n| JobPackageName | 任务来源本地文件名   | 任务来源本地文件名                 | Source 为 1 时，必填 |\n| CodeFileId     | 代码文件ID           | Source 为 5 时，需从工作空间文件选择组件获取所选文件/文件夹对应的ID | Source 为 5 时，必填 |\n| WorkspaceEntryType | 工作空间入口类型 | Source 为 5 时，所选工作空间条目的类型：FILE（文件）/ FOLDER（文件夹），由前端选择器随选择目标自动写入 | Source 为 5 时，必填 |\n\n### RuntimePropertyList\n<p>任务运行参数列表，用于配置任务运行时的计算资源，与 TaskTypePropertyList（任务扩展属性）区分：TaskTypePropertyList 承载任务自身的业务配置（如脚本来源、路径等），RuntimePropertyList 承载任务运行时的资源配置（如资源模式、CU规格、Executor数量等）。</p>\n<p>主要适用于需要配置计算资源的任务类型（如 NOTEBOOK、PYTHON）。</p>\n<p>具体可填写的属性键以任务类型属性配置为准，可通过 ListWorkflowTaskTypeProperties 接口获取（propertyType 为 RUNTIME 的属性项）。常见运行参数键说明：</p>\n\n| 属性键 | 属性名称 | 描述 | 必填性（联动条件满足时） | 默认值 |\n| ---------- | -------------- | ---------------------------------- | -------- | -------- |\n| ResourceMode | 资源模式 | 1：分布式；2：单节点 | 是 | 1 |\n| ConfigType | 配置类型 | DEFAULT：默认配置；CUSTOM：自定义配置 | 是 | DEFAULT |\n| ExecutorAllocation | Executor分配模式 | DYNAMIC：动态分配；FIXED：固定分配 | 是（分布式且自定义配置时） | DYNAMIC |\n| ExecutorMinNum | Executor最小个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorMaxNum | Executor最大个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorFixedNum | Executor固定个数 | 正整数 | 否（固定分配时） | - |\n| ExecutorCU | Executor资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时） | - |\n| DriverCU | Driver资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时 或者单节点时） | - |\n| ExecutorGPU | Executor GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| DriverGPU | Driver GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| Style | 配置样式 | UI / JSON | 是（自定义配置时） | UI |\n\n<p>补充说明：</p>\n<p>1. \"必填性\"指属性配置中的必填标记，仅当属性联动条件（如 ResourceMode=1 且 ConfigType=CUSTOM）满足时才触发必填校验；</p>\n<p>2. ConfigType 为 DEFAULT（默认配置）时，需调用 ListComputeResourceOptions 接口获取所选计算资源的默认规格值，并将其填充到运行参数（ExecutorCU、DriverCU、ExecutorMinNum、ExecutorMaxNum 等）后传入；ConfigType 为 CUSTOM（自定义配置）时，运行参数由调用方自行指定；</p>",
+      "document": "### `TaskTypePropertyList` 中 `TaskTypeProperty` 针对不同任务类型需要填写不同的 key 和 value；\n\n### 1. NOTEBOOK 任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称          | 描述                               | 是否必需                |\n| ------------ | ----------------- | ---------------------------------- | ----------------------- |\n| Source       | 来源              | 只支持填2或5,来源 2:GIT, 5:工作空间    | 是                      |\n| NotebookPath | Notebook 相对路径 | Source为5时，需从（ListFiles）获取 | Source 为 2、5 时，必填 |\n\n### 2. DATA_INTEGRATION 任务类型\n\n#### 属性配置\n\n| 属性键                | 属性名称             | 描述                                    | 是否必需 |\n| --------------------- | -------------------- | --------------------------------------- | -------- |\n| Source                | 来源                 | 必填:4,表示来源为COS                    | 是       |\n| TemplatePath          | 数据接入任务配置路径 | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n| DataIntegrationTaskId | 数据接入任务ID       | 需从（ListBatchIngestionTasks）接口获取 | 是       |\n\n### 3. RUN_WORKFLOW 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称   | 描述                          | 是否必需 |\n| ---------- | ---------- | ----------------------------- | -------- |\n| WorkflowId | 选择工作流 | 需从（ListWorkflows）接口获取 | 是       |\n\n### 4. SQL 任务类型\n\n#### 属性配置\n\n| 属性键          | 属性名称    | 描述                                          | 是否必需             |\n| --------------- | ----------- | --------------------------------------------- | -------------------- |\n| Source          | 来源        | 只支持填2或5,来源 2:GIT, 5:工作空间               | 是                   |\n| SqlPath         | SQL脚本路径 | SQL脚本路径                                   | Source 为 2 时，必填 |\n| CodeFileName    | 文件名称    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n| CodeFileId      | 文件ID      | Source为5时，需从（ListReleasedQueries）接口获取 | Source 为 5 时，必填 |\n| CodeFileVersion | 文件版本    | Source为5时，需从（ListReleasedQueries）接口获取 | 否                |\n\n### 5. PYTHON 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称       | 描述                                   | 是否必需 |\n| ---------- | -------------- | -------------------------------------- | -------- |\n| Source     | 来源           | 只支持填2或5,来源 2:GIT, 5:工作空间        | 是       |\n| SourcePath | Python脚本路径 | Source为5时，需从（ListFiles）接口获取 | 是       |\n\n### 6. DATA_QUALITY（质量监控）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称         | 描述                                          | 是否必需 |\n| -------------- | ---------------- | --------------------------------------------- | -------- |\n| Source         | 来源             | 必填:4,表示来源为COS                          | 是       |\n| TemplatePath   | 质量监控配置路径 | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| SourceUniqueId | 质量监控ID       | 需从（ListDataQualityTaskSummaries）接口获取  | 是       |\n| ExecutionType  | 执行类型         | 必填:SQL                                      | 是       |\n| AfterAspect    | 质量任务后置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n| BeforeAspect   | 质量任务前置切面 | 需从（ListDataQualityTaskSummaries）接口获取  | 否       |\n\n### 7. IF_ELSE 任务类型\n\n#### 属性配置\n\n| 属性键     | 属性名称 | 描述            | 是否必需 |\n| ---------- | -------- | --------------- | -------- |\n| Conditions | 条件列表 | IF-ELSE条件配置 | 是       |\n\n### 8. FOR_EACH 任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称     | 描述                               | 是否必需 |\n| -------------- | ------------ | ---------------------------------- | -------- |\n| MaxConcurrency | 最大并发数   | 最大并发数，默认为1                | 是       |\n| MaxIterations  | 最大迭代次数 | 最大迭代次数，默认1000             | 是       |\n| LoopDataArray  | 循环参数     | JSON格式的数组，或 {{}} 包裹的变量 | 是       |\n\n### 9. RAY_JOB（Ray作业）任务类型\n\n#### 属性配置\n\n| 属性键         | 属性名称             | 描述                               | 是否必需 |\n| -------------- | -------------------- | ---------------------------------- | -------- |\n| RunMode        | 运行方式             | 运行方式，取值：SERVERLESS（按需拉起集群）/ DEDICATED（提交到指定集群）。默认 DEDICATED | 是 |\n| Entrypoint     | 入口指令             | 入口指令                           | 是       |\n| JobConfig      | 任务配置             | 如存储配置 + 计算环境。传值请参考前端页面保存Ray作业任务时调用UpdateWorkflow。Image请调用DLC接口ListImages接口Url字段获取 | RunMode 为 SERVERLESS 时，必填 |\n| ClusterId      | Ray 集群             | 需从所选计算资源下已配置的 Ray 集群（引擎）列表中选择，可通过计算资源相关接口获取 | RunMode 为 DEDICATED 时，必填 |\n| Source         | 任务来源             | 任务来源，取值：1（本地文件）/ 5（工作空间） | 是 |\n| JobPackage     | 任务来源文件地址     | 任务来源路径：Source 为 1 时存本地上传文件的 COS 地址（支持 .zip / .py 文件）；Source 为 5 时存所选工作空间文件/文件夹路径 | 是 |\n| JobPackageName | 任务来源本地文件名   | 任务来源本地文件名                 | Source 为 1 时，必填 |\n| CodeFileId     | 代码文件ID           | Source 为 5 时，需从工作空间文件选择组件获取所选文件/文件夹对应的ID | Source 为 5 时，必填 |\n| WorkspaceEntryType | 工作空间入口类型 | Source 为 5 时，所选工作空间条目的类型：FILE（文件）/ FOLDER（文件夹），由前端选择器随选择目标自动写入 | Source 为 5 时，必填 |\n\n### 10. DEPENDENCY_SENSOR（依赖检查）任务类型\n\n#### 属性配置\n\n| 属性键                      | 属性名称       | 描述                                                       | 是否必需 |\n| --------------------------- | -------------- | ---------------------------------------------------------- | -------- |\n| checkIntervalSeconds        | 检查间隔（秒） | 轮询检查间隔，数字字符串，取值 5~600，缺省默认 10          | 否       |\n| workflowDependencyCondition | 依赖工作流配置 | 依赖条件 JSON 字符串，结构见下方说明                       | 是       |\n\n> 说明：\n> 1. 属性键大小写敏感，仅允许以上两个 key，不允许重复或出现未知 key。\n> 2. 该任务类型不支持 `RuntimePropertyList`，传入会报错。\n\n#### workflowDependencyCondition 结构\n\n```json\n{\n  \"condition\": {\n    \"dependencies\": [\n      {\n        \"workflowId\": \"被依赖工作流ID\",\n        \"workflowName\": \"工作流名称\",\n        \"taskIds\": [],\n        \"timeOffsetExpression\": \"${yyyyMMdd-1d}\",\n        \"expectedState\": \"SUCCESS\",\n        \"logicalRelWithPre\": \"and\"\n      }\n    ]\n  }\n}\n```\n\n| 字段                 | 是否必需               | 描述                                                                 |\n| -------------------- | ---------------------- | -------------------------------------------------------------------- |\n| dependencies         | 是                     | 依赖项列表，1~20 项                                                  |\n| workflowId           | 是                     | 被依赖工作流 ID，不能等于当前工作流自身 ID                           |\n| workflowName         | 否                     | 工作流名称快照，仅用于回显，读取时以最新名称覆盖                     |\n| taskIds              | 否                     | 本期必须为空数组（表示依赖整个工作流），传非空值会被忽略             |\n| timeOffsetExpression | 是                     | 时间偏移表达式，格式见下                                             |\n| expectedState        | 是                     | 期望上游状态，本期仅支持 `SUCCESS`                                   |\n| logicalRelWithPre    | 首项可空，其余项必填   | 与前一项的逻辑关系，本期仅支持 `and`                                 |\n\n**timeOffsetExpression 格式**：`${基础格式[±N单位]}`\n\n- 基础格式：`yyyy` / `yyyyMM` / `yyyyMMdd` / `yyyyMMddHH` / `yyyyMMddHHmm` / `yyyyMMddHHmmss`\n- 偏移单位（大小写敏感）：`y`（年）/ `M`（月）/ `w`（周）/ `d`（天）/ `H`（时）/ `m`（分）/ `s`（秒）\n- 不允许包含空格\n- 示例：`${yyyyMMdd}`、`${yyyyMMdd-1d}`、`${yyyyMM+1y}`\n\n### 11. JAR（Spark Jar）任务类型\n\n#### 属性配置\n\n| 属性键       | 属性名称     | 描述                                                                                         | 是否必需 |\n| ------------ | ------------ | -------------------------------------------------------------------------------------------- | -------- |\n| Source       | 来源         | 只支持填 5，表示来源为工作空间                                                               | 是       |\n| SourcePath   | Jar 文件路径 | 工作空间中 Jar 文件的完整路径，必须以 `.jar` 结尾（不区分大小写）                            | 是       |\n| MainClass    | 主类         | 作业入口类全限定名，如 `com.example.JobMain`，长度 1~128                                     | 是       |\n| ProgramArgs  | 程序参数     | 传给 main 方法的参数，单个字符串，多个参数以空格分隔，长度不超过 65536，支持 `${}` 参数      | 否       |\n| EngineConfig | 引擎参数     | Spark 参数（SparkConfig，最多 100 项，key 唯一）及数据访问策略（RoleArn，数字字符串）        | 否       |\n\n> 说明：\n> 1. 仅支持作业集群（DATA_COMPUTE），不支持交互式集群。\n> 2. 资源配置通过 `RuntimePropertyList` 传入，参见下方 RuntimePropertyList 说明（ResourceMode、ExecutorCU 等）。\n\n\n### RuntimePropertyList\n<p>任务运行参数列表，用于配置任务运行时的计算资源，与 TaskTypePropertyList（任务扩展属性）区分：TaskTypePropertyList 承载任务自身的业务配置（如脚本来源、路径等），RuntimePropertyList 承载任务运行时的资源配置（如资源模式、CU规格、Executor数量等）。</p>\n<p>主要适用于需要配置计算资源的任务类型（如 NOTEBOOK、PYTHON）。</p>\n<p>具体可填写的属性键以任务类型属性配置为准，可通过 ListWorkflowTaskTypeProperties 接口获取（propertyType 为 RUNTIME 的属性项）。常见运行参数键说明：</p>\n\n| 属性键 | 属性名称 | 描述 | 必填性（联动条件满足时） | 默认值 |\n| ---------- | -------------- | ---------------------------------- | -------- | -------- |\n| ResourceMode | 资源模式 | 1：分布式；2：单节点 | 是 | 1 |\n| ConfigType | 配置类型 | DEFAULT：默认配置；CUSTOM：自定义配置 | 是 | DEFAULT |\n| ExecutorAllocation | Executor分配模式 | DYNAMIC：动态分配；FIXED：固定分配 | 是（分布式且自定义配置时） | DYNAMIC |\n| ExecutorMinNum | Executor最小个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorMaxNum | Executor最大个数 | 正整数 | 是（动态分配时） | 1 |\n| ExecutorFixedNum | Executor固定个数 | 正整数 | 否（固定分配时） | - |\n| ExecutorCU | Executor资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时） | - |\n| DriverCU | Driver资源规格 | small / medium / large / xlarge / 4xlarge | 否（分布式且自定义配置时 或者单节点时） | - |\n| ExecutorGPU | Executor GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| DriverGPU | Driver GPU数量 | 0表示不使用GPU | 否（分布式且自定义配置时） | - |\n| Style | 配置样式 | UI / JSON | 是（自定义配置时） | UI |\n\n<p>补充说明：</p>\n<p>1. \"必填性\"指属性配置中的必填标记，仅当属性联动条件（如 ResourceMode=1 且 ConfigType=CUSTOM）满足时才触发必填校验；</p>\n<p>2. ConfigType 为 DEFAULT（默认配置）时，需调用 ListComputeResourceOptions 接口获取所选计算资源的默认规格值，并将其填充到运行参数（ExecutorCU、DriverCU、ExecutorMinNum、ExecutorMaxNum 等）后传入；ConfigType 为 CUSTOM（自定义配置）时，运行参数由调用方自行指定；</p>",
       "members": [
         {
           "disabled": false,
@@ -18425,6 +18519,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流调度文件到达方式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileArrivalConfig",
+          "name": "FileArrivalConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -19274,6 +19379,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流调度文件到达方式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileArrivalConfig",
+          "name": "FileArrivalConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -19414,6 +19530,17 @@
           "example": "无",
           "member": "WorkflowTriggerAdvancedConfiguration",
           "name": "AdvancedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流调度文件到达方式配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileArrivalConfig",
+          "name": "FileArrivalConfig",
           "output_required": false,
           "required": false,
           "type": "object",

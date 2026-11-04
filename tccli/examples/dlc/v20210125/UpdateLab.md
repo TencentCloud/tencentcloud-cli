@@ -6,57 +6,58 @@ Input:
 
 ```
 tccli dlc UpdateLab --cli-unfold-argument  \
-    --Name leionwu \
-    --LabImage ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-lab \
-    --Description 测试测试测试 \
-    --Image ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu \
-    --ImagePullPolicy Always \
-    --ResourceConfigId 11 \
-    --GroupId rayclustergroup-tfh4u6-bcqz \
-    --ResourcePartitionId dlc-p-bleurqnv \
+    --Catalog {"CFSVolumes":[],"COSVolumes":[{"Bucket":"aidanyxu-cq-10-1414839048","VolumeSubPath":"/aidanyxu","SubPathMode":"subPath","SubPath":"","MountPath":"/nmt/data/aidanyxu","VolumeMountMode":"ReadWrite"}],"CFSTurboVolumes":[{"FileSystemId":"cfs-4b9fc65cb","VolumeSubPath":"/","SubPathMode":"subPath","SubPath":"","MountPath":"/mnt/data/aidanyxu/aidanyx","VolumeMountMode":"ReadWrite"}],"GooseFSVolumes":[]} \
+    --Id raylab-20260818143841-zgd5 \
+    --Image aidanyxu.tencentcloudcr.com/andrewmao/dlctest:tcray2.57.0-py311-cpu \
+    --ImagePullType CUSTOM \
+    --Name aidanyxu_Cos \
+    --PersistentWorkDir.Enabled False \
+    --Priority 5 \
     --Queue default \
-    --ExampleId rayclustergroup-tfh4u6-bcqz \
-    --CodeArchiveUrl https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/examples/example-001-ray-core-basics.zip \
-    --LabImagePullPolicy Always \
-    --Priority 7 \
-    --EnableToken False \
-    --PersistentWorkDir.Enabled False
+    --ResourceConfig {"Head":{"Name":"Head","ResourceType":"CPU","BillingItem":"sv_dlc_standard_cu_standard_cu","Spec":1,"Envs":[],"Labels":[],"ResourcesLabels":[],"HighAvailability":false,"PodNum":1,"LabCu":1},"Worker":[{"Name":"WorkerGroup01","ResourceType":"CPU","BillingItem":"sv_dlc_standard_cu_standard_cu","Spec":1,"Envs":[],"Labels":[],"ResourcesLabels":[],"MinPodNum":1,"MaxPodNum":1,"EnableAutoScaling":false}]} \
+    --ResourcePartitionId dlc-p-gymyiibl \
+    --Tags.0.TagKey dlctest \
+    --Tags.0.TagValue ture
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppId": 260200065,
-        "CodeArchiveUrl": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/examples/example-001-ray-core-basics.zip",
-        "Description": "测试测试测试",
-        "EnableToken": false,
-        "ExampleId": "rayclustergroup-tfh4u6-bcqz",
-        "GroupId": "rayclustergroup-tfh4u6-bcqz",
-        "Id": "raylab-20260602161511-uu7l",
-        "Image": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu",
-        "ImagePullPolicy": "Always",
-        "LabImage": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-lab",
-        "LabImagePullPolicy": "Always",
-        "Name": "leionwu",
-        "PersistentWorkDir": {
-            "Enabled": false
-        },
-        "Priority": 7,
+        "Id": "raylab-20260818143841-zgd5",
+        "Type": "RAY_LAB",
+        "Name": "aidanyxu_Cos",
+        "ResourcePartitionId": "dlc-p-gymyiibl",
+        "ResourcePartitionName": "test_qzzhu_1",
         "Queue": "default",
-        "ResourceConfig": "{\"Head\":null,\"Worker\":null}",
-        "ResourceConfigId": "11",
-        "ResourcePartitionId": "dlc-p-bleurqnv",
-        "ResourcePartitionName": "test_andrewmao",
+        "AppId": 1414839048,
+        "Uin": "100047465867",
+        "SubAccountUin": "100047774296",
+        "SubAccountName": "aidanyxu",
+        "Status": "STOPPED",
+        "CreateTime": 1787035121696,
+        "UpdateTime": 1791980289130,
+        "ResourceConfig": "{\"Head\":{\"Name\":\"Head\",\"PodCpu\":1,\"PodMem\":4,\"GpuType\":\"\",\"GpuNum\":0,\"Envs\":[],\"Labels\":[],\"ResourcesLabels\":[],\"Tolerations\":null,\"ResourceType\":\"CPU\",\"InstanceType\":\"\",\"Spec\":1,\"BillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"VideoMemory\":null,\"PodNum\":1,\"HighAvailability\":false,\"LabCu\":1},\"Worker\":[{\"Name\":\"WorkerGroup01\",\"PodCpu\":1,\"PodMem\":4,\"GpuType\":\"\",\"GpuNum\":0,\"Envs\":[],\"Labels\":[],\"ResourcesLabels\":[],\"Tolerations\":null,\"ResourceType\":\"CPU\",\"InstanceType\":\"\",\"Spec\":1,\"BillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"VideoMemory\":null,\"MinPodNum\":1,\"MaxPodNum\":1,\"EnableAutoScaling\":false}]}",
+        "Image": "aidanyxu.tencentcloudcr.com/andrewmao/dlctest:tcray2.57.0-py311-cpu",
+        "Catalog": "{\"CFSVolumes\":[],\"CFSTurboVolumes\":[{\"FileSystemId\":\"cfs-4b9fc65cb\",\"VolumeSubPath\":\"/\",\"SubPathMode\":\"subPath\",\"SubPath\":\"\",\"MountPath\":\"/mnt/data/aidanyxu/aidanyx\",\"FSId\":\"b9fc65cb\",\"Host\":\"10.0.0.241\",\"PersistVolumeName\":\"raylab-20260818143841-zgd5-cfs-turbo-9ba94d8256db98f824603e2c05337de0\",\"VpcId\":\"vpc-12vmf6nr\",\"SubnetId\":\"subnet-64k425ka\",\"CcnId\":\"-\",\"NetworkInterface\":\"VPC\",\"Uin\":\"100047465867\",\"Region\":\"ap-chongqing\",\"VolumeMountMode\":\"ReadWrite\",\"Source\":null,\"AutoCreateSubDir\":null}],\"COSVolumes\":[{\"Region\":\"ap-chongqing\",\"Bucket\":\"aidanyxu-cq-10-1414839048\",\"CustomerClusterSecret\":null,\"VolumeSubPath\":\"/aidanyxu\",\"SubPathMode\":\"subPath\",\"SubPath\":\"\",\"MountPath\":\"/nmt/data/aidanyxu\",\"PersistVolumeName\":\"raylab-20260818143841-zgd5-cos-4aa3e6026b24e974130ab46d419bbf8a\",\"VolumeMountMode\":\"ReadWrite\",\"Source\":null,\"Origin\":null}],\"GooseFSVolumes\":[]}",
+        "ImagePullType": "Custom",
+        "Priority": 5,
+        "Tags": [
+            {
+                "TagKey": "dlctest",
+                "TagValue": "ture"
+            }
+        ],
         "Services": [
             {
                 "Key": "JUPYTER"
             }
         ],
-        "Status": "FAILED",
-        "Type": "RAY_CLUSTER",
-        "Uin": "700002655693",
-        "RequestId": "e403bf2d-7a6c-4a76-b609-26d7441e9ec6"
+        "PersistentWorkDir": {
+            "Enabled": false
+        },
+        "EnableToken": false,
+        "RequestId": "effa12b3-89ae-4a83-acd8-a461fc4a8abd"
     }
 }
 ```

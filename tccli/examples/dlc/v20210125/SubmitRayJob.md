@@ -6,6 +6,7 @@ Input:
 
 ```
 tccli dlc SubmitRayJob --cli-unfold-argument  \
+    --ClusterId ray-cluster \
     --Entrypoint sleep 1 \
     --ResourcePartitionId dlc-p \
     --Queue default \
@@ -25,6 +26,7 @@ Output:
         "AppId": 260090589,
         "AutoscalerOptions": "{\"upscalingMode\":\"Default\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
         "Catalog": "{\"CFSVolumes\":[],\"COSVolumes\":[]}",
+        "ClusterId": "ray-cluster",
         "CreateTime": 1774423615823,
         "Entrypoint": "sleep 1",
         "Id": "rayjob-20260325152655-2py2",

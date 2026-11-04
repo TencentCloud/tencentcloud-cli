@@ -94,6 +94,14 @@
         "title": "示例"
       }
     ],
+    "CreateAndroidInstanceMCPToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63ae2ccd-e20a-4e66-8f96-6733d43238df\"\n    }\n}",
+        "title": "创建安卓实例 MCP token"
+      }
+    ],
     "CreateAndroidInstanceSSH": [
       {
         "document": "",
@@ -198,6 +206,14 @@
         "title": "示例"
       }
     ],
+    "DeleteAndroidInstanceMCPToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27ddc353-c242-4ac1-810d-bdee4f65a6db\"\n    }\n}",
+        "title": "删除安卓实例 MCP token"
+      }
+    ],
     "DescribeAndroidApps": [
       {
         "document": "查询安卓应用信息",
@@ -236,6 +252,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceLabels\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"AndroidInstanceLabels\": [\n            {\n                \"CreateTime\": \"2025-03-21T06:58:23.202Z\",\n                \"Description\": \"\",\n                \"Label\": {\n                    \"Key\": \"key3\",\n                    \"Value\": \"value3\"\n                }\n            },\n            {\n                \"CreateTime\": \"2025-03-21T08:58:24.181Z\",\n                \"Description\": \"\",\n                \"Label\": {\n                    \"Key\": \"key3\",\n                    \"Value\": \"value333\"\n                }\n            },\n            {\n                \"CreateTime\": \"2025-07-02T10:09:07.72Z\",\n                \"Description\": \"desc55\",\n                \"Label\": {\n                    \"Key\": \"testkey55\",\n                    \"Value\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"5103a125-e5eb-45d6-99ad-b16c7313483e\",\n        \"Total\": 8\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "DescribeAndroidInstanceMCPTokens": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceMCPTokens\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efd0e619-9f5e-475d-a3a4-5c4a22c0c0b8\"\n    }\n}",
+        "title": "DescribeAndroidInstanceMCPTokens"
       }
     ],
     "DescribeAndroidInstanceTasksStatus": [
@@ -484,6 +508,14 @@
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RebootAndroidInstances\n<公共请求参数>\n\n{\n    \"AndroidInstanceIds\": [\n        \"cai-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6f7b34a3-0c00-4fac-b6f0-08d47ac3e736\",\n        \"TaskSet\": [\n            {\n                \"TaskId\": \"615cf0a4-075e-4cf5-b26f-d786363daccd\",\n                \"AndroidInstanceId\": \"cai-abcd1234\"\n            }\n        ]\n    }\n}",
         "title": "重启安卓实例"
+      }
+    ],
+    "RenewAndroidInstanceMCPToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39619736-f54e-4b71-bc92-91357f5487ba\"\n    }\n}",
+        "title": "续期安卓实例 MCP token"
       }
     ],
     "RenewAndroidInstancesAccessToken": [

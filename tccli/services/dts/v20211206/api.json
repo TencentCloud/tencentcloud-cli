@@ -8427,7 +8427,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "cdb-9djwowo2",
           "member": "string",
           "name": "InstanceId",
@@ -8437,7 +8437,7 @@
         },
         {
           "disabled": false,
-          "document": "实例名称",
+          "document": "<p>实例名称</p>",
           "example": "实例名称",
           "member": "string",
           "name": "InstanceName",
@@ -8447,7 +8447,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Vip",
+          "document": "<p>实例Vip</p>",
           "example": "192.168.1.1",
           "member": "string",
           "name": "Vip",
@@ -8457,7 +8457,7 @@
         },
         {
           "disabled": false,
-          "document": "实例Vport",
+          "document": "<p>实例Vport</p>",
           "example": "3306",
           "member": "int64",
           "name": "Vport",
@@ -8467,7 +8467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以作为迁移对象，1-可以，0-不可以",
+          "document": "<p>是否可以作为迁移对象，1-可以，0-不可以</p>",
           "example": "1",
           "member": "int64",
           "name": "Usable",
@@ -8477,11 +8477,21 @@
         },
         {
           "disabled": false,
-          "document": "不可以作为迁移对象的原因",
+          "document": "<p>不可以作为迁移对象的原因</p>",
           "example": "当前实例不可以作为迁移源",
           "member": "string",
           "name": "Hint",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>硬盘类型，仅Postgresql适用</p><p>枚举值：</p><ul><li>PHYSICAL_LOCAL_SSD： 本地SSD</li><li>CLOUD_PREMIUM： 高性能云硬盘</li><li>CLOUD_SSD： SSD云硬盘</li><li>CLOUD_HSSD： 增强型SSD云硬盘</li></ul>",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11512,11 +11522,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据迁移任务ID，可通过[DescribeMigrationJobs](https://cloud.tencent.com/document/product/571/82084)接口获取。\n",
+          "document": "<p>数据迁移任务ID，可通过<a href=\"https://cloud.tencent.com/document/product/571/82084\">DescribeMigrationJobs</a>接口获取。</p>",
           "example": "dts-1kl0iy0v",
           "member": "string",
           "name": "JobId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务结束时是否强制迁移高级对象，仅PG适用</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>",
+          "example": "yes",
+          "member": "string",
+          "name": "MigrateAdvancedObject",
+          "required": false,
           "type": "string"
         }
       ],

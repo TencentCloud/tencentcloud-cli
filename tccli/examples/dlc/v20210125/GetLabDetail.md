@@ -17,6 +17,7 @@ Output:
         "AppId": 260200065,
         "Catalog": "{\"CFSVolumes\":[],\"CFSTurboVolumes\":null,\"COSVolumes\":null,\"GooseFSVolumes\":null}",
         "CodeArchiveUrl": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/models/examples/example-001-ray-core-basics.zip\n",
+        "CreateTime": 1780389990304,
         "Description": "测试测试",
         "EnableToken": true,
         "ExampleId": "rayclustergroup-tfh4u6-bcqz",

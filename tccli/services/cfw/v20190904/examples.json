@@ -278,28 +278,28 @@
     ],
     "CreateAlertCenterRuleAsync": [
       {
-        "document": "使用 HandleEventIdList 封禁告警事件。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 7,\n    \"HandleType\": 1,\n    \"AlertDirection\": 0,\n    \"HandleDirection\": \"0\",\n    \"HandleEventIdList\": [\n        \"event-example-block-001\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
-        "title": "Event 封禁"
-      },
-      {
         "document": "使用 HandleEventIdList 加白告警事件；IgnoreReason=2 表示误报。",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 7,\n    \"HandleType\": 2,\n    \"AlertDirection\": 0,\n    \"HandleDirection\": \"1\",\n    \"IgnoreReason\": 2,\n    \"HandleEventIdList\": [\n        \"event-example-allow-001\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000002\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
         "title": "Event 加白"
       },
       {
-        "document": "使用 HandleIpList 封禁一个 IP。",
-        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 1,\n    \"HandleType\": 4,\n    \"AlertDirection\": 0,\n    \"HandleDirection\": \"0\",\n    \"HandleIpList\": [\n        \"192.0.2.10\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000003\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
-        "title": "IP 封禁"
+        "document": "使用 HandleEventIdList 封禁告警事件。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 7,\n    \"HandleType\": 1,\n    \"AlertDirection\": 0,\n    \"HandleDirection\": \"0\",\n    \"HandleEventIdList\": [\n        \"event-example-block-001\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "Event 封禁"
       },
       {
         "document": "使用 HandleIpList 加白一个 IP。",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 7,\n    \"HandleType\": 3,\n    \"AlertDirection\": 1,\n    \"HandleDirection\": \"1\",\n    \"IgnoreReason\": 2,\n    \"HandleIpList\": [\n        \"198.51.100.20\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000004\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
         "title": "IP 加白"
+      },
+      {
+        "document": "使用 HandleIpList 封禁一个 IP。",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertCenterRuleAsync\n<公共请求参数>\n\n{\n    \"HandleTime\": 1,\n    \"HandleType\": 4,\n    \"AlertDirection\": 0,\n    \"HandleDirection\": \"0\",\n    \"HandleIpList\": [\n        \"192.0.2.10\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000003\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "IP 封禁"
       },
       {
         "document": "使用 BlockDomain 加白一个域名，并通过 TargetEventIdList 关联来源事件。",

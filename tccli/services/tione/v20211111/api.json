@@ -70,6 +70,13 @@
       "output": "CreatePresignedNotebookUrlResponse",
       "status": "online"
     },
+    "CreateRole": {
+      "document": "创建自定义角色",
+      "input": "CreateRoleRequest",
+      "name": "创建权限角色",
+      "output": "CreateRoleResponse",
+      "status": "online"
+    },
     "CreateTrainingModel": {
       "document": "导入模型",
       "input": "CreateTrainingModelRequest",
@@ -140,6 +147,13 @@
       "output": "DeleteNotebookResponse",
       "status": "online"
     },
+    "DeleteRole": {
+      "document": "删除权限角色",
+      "input": "DeleteRoleRequest",
+      "name": "删除权限角色",
+      "output": "DeleteRoleResponse",
+      "status": "online"
+    },
     "DeleteTrainingModel": {
       "document": "删除模型",
       "input": "DeleteTrainingModelRequest",
@@ -159,6 +173,13 @@
       "input": "DeleteTrainingTaskRequest",
       "name": "删除训练任务",
       "output": "DeleteTrainingTaskResponse",
+      "status": "online"
+    },
+    "DescribeAccessRules": {
+      "document": "列取访问权限规则列表",
+      "input": "DescribeAccessRulesRequest",
+      "name": "列取权限角色的访问规则列表",
+      "output": "DescribeAccessRulesResponse",
       "status": "online"
     },
     "DescribeAnnotatedTaskList": {
@@ -371,6 +392,27 @@
       "output": "DescribePublicAlgoVersionListResponse",
       "status": "online"
     },
+    "DescribeRole": {
+      "document": "获取角色详情",
+      "input": "DescribeRoleRequest",
+      "name": "获取角色详情",
+      "output": "DescribeRoleResponse",
+      "status": "online"
+    },
+    "DescribeRoleUsers": {
+      "document": "获取角色下已授权的用户列表",
+      "input": "DescribeRoleUsersRequest",
+      "name": "获取角色中的授权用户",
+      "output": "DescribeRoleUsersResponse",
+      "status": "online"
+    },
+    "DescribeRoles": {
+      "document": "获取角色列表",
+      "input": "DescribeRolesRequest",
+      "name": "查询权限角色列表",
+      "output": "DescribeRolesResponse",
+      "status": "online"
+    },
     "DescribeSubAccountLinuxUserInfos": {
       "document": "批量查询子账号Linux用户信息",
       "input": "DescribeSubAccountLinuxUserInfosRequest",
@@ -418,6 +460,34 @@
       "input": "DescribeTrainingTasksRequest",
       "name": "模型训练任务列表",
       "output": "DescribeTrainingTasksResponse",
+      "status": "online"
+    },
+    "DescribeWorkspace": {
+      "document": "查询工作空间详情",
+      "input": "DescribeWorkspaceRequest",
+      "name": "查询工作空间详情",
+      "output": "DescribeWorkspaceResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceMembers": {
+      "document": "查询空间成员列表",
+      "input": "DescribeWorkspaceMembersRequest",
+      "name": "查询空间成员列表",
+      "output": "DescribeWorkspaceMembersResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceQuotaUsage": {
+      "document": "## DescribeWorkspaceQuotaUsage 接口文档\n\n### 接口描述\n查询工作空间配额用量信息。该接口用于查询指定工作空间下某个子账号的配额使用情况，支持多种配额类型（CBS存储配额、Notebook开发机数量配额、托管按量资源规格限制）。\n\n### 错误码\n\n| 错误码 | 说明 |\n|--------|------|\n| InvalidParameterValue | 参数值无效（如必填参数为空、QuotaType不在枚举范围内） |\n| FailedOperation.QueryDatabaseFail | 数据库查询失败 |\n\n### 示例\n\n**请求示例**：\n```json\n{\n  \"QuotaType\": \"Notebook\",\n  \"SupervisorUin\": \"100012345678\",\n  \"SupervisorSubUin\": \"100012345679\",\n  \"TiProjectId\": \"ti-proj-123456\"\n}\n```\n\n**响应示例**：\n```json\n{\n  \"QuotaType\": \"Notebook\",\n  \"QuotaEnabled\": true,\n  \"TotalQuota\": 10,\n  \"UsedQuota\": 3,\n}\n```",
+      "input": "DescribeWorkspaceQuotaUsageRequest",
+      "name": "读取工作空间配额用量",
+      "output": "DescribeWorkspaceQuotaUsageResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceQuotas": {
+      "document": "# DescribeWorkspaceQuotas 接口文档\n\n## 接口描述\n\n查询指定工作空间下的配额配置和配额列表。该接口用于获取主账号在某个工作空间下的配额管理配置，包括是否启用配额管理、默认配额值以及针对子账号或用户组的具体配额分配情况。\n\n支持三种配额类型：\n- **CBS**：CBS存储配额管理\n- **Notebook**：开发机数量配额管理\n- **PostPaySpec**：托管按量资源规格限制\n\n\n\n## 请求参数\n\n### 公共参数（HTTP Header）\n| 参数名 | 类型 | 必填 | 描述 |\n|--------|------|------|------|\n| X-TC-Uin | string | 是 | 主账号Uin |\n| X-TC-ProjectId | uint32 | 是 | 工作空间ID |\n\n### 请求体参数\n| 参数名 | 类型 | 必填 | 描述 |\n|--------|------|------|------|\n| QuotaType | string | 是 | 配额类型，可选值：<br>- `CBS`：CBS存储配额<br>- `Notebook`：开发机数量配额<br>- `PostPaySpec`：托管按量资源规格限制 |\n\n## 响应参数\n\n| 参数名 | 类型 | 描述 |\n|--------|------|------|\n| QuotaType | string | 配额类型 |\n| QuotaEnabled | bool | 是否启用配额管理功能 |\n| DefaultQuota | WorkspaceQuota | 默认配额配置（当QuotaEnabled为false时为空对象） |\n| Quotas | ][WorkspaceQuota | 配额列表，包含所有子账号或用户组的配额配置（仅当QuotaEnabled为true时返回） |\n\n### WorkspaceQuota\n\n| 参数名 | 类型 | 描述 |\n|--------|------|------|\n| Id | string | 配额ID，格式：<br>- 用户配额：`{quota_type}-{uin}-{subuin}-{TiProjectId}`<br>- 用户组配额：`{quota_type}-{uin}-{groupid}-{TiProjectId}`<br>- 默认配额：`{quota_type}-{uin}-default-{TiProjectId}` |\n| QuotaType | string | 配额类型 |\n| Uin | string | 主账号Uin |\n| SubUin | string | 子账号Uin（当TargetType为USER时有值） |\n| SubUinName | string | 子账号名称（当TargetType为USER时有值） |\n| QuotaValue | uint32 | 配额值：<br>- CBS：容量（GiB），默认100，范围10-10000<br>- Notebook：数量（个），默认1，范围1-999<br>- PostPaySpec：无意义，关注QuotaData字段 |\n| QuotaData | []string | 配额数据（JSON数组格式）：<br>- 当QuotaType为PostPaySpec时，存储允许使用的规格ID列表 |\n| TargetType | string | 配额目标类型：<br>- `USER`：用户配额<br>- `USER_GROUP`：用户组配额 |\n| GroupId | string | 用户组ID（当TargetType为USER_GROUP时有值） |\n| GroupName | string | 用户组名称（当TargetType为USER_GROUP时有值） |\n| TiProjectId | string | 工作空间ID |\n\n## 业务逻辑\n\n1. **参数校验**：验证QuotaType参数是否合法\n2. **查询配额配置**：根据主账号Uin、工作空间ID和配额类型查询配额配置\n3. **配置不存在**：\n   - 返回系统默认的配额启用状态和默认配额值\n   - CBS默认启用，默认值100GiB\n   - Notebook默认启用，默认值1个\n   - PostPaySpec默认不启用\n4. **配置存在但未启用**：\n   - QuotaEnabled返回false\n   - DefaultQuota返回空对象\n   - Quotas不返回\n5. **配置存在且已启用**：\n   - QuotaEnabled返回true\n   - DefaultQuota返回配置的默认配额值\n   - Quotas返回所有子账号或用户组的配额列表\n   - 自动反序列化QuotaData字段（JSON数组）\n\n## 使用场景\n\n1. **配额管理页面初始化**：获取当前工作空间的配额配置状态\n2. **配额列表展示**：展示所有子账号或用户组的配额分配情况\n3. **配额编辑前查询**：在修改配额前获取当前配置\n4. **权限控制判断**：判断是否启用了配额管理功能\n\n## 错误码\n\n| 错误码 | 描述 | 解决方案 |\n|--------|------|----------|\n| InvalidParameterValue | 参数值错误 | 检查QuotaType参数是否为合法值（CBS/Notebook/PostPaySpec） |\n| FailedOperation.QueryDatabaseFail | 数据库查询失败 | 稍后重试或联系管理员 |\n\n## 请求示例\n\n```json\n{\n  \"QuotaType\": \"CBS\"\n}\n```\n\n**HTTP Header:**\n```\nX-TC-Uin: 100012345678\nX-TC-ProjectId: 123456\n```\n\n## 响应示例\n\n### 示例1：配额已启用且有配额列表\n\n```json\n{\n  \"QuotaType\": \"CBS\",\n  \"QuotaEnabled\": true,\n  \"DefaultQuota\": {\n    \"Id\": \"CBS-100012345678-default-123456\",\n    \"QuotaType\": \"CBS\",\n    \"Uin\": \"100012345678\",\n    \"SubUin\": \"\",\n    \"SubUinName\": \"\",\n    \"QuotaValue\": 100,\n    \"QuotaData\": [],\n    \"TargetType\": \"\",\n    \"GroupId\": \"\",\n    \"GroupName\": \"\",\n    \"TiProjectId\": \"123456\"\n  },\n  \"Quotas\": [\n    {\n      \"Id\": \"CBS-100012345678-100012345679-123456\",\n      \"QuotaType\": \"CBS\",\n      \"Uin\": \"100012345678\",\n      \"SubUin\": \"100012345679\",\n      \"SubUinName\": \"张三\",\n      \"QuotaValue\": 200,\n      \"QuotaData\": [],\n      \"TargetType\": \"USER\",\n      \"GroupId\": \"\",\n      \"GroupName\": \"\",\n      \"TiProjectId\": \"123456\"\n    },\n    {\n      \"Id\": \"CBS-100012345678-group001-123456\",\n      \"QuotaType\": \"CBS\",\n      \"Uin\": \"100012345678\",\n      \"SubUin\": \"\",\n      \"SubUinName\": \"\",\n      \"QuotaValue\": 500,\n      \"QuotaData\": [],\n      \"TargetType\": \"USER_GROUP\",\n      \"GroupId\": \"group001\",\n      \"GroupName\": \"开发组\",\n      \"TiProjectId\": \"123456\"\n    }\n  ]\n}\n```\n\n### 示例2：配额未启用\n\n```json\n{\n  \"QuotaType\": \"PostPaySpec\",\n  \"QuotaEnabled\": false,\n  \"DefaultQuota\": {},\n  \"Quotas\": []\n}\n```\n\n### 示例3：PostPaySpec类型配额（带QuotaData）\n\n```json\n{\n  \"QuotaType\": \"PostPaySpec\",\n  \"QuotaEnabled\": true,\n  \"DefaultQuota\": {\n    \"Id\": \"PostPaySpec-100012345678-default-123456\",\n    \"QuotaType\": \"PostPaySpec\",\n    \"Uin\": \"100012345678\",\n    \"SubUin\": \"\",\n    \"SubUinName\": \"\",\n    \"QuotaValue\": 0,\n    \"QuotaData\": [\"spec-001\", \"spec-002\", \"spec-003\"],\n    \"TargetType\": \"\",\n    \"GroupId\": \"\",\n    \"GroupName\": \"\",\n    \"TiProjectId\": \"123456\"\n  },\n  \"Quotas\": [\n    {\n      \"Id\": \"PostPaySpec-100012345678-100012345679-123456\",\n      \"QuotaType\": \"PostPaySpec\",\n      \"Uin\": \"100012345678\",\n      \"SubUin\": \"100012345679\",\n      \"SubUinName\": \"李四\",\n      \"QuotaValue\": 0,\n      \"QuotaData\": [\"spec-001\", \"spec-002\"],\n      \"TargetType\": \"USER\",\n      \"GroupId\": \"\",\n      \"GroupName\": \"\",\n      \"TiProjectId\": \"123456\"\n    }\n  ]\n}\n```\n\n## 注意事项\n\n1. **配额继承规则**：\n   - 如果子账号或用户组没有单独配置配额，则使用DefaultQuota的值\n   - 用户组配额优先级高于默认配额，用户配额优先级最高\n\n2. **QuotaData字段**：\n   - 仅在QuotaType为PostPaySpec时有实际意义\n   - 存储的是允许使用的规格ID列表\n   - 其他类型的配额该字段为空数组\n\n3. **TargetType字段**：\n   - DefaultQuota的TargetType为空字符串\n   - Quotas列表中的每个配额都有明确的TargetType\n\n4. **配额值单位**：\n   - CBS配额：GiB（1 GiB = 1024 MiB）\n   - Notebook配额：个数\n\n5. **性能优化**：\n   - 接口会一次性返回所有配额列表，避免多次查询\n   - 建议前端做好缓存，减少重复请求",
+      "input": "DescribeWorkspaceQuotasRequest",
+      "name": "读取工作空间配额",
+      "output": "DescribeWorkspaceQuotasResponse",
       "status": "online"
     },
     "DescribeWorkspaces": {
@@ -469,11 +539,46 @@
       "output": "ModifyNotebookTagsResponse",
       "status": "online"
     },
+    "ModifyRole": {
+      "document": "修改自定义角色",
+      "input": "ModifyRoleRequest",
+      "name": "修改自定义角色",
+      "output": "ModifyRoleResponse",
+      "status": "online"
+    },
+    "ModifyRoleAccessRules": {
+      "document": "修改自定义角色的权限规则",
+      "input": "ModifyRoleAccessRulesRequest",
+      "name": "修改自定义角色的权限规则",
+      "output": "ModifyRoleAccessRulesResponse",
+      "status": "online"
+    },
+    "ModifyRoleUserGrant": {
+      "document": "修改角色下用户的授权状态",
+      "input": "ModifyRoleUserGrantRequest",
+      "name": "修改角色下的用户授权状态",
+      "output": "ModifyRoleUserGrantResponse",
+      "status": "online"
+    },
     "ModifyServiceGroupWeights": {
       "document": "更新推理服务组流量分配",
       "input": "ModifyServiceGroupWeightsRequest",
       "name": "更新推理服务组流量分配",
       "output": "ModifyServiceGroupWeightsResponse",
+      "status": "online"
+    },
+    "ModifyUserGrant": {
+      "document": "更新用户授权",
+      "input": "ModifyUserGrantRequest",
+      "name": "更新用户权限配置",
+      "output": "ModifyUserGrantResponse",
+      "status": "online"
+    },
+    "ModifyWorkspaceMembers": {
+      "document": "更新空间用户列表",
+      "input": "ModifyWorkspaceMembersRequest",
+      "name": "更新空间成员列表",
+      "output": "ModifyWorkspaceMembersResponse",
       "status": "online"
     },
     "PushTrainingMetrics": {
@@ -547,6 +652,56 @@
     "serviceShortName": "tione"
   },
   "objects": {
+    "AccessRule": {
+      "document": "访问规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模块</p>",
+          "example": "TrainingWorkshop.Notebook",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>功能权限点</p>",
+          "example": "[\"Normal\"]",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据权限点</p>",
+          "example": "[\"notebook.Read\"]",
+          "member": "string",
+          "name": "DataActionType",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>功能权限点名称</p>",
+          "example": "[\"开发机-实例列表\"]",
+          "member": "string",
+          "name": "ActionTypeName",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AggregatePublicAlgoVersion": {
       "document": "聚合后的公共算法版本",
       "members": [
@@ -2804,6 +2959,61 @@
       ],
       "type": "object"
     },
+    "CreateRoleRequest": {
+      "document": "CreateRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "test111",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色备注</p>",
+          "example": "desc11",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleResponse": {
+      "document": "CreateRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-1558035333074888960",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTrainingModelRequest": {
       "document": "CreateTrainingModel请求参数结构体",
       "members": [
@@ -3678,6 +3888,52 @@
         }
       ],
       "usage": "both"
+    },
+    "DataSourceBrief": {
+      "document": "数据源简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储实例ID</p>",
+          "example": "cfs-14cpoxo5",
+          "member": "string",
+          "name": "StorageId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储实例名称</p>",
+          "example": "新大模型测试专用-skysaidyuan",
+          "member": "string",
+          "name": "StorageName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储目录</p>",
+          "example": "/jingjing/test_data_xin/",
+          "member": "string",
+          "name": "WorkDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源读写权限，RW/RO</p>",
+          "example": "RW",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DataSourceInfo": {
       "document": "数据源信息",
@@ -4885,6 +5141,42 @@
       ],
       "type": "object"
     },
+    "DeleteRoleRequest": {
+      "document": "DeleteRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-12321",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleResponse": {
+      "document": "DeleteRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTrainingModelRequest": {
       "document": "DeleteTrainingModel请求参数结构体",
       "members": [
@@ -5011,6 +5303,83 @@
     "DeleteTrainingTaskResponse": {
       "document": "DeleteTrainingTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessRulesRequest": {
+      "document": "DescribeAccessRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessRulesResponse": {
+      "document": "DescribeAccessRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前用户有哪些权限</p>",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "AccessRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限点全量集合</p>",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "FullAccessRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户拥有的空间外角色</p>",
+          "example": "[\"Superadmin\"]",
+          "member": "string",
+          "name": "GlobalRoles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户可见的空间列表</p>",
+          "example": "无",
+          "member": "Workspace",
+          "name": "Workspaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户有哪些空间外权限</p>",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "OutsideAccessRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5171,7 +5540,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>TI工作空间ID</p><p>仅用于“工作空间”白名单功能。如需使用，请联系TI管理员开通白名单。</p>",
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
           "example": "0",
           "member": "string",
           "name": "TiProjectId",
@@ -7466,6 +7835,315 @@
       ],
       "type": "object"
     },
+    "DescribeRoleRequest": {
+      "document": "DescribeRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-1538415748334285696",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "datasource",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleResponse": {
+      "document": "DescribeRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-1538415748334285696",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "test11",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型</p>",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "desc11",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-03-12T06:37:28Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限规则列表</p>",
+          "example": "无",
+          "member": "AccessRule",
+          "name": "AccessRules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源级权限列表</p>",
+          "example": "无",
+          "member": "ResourcePermission",
+          "name": "ResourcePermissions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleUsersRequest": {
+      "document": "DescribeRoleUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-12321",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleUsersResponse": {
+      "document": "DescribeRoleUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合过滤条件的用户总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户列表</p>",
+          "example": "无",
+          "member": "UserRoleInfo",
+          "name": "Users",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRolesRequest": {
+      "document": "DescribeRoles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移值</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页数量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否返回绑定的用户数</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WithUserCount",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRolesResponse": {
+      "document": "DescribeRoles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "RoleInfo",
+          "name": "Roles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubAccountLinuxUserInfosRequest": {
       "document": "DescribeSubAccountLinuxUserInfos请求参数结构体",
       "members": [
@@ -7899,6 +8577,286 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceMembersRequest": {
+      "document": "DescribeWorkspaceMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数量</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式</p>",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含角色信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WithRoles",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceMembersResponse": {
+      "document": "DescribeWorkspaceMembers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户列表</p>",
+          "example": "无",
+          "member": "UserRoleInfo",
+          "name": "Members",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceQuotaUsageRequest": {
+      "document": "DescribeWorkspaceQuotaUsage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceQuotaUsageResponse": {
+      "document": "DescribeWorkspaceQuotaUsage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceQuotasRequest": {
+      "document": "DescribeWorkspaceQuotas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceQuotasResponse": {
+      "document": "DescribeWorkspaceQuotas返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceRequest": {
+      "document": "DescribeWorkspace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含运行中的任务</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "WithRunningTasks",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否包含有管理权限的人员信息</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "WithMembers",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceResponse": {
+      "document": "DescribeWorkspace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目ID</p>",
+          "example": "1937645073965580288",
+          "member": "string",
+          "name": "TiProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test11",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-02-02T07:20:35Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行中的任务信息</p>",
+          "example": "无",
+          "member": "WorkspaceTaskInfo",
+          "name": "RunningTasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间创建人信息</p>",
+          "example": "无",
+          "member": "UserBriefInfo",
+          "name": "Creator",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前空间拥有的角色信息</p>",
+          "example": "无",
+          "member": "RoleBriefInfo",
+          "name": "OwnedRoles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间成员信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MemberInfo",
+          "name": "MemberInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -9757,6 +10715,32 @@
       ],
       "usage": "both"
     },
+    "MemberInfo": {
+      "document": "空间成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>超管成员列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserBriefInfo",
+          "name": "SuperAdmins",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间内管理员列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserBriefInfo",
+          "name": "Admins",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Message": {
       "document": "对话输入内容",
       "members": [
@@ -11429,6 +12413,131 @@
       ],
       "type": "object"
     },
+    "ModifyRoleAccessRulesRequest": {
+      "document": "ModifyRoleAccessRules请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyRoleAccessRulesResponse": {
+      "document": "ModifyRoleAccessRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleRequest": {
+      "document": "ModifyRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-12321",
+          "member": "string",
+          "name": "RoleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>",
+          "example": "name11",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "desc11",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleResponse": {
+      "document": "ModifyRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleUserGrantRequest": {
+      "document": "ModifyRoleUserGrant请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色ID列表</p>",
+          "example": "[\"role-1511019232745144192\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户UIN列表</p>",
+          "example": "[\"100046213571\"]",
+          "member": "string",
+          "name": "SubUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权方式</p>",
+          "example": "BIND",
+          "member": "string",
+          "name": "Grant",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleUserGrantResponse": {
+      "document": "ModifyRoleUserGrant返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyServiceGroupWeightsRequest": {
       "document": "ModifyServiceGroupWeights请求参数结构体",
       "members": [
@@ -11475,6 +12584,87 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGrantRequest": {
+      "document": "ModifyUserGrant请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "-1",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户列表</p>",
+          "example": "[\"100045993572\"]",
+          "member": "string",
+          "name": "SubUins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "[\"Normal\"]",
+          "member": "string",
+          "name": "RoleIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权类型</p>",
+          "example": "REFRESH",
+          "member": "string",
+          "name": "Grant",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGrantResponse": {
+      "document": "ModifyUserGrant返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspaceMembersRequest": {
+      "document": "ModifyWorkspaceMembers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "1889353273052233728",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkspaceMembersResponse": {
+      "document": "ModifyWorkspaceMembers返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14480,6 +15670,82 @@
       ],
       "usage": "out"
     },
+    "ResourcePermission": {
+      "document": "资源级权限记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p>",
+          "example": "datasource",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源ID</p>",
+          "example": "dsrc-Cfs-bosiq0lhgrcw",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限值</p>",
+          "example": "ModifyDelete",
+          "member": "string",
+          "name": "Permission",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源名称</p>",
+          "example": "test006",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号</p>",
+          "example": "100046174666",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者昵称</p>",
+          "example": "ajj-test3",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据源简要信息</p>",
+          "example": "无",
+          "member": "DataSourceBrief",
+          "name": "DataSourceBrief",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ResourceSpec": {
       "document": "TI资源规格",
       "members": [
@@ -14543,6 +15809,98 @@
         }
       ],
       "usage": "both"
+    },
+    "RoleBriefInfo": {
+      "document": "角色简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "developer",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "开发人员",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RoleInfo": {
+      "document": "角色信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>角色ID</p>",
+          "example": "role-1465322450421470208",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test11",
+          "member": "string",
+          "name": "RoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色类型。&quot;SYSTEM&quot; 内置角色，&quot;CUSTOMER&quot; 自定义角色</p>",
+          "example": "CUSTOM",
+          "member": "string",
+          "name": "RoleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "desc11",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2025-12-01T10:14:08Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的用户数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RollingUpdate": {
       "document": "滚动更新策略",
@@ -18617,6 +19975,80 @@
       ],
       "usage": "out"
     },
+    "UserBriefInfo": {
+      "document": "用户简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子用户uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100048647583",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qta",
+          "member": "string",
+          "name": "SubUinName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserRoleInfo": {
+      "document": "用户+角色信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>子账号</p>",
+          "example": "100045917938",
+          "member": "string",
+          "name": "SubUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "test11",
+          "member": "string",
+          "name": "NickName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "2026-01-15T20:10:33+08",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>角色列表</p>",
+          "example": "无",
+          "member": "RoleInfo",
+          "name": "Roles",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VolumeMount": {
       "document": "外部挂载信息",
       "members": [
@@ -18869,6 +20301,62 @@
           "example": "NORMAL",
           "member": "string",
           "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceTaskInfo": {
+      "document": "工作空间任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID</p>",
+          "example": "task-12321",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "name11",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型</p>",
+          "example": "TRAINING",
+          "member": "string",
+          "name": "ResourceTaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务所属资源组</p>",
+          "example": "rsg-12321",
+          "member": "string",
+          "name": "ResourceGroupId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

@@ -1,4 +1,4 @@
-**Example 1: 创建文件备份点**
+**Example 1: 创建cos备份**
 
 
 
@@ -6,18 +6,20 @@ Input:
 
 ```
 tccli bdrc CreateFileBackup --cli-unfold-argument  \
-    --ResourceId ins-0dl6ai18 \
-    --BackupPaths /var/log \
-    --ExcludeSystemDirectories True \
-    --BackupStorageId vault-ivsapm9k
+    --ResourceId brc-eva1-260095320 \
+    --BackupStorageId vault-66sdscu3 \
+    --BackupName test-acl \
+    --ResourceType COS_AGENT \
+    --EnableObjectAcl True \
+    --EnableObjectTags True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "BackupId": "fb-hjyz84u8",
-        "RequestId": "4fcb2255-91b4-466b-98a1-1169ede37e8f"
+        "BackupId": "cosbk-bgp33lr1",
+        "RequestId": "3debff38-aeb0-436f-84be-14a445b1ed82"
     }
 }
 ```

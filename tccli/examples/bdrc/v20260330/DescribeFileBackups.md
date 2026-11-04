@@ -1,4 +1,4 @@
-**Example 1: 查询备份列表详情**
+**Example 1: 查询备份列表**
 
 
 
@@ -15,33 +15,39 @@ Output:
     "Response": {
         "BackupSet": [
             {
-                "AspInstanceId": "",
-                "BackupFileCount": 1351200,
-                "BackupId": "fb-m9nvo7l4",
-                "BackupName": "",
+                "AspInstanceId": "abp-adr398np",
+                "BackupFileCount": 0,
+                "BackupId": "fb-85u51cp0",
+                "BackupName": "auto_ins-an553jqi_20260820_04",
                 "BackupPaths": [
                     "/data"
                 ],
-                "BackupSize": 40205298693,
-                "BackupSizeFormatted": "37.44 GiB",
-                "CreatedTime": "2026-04-01T15:00:34",
+                "BackupSize": 0,
+                "BackupSizeFormatted": "0 B",
+                "CreatedTime": "2026-08-20T04:00:06",
+                "Deadline": "",
                 "EndTime": "",
-                "ExcludePatterns": null,
+                "ExcludePatterns": [],
                 "ExcludeSystemDirectories": true,
-                "IncludeFileTypes": null,
-                "JobId": "j-20260401070034-a018b0d8",
-                "PlanId": null,
-                "Progress": 34.14,
-                "ResourceId": "ins-7630gzfm",
-                "ScannedFileCount": 4000000,
-                "ScannedSize": 117760571686,
-                "ScannedSizeFormatted": "109.67 GiB",
-                "StartTime": "2026-04-01T15:01:44",
-                "Status": 1
+                "FailReason": "",
+                "IncludeFileTypes": [],
+                "IsPermanent": false,
+                "JobId": "j-20260819200007-a7961c9b",
+                "NonExistSourcePaths": [],
+                "PlanId": "fbp-k6jm18un",
+                "Progress": 0,
+                "ResourceId": "ins-an553jqi",
+                "ResourceType": "CVM_AGENT",
+                "ScannedFileCount": 0,
+                "ScannedSize": 0,
+                "ScannedSizeFormatted": "0 B",
+                "StartTime": "",
+                "Status": 1,
+                "VaultId": "vault-hrvkughn"
             }
         ],
-        "RequestId": "c7ffb5b2-1000-400c-806a-ce2bd1ae86c8",
-        "TotalCount": 28
+        "TotalCount": 462,
+        "RequestId": "81695377-1d73-44e0-a121-e5855b3b938b"
     }
 }
 ```

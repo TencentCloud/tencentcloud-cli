@@ -7900,6 +7900,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>",
+          "example": "Cos",
+          "member": "string",
+          "name": "JobPackageSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>应用ID</p>",
           "example": "260090589",
           "member": "int64",
@@ -7914,6 +7924,26 @@
           "example": "700002467852",
           "member": "string",
           "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户UIN</p>",
+          "example": "1264132",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "1264132",
+          "member": "string",
+          "name": "SubAccountName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11874,6 +11904,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"upscalingMode\":\"Aggressive\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>",
           "example": "BuiltIn",
           "member": "string",
@@ -12057,6 +12096,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1793253908963",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>计算组 ID</p>",
           "example": "rayclustergroup-tfh4u6-bcqz",
           "member": "string",
@@ -12137,6 +12186,36 @@
         },
         {
           "disabled": false,
+          "document": "<p>启动时间（最近一次启动）</p>",
+          "example": "1432432432432",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止时间（最近一次停止/休眠）</p>",
+          "example": "1432432432432",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除时间</p>",
+          "example": "1432432432432",
+          "member": "uint64",
+          "name": "DeleteTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>标签列表（TagKey-TagValue）</p>",
           "example": "无",
           "member": "Tag",
@@ -12163,6 +12242,26 @@
           "name": "EnableToken",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 认证密钥（开启 token 认证时由系统生成）</p>",
+          "example": "3dd34366a30b4f79b60f8cc0c7e03658",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"upscalingMode\":\"Aggressive\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -33078,6 +33177,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1784085070425",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1784085071765",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>资源配置(JSON)</p>",
           "example": "{\"Head\":{\"Name\":\"default-hea}}",
           "member": "string",
@@ -33214,6 +33333,26 @@
           "name": "EnableToken",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 认证密钥（开启 token 认证时由系统生成）</p>",
+          "example": "747530cac4b74dd8bc7501bf3758f684",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"upscalingMode\":\"Aggressive\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -35169,6 +35308,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属集群ID</p>",
+          "example": "raycluster-20260523122928-r8er",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属资源分区ID</p>",
           "example": "dlc-p-mock0001",
           "member": "string",
@@ -35203,6 +35352,16 @@
           "example": "default",
           "member": "string",
           "name": "QueueAlias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Submission ID</p>",
+          "example": "exec-001",
+          "member": "string",
+          "name": "SubmissionId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35263,6 +35422,16 @@
           "example": "700002467852",
           "member": "string",
           "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "700002655694",
+          "member": "string",
+          "name": "SubAccountName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -42561,7 +42730,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID（必填）",
+          "document": "<p>集群ID（必填）</p>",
           "example": "raycluster-abc123",
           "member": "string",
           "name": "ClusterId",
@@ -42570,7 +42739,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页码（从1开始）",
+          "document": "<p>当前页码（从1开始）</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -42579,7 +42748,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "<p>每页数量</p>",
           "example": "100",
           "member": "int64",
           "name": "PageSize",
@@ -42588,7 +42757,7 @@
         },
         {
           "disabled": false,
-          "document": "额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）",
+          "document": "<p>额外过滤条件（ClusterId 已由外层单独传入，无需再在此处指定）</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -42597,7 +42766,7 @@
         },
         {
           "disabled": false,
-          "document": "提交时间起始过滤-时间戳（毫秒，可选）",
+          "document": "<p>提交时间起始过滤-时间戳（毫秒，可选）</p>",
           "example": "1774410300000",
           "member": "uint64",
           "name": "StartTime",
@@ -42606,7 +42775,7 @@
         },
         {
           "disabled": false,
-          "document": "提交时间截止过滤-时间戳（毫秒，可选）",
+          "document": "<p>提交时间截止过滤-时间戳（毫秒，可选）</p>",
           "example": "1774410400000",
           "member": "uint64",
           "name": "EndTime",
@@ -42615,7 +42784,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段列表",
+          "document": "<p>排序字段列表</p>",
           "example": "无",
           "member": "SortField",
           "name": "SortFields",
@@ -42630,7 +42799,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前页码（从1开始）",
+          "document": "<p>总记录数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码（从1开始）</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -42640,7 +42819,7 @@
         },
         {
           "disabled": false,
-          "document": "每页数量",
+          "document": "<p>每页数量</p>",
           "example": "100",
           "member": "int64",
           "name": "PageSize",
@@ -42650,7 +42829,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数",
+          "document": "<p>总页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalPages",
@@ -42660,7 +42839,7 @@
         },
         {
           "disabled": false,
-          "document": "该集群下的Ray作业列表",
+          "document": "<p>该集群下的Ray作业列表</p>",
           "example": "无",
           "member": "RayJobSubmitEntity",
           "name": "Items",
@@ -42804,7 +42983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前页码（从1开始）",
+          "document": "<p>当前页码（从1开始）</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -42813,7 +42992,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "100",
           "member": "int64",
           "name": "PageSize",
@@ -42822,7 +43001,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件列表（列表的字段名称）",
+          "document": "<p>过滤条件列表（列表的字段名称）</p>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -42831,7 +43010,7 @@
         },
         {
           "disabled": false,
-          "document": "提交时间起始过滤-时间戳（毫秒，可选）",
+          "document": "<p>提交时间起始过滤-时间戳（毫秒，可选）</p>",
           "example": "1774410300000",
           "member": "uint64",
           "name": "StartTime",
@@ -42840,7 +43019,7 @@
         },
         {
           "disabled": false,
-          "document": "提交时间截止过滤-时间戳（毫秒，可选）",
+          "document": "<p>提交时间截止过滤-时间戳（毫秒，可选）</p>",
           "example": "1774410400000",
           "member": "uint64",
           "name": "EndTime",
@@ -42849,7 +43028,7 @@
         },
         {
           "disabled": false,
-          "document": "排序字段列表（列表字段）",
+          "document": "<p>排序字段列表（列表字段）</p>",
           "example": "无",
           "member": "SortField",
           "name": "SortFields",
@@ -42864,7 +43043,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前页码（从1开始）",
+          "document": "<p>总记录数</p>",
+          "example": "33",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码（从1开始）</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -42874,7 +43063,7 @@
         },
         {
           "disabled": false,
-          "document": "页数",
+          "document": "<p>页数</p>",
           "example": "100",
           "member": "int64",
           "name": "PageSize",
@@ -42884,7 +43073,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数",
+          "document": "<p>总页数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalPages",
@@ -42894,7 +43083,7 @@
         },
         {
           "disabled": false,
-          "document": "ray作业列表",
+          "document": "<p>ray作业列表</p>",
           "example": "无",
           "member": "RayJobSubmitEntity",
           "name": "Items",
@@ -53287,6 +53476,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属集群ID</p>",
+          "example": "clusterId",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "clusterName",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属资源分区ID</p>",
           "example": "dlc-p-ofvhyjzn",
           "member": "string",
@@ -53297,10 +53506,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>默认资源分区名称</p>",
+          "example": "raytrain_",
+          "member": "string",
+          "name": "ResourcePartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属队列名称</p>",
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Submission ID</p>",
+          "example": "exec-001",
+          "member": "string",
+          "name": "SubmissionId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -53367,10 +53596,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>历史记录链接</p>",
+          "example": "https:url",
+          "member": "string",
+          "name": "HistoryUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>运行时间(ms)</p>",
           "example": "54",
           "member": "int64",
           "name": "RunningTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "1774406907461",
+          "member": "uint64",
+          "name": "FinishTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -53383,6 +53632,16 @@
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因/错误信息</p>",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -55865,6 +56124,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1791705214959",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属集群组名称</p>",
           "example": "group_test_sunny",
           "member": "string",
@@ -55975,6 +56244,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>停止时间（最近一次停止/休眠）</p>",
+          "example": "1791705152303",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除时间</p>",
+          "example": "1791704554354",
+          "member": "uint64",
+          "name": "DeleteTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>标签列表（TagKey-TagValue）</p>",
           "example": "无",
           "member": "Tag",
@@ -56001,6 +56290,26 @@
           "name": "EnableToken",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Token 认证密钥（开启 token 认证时由系统生成）</p>",
+          "example": "ec56e7d9096843e48434760696195bec",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"upscalingMode\":\"Aggressive\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -57339,6 +57648,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>代码包/工程归档地址</p>",
+          "example": "http:url",
+          "member": "string",
+          "name": "CodeArchiveUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>数据实验室服务入口（服务类型 -&gt; 访问地址）</p>",
           "example": "无",
           "member": "TypeKVPair",
@@ -57353,6 +57672,16 @@
           "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-lab",
           "member": "string",
           "name": "LabImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Lab sidecar 镜像拉取策略（Always, IfNotPresent, Never）</p>",
+          "example": "Always",
+          "member": "string",
+          "name": "LabImagePullPolicy",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57383,6 +57712,16 @@
           "example": "dlc_mao_shiyanshi_1",
           "member": "string",
           "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群描述</p>",
+          "example": "集群描述",
+          "member": "string",
+          "name": "Description",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57459,6 +57798,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>状态详情/错误信息</p>",
+          "example": "error",
+          "member": "string",
+          "name": "StatusMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>创建时间</p>",
           "example": "1780113822930",
           "member": "uint64",
@@ -57469,10 +57818,50 @@
         },
         {
           "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1793253890905",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属集群组名称</p>",
+          "example": "所属集群组名称",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算组 ID</p>",
+          "example": "raygoupid",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>资源配置(JSON)</p>",
           "example": "{\"Head\":{\"Name\":\"Head\",\"PodCpu\":1,\"PodMem\":4,\"GpuType\":\"\",\"GpuNum\":0,\"Envs\":[],\"Labels\":[],\"ResourcesLabels\":[],\"Tolerations\":null,\"ResourceType\":\"CPU\",\"InstanceType\":\"\",\"Spec\":1,\"BillingItem\":\"sv_dlc_standard_cu_standard_cu\",\"VideoMemory\":null,\"PodNum\":1,",
           "member": "string",
           "name": "ResourceConfig",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源配置ID</p>",
+          "example": "0453d291-7b46-4b04-a989-f659d419b8a5",
+          "member": "string",
+          "name": "ResourceConfigId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -57509,6 +57898,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>镜像拉取策略</p>",
+          "example": "Always",
+          "member": "string",
+          "name": "ImagePullPolicy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>",
           "example": "{\"spec.suspend\":\"true\"}",
           "member": "string",
@@ -57533,6 +57932,26 @@
           "example": "1780121753305",
           "member": "uint64",
           "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止时间（最近一次停止/休眠）</p>",
+          "example": "1793253823563",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除时间</p>",
+          "example": "1793253823563",
+          "member": "uint64",
+          "name": "DeleteTime",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -57573,6 +57992,16 @@
           "example": "c22308e26c2645a4a5d1c562bae5467d",
           "member": "string",
           "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"\":\"\"}",
+          "member": "string",
+          "name": "AutoscalerOptions",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -58050,6 +58479,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "ray-cluster",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>资源分区ID</p>",
           "example": "dlc-p",
           "member": "string",
@@ -58158,6 +58596,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>集群分派策略，本期仅支持 RANDOM；大小写不敏感</p>",
+          "example": "RANDOM",
+          "member": "string",
+          "name": "DispatchStrategy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>作业优先级（1-9，数字越大优先级越高）</p>",
           "example": "5",
           "member": "int64",
@@ -58173,6 +58620,60 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业包 URL</p>",
+          "example": "https:cos.com",
+          "member": "string",
+          "name": "JobPackage",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业包名称</p>",
+          "example": "作业包名称",
+          "member": "string",
+          "name": "JobPackageName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺省时按 Local 处理</p>",
+          "example": "Local",
+          "member": "string",
+          "name": "JobPackageSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务来源标识，只为调用上下文，不落盘 JobSpec</p>",
+          "example": "workflow",
+          "member": "string",
+          "name": "JobSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部工作流引擎业务键 flowId</p>",
+          "example": "flow-001",
+          "member": "string",
+          "name": "FlowId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>外部工作流引擎业务键 executionId</p>",
+          "example": "exec-001",
+          "member": "string",
+          "name": "ExecutionId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -58201,6 +58702,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属集群ID</p>",
+          "example": "ray-cluster",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属资源分区ID</p>",
           "example": "dlc-p",
           "member": "string",
@@ -58211,10 +58722,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>默认资源分区名称</p>",
+          "example": "test0701",
+          "member": "string",
+          "name": "ResourcePartitionName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属队列名称</p>",
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Submission ID</p>",
+          "example": "exec-001",
+          "member": "string",
+          "name": "SubmissionId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -58281,6 +58812,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "700002744585",
+          "member": "string",
+          "name": "SubAccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>历史记录链接</p>",
+          "example": "https:url",
+          "member": "string",
+          "name": "HistoryUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>运行时间(ms)</p>",
           "example": "13",
           "member": "int64",
@@ -58291,12 +58842,32 @@
         },
         {
           "disabled": false,
+          "document": "<p>完成时间</p>",
+          "example": "1780029643351",
+          "member": "uint64",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>创建时间</p>",
-          "example": "1774423615823",
+          "example": "1780029643351",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因/错误信息</p>",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -58355,6 +58926,26 @@
           "example": "{\"upscalingMode\":\"Default\",\"idleTimeoutSeconds\":60,\"resourceSpec\":\"small\",\"resources\":{\"cpu\":\"500m\",\"memory\":\"512Mi\"}}",
           "member": "string",
           "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源配置ID</p>",
+          "example": "jobspec",
+          "member": "string",
+          "name": "SpecId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源配置名称</p>",
+          "example": "jobspec名称",
+          "member": "string",
+          "name": "SpecName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -64172,6 +64763,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>作业提交目标：GROUP（按计算组分派）/ CLUSTER（指定集群）/ SERVERLESS（按 Serverless 拉起）</p>",
+          "example": "GROUP",
+          "member": "string",
+          "name": "SubmissionTarget",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>作业包URL</p>",
           "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200065/20260528173355/d3ad25d0-2632-4929-bf4e-32d8d1f7d96c.zip",
           "member": "string",
@@ -64292,10 +64893,40 @@
         },
         {
           "disabled": false,
+          "document": "<p>计算组名称</p>",
+          "example": "计算组名称",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>作业包来源类型（Local: 本地上传, Cos: 用户自有 COS 桶地址）；缺时按 Local 处理</p>",
           "example": "Cos",
           "member": "string",
           "name": "JobPackageSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "子用户名称",
+          "member": "string",
+          "name": "SubAccountName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -64928,8 +65559,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>数据实验室ID</p>",
+          "example": "raylab-20260818143841-zgd5",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>数据实验室名称</p>",
-          "example": "leionwu",
+          "example": "aidanyxu_Cos",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -64938,7 +65578,7 @@
         {
           "disabled": false,
           "document": "<p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>",
-          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu",
+          "example": "aidanyxu.tencentcloudcr.com/andrewmao/dlctest:tcray2.57.0-py311-cpu",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -64947,7 +65587,7 @@
         {
           "disabled": false,
           "document": "<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>",
-          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-lab",
+          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:tcray2.56.1-py311-cpu-extra-lab-dev",
           "member": "string",
           "name": "LabImage",
           "required": false,
@@ -64973,10 +65613,28 @@
         },
         {
           "disabled": false,
+          "document": "<p>资源配置</p>",
+          "example": "{\"Head\":{\"Name\":\"\",\"ResourceType\":\"\",\"BillingItem\":\"\",\"Spec\":1,\"Envs\":[],\"Labels\":[]},\"Worker\":[{\"Name\":\"\",\"Envs\":[],\"Labels\":[],\"ResourcesLabels\":[],\"MinPodNum\":1,\"MaxPodNum\":1,\"EnableAutoScaling\":false}]}",
+          "member": "string",
+          "name": "ResourceConfig",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>资源配置ID</p>",
-          "example": "11",
+          "example": "0453d291-7b46-4b04-a989-f659d419b8a5",
           "member": "string",
           "name": "ResourceConfigId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储卷和挂载卷配置</p>",
+          "example": "{\"CFSVolumes\":[],\"COSVolumes\":[{\"Bucket\":\"aidanyxu-cq-10-1414839048\",\"VolumeSubPath\":\"/aidanyxu\",\"SubPathMode\":\"subPath\",\"SubPath\":\"\",\"MountPath\":\"/nmt/data/aidanyxu\",\"VolumeMountMode\":\"ReadWrite\"}],\"CFSTurboVolumes\":[],\"GooseFSVolumes\":[]}",
+          "member": "string",
+          "name": "Catalog",
           "required": false,
           "type": "string"
         },
@@ -64992,7 +65650,7 @@
         {
           "disabled": false,
           "document": "<p>资源分区ID</p>",
-          "example": "dlc-p-bleurqnv",
+          "example": "dlc-p-gymyiibl",
           "member": "string",
           "name": "ResourcePartitionId",
           "required": false,
@@ -65006,6 +65664,15 @@
           "name": "Queue",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务类型列表(VSCODE, JUPYTER, WEBSHELL)，不填则使用默认配置</p>",
+          "example": "[\"VSCODE\"]",
+          "member": "string",
+          "name": "ServiceTypes",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -65036,8 +65703,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>",
+          "example": "{\"spec.headGroupSpec.template.spec.initContainers\":\"\"}",
+          "member": "string",
+          "name": "AdvancedOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>优先级（1-9，数字越大优先级越高）</p>",
-          "example": "7",
+          "example": "5",
           "member": "int64",
           "name": "Priority",
           "required": false,
@@ -65046,7 +65722,7 @@
         {
           "disabled": false,
           "document": "<p>是否开启token认证</p>",
-          "example": "false",
+          "example": "true",
           "member": "bool",
           "name": "EnableToken",
           "required": false,
@@ -65072,8 +65748,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"\":\"\"}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>",
-          "example": "BuiltIn",
+          "example": "CUSTOM",
           "member": "string",
           "name": "ImagePullType",
           "required": false,
@@ -65091,7 +65776,7 @@
         {
           "disabled": false,
           "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
-          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "example": "{\"\":\"\"}",
           "member": "string",
           "name": "NetworkConfig",
           "required": false,
@@ -65136,7 +65821,7 @@
         {
           "disabled": false,
           "document": "<p>Lab 镜像地址（必填，用于开发工具如 Jupyter/VSCode/WebShell）。前端在&quot;内置 / 自定义&quot;两态中选择此值；当 Image 字段未显式传入时，后端会基于该字段按 R1（镜像表命中）/R2（同值 fallback）派生 Ray 集群镜像。</p>",
-          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu-lab",
+          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:tcray2.56.1-py311-cpu-extra-lab-dev",
           "member": "string",
           "name": "LabImage",
           "output_required": false,
@@ -65156,7 +65841,7 @@
         {
           "disabled": false,
           "document": "<p>集群ID</p>",
-          "example": "raylab-20260602161511-uu7l",
+          "example": "raylab-20260818143841-zgd5",
           "member": "string",
           "name": "Id",
           "output_required": false,
@@ -65166,7 +65851,7 @@
         {
           "disabled": false,
           "document": "<p>资源类型：CLUSTER-普通集群；WORKSPACE-数据实验室（开发入口）</p>",
-          "example": "RAY_CLUSTER",
+          "example": "RAY_LAB",
           "member": "string",
           "name": "Type",
           "output_required": false,
@@ -65176,7 +65861,7 @@
         {
           "disabled": false,
           "document": "<p>集群名称</p>",
-          "example": "leionwu",
+          "example": "aidanyxu_Cos",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -65196,7 +65881,7 @@
         {
           "disabled": false,
           "document": "<p>所属资源分区ID</p>",
-          "example": "dlc-p-bleurqnv",
+          "example": "dlc-p-gymyiibl",
           "member": "string",
           "name": "ResourcePartitionId",
           "output_required": false,
@@ -65206,7 +65891,7 @@
         {
           "disabled": false,
           "document": "<p>默认资源分区名称</p>",
-          "example": "test_andrewmao",
+          "example": "test_qzzhu_1",
           "member": "string",
           "name": "ResourcePartitionName",
           "output_required": false,
@@ -65226,7 +65911,7 @@
         {
           "disabled": false,
           "document": "<p>应用ID</p>",
-          "example": "260200065",
+          "example": "1414839048",
           "member": "int64",
           "name": "AppId",
           "output_required": false,
@@ -65236,7 +65921,7 @@
         {
           "disabled": false,
           "document": "<p>用户UIN</p>",
-          "example": "700002655693",
+          "example": "100047465867",
           "member": "string",
           "name": "Uin",
           "output_required": false,
@@ -65245,10 +65930,60 @@
         },
         {
           "disabled": false,
+          "document": "<p>子用户UIN</p>",
+          "example": "100047774296",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>集群状态</p>",
-          "example": "FAILED",
+          "example": "STOPPED",
           "member": "string",
           "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态详情/错误信息</p>",
+          "example": "error",
+          "member": "string",
+          "name": "StatusMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1787035121696",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1791980289130",
+          "member": "uint64",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属集群组名称</p>",
+          "example": "所属集群组名称",
+          "member": "string",
+          "name": "GroupName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -65266,7 +66001,7 @@
         {
           "disabled": false,
           "document": "<p>资源配置(JSON)</p>",
-          "example": "{\"Head\":null,\"Worker\":null}",
+          "example": "{\"Head\":{\"Name\":\"\",\"ResourceType\":\"\",\"BillingItem\":\"\",\"Spec\":1,\"Envs\":[],\"Labels\":[]},\"Worker\":[{\"Name\":\"\",\"Envs\":[],\"Labels\":[],\"ResourcesLabels\":[],\"MinPodNum\":1,\"MaxPodNum\":1,\"EnableAutoScaling\":false}]}",
           "member": "string",
           "name": "ResourceConfig",
           "output_required": false,
@@ -65276,7 +66011,7 @@
         {
           "disabled": false,
           "document": "<p>资源配置ID</p>",
-          "example": "11",
+          "example": "0453d291-7b46-4b04-a989-f659d419b8a5",
           "member": "string",
           "name": "ResourceConfigId",
           "output_required": false,
@@ -65286,9 +66021,29 @@
         {
           "disabled": false,
           "document": "<p>Ray 集群镜像地址（可选，OpenAPI/SDK 高级控制入口）。前端不再传递此字段；为空时后端按 R1（镜像表查询命中）→ R2（同值 fallback）顺序自动派生。非空时直接作为 Ray 集群镜像，跳过派生（EXPLICIT），且后端不校验其与 LabImage 的兼容性。</p>",
-          "example": "ccr.ccs.tencentyun.com/emr-image/tcray:2.55.1-py311-cpu",
+          "example": "aidanyxu.tencentcloudcr.com/andrewmao/dlctest:tcray2.57.0-py311-cpu",
           "member": "string",
           "name": "Image",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储卷和挂载卷配置(JSON)</p>",
+          "example": "{\"CFSVolumes\":null,\"CFSTurboVolumes\":null,\"COSVolumes\":[],\"GooseFSVolumes\":null,\"VolumeMounts\":[]}",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Dashboard URL / 历史记录链接</p>",
+          "example": "https:url",
+          "member": "string",
+          "name": "HistoryUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -65305,12 +66060,62 @@
         },
         {
           "disabled": false,
+          "document": "<p>高级参数（扁平 Key-Value 的 JSON 字符串），Key 以 spec. 开头，按 RayCluster CRD 下钻；详见 ADVANCED_CLUSTER_OPTIONS_DESIGN.md</p>",
+          "example": "{\"spec.headGroupSpec.template.spec.initContainers\":\"\"}",
+          "member": "string",
+          "name": "AdvancedOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>优先级（1-9，数字越大优先级越高）</p>",
-          "example": "7",
+          "example": "5",
           "member": "int64",
           "name": "Priority",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启动时间（最近一次启动）</p>",
+          "example": "1791980289130",
+          "member": "uint64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止时间（最近一次停止/休眠）</p>",
+          "example": "1791980289130",
+          "member": "uint64",
+          "name": "StopTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>删除时间</p>",
+          "example": "1791980289130",
+          "member": "uint64",
+          "name": "DeleteTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表（TagKey-TagValue）</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -65335,6 +66140,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>Token 认证密钥（开启 token 认证时由系统生成）</p>",
+          "example": "token***",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON）</p>",
+          "example": "{\"\":\"\"}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>Lab sidecar 镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>",
           "example": "BuiltIn",
           "member": "string",
@@ -65346,7 +66171,7 @@
         {
           "disabled": false,
           "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
-          "example": "700002744585",
+          "example": "aidanyxu",
           "member": "string",
           "name": "SubAccountName",
           "output_required": false,
@@ -65356,7 +66181,7 @@
         {
           "disabled": false,
           "document": "<p>镜像拉取类型（BuiltIn: 内置, Custom: 自定义-TCR, CustomCcr: 自定义-CCR）</p>",
-          "example": "BuiltIn",
+          "example": "Custom",
           "member": "string",
           "name": "ImagePullType",
           "output_required": false,
@@ -65366,7 +66191,7 @@
         {
           "disabled": false,
           "document": "<p>用户网络配置(JSON，跨租户 ENI 等)</p>",
-          "example": "{\"AppId\":\"260202503\",\"Uin\":\"700002692501\",\"UniqVpcId\":\"vpc-jcvfh99n\",\"SubnetId\":\"subnet-qay311bw\",\"ConnectionId\":\"nc-c905d7893caf49a4a1f2849e7ff758de\",\"ConnectionName\":\"lyr_test_one\"}",
+          "example": "{\"\":\"\"}",
           "member": "string",
           "name": "NetworkConfig",
           "output_required": false,
@@ -65859,6 +66684,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>所属集群ID</p>",
+          "example": "clusterId",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>所属资源分区ID</p>",
           "example": "dlc-p-ikzmoqyv",
           "member": "string",
@@ -65883,6 +66718,16 @@
           "example": "default",
           "member": "string",
           "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Submission ID</p>",
+          "example": "Ray Submission ID",
+          "member": "string",
+          "name": "SubmissionId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -65949,6 +66794,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>子用户名称（由聚合层通过 CAM 接口回填）</p>",
+          "example": "用户名称",
+          "member": "string",
+          "name": "SubAccountName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>历史记录链接</p>",
           "example": "https://cls-pdb9lgk2.tcray-gateway.ap-guangzhou.cloud.tencent.com/dlc-p-ikzmoqyv/rayjob-20260529124632-9t0i/",
           "member": "string",
@@ -65985,6 +66840,26 @@
           "name": "CreateTime",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>失败原因/错误信息</p>",
+          "example": "error",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行时环境配置(JSON)</p>",
+          "example": "{\"\"}",
+          "member": "string",
+          "name": "RuntimeEnv",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -66029,10 +66904,40 @@
         },
         {
           "disabled": false,
+          "document": "<p>弹性伸缩配置(JSON)</p>",
+          "example": "{\"\"}",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>来源配置ID</p>",
           "example": "rayjobspec-texbsl-gpmd",
           "member": "string",
           "name": "SpecId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源配置名称</p>",
+          "example": "rayjobspec名称",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>高级参数，JSON 字符串</p>",
+          "example": "{\"\"}",
+          "member": "string",
+          "name": "AdvancedOptions",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -66063,6 +66968,16 @@
           "example": "ray-nexus",
           "member": "string",
           "name": "JobSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群名称</p>",
+          "example": "集群名称",
+          "member": "string",
+          "name": "ClusterName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

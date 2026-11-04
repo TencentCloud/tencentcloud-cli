@@ -1,31 +1,4 @@
-**Example 1: Event 封禁**
-
-使用 HandleEventIdList 封禁告警事件。
-
-Input: 
-
-```
-tccli cfw CreateAlertCenterRuleAsync --cli-unfold-argument  \
-    --HandleTime 7 \
-    --HandleType 1 \
-    --AlertDirection 0 \
-    --HandleDirection 0 \
-    --HandleEventIdList event-example-block-001
-```
-
-Output: 
-```
-{
-    "Response": {
-        "RequestId": "00000000-0000-4000-8000-000000000001",
-        "ReturnCode": 0,
-        "ReturnMsg": "success",
-        "Status": 0
-    }
-}
-```
-
-**Example 2: Event 加白**
+**Example 1: Event 加白**
 
 使用 HandleEventIdList 加白告警事件；IgnoreReason=2 表示误报。
 
@@ -53,26 +26,26 @@ Output:
 }
 ```
 
-**Example 3: IP 封禁**
+**Example 2: Event 封禁**
 
-使用 HandleIpList 封禁一个 IP。
+使用 HandleEventIdList 封禁告警事件。
 
 Input: 
 
 ```
 tccli cfw CreateAlertCenterRuleAsync --cli-unfold-argument  \
-    --HandleTime 1 \
-    --HandleType 4 \
+    --HandleTime 7 \
+    --HandleType 1 \
     --AlertDirection 0 \
     --HandleDirection 0 \
-    --HandleIpList 192.0.2.10
+    --HandleEventIdList event-example-block-001
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "00000000-0000-4000-8000-000000000003",
+        "RequestId": "00000000-0000-4000-8000-000000000001",
         "ReturnCode": 0,
         "ReturnMsg": "success",
         "Status": 0
@@ -80,7 +53,7 @@ Output:
 }
 ```
 
-**Example 4: IP 加白**
+**Example 3: IP 加白**
 
 使用 HandleIpList 加白一个 IP。
 
@@ -101,6 +74,33 @@ Output:
 {
     "Response": {
         "RequestId": "00000000-0000-4000-8000-000000000004",
+        "ReturnCode": 0,
+        "ReturnMsg": "success",
+        "Status": 0
+    }
+}
+```
+
+**Example 4: IP 封禁**
+
+使用 HandleIpList 封禁一个 IP。
+
+Input: 
+
+```
+tccli cfw CreateAlertCenterRuleAsync --cli-unfold-argument  \
+    --HandleTime 1 \
+    --HandleType 4 \
+    --AlertDirection 0 \
+    --HandleDirection 0 \
+    --HandleIpList 192.0.2.10
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "00000000-0000-4000-8000-000000000003",
         "ReturnCode": 0,
         "ReturnMsg": "success",
         "Status": 0

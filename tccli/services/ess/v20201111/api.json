@@ -4156,7 +4156,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>初始化操作类型<ul><li>CREATE_SEAL : 创建印章</li><li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li><li>OPEN_AUTO_SIGN :开通企业“授权签”</li><li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权“授权签”</li><li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(<strong>授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用</strong>)</li></ul></p>",
+          "document": "<p>初始化操作类型<ul></p><li>CREATE_SEAL : 创建印章</li><li>AUTH_JOIN_ORGANIZATION_GROUP : 加入集团企业</li><li>OPEN_AUTO_SIGN :开通企业“授权签”</li><li>PARTNER_AUTO_SIGN_AUTH :合作方企业授权“授权签”</li><li>CHANGE_SUB_ORGANIZATION_ADMIN_AUTH :变更子企业超管授权(**授权后，主企业可变更子企业超管，此功能需联系客户经理开通白名单使用**)</li><li>API_ACCREDIT: 开通企业 CA-API (**该操作类型不可与其他操作混合使用，此功能需联系客户经理开通白名单使用**)</li></ul>",
           "example": "[\"CREATE_SEAL \"]",
           "member": "string",
           "name": "OperateTypes",
@@ -15423,7 +15423,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>需查询的印章状态列表。</p><ul><li>空：（默认）仅查询启用状态的印章；</li><li><strong>ALL</strong>：查询所有状态的印章；</li><li><strong>CHECKING</strong>：查询待审核的印章；</li><li><strong>SUCCESS</strong>：查询启用状态的印章；</li><li><strong>FAIL</strong>：查询印章审核拒绝的印章；</li><li><strong>DISABLE</strong>：查询已停用的印章；</li><li><strong>STOPPED</strong>：查询已终止的印章；</li><li><strong>VOID</strong>：查询已作废的印章；</li><li><strong>INVALID</strong>：查询已失效的印章。</li></ul>",
+          "document": "<p>需查询的印章状态数组。默认为空，仅查询启用状态的印章</p><p>枚举值：</p><ul><li>ALL： 所有状态</li><li>CHECKING： 待审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li><li>CHECKING-SADM： 待超管审核</li></ul>",
           "example": "[\"ALL\"]",
           "member": "string",
           "name": "SealStatuses",
@@ -20471,7 +20471,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子印章编号",
+          "document": "<p>电子印章编号</p>",
           "example": "yDtwLUUckp79rcc2UuSIlvCCkIZsXxFY",
           "member": "string",
           "name": "SealId",
@@ -20481,7 +20481,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章名称",
+          "document": "<p>电子印章名称</p>",
           "example": "张三示例企业公章",
           "member": "string",
           "name": "SealName",
@@ -20491,7 +20491,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章授权时间戳，单位秒",
+          "document": "<p>电子印章授权时间戳，单位秒</p>",
           "example": "1736751627",
           "member": "int64",
           "name": "CreateOn",
@@ -20501,7 +20501,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章授权人的UserId",
+          "document": "<p>电子印章授权人的UserId</p>",
           "example": "yDw6yUUgyg3caowzUx4GQptRKfMnJqX8",
           "member": "string",
           "name": "Creator",
@@ -20511,7 +20511,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章策略Id",
+          "document": "<p>电子印章策略Id</p>",
           "example": "yDRIOUUja5b90Uy0fKyKFCQryVc5qKxW",
           "member": "string",
           "name": "SealPolicyId",
@@ -20521,7 +20521,7 @@
         },
         {
           "disabled": false,
-          "document": "印章状态，有以下六种：CHECKING（审核中）SUCCESS（已启用）FAIL（审核拒绝）CHECKING-SADM（待超管审核）DISABLE（已停用）STOPPED（已终止）",
+          "document": "<p>印章状态</p><p>枚举值：</p><ul><li>CHECKING： 待审核</li><li>SUCCESS： 启用状态</li><li>FAIL： 审核拒绝</li><li>DISABLE： 已停用</li><li>STOPPED： 已终止</li><li>VOID： 已作废</li><li>INVALID： 已失效</li><li>CHECKING-SADM： 待超管审核</li></ul>",
           "example": "SUCCESS",
           "member": "string",
           "name": "SealStatus",
@@ -20531,7 +20531,7 @@
         },
         {
           "disabled": false,
-          "document": "审核失败原因",
+          "document": "<p>审核失败原因</p>",
           "example": "印章错误",
           "member": "string",
           "name": "FailReason",
@@ -20541,7 +20541,7 @@
         },
         {
           "disabled": false,
-          "document": "印章图片url，5分钟内有效",
+          "document": "<p>印章图片url，5分钟内有效</p>",
           "example": "https://file.cn/sealid.jpg",
           "member": "string",
           "name": "Url",
@@ -20551,7 +20551,7 @@
         },
         {
           "disabled": false,
-          "document": "印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章",
+          "document": "<p>印章类型,OFFICIAL-企业公章, CONTRACT-合同专用章,ORGANIZATIONSEAL-企业印章(本地上传印章类型),LEGAL_PERSON_SEAL-法人印章</p>",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
@@ -20561,7 +20561,7 @@
         },
         {
           "disabled": false,
-          "document": "用印申请是否为永久授权，true-是，false-否",
+          "document": "<p>用印申请是否为永久授权，true-是，false-否</p>",
           "example": "true",
           "member": "bool",
           "name": "IsAllTime",
@@ -20571,7 +20571,7 @@
         },
         {
           "disabled": false,
-          "document": "授权人列表",
+          "document": "<p>授权人列表</p>",
           "example": "无",
           "member": "AuthorizedUser",
           "name": "AuthorizedUsers",
@@ -20581,7 +20581,7 @@
         },
         {
           "disabled": false,
-          "document": "印章扩展数据信息",
+          "document": "<p>印章扩展数据信息</p>",
           "example": "无",
           "member": "ExtendScene",
           "name": "ExtendScene",
@@ -20591,7 +20591,7 @@
         },
         {
           "disabled": false,
-          "document": "印章的真实宽度，单位毫米",
+          "document": "<p>印章的真实宽度，单位毫米</p>",
           "example": "42",
           "member": "int64",
           "name": "RealWidth",
@@ -20601,7 +20601,7 @@
         },
         {
           "disabled": false,
-          "document": "印章的真实高度，单位毫米",
+          "document": "<p>印章的真实高度，单位毫米</p>",
           "example": "42",
           "member": "int64",
           "name": "RealHeight",
@@ -20611,7 +20611,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义子类型印章",
+          "document": "<p>自定义子类型印章</p>",
           "example": "OHTER_1",
           "member": "string",
           "name": "SubSealType",
@@ -20621,7 +20621,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义子类型印章名称",
+          "document": "<p>自定义子类型印章名称</p>",
           "example": "其他子印章类型",
           "member": "string",
           "name": "SubSealName",
@@ -20631,7 +20631,7 @@
         },
         {
           "disabled": false,
-          "document": "印章描述",
+          "document": "<p>印章描述</p>",
           "example": "印章描述内容",
           "member": "string",
           "name": "SealDescription",

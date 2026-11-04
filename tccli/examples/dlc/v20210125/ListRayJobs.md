@@ -45,6 +45,7 @@ Output:
         ],
         "Page": 1,
         "PageSize": 100,
+        "Total": 1,
         "TotalPages": 1,
         "RequestId": "6f5d03c4-3ffc-4443-866f-c5d659fe481e"
     }

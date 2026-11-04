@@ -381,7 +381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用名称",
+          "document": "<p>应用名称</p>",
           "example": "视立方应用",
           "member": "string",
           "name": "AppName",
@@ -391,7 +391,7 @@
         },
         {
           "disabled": false,
-          "document": "Ios应用的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Ios应用的唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.ios.com",
           "member": "string",
           "name": "BundleId",
@@ -401,7 +401,7 @@
         },
         {
           "disabled": false,
-          "document": "应用类型，formal： 正式应用，test：测试应用",
+          "document": "<p>应用类型，formal： 正式应用，test：测试应用</p>",
           "example": "formal",
           "member": "string",
           "name": "AppType",
@@ -411,7 +411,7 @@
         },
         {
           "disabled": false,
-          "document": "license数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>license数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "License",
           "name": "Licenses",
@@ -421,7 +421,7 @@
         },
         {
           "disabled": false,
-          "document": "license 秘钥",
+          "document": "<p>license 秘钥</p>",
           "example": "2hfais73whfasf23",
           "member": "string",
           "name": "LicenseKey",
@@ -431,7 +431,7 @@
         },
         {
           "disabled": false,
-          "document": "安卓应用的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>安卓应用的唯一标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test.Android.com",
           "member": "string",
           "name": "PackageName",
@@ -441,7 +441,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2021-07-07T11:24:41.995Z",
           "member": "string",
           "name": "CreatedAt",
@@ -451,7 +451,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
+          "document": "<p>更新时间</p>",
           "example": "2021-07-07T11:24:41.995Z",
           "member": "string",
           "name": "UpdatedAt",
@@ -461,7 +461,7 @@
         },
         {
           "disabled": false,
-          "document": "用户应用Id",
+          "document": "<p>用户应用Id</p>",
           "example": "1",
           "member": "uint64",
           "name": "ApplicationId",
@@ -471,7 +471,7 @@
         },
         {
           "disabled": false,
-          "document": "视立方下载license的url",
+          "document": "<p>视立方下载license的url</p>",
           "example": "http://host/license/v2/appid_group/v_cube.license",
           "member": "string",
           "name": "LicenseUrl",
@@ -481,7 +481,7 @@
         },
         {
           "disabled": false,
-          "document": "优图美视信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>优图美视信息列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "XMagicInfo",
           "name": "XMagics",
@@ -491,7 +491,7 @@
         },
         {
           "disabled": false,
-          "document": "Mac  进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Mac  进程名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "com.nengc.cc",
           "member": "string",
           "name": "MacBundleId",
@@ -501,7 +501,7 @@
         },
         {
           "disabled": false,
-          "document": "windows 进程名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>windows 进程名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "com.nengc.ss",
           "member": "string",
           "name": "WinProcessName",
@@ -511,7 +511,7 @@
         },
         {
           "disabled": false,
-          "document": "web端Domain列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>web端Domain列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"nengc.com\"]",
           "member": "string",
           "name": "DomainList",
@@ -521,7 +521,7 @@
         },
         {
           "disabled": false,
-          "document": "账号AppId",
+          "document": "<p>账号AppId</p>",
           "example": "251250924",
           "member": "string",
           "name": "AppId",
@@ -531,12 +531,22 @@
         },
         {
           "disabled": false,
-          "document": "扩展包名数量上限",
+          "document": "<p>扩展包名数量上限</p>",
           "example": "100",
           "member": "uint64",
           "name": "NameLimit",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>linux 进程名</p>",
+          "example": "com.nengc.ll",
+          "member": "string",
+          "name": "LinuxProcessName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -169,7 +169,7 @@
       "status": "online"
     },
     "GeneralBasicOCR": {
-      "document": "**建议您使用识别效果更好的[通用文字识别（高精度版](https://cloud.tencent.com/document/product/866/34937 )）**\n本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语，阿拉伯语20种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:250px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语</td>\n          <td>中文、英文、中英文、泰语、印尼语、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、哈萨克语</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>中英文支持；其他语种需要调整输入参数</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
+      "document": "**建议您使用识别效果更好的[通用文字识别（高精度版](https://cloud.tencent.com/document/product/866/34937 )）**\n本接口支持图像整体文字的检测和识别。可以识别中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语、印地语、阿拉伯语21种语言，且各种语言均支持与英文混合的文字识别。\n\n适用于印刷文档识别、网络图片识别、广告图文字识别、街景店招牌识别、菜单识别、视频标题识别、头像文字识别等场景。\n\n产品优势：支持自动识别语言类型，可返回文本框坐标信息，对于倾斜文本支持自动旋转纠正。\n\n通用印刷体识别不同版本的差异如下：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:150px\"></th>\n          <th style=\"width:250px\">【荐】通用印刷体识别</th>\n          <th ><a href=\"https://cloud.tencent.com/document/product/866/34937\">【荐】通用印刷体识别（高精度版）</a></th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> 适用场景</td>\n          <td>适用于所有通用场景的印刷体识别</td>\n          <td>适用于文字较多、长串数字、小字、模糊字、倾斜文本等困难场景</td>\n        </tr>\n        <tr>\n          <td>识别准确率</td>\n          <td>96%</td>\n          <td>99%</td>\n        </tr>\n        <tr>\n          <td>价格</td>\n          <td>低</td>\n          <td>中</td>\n        </tr>\n        <tr>\n          <td>支持的语言</td>\n          <td>中文、英文、中英文、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、泰语、印地语、阿拉伯语</td>\n          <td>中文、英文、中英文、泰语、印尼语、日语、韩语、西班牙语、法语、德语、葡萄牙语、越南语、马来语、俄语、意大利语、荷兰语、瑞典语、芬兰语、丹麦语、挪威语、匈牙利语、哈萨克语、藏语、阿拉伯语、维吾尔语、捷克语、希腊语、希伯来语、克罗地亚语、波兰语、罗马尼亚语、斯洛伐克语、斯洛文尼亚语、土耳其语、保加利亚语、爱沙尼亚语、拉脱维亚语、立陶宛语、乌尔都文、塞尔维亚文、欧西坦文、毛利文、阿尔巴尼亚文、斯瓦希里文、乌兹别克文、乌克兰文、阿巴扎文、南非荷兰文、威尔士文、冰岛文、库尔德文、达尔瓦文、因古什文、拉克文、莱兹甘文、塔巴萨兰文、沙特阿拉伯文、阿瓦尔文、阿迪赫文、印度-古吉拉特语、印度-印地语、印度-孟加拉语、印度-卡纳达语、印度-马拉亚拉姆语、印度-马拉地语、印度-旁遮普语、印度-泰米尔语、印度-泰卢固语、阿塞拜疆语、波斯尼亚语、加泰罗尼亚语、卢森堡语、马耳他语、爱尔兰语、白俄罗斯语、高棉语、他加禄语、普什图语、波斯语、塔吉克斯坦语、尼泊尔语、尼瓦尔语、梵语、马其顿语、柯尔克孜语、车臣语、鞑靼语、加利西亚语、马达加斯加语、老挝、巴什基尔文、马里文、奥塞梯文、布里亚特文、楚瓦什文、萨达里文、马加希文、约鲁巴文、巴利文、博杰普尔文、迈蒂利文、孔卡尼文、比哈尔文</td>\n        </tr>\n        <tr>\n          <td>自动语言检测</td>\n          <td>支持</td>\n          <td>中英文支持；其他语种需要调整输入参数</td>\n        </tr>\n        <tr>\n          <td>返回文本行坐标</td>\n          <td>支持</td>\n          <td>支持</td>\n        </tr>\n        <tr>\n          <td>自动旋转纠正</td>\n          <td>支持旋转识别，返回角度信息</td>\n          <td>支持旋转识别，返回角度信息</td>\n        </tr>\n      </tbody>\n    </table>\n\n默认接口请求频率限制：20次/秒。",
       "input": "GeneralBasicOCRRequest",
       "name": "通用印刷体识别",
       "output": "GeneralBasicOCRResponse",
@@ -194,6 +194,20 @@
       "input": "GeneralHandwritingOCRRequest",
       "name": "通用手写体识别",
       "output": "GeneralHandwritingOCRResponse",
+      "status": "online"
+    },
+    "GenerateTextEmbedding": {
+      "document": "本接口调用文本向量模型，将文本转换为数值表示的向量，可用于文本检索、RAG 召回、相似度计算等场景。",
+      "input": "GenerateTextEmbeddingRequest",
+      "name": "文本向量",
+      "output": "GenerateTextEmbeddingResponse",
+      "status": "online"
+    },
+    "GenerateVLEmbedding": {
+      "document": "本接口基于多模态向量模型，支持文本、图片、视频及图文混合输入并转换为向量，可用于跨模态检索、RAG 召回、相似度计算与聚类分析等场景。",
+      "input": "GenerateVLEmbeddingRequest",
+      "name": "多模态向量",
+      "output": "GenerateVLEmbeddingResponse",
       "status": "online"
     },
     "GetOCRResult": {
@@ -5352,6 +5366,32 @@
       ],
       "usage": "out"
     },
+    "EmbeddingObject": {
+      "document": "文本向量化结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入文本在 Inputs 列表中的索引，从 0 开始。",
+          "example": "0",
+          "member": "int64",
+          "name": "Index",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "向量化结果，维度由所选模型决定。",
+          "example": "[0.012,-0.034,0.056]",
+          "member": "float",
+          "name": "Embedding",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Encryption": {
       "document": "敏感数据加密",
       "members": [
@@ -7530,6 +7570,192 @@
         }
       ],
       "usage": "out"
+    },
+    "GenerateTextEmbeddingRequest": {
+      "document": "GenerateTextEmbedding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选择生成向量的模型（不同模型计费单价不同）。取值：</p><ul><li>0：text-embedding-0.6b</li><li>1：text-embedding-4b</li></ul>",
+          "example": "1",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入文本列表。单次最多 7 条，单条不超过 2000 字符。</p>",
+          "example": "[\"文本向量是什么？\"]",
+          "member": "string",
+          "name": "Inputs",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本向量化类型。取值：</p><ul><li>query：查询文本，用于检索场景的查询侧</li><li>document：文档文本，用于检索场景的文档侧</li></ul><p>默认为 document</p>",
+          "example": "query",
+          "member": "string",
+          "name": "TextType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义任务指令词，用于指定向量化任务。最大 2000 字符。不传时按 TextType 使用系统默认指令词。</p>",
+          "example": "Represent the query",
+          "member": "string",
+          "name": "Instruction",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateTextEmbeddingResponse": {
+      "document": "GenerateTextEmbedding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>向量化结果列表。顺序与输入 Inputs 列表一一对应。</p>",
+          "example": "无",
+          "member": "EmbeddingObject",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入 Token 数。</p>",
+          "example": "36",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总 Token 数。</p>",
+          "example": "36",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVLEmbeddingRequest": {
+      "document": "GenerateVLEmbedding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选择生成向量的模型。取值：</p><ul><li>0：vl-embedding-4b</li><li>1：vl-embedding-8b</li><li>2：vl-embedding-2b</li></ul>",
+          "example": "0",
+          "member": "string",
+          "name": "Model",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内容类型标识。取值：</p><ul><li>1：文本</li><li>2：图像 URL</li><li>3：视频 URL</li><li>4：图文混合</li></ul>",
+          "example": "2",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文本内容。仅当 Type 为 1 或 4 时必填，单条文本不超过 2000 字符。</p>",
+          "example": "这件商品有同款吗",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>图像地址，支持公网 http/https 链接或 base64 内容。仅当 Type 为 2 或 4 时必填。</p>",
+          "example": "https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/document/SubmitMarkEssayAgentJob/1.jpg",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频地址，支持公网 http/https 链接或 base64 内容。仅当 Type 为 3 时必填。</p>",
+          "example": "https://sls-layer-ap-guangzhou-code-1301293904.cos.ap-guangzhou.myqcloud.com/%E9%89%B4%E4%BC%AA%E6%A0%B7%E5%BC%A0/00085_54d34776.mp4",
+          "member": "string",
+          "name": "VideoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>检索场景，未传入该参数时将自动匹配。取值：</p><ul><li>0：自动匹配</li><li>1：图搜图（找同款、相似图），仅 Type 为 2 或 4 时可用</li><li>2：图文搜图（图 + 问题），仅 Type 为 4 时可用</li><li>3：文搜图（纯文本搜图），仅 Type 为 1 或 4 时可用</li><li>4：文搜视频（纯文本搜视频），仅 Type 为 1 或 4 时可用</li><li>5：图搜视频、图文搜视频，仅 Type 为 2 或 4 时可用</li></ul>",
+          "example": "0",
+          "member": "string",
+          "name": "SearchMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateVLEmbeddingResponse": {
+      "document": "GenerateVLEmbedding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>向量化结果列表。单条图文混合输入可能返回多个向量。</p>",
+          "example": "无",
+          "member": "EmbeddingObject",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入 Token 数，多模态场景含图像、视频折算的 Token。</p>",
+          "example": "990",
+          "member": "int64",
+          "name": "InputTokens",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总 Token 数。</p>",
+          "example": "990",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetOCRResultRequest": {
       "document": "GetOCRResult请求参数结构体",
