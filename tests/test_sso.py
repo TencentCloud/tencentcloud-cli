@@ -182,5 +182,80 @@ class TestAutoRefresh(unittest.TestCase):
         mocks["assume"].assert_not_called()
 
 
+# ---------------------------------------------------------------------------
+# TestLoginTokenCache
+# ---------------------------------------------------------------------------
+
+class TestLoginTokenCache(unittest.TestCase):
+    """凭证文件中缓存 SSO 登录态，供 list-uin / list-role / 后续 login 复用。"""
+
+    def setUp(self):
+        self.temp_dir = tempfile.mkdtemp(prefix="tccli_sso_token_test_")
+        self.cred_path = os.path.join(self.temp_dir, "default.credential")
+
+    def tearDown(self):
+        shutil.rmtree(self.temp_dir, ignore_errors=True)
+
+    def _write_cred(self, cred):
+        with open(self.cred_path, "w") as cred_file:
+            json.dump(cred, cred_file)
+
+    def _load(self):
+        with mock.patch.object(
+                sso_module, "cred_path_of_profile", return_value=self.cred_path):
+            return sso_module.load_login_token("default")
+
+    def test_load_token_from_saved_credential(self):
+        """login 保存的登录态可以被读取出来。"""
+        info = _make_sso_info()
+        with mock.patch.object(
+                sso_module, "cred_path_of_profile", return_value=self.cred_path):
+            sso_module.save_credential(_make_cred_resp(), info, "default", "login-token")
+        loaded = self._load()
+        self.assertEqual(loaded["token"], "login-token")
+        self.assertEqual(loaded["site"], info["site"])
+        self.assertEqual(loaded["expiresAt"], info["expiresAt"])
+
+    def test_credential_without_login_token_has_no_session(self):
+        """老版本写入、没有 ssoSession 的凭证视为无可用登录态。"""
+        info = _make_sso_info()
+        with mock.patch.object(
+                sso_module, "cred_path_of_profile", return_value=self.cred_path):
+            sso_module.save_credential(_make_cred_resp(), info, "default")
+        self.assertIsNone(self._load())
+
+    def test_expiring_login_token_is_rejected(self):
+        """剩余有效期不足安全窗口的登录态不再复用，避免换取凭证时失败。"""
+        self._write_cred({
+            "type": "sso",
+            "sso": {"site": "cn"},
+            "ssoSession": {"token": "t", "expiresAt": int(time.time()) + 60},
+        })
+        self.assertIsNone(self._load())
+
+    def test_non_sso_credential_has_no_session(self):
+        self._write_cred({"type": "cvm-role", "ssoSession": {"token": "t", "expiresAt": time.time() + 3600}})
+        self.assertIsNone(self._load())
+
+    def test_missing_or_corrupted_file_is_tolerated(self):
+        self.assertIsNone(self._load())
+        with open(self.cred_path, "w") as cred_file:
+            cred_file.write("{not json")
+        self.assertIsNone(self._load())
+
+    def test_saved_login_state_does_not_replace_sts_credential(self):
+        """缓存登录态不改变凭证文件原有的 STS 临时密钥结构。"""
+        info = _make_sso_info()
+        with mock.patch.object(
+                sso_module, "cred_path_of_profile", return_value=self.cred_path):
+            sso_module.save_credential(_make_cred_resp(), info, "default", "login-token")
+        with open(self.cred_path) as cred_file:
+            cred = json.load(cred_file)
+        self.assertEqual(cred["type"], "sso")
+        self.assertEqual(cred["secretId"], "sid")
+        self.assertEqual(cred["token"], "tok")
+        self.assertIn("ssoSession", cred)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -62,13 +62,19 @@ def login(args, profile, language):
         print_message(_("auth_url_not_configured") % profile_opt)
         return
 
-    characters = string.ascii_letters + string.digits
-    state = ''.join(random.choice(characters) for x in range(32))
+    cached = sso.load_login_token(profile)
+    if cached:
+        print_message(_("login_token_valid") % ((cached["expiresAt"] - time.time()) / 60))
+        token = {"Token": cached["token"], "Site": cached["site"], "State": ""}
+    else:
+        print_message(_("token_expired_relogin"))
+        characters = string.ascii_letters + string.digits
+        state = ''.join(random.choice(characters) for x in range(32))
 
-    token = _get_token(auth_url, state, language)
+        token = _get_token(auth_url, state, language)
 
-    if token["State"] != state:
-        raise ValueError("invalid state %s" % token["state"])
+        if token["State"] != state:
+            raise ValueError("invalid state %s" % token["state"])
 
     print_message("")
 
@@ -100,7 +106,14 @@ def login(args, profile, language):
         return
 
     specified_role = args.get("rolename", "")
-    if specified_role:
+    specified_role_id = args.get("role-id", "")
+    if specified_role_id:
+        role = next((x for x in roles if x["RoleConfigurationId"] == specified_role_id), None)
+        if not role:
+            print_message(
+                _("specified_role_not_found") % (specified_role_id, ",".join(x["RoleConfigurationId"] for x in roles)))
+            return
+    elif specified_role:
         role = next((x for x in roles if x["RoleConfigurationName"] == specified_role), None)
         if not role:
             print_message(
@@ -121,6 +134,12 @@ def login(args, profile, language):
 
     token_info = sso.verify_login_skey(login_token, site)
 
+    # 登录态有效期优先取服务端返回值, 拿不到时按 12 小时兜底
+    if cached:
+        sso_expires_at = cached["expiresAt"]
+    else:
+        sso_expires_at = int(token_info.get("ExpiresAt") or 0) or int(time.time()) + 3600 * 12
+
     role_arn = "qcs::cam::uin/%s:roleName/TencentCloudSSO-%s" % (account["Uin"], role["RoleConfigurationName"])
     principal_arn = "qcs::cam::uin/%s:saml-provider/TencentReservedSSO-%s" % (account["Uin"], token_info["ZoneId"])
     cred = sso.assume_role_with_saml(
@@ -134,9 +153,9 @@ def login(args, profile, language):
         "zoneId": token_info["ZoneId"],
         "site": site,
         "authUrl": auth_url,
-        "expiresAt": int(time.time()) + 3600 * 12,
+        "expiresAt": sso_expires_at,
     }
-    sso.save_credential(cred, sso_info, profile)
+    sso.save_credential(cred, sso_info, profile, login_token)
 
     print_message(_("login_success") % sso.cred_path_of_profile(profile))
 
