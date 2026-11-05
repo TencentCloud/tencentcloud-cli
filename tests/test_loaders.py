@@ -937,7 +937,32 @@ def test_N1_get_action_example_model_missing_raises():
         ld.get_action_example_model("__no_svc__", "1970-01-01", "X")
         assert False
     except Exception as e:
-        assert "Not find service" in str(e)
+        assert str(e) == (
+            "Cannot find model for service:__no_svc__ version:1970-01-01")
+
+
+def test_N1_plugin_action_without_examples_returns_empty_list():
+    """插件 action 不依赖磁盘 examples.json。"""
+    plugin_spec = {
+        "metadata": {"apiVersion": "2024-10-14"},
+        "actions": {
+            "configure": {
+                "action_caller": lambda args, parsed_globals: None,
+            },
+        },
+        "objects": {},
+    }
+    original_import_plugins = _plg.import_plugins
+    _plg.import_plugins = lambda: {
+        "sso": {"2024-10-14": plugin_spec},
+    }
+    try:
+        examples = Loader().get_action_example_model(
+            "sso", "2024-10-14", "configure")
+    finally:
+        _plg.import_plugins = original_import_plugins
+
+    assert examples == []
 
 
 def test_N2_get_action_example_model_real_cvm():

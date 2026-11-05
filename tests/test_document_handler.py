@@ -707,6 +707,16 @@ def test_H4_example_iterates_loader_examples():
     assert "--A x" in flat
 
 
+def test_H5_example_skips_section_when_loader_returns_empty_list():
+    doc = _FakeDoc()
+    h = _make_action_handler(doc)
+    _patch_loader(h, generate_cli_example=lambda s, v, a: [])
+
+    h.example()
+
+    assert "[H2]Examples" not in _flat(doc)
+
+
 # ============================================================
 # I. doc_help 端到端（detail=True 与 detail=False）
 # ============================================================
