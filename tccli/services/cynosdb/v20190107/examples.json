@@ -770,6 +770,14 @@
         "title": "查询实例参数"
       }
     ],
+    "DescribeInstanceServerlessQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceServerlessQuota\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-mf7uf72f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceQuotas\": [\n            {\n                \"EnableTime\": \"2026-09-11 16:31:33\",\n                \"InstanceId\": \"cynosdbmysql-ins-j6vccbsi\",\n                \"MaxCcu\": 8,\n                \"Status\": \"opened\"\n            }\n        ],\n        \"QuotaConfigs\": [\n            {\n                \"InstanceType\": \"ro\",\n                \"MaxCcu\": 8,\n                \"Status\": \"opened\"\n            }\n        ],\n        \"RequestId\": \"24a3aeaf-8cab-4e78-925e-1dbc3ca0c3e4\"\n    }\n}",
+        "title": "查询集群Serverless弹性信息"
+      }
+    ],
     "DescribeInstanceSlowQueries": [
       {
         "document": "",
@@ -1860,6 +1868,14 @@
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterTables\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwerasd\",\n    \"Database\": \"testDb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Tables\": []\n    }\n}",
         "title": "搜索集群数据表列表"
+      }
+    ],
+    "SetInstanceServerlessQuota": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetInstanceServerlessQuota\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-9tbxdtfl\",\n    \"ServerlessQuotaConfigs\": [\n        {\n            \"InstanceType\": \"rw\",\n            \"MaxCcu\": 4,\n            \"Enabled\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 64769,\n        \"RequestId\": \"c15bbd12-5021-4b8f-b955-95605a49c6b4\"\n    }\n}",
+        "title": "开启rw的Serverless弹性配置"
       }
     ],
     "SetLibraDBClusterRenewFlag": [

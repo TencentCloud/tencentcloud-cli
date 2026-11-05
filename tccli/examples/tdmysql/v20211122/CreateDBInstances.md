@@ -17,6 +17,10 @@ tccli tdmysql CreateDBInstances --cli-unfold-argument  \
     --CreateVersion 21.2.0 \
     --InitParams.0.Param character_set_server \
     --InitParams.0.Value utf8mb4 \
+    --InitParams.1.Param collation_server \
+    --InitParams.1.Value utf8mb4_0900_ai_ci \
+    --InitParams.2.Param lower_case_table_names \
+    --InitParams.2.Value 1 \
     --StorageNodeCpu 1 \
     --StorageNodeMem 2 \
     --Zones ap-chengdu-1 \

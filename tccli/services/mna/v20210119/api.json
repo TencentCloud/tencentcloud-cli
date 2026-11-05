@@ -1973,7 +1973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询粒度。0:day, 1:week, 2:month, 不传默认为day",
+          "document": "<p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>",
           "example": "0",
           "member": "int64",
           "name": "Period",
@@ -1982,7 +1982,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。单位秒",
+          "document": "<p>开始时间。单位秒</p>",
           "example": "1732176361",
           "member": "int64",
           "name": "StartTime",
@@ -1991,7 +1991,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。单位秒",
+          "document": "<p>结束时间。单位秒</p>",
           "example": "1732176361",
           "member": "int64",
           "name": "EndTime",
@@ -2000,7 +2000,7 @@
         },
         {
           "disabled": false,
-          "document": "设备组, 不传查询全部",
+          "document": "<p>设备组, 不传查询全部</p>",
           "example": "group1",
           "member": "string",
           "name": "DevGroup",
@@ -2009,7 +2009,16 @@
         },
         {
           "disabled": false,
-          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "document": "<p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>",
+          "example": "app-zdsbik***e",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>",
           "example": "1",
           "member": "int64",
           "name": "LicenseType",
@@ -2024,7 +2033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "URL地址",
+          "document": "<p>URL地址</p>",
           "example": "http://cos.com",
           "member": "string",
           "name": "FilePath",
@@ -2420,7 +2429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询粒度。0:day, 1:week, 2:month, 不传默认为day",
+          "document": "<p>查询粒度。0:day, 1:week, 2:month, 不传默认为day</p>",
           "example": "0",
           "member": "int64",
           "name": "Period",
@@ -2429,7 +2438,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间。单位秒",
+          "document": "<p>开始时间。单位秒</p>",
           "example": "1732176361",
           "member": "int64",
           "name": "StartTime",
@@ -2438,7 +2447,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。单位秒",
+          "document": "<p>结束时间。单位秒</p>",
           "example": "1732176361",
           "member": "int64",
           "name": "EndTime",
@@ -2447,7 +2456,7 @@
         },
         {
           "disabled": false,
-          "document": "设备组, 不传查询全部",
+          "document": "<p>设备组, 不传查询全部</p>",
           "example": "group1",
           "member": "string",
           "name": "DevGroup",
@@ -2456,7 +2465,16 @@
         },
         {
           "disabled": false,
-          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "document": "<p>应用ID，指控制台上设备管理中的动态设备应用ID，不传查询全部。</p>",
+          "example": "app-zdsbik***e",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>",
           "example": "1",
           "member": "int64",
           "name": "LicenseType",
@@ -2471,8 +2489,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "激活设备统计",
-          "example": "[                     {                         \"count\": 1,                         \"time\": \"2024-11-20\"                     }                 ]",
+          "document": "<p>激活设备统计</p>",
+          "example": "无",
           "member": "ActiveDeviceList",
           "name": "ActiveDeviceList",
           "output_required": false,
@@ -2481,7 +2499,7 @@
         },
         {
           "disabled": false,
-          "document": "查询粒度，0:day, 1:week, 2:month, 不传默认为day",
+          "document": "<p>查询粒度，0:day, 1:week, 2:month, 不传默认为day</p>",
           "example": "1",
           "member": "int64",
           "name": "Period",
@@ -2491,7 +2509,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "2024-11-20",
           "member": "string",
           "name": "StartTime",
@@ -2501,7 +2519,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "2024-11-20",
           "member": "string",
           "name": "EndTime",
@@ -2511,7 +2529,7 @@
         },
         {
           "disabled": false,
-          "document": "设备组",
+          "document": "<p>设备组</p>",
           "example": "group1",
           "member": "string",
           "name": "DevGroup",
@@ -2521,7 +2539,7 @@
         },
         {
           "disabled": false,
-          "document": "license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权",
+          "document": "<p>license类型, 不传查询全部, 1: 租户月付，2：厂商月付，3：永久授权</p>",
           "example": "1",
           "member": "string",
           "name": "LicenseType",
@@ -2531,7 +2549,7 @@
         },
         {
           "disabled": false,
-          "document": "租户ID",
+          "document": "<p>租户ID</p>",
           "example": "251198806",
           "member": "string",
           "name": "AppId",

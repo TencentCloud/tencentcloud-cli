@@ -1494,6 +1494,42 @@
       ],
       "type": "object"
     },
+    "CharsetCollationItem": {
+      "document": "字符集与排序规则联动清单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>字符集</p>",
+          "example": "UTF8",
+          "member": "string",
+          "name": "CharsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序规则</p>",
+          "example": "[\"UTF8_GENERAL_CI\"]",
+          "member": "string",
+          "name": "Collations",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>默认的排序规则</p>",
+          "example": "UTF8_GENERAL_CI",
+          "member": "string",
+          "name": "DefaultCollation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloneInstanceModel": {
       "document": "克隆实例对象",
       "members": [
@@ -1898,15 +1934,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>创建实例区域</p>",
-          "example": "\"ap-guangzhou-1\"",
-          "member": "string",
-          "name": "Zone",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>字符型vpcid</p>",
           "example": "“vpc-o7ssr1vx”",
           "member": "string",
@@ -1967,6 +1994,15 @@
           "name": "InstanceCount",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建实例区域</p>",
+          "example": "\"ap-guangzhou-1\"",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2210,6 +2246,15 @@
           "name": "AutoScaleConfigs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码复杂度</p>",
+          "example": "无",
+          "member": "PasswordComplexity",
+          "name": "PasswordComplexity",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3110,6 +3155,16 @@
       "document": "DescribeDBCharsets返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>字符集与排序规则对应列表</p>",
+          "example": "无",
+          "member": "CharsetCollationItem",
+          "name": "CharsetCollations",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3791,6 +3846,26 @@
           "name": "AutoScaleConfigs",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL开启状态</p>",
+          "example": "Disabled",
+          "member": "string",
+          "name": "SSLStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符集的排序规则</p>",
+          "example": "utf8mb4_0900_ai_ci",
+          "member": "string",
+          "name": "Collation",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5473,6 +5548,15 @@
           "name": "Zones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "\"tdsql3-aaaaaa\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7981,6 +8065,67 @@
       ],
       "usage": "out"
     },
+    "PasswordComplexity": {
+      "document": "密码复杂度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启密码复杂度</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>大写和小写字符的最小长度</p><p>取值范围：[1, 16]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "MixedCaseCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数字字符的最小长度</p><p>取值范围：[1, 16]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "NumberCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>特殊字符的最小长度</p><p>取值范围：[1, 16]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "SpecialCharCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>密码的最小长度</p><p>取值范围：[8, 64]</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Length",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResetDbaAdminPrivilegesRequest": {
       "document": "ResetDbaAdminPrivileges请求参数结构体",
       "members": [
@@ -7991,6 +8136,15 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>DbaAdmin的host</p>",
+          "example": "%",
+          "member": "string",
+          "name": "Host",
+          "required": false,
           "type": "string"
         }
       ],

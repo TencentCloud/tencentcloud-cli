@@ -946,6 +946,23 @@
     "serviceShortName": "adp"
   },
   "objects": {
+    "A2AConfig": {
+      "document": "A2AConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>企业共享开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AICallConfig": {
       "document": "智能通话配置",
       "members": [
@@ -1472,7 +1489,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>输入来源类型：0 用户输入，3 自定义变量（API参数）</p>",
+          "document": "<p>输入来源类型</p><p>枚举值：</p><ul><li>1： 用户输入</li><li>2： 系统变量</li><li>3： 自定义变量（API参数）</li><li>4： 环境变量</li><li>5： 应用变量</li><li>6： 工具参数</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "InputType",
@@ -2957,6 +2974,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9088,6 +9116,15 @@
           "name": "PortalShareConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A配置</p>",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10953,7 +10990,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表),CorpShareConfig(企业共享配置), FileVolumeMountList(云盘挂载列表)</p>",
+          "document": "<p>字段掩码，指定需要返回的字段(Paths为空则返回所有字段)。Paths枚举值：AppConfig(应用配置), SecretInfo(应用密钥信息), ShareUrlInfo(分享链接信息), SpecialStatusInfo(特殊状态信息), SearchResourceStatus(搜索资源状态), SharedKbList(应用引用的共享知识库列表),CorpShareConfig(企业共享配置), FileVolumeMountList(云盘挂载列表), A2AConfig(A2A启用配置)</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "FieldMask",
@@ -23248,6 +23285,17 @@
           "example": "无",
           "member": "PortalShareConfig",
           "name": "PortalShareConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>A2A配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "A2AConfig",
+          "name": "A2AConfig",
           "output_required": false,
           "required": false,
           "type": "object",

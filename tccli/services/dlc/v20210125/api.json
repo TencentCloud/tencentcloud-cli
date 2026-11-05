@@ -2855,6 +2855,33 @@
           "name": "NetworkConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>",
+          "example": "无",
+          "member": "LoraAdapterBinding",
+          "name": "LoraBindings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户上传代码包的原始文件名（详情页「代码引用」回显用）</p>",
+          "example": "generic_http_custom.zip",
+          "member": "string",
+          "name": "CodePackageOriginalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码包 URI（Git URL / COS URI）</p>",
+          "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200066/20261102185937/20c2ebab-00d5-48e0-8894-f2b79617113b.zip",
+          "member": "string",
+          "name": "CodePackageUri",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2984,6 +3011,36 @@
         },
         {
           "disabled": false,
+          "document": "<p>最小副本数（自动伸缩时使用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "MinReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大副本数（自动伸缩时使用）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>弹性伸缩配置（JSON 字符串）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N/A",
+          "member": "string",
+          "name": "AutoscalerOptions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>模型存储配置（Catalog JSON，记录模型 COS 挂载信息）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"COSVolumes\":[{\"Region\":\"ap-guangzhou\",\"Bucket\":\"common-job-packages-251233710\",\"VolumeSubPath\":\"/builtin-models/chronos2/v1/\",\"MountPath\":\"/builtin-models/chronos2/v1\"}]}",
           "member": "string",
@@ -3038,6 +3095,16 @@
           "example": "rayserve-20260806171152-lk8j",
           "member": "string",
           "name": "NeutrinoServeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ray Dashboard 访问地址（通过 Ingress 代理，仅 Running 状态的部署有值）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "N/A",
+          "member": "string",
+          "name": "RayDashboardUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3100,6 +3167,36 @@
           "name": "AdvancedOptions",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户代码包 URL</p>",
+          "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200066/20261102185937/20c2ebab-00d5-48e0-8894-f2b79617113b.zip",
+          "member": "string",
+          "name": "CodePackageUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户上传代码包的原始文件名</p>",
+          "example": "generic_http_custom.zip",
+          "member": "string",
+          "name": "CodePackageOriginalName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署当前挂载的 LoRA 模型版本列表。</p>",
+          "example": "无",
+          "member": "LoraItem",
+          "name": "LoraBindings",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8456,6 +8553,15 @@
           "name": "Spec",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>",
+          "example": "<基座>:<LoRA Adapter 别名>",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8671,6 +8777,16 @@
           "name": "Resources",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;</p>",
+          "example": "<基座>:<LoRA Adapter 别名>",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9926,6 +10042,60 @@
           "name": "StorageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）</p>",
+          "example": "无",
+          "member": "RegisterMeta",
+          "name": "RegisterMeta",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>",
+          "example": "无",
+          "member": "FileNode",
+          "name": "FileList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>",
+          "example": "m-auto-test-model-1793-6ae1df48-7663",
+          "member": "string",
+          "name": "BaseModelUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "modelver-20261028194056-3054",
+          "member": "string",
+          "name": "BaseModelVersionUid",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>",
+          "example": "LoRA",
+          "member": "string",
+          "name": "ModelCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10141,6 +10311,76 @@
           "name": "ResourceTags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>",
+          "example": "LoRA",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>",
+          "example": "m-auto-test-model-1793-6ae1df48-7663",
+          "member": "string",
+          "name": "BaseModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本的全局唯一标识（VersionUid）。CreateInferenceModel 返回时即初始版本的 VersionUid</p>",
+          "example": "modelver-20261030101307-6493",
+          "member": "string",
+          "name": "LatestVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "modelver-20261028194056-3054",
+          "member": "string",
+          "name": "BaseModelVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型名称（仅 ModelCategory=LoRA 且基座存在时有值；列表展示「基座模型及版本」用）</p>",
+          "example": "qwen3.5-0.8B-personal",
+          "member": "string",
+          "name": "BaseModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本号（如 v2；仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "BaseModelVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -10361,6 +10601,15 @@
           "name": "NetworkConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>",
+          "example": "无",
+          "member": "LoraAdapterBinding",
+          "name": "LoraBindings",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12455,12 +12704,30 @@
         },
         {
           "disabled": false,
+          "document": "<p>启动参数（可选，单个字符串，如 &quot;--workers 4&quot;）；分词后追加在平台固定命令之后，下次 start 时生效。平台保留参数（--host/--port/--backend-store-uri 等）不允许指定；不传或空白为默认命令</p>",
+          "example": "--workers 4",
+          "member": "string",
+          "name": "ServerArgs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>标签列表（TagKey-TagValue），用于将 MLflow Server 与腾讯云标签系统中的标签绑定</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息（可选，纯文本，不允许换行，最长 1024）；不传或空白为未填写</p>",
+          "example": "test desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12552,6 +12819,33 @@
           "name": "StorageType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（可选；有 RegisterMeta 时必填；须与模型现有来源一致）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>",
+          "example": "无",
+          "member": "RegisterMeta",
+          "name": "RegisterMeta",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物文件树（可选，仅注册语义下有意义；结构同 GetModelFiles 响应 FileNode）</p>",
+          "example": "无",
+          "member": "FileNode",
+          "name": "FileList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12647,6 +12941,46 @@
           "name": "UseCustomStorage",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册元信息（仅注册语义创建的版本有值，与创建请求 RegisterMeta 结构一致）</p>",
+          "example": "无",
+          "member": "RegisterMeta",
+          "name": "RegisterMeta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本业务唯一标识；LoRA 模型版本挂载到部署时以此引用</p>",
+          "example": "modelver-20261102212502-da8c",
+          "member": "string",
+          "name": "VersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA Adapter 元信息（仅 LoRA 模型版本有值，解析自 adapter_config.json）</p>",
+          "example": "无",
+          "member": "LoraVersionMeta",
+          "name": "LoraMeta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA pool 异步导入状态（Importing/Ready/Failed；NULL=就绪），未就绪不能挂载</p>",
+          "example": "Importing",
+          "member": "string",
+          "name": "PoolImportStatus",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -28548,6 +28882,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>训练产物根的完整存储 URI（注册推理模型用，如 cos://bucket/path/、cfs://fs-id/path/）；作为 CreateInferenceModel / CreateModelVersion 的 StorageUri 传回（配合 UseCustomStorage=true）</p>",
+          "example": "cos://dlc-andrew-260200066/checkpoints/raytrain-20261014170006-0ml7/",
+          "member": "string",
+          "name": "ArtifactRootUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>错误或提示信息（仅在请求异常时有值）</p>",
           "example": "实例未配置 Checkpoint 挂载",
           "member": "string",
@@ -32273,6 +32617,76 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>",
+          "example": "LoRA",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>",
+          "example": "m-qwen3-embedding-4b-6a223aba-c8fd",
+          "member": "string",
+          "name": "BaseModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本的全局唯一标识（VersionUid）。CreateInferenceModel 返回时即初始版本的 VersionUid</p>",
+          "example": "modelver-20260616143931-e9ea",
+          "member": "string",
+          "name": "LatestVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "modelver-20261028193826-08b3",
+          "member": "string",
+          "name": "BaseModelVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型名称（仅 ModelCategory=LoRA 且基座存在时有值；列表展示「基座模型及版本」用）</p>",
+          "example": "Qwen3-Embedding-4B",
+          "member": "string",
+          "name": "BaseModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本号（如 v2；仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "BaseModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -37480,6 +37894,83 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（如 train-checkpoint=训练 Checkpoint 注册；空=普通上传等无注册元信息链路）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>",
+          "example": "LoRA",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>",
+          "example": "m-qwen3-5-0-8b-6a7d67b3-f1f5",
+          "member": "string",
+          "name": "BaseModelUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本的全局唯一标识（VersionUid）。CreateInferenceModel 返回时即初始版本的 VersionUid</p>",
+          "example": "modelver-20261027203515-955c",
+          "member": "string",
+          "name": "LatestVersionUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "modelver-20260813145924-2e5a",
+          "member": "string",
+          "name": "BaseModelVersionUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型名称（仅 ModelCategory=LoRA 且基座存在时有值；列表展示「基座模型及版本」用）</p>",
+          "example": "qwen3.5-0.8B-personal",
+          "member": "string",
+          "name": "BaseModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本号（如 v2；仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "BaseModelVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -44210,6 +44701,189 @@
       ],
       "type": "object"
     },
+    "LoraAdapterBinding": {
+      "document": "创建 RayServe 推理服务时一并挂载的 LoRA 模型版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>LoRA 模型版本 UID（ListModelVersions 返回的 VersionUid；该模型须以部署基座为 BaseModelUid）</p>",
+          "example": "modelver-20261028122311-1e59",
+          "member": "string",
+          "name": "ModelVersionUid",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoraItem": {
+      "document": "单个 LoRA Adapter（LoRA 模型版本）绑定项.",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>模型版本 UID</p>",
+          "example": "modelver-abc",
+          "member": "string",
+          "name": "ModelVersionUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 UID</p>",
+          "example": "thisisuid",
+          "member": "string",
+          "name": "ModelUid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型名称</p>",
+          "example": "qwen3.5-0.8B-lora1",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型版本</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>别名</p>",
+          "example": "anyname",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Lora Rank</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "AdapterRank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "LoraVersionMeta": {
+      "document": "LoRA Adapter 元信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Lora Rank</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "Rank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Lora Alpha</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "Alpha",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA dropout</p>",
+          "example": "0.05",
+          "member": "float",
+          "name": "Dropout",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注入的目标模块</p>",
+          "example": "[\"up_proj\"]",
+          "member": "string",
+          "name": "TargetModules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>PEFT 类型（如 LORA）</p>",
+          "example": "LORA",
+          "member": "string",
+          "name": "PEFTType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务类型（如 CAUSAL_LM）</p>",
+          "example": "CAUSAL_LM",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练时声明的基座名称或路径（base_model_name_or_path）</p>",
+          "example": "/mnt/models/Qwen3.5-0.8B",
+          "member": "string",
+          "name": "BaseModelNameOrPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大 rank（含 rank_pattern 分模块 rank；仅当其大于 Rank 时返回）</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "MaxRank",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "MCPTaskInfo": {
       "document": "mcp 请求任务详情的返回",
       "members": [
@@ -45127,6 +45801,28 @@
         },
         {
           "disabled": false,
+          "document": "<p>启动参数（用户自定义；null = 默认命令，编辑弹窗预填用）</p>",
+          "example": "--workers 4",
+          "member": "string",
+          "name": "ServerArgs",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息（纯文本；null = 未填写）</p>",
+          "example": "test123",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>应用 ID</p>",
           "example": "260200065",
           "member": "int64",
@@ -45142,6 +45838,28 @@
           "example": "700002655693",
           "member": "string",
           "name": "Uin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人子账号 UIN（实际提交者，存量数据可能为空）</p>",
+          "example": "700002718303",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人子账号名称（CAM 动态回填，非持久化；查询失败时为空）</p>",
+          "example": "dlc20-auto-test",
+          "member": "string",
+          "name": "SubAccountName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -45190,6 +45908,61 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次成功探测 Deployment 的时间（epoch millis，Neutrino 透传）；NULL=尚未成功探测过。</p>",
+          "example": "1789891007035",
+          "member": "int64",
+          "name": "LastProbeSuccessTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次成功探测后的连续失败次数（&gt;0 表示当前 Status 可能过期）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "ConsecutiveProbeFailures",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次探测失败原因（Neutrino 透传，仅诊断展示）</p>",
+          "example": "error",
+          "member": "string",
+          "name": "LastProbeError",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联训练实例总数（ray-nexus 侧统计，仅 ListMlflowServers 返回；详情/监控请用 QueryMlFlowServerInstanceStats）</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的运行中（RUNNING）训练实例数（仅 ListMlflowServers 返回；详情/监控请用 QueryMlflowServerInstanceStats）</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "RunningInstanceCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -51840,6 +52613,45 @@
       ],
       "usage": "both"
     },
+    "RegisterMeta": {
+      "document": "注册元信息（携带即注册语义：storageUri 为训练产物根，零拷贝引用）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Checkpoint 子路径不能为空</p>",
+          "example": "checkpoint-4",
+          "member": "string",
+          "name": "CheckpointSubPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源训练实例标识（接入方自定义语义，可选）</p>",
+          "example": "raytrain-20261027213136-nyp6",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入方扩展键值列表（原样落库，平台不解释）</p>",
+          "example": "无",
+          "member": "KVPair",
+          "name": "Extras",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RegisterThirdPartyAccessUserRequest": {
       "document": "RegisterThirdPartyAccessUser请求参数结构体",
       "members": [],
@@ -52219,6 +53031,16 @@
           "name": "DeploymentResources",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>",
+          "example": "<基座>:<LoRA Adapter 别名>",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -52973,6 +53795,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>部署当前挂载的 LoRA 模型版本列表。</p>",
+          "example": "无",
+          "member": "LoraItem",
+          "name": "LoraBindings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -53316,9 +54148,18 @@
         {
           "disabled": false,
           "document": "<p>训练实例ID</p>",
-          "example": "rayjob-20260702185625-wona",
+          "example": "raytrain-20261014170006-0ml7",
           "member": "string",
           "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>续训指定的源 checkpoint 子目录（相对源实例 checkpoint 根；空 = 自动选最新）</p>",
+          "example": "sft_ray_training/checkpoint_2026-10-14_19-34-02.520072",
+          "member": "string",
+          "name": "ResumeCheckpointSubDir",
           "required": false,
           "type": "string"
         }
@@ -57036,6 +57877,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "<p>评测路由模型（可选）：基座或 &quot;&lt;基座&gt;:&lt;LoRA Adapter 别名&gt;&quot;，不传默认压测基座</p>",
+          "example": "<基座>:<LoRA Adapter 别名>",
+          "member": "string",
+          "name": "ModelIdentifier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -57320,6 +58171,16 @@
           "name": "ResourcePartitionName",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署当前挂载的 LoRA 模型版本列表。</p>",
+          "example": "无",
+          "member": "LoraItem",
+          "name": "LoraBindings",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -62041,6 +62902,28 @@
         },
         {
           "disabled": false,
+          "document": "<p>子账号 UIN</p>",
+          "example": "100050081158",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子账号名称</p>",
+          "example": "dlc20-auto-test",
+          "member": "string",
+          "name": "SubAccountName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>创建时间（毫秒时间戳）</p>",
           "example": "1785830165062",
           "member": "int64",
@@ -62290,6 +63173,28 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义网络配置</p>",
+          "example": "{\\\"appId\\\":22,\\\"uin\\\":\\\"111\\\",\\\"uniqVpcId\\\":\\\"vpc-xxx\\\",\\\"subnetId\\\":\\\"subnet-xxx\\\"}",
+          "member": "string",
+          "name": "NetworkConfig",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>断点续训来源实例 ID（仅续训产生的实例有值，仅详情返回）</p>",
+          "example": "raytrain-20261014170006-0ml7",
+          "member": "string",
+          "name": "ResumeSourceInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -63198,6 +64103,94 @@
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Actor Token 上限 / GPU</p>",
+          "example": "4096",
+          "member": "int64",
+          "name": "PPOMaxTokenLenPerGpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LogProb Token 上限 / GPU</p>",
+          "example": "2048",
+          "member": "int64",
+          "name": "LogProbMaxTokenLenPerGpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Actor 参数 Offload</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ActorParamOffload",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>优化器 Offload</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ActorOptimizerOffload",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Ref 参数 Offload</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "RefParamOffload",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Actor Micro Batch / GPU</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PPOMicroBatchSizePerGpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LogProb Micro Batch / GPU</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RollOutLogProbMicroBatchSizePerGpu",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>直接追加为命令行 override，优先级最高</p>",
+          "example": "actor_rollout_ref.actor.fsdp_config.param_offload=True\nactor_rollout_ref.actor.fsdp_config.optimizer_offload=True",
+          "member": "string",
+          "name": "GRPORawOverrides",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -64011,6 +65004,60 @@
           "name": "AutoscalingEnabled",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码包 URI（可选，未传时从 primary deployment 继承）</p>",
+          "example": "https://common-job-packages-251233710.cos.ap-guangzhou.myqcloud.com/job-packages/260200066/20261102151910/982b8f19-83b8-4d97-b1aa-948c32205c6a.zip",
+          "member": "string",
+          "name": "CodePackageUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码包原始文件名（可选，详情页「代码引用」回显用，仅记录不参与业务逻辑）</p>",
+          "example": "generic_http_custom.zip",
+          "member": "string",
+          "name": "CodePackageOriginalName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CR / PodSpec overrides JSON（可选）</p>",
+          "example": "N/A",
+          "member": "string",
+          "name": "CrOverrides",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Head 节点高可用开关（可选，不传或 true 为开启，仅 false 为关闭；与当前值不同会触发服务重建）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HeadHighAvailabilityEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可选：创建时一并挂载的 LoRA 模型版本（首次启动即生效）</p>",
+          "example": "无",
+          "member": "LoraAdapterBinding",
+          "name": "LoraBindings",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>ray runtime env 字段</p>",
+          "example": "{\"pip\": [\"mineru[pipeline]==2.5.4\"], \"env_vars\": {\"PIP_INDEX_URL\": \"http://mirrors.tencent.com/pypi/simple\", \"MINERU_DEVICE_MODE\": \"cpu\"}}",
+          "member": "string",
+          "name": "RuntimeEnv",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -64206,6 +65253,16 @@
           "name": "AdvancedOptions",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署当前挂载的 LoRA 模型版本列表。</p>",
+          "example": "无",
+          "member": "LoraItem",
+          "name": "LoraBindings",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -64534,6 +65591,76 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型类别：Base=普通（基座）模型；LoRA=LoRA Adapter 系列（各版本为 Adapter）</p>",
+          "example": "Base",
+          "member": "string",
+          "name": "ModelCategory",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型 UID（仅 ModelCategory=LoRA 时有值）</p>",
+          "example": "m-qwen3-embedding-4b-6",
+          "member": "string",
+          "name": "BaseModelUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最新版本的全局唯一标识（VersionUid）。CreateInferenceModel 返回时即初始版本的 VersionUid</p>",
+          "example": "modelver-20260616143931-e9ea",
+          "member": "string",
+          "name": "LatestVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本 UID（仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "modelver-20261028193826-08b3",
+          "member": "string",
+          "name": "BaseModelVersionUid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型名称（仅 ModelCategory=LoRA 且基座存在时有值；列表展示「基座模型及版本」用）</p>",
+          "example": "hy4",
+          "member": "string",
+          "name": "BaseModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>LoRA 基座模型版本号（如 v2；仅 ModelCategory=LoRA 且创建时指定了基座版本时有值）</p>",
+          "example": "v1",
+          "member": "string",
+          "name": "BaseModelVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型来源标识（可选；有 RegisterMeta 时必填，须在平台值域登记表内）</p>",
+          "example": "raytrain-checkpoint",
+          "member": "string",
+          "name": "ModelSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

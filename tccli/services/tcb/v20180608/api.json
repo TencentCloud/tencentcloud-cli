@@ -378,6 +378,13 @@
       "output": "DescribeEnvAccountCircleResponse",
       "status": "online"
     },
+    "DescribeEnvInfo": {
+      "document": "查询环境详细信息",
+      "input": "DescribeEnvInfoRequest",
+      "name": "根据环境ID查询环境详情",
+      "output": "DescribeEnvInfoResponse",
+      "status": "online"
+    },
     "DescribeEnvLimit": {
       "document": "查询环境个数上限",
       "input": "DescribeEnvLimitRequest",
@@ -4736,7 +4743,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库唯一标识",
+          "document": "<p>数据库唯一标识</p>",
           "example": "tnt-xxxxyyyy",
           "member": "string",
           "name": "InstanceId",
@@ -4746,7 +4753,7 @@
         },
         {
           "disabled": false,
-          "document": "状态。包含以下取值：\n<li>INITIALIZING：资源初始化中</li>\n<li>RUNNING：运行中，可正常使用的状态</li>\n<li>UNUSABLE：禁用，不可用</li>\n<li>OVERDUE：资源过期</li>",
+          "document": "<p>状态。包含以下取值：</p><li>INITIALIZING：资源初始化中</li><li>RUNNING：运行中，可正常使用的状态</li><li>UNUSABLE：禁用，不可用</li><li>OVERDUE：资源过期</li>",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -4756,7 +4763,7 @@
         },
         {
           "disabled": false,
-          "document": "所属地域。\n当前支持ap-shanghai",
+          "document": "<p>所属地域。<br>当前支持ap-shanghai</p>",
           "example": "ap-shanghai",
           "member": "string",
           "name": "Region",
@@ -4766,8 +4773,8 @@
         },
         {
           "disabled": false,
-          "document": "更新时间",
-          "example": "2022-01-01 12:34:56",
+          "document": "<p>更新时间</p>",
+          "example": "2026-11-05T14:30:00Z",
           "member": "datetime_iso",
           "name": "UpdateTime",
           "output_required": true,
@@ -7542,6 +7549,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvInfoRequest": {
+      "document": "DescribeEnvInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEnvInfoResponse": {
+      "document": "DescribeEnvInfo返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -81159,7 +81159,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最近扫描时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ</p>",
+          "document": "<p>最近扫描时间<br>参数格式：YYYY-MM-DD HH:mm:ss</p>",
           "example": "2026-06-08T06:30:30Z",
           "member": "datetime_iso",
           "name": "LatestScanTime",
@@ -81184,6 +81184,26 @@
           "member": "string",
           "name": "RiskStatus",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否最新补丁</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNew",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复任务id</p>",
+          "example": "1",
+          "member": "string",
+          "name": "FixTaskId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -81581,6 +81601,26 @@
           "name": "VulDetail",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复任务ID</p>",
+          "example": "1",
+          "member": "string",
+          "name": "FixTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前用户可见范围内存在至少一台支持自动修复的主机时为 1，否则为 0</p><p>单位：1</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "SupportAutoFix",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -86786,7 +86826,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>KB补丁ID</p>",
+          "document": "KB补丁ID",
           "example": "20001",
           "member": "int64",
           "name": "KBId",
@@ -86796,7 +86836,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主机实例ID</p>",
+          "document": "主机实例ID",
           "example": "ins-e5f6g7h8",
           "member": "string",
           "name": "InstanceId",
@@ -86806,7 +86846,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主机名称</p>",
+          "document": "主机名称",
           "example": "win-server-01",
           "member": "string",
           "name": "MachineName",
@@ -86816,7 +86856,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主机IP</p>",
+          "document": "主机IP",
           "example": "10.0.1.50",
           "member": "string",
           "name": "MachineIp",
@@ -86826,7 +86866,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>公网IP</p>",
+          "document": "公网IP",
           "example": "203.0.113.20",
           "member": "string",
           "name": "PublicIp",
@@ -86836,7 +86876,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>操作系统名称</p>",
+          "document": "操作系统名称",
           "example": "Windows Server 2019",
           "member": "string",
           "name": "OsName",
@@ -86846,7 +86886,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>主机在线状态<br>枚举值：<br>ONLINE：在线<br>OFFLINE：离线</p>",
+          "document": "主机在线状态\n枚举值：\nONLINE：在线\nOFFLINE：离线",
           "example": "ONLINE",
           "member": "string",
           "name": "MachineStatus",
@@ -86856,7 +86896,17 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否支持自动更新补丁<br>枚举值：<br>0：不支持<br>1：支持</p>",
+          "document": "主机运行状态\n枚举值：\nRUNNING：运行中\nSTOPPED：已停止\nEXPIRED：待回收",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "HostStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持自动更新补丁\n枚举值：\n0：不支持\n1：支持",
           "example": "1",
           "member": "int64",
           "name": "SupportAutoFix",
@@ -86866,7 +86916,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>当前修复状态<br>枚举值：<br>0：未修复<br>1：修复中<br>2：修复失败<br>3：修复成功<br>4：修复超时</p>",
+          "document": "当前修复状态\n枚举值：\n0：未修复\n1：修复中\n2：修复失败\n3：修复成功\n4：修复超时",
           "example": "0",
           "member": "int64",
           "name": "FixStatus",
@@ -86876,7 +86926,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最近一次修复时间<br>参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）</p>",
+          "document": "最近一次修复时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
           "example": "2025-06-25T14:00:00+08:00",
           "member": "string",
           "name": "LatestFixTime",
@@ -86886,7 +86936,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>不可修复原因，SupportAutoFix为0时返回</p>",
+          "document": "不可修复原因，SupportAutoFix为0时返回",
           "example": "主机非旗舰版",
           "member": "string",
           "name": "NotFixableReason",
@@ -86896,7 +86946,17 @@
         },
         {
           "disabled": false,
-          "document": "<p>资产标签列表</p>",
+          "document": "不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回",
+          "example": "无",
+          "member": "VulFixableMachineAction",
+          "name": "NotFixableAction",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产标签列表",
           "example": "无",
           "member": "MiniTagItem",
           "name": "TagItems",
@@ -86906,7 +86966,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>所属账号AppId</p>",
+          "document": "所属账号AppId",
           "example": "1251234567",
           "member": "uint64",
           "name": "AppId",
@@ -86916,7 +86976,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>付费版本信息<br>枚举值：<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版</p>",
+          "document": "付费版本信息\n枚举值：\nBASIC：基础版\nPRO：专业版\nULTIMATE：旗舰版\nPRO_LH：轻量版",
           "example": "ULTIMATE",
           "member": "string",
           "name": "PayVersion",
@@ -111710,6 +111770,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>危害等级</p><p>枚举值：</p><ul><li>LOW： 低危</li><li>MEDIUM： 中危</li><li>HIGH： 高危</li><li>CRITICAL： 严重</li></ul>",
+          "example": "LOW",
+          "member": "string",
+          "name": "Level",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -113682,6 +113752,36 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPR暴露面信息</p>",
+          "example": "无",
+          "member": "VPRExplainInfo",
+          "name": "VPRExplainInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近扫描任务id(应急漏洞)</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ScanTaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>影响资产数(应急漏洞)</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "AffectAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -113856,7 +113956,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否支持一键修复true-支持 false-不支持</p>",
+          "document": "<p>是否支持一键修复</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "FixSwitch",
@@ -113983,9 +114083,49 @@
         {
           "disabled": false,
           "document": "<p>异常提示信息</p>",
-          "example": "Error: Errors during*d*wnloading metadata for rep***tory 'docker*ce-nightly-*ource':\n  - **********e:*404*for http:/*******s.te************/docker-ce/li*********s/**s**rce/nightly/*e*****a*****m*.xml (IP: 1***2*4.0.3)\n**ro***Failed to do************ata f*",
+          "example": "软件源配置重复：软件源在配置文件中存在重复定义，请清理 /etc/yum.repos.d/ 下的重复配置，重复源名以报错日志为准",
           "member": "string",
           "name": "ExceptionMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化错误码（如 VF-INS-002、VF-AG-013）</p>",
+          "example": "VF-INS-002",
+          "member": "string",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化失败原因</p>",
+          "example": "软件源配置重复：软件源在配置文件中存在重复定义，请清理 /etc/yum.repos.d/ 下的重复配置，重复源名以报错日志为准",
+          "member": "string",
+          "name": "ErrorReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结构化解决方案</p>",
+          "example": "1. 执行 grep -r 在 /etc/yum.repos.d/ 下查找重复定义的源；2. 保留正确的配置文件，删除或重命名重复的 .repo 文件；3. 执行 yum clean all && yum makecache 刷新缓存",
+          "member": "string",
+          "name": "ErrorSolution",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原始错误信息（不做翻译）</p>",
+          "example": "Error: Repository epel is listed more than once in the configuration",
+          "member": "string",
+          "name": "RawErrorMessage",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -114038,6 +114178,26 @@
           "name": "SnapshotFailReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>机器类型</p><p>枚举值：</p><ul><li>CVM： 腾讯云cvm</li><li>Other： 混合云机器</li></ul>",
+          "example": "Other",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>快照是否复用</p><p>枚举值：</p><ul><li>true： 是</li><li>false： 否</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "SnapshotReused",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -114385,6 +114545,32 @@
       ],
       "usage": "out"
     },
+    "VulFixableMachineAction": {
+      "document": "不可修复原因关联动作",
+      "members": [
+        {
+          "disabled": false,
+          "document": "动作类型\n枚举值：\nUPGRADE_PROTECTION：升级防护\nREINSTALL_CLIENT：重新安装客户端",
+          "example": "UPGRADE_PROTECTION",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作按钮文案",
+          "example": "升级防护",
+          "member": "string",
+          "name": "ActionText",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VulFixableMachineItem": {
       "document": "可修复主机信息",
       "members": [
@@ -114470,6 +114656,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>主机运行状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "HostStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>是否支持自动修复<br>枚举值：<br>0：不支持<br>1：支持</p>",
           "example": "1",
           "member": "int64",
@@ -114506,6 +114702,26 @@
           "name": "NotFixableReason",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不可修复原因码，SupportAutoFix为0时返回<br>枚举值：<br>BASIC_VERSION：基础版主机不支持一键修复<br>HOST_STOPPED：主机已关机<br>CLIENT_OFFLINE：主机防护客户端已离线<br>PATCH_UNAVAILABLE：官方已停止发布该系统版本的安全补丁<br>SOURCE_COMPILED：源码编译安装，不支持一键修复</p>",
+          "example": "CLIENT_OFFLINE",
+          "member": "string",
+          "name": "NotFixableReasonCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不可修复原因关联动作，SupportAutoFix为0且存在可引导动作时返回</p>",
+          "example": "无",
+          "member": "VulFixableMachineAction",
+          "name": "NotFixableAction",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -114683,6 +114899,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修复方式：AUTO_FIX-一键修复 MANUAL_FIX-手动修复 </p>",
+          "example": "MANUAL_FIX",
+          "member": "string",
+          "name": "RepairMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -114732,7 +114958,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>防护版本<br>枚举值：<br>NONE：无防护<br>BASIC：基础版<br>PRO：专业版<br>ULTIMATE：旗舰版<br>PRO_LH：轻量版</p>",
+          "document": "<p>防护版本枚举值 BASIC：基础版PRO：专业版ULTIMATE：旗舰版PRO_LH：轻量版</p>",
           "example": "ULTIMATE",
           "member": "string",
           "name": "DefendVersion",
@@ -114762,7 +114988,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>云主机实例状态<br>枚举值：<br>RUNNING：运行中<br>STOPPED：已停止<br>UNKNOWN：未知</p>",
+          "document": "<p>云主机实例状态</p><p>枚举值：</p><ul><li>RUNNING： 运行中</li><li>STOPPED： 已停止</li><li>EXPIRED： 待回收</li></ul>",
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
@@ -114818,6 +115044,16 @@
           "name": "CloudTag",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPR评级解释卡片</p>",
+          "example": "无",
+          "member": "VPRExplainInfo",
+          "name": "VPRExplainInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],

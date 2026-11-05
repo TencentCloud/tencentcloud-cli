@@ -658,6 +658,13 @@
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
+    "DescribeInstanceServerlessQuota": {
+      "document": "查询集群设置的serverless弹性配置",
+      "input": "DescribeInstanceServerlessQuotaRequest",
+      "name": "查询集群实例serverless弹性配置",
+      "output": "DescribeInstanceServerlessQuotaResponse",
+      "status": "online"
+    },
     "DescribeInstanceSlowQueries": {
       "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢日志详情。受到平台返回大小限制，当返回结果过大时，可能会对超过限制的内容进行截断。",
       "input": "DescribeInstanceSlowQueriesRequest",
@@ -1601,6 +1608,13 @@
       "input": "SearchClusterTablesRequest",
       "name": "搜索集群数据表列表",
       "output": "SearchClusterTablesResponse",
+      "status": "online"
+    },
+    "SetInstanceServerlessQuota": {
+      "document": "将普通集群转换为Serverless集群",
+      "input": "SetInstanceServerlessQuotaRequest",
+      "name": "设置集群实例Serverless弹性配置",
+      "output": "SetInstanceServerlessQuotaResponse",
       "status": "online"
     },
     "SetLibraDBClusterRenewFlag": {
@@ -6100,6 +6114,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>实例Serverless弹性配置信息</p>",
+          "example": "无",
+          "member": "InstanceServerlessQuotaInfo",
+          "name": "ServerlessQuotaInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>AI优化器状态</p>",
           "example": "无",
           "member": "AIOptimizerStatus",
@@ -6683,6 +6707,42 @@
           "member": "string",
           "name": "ReadOnlyValue",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterServerlessQuotaConfig": {
+      "document": "集群serverless弹性配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写</li><li>ro： 只读</li></ul>",
+          "example": "ro",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Serverless弹性CCU上限</p>",
+          "example": "4",
+          "member": "float",
+          "name": "MaxCcu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Serverless弹性状态</p><p>枚举值：</p><ul><li>opening： 开启中</li><li>opened： 已开启</li><li>closing： 关闭中</li><li>closed： 已关闭</li></ul>",
+          "example": "closed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8111,6 +8171,15 @@
           "name": "SemiSyncTimeout",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群实例Serverless弹性配置</p>",
+          "example": "无",
+          "member": "ServerlessQuotaConfig",
+          "name": "ServerlessQuotaConfigs",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -11286,6 +11355,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Serverless弹性信息</p>",
+          "example": "无",
+          "member": "InstanceServerlessQuotaInfo",
+          "name": "ServerlessQuotaInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11681,6 +11760,16 @@
           "name": "StorageVersion",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Serverless弹性信息</p>",
+          "example": "无",
+          "member": "InstanceServerlessQuotaInfo",
+          "name": "ServerlessQuotaInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -16395,6 +16484,62 @@
           "member": "InstanceParamItem",
           "name": "Items",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceServerlessQuotaRequest": {
+      "document": "DescribeInstanceServerlessQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-mf7uf72f",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写</li><li>ro： 只读</li></ul>",
+          "example": "rw",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceServerlessQuotaResponse": {
+      "document": "DescribeInstanceServerlessQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群实例Serveless弹性配置</p>",
+          "example": "无",
+          "member": "ClusterServerlessQuotaConfig",
+          "name": "QuotaConfigs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群实例Serverless弹性状态</p>",
+          "example": "无",
+          "member": "InstanceServerlessQuotaInfo",
+          "name": "InstanceQuotas",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22725,6 +22870,62 @@
           "name": "ParamsItems",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceServerlessQuotaInfo": {
+      "document": "实例serverless弹性配置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "cynosdbmysql-ins-7h4treqm",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写</li><li>ro： 只读</li></ul>",
+          "example": "ro",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大CCU规格</p>",
+          "example": "8",
+          "member": "float",
+          "name": "MaxCcu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Serverless弹性开启状态</p><p>枚举值：</p><ul><li>opening： 开启中</li><li>opened： 已开启</li><li>closing： 关闭中</li><li>closed： 已关闭</li></ul>",
+          "example": "opened",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开启Serverless弹性的时间</p>",
+          "example": "2026-08-26 16:30:21",
+          "member": "string",
+          "name": "EnableTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -34312,6 +34513,39 @@
       ],
       "usage": "out"
     },
+    "ServerlessQuotaConfig": {
+      "document": "serverless弹性配额",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例类型</p><p>枚举值：</p><ul><li>rw： 读写</li><li>ro： 只读</li></ul>",
+          "example": "ro",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大CCU</p>",
+          "example": "2",
+          "member": "float",
+          "name": "MaxCcu",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
     "ServerlessSpec": {
       "document": "serverless规格",
       "members": [
@@ -34433,6 +34667,52 @@
         }
       ],
       "usage": "out"
+    },
+    "SetInstanceServerlessQuotaRequest": {
+      "document": "SetInstanceServerlessQuota请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群ID</p>",
+          "example": "cynosdbmysql-9tbxdtfl",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例SLS规格配置</p>",
+          "example": "无",
+          "member": "ServerlessQuotaConfig",
+          "name": "ServerlessQuotaConfigs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetInstanceServerlessQuotaResponse": {
+      "document": "SetInstanceServerlessQuota返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务id</p>",
+          "example": "64769",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetLibraDBClusterRenewFlagRequest": {
       "document": "SetLibraDBClusterRenewFlag请求参数结构体",

@@ -540,6 +540,14 @@
         "title": "查询环境账单周期"
       }
     ],
+    "DescribeEnvInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"048dc7d7-fa7d-4007-bcc2-e6fb675bd763\"\n    }\n}",
+        "title": "根据环境ID查询环境信息"
+      }
+    ],
     "DescribeEnvLimit": [
       {
         "document": "",

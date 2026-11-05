@@ -2362,6 +2362,12 @@
     ],
     "TextToSpeechSync": [
       {
+        "document": "指定 ElevenLabs V3 模型与官方音色合成，并通过 ExtParam 调整音色参数和输出格式。",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSync\n<公共请求参数>\n\n{\n    \"ModelName\": \"ElevenLabs\",\n    \"ModelVersion\": \"custom-model-ll-v3\",\n    \"Text\": \"种子在土里沉默，是为了破土时的惊雷。\",\n    \"VoiceId\": \"21m00Tcm4TlvDq8ikWAM\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{\\\"voice_settings\\\":{\\\"stability\\\":0.5,\\\"similarity_boost\\\":0.8,\\\"speed\\\":1.1},\\\"seed\\\":42,\\\"audio_setting\\\":{\\\"format\\\":\\\"mp3\\\",\\\"sample_rate\\\":44100,\\\"bitrate\\\":128}}\",\n    \"Output\": {\n        \"Type\": \"url\"\n    },\n    \"SubAppId\": \"221***\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AudioData\": \"\",\n        \"AudioUrl\": \"https://speech-1300828900.cos.a*************************************07.mp3\",\n        \"ExtInfo\": \"{\\\"audio_format\\\":\\\"mp3\\\",\\\"audio_sample_rate\\\":44100}\",\n        \"RequestId\": \"9f3a1c2e-5b7d-4e8f-a1b2-c3d4e5f6a7b8\"\n    }\n}",
+        "title": "使用 ElevenLabs 模型同步语音合成"
+      },
+      {
         "document": "同步语音合成",
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TextToSpeechSync\n<公共请求参数>\n\n{\n    \"Text\": \"种子在土里沉默，是为了破土时的惊雷。\",\n    \"VoiceId\": \"minimax_5*********527-4dff\",\n    \"LanguageBoost\": \"zh\",\n    \"ExtParam\": \"{\\\"model\\\": \\\"minimax-speech-2.8-hd\\\", \\\"voice_setting\\\": {\\\"speed\\\": 2.0, \\\"vol\\\": 2.0}, \\\"audio_setting\\\": {\\\"sample_rate\\\": 32000, \\\"bitrate\\\": 128000, \\\"format\\\": \\\"mp3\\\"}}\",\n    \"SubAppId\": \"221***\"\n}",
         "output": "{\n    \"Response\": {\n        \"AudioData\": \"\",\n        \"AudioUrl\": \"https://laurie-tmp-1300828900.cos.a***********************************b70-c745-4335-bbfc-b2f6c00ac0b2.mp3\",\n        \"ExtInfo\": \"{\\\"audio_format\\\":\\\"mp3\\\",\\\"audio_length\\\":1836,\\\"audio_sample_rate\\\":32000,\\\"audio_size\\\":0,\\\"word_count\\\":16}\",\n        \"RequestId\": \"a24cdb70-c745-4335-bbfc-b2f6c00ac0b2\"\n    }\n}",

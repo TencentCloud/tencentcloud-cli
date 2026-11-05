@@ -9039,7 +9039,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>可用区Id，可以通过https://document.capi.woa.com/document/api/1605/76892查询相关信息</p>",
+          "document": "<p>可用区Id，可以通过<a href=\"https://cloud.tencent.com/document/product/1596/77929\">可用区列表</a>查询相关信息</p>",
           "example": "100003",
           "member": "int64",
           "name": "ZoneId",
@@ -12641,7 +12641,7 @@
         {
           "disabled": false,
           "document": "<p>grafana访问地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://cloud-grafana.woa.com/grafana-oucb89ne/",
+          "example": "https://*********************/****************/",
           "member": "string",
           "name": "GrafanaURL",
           "output_required": false,

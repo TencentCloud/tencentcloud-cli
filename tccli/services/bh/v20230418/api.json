@@ -3805,7 +3805,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署region",
+          "document": "<p>部署region</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "DeployRegion",
@@ -3814,7 +3814,7 @@
         },
         {
           "disabled": false,
-          "document": "部署堡垒机的VpcId",
+          "document": "<p>部署堡垒机的VpcId</p>",
           "example": "vpc-8jghau",
           "member": "string",
           "name": "VpcId",
@@ -3823,7 +3823,7 @@
         },
         {
           "disabled": false,
-          "document": "部署堡垒机的SubnetId",
+          "document": "<p>部署堡垒机的SubnetId</p>",
           "example": "subnet-92j4ns",
           "member": "string",
           "name": "SubnetId",
@@ -3832,7 +3832,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型。取值:standard/pro",
+          "document": "<p>资源类型。取值:standard/pro</p>",
           "example": "standard",
           "member": "string",
           "name": "ResourceEdition",
@@ -3841,7 +3841,7 @@
         },
         {
           "disabled": false,
-          "document": "资源节点数",
+          "document": "<p>资源节点数</p>",
           "example": "2",
           "member": "int64",
           "name": "ResourceNode",
@@ -3850,7 +3850,7 @@
         },
         {
           "disabled": false,
-          "document": "计费周期",
+          "document": "<p>计费周期</p>",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -3859,7 +3859,7 @@
         },
         {
           "disabled": false,
-          "document": "计费时长",
+          "document": "<p>计费时长</p>",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -3868,7 +3868,7 @@
         },
         {
           "disabled": false,
-          "document": "计费模式 1预付费",
+          "document": "<p>计费模式 1预付费</p>",
           "example": "1",
           "member": "int64",
           "name": "PayMode",
@@ -3877,7 +3877,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费",
+          "document": "<p>自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -3886,7 +3886,34 @@
         },
         {
           "disabled": false,
-          "document": "部署zone",
+          "document": "<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "IOAResource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOAUserCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOABandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署zone</p>",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "DeployZone",
@@ -3895,7 +3922,7 @@
         },
         {
           "disabled": false,
-          "document": "0非试用版，1试用版",
+          "document": "<p>0非试用版，1试用版</p>",
           "example": "0",
           "member": "uint64",
           "name": "Trial",
@@ -3904,7 +3931,7 @@
         },
         {
           "disabled": false,
-          "document": "是否共享clb，0：不共享，1：共享",
+          "document": "<p>是否共享clb</p><p>枚举值：</p><ul><li>0： 不共享</li><li>1： 共享</li></ul><p>默认值：0</p><p>公有云传0</p>",
           "example": "0",
           "member": "uint64",
           "name": "ShareClb",
@@ -3919,7 +3946,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "<p>实例Id</p>",
           "example": "bh-saas-9jegko1",
           "member": "string",
           "name": "ResourceId",
@@ -10188,7 +10215,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要开通服务的资源ID",
+          "document": "<p>需要开通服务的资源ID</p>",
           "example": "bh-saas-9jasuf",
           "member": "string",
           "name": "ResourceId",
@@ -10197,7 +10224,7 @@
         },
         {
           "disabled": true,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "0",
           "member": "string",
           "name": "Status",
@@ -10206,7 +10233,7 @@
         },
         {
           "disabled": false,
-          "document": "实例版本",
+          "document": "<p>实例版本</p>",
           "example": "standard",
           "member": "string",
           "name": "ResourceEdition",
@@ -10215,7 +10242,7 @@
         },
         {
           "disabled": false,
-          "document": "资源节点数",
+          "document": "<p>资源节点数</p>",
           "example": "50",
           "member": "int64",
           "name": "ResourceNode",
@@ -10224,7 +10251,7 @@
         },
         {
           "disabled": false,
-          "document": "自动续费",
+          "document": "<p>自动续费</p>",
           "example": "1",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -10233,7 +10260,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽扩展包个数(4M)",
+          "document": "<p>带宽扩展包个数(4M)</p>",
           "example": "1",
           "member": "int64",
           "name": "PackageBandwidth",
@@ -10242,7 +10269,7 @@
         },
         {
           "disabled": false,
-          "document": "授权点数扩展包个数(50点)",
+          "document": "<p>授权点数扩展包个数(50点)</p>",
           "example": "1",
           "member": "int64",
           "name": "PackageNode",
@@ -10251,10 +10278,37 @@
         },
         {
           "disabled": false,
-          "document": "日志投递",
+          "document": "<p>日志投递</p>",
           "example": "1",
           "member": "int64",
           "name": "LogDelivery",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>零信任堡垒机功能包</p><p>枚举值：</p><ul><li>0： 不开通</li><li>1： 付费版（含 20 用户 / 10Mbps 带宽）</li></ul><p>默认值：0</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IOAResource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>零信任用户扩展包，1 个 = 20 用户</p><p>取值范围：[0, 999]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOAUserCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>零信任带宽扩展包，1 个 = 4Mbps</p><p>取值范围：[0, 509]</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "PackageIOABandwidth",
           "required": false,
           "type": "int"
         }

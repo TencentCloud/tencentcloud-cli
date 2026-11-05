@@ -322,6 +322,13 @@
       "output": "QrcodeOCRResponse",
       "status": "online"
     },
+    "QueryEnterpriseBasicInfo": {
+      "document": "本接口用于查询企业基本信息。输入企业名称或统一社会信用代码，返回企业名称、统一社会信用代码、法定代表人、登记机关、经营期限、经营状态、经营范围、注册地址、主体类型、成立日期、核准日期、行政区划等企业登记信息。部分出参可能无法查得，具体以实际查询结果为准。",
+      "input": "QueryEnterpriseBasicInfoRequest",
+      "name": "营业执照核验（企业基本信息）",
+      "output": "QueryEnterpriseBasicInfoResponse",
+      "status": "online"
+    },
     "QuestionOCR": {
       "document": "题目识别是教育的基础OCR识别能力。可支持扫描、拍照场景的单题题目识别。接口支持印刷体文本、手写体文本及公式的OCR识别和坐标返回，此外，接口还可对题目中的配图位置进行检测并返回坐标位置。适用于智能批改等场景的题目内容识别作为检索输入。\n\n默认接口请求频率限制：2次/秒。",
       "input": "QuestionOCRRequest",
@@ -13112,6 +13119,342 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryEnterpriseBasicInfoRequest": {
+      "document": "QueryEnterpriseBasicInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>统一社会信用代码。CreditCode、EntName 必须提供一个，如果都提供，只使用 CreditCode。</p>",
+          "example": "91440300708461136T",
+          "member": "string",
+          "name": "CreditCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业名称。CreditCode、EntName 必须提供一个，如果都提供，只使用 CreditCode。</p>",
+          "example": "深圳市腾讯计算机系统有限公司",
+          "member": "string",
+          "name": "EntName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryEnterpriseBasicInfoResponse": {
+      "document": "QueryEnterpriseBasicInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求状态。<br>枚举值：<br>0：成功，计费；<br>1：系统异常，不计费；<br>2：查询无结果，不计费。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "StatusCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>统一社会信用代码。</p>",
+          "example": "91440300708461136T",
+          "member": "string",
+          "name": "CreditCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业名称。</p>",
+          "example": "深圳市腾讯计算机系统有限公司",
+          "member": "string",
+          "name": "EntName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主体类型。</p>",
+          "example": "有限责任公司",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>法人代表。</p>",
+          "example": "张三",
+          "member": "string",
+          "name": "LrName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册资本。</p>",
+          "example": "6500万人民币",
+          "member": "string",
+          "name": "Capital",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业登记住所或注册地址。</p>",
+          "example": "深圳市南山区粤海街道麻岭社区科技中一路腾讯大厦35层",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>经营范围。</p>",
+          "example": "计算机软、硬件的设计、技术开发、销售(不含专营、专控、专卖商品及限制项目);数据库及计算机网络服务;国内商业、物资供销业(不含专营、专控、专卖商品)",
+          "member": "string",
+          "name": "Business",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>登记机关。</p>",
+          "example": "深圳市市场监督管理局",
+          "member": "string",
+          "name": "RegistrationAuthority",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>经营状态（标准化），枚举值：<br>1：开业（在营）；<br>2：迁出；<br>3：注销；<br>4：吊销；<br>5：撤销；<br>6：停业；<br>7：撤销登记；<br>0：其他；/：无法查询。</p>",
+          "example": "1",
+          "member": "string",
+          "name": "OperatingStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>经营状态（原始值）。</p>",
+          "example": "吊销，已注销",
+          "member": "string",
+          "name": "RawOperatingStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>成立日期。</p>",
+          "example": "1998-11-11",
+          "member": "string",
+          "name": "SetDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>营业期限：一般包括营业开始时间和结束时间<br>参数格式：yyyy-MM-dd/yyyy-MM-dd<br>无固定期限的格式为：yyyy-MM-dd/<br>部分企业历史数据可能为空，将返回：/<br>无法查询，将返回：/</p>",
+          "example": "1998-11-11/",
+          "member": "string",
+          "name": "OperatingPeriod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>核准日期。</p>",
+          "example": "2024-01-04",
+          "member": "string",
+          "name": "ApprovalDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在省份。</p>",
+          "example": "广东省",
+          "member": "string",
+          "name": "Province",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在省份的行政区划代码。</p>",
+          "example": "440000",
+          "member": "string",
+          "name": "ProvinceCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在城市。</p>",
+          "example": "深圳市",
+          "member": "string",
+          "name": "City",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在城市的行政区划代码。</p>",
+          "example": "440300",
+          "member": "string",
+          "name": "CityCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在区县。</p>",
+          "example": "南山区",
+          "member": "string",
+          "name": "District",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所在区县的行政区划代码。</p>",
+          "example": "440305",
+          "member": "string",
+          "name": "DistrictCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注册资本币种。</p>",
+          "example": "人民币",
+          "member": "string",
+          "name": "CapitalCurrency",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组织机构代码。</p>",
+          "example": "70846113-6",
+          "member": "string",
+          "name": "OrganizationCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业英文名称。</p>",
+          "example": "Shenzhen Tencent Computer System Co., Ltd.",
+          "member": "string",
+          "name": "EnglishName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>企业曾用名列表。</p>",
+          "example": "[\"天天信息技术有限公司\", \"天天软件有限公司\"]",
+          "member": "string",
+          "name": "FormerNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>原注册号。</p>",
+          "example": "440301103448669",
+          "member": "string",
+          "name": "OriginalRegNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实收资本。</p>",
+          "example": "6500万人民币",
+          "member": "string",
+          "name": "PaidInCapital",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>吊销日期。</p>",
+          "example": "2024-07-01",
+          "member": "string",
+          "name": "RevokeDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>吊销原因。</p>",
+          "example": "公司（含公司类外商投资企业）成立后无正当理由超出法定时限不开业或连续停业超出法定时限的行为",
+          "member": "string",
+          "name": "RevokeReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注销日期。</p>",
+          "example": "2025-03-26",
+          "member": "string",
+          "name": "CancellationDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>注销原因。</p>",
+          "example": "经营期限届满",
+          "member": "string",
+          "name": "CancellationReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "QuestionInfo": {
       "document": "试题识别结果",

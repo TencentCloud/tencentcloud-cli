@@ -732,7 +732,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "dataagent-hLhMpd0H",
           "member": "string",
           "name": "InstanceId",
@@ -741,7 +741,7 @@
         },
         {
           "disabled": false,
-          "document": "会话ID",
+          "document": "<p>会话ID</p>",
           "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
           "member": "string",
           "name": "SessionId",
@@ -750,12 +750,21 @@
         },
         {
           "disabled": false,
-          "document": "批量删除 会话id 列表",
+          "document": "<p>批量删除 会话id 列表</p>",
           "example": "[\"e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d\"]",
           "member": "string",
           "name": "SessionIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "无",
+          "member": "SurfaceContext",
+          "name": "SurfaceContext",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -765,7 +774,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除的会话ID",
+          "document": "<p>删除的会话ID</p>",
           "example": "e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d",
           "member": "string",
           "name": "SessionId",
@@ -775,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "删除的会话ID列表",
+          "document": "<p>删除的会话ID列表</p>",
           "example": "[\"e5b6a2e4-3b9b-4d41-8f6a-5b6d5a8d3c1d\"]",
           "member": "string",
           "name": "SessionIds",
@@ -2323,6 +2332,15 @@
           "name": "InstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "无",
+          "member": "SurfaceContext",
+          "name": "SurfaceContext",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -2378,6 +2396,16 @@
           "name": "RunRecord",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话归属信息</p>",
+          "example": "无",
+          "member": "SessionTargetInfo",
+          "name": "SessionTargetInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -2505,6 +2533,111 @@
       ],
       "usage": "out"
     },
+    "SessionTargetInfo": {
+      "document": "会话的归属与保存状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>targetID</p>",
+          "example": "agt_builtin_dataagent",
+          "member": "string",
+          "name": "TargetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>targetType</p>",
+          "example": "agent",
+          "member": "string",
+          "name": "TargetType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>target名称</p>",
+          "example": "数据分析专家",
+          "member": "string",
+          "name": "TargetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源名称</p>",
+          "example": "official",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最后活跃时间</p><p>参数格式：2026-11-05 14:30:00</p>",
+          "example": "2026-10-23T11:49:11.310123",
+          "member": "string",
+          "name": "LastInteractionTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上下文</p>",
+          "example": "无",
+          "member": "SurfaceContext",
+          "name": "SurfaceContext",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否保存</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Saved",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>保存时间</p>",
+          "example": "2026-11-04T22:48:00Z",
+          "member": "datetime_iso",
+          "name": "SavedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否删除</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Deleted",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "StopChatAIRequest": {
       "document": "StopChatAI请求参数结构体",
       "members": [
@@ -2550,6 +2683,23 @@
         }
       ],
       "type": "object"
+    },
+    "SurfaceContext": {
+      "document": "前端宿主环境上下文",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Thinking": {
       "document": "模型思考强度",

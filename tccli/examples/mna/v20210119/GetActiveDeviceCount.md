@@ -5,12 +5,37 @@
 Input: 
 
 ```
+tccli mna GetActiveDeviceCount --cli-unfold-argument ```
+
+Output: 
+```
+{
+    "Response": {
+        "ActiveDeviceList": [
+            {
+                "Count": 0,
+                "Time": "2026-09-03"
+            }
+        ],
+        "DevGroup": "",
+        "EndTime": "2026-09-10",
+        "LicenseType": "",
+        "Period": 0,
+        "StartTime": "2026-09-03",
+        "RequestId": "ef73557b-01ee-4961-b597-2c062b2c495e"
+    }
+}
+```
+
+**Example 2: 按应用活跃设备数量统计**
+
+查询指定应用活跃设备数量
+
+Input: 
+
+```
 tccli mna GetActiveDeviceCount --cli-unfold-argument  \
-    --Period 0 \
-    --StartTime 1732176361 \
-    --EndTime 1732176362 \
-    --DevGroup comollit \
-    --LicenseType 3
+    --ApplicationId app-zdsbik***e
 ```
 
 Output: 
@@ -19,16 +44,16 @@ Output:
     "Response": {
         "ActiveDeviceList": [
             {
-                "Count": 1,
-                "Time": "2024-11-20"
+                "Count": 0,
+                "Time": "2026-09-02"
             }
         ],
-        "DevGroup": "group1",
-        "EndTime": "2024-11-20",
-        "LicenseType": "1",
+        "DevGroup": "app-zdsbik***e",
+        "EndTime": "2026-09-09",
+        "LicenseType": "",
         "Period": 0,
-        "StartTime": "2024-11-20",
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03"
+        "StartTime": "2026-09-02",
+        "RequestId": "09ae639a-2650-40f4-8bf5-abc2ceda8bb0"
     }
 }
 ```
