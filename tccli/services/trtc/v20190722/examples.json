@@ -8,12 +8,28 @@
         "title": "开启异步任务"
       }
     ],
+    "BatchDeleteTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchDeleteTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintIds\": [\n        \"19dbb1d12cd_9610feccb7dc4548910724f3f78a2d9d\"\n    ],\n    \"SdkAppId\": \"1400123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FailCount\": 1,\n        \"Message\": \"batch delete completed: 1 succeeded, 1 failed\",\n        \"Results\": [\n            {\n                \"ErrorCode\": \"FailedOperation.VoiceprintNotFound\",\n                \"ErrorMessage\": \"voiceprint not found\",\n                \"VoicePrintId\": \"19dbb1d12cd_9610feccb7dc4548910724f3f78a2d9d\"\n            }\n        ],\n        \"SuccessCount\": 1,\n        \"RequestId\": \"37584dec-d405-4ed4-8af8-61e21db06ac6\"\n    }\n}",
+        "title": "批量删除示例"
+      }
+    ],
     "ControlAIConversation": [
       {
         "document": "当您想让机器人主动播报文本的时候，可以使用该接口",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlAIConversation\n<公共请求参数>\n\n{\n    \"TaskId\": \"your-taskid\",\n    \"Command\": \"ServerPushText\",\n    \"ServerPushText\": {\n        \"Text\": \"你好很高兴为您服务\",\n        \"Interrupt\": true\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx\"\n    }\n}",
         "title": "发送播报文本"
+      }
+    ],
+    "ControlVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-m9jX35U7ginppW8rcCa0K3L6C*************************b7SjBmnozma7Gfq2Tbb5htQE.\",\n    \"Command\": \"interrupt\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-m9jX35U7ginppW8rcCa0K3L6C*************************b7SjBmnozma7Gfq2Tbb5htQE.\",\n        \"RequestId\": \"13bd15e4-70b3-42e3-a7d6-3b2b3f26ff53\"\n    }\n}",
+        "title": "打断对话"
       }
     ],
     "CreateAudioModerationSync": [
@@ -80,6 +96,20 @@
         "title": "创建热词列表示例"
       }
     ],
+    "CreateVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000311,\n    \"RoomId\": \"99884336\",\n    \"RoomIdType\": 0,\n    \"AgentConfig\": {\n        \"UserId\": \"test2\",\n        \"UserSig\": \"eJyrVgrxCdYrzkxXslJQyvEsqDTzcyrzyHGNcgoMKsuudEt2D3D1KUwsi8jy8PD3NQnK********************************************************************cmWpRSDrjPQMYKaUZOaCzTA3MzYwMDI2NYOKZ6ak5pVkpmVCNJSkFpcYKdUCAKlEMxg_\",\n        \"TargetUserId\": [\n            \"Jeff\"\n        ],\n        \"TTSPushRoomParams\": {\n            \"UserId\": \"tts-bot-001\"\n        },\n        \"MaxIdleTime\": 5000,\n        \"FilterBracketsContent\": [\n            1\n        ],\n        \"SubtitleMode\": 0,\n        \"TurnDetectionMode\": \"auto\"\n    },\n    \"ConversationMode\": \"Cascade\",\n    \"STTConfig\": {\n        \"Provider\": \"trtc\",\n        \"Params\": \"{\\\"engine_model_type\\\":\\\"bigmodel\\\", \\\"max_speak_time\\\":\\\"60000\\\", \\\"language\\\":\\\"zh\\\"}\"\n    },\n    \"LLMConfig\": {\n        \"LLMType\": \"tencent\",\n        \"Model\": \"hunyu*****0628\",\n        \"APIUrl\": \"http://api.taiji.w*****************/chat/completions\",\n        \"APIKey\": \"n21LYT6WmpE***********mqWKCrQlzJ\",\n        \"SystemPrompt\": \"你是一个简洁的对话助手。\",\n        \"FailureMessage\": \"系统繁忙请稍后再试\",\n        \"MaxTokens\": 0,\n        \"ThinkingMode\": false,\n        \"MaxHistory\": 50,\n        \"MaxToolRound\": 20,\n        \"Timeout\": 60000,\n        \"Temperature\": 0.5,\n        \"TopP\": 0.9,\n        \"McpServer\": {\n            \"Name\": \"weath****ools\",\n            \"Url\": \"https://m*********e.com/sse\",\n            \"Timeout\": 10000,\n            \"Headers\": [\n                {\n                    \"Key\": \"enable_search\",\n                    \"Value\": \"true\"\n                }\n            ],\n            \"ToolList\": [\n                \"get_****her\"\n            ]\n        },\n        \"CustomHeaders\": [\n            {\n                \"Key\": \"X-Request-Source\",\n                \"Value\": \"trtc-conversation\"\n            }\n        ],\n        \"CustomFields\": [\n            {\n                \"Key\": \"enable_search\",\n                \"Value\": \"true\"\n            }\n        ],\n        \"HistoryMessages\": [\n            {\n                \"Role\": \"user\",\n                \"Content\": \"你好\"\n            }\n        ]\n    },\n    \"TTSConfig\": {\n        \"Provider\": \"trtc\",\n        \"Params\": \"{\\\"model\\\":\\\"flow_02_turbo\\\",\\\"voice_id\\\":\\\"v-female-R2s4N9qJ\\\",\\\"speed\\\":1.0,\\\"volume\\\":1.0,\\\"pitch\\\":0}\"\n    },\n    \"DialogConfig\": {\n        \"InterruptMode\": 2,\n        \"InterruptSpeechDuration\": 200,\n        \"InterruptKeywords\": [\n            \"停止\"\n        ],\n        \"SilenceFollowUp\": 50,\n        \"SilenceFollowUpText\": \"你还在吗？有想问的直接告诉我。\",\n        \"WelcomeMessage\": \"您好，我是你的ai助手，请问有什么可以帮您？\"\n    },\n    \"VisionConfig\": {\n        \"Enable\": true,\n        \"StorageType\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7iHfG3DHVsI24YFXEn*************************bRRKvrG-CxBxuPyrGvSr2ZQE.\",\n        \"RequestId\": \"45192e66-a49e-4ea4-92f0-519955e3c903\"\n    }\n}",
+        "title": "开始对话任务（三段式）"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"RoomId\": \"9988123\",\n    \"RoomIdType\": 0,\n    \"AgentConfig\": {\n        \"UserId\": \"test2\",\n        \"UserSig\": \"eJyrVgrxCdYrzkxXslJQyvEsqDTzcyrzyHGNcgoMKsuudEt2D3D1KUwsi8jy8PD3NQnK********************************************************************cmWpRSDrjPQMYKaUZOaCzTA3MzYwMDI2NYOKZ6ak5pVkpmVCNJSkFpcYKdUCAKlEMxg_\",\n        \"TargetUserId\": [\n            \"Jeff\"\n        ],\n        \"TTSPushRoomParams\": {\n            \"UserId\": \"tts-bot-001\"\n        },\n        \"MaxIdleTime\": 50\n    },\n    \"ConversationMode\": \"S2S\",\n    \"S2SConfig\": {\n        \"Provider\": \"doubao\",\n        \"Params\": \"{\\\"api_key\\\":\\\"xxxxxx\\\",\\\"type\\\":\\\"session.create\\\",\\\"session\\\":{\\\"id\\\":\\\"\\\",\\\"model\\\":\\\"1.2.6.1\\\",\\\"instructions\\\":\\\"你是一位生活小助手，擅长回答菜谱、旅游、育儿、健康、购物、法律等日常问题，请用中文简洁清晰地回答。\\\",\\\"type\\\":\\\"realtime\\\",\\\"audio\\\":{\\\"input\\\":{\\\"format\\\":{\\\"type\\\":\\\"pcm\\\",\\\"rate\\\":16000}},\\\"output\\\":{\\\"format\\\":{\\\"type\\\":\\\"pcm_s16le\\\",\\\"rate\\\":24000},\\\"voice\\\":\\\"zh_female_vv_jupiter_bigtts\\\"}}},\\\"extension\\\":{\\\"asr\\\":{\\\"extra\\\":{}},\\\"dialog\\\":{\\\"bot_name\\\":\\\"豆包\\\"},\\\"tts\\\":{\\\"speaker\\\":\\\"zh_female_vv_jupiter_bigtts\\\",\\\"audio_config\\\":{\\\"channel\\\":1,\\\"format\\\":\\\"pcm_s16le\\\",\\\"sample_rate\\\":24000}}}}\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7g8UyQOwf8uvyfe1ph*************************bAp-C8HdhuD+Acd+5Tavn6AE.\",\n        \"RequestId\": \"32151e30-fd9f-47d4-b59d-72a372eb61f0\"\n    }\n}",
+        "title": "开始对话任务（端到端语音大模型）"
+      }
+    ],
     "DeleteCloudModeration": [
       {
         "document": "",
@@ -134,6 +164,22 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRecognizeVocabV3\n<公共请求参数>\n\n{\n    \"VocabId\": \"7bc538d6acb442f19dc3396dd7eacd66\",\n    \"SdkAppId\": 1400000001\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"aadd2e37-9878-44ff-91f5-2f60b38739bc\"\n    }\n}",
         "title": "删除词表"
+      }
+    ],
+    "DeleteTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb673331_2c080706ecd94342982b7582e7a98fda\",\n    \"SdkAppId\": \"1400123456\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"voiceprint deleted successfully\",\n        \"VoicePrintId\": \"19dbb673331_2c080706ecd94342982b7582e7a98fda\",\n        \"RequestId\": \"015ac549-83b2-42de-9bc6-5600ca09f922\"\n    }\n}",
+        "title": "删除声纹示例"
+      }
+    ],
+    "DeleteVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-nG0xCFU7lbAnrSOAsc22iFg4v*************************b7S+nNiUvm6EPLEY7SC+VIAE.\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0xCFU7lbAnrSOAsc22iFg4v*************************b7S+nNiUvm6EPLEY7SC+VIAE.\",\n        \"RequestId\": \"222dbe7b-e1e4-45e5-b08a-43699e3493e4\"\n    }\n}",
+        "title": "停止对话任务"
       }
     ],
     "DeleteVoicePrint": [
@@ -312,14 +358,6 @@
         "title": "DescribeTRTCMarketScaleData"
       }
     ],
-    "DescribeTRTCMarketScaleMetricData": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCMarketScaleMetricData\n<公共请求参数>\n\n{\n    \"StartTime\": \"2022-10-01\",\n    \"EndTime\": \"2022-10-13\",\n    \"Period\": \"d\",\n    \"SdkAppId\": \"1400188366\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StatementID\": 0,\n            \"Series\": [\n                {\n                    \"Columns\": [\n                        \"time\",\n                        \"userCount\",\n                        \"roomCount\",\n                        \"peakCurrentChannels\",\n                        \"peakCurrentUsers\"\n                    ],\n                    \"Values\": [\n                        [\n                            1664553600,\n                            16,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664640000,\n                            17,\n                            13,\n                            0,\n                            0\n                        ],\n                        [\n                            1664726400,\n                            14,\n                            11,\n                            0,\n                            0\n                        ],\n                        [\n                            1664812800,\n                            16,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664899200,\n                            17,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1664985600,\n                            17,\n                            12,\n                            0,\n                            0\n                        ],\n                        [\n                            1665072000,\n                            16,\n                            14,\n                            0,\n                            0\n                        ],\n                        [\n                            1665158400,\n                            29,\n                            21,\n                            0,\n                            0\n                        ],\n                        [\n                            1665244800,\n                            43,\n                            32,\n                            0,\n                            0\n                        ],\n                        [\n                            1665331200,\n                            42,\n                            32,\n                            0,\n                            0\n                        ],\n                        [\n                            1665417600,\n                            47,\n                            31,\n                            0,\n                            0\n                        ],\n                        [\n                            1665504000,\n                            51,\n                            35,\n                            0,\n                            0\n                        ],\n                        [\n                            1665590400,\n                            49,\n                            34,\n                            0,\n                            0\n                        ]\n                    ]\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"mg--88gg8wpzr8j26-2wl1xk4pmqfanw\"\n    }\n}",
-        "title": "DescribeTRTCMarketScaleMetricData"
-      }
-    ],
     "DescribeTRTCRealTimeQualityData": [
       {
         "document": "查询TRTC实时监控质量数据",
@@ -348,6 +386,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCSegmentModerationUsage\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-01 00:00:00\",\n    \"EndTime\": \"2026-04-10 00:00:00\",\n    \"Type\": \"picture\",\n    \"Business\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TotalUsage\": [\n            0\n        ],\n        \"UsageKey\": [\n            \"Picture\"\n        ],\n        \"UsageList\": [\n            {\n                \"TimeKey\": \"2026-04-01 00:00:00\",\n                \"UsageValue\": [\n                    0\n                ]\n            }\n        ],\n        \"RequestId\": \"3164f896-1141-4d6d-88da-8e757ce65360\"\n    }\n}",
         "title": "查询指定时间范围内图片切片用量数据"
+      }
+    ],
+    "DescribeTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"SdkAppId\": \"1400123456\",\n    \"Offset\": 0,\n    \"Limit\": 30\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"query voiceprint list successfully\",\n        \"TotalCount\": 4,\n        \"VoicePrintList\": [\n            {\n                \"CreateTime\": \"2026-04-24T01:45:35+08:00\",\n                \"SpeakerId\": \"user4\",\n                \"UpdateTime\": \"2026-04-24T01:45:35+08:00\",\n                \"VoicePrintId\": \"19dbb727a75_f3be637f9fda4c10b5b466d28285efba\"\n            }\n        ],\n        \"RequestId\": \"a14eb21b-8e78-46a0-baad-46e1ab952e95\"\n    }\n}",
+        "title": "查询示例"
       }
     ],
     "DescribeTrtcMcuTranscodeTime": [
@@ -396,6 +442,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{\n    \"StartTime\": 1590065777,\n    \"CommId\": \"1400188366_218695_1590065777\",\n    \"UserIds\": [\n        \"user1_54816741\",\n        \"user2_2107025\"\n    ],\n    \"SdkAppId\": 1400188366,\n    \"EndTime\": 1590065877\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"UserList\": [\n            {\n                \"RoomStr\": \"218695\",\n                \"UserId\": \"user1_54816741\",\n                \"JoinTs\": 1590065777,\n                \"LeaveTs\": 1590067658,\n                \"Finished\": true,\n                \"DeviceType\": \"\",\n                \"SdkVersion\": \"4.3.14\",\n                \"ClientIp\": \"10.4.1.13\"\n            },\n            {\n                \"RoomStr\": \"218695\",\n                \"UserId\": \"user2_2107025\",\n                \"JoinTs\": 1590065700,\n                \"LeaveTs\": 1590067693,\n                \"Finished\": true,\n                \"DeviceType\": \"\",\n                \"SdkVersion\": \"4.3.14\",\n                \"ClientIp\": \"10.4.1.13\"\n            }\n        ],\n        \"RequestId\": \"2e12e365-43e8-4efd-902d-906303e2ee4a\"\n    }\n}",
         "title": "查询用户列表与通话指标"
+      }
+    ],
+    "DescribeVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400000311,\n    \"TaskId\": \"-nG0jIFU7rPr0tFW0cg282rOxP*************************bUA9JbOXgp3tnRyVJAzlBFAE.\",\n    \"DescribeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"HistoryContents\": [\n            {\n                \"Role\": \"user\",\n                \"Content\": \"最近上海天气怎么样\"\n            },\n            {\n                \"Role\": \"assistant\",\n                \"Content\": \"我无法获取实时天气数据，所以没法告诉你上海当前的具体天气情况。建议你打开手机自带的天气应用，或访问中国天气网等平台查询最新预报。\\n\\n如果你告诉我具体日期，我也可以帮你说明上海这个季节通常的气候特点（比如气温范围、降水情况），供你参考。\"\n            }\n        ],\n        \"StartTime\": 1790081311564,\n        \"Status\": \"InProgress\",\n        \"TaskId\": \"-nG0jIFU7rPr0tFW0cg282rOxP*************************bUA9JbOXgp3tnRyVJAzlBFAE.\",\n        \"RequestId\": \"ebb2213e-7322-4f9b-8fcd-60c08a5168b7\"\n    }\n}",
+        "title": "查询对话任务"
       }
     ],
     "DescribeVoicePrint": [
@@ -484,6 +538,22 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=ModifyPicture\n&PictureId=10081\n&Height=80\n&Width=70\n&XPosition=10\n&YPosition=20\n&SdkAppId=1500000001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"049461e6-f2f5-4168-887e-aca4fbfa5fae\"\n    }\n}",
         "title": "修改图片相关参数"
+      }
+    ],
+    "ModifyVoiceConversation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVoiceConversation\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-nG0jIFU7llEfJ3MR8El60TD18*************************bOp75dg0i7c+NqbBQ2tAxOAE.\",\n    \"SequenceNumber\": 0,\n    \"LLMConfig\": {\n        \"LLMType\": \"openai\",\n        \"Model\": \"gpt-4o-mini\",\n        \"APIUrl\": \"https://translationsllm.openai.azure.com****************************************pletions?api-version=2025-01-01-preview\",\n        \"APIKey\": \"CKLhA70tjVXN8Tp0ADnCiv5YSqFe****************************99BJAC4f1cMXJ3w3AAABACOG9t8q\",\n        \"SystemPrompt\": \"你是一个简洁的对话助手。\",\n        \"MaxTokens\": 2048,\n        \"MaxHistory\": 50,\n        \"MaxToolRound\": 20,\n        \"Timeout\": 20000,\n        \"Temperature\": 0.5,\n        \"TopP\": 0.9,\n        \"McpServer\": {\n            \"Name\": \"weather-mcp\",\n            \"Url\": \"https://m*********e.com/v1\",\n            \"Timeout\": 5000,\n            \"ToolList\": [\n                \"get_weather\"\n            ]\n        }\n    },\n    \"DialogConfig\": {\n        \"InterruptMode\": 2,\n        \"InterruptKeywords\": [\n            \"停止\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nG0jIFU7llEfJ3MR8El60TD18*************************bOp75dg0i7c+NqbBQ2tAxOAE.\",\n        \"RequestId\": \"0842be45-1e51-401a-8372-f57f6c86edb9\"\n    }\n}",
+        "title": "修改ai对话"
+      }
+    ],
+    "RegisterTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RegisterTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"SpeakerId\": \"usera\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectiveAudioDuration\": 25.4,\n        \"Message\": \"voiceprint enrolled successfully\",\n        \"RequestId\": \"2ba4e1f9-208c-4d37-9cdc-baa6d8f52a52\",\n        \"SNR\": 5.8,\n        \"SpeakerId\": \"usera\",\n        \"VoicePrintId\": \"19dbe5b905b_1024998c2a534879a78c600f7850874a\"\n    }\n}",
+        "title": "注册声纹测试用例"
       }
     ],
     "RegisterVoicePrint": [
@@ -732,12 +802,28 @@
         "title": "更新输入在线媒体流"
       }
     ],
+    "UpdateTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectiveAudioDuration\": 25.4,\n        \"Message\": \"voiceprint updated successfully\",\n        \"RequestId\": \"c3baedee-e412-4ab1-96cb-049626f79b63\",\n        \"SNR\": 5.8,\n        \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\"\n    }\n}",
+        "title": "更新声纹测试用例"
+      }
+    ],
     "UpdateVoicePrint": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"20250605_9cc525c117ab4545b1ad21543e48412fSz4ZnwTZCW2tyePrHj0Y37WXz4QkUoLvT9P_eRVqiw\",\n    \"ReqTimestamp\": 1749120210000,\n    \"AudioFormat\": 0,\n    \"Audio\": \"The Base64 string of the entire WAV audio file, with valid audio content from 8 to 18 seconds.\",\n    \"AudioMetaInfo\": \"update_metainfo\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"40e323b2-f0e7-402c-be5d-b02aef40d887\"\n    }\n}",
         "title": "更新jackson的音频信息"
+      }
+    ],
+    "VerifyTRTCVoicePrint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyTRTCVoicePrint\n<公共请求参数>\n\n{\n    \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\",\n    \"Data\": \"base64_encoded_audio_data\",\n    \"SdkAppId\": \"1400123456\",\n    \"AudioFormat\": \"pcm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Decision\": 1,\n        \"Message\": \"voiceprint verify success\",\n        \"RequestId\": \"6dd6414b-3695-4db7-af24-7f1a3ef41d0c\",\n        \"Score\": \"100.00\",\n        \"SpeakerId\": \"user1\",\n        \"VoicePrintId\": \"19dbb72269b_1e7b262ef347400490f19956bc293016\"\n    }\n}",
+        "title": "声纹验证测试用例"
       }
     ],
     "VoiceClone": [
