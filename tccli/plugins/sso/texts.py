@@ -22,7 +22,6 @@ texts = {
         "list_login_expired": "登录态已失效, 请重新执行 tccli sso login 完成浏览器登录",
         "login_token_valid": "复用当前登录态, 无需重新浏览器登录 (剩余有效期约 %d 分钟)",
         "token_expired_relogin": "当前登录态已失效, 需要重新浏览器登录",
-        "specified_uin_not_found_all": "未找到指定的 uin, uin=%s, all=[%s]",
     },
     "en-US": {
         "invalid_auth_url": "The entered url is invalid: %s",
@@ -42,7 +41,6 @@ texts = {
         "list_login_expired": "login state expired, run tccli sso login to sign in with browser again",
         "login_token_valid": "reusing current login state, no browser sign-in required (about %d minutes left)",
         "token_expired_relogin": "login state expired, browser sign-in is required",
-        "specified_uin_not_found_all": "Specified uin not found, uin=%s, all=[%s]",
     }
 }
 
