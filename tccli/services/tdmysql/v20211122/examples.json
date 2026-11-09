@@ -354,6 +354,20 @@
         "title": "修改"
       }
     ],
+    "ModifyDBInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-7d3ymevo4z\",\n    \"DryRun\": false,\n    \"HybridNodeCpu\": 2,\n    \"HybridNodeMem\": 4,\n    \"HybridNodeNum\": 3,\n    \"Disk\": 30,\n    \"SpecCode\": \"2c4g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 110149,\n        \"RequestId\": \"2340d9d0-5e20-46a6-8078-eece8d2d46a0\"\n    }\n}",
+        "title": "纵向变配"
+      },
+      {
+        "document": "预检查变配计划，不实际执行变配，返回变配方式和子流程编排描述",
+        "input": "POST / HTTP/1.1\nHost: tdmysql.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql3-ecab00ac\",\n    \"HybridNodeCpu\": 16,\n    \"HybridNodeMem\": 32,\n    \"Disk\": 8000,\n    \"HybridNodeNum\": 20,\n    \"DryRun\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"IsInPlaceModification\": false,\n        \"IsMigrateModification\": true,\n        \"ModifyPlan\": \"纵向变配: 规格 4c8g -> 16c32g, 磁盘 500GB -> 8000GB; 横向变配: 节点数 6 -> 20\",\n        \"RequestId\": \"5b104d05-7e16-4869-87fe-dbd2e8f30b70\"\n    }\n}",
+        "title": "预检查变配计划（DryRun模式）"
+      }
+    ],
     "ModifyDBInstanceSecurityGroups": [
       {
         "document": "修改实例安全组",

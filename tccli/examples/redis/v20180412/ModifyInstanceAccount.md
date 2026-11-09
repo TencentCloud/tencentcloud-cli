@@ -7,7 +7,8 @@ Input:
 ```
 tccli redis ModifyInstanceAccount --cli-unfold-argument  \
     --InstanceId crs-azaq**** \
-    --AccountName *e******test
+    --AccountName *e******test \
+    --ModifyDisableCommands True
 ```
 
 Output: 

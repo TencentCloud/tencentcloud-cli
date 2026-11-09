@@ -208,6 +208,14 @@
         "title": "DescribeUsageRankList"
       }
     ],
+    "ModifyApiKeyBindings": [
+      {
+        "document": "更新API 密钥的绑定类型BindType 为 all ， Bindings 为空，即模型和服务全选",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApiKeyBindings\n<公共请求参数>\n\n{\n    \"ApiKeyId\": \"ak-20260323-xxxxxx\",\n    \"Platform\": \"maas\",\n    \"BindType\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"396579c9-cfee-479b-9475-76b2614cc3c0\"\n    }\n}",
+        "title": "更新 API 密钥绑定。"
+      }
+    ],
     "ModifyApiKeyInfo": [
       {
         "document": " 更新 API 密钥备注信息为“test-new-remark”",

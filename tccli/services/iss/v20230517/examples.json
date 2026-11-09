@@ -796,6 +796,14 @@
         "title": "成功"
       }
     ],
+    "ListVLPlanResults": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVLPlanResults\n<公共请求参数>\n\n{\n    \"Start\": 1790495635,\n    \"End\": 1791791635,\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"AnalysisMode\": \"video\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AnalysisMode\": \"video\",\n                \"BilledFrameCount\": 30,\n                \"ChannelId\": \"**********\",\n                \"ChannelName\": \"*******\",\n                \"Content\": \"{\\\"has_violation\\\":false,\\\"inspection_results\\\":[],\\\"task\\\":\\\"smoking_detection\\\"}\",\n                \"CreatedAt\": \"2026-10-12 13:51:02\",\n                \"SnapshotTimestamp\": 0,\n                \"UpdatedAt\": \"2026-10-12 13:51:02\",\n                \"VLPlanId\": \"VPa43**************************c86\",\n                \"VLPlanName\": \"******\",\n                \"VLPlanResultId\": \"eb63*****************************19d\",\n                \"VLResultTimestamp\": 1791784262,\n                \"VideoEndTimestamp\": 1791784230,\n                \"VideoStartTimestamp\": 1791784200\n            }\n        ],\n        \"TotalCount\": 714,\n        \"RequestId\": \"bfc4d2b5-aeda-472f-a2e9-513e195a54ce\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "ListVLPlans": [
       {
         "document": "",

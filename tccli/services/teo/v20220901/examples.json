@@ -1536,6 +1536,14 @@
         "title": "查询共享CNAME列表"
       }
     ],
+    "DescribeTimingFunctionAnalysisData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingFunctionAnalysisData\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-2o7b38ba1hvr\"\n    ],\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricNames\": [\n        \"function_requestCount\"\n    ],\n    \"Interval\": \"day\",\n    \"Area\": \"mainland\",\n    \"Filters\": [\n        {\n            \"Key\": \"function-name\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"test051301-zone-2o7b38ba1hvr-13000000\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"141a7ccd-9713-43a2-91d5-1b47692d0609\",\n        \"Data\": [\n            {\n                \"TypeKey\": \"13000000\",\n                \"TypeValue\": [\n                    {\n                        \"Avg\": 803,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1659139200,\n                                \"Value\": 0\n                            },\n                            {\n                                \"Timestamp\": 1661731200,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 7921,\n                        \"MetricName\": \"function_requestCount\",\n                        \"Sum\": 24918\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "根据函数名称查询边缘函数请求数时序数据"
+      }
+    ],
     "DescribeTimingL4Data": [
       {
         "document": "查询 ZoneId = zone-28kw53cmc6ky 的站点下，全部四层实例在 2025-10-01T08:00:00+08:00 ~ 2025-10-01T10:00:00+08:00 期间的并发连接数时序数据。",
@@ -1578,6 +1586,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTimingL7OriginPullData\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"*\"\n    ],\n    \"MetricNames\": [\n        \"l7Flow_outFlux_hy\"\n    ],\n    \"StartTime\": \"2025-12-01T00:00:00Z\",\n    \"EndTime\": \"2025-12-02T00:00:00Z\"\n}",
         "output": "{\n    \"Response\": {\n        \"TimingDataRecords\": [\n            {\n                \"TypeKey\": \"1300224863\",\n                \"TypeValue\": [\n                    {\n                        \"Avg\": 157,\n                        \"Detail\": [\n                            {\n                                \"Timestamp\": 1764547200,\n                                \"Value\": 0\n                            }\n                        ],\n                        \"Max\": 4643,\n                        \"MetricName\": \"l7Flow_outFlux_hy\",\n                        \"Sum\": 45461\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"853e9004-b4b0-4ae8-8a8f-510fe42f01e2\"\n    }\n}",
         "title": "查询全部站点的七层回源数据"
+      }
+    ],
+    "DescribeTopFunctionAnalysisData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopFunctionAnalysisData\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        \"zone-2mzegj4vln5f\"\n    ],\n    \"StartTime\": \"2022-07-31T00:00:00+08:00\",\n    \"EndTime\": \"2022-08-29T19:17:59+08:00\",\n    \"MetricName\": \"function_requestCount_functionName\",\n    \"Area\": \"mainland\",\n    \"Interval\": \"day\",\n    \"Limit\": \"1\",\n    \"Filters\": [\n        {\n            \"Key\": \"domain\",\n            \"Operator\": \"equals\",\n            \"Value\": [\n                \"www.baidu.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7c499897-8ad9-4a2d-884e-6154f283d723\",\n        \"Data\": [\n            {\n                \"DetailData\": [\n                    {\n                        \"Key\": \"test051301-zone-2mzegj4vln5f-13000000\",\n                        \"Value\": 1210001\n                    }\n                ],\n                \"TypeKey\": \"251227260\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定域名下的 Top 函数名称请求数数据"
       }
     ],
     "DescribeTopL7AnalysisData": [

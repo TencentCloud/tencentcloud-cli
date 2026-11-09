@@ -629,7 +629,7 @@
       },
       {
         "document": "调用成功示例2",
-        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitExtractDocAgentJob\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"ItemNames\": [\n        {\n            \"KeyName\": \"项目\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"费用名称\",\n            \"KeyType\": 1,\n            \"KeyPrompt\": \"相近词：人民币\"\n        },\n        {\n            \"KeyName\": \"美金\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"欧元\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"开航日\",\n            \"KeyType\": 0\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubmitExtractDocAgentJob\n<公共请求参数>\n\n{\n    \"AgentType\": 0,\n    \"ImageUrl\": \"https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg\",\n    \"ItemNames\": [\n        {\n            \"KeyName\": \"项目\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"费用名称\",\n            \"KeyType\": 1,\n            \"KeyPrompt\": \"相近词：人民币\"\n        },\n        {\n            \"KeyName\": \"美金\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"欧元\",\n            \"KeyType\": 1\n        },\n        {\n            \"KeyName\": \"开航日\",\n            \"KeyType\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"1337322230114697216\",\n        \"RequestId\": \"2659e485-d475-471f-9efa-c94f3f7a8e11\"\n    }\n}",
         "title": "调用成功示例2"
       }

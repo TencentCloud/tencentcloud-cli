@@ -354,7 +354,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定ID",
+          "document": "<p>绑定ID</p>",
           "example": "aga-41d42939",
           "member": "string",
           "name": "ID",
@@ -364,7 +364,7 @@
         },
         {
           "disabled": false,
-          "document": "需要认证",
+          "document": "<p>需要认证</p>",
           "example": "true",
           "member": "bool",
           "name": "NeedAuth",
@@ -374,7 +374,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据ID",
+          "document": "<p>凭据ID</p>",
           "example": "agc-4440aa1d",
           "member": "string",
           "name": "AgentCredentialID",
@@ -384,7 +384,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据详情",
+          "document": "<p>凭据详情</p>",
           "example": "无",
           "member": "DescribeAgentCredentialResp",
           "name": "AgentCredentialVO",
@@ -394,7 +394,7 @@
         },
         {
           "disabled": false,
-          "document": "mcp详情",
+          "document": "<p>mcp详情</p>",
           "example": "无",
           "member": "DescribeMcpServerResponseVO",
           "name": "McpServerVO",
@@ -404,7 +404,7 @@
         },
         {
           "disabled": false,
-          "document": "关联时间",
+          "document": "<p>关联时间</p>",
           "example": "2025-12-28T00:55:38.218Z",
           "member": "string",
           "name": "RelateTime",
@@ -414,7 +414,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，sse模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用为OAuth2认证时，sse模式请求mcp时的资源标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://10.0.0.4/_llmsgw_/sse/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "SSEResourceIdentifier",
@@ -424,7 +424,7 @@
         },
         {
           "disabled": false,
-          "document": "应用为OAuth2认证时，streamable模式请求mcp时的资源标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用为OAuth2认证时，streamable模式请求mcp时的资源标识</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http://10.0.0.4/_llmsgw_/aga-41d42939/mcp-2fc41d77",
           "member": "string",
           "name": "StreamableResourceIdentifier",
@@ -434,7 +434,7 @@
         },
         {
           "disabled": false,
-          "document": "应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>应用ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aga-41d42939",
           "member": "string",
           "name": "AgentAppID",
@@ -444,13 +444,23 @@
         },
         {
           "disabled": false,
-          "document": "mcp ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>mcp ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mcp-41d42939",
           "member": "string",
           "name": "McpServerID",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用</p>",
+          "example": "无",
+          "member": "DescribeAgentAppResp",
+          "name": "AgentAppVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -682,6 +692,16 @@
           "example": "无",
           "member": "DescribeAgentCredentialResp",
           "name": "AgentCredentialVO",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用</p>",
+          "example": "无",
+          "member": "DescribeAgentAppResp",
+          "name": "AgentAppVO",
           "output_required": false,
           "type": "object",
           "value_allowed_null": false

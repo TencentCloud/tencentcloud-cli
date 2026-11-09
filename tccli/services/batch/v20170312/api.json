@@ -3234,7 +3234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要过滤的字段。",
+          "document": "<p>需要过滤的字段。</p>",
           "example": "zone",
           "member": "string",
           "name": "Name",
@@ -3243,7 +3243,7 @@
         },
         {
           "disabled": false,
-          "document": "字段的过滤值。",
+          "document": "<p>字段的过滤值。</p>",
           "example": "[\"ap-guangzhou-6\"]",
           "member": "string",
           "name": "Values",

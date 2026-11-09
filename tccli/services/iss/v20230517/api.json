@@ -560,6 +560,13 @@
       "output": "ListTasksResponse",
       "status": "online"
     },
+    "ListVLPlanResults": {
+      "document": "获取视觉理解计划结果列表",
+      "input": "ListVLPlanResultsRequest",
+      "name": "获取视觉理解计划结果列表",
+      "output": "ListVLPlanResultsResponse",
+      "status": "online"
+    },
     "ListVLPlans": {
       "document": "获取视觉理解计划列表",
       "input": "ListVLPlansRequest",
@@ -7660,6 +7667,107 @@
       ],
       "type": "object"
     },
+    "ListVLPlanResultsRequest": {
+      "document": "ListVLPlanResults请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>开始时间戳（秒），不早于 30 天前</p>",
+          "example": "1790495635",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间戳（秒），不超过当前时间，时间范围不超过 30 天</p>",
+          "example": "1791791635",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析计划 ID，不传则查询所有计划的结果</p>",
+          "example": "VP289*************************6866",
+          "member": "string",
+          "name": "VLPlanId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID 列表，支持多值（英文逗号分隔），不传则查询所有通道的结果</p>",
+          "example": "[\"************************************\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码，默认 1</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 200</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析模式</p><p>枚举值：</p><ul><li>image： 图片模式</li><li>video： 视频模式</li></ul>",
+          "example": "video",
+          "member": "string",
+          "name": "AnalysisMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListVLPlanResultsResponse": {
+      "document": "ListVLPlanResults返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果列表</p>",
+          "example": "无",
+          "member": "VLPlanResultInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数量</p>",
+          "example": "714",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListVLPlansRequest": {
       "document": "ListVLPlans请求参数结构体",
       "members": [
@@ -11062,6 +11170,152 @@
           "name": "ImageUrlExpire",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-07-27 21:54:53",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间，格式 2006-01-02 15:04:05</p>",
+          "example": "2026-07-27 21:54:53",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VLPlanResultInfo": {
+      "document": "视觉理解计划结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分析结果 ID</p>",
+          "example": "49be1187**********-a0bd-340faaaf4e15",
+          "member": "string",
+          "name": "VLPlanResultId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属分析计划 ID</p>",
+          "example": "VP7219c63b*************20189f136f1",
+          "member": "string",
+          "name": "VLPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计划名称</p>",
+          "example": "明厨亮灶识别计划",
+          "member": "string",
+          "name": "VLPlanName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道 ID</p>",
+          "example": "C3B***VXG4",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道名称</p>",
+          "example": "多场景AI识别",
+          "member": "string",
+          "name": "ChannelName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析模式：image=图片模式，video=视频模式（预留）</p>",
+          "example": "image",
+          "member": "string",
+          "name": "AnalysisMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析时间戳（秒）</p>",
+          "example": "1785160490",
+          "member": "int64",
+          "name": "VLResultTimestamp",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>截图时间戳</p>",
+          "example": "1785160490",
+          "member": "int64",
+          "name": "SnapshotTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频开始时间戳</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoStartTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频结束时间戳</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "VideoEndTimestamp",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>视频模式计费帧数</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BilledFrameCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AI 分析结果内容（JSON 字符串）</p>",
+          "example": "{\"total_staff\":0,\"hat\":{\"compliant\":0,\"non_compliant\":0,\"not_wearing\":0},\"mask\":{\"compliant\":0,\"non_compliant\":0,\"not_wearing\":0}}",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {

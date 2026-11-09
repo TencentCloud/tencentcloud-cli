@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli gs DeleteAndroidInstanceMCPToken --cli-unfold-argument ```
+tccli gs DeleteAndroidInstanceMCPToken --cli-unfold-argument  \
+    --TokenId k_b30f8e58b0fe48365386
+```
 
 Output: 
 ```

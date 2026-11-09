@@ -273,6 +273,13 @@
       "output": "ModifyAutoRenewFlagResponse",
       "status": "online"
     },
+    "ModifyDBInstance": {
+      "document": "本接口（ModifyDBInstance）提供通用变配实例功能，合并纵向变配（UpgradeInstance）和横向变配（ExpandInstance）的能力，支持CPU/内存/磁盘/节点数/可用区/存储类型的复合变更。支持DryRun预检查模式，可在不实际执行变配的情况下获取变配计划。",
+      "input": "ModifyDBInstanceRequest",
+      "name": "通用变配实例",
+      "output": "ModifyDBInstanceResponse",
+      "status": "online"
+    },
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口（ModifyDBInstanceSecurityGroups）用于修改云数据库安全组",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
@@ -7243,6 +7250,182 @@
     "ModifyAutoRenewFlagResponse": {
       "document": "ModifyAutoRenewFlag返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceRequest": {
+      "document": "ModifyDBInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "tdsql3-ecab00ac",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否仅做预检查，不实际执行变配。true: 仅返回变配计划和预检查结果；false: 实际执行变配（默认）</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对等节点CPU核数，不传则保持当前值不变</p>",
+          "example": "16",
+          "member": "int64",
+          "name": "HybridNodeCpu",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对等节点内存大小，单位GB，不传则保持当前值不变</p>",
+          "example": "32",
+          "member": "int64",
+          "name": "HybridNodeMem",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对等节点数量，不传则保持当前值不变</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "HybridNodeNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>对等节点磁盘容量，单位GB，不传则保持当前值不变</p>",
+          "example": "8000",
+          "member": "int64",
+          "name": "Disk",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储类型，可选值：CLOUD_HSSD（增强型SSD云硬盘）、CLOUD_TCS（本地盘）、CLOUD_BSSD（通用型SSD云硬盘），不传则保持当前值不变</p>",
+          "example": "\"CLOUD_HSSD\"",
+          "member": "string",
+          "name": "StorageType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规格编码，如 4c8g、16c32g 等</p>",
+          "example": "\"16c32g\"",
+          "member": "string",
+          "name": "SpecCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标可用区列表，不传则保持当前值不变</p>",
+          "example": "[\"ap-guangzhou-3\",\"ap-guangzhou-4\",\"ap-guangzhou-6\"]",
+          "member": "string",
+          "name": "Zones",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区模式，1: 单可用区，3: 多可用区主AZ模式</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "AZMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主可用区，AZMode传3时生效</p>",
+          "example": "\"ap-guangzhou-3\"",
+          "member": "string",
+          "name": "PrimaryAZ",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全功能型副本数，取值范围1-3</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "FullReplications",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceResponse": {
+      "document": "ModifyDBInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步任务ID，DryRun=false时返回。根据此ID可以调用查询任务接口获取任务状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4295036759",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>订单号，预付费场景下返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20261009458182521138671",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否原地变配，DryRun=true时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsInPlaceModification",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否迁移变配，DryRun=true时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsMigrateModification",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变配计划描述，DryRun=true时返回，描述将执行的变配子流程编排</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "纵向变配: 规格 4c8g -> 16c32g, 磁盘 500GB -> 8000GB; 横向变配: 节点数 6 -> 20",
+          "member": "string",
+          "name": "ModifyPlan",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

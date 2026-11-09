@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DescribeExtractDocAgentJob": {
-      "document": "模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】",
+      "document": "模型参数更大，速度更慢。推荐场景：可以接受异步（超过30s返回），样本输入输出token大于2000，长文本类文档建议用异步模型。需要 SubmitExtractDocAgentJob（提交任务）、DescribeExtractDocAgentJob（查询任务）两个接口配套使用，计费发生在提交任务后。【备注：1.固定价格不限抽取字段数，2.自适应价格抽取字段大于10记两次费用，小于等于10记一次费用】。",
       "input": "DescribeExtractDocAgentJobRequest",
       "name": "异步文档抽取Agent(查询任务)",
       "output": "DescribeExtractDocAgentJobResponse",
@@ -3286,7 +3286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务唯一ID。由服务端生成。",
+          "document": "<p>任务唯一ID。由服务端生成。</p>",
           "example": "1334797167793684480",
           "member": "string",
           "name": "JobId",
@@ -3301,7 +3301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。",
+          "document": "<p>图片旋转角度(角度制)，文本的水平方向为 0；顺时针为正，逆时针为负。</p>",
           "example": "1.0",
           "member": "float",
           "name": "Angle",
@@ -3311,7 +3311,7 @@
         },
         {
           "disabled": false,
-          "document": "配置结构化文本信息。",
+          "document": "<p>配置结构化文本信息。AgentType为0按照这个结构返回</p>",
           "example": "无",
           "member": "GroupInfo",
           "name": "StructuralList",
@@ -3321,7 +3321,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误码。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误码。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "FailedOperation.PDFParseFailed",
           "member": "string",
           "name": "ErrorCode",
@@ -3331,7 +3331,7 @@
         },
         {
           "disabled": false,
-          "document": "任务执行错误信息。当任务状态不为 FAIL 时，该值为\"\"。",
+          "document": "<p>任务执行错误信息。当任务状态不为 FAIL 时，该值为&quot;&quot;。</p>",
           "example": "PDF解析失败。",
           "member": "string",
           "name": "ErrorMessage",
@@ -3341,7 +3341,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功",
+          "document": "<p>任务状态。WAIT：等待中，RUN：执行中，FAIL：任务失败，DONE：任务成功</p>",
           "example": "DONE",
           "member": "string",
           "name": "JobStatus",
@@ -3351,10 +3351,20 @@
         },
         {
           "disabled": false,
-          "document": "思考过程",
+          "document": "<p>思考过程</p>",
           "example": "在本次任务中，首先，我们需要从文档中提取车型字段。接着，我定位到文档中所有类型为kv的段落。最终，找到了文档中最相关的kv信息",
           "member": "string",
           "name": "ThoughtContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>定制的json结构字符串，主要用于快速定制输出的agent输出结构。推荐用于POC场景</p>",
+          "example": "​{\"AgentType\":1,\"Message\":\"合同协议分类+抽取+审核 Agent 结果（POC 占位）\",\"Raw\":{}}",
+          "member": "string",
+          "name": "AgentResultJson",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -17901,6 +17911,15 @@
           "name": "ModelConfig",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>agent支持的类型枚举,不同类型输出结果不一样，默认为0</p><p>0:表示标准抽取Agent</p><p>1:表示合同协议分类+抽取+审核Agent</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AgentType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

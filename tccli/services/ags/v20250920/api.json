@@ -3930,6 +3930,15 @@
           "name": "PreCacheImageId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>",
+          "example": "image",
+          "member": "string",
+          "name": "PreCacheType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6818,6 +6827,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联的GPU资源组ID</p>",
+          "example": "gpu-123",
+          "member": "string",
+          "name": "GPUResourceGroupId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7696,6 +7716,15 @@
           "name": "Metadata",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例启动模式。DEFAULT：使用原有同步创建流程，为默认值；WAIT_UNTIL_HEALTHY：使用持久化后台创建流程，受理后可能返回 STARTING，需查询实例状态确认最终结果。</p>",
+          "example": "WAIT_UNTIL_HEALTHY",
+          "member": "string",
+          "name": "StartMode",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

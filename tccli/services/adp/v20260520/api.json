@@ -5707,8 +5707,41 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>环境 UUID（来源于上报字段 channel_uuid）；公有云可为空，不能用 deployment_type 替代</p>",
+          "example": "chanelid111",
+          "member": "string",
+          "name": "DeploymentUuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间名称；空间不存在或查询失败时为空</p>",
+          "example": "默认工作空间",
+          "member": "string",
+          "name": "SpaceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>调用主体 ID，含义由 subject_type 决定（如 app_id、kb_id 等）</p>",
-          "example": "10023456",
+          "example": "2117992610540619904",
           "member": "string",
           "name": "SubjectId",
           "output_required": false,
@@ -5719,7 +5752,7 @@
         {
           "disabled": false,
           "document": "<p>调用主体名称</p>",
-          "example": "智能客服应用",
+          "example": "MySqlDB生效范围测试_都_adp_qta_kUwTyN",
           "member": "string",
           "name": "SubjectName",
           "output_required": false,
@@ -5730,7 +5763,7 @@
         {
           "disabled": false,
           "document": "<p>调用主体类型：APP/KB/WIDGET/OPEN_CLAW/KB_RECALL_TEST/WORKBENCH/MODEL_API</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>METRIC_SOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>METRIC_SOURCE_TYPE_APP</td><td>1</td><td>应用开发</td></tr><tr><td>METRIC_SOURCE_TYPE_KB</td><td>2</td><td>知识库</td></tr><tr><td>METRIC_SOURCE_TYPE_WIDGET</td><td>3</td><td>Widget</td></tr><tr><td>METRIC_SOURCE_TYPE_OPEN_CLAW</td><td>4</td><td>ClawPro</td></tr><tr><td>METRIC_SOURCE_TYPE_KB_RECALL_TEST</td><td>5</td><td>知识库召回测试</td></tr><tr><td>METRIC_SOURCE_TYPE_WORKBENCH</td><td>6</td><td>智能工作台</td></tr><tr><td>METRIC_SOURCE_TYPE_MODEL_API</td><td>7</td><td>模型 API 调用</td></tr></tbody></table>",
-          "example": "1",
+          "example": "2",
           "member": "int64",
           "name": "SubjectType",
           "output_required": false,
@@ -13291,7 +13324,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>看板域，必填，决定返回哪个域的 KPI 数据</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）</td></tr></tbody></table>",
+          "document": "<p>看板域，必填，决定返回哪个域的 KPI 数据</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td></td></tr><tr><td>RESOURCE_TYPE_MODEL</td><td>1</td><td>模型用量</td></tr><tr><td>RESOURCE_TYPE_PLUGIN</td><td>2</td><td>插件用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_PLATFORM</td><td>3</td><td>平台功能用量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_MODEL_CONCURRENCY</td><td>4</td><td>模型并发超限（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_KB_CAPACITY</td><td>5</td><td>知识库容量（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_USAGE_SUMMARY</td><td>6</td><td>用量汇总（预留，暂不支持）</td></tr><tr><td>RESOURCE_TYPE_RESOURCE_CONSUME</td><td>7</td><td>资源消耗（计费明细）（预留，暂不支持）</td></tr></tbody></table>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -13324,6 +13357,15 @@
           "name": "FilterList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID，用于服务端校验当前用户的空间权限；空间或应用视图需传入，企业视图可不传。VIEW_TYPE_SPACE 时应与 ViewScope.ScopeId 一致，VIEW_TYPE_APP 时须校验应用归属该空间；与 FilterList 的 space_id 同传须一致。服务端不得仅凭请求中的 SpaceId 授权</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14680,6 +14722,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID；空间或应用视图必传，由服务端校验空间权限</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -14772,6 +14823,15 @@
           "name": "PageSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间 ID，空间或应用视图必传；服务端据登录态校验空间权限</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16054,6 +16114,78 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "DocumentParseUsageDetail": {
+      "document": "文档解析单次调用明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "10000000000",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消耗资源数（PU）</p>",
+          "example": "1000",
+          "member": "float",
+          "name": "ConsumptionPu",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档 ID</p>",
+          "example": "32132weqwe",
+          "member": "string",
+          "name": "DocId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档解析方式：离线文档解析、实时文档解析。上报值 OfflineUpload 对应离线文档解析；RealtimeUpload、RealTimeDocParse 对应实时文档解析</p>",
+          "example": "OfflineUpload",
+          "member": "string",
+          "name": "DocUsageMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库 ID</p>",
+          "example": "21321321321321",
+          "member": "string",
+          "name": "KbId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>解析页数</p>",
+          "example": "112",
+          "member": "string",
+          "name": "ParsedPageCount",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -19258,13 +19390,46 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>API Key 别名或脱敏值；禁止返回明文密钥</p>",
+          "example": "test-1y***bStx",
+          "member": "string",
+          "name": "ApiKeyDisplay",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费方式；非模型 API 或历史数据可为未指定；后付费不产生 PU</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "BillingType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>调用类型，来源于计费 scene_billing（与 filter.call_type 对应）</p>",
-          "example": "chat",
+          "example": "ChannelExpCallAgentModel",
           "member": "string",
           "name": "CallType",
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次调用消耗 PU 量</p>",
+          "example": "8.6415",
+          "member": "float",
+          "name": "ConsumptionPU",
+          "output_required": false,
+          "required": false,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -19281,7 +19446,7 @@
         {
           "disabled": false,
           "document": "<p>模型名称</p>",
-          "example": "hunyuan-turbo",
+          "example": "MiniMax M3",
           "member": "string",
           "name": "ModelName",
           "output_required": false,
@@ -19299,17 +19464,6 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>本次调用消耗 PU 量</p>",
-          "example": "0.008",
-          "member": "float",
-          "name": "ConsumptionPU",
-          "output_required": false,
-          "required": false,
-          "type": "float",
-          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -19323,6 +19477,17 @@
           "example": "1800",
           "member": "float",
           "name": "CallCount",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>",
+          "example": "194395",
+          "member": "float",
+          "name": "ConsumptionPU",
           "output_required": false,
           "required": false,
           "type": "float",
@@ -19359,17 +19524,6 @@
           "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>模型消耗 PU 总量（聚合维度内的 PU 消耗之和）</p>",
-          "example": "194395",
-          "member": "float",
-          "name": "ConsumptionPU",
-          "output_required": false,
-          "required": false,
-          "type": "float",
           "value_allowed_null": false
         }
       ],
@@ -22123,7 +22277,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>插件名称</p>",
+          "document": "<p>连接器与工具名称</p>",
           "example": "doc-parser-v2",
           "member": "string",
           "name": "PluginName",
@@ -22134,7 +22288,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>PLUGIN 域单次调用的消耗计量列表（权威字段）：按单位+label 分项列出每类计量。unit=TOKEN 时 label 区分 Token 子类别（input/output/avg_*），label 为空表示 total_tokens</p>",
+          "document": "<p>插件单次调用计量：TOKEN 总量用 total_tokens（兼容空 Label），输入/输出用 input/output；其余消耗量按 Unit 区分，PU 的 Label 为 total_pu</p>",
           "example": "无",
           "member": "ResourceConsumption",
           "name": "ResourceConsumptionList",
@@ -22145,7 +22299,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>插件工具名（tool_name）</p>",
+          "document": "<p>工具名称</p>",
           "example": "parse_document",
           "member": "string",
           "name": "ToolName",
@@ -26571,6 +26725,17 @@
           "example": "无",
           "member": "CallSource",
           "name": "CallSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>MODEL 类型的文档解析明细</p>",
+          "example": "无",
+          "member": "DocumentParseUsageDetail",
+          "name": "DocumentParse",
           "output_required": false,
           "required": false,
           "type": "object",

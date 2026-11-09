@@ -8340,7 +8340,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>要修改属性的复制对id</p>",
+          "document": "<p>要修改属性的复制对ID</p>",
           "example": "cvmcopypair-jzrnvbwp",
           "member": "string",
           "name": "CopyPairId",
@@ -8349,7 +8349,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>要修改的复制对类型，可选值：DISK、INSTANCE、CFS，默认 INSTANCE</p>",
+          "document": "<p>要修改的复制对类型，可选值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>",
           "example": "INSTANCE",
           "member": "string",
           "name": "CopyPairType",
@@ -8373,6 +8373,42 @@
           "name": "InstanceType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>容灾端实例VPC IP（仅容灾端CVM未创建时可修改）</p>",
+          "example": "10.0.0.3",
+          "member": "string",
+          "name": "PrivateIpAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用默认IP，与PrivateIpAddress互斥，不能同时使用（仅容灾端CVM未创建时可修改）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultPrivateIp",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例登录设置，需要修改的时候才传（仅容灾端CVM未创建时可修改）</p>",
+          "example": "无",
+          "member": "LoginSettings",
+          "name": "LoginSettings",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动生成密码，与LoginSettings互斥，不能同时使用（仅容灾端CVM未创建时可修改）</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UseDefaultPassword",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9979,7 +10015,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "复制对ID列表",
+          "document": "<p>复制对ID列表</p>",
           "example": "[\"cvmcopypair-2zjmpdlb\"]",
           "member": "string",
           "name": "CopyPairIds",
@@ -9988,7 +10024,7 @@
         },
         {
           "disabled": false,
-          "document": "复制对类型，枚举值：DISK / INSTANCE / CFS。",
+          "document": "<p>复制对类型，枚举值：INSTANCE。</p><p>枚举值：</p><ul><li>INSTANCE： CVM复制对</li></ul>",
           "example": "INSTANCE",
           "member": "string",
           "name": "CopyPairType",
@@ -9997,12 +10033,21 @@
         },
         {
           "disabled": false,
-          "document": "切换类型，支持WAIT和NOW",
+          "document": "<p>切换类型，支持WAIT和NOW</p>",
           "example": "NOW",
           "member": "string",
           "name": "FailoverType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>故障切换成功后是否自动关机生产端实例，默认为true</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "StopSourceInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10012,7 +10057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "故障切换任务ID",
+          "document": "<p>故障切换任务ID</p>",
           "example": "12156",
           "member": "int64",
           "name": "TaskId",

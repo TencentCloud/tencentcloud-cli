@@ -31,6 +31,7 @@ Input:
 
 ```
 tccli ocr SubmitExtractDocAgentJob --cli-unfold-argument  \
+    --AgentType 0 \
     --ImageUrl https://ocr-demo-1254418846.cos.ap-guangzhou.myqcloud.com/***/fakeurl.jpg \
     --ItemNames.0.KeyName 项目 \
     --ItemNames.0.KeyType 1 \

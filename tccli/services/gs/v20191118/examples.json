@@ -97,8 +97,8 @@
     "CreateAndroidInstanceMCPToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63ae2ccd-e20a-4e66-8f96-6733d43238df\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAndroidInstanceMCPToken\n<公共请求参数>\n\n{\n    \"Role\": \"USER\",\n    \"AllowedInstanceIds\": [\n        \"cai-1300055412-ea99nvc2az8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"mcpk_6926c9f7de7821e4879108487e4d30d9e6278c99674d197e\",\n        \"TokenId\": \"k_8f38eb6522d441305386\",\n        \"RequestId\": \"63ae2ccd-e20a-4e66-8f96-6733d43238df\"\n    }\n}",
         "title": "创建安卓实例 MCP token"
       }
     ],
@@ -209,7 +209,7 @@
     "DeleteAndroidInstanceMCPToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAndroidInstanceMCPToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"k_b30f8e58b0fe48365386\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"27ddc353-c242-4ac1-810d-bdee4f65a6db\"\n    }\n}",
         "title": "删除安卓实例 MCP token"
       }
@@ -258,7 +258,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAndroidInstanceMCPTokens\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"efd0e619-9f5e-475d-a3a4-5c4a22c0c0b8\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Tokens\": [\n            {\n                \"AllowedInstanceIds\": [],\n                \"CreateTime\": \"2026-06-09T09:08:55Z\",\n                \"ExpiresTime\": \"\",\n                \"Role\": \"user\",\n                \"Status\": \"ACTIVE\",\n                \"TokenId\": \"k_02bd0e559ab0214c\"\n            }\n        ],\n        \"RequestId\": \"efd0e619-9f5e-475d-a3a4-5c4a22c0c0b8\"\n    }\n}",
         "title": "DescribeAndroidInstanceMCPTokens"
       }
     ],
@@ -513,8 +513,8 @@
     "RenewAndroidInstanceMCPToken": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAndroidInstanceMCPToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"39619736-f54e-4b71-bc92-91357f5487ba\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: gs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewAndroidInstanceMCPToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"k_5a32f6cfbbdeae8d538b\",\n    \"ExpireSeconds\": 7200\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiresTime\": \"2026-10-23T11:47:29Z\",\n        \"RequestId\": \"39619736-f54e-4b71-bc92-91357f5487ba\"\n    }\n}",
         "title": "续期安卓实例 MCP token"
       }
     ],

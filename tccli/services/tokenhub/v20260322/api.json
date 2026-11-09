@@ -182,6 +182,13 @@
       "output": "DescribeUsageRankListResponse",
       "status": "online"
     },
+    "ModifyApiKeyBindings": {
+      "document": "更新 API 密钥绑定。\n\n更新 API 密钥的绑定关系和绑定类型。BindType 为 all 时 Bindings 必须为空，BindType含 custom 时 Bindings 为绑定列表。",
+      "input": "ModifyApiKeyBindingsRequest",
+      "name": "更新 API 密钥绑定",
+      "output": "ModifyApiKeyBindingsResponse",
+      "status": "online"
+    },
     "ModifyApiKeyInfo": {
       "document": "更新 API 密钥信息。\n\n更新 API 密钥的备注信息、 IP 白名单和 Token 限额（修改限额推荐使用QuotaDesired参数）。所有可选参数不传表示不修改。",
       "input": "ModifyApiKeyInfoRequest",
@@ -3848,6 +3855,60 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyApiKeyBindingsRequest": {
+      "document": "ModifyApiKeyBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>API 密钥 ID。</p>",
+          "example": "ak-xxx",
+          "member": "string",
+          "name": "ApiKeyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>平台类型。取值：maas。</p>",
+          "example": "maas",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定类型。取值：all（全部模型和接入点）、model_custom_endpoint_custom（自定义模型+自定义接入点）。</p><p>枚举值：</p><ul><li>model_custom_endpoint_custom： 自定义模型+自定义接入点</li></ul>",
+          "example": "model_custom_endpoint_custom： 自定义模型+自定义接入点",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改后的apikey的模型或服务绑定列表</p>",
+          "example": "无",
+          "member": "BindingItem",
+          "name": "Bindings",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiKeyBindingsResponse": {
+      "document": "ModifyApiKeyBindings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyApiKeyInfoRequest": {
       "document": "ModifyApiKeyInfo请求参数结构体",
