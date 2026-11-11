@@ -147,6 +147,13 @@
       "output": "CreateAllAssetsExportJobResponse",
       "status": "online"
     },
+    "CreateAssetBaselineRiskExportJob": {
+      "document": "创建资产基线风险导出任务",
+      "input": "CreateAssetBaselineRiskExportJobRequest",
+      "name": "创建资产基线风险导出任务",
+      "output": "CreateAssetBaselineRiskExportJobResponse",
+      "status": "online"
+    },
     "CreateAssetComponentListExportJob": {
       "document": "创建镜像资产中组件列表导出任务",
       "input": "CreateAssetComponentListExportJobRequest",
@@ -826,6 +833,13 @@
       "output": "DeleteAssetTagResponse",
       "status": "online"
     },
+    "DeleteBaselineIgnorePolicy": {
+      "document": "删除基线忽略策略",
+      "input": "DeleteBaselineIgnorePolicyRequest",
+      "name": "删除基线忽略策略",
+      "output": "DeleteBaselineIgnorePolicyResponse",
+      "status": "online"
+    },
     "DeleteBaselineSelfDefinedPolicyList": {
       "document": "批量删除自定义基线策略。仅支持删除 PolicyType=SELF 的策略；删除后历史风险记录保留，但不再产生新结果。",
       "input": "DeleteBaselineSelfDefinedPolicyListRequest",
@@ -1365,6 +1379,13 @@
       "output": "DescribeAlertListResponse",
       "status": "online"
     },
+    "DescribeAssetBaselineRiskList": {
+      "document": "获取资产风险列表",
+      "input": "DescribeAssetBaselineRiskListRequest",
+      "name": "获取资产基线风险列表",
+      "output": "DescribeAssetBaselineRiskListResponse",
+      "status": "online"
+    },
     "DescribeAssetComponentList": {
       "document": "查询资产中组件列表",
       "input": "DescribeAssetComponentListRequest",
@@ -1538,6 +1559,13 @@
       "input": "DescribeBaselineFixRecordListRequest",
       "name": "获取基线修复记录列表",
       "output": "DescribeBaselineFixRecordListResponse",
+      "status": "online"
+    },
+    "DescribeBaselineIgnorePolicyList": {
+      "document": "获取基线忽略策略列表",
+      "input": "DescribeBaselineIgnorePolicyListRequest",
+      "name": "获取基线忽略策略列表",
+      "output": "DescribeBaselineIgnorePolicyListResponse",
       "status": "online"
     },
     "DescribeBaselineItemRiskList": {
@@ -1874,6 +1902,13 @@
       "input": "DescribeClusterAssetsRequest",
       "name": "集群列表",
       "output": "DescribeClusterAssetsResponse",
+      "status": "online"
+    },
+    "DescribeClusterBaselineRiskPolicyList": {
+      "document": "获取集群风险策略列表",
+      "input": "DescribeClusterBaselineRiskPolicyListRequest",
+      "name": "获取集群基线风险策略列表",
+      "output": "DescribeClusterBaselineRiskPolicyListResponse",
       "status": "online"
     },
     "DescribeClusterContainerAppList": {
@@ -2308,6 +2343,13 @@
       "input": "DescribeDspmAccessTopologyIpsRequest",
       "name": "查询Dspm访问拓扑ip列表",
       "output": "DescribeDspmAccessTopologyIpsResponse",
+      "status": "online"
+    },
+    "DescribeDspmAccessTopologySummary": {
+      "document": "查询数据库访问拓扑（库级/表级）的概览卡片数据，包含来源IP数、访问账号数、被访问库数/表数、近7天与近30天访问次数。\n数据由后台预聚合产生，查询侧无聚合开销；出参 LastCalcTime 为数据最后计算时间，可据此判断数据新鲜度。",
+      "input": "DescribeDspmAccessTopologySummaryRequest",
+      "name": "查询Dspm访问拓扑概览",
+      "output": "DescribeDspmAccessTopologySummaryResponse",
       "status": "online"
     },
     "DescribeDspmApplyHistory": {
@@ -2940,11 +2982,25 @@
       "output": "DescribeHostVulOverviewResponse",
       "status": "online"
     },
+    "DescribeHostVulRiskEventList": {
+      "document": "查询主机漏洞风险事件列表，按风险记录维度返回漏洞基础信息、实例信息、风险状态和最近扫描时间。",
+      "input": "DescribeHostVulRiskEventListRequest",
+      "name": "获取主机漏洞风险事件列表",
+      "output": "DescribeHostVulRiskEventListResponse",
+      "status": "online"
+    },
     "DescribeHostVulRiskList": {
       "document": "获取主机漏洞风险列表",
       "input": "DescribeHostVulRiskListRequest",
       "name": "获取主机漏洞风险列表",
       "output": "DescribeHostVulRiskListResponse",
+      "status": "online"
+    },
+    "DescribeHostVulScanStatus": {
+      "document": "查询主机漏洞扫描状态，用于判断是否扫描过漏洞、首次漏洞扫描是否失败，以及首次扫描完成后的可修复漏洞状态。",
+      "input": "DescribeHostVulScanStatusRequest",
+      "name": "查询主机漏洞扫描状态",
+      "output": "DescribeHostVulScanStatusResponse",
       "status": "online"
     },
     "DescribeIaCFileList": {
@@ -4291,6 +4347,13 @@
       "output": "ModifyBanModeResponse",
       "status": "online"
     },
+    "ModifyBaselineIgnorePolicy": {
+      "document": "修改基线忽略策略",
+      "input": "ModifyBaselineIgnorePolicyRequest",
+      "name": "修改基线忽略策略",
+      "output": "ModifyBaselineIgnorePolicyResponse",
+      "status": "online"
+    },
     "ModifyBaselinePolicy": {
       "document": "新建或编辑一条基线策略。Policy.ID 为 0 视为新建，非 0 视为编辑；新建/编辑时 Name 必填，CheckAssetType 与 Type 需符合 CheckAssetType / PolicyType 枚举。",
       "input": "ModifyBaselinePolicyRequest",
@@ -4366,6 +4429,13 @@
       "input": "ModifyCSIPRaspLicenseUnBindsRequest",
       "name": "解绑RASP授权",
       "output": "ModifyCSIPRaspLicenseUnBindsResponse",
+      "status": "online"
+    },
+    "ModifyClusterAuditLogStatus": {
+      "document": "修改集群审计日志状态",
+      "input": "ModifyClusterAuditLogStatusRequest",
+      "name": "修改集群审计日志状态",
+      "output": "ModifyClusterAuditLogStatusResponse",
       "status": "online"
     },
     "ModifyClusterDefendStatus": {
@@ -9513,6 +9583,62 @@
           "name": "ProtectedDay",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AssetBaselineRisk": {
+      "document": "资产基线风险",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>风险记录唯一标识。</p>",
+          "example": "29944856d0307789d2d98eb768b5584a",
+          "member": "string",
+          "name": "RiskID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测项详细信息。</p>",
+          "example": "无",
+          "member": "BaselineItem",
+          "name": "Item",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次检测时间（ISO 8601 格式）。</p>",
+          "example": "2026-09-20T19:28:36Z",
+          "member": "string",
+          "name": "LatestCheckTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测结果状态。取值：</p><ul><li>NOT_PASS：未通过</li><li>PASS：通过</li><li>CHECKING：检测中</li></ul><p></p>",
+          "example": "PASS",
+          "member": "string",
+          "name": "ResultStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属基线策略简要信息。</p>",
+          "example": "无",
+          "member": "BaselinePolicyBrief",
+          "name": "PolicyInfo",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -14949,6 +15075,132 @@
       ],
       "usage": "out"
     },
+    "BaselineIgnorePolicy": {
+      "document": "基线忽略策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>忽略策略记录 ID。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测项名称。</p>",
+          "example": "Kubelet 未授权访问",
+          "member": "string",
+          "name": "ItemName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测项所属分类名称。</p>",
+          "example": "未授权访问",
+          "member": "string",
+          "name": "CategoryName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户 AppID。</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略范围类型</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>PICK： 指定资产</li></ul>",
+          "example": "ALL",
+          "member": "string",
+          "name": "ScopeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自选资产 ID 列表，PICK时生效，存储 instance-id 或集群 ID。</p>",
+          "example": "[\"instance-tki\"]",
+          "member": "string",
+          "name": "ScopeIncludeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除资产 ID 列表，ALL 时生效，存储 instance-id 或集群 ID。</p>",
+          "example": "[\"instance-ikj\"]",
+          "member": "string",
+          "name": "ScopeExcludeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息。</p>",
+          "example": "ignore all",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。</p>",
+          "example": "2026-09-21T09:21:35Z",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改时间。</p>",
+          "example": "2026-09-21T09:21:35Z",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>对应资产类型</p><p>枚举值：</p><ul><li>HOST： 主机</li><li>CLUSTER： 集群相关资产</li></ul>",
+          "example": "HOST",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测项ID</p>",
+          "example": "1628",
+          "member": "uint64",
+          "name": "ItemID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BaselineItem": {
       "document": "基线检测项。",
       "members": [
@@ -20004,6 +20256,62 @@
           "name": "AccountInfo",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterBaselinePolicy": {
+      "document": "集群基线策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基线策略 ID。</p>",
+          "example": "1366",
+          "member": "uint64",
+          "name": "PolicyID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基线策略名称。</p>",
+          "example": "等保2.0二级",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测资产类型。<br>枚举值：<br>HOST：主机<br>CLUSTER：容器集群</p>",
+          "example": "HOST",
+          "member": "string",
+          "name": "CheckAssetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>基线系统父分类 ID。</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "ParentCategoryID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为系统基线策略。true 表示系统策略，false 表示自定义策略。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSystem",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -25527,6 +25835,88 @@
       ],
       "type": "object"
     },
+    "CreateAssetBaselineRiskExportJobRequest": {
+      "document": "CreateAssetBaselineRiskExportJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产唯一标识（UUID），与 AssetType 组合定位具体资产。</p>",
+          "example": "87cd7655-**********9ea1-6267cb76707d",
+          "member": "string",
+          "name": "AssetUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型。取值：HOST（主机）、CLUSTER（集群）。</p>",
+          "example": "HOST",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属appid</p>",
+          "example": "260000096",
+          "member": "uint64",
+          "name": "AssetAppID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>导出任务名字</p>",
+          "example": "资产导出",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-****e**-*******52f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用过滤条件。支持字段：ItemName（检测项名称，模糊）、PolicyName（所属基线名称，模糊）、InstanceName（主机名称，模糊）、InstanceID（实例ID，精准）、IP（IP 地址，模糊）。不同 Name 之间为且关系，同一 Name 下多个 Values 为或关系。</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAssetBaselineRiskExportJobResponse": {
+      "document": "CreateAssetBaselineRiskExportJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>导出任务ID</p>",
+          "example": "d1cbc89d-ee9c-46d7-8a86-fa8c418f8719",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateAssetComponentListExportJobRequest": {
       "document": "CreateAssetComponentListExportJob请求参数结构体",
       "members": [
@@ -29815,7 +30205,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>KbID：KB风险关联主机情况下需要额外加入KB风险ID<br>VulID：漏洞风险关联主机情况下需要额外加入vul风险ID</p>",
+          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>KbID：KB风险关联主机情况下需要额外加入KB风险ID<br>VulID：漏洞风险关联主机情况下需要额外加入vul风险ID<br> ClusterId：集群id（仅支持单集群id筛选）</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -33871,6 +34261,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBaselineIgnorePolicyRequest": {
+      "document": "DeleteBaselineIgnorePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>要删除的忽略策略记录 ID。</p>",
+          "example": "[1]",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-6f5795752f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBaselineIgnorePolicyResponse": {
+      "document": "DeleteBaselineIgnorePolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -38023,6 +38449,107 @@
       ],
       "type": "object"
     },
+    "DescribeAssetBaselineRiskListRequest": {
+      "document": "DescribeAssetBaselineRiskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资产唯一标识（UUID），与 AssetType 组合定位具体资产。</p>",
+          "example": "87cd7655-**2**4******a1-6267cb76707d",
+          "member": "string",
+          "name": "AssetUniqueID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产类型。取值：HOST（主机）、CLUSTER（集群）。</p>",
+          "example": "HOST",
+          "member": "string",
+          "name": "AssetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产所属appid</p>",
+          "example": "260083796",
+          "member": "uint64",
+          "name": "AssetAppID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-***c**t*6*57*5*5**66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用过滤条件。支持字段：ItemName（检测项名称，模糊）、PolicyName（所属基线名称，模糊）、ResultStatus（结果状态）、RiskLevel（风险等级）。不同 Name 之间为且关系，同一 Name 下多个 Values 为或关系。</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询每页数量，最大值 100；超过时服务端将自动回退为默认值 10。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询起始偏移量，从 0 开始。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetBaselineRiskListResponse": {
+      "document": "DescribeAssetBaselineRiskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基线风险修复记录列表。</p>",
+          "example": "无",
+          "member": "AssetBaselineRisk",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据总数</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetComponentListRequest": {
       "document": "DescribeAssetComponentList请求参数结构体",
       "members": [
@@ -39737,6 +40264,80 @@
           "document": "<p>基线风险修复记录列表。</p>",
           "example": "无",
           "member": "BaselineFixRecord",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭据总数</p>",
+          "example": "4",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineIgnorePolicyListRequest": {
+      "document": "DescribeBaselineIgnorePolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-6f5795752f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通用过滤条件。支持字段：ItemName（检测项名称，模糊）。不同 Name 之间为且关系，同一 Name 下多个 Values 为或关系。</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询每页数量，最大值 100；超过时服务端将自动回退为默认值 10。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询起始偏移量，从 0 开始。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBaselineIgnorePolicyListResponse": {
+      "document": "DescribeBaselineIgnorePolicyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>基线风险修复记录列表。</p>",
+          "example": "无",
+          "member": "BaselineIgnorePolicy",
           "name": "List",
           "output_required": true,
           "type": "list",
@@ -44063,6 +44664,61 @@
           "member": "FilterDataObject",
           "name": "ProtectStatusList",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterBaselineRiskPolicyListRequest": {
+      "document": "DescribeClusterBaselineRiskPolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群所属账号的 Appid，用于指定查询基线风险策略的账号。</p>",
+          "example": "260082268",
+          "member": "uint64",
+          "name": "ClusterAppid",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群CaMD5</p>",
+          "example": "27092b0cf181be0d848ddcd66dbee929",
+          "member": "string",
+          "name": "ClusterCaMD5",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员 ID 列表。",
+          "example": "[\"mem-*****************f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterBaselineRiskPolicyListResponse": {
+      "document": "DescribeClusterBaselineRiskPolicyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>扫描主任务列表。</p>",
+          "example": "无",
+          "member": "ClusterBaselinePolicy",
+          "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -49187,6 +49843,123 @@
           "name": "Items",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAccessTopologySummaryRequest": {
+      "document": "DescribeDspmAccessTopologySummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDspmAccessTopologySummaryResponse": {
+      "document": "DescribeDspmAccessTopologySummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源IP数",
+          "example": "3",
+          "member": "int64",
+          "name": "SourceIpCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问账号数",
+          "example": "2",
+          "member": "int64",
+          "name": "AccountCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被访问的库数",
+          "example": "65",
+          "member": "int64",
+          "name": "DbCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被访问的表数",
+          "example": "740",
+          "member": "int64",
+          "name": "TableCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "近7天访问次数",
+          "example": "38302536",
+          "member": "int64",
+          "name": "AccessCountLast7Days",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "近30天访问次数",
+          "example": "38302536",
+          "member": "int64",
+          "name": "AccessCountLast30Days",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级访问组合数（实例+账号+来源IP+库+schema+表 的去重组合数）",
+          "example": "756",
+          "member": "int64",
+          "name": "TableCombinationCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表级访问组合数是否已达上限。为 true 时表级拓扑数据不完整：达上限后新出现的访问组合会被拒绝写入（已有组合仍继续累加），因此展示的拓扑可能缺失部分对象，且保留了哪些组合取决于到达顺序。建议据此显式提示数据不完整。查询不到该标志时不返回本字段",
+          "example": "false",
+          "member": "bool",
+          "name": "DataIncomplete",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据最后计算时间。拓扑数据由后台预聚合产生，存在链路延迟；多成员账号场景取各成员中最早的一个",
+          "example": "2026-09-24 11:23:31",
+          "member": "string",
+          "name": "LastCalcTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -56396,6 +57169,98 @@
       ],
       "type": "object"
     },
+    "DescribeHostVulRiskEventListRequest": {
+      "document": "DescribeHostVulRiskEventList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量<br>取值范围：[0, +∞)<br>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页返回数量<br>取值范围：[1, 100]<br>默认值：10</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件支持的Filter.Name：VulName - 模糊匹配，按漏洞名称搜索Category - 精确匹配，按漏洞分类筛选：LINUX-Linux软件漏洞 WINDOWS-Windows系统补丁漏洞 WEB_CMS-Web-CMS漏洞 APPLICATION-应用漏洞 EMERGENCY-应急漏洞RiskStatus - 精确匹配，按风险状态筛选：PENDING-待处理 HANDLED-已处置 FIXED-已修复 SCANNING-重新检测中 IGNORED-已忽略 NOT_REQUIRED-无需处理 DELETED-已删除 FIXING-修复中 NEED_REBOOT-已修复待重启 FIX_FAILED-修复失败Level - 精确匹配，按漏洞危害等级筛选：UNKNOWN-无效 LOW-低危 MEDIUM-中危 HIGH-高危 CRITICAL-严重CVSSLevel - 精确匹配，兼容字段，等同于 LevelVPRLevel - 精确匹配，按VPR修复优先级筛选：DEFERRABLE-可暂缓修复 PLANNED-计划修复 SOON-尽快修复 URGENT-紧急修复- 精确匹配，按漏洞ID筛选InstanceID - 精确匹配，按云主机实例ID筛选InstanceId - 精确匹配，兼容字段，等同于 InstanceIDUUID - 精确匹配，按主机安全UUID筛选LatestScanTimeStart - 范围匹配，最近扫描时间起，格式：YYYY-MM-DD HH:mm:ssLatestScanTimeEnd - 范围匹配，最近扫描时间止，格式：YYYY-MM-DD HH:mm:ss</p>",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方式<br>枚举值：<br>asc：升序<br>desc：降序<br>默认值：desc</p>",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段<br>枚举值：<br>LatestScanTime：按最近扫描时间排序<br>Level：按威胁等级排序<br>VPRLevel：按 VPR 评级排序<br>RiskStatus：按风险状态排序<br>VulID：按漏洞 ID 排序<br>InstanceID：按实例 ID 排序<br>默认值：LatestScanTime</p>",
+          "example": "Level",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[\"mem-tencent-*********f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostVulRiskEventListResponse": {
+      "document": "DescribeHostVulRiskEventList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主机漏洞风险事件列表</p>",
+          "example": "无",
+          "member": "HostVulRiskEventItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合筛选条件的总条数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHostVulRiskListRequest": {
       "document": "DescribeHostVulRiskList请求参数结构体",
       "members": [
@@ -56477,6 +57342,43 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostVulScanStatusRequest": {
+      "document": "DescribeHostVulScanStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-xxxxxx\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHostVulScanStatusResponse": {
+      "document": "DescribeHostVulScanStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>主机漏洞扫描状态</p>",
+          "example": "无",
+          "member": "HostVulScanStatus",
+          "name": "Status",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -69215,7 +70117,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>Keyword：关键字模糊搜索（对组件名称模糊匹配）</p>",
+          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>Keyword：关键字模糊搜索（对组件名称模糊匹配）<br>ClusterId：集群id（仅支持单集群id筛选）</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -69279,7 +70181,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>Keyword：关键字模糊搜索（对主机名/IP/InstanceID 模糊匹配）<br>CloudTag: 云标签<br>Tag: 安全中心标签</p>",
+          "document": "<p>筛选条件数组，多条件之间为 AND 关系<br>支持的 Filter.Name：<br>Keyword：关键字模糊搜索（对主机名/IP/InstanceID 模糊匹配）<br>CloudTag: 云标签<br>Tag: 安全中心标签<br>ClusterId：集群id（仅支持单集群id筛选）</p>",
           "example": "无",
           "member": "Filters",
           "name": "Filters",
@@ -81626,6 +82528,258 @@
       ],
       "usage": "out"
     },
+    "HostVulRiskEventItem": {
+      "document": "主机漏洞风险事件明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞风险记录唯一标识",
+          "example": "8f3c4c74-8cc9-4ddf-b66f-2d20f1a9a001",
+          "member": "string",
+          "name": "UUID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险记录 ID",
+          "example": "1000000000001",
+          "member": "uint64",
+          "name": "RiskID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞 ID",
+          "example": "12345",
+          "member": "uint64",
+          "name": "VulID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "OpenSSL 远程代码执行漏洞",
+          "member": "string",
+          "name": "VulName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVE 编号\n参数格式：形如 CVE-2024-12345",
+          "example": "CVE-2024-12345",
+          "member": "string",
+          "name": "CVEID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞分类\n枚举值：\nLINUX：Linux 软件漏洞\nWINDOWS：Windows 系统补丁\nWEB_CMS：Web-CMS 漏洞\nAPPLICATION：应用漏洞\nEMERGENCY：应急漏洞",
+          "example": "LINUX",
+          "member": "string",
+          "name": "Category",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞危害等级\n枚举值：\nUNKNOWN：无效\nLOW：低危\nMEDIUM：中危\nHIGH：高危\nCRITICAL：严重",
+          "example": "HIGH",
+          "member": "string",
+          "name": "Level",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPR 修复优先级\n枚举值：\nDEFERRABLE：可暂缓修复\nPLANNED：计划修复\nSOON：尽快修复\nURGENT：紧急修复",
+          "example": "URGENT",
+          "member": "string",
+          "name": "VPRLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测方式\n枚举值：\nVersionCompare：版本比对\nPOC：POC 检测\nVersionComparePOC：版本比对 + POC",
+          "example": "POC",
+          "member": "string",
+          "name": "CheckMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险状态\n枚举值：\nPENDING：待处理\nHANDLED：已处置\nFIXED：已修复\nSCANNING：重新检测中\nIGNORED：已忽略\nNOT_REQUIRED：无需处理\nDELETED：已删除\nFIXING：修复中\nNEED_REBOOT：已修复待重启\nFIX_FAILED：修复失败",
+          "example": "PENDING",
+          "member": "string",
+          "name": "RiskStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持一键修复",
+          "example": "true",
+          "member": "bool",
+          "name": "SupportFix",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）",
+          "example": "2026-09-18T06:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "LatestScanTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云主机实例 ID\n参数格式：形如 ins-xxxxxxxx",
+          "example": "ins-5ijxpaa6",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属账号 AppID",
+          "example": "1251234567",
+          "member": "uint64",
+          "name": "AppID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "HostVulScanStatus": {
+      "document": "主机漏洞扫描状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否发起过漏洞扫描\n枚举值：\ntrue：已发起过漏洞扫描\nfalse：从未发起过漏洞扫描",
+          "example": "true",
+          "member": "bool",
+          "name": "HasScanned",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否处于首次漏洞扫描判断场景\n枚举值：\ntrue：处于首次漏洞扫描判断场景\nfalse：不处于首次漏洞扫描判断场景",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFirstScan",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近一次扫描任务状态\n枚举值：\nSCANNING：扫描中\nSUCCESS：扫描成功\nPARTIAL_FAILED：部分扫描失败\nALL_FAILED：全部扫描失败\nSTOPPED：停止扫描",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ScanTaskStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "页面业务状态\n枚举值：\nNEVER_SCANNED：从未扫描过漏洞\nSCANNING：扫描中\nFIRST_SCAN_FAILED：首次漏洞扫描失败\nFIRST_SCAN_HAS_FIXABLE_VUL：首次扫描完成，存在可修复漏洞\nFIRST_SCAN_NO_FIXABLE_VUL：首次扫描完成，有漏洞但无可修复漏洞\nFIRST_SCAN_NO_VUL：首次扫描完成，没有漏洞\nSCANNED_HAS_FIXABLE_VUL：非首次扫描，存在可修复漏洞\nSCANNED_NO_FIXABLE_VUL：非首次扫描，有漏洞但无可修复漏洞\nSCANNED_NO_VUL：非首次扫描，没有漏洞",
+          "example": "FIRST_SCAN_HAS_FIXABLE_VUL",
+          "member": "string",
+          "name": "ScanScene",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间\n参数格式：YYYY-MM-DDTHH:mm:ssZ（ISO8601格式）\n从未扫描时返回空字符串。",
+          "example": "2026-10-20T10:00:00Z",
+          "member": "datetime_iso",
+          "name": "LatestScanTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前待处理漏洞总数\n包含普通主机漏洞和最新 Windows KB 待处理风险。",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalVulCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可修复漏洞数\n包含支持一键修复的普通主机漏洞和最新 Windows KB 待处理风险。",
+          "example": "5",
+          "member": "int64",
+          "name": "FixableVulCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可修复应急漏洞数\n应急漏洞优先归类：应急漏洞仅计入该字段，不再计入 Linux 软件漏洞数。",
+          "example": "1",
+          "member": "int64",
+          "name": "FixableEmergencyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可修复 Linux 软件漏洞数\n仅统计非应急 Linux 软件漏洞。",
+          "example": "2",
+          "member": "int64",
+          "name": "FixableLinuxVulCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前可修复 Windows 系统补丁数\n统计最新 Windows KB 待处理风险。",
+          "example": "2",
+          "member": "int64",
+          "name": "FixableWindowVulCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "IPIntelInfo": {
       "document": "IP威胁情报信息（通过TIX IPAnalysis接口获取）",
       "members": [
@@ -91031,6 +92185,87 @@
       ],
       "type": "object"
     },
+    "ModifyBaselineIgnorePolicyRequest": {
+      "document": "ModifyBaselineIgnorePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检测项 ID，标识对哪个检测项设置忽略策略。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ItemID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略范围类型。</p><p>枚举值：</p><ul><li>ALL： 全部资产</li><li>PICK： 指定资产</li></ul>",
+          "example": "ALL",
+          "member": "string",
+          "name": "ScopeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注信息。</p>",
+          "example": "ignore all",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>忽略策略记录 ID。新建时传 0，更新时传对应记录 ID。</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ID",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自选资产 ID 列表，PICK 时生效，传入 instance-id 或集群 ID。</p>",
+          "example": "[\"instance-tki\"]",
+          "member": "string",
+          "name": "ScopeIncludeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>剔除资产 ID 列表，ALL 时生效，传入 instance-id 或集群 ID。</p>",
+          "example": "[\"instance-ikj\"]",
+          "member": "string",
+          "name": "ScopeExcludeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-tencent-6f5795752f66e429\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBaselineIgnorePolicyResponse": {
+      "document": "ModifyBaselineIgnorePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBaselinePolicyEnableRequest": {
       "document": "ModifyBaselinePolicyEnable请求参数结构体",
       "members": [
@@ -91608,6 +92843,69 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAuditLogStatusRequest": {
+      "document": "ModifyClusterAuditLogStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>审计日志开关，审计日志目标状态：true-开启，false-关闭。开启要求集群已开启防护，关闭不要求。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditLogSwitch",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群资产 id（已废弃）</p>",
+          "example": "86693c5bf9e9fbdce993d557b1038fd8",
+          "member": "string",
+          "name": "ClusterAssetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集团账号的成员id</p>",
+          "example": "[\"mem-a6df317cb6a8c424\"]",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "被调用的集团账号的成员id",
+          "example": "[\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"]",
+          "member": "string",
+          "name": "OperatedMemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群 CA 证书 MD5 列表，集群的唯一标识，支持单个或批量修改</p>",
+          "example": "[\"e3b0c44298fc1c149afbf4c8996fb924\"]",
+          "member": "string",
+          "name": "ClusterCaMD5List",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterAuditLogStatusResponse": {
+      "document": "ModifyClusterAuditLogStatus返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

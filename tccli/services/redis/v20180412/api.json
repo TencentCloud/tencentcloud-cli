@@ -406,6 +406,13 @@
       "output": "DescribeMaintenanceWindowResponse",
       "status": "online"
     },
+    "DescribeModules": {
+      "document": "本接口（DescribeModules）用于查询实例的扩展模块信息，包括模块的支持状态（是否支持）、启用状态（是否已启用）等信息。",
+      "input": "DescribeModulesRequest",
+      "name": "查询扩展模块信息",
+      "output": "DescribeModulesResponse",
+      "status": "online"
+    },
     "DescribeParamTemplateInfo": {
       "document": "本接口（DescribeParamTemplateInfo）用于查询参数模板详情。",
       "input": "DescribeParamTemplateInfoRequest",
@@ -721,6 +728,13 @@
       "output": "ModifyMaintenanceWindowResponse",
       "status": "online"
     },
+    "ModifyModule": {
+      "document": "本接口（ModifyModule）用于修改实例扩展模块的启用状态。",
+      "input": "ModifyModuleRequest",
+      "name": "修改扩展模块(已下线)",
+      "output": "ModifyModuleResponse",
+      "status": "online"
+    },
     "ModifyNetworkConfig": {
       "document": "本接口（ModifyNetworkConfig）用于修改实例网络配置。",
       "input": "ModifyNetworkConfigRequest",
@@ -740,6 +754,20 @@
       "input": "ModifyReplicationGroupRequest",
       "name": "修改复制组信息",
       "output": "ModifyReplicationGroupResponse",
+      "status": "online"
+    },
+    "ModifySSLEncryptionMode": {
+      "document": "本接口（ModifySSLEncryptionMode）用于更改SSL加密模式",
+      "input": "ModifySSLEncryptionModeRequest",
+      "name": "修改SSL加密模式",
+      "output": "ModifySSLEncryptionModeResponse",
+      "status": "online"
+    },
+    "ModifyValkeyModule": {
+      "document": "本接口（ModifyValkeyModule）用于修改Valkey实例扩展模块的启用状态。",
+      "input": "ModifyValkeyModuleRequest",
+      "name": "修改Valkey实例扩展模块",
+      "output": "ModifyValkeyModuleResponse",
       "status": "online"
     },
     "OpenLog": {
@@ -824,6 +852,13 @@
       "input": "SwitchProxyRequest",
       "name": "Proxy模拟故障接口",
       "output": "SwitchProxyResponse",
+      "status": "online"
+    },
+    "UpdateSSLCert": {
+      "document": "本接口（UpdateSSLCert）用于更新SSL密钥信息。",
+      "input": "UpdateSSLCertRequest",
+      "name": "更新SSL证书",
+      "output": "UpdateSSLCertResponse",
       "status": "online"
     },
     "UpgradeInstance": {
@@ -5981,6 +6016,43 @@
           "name": "EndTime",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModulesRequest": {
+      "document": "DescribeModules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-4y9t57vt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModulesResponse": {
+      "document": "DescribeModules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例的扩展模块列表，包括模块的支持状态（是否支持）、启用状态（是否已启用）等信息。</p>",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -12216,6 +12288,61 @@
       ],
       "type": "object"
     },
+    "ModifyModuleRequest": {
+      "document": "ModifyModule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。",
+          "example": "crs-4y9t57vt",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定待修改的扩展模块。Redis 支持修改如下扩展模块的状态。\n- Bloom：指 RedisBloom 模块，可以高效地判断一个元素是否存在于集合中。\n- JSON：指 RedisJSON 模块，允许 Redis 原生支持 JSON 数据格式，方便存储和操作 JSON 对象。\n- Search：指 RediSearch 模块，提供全文搜索功能，可以对存储在 Redis 中的数据进行高效的搜索操作。\n- TimeSeries：指 RedisTimeSeries 模块，专门用于处理时间序列数据，适合存储和查询时间相关的数据。",
+          "example": "JSON",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设置扩展模块的启用状态。仅支持设置为 ON，启用扩展模块。",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyModuleResponse": {
+      "document": "ModifyModule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。",
+          "example": "486489",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNetworkConfigRequest": {
       "document": "ModifyNetworkConfig请求参数结构体",
       "members": [
@@ -12445,6 +12572,143 @@
         }
       ],
       "type": "object"
+    },
+    "ModifySSLEncryptionModeRequest": {
+      "document": "ModifySSLEncryptionMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-kb5f4wul",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul>",
+          "example": "required",
+          "member": "string",
+          "name": "EncryptionMode",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySSLEncryptionModeResponse": {
+      "document": "ModifySSLEncryptionMode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2031422420",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyValkeyModuleRequest": {
+      "document": "ModifyValkeyModule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-d5rb****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定待修改的扩展模块。</p><p>枚举值：</p><ul><li>ValkeyBloom： 指 Bloom 模块，可以高效地判断一个元素是否存在于集合中</li><li>ValkeyJSON： 指 JSON 模块，允许 Redis 原生支持 JSON 数据格式，方便存储和操作 JSON 对象。</li><li>ValkeySearch： 指 Search 模块，提供全文搜索功能，可以对存储在 Redis 中的数据进行高效的搜索操作。</li></ul>",
+          "example": "ValkeyBloom",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>设置扩展模块的启用状态。仅支持设置为 ON，启用扩展模块。</p>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyValkeyModuleResponse": {
+      "document": "ModifyValkeyModule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2031391183",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Module": {
+      "document": "Redis 支持的扩展模块信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Redis 支持的扩展模块，包括 Bloom、JSON、Search 和 TimeSeries，可以为 Redis 提供额外的功能支持。</p><ul><li>Bloom：指 RedisBloom 模块，可以高效地判断一个元素是否存在于集合中。</li><li>JSON：指 RedisJSON 模块，允许 Redis 原生支持 JSON 数据格式，方便存储和操作 JSON 对象。</li><li>Search：指 RediSearch 模块，提供全文搜索功能，可以对存储在 Redis 中的数据进行高效的搜索操作。</li><li>TimeSeries：指 RedisTimeSeries 模块，专门用于处理时间序列数据，适合存储和查询时间相关的数据。</li><li>ValkeyBloom：指Valkey引擎的RedisBloom 模块，可以高效地判断一个元素是否存在于集合中。</li><li>ValkeyJSON：指Valkey引擎的RedisJSON 模块，允许 Redis 原生支持 JSON 数据格式，方便存储和操作 JSON 对象。</li><li>ValkeySearch：指Valkey引擎的RediSearch 模块，提供全文搜索功能，可以对存储在 Redis 中的数据进行高效的搜索操作。</li></ul>",
+          "example": "JSON",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展模块的启用状态。</p><ul><li>ON：启用。</li><li>OFF：关闭。</li></ul>",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例是否支持参数 Name 对应的扩展模块。</p><ul><li>true：支持。</li><li>false：不支持。</li></ul>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSupport",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "OpenLogRequest": {
       "document": "OpenLog请求参数结构体",
@@ -14942,6 +15206,115 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateSSLCertRequest": {
+      "document": "UpdateSSLCert请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>指定实例 ID。例如：crs-xjhsdj****。请登录<a href=\"https://console.cloud.tencent.com/redis\">Redis控制台</a>在实例列表复制实例 ID。</p>",
+          "example": "crs-42x*****",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥类型。</p><p>枚举值：</p><ul><li>0： 腾讯云提供</li><li>1： 用户自定义KMS</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "CertSource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "<p>切换时间。（该参数废弃，不再生效）</p><p>枚举值：</p><ul><li>1： 维护时间窗操作：指开启SSL加密在设置的维护时间窗内执行。请通过接口DescribeMaintenanceWindow查询设置的维护时间窗时间段</li><li>2： 立即操作：操作将立即执行，无需等待维护时间窗。系统默认设置为立即操作。</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchOption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL地址类型。</p><p>枚举值：</p><ul><li>0： 不限。</li><li>1： 内网IPv4。</li><li>2： 内网IPv6。</li><li>3： 外网。</li><li>-1： 未指定。</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "AddressType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": true,
+          "document": "<p>KMS的密钥ID。（该参数废弃，不再生效）</p><p>参数格式：xxxxxxx-xxxx-xxxx-xxxx-xxxxxxx</p>",
+          "example": "1ba881ca-****-****-bb4c-525400c6****",
+          "member": "string",
+          "name": "KmsKeyId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "<p>KMS地域信息。（该参数废弃，不再生效）</p><p>参数格式：ap-xxxx</p><p>取值参考：<a href=\"https://cloud.tencent.com/document/api/573/34406#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8\">KMS支持的地域列表</a></p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "KmsRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL 证书服务的证书 ID，CertSource=1 时必填</p>",
+          "example": "aKnH4alS",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>最低 TLS 版本</p><p>枚举值：</p><ul><li>TLSv1.0： TLSv1.0</li><li>TLSv1.1： TLSv1.1</li><li>TLSv1.2： TLSv1.2</li></ul>",
+          "example": "TLSv1.2",
+          "member": "string",
+          "name": "SSLMinVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标加密模式</p><p>枚举值：</p><ul><li>required： 强制加密</li><li>flexible： 兼容模式</li></ul>",
+          "example": "flexible",
+          "member": "string",
+          "name": "EncryptionMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateSSLCertResponse": {
+      "document": "UpdateSSLCert返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务ID。</p>",
+          "example": "2031390652",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpgradeInstanceProductVersionRequest": {
       "document": "UpgradeInstanceProductVersion请求参数结构体",

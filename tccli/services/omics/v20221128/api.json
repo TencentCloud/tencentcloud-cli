@@ -2719,7 +2719,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cls-8dc20exc",
           "member": "string",
           "name": "ClusterId",
@@ -2729,7 +2729,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "组学分析集群",
           "member": "string",
           "name": "Name",
@@ -2739,7 +2739,7 @@
         },
         {
           "disabled": false,
-          "document": "描述",
+          "document": "<p>描述</p>",
           "example": "高性能计算专用",
           "member": "string",
           "name": "Description",
@@ -2749,7 +2749,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "<p>状态</p>",
           "example": "RUNNING",
           "member": "string",
           "name": "Status",
@@ -2759,7 +2759,7 @@
         },
         {
           "disabled": false,
-          "document": "调度器",
+          "document": "<p>调度器</p>",
           "example": "SLURM",
           "member": "string",
           "name": "Scheduler",
@@ -2769,7 +2769,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "<p>VPC ID</p>",
           "example": "vpc-0efb24n1",
           "member": "string",
           "name": "VPCId",
@@ -2779,7 +2779,7 @@
         },
         {
           "disabled": false,
-          "document": "节点数量",
+          "document": "<p>节点数量</p>",
           "example": "10",
           "member": "uint64",
           "name": "NodeCount",
@@ -2789,7 +2789,7 @@
         },
         {
           "disabled": false,
-          "document": "标签",
+          "document": "<p>标签</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -2799,7 +2799,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-10-10T16:00:00+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -2809,7 +2809,7 @@
         },
         {
           "disabled": false,
-          "document": "集群类型",
+          "document": "<p>集群类型</p>",
           "example": "CVM_CLUSTER",
           "member": "string",
           "name": "Type",
@@ -2819,7 +2819,7 @@
         },
         {
           "disabled": false,
-          "document": "系统名称",
+          "document": "<p>系统名称</p>",
           "example": "CentOS 7.9",
           "member": "string",
           "name": "OsName",
@@ -2829,7 +2829,7 @@
         },
         {
           "disabled": false,
-          "document": "调度器版本",
+          "document": "<p>调度器版本</p>",
           "example": "23.11.7",
           "member": "string",
           "name": "SchedulerVersion",
@@ -2839,7 +2839,7 @@
         },
         {
           "disabled": false,
-          "document": "集群VPC CIDR",
+          "document": "<p>集群VPC CIDR</p>",
           "example": "10.0.0.0/8",
           "member": "string",
           "name": "VPCCIDRBlock",
@@ -2849,10 +2849,40 @@
         },
         {
           "disabled": false,
-          "document": "集群确认交付截止日期",
+          "document": "<p>集群确认交付截止日期</p>",
           "example": "2026-01-14T12:00:00+08:00",
           "member": "string",
           "name": "ConfirmDeadline",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态原因</p>",
+          "example": "CREATE_FAILED",
+          "member": "string",
+          "name": "StatusReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>隔离时间</p>",
+          "example": "2026-06-25T11:20:41+08:00",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息</p>",
+          "example": "vpc vpc-9f0otkb3 not found in region ap-guangzhou",
+          "member": "string",
+          "name": "Message",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -3270,6 +3300,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否存量节点</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsExistingNode",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

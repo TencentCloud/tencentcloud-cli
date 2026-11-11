@@ -56,6 +56,7 @@ Output:
                             "ColorPrimaries": "",
                             "ColorSpace": "",
                             "ColorTransfer": "",
+                            "Duration": 54.955,
                             "Fps": 32,
                             "FpsDenominator": 0,
                             "FpsNumerator": 0,

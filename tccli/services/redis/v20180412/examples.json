@@ -464,6 +464,14 @@
         "title": "查询实例维护时间窗"
       }
     ],
+    "DescribeModules": [
+      {
+        "document": "查询当前实例开启module信息",
+        "input": "POST / HTTP/1.1\nHost: xxx.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModules\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-qkua****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Modules\": [\n            {\n                \"IsSupport\": true,\n                \"Name\": \"Bloom\",\n                \"Status\": \"OFF\"\n            },\n            {\n                \"IsSupport\": true,\n                \"Name\": \"JSON\",\n                \"Status\": \"OFF\"\n            },\n            {\n                \"IsSupport\": false,\n                \"Name\": \"Search\",\n                \"Status\": \"OFF\"\n            },\n            {\n                \"IsSupport\": false,\n                \"Name\": \"TimeSeries\",\n                \"Status\": \"OFF\"\n            }\n        ],\n        \"RequestId\": \"de51c573-17f9-40e8-9c0f-828ebd8a4346\"\n    }\n}",
+        "title": "DescribeModules"
+      }
+    ],
     "DescribeParamTemplateInfo": [
       {
         "document": "查询指定参数模板ID的模板信息",
@@ -848,6 +856,14 @@
         "title": "示例"
       }
     ],
+    "ModifyModule": [
+      {
+        "document": "修改实例扩展模块",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-asda****\",\n    \"Name\": \"JSON\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa6ec05f-d469-41cd-862f-da6771c4554d\",\n        \"TaskId\": 1719562435\n    }\n}",
+        "title": "修改实例扩展模块"
+      }
+    ],
     "ModifyNetworkConfig": [
       {
         "document": "通过该接口修改实例的私有网络。",
@@ -870,6 +886,22 @@
         "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReplicationGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"crs-rpl-oxsincth\",\n    \"GroupName\": \"group-name-1\",\n    \"Remark\": \"note-XXX\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b778637c-1c49-46a5-b958-64b6caXXXXXX\"\n    }\n}",
         "title": "修改复制组信息"
+      }
+    ],
+    "ModifySSLEncryptionMode": [
+      {
+        "document": "更改实例为强制传输加密模式，非加密连接会断开",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySSLEncryptionMode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-kb5f4wul\",\n    \"EncryptionMode\": \"required\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2031422420,\n        \"RequestId\": \"ca5a6781-6dd2-459b-9989-978477be7e28\"\n    }\n}",
+        "title": "更改实例传输加密模式为强制加密"
+      }
+    ],
+    "ModifyValkeyModule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyValkeyModule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-d5rb****\",\n    \"Name\": \"ValkeyBloom\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2031391183,\n        \"RequestId\": \"2ccfc821-f00d-43b7-b50d-fcceaa9c96a8\"\n    }\n}",
+        "title": "启用 ValkeyBloom 模块"
       }
     ],
     "OpenLog": [
@@ -966,6 +998,14 @@
         "input": "https://redis.tencentcloudapi.com/?Action=SwitchProxy\n&InstanceId=crs-5a4py64p\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 1378445,\n        \"RequestId\": \"2d4387ee-2011-449e-a32b-87f9366f3ef4\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "UpdateSSLCert": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateSSLCert\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-42x*****\",\n    \"CertSource\": 1,\n    \"KmsKeyId\": \"1ba881ca-****-****-bb4c-525400c6****\",\n    \"KmsRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 2031390652,\n        \"RequestId\": \"82508018-fc21-4d5a-ab20-023ca1172ba7\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "UpgradeInstance": [

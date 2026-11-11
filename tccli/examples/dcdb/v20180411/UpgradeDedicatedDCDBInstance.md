@@ -13,6 +13,8 @@ tccli dcdb UpgradeDedicatedDCDBInstance --cli-unfold-argument  \
     --ExpandShardConfig.ShardStorage 10 \
     --SwitchStartTime 2026-08-24 22:00:00 \
     --SwitchEndTime 2026-08-24 22:15:00 \
+    --MasterHostId svr-xxx1 \
+    --SlaveHostIds svr-xxx2 svr-xxx3 \
     --SwitchInterval 5
 ```
 

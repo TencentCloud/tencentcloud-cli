@@ -126,6 +126,13 @@
       "output": "CreateAuditTemplateResponse",
       "status": "online"
     },
+    "CreateAvatarEditingLive": {
+      "document": "调用该接口，用于创建数字人直播间。",
+      "input": "CreateAvatarEditingLiveRequest",
+      "name": "创建实时编辑数字人",
+      "output": "CreateAvatarEditingLiveResponse",
+      "status": "online"
+    },
     "CreateCaster": {
       "document": "该接口用来创建新的导播台",
       "input": "CreateCasterRequest",
@@ -684,6 +691,13 @@
       "input": "DescribeAuditTemplatesRequest",
       "name": "获取审核模板列表",
       "output": "DescribeAuditTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeAvatarEditingLive": {
+      "document": "调用该接口，查询数字人直播间信息列表。",
+      "input": "DescribeAvatarEditingLiveRequest",
+      "name": "查询数字人实时编辑直播间状态",
+      "output": "DescribeAvatarEditingLiveResponse",
       "status": "online"
     },
     "DescribeBackupStreamList": {
@@ -1743,6 +1757,13 @@
       "output": "StartLiveStreamMonitorResponse",
       "status": "online"
     },
+    "StopAvatarEditingLive": {
+      "document": "调用该接口，用于停止数字人直播间。",
+      "input": "StopAvatarEditingLiveRequest",
+      "name": "停止实时编辑数字人",
+      "output": "StopAvatarEditingLiveResponse",
+      "status": "online"
+    },
     "StopCasterPgm": {
       "document": "该接口用来停止导播台的主监输出。\n停止主监后，对应的推流到腾讯云直播源站和推流到其他第三方平台均将会停止。",
       "input": "StopCasterPgmRequest",
@@ -1797,6 +1818,13 @@
       "input": "StopScreenshotTaskRequest",
       "name": "终止截图任务",
       "output": "StopScreenshotTaskResponse",
+      "status": "online"
+    },
+    "SwitchAvatarEditingScene": {
+      "document": "调用该接口，用于临时驱动数字人播报。",
+      "input": "SwitchAvatarEditingSceneRequest",
+      "name": "切换数字人实时编辑场景",
+      "output": "SwitchAvatarEditingSceneResponse",
       "status": "online"
     },
     "SwitchBackupStream": {
@@ -6410,6 +6438,81 @@
           "member": "int64",
           "name": "TemplateId",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAvatarEditingLiveRequest": {
+      "document": "CreateAvatarEditingLive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，这里是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>各种编辑场景的参考图</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/change/2%E6%B1%89%E6%9C%8D.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的编辑类型</p><p>枚举值：</p><ul><li>style_transfer： 整体风格迁移</li><li>virtual_tryon： 虚拟试穿</li><li>subject_replacement： 主体替换</li><li>background_replacement： 背景替换</li></ul><p>默认值：style_transfer</p>",
+          "example": "virtual_tryon",
+          "member": "string",
+          "name": "EditingType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAvatarEditingLiveResponse": {
+      "document": "CreateAvatarEditingLive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话ID</p>",
+          "example": "1008224608114978816",
+          "member": "string",
+          "name": "LiveId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话的状态</p><p>枚举值：</p><ul><li>waiting： 等待中</li><li>on_live： 直播中</li><li>ending： 结束中</li><li>ended： 已结束</li><li>prepared： 准备中</li></ul>",
+          "example": "waiting",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通道ID，这里是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11702,6 +11805,123 @@
           "name": "AuditTemplates",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvatarEditingLiveRequest": {
+      "document": "DescribeAvatarEditingLive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAvatarEditingLiveResponse": {
+      "document": "DescribeAvatarEditingLive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话ID</p>",
+          "example": "1008224608114978816",
+          "member": "string",
+          "name": "LiveId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话的状态</p><p>枚举值：</p><ul><li>waiting： 等待中</li><li>on_live： 直播中</li><li>ending： 结束中</li><li>ended： 已结束</li><li>prepared： 准备中</li><li>not_exist： 不存在</li></ul>",
+          "example": "on_live",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内部模块会话状态</p>",
+          "example": "active",
+          "member": "string",
+          "name": "Phase",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出Mode</p>",
+          "example": "video",
+          "member": "string",
+          "name": "CallMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1792050995",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>开播时刻</p>",
+          "example": "1792050998",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间，如果还没结束则该值为0</p>",
+          "example": "0",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跟踪ID，用于查日志</p>",
+          "example": "82e7b0074f492b41ca0152ae7e608ef3",
+          "member": "string",
+          "name": "TraceId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -27176,6 +27396,53 @@
       ],
       "type": "object"
     },
+    "StopAvatarEditingLiveRequest": {
+      "document": "StopAvatarEditingLive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopAvatarEditingLiveResponse": {
+      "document": "StopAvatarEditingLive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话ID</p>",
+          "example": "1008224608114978816",
+          "member": "string",
+          "name": "LiveId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopCasterPgmRequest": {
       "document": "StopCasterPgm请求参数结构体",
       "members": [
@@ -27684,6 +27951,71 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchAvatarEditingSceneRequest": {
+      "document": "SwitchAvatarEditingScene请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>支持的编辑类型</p><p>枚举值：</p><ul><li>style_transfer： 整体风格迁移</li><li>virtual_tryon： 虚拟试穿</li><li>subject_replacement： 主体替换</li><li>background_replacement： 背景替换</li></ul>",
+          "example": "virtual_tryon",
+          "member": "string",
+          "name": "EditingType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>各种编辑场景的参考图</p>",
+          "example": "https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/change/1%E5%8F%A4%E9%A3%8E.png",
+          "member": "string",
+          "name": "ImageUrl",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchAvatarEditingSceneResponse": {
+      "document": "SwitchAvatarEditingScene返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通道ID，通常是待编辑的直播流的源ID</p>",
+          "example": "vidu_s2_editing_test_2",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时编辑会话ID</p>",
+          "example": "1008224608114978816",
+          "member": "string",
+          "name": "LiveId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SwitchBackupStreamRequest": {
       "document": "SwitchBackupStream请求参数结构体",

@@ -5918,6 +5918,15 @@
           "name": "FourthZone",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否使用最新小版本号进行克隆。</p><p>枚举值：</p><ul><li>1： 是</li><li>0： 否</li></ul><p>默认值：0</p><p>默认和源实例的小版本号对齐</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UseLatestMinorVersion",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10233,7 +10242,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "document": "<p>实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。</p>",
           "example": "cdb-qwerasdf",
           "member": "string",
           "name": "InstanceId",
@@ -10248,7 +10257,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否支持数据库审计功能。",
+          "document": "<p>是否支持数据库审计功能。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSupportAudit",
@@ -10258,7 +10267,7 @@
         },
         {
           "disabled": false,
-          "document": "开启审计是否需要升级内核版本。",
+          "document": "<p>开启审计是否需要升级内核版本。</p>",
           "example": "false",
           "member": "bool",
           "name": "AuditNeedUpgrade",
@@ -10268,7 +10277,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持数据库加密功能。",
+          "document": "<p>是否支持数据库加密功能。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSupportEncryption",
@@ -10278,7 +10287,7 @@
         },
         {
           "disabled": false,
-          "document": "开启加密是否需要升级内核版本。",
+          "document": "<p>开启加密是否需要升级内核版本。</p>",
           "example": "false",
           "member": "bool",
           "name": "EncryptionNeedUpgrade",
@@ -10288,7 +10297,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为异地只读实例。",
+          "document": "<p>是否为异地只读实例。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsRemoteRo",
@@ -10298,7 +10307,7 @@
         },
         {
           "disabled": false,
-          "document": "主实例所在地域。\n说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 [查询实例列表](https://cloud.tencent.com/document/product/236/15872) 接口查询。",
+          "document": "<p>主实例所在地域。<br>说明：此参数可能返回空值，您可忽略此出参返回值。如需获取实例所在地域详情，您可调用 <a href=\"https://cloud.tencent.com/document/product/236/15872\">查询实例列表</a> 接口查询。</p>",
           "example": "ap-beijing",
           "member": "string",
           "name": "MasterRegion",
@@ -10308,7 +10317,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持小版本升级。",
+          "document": "<p>是否支持小版本升级。</p>",
           "example": "true",
           "member": "bool",
           "name": "IsSupportUpdateSubVersion",
@@ -10318,7 +10327,7 @@
         },
         {
           "disabled": false,
-          "document": "当前内核版本。",
+          "document": "<p>当前内核版本。</p>",
           "example": "20190203",
           "member": "string",
           "name": "CurrentSubVersion",
@@ -10328,7 +10337,7 @@
         },
         {
           "disabled": false,
-          "document": "可供升级的内核版本。",
+          "document": "<p>可供升级的内核版本。</p>",
           "example": "20190930",
           "member": "string",
           "name": "TargetSubVersion",
@@ -20501,7 +20510,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "RO 组名称。",
+          "document": "<p>RO 组名称。</p>",
           "example": "test_rogroup",
           "member": "string",
           "name": "RoGroupName",
@@ -20510,7 +20519,7 @@
         },
         {
           "disabled": false,
-          "document": "RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。\n注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。",
+          "document": "<p>RO 实例最大延迟阈值。单位为秒，最小值为 1。范围：[1,10000]，整数。<br>注意：RO 组必须设置了开启实例延迟剔除策略，该值才有效。</p>",
           "example": "10",
           "member": "int64",
           "name": "RoMaxDelayTime",
@@ -20519,7 +20528,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。",
+          "document": "<p>是否开启实例延迟剔除。支持的值包括：1 - 开启；0 - 不开启。注意，若设置开启实例延迟剔除，则必须设置延迟阈值（RoMaxDelayTime）参数。</p>",
           "example": "1",
           "member": "int64",
           "name": "RoOfflineDelay",
@@ -20528,7 +20537,7 @@
         },
         {
           "disabled": false,
-          "document": "最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。\n注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。",
+          "document": "<p>最少保留实例数。可设置为小于或等于该 RO 组下 RO 实例个数的任意值。默认值为1。<br>注意：若设置值大于 RO 实例数量将不做剔除；若设置为 0，所有实例延迟超限都会被剔除。</p>",
           "example": "1",
           "member": "int64",
           "name": "MinRoInGroup",
@@ -20537,7 +20546,7 @@
         },
         {
           "disabled": false,
-          "document": "权重模式。支持值包括：\"system\" - 系统自动分配； \"custom\" - 用户自定义设置。注意，若设置 \"custom\" 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。",
+          "document": "<p>权重模式。支持值包括：&quot;system&quot; - 系统自动分配； &quot;custom&quot; - 用户自定义设置。注意，若设置 &quot;custom&quot; 模式，则必须设置 RO 实例权重配置（RoWeightValues）参数。</p>",
           "example": "system",
           "member": "string",
           "name": "WeightMode",
@@ -20546,7 +20555,7 @@
         },
         {
           "disabled": false,
-          "document": "延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。",
+          "document": "<p>延迟复制时间。单位：秒，范围：1 - 259200秒，不传此参数表示不开启实例延迟复制。</p>",
           "example": "100",
           "member": "int64",
           "name": "ReplicationDelayTime",

@@ -1494,7 +1494,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>是否开启JNDI注入检测</p>",
           "example": "0",
           "member": "int64",
@@ -1505,7 +1505,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>是否开启JNI注入检测</p>",
           "example": "0",
           "member": "int64",
@@ -1689,6 +1689,28 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启JNDI注入检测</p>",
+          "example": "0",
+          "member": "string",
+          "name": "IsJNDIInjectionAnalysis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启JNI注入检测</p>",
+          "example": "0",
+          "member": "string",
+          "name": "IsJNIInjectionAnalysis",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2835,7 +2857,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
@@ -2845,11 +2867,22 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "<p>业务系统ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-test",
           "member": "string",
           "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>业务系统ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-test",
+          "member": "string",
+          "name": "InstanceId",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -2867,17 +2900,17 @@
           "example": "无",
           "member": "Series",
           "name": "Series",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>接口参数列表</p>",
           "example": "无",
           "member": "YAxis",
           "name": "YAxis",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7565,7 +7598,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>用户appid</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1251763868",
           "member": "int64",
@@ -7576,7 +7609,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "<p>主账号uin</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1500000688",
           "member": "string",
@@ -7673,6 +7706,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户appid</p>",
+          "example": "1251763868",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主账号uin</p>",
+          "example": "1500000688",
+          "member": "string",
+          "name": "CreateUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8381,7 +8436,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "错误率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>错误率</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0.36",
           "member": "float",
           "name": "ErrRate",
@@ -8391,7 +8446,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SPAN_KIND_SERVER",
           "member": "string",
           "name": "Kind",
@@ -8401,7 +8456,7 @@
         },
         {
           "disabled": false,
-          "document": "节点名",
+          "document": "<p>节点名</p>",
           "example": "Customer",
           "member": "string",
           "name": "Name",
@@ -8411,7 +8466,7 @@
         },
         {
           "disabled": false,
-          "document": "节点权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点权重</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.0",
           "member": "float",
           "name": "Weight",
@@ -8421,7 +8476,7 @@
         },
         {
           "disabled": false,
-          "document": "节点颜色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点颜色</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "red",
           "member": "string",
           "name": "Color",
@@ -8431,7 +8486,7 @@
         },
         {
           "disabled": false,
-          "document": "响应时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>响应时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "float",
           "name": "Duration",
@@ -8441,7 +8496,7 @@
         },
         {
           "disabled": false,
-          "document": "吞吐量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>吞吐量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "float",
           "name": "Qps",
@@ -8451,7 +8506,7 @@
         },
         {
           "disabled": false,
-          "document": "节点类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "http",
           "member": "string",
           "name": "Type",
@@ -8461,7 +8516,7 @@
         },
         {
           "disabled": false,
-          "document": "节点ID",
+          "document": "<p>节点ID</p>",
           "example": "156",
           "member": "string",
           "name": "Id",
@@ -8471,7 +8526,7 @@
         },
         {
           "disabled": false,
-          "document": "节点大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "large",
           "member": "string",
           "name": "Size",
@@ -8481,7 +8536,7 @@
         },
         {
           "disabled": false,
-          "document": "节点是否为组件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点是否为组件类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsModule",
@@ -8491,7 +8546,7 @@
         },
         {
           "disabled": false,
-          "document": "节点位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点位置信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Position",
           "name": "Position",
@@ -8501,7 +8556,7 @@
         },
         {
           "disabled": false,
-          "document": "节点标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点标签</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApmTag",
           "name": "Tags",
@@ -8511,7 +8566,7 @@
         },
         {
           "disabled": false,
-          "document": "节点是否可以下钻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>节点是否可以下钻</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "CanDrillDown",
@@ -8521,7 +8576,7 @@
         },
         {
           "disabled": false,
-          "document": "资源层信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>资源层信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Resource",
           "name": "Resource",
@@ -8531,7 +8586,7 @@
         },
         {
           "disabled": false,
-          "document": "拓扑节点视图名字",
+          "document": "<p>拓扑节点视图名字</p>",
           "example": "mq",
           "member": "string",
           "name": "NodeView",
@@ -8541,7 +8596,7 @@
         },
         {
           "disabled": false,
-          "document": "MQ 消费者视角的响应时间 ms",
+          "document": "<p>MQ 消费者视角的响应时间 ms</p>",
           "example": "100",
           "member": "float",
           "name": "ConsumerDuration",
@@ -8551,7 +8606,7 @@
         },
         {
           "disabled": false,
-          "document": "MQ 消费者视角的错误率 %",
+          "document": "<p>MQ 消费者视角的错误率 %</p>",
           "example": "0.36",
           "member": "float",
           "name": "ConsumerErrRate",
@@ -8561,7 +8616,7 @@
         },
         {
           "disabled": false,
-          "document": "MQ 消费者视角的吞吐量",
+          "document": "<p>MQ 消费者视角的吞吐量</p>",
           "example": "100",
           "member": "float",
           "name": "ConsumerQps",
@@ -8570,8 +8625,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "应用 ID",
+          "disabled": true,
+          "document": "<p>应用 ID</p>",
           "example": "svc-1xfew23",
           "member": "string",
           "name": "ServiceId",
@@ -8581,7 +8636,7 @@
         },
         {
           "disabled": false,
-          "document": "调用次数",
+          "document": "<p>调用次数</p>",
           "example": "10",
           "member": "int64",
           "name": "ReqCnt",
@@ -8591,12 +8646,22 @@
         },
         {
           "disabled": false,
-          "document": "消息队列消费者视角的调用次数",
+          "document": "<p>消息队列消费者视角的调用次数</p>",
           "example": "10",
           "member": "int64",
           "name": "ConsumerReqCnt",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>应用 ID</p>",
+          "example": "svc-1xfew23",
+          "member": "string",
+          "name": "ServiceID",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -8757,7 +8822,7 @@
           "example": "[\"e29646669f404c73\"]",
           "member": "string",
           "name": "Keys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8767,7 +8832,7 @@
           "example": "[\"test-java-gateway-service GET market-service-route\"]",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

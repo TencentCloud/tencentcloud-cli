@@ -76,7 +76,7 @@ def doDescribeMySqlProcessList(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateMailProfile(args, parsed_globals):
+def doCreateProxySessionKillTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -110,11 +110,11 @@ def doCreateMailProfile(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateMailProfileRequest()
+    model = models.CreateProxySessionKillTaskRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateMailProfile(model)
+        rsp = client.CreateProxySessionKillTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2014,7 +2014,7 @@ def doDescribeTopSpaceTables(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAuditInstanceList(args, parsed_globals):
+def doDescribeUserAutonomyProfile(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2048,11 +2048,11 @@ def doDescribeAuditInstanceList(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuditInstanceListRequest()
+    model = models.DescribeUserAutonomyProfileRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAuditInstanceList(model)
+        rsp = client.DescribeUserAutonomyProfile(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2413,6 +2413,63 @@ def doDescribeTopSpaceSchemaTimeSeries(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doDescribeSqlExplainV2(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeSqlExplainV2Request()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeSqlExplainV2(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeRedisUnExpiredKeyStatistics(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2698,7 +2755,7 @@ def doDescribeTableSpaceDataV2(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeAuditLogFiles(args, parsed_globals):
+def doModifyDiagDBInstanceConf(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2732,11 +2789,11 @@ def doDescribeAuditLogFiles(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeAuditLogFilesRequest()
+    model = models.ModifyDiagDBInstanceConfRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeAuditLogFiles(model)
+        rsp = client.ModifyDiagDBInstanceConf(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -3325,7 +3382,7 @@ def doDescribeAllUserGroup(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeUserAutonomyProfile(args, parsed_globals):
+def doDescribeAuditInstanceList(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -3359,11 +3416,11 @@ def doDescribeUserAutonomyProfile(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeUserAutonomyProfileRequest()
+    model = models.DescribeAuditInstanceListRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeUserAutonomyProfile(model)
+        rsp = client.DescribeAuditInstanceList(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4522,7 +4579,7 @@ def doDescribeHealthScoreTimeSeries(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDiagDBInstanceConf(args, parsed_globals):
+def doDescribeAuditLogFiles(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4556,11 +4613,11 @@ def doModifyDiagDBInstanceConf(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDiagDBInstanceConfRequest()
+    model = models.DescribeAuditLogFilesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyDiagDBInstanceConf(model)
+        rsp = client.DescribeAuditLogFiles(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4864,7 +4921,7 @@ def doDescribeUserSqlAdvice(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateProxySessionKillTask(args, parsed_globals):
+def doCreateMailProfile(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4898,11 +4955,11 @@ def doCreateProxySessionKillTask(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.DbbrainClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateProxySessionKillTaskRequest()
+    model = models.CreateMailProfileRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateProxySessionKillTask(model)
+        rsp = client.CreateMailProfile(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -5790,7 +5847,7 @@ MODELS_MAP = {
 
 ACTION_MAP = {
     "DescribeMySqlProcessList": doDescribeMySqlProcessList,
-    "CreateMailProfile": doCreateMailProfile,
+    "CreateProxySessionKillTask": doCreateProxySessionKillTask,
     "CancelKillTask": doCancelKillTask,
     "DescribeDBAutonomyAction": doDescribeDBAutonomyAction,
     "CreateSecurityAuditLogExportTask": doCreateSecurityAuditLogExportTask,
@@ -5824,19 +5881,20 @@ ACTION_MAP = {
     "DescribeTopSpaceTableTimeSeries": doDescribeTopSpaceTableTimeSeries,
     "DescribeSlowLogUserHostStats": doDescribeSlowLogUserHostStats,
     "DescribeTopSpaceTables": doDescribeTopSpaceTables,
-    "DescribeAuditInstanceList": doDescribeAuditInstanceList,
+    "DescribeUserAutonomyProfile": doDescribeUserAutonomyProfile,
     "DescribeDBAuditLogs": doDescribeDBAuditLogs,
     "DescribeHealthScore": doDescribeHealthScore,
     "DeleteSecurityAuditLogExportTasks": doDeleteSecurityAuditLogExportTasks,
     "DescribeDBAutonomyActions": doDescribeDBAutonomyActions,
     "DescribeSlowLogs": doDescribeSlowLogs,
     "DescribeTopSpaceSchemaTimeSeries": doDescribeTopSpaceSchemaTimeSeries,
+    "DescribeSqlExplainV2": doDescribeSqlExplainV2,
     "DescribeRedisUnExpiredKeyStatistics": doDescribeRedisUnExpiredKeyStatistics,
     "DescribeBlockingLogs": doDescribeBlockingLogs,
     "DescribeRedisSlowLogTopSqls": doDescribeRedisSlowLogTopSqls,
     "UpdateAgentSwitch": doUpdateAgentSwitch,
     "DescribeTableSpaceDataV2": doDescribeTableSpaceDataV2,
-    "DescribeAuditLogFiles": doDescribeAuditLogFiles,
+    "ModifyDiagDBInstanceConf": doModifyDiagDBInstanceConf,
     "KillMySqlThreads": doKillMySqlThreads,
     "VerifyUserAccount": doVerifyUserAccount,
     "DescribeSlowLogQueryTimeStats": doDescribeSlowLogQueryTimeStats,
@@ -5847,7 +5905,7 @@ ACTION_MAP = {
     "CreateIgnoreDiagRecord": doCreateIgnoreDiagRecord,
     "DescribeDBDiagReportTasks": doDescribeDBDiagReportTasks,
     "DescribeAllUserGroup": doDescribeAllUserGroup,
-    "DescribeUserAutonomyProfile": doDescribeUserAutonomyProfile,
+    "DescribeAuditInstanceList": doDescribeAuditInstanceList,
     "DescribeSlowLogTimeSeriesStats": doDescribeSlowLogTimeSeriesStats,
     "DescribeDBAuditLogTopSqls": doDescribeDBAuditLogTopSqls,
     "UpdateMonitorSwitch": doUpdateMonitorSwitch,
@@ -5868,13 +5926,13 @@ ACTION_MAP = {
     "DeleteDBDiagReportTasks": doDeleteDBDiagReportTasks,
     "DescribeTopSpaceSchemas": doDescribeTopSpaceSchemas,
     "DescribeHealthScoreTimeSeries": doDescribeHealthScoreTimeSeries,
-    "ModifyDiagDBInstanceConf": doModifyDiagDBInstanceConf,
+    "DescribeAuditLogFiles": doDescribeAuditLogFiles,
     "DeleteAuditLogFile": doDeleteAuditLogFile,
     "DescribeDBDiagEvents": doDescribeDBDiagEvents,
     "DeleteRedisBigKeyAnalysisTasks": doDeleteRedisBigKeyAnalysisTasks,
     "DescribeMongoDBProcessList": doDescribeMongoDBProcessList,
     "DescribeUserSqlAdvice": doDescribeUserSqlAdvice,
-    "CreateProxySessionKillTask": doCreateProxySessionKillTask,
+    "CreateMailProfile": doCreateMailProfile,
     "DescribeRedisTopHotKeys": doDescribeRedisTopHotKeys,
     "CancelRedisBigKeyAnalysisTasks": doCancelRedisBigKeyAnalysisTasks,
     "ModifyAuditService": doModifyAuditService,

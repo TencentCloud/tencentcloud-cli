@@ -150,6 +150,14 @@
         "title": "请求示例"
       }
     ],
+    "CreateAvatarEditingLive": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\",\n    \"ImageUrl\": \"https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/change/2%E6%B1%89%E6%9C%8D.png\",\n    \"EditingType\": \"virtual_tryon\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"LiveId\": \"1008224608114978816\",\n        \"Status\": \"waiting\",\n        \"RequestId\": \"0c104bce-d2f4-4363-b463-cf46fab5519e\"\n    }\n}",
+        "title": "创建实时编辑数字人"
+      }
+    ],
     "CreateCaster": [
       {
         "document": "请求创建导播台",
@@ -818,6 +826,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTemplates\n<公共请求参数>\n\n{\n    \"WithTextAudit\": false,\n    \"PageNum\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"AuditTemplates\": [\n            {\n                \"AudioInterval\": 15,\n                \"AuditAudio\": false,\n                \"AuditImage\": true,\n                \"AuditText\": 0,\n                \"CosBucket\": \"2\",\n                \"CosFilePath\": \"/Audit/{Year}-{Month}-{Day}/{StreamID}-Audit-{Hour}-{Minute}-{Second}{Ext}\",\n                \"CosRegion\": \"ap-guangzhou\",\n                \"Description\": \"\",\n                \"EnableFailoverCos\": false,\n                \"FailoverCosBucket\": \"\",\n                \"FailoverCosRegion\": \"\",\n                \"SceneInfos\": [\n                    {\n                        \"BizInfos\": [\n                            {\n                                \"BizType\": \"1_1_7_8390211\",\n                                \"Status\": true,\n                                \"StrategyConfig\": \"{\\\"ability\\\":{\\\"asr_text\\\":true,\\\"audio\\\":true},\\\"service_config\\\":{\\\"callback_info\\\":{},\\\"codec_info\\\":{}},\\\"ignore_word_conf\\\":{\\\"model_disable\\\":false,\\\"rule_disable\\\":false,\\\"keyword_disable\\\":false},\\\"user_text_libs\\\":[]}\",\n                                \"StrategyType\": \"ShortAudio\"\n                            }\n                        ],\n                        \"SceneID\": \"LiveAudit\"\n                    }\n                ],\n                \"SnapshotInterval\": 2,\n                \"TemplateId\": 8390211,\n                \"TemplateName\": \"qwe\"\n            }\n        ],\n        \"RequestId\": \"23171f70-25d8-4c72-9342-51439526af6d\"\n    }\n}",
         "title": "DescribeAuditTemplates"
+      }
+    ],
+    "DescribeAvatarEditingLive": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CallMode\": \"video\",\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"CreatedAt\": \"1792050995\",\n        \"EndTime\": \"0\",\n        \"LiveId\": \"1008224608114978816\",\n        \"Phase\": \"active\",\n        \"StartTime\": \"1792050998\",\n        \"Status\": \"on_live\",\n        \"TraceId\": \"82e7b0074f492b41ca0152ae7e608ef3\",\n        \"RequestId\": \"e568960c-4894-4670-9e30-e3242f0ee5da\"\n    }\n}",
+        "title": "查询实时会话状态"
       }
     ],
     "DescribeBackupStreamList": [
@@ -2034,6 +2050,14 @@
         "title": "启动一个直播监播任务"
       }
     ],
+    "StopAvatarEditingLive": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"LiveId\": \"1008224608114978816\",\n        \"RequestId\": \"ded2be84-7656-4ab9-8cf1-a7fdf57787c7\"\n    }\n}",
+        "title": "停止数字人实时编辑"
+      }
+    ],
     "StopCasterPgm": [
       {
         "document": "停止主监任务",
@@ -2096,6 +2120,14 @@
         "input": "https://live.tencentcloudapi.com/?Action=StopScreenshotTask\n&TaskId=UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "SwitchAvatarEditingScene": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchAvatarEditingScene\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\",\n    \"EditingType\": \"virtual_tryon\",\n    \"ImageUrl\": \"https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/change/1%E5%8F%A4%E9%A3%8E.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"LiveId\": \"1008224608114978816\",\n        \"RequestId\": \"3bee3e96-48ab-46b8-ac6a-238467576596\"\n    }\n}",
+        "title": "切换实时编辑场景"
       }
     ],
     "SwitchBackupStream": [

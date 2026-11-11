@@ -168,6 +168,14 @@
         "title": "导出全部资产"
       }
     ],
+    "CreateAssetBaselineRiskExportJob": [
+      {
+        "document": "导出资产基线风险",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetBaselineRiskExportJob\n<公共请求参数>\n\n{\n    \"AssetUniqueID\": \"87cd7655-**********9ea1-6267cb76707d\",\n    \"AssetType\": \"HOST\",\n    \"AssetAppID\": 260000096,\n    \"Name\": \"资产导出\",\n    \"MemberId\": [\n        \"mem-****e**-*******52f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"d1cbc89d-ee9c-46d7-8a86-fa8c418f8719\",\n        \"RequestId\": \"cabf5bae-f0ac-4e69-b663-cd0bb5b6fcf6\"\n    }\n}",
+        "title": "导出资产基线风险"
+      }
+    ],
     "CreateAssetComponentListExportJob": [
       {
         "document": "",
@@ -944,6 +952,14 @@
         "title": "删除资产标签"
       }
     ],
+    "DeleteBaselineIgnorePolicy": [
+      {
+        "document": "删除基线忽略策略",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBaselineIgnorePolicy\n<公共请求参数>\n\n{\n    \"ID\": [\n        1\n    ],\n    \"MemberId\": [\n        \"mem-tencent-6f5795752f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d555c07-8ad1-4de4-b7d2-d5b8f894384c\"\n    }\n}",
+        "title": "删除基线忽略策略"
+      }
+    ],
     "DeleteBaselineSelfDefinedPolicyList": [
       {
         "document": "删除自定义策略",
@@ -1560,6 +1576,14 @@
         "title": "告警中心全量告警示例"
       }
     ],
+    "DescribeAssetBaselineRiskList": [
+      {
+        "document": "获取主机资产风险列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetBaselineRiskList\n<公共请求参数>\n\n{\n    \"AssetUniqueID\": \"87cd7655-**2**4******a1-6267cb76707d\",\n    \"AssetType\": \"HOST\",\n    \"AssetAppID\": 260083796,\n    \"MemberId\": [\n        \"mem-***c**t*6*57*5*5**66e429\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Item\": {\n                    \"AffectedVersionList\": [],\n                    \"Category\": {\n                        \"CheckAssetType\": \"HOST\",\n                        \"Description\": \"来自互联网安全中心（CIS）的 CIS Benchmarks 是一套全球公认的共识驱动型最佳实践\",\n                        \"ID\": 209,\n                        \"Name\": \"国际标准-TencentOS 4安全基线检查\"\n                    },\n                    \"CheckObject\": [\n                        \"HOST\"\n                    ],\n                    \"CustomItemID\": 0,\n                    \"DefaultValueList\": [],\n                    \"Description\": \".netrc文件包含用于通过FTP登录远程主机进行文件传输的认证数据。\",\n                    \"FixSuggestion\": \"以下脚本将从交互式用户的主目录中移除.netrc文件\\n#!/bin/bash\\n\\nawk -F: '($1!~/(halt|sync|shutdown|nfsnobody)/ && $7!~/^(\\\\/usr)?\\\\/sbin\\\\/nologin(\\\\/)?$/ && $7!~/(\\\\/usr)?\\\\/bin\\\\/false(\\\\/)?$/) { print $6 }' /etc/passwd | while read -r dir; do\\n\\tif [ -d \\\"$dir\\\" ]; then\\n\\t\\tfile=\\\"$dir/.netrc\\\"\\n\\t\\t[ ! -h \\\"$file\\\" ] && [ -f \\\"$file\\\" ] && rm -f \\\"$file\\\"\\n\\tfi\\ndone\",\n                    \"ID\": 5593,\n                    \"IsCustomConf\": false,\n                    \"Name\": \"确保所有用户均无.netrc文件\",\n                    \"ReferenceLink\": \"\",\n                    \"RiskLevel\": \"LOW\",\n                    \"RuleID\": 14584,\n                    \"SupportCustomValue\": false,\n                    \"SupportFix\": false,\n                    \"SystemCategory\": {\n                        \"CheckAssetType\": \"HOST\",\n                        \"Description\": \"来自互联网安全中心（CIS）的 CIS Benchmarks 是一套全球公认的共识驱动型最佳实践\",\n                        \"ID\": 2,\n                        \"Name\": \"国际通用安全最佳实践基线（CIS）\"\n                    },\n                    \"WebEditParam\": \"\"\n                },\n                \"LatestCheckTime\": \"2026-09-21T19:25:40Z\",\n                \"PolicyInfo\": {\n                    \"ID\": 1008,\n                    \"IsSystem\": false,\n                    \"PolicyName\": \"vcvbcvb\"\n                },\n                \"ResultStatus\": \"PASS\",\n                \"RiskID\": \"03d747385c23a17c834615ee0c6f1ea8\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"0bd276e2-31f8-4d34-a327-31ca8a8a2ac7\"\n    }\n}",
+        "title": "获取主机资产风险列表"
+      }
+    ],
     "DescribeAssetComponentList": [
       {
         "document": "",
@@ -1764,6 +1788,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineFixRecordList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6*************29\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"asc\",\n    \"By\": \"ID\"\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppID\": 200000000,\n                \"AssetType\": \"HOST\",\n                \"DiscoveryTime\": \"1970-01-01T00:00:00Z\",\n                \"FixTime\": \"2026-07-15T08:36:09Z\",\n                \"HostInfo\": {\n                    \"AgentStatus\": \"ONLINE\",\n                    \"Appid\": 200000000,\n                    \"CloudTag\": [],\n                    \"InstanceID\": \"lh**********o4\",\n                    \"InstanceStatus\": \"RUNNING\",\n                    \"Name\": \"漏洞二期测试lh-1\",\n                    \"OsInfo\": \"Ubuntu Server 22.04 LTS 64bit\",\n                    \"PrivateIP\": \"10.1.0.2\",\n                    \"ProtectVersion\": \"ULTIMATE\",\n                    \"PublicIP\": \"1.14.91.114\",\n                    \"QUUID\": \"c*********************************8f\",\n                    \"RegionInfo\": {\n                        \"Region\": \"ap-guangzhou\",\n                        \"RegionCode\": \"\",\n                        \"RegionId\": 0,\n                        \"RegionName\": \"广州\",\n                        \"RegionNameEn\": \"Guangzhou\"\n                    },\n                    \"TagItem\": [\n                        {\n                            \"Color\": \"red\",\n                            \"Description\": \"\",\n                            \"ID\": 123,\n                            \"TagKey\": \"csip\",\n                            \"TagKeyEn\": \"csip\",\n                            \"TagValue\": \"csip\",\n                            \"TagValueEn\": \"csip\"\n                        }\n                    ],\n                    \"UUID\": \"c*********************************8f\"\n                },\n                \"ID\": 1,\n                \"ItemInfo\": {\n                    \"AffectedVersionList\": [],\n                    \"Category\": {\n                        \"CheckAssetType\": \"HOST\",\n                        \"Description\": \"等级保护2.0第二级安全要求，适用于一般性业务系统\",\n                        \"ID\": 144,\n                        \"Name\": \"等保二级-Ubuntu 22安全基线检查\"\n                    },\n                    \"CheckObject\": [\n                        \"HOST\"\n                    ],\n                    \"CustomItemID\": 0,\n                    \"DefaultValueList\": [],\n                    \"Description\": \"配置审计日志文件的最大尺寸。一旦日志达到最大尺寸，它将被轮换，并开始一个新的日志文件。\",\n                    \"FixSuggestion\": \"根据站点策略，在/etc/audit/auditd.conf中设置以下参数(<MB>需替换为具体的数字)：\\nmax_log_file = <MB>。\",\n                    \"ID\": 3249,\n                    \"IsCustomConf\": false,\n                    \"Name\": \"确保配置了审计日志存储大小\",\n                    \"ReferenceLink\": \"\",\n                    \"RiskLevel\": \"MEDIUM\",\n                    \"RuleID\": 11996,\n                    \"SupportCustomValue\": false,\n                    \"SupportFix\": false,\n                    \"SystemCategory\": {\n                        \"CheckAssetType\": \"HOST\",\n                        \"Description\": \"等级保护2.0第二级安全要求，适用于一般性业务系统\",\n                        \"ID\": 222,\n                        \"Name\": \"等保2.0二级\"\n                    },\n                    \"WebEditParam\": \"\"\n                }\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"f3da60c4-5469-4dd5-baa4-7590ab0389c0\"\n    }\n}",
         "title": "调用示例"
+      }
+    ],
+    "DescribeBaselineIgnorePolicyList": [
+      {
+        "document": "获取基线忽略策略列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBaselineIgnorePolicyList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6f5795752f66e429\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"AppID\": 260083796,\n                \"AssetType\": \"HOST\",\n                \"CategoryName\": \"未授权访问\",\n                \"CreateTime\": \"2026-09-21T11:24:59Z\",\n                \"ID\": 4,\n                \"ItemID\": 4,\n                \"ItemName\": \"MongoDB未授权访问\",\n                \"ModifyTime\": \"2026-09-21T11:25:36Z\",\n                \"Remark\": \"ignore all\",\n                \"ScopeExcludeList\": [\n                    \"instance-ikk\"\n                ],\n                \"ScopeIncludeList\": [\n                    \"instance-tki\"\n                ],\n                \"ScopeType\": \"ALL\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"RequestId\": \"fca4f58d-9419-49c9-a79e-c7f2162ac177\"\n    }\n}",
+        "title": "获取基线忽略策略列表"
       }
     ],
     "DescribeBaselineItemRiskList": [
@@ -2172,6 +2204,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterAssets\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Filters\": [\n            {\n                \"Name\": \"TimeRange\",\n                \"Values\": [\n                    \"2\"\n                ],\n                \"OperatorType\": 7\n            }\n        ],\n        \"Limit\": 10,\n        \"Offset\": 0,\n        \"Order\": \"desc\",\n        \"By\": \"InstanceCreateTime\"\n    },\n    \"MemberId\": [\n        \"mem-b21i4hgxa\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"AppIdList\": [\n            {\n                \"Text\": \"1300448058\",\n                \"Value\": \"1300448058\"\n            },\n            {\n                \"Text\": \"1302396215\",\n                \"Value\": \"1302396215\"\n            },\n            {\n                \"Text\": \"1305350016\",\n                \"Value\": \"1305350016\"\n            }\n        ],\n        \"ClusterStatusList\": [\n            {\n                \"Text\": \"运行中\",\n                \"Value\": \"running\"\n            }\n        ],\n        \"ClusterTypeList\": [\n            {\n                \"Text\": \"托管集群\",\n                \"Value\": \"managed_cluster\"\n            },\n            {\n                \"Text\": \"弹性集群\",\n                \"Value\": \"eks\"\n            }\n        ],\n        \"ComponentStatusList\": [\n            {\n                \"Text\": \"未安装\",\n                \"Value\": \"defender_uninstall\"\n            }\n        ],\n        \"Data\": [\n            {\n                \"AppId\": 1302396215,\n                \"AssetId\": \"cls-bc1916ky\",\n                \"AssetName\": \"benben\",\n                \"AssetType\": \"managed_cluster\",\n                \"Region\": \"ap-guangzhou\",\n                \"ServiceCount\": 17,\n                \"PodCount\": 41,\n                \"MachineCount\": 1,\n                \"VpcId\": \"vpc-fw2ndu5f\",\n                \"KubernetesVersion\": \"1.30.0\",\n                \"Component\": \"containerd\",\n                \"CheckCount\": 43,\n                \"VulRisk\": 0,\n                \"CFGRisk\": 1,\n                \"InstanceCreateTime\": \"2024-12-04 10:33:08\",\n                \"Status\": \"running\",\n                \"ComponentStatus\": \"defended\",\n                \"Uin\": \"100014592178\",\n                \"VpcName\": \"fengqqian2test\",\n                \"CheckTime\": \"\",\n                \"ComponentVersion\": \"1.6.9\",\n                \"Nick\": \"声声乌龙\",\n                \"IsCore\": 1,\n                \"IsNewAsset\": 0,\n                \"ProtectStatus\": 0,\n                \"ProtectInfo\": \"AccessedSubNone\",\n                \"CloudType\": 0\n            }\n        ],\n        \"ProtectStatusList\": [\n            {\n                \"Text\": \"未接入\",\n                \"Value\": \"0\"\n            },\n            {\n                \"Text\": \"未防护\",\n                \"Value\": \"1\"\n            },\n            {\n                \"Text\": \"部分防护\",\n                \"Value\": \"2\"\n            },\n            {\n                \"Text\": \"防护中\",\n                \"Value\": \"3\"\n            },\n            {\n                \"Text\": \"接入异常\",\n                \"Value\": \"4\"\n            },\n            {\n                \"Text\": \"接入中\",\n                \"Value\": \"5\"\n            },\n            {\n                \"Text\": \"卸载中\",\n                \"Value\": \"6\"\n            },\n            {\n                \"Text\": \"卸载异常\",\n                \"Value\": \"7\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Text\": \"广州\",\n                \"Value\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"035c9d95-a2da-465e-b735-535d9afed6cf\",\n        \"TotalCount\": 1,\n        \"VpcList\": [\n            {\n                \"Text\": \"wy conflict\",\n                \"Value\": \"vpc-39sc6ru5\"\n            },\n            {\n                \"Text\": \"Default-VPC\",\n                \"Value\": \"vpc-ommo5hlv\"\n            },\n            {\n                \"Text\": \"fengqqian2test\",\n                \"Value\": \"vpc-fw2ndu5f\"\n            },\n            {\n                \"Text\": \"gordan-test1\",\n                \"Value\": \"vpc-q1of50wz\"\n            }\n        ]\n    }\n}",
         "title": "空示例"
+      }
+    ],
+    "DescribeClusterBaselineRiskPolicyList": [
+      {
+        "document": "获取集群基线风险策略",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterBaselineRiskPolicyList\n<公共请求参数>\n\n{\n    \"ClusterAppid\": 260082268,\n    \"ClusterCaMD5\": \"27092b0cf181be0d848ddcd66dbee929\",\n    \"MemberId\": [\n        \"mem-*****************f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"CheckAssetType\": \"HOST\",\n                \"IsSystem\": true,\n                \"ParentCategoryID\": 4,\n                \"PolicyID\": 779,\n                \"PolicyName\": \"弱口令\"\n            }\n        ],\n        \"RequestId\": \"b177c57c-391b-4da4-9b5b-a20ab8267135\"\n    }\n}",
+        "title": "获取集群基线风险策略"
       }
     ],
     "DescribeClusterContainerAppList": [
@@ -2668,6 +2708,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessTopologyIps\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"\"\n        ],\n        \"RequestId\": \"cf839eee-b651-4ff3-9b49-173f9f55733f\"\n    }\n}",
         "title": "查询Dspm访问拓扑ip列表"
+      }
+    ],
+    "DescribeDspmAccessTopologySummary": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDspmAccessTopologySummary\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-6wfo0fzks3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SourceIpCount\": 3,\n        \"AccountCount\": 2,\n        \"DbCount\": 65,\n        \"TableCount\": 740,\n        \"AccessCountLast7Days\": 38302536,\n        \"AccessCountLast30Days\": 38302536,\n        \"TableCombinationCount\": 756,\n        \"DataIncomplete\": false,\n        \"LastCalcTime\": \"2026-09-24 11:23:31\",\n        \"RequestId\": \"6f2c1d7e-3b45-4a18-9c02-8ed5f1a37b90\"\n    }\n}",
+        "title": "查询Dspm访问拓扑概览"
       }
     ],
     "DescribeDspmApplyHistory": [
@@ -3426,12 +3474,28 @@
         "title": "获取概览数据"
       }
     ],
+    "DescribeHostVulRiskEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostVulRiskEventList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"MemberId\": [\n        \"mem-tencent-*********f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"UUID\": \"8f3c4c74-8cc9-4ddf-b66f-2d20f1a9a001\",\n                \"RiskID\": 1000000000001,\n                \"VulID\": 12345,\n                \"VulName\": \"OpenSSL 远程代码执行漏洞\",\n                \"CVEID\": \"CVE-2024-12345\",\n                \"Category\": \"LINUX\",\n                \"Level\": \"HIGH\",\n                \"VPRLevel\": \"URGENT\",\n                \"CheckMethod\": \"POC\",\n                \"RiskStatus\": \"PENDING\",\n                \"SupportFix\": true,\n                \"LatestScanTime\": \"2026-09-18T06:00:00+08:00\",\n                \"InstanceID\": \"ins-5ijxpaa6\",\n                \"AppID\": 1251234567\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询主机漏洞风险事件列表"
+      }
+    ],
     "DescribeHostVulRiskList": [
       {
         "document": "获取漏洞风险列表",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostVulRiskList\n<公共请求参数>\n\n{\n    \"MemberId\": [\n        \"mem-tencent-6f5795752f66e429\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"desc\",\n    \"By\": \"LatestScanTime\"\n}",
         "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Account\": [\n                    {\n                        \"AppID\": 260083796,\n                        \"Nick\": \"700002365149\",\n                        \"Uin\": \"700002365149\"\n                    }\n                ],\n                \"DefendStatus\": \"NOT_ENABLED\",\n                \"EffectHostCount\": 1,\n                \"LatestScanTime\": \"2026-06-12T08:15:45Z\",\n                \"RiskID\": 45230,\n                \"RiskStatus\": \"PENDING\",\n                \"VulDetail\": {\n                    \"AffectProduct\": [\n                        \"socat\"\n                    ],\n                    \"AffectVendor\": [\n                        \"dest-unreach\"\n                    ],\n                    \"CVEID\": \"CVE-2024-54661\",\n                    \"CVSSLevel\": \"LOW\",\n                    \"Category\": \"LINUX\",\n                    \"CheckMethod\": \"VersionCompare\",\n                    \"CvssScore\": 9.8,\n                    \"DefendHostCount\": 0,\n                    \"DefendStatus\": \"NOT_ENABLED\",\n                    \"EPSSScore\": 0.00164,\n                    \"FixSolution\": \"建议关注厂商公告或升级到最新版本。\",\n                    \"ID\": 45230,\n                    \"KVERecord\": false,\n                    \"KVERecordTime\": \"\",\n                    \"Label\": [],\n                    \"LatestScanTime\": \"\",\n                    \"LatestTrend\": [],\n                    \"Mechanism\": \"\",\n                    \"Name\": \"socat 安全漏洞(CVE-2024-54661)\",\n                    \"NotDefendHostCount\": 0,\n                    \"Precondition\": \"\",\n                    \"PublishTime\": \"2024-12-04 13:15:00\",\n                    \"RefLink\": \"https://repo.or.cz/socat.git/blob/6ff391324d2d3b9f6bfb58e7d16a20be43b47af7:/readline.sh#l29\",\n                    \"Remark\": \"\",\n                    \"Summary\": \"socat是socat开源的一个中继器，用于在两个独立的数据之间进行双向数据传输渠道。 socat 1.8.0.1及之前版本存在安全漏洞，该漏洞源于readline.sh依赖于/tmp/$USER/stderr2文件。\",\n                    \"SupportFix\": true,\n                    \"VRPRatingInfo\": {\n                        \"Remark\": \"\",\n                        \"Result\": \"\",\n                        \"Stage\": [\n                            {\n                                \"Result\": \"\",\n                                \"Stage\": \"威胁活跃度\"\n                            }\n                        ]\n                    },\n                    \"VulAffect\": []\n                }\n            }\n        ],\n        \"TotalCount\": 706,\n        \"RequestId\": \"d224b5c5-013c-427e-a7ea-0b2e780da55f\"\n    }\n}",
         "title": "获取漏洞风险列表"
+      }
+    ],
+    "DescribeHostVulScanStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostVulScanStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": {\n            \"HasScanned\": true,\n            \"IsFirstScan\": true,\n            \"ScanTaskStatus\": \"SUCCESS\",\n            \"ScanScene\": \"FIRST_SCAN_HAS_FIXABLE_VUL\",\n            \"LatestScanTime\": \"2026-10-20T10:00:00Z\",\n            \"TotalVulCount\": 12,\n            \"FixableVulCount\": 5,\n            \"FixableEmergencyCount\": 1,\n            \"FixableLinuxVulCount\": 2,\n            \"FixableWindowVulCount\": 2\n        },\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询主机漏洞扫描状态"
       }
     ],
     "DescribeIaCFileList": [
@@ -5006,6 +5070,14 @@
         "title": "修改爆破阻断模式"
       }
     ],
+    "ModifyBaselineIgnorePolicy": [
+      {
+        "document": "添加忽略策略",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBaselineIgnorePolicy\n<公共请求参数>\n\n{\n    \"ItemID\": 1,\n    \"ScopeType\": \"ALL\",\n    \"ScopeIncludeList\": [\n        \"instance-tki\"\n    ],\n    \"ScopeExcludeList\": [\n        \"instance-ikj\"\n    ],\n    \"Remark\": \"ignore all\",\n    \"ID\": 0,\n    \"MemberId\": [\n        \"mem-tencent-6f5795752f66e429\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2dec187-04f4-4cd2-aeb1-ce51c56bc8b8\"\n    }\n}",
+        "title": "添加忽略策略"
+      }
+    ],
     "ModifyBaselinePolicy": [
       {
         "document": "",
@@ -5092,6 +5164,14 @@
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCSIPRaspLicenseUnBinds\n<公共请求参数>\n\n{\n    \"InstanceIDs\": [\n        \"ins-78ip****\"\n    ],\n    \"IsAll\": false\n}",
         "output": "{\n    \"Response\": {\n        \"FailedList\": [],\n        \"FailedNum\": 0,\n        \"SuccessNum\": 0,\n        \"Total\": 0,\n        \"RequestId\": \"5d1c5e68-75a3-4b0d-bb23-9c65debf8b2e\"\n    }\n}",
         "title": "解绑RASP授权"
+      }
+    ],
+    "ModifyClusterAuditLogStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterAuditLogStatus\n<公共请求参数>\n\n{\n    \"ClusterAssetId\": \"86693c5bf9e9fbdce993d557b1038fd8\",\n    \"AuditLogSwitch\": true,\n    \"MemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ],\n    \"OperatedMemberId\": [\n        \"mem-a6df317cb6a8c424\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd5e3b77-1fb1-4c91-8667-183debebd83b\"\n    }\n}",
+        "title": "调用示例"
       }
     ],
     "ModifyClusterDefendStatus": [

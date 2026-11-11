@@ -1066,7 +1066,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备份组ID。",
+          "document": "<p>备份组ID。</p>",
           "example": "cbackup-n00m2307",
           "member": "string",
           "name": "BackupGroupId",
@@ -1076,7 +1076,7 @@
         },
         {
           "disabled": false,
-          "document": "备份组创建进度。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份组创建进度。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "30",
           "member": "uint64",
           "name": "Percent",
@@ -1086,7 +1086,7 @@
         },
         {
           "disabled": false,
-          "document": "备份和云盘绑定关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份和云盘绑定关系</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ApplyDisk",
           "name": "BackupBindDisk",
@@ -1096,7 +1096,7 @@
         },
         {
           "disabled": false,
-          "document": "备份组名称。",
+          "document": "<p>备份组名称。</p>",
           "example": "backup-group",
           "member": "string",
           "name": "BackupGroupName",
@@ -1106,7 +1106,7 @@
         },
         {
           "disabled": false,
-          "document": "备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中",
+          "document": "<p>备份组状态。NORMAL: 正常；CREATING: 创建中；ROLLBACKING: 回滚中</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "BackupGroupState",
@@ -1116,7 +1116,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间",
+          "document": "<p>修改时间</p>",
           "example": "2026-03-27T13:04:45+08:00",
           "member": "datetime_iso",
           "name": "ModifyTime",
@@ -1126,7 +1126,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2026-03-27T13:04:35+08:00",
           "member": "datetime_iso",
           "name": "CreateTime",
@@ -1136,7 +1136,7 @@
         },
         {
           "disabled": false,
-          "document": "用户AppId。",
+          "document": "<p>用户AppId。</p>",
           "example": "260094408",
           "member": "uint64",
           "name": "AppId",
@@ -1146,7 +1146,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为永久备份组。",
+          "document": "<p>是否为永久备份组。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsPermanent",
@@ -1156,7 +1156,7 @@
         },
         {
           "disabled": false,
-          "document": "备份组的到期时间。如果为永久备份组，则取值为null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>备份组的到期时间。如果为永久备份组，则取值为null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2026-04-27T13:04:35+08:00",
           "member": "datetime_iso",
           "name": "DeadlineTime",
@@ -1166,7 +1166,7 @@
         },
         {
           "disabled": false,
-          "document": "创建备份组的实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建备份组的实例ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-jul9m59o",
           "member": "string",
           "name": "InstanceId",
@@ -1176,7 +1176,7 @@
         },
         {
           "disabled": false,
-          "document": "创建备份组时刻实例的详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建备份组时刻实例的详情。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "detail",
           "member": "string",
           "name": "InstanceDetails",
@@ -1186,7 +1186,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建人名称。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "admin",
           "member": "string",
           "name": "AccountName",
@@ -1196,7 +1196,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>主账号uin。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"110000000197\"",
           "member": "string",
           "name": "AccountUin",
@@ -1206,7 +1206,7 @@
         },
         {
           "disabled": false,
-          "document": "创建备份的子账号uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建备份的子账号uin。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"110000000197\"",
           "member": "string",
           "name": "SubAccountUin",
@@ -1216,10 +1216,30 @@
         },
         {
           "disabled": false,
-          "document": "创建当前备份的定期备份策略ID，为null则为手动创建的备份。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>创建当前备份的定期备份策略ID，为null则为手动创建的备份。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abp-4od7o75f",
           "member": "string",
           "name": "AutoBackupPolicyId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-27T13:04:35+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-03-27T13:54:33+08:00",
+          "member": "string",
+          "name": "EndTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1704,10 +1724,30 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SD",
           "member": "string",
           "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份完成量</p><p>单位：MB</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "BackupCompletedSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份完成量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20 B",
+          "member": "string",
+          "name": "BackupCompletedSizeFormatted",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7797,8 +7837,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件名称",
-          "example": "a.json",
+          "document": "完整路径：浏览路径 + \"/\" + 名称（浏览根目录时为 \"/名称\"）",
+          "example": "/data/a.json",
           "member": "string",
           "name": "Path",
           "output_required": false,
@@ -8996,7 +9036,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SD",
           "member": "string",
           "name": "ProductType",
@@ -9474,7 +9514,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>产品存储类型</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>产品存储类型。CFS 资源返回文件系统存储类型；非 CFS 资源无存储类型，返回资源类型标识。</p><p>枚举值：</p><ul><li>SD： 文件系统通用标准型存储</li><li>HP： 文件系统通用性能性存储</li><li>TB： 文件系统Turbo标准型存储</li><li>TP： 文件系统Turbo性能型存储</li><li>THP： 文件系统Turbo吞吐型存储</li><li>CVM_AGENT： CVM 资源（非 CFS 资源时返回）</li><li>COS_AGENT： COS 资源（非 CFS 资源时返回）</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SD",
           "member": "string",
           "name": "ProductType",
@@ -9763,7 +9803,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "恢复任务 ID",
+          "document": "<p>恢复任务 ID</p>",
           "example": "frt-0qu9s8ec",
           "member": "string",
           "name": "TaskId",
@@ -9773,7 +9813,7 @@
         },
         {
           "disabled": false,
-          "document": "关联备份点 ID",
+          "document": "<p>关联备份点 ID</p>",
           "example": "fb-op7apew4",
           "member": "string",
           "name": "BackupId",
@@ -9783,7 +9823,7 @@
         },
         {
           "disabled": false,
-          "document": "源实例 ID",
+          "document": "<p>源实例 ID</p>",
           "example": "ins-7630gzfm",
           "member": "string",
           "name": "ResourceId",
@@ -9793,7 +9833,7 @@
         },
         {
           "disabled": false,
-          "document": "目标实例 ID",
+          "document": "<p>目标实例 ID</p>",
           "example": "ins-eej84hs4",
           "member": "string",
           "name": "TargetResourceId",
@@ -9803,7 +9843,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复路径列表",
+          "document": "<p>恢复路径列表</p>",
           "example": "[\"/data\"]",
           "member": "string",
           "name": "RestorePaths",
@@ -9813,7 +9853,7 @@
         },
         {
           "disabled": false,
-          "document": "目标恢复位置",
+          "document": "<p>目标恢复位置</p>",
           "example": "/data1",
           "member": "string",
           "name": "TargetLocation",
@@ -9823,7 +9863,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态",
+          "document": "<p>任务状态</p>",
           "example": "running",
           "member": "string",
           "name": "Status",
@@ -9833,7 +9873,7 @@
         },
         {
           "disabled": false,
-          "document": "需恢复文件总数",
+          "document": "<p>需恢复文件总数</p>",
           "example": "1520",
           "member": "int64",
           "name": "TotalFileCount",
@@ -9843,7 +9883,7 @@
         },
         {
           "disabled": false,
-          "document": "需恢复数据总量（字节）",
+          "document": "<p>需恢复数据总量（字节）</p>",
           "example": "1073741824",
           "member": "int64",
           "name": "TotalSize",
@@ -9853,8 +9893,8 @@
         },
         {
           "disabled": false,
-          "document": "需恢复数据总量（格式化，如 \"1.5 GB\"）",
-          "example": "\"1.00 GB\"",
+          "document": "<p>需恢复数据总量（格式化：1024 进制，保留两位小数，单位 B/KiB/MiB/GiB/TiB/PiB，如 &quot;1.50 GiB&quot;）</p>",
+          "example": "\"1.00 GiB\"",
           "member": "string",
           "name": "TotalSizeFormatted",
           "output_required": false,
@@ -9863,7 +9903,7 @@
         },
         {
           "disabled": false,
-          "document": "已恢复文件数",
+          "document": "<p>已恢复文件数</p>",
           "example": "760",
           "member": "int64",
           "name": "RestoreFileCount",
@@ -9873,7 +9913,7 @@
         },
         {
           "disabled": false,
-          "document": "已恢复数据量（字节）",
+          "document": "<p>已恢复数据量（字节）</p>",
           "example": "536870912",
           "member": "int64",
           "name": "RestoreSize",
@@ -9883,8 +9923,8 @@
         },
         {
           "disabled": false,
-          "document": "已恢复数据量（格式化）",
-          "example": "\"512.00 MB\"",
+          "document": "<p>已恢复数据量（格式化，口径同 TotalSizeFormatted，如 &quot;512.00 MiB&quot;）</p>",
+          "example": "\"512.00 MiB\"",
           "member": "string",
           "name": "RestoreSizeFormatted",
           "output_required": false,
@@ -9893,7 +9933,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复进度（0-100）",
+          "document": "<p>恢复进度（0-100）</p>",
           "example": "50.0",
           "member": "float",
           "name": "Progress",
@@ -9903,7 +9943,7 @@
         },
         {
           "disabled": false,
-          "document": "关联 Job ID",
+          "document": "<p>关联 Job ID</p>",
           "example": "j-20260331133609-7fcf71f2",
           "member": "string",
           "name": "JobId",
@@ -9913,7 +9953,7 @@
         },
         {
           "disabled": false,
-          "document": "任务开始时间（ISO 格式）",
+          "document": "<p>任务开始时间（ISO 格式）</p>",
           "example": "2026-03-31 21:36:09",
           "member": "string",
           "name": "StartTime",
@@ -9923,7 +9963,7 @@
         },
         {
           "disabled": false,
-          "document": "任务结束时间",
+          "document": "<p>任务结束时间</p>",
           "example": "2026-03-31 21:36:49",
           "member": "string",
           "name": "EndTime",
@@ -9933,7 +9973,7 @@
         },
         {
           "disabled": false,
-          "document": "任务创建时间",
+          "document": "<p>任务创建时间</p>",
           "example": "2026-03-31 21:36:08",
           "member": "string",
           "name": "CreatedTime",
@@ -9943,7 +9983,7 @@
         },
         {
           "disabled": false,
-          "document": "恢复任务失败原因",
+          "document": "<p>恢复任务失败原因</p>",
           "example": "brc-runner process timed out: no status file generated within 600 seconds",
           "member": "string",
           "name": "FailReason",
@@ -9953,13 +9993,43 @@
         },
         {
           "disabled": false,
-          "document": "冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖",
+          "document": "<p>冲突处理策略：skip-跳过/overwrite-覆盖/newer-保留最新版本/if_changed-内容变化时覆盖</p>",
           "example": "skip",
           "member": "string",
           "name": "ConflictStrategy",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为原路径恢复</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsOriginalPath",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>源端腾讯云资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfs-fafkxiaj",
+          "member": "string",
+          "name": "CloudResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标端腾讯云资源ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfs-fafkxiaj",
+          "member": "string",
+          "name": "TargetCloudResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

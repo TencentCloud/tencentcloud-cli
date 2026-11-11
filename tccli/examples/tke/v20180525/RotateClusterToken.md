@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli tke RotateClusterToken --cli-unfold-argument ```
+tccli tke RotateClusterToken --cli-unfold-argument  \
+    --ClusterId cls-h92i9b7e \
+    --Force True \
+    --ClusterType TKE \
+    --Operation CreateNewToken
+```
 
 Output: 
 ```

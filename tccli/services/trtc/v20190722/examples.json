@@ -532,6 +532,14 @@
         "title": "修改云端切片任务"
       }
     ],
+    "ModifyCloudTranscription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudTranscription\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400704311,\n    \"TaskId\": \"-nE****U7t3BGcLlSMQd6UAdKFhPRNXb****S4K-m928oZWQndibHjkrRJJAw****1SjcO6uCAE.\",\n    \"SequenceNumber\": 3,\n    \"SubscribeUserInfo\": {\n        \"SubscribeList\": [\n            {\n                \"UserId\": \"****_test_0\"\n            }\n        ]\n    },\n    \"TranslationParam\": {\n        \"TargetLang\": [\n            \"en\"\n        ],\n        \"Terminologies\": [\n            {\n                \"TargetLang\": \"en\",\n                \"Terminology\": [\n                    {\n                        \"Source\": \"腾讯云音视频\",\n                        \"Target\": \"TRTC\"\n                    }\n                ]\n            }\n        ]\n    },\n    \"TTSParam\": [\n        {\n            \"Model\": \"flow_02_turbo\",\n            \"Language\": \"en\",\n            \"TargetUser\": {\n                \"UserId\": \"****_test_1\"\n            },\n            \"TTSRobotUser\": {\n                \"UserId\": \"tts-robot1\"\n            },\n            \"Voice\": {\n                \"VoiceId\": \"v-female-B7k5WxN4\",\n                \"Speed\": 1.99,\n                \"Volume\": 9.99,\n                \"Pitch\": -10\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-nE5***U7t3BGcLlSMQd6UAdKFhPRNXb****S4K-m928oZWQndibHjkrRJJAw****1SjcO6uCAE.\",\n        \"RequestId\": \"d6ddd3fa-108a-4dd5-b69b-43d93d6ab532\"\n    }\n}",
+        "title": "更新转录任务"
+      }
+    ],
     "ModifyPicture": [
       {
         "document": "",

@@ -245,6 +245,13 @@
       "output": "GetSchemaResponse",
       "status": "online"
     },
+    "GetSessionStatus": {
+      "document": "查询会话任务运行状态（支持批量）",
+      "input": "GetSessionStatusRequest",
+      "name": "查询会话任务运行状态",
+      "output": "GetSessionStatusResponse",
+      "status": "online"
+    },
     "GetTable": {
       "document": "查询table详情",
       "input": "GetTableRequest",
@@ -481,6 +488,13 @@
       "input": "ListWorkspacesRequest",
       "name": "查询工作空间列表",
       "output": "ListWorkspacesResponse",
+      "status": "online"
+    },
+    "ReadProductJson": {
+      "document": "databuddy 产物获取接口",
+      "input": "ReadProductJsonRequest",
+      "name": "读取databuddy产物",
+      "output": "ReadProductJsonResponse",
       "status": "online"
     },
     "RemoveConsoleUsers": {
@@ -6508,6 +6522,69 @@
         }
       ],
       "usage": "out"
+    },
+    "GetSessionStatusRequest": {
+      "document": "GetSessionStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>待查询的会话列表（支持传多个，传一条即单条查询）</p>",
+          "example": "无",
+          "member": "SessionStatusQueryItem",
+          "name": "Items",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionStatusResponse": {
+      "document": "GetSessionStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "GetSessionStatusRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetSessionStatusRsp": {
+      "document": "查询会话任务状态响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果列表，与请求 Items 顺序一致",
+          "example": "无",
+          "member": "SessionStatusItem",
+          "name": "Items",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "GetTableRequest": {
       "document": "GetTable请求参数结构体",
@@ -13069,6 +13146,117 @@
       ],
       "usage": "both"
     },
+    "ReadProductJsonRequest": {
+      "document": "ReadProductJson请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙盒runtimeId</p>",
+          "example": "2046552875433168896",
+          "member": "string",
+          "name": "RuntimeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>沙盒sessionId</p>",
+          "example": "2046552875433168896",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReadProductJsonResponse": {
+      "document": "ReadProductJson返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回对象实体</p>",
+          "example": "无",
+          "member": "ReadProductJsonRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReadProductJsonRsp": {
+      "document": "databuddy 产物json 响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/workspace/file/file.json",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "202",
+          "member": "string",
+          "name": "Size",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"id\":\"834509971636658176\",\"name\":\"hello-wedata.html\",\"path\":\"/Workspace/databuddy/artifacts/hello-wedata.html\",\"type\":\"FILE\",\"action\":\"create\",\"source\":\"manual\",\"timestamp\":\"2026-04-21T11:24:57+00:00\"}",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求状态码 0-成功，其他-异常</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ResultCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果提示信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "读取沙箱产物 JSON 失败: 读取文件失败 [/workspace/file/file.json]: HTTP 404 - {\"code\":404,\"message\":\"path '/workspace/file/file.json' does not exist\"}",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RemoveConsoleUsersRequest": {
       "document": "RemoveConsoleUsers请求参数结构体",
       "members": [
@@ -14355,6 +14543,73 @@
         }
       ],
       "usage": "out"
+    },
+    "SessionStatusItem": {
+      "document": "会话任务状态单条结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对话 Session ID",
+          "example": "session-xxx",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "沙箱 Runtime ID",
+          "example": "runtime-xxx",
+          "member": "string",
+          "name": "RuntimeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务运行状态: planning/working/pending/completed/failed",
+          "example": "working",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SessionStatusQueryItem": {
+      "document": "查询会话任务状态的单条查询项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "沙箱 Runtime ID",
+          "example": "runtime-xxx",
+          "member": "string",
+          "name": "RuntimeId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对话 Session ID",
+          "example": "session-xxx",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "SingleFieldPartitioning": {
       "document": "单字段分区",

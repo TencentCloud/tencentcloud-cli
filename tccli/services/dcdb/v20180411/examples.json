@@ -687,7 +687,7 @@
     "UpgradeDedicatedDCDBInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDedicatedDCDBInstance\n<公共请求参数>\n\n{\n    \"UpgradeType\": \"EXPAND\",\n    \"InstanceId\": \"tdsqlshard-f2jujx9wap\",\n    \"ExpandShardConfig\": {\n        \"ShardInstanceIds\": [\n            \"shard-5lfxfz1z3f\"\n        ],\n        \"ShardMemory\": 2,\n        \"ShardStorage\": 10\n    },\n    \"SwitchStartTime\": \"2026-08-24 22:00:00\",\n    \"SwitchEndTime\": \"2026-08-24 22:15:00\",\n    \"SwitchInterval\": 5\n}",
+        "input": "POST / HTTP/1.1\nHost: dcdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDedicatedDCDBInstance\n<公共请求参数>\n\n{\n    \"UpgradeType\": \"EXPAND\",\n    \"InstanceId\": \"tdsqlshard-f2jujx9wap\",\n    \"ExpandShardConfig\": {\n        \"ShardInstanceIds\": [\n            \"shard-5lfxfz1z3f\"\n        ],\n        \"ShardMemory\": 2,\n        \"ShardStorage\": 10\n    },\n    \"SwitchStartTime\": \"2026-08-24 22:00:00\",\n    \"SwitchEndTime\": \"2026-08-24 22:15:00\",\n    \"MasterHostId\": \"svr-xxx1\",\n    \"SlaveHostIds\": [\n        \"svr-xxx2\",\n        \"svr-xxx3\"\n    ],\n    \"SwitchInterval\": 5\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 75,\n        \"RequestId\": \"d7dca4f8-43c2-4608-8f00-25afcdb18521\"\n    }\n}",
         "title": "调用成功示例"
       }

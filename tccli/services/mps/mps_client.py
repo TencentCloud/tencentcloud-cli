@@ -1841,6 +1841,63 @@ def doBatchDeleteStreamLinkFlow(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doModifyWordSample(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.ModifyWordSampleRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.ModifyWordSample(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeLiveRecordTemplates(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -2468,7 +2525,7 @@ def doDeleteStreamPackageSourceLocation(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateTranscodeTemplate(args, parsed_globals):
+def doDesignVoiceAsync(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2502,11 +2559,11 @@ def doCreateTranscodeTemplate(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateTranscodeTemplateRequest()
+    model = models.DesignVoiceAsyncRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateTranscodeTemplate(model)
+        rsp = client.DesignVoiceAsync(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2753,7 +2810,7 @@ def doDeleteStreamPackageLinearAssemblyChannels(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDesignVoiceAsync(args, parsed_globals):
+def doCreateTranscodeTemplate(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2787,11 +2844,11 @@ def doDesignVoiceAsync(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DesignVoiceAsyncRequest()
+    model = models.CreateTranscodeTemplateRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DesignVoiceAsync(model)
+        rsp = client.CreateTranscodeTemplate(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4520,7 +4577,7 @@ def doDescribeVoices(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doRecognizeAudio(args, parsed_globals):
+def doCreateModelChatTask(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -4554,11 +4611,11 @@ def doRecognizeAudio(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.RecognizeAudioRequest()
+    model = models.CreateModelChatTaskRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.RecognizeAudio(model)
+        rsp = client.CreateModelChatTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9593,7 +9650,7 @@ def doDescribeUsageData(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyWordSample(args, parsed_globals):
+def doRecognizeAudio(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9627,11 +9684,11 @@ def doModifyWordSample(args, parsed_globals):
     mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
     client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyWordSampleRequest()
+    model = models.RecognizeAudioRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyWordSample(model)
+        rsp = client.RecognizeAudio(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10943,6 +11000,63 @@ def doParseLiveStreamProcessNotification(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.ParseLiveStreamProcessNotification(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeModelChatTask(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')], endpoint=g_param["sts_cred_endpoint"]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION) \
+            and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID) \
+            and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE) \
+            and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="TC3-HMAC-SHA256")
+    profile.request_client = "_CLI_" + __version__
+    if g_param[OptionsDefine.RequestClient.replace('-', '_')]:
+        profile.request_client += "; " + g_param[OptionsDefine.RequestClient.replace('-', '_')]
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.MpsClient(cred, g_param[OptionsDefine.Region], profile)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeModelChatTaskRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeModelChatTask(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -13170,6 +13284,7 @@ ACTION_MAP = {
     "DescribeSampleSnapshotTemplates": doDescribeSampleSnapshotTemplates,
     "DescribeStreamLinkFlowStatistics": doDescribeStreamLinkFlowStatistics,
     "BatchDeleteStreamLinkFlow": doBatchDeleteStreamLinkFlow,
+    "ModifyWordSample": doModifyWordSample,
     "DescribeLiveRecordTemplates": doDescribeLiveRecordTemplates,
     "DeleteAsrHotwords": doDeleteAsrHotwords,
     "EnableWorkflow": doEnableWorkflow,
@@ -13181,12 +13296,12 @@ ACTION_MAP = {
     "DescribeTasks": doDescribeTasks,
     "DescribeStreamPackageLinearAssemblyProgramSchedules": doDescribeStreamPackageLinearAssemblyProgramSchedules,
     "DeleteStreamPackageSourceLocation": doDeleteStreamPackageSourceLocation,
-    "CreateTranscodeTemplate": doCreateTranscodeTemplate,
+    "DesignVoiceAsync": doDesignVoiceAsync,
     "DeleteStreamPackageLinearAssemblyProgram": doDeleteStreamPackageLinearAssemblyProgram,
     "DescribeStreamPackageSSAIChannels": doDescribeStreamPackageSSAIChannels,
     "DescribeStreamPackageSourceLocation": doDescribeStreamPackageSourceLocation,
     "DeleteStreamPackageLinearAssemblyChannels": doDeleteStreamPackageLinearAssemblyChannels,
-    "DesignVoiceAsync": doDesignVoiceAsync,
+    "CreateTranscodeTemplate": doCreateTranscodeTemplate,
     "DetectVideoSubtitleArea": doDetectVideoSubtitleArea,
     "CreateStreamLinkFlow": doCreateStreamLinkFlow,
     "CreateWordSamples": doCreateWordSamples,
@@ -13217,7 +13332,7 @@ ACTION_MAP = {
     "DescribeVideoSearchTaskDetail": doDescribeVideoSearchTaskDetail,
     "DescribeStreamPackageSources": doDescribeStreamPackageSources,
     "DescribeVoices": doDescribeVoices,
-    "RecognizeAudio": doRecognizeAudio,
+    "CreateModelChatTask": doCreateModelChatTask,
     "DescribeStreamPackageSSAIUsage": doDescribeStreamPackageSSAIUsage,
     "ModifySampleSnapshotTemplate": doModifySampleSnapshotTemplate,
     "DescribeStreamPackageLinearAssemblyChannel": doDescribeStreamPackageLinearAssemblyChannel,
@@ -13306,7 +13421,7 @@ ACTION_MAP = {
     "DetectVideoWatermark": doDetectVideoWatermark,
     "CreateSchedule": doCreateSchedule,
     "DescribeUsageData": doDescribeUsageData,
-    "ModifyWordSample": doModifyWordSample,
+    "RecognizeAudio": doRecognizeAudio,
     "DescribeImageSpriteTemplates": doDescribeImageSpriteTemplates,
     "DescribeCloneViralTask": doDescribeCloneViralTask,
     "DescribeWatermarkTemplates": doDescribeWatermarkTemplates,
@@ -13330,6 +13445,7 @@ ACTION_MAP = {
     "DescribeSubtitleEmbedTemplates": doDescribeSubtitleEmbedTemplates,
     "DeletePersonSample": doDeletePersonSample,
     "ParseLiveStreamProcessNotification": doParseLiveStreamProcessNotification,
+    "DescribeModelChatTask": doDescribeModelChatTask,
     "EnableSchedule": doEnableSchedule,
     "DescribeAnimatedGraphicsTemplates": doDescribeAnimatedGraphicsTemplates,
     "DeleteSnapshotByTimeOffsetTemplate": doDeleteSnapshotByTimeOffsetTemplate,

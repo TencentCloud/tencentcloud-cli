@@ -6965,7 +6965,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-aser1j2o",
           "member": "string",
           "name": "DBInstanceId",
@@ -6980,7 +6980,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "主从同步方式：\n<li>Semi-sync：半同步</li>\n<li>Async：异步</li>",
+          "document": "<p>主从同步方式：</p><li>Semi-sync：半同步</li><li>Async：异步</li>",
           "example": "Async",
           "member": "string",
           "name": "SyncMode",
@@ -6990,7 +6990,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte</li>\n<li>参数范围：[1073741824, 322122547200]</li>",
+          "document": "<p>高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。</p><li>单位：byte</li><li>参数范围：[1073741824, 322122547200]</li>",
           "example": "2000000000",
           "member": "uint64",
           "name": "MaxStandbyLatency",
@@ -7000,7 +7000,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s</li>\n<li>参数范围：[5, 10]</li>",
+          "document": "<p>高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。</p><li>单位：s</li><li>参数范围：[5, 10]</li>",
           "example": "10",
           "member": "uint64",
           "name": "MaxStandbyLag",
@@ -7010,7 +7010,7 @@
         },
         {
           "disabled": false,
-          "document": "同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n异步实例该字段返回null。\n半同步实例禁止退化为异步复制时，该字段返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例该字段返回null。<br>半同步实例禁止退化为异步复制时，该字段返回null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1000000",
           "member": "uint64",
           "name": "MaxSyncStandbyLatency",
@@ -7020,7 +7020,7 @@
         },
         {
           "disabled": false,
-          "document": "同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n异步实例不返回该字段。\n半同步实例禁止退化为异步复制时，不返回该字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>异步实例不返回该字段。<br>半同步实例禁止退化为异步复制时，不返回该字段。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "uint64",
           "name": "MaxSyncStandbyLag",
@@ -10799,7 +10799,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-aser1j2o",
           "member": "string",
           "name": "DBInstanceId",
@@ -10808,7 +10808,7 @@
         },
         {
           "disabled": false,
-          "document": "主从同步方式：\n<li>Semi-sync：半同步</li>\n<li>Async：异步</li>\n",
+          "document": "<p>主从同步方式：</p><li>Semi-sync：半同步</li><li>Async：异步</li>",
           "example": "Async",
           "member": "string",
           "name": "SyncMode",
@@ -10817,7 +10817,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。\n<li>单位：byte</li>\n<li>参数范围：[1073741824, 322122547200]</li>",
+          "document": "<p>高可用备机最大延迟数据量。备节点延迟数据量小于等于该值，且备节点延迟时间小于等于MaxStandbyLag时，可以切换为主节点。</p><li>单位：byte</li><li>参数范围：[1073741824, 322122547200]</li>",
           "example": "2073741824",
           "member": "uint64",
           "name": "MaxStandbyLatency",
@@ -10826,7 +10826,7 @@
         },
         {
           "disabled": false,
-          "document": "高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。\n<li>单位：s</li>\n<li>参数范围：[5, 10]</li>",
+          "document": "<p>高可用备机最大延迟时间。备节点延迟时间小于等于该值，且备节点延迟数据量小于等于MaxStandbyLatency时，可以切换为主节点。</p><li>单位：s</li><li>参数范围：[5, 10]</li>",
           "example": "10",
           "member": "uint64",
           "name": "MaxStandbyLag",
@@ -10835,7 +10835,7 @@
         },
         {
           "disabled": false,
-          "document": "同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。\n半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag。",
+          "document": "<p>同步备机最大延迟数据量。备机延迟数据量小于等于该值，且该备机延迟时间小于等于MaxSyncStandbyLag时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。<br>半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag。</p>",
           "example": "1000000",
           "member": "uint64",
           "name": "MaxSyncStandbyLatency",
@@ -10844,7 +10844,7 @@
         },
         {
           "disabled": false,
-          "document": "同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。\n该参数值针对SyncMode设置为Semi-sync的实例有效。\n半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。\n半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag，",
+          "document": "<p>同步备机最大延迟时间。备机延迟时间小于等于该值，且该备机延迟数据量小于等于MaxSyncStandbyLatency时，则该备机采用同步复制；否则，采用异步复制。<br>该参数值针对SyncMode设置为Semi-sync的实例有效。<br>半同步实例禁止退化为异步复制时，不设置MaxSyncStandbyLatency、MaxSyncStandbyLag。<br>半同步实例允许退化异步复制时，PostgreSQL 9版本的实例须设置MaxSyncStandbyLatency且不设置MaxSyncStandbyLag，PostgreSQL 10及以上版本的实例须设置MaxSyncStandbyLatency、MaxSyncStandbyLag，</p>",
           "example": "5",
           "member": "uint64",
           "name": "MaxSyncStandbyLag",

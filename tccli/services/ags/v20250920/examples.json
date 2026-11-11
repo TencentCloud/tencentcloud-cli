@@ -244,6 +244,14 @@
         "title": "查询 Deployment 列表"
       }
     ],
+    "DescribeEventCenterEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventCenterEvents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ToolId\",\n            \"Values\": [\n                \"sdt-7dl0dcpn\"\n            ]\n        }\n    ],\n    \"StartTime\": \"2026-10-23T13:28:00Z\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"Order\": \"Asc\",\n    \"Mode\": \"Raw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EndTime\": \"2026-10-23T13:32:39.90197686Z\",\n        \"Events\": [\n            {\n                \"EventId\": \"17083c5e-4af9-4a63-b012-6ac843847bd2\",\n                \"EventLevel\": \"Normal\",\n                \"EventType\": \"SandboxStarting\",\n                \"Extensions\": \"{\\\"ToolId\\\":\\\"sdt-7dl0dcpn\\\",\\\"ToolType\\\":\\\"code-interpreter\\\",\\\"ToolName\\\":\\\"event-center-test-1023\\\"}\",\n                \"Message\": \"SandboxStarting\",\n                \"ObjectId\": \"sdt-7dl0dcpn\",\n                \"ObjectType\": \"SandboxTool\",\n                \"OccurredAt\": \"2026-10-23T13:29:02.427Z\",\n                \"Source\": \"Sandbox\"\n            }\n        ],\n        \"Mode\": \"Raw\",\n        \"StartTime\": \"2026-10-23T13:28:00Z\",\n        \"TotalCount\": 4,\n        \"RequestId\": \"d1fac4dc-5a56-47db-84e2-68ea97f6b4aa\"\n    }\n}",
+        "title": "查询事件"
+      }
+    ],
     "DescribeEvents": [
       {
         "document": "查询指定会话空间下的指定会话事件列表。",

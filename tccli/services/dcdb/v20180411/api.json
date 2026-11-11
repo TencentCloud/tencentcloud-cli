@@ -10742,6 +10742,24 @@
           "name": "SwitchInterval",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主节点所在机器，类似svr-xxx</p>",
+          "example": "",
+          "member": "string",
+          "name": "MasterHostId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>备节点所在机器，类似[svr-xxx1,svr-xxx2]</p>",
+          "example": "",
+          "member": "string",
+          "name": "SlaveHostIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

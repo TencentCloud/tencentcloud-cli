@@ -322,6 +322,14 @@
         "title": "查询schema详情"
       }
     ],
+    "GetSessionStatus": [
+      {
+        "document": "GetSessionStatus",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetSessionStatus\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"Items\": [\n        {\n            \"RuntimeId\": \"2074423297173803008\",\n            \"SessionId\": \"2074423297173803008\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"RuntimeId\": \"2074423297173803008\",\n                    \"SessionId\": \"2074423297173803008\",\n                    \"TaskStatus\": \"completed\"\n                }\n            ]\n        },\n        \"RequestId\": \"691774a7-9463-4e57-904c-d49f54bd99e2\"\n    }\n}",
+        "title": "GetSessionStatus"
+      }
+    ],
     "GetTable": [
       {
         "document": "获取table详情",
@@ -610,6 +618,20 @@
         "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListWorkspaces\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17676143448574812\",\n    \"WorkspaceKeyword\": \"example\",\n    \"StatusList\": [\n        1\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 11\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [],\n            \"PageNumber\": 1,\n            \"PageSize\": 11,\n            \"TotalCount\": 0,\n            \"TotalPageNumber\": 0\n        },\n        \"RequestId\": \"53f42163-04ec-4854-bb90-ce71f730e43e\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ReadProductJson": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReadProductJson\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"RuntimeId\": \"2046552875433168896\",\n    \"SessionId\": \"2046552875433168896\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"{\\\"id\\\":\\\"834509971636658176\\\",\\\"name\\\":\\\"hello-******.html\\\",\\\"path\\\":\\\"/Workspace/databuddy/artifacts/hello-******.html\\\",\\\"type\\\":\\\"FILE\\\",\\\"action\\\":\\\"create\\\",\\\"source\\\":\\\"manual\\\",\\\"timestamp\\\":\\\"2026-04-21T11:24:57+00:00\\\"}\",\n            \"Message\": \"\",\n            \"Path\": \"/workspace/file/file.json\",\n            \"ResultCode\": 0,\n            \"Size\": \"202\"\n        },\n        \"RequestId\": \"1e0c7c30-b9e9-43ea-9a49-b242caabdbc1\"\n    }\n}",
+        "title": "获取databuddy产物文件"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReadProductJson\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17834953737051362\",\n    \"RuntimeId\": \"2079929353352499200\",\n    \"SessionId\": \"2079929353352499200\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"\",\n            \"Message\": \"\",\n            \"Path\": \"\",\n            \"ResultCode\": 0,\n            \"Size\": \"0\"\n        },\n        \"RequestId\": \"ea7b9a19-f80c-4e90-ba33-f5c78ca6ec60\"\n    }\n}",
+        "title": "获取databuddy产物文件-2"
       }
     ],
     "RemoveConsoleUsers": [

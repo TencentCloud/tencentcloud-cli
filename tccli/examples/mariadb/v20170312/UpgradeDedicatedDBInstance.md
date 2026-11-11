@@ -1,4 +1,4 @@
-**Example 1: 无**
+**Example 1: 独享集群实例创建示例**
 
 
 
@@ -6,17 +6,19 @@ Input:
 
 ```
 tccli mariadb UpgradeDedicatedDBInstance --cli-unfold-argument  \
-    --InstanceId tdsql-jv8z8fhl \
+    --InstanceId tdsql-006dngfx4f \
     --Memory 2 \
-    --Storage 20
+    --Storage 10 \
+    --MasterHostId svr-buhfdoz8 \
+    --SlaveHostIds svr-honcouya
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "14f6980a-7fe1-11ea-b896-525400542aa6",
-        "FlowId": 1122
+        "FlowId": 9,
+        "RequestId": "6c0f6fbb-f725-4a9d-abcb-d295ce4a1e7d"
     }
 }
 ```

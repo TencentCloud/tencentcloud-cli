@@ -647,9 +647,9 @@
     "UpgradeDedicatedDBInstance": [
       {
         "document": "",
-        "input": "https://mariadb.tencentcloudapi.com/?Action=UpgradeDedicatedDBInstance\n&InstanceId=tdsql-jv8z8fhl\n&Memory=2\n&Storage=20\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14f6980a-7fe1-11ea-b896-525400542aa6\",\n        \"FlowId\": 1122\n    }\n}",
-        "title": "无"
+        "input": "POST / HTTP/1.1\nHost: mariadb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDedicatedDBInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"tdsql-006dngfx4f\",\n    \"Memory\": 2,\n    \"Storage\": 10,\n    \"MasterHostId\": \"svr-buhfdoz8\",\n    \"SlaveHostIds\": [\n        \"svr-honcouya\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 9,\n        \"RequestId\": \"6c0f6fbb-f725-4a9d-abcb-d295ce4a1e7d\"\n    }\n}",
+        "title": "独享集群实例创建示例"
       }
     ],
     "UpgradeHourDBInstance": [
