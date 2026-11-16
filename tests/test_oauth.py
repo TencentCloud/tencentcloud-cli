@@ -12,10 +12,22 @@ except ImportError:
 
 from tccli import oauth
 from tccli.plugins.auth import login as login_module
+from tccli.utils import Utils, _CA_BUNDLE_UNRESOLVED
+import tccli.utils as utils_module
 
 
 class TestOAuthHttpsVerification(unittest.TestCase):
-    """OAuth 网络请求必须校验服务端 HTTPS 证书。"""
+    """OAuth 网络请求必须校验服务端 HTTPS 证书，并支持自定义 CA。"""
+
+    def setUp(self):
+        self.env_patcher = mock.patch.dict(os.environ, {}, clear=False)
+        self.env_patcher.start()
+        os.environ.pop(Utils.CA_BUNDLE_ENV, None)
+        utils_module._CA_BUNDLE_CACHE = _CA_BUNDLE_UNRESOLVED
+
+    def tearDown(self):
+        utils_module._CA_BUNDLE_CACHE = _CA_BUNDLE_UNRESOLVED
+        self.env_patcher.stop()
 
     @staticmethod
     def _response(data):
@@ -36,7 +48,7 @@ class TestOAuthHttpsVerification(unittest.TestCase):
         args, kwargs = post.call_args
         self.assertEqual(
             args[0], oauth._API_ENDPOINT + "/refresh_user_token")
-        self.assertIs(kwargs["verify"], True)
+        self.assertIsNone(kwargs["verify"])
         self.assertEqual(kwargs["json"]["RefreshToken"], "refresh-token")
         self.assertEqual(kwargs["json"]["OpenId"], "open-id")
         self.assertEqual(kwargs["json"]["Site"], "cn")
@@ -59,7 +71,7 @@ class TestOAuthHttpsVerification(unittest.TestCase):
         args, kwargs = post.call_args
         self.assertEqual(
             args[0], oauth._API_ENDPOINT + "/get_temp_cred")
-        self.assertIs(kwargs["verify"], True)
+        self.assertIsNone(kwargs["verify"])
         self.assertEqual(kwargs["json"]["AccessToken"], "access-token")
         self.assertEqual(kwargs["json"]["Site"], "cn")
         self.assertEqual(result, {
@@ -68,6 +80,37 @@ class TestOAuthHttpsVerification(unittest.TestCase):
             "token": "token",
             "expiresAt": 123456,
         })
+
+    def test_oauth_requests_use_custom_ca_bundle(self):
+        tmp_dir = tempfile.mkdtemp(prefix="tccli_oauth_ca_test_")
+        try:
+            ca_path = os.path.join(tmp_dir, "ca.crt")
+            with open(ca_path, "w") as ca_file:
+                ca_file.write("-----BEGIN CERTIFICATE-----\nfake\n-----END CERTIFICATE-----\n")
+            os.environ[Utils.CA_BUNDLE_ENV] = ca_path
+            expected = os.path.abspath(ca_path)
+
+            refresh_resp = self._response({
+                "AccessToken": "new-access-token",
+                "ExpiresAt": 123456,
+            })
+            with mock.patch.object(
+                    oauth.requests, "post", return_value=refresh_resp) as post:
+                oauth.refresh_user_token("refresh-token", "open-id", "cn")
+            self.assertEqual(expected, post.call_args[1]["verify"])
+
+            cred_resp = self._response({
+                "SecretId": "secret-id",
+                "SecretKey": "secret-key",
+                "Token": "token",
+                "ExpiresAt": 123456,
+            })
+            with mock.patch.object(
+                    oauth.requests, "post", return_value=cred_resp) as post:
+                oauth.get_temp_cred("access-token", "cn")
+            self.assertEqual(expected, post.call_args[1]["verify"])
+        finally:
+            shutil.rmtree(tmp_dir, ignore_errors=True)
 
 
 class TestOAuthCredentialReplacement(unittest.TestCase):

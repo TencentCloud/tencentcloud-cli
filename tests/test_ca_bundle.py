@@ -10,7 +10,7 @@ try:
 except ImportError:
     import mock
 
-from tccli import sso
+from tccli import oauth, sso
 from tccli.exceptions import ConfigurationError
 from tccli.utils import Utils, _CA_BUNDLE_UNRESOLVED
 import tccli.utils as utils_module
@@ -102,6 +102,32 @@ class TestSsoCaBundle(CaBundleTestCase):
         with mock.patch.object(sso.requests, "post") as post:
             post.return_value.json.return_value = {"Ok": True}
             sso.check_login_state("state")
+        self.assertIsNone(post.call_args[1]["verify"])
+
+
+class TestOAuthCaBundle(CaBundleTestCase):
+    def test_all_oauth_requests_pass_bundle_as_verify(self):
+        self.set_bundle(self.ca_path)
+        expected = os.path.abspath(self.ca_path)
+        cases = (
+            (oauth.refresh_user_token, ("refresh-token", "open-id", "cn"),
+             {"AccessToken": "new-access-token", "ExpiresAt": 123456}),
+            (oauth.get_temp_cred, ("access-token", "cn"),
+             {"SecretId": "sid", "SecretKey": "skey", "Token": "tok", "ExpiresAt": 123456}),
+        )
+        for function, args, response in cases:
+            with mock.patch.object(oauth.requests, "post") as post:
+                post.return_value.json.return_value = response
+                function(*args)
+                self.assertEqual(expected, post.call_args[1]["verify"])
+
+    def test_oauth_uses_default_when_bundle_is_unset(self):
+        self.set_bundle(None)
+        with mock.patch.object(oauth.requests, "post") as post:
+            post.return_value.json.return_value = {
+                "AccessToken": "new-access-token", "ExpiresAt": 123456
+            }
+            oauth.refresh_user_token("refresh-token", "open-id", "cn")
         self.assertIsNone(post.call_args[1]["verify"])
 
 
