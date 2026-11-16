@@ -75,6 +75,10 @@ class BasicConfigure(BasicCommand):
             else:
                 conf_data[k] = input_data[k]
 
+        if profile_name.endswith(".configure") \
+                and not conf_data[OptionsDefine.SysParam].get(OptionsDefine.Language):
+            conf_data[OptionsDefine.SysParam][OptionsDefine.Language] = "zh-CN"
+
         if profile_name.endswith(".configure"):
             for mod in self._cli_data.get_available_services().keys():
                 # we have to check autoscaling because we did it wrong in 3.0.30.1

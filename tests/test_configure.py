@@ -171,5 +171,109 @@ class TestConfigureDynamicCredentialMigration(unittest.TestCase):
             })
 
 
+class TestConfigureDefaultLanguage(unittest.TestCase):
+
+    def setUp(self):
+        self.cli_path = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.cli_path)
+
+    def _create_command(self):
+        command = ConfigureCommand.__new__(ConfigureCommand)
+        BasicConfigure.__init__(command)
+        command.cli_path = self.cli_path
+        command._cli_data = mock.Mock()
+        command._cli_data.get_available_services.return_value = {}
+        return command
+
+    def _configure_path(self, profile):
+        return os.path.join(self.cli_path, "%s.configure" % profile)
+
+    def _write_configure(self, profile, data):
+        Utils.dump_json_msg(self._configure_path(profile), data)
+
+    def _read_configure(self, profile):
+        return Utils.load_json_msg(self._configure_path(profile))
+
+    def _init_configures(self, command):
+        with mock.patch("sys.argv", ["tccli"]):
+            command.init_configures()
+
+    def test_first_initialization_adds_default_language_without_changing_credential(self):
+        credential_path = os.path.join(self.cli_path, "default.credential")
+        credential = {
+            OptionsDefine.SecretId: "SECRET_ID",
+            OptionsDefine.SecretKey: "SECRET_KEY",
+        }
+        Utils.dump_json_msg(credential_path, credential)
+
+        self._init_configures(self._create_command())
+
+        configure = self._read_configure("default")
+        self.assertEqual(
+            configure[OptionsDefine.SysParam][OptionsDefine.Language],
+            "zh-CN")
+        self.assertEqual(Utils.load_json_msg(credential_path), credential)
+
+    def test_existing_profiles_without_language_are_completed(self):
+        self._write_configure("default", {
+            OptionsDefine.SysParam: {OptionsDefine.Region: "ap-guangzhou"},
+        })
+        self._write_configure("work", {
+            OptionsDefine.SysParam: {
+                OptionsDefine.Output: "json",
+                OptionsDefine.Language: "",
+            },
+        })
+
+        self._init_configures(self._create_command())
+
+        for profile in ("default", "work"):
+            configure = self._read_configure(profile)
+            self.assertEqual(
+                configure[OptionsDefine.SysParam][OptionsDefine.Language],
+                "zh-CN")
+
+    def test_existing_english_language_is_preserved(self):
+        self._write_configure("default", {
+            OptionsDefine.SysParam: {OptionsDefine.Language: "en-US"},
+        })
+
+        self._init_configures(self._create_command())
+
+        configure = self._read_configure("default")
+        self.assertEqual(
+            configure[OptionsDefine.SysParam][OptionsDefine.Language],
+            "en-US")
+
+    def test_old_format_language_is_migrated(self):
+        self._write_configure("default", {
+            OptionsDefine.Language: "en-US",
+        })
+
+        self._init_configures(self._create_command())
+
+        configure = self._read_configure("default")
+        self.assertNotIn(OptionsDefine.Language, configure)
+        self.assertEqual(
+            configure[OptionsDefine.SysParam][OptionsDefine.Language],
+            "en-US")
+
+    def test_repeated_initialization_does_not_write_unchanged_profiles(self):
+        self._write_configure("default", {
+            OptionsDefine.SysParam: {OptionsDefine.Language: "zh-CN"},
+        })
+        self._write_configure("work", {
+            OptionsDefine.SysParam: {OptionsDefine.Language: "en-US"},
+        })
+        command = self._create_command()
+
+        with mock.patch.object(Utils, "dump_json_msg") as dump_json_msg:
+            self._init_configures(command)
+
+        dump_json_msg.assert_not_called()
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -7,7 +7,13 @@ import uuid
 import tccli.options_define as options_define
 
 
+_CA_BUNDLE_UNRESOLVED = object()
+_CA_BUNDLE_CACHE = _CA_BUNDLE_UNRESOLVED
+
+
 class Utils(object):
+
+    CA_BUNDLE_ENV = "TCCLI_CA_BUNDLE"
 
     @staticmethod
     def try_to_json(data, k):
@@ -133,3 +139,27 @@ class Utils(object):
             return True, False
         else:
             return False, None
+
+    @staticmethod
+    def get_ca_bundle():
+        """Return the custom CA bundle path, or None when not configured."""
+        from tccli.exceptions import ConfigurationError
+
+        global _CA_BUNDLE_CACHE
+        if _CA_BUNDLE_CACHE is _CA_BUNDLE_UNRESOLVED:
+            value = (os.environ.get(Utils.CA_BUNDLE_ENV) or "").strip()
+            if not value:
+                _CA_BUNDLE_CACHE = None
+            else:
+                path = os.path.abspath(os.path.expanduser(value))
+                if not os.path.isfile(path):
+                    raise ConfigurationError(
+                        "%s is set to '%s', but it is not an existing file. "
+                        "Please check the path or unset %s to use the default CA bundle."
+                        % (Utils.CA_BUNDLE_ENV, path, Utils.CA_BUNDLE_ENV))
+                if not os.access(path, os.R_OK):
+                    raise ConfigurationError(
+                        "%s is set to '%s', but the file is not readable."
+                        % (Utils.CA_BUNDLE_ENV, path))
+                _CA_BUNDLE_CACHE = path
+        return _CA_BUNDLE_CACHE

@@ -3,7 +3,10 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build]
-exclude = ["tccli/examples"]
+exclude = [
+  "tccli/examples",
+  "/tccli/services/**/*_client.py",
+]
 
 [project]
 name = "tccli"
@@ -24,7 +27,7 @@ classifiers = [
 dependencies = [
     "jmespath>=0.10.0",
     "six>=1.16.0",
-    "tencentcloud-sdk-python>=3.1.200",
+    "tencentcloud-sdk-python-common>=3.1.180",
     "cos-python-sdk-v5>=1.9.0",
     'futures>=3.2.0; python_version < "3.2"',
 ]

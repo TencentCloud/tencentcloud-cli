@@ -164,7 +164,11 @@ def test_create_client_uses_no_credential_and_preserves_profile_options():
 
     caller = GenericActionCaller(
         "sts", "AssumeRoleWithSAML", skip_sign=True)
-    with mock.patch.object(action_caller, "CommonClient", FakeCommonClient):
+    ca_bundle = "/tmp/test-ca-bundle.pem"
+    with mock.patch.object(action_caller, "CommonClient", FakeCommonClient), \
+            mock.patch.object(
+                action_caller.Utils, "get_ca_bundle",
+                return_value=ca_bundle):
         client = caller._create_client(g_param)
 
     assert captured["service"] == "sts"
@@ -174,6 +178,7 @@ def test_create_client_uses_no_credential_and_preserves_profile_options():
     assert captured["profile"].httpProfile.endpoint == "sts.test.tencentcloudapi.com"
     assert captured["profile"].httpProfile.reqTimeout == 12
     assert captured["profile"].httpProfile.proxy == "http://proxy.example"
+    assert captured["profile"].httpProfile.certification == ca_bundle
     assert captured["profile"].language == "zh-CN"
     assert captured["profile"].request_client.endswith("; unit-test")
     assert client is not None
@@ -917,3 +922,29 @@ def test_parse_global_arg_encodes_text_when_py2(tmpdir):
 
     assert parsed[options_define.Region] == b"ap-guangzhou"
     assert parsed[options_define.UseCVMRole.replace("-", "_")] is False
+
+
+def test_plugin_add_command_uses_common_client(capsys):
+    from tencentcloud.common.exception.tencent_cloud_sdk_exception import TencentCloudSDKException
+    from tccli.plugins.test.add import add_command
+
+    with mock.patch("tccli.plugins.test.add.credential.Credential") as cred, \
+            mock.patch("tccli.plugins.test.add.CommonClient") as client:
+        client.return_value.call.return_value = {"TotalCount": 0}
+        add_command(
+            {"number1": 1, "number2": 2},
+            {"secretId": "id", "secretKey": "key", "token": None, "region": None},
+        )
+        cred.assert_called_once()
+        client.return_value.call.assert_called_once_with(
+            "DescribeInstances", {"Limit": 10})
+        client.return_value.call.side_effect = TencentCloudSDKException(
+            "code", "msg")
+        add_command(
+            {"number1": 1, "number2": 2},
+            {"secretId": "id", "secretKey": "key", "token": None,
+             "region": "ap-guangzhou"},
+        )
+    out = capsys.readouterr().out
+    assert "1 + 2 = 3" in out
+    assert "TotalCount" in out
