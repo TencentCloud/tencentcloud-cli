@@ -20893,6 +20893,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>私有连接的 IP</p>",
+          "example": "10.1.12.4",
+          "member": "string",
+          "name": "PrivateLinkIP",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>是否开启默认预聚合规则</p>",
           "example": "true",
           "member": "bool",

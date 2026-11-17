@@ -105,6 +105,13 @@
       "output": "InitializeCloudRunResourceResponse",
       "status": "online"
     },
+    "ModifyStableIPStatus": {
+      "document": "本接口 ModifyStableIPStatus 用于修改固定 IP 状态",
+      "input": "ModifyStableIPStatusRequest",
+      "name": "修改固定 IP 状态",
+      "output": "ModifyStableIPStatusResponse",
+      "status": "online"
+    },
     "OperateServerManage": {
       "document": "操作发布单",
       "input": "OperateServerManageRequest",
@@ -2511,6 +2518,52 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyStableIPStatusRequest": {
+      "document": "ModifyStableIPStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境ID",
+          "example": "test-1gbtbgkjf8f48e2c",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ON: 开启固定 IP；OFF: 关闭固定 IP",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyStableIPStatusResponse": {
+      "document": "ModifyStableIPStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID",
+          "example": "7494",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ObjectKV": {
       "document": "通用Key Value",

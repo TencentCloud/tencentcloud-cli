@@ -3422,7 +3422,7 @@
       {
         "document": "展示互联网暴露数量周期变化",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExposureTrend\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"ExposeIncrement\": 6,\n        \"AclCount\": 26,\n        \"CloseCount\": 8,\n        \"OpenCount\": 89,\n        \"ExposeTrendList\": [\n            {\n                \"AclCount\": 26,\n                \"CloseCount\": 8,\n                \"Date\": \"2025-01-15\",\n                \"OpenCount\": 89\n            }\n        ],\n        \"RequestId\": \"a98cde8a-3870-433e-bd8f-a491f4981cd2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AclCount\": 0,\n        \"CloseCount\": 8,\n        \"ExposeIncrement\": 0,\n        \"ExposeTotalCount\": 16,\n        \"ExposeTrendList\": [\n            {\n                \"AclCount\": 0,\n                \"CloseCount\": 8,\n                \"Date\": \"2026-11-09\",\n                \"OpenCount\": 8\n            }\n        ],\n        \"OpenCount\": 8,\n        \"ToGovernRiskCount\": 13,\n        \"RequestId\": \"d3c1bb08-ac40-44e3-8670-a2673874500f\"\n    }\n}",
         "title": "查询互联网暴露周期数量趋势统计信息"
       }
     ],

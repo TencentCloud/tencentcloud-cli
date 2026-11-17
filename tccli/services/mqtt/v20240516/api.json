@@ -526,7 +526,7 @@
       "status": "online"
     },
     "RegisterCaCertificate": {
-      "document": "注册CA证书（仅一机一证场景支持），可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817)",
+      "document": "注册CA证书（仅一机一证场景支持）",
       "input": "RegisterCaCertificateRequest",
       "name": "注册CA证书（一机一证）",
       "output": "RegisterCaCertificateResponse",
@@ -8445,7 +8445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -8454,7 +8454,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书内容，自签CA可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 签发自签CA",
+          "document": "<p>CA证书内容</p>",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
           "member": "string",
           "name": "CaCertificate",
@@ -8463,7 +8463,7 @@
         },
         {
           "disabled": false,
-          "document": "验证证书内容，可参考 [自定义 X.509 证书实现 “一机一证”](https://cloud.tencent.com/document/product/1778/114817) 手动注册CA证书章节",
+          "document": "<p>验证证书内容</p>",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIEvDCCA6SgAwIBAgIUGx4783AhEBJYh6OnIafmbwVSJRMwDQYJKoZIhvcNAQEL\\n-----END CERTIFICATE-----\\n",
           "member": "string",
           "name": "VerificationCertificate",
@@ -8472,7 +8472,7 @@
         },
         {
           "disabled": false,
-          "document": "证书格式，不传默认PEM格式，当前仅支持PEM格式",
+          "document": "<p>证书格式，不传默认PEM格式，当前仅支持PEM格式</p>",
           "example": "PEM",
           "member": "string",
           "name": "Format",
@@ -8481,7 +8481,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态，不传默认ACTIVE状态\n    ACTIVE：激活\n    INACTIVE：未激活",
+          "document": "<p>证书状态，不传默认ACTIVE状态<br>    ACTIVE：激活<br>    INACTIVE：未激活</p>",
           "example": "ACTIVE",
           "member": "string",
           "name": "Status",
@@ -8496,7 +8496,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "mqtt实例ID",
+          "document": "<p>mqtt实例ID</p>",
           "example": "mqtt-xxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -8506,7 +8506,7 @@
         },
         {
           "disabled": false,
-          "document": "ca 证书的序列号",
+          "document": "<p>ca 证书的序列号</p>",
           "example": "f2ed1027c42c66c03a15b06ef39765bc",
           "member": "string",
           "name": "CaSn",

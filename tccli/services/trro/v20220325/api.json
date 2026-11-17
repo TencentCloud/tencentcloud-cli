@@ -669,6 +669,15 @@
           "name": "CallbackInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>伴生输入文件列表，全批共用一份。与主视频同桶同凭证，Path 相对每个处理项各自的主视频目录解析，支持 ${FileName} 占位符。最多 8 条；HTTP 源（InputType=2）不支持。</p>",
+          "example": "无",
+          "member": "ExtraSourceInfo",
+          "name": "ExtraSources",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -978,6 +987,15 @@
           "name": "CallbackInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>伴生输入文件列表。与主视频同桶同凭证，每个元素包含 Name（文件引用名）与 Path（相对主视频所在目录的 COS 路径）。最多 8 条；HTTP 源（InputType=2）不支持。</p>",
+          "example": "无",
+          "member": "ExtraSourceInfo",
+          "name": "ExtraSources",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2641,6 +2659,30 @@
         }
       ],
       "usage": "out"
+    },
+    "ExtraSourceInfo": {
+      "document": "伴生输入文件登记（多输入）。与主视频同桶同凭证，Name 为文件引用名，Path 为相对主视频所在目录的 COS 路径。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>伴生文件的引用名。只允许 [A-Za-z0-9._-] 路径段，可含子目录（深度 ≤3 层）；不能以 / 开头，不能包含 ..；同一请求内不重复</p>",
+          "example": "skeleton.description.json",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>伴生文件相对主视频所在目录（含文件名）的 COS 相对路径。必须为相对路径（不能以 / 开头），长度 ≤128 字节，允许 ../ 上溯最多 2 层；批量接口支持 ${FileName} 占位符（替换为该处理项主视频文件名，不含扩展名</p>",
+          "example": "../skeleton.description.json",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "GetDeviceLicenseRequest": {
       "document": "GetDeviceLicense请求参数结构体",

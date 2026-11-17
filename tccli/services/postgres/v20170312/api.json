@@ -11018,7 +11018,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例 ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-6bwgamo3",
           "member": "string",
           "name": "DBInstanceId",
@@ -11027,7 +11027,7 @@
         },
         {
           "disabled": false,
-          "document": "开启或关闭SSL。true - 开启 ；false - 关闭。",
+          "document": "<p>开启或关闭SSL。true - 开启 ；false - 关闭。</p>",
           "example": "true",
           "member": "bool",
           "name": "SSLEnabled",
@@ -11036,10 +11036,28 @@
         },
         {
           "disabled": false,
-          "document": "SSL证书保护的唯一连接地址，若为主实例，可设置为内外网IP地址；若为只读实例，可设置为实例IP或只读组IP。在开启SSL或修改SSL保护的连接地址时，该参数为必传项；在关闭SSL时，该参数将被忽略。",
+          "document": "<p>SSL证书保护的唯一连接地址，若为主实例，可设置为内外网IP地址；若为只读实例，可设置为实例IP或只读组IP。在开启SSL或修改SSL保护的连接地址时，该参数为必传项；在关闭SSL时，该参数将被忽略。</p>",
           "example": "10.0.0.4",
           "member": "string",
           "name": "ConnectAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SSL证书来源。</p><p>枚举值：</p><ul><li>cloud： 平台自签发的云端证书</li><li>custom： 腾讯云SSL证书产品托管的用户自有证书</li></ul>",
+          "example": "cloud",
+          "member": "string",
+          "name": "CertSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>腾讯云 SSL 证书产品的证书 ID。证书类型为custom时必须填写。</p>",
+          "example": "atcnZFIu",
+          "member": "string",
+          "name": "CertificateId",
           "required": false,
           "type": "string"
         }
@@ -11051,7 +11069,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "5423",
           "member": "int64",
           "name": "TaskId",
@@ -14852,7 +14870,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID。可通过[DescribeDBInstances](https://cloud.tencent.com/document/api/409/16773)接口获取",
+          "document": "<p>实例ID。可通过<a href=\"https://cloud.tencent.com/document/api/409/16773\">DescribeDBInstances</a>接口获取</p>",
           "example": "postgres-klj12ina",
           "member": "string",
           "name": "DBInstanceId",
@@ -14861,7 +14879,7 @@
         },
         {
           "disabled": false,
-          "document": "目标内核版本号，可以通过API [DescribeDBVersions](https://cloud.tencent.com/document/product/409/89018)获取可以升级的目标内核版本号。",
+          "document": "<p>目标内核版本号，可以通过API <a href=\"https://cloud.tencent.com/document/product/409/89018\">DescribeDBVersions</a>获取可以升级的目标内核版本号。</p>",
           "example": "v15.1_r1.6",
           "member": "string",
           "name": "TargetDBKernelVersion",
@@ -14870,7 +14888,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为校验模式，若UpgradeCheck为True，表示仅进行内核版本兼容性检查，不会进行实质性的升级操作，对原实例无影响。检查结果可以通过升级日志查看。",
+          "document": "<p>是否为校验模式，若UpgradeCheck为True，表示仅进行内核版本兼容性检查，不会进行实质性的升级操作，对原实例无影响。检查结果可以通过升级日志查看。</p>",
           "example": "false",
           "member": "bool",
           "name": "UpgradeCheck",
@@ -14879,7 +14897,7 @@
         },
         {
           "disabled": false,
-          "document": "升级前备份选项。True，表示升级前需要创建全量备份，False，表示升级前不需要创建全量备份。当实例已有备份集可以恢复到升级前的状态时，可选择False，否则需要指定为True。UpgradeCheck为True时，此参数无效。",
+          "document": "<p>升级前备份选项。True，表示升级前需要创建全量备份，False，表示升级前不需要创建全量备份。当实例已有备份集可以恢复到升级前的状态时，可选择False，否则需要指定为True。UpgradeCheck为True时，此参数无效。</p>",
           "example": "true",
           "member": "bool",
           "name": "BackupBeforeUpgrade",
@@ -14888,7 +14906,7 @@
         },
         {
           "disabled": false,
-          "document": "统计信息收集选项，对主例运行 ANALYZE 以在升级后更新系统统计信息。可选值包括，\n0：不需要收集统计信息；\n1：实例恢复写之前收集统计信息；\n3：实例恢复写之后收集统计信息。\nUpgradeCheck为True时，此参数无效。",
+          "document": "<p>统计信息收集选项，对主例运行 ANALYZE 以在升级后更新系统统计信息。可选值包括，<br>0：不需要收集统计信息；<br>1：实例恢复写之前收集统计信息；<br>3：实例恢复写之后收集统计信息。<br>UpgradeCheck为True时，此参数无效。</p>",
           "example": "0",
           "member": "int64",
           "name": "StatisticsRefreshOption",
@@ -14897,7 +14915,7 @@
         },
         {
           "disabled": false,
-          "document": "插件升级选项，pg_upgrade不会升级任何插件，需要在升级完成后在创建过插件的库上执行\"ALTER EXTENSION UPDATE\"。发起升级实例大版本时可以指定在实例恢复写前/后是否需要升级任务自动升级插件版本。可选值包括：\n0：不需要自动升级插件；\n1：恢复写之前升级插件；\n2：恢复写之后升级插件。\nUpgradeCheck为True时，此参数无效。",
+          "document": "<p>插件升级选项，pg_upgrade不会升级任何插件，需要在升级完成后在创建过插件的库上执行&quot;ALTER EXTENSION UPDATE&quot;。发起升级实例大版本时可以指定在实例恢复写前/后是否需要升级任务自动升级插件版本。可选值包括：<br>0：不需要自动升级插件；<br>1：恢复写之前升级插件；<br>2：恢复写之后升级插件。<br>UpgradeCheck为True时，此参数无效。</p>",
           "example": "0",
           "member": "int64",
           "name": "ExtensionUpgradeOption",
@@ -14906,7 +14924,7 @@
         },
         {
           "disabled": false,
-          "document": "升级时间选项，升级过程中会有一段时间实例只读，并会有一次秒级闪断，发起升级时需要选择这段影响的时间窗。可选值包括：\n0：自动执行，不需要指定时间窗；\n1：指定本次升级任务的时间窗，通过参数UpgradeTimeBegin和UpgradeTimeEnd设置；\n2：在实例运维时间窗内执行。\nUpgradeCheck为True时，此参数无效。",
+          "document": "<p>升级时间选项，升级过程中会有一段时间实例只读，并会有一次秒级闪断，发起升级时需要选择这段影响的时间窗。可选值包括：<br>0：自动执行，不需要指定时间窗；<br>1：指定本次升级任务的时间窗，通过参数UpgradeTimeBegin和UpgradeTimeEnd设置；<br>2：在实例运维时间窗内执行。<br>UpgradeCheck为True时，此参数无效。</p>",
           "example": "1",
           "member": "int64",
           "name": "UpgradeTimeOption",
@@ -14915,7 +14933,7 @@
         },
         {
           "disabled": false,
-          "document": "升级时间窗开始时间，时间格式：HH:MM:SS，例如：01:00:00。当UpgradeTimeOption为1时，该参数有效。\nUpgradeCheck为True时，此参数无效。",
+          "document": "<p>升级时间窗开始时间，时间格式：HH:MM:SS，例如：01:00:00。当UpgradeTimeOption为1时，该参数有效。<br>UpgradeCheck为True时，此参数无效。</p>",
           "example": "01:00:00",
           "member": "string",
           "name": "UpgradeTimeBegin",
@@ -14924,12 +14942,21 @@
         },
         {
           "disabled": false,
-          "document": "升级时间窗截止时间，时间格式：HH:MM:SS，例如：02:00:00。当UpgradeTimeOption为1时，该参数有效。\nUpgradeCheck为True时，此参数无效。",
+          "document": "<p>升级时间窗截止时间，时间格式：HH:MM:SS，例如：02:00:00。当UpgradeTimeOption为1时，该参数有效。<br>UpgradeCheck为True时，此参数无效。</p>",
           "example": "02:00:00",
           "member": "string",
           "name": "UpgradeTimeEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>升级时是否携带RO。开启时在RO重建过程中会存在RO数据延迟现象。</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "UpgradeReadOnlyInstance",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14939,7 +14966,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "5423",
           "member": "int64",
           "name": "TaskId",

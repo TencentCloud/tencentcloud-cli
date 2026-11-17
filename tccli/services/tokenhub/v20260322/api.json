@@ -175,6 +175,13 @@
       "output": "DescribeTokenPlanListResponse",
       "status": "online"
     },
+    "DescribeTokenPlanPersonalPackage": {
+      "document": "查询个人版套餐详情。\n\n查询指定产品类型的个人版 Token Plan 套餐状态、额度及续费信息。",
+      "input": "DescribeTokenPlanPersonalPackageRequest",
+      "name": "查询 TokenPlan 个人版套餐详情",
+      "output": "DescribeTokenPlanPersonalPackageResponse",
+      "status": "online"
+    },
     "DescribeUsageRankList": {
       "document": "查询用量排行列表。\n\n指标族（MetricType）\n- `tokens`（默认）：Token 用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：TotalToken（总）/ InputTotalToken（输入）/ OutputTotalToken（输出）/ CacheTotalToken（读缓存）。\n- `search`：联网搜索用量统计。支持 Dimension = apikey / endpoint / model。\n  返回指标：SearchRequestCount（搜索请求数）/ SearchCount（搜索引擎调用次数）。\n- `apikey_usage`：APIKey 锚定用量统计（某 APIKey 下按模型或接入点展开）。支持 Dimension = endpoint / model。\n  返回指标：TotalToken（总 Token）/ InputTotalToken（输入 Token）/ OutputTotalToken（输出 Token）/ CacheTotalToken（读缓存）/ RequestCount（请求次数）/ SuccessCount（成功次数）。\n\n响应内容\n- MetricType 字段用于切换指标族，响应回显 MetricType 与 MetricKeys。\n- TotalStats：时间窗内全部对象的整段聚合值。\n- PageStats：当前翻页内对象的整段聚合值。\n- TopList：按MetricKeys[0]降序的对象列表，含整段聚合值与逐时间点曲线。",
       "input": "DescribeUsageRankListRequest",
@@ -2397,6 +2404,193 @@
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanPersonalPackageRequest": {
+      "document": "DescribeTokenPlanPersonalPackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品类型。取值：personal（个人版）、personal-hunyuan（个人版混元）。</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTokenPlanPersonalPackageResponse": {
+      "document": "DescribeTokenPlanPersonalPackage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>产品类型。</p>",
+          "example": "personal",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐状态。取值：active（生效中）、processing（处理中）、failed（创建失败）、isolated（隔离/欠费）、destroyed（已销毁）、used_up（额度用尽）、stopped（已停止）、unpurchased（未购买）。</p>",
+          "example": "active",
+          "member": "string",
+          "name": "PackageStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费资源ID</p>",
+          "example": "pre-tp-gz-personal-202611020090241********",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总额度。</p>",
+          "example": "780",
+          "member": "string",
+          "name": "TotalCredits",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用额度。</p>",
+          "example": "32.613264",
+          "member": "string",
+          "name": "TotalUsed",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单周期额度。</p>",
+          "example": "780",
+          "member": "string",
+          "name": "CycleCredits",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总周期数。</p>",
+          "example": "12",
+          "member": "int64",
+          "name": "TotalCycles",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期序号。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "CurrentCycle",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>剩余周期数。</p>",
+          "example": "9",
+          "member": "int64",
+          "name": "RemainCycles",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐生效时间，ISO 8601 格式。</p>",
+          "example": "2026-11-02 17:02:19",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>套餐过期时间，ISO 8601 格式。</p>",
+          "example": "2027-03-15 10:30:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前周期到期日，ISO 8601 格式。</p>",
+          "example": "2026-07-15",
+          "member": "string",
+          "name": "PeriodEndDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。取值：0（未开启）、1（已开启）。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输出token数</p><p>单位：tokens</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "OutputToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入token数</p><p>单位：token</p>",
+          "example": "123",
+          "member": "int64",
+          "name": "InputToken",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>缓存命中token数</p><p>单位：token</p>",
+          "example": "12345",
+          "member": "int64",
+          "name": "CacheToken",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

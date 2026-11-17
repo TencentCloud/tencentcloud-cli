@@ -784,6 +784,13 @@
       "output": "ModifyLabelResponse",
       "status": "online"
     },
+    "ModifyMessageRecordFeedback": {
+      "document": "修改消息记录反馈",
+      "input": "ModifyMessageRecordFeedbackRequest",
+      "name": "修改消息记录反馈",
+      "output": "ModifyMessageRecordFeedbackResponse",
+      "status": "online"
+    },
     "ModifyMsgRecordCategory": {
       "document": "修改指定消息记录分类的名称",
       "input": "ModifyMsgRecordCategoryRequest",
@@ -1299,6 +1306,80 @@
       ],
       "usage": "both"
     },
+    "AgentBuiltinTool": {
+      "document": "Agent 内置工具详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>内置工具基础配置</p>",
+          "example": "无",
+          "member": "AgentBuiltinToolConfig",
+          "name": "Config",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具展示名称</p>",
+          "example": "读取文件",
+          "member": "string",
+          "name": "DisplayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具描述</p>",
+          "example": "读取已授权的文件内容。",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>计费标识</p><p>枚举值：</p><ul><li>0： 免费</li><li>1： 限时免费</li><li>2： 官方收费</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "BillingType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AgentBuiltinToolConfig": {
+      "document": "Agent 内置工具配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工具名称</p>",
+          "example": "Read",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否禁用该内置工具</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Disabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AgentCollaborationConfig": {
       "document": "[数据结构定义] Agent协同配置",
       "members": [
@@ -1427,6 +1508,56 @@
           "example": "无",
           "member": "AgentExternalToolConfig",
           "name": "ExternalToolList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProviderType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用应用的ID</p>",
+          "example": "2010**********35361",
+          "member": "string",
+          "name": "ReferenceAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReferenceAppStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用应用详情，ProviderType=1 时返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReferenceAppDetail",
+          "name": "ReferenceApp",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>内置工具列表</p>",
+          "example": "无",
+          "member": "AgentBuiltinTool",
+          "name": "BuiltinToolList",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
@@ -2275,6 +2406,33 @@
           "name": "ExternalToolList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ProviderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用应用的Id</p>",
+          "example": "2120***********5792",
+          "member": "string",
+          "name": "ReferenceAppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>内置工具信息</p>",
+          "example": "无",
+          "member": "AgentBuiltinToolConfig",
+          "name": "BuiltinToolList",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2310,6 +2468,26 @@
           "name": "AdvancedConfig",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent 执行来源</p><p>枚举值：</p><ul><li>0： 应用内子 Agent</li><li>1： 引用已发布的应用</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ProviderType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>引用应用状态，ProviderType=1 时有效</p><p>枚举值：</p><ul><li>0： 来源应用可用</li><li>1： 来源应用不可用</li><li>2： 无权限</li><li>3： 嵌套引用: 来源应用线上生效配置中已含应用类子 Agent</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ReferenceAppStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2707,7 +2885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "密钥位置 HEADER/QUERY\n\n枚举值:\n| uint | 描述 |\n| --- | --- |\n| 0 | Header鉴权 |\n| 1 | Query鉴权 |",
+          "document": "<p>密钥位置 HEADER/QUERY</p><p>枚举值:<br>| uint | 描述 |<br>| --- | --- |<br>| 0 | Header鉴权 |<br>| 1 | Query鉴权 |</p>",
           "example": "0",
           "member": "int64",
           "name": "KeyLocation",
@@ -2718,7 +2896,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥参数名",
+          "document": "<p>密钥参数名</p>",
           "example": "token",
           "member": "string",
           "name": "KeyParamName",
@@ -2729,13 +2907,24 @@
         },
         {
           "disabled": false,
-          "document": "密钥参数值",
+          "document": "<p>密钥参数值</p>",
           "example": "abcd123",
           "member": "string",
           "name": "KeyParamValue",
           "output_required": false,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>密钥值用途，未指定按允许工具调用处理</p><p>枚举值：</p><ul><li>1： 允许用于工具调用</li><li>2： 仅用于连接测试和获取工具列表</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "KeyValueUsage",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5638,6 +5827,45 @@
       ],
       "usage": "both"
     },
+    "ByteCapacity": {
+      "document": "知识库容量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大容量</p>",
+          "example": "2199023255552",
+          "member": "string",
+          "name": "MaxCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超量失效容量</p>",
+          "example": "0",
+          "member": "string",
+          "name": "ExceededInvalidCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已使用容量</p>",
+          "example": "3315",
+          "member": "string",
+          "name": "UsedCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CallMCPToolRequest": {
       "document": "CallMCPTool请求参数结构体",
       "members": [
@@ -6241,6 +6469,45 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CharacterSize": {
+      "document": "知识库容量信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>最大字符数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "MaxCharSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超量字符数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "OverCharSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已用字符数</p>",
+          "example": "0",
+          "member": "string",
+          "name": "UsedCharSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7133,6 +7400,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>文件信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationFileInfo",
+          "name": "File",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>选项卡列表</p>",
           "example": "[\"mock-option-a\"]",
           "member": "string",
@@ -7162,6 +7440,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>问卷信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationQuestionnaire",
+          "name": "Questionnaire",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -7240,6 +7529,28 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Widget 信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationWidget",
+          "name": "Widget",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Widget 动作信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationWidgetAction",
+          "name": "WidgetAction",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -7581,6 +7892,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>额外信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConversationMessageExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>消息图标</p>",
           "example": "https://example.com/icon.png",
           "member": "string",
@@ -7698,6 +8020,465 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationMessageExtraInfo": {
+      "document": "MessageExtraInfo 消息扩展信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>智能体图标</p>",
+          "example": "https://example.com/agent.png",
+          "member": "string",
+          "name": "AgentIcon",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>智能体名称</p>",
+          "example": "example-agent",
+          "member": "string",
+          "name": "AgentName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息处理耗时</p>",
+          "example": "58",
+          "member": "string",
+          "name": "Elapsed",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>父消息 ID</p>",
+          "example": "example-parent-message-id",
+          "member": "string",
+          "name": "ParentMessageId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联记录 ID</p>",
+          "example": "req_db8387b0-8b9f-49c9-9d05-253c7e9748a6",
+          "member": "string",
+          "name": "RelatedRecordId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息处理开始时间戳（毫秒）</p>",
+          "example": "1777537001671",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具图标</p>",
+          "example": "https://example.com/tool.png",
+          "member": "string",
+          "name": "ToolIcon",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工具名称</p>",
+          "example": "example-tool",
+          "member": "string",
+          "name": "ToolName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Trace ID</p>",
+          "example": "601b3d76fab0462a9e8550ef340754e6",
+          "member": "string",
+          "name": "TraceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以反馈</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CanFeedback",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否可以点赞点踩</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "CanRate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息处理开始时间戳（毫秒）</p>",
+          "example": "1777542760322",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已读</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "HasRead",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否大模型生成</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsModelGenerated",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户反馈标签列表</p>",
+          "example": "[\"mock reason\"]",
+          "member": "string",
+          "name": "ReasonList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>回复方式</p>",
+          "example": "18",
+          "member": "int64",
+          "name": "ReplyMethod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户打分</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent 运行 Id</p>",
+          "example": "ecc8030a-8282-4946-b6e8-625caf649dba:task_1_",
+          "member": "string",
+          "name": "SubAgentRunId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是子 Agent 的消息</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSubAgent",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent 线程 ID</p>",
+          "example": "teammate:b099815a-77a3-4e37-b35f-d796729320f9",
+          "member": "string",
+          "name": "SubAgentThreadId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否是 Agent Team 模式下的 teammate 成员</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsTeammate",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent Team 模式下的 teammate 名称</p>",
+          "example": "backend",
+          "member": "string",
+          "name": "TeammateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流节点名称</p>",
+          "example": "大模型1",
+          "member": "string",
+          "name": "WorkflowNodeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationQuestion": {
+      "document": "Question 问卷问题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问题序号</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "Index",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题内容</p>",
+          "example": "example question",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否必答</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题类型 枚举值: 0-QUESTION_TYPE_UNSPECIFIED(未指定), 1-QUESTION_TYPE_SINGLE(单选), 2-QUESTION_TYPE_MULTIPLE(多选)</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项列表</p>",
+          "example": "无",
+          "member": "ConversationQuestionOption",
+          "name": "OptionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项列表</p>",
+          "example": "无",
+          "member": "ConversationQuestionOption",
+          "name": "Options",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationQuestionAnswer": {
+      "document": "QuestionAnswer 问题答案信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问题内容</p>",
+          "example": "example question",
+          "member": "string",
+          "name": "Question",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已选择的选项标签列表</p>",
+          "example": "[\"mock option\"]",
+          "member": "string",
+          "name": "SelectedLabelList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已选择的选项标签列表</p>",
+          "example": "[\"option-a\"]",
+          "member": "string",
+          "name": "SelectedLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationQuestionOption": {
+      "document": "QuestionOption 问题选项信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>选项描述</p>",
+          "example": "option a description",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>选项标签</p>",
+          "example": "option-a",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationQuestionnaire": {
+      "document": "Questionnaire 问卷信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>问卷标题</p>",
+          "example": "选择",
+          "member": "string",
+          "name": "Title",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>答案列表</p>",
+          "example": "无",
+          "member": "ConversationQuestionAnswer",
+          "name": "AnswerList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>答案列表</p>",
+          "example": "无",
+          "member": "ConversationQuestionAnswer",
+          "name": "Answers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题列表</p>",
+          "example": "无",
+          "member": "ConversationQuestion",
+          "name": "QuestionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>问题列表</p>",
+          "example": "无",
+          "member": "ConversationQuestion",
+          "name": "Questions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -8051,6 +8832,56 @@
           "example": "example widget view",
           "member": "string",
           "name": "View",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件 ID</p>",
+          "example": "widget-1",
+          "member": "string",
+          "name": "WidgetId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>组件运行 ID</p>",
+          "example": "widget-run-1",
+          "member": "string",
+          "name": "WidgetRunId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConversationWidgetAction": {
+      "document": "WidgetAction 组件交互动作信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>动作类型，非枚举类型，用户自定义</p>",
+          "example": "click",
+          "member": "string",
+          "name": "ActionType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>动作载荷</p>",
+          "example": "example widget action payload",
+          "member": "string",
+          "name": "Payload",
           "output_required": false,
           "required": true,
           "type": "string",
@@ -17040,6 +17871,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CharacterSize",
+          "name": "CharacterSize",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>容量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ByteCapacity",
+          "name": "ByteCapacity",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>知识库容量状态</p><p>枚举值：</p><ul><li>1： 正常</li><li>2： 超量但可用（pu 抵扣）</li><li>3： 超量不可用</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CapacityStatus",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -20334,6 +21198,78 @@
       ],
       "type": "object"
     },
+    "ModifyMessageRecordFeedbackRequest": {
+      "document": "ModifyMessageRecordFeedback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>需要反馈的消息记录ID</p>",
+          "example": "rcd_ecbb6143-cf9d-474b-830a-51431074df2a",
+          "member": "string",
+          "name": "RecordId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息记录所属应用的授权AppKey</p>",
+          "example": "oMrkj***************************************************************************************************************pDPtiFjQPlHs",
+          "member": "string",
+          "name": "AppKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>反馈分值</p><p>枚举值：</p><ul><li>0： 取消点赞或点踩</li><li>1： 点赞</li><li>2： 点踩</li></ul>",
+          "example": "2",
+          "member": "uint64",
+          "name": "Score",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>反馈的原因列表</p>",
+          "example": "[\"reason one\"]",
+          "member": "string",
+          "name": "ReasonList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>反馈的补充内容</p>",
+          "example": "this is a test feedback",
+          "member": "string",
+          "name": "FeedbackContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>消息记录所属的应用ID</p>",
+          "example": "2112146673412501952",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMessageRecordFeedbackResponse": {
+      "document": "ModifyMessageRecordFeedback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyMsgRecordCategoryRequest": {
       "document": "ModifyMsgRecordCategory请求参数结构体",
       "members": [
@@ -23159,6 +24095,72 @@
       ],
       "type": "object"
     },
+    "ReferenceAppDetail": {
+      "document": "引用的来源应用详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源应用当前名称</p>",
+          "example": "待****试发布人",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源应用模式</p><p>枚举值：</p><ul><li>1： 标准模式</li><li>2： Multi-Agent模式</li><li>3： 单工作流模式</li><li>4： Claw模式</li></ul>",
+          "example": "4",
+          "member": "int64",
+          "name": "AppMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主 Agent 名称</p>",
+          "example": "测**布人",
+          "member": "string",
+          "name": "MainAgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子 Agent 名称列表</p>",
+          "example": "[\"研发Agent\"]",
+          "member": "string",
+          "name": "SubAgentNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源应用创建人</p>",
+          "example": "co****11",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源应用修改时间</p>",
+          "example": "1794823443",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ReleaseRecord": {
       "document": "[数据结构定义] 发布记录",
       "members": [
@@ -23870,6 +24872,26 @@
           "name": "ResourceStatus",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云盘容量</p><p>单位：GB</p>",
+          "example": "100",
+          "member": "float",
+          "name": "CloudDiskCapacity",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>云盘用量</p><p>单位：GB</p>",
+          "example": "2",
+          "member": "float",
+          "name": "CloudDiskUsage",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": false
         }
       ],

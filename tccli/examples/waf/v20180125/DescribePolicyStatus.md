@@ -7,7 +7,7 @@ Input:
 ```
 tccli waf DescribePolicyStatus --cli-unfold-argument  \
     --Domain test.com \
-    --Edition saas-waf
+    --Edition sparta-waf
 ```
 
 Output: 

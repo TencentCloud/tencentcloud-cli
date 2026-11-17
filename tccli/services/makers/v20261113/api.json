@@ -1,0 +1,2881 @@
+{
+  "actions": {
+    "CreateDeployment": {
+      "document": "创建部署。上传制品时 ViaMeta 和 Provider 传 Upload，TempBucketPath 传已上传对象的路径。",
+      "input": "CreateDeploymentRequest",
+      "name": "创建构建",
+      "output": "CreateDeploymentResponse",
+      "status": "online"
+    },
+    "CreateProject": {
+      "document": "创建项目。上传制品时 Provider 传 Upload，Channel 传 Custom。",
+      "input": "CreateProjectRequest",
+      "name": "创建项目",
+      "output": "CreateProjectResponse",
+      "status": "online"
+    },
+    "CreateZoneCustomDomain": {
+      "document": "把一个自定义域名绑到项目的指定环境。",
+      "input": "CreateZoneCustomDomainRequest",
+      "name": "绑定自定义域名",
+      "output": "CreateZoneCustomDomainResponse",
+      "status": "online"
+    },
+    "DeleteProject": {
+      "document": "删除项目。进行中的构建会阻止删除。",
+      "input": "DeleteProjectRequest",
+      "name": "删除项目",
+      "output": "DeleteProjectResponse",
+      "status": "online"
+    },
+    "DeleteProjectCustomDomains": {
+      "document": "按域名解绑项目的自定义域名。",
+      "input": "DeleteProjectCustomDomainsRequest",
+      "name": "删除项目自定义域名",
+      "output": "DeleteProjectCustomDomainsResponse",
+      "status": "online"
+    },
+    "DeleteProjectEnvs": {
+      "document": "按 EnvVars 删除环境变量。按 Id 或 Key 匹配。Value 必填但不参与匹配，可传任意值。",
+      "input": "DeleteProjectEnvsRequest",
+      "name": "删除项目环境变量",
+      "output": "DeleteProjectEnvsResponse",
+      "status": "online"
+    },
+    "DescribeCosTempToken": {
+      "document": "获取上传制品用的 COS 桶、地域、目标路径和临时密钥。",
+      "input": "DescribeCosTempTokenRequest",
+      "name": "获取上传临时密钥",
+      "output": "DescribeCosTempTokenResponse",
+      "status": "online"
+    },
+    "DescribeDeploymentLog": {
+      "document": "返回构建日志的访问地址。",
+      "input": "DescribeDeploymentLogRequest",
+      "name": "获取构建日志",
+      "output": "DescribeDeploymentLogResponse",
+      "status": "online"
+    },
+    "DescribeDeployments": {
+      "document": "查询项目的部署记录。",
+      "input": "DescribeDeploymentsRequest",
+      "name": "获取构建记录列表",
+      "output": "DescribeDeploymentsResponse",
+      "status": "online"
+    },
+    "DescribeEnvironments": {
+      "document": "查询项目下的环境，含内置 Production、Preview 和自定义环境。",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "查询环境列表",
+      "output": "DescribeEnvironmentsResponse",
+      "status": "online"
+    },
+    "DescribeProjectEnvs": {
+      "document": "查询项目环境变量。不传 Env 时返回全部作用域。",
+      "input": "DescribeProjectEnvsRequest",
+      "name": "获取项目环境变量",
+      "output": "DescribeProjectEnvsResponse",
+      "status": "online"
+    },
+    "DescribeProjects": {
+      "document": "分页查询站点下的项目。Offset 是页码偏移，后端按 Offset * Limit 跳过。",
+      "input": "DescribeProjectsRequest",
+      "name": "获取用户项目列表",
+      "output": "DescribeProjectsResponse",
+      "status": "online"
+    },
+    "DescribeZoneCustomDomains": {
+      "document": "查询项目在站点下的自定义域名和预设域名。",
+      "input": "DescribeZoneCustomDomainsRequest",
+      "name": "查询自定义域名",
+      "output": "DescribeZoneCustomDomainsResponse",
+      "status": "online"
+    },
+    "ModifyProject": {
+      "document": "修改项目名称和构建配置。未传的字段保持原值。",
+      "input": "ModifyProjectRequest",
+      "name": "编辑项目基本信息",
+      "output": "ModifyProjectResponse",
+      "status": "online"
+    },
+    "ModifyProjectEnvs": {
+      "document": "按传入的 EnvVars 写入环境变量。",
+      "input": "ModifyProjectEnvsRequest",
+      "name": "编辑项目环境变量",
+      "output": "ModifyProjectEnvsResponse",
+      "status": "online"
+    },
+    "ModifyZoneCustomDomainEnv": {
+      "document": "把已绑定的自定义域名切到另一个环境。",
+      "input": "ModifyZoneCustomDomainEnvRequest",
+      "name": "修改自定义域名环境",
+      "output": "ModifyZoneCustomDomainEnvResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2026-11-13",
+    "api_brief": "Web 与 Agent 部署能力。",
+    "serviceNameCN": "Web 与 Agent 开发部署平台 Makers",
+    "serviceShortName": "makers"
+  },
+  "objects": {
+    "CosCredentials": {
+      "document": "COS 临时密钥",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>临时 SecretId</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "********************************************************************",
+          "member": "string",
+          "name": "TmpSecretId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时 SecretKey</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "********************************************",
+          "member": "string",
+          "name": "TmpSecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时 Token</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateDeploymentRequest": {
+      "document": "CreateDeployment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发来源。Github、ReDeploy、Api、Webhook、Upload、Coding、Gitee、Gitlab</p>",
+          "example": "Upload",
+          "member": "string",
+          "name": "ViaMeta",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境 slug。Production、Preview 或自定义环境</p>",
+          "example": "Production",
+          "member": "string",
+          "name": "Env",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源。上传制品传 Upload</p>",
+          "example": "Upload",
+          "member": "string",
+          "name": "Provider",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>制品类型。Zip 或 Folder</p>",
+          "example": "Folder",
+          "member": "string",
+          "name": "DistType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>已上传制品在临时桶中的对象路径</p>",
+          "example": "***************************************",
+          "member": "string",
+          "name": "TempBucketPath",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建分支</p>",
+          "example": "main",
+          "member": "string",
+          "name": "RepoBranch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交哈希</p>",
+          "example": "abc1234",
+          "member": "string",
+          "name": "RepoCommitHash",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交说明</p>",
+          "example": "docs example",
+          "member": "string",
+          "name": "RepoCommitMsg",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建来源</p>",
+          "example": "Upload",
+          "member": "string",
+          "name": "BuildFrom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板 ID</p>",
+          "example": "tpl-demo",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建规格。当前服务端仍从 edgeone.json 读取，此字段先保留</p>",
+          "example": "default",
+          "member": "string",
+          "name": "CiSpec",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeploymentResponse": {
+      "document": "CreateDeployment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>部署 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "************",
+          "member": "string",
+          "name": "DeploymentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectRequest": {
+      "document": "CreateProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "*************",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建来源。Template、Custom、CLI、Guest</p>",
+          "example": "Custom",
+          "member": "string",
+          "name": "Channel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源。Upload、Github、Gitee、Gitlab、Coding</p>",
+          "example": "Upload",
+          "member": "string",
+          "name": "Provider",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入方标识</p>",
+          "example": "capi-selftest",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>加速区域。mainland、overseas、global</p>",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Node.js 版本。14.21.3、16.20.2、18.20.4、20.18.0、22.11.0、22.17.1、22.21.1、24.5.0、24.11.0、24.18.0</p>",
+          "example": "20.18.0",
+          "member": "string",
+          "name": "NodeJsVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目根目录</p>",
+          "example": "/",
+          "member": "string",
+          "name": "RootDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建产物目录</p>",
+          "example": "dist",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建命令</p>",
+          "example": "npm run build",
+          "member": "string",
+          "name": "BuildCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装命令</p>",
+          "example": "npm install",
+          "member": "string",
+          "name": "InstallCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架</p>",
+          "example": "Other",
+          "member": "string",
+          "name": "Framework",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板 ID</p>",
+          "example": "tpl-demo",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库地址</p>",
+          "example": "https://***********************",
+          "member": "string",
+          "name": "RepoUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库所有者</p>",
+          "example": "example",
+          "member": "string",
+          "name": "RepoOwner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名称</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产分支</p>",
+          "example": "main",
+          "member": "string",
+          "name": "RepoBranch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>初始环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Coding 命名空间。Provider 为 Coding 时使用</p>",
+          "example": "demo",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Coding 项目 ID。Provider 为 Coding 时使用</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CodingProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProjectResponse": {
+      "document": "CreateProject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateZoneCustomDomainRequest": {
+      "document": "CreateZoneCustomDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义域名</p>",
+          "example": "************************",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境 slug。不传时由后端决定</p>",
+          "example": "Production",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateZoneCustomDomainResponse": {
+      "document": "CreateZoneCustomDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "************************",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名配置 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***************",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CustomDomainInput": {
+      "document": "绑定自定义域名时的域名项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "***",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>证书 ID</p>",
+          "example": "***",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验状态。Verify、Pass、Fail</p>",
+          "example": "Pass",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否不申请证书</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "NoCertificate",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "CustomDomainItem": {
+      "document": "自定义域名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*****************",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteProjectCustomDomainsRequest": {
+      "document": "DeleteProjectCustomDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要解绑的域名</p>",
+          "example": "[\"************************\"]",
+          "member": "string",
+          "name": "CustomDomains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectCustomDomainsResponse": {
+      "document": "DeleteProjectCustomDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectEnvsRequest": {
+      "document": "DeleteProjectEnvs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要删除的环境变量。传 Key（或 Id），Value 必填但不参与匹配</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectEnvsResponse": {
+      "document": "DeleteProjectEnvs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectRequest": {
+      "document": "DeleteProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProjectResponse": {
+      "document": "DeleteProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Deployment": {
+      "document": "部署记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>部署 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "************",
+          "member": "string",
+          "name": "DeploymentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Success、Failed、Process、Invalid、Pending、Timeout、Cancelled</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署被移除前的原始状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Success",
+          "member": "string",
+          "name": "OriginalStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建退出码，0 表示成功</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建耗时，单位毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14474",
+          "member": "string",
+          "name": "BuildCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发来源。Github、ReDeploy、Api、Coding、Gitee、Upload、Gitlab</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Upload",
+          "member": "string",
+          "name": "ViaMeta",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境 slug</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Preview",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分支</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "main",
+          "member": "string",
+          "name": "RepoBranch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交哈希</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc1234",
+          "member": "string",
+          "name": "RepoCommitHash",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "docs example",
+          "member": "string",
+          "name": "RepoCommitMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次部署的访问地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://******************************************************",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目默认域名地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://**************************************************",
+          "member": "string",
+          "name": "ProjectUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为当前生产版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UsedInProd",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>封面地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://*******************************************************************",
+          "member": "string",
+          "name": "CoverUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由配置，JSON 字符串</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"version\": 3}",
+          "member": "string",
+          "name": "MetaData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次部署使用的仓库地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github.com/example/demo",
+          "member": "string",
+          "name": "DplRepoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-17T02:47:58.122Z",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-17T02:48:18.000Z",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeploymentFilter": {
+      "document": "部署列表过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段。ProjectId、DeploymentId、Name、Status、StartTime、EndTime、RepoBranch</p>",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤值</p>",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeCosTempTokenRequest": {
+      "document": "DescribeCosTempToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称。临时路径按它拼接</p>",
+          "example": "**************",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID。不传 ProjectName 时用来反查项目名</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosTempTokenResponse": {
+      "document": "DescribeCosTempToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>COS 桶</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*************************",
+          "member": "string",
+          "name": "Bucket",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>COS 地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>上传路径，格式 appId/projectName/时间戳</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***************************************",
+          "member": "string",
+          "name": "TargetPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时密钥过期时间，Unix 秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1794831547",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时密钥过期时间，ISO 8601</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-16T12:19:07Z",
+          "member": "string",
+          "name": "Expiration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>临时密钥</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosCredentials",
+          "name": "Credentials",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeploymentLogRequest": {
+      "document": "DescribeDeploymentLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署 ID</p>",
+          "example": "************",
+          "member": "string",
+          "name": "DeploymentId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeploymentLogResponse": {
+      "document": "DescribeDeploymentLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>构建日志地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://***************************************************************************",
+          "member": "string",
+          "name": "LogUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeploymentsRequest": {
+      "document": "DescribeDeployments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按部署 ID 查询</p>",
+          "example": "[\"************\"]",
+          "member": "string",
+          "name": "DeploymentIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件</p>",
+          "example": "无",
+          "member": "DeploymentFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CreatedOn 或 ModifiedOn</p>",
+          "example": "CreatedOn",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Asc 或 Desc</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开始时间</p>",
+          "example": "2026-11-16 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间</p>",
+          "example": "2026-11-17 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeploymentsResponse": {
+      "document": "DescribeDeployments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Deployment",
+          "name": "Deployments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Environment",
+          "name": "Environments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectEnvsRequest": {
+      "document": "DescribeProjectEnvs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>只返回该环境 slug 的变量</p>",
+          "example": "Production",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectEnvsResponse": {
+      "document": "DescribeProjectEnvs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsRequest": {
+      "document": "DescribeProjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-3v5*********",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>页码偏移，从 0 开始。后端跳过 Offset * Limit 条</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，最大 100</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件。Name 取值 ProjectId、Name、Status、Provider</p>",
+          "example": "无",
+          "member": "ProjectFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按项目 ID 查询</p>",
+          "example": "[\"makers-yvl*********\"]",
+          "member": "string",
+          "name": "ProjectIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序字段。CreatedOn、ModifiedOn。默认 CreatedOn</p>",
+          "example": "CreatedOn",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序方向。Asc、Desc、ASC、DESC。默认 DESC</p>",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源。drop 时只返回 Upload 项目</p>",
+          "example": "****",
+          "member": "string",
+          "name": "Source",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按项目名称模糊搜索</p>",
+          "example": "makers-functions-demo",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProjectsResponse": {
+      "document": "DescribeProjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Project",
+          "name": "Projects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneCustomDomainsRequest": {
+      "document": "DescribeZoneCustomDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>只查询这些域名。不传则返回项目下的域名</p>",
+          "example": "无",
+          "member": "CustomDomainInput",
+          "name": "CustomDomains",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeZoneCustomDomainsResponse": {
+      "document": "DescribeZoneCustomDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ZoneDomain",
+          "name": "PagesDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DnsVerification": {
+      "document": "DNS 归属校验记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>记录类型，TXT</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TXT",
+          "member": "string",
+          "name": "RecordType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机记录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "******************************",
+          "member": "string",
+          "name": "Subdomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>记录值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reclaim-********************************",
+          "member": "string",
+          "name": "RecordValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvVar": {
+      "document": "环境变量。Env 缺省或空数组表示全局，写入时展开为项目当前全部环境",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>变量名，最长 255</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CAPI_TEST",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值，最长 1000</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "_",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量 ID。创建时不传</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2101",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注，最长 255</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "selftest",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效环境 slug，例如 Production、Preview。同 Key 的多行环境不能重叠</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Production\"]",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Environment": {
+      "document": "环境",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境标识，创建后不可改</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Production",
+          "member": "string",
+          "name": "Slug",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "生产",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Production、Preview、Custom</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Production",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>关联分支，支持通配</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"main\"]",
+          "member": "string",
+          "name": "Branches",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动部署。Production 恒为 true</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoDeploy",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的自定义域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"**\"]",
+          "member": "string",
+          "name": "CustomDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvironmentEnvVar",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-17T02:43:02.000Z",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-17T02:43:02.000Z",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvironmentEnvVar": {
+      "document": "环境上的变量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>变量 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key1",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value1",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备注</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "comment",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效环境 slug</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Preview\"]",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FileVerification": {
+      "document": "文件归属校验信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>校验文件路径</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "********************************************",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>校验文件内容</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "********************************",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ForceRedirectConfig": {
+      "document": "强制 HTTPS 跳转",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>on 或 off</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>301、302、307、308</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "302",
+          "member": "int64",
+          "name": "RedirectStatusCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "HstsConfig": {
+      "document": "HSTS 配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>on 或 off</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>有效期，秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MaxAge",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>on 或 off</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "IncludeSubDomains",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>on 或 off</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Preload",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyProjectEnvsRequest": {
+      "document": "ModifyProjectEnvs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要写入的环境变量</p>",
+          "example": "无",
+          "member": "EnvVar",
+          "name": "EnvVars",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectEnvsResponse": {
+      "document": "ModifyProjectEnvs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectRequest": {
+      "document": "ModifyProject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Makers 站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>",
+          "example": "**************",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目根目录</p>",
+          "example": "/",
+          "member": "string",
+          "name": "RootDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建产物目录</p>",
+          "example": "dist",
+          "member": "string",
+          "name": "OutputDir",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建命令</p>",
+          "example": "npm run build",
+          "member": "string",
+          "name": "BuildCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装命令</p>",
+          "example": "npm install",
+          "member": "string",
+          "name": "InstallCmd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架</p>",
+          "example": "Other",
+          "member": "string",
+          "name": "Framework",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>封面地址</p>",
+          "example": "**************************************************************",
+          "member": "string",
+          "name": "CoverUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Node.js 版本</p>",
+          "example": "22.11.0",
+          "member": "string",
+          "name": "NodeJsVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyProjectResponse": {
+      "document": "ModifyProject返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneCustomDomainEnvRequest": {
+      "document": "ModifyZoneCustomDomainEnv请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID</p>",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>",
+          "example": "************************",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标环境 slug</p>",
+          "example": "Preview",
+          "member": "string",
+          "name": "Env",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyZoneCustomDomainEnvResponse": {
+      "document": "ModifyZoneCustomDomainEnv返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "************************",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>切换后的环境 slug</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Preview",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NsVerification": {
+      "document": "NS 归属校验信息。Makers 目前恒为 null",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>NS 服务器</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"String\"]",
+          "member": "string",
+          "name": "NameServers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OwnershipVerification": {
+      "document": "域名归属校验信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>DNS 校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DnsVerification",
+          "name": "DnsVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileVerification",
+          "name": "FileVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>NS 校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NsVerification",
+          "name": "NsVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Project": {
+      "document": "项目。字段与 DescribeProjects 的实际返回一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "landing-page-demo",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目状态。Normal、Ban、Unlink、Process、Pending、Offline</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pending",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>加速区域。mainland、overseas、global</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "overseas",
+          "member": "string",
+          "name": "Area",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>代码来源。Github、Gitee、Coding、Upload、Gitlab、Bitbucket、Cnb</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Github",
+          "member": "string",
+          "name": "Provider",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建来源。Template、Custom、CLI、Guest</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Channel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预设域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**************************************************",
+          "member": "string",
+          "name": "PresetDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预设域名状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "PresetDomainStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目根目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "./",
+          "member": "string",
+          "name": "RootDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建产物目录</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "out",
+          "member": "string",
+          "name": "OutputDir",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "BuildCmd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>安装命令</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "string",
+          "name": "InstallCmd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>框架</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "react",
+          "member": "string",
+          "name": "Framework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Node.js 版本</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22.11.0",
+          "member": "string",
+          "name": "NodejsVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github*******************************",
+          "member": "string",
+          "name": "RepoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库所有者</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*********",
+          "member": "string",
+          "name": "RepoOwner",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>仓库名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "deepseek-harness",
+          "member": "string",
+          "name": "RepoName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>生产分支</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "main",
+          "member": "string",
+          "name": "RepoBranch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览分支</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"main\"]",
+          "member": "string",
+          "name": "RepoPreBranches",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Regions",
+          "name": "Regions",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectEnvVar",
+          "name": "EnvVars",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomDomainItem",
+          "name": "CustomDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近一次部署</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectDeployment",
+          "name": "Deployment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否 Agent 项目。1 是，0 否</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsAgent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Agent 框架。非 Agent 项目为空</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "openai-sdk",
+          "member": "string",
+          "name": "AgentFramework",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否命中用户级泛域名。1 是，0 否</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsTld",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-18T07:27:10.623Z",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-09-18T07:27:11.970Z",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectDeployment": {
+      "document": "项目最近一次部署",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>部署 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "************",
+          "member": "string",
+          "name": "DeploymentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>项目 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "makers-************",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>部署状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Failed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>构建耗时，单位毫秒</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "21295",
+          "member": "string",
+          "name": "BuildCost",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>触发来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*****",
+          "member": "string",
+          "name": "ViaMeta",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>环境 slug</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Preview",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>分支</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "main",
+          "member": "string",
+          "name": "RepoBranch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交哈希</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "****************************************",
+          "member": "string",
+          "name": "RepoCommitHash",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>提交说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*************************************************************************************",
+          "member": "string",
+          "name": "RepoCommitMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>预览地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "****************************************************",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>封面地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://*******************************************************************",
+          "member": "string",
+          "name": "CoverUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-14T08:55:06.918Z",
+          "member": "string",
+          "name": "CreatedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2026-11-14T08:55:53.000Z",
+          "member": "string",
+          "name": "ModifiedOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次部署使用的仓库地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://github.com*************************************",
+          "member": "string",
+          "name": "DplRepoUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectEnvVar": {
+      "document": "项目列表里返回的环境变量，只有键和值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>变量名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*********",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>变量值</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "***************************************************",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProjectFilter": {
+      "document": "项目列表过滤条件。同一条件的 Values 之间为或",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>过滤字段。ProjectId、Name、Status、Provider</p>",
+          "example": "Name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤值</p>",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "Regions": {
+      "document": "项目部署地域",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>中国大陆地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "Mainland",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>海外地域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"string\"]",
+          "member": "string",
+          "name": "Overseas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SwitchConfig": {
+      "document": "开关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>on 或 off</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "off",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneDomain": {
+      "document": "站点下的自定义域名",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Custom 或 Preset</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*************************",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名状态</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "init",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定的环境 slug，默认 Production</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Production",
+          "member": "string",
+          "name": "Env",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>站点 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-************",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>加速区域</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "global",
+          "member": "string",
+          "name": "Area",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>CNAME</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "**********************************************************************************",
+          "member": "string",
+          "name": "Cname",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>主域名</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*********",
+          "member": "string",
+          "name": "MainDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>IPv6</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchConfig",
+          "name": "Ipv6",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>HTTP/2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchConfig",
+          "name": "Http2",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>OCSP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchConfig",
+          "name": "OcspStapling",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>强制 HTTPS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ForceRedirectConfig",
+          "name": "ForceRedirect",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>HSTS</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HstsConfig",
+          "name": "Hsts",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>归属校验</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OwnershipVerification",
+          "name": "OwnershipVerification",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

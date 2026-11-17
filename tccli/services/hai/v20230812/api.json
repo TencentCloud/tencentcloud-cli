@@ -3428,7 +3428,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务名称",
+          "document": "<p>服务名称</p>",
           "example": "Qwen3-Reranker-8B",
           "member": "string",
           "name": "ServiceName",
@@ -3439,7 +3439,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>付费方式：POSTPAID_BY_HOUR 按量后付费，PREPAID_BY_MONTH 包年包月，SPOT 竞价售卖（竞价需先调用 BidSpotInferService 对套餐出价）</p>",
+          "document": "<p>付费方式</p><p>枚举值：</p><ul><li>POSTPAID_BY_HOUR： 按量后付费</li><li>PREPAID_BY_MONTH： 包年包月</li><li>SPOT： 竞价售卖</li></ul>",
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ServiceChargeType",

@@ -40,12 +40,28 @@
         "title": "示例1"
       }
     ],
+    "CreateInstanceAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-p04nodnb\",\n    \"AccountName\": \"test-read-only\",\n    \"AccountPassword\": \"Test123456\",\n    \"ReadonlyPolicy\": [\n        \"master\"\n    ],\n    \"Privilege\": \"r\",\n    \"Remark\": \"测试只读\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4294994438,\n        \"RequestId\": \"7fa233af-6482-458a-b6cf-a0523b6ff5d4\"\n    }\n}",
+        "title": "创建只读账号"
+      }
+    ],
     "CreateInstances": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstances\n<公共请求参数>\n\n{\n    \"TypeId\": 12,\n    \"UniqVpcId\": \"vpc-f76wgk85\",\n    \"UniqSubnetId\": \"subnet-jsmdnv1y\",\n    \"BillingMode\": 0,\n    \"GoodsNum\": 1,\n    \"Period\": 1,\n    \"ShardNum\": 3,\n    \"ReplicasNum\": 1,\n    \"MachineMemory\": 8,\n    \"ZoneId\": 100006,\n    \"InstanceName\": \"name1\",\n    \"Password\": \"Test123456\",\n    \"DiskSize\": 100,\n    \"MachineCpu\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"DealId\": \"20260706185023127858071\",\n        \"DealName\": \"20260706185023127858071\",\n        \"InstanceIds\": [\n            \"kee-8wb1cgrb\"\n        ],\n        \"RequestId\": \"9af572e5-ab19-4bca-84c6-85109a1350e4\"\n    }\n}",
         "title": "创建存储板实例"
+      }
+    ],
+    "DeleteInstanceAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstanceAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-p04nodnb\",\n    \"AccountName\": \"test-rw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4294994444,\n        \"RequestId\": \"0ebaae3f-1d1e-49e7-9bb5-50696583f840\"\n    }\n}",
+        "title": "删除账号"
       }
     ],
     "DescribeAutoBackupConfig": [
@@ -70,6 +86,14 @@
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-9clk****\",\n    \"Product\": \"keewidb\"\n}",
         "output": "{\n    \"Response\": {\n        \"Groups\": [\n            {\n                \"CreateTime\": \"2021-10-30 16:11:08\",\n                \"Inbound\": [\n                    {\n                        \"Action\": \"ACCEPT\",\n                        \"AddressModule\": \"\",\n                        \"CidrIp\": \"10.0.0.0/8\",\n                        \"Desc\": \"\",\n                        \"Id\": \"\",\n                        \"IpProtocol\": \"tcp\",\n                        \"PortRange\": \"7777\",\n                        \"ServiceModule\": \"\"\n                    }\n                ],\n                \"Outbound\": [],\n                \"ProjectId\": 0,\n                \"SecurityGroupId\": \"sg-iqxw****\",\n                \"SecurityGroupName\": \"安全组4\",\n                \"SecurityGroupRemark\": \"自定义\"\n            }\n        ],\n        \"RequestId\": \"6bb17fcf-dd09-440b-806b-198261cff9a1\",\n        \"VIP\": \"10.0.16.44\",\n        \"VPort\": \"6379\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "DescribeInstanceAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-p04nodnb\",\n    \"Limit\": 100,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Accounts\": [\n            {\n                \"AccountName\": \"root\",\n                \"InstanceId\": \"kee-p04nodnb\",\n                \"Privilege\": \"rw\",\n                \"ReadonlyPolicy\": [\n                    \"replication\"\n                ],\n                \"Remark\": \"default\",\n                \"Status\": 2\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"5b761f9f-0240-4b44-9cdf-1b03b88da780\"\n    }\n}",
+        "title": "查询实例账号"
       }
     ],
     "DescribeInstanceBackups": [
@@ -246,6 +270,14 @@
         "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"Operation\": \"rename\",\n    \"InstanceIds\": [\n        \"kee-4nmv****\",\n        \"kee-9clkb977\"\n    ],\n    \"InstanceNames\": [\n        \"重命名1\",\n        \"重命名2\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f62b5c24-8d4a-4c00-97f5-3810fa5f76c6\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "ModifyInstanceAccount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: keewidb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"kee-p04nodnb\",\n    \"AccountName\": \"test-read-only\",\n    \"Remark\": \"this is a read only account\",\n    \"ReadonlyPolicy\": [\n        \"replication\"\n    ],\n    \"Privilege\": \"r\",\n    \"AccountPassword\": \"Te******56\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 4294994446,\n        \"RequestId\": \"bd49e44c-7876-4880-bf9e-23be1709b94c\"\n    }\n}",
+        "title": "修改实例只读路由策略"
       }
     ],
     "ModifyInstanceParams": [

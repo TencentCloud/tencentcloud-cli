@@ -1,0 +1,133 @@
+{
+  "actions": {
+    "CreateDeployment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeployment\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"ViaMeta\": \"Upload\",\n    \"Env\": \"Production\",\n    \"Provider\": \"Upload\",\n    \"DistType\": \"Folder\",\n    \"TempBucketPath\": \"***************************************\",\n    \"RepoBranch\": \"main\",\n    \"RepoCommitHash\": \"abc1234\",\n    \"RepoCommitMsg\": \"docs example\",\n    \"BuildFrom\": \"Upload\",\n    \"TemplateId\": \"tpl-demo\",\n    \"CiSpec\": \"default\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeploymentId\": \"************\",\n        \"RequestId\": \"7f059411-b286-47bf-a306-d18c2bea4034\"\n    }\n}",
+        "title": "创建构建"
+      }
+    ],
+    "CreateProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProject\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"Name\": \"*************\",\n    \"Channel\": \"Custom\",\n    \"Provider\": \"Upload\",\n    \"Source\": \"capi-selftest\",\n    \"Area\": \"overseas\",\n    \"NodeJsVersion\": \"20.18.0\",\n    \"RootDir\": \"/\",\n    \"OutputDir\": \"dist\",\n    \"BuildCmd\": \"npm run build\",\n    \"InstallCmd\": \"npm install\",\n    \"Framework\": \"Other\",\n    \"TemplateId\": \"tpl-demo\",\n    \"RepoUrl\": \"https://***********************\",\n    \"RepoOwner\": \"example\",\n    \"RepoName\": \"demo\",\n    \"RepoBranch\": \"main\",\n    \"Namespace\": \"demo\",\n    \"CodingProjectId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ProjectId\": \"makers-************\",\n        \"RequestId\": \"c8ce425a-6e77-485f-b56d-c538a2ea28b5\"\n    }\n}",
+        "title": "创建项目"
+      }
+    ],
+    "CreateZoneCustomDomain": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZoneCustomDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"Domain\": \"************************\",\n    \"Env\": \"Production\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"************************\",\n        \"Id\": \"***************\",\n        \"RequestId\": \"17e19340-013c-4451-aee2-b3f2cf48ab9d\"\n    }\n}",
+        "title": "绑定自定义域名"
+      }
+    ],
+    "DeleteProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProject\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21ccf127-4795-4daa-8c02-1b38f5ee92fb\"\n    }\n}",
+        "title": "删除项目"
+      }
+    ],
+    "DeleteProjectCustomDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjectCustomDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"CustomDomains\": [\n        \"************************\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-0000-0000-000000000000\"\n    }\n}",
+        "title": "删除项目自定义域名"
+      }
+    ],
+    "DeleteProjectEnvs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProjectEnvs\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"EnvVars\": [\n        {\n            \"Key\": \"CAPI_TEST\",\n            \"Value\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b993a11a-ec2b-4dcb-aa17-8adb9ebbcb6e\"\n    }\n}",
+        "title": "删除项目环境变量"
+      }
+    ],
+    "DescribeCosTempToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosTempToken\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectName\": \"**************\",\n    \"ProjectId\": \"makers-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Bucket\": \"*************************\",\n        \"Credentials\": {\n            \"TmpSecretId\": \"********************************************************************\",\n            \"TmpSecretKey\": \"********************************************\",\n            \"Token\": \"***********************************************************************************************_*********************************************************************_******************************_*********************************************************************************************************************************************************************************************************************************************************************************************************************************************_*******************************************************************************_**************************************************************************************************************************************7**************************************************************_***********************\"\n        },\n        \"Expiration\": \"2026-11-16T12:19:07Z\",\n        \"ExpiredTime\": 1794831547,\n        \"Region\": \"ap-shanghai\",\n        \"TargetPath\": \"***************************************\",\n        \"RequestId\": \"cb78930b-ef6e-44c6-ba35-c10114266df7\"\n    }\n}",
+        "title": "获取上传临时密钥"
+      }
+    ],
+    "DescribeDeploymentLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeploymentLog\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"DeploymentId\": \"************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogUrl\": \"https://***************************************************************************\",\n        \"RequestId\": \"4a52ce6b-429c-4846-b571-075e05665547\"\n    }\n}",
+        "title": "获取构建日志"
+      }
+    ],
+    "DescribeDeployments": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeployments\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"DeploymentIds\": [\n        \"************\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderBy\": \"CreatedOn\",\n    \"OrderType\": \"DESC\",\n    \"StartTime\": \"2026-11-16 00:00:00\",\n    \"EndTime\": \"2026-11-17 00:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Deployments\": [\n            {\n                \"BuildCost\": \"10917\",\n                \"Code\": 18,\n                \"CoverUrl\": null,\n                \"CreatedOn\": \"2026-11-16T11:43:15.067Z\",\n                \"DeploymentId\": \"************\",\n                \"DplRepoUrl\": \"https://***********************\",\n                \"Env\": \"Production\",\n                \"MetaData\": null,\n                \"ModifiedOn\": \"2026-11-16T11:43:30.000Z\",\n                \"OriginalStatus\": \"Failed\",\n                \"PreviewUrl\": \"https://*****************************************************\",\n                \"ProjectId\": \"makers-************\",\n                \"ProjectUrl\": \"https://************************************************\",\n                \"RepoBranch\": \"main\",\n                \"RepoCommitHash\": \"abc1234\",\n                \"RepoCommitMsg\": \"docs example\",\n                \"Status\": \"Failed\",\n                \"UsedInProd\": true,\n                \"ViaMeta\": \"Upload\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"48ec6c28-cc3a-4b08-9b09-43b15a5af85b\"\n    }\n}",
+        "title": "获取构建记录列表"
+      }
+    ],
+    "DescribeEnvironments": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvironments\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Environments\": [\n            {\n                \"AutoDeploy\": true,\n                \"Branches\": [\n                    \"main\"\n                ],\n                \"CreatedOn\": \"2026-11-16T11:38:00.000Z\",\n                \"CustomDomains\": [],\n                \"EnvVars\": [],\n                \"ModifiedOn\": \"2026-11-16T11:38:00.000Z\",\n                \"Name\": \"生产\",\n                \"Slug\": \"Production\",\n                \"Type\": \"Production\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"d3ce7714-ef4c-4a84-a466-557253ce750f\"\n    }\n}",
+        "title": "查询环境列表"
+      }
+    ],
+    "DescribeProjectEnvs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjectEnvs\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"Env\": \"Production\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EnvVars\": [\n            {\n                \"Comment\": null,\n                \"Env\": [\n                    \"Production\"\n                ],\n                \"Id\": 2098,\n                \"Key\": \"CAPI_TEST\",\n                \"Value\": \"1\"\n            }\n        ],\n        \"RequestId\": \"06a8bdaa-d09c-40ce-949e-7511e1ae7b69\"\n    }\n}",
+        "title": "获取项目环境变量"
+      }
+    ],
+    "DescribeProjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProjects\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3v5*********\",\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"ProjectIds\": [\n        \"makers-yvl*********\"\n    ],\n    \"OrderBy\": \"CreatedOn\",\n    \"OrderType\": \"DESC\",\n    \"Source\": \"****\",\n    \"Query\": \"makers-functions-demo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Projects\": [\n            {\n                \"AgentFramework\": null,\n                \"Area\": \"********\",\n                \"BuildCmd\": null,\n                \"CreatedOn\": \"2026-11-11T09:06:43.608Z\",\n                \"CustomDomains\": [],\n                \"Deployment\": {\n                    \"BuildCost\": \"18275\",\n                    \"CoverUrl\": null,\n                    \"CreatedOn\": \"2026-11-11T09:06:45.114Z\",\n                    \"DeploymentId\": \"dpdol*******\",\n                    \"DplRepoUrl\": null,\n                    \"Env\": \"Production\",\n                    \"ModifiedOn\": \"2026-11-11T09:07:07.000Z\",\n                    \"PreviewUrl\": \"https://************************************************************************\",\n                    \"ProjectId\": \"makers-ji9*********\",\n                    \"RepoBranch\": null,\n                    \"RepoCommitHash\": \"\",\n                    \"RepoCommitMsg\": null,\n                    \"Status\": \"Success\",\n                    \"ViaMeta\": \"Upload\"\n                },\n                \"EnvVars\": [],\n                \"Framework\": null,\n                \"InstallCmd\": null,\n                \"IsAgent\": 0,\n                \"IsTld\": 0,\n                \"ModifiedOn\": \"2026-11-11T09:06:45.114Z\",\n                \"Name\": \"makers*******************************\",\n                \"NodejsVersion\": \"22.11.0\",\n                \"OutputDir\": null,\n                \"PresetDomain\": \"makers******************************************************************\",\n                \"PresetDomainStatus\": \"\",\n                \"ProjectId\": \"makers-ji9*********\",\n                \"Provider\": \"Upload\",\n                \"Regions\": null,\n                \"RepoBranch\": null,\n                \"RepoName\": null,\n                \"RepoOwner\": null,\n                \"RepoPreBranches\": null,\n                \"RepoUrl\": null,\n                \"RootDir\": null,\n                \"Status\": \"Normal\",\n                \"ZoneId\": \"zone-3v5*********\"\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"b3ed47d5-b660-4f6c-b670-c2edd41a9173\"\n    }\n}",
+        "title": "获取用户项目列表"
+      }
+    ],
+    "DescribeZoneCustomDomains": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneCustomDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PagesDomains\": [\n            {\n                \"Area\": \"overseas\",\n                \"Cname\": null,\n                \"Domain\": \"************************\",\n                \"Env\": \"Production\",\n                \"ForceRedirect\": {\n                    \"RedirectStatusCode\": 302,\n                    \"Switch\": \"off\"\n                },\n                \"Hsts\": {\n                    \"IncludeSubDomains\": \"off\",\n                    \"MaxAge\": 0,\n                    \"Preload\": \"off\",\n                    \"Switch\": \"off\"\n                },\n                \"Http2\": {\n                    \"Switch\": \"off\"\n                },\n                \"Ipv6\": {\n                    \"Switch\": \"off\"\n                },\n                \"MainDomain\": \"*********\",\n                \"OcspStapling\": {\n                    \"Switch\": \"off\"\n                },\n                \"OwnershipVerification\": {\n                    \"DnsVerification\": {\n                        \"RecordType\": \"TXT\",\n                        \"RecordValue\": \"reclaim-********************************\",\n                        \"Subdomain\": \"*****************************\"\n                    },\n                    \"FileVerification\": {\n                        \"Content\": \"********************************\",\n                        \"Path\": \"********************************************\"\n                    },\n                    \"NsVerification\": null\n                },\n                \"Status\": \"init\",\n                \"Type\": \"Custom\",\n                \"ZoneId\": \"zone-************\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"ef221935-2ac7-4f9c-acbb-d28e7e7a85e3\"\n    }\n}",
+        "title": "查询自定义域名"
+      }
+    ],
+    "ModifyProject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProject\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"Name\": \"**************\",\n    \"RootDir\": \"/\",\n    \"OutputDir\": \"dist\",\n    \"BuildCmd\": \"npm run build\",\n    \"InstallCmd\": \"npm install\",\n    \"Framework\": \"Other\",\n    \"CoverUrl\": \"**************************************************************\",\n    \"NodeJsVersion\": \"22.11.0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"63fb7e9d-cb30-43c0-8e1a-868412477911\"\n    }\n}",
+        "title": "编辑项目基本信息"
+      }
+    ],
+    "ModifyProjectEnvs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProjectEnvs\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"EnvVars\": [\n        {\n            \"Key\": \"CAPI_TEST\",\n            \"Value\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3fd4d1f8-4c72-4679-89ed-2d3ce85a1b19\"\n    }\n}",
+        "title": "编辑项目环境变量"
+      }
+    ],
+    "ModifyZoneCustomDomainEnv": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyZoneCustomDomainEnv\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-************\",\n    \"ProjectId\": \"makers-************\",\n    \"Domain\": \"************************\",\n    \"Env\": \"Preview\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Domain\": \"************************\",\n        \"Env\": \"Preview\",\n        \"RequestId\": \"bb2a6c27-e2f8-436f-ab46-c0fddb4cb85b\"\n    }\n}",
+        "title": "修改自定义域名环境"
+      }
+    ]
+  },
+  "version": "1.0"
+}

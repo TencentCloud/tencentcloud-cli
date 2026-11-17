@@ -16,6 +16,14 @@
         "title": "算式识别示例代码"
       }
     ],
+    "AuditMaterialAgent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuditMaterialAgent\n<公共请求参数>\n\n{\n    \"AgentType\": \"StorePicAudit\",\n    \"ImageUrl\": \"https://engine-private-1258344699.cos.ap-guangzhou.myqcloud.com/test/kaibin/%E7%A4%BA%E4%BE%8B%E4%BA%8C%E9%97%A8%E5%A4%B4%E7%85%A7%E6%9C%89%E6%B0%B4%E5%8D%B0.jpg?q-sign-algorithm=sha1&q-**********gT*FEwNXR4SZP0KNAhxwf8KFsEJ7e&q-sign-time=1793793983;1793801183&q-key-time=1793793983;1793801183&q-header-list=host&q-url-param-list=&q-signature=43c532b0554a5060e9ab7e9a95a7083c94455cb1\",\n    \"ImageBase64\": \"base64\",\n    \"NeedSceneType\": true,\n    \"StoreInfoHint\": \"星星便利店\",\n    \"IgnoreWatermarkCategories\": [\n        \"PhoneCam\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Angle\": 4.170954704284668,\n        \"RemakeScreen\": {\n            \"IsWarn\": true,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.735259\n        },\n        \"SceneType\": \"各类杂货店,便利店（5331）、瓶装酒零售店（5921）、各类食品店及专门食品零售店（5499）\",\n        \"Screenshot\": {\n            \"IsWarn\": true,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.735259\n        },\n        \"StoreInfo\": [\n            {\n                \"Name\": \"商店名称\",\n                \"Rect\": {\n                    \"Height\": 386,\n                    \"Width\": 990,\n                    \"X\": 307,\n                    \"Y\": -30\n                },\n                \"Value\": \"芙蓉兴盛\"\n            }\n        ],\n        \"StoreLabel\": [\n            \"标准门头照\"\n        ],\n        \"Synthesis\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.0009727084\n        },\n        \"Tamper\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0\n        },\n        \"Template\": {\n            \"IsWarn\": false,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.415345\n        },\n        \"TextWatermark\": {\n            \"IsWarn\": true,\n            \"Polygon\": [],\n            \"RiskConfidence\": 0.9999729\n        },\n        \"WatermarkContent\": \"仅限商户注册，他用无效|商户入网专用\",\n        \"RequestId\": \"b73c12fb-0b91-4f01-90cd-03131dc362f3\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "BankCardOCR": [
       {
         "document": "",

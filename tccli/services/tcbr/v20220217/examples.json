@@ -150,6 +150,14 @@
         "title": "示例"
       }
     ],
+    "ModifyStableIPStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyStableIPStatus\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-123\",\n    \"Status\": \"ON\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5bb552da-0906-44cb-98f6-87a8ad09d3a1\",\n        \"TaskId\": 7494\n    }\n}",
+        "title": "修改固定 IP 状态"
+      }
+    ],
     "OperateServerManage": [
       {
         "document": "",

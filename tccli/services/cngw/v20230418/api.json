@@ -15304,6 +15304,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>",
+          "example": "无",
+          "member": "KongUserTagKV",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间，单位ms</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由超时配置的来源。</p>",
+          "example": "Service",
+          "member": "string",
+          "name": "TimeoutSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -15479,7 +15512,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "目标主机地址",
+          "document": "<p>目标主机地址</p>",
           "example": "8.8.8.8",
           "member": "string",
           "name": "Host",
@@ -15490,7 +15523,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "100",
           "member": "int64",
           "name": "Port",
@@ -15501,7 +15534,7 @@
         },
         {
           "disabled": false,
-          "document": "权重",
+          "document": "<p>权重</p>",
           "example": "10",
           "member": "int64",
           "name": "Weight",
@@ -15512,7 +15545,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
@@ -15523,7 +15556,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例ID",
+          "document": "<p>CVM实例ID</p>",
           "example": "ins-ze3124da",
           "member": "string",
           "name": "CvmInstanceId",
@@ -15534,7 +15567,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例名称",
+          "document": "<p>CVM实例名称</p>",
           "example": "在线学习服务",
           "member": "string",
           "name": "CvmInstanceName",
@@ -15545,7 +15578,7 @@
         },
         {
           "disabled": false,
-          "document": "健康状态",
+          "document": "<p>健康状态</p>",
           "example": "HEALTHY",
           "member": "string",
           "name": "Health",
@@ -15556,7 +15589,18 @@
         },
         {
           "disabled": false,
-          "document": "Target的来源",
+          "document": "<p>Target ID</p>",
+          "example": "nsow23-2dowe2-jsi83",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Target的来源</p>",
           "example": "AutoScaling",
           "member": "string",
           "name": "Source",
@@ -15567,7 +15611,7 @@
         },
         {
           "disabled": false,
-          "document": "target标签",
+          "document": "<p>target标签</p>",
           "example": "[\"learn\"]",
           "member": "string",
           "name": "Tags",
@@ -15834,6 +15878,45 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongUserTagKV": {
+      "document": "用户业务标签的 KV 表示（路由/服务标签分组）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签 ID</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "TagId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签 Key</p>",
+          "example": "环境",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签 Value</p>",
+          "example": "生产",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

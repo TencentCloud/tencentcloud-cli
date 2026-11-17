@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateRegistryRecord": {
-      "document": "统一创建 Registry Record（含 revision 1）。请求通过 DescriptorType 与严格内容输入 Union 选择底层类型：MCPSource / AgentSource / SkillSource / CustomDescriptors 四选一，必须与 DescriptorType 对应。不接受 RecordId 或 ChangeLog；同名 Record 返回冲突，不隐式追加 Version。追加 Version 请使用 UpdateRegistryRecord。",
+      "document": "统一创建 Registry Record（含 revision 1）。MCPSource / AgentSource / SkillSource / CustomDescriptors / FileSource 五选一，必须与 DescriptorType 对应。PLUGIN 使用 FileSource.Type=FILE 上传通用文件，Registry 不校验插件内容格式和语义，运行端负责解析和加载。SupportedHarnessVersions 为该版本支持的 HarnessVersionReference 对象列表，每项同时包含 HarnessEngine 和 HarnessEngineVersion，原样使用 DescribeHarnessEngineList 返回的选项；Metadata 为 Name/Value 字符串数组，Name 非空、小写且唯一，服务内部保存 map[string]string；两项属性省略时均保存空列表，不继承其他版本。不接受 RecordId 或 ChangeLog；同名 Record 返回冲突，不隐式追加 Version。追加 Version 请使用 UpdateRegistryRecord。",
       "input": "CreateRegistryRecordRequest",
       "name": "创建 Record",
       "output": "CreateRegistryRecordResponse",
@@ -110,6 +110,13 @@
       "input": "DeleteDeploymentRequest",
       "name": "删除 Deployment",
       "output": "DeleteDeploymentResponse",
+      "status": "online"
+    },
+    "DeleteGPUResourceGroup": {
+      "document": "同步删除当前租户的空 GPU 资源组。资源组内不能存在交付中、已生效、已隔离、销毁中或其他未完成清理的 GPU 实例，也不能有剩余占用绑定或未删除的关联沙箱工具，否则返回 ResourceInUse。已销毁或补偿清理完成的历史记录不阻止删除。同租户重复删除已删除的资源组返回成功；资源组不存在或不属于当前租户时返回 ResourceNotFound。本接口仅软删除资源组，不执行退订退款、停止沙箱或释放底层 VM，历史计费记录保留。",
+      "input": "DeleteGPUResourceGroupRequest",
+      "name": "删除空GPU资源组",
+      "output": "DeleteGPUResourceGroupResponse",
       "status": "online"
     },
     "DeletePreCacheImage": {
@@ -196,6 +203,27 @@
       "output": "DescribeEventsResponse",
       "status": "online"
     },
+    "DescribeGPUResourceGroups": {
+      "document": "查询当前地域、当前租户的 GPU 资源组及统计。通过 resource-group-id 精确过滤可查询组详情，仍返回数组；无匹配项返回空数组。资源组可以为空，商业期限和续费标记逐台保存。",
+      "input": "DescribeGPUResourceGroupsRequest",
+      "name": "查询GPU资源组",
+      "output": "DescribeGPUResourceGroupsResponse",
+      "status": "online"
+    },
+    "DescribeGPUResourceSpecs": {
+      "document": "查询当前地域可售 GPU 规格与当前租户可购买额度。GPUType、CPU、Memory、GPUNum 必须同时提供或同时省略；精确过滤时按四项匹配。不返回底层机型、资源池或计费标签。总显存为单台全部 GPU 的显存之和。",
+      "input": "DescribeGPUResourceSpecsRequest",
+      "name": "查询GPU可售规格及额度",
+      "output": "DescribeGPUResourceSpecsResponse",
+      "status": "online"
+    },
+    "DescribeGPUResources": {
+      "document": "查询当前地域、当前租户的逐台 GPU 商业资源及占用状态。仅展示当前资源，不展示已销毁或补偿完成的失败资源；先筛选（含占用状态）再统计和分页。",
+      "input": "DescribeGPUResourcesRequest",
+      "name": "查询GPU资源",
+      "output": "DescribeGPUResourcesResponse",
+      "status": "online"
+    },
     "DescribePreCacheImageList": {
       "document": "查询镜像预热列表",
       "input": "DescribePreCacheImageListRequest",
@@ -239,14 +267,14 @@
       "status": "online"
     },
     "DescribeRegistryRecord": {
-      "document": "查询 Record 详情和其中一个 Version。请求可通过互斥的 VersionId 或 Label 选择 Version；均省略时默认 Label=stable。取代原 DescribeRegistryRecordVersion。",
+      "document": "RegistryId 必填。大写常量 MARKETPLACE 表示服务端主 YAML marketplace.registry_ids 配置的工具市场；真实 reg-xxx 表示具体 Registry。省略、空字符串、null 或其他大小写均拒绝。市场读取要求已认证身份，只返回配置来源内未删除、已审批的可读版本，文件还须 READY 和有效制品；不回退私有目录。 RecordId 必填，VersionId/Label 互斥，均省略解析 stable；市场无可读 stable 返回 ResourceNotFound，不回退 latest。市场 Record/Version 使用公开字段投影，隐藏创建者、租户、审批动作和 SourceConfig。普通模式保留原 AppID/归属，由后端执行 Record 级 CAM batch 检查。",
       "input": "DescribeRegistryRecordRequest",
       "name": "查询 Record 详情",
       "output": "DescribeRegistryRecordResponse",
       "status": "online"
     },
     "DescribeRegistryRecordList": {
-      "document": "分页查询 Registry 下的 Record 列表。list 类接口不接入 CAM 转发鉴权；业务侧按 CAM 二次过滤。",
+      "document": "RegistryId 必填。大写常量 MARKETPLACE 表示服务端主 YAML marketplace.registry_ids 配置的工具市场；真实 reg-xxx 表示具体 Registry。省略、空字符串、null 或其他大小写均拒绝。市场读取要求已认证身份，只返回配置来源内未删除、已审批的可读版本，文件还须 READY 和有效制品；不回退私有目录。 返回至少有一个市场可读版本的 Record；去重、过滤、计数后分页，VersionCount/LabelSet 只反映市场可读版本，隐藏租户及创建者信息。真实 RegistryId 保留原 AppID/CAM 资源过滤，接口由后端自行鉴权。",
       "input": "DescribeRegistryRecordListRequest",
       "name": "查询 Record 列表",
       "output": "DescribeRegistryRecordListResponse",
@@ -336,6 +364,13 @@
       "output": "ModifyDeploymentResponse",
       "status": "online"
     },
+    "ModifyGPUResourceGroup": {
+      "document": "仅同步修改当前租户 GPU 资源组的名称，允许重名、同名重试；不修改规格、数量、计费期限或续费标记。不存在或不属于当前租户的资源组返回 ResourceNotFound。",
+      "input": "ModifyGPUResourceGroupRequest",
+      "name": "修改GPU资源组名称",
+      "output": "ModifyGPUResourceGroupResponse",
+      "status": "online"
+    },
     "ModifySession": {
       "document": "修改会话信息",
       "input": "ModifySessionRequest",
@@ -407,7 +442,7 @@
       "status": "online"
     },
     "UpdateRegistryRecord": {
-      "document": "更新 Registry Record。两种互斥模式：①Record 更新模式：不提交任何 Source / CustomDescriptors，可通过 Description、LabelMutations 修改元数据与 Label（至少提交一项）；②Version 创建模式：提交且仅提交一种与现有 DescriptorType 匹配的内容输入，可选 VersionName / ChangeLog，禁止 Description / LabelMutations，服务端在 Record 下创建下一个 Revision。取代原 ChangeRegistryRecordStableVersion / RollbackRegistryRecordVersion / Create*RegistryRecordVersion。",
+      "document": "更新 Registry Record。两种互斥模式：①Record 更新模式：不提交任何 Source / CustomDescriptors，可通过 Description、LabelMutations 修改元数据与 Label（至少提交一项）；②Version 创建模式：提交且仅提交一种与现有 DescriptorType 匹配的内容输入，可选 VersionName / ChangeLog / SupportedHarnessVersions / Metadata，禁止 Description / LabelMutations，服务端创建下一个 Revision。PLUGIN 使用 FileSource.Type=FILE 上传原始文件；FileSource.Type=VERSION 可为 Skill 或 Plugin 复用同一 Record 下未删除且 READY 的文件版本，填写 SourceVersionId，不复制来源版本的 Metadata 或 SupportedHarnessVersions。Metadata 以 Name/Value 字符串数组传输，所有层级 key 必须小写；两项版本属性省略时分别为空对象和空列表，不继承上一版本。取代原 ChangeRegistryRecordStableVersion / RollbackRegistryRecordVersion / Create*RegistryRecordVersion。",
       "input": "UpdateRegistryRecordRequest",
       "name": "更新 Record 可变元数据",
       "output": "UpdateRegistryRecordResponse",
@@ -1102,6 +1137,56 @@
       ],
       "usage": "both"
     },
+    "CloudFileSourceInput": {
+      "document": "通用文件来源。FILE 用于 Plugin 原始文件上传，SizeBytes 必填，SHA256 可选；VERSION 仅用于 UpdateRegistryRecord 复用同一 Record 的 READY 文件版本，仅填写 SourceVersionId。与其他来源互斥，不校验插件格式或语义。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>通用文件来源类型，区分大小写。</p><p>枚举值：</p><ul><li>FILE： 创建 Plugin 文件版本，必须填写 SizeBytes，SHA256 可选；随后通过预签名 PUT 链接上传原始文件。</li><li>VERSION： 仅 UpdateRegistryRecord 支持，复用同一 Skill 或 Plugin Record 的 READY 文件版本，仅填写 SourceVersionId。</li></ul><p>Registry 不做 Plugin 文件内容格式或语义校验，由运行端解析加载。VERSION 不继承来源版本的 Metadata 和 SupportedHarnessVersions。</p>",
+          "example": "FILE",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待上传 Plugin 文件的原始字节数。FILE 时必填，VERSION 时禁止填写。</p><p>取值范围：[1, 54525952]</p><p>单位：字节</p><p>上限 52 MiB，服务端校验实际上传文件的字节数；不推断文件格式。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SizeBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>期望的文件 SHA-256 摘要。FILE 时可选，VERSION 时禁止填写。</p><p>参数格式：64 位小写十六进制字符串。</p><p>提供时服务端计算实际文件摘要并比对；省略时仍计算摘要并在 READY 版本的 ContentSHA256 中返回。</p>",
+          "example": "2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881",
+          "member": "string",
+          "name": "SHA256",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于复用文件内容的来源 Version ID。</p><p>参数格式：rv- 前缀的 Version ID。</p><p>入参限制：VERSION 时必填，FILE 时禁止填写。只能在 UpdateRegistryRecord 中引用同一 Record 下未删除、内容 READY 且存在可用制品的 Skill 或 Plugin 文件版本。</p><p>只复用文件，不继承来源版本的 Metadata 和 SupportedHarnessVersions；不能跨 Record 或跨 Registry 复用。</p>",
+          "example": "rv-0123abcd",
+          "member": "string",
+          "name": "SourceVersionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CloudFilter": {
       "document": "通用过滤条件。Name 为字段名，Values 为字段候选值；字段间 AND、Values 内 OR。",
       "members": [
@@ -1175,7 +1260,7 @@
         {
           "disabled": false,
           "document": "<p>Record ID；格式 <code>rec-</code> + 8 位小写字母/数字。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "rec-hqrxvu1a",
+          "example": "rec-0123abcd",
           "member": "string",
           "name": "RecordId",
           "output_required": false,
@@ -1186,7 +1271,7 @@
         {
           "disabled": false,
           "document": "<p>所属 Registry ID。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "reg-n7a2l9no",
+          "example": "reg-0123abcd",
           "member": "string",
           "name": "RegistryId",
           "output_required": false,
@@ -1197,7 +1282,7 @@
         {
           "disabled": false,
           "document": "<p>Record 名称；同一 Registry 内可重复。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "forC",
+          "example": "example-plugin",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1208,7 +1293,7 @@
         {
           "disabled": false,
           "document": "<p>描述。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "导入测试",
+          "example": "示例 Plugin 文件资产",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -1219,7 +1304,7 @@
         {
           "disabled": false,
           "document": "<p>协议描述符类型；创建后不可变。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "CUSTOM",
+          "example": "PLUGIN",
           "member": "string",
           "name": "DescriptorType",
           "output_required": false,
@@ -1240,41 +1325,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>所属租户 AppId。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1457947897",
-          "member": "int64",
-          "name": "AppId",
-          "output_required": false,
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "<p>创建者主账号 UIN。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100051001552",
-          "member": "string",
-          "name": "CreatorUin",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "<p>创建者子账号 UIN；主账号直接创建时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "100051001552",
-          "member": "string",
-          "name": "CreatorSubAccountUin",
-          "output_required": false,
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "<p>创建时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2026-08-27T06:43:49Z",
+          "example": "2030-01-01T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
           "output_required": false,
@@ -1285,7 +1337,7 @@
         {
           "disabled": false,
           "document": "<p>最近一次更新时间。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2026-08-27T06:43:49Z",
+          "example": "2030-01-01T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
           "output_required": false,
@@ -1295,7 +1347,40 @@
         },
         {
           "disabled": false,
-          "document": "<p>Record 下未删除 Version 数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>所属租户 AppId。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1250000000",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者主账号 UIN。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000000001",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建者子账号 UIN；主账号直接创建时为空。</p><p>普通模式返回，MARKETPLACE 模式不返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000000002",
+          "member": "string",
+          "name": "CreatorSubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>Record 下未删除 Version 数量。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "VersionCount",
@@ -1306,7 +1391,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Record 下所有 Label Name（含未绑定 Label），包括系统 Label（stable / latest）和自定义 Label。仅名称，不含 VersionId、更新时间或操作者。</p><p>MARKETPLACE 模式仅统计市场可读版本。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"latest\"]",
           "member": "string",
           "name": "LabelSet",
@@ -2180,6 +2265,15 @@
           "name": "ImageRegistryType",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热类型</p><p>枚举值：</p><ul><li>image： 镜像预热</li><li>image_volume： 镜像卷预热</li></ul><p>默认值：image</p>",
+          "example": "image",
+          "member": "string",
+          "name": "PreCacheType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2251,7 +2345,7 @@
         {
           "disabled": false,
           "document": "<p>Record 名称，长度 1..255，同一租户、Registry 内按规范化 Name 唯一（大小写不敏感）；软删除后允许复用。</p>",
-          "example": "order-query",
+          "example": "example-plugin",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -2259,8 +2353,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>协议描述符类型。MCP / A2A / AGUI / CUSTOM / AGENT_SKILLS。Record 创建后不可修改。</p>",
-          "example": "MCP",
+          "document": "<p>资产类型。取值包括 MCP、A2A、AGUI、CUSTOM、AGENT_SKILLS 和 PLUGIN。Record 创建后不可修改。PLUGIN 按通用文件资产保存，由运行端解析和加载。</p>",
+          "example": "PLUGIN",
           "member": "string",
           "name": "DescriptorType",
           "required": true,
@@ -2269,7 +2363,7 @@
         {
           "disabled": false,
           "document": "<p>Record 描述，最大 4096 字符，可选，默认空。</p>",
-          "example": "订单查询 MCP 服务",
+          "example": "示例 Plugin 文件资产",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2278,7 +2372,7 @@
         {
           "disabled": false,
           "document": "<p>Revision 1 的展示名称，可选。</p>",
-          "example": "v1",
+          "example": "1.0.0",
           "member": "string",
           "name": "VersionName",
           "required": false,
@@ -2319,6 +2413,33 @@
           "name": "CustomDescriptors",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Plugin 通用文件来源。DescriptorType=PLUGIN 时必填，其他类型禁止。</p><p>入参限制：Create 仅支持 Type=FILE；声明 SizeBytes 为 1..54525952 字节，可选 SHA256 为 64 位小写十六进制摘要。</p><p>Registry 保存原始文件，不校验插件内容格式或语义；由运行端解析和加载。Skill 继续使用原 SkillSource。</p>",
+          "example": "无",
+          "member": "CloudFileSourceInput",
+          "name": "FileSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本版本支持的 HarnessVersionReference 对象列表；每项包含 HarnessEngine 和 HarnessEngineVersion，原样使用 DescribeHarnessEngineList 返回的选项。</p><p>入参限制：两个字段均必填，各为 1 至 128 字符的精确值，区分大小写，不含空白、通配符或版本范围；最多 128 项，按引擎与版本二元组去重。不接受旧字符串数组、null、缺少字段或额外字段。</p><p>省略或空数组表示未声明，不继承前一版本，不代表支持所有 Harness。兼容性按同一对象的引擎与版本共同判断。修改兼容声明需创建新 Version，文件资产可通过 FileSource.Type=VERSION 复用制品。</p>",
+          "example": "无",
+          "member": "HarnessVersionReference",
+          "name": "SupportedHarnessVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本元数据的 Name/Value 对象数组。</p><p>参数格式：每项仅包含必填的 Name、Value 两个字符串字段。Name 非空、小写且数组内唯一，不自动转换；重复 Name 即使 Value 相同也返回 InvalidParameter。Value 允许空字符串，保留大小写；不接受嵌套对象、数组或非字符串值。</p><p>默认值：空数组 []。创建新版本时省略或 [] 均为空，不继承；null、JSON 字符串和原生对象非法。响应按 Name 升序返回，旧 SQL NULL 归一为 []。服务内部使用 map[string]string，数据库 JSON 列保存对象。publisher 表示发布者展示名称；metadata.&lt;key&gt; 按完整小写名称精确筛选，规则不变。</p>",
+          "example": "无",
+          "member": "MetadataEntry",
+          "name": "Metadata",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2358,8 +2479,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：TAR 包上传预签名 URL。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://cos.example/upload",
+          "document": "<p>文件上传预签名 URL。使用文件上传方式创建 Skill 或 Plugin 版本时返回；Plugin 文件使用 application/octet-stream 上传。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://example.com/uploads/example-plugin.bin?signature=example",
           "member": "string",
           "name": "UploadURL",
           "output_required": false,
@@ -2368,8 +2489,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：UploadURL 过期时间，ISO 8601 UTC。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2026-08-11T00:05:00Z",
+          "document": "<p>文件上传链接的过期时间，使用文件上传方式创建 Skill 或 Plugin 版本时返回。</p><p>参数格式：ISO 8601 UTC，例如 2026-10-21T15:30:08Z。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2030-01-01T00:15:00Z",
           "member": "string",
           "name": "ExpireTime",
           "output_required": false,
@@ -2378,7 +2499,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>SkillSource.Type=TAR_PACKAGE 时返回：Version 内容当前状态（UPLOADING 等）。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件版本的内容状态，使用文件上传方式创建 Skill 或 Plugin 版本时返回。创建上传会话后通常为 UPLOADING；文件处理完成后为 READY，失败为 FAILED。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "UPLOADING",
           "member": "string",
           "name": "ContentStatus",
@@ -3169,6 +3290,33 @@
       ],
       "type": "object"
     },
+    "DeleteGPUResourceGroupRequest": {
+      "document": "DeleteGPUResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除的 GPU 资源组 ID，必填、非空，最多 64 字节。资源组必须属于当前租户，且已清空有效 GPU 实例、占用绑定和关联沙箱工具。",
+          "example": "gpug-example",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteGPUResourceGroupResponse": {
+      "document": "DeleteGPUResourceGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePreCacheImageRequest": {
       "document": "DeletePreCacheImage请求参数结构体",
       "members": [
@@ -3946,6 +4094,255 @@
       ],
       "type": "object"
     },
+    "DescribeGPUResourceGroupsRequest": {
+      "document": "DescribeGPUResourceGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件，最多 10 项，Name 不可重复，每项 Values 为 1–10 个值。不同 Name 为 AND、同一 Values 为 OR。支持 resource-group-id（精确 ID）、resource-group-name（精确名称）、resource-group-name-like（普通文本子串，% 和 _ 不作为通配符）、gpu-type、gpu-num、cpu、memory。ID/GPUType 最多 64 字节，名称最多 128 字节；gpu-num 为正整数字符串，cpu/memory 为正数字符串，单位核/GiB。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认为 0，必须大于等于 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数，省略或传 0 时取 100；非零取值范围 1–500。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUResourceGroupsResponse": {
+      "document": "DescribeGPUResourceGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配的资源组列表；无匹配时为 []。",
+          "example": "无",
+          "member": "GPUResourceGroup",
+          "name": "ResourceGroups",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配的资源组总数，分页前计算。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUResourceSpecsRequest": {
+      "document": "DescribeGPUResourceSpecs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 类型标识，例如 5090d；指定时必须同时提供 CPU、Memory、GPUNum。</p>",
+          "example": "5090d",
+          "member": "string",
+          "name": "GPUType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>CPU 核数，必须为正数；与 GPUType、Memory、GPUNum 同时提供。</p>",
+          "example": "32",
+          "member": "uint64",
+          "name": "CPU",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机内存 GiB，必须为正数；与 GPUType、CPU、GPUNum 同时提供。</p>",
+          "example": "96",
+          "member": "uint64",
+          "name": "Memory",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台 GPU 卡数，必须为正整数；与 GPUType、CPU、Memory 同时提供。</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "GPUNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0，必须大于等于 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，省略或传 0 时取 100；非零取值范围 1–500。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUResourceSpecsResponse": {
+      "document": "DescribeGPUResourceSpecs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>可售规格与额度列表；无可售规格时为 []。</p>",
+          "example": "无",
+          "member": "GPUResourceSpec",
+          "name": "GPUResourceSpecSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选后、分页前的总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUResourcesRequest": {
+      "document": "DescribeGPUResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>按资源组 ID 过滤，可省略，最多 64 字节。</p>",
+          "example": "gpug-example",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按GPU资源 ID 过滤，最多 500 个，每个为非空字符串且最多 64 字节；值之间为 OR，与其他条件为 AND。</p>",
+          "example": "[\"ins-1223\"]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按GPU状态过滤，可省略。大小写敏感：Delivering、Active、Isolated、Destroying。</p>",
+          "example": "Active",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按占用状态过滤，可省略。大小写敏感：Idle、Allocating、InUse、Returning、Unavailable。</p>",
+          "example": "InUse",
+          "member": "string",
+          "name": "AllocationState",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量，默认为 0，必须大于等于 0。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页条数，省略或传 0 时取 100；非零取值范围 1–500。</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGPUResourcesResponse": {
+      "document": "DescribeGPUResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 资源列表；每台一条，无匹配时为 []。</p>",
+          "example": "无",
+          "member": "GPUResource",
+          "name": "Resources",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>筛选后、分页前的总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePreCacheImageListRequest": {
       "document": "DescribePreCacheImageList请求参数结构体",
       "members": [
@@ -4477,8 +4874,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>父 Registry ID。</p>",
-          "example": "reg-0123abcd",
+          "document": "<p>RegistryId 必填。大写常量 MARKETPLACE 表示服务端主 YAML marketplace.registry_ids 配置的工具市场；真实 reg-xxx 表示具体 Registry。省略、空字符串、null 或其他大小写均拒绝。市场读取要求已认证身份，只返回配置来源内未删除、已审批的可读版本，文件还须 READY 和有效制品；不回退私有目录。</p>",
+          "example": "MARKETPLACE",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -4551,8 +4948,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>父 Registry ID。</p>",
-          "example": "reg-0123abcd",
+          "document": "<p>RegistryId 必填。大写常量 MARKETPLACE 表示服务端主 YAML marketplace.registry_ids 配置的工具市场；真实 reg-xxx 表示具体 Registry。省略、空字符串、null 或其他大小写均拒绝。市场读取要求已认证身份，只返回配置来源内未删除、已审批的可读版本，文件还须 READY 和有效制品；不回退私有目录。</p>",
+          "example": "MARKETPLACE",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -5792,6 +6189,382 @@
       ],
       "usage": "both"
     },
+    "GPUResource": {
+      "document": "已购买GPU资源详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 资源 ID，与沙箱 InstanceId、底层 VM ID 不同。</p>",
+          "example": "ins-example-001",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属 GPU 资源组 ID。</p>",
+          "example": "gpug-example",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU资源状态，大小写敏感：Delivering（准备中）、Active（已生效）、Isolated（已隔离）、Destroying（释放中）。不返回 Destroyed 和补偿完成的 Failed。</p>",
+          "example": "Active",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>占用状态，大小写敏感：Idle（可领取）、Allocating（领取中）、InUse（使用中）、Returning（归还中）、Unavailable（暂不可用）。不能根据 InstanceId 是否存在判断是否空闲。</p>",
+          "example": "InUse",
+          "member": "string",
+          "name": "AllocationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已绑定的最终 AGS 沙箱实例 ID；尚未绑定或未占用时可能不返回。</p>",
+          "example": "sandbox-example-001",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效时间，未生效时可能不返回。</p>",
+          "example": "2026-10-21T10:00:00+08:00",
+          "member": "string",
+          "name": "ActiveAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间，未生效时可能不返回。</p>",
+          "example": "2026-11-21T10:00:00+08:00",
+          "member": "string",
+          "name": "ExpireAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>续费标记：0 不自动续费，1 自动续费，2 不再续费。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全的状态原因标识；空串表示无额外原因，PhysicalUnavailable 表示物理状态不可用，BindingPending 表示绑定身份尚待确认。未知值应作状态确认中处理。</p>",
+          "example": "PhysicalUnavailable",
+          "member": "string",
+          "name": "StatusReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GPUResourceGroup": {
+      "document": "GPU 资源组元数据及统计；资源组是管理集合，期限和续费标记逐台保存。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU 资源组 ID。",
+          "example": "gpug-example",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组名称。",
+          "example": "推理服务",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源组固定规格；已下架规格的已购组仍可查询。",
+          "example": "无",
+          "member": "GPUResourceGroupSpec",
+          "name": "Spec",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前资源统计。",
+          "example": "无",
+          "member": "GPUResourceGroupStatistics",
+          "name": "Statistics",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GPUResourceGroupSpec": {
+      "document": "已购买 GPU 资源组的固定规格及展示元数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 类型标识，例如 5090d。</p>",
+          "example": "5090d",
+          "member": "string",
+          "name": "GPUType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 类型展示名称；为空时使用 GPUType 展示。</p>",
+          "example": "NVIDIA RTX 5090 D",
+          "member": "string",
+          "name": "GPUTypeAlias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例全部 GPU 的总显存，单位 GiB；不需要再乘 GPUNum。0 表示展示元数据未维护。</p>",
+          "example": "64",
+          "member": "uint64",
+          "name": "GPUMemoryGiB",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例 CPU 核数。</p>",
+          "example": "256",
+          "member": "uint64",
+          "name": "CPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例主机内存，单位 GiB；不是 GPU 显存。</p>",
+          "example": "768",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例的 GPU 卡数。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "GPUNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GPUResourceGroupStatistics": {
+      "document": "组内当前资源统计。可用/占用是额外维度，不能与 StateCounts 相加。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>组内当前资源总数，单位台；不含已销毁和补偿完成的失败资源。</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Active、无占用且物理状态当前可领取的资源数量，单位台。</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "AvailableCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>仍被占用或绑定的资源数量，含领取中、使用中及归还未完成，单位台。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "AllocatedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源状态计数，四项之和等于本组 TotalCount。</p>",
+          "example": "无",
+          "member": "GPUResourceStateCount",
+          "name": "StateCounts",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GPUResourceSpec": {
+      "document": "当前地域可售 GPU 规格与当前租户可购买额度。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>GPU 类型标识，例如 5090d。</p>",
+          "example": "5090d",
+          "member": "string",
+          "name": "GPUType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>GPU 类型展示名称；为空时使用 GPUType 展示。</p>",
+          "example": "NVIDIA RTX 5090 D",
+          "member": "string",
+          "name": "GPUTypeAlias",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例全部 GPU 的总显存，单位 GiB；不需要再乘 GPUNum。0 表示展示元数据未维护。</p>",
+          "example": "64",
+          "member": "uint64",
+          "name": "GPUMemoryGiB",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例 CPU 核数。</p>",
+          "example": "32",
+          "member": "uint64",
+          "name": "CPU",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例主机内存，单位 GiB；不是 GPU 显存。</p>",
+          "example": "96",
+          "member": "uint64",
+          "name": "Memory",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>单台实例的 GPU 卡数。</p>",
+          "example": "2",
+          "member": "uint64",
+          "name": "GPUNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前可购买数量，单位台，不是卡数；0 表示确认无额度，null 表示额度未知。实际购买时仍会重新校验。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AvailableCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GPUResourceStateCount": {
+      "document": "资源状态计数；四项之和为组内 TotalCount，不含已销毁和补偿完成的失败资源。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>准备中的资源数量，单位台。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Delivering",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已生效的资源数量，单位台；不等于当前可领取数量。</p>",
+          "example": "8",
+          "member": "int64",
+          "name": "Active",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已隔离的资源数量，单位台。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Isolated",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>正在释放的资源数量，单位台。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Destroying",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "GetSkillPackageDownloadURLRequest": {
       "document": "GetSkillPackageDownloadURL请求参数结构体",
       "members": [
@@ -6300,6 +7073,42 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGPUResourceGroupRequest": {
+      "document": "ModifyGPUResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "GPU 资源组 ID，必填、非空，最多 64 字节。",
+          "example": "gpug-example",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的资源组名称；去除首尾空白后不能为空，最多 128 字节，UTF-8 中文通常占 3 字节。",
+          "example": "新的推理服务组",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyGPUResourceGroupResponse": {
+      "document": "ModifyGPUResourceGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6997,6 +7806,17 @@
           "output_required": false,
           "required": false,
           "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大镜像预热并发处理数量</p><p>单位：个</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "PreCacheImageConcurrency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8368,7 +9188,7 @@
         {
           "disabled": false,
           "document": "<p>新 Version 的展示名，可选。仅 Version 创建模式允许。</p>",
-          "example": "rv-0123abcd",
+          "example": "1.1.0",
           "member": "string",
           "name": "VersionName",
           "required": false,
@@ -8377,7 +9197,7 @@
         {
           "disabled": false,
           "document": "<p>新 Version 的变更原因，最大 4096 字符，可选。仅 Version 创建模式允许。</p>",
-          "example": "更新版本",
+          "example": "更新兼容声明并复用文件",
           "member": "string",
           "name": "ChangeLog",
           "required": false,
@@ -8425,6 +9245,33 @@
           "example": "无",
           "member": "CloudRecordLabelMutation",
           "name": "LabelMutations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Skill 或 Plugin 后续版本的文件来源。PLUGIN 可使用 FILE 上传新文件，或使用 VERSION 复用同一 Record 的 READY 制品；Skill 仅通过 VERSION 复用现有文件。与其他内容来源互斥。</p><p>VERSION 只提交 Type、SourceVersionId；Metadata 和 SupportedHarnessVersions 由本次请求单独声明，不继承来源版本。</p>",
+          "example": "无",
+          "member": "CloudFileSourceInput",
+          "name": "FileSource",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>资产版本支持的 Harness 引擎与具体版本列表。每个元素同时包含 HarnessEngine 和 HarnessEngineVersion，取值原样使用 DescribeHarnessEngineList 返回的选项。</p><p>入参限制：最多 128 个元素；两个字段均必填，长度 1～128，区分大小写，不允许空白、通配符或版本范围。按完整配对去重；不接受字符串数组或 null。</p><p>省略或空数组表示未声明兼容性，不表示兼容全部。仅随新 Version 写入，后续修改需创建新 Version。筛选时 supported_harness_engine 与 supported_harness_version 必须同时传入，并在同一元素中精确匹配。</p>",
+          "example": "无",
+          "member": "HarnessVersionReference",
+          "name": "SupportedHarnessVersions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>版本元数据的 Name/Value 对象数组。</p><p>参数格式：每项仅包含必填的 Name、Value 两个字符串字段。Name 非空、小写且数组内唯一，不自动转换；重复 Name 即使 Value 相同也返回 InvalidParameter。Value 允许空字符串，保留大小写；不接受嵌套对象、数组或非字符串值。</p><p>默认值：空数组 []。创建新版本时省略或 [] 均为空，不继承；null、JSON 字符串和原生对象非法。响应按 Name 升序返回，旧 SQL NULL 归一为 []。服务内部使用 map[string]string，数据库 JSON 列保存对象。publisher 表示发布者展示名称；metadata.&lt;key&gt; 按完整小写名称精确筛选，规则不变。</p>",
+          "example": "无",
+          "member": "MetadataEntry",
+          "name": "Metadata",
           "required": false,
           "type": "list"
         }
@@ -8477,7 +9324,7 @@
         {
           "disabled": false,
           "document": "<p>Version 创建模式且 SkillSource.Type=TAR_PACKAGE 时返回。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "UPLOADING",
+          "example": "READY",
           "member": "string",
           "name": "ContentStatus",
           "output_required": false,

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli trro CreateBatchVideoAnnotationJob --cli-unfold-argument  \
-    --InputStorage.Bucket ai-annotation-test-input-1258344699 \
-    --InputStorage.Endpoint cos-internal.ap-guangzhou.tencentcos.cn \
+    --InputStorage.Bucket *********************************** \
+    --InputStorage.Endpoint *************************************** \
     --InputStorage.Region ap-guangzhou \
     --InputStorage.Prefix batch-test/ \
     --InputStorage.Secret.SecretId ************************************ \
@@ -18,8 +18,8 @@ tccli trro CreateBatchVideoAnnotationJob --cli-unfold-argument  \
     --AnnotationContext.TaskGoal 把香蕉从盘子中夹起来 \
     --AnnotationContext.KeyObjects 香蕉 \
     --AnnotationContext.AtomicVerbs 拿取 \
-    --OutputStorage.Bucket ai-annotation-test-input-1258344699 \
-    --OutputStorage.Endpoint cos-internal.ap-guangzhou.tencentcos.cn \
+    --OutputStorage.Bucket *********************************** \
+    --OutputStorage.Endpoint *************************************** \
     --OutputStorage.Region ap-guangzhou \
     --OutputStorage.Secret.SecretId ************************************ \
     --OutputStorage.Secret.SecretKey ******************************** \

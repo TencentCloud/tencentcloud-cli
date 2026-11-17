@@ -56629,8 +56629,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "暴露周期趋势数量统计信息",
-          "example": "1",
+          "document": "<p>暴露周期趋势数量统计信息</p>",
+          "example": "无",
           "member": "ExposeTrendItem",
           "name": "ExposeTrendList",
           "output_required": true,
@@ -56639,7 +56639,7 @@
         },
         {
           "disabled": false,
-          "document": "暴露周期新增数量统计",
+          "document": "<p>暴露周期新增数量统计</p>",
           "example": "0",
           "member": "uint64",
           "name": "ExposeIncrement",
@@ -56649,7 +56649,7 @@
         },
         {
           "disabled": false,
-          "document": "近1天（24h）完全开放数量",
+          "document": "<p>近1天（24h）完全开放数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "OpenCount",
@@ -56659,7 +56659,7 @@
         },
         {
           "disabled": false,
-          "document": "近1天（24h）受限访问数量",
+          "document": "<p>近1天（24h）受限访问数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "AclCount",
@@ -56669,11 +56669,31 @@
         },
         {
           "disabled": false,
-          "document": "近1天（24h）无法访问数量",
+          "document": "<p>近1天（24h）无法访问数量</p>",
           "example": "0",
           "member": "uint64",
           "name": "CloseCount",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>互联网边界总数</p>",
+          "example": "16",
+          "member": "uint64",
+          "name": "ExposeTotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待处理边界数量</p>",
+          "example": "13",
+          "member": "uint64",
+          "name": "ToGovernRiskCount",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -90058,7 +90078,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>国家ID，当前仅支持国内：1</p>",
+          "document": "<p>国家ID，当前仅支持境内：1</p>",
           "example": "1",
           "member": "int64",
           "name": "CountryId",
@@ -112995,6 +113015,16 @@
           "name": "ShareFromUser",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否试用订单</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "IsTrialOrder",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cdb OpenSSL --cli-unfold-argument  \
-    --InstanceId cdb-je5egmdl
+    --InstanceId cdb-oyebqmxb
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7",
-        "AsyncRequestId": "123asd21-2dasdasd-123qcsdw-313213"
+        "AsyncRequestId": "5b7c00ca-975e7ca4-87b49ff2-604333e7",
+        "RequestId": "a3d2fe92-9ac2-4001-96ab-ae2e98a9ac3e"
     }
 }
 ```

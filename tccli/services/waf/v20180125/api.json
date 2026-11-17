@@ -742,6 +742,13 @@
       "output": "DescribeLLMContentSecCheckResponse",
       "status": "online"
     },
+    "DescribeLLMHourBillDetail": {
+      "document": "查询单实例、单日的按小时账单明细，包含账单预估总额、分项费用、分时趋势和分时明细",
+      "input": "DescribeLLMHourBillDetailRequest",
+      "name": "查询大模型安全按小时账单明细",
+      "output": "DescribeLLMHourBillDetailResponse",
+      "status": "online"
+    },
     "DescribeLLMKeywordLibrary": {
       "document": "查询关键词列表",
       "input": "DescribeLLMKeywordLibraryRequest",
@@ -768,6 +775,13 @@
       "input": "DescribeLLMWafProtectRulesRequest",
       "name": "查询 waf-LLM 规则推理防护规则",
       "output": "DescribeLLMWafProtectRulesResponse",
+      "status": "online"
+    },
+    "DescribeLLMWafToolCallRules": {
+      "document": "查询 Tool Call 规则",
+      "input": "DescribeLLMWafToolCallRulesRequest",
+      "name": "查询 llmwaf Tool Call 规则",
+      "output": "DescribeLLMWafToolCallRulesResponse",
       "status": "online"
     },
     "DescribeLogHistogram": {
@@ -1414,6 +1428,13 @@
       "output": "ModifyLLMKeywordLibraryResponse",
       "status": "online"
     },
+    "ModifyLLMSdkAccess": {
+      "document": "llmwaf-sdk边界接入配置接口",
+      "input": "ModifyLLMSdkAccessRequest",
+      "name": "修改SDK接入信息",
+      "output": "ModifyLLMSdkAccessResponse",
+      "status": "online"
+    },
     "ModifyLLMStatus": {
       "document": "修改大模型防护的模块开关状态，支持总开关及各子模块独立开关的开启/关闭操作。开启前需确保实例已购买大模型防护能力，未购买时开启操作会返回 AuthFailure.ErrCodeNoPurchased 错误。",
       "input": "ModifyLLMStatusRequest",
@@ -1433,6 +1454,13 @@
       "input": "ModifyLLMWafProtectRuleRequest",
       "name": "修改 LLMwaf 推理防护规则",
       "output": "ModifyLLMWafProtectRuleResponse",
+      "status": "online"
+    },
+    "ModifyLLMWafToolCallRule": {
+      "document": "修改 Tool Call 规则",
+      "input": "ModifyLLMWafToolCallRuleRequest",
+      "name": "修改 llmwafTool Call 规则",
+      "output": "ModifyLLMWafToolCallRuleResponse",
       "status": "online"
     },
     "ModifyModuleStatus": {
@@ -2320,7 +2348,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态",
+          "document": "规则状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -2330,7 +2358,7 @@
         {
           "disabled": false,
           "document": "匹配规则项列表",
-          "example": "[ {MatchField: \"URL\", MatchMethod: \"eq\", MatchContent: \"/testUrl\", MatchParams: \"\"}]",
+          "example": "无",
           "member": "UserWhiteRuleItem",
           "name": "Rules",
           "required": true,
@@ -2561,6 +2589,15 @@
           "name": "GroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览\n默认值：0\n开启后仅记录规则命中并继续匹配后续规则，不执行本规则配置的防护动作。仅支持自定义规则，启用时动作灰度比例须为100；不支持精准白名单和小程序规则。仅支持CNAME接入或云原生清洗接入，启用预览前须开启规则。",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2844,7 +2881,7 @@
         },
         {
           "disabled": false,
-          "document": "开关状态，小程序风控规则的时候传该值",
+          "document": "规则开关状态，0表示关闭，1表示开启，小程序风控规则传该值",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -2875,6 +2912,15 @@
           "example": "2",
           "member": "uint64",
           "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览\n默认值：0\n开启后仅记录规则命中并继续匹配后续规则，不执行本规则配置的防护动作。仅支持自定义规则，启用时动作灰度比例须为100；不支持精准白名单和小程序规则。仅支持CNAME接入或云原生清洗接入，启用预览前须开启规则。",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
           "required": false,
           "type": "int"
         }
@@ -6288,7 +6334,7 @@
         {
           "disabled": false,
           "document": "规则列表",
-          "example": "[{\"Id\":1,\"Name\":\"测试一下\",\"Status\":1,\"Source\":\"custom\",\"Areas\":[\"国外\",\"山东\",\"安徽\",\"江西\"],\"Domains\":[\"config.qcloudwaf.com\",\"test.zjw.com\"],\"Remark\":\"xxxx\",\"UpdateTime\":\"2023-06-27 16:55:01\"}]",
+          "example": "无",
           "member": "BatchCustomRuleListItem",
           "name": "List",
           "output_required": false,
@@ -6539,6 +6585,16 @@
           "name": "GroupIds",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -10469,7 +10525,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": true,
@@ -10477,7 +10533,7 @@
         },
         {
           "disabled": false,
-          "document": "42为黑名单，40为白名单",
+          "document": "IP黑白名单类型，40表示白名单，42表示黑名单",
           "example": "42",
           "member": "int64",
           "name": "ActionType",
@@ -10520,7 +10576,7 @@
         {
           "disabled": false,
           "document": "添加失败的域名列表，如果非空则表示有域名添加失败，整个批量规则添加失败，否则则表示批量规则添加成功。",
-          "example": "[{\"Domain\":\"www.testwaf.com\", \"Message\":\"域名IP个数超过规格\"}]",
+          "example": "无",
           "member": "BatchDomainResult",
           "name": "Failed",
           "output_required": false,
@@ -10978,7 +11034,7 @@
         },
         {
           "disabled": false,
-          "document": "42为黑名单，40为白名单",
+          "document": "IP黑白名单类型，40表示白名单，42表示黑名单",
           "example": "42",
           "member": "int64",
           "name": "ActionType",
@@ -11635,6 +11691,24 @@
           "name": "Order",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段",
+          "example": "无",
+          "member": "Strategy",
+          "name": "MatchConditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "条件间逻辑：and(默认)/or",
+          "example": "and",
+          "member": "string",
+          "name": "ConditionLogic",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12551,7 +12625,7 @@
         },
         {
           "disabled": false,
-          "document": "用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则",
+          "document": "数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则",
           "example": "batch",
           "member": "string",
           "name": "SourceType",
@@ -12634,7 +12708,7 @@
         },
         {
           "disabled": false,
-          "document": "用于按数据来源删除黑白名单记录，非必填，默认为custom。 custom（自定义），用户在控制台手动添加的黑白名单规则 cc（CC 防护\t），由 CC 防护模块自动添加的 IP 黑白名单 bot（Bot 防护），由 Bot 防护模块自动添加的 IP 黑白名单 batch（批量域名防护），批量域名维度添加的黑白名单规则",
+          "document": "数据来源，'batch'表示批量黑白名单规则，空/不传表示单域名黑白名单规则",
           "example": "batch",
           "member": "string",
           "name": "SourceType",
@@ -15213,7 +15287,7 @@
         {
           "disabled": false,
           "document": "筛选列表",
-          "example": "\"Filters\": [{ \t\t\t\"Name\": \"ActionType\", // 执行动作 \t\t\t\"Values\": [\"1\"],      // \"1\"-阻断、\"2\"-人机识别、\"3\"-观察、\"4\"-重定向 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Status\",  // 开关状态 \t\t\t\"Values\": [\"1\"], // \"0\"-全部、\"1\"-开启、\"2\"-关闭 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"ValidStatus\",  // 生效状态 \t\t\t\"Values\": [\"0\"], // \"0\"-全部、\"1\"-生效中、\"2\"-已过期 \t\t\t\"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Name\",  // 规则名称 \t\t\t\"Values\": [\"xxxx\"],            \"ExactMatch\": false \t\t}, { \t\t\t\"Name\": \"RuleId\",  // 规则Id \t\t\t\"Values\": [\"123344\"],            \"ExactMatch\": true \t\t}, { \t\t\t\"Name\": \"Domains\",  // 生效域名 \t\t\t\"Values\": [\"baidu.com\"],            \"ExactMatch\": false \t\t}]",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": true,
@@ -15228,7 +15302,7 @@
         {
           "disabled": false,
           "document": "操作成功",
-          "example": " {                     \"List\": [                         {                             \"Id\": 1101834050,                             \"ActionType\": 1,                             \"Bypass\": \"\",                             \"ExpireTime\": 0,                             \"Name\": \"clb访问测试\",                             \"Redirect\": \"/\",                             \"SortId\": 40,                             \"Status\": 1,                             \"Domains\": [                                 \"zhenhua1020.qcloudwaf.com\"                             ],                             \"Remark\": \"\",                             \"Strategies\": [                                 {                                     \"Field\": \"URL\",                                     \"Arg\": \"\",                                     \"CompareFunc\": \"contains\",                                     \"Content\": \"/ccc/bbb\",                                     \"CaseNotSensitive\": 0                                 }                             ],                             \"EventId\": \"\",                             \"ValidStatus\": 1,                             \"CreateTime\": \"2024-10-23 15:23:51\",                             \"UpdateTime\": \"2024-10-23 16:17:08\",                             \"JobType\": \"TimedJob\",                             \"JobDateTime\": {                                 \"Timed\": [                                     {                                         \"StartDateTime\": 0,                                         \"EndDateTime\": 0                                     }                                 ],                                 \"Cron\": null,                                 \"TimeTZone\": \"UTC+8\"                             },                             \"CronType\": \"-\",                             \"Label\": \"\",                             \"PageId\": \"\"                         } ],                     \"Total\": 1 }",
+          "example": "无",
           "member": "BatchCustomRuleListData",
           "name": "Data",
           "output_required": true,
@@ -16298,7 +16372,7 @@
         {
           "disabled": false,
           "document": "过滤数组,name可以是如下的值： RuleID,RuleName,Match",
-          "example": "[{\"Name\":\"ValidStatus\",\"Values\":[\"1\"],\"ExactMatch\":true}]",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -16340,7 +16414,7 @@
         {
           "disabled": false,
           "document": "规则详情",
-          "example": "[{                         \"ActionType\": \"1\",                         \"Bypass\": \"\",                         \"CreateTime\": \"2024-10-17T20:15:40+08:00\",                         \"ExpireTime\": \"0\",                         \"Name\": \"retest\",                         \"Redirect\": \"/\",                         \"RuleId\": \"1101791960\",                         \"SortId\": \"50\",                         \"Status\": \"1\",                         \"Strategies\": [                             {                                 \"Field\": \"ARGS_HEADER\",                                 \"CompareFunc\": \"rematch\",                                 \"Content\": \"W15hLXpBLVowLTktXQ==\",                                 \"Arg\": \"x-wx-call-id\",                                 \"CaseNotSensitive\": 0                             }                         ],                         \"EventId\": \"\",                         \"ValidStatus\": 1,                         \"ModifyTime\": \"2024-10-17T20:17:14+08:00\",                         \"Source\": \"custom\",                         \"JobType\": \"TimedJob\",                         \"JobDateTime\": {                             \"Timed\": [                                 {                                     \"StartDateTime\": 0,                                     \"EndDateTime\": 0                                 }                             ],                             \"Cron\": null,                             \"TimeTZone\": \"UTC+8\"                         },                         \"CronType\": \"-\",                         \"Label\": \"\",                         \"PageId\": \"\",                         \"Domain\": \"randygz2.qcloudwaf.com\"                     }]",
+          "example": "无",
           "member": "DescribeCustomRulesRspRuleListItem",
           "name": "RuleList",
           "output_required": true,
@@ -16585,6 +16659,16 @@
           "example": "20",
           "member": "uint64",
           "name": "ActionRatio",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -17446,7 +17530,7 @@
         },
         {
           "disabled": false,
-          "document": "流量来源",
+          "document": "流量来源类型，'clb'表示CLB负载均衡，'apisix'表示自建网关（含Kong），'tsegw'表示TSE云原生网关",
           "example": "clb",
           "member": "string",
           "name": "AlbType",
@@ -17462,7 +17546,7 @@
         {
           "disabled": false,
           "document": "成功返回的状态码",
-          "example": "{\"Code\":\"Success\",\"Message\":\"Success\"}",
+          "example": "无",
           "member": "ResponseCode",
           "name": "Success",
           "output_required": true,
@@ -18224,6 +18308,102 @@
       ],
       "type": "object"
     },
+    "DescribeLLMHourBillDetailRequest": {
+      "document": "DescribeLLMHourBillDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID\n参数格式：形如 waf_xxxxxxxx",
+          "example": "waf_2112f6ik1700cnkd",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询日期，仅支持单日\n参数格式：YYYY-MM-DD 或 YYYYMMDD",
+          "example": "2026-01-01",
+          "member": "date",
+          "name": "Date",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMHourBillDetailResponse": {
+      "document": "DescribeLLMHourBillDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_2112f6ik1700cnkd",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询日期，归一化为YYYY-MM-DD格式",
+          "example": "2026-01-01",
+          "member": "date",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当日账单预估总额（元，扣减免费额度后的净费用）",
+          "example": "1234.5600",
+          "member": "string",
+          "name": "EstimatedTotalFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当日按计费项拆分的费用",
+          "example": "无",
+          "member": "LLMBillItemFee",
+          "name": "ItemFees",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "24小时账单趋势，固定24条，无数据补0",
+          "example": "无",
+          "member": "LLMHourBillTrendItem",
+          "name": "HourlyTrend",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "24小时账单明细，固定24条，无数据补0",
+          "example": "无",
+          "member": "LLMHourBillDetailItem",
+          "name": "HourlyDetail",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLLMKeywordLibraryRequest": {
       "document": "DescribeLLMKeywordLibrary请求参数结构体",
       "members": [
@@ -18536,6 +18716,52 @@
       ],
       "type": "object"
     },
+    "DescribeLLMWafToolCallRulesRequest": {
+      "document": "DescribeLLMWafToolCallRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLLMWafToolCallRulesResponse": {
+      "document": "DescribeLLMWafToolCallRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>类别列表</p>",
+          "example": "无",
+          "member": "CategoryGroup",
+          "name": "Categories",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeLogHistogramRequest": {
       "document": "DescribeLogHistogram请求参数结构体",
       "members": [
@@ -18643,7 +18869,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询状态的域名",
+          "document": "<p>要查询状态的域名</p>",
           "example": "zjm.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -18658,7 +18884,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "WEB安全规则是否开启",
+          "document": "<p>WEB安全规则是否开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "WebSecurity",
@@ -18668,7 +18894,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制规则是否开启",
+          "document": "<p>访问控制规则是否开启</p>",
           "example": "1",
           "member": "int64",
           "name": "AccessControl",
@@ -18678,7 +18904,7 @@
         },
         {
           "disabled": false,
-          "document": "CC防护是否开启",
+          "document": "<p>CC防护是否开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "CcProtection",
@@ -18688,7 +18914,7 @@
         },
         {
           "disabled": false,
-          "document": "网页防篡改是否开启",
+          "document": "<p>网页防篡改是否开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "AntiTamper",
@@ -18698,7 +18924,7 @@
         },
         {
           "disabled": false,
-          "document": "信息防泄漏是否开启",
+          "document": "<p>信息防泄漏是否开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "AntiLeakage",
@@ -18708,7 +18934,7 @@
         },
         {
           "disabled": false,
-          "document": "API安全是否开启",
+          "document": "<p>API安全是否开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "ApiProtection",
@@ -18718,7 +18944,17 @@
         },
         {
           "disabled": false,
-          "document": "限流模块开关",
+          "document": "<p>API安全检测开关是否开启</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "ApiDetect",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限流模块开关，0表示关闭，1表示开启</p>",
           "example": "1",
           "member": "uint64",
           "name": "RateLimit",
@@ -18728,7 +18964,7 @@
         },
         {
           "disabled": false,
-          "document": "gzip 开关",
+          "document": "<p>gzip 开关</p>",
           "example": "1",
           "member": "uint64",
           "name": "GzipAnalysis",
@@ -19294,7 +19530,7 @@
         },
         {
           "disabled": false,
-          "document": "clb-waf或者saas-waf",
+          "document": "clb-waf或者sparta-waf",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -19413,7 +19649,7 @@
         {
           "disabled": false,
           "document": "客户的投递流列表",
-          "example": "[{\"FlowId\":1001}]",
+          "example": "无",
           "member": "PostCKafkaFlowInfo",
           "name": "PostCKafkaFlows",
           "output_required": true,
@@ -19773,7 +20009,7 @@
         {
           "disabled": false,
           "document": "过滤器",
-          "example": "[{\"Name\": \"Status\", \"Values\": [\"0\"], \"ExactMatch\": true}]",
+          "example": "无",
           "member": "FiltersItemNew",
           "name": "Filters",
           "required": false,
@@ -19798,7 +20034,7 @@
         {
           "disabled": false,
           "document": "操作结果",
-          "example": "{\"Code\": 0,\"Info\": \"success\"}",
+          "example": "无",
           "member": "RateLimitCommonRsp",
           "name": "BaseInfo",
           "output_required": false,
@@ -19808,7 +20044,7 @@
         {
           "disabled": false,
           "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"LimitRuleID\": 400000023,\"Name\": \"testname\",\"Priority\": 50,\"Status\": 0,\"TsVersion\": 0,\"LimitObject\": \"API\",\"LimitMethod\": {\"Method\": \"GET\",\"Type\": \"EXACT\"},\"LimitPaths\": {\"Path\": \"/url\",\"Type\": \"EXACT\"},\"LimitHeaders\": [{\"Key\": \"\",\"Value\": \"v1,v2\",\"Type\": \"IN\"}],\"LimitWindow\": {\"Second\": 0,\"Minute\": 10},\"LimitStrategy\": 0,\"LimitHeaderName\": {}}]",
+          "example": "无",
           "member": "LimitRuleV2",
           "name": "RateLimits",
           "output_required": false,
@@ -23107,6 +23343,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>仅当该条访问日志命中攻击规则时，是否额外存储 attack_body 字段（取值与 body 字段相同）。1:开启 0/不填:不开启。与 EnableBody 完全独立，互不影响。仅在存储查询链路（DescribeAccessMeta/ModifyAccessPeriod）中生效，不影响 CLS/CKafka 自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow）配置。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "EnableAttackBody",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>1:开启 0:不开启</p>",
           "example": "1",
           "member": "int64",
@@ -23155,6 +23402,28 @@
           "example": "0",
           "member": "int64",
           "name": "EnableResponseStatusLine",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>大模型安全防护详情字段，用;分割，仅对 SDK 访问日志生效。不传表示全部写入；传空字符串表示只写必填字段（uuid、appid、instance、timestamp、llm_service_id）。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "LlmItem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>headers 字段中10个通用冗余子字段（accept/accept-encoding/accept-language/connection/content-type/cookie/host/referer/x-forwarded-for/user-agent）剔除开关。1:剔除 0/不填:不剔除。仅在CLS/CKafka自定义投递（CreatePostCLSFlow/CreatePostCKafkaFlow及对应Describe接口）中生效，不影响原有存储日志配置。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "FilterPlusEnableHeaderFilter",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -25509,7 +25778,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>clb或saas</p>",
+          "document": "<p>实例接入类型</p><p>枚举值：<br>sparta-waf：SaaS型WAF实例<br>clb-waf：负载均衡型WAF实例<br>cdn-waf：CDN上的Web防护实例<br>cdc-clb-waf：CDC环境下负载均衡型WAF实例<br>llm-sdk-waf：大模型SDK WAF实例</p>",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -26467,6 +26736,52 @@
       ],
       "usage": "both"
     },
+    "LLMBillItemFee": {
+      "document": "大模型安全按小时账单分项费用",
+      "members": [
+        {
+          "disabled": false,
+          "document": "提示词攻击防护费用（元）",
+          "example": "300.0000",
+          "member": "string",
+          "name": "PromptAttackFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容合规检测（文本）费用（元）",
+          "example": "500.0000",
+          "member": "string",
+          "name": "ContentTextFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容合规检测（图片）费用（元）",
+          "example": "500.0000",
+          "member": "string",
+          "name": "ContentImageFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感数据检测费用（元）",
+          "example": "500.0000",
+          "member": "string",
+          "name": "SensitiveDataFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LLMDetectResult": {
       "document": "大模型安全检测综合结果",
       "members": [
@@ -26608,6 +26923,138 @@
           "name": "UrlDetectResult",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LLMHourBillDetailItem": {
+      "document": "大模型安全按小时账单明细行",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小时区间，如00:00-01:00",
+          "example": "00:00-01:00",
+          "member": "string",
+          "name": "TimeRange",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示词攻击防护计量值（token）",
+          "example": "10000",
+          "member": "int64",
+          "name": "PromptAttackUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容合规检测（文本）计量值（token）",
+          "example": "10000",
+          "member": "int64",
+          "name": "ContentTextUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容合规检测（图片）计量值（张）",
+          "example": "10000",
+          "member": "int64",
+          "name": "ContentImageUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "敏感数据检测计量值（token）",
+          "example": "0",
+          "member": "int64",
+          "name": "SensitiveDataUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时提示词攻击防护费用（元）",
+          "example": "0.0350",
+          "member": "string",
+          "name": "PromptAttackFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时内容合规检测（文本）费用（元）",
+          "example": "0.0150",
+          "member": "string",
+          "name": "ContentTextFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时内容合规检测（图片）费用（元）",
+          "example": "50.0000",
+          "member": "string",
+          "name": "ContentImageFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时敏感数据检测费用（元）",
+          "example": "0.0000",
+          "member": "string",
+          "name": "SensitiveDataFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时账单总额（元，净费用）",
+          "example": "50.0500",
+          "member": "string",
+          "name": "TotalFee",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LLMHourBillTrendItem": {
+      "document": "大模型安全按小时账单趋势数据点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小时，取值00到23",
+          "example": "00",
+          "member": "string",
+          "name": "Hour",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该小时账单总额（元，净费用）",
+          "example": "50.5000",
+          "member": "string",
+          "name": "Fee",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -27537,7 +27984,7 @@
         {
           "disabled": false,
           "document": "限流方法名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{ \"Method\":\"GET\", \"Type\":\"EXACT\" }",
+          "example": "无",
           "member": "LimitMethod",
           "name": "LimitMethod",
           "output_required": false,
@@ -27548,7 +27995,7 @@
         {
           "disabled": false,
           "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Path\": \"/test1\", \"Type\": \"IN\" }",
+          "example": "无",
           "member": "LimitPath",
           "name": "LimitPaths",
           "output_required": false,
@@ -27559,7 +28006,7 @@
         {
           "disabled": false,
           "document": "Header参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"Type\": \"IN\", \"Key\": \"value\", \"Value\": \"v1,v2\"}]",
+          "example": "无",
           "member": "LimitHeader",
           "name": "LimitHeaders",
           "output_required": false,
@@ -27570,7 +28017,7 @@
         {
           "disabled": false,
           "document": "限流窗口",
-          "example": " {\"Second\": 3, \"Minute\": 0, \"Hour\": 0}",
+          "example": "无",
           "member": "LimitWindow",
           "name": "LimitWindow",
           "output_required": false,
@@ -27581,7 +28028,7 @@
         {
           "disabled": false,
           "document": "限流策略，0:观察,1:拦截，2:人机",
-          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "example": "0",
           "member": "int64",
           "name": "LimitStrategy",
           "output_required": false,
@@ -27592,7 +28039,7 @@
         {
           "disabled": false,
           "document": "Header参数名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"ParamsName\": \"keya,keyb\", \"Type\": \"IN\"} ",
+          "example": "无",
           "member": "LimitHeaderName",
           "name": "LimitHeaderName",
           "output_required": false,
@@ -27603,7 +28050,7 @@
         {
           "disabled": false,
           "document": "Get参数名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " {Content: \"getname\", Func: \"IN\"}",
+          "example": "无",
           "member": "MatchOption",
           "name": "GetParamsName",
           "output_required": false,
@@ -27614,7 +28061,7 @@
         {
           "disabled": false,
           "document": "Get参数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "example": "无",
           "member": "MatchOption",
           "name": "GetParamsValue",
           "output_required": false,
@@ -27625,7 +28072,7 @@
         {
           "disabled": false,
           "document": "Post参数名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " {Content: \"postname\", Func: \"IN\"}",
+          "example": "无",
           "member": "MatchOption",
           "name": "PostParamsName",
           "output_required": false,
@@ -27636,7 +28083,7 @@
         {
           "disabled": false,
           "document": "Post参数值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Content\": \"valuea\", \"Func\": \"IN\", \"Params\": \"valuea\"}",
+          "example": "无",
           "member": "MatchOption",
           "name": "PostParamsValue",
           "output_required": false,
@@ -27647,7 +28094,7 @@
         {
           "disabled": false,
           "document": "Ip属地\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Lang\":\"cn\",\"Areas\":[{\"Country\":\"中国\",\"Region\":\"广西\",\"City\":\"南宁\"}]}",
+          "example": "无",
           "member": "MatchOption",
           "name": "IpLocation",
           "output_required": false,
@@ -27658,7 +28105,7 @@
         {
           "disabled": false,
           "document": "重定向信息，当LimitStrategy为2时，此字段不为空\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"Protool\":\"http\",\"Domain\":\"www.test.com\",\"Url\":\"/testRedirect\"}",
+          "example": "无",
           "member": "RedirectInfo",
           "name": "RedirectInfo",
           "output_required": false,
@@ -27702,7 +28149,7 @@
         {
           "disabled": false,
           "document": "路径选项,可配置每个路径的请求方法\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{/abc/123:POST}",
+          "example": "无",
           "member": "PathItem",
           "name": "PathsOption",
           "output_required": false,
@@ -27719,6 +28166,28 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条",
+          "example": "无",
+          "member": "Strategy",
+          "name": "MatchConditions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "条件间逻辑：and(默认)/or",
+          "example": "and",
+          "member": "string",
+          "name": "ConditionLogic",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -28859,7 +29328,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "防篡改规则状态，0表示关闭，1表示开启",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -28913,7 +29382,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "防信息泄露规则状态，0表示关闭，1表示开启",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -28967,7 +29436,7 @@
         },
         {
           "disabled": false,
-          "document": "Action 值",
+          "document": "防信息泄露动作类型，取值0~4",
           "example": "0",
           "member": "uint64",
           "name": "ActionType",
@@ -28977,7 +29446,7 @@
         {
           "disabled": false,
           "document": "策略数组",
-          "example": "[             {                 \"CompareFunc\": \"contains\",                 \"Content\": \"idcard\",                 \"Field\": \"information\"             }         ]",
+          "example": "无",
           "member": "StrategyForAntiInfoLeak",
           "name": "Strategies",
           "required": true,
@@ -29510,7 +29979,7 @@
         },
         {
           "disabled": false,
-          "document": "规则状态",
+          "document": "规则状态，0表示关闭，1表示开启",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -29520,7 +29989,7 @@
         {
           "disabled": false,
           "document": "匹配规则项列表",
-          "example": "[{\"MatchField\": \"URL\", \"MatchMethod\": \"eq\", \"MatchContent\": \"/ab\", \"MatchParams\": \"\"}]",
+          "example": "无",
           "member": "UserWhiteRuleItem",
           "name": "Rules",
           "required": true,
@@ -29749,6 +30218,15 @@
           "example": "2",
           "member": "uint64",
           "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览\n未传入时保留规则当前的预览设置\n开启后仅记录规则命中并继续匹配后续规则，不执行本规则配置的防护动作。仅支持自定义规则，启用时动作灰度比例须为100；不支持精准白名单和小程序规则。仅支持CNAME接入或云原生清洗接入，启用预览前须开启规则。",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
           "required": false,
           "type": "int"
         }
@@ -30000,7 +30478,7 @@
         {
           "disabled": false,
           "document": "定时任务配置",
-          "example": "{\"Timed\":[{\"StartDateTime\":1711618518,\"EndDateTime\":1711918518}],\"Cron\":[{\"Day\":12,\"WDay\":2,\"StartTime\":\"12:11\",\"EndTime\":\"21:00\"}],\"TimeTZone\":\"UTC+8\"}",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": true,
@@ -30008,7 +30486,7 @@
         },
         {
           "disabled": false,
-          "document": "42为黑名单，40为白名单",
+          "document": "IP黑白名单类型，40表示白名单，42表示黑名单",
           "example": "42",
           "member": "int64",
           "name": "ActionType",
@@ -30051,7 +30529,7 @@
         {
           "disabled": false,
           "document": "编辑失败的域名列表，如果非空则表示有域名编辑失败，整个批量规则编辑失败，否则则表示批量规则编辑成功。",
-          "example": "[{\"Domain\":\"www.testwaf.com\", \"Message\":\"域名IP个数超过规格\"}]",
+          "example": "无",
           "member": "BatchDomainResult",
           "name": "Failed",
           "output_required": false,
@@ -30290,7 +30768,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "BOT模块开关状态，传入'0'表示关闭，'1'表示开启",
           "example": "\"test.com\"",
           "member": "string",
           "name": "Status",
@@ -30519,7 +30997,7 @@
         },
         {
           "disabled": false,
-          "document": "开关状态，小程序风控规则的时候传该值",
+          "document": "规则开关状态，0表示关闭，1表示开启，小程序风控规则传该值",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -30550,6 +31028,15 @@
           "example": "30",
           "member": "uint64",
           "name": "ActionRatio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则预览开关\n枚举值：\n0：关闭预览\n1：开启预览\n未传入时保留规则当前的预览设置\n开启后仅记录规则命中并继续匹配后续规则，不执行本规则配置的防护动作。仅支持自定义规则，启用时动作灰度比例须为100；不支持精准白名单和小程序规则。仅支持CNAME接入或云原生清洗接入，启用预览前须开启规则。",
+          "example": "0",
+          "member": "int64",
+          "name": "Preview",
           "required": false,
           "type": "int"
         }
@@ -31019,7 +31506,7 @@
         },
         {
           "disabled": false,
-          "document": "修改域名的访问日志开关为Status",
+          "document": "CLS访问日志开关，0表示关闭，1表示开启",
           "example": "1",
           "member": "uint64",
           "name": "Status",
@@ -31549,7 +32036,7 @@
         },
         {
           "disabled": false,
-          "document": "42为黑名单，40为白名单",
+          "document": "IP黑白名单类型，40表示白名单，42表示黑名单",
           "example": "42",
           "member": "int64",
           "name": "ActionType",
@@ -31622,7 +32109,7 @@
         {
           "disabled": false,
           "document": "定时配置详情",
-          "example": "{     \"Timed\": [         {             \"StartDateTime\": 1711618518,             \"EndDateTime\": 1711918518         }     ],     \"Cron\": [         {             \"Day\": 12,             \"WDay\": 2,             \"StartTime\": \"12:11\",             \"EndTime\": \"21:00\"         }     ],     \"TimeTZone\": \"UTC+8\" }",
+          "example": "无",
           "member": "JobDateTime",
           "name": "JobDateTime",
           "required": false,
@@ -31942,6 +32429,60 @@
       ],
       "type": "object"
     },
+    "ModifyLLMSdkAccessRequest": {
+      "document": "ModifyLLMSdkAccess请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要接入的应用名称",
+          "example": "12342",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "waf_2l15cfe009ya8lg3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "serviceid",
+          "example": "9000002887",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "ddp",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMSdkAccessResponse": {
+      "document": "ModifyLLMSdkAccess返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLLMStatusRequest": {
       "document": "ModifyLLMStatus请求参数结构体",
       "members": [
@@ -32011,21 +32552,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>服务ID</p>",
-          "example": "9000002874",
-          "member": "string",
-          "name": "ServiceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>要修改的规则id列表</p>",
           "example": "[\"gdl-002\"]",
           "member": "string",
           "name": "RuleIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -32062,6 +32603,15 @@
           "name": "Direction",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名模式传 Domain（与 ServiceId 二选一）</p>",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -32083,21 +32633,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>服务ID</p>",
-          "example": "9000002874",
-          "member": "string",
-          "name": "ServiceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "<p>要修改的规则id列表</p>",
           "example": "[\"grl-safety-prompt-001\"]",
           "member": "string",
           "name": "RuleIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SDK 模式传 ServiceId（与 Domain 二选一）</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -32134,6 +32684,15 @@
           "name": "Direction",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>域名模式传 Domain（与 ServiceId 二选一）</p>",
+          "example": "www.example.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -32150,12 +32709,75 @@
       ],
       "type": "object"
     },
+    "ModifyLLMWafToolCallRuleRequest": {
+      "document": "ModifyLLMWafToolCallRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>服务ID</p>",
+          "example": "9000002874",
+          "member": "string",
+          "name": "ServiceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要修改的规则id列表</p>",
+          "example": "[\"gtc-baseline-001\"]",
+          "member": "string",
+          "name": "RuleIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>规则动作</p>",
+          "example": "deny",
+          "member": "string",
+          "name": "RuleAction",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>开关</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例id</p>",
+          "example": "waf_2l15d14809yfq9sf",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLLMWafToolCallRuleResponse": {
+      "document": "ModifyLLMWafToolCallRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyModuleStatusRequest": {
       "document": "ModifyModuleStatus请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "需要设置的domain",
+          "document": "<p>需要设置的domain</p>",
           "example": "zjm.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
@@ -32164,7 +32786,7 @@
         },
         {
           "disabled": false,
-          "document": "Web 安全模块开关，0或1",
+          "document": "<p>Web 安全模块开关，0或1</p>",
           "example": "1",
           "member": "uint64",
           "name": "WebSecurity",
@@ -32173,7 +32795,7 @@
         },
         {
           "disabled": false,
-          "document": "访问控制模块开关，0或者1",
+          "document": "<p>访问控制模块开关，0或者1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AccessControl",
@@ -32182,7 +32804,7 @@
         },
         {
           "disabled": false,
-          "document": "CC模块开关，0或者1",
+          "document": "<p>CC模块开关，0或者1</p>",
           "example": "1",
           "member": "uint64",
           "name": "CcProtection",
@@ -32191,7 +32813,7 @@
         },
         {
           "disabled": false,
-          "document": "API安全模块开关，0或者1",
+          "document": "<p>API安全模块开关，0或者1</p>",
           "example": "1",
           "member": "uint64",
           "name": "ApiProtection",
@@ -32200,7 +32822,16 @@
         },
         {
           "disabled": false,
-          "document": "防篡改模块开关，0或者1",
+          "document": "<p>API安全检测开关，0关闭1开启</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApiDetect",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>防篡改模块开关，0或者1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AntiTamper",
@@ -32209,7 +32840,7 @@
         },
         {
           "disabled": false,
-          "document": "防泄漏模块开关，0或者1",
+          "document": "<p>防泄漏模块开关，0或者1</p>",
           "example": "1",
           "member": "uint64",
           "name": "AntiLeakage",
@@ -32218,7 +32849,7 @@
         },
         {
           "disabled": false,
-          "document": "限流模块开关，0或1",
+          "document": "<p>限流模块开关，0或1</p>",
           "example": "1",
           "member": "uint64",
           "name": "RateLimit",
@@ -32227,7 +32858,7 @@
         },
         {
           "disabled": false,
-          "document": "gzip 开关",
+          "document": "<p>gzip 开关</p>",
           "example": "1",
           "member": "uint64",
           "name": "GzipAnalysis",
@@ -34898,7 +35529,7 @@
         {
           "disabled": false,
           "document": "配置状态",
-          "example": "{\"EnableHeaders\":1}",
+          "example": "无",
           "member": "FieldWriteConfig",
           "name": "WriteConfig",
           "output_required": false,
@@ -34913,7 +35544,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递流唯一ID",
+          "document": "<p>投递流唯一ID</p>",
           "example": "100001",
           "member": "int64",
           "name": "FlowId",
@@ -34923,7 +35554,7 @@
         },
         {
           "disabled": false,
-          "document": "1-访问日志 2-攻击日志",
+          "document": "<p>1-访问日志 2-攻击日志</p>",
           "example": "1",
           "member": "int64",
           "name": "LogType",
@@ -34933,7 +35564,7 @@
         },
         {
           "disabled": false,
-          "document": "状态 0-为关闭 1-为启用",
+          "document": "<p>状态 0-为关闭 1-为启用</p>",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -34943,7 +35574,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS所在区域",
+          "document": "<p>CLS所在区域</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "CLSRegion",
@@ -34953,7 +35584,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集合名称",
+          "document": "<p>CLS日志集合名称</p>",
           "example": "waf-post-logset",
           "member": "string",
           "name": "LogsetName",
@@ -34963,7 +35594,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集合ID",
+          "document": "<p>CLS日志集合ID</p>",
           "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
           "member": "string",
           "name": "LogsetID",
@@ -34973,7 +35604,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志主题名称",
+          "document": "<p>CLS日志主题名称</p>",
           "example": "waf-post-logtopic",
           "member": "string",
           "name": "LogTopicName",
@@ -34983,7 +35614,7 @@
         },
         {
           "disabled": false,
-          "document": "CLS日志集合ID",
+          "document": "<p>CLS日志集合ID</p>",
           "example": "59a61f1a-d606-4a17-8eaf-0881cb656887",
           "member": "string",
           "name": "LogTopicID",
@@ -34993,7 +35624,7 @@
         },
         {
           "disabled": false,
-          "document": "写配置",
+          "document": "<p>写配置</p>",
           "example": "无",
           "member": "FieldWriteConfig",
           "name": "WriteConfig",
@@ -37402,7 +38033,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段 匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同，具体如下所示： <table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>匹配字段</th>\n\t\t\t<th>匹配参数</th>\n\t\t\t<th>逻辑符号</th>\n\t\t\t<th>匹配内容</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>IP（来源IP）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>多个IP以英文逗号隔开,最多20个</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IPV6（来源IPv6）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>支持单个IPV6地址</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Referer（Referer）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>URL（请求路径）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）<br /></td>\n\t\t\t<td>请以/开头,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>UserAgent（UserAgent）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HTTP_METHOD（HTTP请求方法）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入方法名称,建议大写</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>QUERY_STRING（请求字符串）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET（GET参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_PARAMS_NAMES（GET参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST（POST参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_POST_NAMES（POST参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST_BODY（完整BODY）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入BODY内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>COOKIE（Cookie）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_COOKIES_NAMES（Cookie参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_COOKIE（Cookie参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_HEADERS_NAMES（Header参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,建议小写,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_HEADER（Header参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CONTENT_LENGTH（Content-length）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numge（数值大于等于）<br />numle（数值小于等于）</td>\n\t\t\t<td>请输入0-9999999999999之间的整数</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IP_GEO（来源IP归属地）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>geo_in（属于）<br />geo_not_in（不属于）</td>\n\t\t\t<td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HOST（请求Host）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入Host值,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_RISK（验证码风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>numeq/numneq：Content 为 0-255 的整数字符串，例如 \"10\"；belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"1\",\"2\"]，最多50个元素，每个值为0-255整数；null/nnull：Content 必须为空字符串。集合格式不能使用普通逗号分隔字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"101\",\"201\"]，最多7个元素；支持取值：101、201、301、401、501、601、701；null/nnull：Content 必须为空字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHAR_SCORE（验证码风险评估分）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numle（数值小于等于）<br />numge（数值大于等于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>数值比较时 Content 为 0-100 的整数字符串；null/nnull 时 Content 必须为空字符串。</td>\n\t\t</tr>\n\t</tbody>\n</table>",
+          "document": "匹配字段 匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同，具体如下所示： <table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>匹配字段</th>\n\t\t\t<th>匹配参数</th>\n\t\t\t<th>逻辑符号</th>\n\t\t\t<th>匹配内容</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>IP（来源IP）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>多个IP以英文逗号隔开,最多20个</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IPV6（来源IPv6）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>ipmatch（匹配）<br />ipnmatch（不匹配）</td>\n\t\t\t<td>支持单个IPV6地址</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>Referer（Referer）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>URL（请求路径）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）<br /></td>\n\t\t\t<td>请以/开头,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>UserAgent（UserAgent）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HTTP_METHOD（HTTP请求方法）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入方法名称,建议大写</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>QUERY_STRING（请求字符串）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET（GET参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_PARAMS_NAMES（GET参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST（POST参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_POST_NAMES（POST参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>POST_BODY（完整BODY）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入BODY内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>COOKIE（Cookie）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_COOKIES_NAMES（Cookie参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_COOKIE（Cookie参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>GET_HEADERS_NAMES（Header参数名）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>eq（等于）<br />neq（不等于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,建议小写,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>ARGS_HEADER（Header参数值）</td>\n\t\t\t<td>支持参数录入</td>\n\t\t\t<td>empty（内容为空）<br />nempty（内容不为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />belong_to（属于）<br />not_belong_to（不属于）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入内容,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CONTENT_LENGTH（Content-length）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）</td>\n\t\t\t<td>请输入0-999999999999之间的整数</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>IP_GEO（来源IP归属地）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>geo_in（属于）<br />geo_not_in（不属于）</td>\n\t\t\t<td>请输入内容,10240字符以内，格式为序列化的JSON，格式为：[{\"Country\":\"中国\",\"Region\":\"广东\",\"City\":\"深圳\"}]</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>HOST（请求Host）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>empty（内容为空）<br />null（不存在）<br />nnull（存在）<br />eq（等于）<br />neq（不等于）<br />contains（包含）<br />ncontains（不包含）<br />len_eq（长度等于）<br />len_gt（长度大于）<br />len_lt（长度小于）<br />strprefix（前缀匹配）<br />strsuffix（后缀匹配）<br />rematch（正则匹配）</td>\n\t\t\t<td>请输入Host值,512个字符以内</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_RISK（验证码风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numneq（数值不等于）<br />belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>numeq/numneq：Content 为 0-255 的整数字符串，例如 \"10\"；belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"1\",\"2\"]，最多50个元素，每个值为0-255整数；null/nnull：Content 必须为空字符串。集合格式不能使用普通逗号分隔字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHA_DEVICE_RISK（验证码设备风险）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>belong_to（属于）<br />not_belong_to（不属于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>belong_to/not_belong_to：Content 为 JSON 字符串数组的序列化字符串，例如 [\"101\",\"201\"]，最多7个元素；支持取值：101、201、301、401、501、601、701；null/nnull：Content 必须为空字符串。</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>CAPTCHAR_SCORE（验证码风险评估分）</td>\n\t\t\t<td>不支持参数</td>\n\t\t\t<td>numeq（数值等于）<br />numgt（数值大于）<br />numlt（数值小于）<br />numle（数值小于等于）<br />numge（数值大于等于）<br />null（不存在）<br />nnull（存在）</td>\n\t\t\t<td>数值比较时 Content 为 0-100 的整数字符串；null/nnull 时 Content 必须为空字符串。</td>\n\t\t</tr>\n\t</tbody>\n</table>",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -38601,6 +39232,24 @@
           "name": "Order",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统一匹配条件列表，复用ACL自定义策略结构，条件数量上限10条。MatchConditions非空时引擎只走新字段",
+          "example": "无",
+          "member": "Strategy",
+          "name": "MatchConditions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "条件间逻辑：and(默认)/or",
+          "example": "and",
+          "member": "string",
+          "name": "ConditionLogic",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -38780,7 +39429,7 @@
         },
         {
           "disabled": false,
-          "document": "状态",
+          "document": "CC规则开关，0表示关闭，1表示开启",
           "example": "0",
           "member": "int64",
           "name": "Status",
@@ -38834,7 +39483,7 @@
         },
         {
           "disabled": false,
-          "document": "动作有效时间",
+          "document": "动作有效时间，单位：秒，取值范围60~604800（即1分钟~7天）",
           "example": "600",
           "member": "int64",
           "name": "ValidTime",
@@ -38879,7 +39528,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型",
+          "document": "CC规则类型，0表示基础规则，1表示高级规则",
           "example": "0",
           "member": "int64",
           "name": "Type",

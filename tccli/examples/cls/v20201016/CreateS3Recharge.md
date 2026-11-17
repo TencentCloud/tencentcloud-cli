@@ -17,7 +17,8 @@ tccli cls CreateS3Recharge --cli-unfold-argument  \
     --ExtractRuleInfo.BeginRegex \[\d+-\d+-\w+:\d+:\d+,\d+\]\s+\[\w+\]\s+.* \
     --ExtractRuleInfo.Keys timestamp \
     --ExtractRuleInfo.UnMatchUpLoadSwitch True \
-    --ExtractRuleInfo.UnMatchLogKey LogParseFailure
+    --ExtractRuleInfo.UnMatchLogKey LogParseFailure \
+    --SQSUrl https://sqs.ap-southeast-1.amazonaws.com/*****************ueue
 ```
 
 Output: 

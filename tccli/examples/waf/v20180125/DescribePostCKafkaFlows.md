@@ -26,7 +26,8 @@ Output:
                 "SASLEnable": 0,
                 "SASLUser": "sa",
                 "SASLPassword": "sa***",
-                "Content": "info"
+                "Content": "info",
+                "VipType": 2
             }
         ]
     }

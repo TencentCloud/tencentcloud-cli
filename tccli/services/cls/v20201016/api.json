@@ -9887,6 +9887,24 @@
           "name": "TaskType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用SQS。</p><p>默认值：false</p><p>仅允许 TaskType=2是为true。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SQSEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQS队列URL。SqsEnabled=true 时必填非空标准队列 URL；默认空字符串，不隐式开启 SQS，关闭时不生效。</p>",
+          "example": "https://sqs.ap-southeast-1.amazonaws.com/*****************ueue",
+          "member": "string",
+          "name": "SQSUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -11749,6 +11767,16 @@
           "name": "EnvInfos",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>前置加工任务源主题、目标主题说明</p>",
+          "example": "DataTransformType=1 indicates a pre-processing task. The source topic and the destination topic being the same is by design and will not cause a processing loop.",
+          "member": "string",
+          "name": "Describe",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -26867,6 +26895,24 @@
           "name": "ExtractRuleInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用SQS。不传保持原配置； 开启开关仅对增量数据生效。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SQSEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQS队列URL。开启开关后仅对增量数据生效。</p>",
+          "example": "https://sqs.ap-southeast-1.amazonaws.com/************/my-queue",
+          "member": "string",
+          "name": "SQSUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -30992,6 +31038,26 @@
           "name": "UpdateTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用SQS。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "SQSEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>SQS队列URL。</p>",
+          "example": "https://sqs.ap-southeast-1.amazonaws.com/123456789012/my-queue",
+          "member": "string",
+          "name": "SQSUrl",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

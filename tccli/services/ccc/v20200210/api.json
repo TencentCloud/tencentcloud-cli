@@ -12230,7 +12230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "09:00:00",
           "member": "string",
           "name": "StartTime",
@@ -12241,7 +12241,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "14:00:00",
           "member": "string",
           "name": "EndTime",

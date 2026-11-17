@@ -200,6 +200,14 @@
         "title": "DescribeTokenPlanList"
       }
     ],
+    "DescribeTokenPlanPersonalPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTokenPlanPersonalPackage\n<公共请求参数>\n\n{\n    \"ProductType\": \"personal\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AutoRenewFlag\": 1,\n        \"CurrentCycle\": 3,\n        \"CycleCredits\": \"5000000\",\n        \"ExpireTime\": \"2027-03-15T10:30:00Z\",\n        \"PackageStatus\": \"active\",\n        \"PeriodEndDate\": \"2026-07-15T00:00:00Z\",\n        \"ProductType\": \"personal\",\n        \"RemainCycles\": 9,\n        \"StartTime\": \"2026-03-15T10:30:00Z\",\n        \"TotalCredits\": \"50000000\",\n        \"TotalCycles\": 12,\n        \"TotalUsed\": \"8362150\",\n        \"RequestId\": \"b78bc4eb-e3e8-4bfe-91f7-e92d83b5d030\",\n        \"ResourceId\": \"pre-tp-gz-personal-202611020090241********\"\n    }\n}",
+        "title": "成功调用"
+      }
+    ],
     "DescribeUsageRankList": [
       {
         "document": "",

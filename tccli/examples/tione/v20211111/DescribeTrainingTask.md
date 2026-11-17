@@ -95,6 +95,11 @@ Output:
             "Message": "",
             "CallbackUrl": "",
             "SubUinName": "evanxli",
+            "ExposeNetworkConfig": null,
+            "OperatorInfo": {
+                "SubUin": "100042146752",
+                "SubUinName": "evanxli"
+            },
             "CodeRepos": [
                 {
                     "Id": "cr-1076157270725717248",

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli waf DescribeCustomRuleList --cli-unfold-argument  \
-    --Domain test.qcloudwaf.com \
+    --Domain www.example.com \
     --Limit 1 \
     --Filters.0.Values 1234567890 \
     --Filters.0.Name RuleID \
@@ -57,7 +57,8 @@ Output:
                 "CronType": "week",
                 "Label": "label",
                 "PageId": "1101",
-                "Domain": "www.testwaf.com"
+                "Domain": "www.testwaf.com",
+                "Preview": 0
             }
         ],
         "TotalCount": "1"

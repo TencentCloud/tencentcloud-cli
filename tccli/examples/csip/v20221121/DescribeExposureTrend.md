@@ -11,19 +11,21 @@ Output:
 ```
 {
     "Response": {
-        "ExposeIncrement": 6,
-        "AclCount": 26,
+        "AclCount": 0,
         "CloseCount": 8,
-        "OpenCount": 89,
+        "ExposeIncrement": 0,
+        "ExposeTotalCount": 16,
         "ExposeTrendList": [
             {
-                "AclCount": 26,
+                "AclCount": 0,
                 "CloseCount": 8,
-                "Date": "2025-01-15",
-                "OpenCount": 89
+                "Date": "2026-11-09",
+                "OpenCount": 8
             }
         ],
-        "RequestId": "a98cde8a-3870-433e-bd8f-a491f4981cd2"
+        "OpenCount": 8,
+        "ToGovernRiskCount": 13,
+        "RequestId": "d3c1bb08-ac40-44e3-8670-a2673874500f"
     }
 }
 ```

@@ -6,19 +6,19 @@ Input:
 
 ```
 tccli waf ModifyCustomRule --cli-unfold-argument  \
-    --Edition clb-waf \
-    --Domain www.qcloud.com \
+    --Edition sparta-waf \
+    --Domain www.example.com \
     --RuleId 17958569 \
-    --RuleName rulename \
+    --RuleName ProtectAdminAccess \
     --RuleAction 1 \
-    --Redirect /redirect_url \
-    --Bypass geoip,cc,owasp,ai,antileakage \
     --SortId 100 \
     --ExpireTime 0 \
     --Strategies.0.Field IP \
     --Strategies.0.CompareFunc ipmatch \
-    --Strategies.0.Content 1.1.1.2 \
-    --Strategies.0.Arg "none"
+    --Strategies.0.Content 192.0.2.10 \
+    --Strategies.0.Arg  \
+    --Preview 1 \
+    --ActionRatio 100
 ```
 
 Output: 

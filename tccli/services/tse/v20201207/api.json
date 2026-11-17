@@ -1086,7 +1086,7 @@
       "status": "online"
     },
     "ModifyNetworkAccessStrategy": {
-      "document": "修改云原生API网关实例Kong访问策略，支持白名单或者黑名单。",
+      "document": "修改云原生API网关实例Kong访问策略，支持白名单或者黑名单。 支持 AccessControlSource=reference 引用实例基础配置，与自定义 CIDR 互斥。",
       "input": "ModifyNetworkAccessStrategyRequest",
       "name": "修改云原生API网关实例Kong访问策略",
       "output": "ModifyNetworkAccessStrategyResponse",
@@ -6041,6 +6041,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "Spec",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9133,7 +9143,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云原生API网关名字, 最多支持60个字符。",
+          "document": "<p>云原生API网关名字, 最多支持60个字符。</p>",
           "example": "kong-test",
           "member": "string",
           "name": "Name",
@@ -9142,7 +9152,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生API网关类型, 目前只支持kong。",
+          "document": "<p>云原生API网关类型, 目前只支持kong。</p>",
           "example": "kong",
           "member": "string",
           "name": "Type",
@@ -9151,7 +9161,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生API网关版本。参考值：\n- 2.4.1\n- 2.5.1",
+          "document": "<p>云原生API网关版本。参考值：</p><ul><li>2.4.1</li><li>2.5.1</li></ul>",
           "example": "2.4.1",
           "member": "string",
           "name": "GatewayVersion",
@@ -9160,7 +9170,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生API网关节点配置。",
+          "document": "<p>云原生API网关节点配置。</p>",
           "example": "无",
           "member": "CloudNativeAPIGatewayNodeConfig",
           "name": "NodeConfig",
@@ -9169,7 +9179,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生API网关vpc配置。",
+          "document": "<p>云原生API网关vpc配置。</p>",
           "example": "无",
           "member": "CloudNativeAPIGatewayVpcConfig",
           "name": "VpcConfig",
@@ -9178,7 +9188,7 @@
         },
         {
           "disabled": false,
-          "document": "云原生API网关描述信息, 最多支持120个字符。",
+          "document": "<p>云原生API网关描述信息, 最多支持120个字符。</p>",
           "example": "kong test",
           "member": "string",
           "name": "Description",
@@ -9187,7 +9197,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表",
+          "document": "<p>标签列表</p>",
           "example": "无",
           "member": "InstanceTagInfo",
           "name": "Tags",
@@ -9196,7 +9206,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启 CLS 日志。默认值：fasle",
+          "document": "<p>是否开启 CLS 日志。默认值：fasle</p>",
           "example": "false",
           "member": "bool",
           "name": "EnableCls",
@@ -9205,7 +9215,7 @@
         },
         {
           "disabled": false,
-          "document": "产品版本。参考值：\n- TRIAL：开发版\n- STANDARD：标准版 （默认值）\n- PROFESSIONAL：专业版",
+          "document": "<p>产品版本</p><p>枚举值：</p><ul><li>STANDARD： 标准版</li><li>PROFESSIONAL： 专业版</li></ul>",
           "example": "STANDARD",
           "member": "string",
           "name": "FeatureVersion",
@@ -9214,7 +9224,7 @@
         },
         {
           "disabled": false,
-          "document": "公网出流量带宽，[1,2048]Mbps",
+          "document": "<p>公网出流量带宽，[1,2048]Mbps</p>",
           "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
@@ -9223,7 +9233,7 @@
         },
         {
           "disabled": false,
-          "document": "实例实际的地域信息，默认值：ap-guangzhou",
+          "document": "<p>实例实际的地域信息，默认值：ap-guangzhou</p>",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EngineRegion",
@@ -9232,7 +9242,7 @@
         },
         {
           "disabled": false,
-          "document": "ingress Class名称",
+          "document": "<p>ingress Class名称</p>",
           "example": "nginx",
           "member": "string",
           "name": "IngressClassName",
@@ -9241,7 +9251,7 @@
         },
         {
           "disabled": false,
-          "document": "付费类型。参考值：\n0：后付费（默认值）\n1：预付费（接口暂不支持创建预付费实例）",
+          "document": "<p>付费类型。参考值：<br>0：后付费（默认值）<br>1：预付费（接口暂不支持创建预付费实例）</p>",
           "example": "0",
           "member": "int64",
           "name": "TradeType",
@@ -9250,7 +9260,7 @@
         },
         {
           "disabled": false,
-          "document": "公网相关配置",
+          "document": "<p>公网相关配置</p>",
           "example": "无",
           "member": "InternetConfig",
           "name": "InternetConfig",
@@ -9259,12 +9269,21 @@
         },
         {
           "disabled": false,
-          "document": "关联的prometheus ID",
+          "document": "<p>关联的prometheus ID</p>",
           "example": "prom-788xxxxxx",
           "member": "string",
           "name": "PromId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启HTTP 80 端口的访问</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableHttpPort",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9274,7 +9293,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建云原生API网关实例响应结果。",
+          "document": "<p>创建云原生API网关实例响应结果。</p>",
           "example": "无",
           "member": "CreateCloudNativeAPIGatewayResult",
           "name": "Result",
@@ -9377,7 +9396,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "网关ID",
+          "document": "<p>网关ID</p>",
           "example": "gateway-962b7d7c",
           "member": "string",
           "name": "GatewayId",
@@ -9386,7 +9405,7 @@
         },
         {
           "disabled": false,
-          "document": "所属服务的ID",
+          "document": "<p>所属服务的ID</p>",
           "example": "104dd157-5008-4d3c-9feb-4767667863ff",
           "member": "string",
           "name": "ServiceID",
@@ -9395,7 +9414,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的名字，实例级别唯一，可以不提供",
+          "document": "<p>路由的名字，实例级别唯一，可以不提供</p>",
           "example": "route-demo",
           "member": "string",
           "name": "RouteName",
@@ -9404,7 +9423,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的方法，其中方法可选值：\n- GET\n- POST\n- DELETE\n- PUT\n- OPTIONS\n- PATCH\n- HEAD\n- ANY\n- TRACE\n- COPY\n- MOVE\n- PROPFIND\n- PROPPATCH\n- MKCOL\n- LOCK\n- UNLOCK",
+          "document": "<p>路由的方法，其中方法可选值：</p><ul><li>GET</li><li>POST</li><li>DELETE</li><li>PUT</li><li>OPTIONS</li><li>PATCH</li><li>HEAD</li><li>ANY</li><li>TRACE</li><li>COPY</li><li>MOVE</li><li>PROPFIND</li><li>PROPPATCH</li><li>MKCOL</li><li>LOCK</li><li>UNLOCK</li></ul>",
           "example": "[\"GET\"]",
           "member": "string",
           "name": "Methods",
@@ -9413,7 +9432,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的域名",
+          "document": "<p>路由的域名</p>",
           "example": "[\"www.demo.com\"]",
           "member": "string",
           "name": "Hosts",
@@ -9422,7 +9441,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的路径",
+          "document": "<p>路由的路径</p>",
           "example": "[\"/\"]",
           "member": "string",
           "name": "Paths",
@@ -9431,7 +9450,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的协议，可选\n- https\n- http",
+          "document": "<p>路由的协议，可选</p><ul><li>https</li><li>http</li></ul>",
           "example": "[\"https\"]",
           "member": "string",
           "name": "Protocols",
@@ -9440,7 +9459,7 @@
         },
         {
           "disabled": false,
-          "document": "转发到后端时是否保留Host",
+          "document": "<p>转发到后端时是否保留Host</p>",
           "example": "true",
           "member": "bool",
           "name": "PreserveHost",
@@ -9449,7 +9468,7 @@
         },
         {
           "disabled": false,
-          "document": "https重定向状态码",
+          "document": "<p>https重定向状态码</p>",
           "example": "308",
           "member": "int64",
           "name": "HttpsRedirectStatusCode",
@@ -9458,7 +9477,7 @@
         },
         {
           "disabled": false,
-          "document": "转发到后端时是否StripPath",
+          "document": "<p>转发到后端时是否StripPath</p>",
           "example": "true",
           "member": "bool",
           "name": "StripPath",
@@ -9467,7 +9486,7 @@
         },
         {
           "disabled": true,
-          "document": "是否开启强制HTTPS",
+          "document": "<p>是否开启强制HTTPS</p>",
           "example": "false",
           "member": "bool",
           "name": "ForceHttps",
@@ -9476,7 +9495,7 @@
         },
         {
           "disabled": false,
-          "document": "四层匹配的目的端口",
+          "document": "<p>四层匹配的目的端口</p>",
           "example": "[7501]",
           "member": "uint64",
           "name": "DestinationPorts",
@@ -9485,7 +9504,7 @@
         },
         {
           "disabled": false,
-          "document": "路由的Headers",
+          "document": "<p>路由的Headers</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "Headers",
@@ -9494,7 +9513,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存请求body，默认true",
+          "document": "<p>是否缓存请求body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "RequestBuffering",
@@ -9503,7 +9522,7 @@
         },
         {
           "disabled": false,
-          "document": "是否缓存响应body，默认true",
+          "document": "<p>是否缓存响应body，默认true</p>",
           "example": "true",
           "member": "bool",
           "name": "ResponseBuffering",
@@ -9512,7 +9531,7 @@
         },
         {
           "disabled": false,
-          "document": "正则优先级",
+          "document": "<p>正则优先级</p>",
           "example": "0",
           "member": "int64",
           "name": "RegexPriority",
@@ -9521,12 +9540,21 @@
         },
         {
           "disabled": false,
-          "document": "queryString参数",
+          "document": "<p>queryString参数</p>",
           "example": "无",
           "member": "KVMapping",
           "name": "QueryStringParameters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由级超时时间，单位ms</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -17118,6 +17146,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>内网IP地址列表</p>",
+          "example": "[\"10.0.0.18\"]",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17260,6 +17298,24 @@
           "name": "OrderType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按标签 ID 过滤路由（AND 语义，需同时命中所有传入的 tag），最多 10 个。关联需求：路由/服务标签分组管理</p>",
+          "example": "[1]",
+          "member": "int64",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>按标签 K:V 过滤路由（AND 语义，前端下拉直传场景），最多 10 个。与 TagIds 同时传时取交集</p>",
+          "example": "无",
+          "member": "TagKVFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -23885,6 +23941,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>用户绑定的业务标签（路由/服务标签分组能力，不含 Kong 内部 tag）。未绑定时字段为空数组或不返回。关联需求：路由/服务标签分组管理</p>",
+          "example": "无",
+          "member": "KongUserTagKV",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>超时时间</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由超时配置的来源。</p>",
+          "example": "Service",
+          "member": "string",
+          "name": "TimeoutSource",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -24339,7 +24428,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Host",
+          "document": "<p>Host</p>",
           "example": "8.8.8.8",
           "member": "string",
           "name": "Host",
@@ -24350,7 +24439,7 @@
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "<p>端口</p>",
           "example": "100",
           "member": "int64",
           "name": "Port",
@@ -24361,7 +24450,7 @@
         },
         {
           "disabled": false,
-          "document": "权重",
+          "document": "<p>权重</p>",
           "example": "10",
           "member": "int64",
           "name": "Weight",
@@ -24372,18 +24461,7 @@
         },
         {
           "disabled": false,
-          "document": "健康状态",
-          "example": "HEALTHY",
-          "member": "string",
-          "name": "Health",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "2024-11-25 10:49:23",
           "member": "string",
           "name": "CreatedTime",
@@ -24394,18 +24472,7 @@
         },
         {
           "disabled": false,
-          "document": "Target的来源",
-          "example": "AutoScaling",
-          "member": "string",
-          "name": "Source",
-          "output_required": false,
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "CVM实例ID",
+          "document": "<p>CVM实例ID</p>",
           "example": "ins-ze3124da",
           "member": "string",
           "name": "CvmInstanceId",
@@ -24416,7 +24483,7 @@
         },
         {
           "disabled": false,
-          "document": "CVM实例名称",
+          "document": "<p>CVM实例名称</p>",
           "example": "在线学习服务",
           "member": "string",
           "name": "CvmInstanceName",
@@ -24427,8 +24494,41 @@
         },
         {
           "disabled": false,
-          "document": "target标签",
-          "example": "learn",
+          "document": "<p>健康状态</p>",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "Health",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Target ID</p>",
+          "example": "target-xxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>Target的来源</p>",
+          "example": "AutoScaling",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>target标签</p>",
+          "example": "[\"learn\"]",
           "member": "string",
           "name": "Tags",
           "output_required": false,
@@ -24749,6 +24849,45 @@
           "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "KongUserTagKV": {
+      "document": "用户业务标签的 KV 表示（路由/服务标签分组）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签 ID</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "TagId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签 Key</p>",
+          "example": "环境",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签 Value</p>",
+          "example": "生产",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -26503,6 +26642,15 @@
           "name": "QueryStringParameters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>路由级超时时间，单位ms</p>",
+          "example": "60000",
+          "member": "int64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -27233,7 +27381,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "云原生API网关实例ID。",
+          "document": "<p>云原生API网关实例ID。</p>",
           "example": "gateway-xxxxxx",
           "member": "string",
           "name": "GatewayId",
@@ -27242,7 +27390,7 @@
         },
         {
           "disabled": false,
-          "document": "分组id",
+          "document": "<p>分组id</p>",
           "example": "group-xxx2345s",
           "member": "string",
           "name": "GroupId",
@@ -27251,7 +27399,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型： \n- Open 公网\n- Internal 内网\t（暂不支持）",
+          "document": "<p>网络类型： </p><ul><li>Open 公网</li><li>Internal 内网    （暂不支持）</li></ul>",
           "example": "Open",
           "member": "string",
           "name": "NetworkType",
@@ -27260,7 +27408,7 @@
         },
         {
           "disabled": false,
-          "document": "ip地址",
+          "document": "<p>ip地址</p>",
           "example": "132.0.0.1",
           "member": "string",
           "name": "Vip",
@@ -27269,12 +27417,30 @@
         },
         {
           "disabled": false,
-          "document": "访问控制策略",
+          "document": "<p>访问控制策略</p>",
           "example": "无",
           "member": "NetworkAccessControl",
           "name": "AccessControl",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GlobalConfig / Custom；不传默认 Custom</p>",
+          "example": "Custom",
+          "member": "string",
+          "name": "AccessControlSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>全局配置ID</p>",
+          "example": "c1a57b9e-5e3c-4d77-b0bd-d8f7b0e80bbe",
+          "member": "string",
+          "name": "GlobalConfigId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -27814,6 +27980,7 @@
           "example": "Whitelist",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27824,6 +27991,7 @@
           "example": "[\"0.0.0.0\"]",
           "member": "string",
           "name": "CidrWhiteList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -27834,6 +28002,7 @@
           "example": "[\"100.10.0.0/24\"]",
           "member": "string",
           "name": "CidrBlackList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -29475,6 +29644,30 @@
         }
       ],
       "usage": "both"
+    },
+    "TagKVFilter": {
+      "document": "按标签 K:V 过滤条件（关联需求：路由/服务标签分组管理）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签 Key，长度 1~64</p>",
+          "example": "环境",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签 Value，长度 1~128</p>",
+          "example": "生产",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "TrafficGray": {
       "document": "泳道流量灰度规则",

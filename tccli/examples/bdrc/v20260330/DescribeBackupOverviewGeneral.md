@@ -12,71 +12,97 @@ Output:
 {
     "Response": {
         "BackupPolicyOverview": {
-            "BoundCount": 21,
-            "TotalCount": 146,
-            "UnboundCount": 125
+            "BoundCount": 12,
+            "TotalCount": 25,
+            "UnboundCount": 13
         },
         "BackupVaultOverview": {
-            "TotalCount": 50,
-            "TotalSizeMb": 8
+            "TotalCount": 13,
+            "TotalSizeMb": 85233
         },
         "CFSAgentBackupOverview": {
-            "BackupCount": 182,
-            "BackupResourceCount": 0,
-            "BackupSizeMb": 0,
-            "CreatingBackupCount": 1,
-            "FailedBackupCount": 154,
+            "BackupCount": 571,
+            "BackupResourceCount": 7,
+            "BackupSizeMb": 8303,
+            "CreatingBackupCount": 0,
+            "FailedBackupCount": 44,
             "RestoringBackupCount": 0,
-            "SuccessBackupCount": 16
+            "SuccessBackupCount": 527
         },
         "COSAgentBackupOverview": {
-            "BackupCount": 228,
-            "BackupResourceCount": 7,
-            "BackupSizeMb": 8,
-            "CreatingBackupCount": 0,
-            "FailedBackupCount": 73,
+            "BackupCount": 89,
+            "BackupResourceCount": 4,
+            "BackupSizeMb": 583,
+            "CreatingBackupCount": 1,
+            "FailedBackupCount": 71,
             "RestoringBackupCount": 0,
-            "SuccessBackupCount": 153
+            "SuccessBackupCount": 17
         },
         "FileBackupOverview": {
-            "BackupCount": 15,
+            "BackupCount": 18,
             "BackupResourceCount": 0,
-            "BackupSizeMb": 0,
-            "CreatingBackupCount": 3,
-            "FailedBackupCount": 8,
+            "BackupSizeMb": 72422,
+            "CreatingBackupCount": 0,
+            "FailedBackupCount": 11,
             "RestoringBackupCount": 0,
-            "SuccessBackupCount": 2
+            "SuccessBackupCount": 7
         },
         "InstanceBackupOverview": {
-            "BackupCount": 246,
-            "BackupResourceCount": 12,
-            "BackupSizeMb": 67319528,
+            "BackupCount": 9,
+            "BackupResourceCount": 7,
+            "BackupSizeMb": 51994,
             "CreatingBackupCount": 0,
             "FailedBackupCount": 0,
             "RestoringBackupCount": 0,
-            "SuccessBackupCount": 246
+            "SuccessBackupCount": 9
+        },
+        "LocalCFSAgentBackupOverview": {
+            "BackupCount": 8,
+            "BackupResourceCount": 4,
+            "BackupSizeMb": 24411,
+            "CreatingBackupCount": 0,
+            "FailedBackupCount": 0,
+            "RestoringBackupCount": 0,
+            "SuccessBackupCount": 8
+        },
+        "LocalCVMAgentBackupOverview": {
+            "BackupCount": 2,
+            "BackupResourceCount": 1,
+            "BackupSizeMb": 3927,
+            "CreatingBackupCount": 0,
+            "FailedBackupCount": 0,
+            "RestoringBackupCount": 0,
+            "SuccessBackupCount": 2
         },
         "ProtectedResourceOverview": {
             "CFS": {
-                "ProtectedCount": 10,
-                "TotalCount": 12
+                "ProtectedCount": 2,
+                "TotalCount": 2
             },
             "CFSAgent": {
-                "ProtectedCount": 3,
-                "TotalCount": 14
+                "ProtectedCount": 17,
+                "TotalCount": 28
             },
             "COSAgent": {
-                "ProtectedCount": 15,
-                "TotalCount": 31
+                "ProtectedCount": 10,
+                "TotalCount": 13
             },
             "Cvm": {
-                "ProtectedCount": 12,
-                "TotalCount": 12
+                "ProtectedCount": 7,
+                "TotalCount": 2
             },
-            "TotalProtectedCount": 40,
-            "TotalResourceCount": 69
+            "LocalCFSAgent": {
+                "ProtectedCount": 0,
+                "TotalCount": 0
+            },
+            "LocalCVMAgent": {
+                "ProtectedCount": 652,
+                "TotalCount": 652
+            },
+            "TotalProtectedCount": 688,
+            "TotalResourceCount": 697
         },
-        "RequestId": "0f99c423-ef91-4c77-9c07-58ad635e2095"
+        "RequestId": "43889a89-698c-4926-a35f-d7f979882f54"
     }
 }
 ```

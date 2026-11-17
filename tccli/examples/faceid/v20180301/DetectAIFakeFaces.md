@@ -80,3 +80,40 @@ Output:
 }
 ```
 
+**Example 4: 检查IP**
+
+
+
+Input: 
+
+```
+tccli faceid DetectAIFakeFaces --cli-unfold-argument  \
+    --FaceInputType 1 \
+    --FaceInput data:image/*peg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aH*wgJC4n**Is**wcKDcpLDAxNDQ0Hyc5PTgy*C******2wBDAQkJCQwLDBgN*Rg*I**h*jI**jIyMjIyMjIyMjIyMjIyMjI*Mj*yM*IyMjIyMjIy*jIy*jI*M***MjI*MjIyMjL/wAARCAMAAwAD**IAAhEBAxEB/8*AHw*A*QU*AQ*BAQEA**A*AAAAAAECAwQFBgcICQoL/8QA*RA*Ag*DAwIE*wUF*AQAAA*9AQI*AA***R*hMU**E1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQ \
+    --ExtraRiskInfo.Latitude 1.3048 \
+    --ExtraRiskInfo.Longitude 103.8318 \
+    --ExtraRiskInfo.Ip 106.55.202.186
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AttackRiskDetailList": [],
+        "AttackRiskLevel": "Mid",
+        "ExtraInfo": {},
+        "ExtraRiskResult": {
+            "BlackListResult": [],
+            "RiskDetailList": [
+                {
+                    "Type": "IpLocationMismatch"
+                }
+            ],
+            "RiskLevel": "High",
+            "Status": "Completed"
+        },
+        "RequestId": "5738fb6b-da7d-417f-af4d-947914e7bdc2"
+    }
+}
+```
+

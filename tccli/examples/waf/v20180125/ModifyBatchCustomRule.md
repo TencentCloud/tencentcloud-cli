@@ -7,19 +7,21 @@ Input:
 ```
 tccli waf ModifyBatchCustomRule --cli-unfold-argument  \
     --Id 1101 \
-    --Name  \
+    --Name ProtectAdminAccess \
     --ExpireTime 0 \
     --SortId 0 \
-    --ActionType 0 \
+    --ActionType 1 \
     --Redirect /redirect \
     --Bypass cc \
     --Remark remark \
     --EventId 11101 \
-    --Domains www.test.com \
+    --Domains www.example.com \
     --Strategies.0.Field URL \
     --Strategies.0.Arg  \
     --Strategies.0.CompareFunc eq \
-    --Strategies.0.Content /acl
+    --Strategies.0.Content /acl \
+    --Preview 1 \
+    --ActionRatio 100
 ```
 
 Output: 

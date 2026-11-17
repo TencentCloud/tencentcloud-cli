@@ -234,7 +234,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAccessToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessToken\": \"eyJhbGciOiJIUzI1NiJ9.signature\",\n        \"TokenType\": \"Bearer\",\n        \"ExpiresIn\": 3600,\n        \"RequestId\": \"3c6d138e-1234-5678-9abc-def012345678\"\n    }\n}",
         "title": "查询用户级访问凭证"
       }
     ],

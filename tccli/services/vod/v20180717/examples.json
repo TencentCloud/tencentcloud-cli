@@ -932,6 +932,14 @@
         "title": "查询AI生成视频的用量数据"
       }
     ],
+    "DescribeAigcWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAigcWhitelist\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"AigcType\": \"Video\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AigcType\": \"Video\",\n        \"IpWhitelist\": [\n            \"4*.*.*.0/8\"\n        ],\n        \"IpWhitelistSwitch\": \"ON\",\n        \"ModelWhitelist\": [\n            {\n                \"ModelName\": \"Hunyuan\",\n                \"ModelVersion\": \"1.5\"\n            }\n        ],\n        \"ModelWhitelistSwitch\": \"ON\",\n        \"RequestId\": \"4bb3588f-18a6-4caa-a667-096f13498afa\"\n    }\n}",
+        "title": "查询子应用白名单配置"
+      }
+    ],
     "DescribeAllClass": [
       {
         "document": "",
@@ -2304,6 +2312,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMediaBySemantics\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"Url\": \"https://******************.cos.ap-shanghai.myqcloud.com/***********.png\",\n    \"KnowledgeBaseId\": \"kb-**********\"\n}",
         "output": "{\n    \"Response\": {\n        \"SearchResults\": [\n            {\n                \"EndTimeOffset\": 0,\n                \"FileId\": \"9****************1\",\n                \"Score\": 1,\n                \"StartTimeOffset\": 0,\n                \"Title\": \"\"\n            }\n        ],\n        \"RequestId\": \"dccae516-7f4e-4972-90dc-36a5c22361d3\"\n    }\n}",
         "title": "按图片Url在知识库中进行搜索"
+      }
+    ],
+    "SetAigcWhitelist": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetAigcWhitelist\n<公共请求参数>\n\n{\n    \"SubAppId\": 200000,\n    \"AigcType\": \"Video\",\n    \"ModelWhitelistSwitch\": \"ON\",\n    \"IpWhitelistSwitch\": \"ON\",\n    \"ModelWhitelist\": [\n        {\n            \"ModelName\": \"Hunyuan\",\n            \"ModelVersion\": \"1.5\"\n        }\n    ],\n    \"IpWhitelist\": [\n        \"1*.*.*.*/24\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee3724d-6f5e-482a-9112-188e1c19d62a\"\n    }\n}",
+        "title": "设置 AIGC 生视频任务的模型白名单和 IP 白名单"
       }
     ],
     "SetCLSPushTarget": [

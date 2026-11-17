@@ -41,7 +41,7 @@
     "AddBatchCustomRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddBatchCustomRule\n<公共请求参数>\n\n{\n    \"Name\": \"name\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 1,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.test.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddBatchCustomRule\n<公共请求参数>\n\n{\n    \"Name\": \"ProtectAdminAccess\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 1,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.example.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ],\n    \"Preview\": 1,\n    \"ActionRatio\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"Res\": \"success\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "批量新增自定义规则接口"
       }
@@ -65,7 +65,7 @@
     "AddCustomRule": [
       {
         "document": "增加访问控制（自定义策略）",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomRule\n<公共请求参数>\n\n{\n    \"Redirect\": \"/redirect_url\",\n    \"Domain\": \"www.test.com\",\n    \"Name\": \"name\",\n    \"SortId\": \"100\",\n    \"ExpireTime\": \"0\",\n    \"Edition\": \"clb-waf\",\n    \"ActionType\": \"1\",\n    \"Strategies\": [\n        {\n            \"Content\": \"cookie_value\",\n            \"Field\": \"COOKIE\",\n            \"CompareFunc\": \"eq\",\n            \"Arg\": \"cookie_key\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddCustomRule\n<公共请求参数>\n\n{\n    \"Redirect\": \"/redirect_url\",\n    \"Domain\": \"www.example.com\",\n    \"Name\": \"ProtectAdminAccess\",\n    \"SortId\": \"100\",\n    \"ExpireTime\": \"0\",\n    \"Edition\": \"sparta-waf\",\n    \"ActionType\": \"1\",\n    \"Strategies\": [\n        {\n            \"Content\": \"cookie_value\",\n            \"Field\": \"COOKIE\",\n            \"CompareFunc\": \"eq\",\n            \"Arg\": \"cookie_key\"\n        }\n    ],\n    \"Preview\": 1,\n    \"ActionRatio\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a16a333-76ac-42f5-8066-c0ea93cc8dc7\",\n        \"RuleId\": 7025,\n        \"Success\": {\n            \"Message\": \"Success\",\n            \"Code\": \"Success\"\n        }\n    }\n}",
         "title": "添加访问控制（自定义策略）"
       }
@@ -611,8 +611,8 @@
     "DescribeBatchCustomRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchCustomRuleList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"By\": \"abc\",\n    \"Order\": \"abc\",\n    \"DataType\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Id\": 1101834050,\n                    \"ActionType\": 1,\n                    \"Bypass\": \"\",\n                    \"ExpireTime\": 0,\n                    \"Name\": \"clb访问测试\",\n                    \"Redirect\": \"/\",\n                    \"SortId\": 40,\n                    \"Status\": 1,\n                    \"Domains\": [\n                        \"zhenhua1020.qcloudwaf.com\"\n                    ],\n                    \"Remark\": \"\",\n                    \"Strategies\": [\n                        {\n                            \"Field\": \"URL\",\n                            \"Arg\": \"\",\n                            \"CompareFunc\": \"contains\",\n                            \"Content\": \"/ccc/bbb\",\n                            \"CaseNotSensitive\": 0\n                        }\n                    ],\n                    \"EventId\": \"\",\n                    \"ValidStatus\": 1,\n                    \"CreateTime\": \"2024-10-23 15:23:51\",\n                    \"UpdateTime\": \"2024-10-23 16:17:08\",\n                    \"JobType\": \"TimedJob\",\n                    \"JobDateTime\": {\n                        \"Timed\": [\n                            {\n                                \"StartDateTime\": 0,\n                                \"EndDateTime\": 0\n                            }\n                        ],\n                        \"Cron\": null,\n                        \"TimeTZone\": \"UTC+8\"\n                    },\n                    \"CronType\": \"-\",\n                    \"Label\": \"\",\n                    \"PageId\": \"\"\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"1547e8aa-b673-1a81-60ea-c91a2b153940\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchCustomRuleList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"By\": \"update_time\",\n    \"Order\": \"desc\",\n    \"DataType\": \"custom-rule\",\n    \"Filters\": [\n        {\n            \"Name\": \"Status\",\n            \"Values\": [\n                \"1\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Id\": 1101834050,\n                    \"ActionType\": 1,\n                    \"Bypass\": \"\",\n                    \"ExpireTime\": 0,\n                    \"Name\": \"clb访问测试\",\n                    \"Redirect\": \"/\",\n                    \"SortId\": 40,\n                    \"Status\": 1,\n                    \"Domains\": [\n                        \"zhenhua1020.qcloudwaf.com\"\n                    ],\n                    \"Remark\": \"\",\n                    \"Strategies\": [\n                        {\n                            \"Field\": \"URL\",\n                            \"Arg\": \"\",\n                            \"CompareFunc\": \"contains\",\n                            \"Content\": \"/ccc/bbb\",\n                            \"CaseNotSensitive\": 0\n                        }\n                    ],\n                    \"EventId\": \"\",\n                    \"ValidStatus\": 1,\n                    \"CreateTime\": \"2024-10-23 15:23:51\",\n                    \"UpdateTime\": \"2024-10-23 16:17:08\",\n                    \"JobType\": \"CronJob\",\n                    \"JobDateTime\": {\n                        \"Timed\": [],\n                        \"Cron\": [\n                            {\n                                \"Days\": [],\n                                \"WDays\": [\n                                    1,\n                                    2,\n                                    3,\n                                    4,\n                                    5\n                                ],\n                                \"StartTime\": \"09:00:00\",\n                                \"EndTime\": \"18:00:00\"\n                            }\n                        ],\n                        \"TimeTZone\": \"UTC+8\"\n                    },\n                    \"CronType\": \"week\",\n                    \"Label\": \"\",\n                    \"PageId\": \"\",\n                    \"Preview\": 0\n                }\n            ],\n            \"Total\": 1\n        },\n        \"RequestId\": \"1547e8aa-b673-1a81-60ea-c91a2b153940\"\n    }\n}",
         "title": "批量自定义规则列表接口"
       }
     ],
@@ -713,8 +713,8 @@
     "DescribeCustomRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a638b80-87db-458d-9dd8-461bb38d960a\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"cc\",\n                \"CreateTime\": \"2024-07-29T18:55:42+08:00\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"rulename\",\n                \"Redirect\": \"/redirect_url\",\n                \"RuleId\": \"1101205922\",\n                \"SortId\": \"50\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Field\": \"COOKIE\",\n                        \"CompareFunc\": \"eq\",\n                        \"Content\": \"cookie_value\",\n                        \"Arg\": \"cookie_key\",\n                        \"CaseNotSensitive\": 0\n                    }\n                ],\n                \"EventId\": \"1101\",\n                \"ValidStatus\": 1,\n                \"ModifyTime\": \"2024-08-28T18:54:25+08:00\",\n                \"Source\": \"custom\",\n                \"JobType\": \"TimedJob\",\n                \"JobDateTime\": {\n                    \"Timed\": [\n                        {\n                            \"StartDateTime\": 0,\n                            \"EndDateTime\": 0\n                        }\n                    ],\n                    \"Cron\": [],\n                    \"TimeTZone\": \"UTC+8\"\n                },\n                \"CronType\": \"week\",\n                \"Label\": \"label\",\n                \"PageId\": \"1101\",\n                \"Domain\": \"www.testwaf.com\"\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.example.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6a638b80-87db-458d-9dd8-461bb38d960a\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"1\",\n                \"Bypass\": \"cc\",\n                \"CreateTime\": \"2024-07-29T18:55:42+08:00\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"rulename\",\n                \"Redirect\": \"/redirect_url\",\n                \"RuleId\": \"1101205922\",\n                \"SortId\": \"50\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Field\": \"COOKIE\",\n                        \"CompareFunc\": \"eq\",\n                        \"Content\": \"cookie_value\",\n                        \"Arg\": \"cookie_key\",\n                        \"CaseNotSensitive\": 0\n                    }\n                ],\n                \"EventId\": \"1101\",\n                \"ValidStatus\": 1,\n                \"ModifyTime\": \"2024-08-28T18:54:25+08:00\",\n                \"Source\": \"custom\",\n                \"JobType\": \"TimedJob\",\n                \"JobDateTime\": {\n                    \"Timed\": [\n                        {\n                            \"StartDateTime\": 0,\n                            \"EndDateTime\": 0\n                        }\n                    ],\n                    \"Cron\": [],\n                    \"TimeTZone\": \"UTC+8\"\n                },\n                \"CronType\": \"week\",\n                \"Label\": \"label\",\n                \"PageId\": \"1101\",\n                \"Domain\": \"www.testwaf.com\",\n                \"Preview\": 0\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
         "title": "获取访问控制规则列表"
       }
     ],
@@ -908,6 +908,14 @@
         "title": "意图检测用例"
       }
     ],
+    "DescribeLLMHourBillDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMHourBillDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"waf_2112f6ik1700cnkd\",\n    \"Date\": \"2026-01-01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"waf_2112f6ik1700cnkd\",\n        \"Date\": \"2026-01-01\",\n        \"EstimatedTotalFee\": \"1234.56\",\n        \"ItemFees\": {\n            \"PromptAttackFee\": \"300.0\",\n            \"ContentTextFee\": \"500.0\",\n            \"ContentImageFee\": \"500.0\",\n            \"SensitiveDataFee\": \"500.0\"\n        },\n        \"HourlyTrend\": [\n            {\n                \"Hour\": \"00\",\n                \"Fee\": \"50.05\"\n            },\n            {\n                \"Hour\": \"01\",\n                \"Fee\": \"50.05\"\n            }\n        ],\n        \"HourlyDetail\": [\n            {\n                \"TimeRange\": \"00:00-01:00\",\n                \"PromptAttackUsage\": 10000,\n                \"ContentTextUsage\": 10000,\n                \"ContentImageUsage\": 10000,\n                \"SensitiveDataUsage\": 0,\n                \"PromptAttackFee\": \"0.035\",\n                \"ContentTextFee\": \"0.015\",\n                \"ContentImageFee\": \"50.0\",\n                \"SensitiveDataFee\": \"0.0\",\n                \"TotalFee\": \"50.05\"\n            }\n        ],\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
+        "title": "查询按小时账单明细"
+      }
+    ],
     "DescribeLLMKeywordLibrary": [
       {
         "document": "按更新时间降序查询自定义词库列表，每页10条",
@@ -938,6 +946,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMWafProtectRules\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"RuleType\": \"prompt_injection\"\n}",
         "output": "{\n    \"Response\": {\n        \"Categories\": [\n            {\n                \"Category\": \"prompt_injection\",\n                \"Count\": 4,\n                \"Rules\": [\n                    {\n                        \"Action\": \"log\",\n                        \"Description\": \"检测用户输入中试图覆盖或篡改系统指令的攻击行为\",\n                        \"DesensitizeSample\": \"\",\n                        \"RuleId\": \"grl-safety-prompt-001\",\n                        \"RuleName\": \"指令覆盖检测\",\n                        \"Severity\": \"critical\",\n                        \"Status\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"9f0960eb-a57f-43bf-8ac0-69cbc49ac924\"\n    }\n}",
         "title": "查询提示词注入"
+      }
+    ],
+    "DescribeLLMWafToolCallRules": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLLMWafToolCallRules\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Categories\": [\n            {\n                \"Category\": \"dangerous_ops\",\n                \"Count\": 9,\n                \"Rules\": [\n                    {\n                        \"Action\": \"log\",\n                        \"Description\": \"拦截 rm -rf、mkfs、dd、shutdown、reboot 等破坏性系统命令\",\n                        \"DesensitizeSample\": \"\",\n                        \"RuleId\": \"gtc-baseline-001\",\n                        \"RuleName\": \"高危系统命令工具阻断\",\n                        \"Severity\": \"critical\",\n                        \"Status\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e757752d-8e32-4521-b701-d9204aadd6de\"\n    }\n}",
+        "title": "测试用例"
       }
     ],
     "DescribeLogHistogram": [
@@ -1007,7 +1023,7 @@
     "DescribePolicyStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Edition\": \"saas-waf\"\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicyStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.com\",\n    \"Edition\": \"sparta-waf\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7984267-1b60-4979-accb-8f1ca497f827\",\n        \"InstanceId\": \"avcsm-1ads\",\n        \"Status\": 0\n    }\n}",
         "title": "DescribePolicyStatus"
       }
@@ -1024,7 +1040,7 @@
       {
         "document": "获取CKafka投递流任务列表",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostCKafkaFlows\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCKafkaFlows\": [\n            {\n                \"FlowId\": 100000,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CKafkaRegion\": \"ap-guangzhou\",\n                \"CKafkaID\": \"ckafka-o9gjqonr\",\n                \"Brokers\": \"11.179.226.202:6016\",\n                \"Version\": \"2.4.1\",\n                \"Topic\": \"waf_post_access_log\",\n                \"Compression\": \"lz4\",\n                \"SASLEnable\": 0,\n                \"SASLUser\": \"sa\",\n                \"SASLPassword\": \"sa***\",\n                \"Content\": \"info\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a20702ee-7206-4eeb-ba74-d13ecbc29c02\",\n        \"PostCKafkaFlows\": [\n            {\n                \"FlowId\": 100000,\n                \"LogType\": 1,\n                \"Status\": 1,\n                \"CKafkaRegion\": \"ap-guangzhou\",\n                \"CKafkaID\": \"ckafka-o9gjqonr\",\n                \"Brokers\": \"11.179.226.202:6016\",\n                \"Version\": \"2.4.1\",\n                \"Topic\": \"waf_post_access_log\",\n                \"Compression\": \"lz4\",\n                \"SASLEnable\": 0,\n                \"SASLUser\": \"sa\",\n                \"SASLPassword\": \"sa***\",\n                \"Content\": \"info\",\n                \"VipType\": 2\n            }\n        ]\n    }\n}",
         "title": "获取CKafka投递流任务列表"
       }
     ],
@@ -1038,7 +1054,7 @@
       {
         "document": "获取CLS投递流任务列表",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostCLSFlows\n<公共请求参数>\n\n{\n    \"LogType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"PostCLSFlows\": [\n            {\n                \"CLSRegion\": \"ap-guangzhou\",\n                \"FlowId\": 16778297,\n                \"LogTopicID\": \"3a867828-4e7e-4268-bac4-5f3900e49e46\",\n                \"LogTopicName\": \"waf_access_logtopic\",\n                \"LogType\": 1,\n                \"LogsetID\": \"76dc6d58-c4b6-4e39-92dc-0ecf35e09282\",\n                \"LogsetName\": \"waf_logset\",\n                \"Status\": 1,\n                \"WriteConfig\": {\n                    \"EnableBody\": 1,\n                    \"EnableBot\": 0,\n                    \"EnableHeaders\": 1,\n                    \"EnableResponse\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"32e9cdf3-05ad-4c7e-b225-d3dfb0efa201\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PostCLSFlows\": [\n            {\n                \"CLSRegion\": \"ap-guangzhou\",\n                \"FlowId\": 16778297,\n                \"LogTopicID\": \"3a867828-4e7e-4268-bac4-5f3900e49e46\",\n                \"LogTopicName\": \"waf_access_logtopic\",\n                \"LogType\": 1,\n                \"LogsetID\": \"76dc6d58-c4b6-4e39-92dc-0ecf35e09282\",\n                \"LogsetName\": \"waf_logset\",\n                \"Status\": 1,\n                \"WriteConfig\": {\n                    \"EnableAttackBody\": 0,\n                    \"EnableBody\": 1,\n                    \"EnableBot\": 0,\n                    \"EnableHeaders\": 1,\n                    \"EnableResponse\": 1,\n                    \"FilterPlusEnableHeaderFilter\": 1\n                }\n            }\n        ],\n        \"RequestId\": \"32e9cdf3-05ad-4c7e-b225-d3dfb0efa201\"\n    }\n}",
         "title": "获取CLS投递流任务列表新"
       }
     ],
@@ -1443,7 +1459,7 @@
     "ModifyBatchCustomRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomRule\n<公共请求参数>\n\n{\n    \"Id\": 1101,\n    \"Name\": \"\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 0,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.test.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBatchCustomRule\n<公共请求参数>\n\n{\n    \"Id\": 1101,\n    \"Name\": \"ProtectAdminAccess\",\n    \"ExpireTime\": 0,\n    \"SortId\": 0,\n    \"ActionType\": 1,\n    \"Redirect\": \"/redirect\",\n    \"Bypass\": \"cc\",\n    \"Remark\": \"remark\",\n    \"EventId\": \"11101\",\n    \"Domains\": [\n        \"www.example.com\"\n    ],\n    \"Strategies\": [\n        {\n            \"Field\": \"URL\",\n            \"Arg\": \"\",\n            \"CompareFunc\": \"eq\",\n            \"Content\": \"/acl\"\n        }\n    ],\n    \"Preview\": 1,\n    \"ActionRatio\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"Res\": \"success\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "批量编辑自定义规则接口"
       }
@@ -1545,7 +1561,7 @@
     "ModifyCustomRule": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRule\n&Edition=clb-waf\n&Domain=www.qcloud.com\n&RuleId=17958569\n&RuleName=rulename\n&RuleAction=1\n&Redirect=/redirect_url\n&Bypass=geoip,cc,owasp,ai,antileakage\n&SortId=100\n&ExpireTime=0\n&Strategies.0.Field=IP\n&Strategies.0.CompareFunc=ipmatch\n&Strategies.0.Content=1.1.1.2\n&Strategies.0.Arg=\"none\"\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomRule\n<公共请求参数>\n\n{\n    \"Edition\": \"sparta-waf\",\n    \"Domain\": \"www.example.com\",\n    \"RuleId\": 17958569,\n    \"RuleName\": \"ProtectAdminAccess\",\n    \"RuleAction\": \"1\",\n    \"SortId\": 100,\n    \"ExpireTime\": 0,\n    \"Strategies\": [\n        {\n            \"Field\": \"IP\",\n            \"CompareFunc\": \"ipmatch\",\n            \"Content\": \"192.0.2.10\",\n            \"Arg\": \"\"\n        }\n    ],\n    \"Preview\": 1,\n    \"ActionRatio\": 100\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a713f4cf-51ef-437f-8467-d4fdec061b78\",\n        \"Success\": {\n            \"Code\": \"Success\",\n            \"Message\": \"Success\"\n        }\n    }\n}",
         "title": "编辑自定义规则"
       }
@@ -1718,6 +1734,14 @@
         "title": "修改自定义词库"
       }
     ],
+    "ModifyLLMSdkAccess": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMSdkAccess\n<公共请求参数>\n\n{\n    \"Name\": \"12342\",\n    \"InstanceId\": \"waf_2l15cfe009ya8lg3\",\n    \"Domain\": \"9000002887\",\n    \"Remark\": \"ddp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4573d194-3857-4699-a102-368b0bdde2f6\"\n    }\n}",
+        "title": "测试用例"
+      }
+    ],
     "ModifyLLMStatus": [
       {
         "document": "关闭指定域名的内容合规检测（SwitchType=6）",
@@ -1745,6 +1769,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMWafProtectRule\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"RuleIds\": [\n        \"grl-safety-prompt-001\"\n    ],\n    \"RuleAction\": \"deny\",\n    \"Status\": 1,\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\",\n    \"Direction\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"05690bf3-09bf-43e7-9a92-6b59074c6f3b\"\n    }\n}",
+        "title": "批量修改防护规则"
+      }
+    ],
+    "ModifyLLMWafToolCallRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLLMWafToolCallRule\n<公共请求参数>\n\n{\n    \"ServiceId\": \"9000002874\",\n    \"RuleIds\": [\n        \"gtc-baseline-001\"\n    ],\n    \"RuleAction\": \"deny\",\n    \"Status\": 1,\n    \"InstanceId\": \"waf_2l15d14809yfq9sf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"be8d36b9-ba0a-440f-af14-d079ad2fad3f\"\n    }\n}",
         "title": "批量修改防护规则"
       }
     ],

@@ -828,6 +828,14 @@
         "title": "成功"
       }
     ],
+    "ListVideoSnapshotResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListVideoSnapshotResult\n<公共请求参数>\n\n{\n    \"BeginTime\": 1769510374,\n    \"EndTime\": 1769520374,\n    \"ConfigId\": \"f044***1******************821df8a75d\",\n    \"ChannelId\": \"4150*******3***b***8*******b7acce0c0\",\n    \"Type\": 1,\n    \"ImageUrlExpires\": 600,\n    \"PageNumber\": 1,\n    \"PageSize\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [],\n            \"PageNumber\": 1,\n            \"PageSize\": 20,\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"330d405e-cb45-43a8-8712-c9c9587290ed\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "ListVideoSnapshotTemplate": [
       {
         "document": "",

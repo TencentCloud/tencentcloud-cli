@@ -52,10 +52,12 @@ Output:
                 "LogsetName": "waf_logset",
                 "Status": 1,
                 "WriteConfig": {
+                    "EnableAttackBody": 0,
                     "EnableBody": 1,
                     "EnableBot": 0,
                     "EnableHeaders": 1,
-                    "EnableResponse": 1
+                    "EnableResponse": 1,
+                    "FilterPlusEnableHeaderFilter": 1
                 }
             }
         ],

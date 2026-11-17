@@ -86,16 +86,16 @@
     ],
     "CreateRegistryRecord": [
       {
-        "document": "CUSTOM 直接提交顶层 CustomDescriptors；服务端 SourceType 固定为 MANUAL。",
-        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"custom-order-query\",\n    \"DescriptorType\": \"CUSTOM\",\n    \"CustomDescriptors\": \"{\\\"vendor\\\":\\\"example\\\",\\\"capability\\\":\\\"order-query\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordId\": \"rec-01234567\",\n        \"Record\": {\n            \"RecordId\": \"rec-01234567\",\n            \"DescriptorType\": \"CUSTOM\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-01234567\",\n            \"Revision\": 1,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
-        "title": "创建 CUSTOM 类型 Record"
+        "document": "参数示意；资源 ID、账号、时间、摘要及 example.com URL 为示例，不对应真实资源，请替换后调用。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegistryRecord\n<公共请求参数>\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"example-mcp\",\n    \"Description\": \"示例 MCP 服务\",\n    \"DescriptorType\": \"MCP\",\n    \"VersionName\": \"1.0.0\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp\"\n    },\n    \"Metadata\": [\n        {\n            \"Name\": \"publisher\",\n            \"Value\": \"示例发布者\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"RecordId\": \"rec-0123abcd\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 1,\n            \"Status\": \"PENDING_APPROVAL\",\n            \"SupportedHarnessVersions\": [],\n            \"Metadata\": [\n                {\n                    \"Name\": \"publisher\",\n                    \"Value\": \"示例发布者\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "创建 MCP URL_IMPORT 版本"
       },
       {
-        "document": "统一 Create 接口，通过 DescriptorType + Source Union 选择协议类型。",
-        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: CreateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"order-query\",\n    \"Description\": \"订单查询 MCP 服务\",\n    \"DescriptorType\": \"MCP\",\n    \"VersionName\": \"v1\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp.json\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordId\": \"rec-0123abcd\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"DescriptorType\": \"MCP\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 1,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
-        "title": "创建 URL_IMPORT 类型的 MCP Record"
+        "document": "参数示意；资源 ID、账号、时间、摘要及 example.com URL 为示例，不对应真实资源，请替换后调用。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegistryRecord\n<公共请求参数>\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Name\": \"example-plugin\",\n    \"Description\": \"示例 Plugin 文件资产\",\n    \"DescriptorType\": \"PLUGIN\",\n    \"VersionName\": \"1.0.0\",\n    \"FileSource\": {\n        \"Type\": \"FILE\",\n        \"SizeBytes\": 1\n    },\n    \"SupportedHarnessVersions\": [\n        {\n            \"HarnessEngine\": \"pi\",\n            \"HarnessEngineVersion\": \"1.3.0\"\n        }\n    ],\n    \"Metadata\": [\n        {\n            \"Name\": \"publisher\",\n            \"Value\": \"示例发布者\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"RecordId\": \"rec-0123abcd\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-plugin\",\n            \"Description\": \"示例 Plugin 文件资产\",\n            \"DescriptorType\": \"PLUGIN\",\n            \"LifecycleStatus\": \"ACTIVE\",\n            \"AppId\": 1250000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"100000000002\",\n            \"VersionCount\": 1,\n            \"LabelSet\": [\n                \"latest\"\n            ],\n            \"CreateTime\": \"2030-01-01T00:00:00Z\",\n            \"UpdateTime\": \"2030-01-01T00:00:00Z\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"RecordId\": \"rec-0123abcd\",\n            \"Revision\": 1,\n            \"VersionName\": \"1.0.0\",\n            \"ChangeLog\": \"首次发布\",\n            \"Descriptors\": \"{\\\"name\\\": \\\"example-plugin\\\", \\\"description\\\": \\\"示例 Plugin 文件资产\\\"}\",\n            \"SourceType\": \"FILE\",\n            \"SourceConfig\": \"{\\\"Type\\\":\\\"FILE\\\",\\\"SizeBytes\\\":1}\",\n            \"Status\": \"PREPARING\",\n            \"ApprovalMode\": \"MANUAL\",\n            \"ConfigSHA256\": \"\",\n            \"LabelSet\": [],\n            \"SupportedHarnessVersions\": [\n                {\n                    \"HarnessEngine\": \"pi\",\n                    \"HarnessEngineVersion\": \"1.3.0\"\n                }\n            ],\n            \"Metadata\": [\n                {\n                    \"Name\": \"publisher\",\n                    \"Value\": \"示例发布者\"\n                }\n            ],\n            \"AppId\": 1250000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"100000000002\",\n            \"CreateTime\": \"2030-01-01T00:00:00Z\",\n            \"UpdateTime\": \"2030-01-01T00:00:00Z\",\n            \"ContentStatus\": \"UPLOADING\"\n        },\n        \"ContentStatus\": \"UPLOADING\",\n        \"UploadURL\": \"https://example.com/uploads/example-plugin.bin?signature=example\",\n        \"ExpireTime\": \"2030-01-01T00:15:00Z\"\n    }\n}",
+        "title": "创建 Plugin 文件版本"
       }
     ],
     "CreateSandboxSnapshot": [
@@ -150,6 +150,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDeployment\n<公共请求参数>\n\n{\n    \"DeploymentId\": \"dpl-a1b2c3d4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "删除 Deployment"
+      }
+    ],
+    "DeleteGPUResourceGroup": [
+      {
+        "document": "删除当前租户下已清空有效 GPU 实例、占用绑定和关联沙箱工具的资源组。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGPUResourceGroup\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-chongqing\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"gpug-example\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "删除空GPU资源组"
       }
     ],
     "DeletePreCacheImage": [
@@ -260,6 +268,48 @@
         "title": "查询事件列表"
       }
     ],
+    "DescribeGPUResourceGroups": [
+      {
+        "document": "查询当前地域、当前租户的 GPU 资源组及统计。通过 resource-group-id 精确过滤可查询组详情，仍返回数组；无匹配项返回空数组。资源组可以为空，商业期限和续费标记逐台保存。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResourceGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"resource-group-name-like\",\n            \"Values\": [\n                \"推理\"\n            ]\n        },\n        {\n            \"Name\": \"gpu-type\",\n            \"Values\": [\n                \"5090d\"\n            ]\n        },\n        {\n            \"Name\": \"gpu-num\",\n            \"Values\": [\n                \"2\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGroups\": [\n            {\n                \"ResourceGroupId\": \"gpug-example\",\n                \"Name\": \"推理服务\",\n                \"Spec\": {\n                    \"GPUType\": \"5090d\",\n                    \"GPUTypeAlias\": \"NVIDIA RTX 5090 D\",\n                    \"GPUMemoryGiB\": 64,\n                    \"CPU\": 64,\n                    \"Memory\": 192,\n                    \"GPUNum\": 2\n                },\n                \"Statistics\": {\n                    \"TotalCount\": 10,\n                    \"AvailableCount\": 5,\n                    \"AllocatedCount\": 3,\n                    \"StateCounts\": {\n                        \"Delivering\": 1,\n                        \"Active\": 8,\n                        \"Isolated\": 1,\n                        \"Destroying\": 0\n                    }\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "查询GPU资源组"
+      },
+      {
+        "document": "复用同一接口查询详情，没有独立的 DescribeGPUResourceGroup Action。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResourceGroups\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"resource-group-id\",\n            \"Values\": [\n                \"gpug-example\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceGroups\": [\n            {\n                \"ResourceGroupId\": \"gpug-example\",\n                \"Name\": \"推理服务\",\n                \"Spec\": {\n                    \"GPUType\": \"5090d\",\n                    \"GPUTypeAlias\": \"NVIDIA RTX 5090 D\",\n                    \"GPUMemoryGiB\": 64,\n                    \"CPU\": 64,\n                    \"Memory\": 192,\n                    \"GPUNum\": 2\n                },\n                \"Statistics\": {\n                    \"TotalCount\": 10,\n                    \"AvailableCount\": 5,\n                    \"AllocatedCount\": 3,\n                    \"StateCounts\": {\n                        \"Delivering\": 1,\n                        \"Active\": 8,\n                        \"Isolated\": 1,\n                        \"Destroying\": 0\n                    }\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "按资源组ID查询详情"
+      }
+    ],
+    "DescribeGPUResourceSpecs": [
+      {
+        "document": "查询当前地域可售 GPU 规格与当前租户可购买额度。GPUType、CPU、Memory、GPUNum 必须同时提供或同时省略；精确过滤时按四项匹配。不返回底层机型、资源池或计费标签。总显存为单台全部 GPU 的显存之和。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResourceSpecs\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"GPUResourceSpecSet\": [\n            {\n                \"GPUType\": \"5090d\",\n                \"GPUTypeAlias\": \"NVIDIA RTX 5090 D\",\n                \"GPUMemoryGiB\": 64,\n                \"CPU\": 64,\n                \"Memory\": 192,\n                \"GPUNum\": 2,\n                \"AvailableCount\": 2\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "查询GPU可售规格及额度"
+      },
+      {
+        "document": "0 表示确认无可购买额度，AvailableCount 的单位是台。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResourceSpecs\n<公共请求参数>\n\n{\n    \"GPUType\": \"5090d\",\n    \"CPU\": 64,\n    \"Memory\": 192,\n    \"GPUNum\": 2,\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"GPUResourceSpecSet\": [\n            {\n                \"GPUType\": \"5090d\",\n                \"GPUTypeAlias\": \"NVIDIA RTX 5090 D\",\n                \"GPUMemoryGiB\": 64,\n                \"CPU\": 64,\n                \"Memory\": 192,\n                \"GPUNum\": 2,\n                \"AvailableCount\": 0\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "精确查询一个规格"
+      },
+      {
+        "document": "null 表示额度未知，不能转换成 0 或无限额度。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResourceSpecs\n<公共请求参数>\n\n{\n    \"GPUType\": \"5090d\",\n    \"CPU\": 64,\n    \"Memory\": 192,\n    \"GPUNum\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"GPUResourceSpecSet\": [\n            {\n                \"GPUType\": \"5090d\",\n                \"GPUTypeAlias\": \"NVIDIA RTX 5090 D\",\n                \"GPUMemoryGiB\": 64,\n                \"CPU\": 64,\n                \"Memory\": 192,\n                \"GPUNum\": 2,\n                \"AvailableCount\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "额度暂不可确认"
+      }
+    ],
+    "DescribeGPUResources": [
+      {
+        "document": "查询当前地域、当前租户的逐台 GPU 商业资源及占用状态。仅展示当前资源，不展示已销毁或补偿完成的失败资源；先筛选（含占用状态）再统计和分页。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResources\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"gpug-example\",\n    \"State\": \"Active\",\n    \"AllocationState\": \"InUse\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Resources\": [\n            {\n                \"ResourceId\": \"ins-example-001\",\n                \"ResourceGroupId\": \"gpug-example\",\n                \"State\": \"Active\",\n                \"AllocationState\": \"InUse\",\n                \"InstanceId\": \"sandbox-example-001\",\n                \"ActiveAt\": \"2026-10-21T10:00:00+08:00\",\n                \"ExpireAt\": \"2026-11-21T10:00:00+08:00\",\n                \"RenewFlag\": 1,\n                \"StatusReason\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "查询GPU资源"
+      }
+    ],
     "DescribePreCacheImageList": [
       {
         "document": "",
@@ -336,14 +386,20 @@
       {
         "document": "VersionId 与 Label 互斥；均省略时等价于 Label=stable。",
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\"\n            ]\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\"\n        },\n        \"ResolvedBy\": \"LABEL\",\n        \"ResolvedLabel\": \"stable\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\"\n            ]\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\",\n            \"Metadata\": [],\n            \"SupportedHarnessVersions\": []\n        },\n        \"ResolvedBy\": \"LABEL\",\n        \"ResolvedLabel\": \"stable\"\n    }\n}",
         "title": "按 Label=stable 查询"
       },
       {
         "document": "指定 VersionId 时不返回 ResolvedLabel。",
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\"\n        },\n        \"ResolvedBy\": \"VERSION_ID\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\",\n            \"Metadata\": [],\n            \"SupportedHarnessVersions\": []\n        },\n        \"ResolvedBy\": \"VERSION_ID\"\n    }\n}",
         "title": "按 VersionId 精确查询"
+      },
+      {
+        "document": "示例资源 ID 请替换；MARKETPLACE 为固定大写常量，市场响应只包含公开字段。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"MARKETPLACE\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionId\": \"rv-0123abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"Name\": \"order-query\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\"\n            ]\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0123abcd\",\n            \"Revision\": 2,\n            \"Status\": \"APPROVED\",\n            \"Metadata\": [],\n            \"SupportedHarnessVersions\": []\n        },\n        \"ResolvedBy\": \"VERSION_ID\",\n        \"ResolvedLabel\": \"stable\"\n    }\n}",
+        "title": "使用 MARKETPLACE 查询市场固定版本详情"
       }
     ],
     "DescribeRegistryRecordList": [
@@ -352,6 +408,12 @@
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"search\",\n            \"Values\": [\n                \"weather\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordSet\": [],\n        \"TotalCount\": 0\n    }\n}",
         "title": "查询 weather 相关 Record"
+      },
+      {
+        "document": "示例资源 ID 请替换；MARKETPLACE 为固定大写常量，市场响应只包含公开字段。",
+        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: DescribeRegistryRecordList\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"MARKETPLACE\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"search\",\n            \"Values\": [\n                \"weather\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"RecordSet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "使用 MARKETPLACE 查询市场资产列表"
       }
     ],
     "DescribeRegistryRecordVersionList": [
@@ -480,6 +542,14 @@
         "title": "修改 Deployment"
       }
     ],
+    "ModifyGPUResourceGroup": [
+      {
+        "document": "仅同步修改当前租户 GPU 资源组的名称，允许重名、同名重试；不修改规格、数量、计费期限或续费标记。不存在或不属于当前租户的资源组返回 ResourceNotFound。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGPUResourceGroup\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"gpug-example\",\n    \"Name\": \"新的推理服务组\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"request-example\"\n    }\n}",
+        "title": "修改GPU资源组名称"
+      }
+    ],
     "ModifySession": [
       {
         "document": "",
@@ -568,16 +638,22 @@
     ],
     "UpdateRegistryRecord": [
       {
-        "document": "不提交 Source/CustomDescriptors 时是 Record 更新模式，允许 Description/LabelMutations。",
-        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"LabelMutations\": [\n        {\n            \"Operation\": \"SET\",\n            \"Name\": \"stable\",\n            \"VersionId\": \"rv-0002abcd\",\n            \"Reason\": \"发布已验证的第二版\"\n        },\n        {\n            \"Operation\": \"SET\",\n            \"Name\": \"grey\",\n            \"VersionId\": \"rv-0003abcd\",\n            \"Reason\": \"灰度环境验证第三版\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"LabelSet\": [\n                \"stable\",\n                \"latest\",\n                \"grey\"\n            ]\n        }\n    }\n}",
-        "title": "Record 更新模式：移动 stable + 新增 grey"
+        "document": "参数示意；资源 ID、账号、时间、摘要及 example.com URL 为示例，不对应真实资源，请替换后调用。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRegistryRecord\n<公共请求参数>\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionName\": \"1.1.0\",\n    \"ChangeLog\": \"更新 MCP 接入地址\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp-v2\"\n    },\n    \"Metadata\": [\n        {\n            \"Name\": \"publisher\",\n            \"Value\": \"示例发布者\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-89abcdef\",\n            \"Revision\": 2,\n            \"Status\": \"PENDING_APPROVAL\",\n            \"SupportedHarnessVersions\": [],\n            \"Metadata\": [\n                {\n                    \"Name\": \"publisher\",\n                    \"Value\": \"示例发布者\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "创建 MCP URL_IMPORT 后续版本"
       },
       {
-        "document": "提交内容输入进入 Version 创建模式；禁止同时提交 Description/LabelMutations。",
-        "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: UpdateRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionName\": \"v2\",\n    \"ChangeLog\": \"增加订单状态筛选参数\",\n    \"MCPSource\": {\n        \"Type\": \"URL_IMPORT\",\n        \"EndpointURL\": \"https://example.com/mcp-v2.json\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-0004abcd\",\n            \"Revision\": 4,\n            \"Status\": \"PENDING_APPROVAL\"\n        }\n    }\n}",
-        "title": "Version 创建模式：MCP URL_IMPORT"
+        "document": "参数示意；资源 ID、账号、时间、摘要及 example.com URL 为示例，不对应真实资源，请替换后调用。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRegistryRecord\n<公共请求参数>\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"VersionName\": \"1.1.0\",\n    \"ChangeLog\": \"更新兼容声明并复用文件\",\n    \"FileSource\": {\n        \"Type\": \"VERSION\",\n        \"SourceVersionId\": \"rv-0123abcd\"\n    },\n    \"SupportedHarnessVersions\": [\n        {\n            \"HarnessEngine\": \"pi\",\n            \"HarnessEngineVersion\": \"1.3.0\"\n        }\n    ],\n    \"Metadata\": [\n        {\n            \"Name\": \"publisher\",\n            \"Value\": \"示例发布者\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-plugin\",\n            \"Description\": \"示例 Plugin 文件资产\",\n            \"DescriptorType\": \"PLUGIN\",\n            \"LifecycleStatus\": \"ACTIVE\",\n            \"AppId\": 1250000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"100000000002\",\n            \"VersionCount\": 2,\n            \"LabelSet\": [\n                \"latest\"\n            ],\n            \"CreateTime\": \"2030-01-01T00:00:00Z\",\n            \"UpdateTime\": \"2030-01-01T00:00:00Z\"\n        },\n        \"Version\": {\n            \"VersionId\": \"rv-89abcdef\",\n            \"RecordId\": \"rec-0123abcd\",\n            \"Revision\": 2,\n            \"VersionName\": \"1.1.0\",\n            \"ChangeLog\": \"更新兼容声明并复用文件\",\n            \"Descriptors\": \"{\\\"name\\\": \\\"example-plugin\\\", \\\"description\\\": \\\"示例 Plugin 文件资产\\\"}\",\n            \"SourceType\": \"FILE\",\n            \"SourceConfig\": \"{\\\"Type\\\":\\\"FILE\\\",\\\"SizeBytes\\\":1}\",\n            \"Status\": \"PENDING_APPROVAL\",\n            \"ApprovalMode\": \"MANUAL\",\n            \"ConfigSHA256\": \"8eb0ce58a4b47f2d9f4154cfe67815d4977b99abdfd35d735219b1d5a5436526\",\n            \"LabelSet\": [],\n            \"SupportedHarnessVersions\": [\n                {\n                    \"HarnessEngine\": \"pi\",\n                    \"HarnessEngineVersion\": \"1.3.0\"\n                }\n            ],\n            \"Metadata\": [\n                {\n                    \"Name\": \"publisher\",\n                    \"Value\": \"示例发布者\"\n                }\n            ],\n            \"AppId\": 1250000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"100000000002\",\n            \"CreateTime\": \"2030-01-01T00:00:00Z\",\n            \"UpdateTime\": \"2030-01-01T00:00:00Z\",\n            \"ContentStatus\": \"READY\",\n            \"ContentSHA256\": \"2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881\",\n            \"ContentSizeBytes\": 1,\n            \"ContentReadyTime\": \"2030-01-01T00:00:00Z\"\n        },\n        \"ContentStatus\": \"READY\"\n    }\n}",
+        "title": "复用 Plugin 文件创建新版本"
+      },
+      {
+        "document": "参数示意；资源 ID、账号、时间、摘要及 example.com URL 为示例，不对应真实资源，请替换后调用。",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRegistryRecord\n<公共请求参数>\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"LabelMutations\": [\n        {\n            \"Operation\": \"SET\",\n            \"Name\": \"stable\",\n            \"VersionId\": \"rv-0123abcd\",\n            \"Reason\": \"发布已验证版本\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"00000000-0000-4000-8000-000000000001\",\n        \"Record\": {\n            \"RecordId\": \"rec-0123abcd\",\n            \"RegistryId\": \"reg-0123abcd\",\n            \"Name\": \"example-plugin\",\n            \"Description\": \"示例 Plugin 文件资产\",\n            \"DescriptorType\": \"PLUGIN\",\n            \"LifecycleStatus\": \"ACTIVE\",\n            \"AppId\": 1250000000,\n            \"CreatorUin\": \"100000000001\",\n            \"CreatorSubAccountUin\": \"100000000002\",\n            \"VersionCount\": 1,\n            \"LabelSet\": [\n                \"latest\",\n                \"stable\"\n            ],\n            \"CreateTime\": \"2030-01-01T00:00:00Z\",\n            \"UpdateTime\": \"2030-01-01T00:00:00Z\"\n        }\n    }\n}",
+        "title": "移动 stable Label"
       }
     ],
     "UpdateSandboxInstance": [

@@ -7,12 +7,12 @@ Input:
 ```
 tccli waf DescribeBatchCustomRuleList --cli-unfold-argument  \
     --Offset 0 \
-    --Limit 0 \
-    --By abc \
-    --Order abc \
-    --DataType abc \
-    --Filters.0.Name abc \
-    --Filters.0.Values abc \
+    --Limit 20 \
+    --By update_time \
+    --Order desc \
+    --DataType custom-rule \
+    --Filters.0.Name Status \
+    --Filters.0.Values 1 \
     --Filters.0.ExactMatch True
 ```
 
@@ -48,20 +48,29 @@ Output:
                     "ValidStatus": 1,
                     "CreateTime": "2024-10-23 15:23:51",
                     "UpdateTime": "2024-10-23 16:17:08",
-                    "JobType": "TimedJob",
+                    "JobType": "CronJob",
                     "JobDateTime": {
-                        "Timed": [
+                        "Timed": [],
+                        "Cron": [
                             {
-                                "StartDateTime": 0,
-                                "EndDateTime": 0
+                                "Days": [],
+                                "WDays": [
+                                    1,
+                                    2,
+                                    3,
+                                    4,
+                                    5
+                                ],
+                                "StartTime": "09:00:00",
+                                "EndTime": "18:00:00"
                             }
                         ],
-                        "Cron": null,
                         "TimeTZone": "UTC+8"
                     },
-                    "CronType": "-",
+                    "CronType": "week",
                     "Label": "",
-                    "PageId": ""
+                    "PageId": "",
+                    "Preview": 0
                 }
             ],
             "Total": 1

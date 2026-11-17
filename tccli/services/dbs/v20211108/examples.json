@@ -24,12 +24,28 @@
         "title": "创建连通性检测任务"
       }
     ],
+    "DeleteBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "删除备份计划"
+      }
+    ],
     "DescribeBackupCheckJob": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupCheckJob\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": \"finished\",\n        \"Progress\": 100,\n        \"CheckFlag\": 1,\n        \"ErrMessage\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "查询备份计划预校验结果"
+      }
+    ],
+    "DescribeBackupPlanDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupPlanDetail\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-6ll0ly4c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AllowedActions\": [\n            \"view\"\n        ],\n        \"AutoRenewFlag\": 0,\n        \"BackupObject\": {\n            \"ObjectItems\": null,\n            \"ObjectMode\": \"all\"\n        },\n        \"BackupPlanId\": \"dbs-6ll0ly4c\",\n        \"BackupPlanName\": \"dbs-6ll0ly4c\",\n        \"BackupStrategy\": {\n            \"BackupMethod\": \"logical\",\n            \"BackupPeriod\": {\n                \"Day\": [\n                    \"Monday\"\n                ],\n                \"PeriodType\": \"Weekly\"\n            },\n            \"BackupStartTime\": \"17:00\",\n            \"EnableIncrement\": true,\n            \"StorageStrategy\": {\n                \"BackupRetentionPeriod\": 8,\n                \"Encryption\": \"UnEncrypted\",\n                \"FullStorageStrategy\": {\n                    \"RetentionPeriod\": 30,\n                    \"RetentionType\": \"\",\n                    \"TieredStrategy\": {\n                        \"DayToArchive\": 0,\n                        \"DayToDeepArchive\": 0,\n                        \"DayToLowFrequency\": 0\n                    }\n                },\n                \"IncStorageStrategy\": {\n                    \"RetentionPeriod\": 30,\n                    \"RetentionType\": \"\",\n                    \"TieredStrategy\": {\n                        \"DayToArchive\": 0,\n                        \"DayToDeepArchive\": 0,\n                        \"DayToLowFrequency\": 0\n                    }\n                },\n                \"StorageType\": \"system\"\n            },\n            \"StrategyType\": \"period\"\n        },\n        \"CreateTime\": \"2026-10-30 11:08:56\",\n        \"ErrorInfo\": {\n            \"ErrorMsg\": \"ok\",\n            \"ErrorType\": \"\"\n        },\n        \"ExpireTime\": \"2026-11-30 11:08:56\",\n        \"LastBackupJobTime\": \"\",\n        \"LastFullBackupJobStatus\": \"\",\n        \"LastIncBackupJobStatus\": \"\",\n        \"LastRestoreJobStatus\": \"\",\n        \"LastRestoreJobTime\": \"\",\n        \"NextBackupJobTime\": \"\",\n        \"OfflineTime\": \"2026-12-14 11:08:56\",\n        \"PayInfo\": {\n            \"CreateTime\": \"2026-10-30 11:08:56\",\n            \"FreeSpace\": 42949672960,\n            \"FullBackupSetSize\": 0,\n            \"FullChargeSpace\": 0,\n            \"IncrementBackupSetSize\": 0,\n            \"IncrementChargeSpace\": 0,\n            \"InstanceClass\": \"micro\",\n            \"PayType\": \"prePay\",\n            \"TimeRange\": \"2026-10-30 11:08:56 - 2026-10-30 11:10:12\",\n            \"TotalChargeSpace\": 0\n        },\n        \"Progress\": {\n            \"CurrentBackupJobStatus\": \"starting\",\n            \"FullBackupStatus\": \"\",\n            \"IncrementBackupStatus\": \"running\",\n            \"LastBackupTime\": \"2026-10-30 11:10:11\",\n            \"LastRestoreStatus\": \"\",\n            \"LastRestoreTime\": \"\",\n            \"NextBackupTime\": \"0000-00-00 00:00:00\"\n        },\n        \"Region\": \"ap-guangzhou\",\n        \"RestoreRange\": {\n            \"EndTime\": \"\",\n            \"StartTime\": \"\"\n        },\n        \"SetSourceInfo\": [],\n        \"SourceEndPoint\": [\n            {\n                \"AccessType\": \"cdb\",\n                \"CcnId\": \"\",\n                \"CvmInstanceId\": \"\",\n                \"DBKernel\": \"\",\n                \"DatabaseType\": \"mysql\",\n                \"EngineVersion\": \"\",\n                \"InstanceId\": \"cdb-favwofb9\",\n                \"Ip\": \"\",\n                \"Password\": \"\",\n                \"Port\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Role\": \"master\",\n                \"SubnetId\": \"\",\n                \"Supplier\": \"others\",\n                \"UniqDcgId\": \"\",\n                \"UniqVpnGwId\": \"\",\n                \"UserName\": \"tencent\",\n                \"VpcId\": \"\"\n            }\n        ],\n        \"SourceInfo\": [\n            \"cdb-favwofb9\"\n        ],\n        \"Status\": \"fullBacking\",\n        \"Tags\": null,\n        \"UpperBandwidth\": 3,\n        \"UpperParallel\": 2,\n        \"RequestId\": \"9e5315f0-64b2-4949-b808-e410e066c042\"\n    }\n}",
+        "title": "备份计划详情"
       }
     ],
     "DescribeBackupPlans": [
@@ -48,6 +64,54 @@
         "title": "查询连通性检测任务结果"
       }
     ],
+    "DescribeFullBackupSetDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFullBackupSetDetail\n<公共请求参数>\n\n{\n    \"BackupSetId\": \"backupset-qvmga518\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BackupSet\": {\n            \"BackupMethod\": \"logical\",\n            \"BackupObject\": {\n                \"ObjectItems\": [],\n                \"ObjectMode\": \"all\"\n            },\n            \"BackupPool\": \"DefaultPool\",\n            \"BackupSetId\": \"backupset-qvmga518\",\n            \"BackupSetOption\": {\n                \"Encryption\": \"UnEncrypted\"\n            },\n            \"BackupSize\": 991853615,\n            \"EndTime\": \"2026-04-28 01:03:35\",\n            \"ErrorMessage\": {\n                \"Message\": \"\",\n                \"Title\": \"\"\n            },\n            \"ExpireTime\": \"2026-05-01 01:03:35\",\n            \"Progress\": {\n                \"DataProgress\": 100,\n                \"SchemaProgress\": 100\n            },\n            \"ResourceDetail\": {\n                \"StayTime\": 0,\n                \"TieredType\": \"standard\"\n            },\n            \"RetentionType\": \"standard\",\n            \"SourceEndpoint\": {\n                \"AccessType\": \"cdb\",\n                \"CcnId\": \"\",\n                \"CvmInstanceId\": \"\",\n                \"DBKernel\": \"\",\n                \"DatabaseType\": \"mysql\",\n                \"EngineVersion\": \"8.0\",\n                \"InstanceId\": \"cdb-ai2oxphl\",\n                \"Ip\": \"\",\n                \"Password\": \"\",\n                \"Port\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"Role\": \"\",\n                \"SubnetId\": \"\",\n                \"Supplier\": \"others\",\n                \"UniqDcgId\": \"\",\n                \"UniqVpnGwId\": \"\",\n                \"UserName\": \"root\",\n                \"VpcId\": \"\"\n            },\n            \"SourceInfo\": \"cdb-ai2oxphl\",\n            \"StartTime\": \"2026-04-28 01:02:04\",\n            \"Status\": \"finished\",\n            \"StorageType\": \"DBSStorage\"\n        },\n        \"RequestId\": \"fc1b4708-1ccf-49b5-adf9-feb2acea998a\"\n    }\n}",
+        "title": "查询全量备份集详情"
+      }
+    ],
+    "DescribeIncrementBackupSetFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIncrementBackupSetFiles\n<公共请求参数>\n\n{\n    \"BackupSetId\": \"dbsset-xxxxxxxx\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupFiles\": [\n            {\n                \"FileName\": \"mysql-bin.000001\",\n                \"BackupSetId\": \"dbsset-xxxxxxxx\",\n                \"Status\": \"finished\",\n                \"SourceInfo\": \"127.0.0.1:3306\",\n                \"StartTime\": \"2022-05-23 11:12:13\",\n                \"EndTime\": \"2022-05-23 11:20:13\",\n                \"ExpireTime\": \"2022-06-23 11:20:13\",\n                \"BackupSize\": 1024,\n                \"BackupMethod\": \"logical\",\n                \"StorageType\": \"system\",\n                \"RetentionType\": \"standard\",\n                \"ResourceDetail\": {\n                    \"TieredType\": \"standard\",\n                    \"StayTime\": 0\n                },\n                \"BackupPool\": \"DefaultPool\",\n                \"AllowedActions\": [\n                    \"download\"\n                ],\n                \"AllActions\": [\n                    \"download\"\n                ],\n                \"LastModified\": \"2022-05-23 11:20:13\"\n            }\n        ],\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "查询增量备份集文件列表"
+      }
+    ],
+    "DescribeIncrementBackupSets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIncrementBackupSets\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\",\n    \"BackupSetId\": \"backupset-test\",\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"BackupMethod\": \"logical\",\n                \"BackupPool\": \"DefaultPool\",\n                \"BackupSetId\": \"backupset-test\",\n                \"EndTime\": \"2022-05-25 12:33:33\",\n                \"ExpireTime\": \"2022-06-24 12:33:33\",\n                \"FileCount\": 1,\n                \"ResourceDetail\": {\n                    \"StayTime\": 0,\n                    \"TieredType\": \"standard\"\n                },\n                \"RetentionType\": \"standard\",\n                \"SourceInfo\": \"cdb-hj0xshpk\",\n                \"StartTime\": \"2022-05-25 11:33:33\",\n                \"Status\": \"finished\",\n                \"StorageType\": \"DBSStorage\"\n            }\n        ],\n        \"RequestId\": \"56af4d60-dbdc-11ec-9a80-47aee7851065\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询增量备份集列表"
+      }
+    ],
+    "DestroyBackupPlanByUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyBackupPlanByUser\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "立即下线备份计划"
+      }
+    ],
+    "ModifyBackupPlanSourceInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBackupPlanSourceInfo\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxx\",\n    \"SourceEndPoint\": {\n        \"Region\": \"ap-guangzhou\",\n        \"DatabaseType\": \"mysql\",\n        \"AccessType\": \"cdb\",\n        \"InstanceId\": \"cdb-xxxxxxxx\",\n        \"Supplier\": \"others\",\n        \"UserName\": \"root\",\n        \"Password\": \"xxxxxxxx\"\n    },\n    \"BackupObject\": {\n        \"ObjectMode\": \"all\",\n        \"ObjectItems\": []\n    },\n    \"BackupPlanName\": \"mysql-daily-backup\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "ModifyBackupPlanSourceInfo"
+      }
+    ],
+    "ResumeBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxxxx\",\n    \"BackupNow\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "恢复备份计划"
+      }
+    ],
     "StartBackupCheckJob": [
       {
         "document": "",
@@ -62,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-qcloudtest\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "启动备份计划"
+      }
+    ],
+    "StopBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dbs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopBackupPlan\n<公共请求参数>\n\n{\n    \"BackupPlanId\": \"dbs-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ce31a435-eb3d-4508-b6e9-1b96cf86c8c7\"\n    }\n}",
+        "title": "暂停备份计划"
       }
     ]
   },

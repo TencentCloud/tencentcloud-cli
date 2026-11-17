@@ -21,11 +21,25 @@
       "output": "CreateConnectTestJobResponse",
       "status": "online"
     },
+    "DeleteBackupPlan": {
+      "document": "删除备份计划。\n\n仅已下线的备份计划支持删除，删除后不可恢复。已隔离（isolated）的备份计划请先调用 DestroyBackupPlanByUser 完成下线，再进行删除。调用接口后，若通过 DescribeBackupPlans 接口查询不到对应的备份计划，则表示删除成功。",
+      "input": "DeleteBackupPlanRequest",
+      "name": "删除备份计划",
+      "output": "DeleteBackupPlanResponse",
+      "status": "online"
+    },
     "DescribeBackupCheckJob": {
       "document": "本接口（DescribeBackupCheckJob）用于查询备份计划预校验任务的结果。仅对于预校验通过的任务，才能启动备份计划。",
       "input": "DescribeBackupCheckJobRequest",
       "name": "查询备份计划预校验结果",
       "output": "DescribeBackupCheckJobResponse",
+      "status": "online"
+    },
+    "DescribeBackupPlanDetail": {
+      "document": "查询备份计划详情。\n返回备份计划的基本信息、源库信息、备份对象、备份策略、备份进度和付费信息。",
+      "input": "DescribeBackupPlanDetailRequest",
+      "name": "查询备份计划详情",
+      "output": "DescribeBackupPlanDetailResponse",
       "status": "online"
     },
     "DescribeBackupPlans": {
@@ -42,6 +56,48 @@
       "output": "DescribeConnectTestResultResponse",
       "status": "online"
     },
+    "DescribeFullBackupSetDetail": {
+      "document": "查询全量备份集详情。\n\n返回全量备份集的基本信息、源库信息、备份对象、备份进度和加密信息。",
+      "input": "DescribeFullBackupSetDetailRequest",
+      "name": "查询全量备份集详情",
+      "output": "DescribeFullBackupSetDetailResponse",
+      "status": "online"
+    },
+    "DescribeIncrementBackupSetFiles": {
+      "document": "查询增量备份集文件列表。\n\n文件按最后修改时间倒序返回，支持分页。",
+      "input": "DescribeIncrementBackupSetFilesRequest",
+      "name": "查询增量备份集文件",
+      "output": "DescribeIncrementBackupSetFilesResponse",
+      "status": "online"
+    },
+    "DescribeIncrementBackupSets": {
+      "document": "本接口（DescribeIncrementBackupSets）用于查询增量备份集列表。",
+      "input": "DescribeIncrementBackupSetsRequest",
+      "name": "查询增量备份集列表",
+      "output": "DescribeIncrementBackupSetsResponse",
+      "status": "online"
+    },
+    "DestroyBackupPlanByUser": {
+      "document": "立即下线已隔离的备份计划。\n\n下线后备份计划不可恢复。调用接口后，若通过 DescribeBackupPlanDetail 接口查询到备份计划状态为 offlined，则表示下线成功。",
+      "input": "DestroyBackupPlanByUserRequest",
+      "name": "立即下线备份计划",
+      "output": "DestroyBackupPlanByUserResponse",
+      "status": "online"
+    },
+    "ModifyBackupPlanSourceInfo": {
+      "document": "本接口（ModifyBackupPlanSourceInfo）用于修改备份计划的源实例信息、备份对象信息等。注意，调用该接口后，原有备份计划任务将立即停止，您可以在修改完源信息后重新启动备份任务。",
+      "input": "ModifyBackupPlanSourceInfoRequest",
+      "name": "修改备份计划源端信息",
+      "output": "ModifyBackupPlanSourceInfoResponse",
+      "status": "online"
+    },
+    "ResumeBackupPlan": {
+      "document": "恢复已暂停的备份计划。\n\n仅已暂停的备份计划支持恢复。调用接口后，若通过 DescribeBackupPlanDetail 接口查询到备份计划状态为 running，则表示恢复成功。",
+      "input": "ResumeBackupPlanRequest",
+      "name": "恢复备份计划",
+      "output": "ResumeBackupPlanResponse",
+      "status": "online"
+    },
     "StartBackupCheckJob": {
       "document": "本接口（StartBackupCheckJob）用于创建备份计划预校验任务。",
       "input": "StartBackupCheckJobRequest",
@@ -54,6 +110,13 @@
       "input": "StartBackupPlanRequest",
       "name": "启动备份计划",
       "output": "StartBackupPlanResponse",
+      "status": "online"
+    },
+    "StopBackupPlan": {
+      "document": "暂停备份计划。\n\n仅运行中的备份计划支持暂停。调用接口后，若通过 DescribeBackupPlanDetail 接口查询到备份计划状态为 paused，则表示暂停成功。",
+      "input": "StopBackupPlanRequest",
+      "name": "暂停备份计划",
+      "output": "StopBackupPlanResponse",
       "status": "online"
     }
   },
@@ -285,6 +348,172 @@
       ],
       "usage": "both"
     },
+    "BackupFile": {
+      "document": "增量备份文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件名。",
+          "example": "mysql-bin.000001",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集 ID。",
+          "example": "dbs-set-abc123",
+          "member": "string",
+          "name": "BackupSetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件状态。取值：\n- notReady：未就绪\n- backuping：备份中\n- finished：备份完成\n- failed：备份失败",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源库连接信息。云数据库实例为实例 ID，其余为 ip:port。",
+          "example": "10.0.0.1:3306",
+          "member": "string",
+          "name": "SourceInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。格式为 YYYY-MM-DD hh:mm:ss。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。格式为 YYYY-MM-DD hh:mm:ss，备份集尚未结束时返回 0000-00-00 00:00:00。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间。格式为 YYYY-MM-DD hh:mm:ss。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位：字节。",
+          "example": "1048576",
+          "member": "int64",
+          "name": "BackupSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。取值：logical（逻辑备份）。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储类型。取值：DBSStorage（内置存储）。",
+          "example": "DBSStorage",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储策略类型。取值：\n- standard：标准存储\n- tiered：分级存储",
+          "example": "standard",
+          "member": "string",
+          "name": "RetentionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集存储详情。",
+          "example": "无",
+          "member": "ResourceDetail",
+          "name": "ResourceDetail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份池。",
+          "example": "DefaultPool",
+          "member": "string",
+          "name": "BackupPool",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前状态下允许的操作。取值：download。",
+          "example": "[\"download\"]",
+          "member": "string",
+          "name": "AllowedActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支持的全部操作。",
+          "example": "[\"download\"]",
+          "member": "string",
+          "name": "AllActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件最后修改时间。格式为 YYYY-MM-DD hh:mm:ss。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "LastModified",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BackupObject": {
       "document": "备份对象",
       "members": [
@@ -420,6 +649,34 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupPeriodItem": {
+      "document": "备份周期描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量备份频率。目前仅支持\"Weekly\" - 每星期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Weekly",
+          "member": "string",
+          "name": "PeriodType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全量备份周期。取值范围为：[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\",\"Sunday\"]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"Monday\",\"Tuesday\",\"Wednesday\",\"Thursday\",\"Friday\",\"Saturday\"]",
+          "member": "string",
+          "name": "Day",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -600,6 +857,204 @@
       ],
       "usage": "out"
     },
+    "BackupPlanPayInfo": {
+      "document": "备份计划付费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例规格。",
+          "example": "free",
+          "member": "string",
+          "name": "InstanceClass",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费方式。取值：\n- postPay：后付费\n- prePay：预付费",
+          "example": "postPay",
+          "member": "string",
+          "name": "PayType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费额度，单位：字节。取值为 -1 表示不限量。",
+          "example": "107374182400",
+          "member": "int64",
+          "name": "FreeSpace",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本月计费空间，单位：字节。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalChargeSpace",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全量计费空间，单位：字节。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "FullChargeSpace",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量计费空间，单位：字节。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "IncrementChargeSpace",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本月全量备份集大小，单位：字节。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "FullBackupSetSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本月增量备份集大小，单位：字节。",
+          "example": "1073741824",
+          "member": "int64",
+          "name": "IncrementBackupSetSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计周期，格式为“开始时间 - 结束时间”。",
+          "example": "2024-01-01 00:00:00 - 2024-01-10 00:00:00",
+          "member": "string",
+          "name": "TimeRange",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupProgress": {
+      "document": "备份进度信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量备份状态。",
+          "example": "success",
+          "member": "string",
+          "name": "FullBackupStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量备份状态。",
+          "example": "running",
+          "member": "string",
+          "name": "IncrementBackupStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次备份执行时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未执行过备份时为空字符串。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "LastBackupTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下次备份执行时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未确定时为空字符串。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "NextBackupTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次恢复时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未执行过恢复时为空字符串。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "LastRestoreTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次恢复任务状态。",
+          "example": "success",
+          "member": "string",
+          "name": "LastRestoreStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前备份作业状态。",
+          "example": "running",
+          "member": "string",
+          "name": "CurrentBackupJobStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupSetOption": {
+      "document": "备份集加密信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>存储加密方式。取值：<br>&quot;UnEncrypted&quot; - 非加密存储;<br>&quot;SSE-COS&quot; - 内置加密存储;<br>&quot;SSE-KMS&quot; - KMS 加密存储。</p>",
+          "example": "UnEncrypted",
+          "member": "string",
+          "name": "Encryption",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BackupStrategy": {
       "document": "备份策略",
       "members": [
@@ -668,6 +1123,78 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BackupStrategyItem": {
+      "document": "备份策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全量备份开始时间。周期性的全量备份将在当天该时间开始，格式：HH:mm（24 小时制），如 02:00。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "02:00",
+          "member": "string",
+          "name": "BackupStartTime",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageStrategyItem",
+          "name": "StorageStrategy",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份周期。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupPeriodItem",
+          "name": "BackupPeriod",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份方法。目前仅支持 \"logical\" - 逻辑备份。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份周期。支持的值包括：\n\"period\" - 周期性备份；\n\"single\" - 单次备份。\n默认值为\"period\"。",
+          "example": "period",
+          "member": "string",
+          "name": "StrategyType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启增量备份。可能的取值为[\"true\", \"false\"]。默认值为\"true\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableIncrement",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1005,6 +1532,33 @@
       ],
       "type": "object"
     },
+    "DeleteBackupPlanRequest": {
+      "document": "DeleteBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。可通过 DescribeBackupPlans 接口获取。",
+          "example": "dbs-abc123",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackupPlanResponse": {
+      "document": "DeleteBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupCheckJobRequest": {
       "document": "DescribeBackupCheckJob请求参数结构体",
       "members": [
@@ -1061,6 +1615,303 @@
           "name": "ErrMessage",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupPlanDetailRequest": {
+      "document": "DescribeBackupPlanDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份计划 ID。可通过 DescribeBackupPlans 接口获取。</p>",
+          "example": "dbs-6ll0ly4c",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupPlanDetailResponse": {
+      "document": "DescribeBackupPlanDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>地域。</p>",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份计划 ID。</p>",
+          "example": "dbs-6ll0ly4c",
+          "member": "string",
+          "name": "BackupPlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份计划名称。</p>",
+          "example": "dbs-6ll0ly4c",
+          "member": "string",
+          "name": "BackupPlanName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份计划状态。取值：</p><ul><li>creating：创建中</li><li>notStarted：未启动</li><li>notConfigured：未配置</li><li>checkNotPass：校验未通过</li><li>checkPass：校验通过</li><li>checking：校验中</li><li>readyRun：待运行</li><li>running：运行中</li><li>fullBacking：全量备份中</li><li>paused：已暂停</li><li>isolating：隔离中</li><li>isolated：已隔离</li><li>offlining：下线中</li><li>offlined：已下线</li><li>completed：已完成</li></ul>",
+          "example": "fullBacking",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源库连接信息列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "SourceEndPoint",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份对象信息。</p>",
+          "example": "无",
+          "member": "BackupObject",
+          "name": "BackupObject",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份策略。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupStrategyItem",
+          "name": "BackupStrategy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份进度信息。</p>",
+          "example": "无",
+          "member": "BackupProgress",
+          "name": "Progress",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误异常信息。</p>",
+          "example": "无",
+          "member": "ErrorInfo",
+          "name": "ErrorInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00。</p>",
+          "example": "2026-10-30 11:08:56",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>到期时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，后付费计划无到期时间时为空字符串。</p>",
+          "example": "2026-11-30 11:08:56",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下线时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未下线时为空字符串。</p>",
+          "example": "2026-12-14 11:08:56",
+          "member": "string",
+          "name": "OfflineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动续费标识。取值：</p><ul><li>0：不自动续费</li><li>1：自动续费</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主节点连接信息。云数据库实例为实例 ID，云服务器自建为实例 ID:端口，其余为 ip:port。</p>",
+          "example": "[\"cdb-favwofb9\"]",
+          "member": "string",
+          "name": "SourceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>从节点连接信息，格式同 SourceInfo。</p>",
+          "example": "[\"10.0.0.2:3306\"]",
+          "member": "string",
+          "name": "SetSourceInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签信息列表。未绑定标签时返回 null。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfo",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次备份作业时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未执行过备份作业时为空字符串。</p>",
+          "example": "2026-10-30 11:08:56",
+          "member": "string",
+          "name": "LastBackupJobTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次全量备份作业状态。</p>",
+          "example": "success",
+          "member": "string",
+          "name": "LastFullBackupJobStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次增量备份作业状态。</p>",
+          "example": "success",
+          "member": "string",
+          "name": "LastIncBackupJobStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>下次备份作业时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未确定时为空字符串。</p>",
+          "example": "2026-10-30 11:08:56",
+          "member": "string",
+          "name": "NextBackupJobTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次恢复作业时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，尚未执行过恢复作业时为空字符串。</p>",
+          "example": "2026-10-30 11:08:56",
+          "member": "string",
+          "name": "LastRestoreJobTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>上次恢复作业状态。</p>",
+          "example": "success",
+          "member": "string",
+          "name": "LastRestoreJobStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>付费信息。</p>",
+          "example": "无",
+          "member": "BackupPlanPayInfo",
+          "name": "PayInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>全量备份并行数上限。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "UpperParallel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>带宽上限，单位：MB/s。</p>",
+          "example": "3",
+          "member": "int64",
+          "name": "UpperBandwidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前状态下允许的操作。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"view\"]",
+          "member": "string",
+          "name": "AllowedActions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>可恢复时间范围。</p>",
+          "example": "无",
+          "member": "RestoreRange",
+          "name": "RestoreRange",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -1229,6 +2080,972 @@
       ],
       "type": "object"
     },
+    "DescribeFullBackupSetDetailRequest": {
+      "document": "DescribeFullBackupSetDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全量备份集 ID。可通过 DescribeFullBackupSets 接口获取。</p>",
+          "example": "backupset-qvmga518",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFullBackupSetDetailResponse": {
+      "document": "DescribeFullBackupSetDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>全量备份集详情。</p>",
+          "example": "无",
+          "member": "FullBackupSetDetail",
+          "name": "BackupSet",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementBackupSetFilesRequest": {
+      "document": "DescribeIncrementBackupSetFiles请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量备份集 ID。可通过 DescribeIncrementBackupSets 接口获取。",
+          "example": "dbs-set-abc123",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 10。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementBackupSetFilesResponse": {
+      "document": "DescribeIncrementBackupSetFiles返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件总数。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量备份文件列表。",
+          "example": "无",
+          "member": "BackupFile",
+          "name": "BackupFiles",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementBackupSetsRequest": {
+      "document": "DescribeIncrementBackupSets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。",
+          "example": "dbs-xxxxxxxx",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，备份集 ID。",
+          "example": "backupset-test",
+          "member": "string",
+          "name": "BackupSetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。取值范围为(0, 100]，默认值为20。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。默认值为0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIncrementBackupSetsResponse": {
+      "document": "DescribeIncrementBackupSets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "增量备份集数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增量备份集信息。",
+          "example": "无",
+          "member": "IncrementBackup",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyBackupPlanByUserRequest": {
+      "document": "DestroyBackupPlanByUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。可通过 DescribeBackupPlans 接口获取。",
+          "example": "dbs-abc123",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyBackupPlanByUserResponse": {
+      "document": "DestroyBackupPlanByUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Endpoint": {
+      "document": "备份源实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点角色。取值：\n\"master\" - 主节点;\n\"slave\" - 从节点。",
+          "example": "master",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库类型。目前支持的值[\"mysql\", \"mariadb\", \"percona\"]。注意，该值必须和备份计划的类型一致。",
+          "example": "mysql",
+          "member": "string",
+          "name": "DatabaseType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例接入类型，支持的值包括：\n\"extranet\" - 外网;\n\"cvm\" - cvm自建实例;\n\"dcg\" - 专线接入;\n\"vpncloud\" - 云vpn接入;\n\"cdb\" - 腾讯云数据库实例;\n\"ccn\" - 云联网接入。",
+          "example": "cdb",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例 Ip。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例端口号。",
+          "example": "3306",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名。",
+          "example": "user_test",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登录密码。",
+          "example": "user_paawd",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云数据库实例ID，格式如：cdb-qcloudtest。",
+          "example": "cdb-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVM 实例ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要填写该字段。",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专线网关ID，格式如：dcg-0rxtqqxb。",
+          "example": "dcg-xxxxxxxx",
+          "member": "string",
+          "name": "UniqDcgId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPN网关ID，格式如：vpngw-9ghexg7q。",
+          "example": "vpngw-xxxxxxx",
+          "member": "string",
+          "name": "UniqVpnGwId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有网络ID，格式如：vpc-92jblxto。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID，格式如：subnet-3paxmkdz。",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云联网ID，如：ccn-afp6kltc。",
+          "example": "ccn-xxxxxxxx",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务提供商，支持的值包括[\"aliyun\", \"aws\", \"others\"]。",
+          "example": "others",
+          "member": "string",
+          "name": "Supplier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库版本，当实例为 RDS 或 AWS 实例时才有效，格式如：5.6或者5.7，默认为5.6。",
+          "example": "5.6",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "mariadb三引擎版本。",
+          "example": "mariadb",
+          "member": "string",
+          "name": "DBKernel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ErrorInfo": {
+      "document": "错误异常信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误类型。",
+          "example": "Unknown",
+          "member": "string",
+          "name": "ErrorType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "ok",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FullBackupErrorMessage": {
+      "document": "全量备份错误信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误标题。",
+          "example": "RunningMessage",
+          "member": "string",
+          "name": "Title",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误详情。",
+          "example": "error message",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FullBackupProgress": {
+      "document": "全量备份进度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结构备份进度，取值范围为 0 - 100，单位：百分比。",
+          "example": "100",
+          "member": "int64",
+          "name": "SchemaProgress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份进度，取值范围为 0 - 100，单位：百分比。",
+          "example": "100",
+          "member": "int64",
+          "name": "DataProgress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FullBackupSetDetail": {
+      "document": "全量备份集详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>备份集 ID。</p>",
+          "example": "backup-xxxxxxxx",
+          "member": "string",
+          "name": "BackupSetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>源实例信息。</p>",
+          "example": "127.0.0.1:8888",
+          "member": "string",
+          "name": "SourceInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集状态。可能的取值为：\"running\" - 运行中;\"finished\" - 已完成;\"failed\" - 已失败;\"stopped\" - 已终止。</p>",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间。格式为 YYYY-MM-DD hh:mm:ss。</p>",
+          "example": "2022-02-22 14:13:20",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>结束时间。格式为 YYYY-MM-DD hh:mm:ss，备份集尚未结束时返回 0000-00-00 00:00:00。</p>",
+          "example": "2022-02-23 14:13:20",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间。格式为 YYYY-MM-DD hh:mm:ss。</p>",
+          "example": "2022-02-28 14:13:20",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集大小，单位为 Bytes。</p>",
+          "example": "23323323",
+          "member": "int64",
+          "name": "BackupSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份方式。可能的取值为：\"logical\" - 逻辑备份；\"physical\" - 物理备份。</p>",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储类型。目前仅支持 \"DBSStorage\"，即 DBS 内置存储。</p>",
+          "example": "DBSStorage",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份池类型。目前仅支持 \"DefaultPool\"，即默认存储池。</p>",
+          "example": "DefaultPool",
+          "member": "string",
+          "name": "BackupPool",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集存储类型。支持的取值范围为：\"standard\" - 标准存储；\"tiered\" - 分级存储。</p>",
+          "example": "standard",
+          "member": "string",
+          "name": "RetentionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>备份集存储状态详情。</p>",
+          "example": "无",
+          "member": "ResourceDetail",
+          "name": "ResourceDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份源实例信息。",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "SourceEndpoint",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份对象。",
+          "example": "无",
+          "member": "BackupObject",
+          "name": "BackupObject",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份进度。",
+          "example": "无",
+          "member": "FullBackupProgress",
+          "name": "Progress",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份错误信息。备份失败时有值。",
+          "example": "无",
+          "member": "FullBackupErrorMessage",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集加密信息。",
+          "example": "无",
+          "member": "BackupSetOption",
+          "name": "BackupSetOption",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IncrementBackup": {
+      "document": "增量备份集信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份集 ID。",
+          "example": "backup-xxxxxxxx",
+          "member": "string",
+          "name": "BackupSetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源实例信息。",
+          "example": "127.0.0.1:8888",
+          "member": "string",
+          "name": "SourceInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集状态。可能的取值为：\n\"running\" - 运行中;\n\"finished\" - 已完成;\n\"failed\" - 已失败;\n\"stopped\" - 已终止。",
+          "example": "finished",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。格式为 YYYY-MM-DD hh:mm:ss。",
+          "example": "2022-02-22 14:13:20",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。格式为 YYYY-MM-DD hh:mm:ss，备份集尚未结束时返回 0000-00-00 00:00:00。",
+          "example": "2022-02-23 14:13:20",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间。格式为 YYYY-MM-DD hh:mm:ss，备份集尚未生成过期时间时返回空字符串。",
+          "example": "2022-02-28 14:13:20",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集文件个数。",
+          "example": "10",
+          "member": "int64",
+          "name": "FileCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份方式。可能的取值为：\n\"logical\" - 逻辑备份；\n\"physical\" - 物理备份。",
+          "example": "logical",
+          "member": "string",
+          "name": "BackupMethod",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储类型。目前仅支持 \"DBSStorage\"，即 DBS 内置存储。",
+          "example": "DBSStorage",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份池类型。目前仅支持 \"DefaultPool\"，即默认存储池。",
+          "example": "DefaultPool",
+          "member": "string",
+          "name": "BackupPool",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集存储类型。支持的取值范围为：\"standard\" - 标准存储；\"tiered\" - 分级存储。",
+          "example": "standard",
+          "member": "string",
+          "name": "RetentionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份集存储状态详情。",
+          "example": "无",
+          "member": "ResourceItemDetail",
+          "name": "ResourceDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyBackupPlanSourceInfoRequest": {
+      "document": "ModifyBackupPlanSourceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。",
+          "example": "dbs-xxxxxxxx",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的备份源实例信息。",
+          "example": "无",
+          "member": "BackupEndpoint",
+          "name": "SourceEndPoint",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "新的备份名称。",
+          "example": "mysql-daily-backup",
+          "member": "string",
+          "name": "BackupPlanName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的备份对象信息。",
+          "example": "无",
+          "member": "BackupObject",
+          "name": "BackupObject",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否立即启动新的备份任务。支持的取值为：1 - 立即启动；0 - 按备份策略配置的时间启动。",
+          "example": "1",
+          "member": "int64",
+          "name": "BackupNow",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBackupPlanSourceInfoResponse": {
+      "document": "ModifyBackupPlanSourceInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceDetail": {
+      "document": "备份集状态详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前存储状态。可能的取值为：\"standard\" - 标准存储；\"lowFrequency\" - 低频存储；\"archive\" - 归档存储；\"deepArchive\" - 深度归档存储；</p>",
+          "example": "standard",
+          "member": "string",
+          "name": "TieredType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储时长。备份集已保留的时长，单位为小时。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "StayTime",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ResourceItemDetail": {
+      "document": "备份集状态详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前存储状态。可能的取值为：\"standard\" - 标准存储；\"lowFrequency\" - 低频存储；\"archive\" - 归档存储；\"deepArchive\" - 深度归档存储；</p>",
+          "example": "standard",
+          "member": "string",
+          "name": "TieredType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储时长。备份集已保留的时长，单位为小时。</p>",
+          "example": "0",
+          "member": "float",
+          "name": "StayTime",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RestoreRange": {
+      "document": "可恢复时间范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可恢复起始时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，无可恢复时间范围时为空字符串。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可恢复结束时间。格式为 YYYY-MM-DD HH:mm:ss，如 2024-01-01 00:00:00，无可恢复时间范围时为空字符串。",
+          "example": "2024-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ResumeBackupPlanRequest": {
+      "document": "ResumeBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。可通过 DescribeBackupPlans 接口获取。",
+          "example": "dbs-abc123",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "恢复后是否立即发起一次备份。取值：\n- 0：不立即备份，默认值\n- 1：立即备份",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupNow",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeBackupPlanResponse": {
+      "document": "ResumeBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StartBackupCheckJobRequest": {
       "document": "StartBackupCheckJob请求参数结构体",
       "members": [
@@ -1283,6 +3100,33 @@
       ],
       "type": "object"
     },
+    "StopBackupPlanRequest": {
+      "document": "StopBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份计划 ID。可通过 DescribeBackupPlans 接口获取。",
+          "example": "dbs-abc123",
+          "member": "string",
+          "name": "BackupPlanId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopBackupPlanResponse": {
+      "document": "StopBackupPlan返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StorageStrategy": {
       "document": "备份存储策略。",
       "members": [
@@ -1318,6 +3162,145 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageStrategyItem": {
+      "document": "备份存储策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储类型。目前仅支持 \"system\" - DBS 内置存储。默认值为 \"system\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "system",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密方式。可能的取值为：\n\"UnEncrypted\" - 非加密存储;\n\"SSE-COS\" - 内置加密存储;\n当该参数用作入参时，默认值为 \"UnEncrypted\"。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SSE-COS",
+          "member": "string",
+          "name": "Encryption",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志保留时间，单位为天。取值范围为[7, 3650]，默认值为 30。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "BackupRetentionPeriod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全量备份存储策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageStrategySingle",
+          "name": "FullStorageStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增量备份存储策略。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageStrategySingle",
+          "name": "IncStorageStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageStrategySingle": {
+      "document": "存储策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储策略类型。取值：\n- standard：标准存储\n- tiered：分级存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "standard",
+          "member": "string",
+          "name": "RetentionType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份保留天数，取值范围为 7 - 3650。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "RetentionPeriod",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分级存储策略。RetentionType 为 tiered 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageTieredStrategy",
+          "name": "TieredStrategy",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageTieredStrategy": {
+      "document": "分级存储策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低频存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "int64",
+          "name": "DayToLowFrequency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归档存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "int64",
+          "name": "DayToArchive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "深度归档存储\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "180",
+          "member": "int64",
+          "name": "DayToDeepArchive",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1375,6 +3358,34 @@
         }
       ],
       "usage": "in"
+    },
+    "TagInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值。",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TestItem": {
       "document": "检测步骤详情",

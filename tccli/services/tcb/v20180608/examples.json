@@ -532,6 +532,14 @@
         "title": "查询数据库ACL"
       }
     ],
+    "DescribeEnvAccessControl": [
+      {
+        "document": "查询域名访问权限配置",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvAccessControl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33694abb-0e1e-4708-bcdb-db4d8dfdefe8\"\n    }\n}",
+        "title": "查询域名访问权限配置"
+      }
+    ],
     "DescribeEnvAccountCircle": [
       {
         "document": "",
@@ -952,6 +960,26 @@
         "title": "打开qps按量计费，qps按量计费上限为1200"
       }
     ],
+    "ModifyEnvAccessControl": [
+      {
+        "document": "关闭 VPC 白名单",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a57000c9-4d54-4626-9012-819801270a6b\"\n    }\n}",
+        "title": "关闭 VPC 白名单"
+      },
+      {
+        "document": "关闭公网访问",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f44ad4d2-72c9-46a6-8cec-d951b2998159\"\n    }\n}",
+        "title": "关闭公网访问"
+      },
+      {
+        "document": "配置 VPC 白名单",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92285e0b-e1db-4a40-b8bc-6bc32cd01362\"\n    }\n}",
+        "title": "配置 VPC 白名单"
+      }
+    ],
     "ModifyEnvExtra": [
       {
         "document": "",
@@ -978,16 +1006,10 @@
     ],
     "ModifyLoginConfig": [
       {
-        "document": "使用默认云开发短信包发送登录短信",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"PhoneNumberLogin\": true,\n    \"EmailLogin\": true,\n    \"UserNameLogin\": false,\n    \"AnonymousLogin\": false,\n    \"SmsVerificationConfig\": {\n        \"Type\": \"default\",\n        \"SmsDayLimit\": 30\n    },\n    \"MfaConfig\": {\n        \"On\": \"TRUE\",\n        \"Sms\": \"TRUE\",\n        \"Email\": \"FALSE\",\n        \"RequiredBindPhone\": \"TRUE\"\n    },\n    \"PwdUpdateStrategy\": {\n        \"FirstLoginUpdate\": true,\n        \"PeriodUpdate\": true,\n        \"PeriodValue\": 6,\n        \"PeriodType\": \"MONTH\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70b8908d-5c99-4a20-be23-f84aff0bfd37\"\n    }\n}",
-        "title": "修改环境登录配置"
-      },
-      {
-        "document": "使用自定义apis发送登录短信",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"env-123\",\n    \"PhoneNumberLogin\": true,\n    \"EmailLogin\": true,\n    \"UserNameLogin\": false,\n    \"AnonymousLogin\": false,\n    \"SmsVerificationConfig\": {\n        \"Type\": \"apis\",\n        \"Name\": \"method_53978f9f96a35\",\n        \"Method\": \"SendVerificationCode\",\n        \"SmsDayLimit\": 20\n    },\n    \"MfaConfig\": {\n        \"On\": \"TRUE\",\n        \"Sms\": \"TRUE\",\n        \"Email\": \"FALSE\",\n        \"RequiredBindPhone\": \"TRUE\"\n    },\n    \"PwdUpdateStrategy\": {\n        \"FirstLoginUpdate\": true,\n        \"PeriodUpdate\": true,\n        \"PeriodValue\": 6,\n        \"PeriodType\": \"MONTH\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26d3461b-b116-4862-bbaf-6233d2922aca\"\n    }\n}",
-        "title": "修改登录配置"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginConfig\n<公共请求参数>\n\n{\n    \"EnvId\": \"**w**d***************1b7\",\n    \"PhoneNumberLogin\": true,\n    \"EmailLogin\": false,\n    \"UserNameLogin\": true,\n    \"AnonymousLogin\": true,\n    \"SmsVerificationConfig\": {\n        \"Type\": \"template\",\n        \"SmsDayLimit\": 30,\n        \"TemplateProvider\": {\n            \"Vendor\": \"TENCENT_CN\",\n            \"TemplateId\": \"*****45\",\n            \"SdkAppId\": \"1********7\",\n            \"SecretId\": \"************************************\",\n            \"SecretKey\": \"********************************\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2437d6bd-5fea-442c-bcac-b23416c2b0e2\"\n    }\n}",
+        "title": "使用腾讯云短信发送登录短信"
       }
     ],
     "ModifyPGInstanceSpec": [

@@ -978,6 +978,14 @@
         "title": "查询设备绑定的网关设备"
       }
     ],
+    "DescribeDeviceCloudStoragePackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iotexplorer.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceCloudStoragePackages\n<公共请求参数>\n\n{\n    \"ProductId\": \"DLLNMAZ4EO\",\n    \"DeviceName\": \"cs_src2\",\n    \"ChannelId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Packages\": [],\n        \"TotalCount\": 0,\n        \"RequestId\": \"91d5d6d9-caa4-414e-ac14-8e53f1c60cd8\"\n    }\n}",
+        "title": "成功示例"
+      }
+    ],
     "DescribeDeviceData": [
       {
         "document": "获取设备数据",

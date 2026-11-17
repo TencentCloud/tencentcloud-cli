@@ -7,16 +7,18 @@ Input:
 ```
 tccli waf AddCustomRule --cli-unfold-argument  \
     --Redirect /redirect_url \
-    --Domain www.test.com \
-    --Name name \
+    --Domain www.example.com \
+    --Name ProtectAdminAccess \
     --SortId 100 \
     --ExpireTime 0 \
-    --Edition clb-waf \
+    --Edition sparta-waf \
     --ActionType 1 \
     --Strategies.0.Content cookie_value \
     --Strategies.0.Field COOKIE \
     --Strategies.0.CompareFunc eq \
-    --Strategies.0.Arg cookie_key
+    --Strategies.0.Arg cookie_key \
+    --Preview 1 \
+    --ActionRatio 100
 ```
 
 Output: 

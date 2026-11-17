@@ -40,6 +40,14 @@
         "title": "示例"
       }
     ],
+    "CreateExperiment": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExperiment\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17678671667189298\",\n    \"Name\": \"测试实验\",\n    \"Type\": \"MACHINE_LEARNING\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ExperimentId\": \"336\"\n        },\n        \"RequestId\": \"e65ca227-3d11-4fe6-9758-0dd0d013b0a5\"\n    }\n}",
+        "title": "CreateExperiment"
+      }
+    ],
     "CreateFile": [
       {
         "document": "",
@@ -282,6 +290,14 @@
         "title": "获取文件信息示例"
       }
     ],
+    "GetFileContent": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFileContent\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"1**8*18***8***327\",\n    \"FileId\": \"8**8*1**4****39*68\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Content\": \"MQ==\",\n            \"ContentEncoding\": \"base64\",\n            \"FileId\": \"89*8*1*0******9968\",\n            \"FileName\": \"1.sql\",\n            \"FilePath\": \"/Wor**p*ce/*ser*********0-test1@tenc************0*1***19/1.sql\",\n            \"FileSize\": \"1\",\n            \"FileType\": \"SQL_FILE\"\n        },\n        \"RequestId\": \"95d63f8f-1f17-4542-848d-76a307ead1d2\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "GetFolder": [
       {
         "document": "",
@@ -349,8 +365,8 @@
     "GetView": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetView\n<公共请求参数>\n\n{\n    \"CatalogName\": \"DataLakeCatalog\",\n    \"SchemaName\": \"default\",\n    \"ViewName\": \"order_partition_view\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b5a9e27a-358e-45f1-89c5-c56ce24d10df\",\n        \"Data\": {\n            \"View\": {\n                \"Audit\": {\n                    \"CreatedAt\": \"1761055227671\",\n                    \"Creator\": \"1290245077@qq.com\",\n                    \"LastModifiedAt\": \"0\",\n                    \"LastModifier\": \"\"\n                },\n                \"Columns\": [\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"order_id_col\",\n                        \"Type\": \"long\"\n                    },\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"customer_id_col\",\n                        \"Type\": \"long\"\n                    },\n                    {\n                        \"Comment\": \"\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"quantity_col\",\n                        \"Type\": \"integer\"\n                    }\n                ],\n                \"Comment\": \"订单分区视图\",\n                \"MetaOwner\": {\n                    \"FullName\": \"DataLakeCatalog.default.order_partition_view\",\n                    \"Owner\": \"1290245077@qq.com\",\n                    \"OwnerType\": \"user\"\n                },\n                \"Name\": \"order_partition_view\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"comment\",\n                        \"Value\": \"订单分区视图\"\n                    },\n                    {\n                        \"Key\": \"create_engine_version\",\n                        \"Value\": \"Spark 3.5.3-dlc\"\n                    },\n                    {\n                        \"Key\": \"engine_version\",\n                        \"Value\": \"Spark 3.5.3-dlc\"\n                    }\n                ]\n            }\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: databuddy.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetView\n<公共请求参数>\n\n{\n    \"CatalogName\": \"svmgao0710\",\n    \"SchemaName\": \"information_schema\",\n    \"ViewName\": \"users\",\n    \"WorkspaceId\": \"17836526087487468\",\n    \"FetchOption\": {\n        \"FetchPermissions\": true,\n        \"FetchFeatureTableDetail\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"View\": {\n                \"AssetGuid\": \"tccatalog.v1.uid2710499687237408551@260073493_ap-guangzhou_VIEW\",\n                \"Audit\": {\n                    \"CreatedAt\": \"1783652631760\",\n                    \"Creator\": \"700002164619\",\n                    \"CreatorName\": \"*e*a*a30*t*s****encent.com\",\n                    \"LastModifiedAt\": \"1783652638078\",\n                    \"LastModifier\": \"700002164619\",\n                    \"LastModifierName\": \"we*a***0***s*1***********m\"\n                },\n                \"Columns\": [\n                    {\n                        \"Comment\": \"metalake name\",\n                        \"FieldSetting\": \"\",\n                        \"IsPrimaryKey\": false,\n                        \"Name\": \"metalake_name\",\n                        \"Tags\": [],\n                        \"Type\": \"string\"\n                    }\n                ],\n                \"Comment\": \"users\",\n                \"MetaOwner\": {\n                    \"FullName\": \"svmgao0710.information_schema.users\",\n                    \"Owner\": \"700002164619\",\n                    \"OwnerName\": \"we*a****-*e******ncent.com\",\n                    \"OwnerType\": \"user\"\n                },\n                \"Name\": \"users\",\n                \"PermissionDetail\": {\n                    \"CatalogWorkspacePrivilege\": \"WORKSPACE_READWRITE\",\n                    \"DenyPrivilegeList\": [],\n                    \"Permissions\": [\n                        \"ALL_PRIVILEGES\"\n                    ]\n                },\n                \"Properties\": [\n                    {\n                        \"Key\": \"tccatalog.identifier\",\n                        \"Value\": \"tccatalog.v1.uid2710499687237408551\"\n                    }\n                ],\n                \"Tags\": []\n            }\n        },\n        \"RequestId\": \"d2bb3f89-e227-4be9-b528-836883f6f100\"\n    }\n}",
         "title": "查询view详情"
       }
     ],

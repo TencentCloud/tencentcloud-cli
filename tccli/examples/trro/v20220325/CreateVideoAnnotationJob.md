@@ -8,8 +8,8 @@ Input:
 tccli trro CreateVideoAnnotationJob --cli-unfold-argument  \
     --InputType 1 \
     --AnnotationType 3 \
-    --S3SourceInfo.Bucket ai-annotation-test-input-1258344699 \
-    --S3SourceInfo.Endpoint cos-internal.ap-guangzhou.tencentcos.cn \
+    --S3SourceInfo.Bucket *********************************** \
+    --S3SourceInfo.Endpoint *************************************** \
     --S3SourceInfo.Region ap-guangzhou \
     --S3SourceInfo.Key batch-test/1qLIfbvfNo_0003.mp4 \
     --S3SourceInfo.Secret.SecretId ************************************ \
@@ -18,8 +18,8 @@ tccli trro CreateVideoAnnotationJob --cli-unfold-argument  \
     --AnnotationContext.TaskGoal 把香蕉从盘子中夹出来 \
     --AnnotationContext.KeyObjects 香蕉 \
     --AnnotationContext.AtomicVerbs 拿取 \
-    --OutputInfo.Bucket ai-annotation-test-input-1258344699 \
-    --OutputInfo.Endpoint cos-internal.ap-guangzhou.tencentcos.cn \
+    --OutputInfo.Bucket *********************************** \
+    --OutputInfo.Endpoint *************************************** \
     --OutputInfo.Region ap-guangzhou \
     --OutputInfo.Key annotation-result/1qLIfbvfNo_0003.json \
     --OutputInfo.Secret.SecretId ************************************ \

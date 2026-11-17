@@ -371,6 +371,13 @@
       "output": "DescribeDatabaseACLResponse",
       "status": "online"
     },
+    "DescribeEnvAccessControl": {
+      "document": "查询云开发域名访问限制配置，返回指定环境下公网、VPC、办公网三种来源的当前访问策略\n（1）可以通过控制台调用查询域名访问控制。响应  Current 返回各来源（PUBLIC/VPC/WOA）当前生效的配置\n（2）不产生写副作用",
+      "input": "DescribeEnvAccessControlRequest",
+      "name": "查询环境访问控制配置（域名来源）",
+      "output": "DescribeEnvAccessControlResponse",
+      "status": "online"
+    },
     "DescribeEnvAccountCircle": {
       "document": "查询环境计费周期。\n云开发环境的资源点都是按月结算的，每个月都有一定的抵扣额度。\n\n例如：\n  某个环境在 2026-01-05 购买了3个月个人版(到期时间: 2026-04-05)，则他可以在以下3个周期内，分别享有40000资源点的额度：\n  1. 2026-01-05 ~ 2026-02-05 23:59:59\n  2. 2026-02-06 ~ 2026-03-05 23:59:59\n  3. 2026-03-06 ~ 2026-04-05 23:59:59\n\n本接口，用于获取环境当前属于哪个计费周期内。",
       "input": "DescribeEnvAccountCircleRequest",
@@ -684,6 +691,13 @@
       "input": "ModifyEnvRequest",
       "name": "更新环境信息",
       "output": "ModifyEnvResponse",
+      "status": "online"
+    },
+    "ModifyEnvAccessControl": {
+      "document": "云开发域名访问限制配置\n（1）影响指定环境下域名来源访问策略，包含公网与 VPC 白名单\n（2）关闭公网访问后，云开发提供的默认域名在公网访问场景下返回403\n（3）可以通过配置 VPC 白名单指定放通特定 VPC 来源的请求\n（4）可以通过云开发控制台调用修改访问配置，修改后可通过查询接口核对生效配置",
+      "input": "ModifyEnvAccessControlRequest",
+      "name": "修改环境访问控制配置（域名来源）",
+      "output": "ModifyEnvAccessControlResponse",
       "status": "online"
     },
     "ModifyEnvExtra": {
@@ -7502,6 +7516,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvAccessControlRequest": {
+      "document": "DescribeEnvAccessControl请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEnvAccessControlResponse": {
+      "document": "DescribeEnvAccessControl返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14390,6 +14421,23 @@
       ],
       "type": "object"
     },
+    "ModifyEnvAccessControlRequest": {
+      "document": "ModifyEnvAccessControl请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyEnvAccessControlResponse": {
+      "document": "ModifyEnvAccessControl返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEnvExtraRequest": {
       "document": "ModifyEnvExtra请求参数结构体",
       "members": [
@@ -14557,8 +14605,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "环境 ID，用于指定需要修改登录策略的云开发环境。",
-          "example": "env-123",
+          "document": "<p>环境 ID，用于指定需要修改登录策略的云开发环境。</p>",
+          "example": "**w**d***************1b7",
           "member": "string",
           "name": "EnvId",
           "required": true,
@@ -14566,7 +14614,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。",
+          "document": "<p>手机号短信登录开关。设置为 true 开启手机号短信登录，允许用户使用手机号和短信验证码进行登录和注册；设置为 false 关闭手机号短信登录。</p>",
           "example": "true",
           "member": "bool",
           "name": "PhoneNumberLogin",
@@ -14575,8 +14623,8 @@
         },
         {
           "disabled": false,
-          "document": "邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。",
-          "example": "true",
+          "document": "<p>邮箱登录开关。设置为 true 开启邮箱登录，允许用户使用邮箱和密码进行登录和注册；设置为 false 关闭邮箱登录。</p>",
+          "example": "false",
           "member": "bool",
           "name": "EmailLogin",
           "required": true,
@@ -14584,8 +14632,8 @@
         },
         {
           "disabled": false,
-          "document": "用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。",
-          "example": "false",
+          "document": "<p>用户名密码登录开关。设置为 true 开启用户名密码登录，允许用户使用用户名和密码进行登录和注册；设置为 false 关闭用户名密码登录。</p>",
+          "example": "true",
           "member": "bool",
           "name": "UserNameLogin",
           "required": true,
@@ -14593,8 +14641,8 @@
         },
         {
           "disabled": false,
-          "document": "匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。",
-          "example": "false",
+          "document": "<p>匿名登录开关。设置为 true 开启匿名登录，允许用户无需注册即可以匿名身份访问应用；设置为 false 关闭匿名登录。</p>",
+          "example": "true",
           "member": "bool",
           "name": "AnonymousLogin",
           "required": true,
@@ -14602,7 +14650,7 @@
         },
         {
           "disabled": false,
-          "document": "短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。",
+          "document": "<p>短信验证码发送配置，用于设置短信验证码的发送通道类型和日发送限额。不传则不修改当前配置。</p>",
           "example": "无",
           "member": "VerificationConfig",
           "name": "SmsVerificationConfig",
@@ -14611,7 +14659,7 @@
         },
         {
           "disabled": false,
-          "document": "MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。",
+          "document": "<p>MFA 多因子认证登录配置，用于设置多因子认证开关及验证方式（短信、邮箱、TOTP、强制绑定手机号）。不传则不修改当前配置。</p>",
           "example": "无",
           "member": "MFALoginConfig",
           "name": "MfaConfig",
@@ -14620,7 +14668,7 @@
         },
         {
           "disabled": false,
-          "document": "密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。",
+          "document": "<p>密码更新策略配置，用于设置首次登录强制修改密码和定期强制修改密码策略。不传则不修改当前配置。</p>",
           "example": "无",
           "member": "PasswordUpdateLoginConfig",
           "name": "PwdUpdateStrategy",

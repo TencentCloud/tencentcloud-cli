@@ -35,6 +35,13 @@
       "output": "CreateConsoleGroupResponse",
       "status": "online"
     },
+    "CreateExperiment": {
+      "document": "创建实验。实验是 MLflow 训练跟踪的容器，用于承载训练运行记录与已记录模型。支持 MACHINE_LEARNING/CLASSIFICATION/REGRESSION/FORECASTING/AGENT 五种类型；AutoML 类型（分类/回归/时序预测）需同时传入 AutoMlConf 与 TrainingData。",
+      "input": "CreateExperimentRequest",
+      "name": "创建实验",
+      "output": "CreateExperimentResponse",
+      "status": "online"
+    },
     "CreateFile": {
       "document": "在Studio（统一开发 IDE）的工作空间文件树中新建一个文件（Notebook/SQL/Python等），创建成功后返回文件的完整元信息。\n\n**前置条件**\n1. WorkspaceId 对应工作空间存在，且调用方为该工作空间成员；\n2. ParentFolderPath 对应的父文件夹必须存在，且调用方对其有写权限（根目录传 `/`）；\n3. FileName 在同一父文件夹下不能重名（含后缀比较）；\n4. FileName 后缀必须与 FileType 匹配（`.ipynb`↔`NOTEBOOK_FILE`、`.sql`↔`SQL_FILE`）；\n5. 需带文件内容创建时通过 Storage 传入（大文件走 COS 中转，小文件放 Storage.Content）。",
       "input": "CreateFileRequest",
@@ -208,6 +215,13 @@
       "input": "GetFileRequest",
       "name": "获取代码文件详情",
       "output": "GetFileResponse",
+      "status": "online"
+    },
+    "GetFileContent": {
+      "document": "获取文件内容。第一期：支持 FileId 定位",
+      "input": "GetFileContentRequest",
+      "name": "获取文件内容",
+      "output": "GetFileContentResponse",
       "status": "online"
     },
     "GetFolder": {
@@ -1375,6 +1389,67 @@
       ],
       "usage": "both"
     },
+    "AutoMlConf": {
+      "document": "AutoML配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "评估指标：acc/auc/f1/mse/mae/rmse",
+          "example": "auc",
+          "member": "string",
+          "name": "EvaluationMetric",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "搜索空间列表",
+          "example": "[\"lr:0.01-0.1\"]",
+          "member": "string",
+          "name": "SearchSpace",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大运行时间（分钟），默认60",
+          "example": "60",
+          "member": "int64",
+          "name": "MaxRuntimeMinutes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大运行次数，默认100",
+          "example": "100",
+          "member": "int64",
+          "name": "MaxRunCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大运行并发，默认1，最大100",
+          "example": "1",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "BucketPartitioning": {
       "document": "分桶分区策略",
       "members": [
@@ -2356,6 +2431,132 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateExperimentRequest": {
+      "document": "CreateExperiment请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID（必填），可通过 ListWorkspaces 接口获取</p>",
+          "example": "17678671667189298",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实验名称（必填），同一工作空间内唯一</p>",
+          "example": "测试实验",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实验类型（必填），取值：MACHINE_LEARNING（机器学习）/ CLASSIFICATION（分类）/ REGRESSION（回归）/ FORECASTING（时间序列预测）/ AGENT（智能体）。传入其他值将返回 InvalidParameter.ExperimentTypeInvalid</p>",
+          "example": "MACHINE_LEARNING",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实验描述（可选），建议长度不超过 1024 字符</p>",
+          "example": "Unicode特殊字符测试",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>Studio目录树文件夹节点ID，即实验所在的目录节点，可通过 ListFiles 接口获取</p>",
+          "example": "842713669035552768",
+          "member": "string",
+          "name": "StudioId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实验标签列表（可选），key/value 均为字符串</p>",
+          "example": "无",
+          "member": "ExperimentTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>AutoML配置（可选，仅 Type 为 CLASSIFICATION/REGRESSION/FORECASTING 时需要），包含评估指标、搜索空间、最大运行时间/次数/并发等</p>",
+          "example": "无",
+          "member": "AutoMlConf",
+          "name": "AutoMlConf",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>训练数据配置（可选，仅 AutoML 类型实验需要），指定训练数据表（Catalog.Schema.Table 三段式）与目标标签列</p>",
+          "example": "无",
+          "member": "TrainingData",
+          "name": "TrainingData",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>计算资源组ID（可选），指定实验运行所使用的计算资源，可通过 ListComputeResourceOptions 接口获取</p>",
+          "example": "rg-1",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExperimentResponse": {
+      "document": "CreateExperiment返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "无",
+          "member": "CreateExperimentRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExperimentRsp": {
+      "document": "创建实验响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的实验ID",
+          "example": "exp-1",
+          "member": "string",
+          "name": "ExperimentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "CreateFileRequest": {
       "document": "CreateFile请求参数结构体",
@@ -4522,6 +4723,84 @@
       ],
       "usage": "both"
     },
+    "ExperimentTag": {
+      "document": "实验标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键",
+          "example": "env",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "prod",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FeatureLookup": {
+      "document": "FeatureLookup",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特征表全名",
+          "example": "cat.schema.table",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联键",
+          "example": "[\"user_id\"]",
+          "member": "string",
+          "name": "LookupKey",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间戳关联键",
+          "example": "ts",
+          "member": "string",
+          "name": "TimestampLookupKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特征列名列表",
+          "example": "[\"feature1\"]",
+          "member": "string",
+          "name": "FeatureNames",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "FeatureTable": {
       "document": "特征表定义",
       "members": [
@@ -6026,6 +6305,135 @@
       ],
       "usage": "out"
     },
+    "GetFileContentRequest": {
+      "document": "GetFileContent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间ID，必填，最大长度64</p>",
+          "example": "1**8*18***8***327",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件ID，FileId/FilePath 二选一，最大长度128；非空时优先生效</p>",
+          "example": "8**8*1**4****39*68",
+          "member": "string",
+          "name": "FileId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFileContentResponse": {
+      "document": "GetFileContent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件内容查询结果</p>",
+          "example": "无",
+          "member": "GetFileContentRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFileContentRsp": {
+      "document": "获取文件内容响应",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件ID；按 FilePath 查询时回显解析结果，便于调用方缓存",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名，不含路径",
+          "example": "my_file",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件全路径",
+          "example": "/data/example",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型，参考 ListEntityTypeMetas 返回值为准",
+          "example": "FILE",
+          "member": "string",
+          "name": "FileType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，字节",
+          "example": "1024",
+          "member": "string",
+          "name": "FileSize",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件内容，base64 编码",
+          "example": "aGVsbG8gd29ybGQ=",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容编码方式，当前固定 base64",
+          "example": "base64",
+          "member": "string",
+          "name": "ContentEncoding",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "GetFileRequest": {
       "document": "GetFile请求参数结构体",
       "members": [
@@ -6789,7 +7197,7 @@
         {
           "disabled": false,
           "document": "<p>数据目录名</p>",
-          "example": "DataLakeCatalog",
+          "example": "svmgao0710",
           "member": "string",
           "name": "CatalogName",
           "required": true,
@@ -6798,7 +7206,7 @@
         {
           "disabled": false,
           "document": "<p>数据库名</p>",
-          "example": "default",
+          "example": "information_schema",
           "member": "string",
           "name": "SchemaName",
           "required": true,
@@ -6807,7 +7215,7 @@
         {
           "disabled": false,
           "document": "<p>View名称</p>",
-          "example": "order_partition_view",
+          "example": "users",
           "member": "string",
           "name": "ViewName",
           "required": true,
@@ -6816,7 +7224,7 @@
         {
           "disabled": false,
           "document": "<p>调用时所在workspace唯一id</p>",
-          "example": "231434145236852",
+          "example": "17836526087487468",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -8558,6 +8966,45 @@
       ],
       "type": "object"
     },
+    "Label": {
+      "document": "标签列信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名",
+          "example": "target",
+          "member": "string",
+          "name": "ColumnName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缺失值填充",
+          "example": "mean",
+          "member": "string",
+          "name": "MissingValueImputation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据格式",
+          "example": "float",
+          "member": "string",
+          "name": "Format",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "LabelBrief": {
       "document": "标签信息",
       "members": [
@@ -8655,6 +9102,15 @@
           "name": "CatalogSources",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。",
+          "example": "9d1d39a6-bf1f-40b2-ac81-f557423487d6",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8774,6 +9230,15 @@
           "name": "CatalogSources",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接ID，可选。传入后仅返回该数据源下的 catalog/database；不传则不做过滤，返回全部数据。",
+          "example": "9d1d39a6-bf1f-40b2-ac81-f557423487d6",
+          "member": "string",
+          "name": "ConnectionId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12349,6 +12814,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接ID，与入参 Catalogs[].ConnectionId 对应。CatalogSource=CONNECTION 时返回该连接ID，用于区分同名目录的归属；METALAKE / SETATS 来源为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bb7b763b-7017-4797-a896-56d36d68b6e5",
+          "member": "string",
+          "name": "ConnectionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12742,6 +13218,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接ID（仅 CONNECTION 来源时返回）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "ConnectionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源连接名称（仅CatalogSource=CONNECTION）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "my_mysql",
+          "member": "string",
+          "name": "ConnectionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -15476,6 +15974,155 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TrainingData": {
+      "document": "训练数据配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Catalog名称",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Schema名称",
+          "example": "my_schema",
+          "member": "string",
+          "name": "Schema",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Table名称",
+          "example": "my_table",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标标签列",
+          "example": "无",
+          "member": "Label",
+          "name": "TargetLabel",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "忽略的列",
+          "example": "无",
+          "member": "Label",
+          "name": "DiscardedLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预测列",
+          "example": "无",
+          "member": "Label",
+          "name": "PredictionLabel",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间间隔单位",
+          "example": "day",
+          "member": "string",
+          "name": "EvaluationInterval",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时序步长",
+          "example": "7",
+          "member": "int64",
+          "name": "ForecastHorizon",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果集Catalog名称",
+          "example": "my_catalog",
+          "member": "string",
+          "name": "StorageCatalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果集Schema名称",
+          "example": "my_schema",
+          "member": "string",
+          "name": "StorageSchema",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果集Table名称",
+          "example": "result_table",
+          "member": "string",
+          "name": "StorageTable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "选中的列",
+          "example": "无",
+          "member": "Label",
+          "name": "SelectedLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "特征查找配置",
+          "example": "无",
+          "member": "FeatureLookup",
+          "name": "FeatureLookup",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
