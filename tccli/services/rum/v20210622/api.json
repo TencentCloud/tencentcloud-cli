@@ -20761,7 +20761,7 @@
         {
           "disabled": false,
           "document": "<p>开始时间，YYYY-MM-DD HH:00:00（小时对齐，必填）</p>",
-          "example": "2026-09-15 00:00:00",
+          "example": "2026-09-15T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -20770,7 +20770,7 @@
         {
           "disabled": false,
           "document": "<p>结束时间，YYYY-MM-DD HH:00:00（小时对齐，必填）</p>",
-          "example": "2026-09-22 13:00:00",
+          "example": "2026-09-22T13:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -20863,7 +20863,7 @@
         {
           "disabled": false,
           "document": "<p>开始时间，YYYY-MM-DD HH:00:00（小时对齐，必填）</p>",
-          "example": "2026-09-15 00:00:00",
+          "example": "2026-09-15T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -20872,7 +20872,7 @@
         {
           "disabled": false,
           "document": "<p>结束时间，YYYY-MM-DD HH:00:00（小时对齐，必填）</p>",
-          "example": "2026-09-22 13:00:00",
+          "example": "2026-09-22T13:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,

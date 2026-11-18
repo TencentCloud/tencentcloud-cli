@@ -21,6 +21,13 @@
       "output": "CreateAccessCertResponse",
       "status": "online"
     },
+    "CreateAutoDeletePolicy": {
+      "document": "为指定 CFS 文件系统创建一条数据自动删除策略",
+      "input": "CreateAutoDeletePolicyRequest",
+      "name": "创建数据自动化清理策略",
+      "output": "CreateAutoDeletePolicyResponse",
+      "status": "online"
+    },
     "CreateAutoSnapshotPolicy": {
       "document": "创建定期快照策略",
       "input": "CreateAutoSnapshotPolicyRequest",
@@ -98,6 +105,13 @@
       "output": "CreateMigrationTaskResponse",
       "status": "online"
     },
+    "DeleteAutoDeletePolicy": {
+      "document": "删除指定自动删除策略",
+      "input": "DeleteAutoDeletePolicyRequest",
+      "name": "删除指定自动删除策略",
+      "output": "DeleteAutoDeletePolicyResponse",
+      "status": "online"
+    },
     "DeleteAutoSnapshotPolicy": {
       "document": "删除快照定期策略",
       "input": "DeleteAutoSnapshotPolicyRequest",
@@ -166,6 +180,13 @@
       "input": "DeleteUserQuotaRequest",
       "name": "删除文件系统配额",
       "output": "DeleteUserQuotaResponse",
+      "status": "online"
+    },
+    "DescribeAutoDeletePolicies": {
+      "document": "查询数据自动删除策略列表",
+      "input": "DescribeAutoDeletePoliciesRequest",
+      "name": "查询数据自动删除策略列表",
+      "output": "DescribeAutoDeletePoliciesResponse",
       "status": "online"
     },
     "DescribeAutoSnapshotPolicies": {
@@ -262,7 +283,7 @@
     "DescribeLifecycleDataTask": {
       "document": "查询生命周期任务的接口。仅支持查询最近三个月内的任务数据。",
       "input": "DescribeLifecycleDataTaskRequest",
-      "name": "查询生命周期任务的接口",
+      "name": "查询数据管理任务",
       "output": "DescribeLifecycleDataTaskResponse",
       "status": "online"
     },
@@ -306,6 +327,13 @@
       "input": "DoDirectoryOperationRequest",
       "name": "目录操作接口",
       "output": "DoDirectoryOperationResponse",
+      "status": "online"
+    },
+    "ModifyAutoDeletePolicy": {
+      "document": "修改自动删除策略名称或清理路径",
+      "input": "ModifyAutoDeletePolicyRequest",
+      "name": "修改自动删除策略名称或清理路径",
+      "output": "ModifyAutoDeletePolicyResponse",
       "status": "online"
     },
     "ModifyDataFlow": {
@@ -501,6 +529,111 @@
         }
       ],
       "type": "object"
+    },
+    "AutoDeletePolicy": {
+      "document": "自动删除策略配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略 ID</p>",
+          "example": "adp-8c29****",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件系统Id</p>",
+          "example": "cfs-4e69*****",
+          "member": "string",
+          "name": "FileSystemId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略名称</p>",
+          "example": "te***",
+          "member": "string",
+          "name": "PolicyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>待清理的路径</p>",
+          "example": "[\"/cfs/*\"]",
+          "member": "string",
+          "name": "Paths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略状态</p><p>枚举值：</p><ul><li>enabling： 启用中</li><li>enabled： 已启用</li><li>disabling： 禁用中</li><li>disabed： 已禁用</li><li>deleting： 删除中</li><li>failed： 失败</li><li>creating： 创建中</li><li>updating： 修改中</li></ul>",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>清理策略创建时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-08-12 17:29:12",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略更新时间</p><p>参数格式：YYYY-MM-DD hh:mm:ss</p>",
+          "example": "2026-08-13 10:51:59",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略所属地域</p>",
+          "example": "ap-gu*******",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>错误信息</p>",
+          "example": "auto_de****: ****** ****** failed",
+          "member": "string",
+          "name": "ErrMsg",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "AutoScaleUpRule": {
       "document": "自动扩容规则",
@@ -1063,6 +1196,61 @@
           "member": "string",
           "name": "CertId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoDeletePolicyRequest": {
+      "document": "CreateAutoDeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统 ID</p>",
+          "example": "cfs-85nd****",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略名称</p>",
+          "example": "te***",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略路径列表</p>",
+          "example": "[\"/cfs/*\"]",
+          "member": "string",
+          "name": "Paths",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAutoDeletePolicyResponse": {
+      "document": "CreateAutoDeletePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略ID</p>",
+          "example": "adp-c0d0****",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2718,6 +2906,42 @@
       ],
       "usage": "both"
     },
+    "DeleteAutoDeletePolicyRequest": {
+      "document": "DeleteAutoDeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统 ID</p>",
+          "example": "cfs-85nd****",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略ID</p>",
+          "example": "adp-c0d0****",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAutoDeletePolicyResponse": {
+      "document": "DeleteAutoDeletePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteAutoSnapshotPolicyRequest": {
       "document": "DeleteAutoSnapshotPolicy请求参数结构体",
       "members": [
@@ -3093,6 +3317,71 @@
     "DeleteUserQuotaResponse": {
       "document": "DeleteUserQuota返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoDeletePoliciesRequest": {
+      "document": "DescribeAutoDeletePolicies请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统 ID</p>",
+          "example": "cfs-4e5e7****",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoDeletePoliciesResponse": {
+      "document": "DescribeAutoDeletePolicies返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略列表</p>",
+          "example": "无",
+          "member": "AutoDeletePolicy",
+          "name": "Policies",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5728,6 +6017,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAutoDeletePolicyRequest": {
+      "document": "ModifyAutoDeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>文件系统 ID</p>",
+          "example": "cfs-4e5e7****",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略 ID</p>",
+          "example": "adp-d774****",
+          "member": "string",
+          "name": "PolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理路径列表</p>",
+          "example": "[\"/cfs/*\"]",
+          "member": "string",
+          "name": "Paths",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略名称</p>",
+          "example": "te***",
+          "member": "string",
+          "name": "PolicyName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略状态</p><p>枚举值：</p><ul><li>enabled： 启用</li><li>disabled： 禁用</li></ul>",
+          "example": "enabled",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAutoDeletePolicyResponse": {
+      "document": "ModifyAutoDeletePolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyDataFlowRequest": {
       "document": "ModifyDataFlow请求参数结构体",

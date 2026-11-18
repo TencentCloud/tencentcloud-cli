@@ -7,6 +7,13 @@
       "output": "ApplyConcurrentResponse",
       "status": "online"
     },
+    "CreateMCPToken": {
+      "document": "创建 MCP Token（签发令牌）",
+      "input": "CreateMCPTokenRequest",
+      "name": "创建 MCP Token",
+      "output": "CreateMCPTokenResponse",
+      "status": "online"
+    },
     "CreateSession": {
       "document": "本接口用于创建会话。接口超时时间：5秒。",
       "input": "CreateSessionRequest",
@@ -21,11 +28,25 @@
       "output": "DescribeConcurrentCountResponse",
       "status": "online"
     },
+    "DescribeMCPTokens": {
+      "document": "查询 MCP Token 列表",
+      "input": "DescribeMCPTokensRequest",
+      "name": "查询 MCP Token 列表",
+      "output": "DescribeMCPTokensResponse",
+      "status": "online"
+    },
     "DestroySession": {
       "document": "销毁会话。如果该会话开启了云端推流，那么销毁会话时会结束云端推流。",
       "input": "DestroySessionRequest",
       "name": "销毁会话",
       "output": "DestroySessionResponse",
+      "status": "online"
+    },
+    "RenewMCPToken": {
+      "document": "续期 MCP Token（续期令牌）",
+      "input": "RenewMCPTokenRequest",
+      "name": "续期 MCP Token",
+      "output": "RenewMCPTokenResponse",
       "status": "online"
     },
     "StartPublishStream": {
@@ -110,6 +131,23 @@
     },
     "ApplyConcurrentResponse": {
       "document": "ApplyConcurrent返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMCPTokenRequest": {
+      "document": "CreateMCPToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateMCPTokenResponse": {
+      "document": "CreateMCPToken返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -267,6 +305,23 @@
       ],
       "type": "object"
     },
+    "DescribeMCPTokensRequest": {
+      "document": "DescribeMCPTokens请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeMCPTokensResponse": {
+      "document": "DescribeMCPTokens返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroySessionRequest": {
       "document": "DestroySession请求参数结构体",
       "members": [
@@ -284,6 +339,23 @@
     },
     "DestroySessionResponse": {
       "document": "DestroySession返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewMCPTokenRequest": {
+      "document": "RenewMCPToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RenewMCPTokenResponse": {
+      "document": "RenewMCPToken返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

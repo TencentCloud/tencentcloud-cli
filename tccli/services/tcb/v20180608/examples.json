@@ -535,8 +535,8 @@
     "DescribeEnvAccessControl": [
       {
         "document": "查询域名访问权限配置",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvAccessControl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"33694abb-0e1e-4708-bcdb-db4d8dfdefe8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnvAccessControl\n<公共请求参数>\n\n{\n    \"EnvId\": \"c*****i**a*en*-*g*y*g**3*******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Current\": [\n            {\n                \"Action\": \"OPEN\",\n                \"AuthToken\": \"\",\n                \"SourceType\": \"PUBLIC\",\n                \"VPCWhiteList\": {\n                    \"Action\": \"\",\n                    \"VPCs\": null\n                },\n                \"WOAAuth\": \"\"\n            }\n        ],\n        \"RequestId\": \"33694abb-0e1e-4708-bcdb-db4d8dfdefe8\"\n    }\n}",
         "title": "查询域名访问权限配置"
       }
     ],
@@ -963,20 +963,20 @@
     "ModifyEnvAccessControl": [
       {
         "document": "关闭 VPC 白名单",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a57000c9-4d54-4626-9012-819801270a6b\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{\n    \"EnvId\": \"co*le*i*-*ge*t***********dfee49\",\n    \"Sources\": [\n        {\n            \"SourceType\": \"VPC\",\n            \"Action\": \"OPEN\",\n            \"VPCWhiteList\": {\n                \"Action\": \"CLOSE\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Current\": [\n            {\n                \"Action\": \"OPEN\",\n                \"AuthToken\": \"\",\n                \"SourceType\": \"PUBLIC\",\n                \"VPCWhiteList\": {\n                    \"Action\": \"\",\n                    \"VPCs\": null\n                },\n                \"WOAAuth\": \"\"\n            }\n        ],\n        \"RequestId\": \"a57000c9-4d54-4626-9012-819801270a6b\"\n    }\n}",
         "title": "关闭 VPC 白名单"
       },
       {
         "document": "关闭公网访问",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f44ad4d2-72c9-46a6-8cec-d951b2998159\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{\n    \"EnvId\": \"****e******ent-7gtyygbr36dfee49\",\n    \"Sources\": [\n        {\n            \"SourceType\": \"PUBLIC\",\n            \"Action\": \"CLOSE\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 2,\n        \"Current\": [\n            {\n                \"Action\": \"CLOSE\",\n                \"AuthToken\": \"\",\n                \"SourceType\": \"PUBLIC\",\n                \"VPCWhiteList\": {\n                    \"Action\": \"\",\n                    \"VPCs\": null\n                },\n                \"WOAAuth\": \"\"\n            }\n        ],\n        \"RequestId\": \"f44ad4d2-72c9-46a6-8cec-d951b2998159\"\n    }\n}",
         "title": "关闭公网访问"
       },
       {
         "document": "配置 VPC 白名单",
-        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"92285e0b-e1db-4a40-b8bc-6bc32cd01362\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvAccessControl\n<公共请求参数>\n\n{\n    \"EnvId\": \"***********ent-7gtyygbr36dfee49\",\n    \"Sources\": [\n        {\n            \"SourceType\": \"VPC\",\n            \"Action\": \"OPEN\",\n            \"VPCWhiteList\": {\n                \"Action\": \"OPEN\",\n                \"VPCs\": [\n                    {\n                        \"UniqVpcId\": \"vpc-********\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ]\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"AffectedRows\": 0,\n        \"Current\": [\n            {\n                \"Action\": \"OPEN\",\n                \"AuthToken\": \"\",\n                \"SourceType\": \"PUBLIC\",\n                \"VPCWhiteList\": {\n                    \"Action\": \"\",\n                    \"VPCs\": null\n                },\n                \"WOAAuth\": \"\"\n            }\n        ],\n        \"RequestId\": \"92285e0b-e1db-4a40-b8bc-6bc32cd01362\"\n    }\n}",
         "title": "配置 VPC 白名单"
       }
     ],

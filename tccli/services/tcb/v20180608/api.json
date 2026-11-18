@@ -1141,6 +1141,67 @@
       ],
       "usage": "both"
     },
+    "AccessSourceSetting": {
+      "document": "域名访问来源配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>来源类型</p><p>枚举值：</p><ul><li>PUBLIC： 公网请求</li><li>VPC： VPC 请求</li><li>WOA： 办公网请求</li></ul>",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "SourceType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>来源请求状态</p><p>枚举值：</p><ul><li>OPEN： 放通</li><li>CLOSE： 拦截</li></ul>",
+          "example": "CLOSE",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启 WOA 鉴权</p><p>枚举值：</p><ul><li>FORCE_AUTH： 强制鉴权</li><li>NO_AUTH： 不鉴权</li></ul><p>默认值：NO_AUTH</p><p>仅 SourceType = WOA 且 Action= OPEN 时生效</p>",
+          "example": "FORCE_AUTH",
+          "member": "string",
+          "name": "WOAAuth",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>WOA 鉴权需要的 Token</p><p>仅 Source Type=WOA 且 WOAAuth = FORCE_AUTH 时必填</p>",
+          "example": "OQ***Q**************Z5",
+          "member": "string",
+          "name": "AuthToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 白名单信息</p><p>仅 SourceType = VPC 时有效; 不传表示不修改</p>",
+          "example": "无",
+          "member": "VPCWhiteListConfig",
+          "name": "VPCWhiteList",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AddProviderRequest": {
       "document": "AddProvider请求参数结构体",
       "members": [
@@ -7527,12 +7588,32 @@
     },
     "DescribeEnvAccessControlRequest": {
       "document": "DescribeEnvAccessControl请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "c*****i**a*en*-*g*y*g**3*******",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeEnvAccessControlResponse": {
       "document": "DescribeEnvAccessControl返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>修改之后，当前的生效的配置</p>",
+          "example": "无",
+          "member": "AccessSourceSetting",
+          "name": "Current",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14423,12 +14504,51 @@
     },
     "ModifyEnvAccessControlRequest": {
       "document": "ModifyEnvAccessControl请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境id</p>",
+          "example": "co*le*i*-*ge*t***********dfee49",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>本次要设置的来源集合</p><p>入参限制：SourceType = PUBLIC 时，标识操作公网开关<br>SourceType = VPC 时，通过配置 VPCWhiteList，开启/关闭 VPC 白名单<br>SourceType = WOA 时，通过配置 WOAAuth，开启/关闭鉴权校验，开启鉴权时，AuthToken 字段为填</p>",
+          "example": "无",
+          "member": "AccessSourceSetting",
+          "name": "Sources",
+          "required": true,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ModifyEnvAccessControlResponse": {
       "document": "ModifyEnvAccessControl返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>本次请求影响的权限数量</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "AffectedRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改之后，当前的生效的配置</p><p>SourceType = PUBLIC 表示公网链路访问配置<br>SourceType = VPC 表示 VPC 链路访问配置<br>SourceType = WOA 表示办公网链路访问配置</p>",
+          "example": "无",
+          "member": "AccessSourceSetting",
+          "name": "Current",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -19151,6 +19271,62 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VPCInfo": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>VPC 唯一 ID</p><p>参数格式：vpc-xxxxx</p>",
+          "example": "vpc-***l****",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 所在地域</p><p>参数格式：ap-xxxx</p>",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VPCWhiteListConfig": {
+      "document": "VPC 白名单列表配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>VPC 白名单配置状态</p><p>枚举值：</p><ul><li>OPEN： 开启白名单，VPCs 必填，覆盖写入</li><li>CLOSE： 关闭白名单，VPCs 填入时，覆盖写入</li></ul>",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Action",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>VPC 信息</p>",
+          "example": "无",
+          "member": "VPCInfo",
+          "name": "VPCs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

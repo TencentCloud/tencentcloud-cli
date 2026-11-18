@@ -2306,6 +2306,33 @@
           "name": "NotifyId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>通知渠道多选。按渠道过滤通知历史，多个取值之间为或关系。</p>",
+          "example": "[\"QCloudYehe_email\"]",
+          "member": "string",
+          "name": "ChannelNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>告警策略多选。按策略 ID 精确过滤通知历史，多个 ID 之间为或关系。</p>",
+          "example": "[\"policy-bgvgn6ml\"]",
+          "member": "string",
+          "name": "PolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>字符串数组。每项为告警策略 ID，形如 policy- 开头。</p>",
+          "example": "[\"notice-kciur1h8\"]",
+          "member": "string",
+          "name": "NoticeIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

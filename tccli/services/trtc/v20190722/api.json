@@ -6461,6 +6461,24 @@
           "name": "AgoraParam",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>网易云信(NERTC)频道拉流参数</p>",
+          "example": "无",
+          "member": "NeteaseParam",
+          "name": "NeteaseParam",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>火山(Volc)房间拉流参数</p>",
+          "example": "无",
+          "member": "VolcParam",
+          "name": "VolcParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -8667,6 +8685,48 @@
         }
       ],
       "type": "object"
+    },
+    "NeteaseParam": {
+      "document": "网易云信(NERTC)频道拉流参数。传入后表示从网易云信频道内拉流审核，此时可不填 Url。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网易云信应用 AppKey</p><p>登陆云信侧控制台或联系云信获取</p>",
+          "example": "b5334b5766d02e5b4cc6e162b139dbfe",
+          "member": "string",
+          "name": "AppKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>频道名。</p><p>非空字符串,需要和生成token使用的Channel完全一致。</p>",
+          "example": "netease_room",
+          "member": "string",
+          "name": "Channel",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于拉流端进房安全签名</p><p>生成方式详见文档：https://doc.yunxin.163.com/nertc/server-apis/TcxNDAxMTI?platform=server#%E8%8E%B7%E5%8F%96-token，每次请求审核需要重新生成新的token。</p>",
+          "example": "00*eJxSYIgxtfHxf6Z0t3Rei6FY4t2ZXXND7r*vWLGod*/WpcK*H+xRYDAxN*5*T*JLM*K1MDWxS*xNSktKTEpLTj0xNEuzTDFNYtnyJmsDC*MDSy[b[yMDBIL4nA*L",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分配进房拉流的用户ID。</p><p>和生成Token时所用 Uid 完全一致。</p>",
+          "example": "8899",
+          "member": "uint64",
+          "name": "Uid",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "OneSdkAppIdTranscodeTimeUsagesInfo": {
       "document": "旁路转码时长的查询结果",
@@ -14231,6 +14291,66 @@
         }
       ],
       "usage": "out"
+    },
+    "VolcParam": {
+      "document": "VolcParam 火山引擎(VolcEngineRTC / ByteRTC)房间拉流参数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>火山引擎 AppID。</p>",
+          "example": "6ae1ae0644ff22*********c",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>房间号。</p>",
+          "example": "volc_room",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>进房 Token。</p><p>需要开启鉴权，生成 Token时，注意RoomId 、UserId 需要对应上。详见：https://www.volcengine.com/docs/6348/70121</p>",
+          "example": "007eJxSYIgxtfHxf6Z0t3Rei6FY4t2ZXXND7rV****o*********+xRYDAxNk5JTjJ****1MDWxSExNS*tKTEpLTj0xN***TDF***********MDSy[b[yMDBIL4nAwL",
+          "member": "string",
+          "name": "Token",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分配给拉流端的UserId。</p>",
+          "example": "volc_anchor",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>订阅用户名单。</p><p>当前名单列表为空时，默认为全订阅；当名单列表有用户id,则只会订阅列表中用户。</p>",
+          "example": "[\"volc_inspect\",\"volc_inspect_2\"]",
+          "member": "string",
+          "name": "TrustedUserIdList",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>不订阅用户名单</p>",
+          "example": "[\"volc_inspect_4\",\"volc_inspect_5\"]",
+          "member": "string",
+          "name": "UntrustedUserIdList",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "WaterMark": {
       "document": "水印布局参数",
