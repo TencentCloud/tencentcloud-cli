@@ -7279,6 +7279,15 @@
           "name": "CcInfoVisibility",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p><br>在调用<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlow\">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>",
+          "example": "无",
+          "member": "EmbedSignComponentLimit",
+          "name": "SignComponentLimits",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -16229,6 +16238,30 @@
       ],
       "usage": "in"
     },
+    "EmbedSignComponentLimit": {
+      "document": "签署控件的类型和范围限制条件，用于控制**嵌入式文件**发起页面上，拖拽签署区时可使用的控件类型和具体的印章或签名方式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>控件类型，支持以下类型</p><ul><li>SIGN_SEAL : 印章控件</li><li>SIGN_PAGING_SEAL : 骑缝章控件</li><li>SIGN_SIGNATURE : 用户签名控件</li><li>SIGN_PAGING_SIGNATURE : 用户签名骑缝控件</li></ul>",
+          "example": "SIGN_SEAL",
+          "member": "string",
+          "name": "ComponentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署控件类型的值，用于限制签署时印章或者签名的选择范围</p><p>1.当 ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时，可指定印章类型。具体场景与规则说明如下：</p><p>指定印章类型:可传入以下枚举值来限制印章类型</p><ul><li> <b>OFFICIAL</b> :  企业公章</li><li> <b>CONTRACT</b> : 合同专用章</li><li> <b>FINANCE</b> : 财务专用章</li><li> <b>PERSONNEL</b> : 人事专用章</li><li> <b>OTHER</b> : 其他</li></ul><p>2.当ComponentType 是 SIGN_SIGNATURE 或者 SIGN_PAGING_SIGNATURE 时可传入以下类型（支持多个）</p><ul><li>HANDWRITE : 需要实时手写的手写签名</li><li>OCR_ESIGN : OCR印章（智慧手写签名）</li><li>IMG_ESIGN : 图片印章</li><li>ESIGN : 个人印章</li><li>SYSTEM_ESIGN : 系统印章</li></ul><br>",
+          "example": "[\"OFFICIAL\",\"FINANCE\"]",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "EmbedUrlOption": {
       "document": "个性化参数",
       "members": [
@@ -18512,6 +18545,24 @@
           "name": "PreviewAfterStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p><br>在调用<a href=\"https://qian.tencent.com/developers/companyApis/embedPages/CreatePrepareFlowGroup\">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>",
+          "example": "无",
+          "member": "EmbedSignComponentLimit",
+          "name": "SignComponentLimits",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效",
+          "example": "[2,4]",
+          "member": "uint64",
+          "name": "HideOperationSteps",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

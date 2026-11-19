@@ -15306,7 +15306,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "角色，eg：PS、WORKER、DRIVER、EXECUTOR",
+          "document": "<p>角色，eg：PS、WORKER、DRIVER、EXECUTOR</p>",
           "example": "PS",
           "member": "string",
           "name": "Role",
@@ -15317,7 +15317,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核",
+          "document": "<p>cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核</p>",
           "example": "1000",
           "member": "uint64",
           "name": "Cpu",
@@ -15328,7 +15328,7 @@
         },
         {
           "disabled": false,
-          "document": "内存，使用资源组时需配置。单位为MB",
+          "document": "<p>内存，使用资源组时需配置。单位为MB</p>",
           "example": "1",
           "member": "uint64",
           "name": "Memory",
@@ -15339,7 +15339,7 @@
         },
         {
           "disabled": false,
-          "document": "gpu卡类型，使用资源组时需配置",
+          "document": "<p>gpu卡类型，使用资源组时需配置</p>",
           "example": "V100",
           "member": "string",
           "name": "GpuType",
@@ -15350,7 +15350,7 @@
         },
         {
           "disabled": false,
-          "document": "gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡",
+          "document": "<p>gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡</p>",
           "example": "1",
           "member": "uint64",
           "name": "Gpu",
@@ -15361,7 +15361,7 @@
         },
         {
           "disabled": false,
-          "document": "算力规格ID\n计算规格 (for后付费)，可选值如下：\nTI.S.LARGE.POST: 4C8G \nTI.S.2XLARGE16.POST:  8C16G \nTI.S.2XLARGE32.POST:  8C32G \nTI.S.4XLARGE32.POST:  16C32G\nTI.S.4XLARGE64.POST:  16C64G\nTI.S.6XLARGE48.POST:  24C48G\nTI.S.6XLARGE96.POST:  24C96G\nTI.S.8XLARGE64.POST:  32C64G\nTI.S.8XLARGE128.POST : 32C128G\nTI.GN10.2XLARGE40.POST: 8C40G V100*1 \nTI.GN10.5XLARGE80.POST:  18C80G V100*2 \nTI.GN10.10XLARGE160.POST :  32C160G V100*4\nTI.GN10.20XLARGE320.POST :  72C320G V100*8\nTI.GN7.8XLARGE128.POST: 32C128G T4*1 \nTI.GN7.10XLARGE160.POST: 40C160G T4*2 \nTI.GN7.20XLARGE320.POST: 80C32",
+          "document": "<p>算力规格ID<br>计算规格 (for后付费)，可选值如下：<br>TI.S.LARGE.POST: 4C8G<br>TI.S.2XLARGE16.POST:  8C16G<br>TI.S.2XLARGE32.POST:  8C32G<br>TI.S.4XLARGE32.POST:  16C32G<br>TI.S.4XLARGE64.POST:  16C64G<br>TI.S.6XLARGE48.POST:  24C48G<br>TI.S.6XLARGE96.POST:  24C96G<br>TI.S.8XLARGE64.POST:  32C64G<br>TI.S.8XLARGE128.POST : 32C128G<br>TI.GN10.2XLARGE40.POST: 8C40G V100<em>1<br>TI.GN10.5XLARGE80.POST:  18C80G V100</em>2<br>TI.GN10.10XLARGE160.POST :  32C160G V100<em>4<br>TI.GN10.20XLARGE320.POST :  72C320G V100</em>8<br>TI.GN7.8XLARGE128.POST: 32C128G T4<em>1<br>TI.GN7.10XLARGE160.POST: 40C160G T4</em>2<br>TI.GN7.20XLARGE320.POST: 80C32</p>",
           "example": "TI.GN10.2XLARGE40",
           "member": "string",
           "name": "InstanceType",
@@ -15372,7 +15372,7 @@
         },
         {
           "disabled": false,
-          "document": "计算节点数",
+          "document": "<p>计算节点数</p>",
           "example": "4",
           "member": "uint64",
           "name": "InstanceNum",
@@ -15383,7 +15383,7 @@
         },
         {
           "disabled": false,
-          "document": "算力规格名称\n计算规格 (for后付费)，可选值如下：\n4C8G \n8C16G \n8C32G \n16C32G\n6C64G\n24C48G\n24C96G\n32C64G\n32C128G\n8C40G V100*1 \n8C80G V100*2 \n32C160G V100*4\n72C320G V100*8\n32C128G T4*1 \n40C160G T4*2 \n80C32",
+          "document": "<p>算力规格名称<br>计算规格 (for后付费)，可选值如下：<br>4C8G<br>8C16G<br>8C32G<br>16C32G<br>6C64G<br>24C48G<br>24C96G<br>32C64G<br>32C128G<br>8C40G V100<em>1<br>8C80G V100</em>2<br>32C160G V100<em>4<br>72C320G V100</em>8<br>32C128G T4<em>1<br>40C160G T4</em>2<br>80C32</p>",
           "example": "2核4G",
           "member": "string",
           "name": "InstanceTypeAlias",
@@ -15394,7 +15394,7 @@
         },
         {
           "disabled": false,
-          "document": "RDMA配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>RDMA配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RDMAConfig",
           "name": "RDMAConfig",

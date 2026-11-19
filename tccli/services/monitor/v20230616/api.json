@@ -6379,6 +6379,33 @@
           "name": "TaskId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>session会话ID</p>",
+          "example": "ses-*b****0ev*1i",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>输入内容</p>",
+          "example": "请基于当前账号最近 7 天告警数据给出本轮分析结论，并指出最需要关注的地域。",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>幂等键，调用方保证同一事件重试时携带同一 key</p>",
+          "example": "re**es*i*n-********-r*****-001",
+          "member": "string",
+          "name": "IdempotencyKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6392,6 +6419,26 @@
           "example": "exe-************",
           "member": "string",
           "name": "ExecutionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ses-*b*g**0**y**",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>运行 ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "run-y*****l**9*h",
+          "member": "string",
+          "name": "RunId",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

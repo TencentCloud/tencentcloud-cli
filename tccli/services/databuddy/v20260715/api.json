@@ -399,6 +399,13 @@
       "output": "ListModelsResponse",
       "status": "online"
     },
+    "ListScheduledTasks": {
+      "document": "分页查询工作空间下的定时任务列表；支持按 SessionType、AnalysisSpaceId、TaskName 过滤。返回内容包含任务的完整详情，含 SkillIds 与 MCPIds。",
+      "input": "ListScheduledTasksRequest",
+      "name": "查询定时任务列表",
+      "output": "ListScheduledTasksResponse",
+      "status": "online"
+    },
     "ListSchemaNames": {
       "document": "分页查询数据库名称列表",
       "input": "ListSchemaNamesRequest",
@@ -5076,6 +5083,17 @@
           "example": "true",
           "member": "bool",
           "name": "FetchDimensions",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否获取tclake表的snapshots文件信息（文件大小、文件数量、最后修改时间）<br>各接口默认行为不同：</p><ul><li>GetTable：不传或未设置时默认获取（true），显式传 false 时跳过</li><li>GetTables：不传或未设置时默认不获取（false），显式传 true 时获取；获取会显著增加接口耗时</li></ul>",
+          "example": "false",
+          "member": "bool",
+          "name": "FetchTableFilesInfo",
           "output_required": false,
           "required": false,
           "type": "bool",
@@ -10447,6 +10465,89 @@
       ],
       "usage": "both"
     },
+    "ListScheduledTasksRequest": {
+      "document": "ListScheduledTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID</p>",
+          "example": "17761588656557477",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListScheduledTasksResponse": {
+      "document": "ListScheduledTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时任务列表分页结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ListScheduledTasksRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListScheduledTasksRsp": {
+      "document": "定时任务列表分页结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>当前页任务列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScheduledTaskDetail",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>符合筛选条件的任务总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前页码（从 1 开始）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实际生效的每页数量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ListSchemaNamesRequest": {
       "document": "ListSchemaNames请求参数结构体",
       "members": [
@@ -14467,6 +14568,210 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ScheduledTaskDetail": {
+      "document": "定时任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>定时任务唯一标识</p>",
+          "example": "17676143448574812",
+          "member": "string",
+          "name": "ScheduledTaskId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务名称</p>",
+          "example": "daily_report",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务提示词</p>",
+          "example": "生成每日数据报告",
+          "member": "string",
+          "name": "Prompt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>六段 cron 表达式</p>",
+          "example": "0 3 * * *",
+          "member": "string",
+          "name": "Schedule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>任务状态：1=ACTIVE，2=PAUSED</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话类型：1=数据分析，2=数据工程</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "SessionType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分析空间 ID</p>",
+          "example": "17676143448574813",
+          "member": "string",
+          "name": "AnalysisSpaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作空间 ID</p>",
+          "example": "17697667906247629",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人 UIN</p>",
+          "example": "100044134096",
+          "member": "string",
+          "name": "CreateUserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间，毫秒级 Unix 时间戳字符串</p>",
+          "example": "1735962907000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改时间，毫秒级 Unix 时间戳字符串</p>",
+          "example": "1735962907000",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效开始时间，上海时区本地零点的毫秒时间戳字符串；0 表示不传</p>",
+          "example": "1735689600000",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>生效结束时间，上海时区本地零点的毫秒时间戳字符串；0 表示不传</p>",
+          "example": "1735776000000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>技能 ID 列表</p>",
+          "example": "skill-1,skill-2",
+          "member": "string",
+          "name": "SkillIds",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 ID</p>",
+          "example": "model-1",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度类型：1=每天，2=间隔，3=单次</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ScheduleType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改人 UIN</p>",
+          "example": "100044134096",
+          "member": "string",
+          "name": "UpdateUserUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>mcpId列表（逗号分隔）</p>",
+          "example": "3b9a448717916228157141a8461e5",
+          "member": "string",
+          "name": "MCPIds",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

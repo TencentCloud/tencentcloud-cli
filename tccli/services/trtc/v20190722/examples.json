@@ -254,6 +254,14 @@
         "title": "查询转录任务"
       }
     ],
+    "DescribeFinanceCloudRoomUsage": [
+      {
+        "document": "查询金融云房间维度用量",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFinanceCloudRoomUsage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400017192,\n    \"StartTime\": \"2026-11-13 10:00\",\n    \"EndTime\": \"2026-11-13 12:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b35a6eb0-f3dd-4dad-9bf3-d2e42488eeac\"\n    }\n}",
+        "title": "查询金融云房间维度用量"
+      }
+    ],
     "DescribeLiveStreamModeration": [
       {
         "document": "",

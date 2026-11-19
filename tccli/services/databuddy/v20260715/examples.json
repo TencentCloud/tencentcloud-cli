@@ -510,6 +510,14 @@
         "title": "分页获取模型列表"
       }
     ],
+    "ListScheduledTasks": [
+      {
+        "document": "分页查询命中一条任务",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListScheduledTasks\n<公共请求参数>\n\n{\n    \"WorkspaceId\": \"17761588656557477\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Tasks\": [\n                {\n                    \"ScheduledTaskId\": \"59800\",\n                    \"Name\": \"每日精选任务-1\",\n                    \"Prompt\": \"分析今日数据趋势并生成报告\",\n                    \"Schedule\": \"0 0 9 * * *\",\n                    \"Status\": 1,\n                    \"SessionType\": 1,\n                    \"AnalysisSpaceId\": \"as-1024\",\n                    \"WorkspaceId\": \"17761588656557477\",\n                    \"CreateUserUin\": \"700002164618\",\n                    \"CreateTime\": \"1779273675952\",\n                    \"ModifyTime\": \"1779274998199\",\n                    \"StartTime\": \"1759161600000\",\n                    \"EndTime\": \"0\",\n                    \"SkillIds\": \"skill-abnormal-detect\",\n                    \"ModelId\": \"hunyuan-turbo\",\n                    \"ScheduleType\": 1,\n                    \"UpdateUserUin\": \"700002164618\",\n                    \"MCPIds\": \"mcp-github-001,mcp-jira-002\"\n                }\n            ],\n            \"Total\": 1,\n            \"Page\": 1,\n            \"PageSize\": 20\n        },\n        \"RequestId\": \"991014a1-bbb8-4610-a814-896725742863\"\n    }\n}",
+        "title": "查询工作空间下的定时任务"
+      }
+    ],
     "ListSchemaNames": [
       {
         "document": "",

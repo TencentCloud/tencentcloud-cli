@@ -294,6 +294,14 @@
         "title": "创建数据库代理连接点"
       }
     ],
+    "CreateProxyEndPoints": [
+      {
+        "document": "Create Proxy End Points",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyEndPoints\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-e4q3jddv\",\n    \"ProxyEndPointItems\": [\n        {\n            \"UniqueVpcId\": \"vpc-mvev6kw9\",\n            \"UniqueSubnetId\": \"subnet-oxrmkp18\",\n            \"WeightMode\": \"custom\",\n            \"AutoAddRo\": \"no\",\n            \"RwType\": \"READWRITE\",\n            \"FailOver\": \"no\",\n            \"InstanceWeights\": [\n                {\n                    \"InstanceId\": \"cynosdbmysql-ins-1p1bgw9g\",\n                    \"Weight\": 1\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 17679,\n        \"TaskId\": 25278,\n        \"RequestId\": \"e961f903-9254-44e8-a5e2-a0b11f71067e\"\n    }\n}",
+        "title": "批量创建proxy end point"
+      }
+    ],
     "CreateResourcePackage": [
       {
         "document": "新购资源包",

@@ -3,7 +3,7 @@
     "CreateDeployment": {
       "document": "创建部署。上传制品时 ViaMeta 和 Provider 传 Upload，TempBucketPath 传已上传对象的路径。",
       "input": "CreateDeploymentRequest",
-      "name": "创建构建",
+      "name": "创建部署",
       "output": "CreateDeploymentResponse",
       "status": "online"
     },
@@ -52,14 +52,14 @@
     "DescribeDeploymentLog": {
       "document": "返回构建日志的访问地址。",
       "input": "DescribeDeploymentLogRequest",
-      "name": "获取构建日志",
+      "name": "获取部署日志",
       "output": "DescribeDeploymentLogResponse",
       "status": "online"
     },
     "DescribeDeployments": {
       "document": "查询项目的部署记录。",
       "input": "DescribeDeploymentsRequest",
-      "name": "获取构建记录列表",
+      "name": "获取部署记录列表",
       "output": "DescribeDeploymentsResponse",
       "status": "online"
     },

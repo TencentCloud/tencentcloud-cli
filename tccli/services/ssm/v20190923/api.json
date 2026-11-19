@@ -36,7 +36,7 @@
       "status": "online"
     },
     "DeleteSecretVersion": {
-      "document": "该接口用于直接删除指定凭据下的单个版本凭据，删除操作立即生效，对所有状态下的凭据版本都可以删除。\n本接口仅适用于用户自定义凭据，本接口不能对云产品凭据进行操作。",
+      "document": "删除指定的自定义凭据版本，删除操作立即生效。绑定 Stage_Current 标签的版本不能删除，请先通过 UpdateSecret 将该标签迁移到其他版本。",
       "input": "DeleteSecretVersionRequest",
       "name": "删除指定版本的凭据",
       "output": "DeleteSecretVersionResponse",
@@ -134,7 +134,7 @@
       "status": "online"
     },
     "PutSecretValue": {
-      "document": "该接口在指定名称的凭据下增加新版本的凭据内容，一个凭据下最多可以支持10个版本。只能对处于Enabled 和 Disabled 状态的凭据添加新的版本。\n本接口仅适用于用户自定义凭据，对云产品凭据不能操作。",
+      "document": "该接口用于在指定凭据下新增版本，支持自定义凭据。未指定 VersionId 时，系统生成版本号并在响应中返回。可指定 Stage_Current，将标签绑定到新版本。\n一个凭据下最多支持 10 个版本。SecretBinary 和 SecretString 必须且只能指定一个。",
       "input": "PutSecretValueRequest",
       "name": "增加新版本凭据",
       "output": "PutSecretValueResponse",
@@ -169,7 +169,7 @@
       "status": "online"
     },
     "UpdateSecret": {
-      "document": "该接口用于更新指定凭据名称和版本号的内容，调用该接口会对新的凭据内容加密后覆盖旧的内容。仅允许更新Enabled 和 Disabled 状态的凭据。\n本接口仅适用于用户自定义凭据，不能对云产品凭据操作。",
+      "document": "本接口用于更新指定凭据版本的内容，或设置、迁移已有版本的 Stage_Current 标签。\n更新凭据内容支持自定义凭据，新的内容加密后覆盖原内容。设置版本标签支持自定义、云产品及 Redis/MongoDB 凭据；云产品及 Redis/MongoDB 凭据仅支持设置或迁移标签。",
       "input": "UpdateSecretRequest",
       "name": "更新凭据内容",
       "output": "UpdateSecretResponse",
@@ -827,7 +827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定凭据名称。",
+          "document": "<p>指定凭据名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -836,7 +836,7 @@
         },
         {
           "disabled": false,
-          "document": "指定该名称下需要删除的凭据的版本号。",
+          "document": "<p>指定该名称下需要删除的凭据的版本号。</p><p>仅支持删除自定义凭据版本。目标版本持有 Stage_Current 标签时返回 FailedOperation，须先通过 UpdateSecret 将标签迁移到其他已有版本。存在并发写入或轮转等操作、未取得共享写锁时返回 OperationDenied。</p>",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
@@ -851,7 +851,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称。",
+          "document": "<p>凭据名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -861,7 +861,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据版本号。",
+          "document": "<p>凭据版本号。</p>",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
@@ -1545,7 +1545,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定凭据的名称。",
+          "document": "<p>指定凭据的名称。</p>",
           "example": "test_secret",
           "member": "string",
           "name": "SecretName",
@@ -1554,17 +1554,17 @@
         },
         {
           "disabled": false,
-          "document": "指定对应凭据的版本号。\n对于云产品凭据如Mysql凭据，通过指定凭据名称和历史版本号来获取历史轮转凭据的明文信息，如果要获取当前正在使用的凭据版本的明文，需要将版本号指定为：SSM_Current。",
+          "document": "<p>指定要读取的凭据版本号。仅传 VersionId 时按该版本号精确读取；云产品及 Redis/MongoDB 凭据可通过 SSM_Current 读取当前版本。</p><p>入参限制：同时指定 VersionStage 时，两者必须指向同一版本，否则返回 ResourceNotFound。</p><p>自定义、云产品及 Redis/MongoDB 凭据在 VersionId 和 VersionStage 均未指定时，默认读取 Stage_Current 标签指向的版本；未设置该标签返回 InvalidParameterValue，不回退到 SSM_Current。</p>",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>用于加密返回凭据值的 PEM 格式公钥，支持 RSA 2048 和 SM2。未指定时，凭据值按原有方式返回。</p>",
+          "example": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/P19p40ZFCooKO8FTPO6fCFgsgU/ffxfSLGLfrOWG+SJGj4H1faRLJ/+I+lx6XKI4Q+jVANjFhEMrPBPdpd0Pg==\n-----END PUBLIC KEY-----",
           "member": "string",
           "name": "EncryptionPublicKey",
           "required": false,
@@ -1572,10 +1572,19 @@
         },
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>非对称加密算法，仅在指定 EncryptionPublicKey 时生效。支持 SM2、SM2_C1C3C2_ASN1、RSAES_PKCS1_V1_5、RSAES_OAEP_SHA_1、RSAES_OAEP_SHA_256，默认值为 SM2。</p>",
+          "example": "SM2",
           "member": "string",
           "name": "EncryptionAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>用于选择凭据版本的标签。支持自定义、云产品及 Redis/MongoDB 凭据。</p><p>枚举值：</p><ul><li>Stage_Current： 读取用户设置的当前版本标签所绑定的版本。标签不会自动设置，也不会跟随账号迁移。</li></ul><p>仅支持 Stage_Current，大小写敏感。仅传标签时按绑定关系取值；与 VersionId 同时传入时必须指向同一版本。两者均不传时默认解析 Stage_Current，未设置该标签返回 InvalidParameterValue。</p>",
+          "example": "Stage_Current",
+          "member": "string",
+          "name": "VersionStage",
           "required": false,
           "type": "string"
         }
@@ -1587,7 +1596,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据的名称。",
+          "document": "<p>凭据的名称。</p>",
           "example": "test3-secret",
           "member": "string",
           "name": "SecretName",
@@ -1597,7 +1606,7 @@
         },
         {
           "disabled": false,
-          "document": "该凭据对应的版本号。",
+          "document": "<p>该凭据对应的版本号。</p>",
           "example": "v3",
           "member": "string",
           "name": "VersionId",
@@ -1607,7 +1616,7 @@
         },
         {
           "disabled": false,
-          "document": "在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。\nSecretBinary和SecretString只有一个不为空。",
+          "document": "<p>在创建凭据(CreateSecret)时，如果指定的是二进制数据，则该字段为返回结果，并且使用base64进行编码，应用方需要进行base64解码后获取原始数据。<br>SecretBinary和SecretString只有一个不为空。</p>",
           "example": "5Yet5o2udmFsdWUyCg==",
           "member": "string",
           "name": "SecretBinary",
@@ -1617,7 +1626,7 @@
         },
         {
           "disabled": false,
-          "document": "在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。\nSecretBinary和SecretString只有一个不为空。",
+          "document": "<p>在创建凭据(CreateSecret)时，如果指定的是普通文本数据，则该字段为返回结果。<br>SecretBinary和SecretString只有一个不为空。</p>",
           "example": "凭据value3",
           "member": "string",
           "name": "SecretString",
@@ -2055,7 +2064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定需要增加版本的凭据名称。",
+          "document": "<p>指定需要增加版本的凭据名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -2064,16 +2073,16 @@
         },
         {
           "disabled": false,
-          "document": "指定新增加的版本号，最长64 字节，使用字母、数字或者 - _ . 的组合并且以字母或数字开头。",
+          "document": "<p>指定新增凭据版本的版本号。可选，未指定时由系统生成 UUID v4，并通过响应 VersionId 返回。</p><p>参数格式：最长64字节，使用字母、数字或 - _ . 的组合，并以字母或数字开头。</p><p>省略 VersionId 的每次调用都会生成新版本。需要识别同一版本或处理重试时，由调用方生成并复用 VersionId；已有版本号返回 ResourceInUse.VersionIdExists。</p>",
           "example": "v2.0",
           "member": "string",
           "name": "VersionId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "二进制凭据信息，使用base64编码。\nSecretBinary 和 SecretString 必须且只能设置一个。",
+          "document": "<p>二进制凭据信息，使用base64编码。<br>SecretBinary 和 SecretString 必须且只能设置一个。</p>",
           "example": "5Yet5o2udmFsdWUyCg==",
           "member": "string",
           "name": "SecretBinary",
@@ -2082,10 +2091,19 @@
         },
         {
           "disabled": false,
-          "document": "文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。",
+          "document": "<p>文本类型凭据信息明文（不需要进行base64编码），SecretBinary 和 SecretString 必须且只能设置一个。</p>",
           "example": "test_v2",
           "member": "string",
           "name": "SecretString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>为新增版本设置版本标签，仅支持 Stage_Current，大小写敏感。本接口仅支持自定义凭据。</p><p>入参限制：SecretString 和 SecretBinary 必须且只能指定一个非空值。</p>",
+          "example": "Stage_Current",
+          "member": "string",
+          "name": "VersionStage",
           "required": false,
           "type": "string"
         }
@@ -2097,7 +2115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称。",
+          "document": "<p>凭据名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -2107,7 +2125,7 @@
         },
         {
           "disabled": false,
-          "document": "新增加的版本号。",
+          "document": "<p>新增加的版本号。</p>",
           "example": "v2.0",
           "member": "string",
           "name": "VersionId",
@@ -2637,7 +2655,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "指定需要更新凭据内容的名称。",
+          "document": "<p>指定需要更新凭据内容的名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -2646,7 +2664,7 @@
         },
         {
           "disabled": false,
-          "document": "指定需要更新凭据内容的版本号。",
+          "document": "<p>指定需要更新内容或设置版本标签的已有版本号，必填。</p><p>指定 VersionStage 时，将该标签迁移到此版本。目标版本不存在返回 ResourceNotFound；凭据处于 PendingCreate 或 CreateFailed 状态时返回 FailedOperation。</p>",
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
@@ -2655,7 +2673,7 @@
         },
         {
           "disabled": false,
-          "document": "新的凭据内容为二进制的场景使用该字段，并使用base64进行编码。\nSecretBinary 和 SecretString 只能一个不为空。",
+          "document": "<p>新的二进制凭据内容，须使用 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>",
           "example": "5Yet5o2udmFsdWUyCg==",
           "member": "string",
           "name": "SecretBinary",
@@ -2664,10 +2682,19 @@
         },
         {
           "disabled": false,
-          "document": "新的凭据内容为文本的场景使用该字段，不需要base64编码SecretBinary 和 SecretString 只能一个不为空。",
+          "document": "<p>新的文本凭据内容，无需 Base64 编码，仅自定义凭据支持通过本接口更新内容。</p><p>入参限制：未指定 VersionStage 时，SecretString 和 SecretBinary 必须且只能一个非空；指定 VersionStage 时可均不传以仅迁移标签，但不能同时非空。云产品及 Redis/MongoDB 凭据须省略两项内容。</p>",
           "example": "new value",
           "member": "string",
           "name": "SecretString",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>将 Stage_Current 标签设置或迁移到 VersionId 指定的已有版本，大小写敏感。</p><p>入参限制：支持自定义、云产品及 Redis/MongoDB 凭据；VersionId 必填。</p><p>自定义凭据可仅设置标签，也可同时更新内容；SecretString 和 SecretBinary 不能同时非空。云产品及 Redis/MongoDB 仅支持标签操作，两项内容均须省略。标签绑定版本号，原轮转流程保持不变；绑定历史版本不保证账密仍有效。</p>",
+          "example": "Stage_Current",
+          "member": "string",
+          "name": "VersionStage",
           "required": false,
           "type": "string"
         }
@@ -2679,7 +2706,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "凭据名称。",
+          "document": "<p>凭据名称。</p>",
           "example": "lzc-testss",
           "member": "string",
           "name": "SecretName",
@@ -2689,7 +2716,7 @@
         },
         {
           "disabled": false,
-          "document": "凭据版本号。",
+          "document": "<p>凭据版本号。</p>",
           "example": "v2.0",
           "member": "string",
           "name": "VersionId",
@@ -2711,7 +2738,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本号",
+          "document": "<p>版本号</p>",
           "example": "v1",
           "member": "string",
           "name": "VersionId",
@@ -2721,12 +2748,22 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，unix时间戳。",
+          "document": "<p>创建时间，unix时间戳。</p>",
           "example": "1730278717",
           "member": "uint64",
           "name": "CreateTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>该版本持有的公开版本标签列表，用于查看标签指向。</p><p>自定义、云产品及 Redis/MongoDB 凭据在版本列表中返回此字段，仅包含 Stage_Current；无标签时返回空数组 []。</p>",
+          "example": "[\"Stage_Current\"]",
+          "member": "string",
+          "name": "VersionStages",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

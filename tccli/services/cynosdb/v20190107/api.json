@@ -252,6 +252,13 @@
       "output": "CreateProxyEndPointResponse",
       "status": "online"
     },
+    "CreateProxyEndPoints": {
+      "document": "本接口（CreateProxyEndPoints）用于批量创建数据库代理连接点。",
+      "input": "CreateProxyEndPointsRequest",
+      "name": "批量创建数据库代理连接点",
+      "output": "CreateProxyEndPointsResponse",
+      "status": "online"
+    },
     "CreateResourcePackage": {
       "document": "本接口（CreateResourcePackage）用于新购资源包。",
       "input": "CreateResourcePackageRequest",
@@ -9185,6 +9192,62 @@
           "name": "ProxyGroupId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyEndPointsRequest": {
+      "document": "CreateProxyEndPoints请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>集群 ID。</p>",
+          "example": "cynosdbmysql-e4q3jddv",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>proxyEndPoint的参数配置</p>",
+          "example": "无",
+          "member": "ProxyEndPointItem",
+          "name": "ProxyEndPointItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProxyEndPointsResponse": {
+      "document": "CreateProxyEndPoints返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>异步流程 ID。</p>",
+          "example": "17679",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>异步任务 ID。</p>",
+          "example": "25278",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -31065,6 +31128,199 @@
         }
       ],
       "usage": "in"
+    },
+    "ProxyEndPointItem": {
+      "document": "批量proxy接入点配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>vpc id</p>",
+          "example": "vpc-mvev6kw9",
+          "member": "string",
+          "name": "UniqueVpcId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-oxrmkp18",
+          "member": "string",
+          "name": "UniqueSubnetId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全组列表</p>",
+          "example": "[\"sg-2uzdz3cv\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权重模式</p><p>枚举值：</p><ul><li>system： 系统分配</li><li>custom： 自定义</li></ul>",
+          "example": "custom",
+          "member": "string",
+          "name": "WeightMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否自动添加只读实例</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>",
+          "example": "no",
+          "member": "string",
+          "name": "AutoAddRo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>读写类型</p><p>枚举值：</p><ul><li>READWRITE： 读写</li><li>READONLY： 只读</li></ul>",
+          "example": "READWRITE",
+          "member": "string",
+          "name": "RwType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启故障转移</p><p>枚举值：</p><ul><li>yes： 是</li><li>no： 否</li></ul>",
+          "example": "no",
+          "member": "string",
+          "name": "FailOver",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>一致性超时时间</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "ConsistencyTimeOut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>一致性类型。</p><p>枚举值：</p><ul><li>eventual： 最终一致性</li><li>global： 全局一致性</li><li>session： 会话一致性</li></ul><p>仅当 RwType 参数值为 READWRITE 时，才支持设置此项。</p>",
+          "example": "eventual",
+          "member": "string",
+          "name": "ConsistencyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启事务拆分。</p><p>开启后，在一个事务中拆分读和写到不同的实例上去执行。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TransSplit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>接入模式</p><p>枚举值：</p><ul><li>nearby： 就近访问</li><li>balance： 均衡分配</li></ul>",
+          "example": "nearby",
+          "member": "string",
+          "name": "AccessMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例及权重</p>",
+          "example": "无",
+          "member": "ProxyInstanceWeight",
+          "name": "InstanceWeights",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述信息</p>",
+          "example": "batch-desc-test-0",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动负载模式</p><p>枚举值：</p><ul><li>static： 静态</li><li>dynamic： 自适应</li></ul>",
+          "example": "static",
+          "member": "string",
+          "name": "LoadBalanceMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启连接池</p><p>枚举值：</p><ul><li>yes： 打开</li><li>no： 不打开</li></ul>",
+          "example": "no",
+          "member": "string",
+          "name": "OpenConnectionPool",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池类型</p><p>枚举值：</p><ul><li>SessionConnectionPool： 会话级连接池</li><li>TransactionConnectionPool： 事物级连接池</li></ul>",
+          "example": "SessionConnectionPool",
+          "member": "string",
+          "name": "ConnectionPoolType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接池阀值</p>",
+          "example": "15",
+          "member": "int64",
+          "name": "ConnectionPoolTimeOut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ProxyGroup": {
       "document": "proxy组",

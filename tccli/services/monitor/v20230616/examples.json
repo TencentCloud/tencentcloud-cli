@@ -323,9 +323,9 @@
     "TriggerAIWorkbenchTask": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIWorkbenchTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"tsk-********\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\",\n        \"ExecutionId\": \"exe-************\"\n    }\n}",
-        "title": "test"
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerAIWorkbenchTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"tsk-********\",\n    \"SessionId\": \"ses-*b****0ev*1i\",\n    \"IdempotencyKey\": \"re**es*i*n-********-r*****-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"717fd6d5-71c6-4380-90f2-0b534cf9fe25\",\n        \"RunId\": \"run-y*****l**9*h\",\n        \"SessionId\": \"ses-*b*g**0**y**\",\n        \"ExecutionId\": \"exe-************\"\n    }\n}",
+        "title": "TriggerAIWorkbenchTask"
       }
     ],
     "UpdateAIWorkbenchAgent": [

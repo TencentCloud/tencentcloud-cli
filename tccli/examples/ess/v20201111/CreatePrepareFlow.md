@@ -430,3 +430,37 @@ Output:
 }
 ```
 
+**Example 6: 嵌入式文件发起-限制在界面上签署区印章类型控件限制范围**
+
+通过此请求获取链接后，操作人在界面上为签署人分配企业印章控件时，印章类型可选的范围为 公章+合同专用章
+
+Input: 
+
+```
+tccli ess CreatePrepareFlow --cli-unfold-argument  \
+    --Operator.UserId yDwfGUUckps8w16aUy083fBSBwGv1wHo \
+    --FlowName 文件发起 \
+    --ResourceId yDCjFUUckp4j37dfUEX0bPBx7V6hXRZp \
+    --ResourceType 2 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 腾讯云计算（西安）有限责任公司测试 \
+    --Approvers.0.ApproverName 张殷虔 \
+    --Approvers.0.ApproverMobile 18251952320 \
+    --IntelligentStatus CLOSE \
+    --FlowOption.CanEditFlow True \
+    --FlowOption.SignComponentLimits.0.ComponentType SIGN_SEAL \
+    --FlowOption.SignComponentLimits.0.ComponentValue OFFICIAL CONTRACT
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DraftId": "",
+        "FlowId": "yDIEbUUckp6qo5dmU1UyKnSs8y7vjLFM",
+        "Url": "https://embed.test.qian.tencent.cn/contract-create?embed=1&expiredOn=1795069394&code=yDIEbUUckp6qo5d9UyKnSs8uHs8cOkGp&businessId=yDIEbUUckp6qo5dfUyKnSs8RVoToEMGS&channel=TENCENTCLOUD&operateSource=byFile&themeId=saas_web_theme_yDwf3UUckpshchk9Uuan1OkFOE0qLixm",
+        "RequestId": "a2ad6910-65ac-4764-a625-a4e79c7ec2ff"
+    }
+}
+```
+

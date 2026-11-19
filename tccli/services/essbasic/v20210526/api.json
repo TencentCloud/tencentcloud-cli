@@ -3833,7 +3833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li>\n<li> **3**：草稿</li>\n</ul>",
+          "document": "<p>资源类型，取值有：</p><ul><li> **1**：模板</li><li> **2**：文件（默认值）</li><li> **3**：草稿</li></ul>",
           "example": "2",
           "member": "int64",
           "name": "ResourceType",
@@ -3842,7 +3842,7 @@
         },
         {
           "disabled": false,
-          "document": "要创建的合同信息",
+          "document": "<p>要创建的合同信息</p>",
           "example": "无",
           "member": "BaseFlowInfo",
           "name": "FlowInfo",
@@ -3851,7 +3851,7 @@
         },
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3860,7 +3860,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n<li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
+          "document": "<p>资源id，与ResourceType相对应，取值范围：</p><ul><li>文件Id（通过UploadFiles获取文件资源Id）</li><li>模板Id（通过控制台创建模板后获取模板Id）</li><li>草稿Id（通过嵌入页面保存草稿后获取草稿Id）</li></ul>注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "yDwqFUUckp3em41rUwWPgIBjsYgG5bba",
           "member": "string",
           "name": "ResourceId",
@@ -3869,7 +3869,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑",
+          "document": "<p>合同流程配置信息，用于配置发起合同时定制化如是否允许修改，某些按钮的隐藏等逻辑</p>",
           "example": "无",
           "member": "CreateFlowOption",
           "name": "FlowOption",
@@ -3878,7 +3878,7 @@
         },
         {
           "disabled": true,
-          "document": "已废弃，请用FlowInfo.Approvers",
+          "document": "<p>已废弃，请用FlowInfo.Approvers</p>",
           "example": "无",
           "member": "CommonFlowApprover",
           "name": "FlowApproverList",
@@ -3887,7 +3887,7 @@
         },
         {
           "disabled": false,
-          "document": "合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接\n注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`",
+          "document": "<p>合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接<br>注: <code>该参数必须是一个待发起审核的合同id，并且还未审核通过</code></p>",
           "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
           "member": "string",
           "name": "FlowId",
@@ -3896,7 +3896,7 @@
         },
         {
           "disabled": true,
-          "document": "该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL",
+          "document": "<p>该参数不可用，请通过获取 web 可嵌入接口获取合同流程预览 URL</p>",
           "example": "false",
           "member": "bool",
           "name": "NeedPreview",
@@ -3905,7 +3905,7 @@
         },
         {
           "disabled": true,
-          "document": "企业机构信息，不用传",
+          "document": "<p>企业机构信息，不用传</p>",
           "example": "无",
           "member": "OrganizationInfo",
           "name": "Organization",
@@ -3914,7 +3914,7 @@
         },
         {
           "disabled": true,
-          "document": "操作人（用户）信息，不用传",
+          "document": "<p>操作人（用户）信息，不用传</p>",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3923,7 +3923,7 @@
         },
         {
           "disabled": true,
-          "document": "<font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>\n签署控件的配置信息，用在嵌入式发起的页面配置，包括\n\n- 签署控件 是否默认展示日期.",
+          "document": "<p><font color=\"red\">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font><br>签署控件的配置信息，用在嵌入式发起的页面配置，包括</p><ul><li>签署控件 是否默认展示日期.</li></ul>",
           "example": "无",
           "member": "SignComponentConfig",
           "name": "SignComponentConfig",
@@ -3938,7 +3938,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟",
+          "document": "<p>发起的合同嵌入链接， 可以直接点击进入进行合同发起， 有效期为5分钟</p>",
           "example": "https://embed.beta.qian.tencent.cn/contract-create?code=yDCNBUUckpvlzt0sUypjGZRCTkEHyRh6",
           "member": "string",
           "name": "PrepareFlowUrl",
@@ -3948,7 +3948,7 @@
         },
         {
           "disabled": false,
-          "document": "合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟",
+          "document": "<p>合同发起后预览链接， 注意此时合同并未发起，仅只是展示效果， 有效期为5分钟</p>",
           "example": "embed.beta.qian.tencent.cn/xxxxx(后省略)",
           "member": "string",
           "name": "PreviewFlowUrl",
@@ -3958,7 +3958,7 @@
         },
         {
           "disabled": false,
-          "document": "发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效",
+          "document": "<p>发起的合同临时Id， 只有当点击进入链接，成功发起合同后， 此Id才有效</p>",
           "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
           "member": "string",
           "name": "FlowId",
@@ -3968,7 +3968,7 @@
         },
         {
           "disabled": false,
-          "document": "临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。",
+          "document": "<p>临时的草稿id（还未实际保存草稿），用户可以记录此字段对应后续页面保存的草稿，若在页面上未保存草稿，则此字段无效。</p>",
           "example": "yDC54UUckpyr7yh4UEfZcRRy3XMQvLvT",
           "member": "string",
           "name": "DraftId",
@@ -7431,7 +7431,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "<p>关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。</p><p>此接口下面信息必填。</p><ul><li>渠道应用标识:  Agent.AppId</li><li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li><li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li></ul>第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7440,8 +7440,8 @@
         },
         {
           "disabled": false,
-          "document": "要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。",
-          "example": "[org_zhangsan, org_lisi]",
+          "document": "<p>要进行激活或者续期的子客企业OrganizationOpenId列表，请确保所有列出的子客企业均已完成认证。</p>",
+          "example": "[\"org_zhangsan\", \"org_lisi\"]",
           "member": "string",
           "name": "SubOrganizationOpenIds",
           "required": false,
@@ -7449,10 +7449,19 @@
         },
         {
           "disabled": false,
-          "document": "操作类型，可以选择如下：\n\n**false**：（默认）激活子客企业\n**true**：续期子客企业\n",
+          "document": "<p>操作类型，可以选择如下：</p><p><strong>false</strong>：（默认）激活子客企业<br><strong>true</strong>：续期子客企业</p>",
           "example": "true",
           "member": "bool",
           "name": "Renew",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否解绑子企业</p><p>枚举值：</p><ul><li>false： 否</li><li>true： 是：解绑后，份额将会返还，但是该子企业无法再次被激活</li></ul><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Unbind",
           "required": false,
           "type": "bool"
         }
@@ -8360,7 +8369,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>1 : 选择文件及签署方</li><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效",
+          "document": "<p>隐藏操作步骤: 具体类型如下</p><ul><li>1 : 选择文件及签署方</li><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效",
           "example": "[1,2,4]",
           "member": "uint64",
           "name": "HideOperationSteps",
@@ -8447,6 +8456,15 @@
           "name": "CcInfoVisibility",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p><br>在调用<a href=\"https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow\">创建发起流程web页面</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>",
+          "example": "无",
+          "member": "EmbedSignComponentLimit",
+          "name": "SignComponentLimits",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -10937,6 +10955,30 @@
       ],
       "usage": "in"
     },
+    "EmbedSignComponentLimit": {
+      "document": "签署控件的类型和范围限制条件，用于控制文件发起后签署人拖拽签署区时可使用的控件类型和具体的印章或签名方式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>控件类型，支持以下类型</p><ul><li>SIGN_SEAL : 印章控件</li><li>SIGN_PAGING_SEAL : 骑缝章控件</li><li>SIGN_SIGNATURE : 用户签名控件</li><li>SIGN_PAGING_SIGNATURE : 用户签名骑缝控件</li></ul>",
+          "example": "SIGN_SEAL",
+          "member": "string",
+          "name": "ComponentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>签署控件类型的值，用于限制签署时印章或者签名的选择范围</p><p>1.当 ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时，可指定印章类型。具体场景与规则说明如下：</p><p>指定印章类型:可传入以下枚举值来限制印章类型</p><ul><li> <b>OFFICIAL</b> :  企业公章</li><li> <b>CONTRACT</b> : 合同专用章</li><li> <b>FINANCE</b> : 财务专用章</li><li> <b>PERSONNEL</b> : 人事专用章</li><li> <b>OTHER</b> : 其他</li></ul><p>2.当ComponentType 是 SIGN_SIGNATURE 或者 SIGN_PAGING_SIGNATURE 时可传入以下类型（支持多个）</p><ul><li>HANDWRITE : 需要实时手写的手写签名</li><li>OCR_ESIGN : OCR印章（智慧手写签名）</li><li>IMG_ESIGN : 图片印章</li><li>ESIGN : 个人印章</li><li>SYSTEM_ESIGN : 系统印章</li></ul><br>",
+          "example": "[\"OFFICIAL\"]",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
     "EmbedUrlOption": {
       "document": "创建嵌入式页面url个性化参数",
       "members": [
@@ -12303,6 +12345,24 @@
           "name": "PreviewAfterStart",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p><br>在调用<a href=\"https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlowGroup\">获取发起合同组嵌入链接</a>创建合同时,可通过此参数限制在界面上拖拽签署控件后，可选那几种印章类型或签名类型。</p><p>注：仅在<strong>嵌入式文件</strong>发起场景下生效。</p>",
+          "example": "无",
+          "member": "EmbedSignComponentLimit",
+          "name": "SignComponentLimits",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>隐藏操作步骤: 具体的控件类型如下</p><ul><li>2 : 补充文件内容</li><li>4 : 发起前合同信息与设置确认</li></ul>注：仅对新版页面生效",
+          "example": "[2,4]",
+          "member": "uint64",
+          "name": "HideOperationSteps",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

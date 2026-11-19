@@ -11819,6 +11819,15 @@
           "name": "TaskType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTableCellCoord",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -18370,6 +18379,15 @@
           "name": "TaskType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否输出单元格坐标。开启后，耗时会稍有增加。<br>默认值：false</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableTableCellCoord",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
