@@ -49,6 +49,13 @@
       "output": "CreateDeploymentResponse",
       "status": "online"
     },
+    "CreatePreCacheImageCleanupPolicy": {
+      "document": "创建镜像预热自动清理策略",
+      "input": "CreatePreCacheImageCleanupPolicyRequest",
+      "name": "创建镜像预热自动清理策略",
+      "output": "CreatePreCacheImageCleanupPolicyResponse",
+      "status": "online"
+    },
     "CreatePreCacheImageTask": {
       "document": "创建镜像预热任务",
       "input": "CreatePreCacheImageTaskRequest",
@@ -124,6 +131,13 @@
       "input": "DeletePreCacheImageRequest",
       "name": "删除镜像预热",
       "output": "DeletePreCacheImageResponse",
+      "status": "online"
+    },
+    "DeletePreCacheImageCleanupPolicy": {
+      "document": "删除镜像预热自动卸载策略",
+      "input": "DeletePreCacheImageCleanupPolicyRequest",
+      "name": "删除镜像预热自动清理策略",
+      "output": "DeletePreCacheImageCleanupPolicyResponse",
       "status": "online"
     },
     "DeleteRegistry": {
@@ -222,6 +236,13 @@
       "input": "DescribeGPUResourcesRequest",
       "name": "查询GPU资源",
       "output": "DescribeGPUResourcesResponse",
+      "status": "online"
+    },
+    "DescribePreCacheImageCleanupPolicyList": {
+      "document": "查询镜像预热自动卸载策略",
+      "input": "DescribePreCacheImageCleanupPolicyListRequest",
+      "name": "查询镜像预热自动清理策略",
+      "output": "DescribePreCacheImageCleanupPolicyListResponse",
       "status": "online"
     },
     "DescribePreCacheImageList": {
@@ -432,6 +453,13 @@
       "input": "SyncRegistryRecordRequest",
       "name": "同步 Record 描述符",
       "output": "SyncRegistryRecordResponse",
+      "status": "online"
+    },
+    "UpdatePreCacheImageCleanupPolicy": {
+      "document": "更新镜像预热自动卸载策略",
+      "input": "UpdatePreCacheImageCleanupPolicyRequest",
+      "name": "更新镜像预热自动清理策略",
+      "output": "UpdatePreCacheImageCleanupPolicyResponse",
       "status": "online"
     },
     "UpdateRegistry": {
@@ -2245,6 +2273,79 @@
       ],
       "type": "object"
     },
+    "CreatePreCacheImageCleanupPolicyRequest": {
+      "document": "CreatePreCacheImageCleanupPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略名</p>",
+          "example": "example",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>闲置过期时间</p><p>参数格式：正数 m/h/d</p>",
+          "example": "3d",
+          "member": "string",
+          "name": "IdleTTL",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库地址</p><p>入参限制：精准匹配，不传或空串表示不限，最多 255 字符</p>",
+          "example": "tcr-cq.tencentcloudcr.com",
+          "member": "string",
+          "name": "RegistryHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库名</p><p>入参限制：正则匹配，最多 256 字符，编译后指令数不超过 128，账号全部启用策略合计不超过 1280；不传或空串表示全部 Repo</p>",
+          "example": "ags.dev/*",
+          "member": "string",
+          "name": "RepoPattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略启用配置</p><p>枚举值：</p><ul><li>true： 启用策略</li><li>false： 禁用策略</li></ul><p>默认值：true</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePreCacheImageCleanupPolicyResponse": {
+      "document": "CreatePreCacheImageCleanupPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>清理策略详情</p>",
+          "example": "无",
+          "member": "PreCacheImageCleanupPolicy",
+          "name": "CleanupPolicy",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePreCacheImageTaskRequest": {
       "document": "CreatePreCacheImageTask请求参数结构体",
       "members": [
@@ -3317,6 +3418,33 @@
       ],
       "type": "object"
     },
+    "DeletePreCacheImageCleanupPolicyRequest": {
+      "document": "DeletePreCacheImageCleanupPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>清理策略ID</p>",
+          "example": "pccp-bdfoofre",
+          "member": "string",
+          "name": "CleanupPolicyId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePreCacheImageCleanupPolicyResponse": {
+      "document": "DeletePreCacheImageCleanupPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeletePreCacheImageRequest": {
       "document": "DeletePreCacheImage请求参数结构体",
       "members": [
@@ -4327,6 +4455,80 @@
         {
           "disabled": false,
           "document": "<p>筛选后、分页前的总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageCleanupPolicyListRequest": {
+      "document": "DescribePreCacheImageCleanupPolicyList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>策略 ID 列表</p><p>入参限制：最多 100 个，每个 1～64 字符；指定时 Offset、Limit、Filters 不生效，不存在或已删除的 ID 被忽略</p>",
+          "example": "[\"pccp-peuhhczu\"]",
+          "member": "string",
+          "name": "CleanupPolicyIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤器</p><p>入参限制：Filter={Name:String,Values:String[]}；最多 10 个 Filter，每个 Filter 的 Name 和 Values 必填，Values 最多 10 个、每个最多 255 字符</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移值</p><p>默认值：0</p>",
+          "example": "5",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回数量限制</p><p>取值范围：[1, 100]</p><p>默认值：20</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePreCacheImageCleanupPolicyListResponse": {
+      "document": "DescribePreCacheImageCleanupPolicyList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>清理策略集合</p>",
+          "example": "无",
+          "member": "PreCacheImageCleanupPolicy",
+          "name": "CleanupPolicySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回策略数</p><p>单位：个</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -7532,6 +7734,100 @@
       ],
       "usage": "out"
     },
+    "PreCacheImageCleanupPolicy": {
+      "document": "预热镜像自动清理策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略ID</p>",
+          "example": "pccp-fipjvbm0",
+          "member": "string",
+          "name": "CleanupPolicyId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自动清理策略名</p>",
+          "example": "example",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略启用配置</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库地址</p><p>精准匹配，空串表示不限域名</p>",
+          "example": "tcr-cq.tencentcloudcr.com",
+          "member": "string",
+          "name": "RegistryHost",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库名</p><p>正则匹配，匹配 命名空间/仓库 完整路径，非锚定子串匹配，语法与 TCR 预热触发器一致；空串表示全部 Repo</p>",
+          "example": "example/*",
+          "member": "string",
+          "name": "RepoPattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>闲置过期清理时间</p><p>规范化正数时长，例如 7d</p>",
+          "example": "3d",
+          "member": "string",
+          "name": "IdleTTL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略创建时间</p>",
+          "example": "2026-11-17T08:30:48Z",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略最近更新时间</p>",
+          "example": "2026-11-17T08:36:20Z",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "PreviewRegistryRecordRequest": {
       "document": "PreviewRegistryRecord请求参数结构体",
       "members": [
@@ -8813,6 +9109,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>启动沙箱实例时追加挂载规则，仅支持 volume、cfs、cos、image</p>",
+          "example": "无",
+          "member": "StorageMount",
+          "name": "StorageMounts",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "<p>实例启动模式。DEFAULT：使用原有同步创建流程，为默认值；WAIT_UNTIL_HEALTHY：使用持久化后台创建流程，受理后可能返回 STARTING，需查询实例状态确认最终结果，当前仅支持WAA沙箱和GPU沙箱。</p>",
           "example": "WAIT_UNTIL_HEALTHY",
           "member": "string",
@@ -9154,6 +9459,88 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdatePreCacheImageCleanupPolicyRequest": {
+      "document": "UpdatePreCacheImageCleanupPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>清理策略ID</p>",
+          "example": "pccp-fipjvbm0",
+          "member": "string",
+          "name": "CleanupPolicyId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>清理策略名</p>",
+          "example": "example2",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库地址</p><p>入参限制：精准匹配，不传或空串表示不限，最多 255 字符</p>",
+          "example": "tcr-cq.tencentcloudcr.com",
+          "member": "string",
+          "name": "RegistryHost",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像仓库名</p><p>入参限制：正则匹配，最多 256 字符，编译后指令数不超过 128，账号全部启用策略合计不超过 1280。不传或空串表示全部 Repo。</p>",
+          "example": "example/*",
+          "member": "string",
+          "name": "RepoPattern",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>闲置过期时间</p><p>参数格式：正数 m/h/d</p>",
+          "example": "10d",
+          "member": "string",
+          "name": "IdleTTL",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>策略启用配置</p><p>枚举值：</p><ul><li>true： 启用策略</li><li>false： 禁用策略</li></ul><p>默认值：true</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePreCacheImageCleanupPolicyResponse": {
+      "document": "UpdatePreCacheImageCleanupPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>清理策略详情</p>",
+          "example": "无",
+          "member": "PreCacheImageCleanupPolicy",
+          "name": "CleanupPolicy",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateRegistryRecordRequest": {
       "document": "UpdateRegistryRecord请求参数结构体",

@@ -62,6 +62,14 @@
         "title": "创建 Deployment - 2"
       }
     ],
+    "CreatePreCacheImageCleanupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePreCacheImageCleanupPolicy\n<公共请求参数>\n\n{\n    \"Name\": \"example\",\n    \"IdleTTL\": \"3d\",\n    \"Enabled\": false,\n    \"RegistryHost\": \"tcr-cq.tencentcloudcr.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CleanupPolicy\": {\n            \"CleanupPolicyId\": \"pccp-fipjvbm0\",\n            \"CreateTime\": \"2026-11-17T08:30:48Z\",\n            \"Enabled\": false,\n            \"IdleTTL\": \"3d\",\n            \"Name\": \"example\",\n            \"RegistryHost\": \"tcr-cq.tencentcloudcr.com\",\n            \"RepoPattern\": \"\",\n            \"UpdateTime\": \"2026-11-17T08:30:48Z\"\n        },\n        \"RequestId\": \"ba91d0c1-8b57-4c59-8775-c7ecbef99fab\"\n    }\n}",
+        "title": "创建镜像预热清理策略"
+      }
+    ],
     "CreatePreCacheImageTask": [
       {
         "document": "",
@@ -172,6 +180,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePreCacheImage\n<公共请求参数>\n\n{\n    \"PreCacheImageId\": \"pcimg-7k******\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fd94bec3-6f82-4338-b650-bde4fda32dfd\"\n    }\n}",
         "title": "按预热镜像ID卸载镜像预热"
+      }
+    ],
+    "DeletePreCacheImageCleanupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePreCacheImageCleanupPolicy\n<公共请求参数>\n\n{\n    \"CleanupPolicyId\": \"pccp-bdfoofre\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02c435c9-2cb9-495f-8d95-a3de1f811c28\"\n    }\n}",
+        "title": "删除镜像预热清理策略"
       }
     ],
     "DeleteRegistry": [
@@ -308,6 +324,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGPUResources\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"gpug-example\",\n    \"State\": \"Active\",\n    \"AllocationState\": \"InUse\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"Resources\": [\n            {\n                \"ResourceId\": \"ins-example-001\",\n                \"ResourceGroupId\": \"gpug-example\",\n                \"State\": \"Active\",\n                \"AllocationState\": \"InUse\",\n                \"InstanceId\": \"sandbox-example-001\",\n                \"ActiveAt\": \"2026-10-21T10:00:00+08:00\",\n                \"ExpireAt\": \"2026-11-21T10:00:00+08:00\",\n                \"RenewFlag\": 1,\n                \"StatusReason\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"request-example\"\n    }\n}",
         "title": "查询GPU资源"
+      }
+    ],
+    "DescribePreCacheImageCleanupPolicyList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePreCacheImageCleanupPolicyList\n<公共请求参数>\n\n{\n    \"CleanupPolicyIds\": [\n        \"pccp-peuhhczu\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CleanupPolicySet\": [\n            {\n                \"CleanupPolicyId\": \"pccp-peuhhczu\",\n                \"CreateTime\": \"2026-11-17T08:27:41Z\",\n                \"Enabled\": true,\n                \"IdleTTL\": \"1d\",\n                \"Name\": \"example2\",\n                \"RegistryHost\": \"tcr-cq.tencentcloudcr.com\",\n                \"RepoPattern\": \"test/*\",\n                \"UpdateTime\": \"2026-11-17T08:28:13Z\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"84861c4e-e29f-443b-a952-0120053f31e6\"\n    }\n}",
+        "title": "按ID查询镜像预热清理策略"
       }
     ],
     "DescribePreCacheImageList": [
@@ -626,6 +650,14 @@
         "input": "POST / HTTP/1.1\nHost: ags.internal.tencentcloudapi.com\nX-TC-Action: SyncRegistryRecord\nX-TC-Version: 2025-09-20\nX-TC-Region: ap-guangzhou\nX-TC-RequestId: req-example\nContent-Type: application/json\n\n{\n    \"RegistryId\": \"reg-0123abcd\",\n    \"RecordId\": \"rec-0123abcd\",\n    \"Label\": \"stable\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"req-example\",\n        \"SyncStatus\": \"UNCHANGED\",\n        \"ResolvedVersionId\": \"rv-0123abcd\",\n        \"LastSyncTime\": \"2026-08-12T00:00:00Z\"\n    }\n}",
         "title": "远端未变化"
+      }
+    ],
+    "UpdatePreCacheImageCleanupPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ags.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePreCacheImageCleanupPolicy\n<公共请求参数>\n\n{\n    \"CleanupPolicyId\": \"pccp-fipjvbm0\",\n    \"RegistryHost\": \"tcr-cq.tencentcloudcr.com\",\n    \"RepoPattern\": \"example/*\",\n    \"Enabled\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"CleanupPolicy\": {\n            \"CleanupPolicyId\": \"pccp-fipjvbm0\",\n            \"CreateTime\": \"2026-11-17T08:30:48Z\",\n            \"Enabled\": false,\n            \"IdleTTL\": \"3d\",\n            \"Name\": \"example\",\n            \"RegistryHost\": \"tcr-cq.tencentcloudcr.com\",\n            \"RepoPattern\": \"example/*\",\n            \"UpdateTime\": \"2026-11-17T08:36:20Z\"\n        },\n        \"RequestId\": \"71677a5f-4661-4b84-a30d-00b705f52aba\"\n    }\n}",
+        "title": "更新镜像预热自动清理策略"
       }
     ],
     "UpdateRegistry": [
