@@ -746,7 +746,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略规则ID",
+          "document": "<p>策略规则ID</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "MQTT集群ID",
+          "document": "<p>MQTT集群ID</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -766,7 +766,7 @@
         },
         {
           "disabled": false,
-          "document": "策略规则名",
+          "document": "<p>策略规则名</p>",
           "example": "allow-connect",
           "member": "string",
           "name": "PolicyName",
@@ -776,7 +776,7 @@
         },
         {
           "disabled": false,
-          "document": "规则语法版本，当前仅支持1，默认为1",
+          "document": "<p>规则语法版本，当前仅支持1，默认为1</p>",
           "example": "1",
           "member": "int64",
           "name": "Version",
@@ -786,7 +786,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>策略优先级，优先级ID越小表示策略越优先检查生效。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -796,7 +796,7 @@
         },
         {
           "disabled": false,
-          "document": "决策\nallow：允许符合该策略的设备的访问请求。\ndeny：拒绝覆盖该策略的设备的访问请求。\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>决策<br>allow：允许符合该策略的设备的访问请求。<br>deny：拒绝覆盖该策略的设备的访问请求。<br>可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "allow",
           "member": "string",
           "name": "Effect",
@@ -806,7 +806,7 @@
         },
         {
           "disabled": false,
-          "document": "操作\nconnect：连接\npub：发布mqtt消息\nsub：订阅mqtt消息\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>操作<br>connect：连接<br>pub：发布mqtt消息<br>sub：订阅mqtt消息<br>可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "connect",
           "member": "string",
           "name": "Actions",
@@ -816,7 +816,7 @@
         },
         {
           "disabled": false,
-          "document": "资源，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>资源，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "topic1",
           "member": "string",
           "name": "Resources",
@@ -826,7 +826,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-连接设备ID，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>条件-连接设备ID，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "client1",
           "member": "string",
           "name": "ClientId",
@@ -836,7 +836,17 @@
         },
         {
           "disabled": false,
-          "document": "条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>授权资源，支持函数表达式</p>",
+          "example": "[\"home/#\"]",
+          "member": "string",
+          "name": "ResourceItems",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>条件-用户名，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -846,7 +856,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-客户端IP地址，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>条件-客户端IP地址，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -856,7 +866,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-服务质量，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>条件-服务质量，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "0",
           "member": "string",
           "name": "Qos",
@@ -866,7 +876,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n1：表示匹配retain消息\n2：表示匹配非retain消息\n3：表示匹配retain和非retain消息",
+          "document": "<p>条件-保留消息，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。<br>1：表示匹配retain消息<br>2：表示匹配非retain消息<br>3：表示匹配retain和非retain消息</p>",
           "example": "1",
           "member": "int64",
           "name": "Retain",
@@ -876,7 +886,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，长度不超过128个字符。",
+          "document": "<p>备注，长度不超过128个字符。</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
@@ -886,7 +896,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。毫秒级时间戳 。",
+          "document": "<p>创建时间。毫秒级时间戳 。</p>",
           "example": "1713164969433",
           "member": "int64",
           "name": "CreatedTime",
@@ -896,7 +906,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。毫秒级时间戳 。",
+          "document": "<p>更新时间。毫秒级时间戳 。</p>",
           "example": "1713164969433",
           "member": "int64",
           "name": "UpdateTime",
@@ -1186,7 +1196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1195,7 +1205,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。",
+          "document": "<p>策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。</p>",
           "example": "name",
           "member": "string",
           "name": "PolicyName",
@@ -1204,7 +1214,7 @@
         },
         {
           "disabled": false,
-          "document": "策略版本,默认为1，当前仅支持1",
+          "document": "<p>策略版本,默认为1，当前仅支持1</p>",
           "example": "1",
           "member": "int64",
           "name": "PolicyVersion",
@@ -1213,7 +1223,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>策略优先级，越小越优先，不能重复，优先级ID越小表示策略越优先检查生效。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -1222,7 +1232,7 @@
         },
         {
           "disabled": false,
-          "document": "决策：\nallow：允许符合该策略的设备的访问请求。\ndeny：拒绝覆盖该策略的设备的访问请求。\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>决策：<br>allow：允许符合该策略的设备的访问请求。<br>deny：拒绝覆盖该策略的设备的访问请求。<br>可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "allow",
           "member": "string",
           "name": "Effect",
@@ -1231,7 +1241,7 @@
         },
         {
           "disabled": false,
-          "document": "操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\nconnect：连接\npub：发布\nsub：订阅",
+          "document": "<p>操作,支持多选，多个操作用英文逗号隔开。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。<br>connect：连接<br>pub：发布<br>sub：订阅</p>",
           "example": "connect",
           "member": "string",
           "name": "Actions",
@@ -1240,7 +1250,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-保留消息，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n1,匹配保留消息；\n2,匹配非保留消息，\n3.匹配保留和非保留消息",
+          "document": "<p>条件-保留消息，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。<br>1,匹配保留消息；<br>2,匹配非保留消息，<br>3.匹配保留和非保留消息</p>",
           "example": "1",
           "member": "int64",
           "name": "Retain",
@@ -1249,7 +1259,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：服务质量\n0：最多一次\n1：最少一次\n2：精确一次\n可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>条件：服务质量<br>0：最多一次<br>1：最少一次<br>2：精确一次<br>可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "1",
           "member": "string",
           "name": "Qos",
@@ -1258,7 +1268,7 @@
         },
         {
           "disabled": false,
-          "document": "资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n",
+          "document": "<p>资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "topic1",
           "member": "string",
           "name": "Resources",
@@ -1267,7 +1277,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-用户名",
+          "document": "<p>条件-用户名</p>",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -1276,7 +1286,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：客户端ID，支持正则",
+          "document": "<p>条件：客户端ID，支持正则</p>",
           "example": "client1",
           "member": "string",
           "name": "ClientId",
@@ -1285,7 +1295,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：客户端IP地址，支持IP或者CIDR，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。",
+          "document": "<p>条件：客户端IP地址，支持IP或者CIDR，可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -1294,12 +1304,21 @@
         },
         {
           "disabled": false,
-          "document": "备注信息，最长 128 字符",
+          "document": "<p>备注信息，最长 128 字符</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权资源，支持函数表达式</p>",
+          "example": "[\"home/+\"]",
+          "member": "string",
+          "name": "ResourceItems",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1309,7 +1328,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群Id",
+          "document": "<p>集群Id</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -1319,7 +1338,7 @@
         },
         {
           "disabled": false,
-          "document": "策略id",
+          "document": "<p>策略id</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -2753,7 +2772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。",
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -2768,7 +2787,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则",
+          "document": "<p>规则</p>",
           "example": "无",
           "member": "AuthorizationPolicyItem",
           "name": "Data",
@@ -7120,7 +7139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权策略ID，从 [查询授权策略](https://cloud.tencent.com/document/product/1778/111074) 接口获取",
+          "document": "<p>授权策略ID，从 <a href=\"https://cloud.tencent.com/document/product/1778/111074\">查询授权策略</a> 接口获取</p>",
           "example": "1",
           "member": "int64",
           "name": "Id",
@@ -7129,7 +7148,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。\n",
+          "document": "<p>腾讯云MQTT实例ID，从 <a href=\"https://cloud.tencent.com/document/api/1778/111029\">DescribeInstanceList</a>接口或控制台获得。</p>",
           "example": "mqtt-xxxx",
           "member": "string",
           "name": "InstanceId",
@@ -7138,7 +7157,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。",
+          "document": "<p>策略名称，不能为空，3-64个字符，支持中文、字母、数字、“-”及“_”。</p>",
           "example": "name",
           "member": "string",
           "name": "PolicyName",
@@ -7147,7 +7166,7 @@
         },
         {
           "disabled": false,
-          "document": "策略版本,默认为1，当前仅支持1",
+          "document": "<p>策略版本,默认为1，当前仅支持1</p>",
           "example": "1",
           "member": "int64",
           "name": "PolicyVersion",
@@ -7156,7 +7175,7 @@
         },
         {
           "disabled": false,
-          "document": "策略优先级，越小越优先，不能重复",
+          "document": "<p>策略优先级，越小越优先，不能重复</p>",
           "example": "1",
           "member": "int64",
           "name": "Priority",
@@ -7165,7 +7184,7 @@
         },
         {
           "disabled": false,
-          "document": "决策：\nallow 允许\ndeny 拒绝",
+          "document": "<p>决策：<br>allow 允许<br>deny 拒绝</p>",
           "example": "allow",
           "member": "string",
           "name": "Effect",
@@ -7174,7 +7193,7 @@
         },
         {
           "disabled": false,
-          "document": "操作,支持多选，多个操作用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\nconnect：连接\npub：发布\nsub：订阅",
+          "document": "<p>操作,支持多选，多个操作用英文逗号隔开。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。<br>connect：连接<br>pub：发布<br>sub：订阅</p>",
           "example": "connect",
           "member": "string",
           "name": "Actions",
@@ -7183,7 +7202,7 @@
         },
         {
           "disabled": false,
-          "document": "资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。\n",
+          "document": "<p>资源，需要匹配的订阅，支持配置多条匹配规则，多个用英文逗号隔开。可参考 <a href=\"https://cloud.tencent.com/document/product/1778/109715\">数据面授权策略说明</a>。</p>",
           "example": "topic1",
           "member": "string",
           "name": "Resources",
@@ -7192,7 +7211,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-用户名",
+          "document": "<p>条件-用户名</p>",
           "example": "user1",
           "member": "string",
           "name": "Username",
@@ -7201,7 +7220,7 @@
         },
         {
           "disabled": false,
-          "document": "条件-保留消息\n1,匹配保留消息；\n2,匹配非保留消息，\n3.匹配保留和非保留消息",
+          "document": "<p>条件-保留消息<br>1,匹配保留消息；<br>2,匹配非保留消息，<br>3.匹配保留和非保留消息</p>",
           "example": "1",
           "member": "int64",
           "name": "Retain",
@@ -7210,7 +7229,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：客户端ID，支持正则",
+          "document": "<p>条件：客户端ID，支持正则</p>",
           "example": "client1",
           "member": "string",
           "name": "ClientId",
@@ -7219,7 +7238,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：客户端IP地址，支持IP或者CIDR",
+          "document": "<p>条件：客户端IP地址，支持IP或者CIDR</p>",
           "example": "127.0.0.1",
           "member": "string",
           "name": "Ip",
@@ -7228,7 +7247,7 @@
         },
         {
           "disabled": false,
-          "document": "条件：服务质量\n0：最多一次\n1：最少一次\n2：精确一次",
+          "document": "<p>条件：服务质量<br>0：最多一次<br>1：最少一次<br>2：精确一次</p>",
           "example": "1",
           "member": "string",
           "name": "Qos",
@@ -7237,12 +7256,21 @@
         },
         {
           "disabled": false,
-          "document": "备注信息，最长 128 字符",
+          "document": "<p>备注信息，最长 128 字符</p>",
           "example": "remark",
           "member": "string",
           "name": "Remark",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权资源列表，支持函数表达式</p>",
+          "example": "[\"home/#\"]",
+          "member": "string",
+          "name": "ResourceItems",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

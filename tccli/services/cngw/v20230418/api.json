@@ -238,6 +238,13 @@
       "output": "DescribeAIGWCustomGuardrailPolicyListResponse",
       "status": "online"
     },
+    "DescribeAIGWLLMModelAPIIPRestriction": {
+      "document": "查询指定模型 API 的 IP 黑白名单配置。",
+      "input": "DescribeAIGWLLMModelAPIIPRestrictionRequest",
+      "name": "查询指定模型 API 的 IP 黑白名单配置",
+      "output": "DescribeAIGWLLMModelAPIIPRestrictionResponse",
+      "status": "online"
+    },
     "DescribeCNGWServicesWithRoutes": {
       "document": "查询云原生网关服务和路由列表",
       "input": "DescribeCNGWServicesWithRoutesRequest",
@@ -446,6 +453,13 @@
       "input": "ModifyAIGWCustomGuardrailPolicyRequest",
       "name": "修改自定义安全护栏策略",
       "output": "ModifyAIGWCustomGuardrailPolicyResponse",
+      "status": "online"
+    },
+    "ModifyAIGWLLMModelAPIIPRestriction": {
+      "document": "创建或整体覆盖指定模型 API 的 IP 黑白名单配置。PUT 覆盖语义（每次以请求值为最终态）。",
+      "input": "ModifyAIGWLLMModelAPIIPRestrictionRequest",
+      "name": "配置（创建或修改）模型 API 的 IP 黑白名单（PUT 覆盖语义）",
+      "output": "ModifyAIGWLLMModelAPIIPRestrictionResponse",
       "status": "online"
     },
     "ModifyCloudNativeAPIGatewayAIServiceSource": {
@@ -1804,6 +1818,42 @@
         }
       ],
       "usage": "both"
+    },
+    "AIGWLLMIPRestrictionResult": {
+      "document": "IP 黑白名单配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否开启</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制类型</p><p>枚举值：</p><ul><li>whiteList： 白名单</li><li>blackList： 黑名单</li></ul>",
+          "example": "whiteList",
+          "member": "string",
+          "name": "RestrictionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 或 CIDR 列表，每项须为合法 IP/CIDR（支持 IPv4/IPv6）</p>",
+          "example": "[\"127.0.0.1/8\"]",
+          "member": "string",
+          "name": "AddressList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AIGWLLMModelServiceSubRoute": {
       "document": "模型服务二级路由配置",
@@ -13045,6 +13095,52 @@
       ],
       "usage": "out"
     },
+    "DescribeAIGWLLMModelAPIIPRestrictionRequest": {
+      "document": "DescribeAIGWLLMModelAPIIPRestriction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-bb346e76",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型API ID</p>",
+          "example": "7e01bc3d338148728ab02e9b854b911e",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAIGWLLMModelAPIIPRestrictionResponse": {
+      "document": "DescribeAIGWLLMModelAPIIPRestriction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>IP 黑白名单配置</p>",
+          "example": "无",
+          "member": "AIGWLLMIPRestrictionResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCNGWServicesWithRoutesRequest": {
       "document": "DescribeCNGWServicesWithRoutes请求参数结构体",
       "members": [
@@ -16189,6 +16285,79 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyAIGWLLMModelAPIIPRestrictionRequest": {
+      "document": "ModifyAIGWLLMModelAPIIPRestriction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>网关实例id</p>",
+          "example": "gateway-bb346e76",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型 API ID</p>",
+          "example": "7e01bc3d338148728ab02e9b854b911e",
+          "member": "string",
+          "name": "ModelAPIId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否启用 IP 黑白名单</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>限制类型</p><p>枚举值：</p><ul><li>whiteList： 白名单</li><li>blackList： 黑名单</li></ul>",
+          "example": "whiteList",
+          "member": "string",
+          "name": "RestrictionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 或 CIDR 列表，每项须为合法 IP/CIDR（支持 IPv4/IPv6），长度 [1,400]</p>",
+          "example": "[\"127.0.0.1/8\"]",
+          "member": "string",
+          "name": "AddressList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAIGWLLMModelAPIIPRestrictionResponse": {
+      "document": "ModifyAIGWLLMModelAPIIPRestriction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>结果</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyCloudNativeAPIGatewayAIServiceSourceRequest": {
       "document": "ModifyCloudNativeAPIGatewayAIServiceSource请求参数结构体",

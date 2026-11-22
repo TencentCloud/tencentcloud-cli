@@ -671,6 +671,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>原生节点池 containerd 镜像仓库定制（仅 containerd 生效）；非 containerd 节点池携带本字段会被消费侧忽略</p>",
+          "example": "无",
+          "member": "RegistryConfig",
+          "name": "Registry",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "<p>自定义镜像 ID</p>",
           "example": "img-j9tbqlc2",
           "member": "string",
@@ -680,7 +689,7 @@
         },
         {
           "disabled": false,
-          "document": "原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。",
+          "document": "<p>原生节点池 containerd 运行时纯版本号，例如 1.7.28 或 1.7.28-tke.3。未指定或为空时使用原有 GPE 默认版本。仅对新建节点生效。</p>",
           "example": "1.7.28",
           "member": "string",
           "name": "RuntimeVersion",
@@ -3983,6 +3992,73 @@
       ],
       "type": "object"
     },
+    "RegistryConfig": {
+      "document": "containerd 镜像仓库定制（仅 containerd 1.6+ 生效）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>镜像加速站点列表，按 registry 维度渲染独立的 hosts.toml</p>",
+          "example": "无",
+          "member": "RegistryMirror",
+          "name": "Mirrors",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>不安全镜像仓库（跳过证书校验）</p>",
+          "example": "[\"110.101.10.1\"]",
+          "member": "string",
+          "name": "InsecureRegistries",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "RegistryMirror": {
+      "document": "containerd 镜像加速站点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>源仓库，例如 docker.io / registry.k8s.io</p>",
+          "example": "registry.k8s.io",
+          "member": "string",
+          "name": "Registry",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像加速地址列表，按顺序写入 hosts.toml</p>",
+          "example": "[\"https://test.com\"]",
+          "member": "string",
+          "name": "Endpoints",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否在 hosts.toml 中写入 override_path，为 true 时镜像 endpoints 路径不再追加 namespace 后缀</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "OverridePath",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RegularNodeInfo": {
       "document": "普通节点信息",
       "members": [
@@ -4873,6 +4949,15 @@
           "name": "Password",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>节点的 containerd 镜像仓库定制（仅 containerd 运行时生效）</p>",
+          "example": "无",
+          "member": "RegistryConfig",
+          "name": "Registry",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,

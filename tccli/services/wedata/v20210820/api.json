@@ -37546,8 +37546,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例运行日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>实例运行日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "#******************************************************************#<br>##author: wedata-test7@tencent.com<br>##create time: 2026-06-16 11:55:21<br>#******************************************************************#<br>dsfdsfdfsgsfgasdfgsa",
           "member": "string",
           "name": "LogInfo",
           "output_required": true,
@@ -37556,8 +37556,8 @@
         },
         {
           "disabled": false,
-          "document": "实例运行提交的yarn日志地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>实例运行提交的yarn日志地址</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/emr-8g2f12ab/proxy/application_1730000000001_0042\"]",
           "member": "string",
           "name": "YarnLogInfo",
           "output_required": true,
@@ -37566,8 +37566,8 @@
         },
         {
           "disabled": false,
-          "document": "实例运行产生的datax日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>实例运行产生的datax日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "type=dxrunlog&taskId=20230217102628012&curRunDate=2026-11-20 00:00:00&brokerIp=10.120.33.15",
           "member": "string",
           "name": "DataLogInfo",
           "output_required": true,
@@ -37576,8 +37576,8 @@
         },
         {
           "disabled": false,
-          "document": "第三方任务运行日志\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>第三方任务运行日志</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "type=thirdTaskRunLog&taskId=20230217102628012&curRunDate=2026-11-20 00:00:00",
           "member": "string",
           "name": "ThirdTaskRunLogInfo",
           "output_required": true,
@@ -37586,8 +37586,8 @@
         },
         {
           "disabled": false,
-          "document": "第三方任务日志链接描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>第三方任务日志链接描述</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "自定义业务实体运行日志",
           "member": "string",
           "name": "ThirdTaskLogUrlDesc",
           "output_required": true,
@@ -37596,7 +37596,7 @@
         },
         {
           "disabled": false,
-          "document": "日志行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>日志行数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10000",
           "member": "int64",
           "name": "LineCount",
@@ -37606,8 +37606,8 @@
         },
         {
           "disabled": false,
-          "document": "统一执行平台日志分页查询参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>统一执行平台日志分页查询参数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "229",
           "member": "string",
           "name": "ExtInfo",
           "output_required": false,
@@ -37616,8 +37616,8 @@
         },
         {
           "disabled": false,
-          "document": "日志分页查询，是否最后一页\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>日志分页查询，是否最后一页</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsEnd",
           "output_required": false,
@@ -37626,8 +37626,8 @@
         },
         {
           "disabled": false,
-          "document": "文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "<p>文件大小</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.22 KB",
           "member": "string",
           "name": "FileSize",
           "output_required": false,
@@ -37636,8 +37636,8 @@
         },
         {
           "disabled": false,
-          "document": "日志匹配节点信息",
-          "example": "NA",
+          "document": "<p>日志匹配节点信息</p>",
+          "example": "251433363_vpc-nfpij875_21.78.45.121",
           "member": "string",
           "name": "MatchedBrokerIp",
           "output_required": false,
@@ -37646,13 +37646,23 @@
         },
         {
           "disabled": false,
-          "document": "执行平台通用协议",
+          "document": "<p>执行平台通用协议</p>",
           "example": "无",
           "member": "PairDto",
           "name": "ExecutionExtendedProps",
           "output_required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "<p>日志诊断规则</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogDiagnosisRules",
+          "name": "LogDiagnosisRules",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -42225,6 +42235,188 @@
         }
       ],
       "usage": "out"
+    },
+    "LogDiagnosisRules": {
+      "document": "LogDiagnosisRules",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>id</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>errorCode</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>createTime</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>lastUpdate</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "LastUpdate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>owner</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Owner",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常概要</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorTitle",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常关键字</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常原因</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorReason",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>解决办法</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorSolution",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示顺序</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorOrder",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>例子</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorExample",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>扩展说明</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ExtToolsUrl",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常级别</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorLevel",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常类型：用户/系统</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorTypeAggregation",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常系统类型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorSystem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>异常日志来源</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ErrorLogSystem",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "MQPackageVO": {
       "document": "MQPackageVO",

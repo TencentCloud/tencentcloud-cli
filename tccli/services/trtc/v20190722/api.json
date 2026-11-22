@@ -13605,6 +13605,15 @@
           "name": "ExtraParams",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听文本</p>",
+          "example": "你好，这里是试听文本。",
+          "member": "string",
+          "name": "PreviewText",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13618,6 +13627,16 @@
           "example": "xiaoming_01_ejwiqnd",
           "member": "string",
           "name": "VoiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>试听音频url,请于24小时内尽快下载</p>",
+          "example": "https://xxx.mp3",
+          "member": "string",
+          "name": "PreviewUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

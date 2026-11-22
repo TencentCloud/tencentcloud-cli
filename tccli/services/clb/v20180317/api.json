@@ -11506,7 +11506,7 @@
       "usage": "out"
     },
     "ImageConfig": {
-      "document": "video配置。",
+      "document": "image配置。",
       "members": [
         {
           "disabled": false,
@@ -11543,7 +11543,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>同步超时时间</p><p>取值范围：[0, 60]</p><p>单位：秒</p>",
+          "document": "<p>同步超时时间</p><p>取值范围：[0, 300]</p><p>单位：秒</p><p>默认值：15</p>",
           "example": "20",
           "member": "uint64",
           "name": "WaitSeconds",

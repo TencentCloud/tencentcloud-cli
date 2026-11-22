@@ -693,25 +693,11 @@
       "output": "DescribeRumLogExportResponse",
       "status": "online"
     },
-    "DescribeRumLogExportV2": {
-      "document": "创建日志导出",
-      "input": "DescribeRumLogExportV2Request",
-      "name": "创建日志导出",
-      "output": "DescribeRumLogExportV2Response",
-      "status": "online"
-    },
     "DescribeRumLogExports": {
       "document": "获取项目下的日志导出列表",
       "input": "DescribeRumLogExportsRequest",
       "name": "获取Rum日志导出列表",
       "output": "DescribeRumLogExportsResponse",
-      "status": "online"
-    },
-    "DescribeRumLogExportsV2": {
-      "document": "获取日志导出列表",
-      "input": "DescribeRumLogExportsV2Request",
-      "name": "获取日志导出列表",
-      "output": "DescribeRumLogExportsV2Response",
       "status": "online"
     },
     "DescribeRumLogList": {
@@ -14470,7 +14456,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ID",
+          "document": "<p>ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -14479,8 +14465,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
-          "example": "20201104",
+          "document": "<p>查询结束时间（必填）。</p><p>参数格式：日维度继续支持 YYYYMMDD，也支持带时区的 RFC3339。</p><p>入参限制：仅 Dimension=d 支持 RFC3339，须等于北京时间 00:00:00。</p><p>等价日期的查询结果和返回字段一致。</p>",
+          "example": "2026-11-02T00:00:00+08:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -14488,8 +14474,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间",
-          "example": "20201101",
+          "document": "<p>查询开始时间（必填）。</p><p>参数格式：日维度继续支持 YYYYMMDD，也支持带时区的 RFC3339。</p><p>入参限制：仅 Dimension=d 支持 RFC3339，须等于北京时间 00:00:00。</p><p>等价日期的查询结果和返回字段一致。</p>",
+          "example": "2026-11-01T00:00:00+08:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -14497,7 +14483,7 @@
         },
         {
           "disabled": false,
-          "document": "对PV指标的查询维度。获取day：d，   获取min则不填。",
+          "document": "<p>对PV指标的查询维度。获取day：d，   获取min则不填。</p>",
           "example": "d",
           "member": "string",
           "name": "Dimension",
@@ -14512,8 +14498,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "pv列表",
-          "example": "[{\"ProjectId\":26,\"Pv\":\"236\",\"CreateTime\":\"20241123\"}]",
+          "document": "<p>pv列表</p>",
+          "example": "无",
           "member": "RumPvInfo",
           "name": "ProjectPvSet",
           "output_required": true,
@@ -14986,8 +14972,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>开始时间（必填）</p>",
-          "example": "1665993060000",
+          "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T07:51:00.123Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15022,8 +15008,8 @@
         },
         {
           "disabled": false,
-          "document": "<p>结束时间（必填）</p>",
-          "example": "1665996660000",
+          "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T08:51:00.456Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15186,7 +15172,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>",
+          "document": "<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>",
           "example": "1625444040000000000",
           "member": "int64",
           "name": "StartTime",
@@ -15195,7 +15181,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
+          "document": "<p>CLS路径单次返回1～1000条；旧路径保留原行为。短页不表示结束，以ListOver为准。</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -15213,7 +15199,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>",
+          "document": "<p>Unix纳秒结束时间，不包含该时刻。</p>",
           "example": "1665996660000000000",
           "member": "int64",
           "name": "EndTime",
@@ -15231,7 +15217,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>上次查询的最后一个日志的时间戳</p>",
+          "document": "<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastTime",
@@ -15240,12 +15226,30 @@
         },
         {
           "disabled": false,
-          "document": "<p>上次查询的最后一个日志的rowId</p>",
+          "document": "<p>旧游标参数已废弃，请迁移至Offset或Context。LastTime和LastRowId均为0或缺省视为未传；非零旧游标在cls下拒绝，off/window且不带新分页参数时保留旧行为。</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "LastRowId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>从0开始的非负偏移量；保留缺省与显式0的差别。不能与非空Context同时使用，Context续页时删除Offset。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>原样回传上次非空Context，续页时删除Offset，其余有效查询条件保持不变；空串视为缺省。不保证快照或重放同一页。</p>",
+          "example": "opaque-context-example",
+          "member": "string",
+          "name": "Context",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15255,12 +15259,32 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志明细</p>",
+          "document": "<p>日志明细JSON字符串，内部Result数组结构不变。CLS路径row_id为0，ts为毫秒精度但单位仍为纳秒，字符串字段完整。</p>",
           "example": "\"{\\\"Result\\\":[{\\\"aid\\\":\\\"5643b4b9-7066-4798-a035-0b31dd11ad1c\\\",\\\"appid\\\":1436180000,\\\"brand\\\":\\\"iPhone\\\",\\\"city\\\":\\\"长沙市\\\",\\\"country\\\":\\\"中国\\\",\\\"device\\\":\\\"iPhone\\\"}]}\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS续读令牌；ListOver为true时为空。仅CLS路径返回，可缺省。</p>",
+          "example": "opaque-context-example",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前条件的日志是否全部返回；预算短页不表示结束。仅CLS路径返回，可缺省。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ListOver",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -15277,7 +15301,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导出标识name",
+          "document": "<p>导出标识name</p>",
           "example": "标识",
           "member": "string",
           "name": "Name",
@@ -15286,8 +15310,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）",
-          "example": "1665993060000",
+          "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>",
+          "example": "2022-10-17T07:51:00.123Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15295,7 +15319,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "document": "<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>",
           "example": "id:100",
           "member": "string",
           "name": "Query",
@@ -15304,8 +15328,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）",
-          "example": "1665996660000",
+          "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>",
+          "example": "2022-10-17T08:51:00.456Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15313,7 +15337,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -15322,7 +15346,7 @@
         },
         {
           "disabled": false,
-          "document": "field条件",
+          "document": "<p>field条件</p>",
           "example": "[\"msg\",\"url\"]",
           "member": "string",
           "name": "Fields",
@@ -15337,90 +15361,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回字符串",
+          "document": "<p>返回字符串</p>",
           "example": "{ \t\"RequestId\": \"da2124e7-3dec-47d8-a3e2-0a84b9128571\", \t\"Result\": \"{\\\"code\\\":0,\\\"data\\\":{\\\"id\\\":234875,\\\"name\\\":\\\"132445_log\\\",\\\"message\\\":\\\"\\\"},\\\"msg\\\":\\\"\\\"}\" }",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRumLogExportV2Request": {
-      "document": "DescribeRumLogExportV2请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>Name（string，必填）：导出任务名称标识，需要在使用API创建导出任务时填写。此字段为后续能力扩展预留，不在查询结果中返回。</p>",
-          "example": "20250520160524",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>查询日志开始时间(必填)</p>",
-          "example": "1665993060000",
-          "member": "int64",
-          "name": "StartTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>过滤条件，其中key与运算符(Operator)对应可选字段枚举值与示例查看文档：<a href=\"https://cloud.tencent.com/document/product/248/87223\">日志查询相关</a></p>",
-          "example": "[{\"Key\":\"country\",\"Operator\":\"eq\",\"Value\":\"中国\"},{\"Key\":\"level\",\"Operator\":\"eq\",\"Value\":\"4\"}]",
-          "member": "string",
-          "name": "Filter",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<p>查询日志结束时间(必填)</p>",
-          "example": "1665996660000",
-          "member": "int64",
-          "name": "EndTime",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>项目ID</p>",
-          "example": "100",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>注意：这个字段必选，不能为空！选择要导出哪些字段的参数，对应日志的列，可查看文档：<a href=\"https://cloud.tencent.com/document/product/248/87223\">日志查询相关</a></p><p>枚举值：</p><ul><li>level： 日志类型</li><li>url： URL</li><li>ip： 用户终端IP</li><li>version： 版本</li></ul>",
-          "example": "[\"level\", \"aid\"]",
-          "member": "string",
-          "name": "Fields",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRumLogExportV2Response": {
-      "document": "DescribeRumLogExportV2返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>日志导出任务TaskId</p>",
-          "example": "\"[{\\\"TaskId\\\":\\\"344\\\"}]\"",
           "member": "string",
           "name": "Result",
           "output_required": true,
@@ -15491,67 +15433,12 @@
       ],
       "type": "object"
     },
-    "DescribeRumLogExportsV2Request": {
-      "document": "DescribeRumLogExportsV2请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>每页返回任务数</p>",
-          "example": "10",
-          "member": "int64",
-          "name": "PageSize",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>当前页码</p>",
-          "example": "1",
-          "member": "int64",
-          "name": "PageNum",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "<p>项目ID</p>",
-          "example": "100",
-          "member": "int64",
-          "name": "ID",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeRumLogExportsV2Response": {
-      "document": "DescribeRumLogExportsV2返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "<p>日志导出列表</p>",
-          "example": "\"[{\\\"id\\\":158000,\\\"task_id\\\":33,\\\"filters\\\":[{\\\"Key\\\":\\\"id\\\",\\\"Operator\\\":\\\"eq\\\",\\\"Value\\\":\\\"158000\\\"}],\\\"fields\\\":[\\\"aid\\\",\\\"level\\\"],\\\"last_row_id\\\":0,\\\"processed_total\\\":0,\\\"total\\\":0,\\\"status\\\":\\\"done\\\"}]\"",
-          "member": "string",
-          "name": "Result",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeRumLogListRequest": {
       "document": "DescribeRumLogList请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "排序方式  desc  asc（必填）",
+          "document": "<p>排序方式  desc  asc（必填）</p>",
           "example": "asc",
           "member": "string",
           "name": "OrderBy",
@@ -15560,8 +15447,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间（必填）格式为时间戳 毫秒",
-          "example": "1665993060000",
+          "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T07:51:00.123Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15569,7 +15456,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -15578,7 +15465,7 @@
         },
         {
           "disabled": false,
-          "document": "页数，第几页",
+          "document": "<p>页数，第几页</p>",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -15587,7 +15474,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "document": "<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>",
           "example": "id:100",
           "member": "string",
           "name": "Query",
@@ -15596,8 +15483,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）格式为时间戳 毫秒",
-          "example": "1665996660000",
+          "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T08:51:00.456Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15605,7 +15492,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "120000",
           "member": "int64",
           "name": "ID",
@@ -15620,7 +15507,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回字符串",
+          "document": "<p>返回字符串</p>",
           "example": "\"{\\\"code\\\":0,\\\"data\\\":{\\\"total\\\":0,\\\"limit\\\":100,\\\"page\\\":1},\\\"msg\\\":\\\"\\\",\\\"request_id\\\":\\\"2158d1c1abbae2f1a5238786fd061c7e\\\"}\"",
           "member": "string",
           "name": "Result",
@@ -15651,7 +15538,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询日志开始时间（必填）格式为时间戳 毫秒</p>",
+          "document": "<p>Unix纳秒开始时间，包含该时刻；不猜测时间单位。</p>",
           "example": "1625444040000000000",
           "member": "int64",
           "name": "StartTime",
@@ -15678,7 +15565,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>查询日志结束时间（必填）格式为时间戳 毫秒</p>",
+          "document": "<p>Unix纳秒结束时间，不包含该时刻。</p>",
           "example": "1665996660000000000",
           "member": "int64",
           "name": "EndTime",
@@ -15720,7 +15607,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>日志总量</p>",
+          "document": "<p>日志总量JSON字符串，内部Total结构不变。总量与明细为独立查询，不保证同一快照；window迁移期间总量仍走旧后端，带新分页参数的明细可走CLS。旧游标继续忽略。</p>",
           "example": "\"{\\\"Total\\\":1523}\"",
           "member": "string",
           "name": "Result",
@@ -15742,8 +15629,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间（必填）",
-          "example": "1665993060000",
+          "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T07:51:00.123Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15751,7 +15638,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的原始日志条数，最大值为100（必填）",
+          "document": "<p>单次查询返回的原始日志条数，最大值为100（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -15760,7 +15647,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，参考控制台请求参数，语句长度最大为4096（必填）",
+          "document": "<p>查询语句，参考控制台请求参数，语句长度最大为4096（必填）</p>",
           "example": "id:100",
           "member": "string",
           "name": "Query",
@@ -15769,8 +15656,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间（必填）",
-          "example": "1665996660000",
+          "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
+          "example": "2022-10-17T08:51:00.456Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15778,7 +15665,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID（必填）",
+          "document": "<p>项目ID（必填）</p>",
           "example": "100",
           "member": "int64",
           "name": "ID",
@@ -15793,7 +15680,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回字符串",
+          "document": "<p>返回字符串</p>",
           "example": "\"{\"code\":0,\"data\":[],\"msg\":\"\"}\"",
           "member": "string",
           "name": "Result",
@@ -28022,7 +27909,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "备注",
+          "document": "<p>备注</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -28032,7 +27919,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID",
+          "document": "<p>实例ID</p>",
           "example": "taw-123",
           "member": "string",
           "name": "InstanceID",
@@ -28042,7 +27929,7 @@
         },
         {
           "disabled": false,
-          "document": "截止时间",
+          "document": "<p>截止时间</p>",
           "example": "20200527221900",
           "member": "string",
           "name": "Ttl",
@@ -28052,7 +27939,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单自增ID",
+          "document": "<p>白名单自增ID</p>",
           "example": "18",
           "member": "string",
           "name": "ID",
@@ -28062,7 +27949,7 @@
         },
         {
           "disabled": false,
-          "document": "业务唯一标识",
+          "document": "<p>业务唯一标识</p>",
           "example": "****563044",
           "member": "string",
           "name": "WhitelistUin",
@@ -28072,7 +27959,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者ID",
+          "document": "<p>创建者ID</p>",
           "example": "T. hao",
           "member": "string",
           "name": "CreateUser",
@@ -28082,7 +27969,7 @@
         },
         {
           "disabled": false,
-          "document": "aid标识",
+          "document": "<p>aid标识</p>",
           "example": "****237",
           "member": "string",
           "name": "Aid",
@@ -28092,11 +27979,21 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "20200527221900",
           "member": "string",
           "name": "CreateTime",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>白名单创建时刻。由原始time.Time同源生成带偏移RFC3339，旧CreateTime原值及十二小时显示格式保持；缺失原始时刻时省略本成员。</p>",
+          "example": "2026-11-01T13:14:15.123+08:00",
+          "member": "string",
+          "name": "CreateDatetime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

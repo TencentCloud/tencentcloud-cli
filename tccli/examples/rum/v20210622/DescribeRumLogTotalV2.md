@@ -7,10 +7,10 @@ Input:
 ```
 tccli rum DescribeRumLogTotalV2 --cli-unfold-argument  \
     --OrderBy asc \
-    --StartTime 1767860481 \
+    --StartTime 1767860481000000000 \
     --Limit 100 \
     --Filter [{"Key": "id","Operator": "eq","Value": "120000"}] \
-    --EndTime 1767946881 \
+    --EndTime 1767946881000000000 \
     --ID 120000
 ```
 

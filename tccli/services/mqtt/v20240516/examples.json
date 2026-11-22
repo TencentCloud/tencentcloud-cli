@@ -242,9 +242,9 @@
     ],
     "DescribeAuthorizationPolicies": [
       {
-        "document": "示例",
-        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthorizationPolicies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-mzd7ewkr\"\n}",
-        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Actions\": \"connect,pub,sub\",\n                \"ClientId\": \"client1\",\n                \"CreatedTime\": 1742387322000,\n                \"Effect\": \"allow\",\n                \"Id\": 3867,\n                \"InstanceId\": \"mqtt-mzd7ewkr\",\n                \"Ip\": \"0.0.0.0/0\",\n                \"PolicyName\": \"default_policy\",\n                \"Priority\": 1,\n                \"Qos\": \"0,1,2\",\n                \"Remark\": \"\",\n                \"Resources\": \"topic1\",\n                \"Retain\": 3,\n                \"UpdateTime\": 1742458867000,\n                \"Username\": \"default_user\",\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"9c44531d-37bd-4c8f-ab9f-b35589fa5b4d\"\n    }\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mqtt.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuthorizationPolicies\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mqtt-vvk4zz5j\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Actions\": \"connect,pub,sub\",\n                \"ClientId\": \"\",\n                \"CreatedTime\": 1782871983000,\n                \"Effect\": \"allow\",\n                \"Id\": 65,\n                \"InstanceId\": \"mqtt-vvk4zz5j\",\n                \"Ip\": \"\",\n                \"PolicyName\": \"default_allow_all\",\n                \"Priority\": 1,\n                \"Qos\": \"0,1,2\",\n                \"Remark\": \"默认不进行策略管控，如有开启权限策略需要可以新增策略或在当前策略修改。\",\n                \"ResourceItems\": [\n                    \"*\"\n                ],\n                \"Resources\": \"*\",\n                \"Retain\": 3,\n                \"UpdateTime\": 1782871983000,\n                \"Username\": \"\",\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"403edf65-f706-4c22-b89e-69075498aaab\"\n    }\n}",
         "title": "示例"
       }
     ],

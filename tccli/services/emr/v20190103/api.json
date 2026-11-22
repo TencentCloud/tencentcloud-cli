@@ -5064,34 +5064,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名称。",
-          "example": "emr-test",
-          "member": "string",
-          "name": "InstanceName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。",
-          "example": "0",
-          "member": "int64",
-          "name": "PayMode",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。",
-          "example": "CLOUD_HSSD",
-          "member": "string",
-          "name": "DiskType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "实例单节点磁盘容量，单位GB，单节点磁盘容量需大于等于100，小于等于250*CPU核心数，容量调整步长为100。",
+          "document": "<p>实例单节点磁盘容量，单位GB，单节点磁盘容量需大于等于100，小于等于250*CPU核心数，容量调整步长为100。</p>",
           "example": "200",
           "member": "int64",
           "name": "DiskSize",
@@ -5100,7 +5073,25 @@
         },
         {
           "disabled": false,
-          "document": "实例节点规格，可填写4C16G、8C32G、16C64G、32C128G，不区分大小写。",
+          "document": "<p>实例存储类型，CLOUD_HSSD表示性能云存储， CLOUD_BSSD表示标准云存储。</p>",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例名称。</p>",
+          "example": "emr-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例节点规格，可填写4C16G、8C32G、16C64G、32C128G，不区分大小写。</p>",
           "example": "4C16G",
           "member": "string",
           "name": "NodeType",
@@ -5109,7 +5100,16 @@
         },
         {
           "disabled": false,
-          "document": "实例可用区详细配置，当前支持多可用区，可用区数量只能为1或3，包含区域名称，VPC信息、节点数量，其中所有区域节点总数需大于等于3，小于等于50。",
+          "document": "<p>实例计费模式，0表示后付费，即按量计费，1表示预付费，即包年包月。</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例可用区详细配置，当前支持多可用区，可用区数量只能为1或3，包含区域名称，VPC信息、节点数量，其中所有区域节点总数需大于等于3，小于等于50。</p>",
           "example": "无",
           "member": "ZoneSetting",
           "name": "ZoneSettings",
@@ -5118,25 +5118,7 @@
         },
         {
           "disabled": false,
-          "document": "实例要绑定的标签列表。",
-          "example": "无",
-          "member": "Tag",
-          "name": "Tags",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "预付费参数",
-          "example": "无",
-          "member": "PrePaySetting",
-          "name": "PrePaySetting",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-****-****-****-fae360632808\t",
+          "document": "<p>唯一随机标识，时效性为5分钟，需要调用者指定 防止客户端重复创建资源，例如 a9a90aa6-<strong><strong>-</strong></strong>-****-fae360632808</p>",
           "example": "sdcdwxxxws",
           "member": "string",
           "name": "ClientToken",
@@ -5145,7 +5127,7 @@
         },
         {
           "disabled": false,
-          "document": "部署模式",
+          "document": "<p>部署模式</p>",
           "example": "Active-Standby",
           "member": "string",
           "name": "DeploymentMode",
@@ -5154,7 +5136,52 @@
         },
         {
           "disabled": false,
-          "document": "服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字",
+          "document": "<p>是否开启公网 IP 访问，默认 false。TCBase 开启后会创建并绑定 EIP；内网 CLB 绑定 EIP 后，CLB 安全组对来自 EIP 的流量不生效，对来自内网 CLB 的流量生效。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "EnablePublicIP",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>预付费参数</p>",
+          "example": "无",
+          "member": "PrePaySetting",
+          "name": "PrePaySetting",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TCBase 实例 CLB 绑定的安全组 ID 列表，形如 sg-xxxxxxxx，可通过 DescribeSecurityGroups 获取。绑定后管控侧会尝试补充 TCP 80、5432、5433 入站放通规则。</p>",
+          "example": "[\"sg-xxxxxxxx\"]",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例要绑定的标签列表。</p>",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启实例销毁保护，默认 false；true 表示开启，开启后不允许销毁实例。</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "TerminateProtection",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务用户名，对不需要用户名的服务不用传，8-16个字符，支持大写字母、小写字母、数字</p>",
           "example": "admin",
           "member": "string",
           "name": "UserName",
@@ -5169,7 +5196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例唯一标识符（字符串表示）",
+          "document": "<p>实例唯一标识符（字符串表示）</p>",
           "example": "emr-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
@@ -21413,17 +21440,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "Period",
-          "name": "Period",
-          "output_required": false,
-          "required": true,
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "自动续费标记，0：表示通知即将过期，但不自动续费 1：表示通知即将过期，而且自动续费 2：表示不通知即将过期，也不自动续费",
           "example": "0",
           "member": "int64",
@@ -21432,6 +21448,17 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Period",
+          "name": "Period",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -25712,6 +25739,7 @@
           "example": "depart-xxx",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25722,6 +25750,7 @@
           "example": "Intelligent-xxx",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -27127,20 +27156,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "VPC ID",
-          "example": "vpc-xxxxx",
+          "document": "Subnet ID",
+          "example": "subnet-xxxxx",
           "member": "string",
-          "name": "VpcId",
+          "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Subnet ID",
-          "example": "subnet-xxxxx",
+          "document": "VPC ID",
+          "example": "vpc-xxxxx",
           "member": "string",
-          "name": "SubnetId",
+          "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27935,13 +27966,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "可用区名称",
-          "example": "ap-guangzhou-2",
-          "member": "string",
-          "name": "Zone",
+          "document": "可用区节点数量",
+          "example": "3",
+          "member": "int64",
+          "name": "NodeNum",
           "output_required": true,
           "required": true,
-          "type": "string",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -27957,13 +27988,13 @@
         },
         {
           "disabled": false,
-          "document": "可用区节点数量",
-          "example": "3",
-          "member": "int64",
-          "name": "NodeNum",
+          "document": "可用区名称",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
           "output_required": true,
           "required": true,
-          "type": "int",
+          "type": "string",
           "value_allowed_null": false
         }
       ],

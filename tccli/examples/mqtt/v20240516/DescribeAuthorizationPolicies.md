@@ -1,41 +1,42 @@
 **Example 1: 示例**
 
-示例
+
 
 Input: 
 
 ```
 tccli mqtt DescribeAuthorizationPolicies --cli-unfold-argument  \
-    --InstanceId mqtt-mzd7ewkr
+    --InstanceId mqtt-vvk4zz5j
 ```
 
 Output: 
 ```
 {
-    "Error": null,
-    "RequestId": null,
     "Response": {
         "Data": [
             {
                 "Actions": "connect,pub,sub",
-                "ClientId": "client1",
-                "CreatedTime": 1742387322000,
+                "ClientId": "",
+                "CreatedTime": 1782871983000,
                 "Effect": "allow",
-                "Id": 3867,
-                "InstanceId": "mqtt-mzd7ewkr",
-                "Ip": "0.0.0.0/0",
-                "PolicyName": "default_policy",
+                "Id": 65,
+                "InstanceId": "mqtt-vvk4zz5j",
+                "Ip": "",
+                "PolicyName": "default_allow_all",
                 "Priority": 1,
                 "Qos": "0,1,2",
-                "Remark": "",
-                "Resources": "topic1",
+                "Remark": "默认不进行策略管控，如有开启权限策略需要可以新增策略或在当前策略修改。",
+                "ResourceItems": [
+                    "*"
+                ],
+                "Resources": "*",
                 "Retain": 3,
-                "UpdateTime": 1742458867000,
-                "Username": "default_user",
+                "UpdateTime": 1782871983000,
+                "Username": "",
                 "Version": 1
             }
         ],
-        "RequestId": "9c44531d-37bd-4c8f-ab9f-b35589fa5b4d"
+        "RequestId": "403edf65-f706-4c22-b89e-69075498aaab"
     }
 }
 ```
