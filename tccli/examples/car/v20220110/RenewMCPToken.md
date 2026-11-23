@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli car RenewMCPToken --cli-unfold-argument ```
+tccli car RenewMCPToken --cli-unfold-argument  \
+    --TokenId tok_532*******6babb3 \
+    --ExpireSeconds 604800
+```
 
 Output: 
 ```

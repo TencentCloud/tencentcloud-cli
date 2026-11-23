@@ -3186,7 +3186,7 @@
         {
           "disabled": false,
           "document": "待扫描文件类型，用逗号隔开，格式如：[\".txt\", \".csv\", \".log\", \".xml\",\".html\", \".json\"]。",
-          "example": ".txt, .csv",
+          "example": "[]",
           "member": "string",
           "name": "FileTypes",
           "required": true,
@@ -3505,7 +3505,7 @@
         {
           "disabled": false,
           "document": "规则列表",
-          "example": "[{\"RuleId\":1,\"LevelId\":5}]",
+          "example": "无",
           "member": "CreateComplianceRules",
           "name": "Rules",
           "required": true,
@@ -7814,7 +7814,7 @@
         {
           "disabled": false,
           "document": "COS对象存储敏感数据资产详情列表",
-          "example": "[   {     \"FileResultId\": 1,     \"BucketName\": \"kyrie-cos-test-251007922\",     \"FileName\": \"a_kms-sse.txt\",     \"RuleName\": \"手机\",     \"RuleId\": 8,     \"SensitiveDataCount\": 1,     \"CategoryName\": \"个人基本信息\",     \"CategoryId\": 103,     \"CategoryFullPath\": \"[\\\"个人基本信息\\\"]\",     \"LevelId\": 2,     \"LevelRiskName\": \"中\",     \"LevelRiskScore\": 5,     \"KMSEncrypted\": false,     \"FileType\": \"\",     \"FileSize\": \"\",     \"DataSourceId\": \"cos-d653b75c5bac583e5003012eff6cf40ecbadfe3c\",     \"ResourceRegion\": \"ap-guangzhou\",     \"DataSourceName\": \"\",     \"IdentifyType\": 0,     \"CheckStatus\": 0   } ]",
+          "example": "无",
           "member": "DspaCOSDataAssetDetail",
           "name": "Details",
           "output_required": true,
@@ -7870,7 +7870,7 @@
         {
           "disabled": false,
           "document": "任务详情",
-          "example": "\"Task\": {                     \"TaskId\": 14590,                     \"Name\": \"COS-YmY0MDA3-对应评估任务-存储桶未开启版本控制功能\",                     \"Description\": \"对象存储扫描\",                     \"Period\": 0,                     \"Plan\": 0,                     \"Enable\": 1,                     \"DataSourceInfo\": {                         \"ResourceRegion\": \"ap-guangzhou\",                         \"DataSourceId\": \"cos-d653b75c5bac583e5003012eff6cf40ecbadfe3c\",                         \"DataSourceName\": \"kyrie-cos-test-251007922\",                         \"ProxyAddress\": null,                         \"Condition\": {                             \"Bucket\": \"kyrie-cos-test-251007922\",                             \"FileTypes\": [                                 \".txt\",                                 \".pgm\",                                 \".jpeg\",                                 \".jp2\",                                 \".webp\",                                 \".pbm\",                                 \".hdr\",                                 \".xml\",                                 \".doc\",                                 \".xlsx\",                                 \".html\",                                 \".pdf\",                                 \".pnm\",                                 \".docx\",                                 \".xls\",                                 \".pptx\",                                 \".jpg\",                                 \".jpe\",                                 \".csv\",                                 \".log\",                                 \".json\",                                 \".tiff\",                                 \".png\",                                 \".bmp\",                                 \".ppm\"                             ],                             \"FileSizeLimit\": 1000                         }                     },                     \"GeneralRuleSetEnable\": 0,                     \"CustomComplianceInfo\": [                         {                             \"ComplianceGroupId\": 1,                             \"ComplianceGroupName\": \"通用规则集\"                         }                     ],                     \"DefaultComplianceInfo\": null,                     \"TimingStartTime\": null                 }",
+          "example": "无",
           "member": "DspaCOSDiscoveryTaskDetail",
           "name": "Task",
           "output_required": true,
@@ -8127,7 +8127,7 @@
         {
           "disabled": false,
           "document": "任务列表",
-          "example": "[   {     \"TaskId\": 1,     \"Name\": \"cos扫描任务\",     \"Description\": \"\",     \"Period\": 0,     \"Plan\": 0,     \"Enable\": 1,     \"DataSourceInfo\": {       \"ResourceRegion\": \"ap-guangzhou\",       \"DataSourceId\": \"cos-d653b75c5bac583e5003012eff6cf40ecbadfe3c\",       \"DataSourceName\": \"kyrie-cos-test-251007922\",       \"ProxyAddress\": [                ],       \"Condition\": {         \"Bucket\": \"kyrie-cos-test-251007922\",         \"FileTypes\": [           \".txt\"         ],         \"FileSizeLimit\": 102400       }     },     \"GeneralRuleSetEnable\": 0,     \"TimingStartTime\": \"2024-11-07 22:40:19\",     \"ComplianceUpdate\": true,     \"Result\": {       \"Id\": 1,       \"EndTime\": \"2024-11-07 22:41:19\",       \"Status\": 4,       \"Result\": \"ComplianceConfigError\"     }   } ]",
+          "example": "无",
           "member": "DspaCOSDiscoveryTask",
           "name": "Items",
           "output_required": true,
@@ -8312,7 +8312,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "数据分类ID",
           "example": "10000",
           "member": "int64",
@@ -8321,7 +8321,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "敏感数据分类名称",
           "example": "财务信息",
           "member": "string",
@@ -8346,6 +8346,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件（Id:分类id,Name:分类名称）",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "姓名",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8356,7 +8374,7 @@
         {
           "disabled": false,
           "document": "敏感数据分类列表",
-          "example": "[{\"CategoryId\": 1,\"Name\": \"个人鉴别辅助信息\",\"Source\": 0,\"RelateComplianceCount\": 3}]",
+          "example": "无",
           "member": "DataCategory",
           "name": "Items",
           "output_required": true,
@@ -8412,7 +8430,7 @@
         {
           "disabled": false,
           "document": "分类规则统计信息",
-          "example": "[                     {                         \"CategoryId\": 10912,                         \"CategoryName\": \"example\",                         \"RuleCount\": 0                     }                 ]",
+          "example": "无",
           "member": "CategoryRuleStatistic",
           "name": "StatisticSet",
           "output_required": true,
@@ -8614,7 +8632,7 @@
         {
           "disabled": false,
           "document": "模板详情",
-          "example": "{                     \"Id\": 13110,                     \"Name\": \"新建模版\",                     \"Description\": \"当前开发模版\",                     \"ComplianceGroupType\": 2,                     \"CreateTime\": \"2024-11-02 11:38:42\",                     \"ModifyTime\": \"2024-11-02 11:38:42\",                     \"LevelGroupId\": 1,                     \"LevelGroupName\": \"系统-高中低\",                     \"IsAlias\": false                 }",
+          "example": "无",
           "member": "ComplianceGroupDetail",
           "name": "Detail",
           "output_required": true,
@@ -8705,7 +8723,7 @@
         {
           "disabled": false,
           "document": "合规组列表",
-          "example": "[{\"ComplianceGroupId\": 15114, \"Name\": \"模板1\", \"Description\": \"\", \"ComplianceGroupType\": 2, \"ComplianceGroupRules\": null, \"LevelGroupId\": 1198, \"Disabled\": false, \"IsAlias\": false}]",
+          "example": "无",
           "member": "DspaDiscoveryComplianceGroupInfo",
           "name": "Items",
           "output_required": true,
@@ -8928,7 +8946,7 @@
         {
           "disabled": false,
           "document": "规则集合",
-          "example": "{\"RequestId\": \"91c7a73v-e540-4780-8b8e-74e0b65b4f1a\",                 \"TotalCount\": 522,                 \"Items\": [                     {                         \"RuleId\": 112,                         \"Name\": \"产品类目数据\",                         \"Description\": \"产品数据\",                         \"Source\": 0,                         \"Status\": 1,                         \"RDBRules\": null,                         \"COSRules\": null                     }]}",
+          "example": "无",
           "member": "DspaDiscoveryRuleDetail",
           "name": "Items",
           "output_required": true,
@@ -9807,7 +9825,7 @@
         {
           "disabled": false,
           "document": "ES扫描结果详情列表",
-          "example": "[   {     \"Id\": 1,     \"TaskId\": 1,     \"FieldName\": \"hhtestaLipayhhtest\",     \"RuleId\": 8,     \"RuleName\": \"手机\",     \"CategoryId\": 103,     \"CategoryName\": \"个人基本信息\",     \"CategoryArr\": [       \"个人基本信息\"     ],     \"LevelId\": 2,     \"LevelName\": \"中\",     \"LevelRiskScore\": 5   } ]",
+          "example": "无",
           "member": "ESTaskResultDetail",
           "name": "Items",
           "output_required": true,
@@ -9848,7 +9866,7 @@
         {
           "disabled": false,
           "document": "过滤数组。支持的Name：\nComplianceId 合规组ID\nLevelGroupId 敏感分级组ID",
-          "example": "[{\"Name\":\"LevelGroupId\",\"Values\":[\"1\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -9863,7 +9881,7 @@
         {
           "disabled": false,
           "document": "符合条件的敏感数据分级标识记录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[       {         \"LevelGroupId\": 1,         \"LevelId\": 1,         \"LevelRiskName\": \"高\",         \"LevelRiskScore\": 10       },       {         \"LevelGroupId\": 1,         \"LevelId\": 3,         \"LevelRiskName\": \"低\",         \"LevelRiskScore\": 1       },       {         \"LevelGroupId\": 1,         \"LevelId\": 2,         \"LevelRiskName\": \"中\",         \"LevelRiskScore\": 5       }     ]",
+          "example": "无",
           "member": "LevelItem",
           "name": "Items",
           "output_required": true,
@@ -10011,7 +10029,7 @@
         {
           "disabled": false,
           "document": "符合条件的RDB关系数据库敏感数据资产统计记录\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{                     \"DataAssetType\": 0,                     \"TotalDbCnt\": 4,                     \"TotalTableCnt\": 10,                     \"SensitiveCategoryCnt\": 2,                     \"SensitiveFieldCnt\": 2,                     \"SensitiveLevel\": [                         {                             \"LevelId\": 1,                             \"LevelCnt\": 1,                             \"LevelRiskName\": \"高\",                             \"LevelRiskScore\": 10                         },                         {                             \"LevelId\": 2,                             \"LevelCnt\": 1,                             \"LevelRiskName\": \"中\",                             \"LevelRiskScore\": 5                         }                     ],                     \"SensitiveDbCnt\": 2,                     \"SensitiveTableCnt\": 2,                     \"TotalFieldCnt\": 225,                     \"CategoryDistributed\": [                         {                             \"CategoryId\": 101,                             \"CategoryName\": \"账户信息\",                             \"Count\": 1,                             \"CategoryFullPath\": \"[\\\"账户信息\\\"]\"                         },                         {                             \"CategoryId\": 103,                             \"CategoryName\": \"个人基本信息\",                             \"Count\": 1,                             \"CategoryFullPath\": \"[\\\"个人基本信息\\\"]\"                         }                     ]                 }",
+          "example": "无",
           "member": "DspaRDBDataAssetCount",
           "name": "Stats",
           "output_required": true,
@@ -10051,7 +10069,7 @@
         {
           "disabled": false,
           "document": "过滤数组。支持的Name：\nDataSourceID 数据源ID\nDbName 数据库名称\nCategoryID 敏感数据分类ID\nRuleID 规则ID\nLevelID 敏感分级ID\nResourceRegion 资源所在地域\nSensitiveField 过滤敏感字段，可选值为1，或者无此SensitiveField字段\nDataSourceType 数据源类型，不填默认过滤非自建的所有关系型数据源类型，填selfbuilt-db只过滤自建类型\n注意：每个name默认支持最多5个values。",
-          "example": "[{\"Name\":\"DataSourceType\",\"Values\":[\"cdb\",\"dcdb\",\"mariadb\",\"postgres\",\"cynosdbmysql\"]},{\"Name\":\"BuildType\",\"Values\":[\"cloud\"]},{\"Name\":\"SensitiveField\",\"Values\":[\"1\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -10093,7 +10111,7 @@
         {
           "disabled": false,
           "document": "RDB关系数据库敏感数据资产详情列表",
-          "example": "[DspaRDBDataAssetDetail]",
+          "example": "无",
           "member": "DspaRDBDataAssetDetail",
           "name": "Details",
           "output_required": false,
@@ -11014,7 +11032,7 @@
         {
           "disabled": false,
           "document": "敏感等级分布",
-          "example": "[{\"LevelId\":1,\"LevelCnt\":2,\"LevelRiskName\":\"高\",\"LevelRiskScore\":10}]",
+          "example": "无",
           "member": "SensitiveLevel",
           "name": "SensitiveLevel",
           "output_required": true,
@@ -11044,7 +11062,7 @@
         {
           "disabled": false,
           "document": "数据分类分布",
-          "example": "[{\"CategoryId\":1,\"CategoryName\":\"个人信息分类\",\"Count\":1,\"CategoryFullPath\":\"个人信息/个人资产信息\"}]",
+          "example": "无",
           "member": "DspaDataCategoryDistributed",
           "name": "CategoryDistributed",
           "output_required": true,
@@ -11382,7 +11400,7 @@
         {
           "disabled": false,
           "document": "代理地址",
-          "example": "1.1.1.1:8080",
+          "example": "[]",
           "member": "string",
           "name": "ProxyAddress",
           "output_required": true,
@@ -11402,7 +11420,7 @@
         {
           "disabled": false,
           "document": "扫描任务条件",
-          "example": "{\"Bucket\":\"bucket_name\",\"FileTypes\":[\".csv\",\".txt\"],\"FileSizeLimit\":1000}",
+          "example": "无",
           "member": "DspaDiscoveryTaskCOSCondition",
           "name": "Condition",
           "output_required": true,
@@ -11478,7 +11496,7 @@
         {
           "disabled": false,
           "document": "数据源对象信息",
-          "example": "datasource",
+          "example": "无",
           "member": "DspaCOSDiscoveryTaskDataSourceInfo",
           "name": "DataSourceInfo",
           "output_required": true,
@@ -11498,7 +11516,7 @@
         {
           "disabled": false,
           "document": "当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息",
-          "example": "[default]",
+          "example": "无",
           "member": "ScanTaskComplianceInfo",
           "name": "DefaultComplianceInfo",
           "output_required": true,
@@ -11508,7 +11526,7 @@
         {
           "disabled": false,
           "document": "该任务中用户选择的合规组信息列表",
-          "example": "[default]",
+          "example": "无",
           "member": "ScanTaskComplianceInfo",
           "name": "CustomComplianceInfo",
           "output_required": true,
@@ -11824,7 +11842,7 @@
         {
           "disabled": false,
           "document": "过滤类型的值。",
-          "example": "value",
+          "example": "[]",
           "member": "string",
           "name": "Values",
           "required": true,
@@ -12458,7 +12476,7 @@
         {
           "disabled": false,
           "document": "该字段是针对规则类型RuleType为keyword类型时的一个扩展属性",
-          "example": "[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"}]",
+          "example": "无",
           "member": "DatagovRuleExtendParameter",
           "name": "ExtendParameters",
           "output_required": true,
@@ -12486,7 +12504,7 @@
         {
           "disabled": false,
           "document": "规则",
-          "example": "[{\"RuleType\":\"keyword\",\"RuleContent\":\"keyword\",\"ExtendParameters\":[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"}]}]",
+          "example": "无",
           "member": "DspaDiscoveryDataRule",
           "name": "Contents",
           "output_required": true,
@@ -12601,7 +12619,7 @@
         {
           "disabled": false,
           "document": "字段名包含规则，最大支持选择9项",
-          "example": "{\"Operator\":\"or\",\"Contents\":[{\"RuleType\":\"keyword\",\"RuleContent\":\"url\",\"ExtendParameters\":[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"},{\"Name\":\"IsIgnoreCase\",\"Value\":\"true\"}]}]}",
+          "example": "无",
           "member": "DspaDiscoveryDataRules",
           "name": "MetaRule",
           "output_required": false,
@@ -12612,7 +12630,7 @@
         {
           "disabled": false,
           "document": "内容包含规则，最大支持选择9项",
-          "example": "{ \"Operator\":\"or\", \"Contents\":[{\"RuleType\":\"regex\",\"RuleContent\":\"^[\\\\w-]+(\\\\.[\\\\w-]+)*@([\\\\w-]+\\\\.)+(com|cn|net|pk|om|it|za|nz|sg|ae|fm|sy|org|tr|ye|cy|gr|in|ru|de|il|au|vn|jp|zm|ar|mk|gn|mx|es|fr|zw|ci|na|np|to|id|ie|sa|mn|uk|se|at)$\"}]}",
+          "example": "无",
           "member": "DspaDiscoveryDataRules",
           "name": "ContentRule",
           "output_required": false,
@@ -12669,7 +12687,7 @@
         {
           "disabled": false,
           "document": "RDB规则详情",
-          "example": "{\"Status\":1,\"MatchOperator\":\"and\",\"MetaRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleType\":\"keyword\",\"RuleContent\":\"url\",\"ExtendParameters\":[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"},{\"Name\":\"IsIgnoreCase\",\"Value\":\"true\"}]}]},\"ContentRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleType\":\"regex\",\"RuleContent\":\"^[\\\\w-]+(\\\\.[\\\\w-]+)*@([\\\\w-]+\\\\.)+(com|cn|net|pk|om|it|za|nz|sg|ae|fm|sy|org|tr|ye|cy|gr|in|ru|de|il|au|vn|jp|zm|ar|mk|gn|mx|es|fr|zw|ci|na|np|to|id|ie|sa|mn|uk|se|at)$\"}]}}",
+          "example": "无",
           "member": "DspaDiscoveryRDBRules",
           "name": "RDBRules",
           "output_required": true,
@@ -12679,7 +12697,7 @@
         {
           "disabled": false,
           "document": "COS规则详情",
-          "example": "{\"Status\":1,\"MatchOperator\":\"and\",\"KeywordRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleType\":\"keyword\",\"RuleContent\":\"url\",\"ExtendParameters\":[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"},{\"Name\":\"IsIgnoreCase\",\"Value\":\"true\"}]}]},\"RegexRule\":{\"Operator\":\"or\",\"Contents\":[{\"RuleType\":\"regex\",\"RuleContent\":\"^[\\\\w-]+(\\\\.[\\\\w-]+)*@([\\\\w-]+\\\\.)+(com|cn|net|pk|om|it|za|nz|sg|ae|fm|sy|org|tr|ye|cy|gr|in|ru|de|il|au|vn|jp|zm|ar|mk|gn|mx|es|fr|zw|ci|na|np|to|id|ie|sa|mn|uk|se|at)$\"}]},\"IgnoreStringRule\":{\"Operator\":\"and\",\"Contents\":[{\"RuleType\":\"keyword\",\"RuleContent\":\"keyword\",\"ExtendParameters\":[{\"Name\":\"IsFullWordMatch\",\"Value\":\"false\"}]}]}}",
+          "example": "无",
           "member": "DspaDiscoveryCOSRules",
           "name": "COSRules",
           "output_required": true,
@@ -12841,7 +12859,7 @@
         {
           "disabled": false,
           "document": "文件类型",
-          "example": "[“.csv\", \".txt\"]",
+          "example": "[]",
           "member": "string",
           "name": "FileTypes",
           "output_required": true,
@@ -12867,7 +12885,7 @@
         {
           "disabled": false,
           "document": "数据源ID",
-          "example": "1",
+          "example": "cdb-xxxxxxx",
           "member": "string",
           "name": "DataSourceId",
           "output_required": true,
@@ -12887,7 +12905,7 @@
         {
           "disabled": false,
           "document": "代理地址",
-          "example": "1.1.1.1:8080",
+          "example": "[]",
           "member": "string",
           "name": "ProxyAddress",
           "output_required": true,
@@ -13643,7 +13661,7 @@
         {
           "disabled": false,
           "document": "敏感等级分布",
-          "example": "[{\"LevelId\":1,\"LevelCnt\":2,\"LevelRiskName\":\"高\",\"LevelRiskScore\":10}]",
+          "example": "无",
           "member": "SensitiveLevel",
           "name": "SensitiveLevel",
           "output_required": true,
@@ -13683,7 +13701,7 @@
         {
           "disabled": false,
           "document": "数据分类分布",
-          "example": "[{\"CategoryId\":1,\"CategoryName\":\"个人信息分类\",\"Count\":1,\"CategoryFullPath\":\"个人信息/个人资产信息\"}]",
+          "example": "无",
           "member": "DspaDataCategoryDistributed",
           "name": "CategoryDistributed",
           "output_required": true,
@@ -13809,7 +13827,7 @@
         {
           "disabled": false,
           "document": "字段扫描结果ID",
-          "example": "1",
+          "example": "默认值",
           "member": "string",
           "name": "FieldResultId",
           "output_required": true,
@@ -13859,7 +13877,7 @@
         {
           "disabled": false,
           "document": "保护措施",
-          "example": "safeGuard",
+          "example": "无",
           "member": "DspaSafeGuard",
           "name": "SafeGuard",
           "output_required": true,
@@ -14467,7 +14485,7 @@
         {
           "disabled": false,
           "document": "敏感分级的分布",
-          "example": "[{\"LevelId\":1,\"LevelCnt\":2,\"LevelRiskName\":\"高\",\"LevelRiskScore\":10}]",
+          "example": "无",
           "member": "SensitiveLevel",
           "name": "SensitiveLevel",
           "output_required": false,
@@ -14477,7 +14495,7 @@
         {
           "disabled": false,
           "document": "敏感分类的分布",
-          "example": "[{\"CategoryId\":1,\"CategoryName\":\"个人信息分类\",\"Count\":1,\"CategoryFullPath\":\"个人信息/个人资产信息\"}]",
+          "example": "无",
           "member": "DspaDataCategoryDistributed",
           "name": "CategoryDistributed",
           "output_required": false,
@@ -14493,7 +14511,7 @@
         {
           "disabled": false,
           "document": "id",
-          "example": "字段id",
+          "example": "0",
           "member": "int64",
           "name": "FieldResultId",
           "output_required": false,
@@ -14583,7 +14601,7 @@
         {
           "disabled": false,
           "document": "分类路径数组",
-          "example": "[个人身份信息]",
+          "example": "[]",
           "member": "string",
           "name": "CategoryArr",
           "output_required": false,
@@ -14593,7 +14611,7 @@
         {
           "disabled": false,
           "document": "等级id",
-          "example": "高",
+          "example": "0",
           "member": "int64",
           "name": "LevelId",
           "output_required": false,
@@ -14810,7 +14828,7 @@
         {
           "disabled": false,
           "document": "多级分类的路径",
-          "example": "个人基础信息/个人身份信息",
+          "example": "[]",
           "member": "string",
           "name": "CategoryArr",
           "output_required": true,
@@ -14990,7 +15008,7 @@
         {
           "disabled": false,
           "document": "过滤数组。支持的Name：\nDataSourceID 数据源ID\nDbName 数据库名称\nCategoryID 敏感数据分类ID\nRuleID 规则ID\nLevelID 敏感分级ID\nResourceRegion 资源所在地域\nDataSourceType 数据源类型，不填默认过滤非自建的所有关系型数据源类型，填selfbuilt-db只过滤自建类型\n注意：每个name默认支持最多5个values。",
-          "example": "[{Name: \"DataSourceType\", Values: [\"cdb\", \"dcdb\", \"mariadb\", \"postgres\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -16791,7 +16809,7 @@
         {
           "disabled": false,
           "document": "0系统识别，1人工打标",
-          "example": "识别方式",
+          "example": "0",
           "member": "int64",
           "name": "IdentifyType",
           "required": false,
@@ -18427,7 +18445,7 @@
           "example": "1",
           "member": "int64",
           "name": "ComplianceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18437,7 +18455,7 @@
           "example": "财务信息",
           "member": "string",
           "name": "ComplianceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -18599,7 +18617,7 @@
           "example": "1",
           "member": "int64",
           "name": "LevelId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18609,7 +18627,7 @@
           "example": "2",
           "member": "int64",
           "name": "LevelCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18619,7 +18637,7 @@
           "example": "高",
           "member": "string",
           "name": "LevelRiskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18629,7 +18647,7 @@
           "example": "10",
           "member": "int64",
           "name": "LevelRiskScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

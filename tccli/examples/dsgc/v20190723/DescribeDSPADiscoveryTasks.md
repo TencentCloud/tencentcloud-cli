@@ -32,7 +32,7 @@ Output:
                     "ResourceRegion": "ap-guangzhou",
                     "DataSourceId": "cdb-6dcpe42v",
                     "DataSourceName": "采集测试",
-                    "ProxyAddress": null,
+                    "ProxyAddress": [],
                     "Condition": "test_report,dsgctest001",
                     "DataSourceType": "cdb"
                 },

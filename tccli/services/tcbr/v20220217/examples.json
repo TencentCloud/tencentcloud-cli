@@ -134,6 +134,14 @@
         "title": "查询服务管理任务信息"
       }
     ],
+    "DescribeStableIPTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStableIPTask\n<公共请求参数>\n\n{\n    \"EnvId\": \"1\",\n    \"TaskId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a33ae2b6-baf1-4450-a0f4-a319c8698692\",\n        \"Result\": \"success\",\n        \"TaskId\": 7496\n    }\n}",
+        "title": "查询固定 IP 任务状态"
+      }
+    ],
     "DescribeVersionDetail": [
       {
         "document": "",

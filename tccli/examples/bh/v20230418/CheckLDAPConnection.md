@@ -7,20 +7,23 @@ Input:
 ```
 tccli bh CheckLDAPConnection --cli-unfold-argument  \
     --Enable True \
-    --AdminPassword pwd \
-    --Ip 10.10.1.10 \
-    --BaseDN bh-test-DN \
-    --EnableSSL True \
-    --IpBackup  \
-    --AdminAccount admin \
-    --Port 80
+    --Ip 192.168.***.** \
+    --Port 389 \
+    --EnableSSL False \
+    --BaseDN dc=my-domain,dc=com \
+    --AdminAccount cn=Manager,dc=my-domain,dc=com \
+    --AdminPassword ******** \
+    --IpBackup 192.168.**.** \
+    --DomainId net-6jvrhv6j \
+    --AttributeUserName cn \
+    --ResourceId bh-saas-icgwc5mj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c7c79e35-65b9-4c2a-beea-a038fdf8c082"
+        "RequestId": "4f65a4eb-3b3f-494a-9c55-d758210d39d7"
     }
 }
 ```

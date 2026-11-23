@@ -105,6 +105,13 @@
       "output": "CreateContentIdentifierResponse",
       "status": "online"
     },
+    "CreateCustomGroup": {
+      "document": "创建自定义组。自定义组用于集中管理一组可复用的匹配条目，例如可以将多个 JA3/JA4 TLS 指纹保存为一个 TLS 指纹组，并在安全规则中直接引用该组，从而避免在多条规则中重复维护相同的指纹列表。",
+      "input": "CreateCustomGroupRequest",
+      "name": "创建自定义组",
+      "output": "CreateCustomGroupResponse",
+      "status": "online"
+    },
     "CreateCustomizeErrorPage": {
       "document": "创建自定义响应页面。",
       "input": "CreateCustomizeErrorPageRequest",
@@ -378,6 +385,13 @@
       "output": "DeleteCustomErrorPageResponse",
       "status": "online"
     },
+    "DeleteCustomGroup": {
+      "document": "删除指定自定义组。若该组已被规则引用，则不允许删除，请先解除引用关系。",
+      "input": "DeleteCustomGroupRequest",
+      "name": "删除自定义组",
+      "output": "DeleteCustomGroupResponse",
+      "status": "online"
+    },
     "DeleteDnsRecords": {
       "document": "您可以用本接口批量删除 DNS 记录。",
       "input": "DeleteDnsRecordsRequest",
@@ -635,6 +649,27 @@
       "input": "DescribeCustomErrorPagesRequest",
       "name": "查询自定义响应页面列表",
       "output": "DescribeCustomErrorPagesResponse",
+      "status": "online"
+    },
+    "DescribeCustomGroup": {
+      "document": "查询单个自定义组的详细信息，包含组内全量条目（通过 Limit/Offset 分页返回）。DescribeCustomGroups 列表接口每组最多返回前 500 个条目，如需获取全量条目，请使用本接口。GroupId 可通过 CreateCustomGroup 创建时返回或 DescribeCustomGroups 查询获取。",
+      "input": "DescribeCustomGroupRequest",
+      "name": "查询自定义组",
+      "output": "DescribeCustomGroupResponse",
+      "status": "online"
+    },
+    "DescribeCustomGroupReferences": {
+      "document": "获取使用自定义组的安全策略配置。",
+      "input": "DescribeCustomGroupReferencesRequest",
+      "name": "查询自定义组引用信息",
+      "output": "DescribeCustomGroupReferencesResponse",
+      "status": "online"
+    },
+    "DescribeCustomGroups": {
+      "document": "查询指定站点下的自定义组列表。本接口只返回每个自定义组前 500 个条目，如需查询组内完整条目请使用 DescribeSecurityCustomGroup 接口查询。",
+      "input": "DescribeCustomGroupsRequest",
+      "name": "查询自定义组列表",
+      "output": "DescribeCustomGroupsResponse",
       "status": "online"
     },
     "DescribeDDoSAttackData": {
@@ -1342,6 +1377,13 @@
       "input": "ModifyCustomErrorPageRequest",
       "name": "修改自定义响应页面",
       "output": "ModifyCustomErrorPageResponse",
+      "status": "online"
+    },
+    "ModifyCustomGroup": {
+      "document": "修改自定义组内容。GroupType 创建后不可修改，修改组内条目时，可通过 GroupItemOperation 指定替换、追加或移除操作。",
+      "input": "ModifyCustomGroupRequest",
+      "name": "修改自定义组",
+      "output": "ModifyCustomGroupResponse",
       "status": "online"
     },
     "ModifyDDoSProtection": {
@@ -7542,6 +7584,100 @@
       ],
       "type": "object"
     },
+    "CreateCustomGroupRequest": {
+      "document": "CreateCustomGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组名称。</p>",
+          "example": "tls_group_1",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组类型。创建后不可修改，不同类型的自定义组支持的条目类型不同。</p><p>枚举值：</p><ul><li>TLSFingerprint： TLS 指纹组，支持 JA3、JA4 类型的条目</li><li>UA： UA 组，支持 UA 类型的条目</li><li>Referer： Referer 组，支持 Referer 类型的条目</li></ul>",
+          "example": "TLSFingerprint",
+          "member": "string",
+          "name": "GroupType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目列表。</p>",
+          "example": "无",
+          "member": "CustomGroupItem",
+          "name": "GroupItems",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomGroupResponse": {
+      "document": "CreateCustomGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义组唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组名称。</p>",
+          "example": "tls_group_1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组类型。</p><p>枚举值：</p><ul><li>TLSFingerprint： TLS 指纹组</li><li>UA： UA 组</li><li>Referer： Referer 组</li></ul>",
+          "example": "TLSFingerprint",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目列表。</p>",
+          "example": "无",
+          "member": "CustomGroupItem",
+          "name": "GroupItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCustomizeErrorPageRequest": {
       "document": "CreateCustomizeErrorPage请求参数结构体",
       "members": [
@@ -10361,6 +10497,189 @@
       ],
       "usage": "both"
     },
+    "CustomGroup": {
+      "document": "安全自定义组用于集中管理一组可复用的安全匹配条目，例如可以将多个 JA3/JA4 TLS 指纹保存为一个 TLS 指纹组，并在安全规则中直接引用该组，从而避免在多条规则中重复维护相同的指纹列表。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义组的唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组名称。</p>",
+          "example": "tls_group_1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组类型。</p><p>枚举值：</p><ul><li>TLSFingerprint： TLS 指纹组</li><li>UA： UA 组</li><li>Referer： Referer 组</li></ul>",
+          "example": "TLSFingerprint",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目列表。</p>",
+          "example": "无",
+          "member": "CustomGroupItem",
+          "name": "GroupItems",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目总数量。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupItemTotalCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组被引用的次数。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RefCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomGroupItem": {
+      "document": "自定义组条目。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>条目内容。</p>",
+          "example": "SPECIAL_VALUE_EMPTY",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>条目类型。</p><p>枚举值：</p><ul><li>JA3： JA3 指纹，仅当所属组 GroupType 为 TLSFingerprint 时可用</li><li>JA4： JA4 指纹，仅当所属组 GroupType 为 TLSFingerprint 时可用</li><li>UA： UA 值，仅当所属组 GroupType 为 UA 时可用</li><li>Referer： Referer 值，仅当所属组 GroupType 为 Referer 时可用</li></ul>",
+          "example": "JA4",
+          "member": "string",
+          "name": "ItemType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CustomGroupReference": {
+      "document": "引用自定义组的安全模块",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体类型。</p><p>枚举值：</p><ul><li>WebSec.ZonePolicy： 站点级防护策略</li><li>WebSec.HostPolicy： 域名级防护策略</li><li>WebSec.Template： 策略模板</li><li>WebSec.APIResource： API 资源</li><li>WebSec.JSInjectionRule： 注入规则</li><li>DDoS.L4Proxy： 四层代理 DDoS 防护</li><li>DDoS.L3Transit： 三层代播 DDoS 防护</li></ul>",
+          "example": "WebSec.ZonePolicy",
+          "member": "string",
+          "name": "EntityType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体标识，根据 EntityType 不同代表不同的含义：</p><ul><li>WebSec.ZonePolicy：站点 ID</li><li>WebSec.HostPolicy：域名</li><li>WebSec.Template：模板 ID</li><li>WebSec.APIResource：API 资源 ID</li><li>WebSec.JSInjectionRule：JavaScript 注入规则 ID</li><li>DDoS.L4Proxy：实例 ID</li><li>DDoS.L3Transit：实例 ID</li></ul>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "EntityId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>实体标识，根据 EntityType 不同代表不同的含义：</p><ul><li>WebSec.ZonePolicy：空</li><li>WebSec.HostPolicy：空</li><li>WebSec.Template：模板名称</li><li>WebSec.APIResource：API 资源名称</li><li>WebSec.JSInjectionRule：JavaScript 注入规则名称</li><li>DDoS.L4Proxy：空</li><li>DDoS.L3Transit：空</li></ul>",
+          "example": "referer组",
+          "member": "string",
+          "name": "EntityName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子实体类型。</p><p>枚举值：</p><ul><li>WebSec.ExceptionRule： 防护例外规则</li><li>WebSec.BasicAccessRule： 基础访问管控</li><li>WebSec.PreciseMatchRule： 精确匹配规则</li><li>WebSec.RateLimitRule： 精准速率限制</li><li>WebSec.BotCustomRule： 高级 Bot 管理 - 自定义规则</li><li>DDoS.L4Proxy.IpAccessControl： 四层代理 DDoS 防护 - IP 黑白名单</li><li>DDoS.L3Transit.IpAccessControl： 三层代播 DDoS 防护 - IP 黑白名单</li></ul>",
+          "example": "WebSec.ExceptionRule",
+          "member": "string",
+          "name": "SubEntityType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子实体标识，根据 SubEntityType 不同代表不同的含义：</p><ul><li>WebSec.ExceptionRule：规则 ID</li><li>WebSec.BasicAccessRule：规则 ID</li><li>WebSec.PreciseMatchRule：规则 ID</li><li>WebSec.RateLimitRule：规则 ID</li><li>WebSec.BotCustomRule：规则 ID</li><li>DDoS.L4Proxy.IpAccessControl：空</li><li>DDoS.L3Transit.IpAccessControl：空</li></ul><p>EntityType 与 SubEntityType 为对应关系，不同的 EntityType 支持不同的 SubEntityType。<br>WebSec.ZonePolicy，WebSec.HostPolicy 和 WebSec.Template 支持如下 SubEntityType：</p><ul><li>WebSec.ExceptionRule</li><li>WebSec.BasicAccessRule</li><li>WebSec.PreciseMatchRule</li><li>WebSec.RateLimitRule</li><li>WebSec.BotCustomRule</li></ul>DDoS.L4Proxy 支持如下 SubEntityType：<ul><li>DDoS.L4Proxy.IpAccessControl</li></ul>DDoS.L3Transit 支持如下 SubEntityType：<ul><li>DDoS.L3Transit.IpAccessControl</li></ul>",
+          "example": "2181589977",
+          "member": "string",
+          "name": "SubEntityId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>子实体名称，根据 SubEntityType 不同代表不同的含义：</p><ul><li>WebSec.ExceptionRule：规则名称</li><li>WebSec.BasicAccessRule：规则名称</li><li>WebSec.PreciseMatchRule：规则名称</li><li>WebSec.RateLimitRule：规则名称</li><li>WebSec.BotCustomRule：规则名称</li><li>DDoS.L4Proxy.IpAccessControl：空</li><li>DDoS.L3Transit.IpAccessControl：空</li></ul>",
+          "example": "TLS 白名单",
+          "member": "string",
+          "name": "SubEntityName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CustomRule": {
       "document": "Web 防护功能下的自定义规则。",
       "members": [
@@ -11321,6 +11640,42 @@
     },
     "DeleteCustomErrorPageResponse": {
       "document": "DeleteCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomGroupRequest": {
+      "document": "DeleteCustomGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomGroupResponse": {
+      "document": "DeleteCustomGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -13278,6 +13633,268 @@
           "member": "CustomErrorPage",
           "name": "ErrorPages",
           "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupReferencesRequest": {
+      "document": "DescribeCustomGroupReferences请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组 ID。</p>",
+          "example": "273746924",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量。</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询引用自定义组的配置条数。</p><p>取值范围：[1, 200]</p><p>默认值：20</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupReferencesResponse": {
+      "document": "DescribeCustomGroupReferences返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>引用对应自定义组的配置信息。</p>",
+          "example": "无",
+          "member": "CustomGroupReference",
+          "name": "References",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>查询结果总数。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupRequest": {
+      "document": "DescribeCustomGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GroupItems 分页查询限制数目。</p><p>取值范围：[1, 50000]</p><p>默认值：500</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>GroupItems 分页查询偏移量。</p><p>默认值：0</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupResponse": {
+      "document": "DescribeCustomGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>自定义组唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组名称。</p>",
+          "example": "tls_group_1",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组类型。</p><p>枚举值：</p><ul><li>TLSFingerprint： TLS 指纹组</li><li>UA： UA 组</li><li>Referer： Referer 组</li></ul>",
+          "example": "TLSFingerprint",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目列表。</p>",
+          "example": "无",
+          "member": "CustomGroupItem",
+          "name": "GroupItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目总数量。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupItemTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组被引用的次数。</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "RefCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupsRequest": {
+      "document": "DescribeCustomGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组类型列表。不传则查询所有类型的列表。</p>",
+          "example": "[\"TLSFingerprint\"]",
+          "member": "string",
+          "name": "GroupTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询限制数目。</p><p>取值范围：[1, 100]</p><p>默认值：10</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页查询偏移量。</p><p>默认值：0</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomGroupsResponse": {
+      "document": "DescribeCustomGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>满足类型列表条件的自定义组总数量。</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "GroupTotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>满足类型列表条件的自定义组列表。</p>",
+          "example": "无",
+          "member": "CustomGroup",
+          "name": "CustomGroups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -26935,6 +27552,69 @@
     },
     "ModifyCustomErrorPageResponse": {
       "document": "ModifyCustomErrorPage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomGroupRequest": {
+      "document": "ModifyCustomGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>站点 ID。</p>",
+          "example": "zone-3nw1o2owaf7p",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组唯一标识 ID。</p>",
+          "example": "273746923",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组名称。该字段不填时则保留原值。</p>",
+          "example": "referer_group_new_59462312071",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>指定本次对 GroupItems 的更新方式。</p><p>枚举值：</p><ul><li>Replace： 使用 GroupItems 全量替换原有条目列表</li><li>Append： 追加 GroupItems 到组条目列表中</li><li>Remove： 从原有条目列表中移除与 GroupItems 中 Content 和 ItemType 均相同的条目。若指定条目不存在，则忽略该条目</li></ul><p>默认值：Replace</p>",
+          "example": "Append",
+          "member": "string",
+          "name": "GroupItemOperation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义组条目列表。该字段不填时则保留原值。</p>",
+          "example": "无",
+          "member": "CustomGroupItem",
+          "name": "GroupItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomGroupResponse": {
+      "document": "ModifyCustomGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",

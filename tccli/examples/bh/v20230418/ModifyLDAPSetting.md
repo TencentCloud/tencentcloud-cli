@@ -7,31 +7,33 @@ Input:
 ```
 tccli bh ModifyLDAPSetting --cli-unfold-argument  \
     --Enable True \
-    --AdminAccount admin \
-    --AttributeEmail bhtets@email.com \
-    --AdminPassword password \
+    --Ip 192.168.***.** \
+    --IpBackup 192.168.**.** \
+    --Port 389 \
+    --EnableSSL False \
+    --BaseDN dc=my-domain,dc=com \
+    --AdminAccount cn=Manager,dc=my-domain,dc=com \
+    --AdminPassword ******** \
+    --AttributeUser objectClass=organizationalPerson \
+    --AttributeUserName cn \
     --AutoSync True \
-    --Ip 172.168.0.1 \
-    --BaseDN bhtest-dn \
-    --SyncPeriod 1 \
+    --Overwrite True \
+    --SyncPeriod 30 \
     --SyncAll True \
-    --EnableSSL True \
-    --AttributeRealName attrRealName \
     --SyncUnitSet ou=GGG,dc=my-domain,dc=com \
-    --IpBackup  \
-    --AttributeUser user \
-    --AttributeUserName testusername \
-    --AttributePhone phone \
-    --AttributeUnit unit \
-    --Port 1 \
-    --Overwrite True
+    --AttributeUnit objectClass=organizationalUnit \
+    --AttributeRealName displayName \
+    --AttributePhone mobile \
+    --AttributeEmail mail \
+    --DomainId net-6jvrhv6j \
+    --ResourceId bh-saas-icgwc5mj
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "9e5a83b7-564a-4831-8111-28a4ec740c61"
+        "RequestId": "7a213e7a-53d2-45f7-94ba-60591b925e64"
     }
 }
 ```

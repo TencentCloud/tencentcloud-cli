@@ -11,8 +11,8 @@
     "CreateMCPToken": [
       {
         "document": "用于获取 MCP Token",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMCPToken\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f151245-7a15-4ccf-9139-191add823c61\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMCPToken\n<公共请求参数>\n\n{\n    \"ExpireSeconds\": 50000,\n    \"TokenName\": \"token*****id01\",\n    \"UserId\": \"v**to***_token_userid01\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"mcptok_1e993fa723ed62f56************************a435a95e361f11fdf49ce3c\",\n        \"TokenId\": \"tok_59f*******76ee22\",\n        \"RequestId\": \"4f151245-7a15-4ccf-9139-191add823c61\"\n    }\n}",
         "title": "创建 MCP Token"
       }
     ],
@@ -35,8 +35,8 @@
     "DescribeMCPTokens": [
       {
         "document": "用于获取 MCP Token 信息",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTokens\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8b143d62-6e9d-4a5f-ae5a-f81dce022418\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMCPTokens\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"Tokens\": [\n            {\n                \"CreatedTime\": \"2026-10-14T05:25:21Z\",\n                \"ExpiresTime\": \"2026-10-15T14:45:21Z\",\n                \"Scopes\": [\n                    \"*\"\n                ],\n                \"Status\": \"ACTIVE\",\n                \"TokenId\": \"tok_b29*******7aebe2\",\n                \"TokenName\": \"victo****ken2\",\n                \"UserId\": \"\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"d6a04877-3267-4f35-94d0-f6809e5b961d\"\n    }\n}",
         "title": "查询 MCP Token 列表"
       }
     ],
@@ -51,7 +51,7 @@
     "RenewMCPToken": [
       {
         "document": "用于延长 Token 过期时间",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewMCPToken\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewMCPToken\n<公共请求参数>\n\n{\n    \"TokenId\": \"tok_532*******6babb3\",\n    \"ExpireSeconds\": 604800\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bb0741a-897e-456c-a553-c0bd9e4d5596\"\n    }\n}",
         "title": "续期 MCP Token"
       }

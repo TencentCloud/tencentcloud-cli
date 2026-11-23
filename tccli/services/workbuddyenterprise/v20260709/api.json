@@ -1462,6 +1462,15 @@
           "name": "VersionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话创建来源，仅用于监控统计，不参与鉴权。</p><p>page 表示页面端，adk 表示 ADK/API；不传或无法识别时统计为 unknown。</p>",
+          "example": "page",
+          "member": "string",
+          "name": "MetricEntry",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2039,12 +2048,41 @@
     },
     "DeleteSessionArtifactListRequest": {
       "document": "DeleteSessionArtifactList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要删除的物料ID集合</p>",
+          "example": "",
+          "member": "string",
+          "name": "ArtifactIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DeleteSessionArtifactListResponse": {
       "document": "DeleteSessionArtifactList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>删除的物料数量</p>",
+          "example": "",
+          "member": "int64",
+          "name": "DeletedCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3867,12 +3905,81 @@
     },
     "DescribeSessionArtifactDownloadUrlRequest": {
       "document": "DescribeSessionArtifactDownloadUrl请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>物料ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "ArtifactId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物过期时间</p><p>单位：s</p>",
+          "example": "",
+          "member": "int64",
+          "name": "ExpiredSeconds",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "DescribeSessionArtifactDownloadUrlResponse": {
       "document": "DescribeSessionArtifactDownloadUrl返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>产物下载地址</p>",
+          "example": "",
+          "member": "string",
+          "name": "DownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物过期时间</p>",
+          "example": "",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物对应文件名</p>",
+          "example": "",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>产物文件大小</p>",
+          "example": "",
+          "member": "int64",
+          "name": "FileSizeBytes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件摘要</p>",
+          "example": "",
+          "member": "string",
+          "name": "FileSha256",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3884,12 +3991,69 @@
     },
     "DescribeSessionArtifactListRequest": {
       "document": "DescribeSessionArtifactList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>偏移量，从 0 开始，默认 0（按 ID 批量查询时忽略）</p>",
+          "example": "",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数量，默认 20，最大 200（按 ID 批量查询时忽略）</p>",
+          "example": "",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>标准过滤条件：ArtifactId（精确，多值 OR，携带即按 ID 批量查询，忽略分页）/ Keyword（模糊）</p>",
+          "example": "",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "DescribeSessionArtifactListResponse": {
       "document": "DescribeSessionArtifactList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>符合条件的物料总数（按 ID 批量时为实际命中数）</p>",
+          "example": "",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回的物料集合</p>",
+          "example": "",
+          "member": "SessionArtifactDetail",
+          "name": "ArtifactSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5743,6 +5907,133 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SessionArtifactDetail": {
+      "document": "会话物料结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>物料ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "ArtifactId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>会话ID</p>",
+          "example": "",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>AgentID</p>",
+          "example": "",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件名</p>",
+          "example": "",
+          "member": "string",
+          "name": "FileName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件沙箱内路径</p>",
+          "example": "",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件字节数</p>",
+          "example": "",
+          "member": "int64",
+          "name": "FileSizeBytes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>文件摘要值(Sha256)</p>",
+          "example": "",
+          "member": "string",
+          "name": "FileSha256",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>物料状态</p><p>枚举值：</p><ul><li>PENDING： 处理中</li><li>READY： 准备完毕</li><li>FAILED： 失败</li></ul>",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p><p>参数格式：RFC3339 UTC</p>",
+          "example": "",
+          "member": "string",
+          "name": "CreatedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p><p>参数格式：RFC3339 UTC</p>",
+          "example": "",
+          "member": "string",
+          "name": "UploadedTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>过期时间</p><p>参数格式：RFC3339 UTC</p>",
+          "example": "",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

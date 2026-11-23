@@ -59,8 +59,8 @@
     "CheckLDAPConnection": [
       {
         "document": "测试LDAP连接",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLDAPConnection\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminPassword\": \"pwd\",\n    \"Ip\": \"10.10.1.10\",\n    \"BaseDN\": \"bh-test-DN\",\n    \"EnableSSL\": true,\n    \"IpBackup\": \"\",\n    \"AdminAccount\": \"admin\",\n    \"Port\": 80\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckLDAPConnection\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"Ip\": \"192.168.***.**\",\n    \"Port\": 389,\n    \"EnableSSL\": false,\n    \"BaseDN\": \"dc=my-domain,dc=com\",\n    \"AdminAccount\": \"cn=Manager,dc=my-domain,dc=com\",\n    \"AdminPassword\": \"********\",\n    \"IpBackup\": \"192.168.**.**\",\n    \"DomainId\": \"net-6jvrhv6j\",\n    \"AttributeUserName\": \"cn\",\n    \"ResourceId\": \"bh-saas-icgwc5mj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f65a4eb-3b3f-494a-9c55-d758210d39d7\"\n    }\n}",
         "title": "测试LDAP连接"
       }
     ],
@@ -441,8 +441,8 @@
     "DescribeLDAPUnitSet": [
       {
         "document": "获取LDAP ou 列表",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLDAPUnitSet\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminPassword\": \"pwd\",\n    \"Ip\": \"192.168.0.1\",\n    \"BaseDN\": \"bh-base-dn\",\n    \"EnableSSL\": true,\n    \"IpBackup\": \"\",\n    \"AttributeUserName\": \"attr-user\",\n    \"AdminAccount\": \"admin\",\n    \"AttributeUnit\": \"attr-uint\",\n    \"Port\": 22\n}",
-        "output": "{\n    \"Response\": {\n        \"UnitSet\": [\n            \"ou=GGG,dc=my-domain,dc=com\"\n        ],\n        \"RequestId\": \"c7c79e35-65b9-4c2a-beea-a038fdf8c082\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLDAPUnitSet\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"Ip\": \"192.168.***.**\",\n    \"Port\": 389,\n    \"EnableSSL\": false,\n    \"BaseDN\": \"dc=my-domain,dc=com\",\n    \"AdminAccount\": \"cn=Manager,dc=my-domain,dc=com\",\n    \"AdminPassword\": \"********\",\n    \"AttributeUserName\": \"cn\",\n    \"AttributeUnit\": \"objectClass=organizationalUnit\",\n    \"IpBackup\": \"192.168.**.**\",\n    \"DomainId\": \"net-6jvrhv6j\",\n    \"ResourceId\": \"bh-saas-icgwc5mj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UnitSet\": [\n            \"ou=TTTT,dc=my-domain,dc=com\"\n        ],\n        \"RequestId\": \"7dabe376-93a2-42e1-8f37-6a7de78bb4cd\"\n    }\n}",
         "title": "获取LDAP ou 列表"
       }
     ],
@@ -707,8 +707,8 @@
     "ModifyLDAPSetting": [
       {
         "document": "修改LDAP配置信息",
-        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLDAPSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"AdminAccount\": \"admin\",\n    \"AttributeEmail\": \"bhtets@email.com\",\n    \"AdminPassword\": \"password\",\n    \"AutoSync\": true,\n    \"Ip\": \"172.168.0.1\",\n    \"BaseDN\": \"bhtest-dn\",\n    \"SyncPeriod\": 1,\n    \"SyncAll\": true,\n    \"EnableSSL\": true,\n    \"AttributeRealName\": \"attrRealName\",\n    \"SyncUnitSet\": [\n        \"ou=GGG,dc=my-domain,dc=com\"\n    ],\n    \"IpBackup\": \"\",\n    \"AttributeUser\": \"user\",\n    \"AttributeUserName\": \"testusername\",\n    \"AttributePhone\": \"phone\",\n    \"AttributeUnit\": \"unit\",\n    \"Port\": 1,\n    \"Overwrite\": true\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9e5a83b7-564a-4831-8111-28a4ec740c61\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: bh.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLDAPSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"Ip\": \"192.168.***.**\",\n    \"IpBackup\": \"192.168.**.**\",\n    \"Port\": 389,\n    \"EnableSSL\": false,\n    \"BaseDN\": \"dc=my-domain,dc=com\",\n    \"AdminAccount\": \"cn=Manager,dc=my-domain,dc=com\",\n    \"AdminPassword\": \"********\",\n    \"AttributeUser\": \"objectClass=organizationalPerson\",\n    \"AttributeUserName\": \"cn\",\n    \"AutoSync\": true,\n    \"Overwrite\": true,\n    \"SyncPeriod\": 30,\n    \"SyncAll\": true,\n    \"SyncUnitSet\": [\n        \"ou=GGG,dc=my-domain,dc=com\"\n    ],\n    \"AttributeUnit\": \"objectClass=organizationalUnit\",\n    \"AttributeRealName\": \"displayName\",\n    \"AttributePhone\": \"mobile\",\n    \"AttributeEmail\": \"mail\",\n    \"DomainId\": \"net-6jvrhv6j\",\n    \"ResourceId\": \"bh-saas-icgwc5mj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7a213e7a-53d2-45f7-94ba-60591b925e64\"\n    }\n}",
         "title": "修改LDAP配置信息"
       }
     ],

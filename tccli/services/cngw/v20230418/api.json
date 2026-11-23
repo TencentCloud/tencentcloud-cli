@@ -10617,7 +10617,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p>",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": true,
@@ -10627,7 +10627,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p>",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": true,
@@ -10715,7 +10715,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": false,
@@ -10726,7 +10726,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": false,
@@ -10820,7 +10820,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": false,
@@ -10831,7 +10831,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": false,
@@ -11605,7 +11605,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p>",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": true,
@@ -11676,7 +11676,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": false,
@@ -11748,7 +11748,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": false,

@@ -168,6 +168,14 @@
         "title": "创建内容标识符"
       }
     ],
+    "CreateCustomGroup": [
+      {
+        "document": "创建一个 TLS 指纹组，并添加一个 JA3 值。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\",\n    \"GroupName\": \"tls_group_1\",\n    \"GroupType\": \"TLSFingerprint\",\n    \"GroupItems\": [\n        {\n            \"Content\": \"080376eff4b9c0bb02f14d42705994be\",\n            \"ItemType\": \"JA3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"273746923\",\n        \"GroupItems\": [\n            {\n                \"Content\": \"080376eff4b9c0bb02f14d42705994be\",\n                \"ItemType\": \"JA3\"\n            }\n        ],\n        \"GroupName\": \"tls_group_1\",\n        \"GroupType\": \"TLSFingerprint\",\n        \"RequestId\": \"eaadf524-d010-4ecb-9915-b6633b8230ed\"\n    }\n}",
+        "title": "创建 TLS 指纹组"
+      }
+    ],
     "CreateCustomizeErrorPage": [
       {
         "document": "创建自定义响应页面接口",
@@ -660,6 +668,14 @@
         "title": "删除自定义响应页面接口"
       }
     ],
+    "DeleteCustomGroup": [
+      {
+        "document": "删除一个指定自定义组。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\",\n    \"GroupId\": \"273746923\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbb8627e-9533-4ce1-bf63-4dedfb7df1fd\"\n    }\n}",
+        "title": "删除自定义组"
+      }
+    ],
     "DeleteDnsRecords": [
       {
         "document": "在 ZoneId 为 zone-25ryyvog1qih 的站点下，删除记录 ID 为 record-25ryzh92h8qh 和 record-3suf7slrsobi 的 DNS 记录。",
@@ -972,6 +988,30 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomErrorPages\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Filters\": [\n        {\n            \"Name\": \"name\",\n            \"Values\": [\n                \"web防护响应页面\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 20\n}",
         "output": "{\n    \"Response\": {\n        \"ErrorPages\": [\n            {\n                \"PageId\": \"p-2kplomhisdcb\",\n                \"Name\": \"web防护响应页面\",\n                \"ContentType\": \"application/json\",\n                \"Content\": \"{\\\"title\\\": \\\"自定义响应页面title\\\",\\\"content\\\": \\\"自定义响应页面内容\\\"}\",\n                \"Description\": \"自定义的web防护响应页面\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "自定义响应页面查询列表"
+      }
+    ],
+    "DescribeCustomGroup": [
+      {
+        "document": "查询指定自定义组详细内容。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\",\n    \"GroupId\": \"273746923\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"273746923\",\n        \"GroupItemTotalCount\": 1,\n        \"GroupItems\": [\n            {\n                \"Content\": \"080376eff4b9c0bb02f14d42705994be\",\n                \"ItemType\": \"JA3\"\n            }\n        ],\n        \"GroupName\": \"tls_group_1\",\n        \"GroupType\": \"TLSFingerprint\",\n        \"RequestId\": \"772aa1f5-5c3f-41b1-b638-b6ecfd0fc135\"\n    }\n}",
+        "title": "查询自定义组内容"
+      }
+    ],
+    "DescribeCustomGroupReferences": [
+      {
+        "document": "查询某个自定义组的安全策略引用关系。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomGroupReferences\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\",\n    \"GroupId\": \"273746924\"\n}",
+        "output": "{\n    \"Response\": {\n        \"References\": [\n            {\n                \"EntityId\": \"zone-3nw1o2owaf7p\",\n                \"EntityType\": \"WebSec.ZonePolicy\",\n                \"SubEntityId\": \"2181039091\",\n                \"SubEntityName\": \"TLS 白名单\",\n                \"SubEntityType\": \"WebSec.PreciseMatchRule\",\n                \"ZoneId\": \"zone-3nw1o2owaf7p\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"761bf328-3c64-4fbd-927e-ebd01ef8d9f6\"\n    }\n}",
+        "title": "查询自定组引用"
+      }
+    ],
+    "DescribeCustomGroups": [
+      {
+        "document": "查询指定站点下所有自定义组内容。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomGroups\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CustomGroups\": [\n            {\n                \"GroupId\": \"273746923\",\n                \"GroupItemTotalCount\": 2,\n                \"GroupItems\": [\n                    {\n                        \"Content\": \"080376eff4b9c0bb02f14d42705994be\",\n                        \"ItemType\": \"JA3\"\n                    }\n                ],\n                \"GroupName\": \"tls_group_1\",\n                \"GroupType\": \"TLSFingerprint\"\n            }\n        ],\n        \"GroupTotalCount\": 1,\n        \"RequestId\": \"266b1419-4bd5-44d1-8be2-c31806539d6e\"\n    }\n}",
+        "title": "查询站点下所有自定义组"
       }
     ],
     "DescribeDDoSAttackData": [
@@ -1936,6 +1976,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomErrorPage\n<公共请求参数>\n\n{\n    \"PageId\": \"p-2kplomhisdcb\",\n    \"ZoneId\": \"zone-2kplomhisdcb\",\n    \"Name\": \"web防护自定义响应页面\",\n    \"Description\": \"web防护自定义响应页面\",\n    \"ContentType\": \"application/json\",\n    \"Content\": \"{\\\"title\\\": \\\"自定义响应页面title\\\",\\\"content\\\": \\\"自定义响应页面内容\\\"}\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9bd9c732-8f9a-4cd3-a3e8-1c9db5e53631\"\n    }\n}",
         "title": "修改自定义响应页面"
+      }
+    ],
+    "ModifyCustomGroup": [
+      {
+        "document": "已有一个 TLS 指纹组，向其中追加一个 JA4 值。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3nw1o2owaf7p\",\n    \"GroupId\": \"273746923\",\n    \"GroupItemOperation\": \"Append\",\n    \"GroupItems\": [\n        {\n            \"Content\": \"t13d1812h2_e8a523a41297_ef7df7f74e48\",\n            \"ItemType\": \"JA4\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3296318f-6aad-461f-84de-85805697a75e\"\n    }\n}",
+        "title": "修改 TLS 指纹组内容"
       }
     ],
     "ModifyDDoSProtection": [

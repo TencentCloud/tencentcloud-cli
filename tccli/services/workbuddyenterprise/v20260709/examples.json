@@ -67,8 +67,8 @@
     "DeleteSessionArtifactList": [
       {
         "document": "删除会话产物，如果 SessionId 存在，则删除 SessionId 对应会话内的所有产物，如果 ArtifactIds 有元素，会批量删除指定 ArtifactId 对应的产物记录。",
-        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSessionArtifactList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1364edc5-1428-4e03-8ada-517b4133a990\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSessionArtifactList\n<公共请求参数>\n\n{\n    \"SessionId\": \"2115095472771747840\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DeletedCount\": 1,\n        \"RequestId\": \"1364edc5-1428-4e03-8ada-517b4133a990\"\n    }\n}",
         "title": "删除会话产物"
       }
     ],
@@ -208,17 +208,17 @@
     ],
     "DescribeSessionArtifactDownloadUrl": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactDownloadUrl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5a1eb38a-7991-49c1-9732-4f9e7577da3b\"\n    }\n}",
+        "document": "已知对应产物 ID， 需要下载到本地时使用。",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactDownloadUrl\n<公共请求参数>\n\n{\n    \"ArtifactId\": \"01a17de6-3743-7e3b-96fa-e4c7505b8b37\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrl\": \"https://managed-agent-store-1328944842.cos.accelerate.myqcloud.com/managed-agent/artifacts/2026-10/a9b52be44a69d675/3793806491318e7e/01a17de6-3743-7e3b-96fa-e4c7505b8b***********************************************************************************************************************************************************************%3B1793117663&q-key-time=1793114063%3B1793117663&q-header-list=host&q-url-param-list=response-content-disposition&q-signature=18f9219f47591acef678491bd344079883e5bf2d\",\n        \"ExpiredTime\": \"2026-10-27T16:14:23Z\",\n        \"FileName\": \"hello_world.py\",\n        \"FileSha256\": \"*2373fc9647ea86*d12792594f30b*7e**7cc*fd*014cc5ac748ba41b4*****8\",\n        \"FileSizeBytes\": 180,\n        \"RequestId\": \"5a1eb38a-7991-49c1-9732-4f9e7577da3b\"\n    }\n}",
         "title": "获取目标产物ID的下载地址"
       }
     ],
     "DescribeSessionArtifactList": [
       {
         "document": "查询指定会话（SessionID）产物列表，可从 Offset 开始筛选共计 Limit 个产物，并返回产物列表。",
-        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a4d3e20-a6f2-453d-b723-485a427caa51\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: workbuddyenterprise.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSessionArtifactList\n<公共请求参数>\n\n{\n    \"SessionId\": \"2115095472771747840\",\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ArtifactSet\": [],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4a4d3e20-a6f2-453d-b723-485a427caa51\"\n    }\n}",
         "title": "查询指定Session的产物列表"
       }
     ],

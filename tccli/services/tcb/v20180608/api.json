@@ -10040,6 +10040,34 @@
       ],
       "usage": "in"
     },
+    "EipOutConfig": {
+      "document": "同[EipOutConfig](https://document.capi.woa.com/document/product/583/17244#EipOutConfig)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否固定 EIP</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TRUE",
+          "member": "string",
+          "name": "EipFixed",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>EIP 列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"101.********\"]",
+          "member": "string",
+          "name": "Eips",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EmailProviderConfig": {
       "document": "邮箱登录配置",
       "members": [
@@ -10747,6 +10775,23 @@
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "EnvironmentOut": {
+      "document": "同[Environment](https://document.capi.woa.com/document/product/583/17244#Environment)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>环境变量数组</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Variable",
+          "name": "Variables",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11601,6 +11646,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>环境变量</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EnvironmentOut",
+          "name": "Environment",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>代码校验结果 (&quot;success&quot;/&quot;failed&quot;)</p>",
           "example": "success",
           "member": "string",
@@ -11622,7 +11677,7 @@
         {
           "disabled": false,
           "document": "<p>命名空间</p>",
-          "example": "cbf-wushan-d8gg2hg8mae294e31",
+          "example": "c**********d********ae294e31",
           "member": "string",
           "name": "Namespace",
           "output_required": false,
@@ -11661,6 +11716,26 @@
         },
         {
           "disabled": false,
+          "document": "<p>CLS 日志集 ID</p>",
+          "example": "b2**********8******b*************a**",
+          "member": "string",
+          "name": "ClsLogsetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>CLS Topic ID</p>",
+          "example": "122*****-**d***3**-9**4*****c****8e*",
+          "member": "string",
+          "name": "ClsTopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>函数 ID</p>",
           "example": "lam-0qxuqwmn",
           "member": "string",
@@ -11677,6 +11752,16 @@
           "name": "Tags",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>EIP 配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EipOutConfig",
+          "name": "EipConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -14884,6 +14969,15 @@
           "name": "DryRun",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例Cpu 核数</p><p>取值范围：[0.1, 1024]</p><p>单位：核数</p><p>当 CpuCores 和 Cpu 共存时，优先 CpuCores 生效</p>",
+          "example": "0.5",
+          "member": "float",
+          "name": "CpuCores",
+          "required": false,
+          "type": "float"
         }
       ],
       "type": "object"

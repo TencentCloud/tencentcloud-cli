@@ -11110,7 +11110,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "document": "<p>安全组名称，可任意命名，但不得超过60个字符。</p>",
           "example": "TestGroup",
           "member": "string",
           "name": "GroupName",
@@ -11119,7 +11119,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组备注，最多100个字符。",
+          "document": "<p>安全组备注，最多100个字符。</p>",
           "example": "test-group-desc",
           "member": "string",
           "name": "GroupDescription",
@@ -11128,7 +11128,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。",
+          "document": "<p>项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。</p>",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -11137,7 +11137,7 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>",
           "example": "无",
           "member": "Tag",
           "name": "Tags",
@@ -11152,7 +11152,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组对象。",
+          "document": "<p>安全组对象。</p>",
           "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
@@ -11174,7 +11174,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "document": "<p>安全组名称，可任意命名，但不得超过60个字符。</p>",
           "example": "demo",
           "member": "string",
           "name": "GroupName",
@@ -11183,7 +11183,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组备注，最多100个字符。",
+          "document": "<p>安全组备注，最多100个字符。</p>",
           "example": "demo",
           "member": "string",
           "name": "GroupDescription",
@@ -11192,7 +11192,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。",
+          "document": "<p>项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。</p>",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -11201,8 +11201,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组规则集合。",
-          "example": "{\"Version\": \"124\", \"Egress\": [], \"Ingress\": []}",
+          "document": "<p>安全组规则集合。</p>",
+          "example": "无",
           "member": "SecurityGroupPolicySet",
           "name": "SecurityGroupPolicySet",
           "required": false,
@@ -11210,8 +11210,8 @@
         },
         {
           "disabled": false,
-          "document": "指定绑定的标签列表，例如：[{\"Key\": \"city\", \"Value\": \"shanghai\"}]。",
-          "example": "[{\"Key\": \"env\", \"Value\": \"prod\"}]",
+          "document": "<p>指定绑定的标签列表，例如：[{&quot;Key&quot;: &quot;city&quot;, &quot;Value&quot;: &quot;shanghai&quot;}]。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -11225,7 +11225,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组对象。",
+          "document": "<p>安全组对象。</p>",
           "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
@@ -38279,7 +38279,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如：sg-ohuuioma。",
+          "document": "<p>安全组实例ID，例如：sg-ohuuioma。</p>",
           "example": "sg-05bb4upy",
           "member": "string",
           "name": "SecurityGroupId",
@@ -38290,7 +38290,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组名称，可任意命名，但不得超过60个字符。",
+          "document": "<p>安全组名称，可任意命名，但不得超过60个字符。</p>",
           "example": "TestGroup",
           "member": "string",
           "name": "SecurityGroupName",
@@ -38301,7 +38301,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组备注，最多100个字符。",
+          "document": "<p>安全组备注，最多100个字符。</p>",
           "example": "test-group-desc",
           "member": "string",
           "name": "SecurityGroupDesc",
@@ -38312,7 +38312,7 @@
         },
         {
           "disabled": false,
-          "document": "项目id，默认0。可在qcloud控制台项目管理页面查询到。",
+          "document": "<p>项目id，默认0。可在qcloud控制台项目管理页面查询到。</p>",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -38323,7 +38323,7 @@
         },
         {
           "disabled": false,
-          "document": "是否是默认安全组，默认安全组不支持删除。",
+          "document": "<p>是否是默认安全组，默认安全组不支持删除。</p>",
           "example": "false",
           "member": "bool",
           "name": "IsDefault",
@@ -38334,7 +38334,7 @@
         },
         {
           "disabled": false,
-          "document": "安全组创建时间。",
+          "document": "<p>安全组创建时间。</p>",
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "CreatedTime",
@@ -38345,8 +38345,8 @@
         },
         {
           "disabled": false,
-          "document": "标签键值对。",
-          "example": "[{\"Key\": \"Version\", \"Value\": \"TEST\"}]",
+          "document": "<p>标签键值对。</p>",
+          "example": "无",
           "member": "Tag",
           "name": "TagSet",
           "output_required": true,
@@ -38356,13 +38356,24 @@
         },
         {
           "disabled": false,
-          "document": "安全组更新时间。",
+          "document": "<p>安全组更新时间。</p>",
           "example": "2017-04-18 21:02:30",
           "member": "string",
           "name": "UpdateTime",
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否为托管安全组</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ServiceManaged",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

@@ -2050,6 +2050,14 @@
         "title": "启动一个直播监播任务"
       }
     ],
+    "StartLiveSubtitle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLiveSubtitle\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "StopAvatarEditingLive": [
       {
         "document": "",
@@ -2104,6 +2112,14 @@
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopLiveStreamMonitor\n<公共请求参数>\n\n{\n    \"MonitorId\": \"1bd5af00-5be5-4e4d-aa75-340ba0f35586\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f0d37553-319f-407d-a998-2047d7e5cbb7\"\n    }\n}",
         "title": "停止直播流监播任务"
+      }
+    ],
+    "StopLiveSubtitle": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StopLiveSubtitle\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"5000.livepush.com\",\n    \"AppName\": \"live\",\n    \"StreamName\": \"stream1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "StopRecordTask": [

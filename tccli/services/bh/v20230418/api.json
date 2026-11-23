@@ -2567,7 +2567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启LDAP认证，必须为true",
+          "document": "<p>是否开启LDAP认证，必须为true</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -2576,7 +2576,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器地址",
+          "document": "<p>服务器地址</p>",
           "example": "10.10.10.1",
           "member": "string",
           "name": "Ip",
@@ -2585,7 +2585,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口",
+          "document": "<p>服务端口</p>",
           "example": "389",
           "member": "uint64",
           "name": "Port",
@@ -2594,7 +2594,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSL，false-不开启，true-开启",
+          "document": "<p>是否开启SSL，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSSL",
@@ -2603,7 +2603,7 @@
         },
         {
           "disabled": false,
-          "document": "Base DN",
+          "document": "<p>Base DN</p>",
           "example": "bh-test-DN",
           "member": "string",
           "name": "BaseDN",
@@ -2612,7 +2612,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员账号",
+          "document": "<p>管理员账号</p>",
           "example": "admin",
           "member": "string",
           "name": "AdminAccount",
@@ -2621,7 +2621,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员密码",
+          "document": "<p>管理员密码</p>",
           "example": "pwd",
           "member": "string",
           "name": "AdminPassword",
@@ -2630,7 +2630,7 @@
         },
         {
           "disabled": false,
-          "document": "备用服务器地址",
+          "document": "<p>备用服务器地址</p>",
           "example": "10.10.10.2",
           "member": "string",
           "name": "IpBackup",
@@ -2639,7 +2639,7 @@
         },
         {
           "disabled": false,
-          "document": "网络域id",
+          "document": "<p>网络域id</p>",
           "example": "net-default",
           "member": "string",
           "name": "DomainId",
@@ -2648,10 +2648,19 @@
         },
         {
           "disabled": false,
-          "document": "用户名称映射属性",
+          "document": "<p>用户名称映射属性</p>",
           "example": "cn",
           "member": "string",
           "name": "AttributeUserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>堡垒机实例ID</p>",
+          "example": "bh-saas-test1234",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }
@@ -4628,7 +4637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部门ID",
+          "document": "<p>部门ID</p>",
           "example": "\"1.2.3\"",
           "member": "string",
           "name": "Id",
@@ -4639,7 +4648,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称，1 - 256个字符",
+          "document": "<p>部门名称，1 - 256个字符</p>",
           "example": "\"研发部\"",
           "member": "string",
           "name": "Name",
@@ -4650,7 +4659,7 @@
         },
         {
           "disabled": false,
-          "document": "部门管理员账号ID",
+          "document": "<p>部门管理员账号ID</p>",
           "example": "[\"1000*****385\"]",
           "member": "string",
           "name": "Managers",
@@ -4661,8 +4670,8 @@
         },
         {
           "disabled": false,
-          "document": "管理员用户",
-          "example": "[{\"ManagerId\":\"1000*****385\", \"ManagerName\":\"carl\"}]",
+          "document": "<p>管理员用户</p>",
+          "example": "无",
           "member": "DepartmentManagerUser",
           "name": "ManagerUsers",
           "output_required": false,
@@ -6299,7 +6308,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启LDAP认证，true-开启",
+          "document": "<p>是否开启LDAP认证，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -6308,7 +6317,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器地址",
+          "document": "<p>服务器地址</p>",
           "example": "10.10.10.1",
           "member": "string",
           "name": "Ip",
@@ -6317,7 +6326,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口",
+          "document": "<p>服务端口</p>",
           "example": "389",
           "member": "uint64",
           "name": "Port",
@@ -6326,7 +6335,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSL，false-不开启，true-开启",
+          "document": "<p>是否开启SSL，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSSL",
@@ -6335,7 +6344,7 @@
         },
         {
           "disabled": false,
-          "document": "Base DN",
+          "document": "<p>Base DN</p>",
           "example": "bh-test-DN",
           "member": "string",
           "name": "BaseDN",
@@ -6344,7 +6353,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员账号",
+          "document": "<p>管理员账号</p>",
           "example": "admin",
           "member": "string",
           "name": "AdminAccount",
@@ -6353,7 +6362,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员密码",
+          "document": "<p>管理员密码</p>",
           "example": "pwd",
           "member": "string",
           "name": "AdminPassword",
@@ -6362,7 +6371,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名映射属性",
+          "document": "<p>用户名映射属性</p>",
           "example": "attr-user-name",
           "member": "string",
           "name": "AttributeUserName",
@@ -6371,7 +6380,7 @@
         },
         {
           "disabled": false,
-          "document": "部门过滤",
+          "document": "<p>部门过滤</p>",
           "example": "bh-attr-test",
           "member": "string",
           "name": "AttributeUnit",
@@ -6380,7 +6389,7 @@
         },
         {
           "disabled": false,
-          "document": "备用服务器地址",
+          "document": "<p>备用服务器地址</p>",
           "example": "10.10.10.2",
           "member": "string",
           "name": "IpBackup",
@@ -6389,10 +6398,19 @@
         },
         {
           "disabled": false,
-          "document": "网络域Id",
+          "document": "<p>网络域Id</p>",
           "example": "net-default",
           "member": "string",
           "name": "DomainId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>堡垒机实例ID</p>",
+          "example": "bh-saas-test1234",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }
@@ -6404,7 +6422,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "ou 列表",
+          "document": "<p>ou 列表</p>",
           "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "UnitSet",
@@ -8389,7 +8407,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "组ID",
+          "document": "<p>组ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -8400,7 +8418,7 @@
         },
         {
           "disabled": false,
-          "document": "组名称",
+          "document": "<p>组名称</p>",
           "example": "运维组",
           "member": "string",
           "name": "Name",
@@ -8411,8 +8429,8 @@
         },
         {
           "disabled": false,
-          "document": "所属部门信息",
-          "example": "{\"Id\":\"1.2\",\"Name\":\"运维部\"}",
+          "document": "<p>所属部门信息</p>",
+          "example": "无",
           "member": "Department",
           "name": "Department",
           "output_required": false,
@@ -8422,7 +8440,7 @@
         },
         {
           "disabled": false,
-          "document": "个数",
+          "document": "<p>个数</p>",
           "example": "10",
           "member": "uint64",
           "name": "Count",
@@ -8897,6 +8915,17 @@
           "example": "1",
           "member": "uint64",
           "name": "EnableSingleLogin",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>主机指纹校验开关</p><p>枚举值：</p><ul><li>0： 关闭</li><li>1： 开启</li></ul>",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableDeviceFingerprintVerify",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -9783,7 +9812,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启LDAP认证，false-不开启，true-开启",
+          "document": "<p>是否开启LDAP认证，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "Enable",
@@ -9792,7 +9821,7 @@
         },
         {
           "disabled": false,
-          "document": "服务器地址",
+          "document": "<p>服务器地址</p>",
           "example": "10.10.10.1",
           "member": "string",
           "name": "Ip",
@@ -9801,7 +9830,7 @@
         },
         {
           "disabled": false,
-          "document": "备用服务器地址",
+          "document": "<p>备用服务器地址</p>",
           "example": "10.10.10.2",
           "member": "string",
           "name": "IpBackup",
@@ -9810,7 +9839,7 @@
         },
         {
           "disabled": false,
-          "document": "服务端口",
+          "document": "<p>服务端口</p>",
           "example": "389",
           "member": "uint64",
           "name": "Port",
@@ -9819,7 +9848,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SSL，false-不开启，true-开启",
+          "document": "<p>是否开启SSL，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableSSL",
@@ -9828,7 +9857,7 @@
         },
         {
           "disabled": false,
-          "document": "Base DN",
+          "document": "<p>Base DN</p>",
           "example": "base-dn",
           "member": "string",
           "name": "BaseDN",
@@ -9837,7 +9866,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员账号",
+          "document": "<p>管理员账号</p>",
           "example": "admin",
           "member": "string",
           "name": "AdminAccount",
@@ -9846,7 +9875,7 @@
         },
         {
           "disabled": false,
-          "document": "管理员密码",
+          "document": "<p>管理员密码</p>",
           "example": "adminpwd",
           "member": "string",
           "name": "AdminPassword",
@@ -9855,7 +9884,7 @@
         },
         {
           "disabled": false,
-          "document": "用户属性",
+          "document": "<p>用户属性</p>",
           "example": "attr-user",
           "member": "string",
           "name": "AttributeUser",
@@ -9864,7 +9893,7 @@
         },
         {
           "disabled": false,
-          "document": "用户名属性",
+          "document": "<p>用户名属性</p>",
           "example": "attr-username",
           "member": "string",
           "name": "AttributeUserName",
@@ -9873,7 +9902,7 @@
         },
         {
           "disabled": false,
-          "document": "自动同步，false-不开启，true-开启",
+          "document": "<p>自动同步，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "AutoSync",
@@ -9882,7 +9911,7 @@
         },
         {
           "disabled": false,
-          "document": "覆盖用户信息，false-不开启，true-开启",
+          "document": "<p>覆盖用户信息，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "Overwrite",
@@ -9891,7 +9920,7 @@
         },
         {
           "disabled": false,
-          "document": "同步周期，30～60000之间的整数",
+          "document": "<p>同步周期，30～60000之间的整数</p>",
           "example": "30",
           "member": "uint64",
           "name": "SyncPeriod",
@@ -9900,7 +9929,7 @@
         },
         {
           "disabled": false,
-          "document": "是否同步全部，false-不开启，true-开启",
+          "document": "<p>是否同步全部，false-不开启，true-开启</p>",
           "example": "true",
           "member": "bool",
           "name": "SyncAll",
@@ -9909,7 +9938,7 @@
         },
         {
           "disabled": false,
-          "document": "同步OU列表，SyncAll为false时必传",
+          "document": "<p>同步OU列表，SyncAll为false时必传</p>",
           "example": "[\"ou=GGG,dc=my-domain,dc=com\"]",
           "member": "string",
           "name": "SyncUnitSet",
@@ -9918,7 +9947,7 @@
         },
         {
           "disabled": false,
-          "document": "组织单元属性",
+          "document": "<p>组织单元属性</p>",
           "example": "unit",
           "member": "string",
           "name": "AttributeUnit",
@@ -9927,7 +9956,7 @@
         },
         {
           "disabled": false,
-          "document": "用户姓名属性",
+          "document": "<p>用户姓名属性</p>",
           "example": "realname",
           "member": "string",
           "name": "AttributeRealName",
@@ -9936,7 +9965,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号属性",
+          "document": "<p>手机号属性</p>",
           "example": "phone",
           "member": "string",
           "name": "AttributePhone",
@@ -9945,7 +9974,7 @@
         },
         {
           "disabled": false,
-          "document": "邮箱属性",
+          "document": "<p>邮箱属性</p>",
           "example": "email",
           "member": "string",
           "name": "AttributeEmail",
@@ -9954,10 +9983,19 @@
         },
         {
           "disabled": false,
-          "document": "网络域Id",
+          "document": "<p>网络域Id</p>",
           "example": "net-default",
           "member": "string",
           "name": "DomainId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>堡垒机实例ID</p>",
+          "example": "bh-saas-testabcd",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }

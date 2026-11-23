@@ -6705,8 +6705,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件id",
-          "example": "configId",
+          "document": "<p>配置文件id</p>",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -6716,7 +6716,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件名称",
+          "document": "<p>配置文件名称</p>",
           "example": "application",
           "member": "string",
           "name": "Name",
@@ -6727,7 +6727,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件命名空间",
+          "document": "<p>配置文件命名空间</p>",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
@@ -6738,7 +6738,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件组",
+          "document": "<p>配置文件组</p>",
           "example": "groupName",
           "member": "string",
           "name": "Group",
@@ -6749,7 +6749,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件内容",
+          "document": "<p>配置文件内容</p>",
           "example": "configContent",
           "member": "string",
           "name": "Content",
@@ -6760,7 +6760,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件格式",
+          "document": "<p>配置文件格式</p>",
           "example": "text",
           "member": "string",
           "name": "Format",
@@ -6771,7 +6771,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件注释",
+          "document": "<p>配置文件注释</p>",
           "example": "Comment",
           "member": "string",
           "name": "Comment",
@@ -6782,7 +6782,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件状态",
+          "document": "<p>配置文件状态</p>",
           "example": "status",
           "member": "string",
           "name": "Status",
@@ -6793,8 +6793,8 @@
         },
         {
           "disabled": false,
-          "document": "配置文件标签数组",
-          "example": "[\"taga\",\"tagb\"]",
+          "document": "<p>配置文件标签数组</p>",
+          "example": "无",
           "member": "ConfigFileTag",
           "name": "Tags",
           "output_required": true,
@@ -6804,7 +6804,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件创建时间",
+          "document": "<p>配置文件创建时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
@@ -6815,7 +6815,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件创建者",
+          "document": "<p>配置文件创建者</p>",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
@@ -6826,7 +6826,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件修改时间",
+          "document": "<p>配置文件修改时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
@@ -6837,7 +6837,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件修改者",
+          "document": "<p>配置文件修改者</p>",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
@@ -6848,7 +6848,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布时间",
+          "document": "<p>配置文件发布时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ReleaseTime",
@@ -6859,7 +6859,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布者",
+          "document": "<p>配置文件发布者</p>",
           "example": "usera",
           "member": "string",
           "name": "ReleaseBy",
@@ -6870,8 +6870,8 @@
         },
         {
           "disabled": false,
-          "document": "配置文件类型",
-          "example": "client_sdk",
+          "document": "<p>配置文件类型</p>",
+          "example": "0",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -6881,7 +6881,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件持久化",
+          "document": "<p>配置文件持久化</p>",
           "example": "无",
           "member": "ConfigFilePersistent",
           "name": "ConfigFilePersistent",
@@ -6892,7 +6892,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启加密算法",
+          "document": "<p>是否开启加密算法</p>",
           "example": "true",
           "member": "bool",
           "name": "Encrypted",
@@ -6903,7 +6903,7 @@
         },
         {
           "disabled": false,
-          "document": "加密算法",
+          "document": "<p>加密算法</p>",
           "example": "AES",
           "member": "string",
           "name": "EncryptAlgo",
@@ -7585,7 +7585,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件发布历史记录id",
+          "document": "<p>配置文件发布历史记录id</p>",
           "example": "1",
           "member": "uint64",
           "name": "Id",
@@ -7595,7 +7595,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史名称",
+          "document": "<p>配置文件发布历史名称</p>",
           "example": "configName",
           "member": "string",
           "name": "Name",
@@ -7605,7 +7605,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史命名空间",
+          "document": "<p>配置文件发布历史命名空间</p>",
           "example": "namespaceName",
           "member": "string",
           "name": "Namespace",
@@ -7615,7 +7615,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史组",
+          "document": "<p>配置文件发布历史组</p>",
           "example": "provider-demo",
           "member": "string",
           "name": "Group",
@@ -7625,7 +7625,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史名称",
+          "document": "<p>配置文件发布历史名称</p>",
           "example": "application,yml",
           "member": "string",
           "name": "FileName",
@@ -7635,7 +7635,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史内容",
+          "document": "<p>配置文件发布历史内容</p>",
           "example": "hello",
           "member": "string",
           "name": "Content",
@@ -7645,7 +7645,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史格式",
+          "document": "<p>配置文件发布历史格式</p>",
           "example": "yaml",
           "member": "string",
           "name": "Format",
@@ -7655,7 +7655,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史注释",
+          "document": "<p>配置文件发布历史注释</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -7665,7 +7665,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史Md5",
+          "document": "<p>配置文件发布历史Md5</p>",
           "example": "md5hash",
           "member": "string",
           "name": "Md5",
@@ -7675,7 +7675,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史类型",
+          "document": "<p>配置文件发布历史类型</p>",
           "example": "config",
           "member": "string",
           "name": "Type",
@@ -7685,7 +7685,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史状态",
+          "document": "<p>配置文件发布历史状态</p>",
           "example": "status",
           "member": "string",
           "name": "Status",
@@ -7695,7 +7695,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史标签组",
+          "document": "<p>配置文件发布历史标签组</p>",
           "example": "无",
           "member": "ConfigFileTag",
           "name": "Tags",
@@ -7705,7 +7705,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建时间",
+          "document": "<p>配置文件发布创建时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "CreateTime",
@@ -7715,7 +7715,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布创建者",
+          "document": "<p>配置文件发布创建者</p>",
           "example": "usera",
           "member": "string",
           "name": "CreateBy",
@@ -7725,7 +7725,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改时间",
+          "document": "<p>配置文件发布修改时间</p>",
           "example": "2024-12-29 16:23:00",
           "member": "string",
           "name": "ModifyTime",
@@ -7735,7 +7735,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布修改者",
+          "document": "<p>配置文件发布修改者</p>",
           "example": "usera",
           "member": "string",
           "name": "ModifyBy",
@@ -7745,7 +7745,7 @@
         },
         {
           "disabled": false,
-          "document": "发布描述",
+          "document": "<p>发布描述</p>",
           "example": "desc",
           "member": "string",
           "name": "ReleaseDescription",
@@ -7755,7 +7755,7 @@
         },
         {
           "disabled": false,
-          "document": "原因，用于失败时原因展示",
+          "document": "<p>原因，用于失败时原因展示</p>",
           "example": "publish error",
           "member": "string",
           "name": "ReleaseReason",
@@ -7765,8 +7765,8 @@
         },
         {
           "disabled": false,
-          "document": "配置文件类型\n",
-          "example": "client_sdk",
+          "document": "<p>配置文件类型</p>",
+          "example": "0",
           "member": "int64",
           "name": "ConfigFileSupportedClient",
           "output_required": false,
@@ -7775,7 +7775,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件持久化",
+          "document": "<p>配置文件持久化</p>",
           "example": "无",
           "member": "ConfigFilePersistent",
           "name": "ConfigFilePersistent",
@@ -7819,8 +7819,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "配置文件模板id",
-          "example": "template-id",
+          "document": "<p>配置文件模板id</p>",
+          "example": "1",
           "member": "uint64",
           "name": "Id",
           "output_required": true,
@@ -7829,7 +7829,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板名称",
+          "document": "<p>配置文件模板名称</p>",
           "example": "name",
           "member": "string",
           "name": "Name",
@@ -7839,7 +7839,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板内容",
+          "document": "<p>配置文件模板内容</p>",
           "example": "content",
           "member": "string",
           "name": "Content",
@@ -7849,7 +7849,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板格式",
+          "document": "<p>配置文件模板格式</p>",
           "example": "yaml",
           "member": "string",
           "name": "Format",
@@ -7859,7 +7859,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板注释",
+          "document": "<p>配置文件模板注释</p>",
           "example": "comment",
           "member": "string",
           "name": "Comment",
@@ -7869,7 +7869,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板创建时间",
+          "document": "<p>配置文件模板创建时间</p>",
           "example": "2024-10-08 10:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -7879,7 +7879,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板创建者",
+          "document": "<p>配置文件模板创建者</p>",
           "example": "user",
           "member": "string",
           "name": "CreateBy",
@@ -7889,7 +7889,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板修改时间",
+          "document": "<p>配置文件模板修改时间</p>",
           "example": "2024-10-08 10:00:00",
           "member": "string",
           "name": "ModifyTime",
@@ -7899,7 +7899,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件模板修改者",
+          "document": "<p>配置文件模板修改者</p>",
           "example": "user",
           "member": "string",
           "name": "ModifyBy",
@@ -10392,7 +10392,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "tse实例id。",
+          "document": "<p>tse实例id。</p>",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
@@ -10401,7 +10401,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例信息。",
+          "document": "<p>服务实例信息。</p>",
           "example": "无",
           "member": "GovernanceInstanceInput",
           "name": "GovernanceInstances",
@@ -10416,7 +10416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建是否成功。",
+          "document": "<p>创建是否成功。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",
@@ -11944,7 +11944,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p>",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": true,
@@ -11954,7 +11954,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p>",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": true,
@@ -12042,7 +12042,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": false,
@@ -12053,7 +12053,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": false,
@@ -12147,7 +12147,7 @@
         {
           "disabled": false,
           "document": "<p>请求送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤；非空时按 KeywordMatchMode 满足条件才送审，不是本地违禁词阻断列表。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "RequestKeywords",
           "output_required": false,
@@ -12158,7 +12158,7 @@
         {
           "disabled": false,
           "document": "<p>响应送审触发关键词；最多 64 项，每项非空且最长 128 字符。默认 [] 不按关键词过滤。流式审核按增量审核单元执行筛选，不代表等待完整响应后统一判断。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"内部机密\"]",
           "member": "string",
           "name": "ResponseKeywords",
           "output_required": false,
@@ -12932,7 +12932,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p>",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": true,
@@ -13003,7 +13003,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": false,
@@ -13075,7 +13075,7 @@
         {
           "disabled": false,
           "document": "<p>允许额外写入送审包的原始 HTTP Header 名称，最多 64 项，每项最长 128 字节；名称不区分大小写，默认 []。内置保留 content-type、accept、mcp-protocol-version、a2a-version；Authorization、Cookie、API Key、MCP 会话标识和内部 Relay 等受限头不会因加入本列表而放行。审核服务自身的鉴权请使用 AuthConfig。</p><p>修改时省略本字段保留原值。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[]",
+          "example": "[\"X-Request-ID\",\"X-Trace-ID\"]",
           "member": "string",
           "name": "HeaderAllowList",
           "output_required": false,
@@ -17950,8 +17950,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "TSE实例id",
-          "example": "ins-df344df5\t",
+          "document": "<p>TSE实例id</p>",
+          "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -17959,7 +17959,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "<p>命名空间</p>",
           "example": "namespace",
           "member": "string",
           "name": "Namespace",
@@ -17968,7 +17968,7 @@
         },
         {
           "disabled": false,
-          "document": "组",
+          "document": "<p>组</p>",
           "example": "group",
           "member": "string",
           "name": "Group",
@@ -17977,7 +17977,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "<p>名称</p>",
           "example": "a.yaml",
           "member": "string",
           "name": "Name",
@@ -17986,8 +17986,8 @@
         },
         {
           "disabled": false,
-          "document": "发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续",
-          "example": "end-id",
+          "document": "<p>发布历史记录id，用于分页优化，一般指定 EndId，就不用指定 Offset，否则分页可能不连续</p>",
+          "example": "1",
           "member": "uint64",
           "name": "EndId",
           "required": false,
@@ -17995,7 +17995,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件ID",
+          "document": "<p>配置文件ID</p>",
           "example": "1",
           "member": "string",
           "name": "ConfigFileId",
@@ -18004,7 +18004,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。\t",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "50",
           "member": "uint64",
           "name": "Limit",
@@ -18013,7 +18013,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。\t",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -18028,7 +18028,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据总数量",
+          "document": "<p>数据总数量</p>",
           "example": "125",
           "member": "uint64",
           "name": "TotalCount",
@@ -18038,7 +18038,7 @@
         },
         {
           "disabled": false,
-          "document": "配置文件发布历史列表",
+          "document": "<p>配置文件发布历史列表</p>",
           "example": "无",
           "member": "ConfigFileReleaseHistory",
           "name": "ConfigFileReleaseHistories",
@@ -18754,7 +18754,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例所在的服务名。",
+          "document": "<p>实例所在的服务名。</p>",
           "example": "Producer",
           "member": "string",
           "name": "Service",
@@ -18763,7 +18763,7 @@
         },
         {
           "disabled": false,
-          "document": "实例所在命名空间名。",
+          "document": "<p>实例所在命名空间名。</p>",
           "example": "Development",
           "member": "string",
           "name": "Namespace",
@@ -18772,7 +18772,7 @@
         },
         {
           "disabled": false,
-          "document": "tse实例id。",
+          "document": "<p>tse实例id。</p>",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
@@ -18781,7 +18781,7 @@
         },
         {
           "disabled": false,
-          "document": "根据实例ip过滤，多个ip使用英文逗号分隔。",
+          "document": "<p>根据实例ip过滤，多个ip使用英文逗号分隔。</p>",
           "example": "192.168.1.1,10.10.10.1",
           "member": "string",
           "name": "Host",
@@ -18790,7 +18790,7 @@
         },
         {
           "disabled": false,
-          "document": "根据实例版本过滤。",
+          "document": "<p>根据实例版本过滤。</p>",
           "example": "v1",
           "member": "string",
           "name": "InstanceVersion",
@@ -18799,7 +18799,7 @@
         },
         {
           "disabled": false,
-          "document": "根据实例协议过滤。",
+          "document": "<p>根据实例协议过滤。</p>",
           "example": "grpc",
           "member": "string",
           "name": "Protocol",
@@ -18808,7 +18808,7 @@
         },
         {
           "disabled": false,
-          "document": "根据实例健康状态过滤。false：表示不健康，true：表示健康。",
+          "document": "<p>根据实例健康状态过滤。false：表示不健康，true：表示健康。</p>",
           "example": "true",
           "member": "bool",
           "name": "HealthStatus",
@@ -18817,8 +18817,8 @@
         },
         {
           "disabled": false,
-          "document": "根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。",
-          "example": "1",
+          "document": "<p>根据实例隔离状态过滤。false：表示非隔离，true：表示隔离中。</p>",
+          "example": "true",
           "member": "bool",
           "name": "Isolate",
           "required": false,
@@ -18826,7 +18826,7 @@
         },
         {
           "disabled": false,
-          "document": "根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。",
+          "document": "<p>根据元数据信息过滤。目前只支持一组元数据键值，若传了多个键值对，只会以第一个过滤。</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -18835,7 +18835,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0。",
+          "document": "<p>偏移量，默认为0。</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -18844,7 +18844,7 @@
         },
         {
           "disabled": false,
-          "document": "返回数量，默认为20，最大值为100。",
+          "document": "<p>返回数量，默认为20，最大值为100。</p>",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -18853,7 +18853,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "无",
           "member": "Location",
           "name": "Location",
@@ -18868,7 +18868,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务实例总数量。",
+          "document": "<p>服务实例总数量。</p>",
           "example": "15",
           "member": "uint64",
           "name": "TotalCount",
@@ -18878,7 +18878,7 @@
         },
         {
           "disabled": false,
-          "document": "服务里实例列表。",
+          "document": "<p>服务里实例列表。</p>",
           "example": "无",
           "member": "GovernanceInstance",
           "name": "Content",
@@ -18888,7 +18888,7 @@
         },
         {
           "disabled": false,
-          "document": "地域",
+          "document": "<p>地域</p>",
           "example": "无",
           "member": "Location",
           "name": "Location",
@@ -22387,7 +22387,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间名称。",
+          "document": "<p>命名空间名称。</p>",
           "example": "Development",
           "member": "string",
           "name": "Name",
@@ -22397,7 +22397,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间描述信息。",
+          "document": "<p>命名空间描述信息。</p>",
           "example": "开发环境",
           "member": "string",
           "name": "Comment",
@@ -22407,7 +22407,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2021-08-11 04:07:00",
           "member": "string",
           "name": "CreateTime",
@@ -22417,7 +22417,7 @@
         },
         {
           "disabled": false,
-          "document": "修改时间。",
+          "document": "<p>修改时间。</p>",
           "example": "2021-08-11 06:09:38",
           "member": "string",
           "name": "ModifyTime",
@@ -22427,7 +22427,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间下总服务数据量",
+          "document": "<p>命名空间下总服务数据量</p>",
           "example": "1000",
           "member": "int64",
           "name": "TotalServiceCount",
@@ -22437,7 +22437,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间下总健康实例数量",
+          "document": "<p>命名空间下总健康实例数量</p>",
           "example": "1000",
           "member": "int64",
           "name": "TotalHealthInstanceCount",
@@ -22447,7 +22447,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间下总实例数量",
+          "document": "<p>命名空间下总实例数量</p>",
           "example": "1000",
           "member": "int64",
           "name": "TotalInstanceCount",
@@ -22457,7 +22457,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间ID",
+          "document": "<p>命名空间ID</p>",
           "example": "1",
           "member": "string",
           "name": "Id",
@@ -22467,7 +22467,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可以编辑",
+          "document": "<p>是否可以编辑</p>",
           "example": "true",
           "member": "bool",
           "name": "Editable",
@@ -22477,7 +22477,7 @@
         },
         {
           "disabled": false,
-          "document": "可以操作此命名空间的用户ID列表",
+          "document": "<p>可以操作此命名空间的用户ID列表</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "UserIds",
@@ -22487,7 +22487,7 @@
         },
         {
           "disabled": false,
-          "document": "可以操作此命名空间的用户组ID列表",
+          "document": "<p>可以操作此命名空间的用户组ID列表</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "GroupIds",
@@ -22497,7 +22497,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以操作此命名空间的用户ID列表",
+          "document": "<p>移除可以操作此命名空间的用户ID列表</p>",
           "example": "[\"usera\"]",
           "member": "string",
           "name": "RemoveUserIds",
@@ -22507,7 +22507,7 @@
         },
         {
           "disabled": false,
-          "document": "移除可以操作此命名空间的用户组ID列表",
+          "document": "<p>移除可以操作此命名空间的用户组ID列表</p>",
           "example": "[\"group-1\"]",
           "member": "string",
           "name": "RemoveGroupIds",
@@ -22517,8 +22517,8 @@
         },
         {
           "disabled": false,
-          "document": "该命名空间下的服务对哪些命名空间可见",
-          "example": "[Namespace-1,Namespace-2]",
+          "document": "<p>该命名空间下的服务对哪些命名空间可见</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "ServiceExportTo",
           "output_required": false,
@@ -22527,7 +22527,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心\t",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
@@ -22537,7 +22537,7 @@
         },
         {
           "disabled": false,
-          "document": "元数据",
+          "document": "<p>元数据</p>",
           "example": "无",
           "member": "Metadata",
           "name": "Metadatas",
@@ -22553,7 +22553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "命名空间名。",
+          "document": "<p>命名空间名。</p>",
           "example": "Development",
           "member": "string",
           "name": "Name",
@@ -22562,7 +22562,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "开发环境",
           "member": "string",
           "name": "Comment",
@@ -22571,8 +22571,8 @@
         },
         {
           "disabled": false,
-          "document": "新增的可以操作此命名空间的用户ID列表",
-          "example": "[1,2,3,4]",
+          "document": "<p>新增的可以操作此命名空间的用户ID列表</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "UserIds",
           "required": false,
@@ -22580,8 +22580,8 @@
         },
         {
           "disabled": false,
-          "document": "新增的可以操作此命名空间的用户组ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>新增的可以操作此命名空间的用户组ID列表</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "GroupIds",
           "required": false,
@@ -22589,8 +22589,8 @@
         },
         {
           "disabled": false,
-          "document": "移除可以操作此命名空间的用户ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>移除可以操作此命名空间的用户ID列表</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "RemoveUserIds",
           "required": false,
@@ -22598,8 +22598,8 @@
         },
         {
           "disabled": false,
-          "document": "移除可以操作此命名空间的用户组ID列表",
-          "example": "[1,2,3]",
+          "document": "<p>移除可以操作此命名空间的用户组ID列表</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "RemoveGroupIds",
           "required": false,
@@ -22607,8 +22607,8 @@
         },
         {
           "disabled": false,
-          "document": "该命名空间下的服务对哪些命名空间下可见，\n1、为空或者不填写，表示仅当前命名空间可见\n2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）\n3、列表内容为部份命名空间名称，则只对这些命名空间下可见",
-          "example": "[Namespace-1, Namespace-2]",
+          "document": "<p>该命名空间下的服务对哪些命名空间下可见，<br>1、为空或者不填写，表示仅当前命名空间可见<br>2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）<br>3、列表内容为部份命名空间名称，则只对这些命名空间下可见</p>",
+          "example": "[\"Namespace-1\", \"Namespace-2\"]",
           "member": "string",
           "name": "ServiceExportTo",
           "required": false,
@@ -22616,7 +22616,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启同步到全局注册中心",
+          "document": "<p>是否开启同步到全局注册中心</p>",
           "example": "false",
           "member": "bool",
           "name": "SyncToGlobalRegistry",
@@ -27089,7 +27089,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "tse实例id。",
+          "document": "<p>tse实例id。</p>",
           "example": "ins-df344df5",
           "member": "string",
           "name": "InstanceId",
@@ -27098,7 +27098,7 @@
         },
         {
           "disabled": false,
-          "document": "服务实例信息。",
+          "document": "<p>服务实例信息。</p>",
           "example": "无",
           "member": "GovernanceInstanceUpdate",
           "name": "GovernanceInstances",
@@ -27113,7 +27113,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改是否成功。",
+          "document": "<p>修改是否成功。</p>",
           "example": "true",
           "member": "bool",
           "name": "Result",

@@ -7,15 +7,17 @@ Input:
 ```
 tccli bh DescribeLDAPUnitSet --cli-unfold-argument  \
     --Enable True \
-    --AdminPassword pwd \
-    --Ip 192.168.0.1 \
-    --BaseDN bh-base-dn \
-    --EnableSSL True \
-    --IpBackup  \
-    --AttributeUserName attr-user \
-    --AdminAccount admin \
-    --AttributeUnit attr-uint \
-    --Port 22
+    --Ip 192.168.***.** \
+    --Port 389 \
+    --EnableSSL False \
+    --BaseDN dc=my-domain,dc=com \
+    --AdminAccount cn=Manager,dc=my-domain,dc=com \
+    --AdminPassword ******** \
+    --AttributeUserName cn \
+    --AttributeUnit objectClass=organizationalUnit \
+    --IpBackup 192.168.**.** \
+    --DomainId net-6jvrhv6j \
+    --ResourceId bh-saas-icgwc5mj
 ```
 
 Output: 
@@ -23,9 +25,9 @@ Output:
 {
     "Response": {
         "UnitSet": [
-            "ou=GGG,dc=my-domain,dc=com"
+            "ou=TTTT,dc=my-domain,dc=com"
         ],
-        "RequestId": "c7c79e35-65b9-4c2a-beea-a038fdf8c082"
+        "RequestId": "7dabe376-93a2-42e1-8f37-6a7de78bb4cd"
     }
 }
 ```

@@ -18,12 +18,26 @@ Output:
         "AddTime": "2026-08-20 10:53:26",
         "AsyncRunEnable": "FALSE",
         "AvailableStatus": "Available",
+        "ClsLogsetId": "b2**********8******b*************a**",
+        "ClsTopicId": "122*****-**d***3**-9**4*****c****8e*",
         "CodeInfo": "",
         "CodeResult": "success",
         "CodeSize": 0,
         "Description": "Hello World",
+        "EipConfig": {
+            "EipFixed": "TRUE",
+            "Eips": []
+        },
+        "Environment": {
+            "Variables": [
+                {
+                    "Key": "AD",
+                    "Value": "BC"
+                }
+            ]
+        },
         "ErrNo": 0,
-        "FunctionId": "lam-bl4u8z57",
+        "FunctionId": "lam-0qxuqwmn",
         "FunctionName": "jackvylitest7",
         "FunctionVersion": "$LATEST",
         "Handler": "",
@@ -40,7 +54,7 @@ Output:
         "L5Enable": "FALSE",
         "MemorySize": 256,
         "ModTime": "2026-08-20 10:53:26",
-        "Namespace": "jackvyli-d1g5v7p5e7191af47",
+        "Namespace": "c**********d********ae294e31",
         "OnsEnable": "FALSE",
         "Qualifier": "$LATEST",
         "RequestId": "94070739-c916-496b-9e2a-3f93cf69fc9d",

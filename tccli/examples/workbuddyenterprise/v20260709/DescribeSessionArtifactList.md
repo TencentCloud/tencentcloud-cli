@@ -5,12 +5,17 @@
 Input: 
 
 ```
-tccli workbuddyenterprise DescribeSessionArtifactList --cli-unfold-argument ```
+tccli workbuddyenterprise DescribeSessionArtifactList --cli-unfold-argument  \
+    --SessionId 2115095472771747840 \
+    --Offset 1
+```
 
 Output: 
 ```
 {
     "Response": {
+        "ArtifactSet": [],
+        "TotalCount": 1,
         "RequestId": "4a4d3e20-a6f2-453d-b723-485a427caa51"
     }
 }

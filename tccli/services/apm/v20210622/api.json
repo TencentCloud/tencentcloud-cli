@@ -2572,6 +2572,16 @@
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际生效的关联记录 ID（存量 0 解析为默认关联）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "59",
+          "member": "int64",
+          "name": "AssociationId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3100,6 +3110,15 @@
           "name": "AppendResourceAttributes",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "归属的关联记录 ID，0 或不传表示跟随默认关联",
+          "example": "0",
+          "member": "int64",
+          "name": "AssociationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3762,6 +3781,15 @@
           "name": "InstanceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按有效关联过滤，0 或不传表示不过滤",
+          "example": "0",
+          "member": "int64",
+          "name": "AssociationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7066,6 +7094,15 @@
           "name": "AppendResourceAttributes",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "修改归属目标 ID，0 或不传表示不改变原归属",
+          "example": "0",
+          "member": "int64",
+          "name": "AssociationId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

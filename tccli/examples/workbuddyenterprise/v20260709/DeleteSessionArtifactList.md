@@ -5,12 +5,15 @@
 Input: 
 
 ```
-tccli workbuddyenterprise DeleteSessionArtifactList --cli-unfold-argument ```
+tccli workbuddyenterprise DeleteSessionArtifactList --cli-unfold-argument  \
+    --SessionId 2115095472771747840
+```
 
 Output: 
 ```
 {
     "Response": {
+        "DeletedCount": 1,
         "RequestId": "1364edc5-1428-4e03-8ada-517b4133a990"
     }
 }

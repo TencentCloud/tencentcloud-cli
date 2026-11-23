@@ -1,47 +1,4 @@
-**Example 1: 获取分类分级模板列表**
-
-
-
-Input: 
-
-```
-tccli dsgc DescribeDSPAComplianceGroups --cli-unfold-argument  \
-    --DspaId dspa-001 \
-    --Name task
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Items": [
-            {
-                "ComplianceGroupId": 1,
-                "Name": "通用规则集",
-                "Description": "通用规则集的描述",
-                "ComplianceGroupType": 0,
-                "ComplianceGroupRules": [
-                    {
-                        "RuleId": 0,
-                        "RuleName": "手机",
-                        "CategoryId": 0,
-                        "LevelId": 0,
-                        "CategoryName": "个人信息",
-                        "LevelRiskName": "敏感"
-                    }
-                ],
-                "LevelGroupId": 1,
-                "Disabled": true,
-                "IsAlias": true
-            }
-        ],
-        "TotalCount": 0,
-        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
-    }
-}
-```
-
-**Example 2: 主模板字段返回示例**
+**Example 1: 主模板字段返回示例**
 
 扩展主模板标志字段
 
@@ -120,6 +77,49 @@ Output:
         ],
         "RequestId": "232796e7-693f-43ca-a14c-134ad4a8b702",
         "TotalCount": 6
+    }
+}
+```
+
+**Example 2: 获取分类分级模板列表**
+
+
+
+Input: 
+
+```
+tccli dsgc DescribeDSPAComplianceGroups --cli-unfold-argument  \
+    --DspaId dspa-001 \
+    --Name task
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Items": [
+            {
+                "ComplianceGroupId": 1,
+                "Name": "通用规则集",
+                "Description": "通用规则集的描述",
+                "ComplianceGroupType": 0,
+                "ComplianceGroupRules": [
+                    {
+                        "RuleId": 0,
+                        "RuleName": "手机",
+                        "CategoryId": 0,
+                        "LevelId": 0,
+                        "CategoryName": "个人信息",
+                        "LevelRiskName": "敏感"
+                    }
+                ],
+                "LevelGroupId": 1,
+                "Disabled": true,
+                "IsAlias": true
+            }
+        ],
+        "TotalCount": 0,
+        "RequestId": "91c7a73v-e540-4780-8b8e-74e0b65b4f1a"
     }
 }
 ```
