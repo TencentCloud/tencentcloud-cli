@@ -10,6 +10,11 @@ pip install --pre tccli
 ```bash
 pip install --pre --upgrade tccli
 ```
+如果您需要从轻量版回退到标准版，请先卸载轻量版再重新安装标准版：
+```bash
+pip uninstall tccli
+pip install tccli
+```
 
 ## 标准版安装
 1. 安装 Python 环境和 Pip 工具，安装腾讯云命令行工具前请确保您的系统已经安装了 Python 环境和 Pip 工具。**注意python版本必须为2.7及以上版本**,更多内容请参考[python主页](https://www.python.org/)和[pip主页](https://pypi.org/project/pip/)。
