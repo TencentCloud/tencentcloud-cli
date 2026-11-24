@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli trtc DescribeFinanceCloudRoomUsage --cli-unfold-argument  \
-    --SdkAppId 1400017192 \
-    --StartTime 2026-11-13 10:00 \
-    --EndTime 2026-11-13 12:00
+    --SdkAppId 1500000000 \
+    --StartTime 2026-11-15 16:53 \
+    --EndTime 2026-11-16 16:13
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b35a6eb0-f3dd-4dad-9bf3-d2e42488eeac"
+        "Data": "RoomId,Duration\n123035,452\n123036,1128\nhli_036,120\n",
+        "RequestId": "570a54ce-2e76-4fef-ae9b-bf98a568c61e"
     }
 }
 ```

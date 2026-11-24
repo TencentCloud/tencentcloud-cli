@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tokenhub CreateEndpoint --cli-unfold-argument  \
-    --EndpointName test-endpoint \
+    --EndpointName GLM-4 Flash \
     --ModelId deepseek-v3.2 \
     --ChargeType FREE
 ```

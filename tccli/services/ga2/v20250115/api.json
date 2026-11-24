@@ -332,6 +332,17 @@
         },
         {
           "disabled": false,
+          "document": "<p>加速地域名称。</p>",
+          "example": "广州",
+          "member": "string",
+          "name": "AccelerateRegionName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>带宽。</p>",
           "example": "10",
           "member": "uint64",

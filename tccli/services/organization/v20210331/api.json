@@ -4824,7 +4824,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "国际站：en，国内站：zh",
+          "document": "<p>国际站：en，国内站：zh</p>",
           "example": "en",
           "member": "string",
           "name": "Lang",
@@ -4833,7 +4833,7 @@
         },
         {
           "disabled": false,
-          "document": "可信服务产品简称。查询是否该可信服务管理员时必须指定",
+          "document": "<p>可信服务产品简称。查询是否该可信服务管理员时必须指定</p>",
           "example": "config",
           "member": "string",
           "name": "Product",
@@ -4848,7 +4848,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业组织ID。",
+          "document": "<p>企业组织ID。</p>",
           "example": "101",
           "member": "int64",
           "name": "OrgId",
@@ -4858,7 +4858,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者UIN。",
+          "document": "<p>创建者UIN。</p>",
           "example": "10001",
           "member": "int64",
           "name": "HostUin",
@@ -4868,7 +4868,7 @@
         },
         {
           "disabled": false,
-          "document": "创建者昵称。",
+          "document": "<p>创建者昵称。</p>",
           "example": "host_name",
           "member": "string",
           "name": "NickName",
@@ -4878,7 +4878,7 @@
         },
         {
           "disabled": false,
-          "document": "企业组织类型。",
+          "document": "<p>企业组织类型。</p>",
           "example": "1",
           "member": "int64",
           "name": "OrgType",
@@ -4888,7 +4888,7 @@
         },
         {
           "disabled": false,
-          "document": "是否组织管理员。是：true ，否：false",
+          "document": "<p>是否组织管理员。是：true ，否：false</p>",
           "example": "true",
           "member": "bool",
           "name": "IsManager",
@@ -4898,7 +4898,7 @@
         },
         {
           "disabled": false,
-          "document": "策略类型。财务管理：Financial",
+          "document": "<p>策略类型。财务管理：Financial</p>",
           "example": "Financial",
           "member": "string",
           "name": "OrgPolicyType",
@@ -4908,7 +4908,7 @@
         },
         {
           "disabled": false,
-          "document": "策略名。",
+          "document": "<p>策略名。</p>",
           "example": "财务策略",
           "member": "string",
           "name": "OrgPolicyName",
@@ -4918,8 +4918,8 @@
         },
         {
           "disabled": false,
-          "document": "成员财务权限列表。",
-          "example": "[{\"Id\":1,\"Name\":\"viewBill\"},{\"Id\":2,\"Name\":\"viewBalance\"}]",
+          "document": "<p>成员财务权限列表。</p>",
+          "example": "无",
           "member": "OrgPermission",
           "name": "OrgPermission",
           "output_required": true,
@@ -4928,7 +4928,7 @@
         },
         {
           "disabled": false,
-          "document": "组织根节点ID。",
+          "document": "<p>组织根节点ID。</p>",
           "example": "100",
           "member": "int64",
           "name": "RootNodeId",
@@ -4938,7 +4938,7 @@
         },
         {
           "disabled": false,
-          "document": "组织创建时间。",
+          "document": "<p>组织创建时间。</p>",
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "CreateTime",
@@ -4948,7 +4948,7 @@
         },
         {
           "disabled": false,
-          "document": "成员加入时间。",
+          "document": "<p>成员加入时间。</p>",
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "JoinTime",
@@ -4958,7 +4958,7 @@
         },
         {
           "disabled": false,
-          "document": "成员是否允许退出。允许：Allow，不允许：Denied",
+          "document": "<p>成员是否允许退出。允许：Allow，不允许：Denied</p>",
           "example": "Allow",
           "member": "string",
           "name": "IsAllowQuit",
@@ -4968,7 +4968,7 @@
         },
         {
           "disabled": false,
-          "document": "代付者Uin。",
+          "document": "<p>代付者Uin。</p>",
           "example": "\"100000000001\"",
           "member": "string",
           "name": "PayUin",
@@ -4978,7 +4978,7 @@
         },
         {
           "disabled": false,
-          "document": "代付者名称。",
+          "document": "<p>代付者名称。</p>",
           "example": "\"host_name\"",
           "member": "string",
           "name": "PayName",
@@ -4988,7 +4988,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可信服务管理员。是：true，否：false",
+          "document": "<p>是否可信服务管理员。是：true，否：false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAssignManager",
@@ -4998,12 +4998,32 @@
         },
         {
           "disabled": false,
-          "document": "是否实名主体管理员。是：true，否：false",
+          "document": "<p>是否实名主体管理员。是：true，否：false</p>",
           "example": "false",
           "member": "bool",
           "name": "IsAuthManager",
           "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建/邀请成员时可设置的财务权限列表</p>",
+          "example": "无",
+          "member": "MemberPermissionOption",
+          "name": "MemberPermissionOptions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建/邀请成员时的默认付费方式。</p><p>枚举值：</p><ul><li>SelfPay： 自付</li><li>BehalfPay： 代付</li></ul>",
+          "example": "SelfPay",
+          "member": "string",
+          "name": "DefaultPayType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9373,6 +9393,67 @@
         }
       ],
       "usage": "out"
+    },
+    "MemberPermissionOption": {
+      "document": "创建/邀请成员时可设置的财务权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>权限 ID</p>",
+          "example": "6",
+          "member": "uint64",
+          "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限名</p>",
+          "example": "View Bills",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>展示状态</p><p>枚举值：</p><ul><li>FIXED： 已勾选且置灰，不可修改</li><li>OPTIONAL： 正常可选</li><li>DISABLE： 置灰不可选，悬浮展示原因</li></ul><p>默认值：OPTIONAL</p>",
+          "example": "DISABLE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否默认勾选</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "DefaultChecked",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>置灰原因码</p><p>枚举值：</p><ul><li>TransferNotAllowAdd： 资金划拨权限未命中白名单</li><li>CreditAmountsNotAllowAdd： 信用额度设置权限未命中白名单</li><li>AddDiscountInheritNotAllow： 校验不通过或异常</li></ul>",
+          "example": "TransferNotAllowAdd",
+          "member": "string",
+          "name": "DisabledCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "MoveOrganizationNodeMembersRequest": {
       "document": "MoveOrganizationNodeMembers请求参数结构体",

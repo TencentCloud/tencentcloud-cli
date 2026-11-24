@@ -2830,10 +2830,10 @@
       "members": [
         {
           "disabled": false,
-          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
-          "example": "second、minute、hour、day、month、year",
+          "document": "全局配置ID",
+          "example": "aa2090e1-0117-404f-b73f-69b662b6834f",
           "member": "string",
-          "name": "Unit",
+          "name": "GlobalConfigId",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -2841,10 +2841,10 @@
         },
         {
           "disabled": false,
-          "document": "全局配置ID",
-          "example": "aa2090e1-0117-404f-b73f-69b662b6834f",
+          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
+          "example": "second、minute、hour、day、month、year",
           "member": "string",
-          "name": "GlobalConfigId",
+          "name": "Unit",
           "output_required": true,
           "required": true,
           "type": "string",
@@ -17238,6 +17238,15 @@
         },
         {
           "disabled": false,
+          "document": "<p>按服务 ID 查询路由。</p>",
+          "example": "55caa77b-7d90-4e2c-b6e0-6ed4026920eb",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>服务的名字，精确匹配</p>",
           "example": "test-service",
           "member": "string",
@@ -24374,8 +24383,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "",
-          "example": "",
+          "document": "<p>服务及路由列表</p>",
+          "example": "无",
           "member": "KongServiceRoute",
           "name": "ServiceList",
           "output_required": true,
@@ -24384,8 +24393,8 @@
         },
         {
           "disabled": false,
-          "document": "总数",
-          "example": "",
+          "document": "<p>总数</p>",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -24976,8 +24985,19 @@
       "members": [
         {
           "disabled": false,
+          "document": "精确限流阈值",
+          "example": "无",
+          "member": "AccurateQpsThreshold",
+          "name": "AccurateQpsThresholds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "请求匹配条件",
-          "example": "{\"Key\":\"ip\",\"Values\":[\"8.8.8.8/24\"]}",
+          "example": "无",
           "member": "RuleFilter",
           "name": "Filters",
           "output_required": false,
@@ -24988,7 +25008,7 @@
         {
           "disabled": false,
           "document": "参数限流依据组合",
-          "example": "[{\"Key\":\"ip\",\"Value\":\"\"},{\"Key\":\"header\",\"Value\":\"host\"}]",
+          "example": "无",
           "member": "KeyValue",
           "name": "LimitBy",
           "output_required": false,
@@ -24999,7 +25019,7 @@
         {
           "disabled": false,
           "document": "限流阈值",
-          "example": "[{\"Unit\":\"second\",\"Max\":10000}]",
+          "example": "无",
           "member": "QpsThreshold",
           "name": "QpsThresholds",
           "output_required": false,
@@ -25009,13 +25029,13 @@
         },
         {
           "disabled": false,
-          "document": "精确限流阈值",
-          "example": "无",
-          "member": "AccurateQpsThreshold",
-          "name": "AccurateQpsThresholds",
+          "document": "是否启用该条参数限流规则。不传或 true 表示启用；false 表示禁用，配置保留但不对流量生效。与 LimitDetail.Enabled（整个限流插件开关）相互独立。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
           "output_required": false,
           "required": false,
-          "type": "list",
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -28257,22 +28277,24 @@
       "members": [
         {
           "disabled": false,
-          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
-          "example": "second、minute、hour、day、month、year",
-          "member": "string",
-          "name": "Unit",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "阈值",
           "example": "10",
           "member": "int64",
           "name": "Max",
+          "output_required": true,
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "qps阈值控制维度,包含:second、minute、hour、day、month、year",
+          "example": "second、minute、hour、day、month、year",
+          "member": "string",
+          "name": "Unit",
+          "output_required": true,
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -28740,13 +28762,13 @@
         },
         {
           "disabled": false,
-          "document": "限流条件的Values",
-          "example": "8.8.8.8/24",
+          "document": "header或query对应的name",
+          "example": "Auth",
           "member": "string",
-          "name": "Values",
+          "name": "Name",
           "output_required": false,
           "required": false,
-          "type": "list",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -28762,13 +28784,13 @@
         },
         {
           "disabled": false,
-          "document": "header或query对应的name",
-          "example": "Auth",
+          "document": "限流条件的Values",
+          "example": "[\"8.8.8.8/24\"]",
           "member": "string",
-          "name": "Name",
+          "name": "Values",
           "output_required": false,
           "required": false,
-          "type": "string",
+          "type": "list",
           "value_allowed_null": false
         }
       ],

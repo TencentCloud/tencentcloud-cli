@@ -654,6 +654,14 @@
         "title": "测试"
       }
     ],
+    "ModifyTrainingTaskSchedulingPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTrainingTaskSchedulingPolicy\n<公共请求参数>\n\n{\n    \"TrainingTaskId\": \"train-1440591021184975616\",\n    \"CrossResourceGroupScheduling\": false,\n    \"SchedulePolicy\": {\n        \"PriorityClass\": \"p0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78f4f261-dde6-4cee-8747-fe66c165b3e3\"\n    }\n}",
+        "title": "修改训练任务调度策略"
+      }
+    ],
     "ModifyUserGrant": [
       {
         "document": "",

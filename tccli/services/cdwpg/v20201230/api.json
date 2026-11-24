@@ -1340,6 +1340,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>",
+          "example": "无",
+          "member": "InstanceStateItem",
+          "name": "InstanceStates",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>当前步骤的名称，例如：”购买资源中“</p>",
           "example": "create",
           "member": "string",
@@ -1350,12 +1360,12 @@
         },
         {
           "disabled": false,
-          "document": "<p>批量实例状态列表（InstanceIds 入参时返回，每项含 InstanceId 与状态字段）</p>",
-          "example": "无",
-          "member": "InstanceStateItem",
-          "name": "InstanceStates",
-          "output_required": false,
-          "type": "list",
+          "document": "<p>恢复状态，仅用于前端交互判断（不用于展示）。TableRecovering=表级恢复进行中；ClusterRecovering=集群恢复进行中（CBS 快照恢复/旧回档，不区分）；空字符串=无恢复进行中。批量请求时以 InstanceStates 内各项为准</p>",
+          "example": "",
+          "member": "string",
+          "name": "RecoveryState",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -2930,6 +2940,66 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>集群备份任务开启状态2</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupOpenStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群备份任务开启状态</p>",
+          "example": "0",
+          "member": "int64",
+          "name": "BackupStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作创建时间</p>",
+          "example": "2026-09-17 14:20:54",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群流程错误信息</p>",
+          "example": "快照数据恢复失败: not finished within 24h0m0s, previous status: mounting",
+          "member": "string",
+          "name": "FlowMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作名称</p>",
+          "example": "回档创建",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>集群操作进度</p>",
+          "example": "0",
+          "member": "float",
+          "name": "FlowProgress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>集群实例名称</p>",
           "example": "cdwpg-cdsxxxx",
           "member": "string",
@@ -2960,70 +3030,20 @@
         },
         {
           "disabled": false,
-          "document": "<p>集群备份任务开启状态</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "BackupStatus",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群备份任务开启状态2</p>",
-          "example": "0",
-          "member": "int64",
-          "name": "BackupOpenStatus",
-          "output_required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群操作创建时间</p>",
-          "example": "2026-09-17 14:20:54",
-          "member": "string",
-          "name": "FlowCreateTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群操作名称</p>",
-          "example": "回档创建",
-          "member": "string",
-          "name": "FlowName",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群操作进度</p>",
-          "example": "0",
-          "member": "float",
-          "name": "FlowProgress",
-          "output_required": true,
-          "type": "float",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "<p>集群流程错误信息</p>",
-          "example": "快照数据恢复失败: not finished within 24h0m0s, previous status: mounting",
-          "member": "string",
-          "name": "FlowMsg",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "<p>当前步骤的名称</p>",
           "example": "销毁",
           "member": "string",
           "name": "ProcessName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>恢复状态，仅用于前端交互判断（不用于展示）。TableRecovering=表级恢复进行中；ClusterRecovering=集群恢复进行中（CBS 快照恢复/旧回档，不区分）；空字符串=无恢复进行中</p>",
+          "example": "TableRecovering",
+          "member": "string",
+          "name": "RecoveryState",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

@@ -22,6 +22,7 @@ Output:
         "InstanceState": "Serving",
         "InstanceStateDesc": "运行中",
         "ProcessName": "",
+        "RecoveryState": "",
         "RequestId": "07fc03a7-0e42-4a21-b10d-ed0ceda4ab27"
     }
 }

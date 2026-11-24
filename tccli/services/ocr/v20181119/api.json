@@ -16042,11 +16042,11 @@
       "type": "object"
     },
     "ReconstructDocumentFailedPage": {
-      "document": "解析失败的页数",
+      "document": "解析失败的页码",
       "members": [
         {
           "disabled": false,
-          "document": "<p>解析失败页数。</p>",
+          "document": "<p>解析失败页码。</p>",
           "example": "44",
           "member": "int64",
           "name": "PageNumber",

@@ -98,6 +98,20 @@
       "output": "CreatePluginResponse",
       "status": "online"
     },
+    "CreatePromptTemplate": {
+      "document": "创建提示词模板",
+      "input": "CreatePromptTemplateRequest",
+      "name": "创建提示词模板",
+      "output": "CreatePromptTemplateResponse",
+      "status": "online"
+    },
+    "CreatePromptTemplateLabel": {
+      "document": "创建提示词模板标签",
+      "input": "CreatePromptTemplateLabelRequest",
+      "name": "创建提示词模板标签",
+      "output": "CreatePromptTemplateLabelResponse",
+      "status": "online"
+    },
     "CreateQAGenerationTask": {
       "document": "创建 QA 生成任务",
       "input": "CreateQAGenerationTaskRequest",
@@ -257,6 +271,20 @@
       "input": "DeletePluginRequest",
       "name": "删除插件",
       "output": "DeletePluginResponse",
+      "status": "online"
+    },
+    "DeletePromptTemplate": {
+      "document": "删除提示词模板",
+      "input": "DeletePromptTemplateRequest",
+      "name": "删除提示词模板",
+      "output": "DeletePromptTemplateResponse",
+      "status": "online"
+    },
+    "DeletePromptTemplateLabel": {
+      "document": "删除提示词模板标签",
+      "input": "DeletePromptTemplateLabelRequest",
+      "name": "删除提示词模板标签",
+      "output": "DeletePromptTemplateLabelResponse",
       "status": "online"
     },
     "DeleteQAList": {
@@ -560,6 +588,34 @@
       "output": "DescribePluginSummaryListResponse",
       "status": "online"
     },
+    "DescribePromptTemplate": {
+      "document": "查询提示词模板详情",
+      "input": "DescribePromptTemplateRequest",
+      "name": "查询提示词模板详情",
+      "output": "DescribePromptTemplateResponse",
+      "status": "online"
+    },
+    "DescribePromptTemplateCategoryList": {
+      "document": "查询提示词模板分类列表",
+      "input": "DescribePromptTemplateCategoryListRequest",
+      "name": "查询提示词模板分类列表",
+      "output": "DescribePromptTemplateCategoryListResponse",
+      "status": "online"
+    },
+    "DescribePromptTemplateLabelList": {
+      "document": "查询提示词模板标签列表",
+      "input": "DescribePromptTemplateLabelListRequest",
+      "name": "查询提示词模板标签列表",
+      "output": "DescribePromptTemplateLabelListResponse",
+      "status": "online"
+    },
+    "DescribePromptTemplateSummaryList": {
+      "document": "查询提示词模板摘要列表",
+      "input": "DescribePromptTemplateSummaryListRequest",
+      "name": "查询提示词模板摘要列表",
+      "output": "DescribePromptTemplateSummaryListResponse",
+      "status": "online"
+    },
     "DescribeQA": {
       "document": "查询 QA 详情",
       "input": "DescribeQARequest",
@@ -693,6 +749,13 @@
       "output": "FavoritePluginResponse",
       "status": "online"
     },
+    "FavoritePromptTemplate": {
+      "document": "收藏提示词模板",
+      "input": "FavoritePromptTemplateRequest",
+      "name": "收藏提示词模板",
+      "output": "FavoritePromptTemplateResponse",
+      "status": "online"
+    },
     "FavoriteSkill": {
       "document": "收藏skill",
       "input": "FavoriteSkillRequest",
@@ -803,6 +866,13 @@
       "input": "ModifyPluginRequest",
       "name": "修改插件",
       "output": "ModifyPluginResponse",
+      "status": "online"
+    },
+    "ModifyPromptTemplate": {
+      "document": "修改提示词模板",
+      "input": "ModifyPromptTemplateRequest",
+      "name": "修改提示词模板",
+      "output": "ModifyPromptTemplateResponse",
       "status": "online"
     },
     "ModifyQA": {
@@ -936,6 +1006,13 @@
       "input": "UnfavoritePluginRequest",
       "name": "取消收藏插件",
       "output": "UnfavoritePluginResponse",
+      "status": "online"
+    },
+    "UnfavoritePromptTemplate": {
+      "document": "取消收藏提示词模板",
+      "input": "UnfavoritePromptTemplateRequest",
+      "name": "取消收藏提示词模板",
+      "output": "UnfavoritePromptTemplateResponse",
       "status": "online"
     },
     "UnfavoriteSkill": {
@@ -3723,7 +3800,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "AI一键优化模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>AI一键优化模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AIOptimizeModel",
           "name": "AiOptimizeModel",
@@ -3734,7 +3811,7 @@
         },
         {
           "disabled": false,
-          "document": "实时文件解析模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>实时文件解析模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FileParseModel",
           "name": "FileParseModel",
@@ -3745,7 +3822,7 @@
         },
         {
           "disabled": false,
-          "document": "生成模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>生成模型配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "GenerateModel",
           "name": "GenerateModel",
@@ -3756,7 +3833,7 @@
         },
         {
           "disabled": false,
-          "document": "多模态问答模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多模态问答模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiModalQAModel",
           "name": "MultiModalQaModel",
@@ -3767,7 +3844,7 @@
         },
         {
           "disabled": false,
-          "document": "多模态理解模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>多模态理解模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiModalUnderstandingModel",
           "name": "MultiModalUnderstandingModel",
@@ -3778,7 +3855,7 @@
         },
         {
           "disabled": false,
-          "document": "Prompt改写模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>Prompt改写模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PromptRewriteModel",
           "name": "PromptRewriteModel",
@@ -3789,12 +3866,34 @@
         },
         {
           "disabled": false,
-          "document": "思考模型配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>思考模型配置</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ThinkModel",
           "name": "ThinkModel",
           "output_required": false,
           "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>实时文档切分模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FileSplitModel",
+          "name": "FileSplitModel",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表头拆分模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HeaderExtractModel",
+          "name": "HeaderExtractModel",
+          "output_required": false,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4235,8 +4334,19 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>Agent ID，scope=USER 时可选。</p>",
+          "example": "00bd6a05-b461-41cd-9681-1f8252a9d0ee",
+          "member": "string",
+          "name": "AgentId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>应用ID</p>",
-          "example": "2078002407236474624",
+          "example": "2082358347602495552",
           "member": "string",
           "name": "AppId",
           "output_required": false,
@@ -4291,7 +4401,7 @@
         {
           "disabled": false,
           "document": "<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>APP_TRIGGER_SCOPE_UNSPECIFIED</td><td>0</td><td>未指定</td></tr><tr><td>APP_TRIGGER_SCOPE_APP</td><td>1</td><td>B 端管理员</td></tr><tr><td>APP_TRIGGER_SCOPE_USER</td><td>2</td><td>C 端访客</td></tr></tbody></table>",
-          "example": "2",
+          "example": "1",
           "member": "int64",
           "name": "Scope",
           "output_required": false,
@@ -4313,7 +4423,7 @@
         {
           "disabled": false,
           "document": "<p>成功次数</p>",
-          "example": "0",
+          "example": "1",
           "member": "string",
           "name": "SuccessCount",
           "output_required": false,
@@ -4335,7 +4445,7 @@
         {
           "disabled": false,
           "document": "<p>触发器ID</p>",
-          "example": "b62b21d9-dff1-4841-b357-304ca4d7edfe",
+          "example": "ef3a05ea-f3d2-4881-8183-32689b9fa28a",
           "member": "string",
           "name": "TriggerId",
           "output_required": false,
@@ -4346,7 +4456,7 @@
         {
           "disabled": false,
           "document": "<p>触发器名称</p>",
-          "example": "C端测试(已修改)",
+          "example": "测试工作流",
           "member": "string",
           "name": "TriggerName",
           "output_required": false,
@@ -4385,6 +4495,56 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppTriggerGongfengWebhookConfig": {
+      "document": "工蜂 Webhook 来源配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监听的工蜂事件标识，原值传递，1 至 20 个，如 push、merge_request。",
+          "example": "[\"push\"]",
+          "member": "string",
+          "name": "EventList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工蜂项目 ID 或项目路径，不能为空。",
+          "example": "group/project",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分支规则列表，最多 20 个；空表示全部分支。",
+          "example": "[\"main\"]",
+          "member": "string",
+          "name": "BranchRuleList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合并请求动作标识，最多 20 个；监听 merge_request 时必填，如 open、merge。",
+          "example": "[\"merge\"]",
+          "member": "string",
+          "name": "MRActionList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5139,6 +5299,45 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。",
+          "example": "1",
+          "member": "int64",
+          "name": "WebhookProvider",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppTriggerTAPDWebhookConfig": {
+      "document": "TAPD Webhook 来源配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监听的 TAPD 事件标识，原值传递，1 至 20 个，如 story::create、bug::update。",
+          "example": "[\"story::create\"]",
+          "member": "string",
+          "name": "EventList",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TAPD 项目 ID，不能为空。",
+          "example": "123******",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -5159,6 +5358,17 @@
         },
         {
           "disabled": false,
+          "document": "Webhook 来源扩展配置。通用 Webhook 不传；工蜂/TAPD 传对应配置及 OAuth 凭证，GongfengConfig 与 TAPDConfig 互斥且须与 WebhookProvider 一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AppTriggerWebhookConfigExt",
+          "name": "WebhookConfigExt",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "<p>webhook的key</p>",
           "example": "9fb9a978-6bf5-48d0-a5b3-69ca8e033412",
           "member": "string",
@@ -5166,6 +5376,17 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Webhook 来源。0：未指定，兼容通用 Webhook；1：工蜂；2：TAPD。",
+          "example": "1",
+          "member": "int64",
+          "name": "WebhookProvider",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5188,6 +5409,95 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppTriggerWebhookConfigExt": {
+      "document": "Webhook 来源扩展配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问外部平台的 OAuth 凭证 ID，不能为空。",
+          "example": "credential-example",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>绑定凭证的只读摘要；创建和修改时忽略</p>",
+          "example": "无",
+          "member": "AppTriggerWebhookCredential",
+          "name": "Credential",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工蜂配置，仅 WebhookProvider=1 时使用，与 TAPDConfig 互斥。",
+          "example": "无",
+          "member": "AppTriggerGongfengWebhookConfig",
+          "name": "GongfengConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TAPD 配置，仅 WebhookProvider=2 时使用，与 GongfengConfig 互斥。",
+          "example": "无",
+          "member": "AppTriggerTAPDWebhookConfig",
+          "name": "TAPDConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AppTriggerWebhookCredential": {
+      "document": "<p>触发器绑定凭证的摘要，不包含授权密钥</p>",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>凭证ID</p>",
+          "example": "credential-example",
+          "member": "string",
+          "name": "CredentialId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>凭证名称；凭证不存在时为空</p>",
+          "example": "webhook-credential",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>授权状态；0：未指定，凭证不存在或状态未知；1：未授权；2：已授权；3：已失效</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5428,6 +5738,78 @@
           "output_required": false,
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Audit": {
+      "document": "通用审计信息（创建/修改人 + 时间）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1710000000",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>创建人姓名</p>",
+          "example": "系统管理员",
+          "member": "string",
+          "name": "CreatorName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改人</p>",
+          "example": "admin",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最近修改人姓名</p>",
+          "example": "系统管理员",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>更新时间</p>",
+          "example": "1710000000",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -9224,6 +9606,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<p>Agent ID，scope=USER 时可选。</p>",
+          "example": "00bd6a05-b461-41cd-9681-1f8252a9d0ee",
+          "member": "string",
+          "name": "AgentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "<p>应用ID</p>",
           "example": "20754157***********",
           "member": "string",
@@ -9804,6 +10195,89 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePromptTemplateLabelRequest": {
+      "document": "CreatePromptTemplateLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签内容</p>",
+          "example": "体育",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePromptTemplateLabelResponse": {
+      "document": "CreatePromptTemplateLabel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板标签ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2120849767405831808",
+          "member": "string",
+          "name": "PromptTemplateLabelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePromptTemplateRequest": {
+      "document": "CreatePromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "IKxgVhsE",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词内容</p>",
+          "example": "无",
+          "member": "PromptTemplateSpec",
+          "name": "Spec",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePromptTemplateResponse": {
+      "document": "CreatePromptTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2120852380708882048",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -11326,6 +11800,69 @@
     },
     "DeletePluginResponse": {
       "document": "DeletePlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePromptTemplateLabelRequest": {
+      "document": "DeletePromptTemplateLabel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "1",
+          "member": "string",
+          "name": "PromptTemplateLabelId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePromptTemplateLabelResponse": {
+      "document": "DeletePromptTemplateLabel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePromptTemplateRequest": {
+      "document": "DeletePromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "IKxgVhsE",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2120852380708882048",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePromptTemplateResponse": {
+      "document": "DeletePromptTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -14837,6 +15374,236 @@
       ],
       "type": "object"
     },
+    "DescribePromptTemplateCategoryListRequest": {
+      "document": "DescribePromptTemplateCategoryList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePromptTemplateCategoryListResponse": {
+      "document": "DescribePromptTemplateCategoryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类分组列表</p>",
+          "example": "无",
+          "member": "PromptTemplateCategoryGroup",
+          "name": "CategoryGroupList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateLabelListRequest": {
+      "document": "DescribePromptTemplateLabelList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数目，最大100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词模糊搜索</p>",
+          "example": "通用",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateLabelListResponse": {
+      "document": "DescribePromptTemplateLabelList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "PromptTemplateLabel",
+          "name": "PromptTemplateLabelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateRequest": {
+      "document": "DescribePromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2054770702757396480",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateResponse": {
+      "document": "DescribePromptTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板完整信息</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PromptTemplate",
+          "name": "PromptTemplate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateSummaryListRequest": {
+      "document": "DescribePromptTemplateSummaryList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>页码，从0开始</p>",
+          "example": "0",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>每页数目，最大100</p>",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>过滤条件列表</p>",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只查询收藏的模板</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "IsFavorite",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词模糊搜索</p>",
+          "example": "质量",
+          "member": "string",
+          "name": "Query",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePromptTemplateSummaryListResponse": {
+      "document": "DescribePromptTemplateSummaryList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板摘要列表</p>",
+          "example": "无",
+          "member": "PromptTemplateSummary",
+          "name": "PromptTemplateSummaryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeQARequest": {
       "document": "DescribeQA请求参数结构体",
       "members": [
@@ -17336,6 +18103,42 @@
       ],
       "type": "object"
     },
+    "FavoritePromptTemplateRequest": {
+      "document": "FavoritePromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "IKxgVhsE",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2120852380708882048",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "FavoritePromptTemplateResponse": {
+      "document": "FavoritePromptTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FavoriteSkillRequest": {
       "document": "FavoriteSkill请求参数结构体",
       "members": [
@@ -17490,6 +18293,23 @@
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "FileSplitModel": {
+      "document": "实时文档切分模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实时文档解析模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelDetailInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -17652,6 +18472,23 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "HeaderExtractModel": {
+      "document": "表头拆分模型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实时文档解析模型</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelDetailInfo",
+          "name": "Model",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -20524,7 +21361,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：<br>【顶层】Name, Avatar, Description, AppMode, SharedKbIdList, FileVolumeMountList<br>【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList<br>【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel<br>【WebSearch】Config.WebSearch<br>【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent<br>【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig,Config.Mode.ClawAgentConfig<br> 【Mode.ClawAgentConfig】 Config.Mode.ClawAgentConfig.LongMemoryConfig, Config.Mode.ClawAgentConfig.AgentTeamConfig, Config.Mode.ClawAgentConfig.ChannelContextTimeoutConfig<br>【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced<br>【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch,Config.Experience.Conversation.NewMessageInterrupt<br>【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman<br>【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility</p>",
+          "document": "<p>字段掩码，指定需要更新的字段(Paths为空则不更新任何字段)。Paths枚举值：<br>【顶层】Name, Avatar, Description, AppMode, SharedKbIdList, FileVolumeMountList<br>【Greeting】Config.Greeting, Config.Greeting.Greeting, Config.Greeting.OpeningQuestionList<br>【Model】Config.Model, Config.Model.ThinkModel, Config.Model.GenerateModel, Config.Model.AiOptimizeModel, Config.Model.FileParseModel, Config.Model.PromptRewriteModel, Config.Model.MultiModalQaModel, Config.Model.MultiModalUnderstandingModel,Config.Model.FileSplitModel,Config.Model.HeaderExtractModel<br>【WebSearch】Config.WebSearch<br>【Memory】Config.Memory, Config.Memory.Enabled, Config.Memory.LongMemoryDay, Config.Memory.Model, Config.Memory.PromptMode, Config.Memory.PromptContent<br>【Mode】Config.Mode, Config.Mode.MultiAgentConfig, Config.Mode.SingleWorkflowConfig,Config.Mode.ClawAgentConfig<br> 【Mode.ClawAgentConfig】 Config.Mode.ClawAgentConfig.LongMemoryConfig, Config.Mode.ClawAgentConfig.AgentTeamConfig, Config.Mode.ClawAgentConfig.ChannelContextTimeoutConfig<br>【Experience】Config.Experience, Config.Experience.Conversation, Config.Experience.Role, Config.Experience.Advanced<br>【Experience.Conversation】Config.Experience.Conversation.AiCall, Config.Experience.Conversation.BackgroundImage, Config.Experience.Conversation.Method, Config.Experience.Conversation.FallbackReply, Config.Experience.Conversation.Recommended, Config.Experience.Conversation.InputBoxConfig, Config.Experience.Conversation.WebSearch,Config.Experience.Conversation.NewMessageInterrupt<br>【Experience.Conversation.AiCall】Config.Experience.Conversation.AiCall.VoiceInteract, Config.Experience.Conversation.AiCall.VoiceCall, Config.Experience.Conversation.AiCall.DigitalHuman<br>【Experience.Advanced】Config.Experience.Advanced.ContextRewrite, Config.Experience.Advanced.ImageTextRetrieval, Config.Experience.Advanced.IntentAchievement, Config.Experience.Advanced.ReplyFlexibility</p>",
           "example": "无",
           "member": "FieldMask",
           "name": "UpdateMask",
@@ -20629,6 +21466,16 @@
     "ModifyAppTriggerResponse": {
       "document": "ModifyAppTrigger返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>工蜂/TAPD 触发器绑定的凭证；其他触发器不返回</p>",
+          "example": "无",
+          "member": "AppTriggerWebhookCredential",
+          "name": "Credential",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21395,6 +22242,60 @@
     },
     "ModifyPluginResponse": {
       "document": "ModifyPlugin返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPromptTemplateRequest": {
+      "document": "ModifyPromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "IKxgVhsE",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2120852138965976704",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>要更新的字段掩码</p>",
+          "example": "无",
+          "member": "FieldMask",
+          "name": "UpdateMask",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词规格</p>",
+          "example": "无",
+          "member": "PromptTemplateSpec",
+          "name": "Spec",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPromptTemplateResponse": {
+      "document": "ModifyPromptTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
@@ -23347,6 +24248,327 @@
         }
       ],
       "usage": "both"
+    },
+    "PromptTemplate": {
+      "document": "提示词模板完整信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板Profile</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PromptTemplateProfile",
+          "name": "Profile",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>自定义变量列表</p>",
+          "example": "[\"name\"]",
+          "member": "string",
+          "name": "CustomVariableList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "PromptTemplateLabel",
+          "name": "LabelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词内容</p>",
+          "example": "hello {{name}}",
+          "member": "string",
+          "name": "PromptContent",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PromptTemplateCategory": {
+      "document": "提示词模板分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类标识",
+          "example": "chat",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类名称",
+          "example": "对话",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PromptTemplateCategoryGroup": {
+      "document": "提示词模板分类分组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类列表",
+          "example": "无",
+          "member": "PromptTemplateCategory",
+          "name": "CategoryList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模块标识",
+          "example": "agent",
+          "member": "string",
+          "name": "Module",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PromptTemplateLabel": {
+      "document": "提示词模板标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签内容",
+          "example": "热门",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签ID",
+          "example": "1",
+          "member": "string",
+          "name": "PromptTemplateLabelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。1-系统标签, 2-自定义标签",
+          "example": "1",
+          "member": "int64",
+          "name": "PromptTemplateLabelType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "PromptTemplateProfile": {
+      "document": "提示词模板基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分类</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PromptTemplateCategory",
+          "name": "Category",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>描述</p>",
+          "example": "你是一个Claw模式的提示词",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板名称</p>",
+          "example": "教育题材",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2120441882024730560",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模板类型。1-预置模板, 2-自定义模板</p>",
+          "example": "2",
+          "member": "int64",
+          "name": "PromptTemplateType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "default_space",
+          "member": "string",
+          "name": "SpaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>审计信息</p>",
+          "example": "无",
+          "member": "Audit",
+          "name": "Audit",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PromptTemplateSpec": {
+      "document": "提示词模板规格参数（创建/修改）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分类标识",
+          "example": "chat",
+          "member": "string",
+          "name": "CategoryKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义变量列表",
+          "example": "[\"{name}\"]",
+          "member": "string",
+          "name": "CustomVariableList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "用于客服场景的回答模板",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签ID列表",
+          "example": "[]",
+          "member": "string",
+          "name": "LabelIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模板名称",
+          "example": "客服回答模板",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "提示词内容",
+          "example": "你是一个客服助手",
+          "member": "string",
+          "name": "PromptContent",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "PromptTemplateSummary": {
+      "document": "提示词模板摘要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>提示词模板Profile</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PromptTemplateProfile",
+          "name": "Profile",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签列表</p>",
+          "example": "无",
+          "member": "PromptTemplateLabel",
+          "name": "LabelList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否已收藏</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "IsFavorite",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限列表</p>",
+          "example": "[\"adpPromptTemplateEdit\"]",
+          "member": "string",
+          "name": "PermissionIdList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QACreateSpec": {
       "document": "QA 创建规格（一次性输入的非持久化数据）",
@@ -27702,6 +28924,42 @@
       ],
       "type": "object"
     },
+    "UnfavoritePromptTemplateRequest": {
+      "document": "UnfavoritePromptTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>空间ID</p>",
+          "example": "IKxgVhsE",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>提示词模板ID</p>",
+          "example": "2120852380708882048",
+          "member": "string",
+          "name": "PromptTemplateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UnfavoritePromptTemplateResponse": {
+      "document": "UnfavoritePromptTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UnfavoriteSkillRequest": {
       "document": "UnfavoriteSkill请求参数结构体",
       "members": [
@@ -28082,6 +29340,17 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>值作用域</p><p>枚举值：</p><ul><li>0： 同一用户跨会话(默认): 同一用户的所有会话共用一份变量值</li><li>1： 仅当前会话: 变量值按会话隔离, 各会话互不影响</li></ul>",
+          "example": "0",
+          "member": "int64",
+          "name": "ValueScope",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

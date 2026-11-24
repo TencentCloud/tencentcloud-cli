@@ -130,6 +130,22 @@
         "title": "创建插件"
       }
     ],
+    "CreatePromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePromptTemplate\n<公共请求参数>\n\n{\n    \"SpaceId\": \"IKxgVhsE\",\n    \"Spec\": {\n        \"CategoryKey\": \"PromptTemplateTypeGeneral\",\n        \"CustomVariableList\": [\n            \"message\"\n        ],\n        \"Description\": \"通用文本表达\",\n        \"LabelIdList\": [\n            \"1957634992069301385\"\n        ],\n        \"Name\": \"文档表达提示词\",\n        \"PromptContent\": \"帮我起草一份文档\\n把这段话改得更简洁\\n按要点整理成表格\\n检查这段{{message}}表述有没有歧义\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptTemplateId\": \"2120852380708882048\",\n        \"RequestId\": \"de754e25-b52b-4fdc-b225-5f0406978984\"\n    }\n}",
+        "title": "创建提示词模板"
+      }
+    ],
+    "CreatePromptTemplateLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePromptTemplateLabel\n<公共请求参数>\n\n{\n    \"Content\": \"体育\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptTemplateLabelId\": \"2120849767405831808\",\n        \"RequestId\": \"1fc337ba-80fc-418f-95ee-af15a03e3ae6\"\n    }\n}",
+        "title": "创建提示词模板标签"
+      }
+    ],
     "CreateQAGenerationTask": [
       {
         "document": "创建 QA 生成任务",
@@ -318,6 +334,22 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"06f22d3d-07c6-45dd-a54d-565875ddbe37\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18c4c8d8-dead-4a21-b2e2-49baf9edf8bd\"\n    }\n}",
         "title": "删除插件"
+      }
+    ],
+    "DeletePromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePromptTemplate\n<公共请求参数>\n\n{\n    \"SpaceId\": \"IKxgVhsE\",\n    \"PromptTemplateId\": \"2120852380708882048\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6badea92-edf3-42ae-a0d1-a8930ae8bad6\"\n    }\n}",
+        "title": "删除提示词模板"
+      }
+    ],
+    "DeletePromptTemplateLabel": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePromptTemplateLabel\n<公共请求参数>\n\n{\n    \"PromptTemplateLabelId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d8712288-6b1d-4e94-9f5a-77904d3cd2df\"\n    }\n}",
+        "title": "删除提示词模板标签"
       }
     ],
     "DeleteQAList": [
@@ -670,6 +702,38 @@
         "title": "拉取插件列表"
       }
     ],
+    "DescribePromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePromptTemplate\n<公共请求参数>\n\n{\n    \"PromptTemplateId\": \"2054770702757396480\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptTemplate\": {\n            \"CustomVariableList\": [\n                \"query\"\n            ],\n            \"LabelList\": [\n                {\n                    \"Content\": \"任务执行\",\n                    \"PromptTemplateLabelId\": \"2026568956095234048\",\n                    \"PromptTemplateLabelType\": 1\n                }\n            ],\n            \"Profile\": {\n                \"Audit\": {\n                    \"CreateTime\": \"1778730485\",\n                    \"Creator\": \"\",\n                    \"CreatorName\": \"智能体开发平台\",\n                    \"Operator\": \"\",\n                    \"OperatorName\": \"\",\n                    \"UpdateTime\": \"1778730485\"\n                },\n                \"Category\": {\n                    \"Key\": \"PromptTemplateTypeBaselineEvaluation\",\n                    \"Name\": \"基准评测\"\n                },\n                \"Description\": \"裁判模型在无参考答案情况下,根据回复质量打分。\",\n                \"Name\": \"按回复质量评分\",\n                \"PromptTemplateId\": \"2054770702757396480\",\n                \"PromptTemplateType\": 1,\n                \"SpaceId\": \"default_space\"\n            },\n            \"PromptContent\": \"你是一个专业裁判模型，需要直接评估模型答案的质量并给出评分。请根据问题要求严格评估以下维度：\\n\\n【核心评估维度】\\n1. 指令遵循度 - 是否完整响应指令的所有要求\\n2. 内容准确性 - 提供的信息是否事实正确、逻辑自洽\\n3. 完整度 - 是否覆盖问题核心要素（按指令隐含要求）\\n4. 专业度 - 表述是否清晰严谨，无歧义\\n5. 安全性 - 是否包含危险/违规内容\\n\\n【评分标准】\\n5分：完美解答\\n- 全面覆盖指令要求\\n- 所有信息准确无误\\n- 逻辑结构完整严密\\n- 表述专业清晰\\n\\n4分：优质解答\\n- 主要要求完全满足\\n- 存在细微瑕疵（如次要细节不完善）\\n- 核心逻辑正确无偏差\\n\\n3分：合格解答\\n- 满足基本要求\\n- 存在明显事实错误或关键缺失\\n- 整体方向正确但质量不足\\n\\n2分：缺陷解答\\n- 仅部分满足要求\\n- 核心内容存在重大偏差\\n- 包含事实性错误\\n\\n1分：无效解答\\n- 完全偏离主题\\n- 包含危险/违规内容\\n- 或未提供有效信息\\n\\n【输出要求】\\n必须严格输出JSON格式：\\n{\\\"answer_score\\\": \\\"评分\\\", \\\"answer_reason\\\": \\\"具体说明扣分点或优点（依据评估维度）\\\", \\\"full_score\\\":5}\\n\\n【执行流程】\\n1. 解析用户指令的核心需求\\n2. 逐维度分析模型答案质量\\n3. 对照评分标准确定最终得分\\n4. 撰写客观专业的技术性评价\\n\\n### 用户问题：\\n{{query}}\\n\\n### 待评估的模型答案：\\n{{output}}\"\n        },\n        \"RequestId\": \"eb8b375f-d6f3-4dc6-a347-e5b8db62057d\"\n    }\n}",
+        "title": "查询提示词模板详情"
+      }
+    ],
+    "DescribePromptTemplateCategoryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePromptTemplateCategoryList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"CategoryGroupList\": [\n            {\n                \"CategoryList\": [\n                    {\n                        \"Key\": \"PromptTemplateTypeMultiAgent\",\n                        \"Name\": \"Multi-Agent模式\"\n                    }\n                ],\n                \"Module\": \"PromptTemplateModeMultiAgent\"\n            }\n        ],\n        \"RequestId\": \"31beecd9-9859-4cf1-b25b-392eee422155\"\n    }\n}",
+        "title": "查询提示词模板分类列表"
+      }
+    ],
+    "DescribePromptTemplateLabelList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePromptTemplateLabelList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"Query\": \"通用\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptTemplateLabelList\": [\n            {\n                \"Content\": \"通用提示词\",\n                \"PromptTemplateLabelId\": \"1957634992069301385\",\n                \"PromptTemplateLabelType\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"4e79f459-175b-434a-b6ce-7de33665af1a\"\n    }\n}",
+        "title": "查询提示词模板标签列表"
+      }
+    ],
+    "DescribePromptTemplateSummaryList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePromptTemplateSummaryList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"FilterList\": [\n        {\n            \"Name\": \"PromptTemplateType\",\n            \"ValueList\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"IsFavorite\": false,\n    \"Query\": \"质量\",\n    \"SpaceId\": \"default_space\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PromptTemplateSummaryList\": [\n            {\n                \"IsFavorite\": false,\n                \"LabelList\": [\n                    {\n                        \"Content\": \"任务执行\",\n                        \"PromptTemplateLabelId\": \"2026568956095234048\",\n                        \"PromptTemplateLabelType\": 1\n                    }\n                ],\n                \"PermissionIdList\": [\n                    \"adpPromptTemplateEdit\"\n                ],\n                \"Profile\": {\n                    \"Audit\": {\n                        \"CreateTime\": \"1778730485\",\n                        \"Creator\": \"\",\n                        \"CreatorName\": \"智能体开发平台\",\n                        \"Operator\": \"\",\n                        \"OperatorName\": \"\",\n                        \"UpdateTime\": \"1778730485\"\n                    },\n                    \"Category\": {\n                        \"Key\": \"PromptTemplateTypeBaselineEvaluation\",\n                        \"Name\": \"基准评测\"\n                    },\n                    \"Description\": \"裁判模型在无参考答案情况下,根据回复质量打分。\",\n                    \"Name\": \"按回复质量评分\",\n                    \"PromptTemplateId\": \"2054770702757396480\",\n                    \"PromptTemplateType\": 1,\n                    \"SpaceId\": \"default_space\"\n                }\n            }\n        ],\n        \"TotalCount\": 3,\n        \"RequestId\": \"efed2dc8-3f9b-427a-9f6e-e8f6b5898755\"\n    }\n}",
+        "title": "查询提示词模板摘要列表"
+      }
+    ],
     "DescribeQA": [
       {
         "document": "查询 QA 详情",
@@ -822,6 +886,14 @@
         "title": "收藏插件"
       }
     ],
+    "FavoritePromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FavoritePromptTemplate\n<公共请求参数>\n\n{\n    \"SpaceId\": \"IKxgVhsE\",\n    \"PromptTemplateId\": \"2120852380708882048\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e1424085-3fec-42f6-b0bd-4b3cd6e01445\"\n    }\n}",
+        "title": "收藏提示词模板"
+      }
+    ],
     "FavoriteSkill": [
       {
         "document": "",
@@ -948,6 +1020,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"6ec78f78-23fb-49db-8e53-76921e1e3918\",\n    \"PluginVersion\": 4,\n    \"Profile\": {\n        \"Description\": \"天气插件测试\",\n        \"IconUrl\": \"https://qidian-qbot-1251316161.cos.ap-guangzhou.myqcloud.com/public/plugin_files/%E6%8F%92%E4%BB%B6-%E9%BB%98%E8%AE%A4.png\",\n        \"Name\": \"CAPI-Test-modify\",\n        \"PluginClass\": 0,\n        \"PluginKind\": 2\n    },\n    \"Config\": {\n        \"MCPPluginConfig\": {\n            \"MCPServerUrl\": \"https://******************************.com/sse\",\n            \"MCPTransport\": 0,\n            \"PluginHeader\": [\n                {\n                    \"IsGlobalHidden\": false,\n                    \"IsRequired\": true,\n                    \"Name\": \"Authorization\",\n                    \"Value\": \"Bearer ************************************************\"\n                }\n            ],\n            \"PluginQuery\": [],\n            \"SSEReadTimeout\": 300,\n            \"Timeout\": 15,\n            \"AuthConfig\": {\n                \"AuthType\": 0\n            }\n        }\n    },\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"Config.Timeout\"\n        ]\n    },\n    \"LoginUin\": \"6000005624511\",\n    \"LoginSubAccountUin\": \"6000005624511\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9814760b-4166-4571-bf83-856aed7ccade\"\n    }\n}",
         "title": "修改插件示例"
+      }
+    ],
+    "ModifyPromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPromptTemplate\n<公共请求参数>\n\n{\n    \"SpaceId\": \"IKxgVhsE\",\n    \"PromptTemplateId\": \"2120852138965976704\",\n    \"UpdateMask\": {\n        \"Paths\": [\n            \"spec.name\"\n        ]\n    },\n    \"Spec\": {\n        \"CategoryKey\": \"PromptTemplateTypeGeneral\",\n        \"CustomVariableList\": [\n            \"message\"\n        ],\n        \"Description\": \"通用文本表达\",\n        \"LabelIdList\": [\n            \"1957634992069301385\"\n        ],\n        \"Name\": \"文档表达\",\n        \"PromptContent\": \"帮我起草一份文档\\n把这段话改得更简洁\\n按要点整理成表格\\n检查这段{{message}}表述有没有歧义\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"939c3a41-a80f-4bb9-8152-5a07e14f4e48\"\n    }\n}",
+        "title": "修改提示词模版"
       }
     ],
     "ModifyQA": [
@@ -1100,6 +1180,14 @@
         "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfavoritePlugin\n<公共请求参数>\n\n{\n    \"PluginId\": \"adcda186-813b-4d70-bb3f-538a522fe4a5\",\n    \"SpaceId\": \"default_space\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"75752bbd-8bf9-4859-bb0f-24cbfb0c5cb2\"\n    }\n}",
         "title": "取消收藏插件"
+      }
+    ],
+    "UnfavoritePromptTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: adp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnfavoritePromptTemplate\n<公共请求参数>\n\n{\n    \"SpaceId\": \"IKxgVhsE\",\n    \"PromptTemplateId\": \"2120852380708882048\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ecaa796-6323-44b9-86d9-859c5bb03790\"\n    }\n}",
+        "title": "取消收藏提示词模板"
       }
     ],
     "UnfavoriteSkill": [

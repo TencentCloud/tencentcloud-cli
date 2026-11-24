@@ -8,7 +8,7 @@
       "status": "online"
     },
     "CreateEndpoint": {
-      "document": "创建推理服务。\n\n创建一个在线推理服务，创建成功后返回推理服务 ID。",
+      "document": "创建推理服务，并可指定所属企业空间。不传 WorkspaceId 时，推理服务会创建在账号默认空间。",
       "input": "CreateEndpointRequest",
       "name": "创建推理服务",
       "output": "CreateEndpointResponse",
@@ -883,7 +883,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐 ID。可通过DescribeTokenPlanList接口获取。",
+          "document": "<p>套餐 ID。可通过DescribeTokenPlanList接口获取。</p>",
           "example": "tp-ent-a1b2c3d4",
           "member": "string",
           "name": "TeamId",
@@ -892,7 +892,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 名称，最大 128 字符。如果创建 API Key 的数量超过1个，实际名称格式为 {ApiKeyName}-{序号}（如 mykey-1, mykey-2）。",
+          "document": "<p>API Key 名称，最大 128 字符。如果创建 API Key 的数量超过1个，实际名称格式为 {ApiKeyName}-{序号}（如 mykey-1, mykey-2）。</p>",
           "example": "生产Key",
           "member": "string",
           "name": "ApiKeyName",
@@ -901,7 +901,7 @@
         },
         {
           "disabled": false,
-          "document": "创建数量。取值范围：1 ~ 10。",
+          "document": "<p>创建数量。取值范围：1 ~ 10。</p>",
           "example": "5",
           "member": "int64",
           "name": "Count",
@@ -910,7 +910,7 @@
         },
         {
           "disabled": false,
-          "document": "可用模型列表。如果套餐类型为企业版专业套餐，可以指定模型，也可以传入“all”，传入 “all“表示可以使用套餐支持的所有模型，如果要指定具体模型，传入 Model ID，“all“和具体的 Model ID 不能同时传入，如果不传则表示该API Key不支持任何模型，从而影响API Key的正常使用。如果套餐类型为企业版轻享套餐，则无论是否传入该字段，以及该字段传入什么值，都会被强制覆盖为[\"auto\"]。",
+          "document": "<p>可用模型列表。如果套餐类型为企业版专业套餐，该字段必传！可以指定模型，也可以传入“all”，传入 “all“表示可以使用套餐支持的所有模型，如果要指定具体模型，传入 Model ID，“all“和具体的 Model ID 不能同时传入。如果套餐类型为企业版轻享套餐，则无论是否传入该字段，以及该字段传入什么值，都会被强制覆盖为[&quot;auto&quot;]。</p>",
           "example": "[\"glm-5\",\"kimi-k2.5\"]",
           "member": "string",
           "name": "AllowedModels",
@@ -919,7 +919,7 @@
         },
         {
           "disabled": false,
-          "document": "独占额度。不传则为0，代表该 API Key 不被分配任何独占配额。单位说明如下：\n- 套餐类型为专业，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>独占额度。不传则为0，代表该 API Key 不被分配任何独占配额。单位说明如下：</p><ul><li>套餐类型为专业，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "500000",
           "member": "int64",
           "name": "ExclusiveQuota",
@@ -928,7 +928,7 @@
         },
         {
           "disabled": false,
-          "document": "总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度）。不传表示不设置上限。单位说明如下：\n- 套餐类型为专业，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度）。不传表示不设置上限。单位说明如下：</p><ul><li>套餐类型为专业，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "-1",
           "member": "int64",
           "name": "TotalQuota",
@@ -937,12 +937,30 @@
         },
         {
           "disabled": false,
-          "document": "TPM（Tokens Per Minute）限制。不传使用套餐级别 TPM。必须 >= 0 且 <= 套餐 TPM。",
+          "document": "<p>TPM（Tokens Per Minute）限制。不传使用套餐级别 TPM。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>",
           "example": "4400",
           "member": "int64",
           "name": "TPM",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式。最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。不传或传空数组表示不限制。批量创建时所有 APIKey 共用同一份白名单。</p>",
+          "example": "[\"1.2.3.4\",\"10.0.0.0/24\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启超额按量计费。默认值为 false。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式，该部分将按所用模型的按量计费定价额外计费；未开启时用量达上限后调用报错。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "OverageEnabled",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -952,7 +970,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功创建的项列表。",
+          "document": "<p>成功创建的项列表。</p>",
           "example": "无",
           "member": "CreateApiKeysResultItem",
           "name": "Items",
@@ -962,7 +980,7 @@
         },
         {
           "disabled": false,
-          "document": "创建失败的项列表。",
+          "document": "<p>创建失败的项列表。</p>",
           "example": "无",
           "member": "BatchCreateFailedItem",
           "name": "FailedItems",
@@ -3053,7 +3071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "预付费包 id",
+          "document": "<p>预付费包 id</p>",
           "example": "free-new-test",
           "member": "string",
           "name": "PreResourceId",
@@ -3074,6 +3092,26 @@
           "member": "string",
           "name": "EndpointId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属企业空间 ID。</p>",
+          "example": "ws-a1b2c3d4",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>跨空间展开时的原始推理服务 ID；未展开时与 EndpointId 相同。</p>",
+          "example": "ep-abcd123",
+          "member": "string",
+          "name": "OriginEndpointId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3205,6 +3243,16 @@
           "name": "ModelStatus",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NightDiscountEnabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3815,6 +3863,16 @@
         },
         {
           "disabled": false,
+          "document": "<p>模型计费单位（模型维度属性，区别于计费方式 ChargeType）。取值：TOKEN（词元）、COUNT（次）、CREDIT（积分）、PICTURE（张）。未激活时为空。</p>",
+          "example": "TOKEN",
+          "member": "string",
+          "name": "ModelChargeUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "<p>服务类型。固定为 TEXT_GENERATION（文本生成）。</p>",
           "example": "TEXT_GENERATION",
           "member": "string",
@@ -3881,6 +3939,46 @@
           "name": "TPM",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型图标。</p>",
+          "example": "无",
+          "member": "ModelImage",
+          "name": "ModelImage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>模型下线时间，Status=pre-offline 时，会配置模型下线时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "OfflineAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>停止新购时间</p>",
+          "example": "2026-05-02T00:00:00Z",
+          "member": "datetime_iso",
+          "name": "DiscontinuedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否参与夜间折扣。true 表示该接入点参与夜间时段折扣计费，false 表示不参与。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "NightDiscountEnabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -4332,7 +4430,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API Key ID。",
+          "document": "<p>API Key ID。</p>",
           "example": "ak-tp-20260401-a1b2c3d4",
           "member": "string",
           "name": "ApiKeyId",
@@ -4341,7 +4439,7 @@
         },
         {
           "disabled": false,
-          "document": "可用模型列表。不传则不修改。\n\n- 如果套餐类型为企业版专业套餐：\n1）传入“all“ ：使用套餐支持的所有模型\n2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。\n\n- 如果套餐类型为企业版轻享套餐，不允许传该参数。",
+          "document": "<p>可用模型列表。不传则不修改。</p><ul><li><p>如果套餐类型为企业版专业套餐：<br>1）传入“all“ ：使用套餐支持的所有模型<br>2）传入 Model ID：指定具体模型。“all“和具体的 Model ID 不能同时传入。</p></li><li><p>如果套餐类型为企业版轻享套餐，不允许传该参数。</p></li></ul>",
           "example": "[\"glm-5\",\"kimi-k2.5\"]",
           "member": "string",
           "name": "AllowedModels",
@@ -4350,7 +4448,7 @@
         },
         {
           "disabled": false,
-          "document": "独占额度，不传则不修改。单位说明：\n\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>独占额度，不传则不修改。单位说明：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "500000",
           "member": "int64",
           "name": "ExclusiveQuota",
@@ -4359,7 +4457,7 @@
         },
         {
           "disabled": false,
-          "document": "总额度上限。-1 表示不限，必须为 -1 或 >= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：\n- 套餐类型为专业套餐，单位取值为积分；\n- 套餐类型为轻享套餐，单位取值为 token。",
+          "document": "<p>总额度上限。-1 表示不限，必须为 -1 或 &gt;= API Key 当前的 ExclusiveQuota（独占额度），不传则不修改。单位说明如下：</p><ul><li>套餐类型为专业套餐，单位取值为积分；</li><li>套餐类型为轻享套餐，单位取值为 token。</li></ul>",
           "example": "-1",
           "member": "int64",
           "name": "TotalQuota",
@@ -4368,7 +4466,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。",
+          "document": "<p>是否启用该 API Key。取值：enable（启用）、disable（停用），不传则不修改。</p>",
           "example": "enable",
           "member": "string",
           "name": "UseStatus",
@@ -4377,12 +4475,21 @@
         },
         {
           "disabled": false,
-          "document": "TPM（Tokens Per Minute）限制。不传则不修改。必须 >= 0 且 <= 套餐 TPM。",
+          "document": "<p>TPM（Tokens Per Minute）限制。不传则不修改。必须 &gt;= 0 且 &lt;= 套餐 TPM。</p>",
           "example": "4400",
           "member": "int64",
           "name": "TPM",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。不传则不修改；传空数组表示清空（不限制 IP）；传非空数组表示覆盖。支持 IPv4 单地址（如 1.2.3.4）和 IPv4 CIDR（如 10.0.0.0/24）格式，最多 50 个条目，不允许重复；不支持 IPv6 与 IP 范围。</p>",
+          "example": "[\"1.2.3.4\",\"10.0.0.0/24\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4964,7 +5071,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "API Key ID。",
+          "document": "<p>API Key ID。</p>",
           "example": "ak-tp-20260401-a1b2c3d4",
           "member": "string",
           "name": "ApiKeyId",
@@ -4974,7 +5081,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 密钥值（脱敏）。",
+          "document": "<p>API Key 密钥值（脱敏）。</p>",
           "example": "sk-tp-****xxxx",
           "member": "string",
           "name": "ApiKey",
@@ -4984,7 +5091,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 名称。",
+          "document": "<p>API Key 名称。</p>",
           "example": "生产Key",
           "member": "string",
           "name": "Name",
@@ -4994,7 +5101,7 @@
         },
         {
           "disabled": false,
-          "document": "所属套餐 ID。",
+          "document": "<p>所属套餐 ID。</p>",
           "example": "team-tp-20260401-a1b2c3d4",
           "member": "string",
           "name": "TeamId",
@@ -5004,7 +5111,7 @@
         },
         {
           "disabled": false,
-          "document": "账号APP ID。",
+          "document": "<p>账号APP ID。</p>",
           "example": "1300000001",
           "member": "string",
           "name": "AppId",
@@ -5014,7 +5121,7 @@
         },
         {
           "disabled": false,
-          "document": "主账号 UIN。最大 128 字符。",
+          "document": "<p>主账号 UIN。最大 128 字符。</p>",
           "example": "100000000001",
           "member": "string",
           "name": "Uin",
@@ -5024,7 +5131,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 可用模型列表（JSON 数组字符串）。",
+          "document": "<p>API Key 可用模型列表（JSON 数组字符串）。</p>",
           "example": "[\"glm-5\"]",
           "member": "string",
           "name": "AllowedModels",
@@ -5034,7 +5141,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 是否可用。取值：enable（启用）、disable（停用）。",
+          "document": "<p>API Key 是否可用。取值：enable（启用）、disable（停用）。</p>",
           "example": "enable",
           "member": "string",
           "name": "Status",
@@ -5044,7 +5151,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）",
+          "document": "<p>API Key 停用原因。取值：NORMAL（正常，默认值），QUOTA_EXHAUSTED（API Key额度包耗尽），ABNORMAL（异常，需人工介入）</p>",
           "example": "NORMAL",
           "member": "string",
           "name": "StopReason",
@@ -5054,7 +5161,7 @@
         },
         {
           "disabled": false,
-          "document": "用户侧开关。取值：enable（启用）、disable（停用）。",
+          "document": "<p>用户侧开关。取值：enable（启用）、disable（停用）。</p>",
           "example": "enable",
           "member": "string",
           "name": "UseStatus",
@@ -5064,7 +5171,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥版本号。",
+          "document": "<p>密钥版本号。</p>",
           "example": "1",
           "member": "int64",
           "name": "KeyVersion",
@@ -5074,7 +5181,7 @@
         },
         {
           "disabled": false,
-          "document": "最近一次重置时间。（ISO 8601）",
+          "document": "<p>最近一次重置时间。（ISO 8601）</p>",
           "example": "2026-04-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "LastRotatedAt",
@@ -5084,7 +5191,7 @@
         },
         {
           "disabled": false,
-          "document": "创建人，如果是子账号创建，则该值为子账号UIN。",
+          "document": "<p>创建人，如果是子账号创建，则该值为子账号UIN。</p>",
           "example": "100000000002",
           "member": "string",
           "name": "Creator",
@@ -5094,7 +5201,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间。",
+          "document": "<p>创建时间。</p>",
           "example": "2026-04-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "CreatedAt",
@@ -5104,7 +5211,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间。",
+          "document": "<p>更新时间。</p>",
           "example": "2026-04-01T00:00:00Z",
           "member": "datetime_iso",
           "name": "UpdatedAt",
@@ -5114,7 +5221,7 @@
         },
         {
           "disabled": false,
-          "document": "API Key 额度用量信息",
+          "document": "<p>API Key 额度用量信息</p>",
           "example": "无",
           "member": "SubPackageBalance",
           "name": "Balance",
@@ -5124,12 +5231,32 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。",
+          "document": "<p>套餐类型。取值：enterprise（企业版专业套餐）、enterprise-auto（企业版轻享套餐）。</p>",
           "example": "enterprise",
           "member": "string",
           "name": "ProductType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>IP 白名单列表。支持 IPv4 单地址与 IPv4 CIDR 格式，空数组表示不限制。</p>",
+          "example": "[\"1.2.3.4\",\"10.0.0.0/24\"]",
+          "member": "string",
+          "name": "IpWhitelist",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启超额按量计费。开启后，若 APIKey 用量达到总额度上限，并且使用的模型已开启按量计费，将自动切换至按量计费模式；未开启时用量达上限后调用报错。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "OverageEnabled",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

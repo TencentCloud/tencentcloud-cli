@@ -11,7 +11,7 @@
     "CreateEndpoint": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndpoint\n<公共请求参数>\n\n{\n    \"EndpointName\": \"test-endpoint\",\n    \"ModelId\": \"deepseek-v3.2\",\n    \"ChargeType\": \"FREE\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tokenhub.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateEndpoint\n<公共请求参数>\n\n{\n    \"EndpointName\": \"GLM-4 Flash\",\n    \"ModelId\": \"deepseek-v3.2\",\n    \"ChargeType\": \"FREE\"\n}",
         "output": "{\n    \"Response\": {\n        \"Endpoint\": {},\n        \"EndpointId\": \"ep-mxorl8ln\",\n        \"RequestId\": \"41cb8232-655d-42b4-b021-4f500866bd57\"\n    }\n}",
         "title": "正常响应"
       }

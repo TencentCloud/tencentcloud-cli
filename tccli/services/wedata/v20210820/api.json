@@ -69974,6 +69974,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表，仅工作流调度模式返回</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -70209,6 +70220,56 @@
         }
       ],
       "usage": "out"
+    },
+    "WorkflowLabel": {
+      "document": "工作流标签（K-V），标签字典与数据资产标签一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签ID，入参时必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "env",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prod",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "WorkflowScheduleDtoDs": {
       "document": "工作流调度信息",

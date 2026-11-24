@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AddSubnetToManagedCluster": {
+      "document": "添加子网到 Prometheus 的托管集群",
+      "input": "AddSubnetToManagedClusterRequest",
+      "name": "添加子网到托管集群",
+      "output": "AddSubnetToManagedClusterResponse",
+      "status": "online"
+    },
     "BindPrometheusManagedGrafana": {
       "document": "绑定 Grafana 可视化服务实例",
       "input": "BindPrometheusManagedGrafanaRequest",
@@ -1310,6 +1317,42 @@
     "serviceShortName": "monitor"
   },
   "objects": {
+    "AddSubnetToManagedClusterRequest": {
+      "document": "AddSubnetToManagedCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>Prometheus实例ID</p>",
+          "example": "prom-a4b5",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>子网ID</p>",
+          "example": "subnet-a3x5",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddSubnetToManagedClusterResponse": {
+      "document": "AddSubnetToManagedCluster返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AlarmConditionFilter": {
       "document": "策略过滤条件",
       "members": [

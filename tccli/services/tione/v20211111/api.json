@@ -567,6 +567,13 @@
       "output": "ModifyServiceGroupWeightsResponse",
       "status": "online"
     },
+    "ModifyTrainingTaskSchedulingPolicy": {
+      "document": "更新训练任务的调度策略",
+      "input": "ModifyTrainingTaskSchedulingPolicyRequest",
+      "name": "更新训练任务调度策略",
+      "output": "ModifyTrainingTaskSchedulingPolicyResponse",
+      "status": "online"
+    },
     "ModifyUserGrant": {
       "document": "更新用户授权",
       "input": "ModifyUserGrantRequest",
@@ -12650,6 +12657,60 @@
       ],
       "type": "object"
     },
+    "ModifyTrainingTaskSchedulingPolicyRequest": {
+      "document": "ModifyTrainingTaskSchedulingPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>训练任务 id</p>",
+          "example": "train-1440591021184975616",
+          "member": "string",
+          "name": "TrainingTaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TI工作空间ID</p><p>使用非默认空间必须填写工作空间ID，使用默认空间无需填写工作空间ID。</p>",
+          "example": "0",
+          "member": "string",
+          "name": "TiProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否开启跨资源组调度。缺省为 false，仅改优先级时若任务已开启需显式传 true，否则会被关闭。</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "CrossResourceGroupScheduling",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>调度策略</p>",
+          "example": "无",
+          "member": "SchedulePolicy",
+          "name": "SchedulePolicy",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTrainingTaskSchedulingPolicyResponse": {
+      "document": "ModifyTrainingTaskSchedulingPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyUserGrantRequest": {
       "document": "ModifyUserGrant请求参数结构体",
       "members": [
@@ -16092,6 +16153,23 @@
           "output_required": false,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SchedulePolicy": {
+      "document": "任务调度策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>任务优先级，取值 p0~p9，p0 最高、p9 最低</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p0",
+          "member": "string",
+          "name": "PriorityClass",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

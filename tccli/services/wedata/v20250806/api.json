@@ -5664,7 +5664,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li></ul>",
+          "document": "<p>触发方式：定时触发：TIME_TRIGGER 、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件触发</li><li>TABLE_UPDATE： 表更新</li></ul>",
           "example": "TIME_TRIGGER",
           "member": "string",
           "name": "TriggerMode",
@@ -5673,12 +5673,21 @@
         },
         {
           "disabled": false,
-          "document": "<p>运行账号ID,未传时默认使用当前登录用户ID</p>",
+          "document": "<p>运行账号ID</p>",
           "example": "135797531",
           "member": "string",
           "name": "ExecuteUserUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表。可按ID或名称传，标签需在数据资产中已存在；同一标签Key只能选一个Value。标签写入失败时工作流创建会回滚</p>",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12559,7 +12568,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1470547050521227264",
           "member": "string",
           "name": "ProjectId",
@@ -12568,7 +12577,7 @@
         },
         {
           "disabled": false,
-          "document": "父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/",
+          "document": "<p>父文件夹path，例如/aaa/bbb/ccc，路径头需带斜杠，根目录传/</p>",
           "example": "/",
           "member": "string",
           "name": "ParentFolderPath",
@@ -12577,7 +12586,7 @@
         },
         {
           "disabled": false,
-          "document": "文件夹名称/代码文件名称搜索",
+          "document": "<p>文件夹名称/代码文件名称搜索</p>",
           "example": "u76eeu5f55",
           "member": "string",
           "name": "Keyword",
@@ -12586,7 +12595,7 @@
         },
         {
           "disabled": false,
-          "document": "只查询文件夹",
+          "document": "<p>只查询文件夹</p>",
           "example": "true",
           "member": "bool",
           "name": "OnlyFolderNode",
@@ -12595,10 +12604,19 @@
         },
         {
           "disabled": false,
-          "document": "是否只查询用户自己创建的代码文件",
+          "document": "<p>是否只查询用户自己创建的代码文件</p>",
           "example": "false",
           "member": "bool",
           "name": "OnlyUserSelfScript",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否只查询提交状态为提交成功的文件</p><p>默认值：false</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "SubmitStatusFilter",
           "required": false,
           "type": "bool"
         }
@@ -12610,7 +12628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>结果</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CodeFolderNode",
           "name": "Data",
@@ -29461,6 +29479,56 @@
       ],
       "usage": "out"
     },
+    "TriggerTableUpdateRecord": {
+      "document": "触发本次运行的一条表更新记录（某张表在某个时刻、某个版本的一次更新）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>表全名</p><p>参数格式：格式 catalog.schema.table</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "catalog.schema.table",
+          "member": "string",
+          "name": "TableQualifier",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表更新时间</p><p>参数格式：时间戳格式，如：1792951200000</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1792951200000",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表更新版本号</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "UpdateVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据资产ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123e4567-e89b-12d3-a456-426614174000",
+          "member": "string",
+          "name": "AssetGuid",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TriggerTask": {
       "document": "任务对象",
       "members": [
@@ -30853,6 +30921,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>所属工作流运行中本次触发涉及的表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerTableUpdateRecord",
+          "name": "TriggerTableUpdateRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -31456,6 +31534,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -31984,6 +32072,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表更新触发的运行中，本次触发涉及的表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerTableUpdateRecord",
+          "name": "TriggerTableUpdateRecords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表，仅工作流调度模式返回</p>",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -33720,6 +33828,15 @@
           "name": "ExecuteUserUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -33901,7 +34018,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>触发方式：定时触发：TIME_TRIGGER 。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>",
+          "document": "<p>触发方式：定时触发：TIME_TRIGGER、文件到达触发：FILE_ARRIVAL、表更新触发：TABLE_UPDATE。配置完之后，内部的TriggerMode状态可不配置，如果配置，内容会被该值覆盖。</p><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>",
           "example": "TIME_TRIGGER",
           "member": "string",
           "name": "TriggerMode",
@@ -33916,6 +34033,15 @@
           "name": "ExecuteUserUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>工作流标签列表。不传则不修改；传空数组则清空；传值则整体覆盖。同一标签Key只能选一个Value，标签需在数据资产中已存在</p>",
+          "example": "无",
+          "member": "WorkflowLabel",
+          "name": "WorkflowLabels",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -34536,6 +34662,56 @@
       ],
       "usage": "out"
     },
+    "WorkflowLabel": {
+      "document": "工作流标签（K-V），标签字典与数据资产标签一致",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>标签ID，入参时必填</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LabelId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "env",
+          "member": "string",
+          "name": "LabelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值ID</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "LabelValueId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>标签值名称</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prod",
+          "member": "string",
+          "name": "LabelValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "WorkflowMaxPermission": {
       "document": "用户对工作流文件夹的递归最大权限类型",
       "members": [
@@ -34966,7 +35142,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>触发方式，非必填，外部结构的TriggerMode字段优先级比当前字段高</p><ul><li>定时触发：TIME_TRIGGER</li><li>文件到达：FILE_ARRIVAL</li><li>表更新：TABLE_UPDATE</li><li>持续运行：CONTINUE_RUN（暂不支持）</li></ul><p>注意：</p><ul><li>TIME_TRIGGER 和 CONTINUE_RUN 模式下，SchedulerStatus、SchedulerTimeZone、StartTime、EndTime、ConfigMode、CycleType、CrontabExpression 必填；</li><li>FILE_ARRIVAL 模式下，FileArrivalPath、TriggerMinimumIntervalSecond、TriggerWaitTimeSecond 必填；</li><li>TABLE_UPDATE 模式下，TriggerMinimumIntervalSecond、TriggerWaitTimeSecond、tableQualifiers、triggerPolicy 必填；</li></ul><p>枚举值：</p><ul><li>TIME_TRIGGER： 定时触发</li><li>FILE_ARRIVAL： 文件到达</li><li>TABLE_UPDATE： 表更新</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CONTINUE_RUN",
           "member": "string",
           "name": "TriggerMode",
@@ -35109,7 +35285,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件到达模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件到达、表更新 模式下 最小触发间隔</p><p>取值范围：[1, 1440]</p><p>单位：分钟</p><p>默认值：5</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "TriggerMinimumInterval",
@@ -35120,7 +35296,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件到达模式下 文件批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件到达、表更新 模式下 批次等待时间</p><p>取值范围：[1, 60]</p><p>单位：分钟</p><p>默认值：2</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "int64",
           "name": "TriggerWaitTime",
@@ -35131,7 +35307,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件到达模式下    触发最短间隔时间</p><p>单位：秒</p><p>后续废弃 勿用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件到达、表更新 模式下，触发最短间隔时间</p><p>取值范围：[60, 86400]</p><p>单位：秒</p><p>默认值：300</p><p>只需填TriggerMinimumIntervalSecond，不用填TriggerMinimumInterval；两者都填取TriggerMinimumIntervalSecond；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
           "name": "TriggerMinimumIntervalSecond",
@@ -35142,13 +35318,35 @@
         },
         {
           "disabled": false,
-          "document": "<p>文件到达模式下    触发等待时间</p><p>单位：秒</p><p>后续废弃 勿用</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>文件到达、表更新 模式下，触发等待时间</p><p>取值范围：[60, 3600]</p><p>单位：秒</p><p>默认值：120</p><p>只需填TriggerWaitTimeSecond，不用填TriggerWaitTime；两者都填取TriggerWaitTimeSecond；</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
           "name": "TriggerWaitTimeSecond",
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表更新 模式下，触发表列表</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"DataLakeCatalog.dwd.orders\"]",
+          "member": "string",
+          "name": "TableQualifiers",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>表更新模式下，触发条件</p><p>枚举值：</p><ul><li>ALL： 所有表更新</li><li>ANY： 任一表更新</li></ul><p>默认值：ANY</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ANY",
+          "member": "string",
+          "name": "TriggerPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -1268,7 +1268,7 @@
       "status": "online"
     },
     "EnableOriginACL": {
-      "document": "本接口用于站点首次开启源站防护，启用后 EdgeOne 将会使用特定的回源 IP 网段为七层加速域名/四层代理实例回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需要启用超过 200 个资源，可先通过指定资源的方式以最大数量启用，剩余资源通过 ModifyOriginACL 接口启用。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。同时开启的时候对开白的账户支持选择其他回源 IP 网段版本，例如精简版，来达到使用更少的 IP 网段回源效果。\n\n注意：\n- 调用本接口视为同意 [源站防护启用特别约定](https://cloud.tencent.com/document/product/1552/120141)；\n- 回源 IP 网段会不定期变更，EdgeOne 将在回源 IP 网段变更前 14 天、前 7 天、前 3 天和前 1 天分别通过站内信、短信、邮件等一种或多种方式发起通知，为了能正常收到回源 IP 网段的变更通知，请务必确保您在 [腾讯云消息中心控制台](https://console.cloud.tencent.com/message)内，已勾选边缘安全加速平台 EO 的产品服务相关消息通知，并配置正确的消息接收人。配置方式请参考 [消息订阅管理](https://cloud.tencent.com/document/product/567/43476)。",
+      "document": "本接口用于站点首次开启源站防护，启用后 EdgeOne 将会使用特定的回源 IP 网段为七层加速域名/四层代理实例回源。\n本接口支持两种模式：**自动纳入防护模式** 和 **指定加入防护模式** 。<li>当使用 **自动纳入防护模式** 时（L7EnableMode/L4EnableMode 取值为 all），会实时的将站点下的加速域名列表和四层代理实例自动加入到源站防护列表中，无需人工干预；</li><li>当使用 **指定加入防护模式** 时（L7EnableMode/L4EnableMode 取值为 specific），需要人工指定期望加入到源站防护的资源，未指定的资源不会加入到源站防护列表中。如果有资源调整的需求，需要通过主动调用 ModifyOriginACL 接口来进行调整。</li>\n\n指定加入防护模式使用说明：\n<li>单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200;</li>\n<li>当需要启用超过 200 个资源时，需要先通过本接口配置第一个分片的资源，再通过 ModifyOriginACL 接口进行分片配置。例如：需要加入 500 个七层加速域名，先使用本接口设置 200 个域名，再通过 ModifyOriginACL 接口分两次配置剩余的 300 个域名，每次上限不超过 200 个。</li>\n\n注意：\n- 开启的时候对开白的账户支持选择其他回源 IP 网段版本，例如精简版，来达到使用更少的 IP 网段回源效果。\n- 调用本接口视为同意 [源站防护启用特别约定](https://cloud.tencent.com/document/product/1552/120141)；\n- 回源 IP 网段会不定期变更，EdgeOne 将在回源 IP 网段变更前 14 天、前 7 天、前 3 天和前 1 天分别通过站内信、短信、邮件等一种或多种方式发起通知，为了能正常收到回源 IP 网段的变更通知，请务必确保您在 [腾讯云消息中心控制台](https://console.cloud.tencent.com/message)内，已勾选边缘安全加速平台 EO 的产品服务相关消息通知，并配置正确的消息接收人。配置方式请参考 [消息订阅管理](https://cloud.tencent.com/document/product/567/43476)。",
       "input": "EnableOriginACLRequest",
       "name": "开启源站防护",
       "output": "EnableOriginACLResponse",
@@ -1548,7 +1548,7 @@
       "status": "online"
     },
     "ModifyOriginACL": {
-      "document": "本接口用于对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源。单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200。如需变更超过 200 个实例，请通过本接口分批提交。同时对于开白的客户支持切换到其他可用的源站防护 IP 网段版本，例如精简版，可以减少回源 IP 网段。",
+      "document": "本接口用于修改站点的源站防护配置，支持以下操作：<li>**资源增删**：对七层加速域名/四层代理实例启用/关闭特定回源 IP 网段回源，适用于 **指定加入防护模式** 下的资源调整，未指定的资源不会发生变化；</li><li>**模式切换**：调整七层加速域名/四层代理实例的源站防护模式。切换为 all 后，会实时的将站点下的加速域名列表或四层代理实例自动加入到源站防护列表中，且后续的资源发生变化时也会自动进行调整，无需人工干预；切换为 specific 后，仅变更模式，已纳入防护的资源保持不变；</li><li>**网段版本切换**：对于开白的客户，支持切换到其他可用的源站防护 IP 网段版本，例如精简版，可以减少回源 IP 网段。</li>\n\n指定加入防护模式使用说明：\n<li>单次支持提交的七层加速域名的数量最大为 200，四层代理实例的数量最大为 100，支持七层加速域名/四层代理实例混合提交，总实例个数最大为 200;</li>\n<li>当需要变更超过 200 个资源时，请通过本接口分批提交。例如：需要加入 500 个七层加速域名，先通过本接口提交 200 个域名，再分两次提交剩余的 300 个域名，每次不超过 200 个。</li>",
       "input": "ModifyOriginACLRequest",
       "name": "变更源站防护实例",
       "output": "ModifyOriginACLResponse",
@@ -20888,7 +20888,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "\"zone-276zs184g93m\"",
           "member": "string",
           "name": "ZoneId",
@@ -20897,7 +20897,7 @@
         },
         {
           "disabled": false,
-          "document": "站点首次开启源站防护时，为七层加速域名配置特定回源 IP 网段的模式。\n<li>all：针对当前站点下的所有七层加速域名开启，当域名数量超过 200 时，请先通过 specific 模式启用 200 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>\n<li>specific：针对站点下指定的七层加速域名开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。",
+          "document": "<p>七层加速域名源站防护模式，默认值: specific。<li>all：<strong>自动纳入防护模式</strong>，站点内所有七层加速域名将自动加入到源站防护列表中，包含后续新增的七层加速域名；</li><li>specific：<strong>指定加入防护模式</strong>，需要人工指定期望加入到源站防护的七层加速域名（通过 L7Hosts 参数指定），未指定的资源不会加入到源站防护列表中，后续的防护资源调整可通过 ModifyOriginACL 接口进行。</li>注意：取值为 all 时，L7Hosts 请保留为空；当站点下七层加速域名数量超过 200 时，请先通过 specific 模式启用，剩余资源通过 ModifyOriginACL 接口启用后，再通过 ModifyOriginACL 接口切换为 all。</p>",
           "example": "\"specific\"",
           "member": "string",
           "name": "L7EnableMode",
@@ -20906,7 +20906,7 @@
         },
         {
           "disabled": false,
-          "document": "开启源站防护的七层加速域名列表，仅当参数 L7EnableMode 为 specific 时生效。L7EnableMode 为 all 时，请保留此参数为空。单次最大仅支持填写 200 个七层加速域名。",
+          "document": "<p>需要开启源站防护的七层加速域名列表，仅当参数 L7EnableMode 为 specific 时生效。本字段最多支持一次开启 200 个七层加速域名；当期望开启的域名个数超过 200 时，请联合使用 ModifyOriginACL 接口进行分片配置。</p>",
           "example": "[\"www.qq.com\"]",
           "member": "string",
           "name": "L7Hosts",
@@ -20915,7 +20915,7 @@
         },
         {
           "disabled": false,
-          "document": "站点首次开启源站防护时，为四层代理实例配置特定回源 IP 网段的模式。\n<li>all：针对当前站点下的所有四层代理实例开启，当实例数量超过 100 时，请先通过 specific 模式启用 100 个域名，剩余资源通过 ModifyOriginACL 接口启用。</li>\n<li>specific：针对站点下指定的四层代理实例开启。</li>注意：当参数为空时，默认为 specific。后续新增七层加速域名/四层代理实例均请通过 ModifyOriginACL 接口配置。",
+          "document": "<p>四层代理实例源站防护模式，默认值: specific。<li>all：<strong>自动纳入防护模式</strong>，站点内所有四层代理实例将自动加入到源站防护列表中，包含后续新增的四层代理实例资源；</li><li>specific：<strong>指定加入防护模式</strong>，需要人工指定期望加入到源站防护的四层代理实例（通过 L4ProxyIds 参数指定），未指定的资源不会加入到源站防护列表中，后续的防护资源调整可通过 ModifyOriginACL 接口进行。</li>注意：取值为 all 时，L4ProxyIds 请保留为空；当站点下四层代理实例数量超过 100 时，请先通过 specific 模式启用，剩余资源通过 ModifyOriginACL 接口启用后，再通过 ModifyOriginACL 接口切换为 all。</p>",
           "example": "\"specific\"",
           "member": "string",
           "name": "L4EnableMode",
@@ -20924,7 +20924,7 @@
         },
         {
           "disabled": false,
-          "document": "开启源站防护的四层代理实例列表，仅当参数 L4EnableMode 为 specific 时生效。L4EnableMode 为 all 时，请保留此参数为空。单次最大仅支持填写 100 个四层代理实例。",
+          "document": "<p>需要开启源站防护的四层代理实例列表，仅当参数 L4EnableMode 为 specific 时生效。本字段最多支持一次开启 100 个四层代理实例；当期望开启的四层代理实例个数超过 100 时，请联合使用 ModifyOriginACL 接口进行分片配置。</p>",
           "example": "[\"proxy-19389e5dwwxfs\"]",
           "member": "string",
           "name": "L4ProxyIds",
@@ -20933,7 +20933,7 @@
         },
         {
           "disabled": false,
-          "document": "源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。\n具体取值说明如下：\n<li>gaz：标准全球可用区控制域；</li>\n<li>mlc：标准中国大陆可用区控制域；</li>\n<li>emc：标准全球(不含中国大陆)可用区控制域；</li>\n<li>plat-gaz：精简全球可用区控制域；</li>\n<li>plat-mlc：精简中国大陆可用区控制域；</li>\n<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>",
+          "document": "<p>源站防护回源ACL控制域，不填则默认用标准全球控制域；可用控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。<br>具体取值说明如下：</p><li>gaz：标准全球可用区控制域；</li><li>mlc：标准中国大陆可用区控制域；</li><li>emc：标准全球(不含中国大陆)可用区控制域；</li><li>plat-gaz：精简全球可用区控制域；</li><li>plat-mlc：精简中国大陆可用区控制域；</li><li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>",
           "example": "gaz",
           "member": "string",
           "name": "OriginACLFamily",
@@ -28872,7 +28872,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点 ID。",
+          "document": "<p>站点 ID。</p>",
           "example": "\"zone-276zs184g93m\"",
           "member": "string",
           "name": "ZoneId",
@@ -28881,7 +28881,25 @@
         },
         {
           "disabled": false,
-          "document": "需要启用/关闭特定回源 IP 网段回源的实例。",
+          "document": "<p>七层加速域名源站防护模式，默认值: specific。<li>all：<strong>自动纳入防护模式</strong>，站点内所有七层加速域名将自动加入到源站防护列表中，包含后续新增的七层加速域名；</li><li>specific：<strong>指定加入防护模式</strong>，需要人工指定期望加入到源站防护的七层加速域名（通过 L7Hosts 参数指定），未指定的资源不会加入到源站防护列表中，后续的防护资源调整可通过 ModifyOriginACL 接口进行。</li>注意：取值为 all 时，L7Hosts 请保留为空；当站点下七层加速域名数量超过 200 时，请先通过 specific 模式启用，剩余资源通过 ModifyOriginACL 接口启用后，再通过 ModifyOriginACL 接口切换为 all。</p>",
+          "example": "specific",
+          "member": "string",
+          "name": "L7EnableMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>四层代理实例源站防护模式，默认值: specific。<li>all：<strong>自动纳入防护模式</strong>，站点内所有四层代理实例将自动加入到源站防护列表中，包含后续新增的四层代理实例资源；</li><li>specific：<strong>指定加入防护模式</strong>，需要人工指定期望加入到源站防护的四层代理实例（通过 L4ProxyIds 参数指定），未指定的资源不会加入到源站防护列表中，后续的防护资源调整可通过 ModifyOriginACL 接口进行。</li>注意：取值为 all 时，L4ProxyIds 请保留为空；当站点下四层代理实例数量超过 100 时，请先通过 specific 模式启用，剩余资源通过 ModifyOriginACL 接口启用后，再通过 ModifyOriginACL 接口切换为 all。</p>",
+          "example": "specific",
+          "member": "string",
+          "name": "L4EnableMode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>需要启用/关闭特定回源 IP 网段回源的实例。<br>注意：本参数仅适用于 <strong>指定加入防护模式</strong> 下的资源调整；当对应层级的源站防护模式为 all 时，该类型的资源列表由系统自动维护，本参数中请勿包含该类型的资源，如需手动调整，请先通过 L7EnableMode/L4EnableMode 将对应层级切换为 specific。</p>",
           "example": "无",
           "member": "OriginACLEntity",
           "name": "OriginACLEntities",
@@ -28890,7 +28908,7 @@
         },
         {
           "disabled": false,
-          "document": "源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。\n具体取值说明如下：\n<li>gaz：标准全球可用区控制域；</li>\n<li>mlc：标准中国大陆可用区控制域；</li>\n<li>emc：标准全球(不含中国大陆)可用区控制域；</li>\n<li>plat-gaz：精简全球可用区控制域；</li>\n<li>plat-mlc：精简中国大陆可用区控制域；</li>\n<li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>",
+          "document": "<p>源站防护回源ACL控制域，不填则默认不变；控制域信息可以通过DescribeAvailableOriginACLFamily接口查询获得。<br>具体取值说明如下：</p><li>gaz：标准全球可用区控制域；</li><li>mlc：标准中国大陆可用区控制域；</li><li>emc：标准全球(不含中国大陆)可用区控制域；</li><li>plat-gaz：精简全球可用区控制域；</li><li>plat-mlc：精简中国大陆可用区控制域；</li><li>plat-emc：精简全球(不含中国大陆)可用区控制域；</li>",
           "example": "plat-emc",
           "member": "string",
           "name": "OriginACLFamily",
@@ -31046,7 +31064,18 @@
       "members": [
         {
           "disabled": false,
-          "document": "启用了特定回源 IP 网段回源的七层加速域名列表。源站防护未开启时为空。",
+          "document": "<p>七层加速域名源站防护模式，取值有：<li>all：自动纳入防护模式，站点内所有七层加速域名已纳入源站防护列表，包含后续新增的七层加速域名；</li><li>specific：指定加入防护模式，仅防护已绑定的七层加速域名。</li></p>",
+          "example": "specific",
+          "member": "string",
+          "name": "L7EnableMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用了特定回源 IP 网段回源的七层加速域名列表。源站防护未开启时为空。</p>",
           "example": "[\"www.qq.com\",\"aaa.qq.com\"]",
           "member": "string",
           "name": "L7Hosts",
@@ -31057,7 +31086,18 @@
         },
         {
           "disabled": false,
-          "document": "启用了特定回源 IP 网段回源的四层代理实例列表。源站防护未开启时为空。",
+          "document": "<p>四层代理实例源站防护模式，取值有：<li>all：自动纳入防护模式，站点内所有四层代理实例已纳入源站防护列表，包含后续新增的四层代理实例；</li><li>specific：指定加入防护模式，仅防护已绑定的四层代理实例。</li></p>",
+          "example": "specific",
+          "member": "string",
+          "name": "L4EnableMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>启用了特定回源 IP 网段回源的四层代理实例列表。源站防护未开启时为空。</p>",
           "example": "[\"sid-19389e5dwwxfs\"]",
           "member": "string",
           "name": "L4ProxyIds",
@@ -31068,7 +31108,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效的回源 IP 网段。源站防护未开启时为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前生效的回源 IP 网段。源站防护未开启时为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CurrentOriginACL",
           "name": "CurrentOriginACL",
@@ -31079,7 +31119,7 @@
         },
         {
           "disabled": false,
-          "document": "当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前回源 IP 网段的对比。无更新或者源站防护未开启时该字段为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当回源 IP 网段发生更新时，该字段会返回下一个版本将要生效的回源 IP 网段，包含与当前回源 IP 网段的对比。无更新或者源站防护未开启时该字段为空。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "NextOriginACL",
           "name": "NextOriginACL",
@@ -31090,7 +31130,7 @@
         },
         {
           "disabled": false,
-          "document": "源站防护状态，取值有：\n<li>online：已生效；</li>\n<li>offline：已停用；</li>\n<li>updating: 配置部署中。</li>",
+          "document": "<p>源站防护状态，取值有：</p><li>online：已生效；</li><li>offline：已停用；</li><li>updating: 配置部署中。</li>",
           "example": "offline",
           "member": "string",
           "name": "Status",
@@ -31101,7 +31141,7 @@
         },
         {
           "disabled": false,
-          "document": "源站防护回源ACL控制域。",
+          "document": "<p>源站防护回源ACL控制域。</p>",
           "example": "gaz",
           "member": "string",
           "name": "OriginACLFamily",
@@ -38230,8 +38270,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点级策略的配置详情。",
-          "example": "参考WebSecurityPolicy结构。",
+          "document": "<p>站点级策略的配置详情。</p>",
+          "example": "无",
           "member": "SecurityPolicy",
           "name": "ZoneDefaultPolicy",
           "output_required": false,
@@ -38241,24 +38281,24 @@
         },
         {
           "disabled": false,
-          "document": "域名级策略的配置详情。",
-          "example": "参考HostPolicy结构。",
+          "document": "<p>域名级策略的配置详情。</p>",
+          "example": "无",
           "member": "HostPolicy",
           "name": "HostPolicy",
           "output_required": false,
           "required": false,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略模板的配置详情。",
-          "example": "参考WebSecurityTemplates结构。",
+          "document": "<p>策略模板的配置详情。</p>",
+          "example": "无",
           "member": "WebSecurityTemplates",
           "name": "Templates",
           "output_required": false,
           "required": false,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": false
         }
       ],

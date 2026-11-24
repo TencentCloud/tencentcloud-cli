@@ -134,6 +134,14 @@
         "title": "查询服务管理任务信息"
       }
     ],
+    "DescribeStableIP": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcbr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStableIP\n<公共请求参数>\n\n{\n    \"EnvId\": \"test-1gbtbgkjf8f48e2c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Address\": \"1.1.1.1\",\n        \"Status\": \"normal\",\n        \"ExpireTime\": \"2022-12-06 00:00:00\",\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "查询固定IP地址"
+      }
+    ],
     "DescribeStableIPTask": [
       {
         "document": "",

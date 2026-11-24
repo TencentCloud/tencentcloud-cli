@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddSubnetToManagedCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSubnetToManagedCluster\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-asdfghjk\",\n    \"SubnetId\": \"subnet-asdfghjk\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-123-asdfghjk\"\n    }\n}",
+        "title": "添加子网到托管集群"
+      }
+    ],
     "BindPrometheusManagedGrafana": [
       {
         "document": "绑定 Grafana 可视化服务",
