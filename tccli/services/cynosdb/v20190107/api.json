@@ -4693,7 +4693,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>任务状态</p>",
+          "document": "<p>任务状态</p><p>枚举值：</p><ul><li>waiting： 等待执行</li><li>processing： 执行中</li><li>success： 执行成功</li><li>fail： 任务失败</li><li>paused： 任务暂停（存量任务状态）</li><li>undoing： 回滚中</li><li>undoed： 任务已回滚</li></ul>",
           "example": "success",
           "member": "string",
           "name": "Status",
@@ -9264,7 +9264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-mwg7212w",
           "member": "string",
           "name": "ClusterId",
@@ -9273,7 +9273,7 @@
         },
         {
           "disabled": false,
-          "document": "cpu核数",
+          "document": "<p>cpu核数</p>",
           "example": "2",
           "member": "int64",
           "name": "Cpu",
@@ -9282,7 +9282,7 @@
         },
         {
           "disabled": false,
-          "document": "内存",
+          "document": "<p>内存</p>",
           "example": "4000",
           "member": "int64",
           "name": "Mem",
@@ -9291,7 +9291,16 @@
         },
         {
           "disabled": false,
-          "document": "私有网络ID，默认与集群私有网络ID保持一致",
+          "document": "<p>代理内核版本。不传时默认使用最新稳定版本（白名单用户以appoint策略为准）；显式指定时将实时校验该版本是否在当前集群支持的代理版本集合内，不在则返回错误。集群存在已开启列存索引的只读实例时，所选版本需不低于列存转发要求的最低版本（如1.4.7）</p>",
+          "example": "1.4.7",
+          "member": "string",
+          "name": "ProxyVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>私有网络ID，默认与集群私有网络ID保持一致</p>",
           "example": "vpc-5l7l5q11",
           "member": "string",
           "name": "UniqueVpcId",
@@ -9300,7 +9309,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络子网ID，默认与集群子网ID保持一致",
+          "document": "<p>私有网络子网ID，默认与集群子网ID保持一致</p>",
           "example": "subnet-b5v6id11",
           "member": "string",
           "name": "UniqueSubnetId",
@@ -9309,7 +9318,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)",
+          "document": "<p>数据库代理组节点个数（该参数不再建议使用，建议使用ProxyZones)</p>",
           "example": "2",
           "member": "int64",
           "name": "ProxyCount",
@@ -9318,7 +9327,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池类型：SessionConnectionPool(会话级别连接池 )",
+          "document": "<p>连接池类型：SessionConnectionPool(会话级别连接池 )</p>",
           "example": "SessionConnectionPool",
           "member": "string",
           "name": "ConnectionPoolType",
@@ -9327,7 +9336,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启连接池,yes-开启，no-不开启",
+          "document": "<p>是否开启连接池,yes-开启，no-不开启</p>",
           "example": "yes",
           "member": "string",
           "name": "OpenConnectionPool",
@@ -9336,7 +9345,7 @@
         },
         {
           "disabled": false,
-          "document": "连接池阈值：单位（秒）",
+          "document": "<p>连接池阈值：单位（秒）</p>",
           "example": "0",
           "member": "int64",
           "name": "ConnectionPoolTimeOut",
@@ -9345,8 +9354,8 @@
         },
         {
           "disabled": false,
-          "document": "安全组ID数组",
-          "example": "sg-qwaszx",
+          "document": "<p>安全组ID数组</p>",
+          "example": "[\"sg-qwaszx\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -9354,7 +9363,7 @@
         },
         {
           "disabled": false,
-          "document": "描述说明",
+          "document": "<p>描述说明</p>",
           "example": "一区代理",
           "member": "string",
           "name": "Description",
@@ -9363,8 +9372,8 @@
         },
         {
           "disabled": false,
-          "document": "数据库节点信息（该参数与ProxyCount需要任选一个输入）",
-          "example": "[{\"ProxyNodeZone\": \"ap-guangzhou-3\",\"ProxyNodeCount\": \"2\"}]",
+          "document": "<p>数据库节点信息（该参数与ProxyCount需要任选一个输入）</p>",
+          "example": "无",
           "member": "ProxyZone",
           "name": "ProxyZones",
           "required": false,
@@ -9378,7 +9387,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "异步流程ID",
+          "document": "<p>异步流程ID</p>",
           "example": "358874",
           "member": "int64",
           "name": "FlowId",
@@ -9388,7 +9397,7 @@
         },
         {
           "disabled": false,
-          "document": "异步任务ID",
+          "document": "<p>异步任务ID</p>",
           "example": "1063084",
           "member": "int64",
           "name": "TaskId",
@@ -9398,7 +9407,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "<p>数据库代理组ID</p>",
           "example": "cynosdbmysql-proxy-1qasdfre",
           "member": "string",
           "name": "ProxyGroupId",
@@ -20138,19 +20147,55 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID。与Zone/DbVersion/CynosVersion二选一：查询存量集群支持的代理版本时必填；不传时表示创建集群前查询场景，需同时传入Zone、DbVersion、CynosVersion</p>",
           "example": "cynosdbmysql-mwg7121e",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "数据库代理组ID",
+          "document": "<p>数据库代理组ID。仅在传入ClusterId时有效，传入时返回当前代理版本号</p>",
           "example": "cynosdbmysql-proxy-aroh7ka2",
           "member": "string",
           "name": "ProxyGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>可用区，如ap-guangzhou-3。创建集群前查询场景（不传ClusterId时）必填</p>",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>数据库引擎版本，如5.7、8.0。创建集群前查询场景（不传ClusterId时）必填</p>",
+          "example": "8.0",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>目标内核版本，如3.1.20.001。创建集群前查询场景（不传ClusterId时）必填</p>",
+          "example": "3.1.20.001",
+          "member": "string",
+          "name": "CynosVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>存储版本，枚举值：1.0、2.0。可选，仅创建集群前查询场景有效</p>",
+          "example": "1.0",
+          "member": "string",
+          "name": "StorageVersion",
           "required": false,
           "type": "string"
         }
@@ -20162,7 +20207,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的数据库代理版本集合",
+          "document": "<p>支持的数据库代理版本集合</p>",
           "example": "[\"1.3.7\",\"1.3.9\",\"1.2.1\",\"1.3.14\"]",
           "member": "string",
           "name": "SupportProxyVersions",
@@ -20172,7 +20217,7 @@
         },
         {
           "disabled": false,
-          "document": "当前proxy版本号",
+          "document": "<p>当前proxy版本号</p>",
           "example": "1.3.13",
           "member": "string",
           "name": "CurrentProxyVersion",
@@ -20182,8 +20227,8 @@
         },
         {
           "disabled": false,
-          "document": "代理版本详情",
-          "example": "[{\"ProxyVersion\": \"1.3.7\",\"ProxyVersionType\": \"DEPRECATED\"},{\"ProxyVersion\": \"1.3.9\",\"ProxyVersionType\": \"DEPRECATED\"}]",
+          "document": "<p>代理版本详情</p>",
+          "example": "无",
           "member": "ProxyVersionInfo",
           "name": "SupportProxyVersionDetail",
           "output_required": true,
@@ -23421,7 +23466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbpg-bzxxrmtq",
           "member": "string",
           "name": "ClusterId",
@@ -23430,7 +23475,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数已废用",
+          "document": "<p>该参数已废用</p>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -23439,7 +23484,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还原因类型",
+          "document": "<p>实例退还原因类型</p>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "IsolateReasonTypes",
@@ -23448,7 +23493,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还原因补充",
+          "document": "<p>实例退还原因补充</p>",
           "example": "隔离原因",
           "member": "string",
           "name": "IsolateReason",
@@ -23457,10 +23502,19 @@
         },
         {
           "disabled": false,
-          "document": "保留备份,true-保留（会产生费用）",
+          "document": "<p>保留备份,true-保留（会产生费用）</p>",
           "example": "false",
           "member": "bool",
           "name": "SaveBackup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>立即彻底删除RO实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ImmediateRecycleRo",
           "required": false,
           "type": "bool"
         }
@@ -23472,7 +23526,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)",
+          "document": "<p>任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)</p>",
           "example": "147284",
           "member": "int64",
           "name": "FlowId",
@@ -23482,7 +23536,7 @@
         },
         {
           "disabled": false,
-          "document": "退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>退款订单号(预付费资源返回，如果需要同步订单状态，请使用计费产品的DescribeDealsByCond同步订单状态)</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"20241226054077125855171\"]",
           "member": "string",
           "name": "DealNames",
@@ -23504,7 +23558,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "<p>集群ID</p>",
           "example": "cynosdbmysql-ins-bzkxxrmt",
           "member": "string",
           "name": "ClusterId",
@@ -23513,7 +23567,7 @@
         },
         {
           "disabled": false,
-          "document": "实例ID数组，例如[\"cynosdbbmysql-ins-asd\",\"cynosdbmysql-ins-zxc\"]",
+          "document": "<p>实例ID数组，例如[&quot;cynosdbbmysql-ins-asd&quot;,&quot;cynosdbmysql-ins-zxc&quot;]</p>",
           "example": "[\"cynosdbmysql-ixgbd0di\\n\"]",
           "member": "string",
           "name": "InstanceIdList",
@@ -23522,7 +23576,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数已废弃",
+          "document": "<p>该参数已废弃</p>",
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
@@ -23531,7 +23585,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还原因类型",
+          "document": "<p>实例退还原因类型</p>",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "IsolateReasonTypes",
@@ -23540,7 +23594,7 @@
         },
         {
           "disabled": false,
-          "document": "实例退还原因补充",
+          "document": "<p>实例退还原因补充</p>",
           "example": "退还原因",
           "member": "string",
           "name": "IsolateReason",
@@ -23549,10 +23603,19 @@
         },
         {
           "disabled": false,
-          "document": "保留备份",
+          "document": "<p>保留备份</p>",
           "example": "false",
           "member": "bool",
           "name": "SaveBackup",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "<p>立即彻底删除RO实例</p>",
+          "example": "false",
+          "member": "bool",
+          "name": "ImmediateRecycleRo",
           "required": false,
           "type": "bool"
         }
@@ -23564,7 +23627,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务流id",
+          "document": "<p>任务流id</p>",
           "example": "147285",
           "member": "int64",
           "name": "FlowId",
@@ -23574,7 +23637,7 @@
         },
         {
           "disabled": false,
-          "document": "隔离实例的订单id（预付费实例）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>隔离实例的订单id（预付费实例）</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"8345452\"]",
           "member": "string",
           "name": "DealNames",
@@ -30966,6 +31029,15 @@
           "name": "ProxyZones",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>proxy版本号</p>",
+          "example": "1.4.7",
+          "member": "string",
+          "name": "ProxyVersion",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -37165,7 +37237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权用户",
+          "document": "<p>授权用户</p>",
           "example": "root",
           "member": "string",
           "name": "DbUserName",
@@ -37176,7 +37248,7 @@
         },
         {
           "disabled": false,
-          "document": "客户端ip",
+          "document": "<p>客户端ip</p>",
           "example": "%",
           "member": "string",
           "name": "DbHost",
@@ -37187,13 +37259,24 @@
         },
         {
           "disabled": false,
-          "document": "用户权限",
+          "document": "<p>用户权限</p>",
           "example": "readonly",
           "member": "string",
           "name": "DbPrivilege",
           "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>权限明细列表</p>",
+          "example": "[\"SELECT\"]",
+          "member": "string",
+          "name": "PrivilegeList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

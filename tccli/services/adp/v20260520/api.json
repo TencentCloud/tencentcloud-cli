@@ -1980,6 +1980,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接器知识范围，目前仅支持腾讯乐享配置</p>",
+          "example": "无",
+          "member": "ConnectorKnowledgeScope",
+          "name": "KnowledgeScope",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -7378,6 +7389,123 @@
       ],
       "usage": "both"
     },
+    "ConnectorKnowledgeScope": {
+      "document": "连接器知识范围",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>是否启用知识范围</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>已选资源列表，Enabled 为 true 时至少 1 项</p>",
+          "example": "无",
+          "member": "ConnectorResource",
+          "name": "ResourceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConnectorResource": {
+      "document": "连接器资源及上级链",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>资源类型</p><p>枚举值：</p><ul><li>1： 空间（乐享知识库）</li><li>2： 文件夹</li><li>3： 文档或文件</li><li>4： 团队</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>连接器侧资源 ID</p>",
+          "example": "2767ea7726f3408b87533257e4094568",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源名称快照</p>",
+          "example": "这是第一季",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>祖先链快照，自顶向下且不含自身，最多 100 项；顶层资源为空。</p>",
+          "example": "无",
+          "member": "ConnectorResourceRef",
+          "name": "AncestorList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConnectorResourceRef": {
+      "document": "<p>连接器资源引用</p>",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>连接器侧资源 ID</p>",
+          "example": "6a16ec58977a409d95a0c50948fc98d0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源类型：1-空间（乐享知识库），2-文件夹，3-文档或文件，4-团队；0 无效。</p><table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>CONNECTOR_RESOURCE_TYPE_UNSPECIFIED</td><td>0</td><td>未指定，不允许用于资源引用</td></tr><tr><td>CONNECTOR_RESOURCE_TYPE_WORKSPACE</td><td>1</td><td>空间；乐享个人知识库和团队知识库均为此类型</td></tr><tr><td>CONNECTOR_RESOURCE_TYPE_FOLDER</td><td>2</td><td>文件夹</td></tr><tr><td>CONNECTOR_RESOURCE_TYPE_DOC</td><td>3</td><td>文档或文件</td></tr><tr><td>CONNECTOR_RESOURCE_TYPE_GROUP</td><td>4</td><td>团队或群组</td></tr></tbody></table>",
+          "example": "2",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>资源名称；请求中选填，不参与资源定位。</p>",
+          "example": "1 如何让AI读懂复杂文档？",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ConsumptionClassification": {
       "document": "消耗分类",
       "members": [
@@ -7555,7 +7683,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>图片最小高度（像素），小于则过滤；&lt;=0 表示不启用</p>",
+          "document": "图片最小高度（像素），小于则过滤；<=0 表示不启用",
           "example": "64",
           "member": "int64",
           "name": "ImageMinHeight",
@@ -7566,7 +7694,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>图片最小宽度（像素），小于则过滤；&lt;=0 表示不启用</p>",
+          "document": "图片最小宽度（像素），小于则过滤；<=0 表示不启用",
           "example": "64",
           "member": "int64",
           "name": "ImageMinWidth",
@@ -7577,7 +7705,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>图片名称过滤规则（用分号 &#39;;&#39; 分隔的多条正则，如 &#39;icon;notice;warning;info.*&#39;）</p>",
+          "document": "图片名称过滤规则（用分号 ';' 分隔的多条正则，如 'icon;notice;warning;info.*'）",
           "example": "icon;logo;banner.*",
           "member": "string",
           "name": "ImageNamePatterns",
@@ -17418,6 +17546,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>文档解析策略：1=OCR解析 2=智能解析 3=MLLM解析；不传默认智能解析<table><tbody><tr><td>枚举项</td><td>枚举值</td><td>描述</td></tr><tr><td>DOC_PARSE_STRATEGY_UNKNOWN</td><td>0</td><td>未指定，走服务端默认（智能解析）</td></tr><tr><td>DOC_PARSE_STRATEGY_OCR</td><td>1</td><td>OCR 解析</td></tr><tr><td>DOC_PARSE_STRATEGY_SMART</td><td>2</td><td>智能解析（按图片类型自动选择：数据图/思维导图/架构图/流程图用 MLLM，其他图片用 OCR）</td></tr><tr><td>DOC_PARSE_STRATEGY_MLLM</td><td>3</td><td>MLLM 解析</td></tr></tbody></table></p>",
+          "example": "1",
+          "member": "int64",
+          "name": "ParseStrategy",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,

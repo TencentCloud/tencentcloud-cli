@@ -81,6 +81,12 @@ Output:
                         },
                         {
                             "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": true,
+                            "Version": "3.9.2"
+                        },
+                        {
+                            "Flag": false,
                             "Platform": "premium",
                             "SoldOut": true,
                             "Version": "2.4.1"
@@ -150,6 +156,12 @@ Output:
                             "Platform": "profession",
                             "SoldOut": true,
                             "Version": "3.2.3"
+                        },
+                        {
+                            "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": true,
+                            "Version": "3.9.2"
                         },
                         {
                             "Flag": false,
@@ -225,6 +237,12 @@ Output:
                         },
                         {
                             "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": false,
+                            "Version": "3.9.2"
+                        },
+                        {
+                            "Flag": false,
                             "Platform": "premium",
                             "SoldOut": false,
                             "Version": "2.4.1"
@@ -294,6 +312,12 @@ Output:
                             "Platform": "profession",
                             "SoldOut": true,
                             "Version": "3.2.3"
+                        },
+                        {
+                            "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": true,
+                            "Version": "3.9.2"
                         },
                         {
                             "Flag": false,
@@ -369,6 +393,12 @@ Output:
                         },
                         {
                             "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": true,
+                            "Version": "3.9.2"
+                        },
+                        {
+                            "Flag": false,
                             "Platform": "premium",
                             "SoldOut": true,
                             "Version": "2.4.1"
@@ -438,6 +468,12 @@ Output:
                             "Platform": "profession",
                             "SoldOut": false,
                             "Version": "3.2.3"
+                        },
+                        {
+                            "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": false,
+                            "Version": "3.9.2"
                         },
                         {
                             "Flag": false,
@@ -513,6 +549,12 @@ Output:
                         },
                         {
                             "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": false,
+                            "Version": "3.9.2"
+                        },
+                        {
+                            "Flag": false,
                             "Platform": "premium",
                             "SoldOut": false,
                             "Version": "2.4.1"
@@ -585,6 +627,12 @@ Output:
                         },
                         {
                             "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": false,
+                            "Version": "3.9.2"
+                        },
+                        {
+                            "Flag": false,
                             "Platform": "premium",
                             "SoldOut": false,
                             "Version": "2.4.1"
@@ -654,6 +702,12 @@ Output:
                             "Platform": "profession",
                             "SoldOut": false,
                             "Version": "3.2.3"
+                        },
+                        {
+                            "Flag": false,
+                            "Platform": "profession",
+                            "SoldOut": false,
+                            "Version": "3.9.2"
                         },
                         {
                             "Flag": false,

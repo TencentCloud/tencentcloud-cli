@@ -180,6 +180,14 @@
         "title": "获取动作顺序失败示例"
       }
     ],
+    "GetAttackDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAttackDetail\n<公共请求参数>\n\n{\n    \"SeqId\": \"862c8400-734************cd0dd2914424\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AttackRegionList\": [\n            {\n                \"Description\": \"在图像中央区域观察到一张被手持的证件卡片，卡片边缘呈现僵硬笔直的物理轮廓，其表面为光滑的塑料材质，反光均匀且无皮肤纹理。卡片上的人脸图像为二维平面印刷，缺乏真实面部的三维深度和毛孔细节，整体呈现为一张静态的证件照，而非活体人脸。\",\n                \"Polygon\": [\n                    {\n                        \"X\": 131,\n                        \"Y\": 361\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"facea0be-f52a-411a-ad4c-0caa1710c4e9\"\n    }\n}",
+        "title": "example"
+      }
+    ],
     "GetDetectInfo": [
       {
         "document": "",

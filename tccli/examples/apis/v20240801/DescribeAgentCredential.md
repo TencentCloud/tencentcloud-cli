@@ -5,12 +5,38 @@
 Input: 
 
 ```
-tccli apis DescribeAgentCredential --cli-unfold-argument ```
+tccli apis DescribeAgentCredential --cli-unfold-argument  \
+    --InstanceID ins-e6fbc9b9 \
+    --ID agc-f4431972
+```
 
 Output: 
 ```
 {
     "Response": {
+        "Data": {
+            "AppID": 1300273807,
+            "Content": {
+                "Headers": [
+                    {
+                        "Key": "x-rio-signature",
+                        "Value": "hellosig"
+                    }
+                ],
+                "STSService": "",
+                "STSSystem": ""
+            },
+            "CreateTime": "2025-07-14T07:22:40.347Z",
+            "ID": "agc-f4431972",
+            "InstanceID": "ins-e6fbc9b9",
+            "LastUpdateTime": "2025-07-14T07:22:40.347Z",
+            "Name": "测试凭据",
+            "RelateAgentAppNum": 0,
+            "RelateMcpServerNum": 0,
+            "Status": "normal",
+            "Type": "reqKey",
+            "Uin": "700001136234"
+        },
         "RequestId": "fb5e8042-5259-4fe3-b07d-cdecb73a5554"
     }
 }

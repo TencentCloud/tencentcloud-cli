@@ -1,5 +1,13 @@
 {
   "actions": {
+    "BlockProject": [
+      {
+        "document": "封禁或解封项目及 Preset、Custom、Deployment 域名。",
+        "input": "POST / HTTP/1.1\nHost: makers.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BlockProject\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-3vdi1u3iez9g\",\n    \"ProjectId\": \"makers-gk6nldnxsolv\",\n    \"Status\": \"Ban\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea3834ef-53cd-4fa0-8bea-5554ffb60d8e\"\n    }\n}",
+        "title": "封禁或解封项目"
+      }
+    ],
     "CreateDeployment": [
       {
         "document": "",

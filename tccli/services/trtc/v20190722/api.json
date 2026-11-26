@@ -1238,6 +1238,57 @@
       ],
       "usage": "in"
     },
+    "AsyncTTSSegmentResult": {
+      "document": "AsyncTTSTextSegment对应的结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分段文本</p>",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频下载url</p>",
+          "example": "https://async-tts-1258344699.cos-internal.ap-shanghai.tencentcos.cn*e4bb5*22",
+          "member": "string",
+          "name": "AudioDownloadUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>音频时长</p><p>单位：ms</p>",
+          "example": "768",
+          "member": "uint64",
+          "name": "DurationMs",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AsyncTTSTextSegment": {
+      "document": "文本分段元素",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分段文本</p>",
+          "example": "你好",
+          "member": "string",
+          "name": "Text",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "AsyncTextToSpeechRequest": {
       "document": "AsyncTextToSpeech请求参数结构体",
       "members": [
@@ -1267,6 +1318,15 @@
           "name": "SdkAppId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分段文本，优先级高于text，适用于定制长文本分句场景</p><p>入参限制：文本总长度不能超过50000字符，段数不能超过500</p>",
+          "example": "无",
+          "member": "AsyncTTSTextSegment",
+          "name": "TextSegments",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1327,6 +1387,26 @@
           "name": "TaskId",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>当前正在处理的任务数</p>",
+          "example": "3",
+          "member": "uint64",
+          "name": "CurrentTaskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>最大允许提交的任务数，默认1000，有提额需求请提交工单</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "MaxTaskCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -3557,7 +3637,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "<p>任务ID</p>",
           "example": "86edb448-dc2f-4853-be31-8f05c7d3f6fe",
           "member": "string",
           "name": "TaskId",
@@ -3572,7 +3652,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务状态\n- Processing，处理中\n- Success，任务成功\n- Failed，任务失败\n- Expired，任务过期",
+          "document": "<p>任务状态</p><ul><li>Processing，处理中</li><li>Success，任务成功</li><li>Failed，任务失败</li><li>Expired，任务过期</li></ul>",
           "example": "Success",
           "member": "string",
           "name": "Status",
@@ -3582,7 +3662,7 @@
         },
         {
           "disabled": false,
-          "document": "音频下载url",
+          "document": "<p>音频下载url</p>",
           "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/result.mp3",
           "member": "string",
           "name": "AudioDownloadUrl",
@@ -3592,7 +3672,7 @@
         },
         {
           "disabled": false,
-          "document": "字幕下载url",
+          "document": "<p>字幕下载url</p>",
           "example": "https://async-tts-1258344699.cos.ap-shanghai.myqcloud.com/86edb448-dc2f-4853-be31-8f05c7d3f6fe/subtitle.json",
           "member": "string",
           "name": "SubtitleDownloadUrl",
@@ -3602,12 +3682,22 @@
         },
         {
           "disabled": false,
-          "document": "音频时长",
+          "document": "<p>音频时长</p>",
           "example": "2360",
           "member": "uint64",
           "name": "TotalDurationMs",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>分段文本对应的结果</p>",
+          "example": "无",
+          "member": "AsyncTTSSegmentResult",
+          "name": "SegmentResults",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -2375,6 +2375,15 @@
           "name": "PreCacheType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul><p>默认值：inherit</p>",
+          "example": "30m",
+          "member": "string",
+          "name": "IdleTTL",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4789,6 +4798,26 @@
           "example": "2026-09-11T18:04:36+08:00",
           "member": "string",
           "name": "LastUsedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>镜像预热闲置清理时间</p><p>枚举值：</p><ul><li>inherit： 继承账号配置的自动清理策略</li><li>0： 永不自动清理</li><li>正整数加 m/h/d： 空闲相应时间后自动清理</li></ul>",
+          "example": "30m",
+          "member": "string",
+          "name": "IdleTTL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>预计过期清理时间</p>",
+          "example": "2026-11-20T16:26:00+08:00",
+          "member": "string",
+          "name": "ExpireTime",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false

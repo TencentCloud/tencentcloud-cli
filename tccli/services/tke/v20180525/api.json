@@ -4148,7 +4148,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "容器网络类型，支持：HostNetwork、CiliumBGP",
+          "document": "<p>容器网络类型，支持：HostNetwork、CiliumBGP</p>",
           "example": "HostNetwork",
           "member": "string",
           "name": "NetworkType",
@@ -4159,7 +4159,7 @@
         },
         {
           "disabled": false,
-          "document": "子网ID",
+          "document": "<p>子网ID</p>",
           "example": "subnet-1ed3gqns",
           "member": "string",
           "name": "SubnetId",
@@ -4170,7 +4170,7 @@
         },
         {
           "disabled": false,
-          "document": "集群CIDR，网络模式HostNetwork 时无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>集群CIDR，网络模式HostNetwork 时无需填写</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "172.22.0.0/16",
           "member": "string",
           "name": "ClusterCIDR",
@@ -4181,13 +4181,24 @@
         },
         {
           "disabled": false,
-          "document": "【已废弃】是否开启专线连接能力",
+          "document": "<p>【已废弃】是否开启专线连接能力</p>",
           "example": "false",
           "member": "bool",
           "name": "Enabled",
           "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>ProxyCLBMode</p><p>枚举值：</p><ul><li>Dedicated： 默认，独立专属 CLB 元素</li><li>Shared： 复用支撑面 CLB</li></ul><p>默认值：Dedicated</p>",
+          "example": "Dedicated",
+          "member": "string",
+          "name": "ProxyCLBMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

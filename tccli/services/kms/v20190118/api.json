@@ -2678,7 +2678,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "独享集群Id",
+          "document": "<p>独享集群Id</p>",
           "example": "cls-hsm-3dflmo9g",
           "member": "string",
           "name": "HsmClusterId",
@@ -2688,12 +2688,32 @@
         },
         {
           "disabled": false,
-          "document": "独享集群名称",
+          "document": "<p>独享集群名称</p>",
           "example": "cls-hsm-3dflmo9g-name",
           "member": "string",
           "name": "HsmClusterName",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>根密钥的使用量</p><p>单位：个</p>",
+          "example": "8",
+          "member": "uint64",
+          "name": "CmkUserCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>根密钥的额度</p><p>单位：个</p>",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CmkLimit",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -84,6 +84,13 @@
       "output": "GetActionSequenceResponse",
       "status": "online"
     },
+    "GetAttackDetail": {
+      "document": "根据 AI 人脸防护盾接口返回的 SeqId，查询本次检测命中的攻击区域坐标与攻击描述信息。常用于在 AttackRiskLevel 为 High 或 Mid 时，对原始图片/视频帧进行可视化标注与人工复核。\n\n检测结果默认保留 3 天，超过保留期后无法再查询。\n\n默认接口请求频率限制：10次/秒。",
+      "input": "GetAttackDetailRequest",
+      "name": "获取攻击详细信息",
+      "output": "GetAttackDetailResponse",
+      "status": "online"
+    },
     "GetDetectInfo": {
       "document": "完成验证后，用BizToken调用本接口获取结果信息，BizToken生成后三天内（3\\*24\\*3,600秒）可多次拉取。",
       "input": "GetDetectInfoRequest",
@@ -267,6 +274,34 @@
     "serviceShortName": "faceid"
   },
   "objects": {
+    "AttackRegion": {
+      "document": "命中的攻击区域列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>攻击区域的四点坐标，固定为轴对齐矩形，按 左上 → 右上 → 右下 → 左下 顺时针顺序排列。单位为像素，坐标原点为图像左上角。数组长度固定为 4。</p>",
+          "example": "无",
+          "member": "Point",
+          "name": "Polygon",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>攻击描述，对该区域命中的可疑特征进行详细说明。</p>",
+          "example": "面部出现不符合环境光的锐利高光点",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AttackRiskDetail": {
       "document": "疑似攻击风险详情",
       "members": [
@@ -2324,6 +2359,43 @@
           "name": "ActionSequence",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAttackDetailRequest": {
+      "document": "GetAttackDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>待查询的检测请求 ID，来自上游检测接口（如 <code>DetectAIFakeFaces</code>）返回的 <code>RequestId</code>。长度 32 ~ 64，仅支持数字、字母及短横线 <code>-</code>。检测结果保留期为 3 天，超期后将返回 <code>ResourceUnavailable.ResultExpired</code>。</p>",
+          "example": "862c8400-734************cd0dd2914424",
+          "member": "string",
+          "name": "SeqId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAttackDetailResponse": {
+      "document": "GetAttackDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>检测命中的攻击区域列表。本次检测未命中任何攻击区域时返回空数组 []</p>",
+          "example": "无",
+          "member": "AttackRegion",
+          "name": "AttackRegionList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5495,6 +5567,34 @@
         }
       ],
       "type": "object"
+    },
+    "Point": {
+      "document": "图像坐标点结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>横坐标，单位像素，取值范围 [0, 图像宽度]</p>",
+          "example": "480",
+          "member": "int64",
+          "name": "X",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>纵坐标，单位像素，取值范围 [0, 图像高度]</p>",
+          "example": "640",
+          "member": "int64",
+          "name": "Y",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RetrievalLivenessExtraInfo": {
       "document": "模板检索详细信息",

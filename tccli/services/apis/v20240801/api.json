@@ -1282,12 +1282,59 @@
     },
     "CreateAgentCredentialRequest": {
       "document": "CreateAgentCredential请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-b1dacafc",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "name000001",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "apiKey",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>具体内容</p>",
+          "example": "无",
+          "member": "AgentCredentialContentDTO",
+          "name": "Content",
+          "required": true,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "CreateAgentCredentialResponse": {
       "document": "CreateAgentCredential返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>credential id</p>",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2296,12 +2343,41 @@
     },
     "DeleteAgentCredentialRequest": {
       "document": "DeleteAgentCredential请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-01010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>credential id</p>",
+          "example": "agc-01010",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DeleteAgentCredentialResponse": {
       "document": "DeleteAgentCredential返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>credential id</p>",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3164,7 +3240,26 @@
     },
     "DescribeAgentCredentialRequest": {
       "document": "DescribeAgentCredential请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-0101010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>app id</p>",
+          "example": "agc--01010",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeAgentCredentialResp": {
@@ -3317,6 +3412,16 @@
       "document": "DescribeAgentCredential返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "<p>Credential详情</p>",
+          "example": "无",
+          "member": "DescribeAgentCredentialResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3327,12 +3432,130 @@
     },
     "DescribeAgentCredentialsRequest": {
       "document": "DescribeAgentCredentials请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>分页大小</p>",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-b1dacafc",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>notID列表</p>",
+          "example": "[\"agc-01010\"]",
+          "member": "string",
+          "name": "NotIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态：normal正常状态，disabled下线状态</p>",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>分页偏移量</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>关键词</p>",
+          "example": "凭据",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>服务ID数组</p>",
+          "example": "[\"agc-01010\"]",
+          "member": "string",
+          "name": "IDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>认证类型：sts，reqKey</p>",
+          "example": "sts",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>排序</p>",
+          "example": "无",
+          "member": "DescribeAgentCredentialsSortDTO",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        }
+      ],
       "type": "object"
+    },
+    "DescribeAgentCredentialsResp": {
+      "document": "获取凭证列表的返回值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>总数</p>",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>条目</p>",
+          "example": "无",
+          "member": "DescribeAgentCredentialResp",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeAgentCredentialsResponse": {
       "document": "DescribeAgentCredentials返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>Credential列表</p>",
+          "example": "无",
+          "member": "DescribeAgentCredentialsResp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3341,6 +3564,57 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeAgentCredentialsSortDTO": {
+      "document": "查询凭据列表的排序",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>创建时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>修改时间</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Name",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>状态</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "1",
+          "member": "int64",
+          "name": "Type",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "DescribeMcpServerRequest": {
       "document": "DescribeMcpServer请求参数结构体",
@@ -5592,6 +5866,7 @@
           "member": "string",
           "name": "ID",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5602,6 +5877,7 @@
           "member": "string",
           "name": "Type",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5612,6 +5888,7 @@
           "member": "string",
           "name": "Name",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5622,6 +5899,7 @@
           "member": "string",
           "name": "Description",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5632,6 +5910,7 @@
           "member": "string",
           "name": "RiskLevel",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5642,6 +5921,7 @@
           "member": "string",
           "name": "VersionNumber",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5652,6 +5932,7 @@
           "member": "string",
           "name": "Status",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5662,6 +5943,7 @@
           "member": "string",
           "name": "Act",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5672,6 +5954,7 @@
           "member": "string",
           "name": "SupportActs",
           "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5682,6 +5965,7 @@
           "member": "string",
           "name": "BodyType",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5692,11 +5976,12 @@
           "member": "string",
           "name": "IconType",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "McpTool": {
       "document": "mcp工具",
@@ -5985,12 +6270,68 @@
     },
     "ModifyAgentCredentialRequest": {
       "document": "ModifyAgentCredential请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>实例ID</p>",
+          "example": "ins-01010",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>certify id</p>",
+          "example": "agc-01010",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>名称</p>",
+          "example": "凭据",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>类型</p>",
+          "example": "sts",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>具体内容</p>",
+          "example": "无",
+          "member": "AgentCredentialContentDTO",
+          "name": "Content",
+          "required": false,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "ModifyAgentCredentialResponse": {
       "document": "ModifyAgentCredential返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "<p>credential id</p>",
+          "example": "无",
+          "member": "ResultIDVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7200,6 +7541,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测内容类型</p>",
+          "example": "[\"userPrompt\"]",
+          "member": "string",
+          "name": "CheckTargets",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8175,6 +8527,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全规则</p>",
+          "example": "无",
+          "member": "BindMcpSecurityRuleDTO",
+          "name": "ServiceSecurityRules",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>安全规则</p>",
+          "example": "无",
+          "member": "McpSecurityRulesVO",
+          "name": "ServiceSecurityRulesVO",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -8631,6 +9005,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "<p>检测内容类型</p>",
+          "example": "[\"userPrompt\"]",
+          "member": "string",
+          "name": "CheckTargets",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

@@ -152,7 +152,7 @@
     ],
     "CreateAvatarEditingLive": [
       {
-        "document": "",
+        "document": "创建实时编辑数字人",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\",\n    \"ImageUrl\": \"https://wsh-test-1303333058.cos.ap-guangzhou.myqcloud.com/change/2%E6%B1%89%E6%9C%8D.png\",\n    \"EditingType\": \"virtual_tryon\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"LiveId\": \"1008224608114978816\",\n        \"Status\": \"waiting\",\n        \"RequestId\": \"0c104bce-d2f4-4363-b463-cf46fab5519e\"\n    }\n}",
         "title": "创建实时编辑数字人"
@@ -830,7 +830,7 @@
     ],
     "DescribeAvatarEditingLive": [
       {
-        "document": "",
+        "document": "查询实时会话状态",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\"\n}",
         "output": "{\n    \"Response\": {\n        \"CallMode\": \"video\",\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"CreatedAt\": \"1792050995\",\n        \"EndTime\": \"0\",\n        \"LiveId\": \"1008224608114978816\",\n        \"Phase\": \"active\",\n        \"StartTime\": \"1792050998\",\n        \"Status\": \"on_live\",\n        \"TraceId\": \"82e7b0074f492b41ca0152ae7e608ef3\",\n        \"RequestId\": \"e568960c-4894-4670-9e30-e3242f0ee5da\"\n    }\n}",
         "title": "查询实时会话状态"
@@ -2060,7 +2060,7 @@
     ],
     "StopAvatarEditingLive": [
       {
-        "document": "",
+        "document": "停止数字人实时编辑",
         "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAvatarEditingLive\n<公共请求参数>\n\n{\n    \"ChannelId\": \"vidu_s2_editing_test_2\"\n}",
         "output": "{\n    \"Response\": {\n        \"ChannelId\": \"vidu_s2_editing_test_2\",\n        \"LiveId\": \"1008224608114978816\",\n        \"RequestId\": \"ded2be84-7656-4ab9-8cf1-a7fdf57787c7\"\n    }\n}",
         "title": "停止数字人实时编辑"

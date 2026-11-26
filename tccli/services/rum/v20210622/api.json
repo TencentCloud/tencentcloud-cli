@@ -2311,7 +2311,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例ID：taw-123",
+          "document": "<p>实例ID：taw-123</p>",
           "example": "taw-123",
           "member": "string",
           "name": "InstanceID",
@@ -2320,7 +2320,7 @@
         },
         {
           "disabled": false,
-          "document": "备注（暂未作字节数限制）",
+          "document": "<p>备注（暂未作字节数限制）</p>",
           "example": "备注",
           "member": "string",
           "name": "Remark",
@@ -2329,7 +2329,7 @@
         },
         {
           "disabled": false,
-          "document": "uin：业务方标识",
+          "document": "<p>uin：业务方标识</p>",
           "example": "136",
           "member": "string",
           "name": "WhitelistUin",
@@ -2338,8 +2338,8 @@
         },
         {
           "disabled": false,
-          "document": "业务方标识",
-          "example": "2222",
+          "document": "<p>业务方标识</p>",
+          "example": "2048",
           "member": "string",
           "name": "Aid",
           "required": false,
@@ -2353,7 +2353,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "消息",
+          "document": "<p>消息</p>",
           "example": "success",
           "member": "string",
           "name": "Msg",
@@ -2363,7 +2363,7 @@
         },
         {
           "disabled": false,
-          "document": "白名单ID",
+          "document": "<p>白名单ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "ID",
@@ -8852,7 +8852,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间",
+          "document": "<p>开始时间</p>",
           "example": "1625444040",
           "member": "int64",
           "name": "StartTime",
@@ -8861,7 +8861,7 @@
         },
         {
           "disabled": false,
-          "document": "allcount：性能视图，day：14天数据，condition：条件列表，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等",
+          "document": "<p>allcount：性能视图，day：14天数据，condition：条件列表，area：请求速度分布，nettype/version/platform/isp/region/device/browser/ext1/ext2/ext3/ret/status/from/url/env/：网络平台视图/Version视图/设备视图/ISP视图/地区视图/浏览器视图/ext1视图等等</p>",
           "example": "pagepv",
           "member": "string",
           "name": "Type",
@@ -8870,7 +8870,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间",
+          "document": "<p>结束时间</p>",
           "example": "1625454840",
           "member": "int64",
           "name": "EndTime",
@@ -8879,7 +8879,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ID",
@@ -8888,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义2",
+          "document": "<p>自定义2</p>",
           "example": "optimized",
           "member": "string",
           "name": "ExtSecond",
@@ -8897,7 +8897,7 @@
         },
         {
           "disabled": false,
-          "document": "浏览器引擎",
+          "document": "<p>浏览器引擎</p>",
           "example": "ie7",
           "member": "string",
           "name": "Engine",
@@ -8906,7 +8906,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商",
+          "document": "<p>运营商</p>",
           "example": "中国移动",
           "member": "string",
           "name": "Isp",
@@ -8915,7 +8915,7 @@
         },
         {
           "disabled": false,
-          "document": "来源页面",
+          "document": "<p>来源页面</p>",
           "example": "index.html",
           "member": "string",
           "name": "From",
@@ -8924,7 +8924,7 @@
         },
         {
           "disabled": false,
-          "document": "日志等级（1表示白名单日志，2表示一般日志，4表示错误日志，8表示Promise 错误，16表示Ajax 请求异常，32表示JS 加载异常，64表示图片加载异常，128表示css 加载异常，256表示console.error，512表示音视频资源异常，1024表示retcode 异常，2048表示aegis report，4096表示PV日志，8192表示自定义事件，16384表示小程序 页面不存在，32768表示websocket错误，65536表示js bridge错误）",
+          "document": "<p>日志等级（1表示白名单日志，2表示一般日志，4表示错误日志，8表示Promise 错误，16表示Ajax 请求异常，32表示JS 加载异常，64表示图片加载异常，128表示css 加载异常，256表示console.error，512表示音视频资源异常，1024表示retcode 异常，2048表示aegis report，4096表示PV日志，8192表示自定义事件，16384表示小程序 页面不存在，32768表示websocket错误，65536表示js bridge错误）</p>",
           "example": "1",
           "member": "string",
           "name": "Level",
@@ -8933,7 +8933,7 @@
         },
         {
           "disabled": false,
-          "document": "品牌",
+          "document": "<p>品牌</p>",
           "example": "苹果",
           "member": "string",
           "name": "Brand",
@@ -8942,7 +8942,7 @@
         },
         {
           "disabled": false,
-          "document": "地区",
+          "document": "<p>地区</p>",
           "example": "中国",
           "member": "string",
           "name": "Area",
@@ -8951,7 +8951,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "<p>版本</p>",
           "example": "1.2.1",
           "member": "string",
           "name": "VersionNum",
@@ -8960,7 +8960,7 @@
         },
         {
           "disabled": false,
-          "document": "平台",
+          "document": "<p>平台</p>",
           "example": "2",
           "member": "string",
           "name": "Platform",
@@ -8969,7 +8969,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义3",
+          "document": "<p>自定义3</p>",
           "example": "normal",
           "member": "string",
           "name": "ExtThird",
@@ -8978,7 +8978,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义1",
+          "document": "<p>自定义1</p>",
           "example": "offline",
           "member": "string",
           "name": "ExtFirst",
@@ -8987,7 +8987,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。",
+          "document": "<p>网络类型（1,2,3,4,5,100），1表示WIFI, 2表示2G, 3表示3G, 4表示4G, 5表示5G, 6表示6G, 100表示未知。</p>",
           "example": "2",
           "member": "string",
           "name": "NetType",
@@ -8996,7 +8996,7 @@
         },
         {
           "disabled": false,
-          "document": "机型",
+          "document": "<p>机型</p>",
           "example": "三星",
           "member": "string",
           "name": "Device",
@@ -9005,7 +9005,7 @@
         },
         {
           "disabled": false,
-          "document": "显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。",
+          "document": "<p>显示是否海外,1表示海外，0表示非海外；默认值为空，查询所有。</p>",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -9014,7 +9014,7 @@
         },
         {
           "disabled": false,
-          "document": "操作系统",
+          "document": "<p>操作系统</p>",
           "example": "ios",
           "member": "string",
           "name": "Os",
@@ -9023,7 +9023,7 @@
         },
         {
           "disabled": false,
-          "document": "浏览器",
+          "document": "<p>浏览器</p>",
           "example": "ie",
           "member": "string",
           "name": "Browser",
@@ -9032,7 +9032,7 @@
         },
         {
           "disabled": false,
-          "document": "耗时口径：\"50\"/\"75\"/\"90\"/\"95\"/\"99\"/\"99.5\" 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；\"avg\" 表示均值（avg）。",
+          "document": "<p>耗时口径：&quot;50&quot;/&quot;75&quot;/&quot;90&quot;/&quot;95&quot;/&quot;99&quot;/&quot;99.5&quot; 分别表示 TP50/TP75/TP90/TP95/TP99/TP99.5（percentile2）；&quot;avg&quot; 表示均值（avg）。</p>",
           "example": "avg",
           "member": "string",
           "name": "CostType",
@@ -9041,8 +9041,8 @@
         },
         {
           "disabled": false,
-          "document": "来源",
-          "example": "http",
+          "document": "<p>来源</p>",
+          "example": "[\"http\"]",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -9050,7 +9050,7 @@
         },
         {
           "disabled": false,
-          "document": "环境",
+          "document": "<p>环境</p>",
           "example": "prod",
           "member": "string",
           "name": "Env",
@@ -9065,7 +9065,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "返回值",
+          "document": "<p>返回值</p>",
           "example": "\"{\\\"series\\\":[{\\\"name\\\":\\\"static_project_statistics\\\",\\\"columns\\\":[\\\"time\\\",\\\"allCount\\\",\\\"successRate\\\",\\\"avgDuration\\\",\\\"connectTime\\\",\\\"domainLookupTime\\\"],\\\"values\\\":[[1737246360,null,null,null,null,null]],\\\"total\\\":1,\\\"offset\\\":\\\"\\\"}]}\"",
           "member": "string",
           "name": "Result",
@@ -14973,7 +14973,7 @@
         {
           "disabled": false,
           "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T07:51:00.123Z",
+          "example": "2022-10-17T07:51:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15009,7 +15009,7 @@
         {
           "disabled": false,
           "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T08:51:00.456Z",
+          "example": "2022-10-17T08:51:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15311,7 +15311,7 @@
         {
           "disabled": false,
           "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>",
-          "example": "2022-10-17T07:51:00.123Z",
+          "example": "2022-10-17T07:51:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15329,7 +15329,7 @@
         {
           "disabled": false,
           "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间格式对应同一导出范围，返回字段一致。</p>",
-          "example": "2022-10-17T08:51:00.456Z",
+          "example": "2022-10-17T08:51:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15448,7 +15448,7 @@
         {
           "disabled": false,
           "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T07:51:00.123Z",
+          "example": "2022-10-17T07:51:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15484,7 +15484,7 @@
         {
           "disabled": false,
           "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T08:51:00.456Z",
+          "example": "2022-10-17T08:51:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -15630,7 +15630,7 @@
         {
           "disabled": false,
           "document": "<p>查询开始时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T07:51:00.123Z",
+          "example": "2022-10-17T07:51:00Z",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -15657,7 +15657,7 @@
         {
           "disabled": false,
           "document": "<p>查询结束时间（必填）。</p><p>参数格式：支持旧 Unix 毫秒字符串或新 RFC3339（需带时区）。</p><p>入参限制：RFC3339 最多 3 位小数秒，须对应非负毫秒。</p><p>等价时间范围的查询结果和返回字段一致。</p>",
-          "example": "2022-10-17T08:51:00.456Z",
+          "example": "2022-10-17T08:51:00Z",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -20834,8 +20834,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "片区Id",
-          "example": "1",
+          "document": "<p>片区Id</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "AreaIds",
           "required": false,
@@ -20843,8 +20843,8 @@
         },
         {
           "disabled": false,
-          "document": "片区Key",
-          "example": "area-cn-dl",
+          "document": "<p>片区Key</p>",
+          "example": "[\"area-cn-dl\"]",
           "member": "string",
           "name": "AreaKeys",
           "required": false,
@@ -20852,7 +20852,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。",
+          "document": "<p>分页Limit，默认根据AreaKeys和AreaStatuses参数查询所有。</p>",
           "example": "1",
           "member": "int64",
           "name": "Limit",
@@ -20861,8 +20861,8 @@
         },
         {
           "disabled": false,
-          "document": "片区状态(1=有效，2=无效)",
-          "example": "1",
+          "document": "<p>片区状态(1=有效，2=无效)</p>",
+          "example": "[1]",
           "member": "int64",
           "name": "AreaStatuses",
           "required": false,
@@ -20870,7 +20870,7 @@
         },
         {
           "disabled": false,
-          "document": "分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。",
+          "document": "<p>分页Offset，默认根据AreaKeys和AreaStatuses参数查询所有。</p>",
           "example": "100",
           "member": "int64",
           "name": "Offset",
@@ -20885,7 +20885,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "片区总数",
+          "document": "<p>片区总数</p>",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
@@ -20895,7 +20895,7 @@
         },
         {
           "disabled": false,
-          "document": "片区列表",
+          "document": "<p>片区列表</p>",
           "example": "无",
           "member": "RumAreaInfo",
           "name": "AreaSet",
@@ -20918,7 +20918,7 @@
         {
           "disabled": false,
           "document": "计费状态",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "ChargeStatuses",
           "required": false,
@@ -20927,7 +20927,7 @@
         {
           "disabled": false,
           "document": "计费类型",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "ChargeTypes",
           "required": false,
@@ -20954,7 +20954,7 @@
         {
           "disabled": false,
           "document": "片区Id",
-          "example": "1",
+          "example": "[1]",
           "member": "int64",
           "name": "AreaIds",
           "required": false,
@@ -20963,7 +20963,7 @@
         {
           "disabled": true,
           "document": "实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明",
-          "example": "2",
+          "example": "[2]",
           "member": "int64",
           "name": "InstanceStatuses",
           "required": false,
@@ -20972,7 +20972,7 @@
         {
           "disabled": true,
           "document": "实例Id, 该参数已废弃，请在Filters内注明",
-          "example": "****7ixj431zO1",
+          "example": "[\"****7ixj431zO1\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -20981,7 +20981,7 @@
         {
           "disabled": false,
           "document": "过滤参数；demo模式传{\"Name\": \"IsDemo\", \"Values\":[\"1\"]}",
-          "example": "[{\"Name\":\"Region\",\"Values\":[\"ap-guangzhou\"]}]",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -23655,8 +23655,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或者多个过滤值。",
-          "example": "ap-guangdong,ap-shenzhen",
+          "document": "<p>一个或者多个过滤值。</p>",
+          "example": "[\"ap-guangdong\",\"ap-shenzhen\"]",
           "member": "string",
           "name": "Values",
           "required": false,
@@ -23665,7 +23665,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤键的名称。",
+          "document": "<p>过滤键的名称。</p>",
           "example": "Zone",
           "member": "string",
           "name": "Name",
@@ -26499,7 +26499,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID",
+          "document": "<p>项目ID</p>",
           "example": "1",
           "member": "int64",
           "name": "ProjectId",
@@ -26509,8 +26509,8 @@
         },
         {
           "disabled": false,
-          "document": "uv访问量",
-          "example": "222",
+          "document": "<p>uv访问量</p>",
+          "example": "237",
           "member": "string",
           "name": "Uv",
           "required": true,
@@ -26519,7 +26519,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "<p>创建时间</p>",
           "example": "20201102",
           "member": "string",
           "name": "CreateTime",

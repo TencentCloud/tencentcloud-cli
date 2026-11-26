@@ -2016,7 +2016,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>并发限流数</p>",
+          "document": "<p>并发数限流</p>",
           "example": "20",
           "member": "int64",
           "name": "ConcurrentCountLimit",
@@ -2111,7 +2111,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>是否开启输入限制</p>",
+          "document": "<p>是否开启输入长度限制</p>",
           "example": "true",
           "member": "bool",
           "name": "EnableInputLimit",
@@ -2122,7 +2122,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>最大输入字符数</p>",
+          "document": "<p>最大输入长度字符数</p>",
           "example": "10",
           "member": "uint64",
           "name": "MaxInputChars",
@@ -2139,8 +2139,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>负载均衡算法</p>",
-          "example": "Random",
+          "document": "<p>负载均衡类型</p><p>枚举值：</p><ul><li>RoundRobin： 轮询</li><li>WeightedRoundRobin： 加权轮询</li><li>LeastConnections： 最少连接</li><li>Random： 随机</li></ul><p>默认值：RoundRobin</p>",
+          "example": "WeightedRoundRobin",
           "member": "string",
           "name": "Algorithm",
           "output_required": false,
@@ -17836,6 +17836,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<p>是否按照地域进行过滤</p>",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableRegionFilter",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

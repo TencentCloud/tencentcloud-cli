@@ -20,6 +20,10 @@ Output:
                     "BrokerVersion": "v0.10.2.1_r1.2.11"
                 },
                 {
+                    "KafkaVersion": "3.9.2",
+                    "BrokerVersion": "v3.9.2_r1.0.0"
+                },
+                {
                     "KafkaVersion": "3.2.3",
                     "BrokerVersion": "v3.2.3_r1.0.7"
                 },
