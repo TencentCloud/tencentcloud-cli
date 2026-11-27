@@ -13,11 +13,20 @@ texts = {
         "account_select_prompt": "登录成功, 请选择您的用户: ",
         "role_select_prompt": "请选择您的角色: ",
         "login_success": "登录成功, 密钥凭证已被写入: %s",
+        "login_result": "uin=%s, role=%s, role id=%s",
         "logout_success": "登出成功, 密钥凭证已被删除: %s",
         "no_account": "未找到成员账号, 请确认是否同步过 CAM 角色",
         "no_role": "当前成员账号不存在授权角色",
         "specified_uin_not_found": "未找到指定的 uin，uin=%s，all=[%s]",
         "specified_role_not_found": "未找到指定的 role, role=%s, all=[%s]",
+        "list_no_account": "当前登录态下未找到成员账号, 请确认是否已经完成 CIC 账号同步",
+        "invalid_uin": "无效的 uin: %s, 应为纯数字",
+        "uin_required_when_not_terminal": "stdin 不是终端时无法交互选择账号, 请通过 --uin 指定",
+
+        "list_login_expired": "登录态已失效, 请重新执行 tccli sso login 完成浏览器登录",
+        "login_token_valid": "复用当前登录态, 无需重新浏览器登录 (剩余有效期约 %d 分钟)",
+        "token_expired_relogin": "当前登录态已失效, 需要重新浏览器登录",
+        "login_state_revoked": "本地登录态已被服务端吊销, 需要重新浏览器登录",
     },
     "en-US": {
         "invalid_auth_url": "The entered url is invalid: %s",
@@ -28,11 +37,20 @@ texts = {
         "account_select_prompt": "Login succeed, choose your account: ",
         "role_select_prompt": "choose your role: ",
         "login_success": "Login succeed, credential has been written to %s",
+        "login_result": "uin=%s, role=%s, role id=%s",
         "logout_success": "Logout succeed, credential has been removed: %s",
         "no_account": "no account found, please confirm the account is synchronized",
         "no_role": "no role found in current account",
         "specified_uin_not_found": "Specified uin not found, uin=%s, all=[%s]",
         "specified_role_not_found": "Specified role not found, role=%s, all=[%s]",
+        "list_no_account": "no account found under current login state, please check whether the CIC accounts are synchronized",
+        "invalid_uin": "invalid uin: %s, expected digits only",
+        "uin_required_when_not_terminal": "cannot pick an account interactively when stdin is not a terminal, pass --uin instead",
+
+        "list_login_expired": "login state expired, run tccli sso login to sign in with browser again",
+        "login_token_valid": "reusing current login state, no browser sign-in required (about %d minutes left)",
+        "token_expired_relogin": "login state expired, browser sign-in is required",
+        "login_state_revoked": "the cached login state was rejected by the server, browser sign-in is required",
     }
 }
 

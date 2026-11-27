@@ -2,6 +2,7 @@
 from tccli.plugins.sso.login import login_command_entrypoint
 from tccli.plugins.sso.logout import logout_command_entrypoint
 from tccli.plugins.sso.configure import configure_command_entrypoint
+from tccli.plugins.sso.list import list_uin_command_entrypoint, list_role_command_entrypoint
 
 service_name = "sso"
 service_version = "2024-10-14"
@@ -26,6 +27,20 @@ _spec = {
             "input": "loginRequest",
             "output": "loginResponse",
             "action_caller": login_command_entrypoint,
+        },
+        "list-uin": {
+            "name": "查询成员账号",
+            "document": "list all member accounts (uin) available for the current login state. Output is one tab-separated record per line, fields: <uin>, <name>. Exits non-zero on failure.",
+            "input": "list-uinRequest",
+            "output": "list-uinResponse",
+            "action_caller": list_uin_command_entrypoint,
+        },
+        "list-role": {
+            "name": "查询角色",
+            "document": "list role configurations of the specified uin. Output is one tab-separated record per line, fields: <uin>, <role name>, <role id>. Exits non-zero on failure.",
+            "input": "list-roleRequest",
+            "output": "list-roleResponse",
+            "action_caller": list_role_command_entrypoint,
         },
         "logout": {
             "name": "登出",
@@ -59,10 +74,31 @@ _spec = {
                     "required": False,
                     "document": "Role to use",
                 },
+                {
+                    "name": "role-id",
+                    "member": "string",
+                    "type": "string",
+                    "required": False,
+                    "document": "Role configuration id to use, takes precedence over rolename",
+                },
             ],
         },
         "loginResponse": {"members": []},
         "logoutRequest": {"members": []},
+        "list-uinRequest": {"members": []},
+        "list-uinResponse": {"members": []},
+        "list-roleRequest": {
+            "members": [
+                {
+                    "name": "uin",
+                    "member": "string",
+                    "type": "string",
+                    "required": False,
+                    "document": "uin to list roles for; asked interactively when omitted and stdin is a terminal, required otherwise",
+                },
+            ],
+        },
+        "list-roleResponse": {"members": []},
         "logoutResponse": {"members": []},
         "configureRequest": {"members": [
             {
