@@ -1,11 +1,89 @@
 {
   "actions": {
+    "CreateProtection": [
+      {
+        "document": "创建一个名为 `protection_name`、防护级别为增强防护的防护实例，并为其绑定业务标签。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProtection\n<公共请求参数>\n\n{\n    \"Name\": \"protection_name\",\n    \"ProtectionLevel\": \"advanced\",\n    \"Tags\": [\n        {\n            \"TagKey\": \"env\",\n            \"TagValue\": \"production\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectionId\": \"prot-0004c045b8\",\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "创建防护实例"
+      }
+    ],
+    "DeleteProtection": [
+      {
+        "document": "删除 ID 为 `prot-0004c045b8` 的防护实例。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProtection\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-0004c045b8\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "删除防护实例"
+      }
+    ],
     "DescribeDDoSBlockRecords": [
       {
         "document": "查询封堵解封列表。",
         "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSBlockRecords\n<公共请求参数>\n\n{\n    \"StartTime\": \"2026-04-05T11:30:00+08:00\",\n    \"EndTime\": \"2026-04-21T11:15:00+08:00\",\n    \"Filters\": [\n        {\n            \"Name\": \"Resource\",\n            \"Values\": [\n                \"43.136.33.201\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"BlockRecords\": [\n            {\n                \"BlockTime\": \"2026-04-21T10:53:00+08:00\",\n                \"Resource\": \"43.136.33.201\",\n                \"Status\": \"Blocked\"\n            }\n        ],\n        \"TotalCount\": 4,\n        \"UnblockQuotaInfo\": {\n            \"QuotaEndTime\": \"2026-04-22T00:00:00+08:00\",\n            \"QuotaStartTime\": \"2026-04-21T00:00:00+08:00\",\n            \"TotalQuota\": 3,\n            \"UsedQuota\": 3\n        },\n        \"RequestId\": \"b450f3fd-6f30-4e2d-84d6-35e5c0afd25d\"\n    }\n}",
         "title": "按照公网IP查询封堵列表"
+      }
+    ],
+    "DescribeDDoSProtectionPolicy": [
+      {
+        "document": "查询防护实例 `prot-3t4pafh3u10f` 的 DDoS 防护策略详情。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDDoSProtectionPolicy\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-3t4pafh3u10f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ProtectionPolicy\": {\n            \"DefaultProtection\": {\n                \"SensitivityLevel\": \"high\"\n            },\n            \"IPACLRules\": {\n                \"Rules\": [\n                    {\n                        \"Action\": \"drop\",\n                        \"IPs\": [\n                            \"1.1.1.1\"\n                        ]\n                    }\n                ]\n            },\n            \"GeoBlocking\": {\n                \"GeoCode\": [\n                    \"AF\"\n                ]\n            },\n            \"ProtocolBlocking\": {\n                \"TCPProtocol\": \"on\",\n                \"UDPProtocol\": \"off\",\n                \"ICMPProtocol\": \"on\",\n                \"OtherProtocol\": \"off\"\n            },\n            \"ConnectionProtection\": {\n                \"SourceIPNewConnectionLimit\": 111,\n                \"AbnormalConnectionLimit\": {\n                    \"AbnormalConnectThreshold\": 4,\n                    \"AbnormalConnectCondition\": {\n                        \"EmptyConnection\": \"off\"\n                    }\n                }\n            }\n        },\n        \"RequestId\": \"5eb8d33a-dc1a-4cdf-9ccf-7ace3ee15d46\"\n    }\n}",
+        "title": "按防护实例 ID 查询防护策略"
+      }
+    ],
+    "DescribeProtectionResources": [
+      {
+        "document": "查询防护实例 `prot-3x7powyzy7kx` 下绑定的防护资源，返回第 1 页、每页 20 条。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectionResources\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-3x7powyzy7kx\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ResourceInfos\": [\n            {\n                \"Resource\": \"qcs::clb:ap-guangzhou:uin/7000****8005:clb/lb-jm****74\",\n                \"ResourceType\": \"clb\",\n                \"Status\": \"protecting\",\n                \"Region\": \"ap-guangzhou\",\n                \"PublicAddresses\": [\n                    \"lb-jmn***74-u8ovwq****xdj02f.clb.gz-ten****clb.com\"\n                ]\n            }\n        ],\n        \"RequestId\": \"2a146867-7e3f-4854-8e0d-f37cb1c6dd51\"\n    }\n}",
+        "title": "查询防护实例的防护资源列表"
+      }
+    ],
+    "DescribeProtections": [
+      {
+        "document": "按防护实例 ID 过滤，查询 `prot-0004c045b8` 的详细信息。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtections\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ProtectionId\",\n            \"Values\": [\n                \"prot-0004c045b8\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Protections\": [\n            {\n                \"ProtectionId\": \"prot-0004c045b8\",\n                \"Name\": \"protection_name\",\n                \"ProtectionLevel\": \"advanced\",\n                \"Status\": \"protecting\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"business\",\n                        \"TagValue\": \"protection\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"641a08e3-2ef7-407c-9c2f-2a9928741df5\"\n    }\n}",
+        "title": "查询指定防护实例的详情"
+      }
+    ],
+    "DescribeResourceProtections": [
+      {
+        "document": "查询负载均衡资源 `lb-6******q` 当前绑定的 DDoS 高防服务防护实例。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceProtections\n<公共请求参数>\n\n{\n    \"Resources\": [\n        \"qcs::clb:ap-guangzhou:uin/700******996:clb/lb-6******q\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceProtections\": [\n            {\n                \"Resource\": \"qcs::clb:ap-guangzhou:uin/700*******96:clb/lb-6******q\",\n                \"ProtectionId\": \"prot-3sk*******py\"\n            }\n        ],\n        \"RequestId\": \"3a0775ce-60d6-4c3b-9c91-021fbe50dd5a\"\n    }\n}",
+        "title": "查询资源绑定的防护实例"
+      }
+    ],
+    "ModifyDDoSProtectionPolicy": [
+      {
+        "document": "将防护实例 `prot-3xua1doxm4km` 的 DDoS 防护策略一次性修改为：防护等级 `medium`；丢弃来自 `1.14.55.227` 的流量；对 TCP 80 端口继续防护并限速 100000000 bps、100000 pps；丢弃载荷中包含 `EVIL_TEST_PAYLOAD` 的报文；封禁中国香港地域；开启 `ICMP` 与其他协议封禁；开启源/目的 IP 新建连接数、并发连接数及异常连接防护；关闭流量签名校验。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDDoSProtectionPolicy\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-3xua1doxm4km\",\n    \"ProtectionPolicy\": {\n        \"DefaultProtection\": {\n            \"SensitivityLevel\": \"medium\"\n        },\n        \"IPACLRules\": {\n            \"Rules\": [\n                {\n                    \"Action\": \"drop\",\n                    \"IPs\": [\n                        \"1.14.55.227\"\n                    ]\n                }\n            ]\n        },\n        \"PortACLRules\": {\n            \"Rules\": [\n                {\n                    \"SourcePortRange\": {\n                        \"FromPort\": 1,\n                        \"ToPort\": 65535\n                    },\n                    \"DestinationPortRange\": {\n                        \"FromPort\": 80,\n                        \"ToPort\": 80\n                    },\n                    \"Protocol\": \"tcp\",\n                    \"Action\": \"forward\"\n                }\n            ]\n        },\n        \"SpeedLimitRules\": {\n            \"Rules\": [\n                {\n                    \"IPProtocolNumbers\": [\n                        \"6\"\n                    ],\n                    \"DestinationPortRanges\": [\n                        {\n                            \"FromPort\": 80,\n                            \"ToPort\": 80\n                        }\n                    ],\n                    \"Mode\": \"destination_ip\",\n                    \"BandwidthLimit\": 100000000,\n                    \"PacketRateLimit\": 100000\n                }\n            ]\n        },\n        \"PacketFilterRules\": {\n            \"Rules\": [\n                {\n                    \"Action\": \"drop\",\n                    \"Protocol\": \"tcp\",\n                    \"PacketSizeRange\": {\n                        \"Min\": 0,\n                        \"Max\": 1500\n                    },\n                    \"SourcePortRange\": {\n                        \"FromPort\": 1,\n                        \"ToPort\": 65535\n                    },\n                    \"DestinationPortRange\": {\n                        \"FromPort\": 80,\n                        \"ToPort\": 80\n                    },\n                    \"PacketFilterConditions\": [\n                        {\n                            \"MatchBegin\": \"payload\",\n                            \"Content\": {\n                                \"Type\": \"string\",\n                                \"Value\": \"EVIL_TEST_PAYLOAD\",\n                                \"Offset\": 0,\n                                \"Depth\": 100\n                            }\n                        }\n                    ]\n                }\n            ]\n        },\n        \"GeoBlocking\": {\n            \"GeoCode\": [\n                \"CN-HK\"\n            ]\n        },\n        \"ProtocolBlocking\": {\n            \"TCPProtocol\": \"off\",\n            \"UDPProtocol\": \"off\",\n            \"ICMPProtocol\": \"on\",\n            \"OtherProtocol\": \"on\"\n        },\n        \"ConnectionProtection\": {\n            \"SourceIPNewConnectionLimit\": 1000,\n            \"SourceIPConcurrentConnectionLimit\": 2000,\n            \"DestinationIPNewConnectionLimit\": 5000,\n            \"DestinationIPConcurrentConnectionLimit\": 10000,\n            \"AbnormalConnectionLimit\": {\n                \"AbnormalConnectThreshold\": 1000,\n                \"AbnormalConnectCondition\": {\n                    \"SynRatioThreshold\": 80,\n                    \"SynCountThreshold\": 1000,\n                    \"ConnectTimeout\": 10,\n                    \"EmptyConnection\": \"on\"\n                }\n            }\n        },\n        \"TrafficSignature\": {\n            \"Switch\": \"off\",\n            \"TrafficSignatureKeys\": [\n                \"0123456789abcdef-1A2B-0123456789abcdef0123456789abcdef01234567\"\n            ],\n            \"UdpCheckPortRanges\": [\n                {\n                    \"FromPort\": 53,\n                    \"ToPort\": 53\n                }\n            ],\n            \"TcpCheckPortRanges\": [\n                {\n                    \"FromPort\": 80,\n                    \"ToPort\": 80\n                }\n            ],\n            \"UdpTrafficSignatureOffset\": 0,\n            \"TcpTrafficSignatureOffset\": 0\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ad0d5d7b-2f9b-4f68-a595-e4dfa8c3f787\"\n    }\n}",
+        "title": "按防护实例 ID 全量修改 DDoS 防护策略"
+      }
+    ],
+    "ModifyProtection": [
+      {
+        "document": "将防护实例 `prot-0004c045b8` 的名称修改为 `new_protection_name`。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProtection\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-0004c045b8\",\n    \"Name\": \"new_protection_name\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "修改防护实例的名称"
+      }
+    ],
+    "ModifyProtectionResource": [
+      {
+        "document": "向防护实例 `prot-0004c045b8` 追加绑定两个 EIP 作为防护资源。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProtectionResource\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-0004c045b8\",\n    \"Mode\": \"APPEND\",\n    \"Resources\": [\n        \"qcs::cvm:ap-guangzhou:uin/164256472:eip/eip-1a2b3c4d\",\n        \"qcs::cvm:ap-guangzhou:uin/164256472:eip/eip-5e6f7g8h\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "向防护实例追加绑定 EIP 防护资源"
+      },
+      {
+        "document": "将防护实例 `prot-0004c045b8` 的防护资源更新为一个 CLB 实例，若该资源已绑定至其他防护实例则强制绑定。",
+        "input": "POST / HTTP/1.1\nHost: antiddos.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyProtectionResource\n<公共请求参数>\n\n{\n    \"ProtectionId\": \"prot-0004c045b8\",\n    \"Mode\": \"UPDATE\",\n    \"Resources\": [\n        \"qcs::clb:ap-guangzhou:uin/164256472:clb/lb-1a2b3c4d\"\n    ],\n    \"ConflictStrategy\": \"FORCE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ea95fca6-715c-4995-9680-2b72b394a2cb\"\n    }\n}",
+        "title": "更新防护实例的防护资源列表"
       }
     ],
     "UnblockResources": [

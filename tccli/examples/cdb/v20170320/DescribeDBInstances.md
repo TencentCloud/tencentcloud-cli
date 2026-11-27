@@ -19,6 +19,7 @@ Output:
             {
                 "WanStatus": 0,
                 "Zone": "100001",
+                "CageId": "cage-172",
                 "WanPort": 0,
                 "DiskType": "CLOUD_SSD",
                 "RoVipInfo": {

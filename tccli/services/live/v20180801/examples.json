@@ -383,7 +383,7 @@
     "CreateLiveTimeShiftTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"name\",\n    \"Description\": \"timeshift\",\n    \"Area\": \"0\",\n    \"Duration\": 604800,\n    \"ItemDuration\": 5,\n    \"RemoveWatermark\": false,\n    \"TranscodeTemplateIds\": [\n        1\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTimeShiftTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"name\",\n    \"Description\": \"timeshift\",\n    \"Area\": \"Mainland\",\n    \"Duration\": 604800,\n    \"ItemDuration\": 5,\n    \"RemoveWatermark\": false,\n    \"TranscodeTemplateIds\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 58241,\n        \"RequestId\": \"3fefec28-3f95-4055-8a22-714cc271251e\"\n    }\n}",
         "title": "请求示例"
       }
@@ -399,7 +399,7 @@
     "CreateLiveTranscodeTemplate": [
       {
         "document": "CreateLiveTranscodeTemplate 例子。",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"jiang8\",\n    \"VideoBitrate\": 0,\n    \"Description\": \"\",\n    \"IsAdaptiveBitRate\": 1,\n    \"AdaptiveChildren\": [\n        {\n            \"TemplateName\": \"jiang9\",\n            \"Vcodec\": \"origin\",\n            \"VideoBitrate\": 3000,\n            \"Height\": 2000,\n            \"Fps\": 0,\n            \"Gop\": 0,\n            \"NeedVideo\": 1,\n            \"NeedAudio\": 1,\n            \"BitrateToOrig\": 0,\n            \"HeightToOrig\": 0,\n            \"FpsToOrig\": 0,\n            \"ShortEdgeAsHeight\": 0,\n            \"HlsContainerFormat\": \"ts\",\n            \"HlsMp4VideoCodecTag\": \"hev1\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLiveTranscodeTemplate\n<公共请求参数>\n\n{\n    \"TemplateName\": \"jiang8\",\n    \"VideoBitrate\": 0,\n    \"Description\": \"\",\n    \"IsAdaptiveBitRate\": 1,\n    \"AdaptiveChildren\": [\n        {\n            \"TemplateName\": \"jiang9\",\n            \"Vcodec\": \"origin\",\n            \"VideoBitrate\": 3000,\n            \"Height\": 2000,\n            \"Fps\": 0,\n            \"Gop\": 2,\n            \"NeedVideo\": 1,\n            \"NeedAudio\": 1,\n            \"BitrateToOrig\": 0,\n            \"HeightToOrig\": 0,\n            \"FpsToOrig\": 0,\n            \"ShortEdgeAsHeight\": 0,\n            \"HlsContainerFormat\": \"ts\",\n            \"HlsMp4VideoCodecTag\": \"hev1\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 8453014,\n        \"RequestId\": \"12306f18-9332-412f-bf15-e5b47f6fcaf1\"\n    }\n}",
         "title": "请求示例"
       }
@@ -2023,15 +2023,15 @@
     "StartLiveAvatarRoom": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"10001\",\n    \"Comment\": \"wx\",\n    \"ToUrl\": \"rtmp://5000.livepush.com/live/stream\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
-        "title": "请求示例"
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"2147485667\",\n    \"Comment\": \"推往trtc\",\n    \"ToUrl\": \"rtmp://5000.livepush.myqcloud.com/live/qloud_push_test_test_50?txSecret=********************************&txTime=********\",\n    \"SessionProtocol\": \"trtc\",\n    \"TrtcSdkAppId\": \"1600098322\",\n    \"TrtcUserSig\": \"********************************************************************************************************************************************************************************************************\",\n    \"TrtcRoomId\": \"79059\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79da8b98-8e57-4343-aba0-bc8f614ba8ba\"\n    }\n}",
+        "title": "交互模式测试"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"2147485667\",\n    \"Comment\": \"推往trtc\",\n    \"ToUrl\": \"rtmp://5000.livepush.myqcloud.com/live/qloud_push_test_test_50?txSecret=40e467c0e787205b7086c7fa9db0e3fd&txTime=6ba1006a\",\n    \"SessionProtocol\": \"trtc\",\n    \"TrtcSdkAppId\": \"1600098322\",\n    \"TrtcUserSig\": \"eJwtzE8LgjAcxvH3smth29pfoUNdKvEiBhV0KZz1o6y5qQXRe2*lx*fzheeNNmkedcahGNEIo-F-Q2HuDZTQM2GSKS6EHKovrkdroUAxERhjraaU9sW8LDgTnHNOQ*q1gepnUinJtJCDejiH86WdW*pPN02Sx6LdHiam9T7tSvcUNWV2dZFVnY*S3X6dZTP0*QKnjTIx\",\n    \"TrtcRoomId\": \"79059\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"79da8b98-8e57-4343-aba0-bc8f614ba8ba\"\n    }\n}",
-        "title": "交互模式测试"
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: StartLiveAvatarRoom\n<公共请求参数>\n\n{\n    \"RoomId\": \"10001\",\n    \"Comment\": \"wx\",\n    \"ToUrl\": \"rtmp://5000.livepush.com/live/stream\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1047d0dc-6dc8-4898-a7f3-03726a822b0e\"\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "StartLivePadStream": [

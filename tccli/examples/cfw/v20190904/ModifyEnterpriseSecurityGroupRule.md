@@ -56,31 +56,7 @@ Output:
 }
 ```
 
-**Example 3: 开启全部企业安全组规则**
-
-开启全部企业安全组规则；RuleUuid 传 0。
-
-Input: 
-
-```
-tccli cfw ModifyEnterpriseSecurityGroupRule --cli-unfold-argument  \
-    --RuleUuid 0 \
-    --ModifyType 2 \
-    --Enable 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Status": 0,
-        "NewRuleUuid": 0,
-        "RequestId": "33333333-4444-4555-8666-777777777777"
-    }
-}
-```
-
-**Example 4: 将企业安全组规则修改为地域访问解析域名**
+**Example 3: 将企业安全组规则修改为地域访问解析域名**
 
 用户要求广州地域资产按 DNS 解析结果访问域名时，调用 DescribeCfwRules 和 DescribeEnterpriseSecurityGroupRule 获取原规则完整字段，调用 DescribeSecurityGroupRegionList 获取广州对应的 Region=ap-guangzhou，再完整提交修改。
 
@@ -110,6 +86,30 @@ Output:
         "Status": 0,
         "NewRuleUuid": 420003,
         "RequestId": "44444444-5555-4666-8777-888888888888"
+    }
+}
+```
+
+**Example 4: 开启全部企业安全组规则**
+
+开启全部企业安全组规则；RuleUuid 传 0。
+
+Input: 
+
+```
+tccli cfw ModifyEnterpriseSecurityGroupRule --cli-unfold-argument  \
+    --RuleUuid 0 \
+    --ModifyType 2 \
+    --Enable 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Status": 0,
+        "NewRuleUuid": 0,
+        "RequestId": "33333333-4444-4555-8666-777777777777"
     }
 }
 ```

@@ -511,6 +511,13 @@
       "output": "SaveAndDeployLogstashPipelineResponse",
       "status": "online"
     },
+    "SearchServerlessSpaceData": {
+      "document": "用于查询serverless space中的数据",
+      "input": "SearchServerlessSpaceDataRequest",
+      "name": "查询space下的数据",
+      "output": "SearchServerlessSpaceDataResponse",
+      "status": "online"
+    },
     "StartLogstashPipelines": {
       "document": "用于启动Logstash管道",
       "input": "StartLogstashPipelinesRequest",
@@ -14811,6 +14818,80 @@
     "SaveAndDeployLogstashPipelineResponse": {
       "document": "SaveAndDeployLogstashPipeline返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchServerlessSpaceDataRequest": {
+      "document": "SearchServerlessSpaceData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>space空间id</p>",
+          "example": "space-********",
+          "member": "string",
+          "name": "SpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求url</p>",
+          "example": "***-********/_search",
+          "member": "string",
+          "name": "Uri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>method</p><p>枚举值：</p><ul><li>GET： get请求</li><li>POST： post请求</li><li>PUT： put请求</li></ul>",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<p>请求体</p>",
+          "example": "{\"query\":{\"match_all\":{}},\"size\":2}",
+          "member": "string",
+          "name": "Body",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchServerlessSpaceDataResponse": {
+      "document": "SearchServerlessSpaceData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "<p>请求状态</p>",
+          "example": "200",
+          "member": "int64",
+          "name": "HttpStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>返回结果</p>",
+          "example": "{\"took\":1,\"timed_out\":false}",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

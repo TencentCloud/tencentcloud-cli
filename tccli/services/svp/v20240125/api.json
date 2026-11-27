@@ -553,7 +553,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID",
+          "document": "<p>资源 ID：账单中出账对象 ID，不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID</p>",
           "example": "disk-3t7fhog0",
           "member": "string",
           "name": "ResourceId",
@@ -564,7 +564,7 @@
         },
         {
           "disabled": false,
-          "document": "地域ID",
+          "document": "<p>地域ID</p>",
           "example": "1",
           "member": "uint64",
           "name": "RegionId",
@@ -575,7 +575,7 @@
         },
         {
           "disabled": false,
-          "document": "产品编码",
+          "document": "<p>产品编码</p>",
           "example": "p_cynosdb",
           "member": "string",
           "name": "ProductCode",
@@ -586,7 +586,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品编码",
+          "document": "<p>子产品编码</p>",
           "example": "sp_cynosdb_mysql",
           "member": "string",
           "name": "SubProductCode",
@@ -597,7 +597,7 @@
         },
         {
           "disabled": false,
-          "document": "费用起始日期，格式yyyy-MM-dd",
+          "document": "<p>费用起始日期，格式yyyy-MM-dd</p>",
           "example": "2023-06-01",
           "member": "string",
           "name": "StartDate",
@@ -608,7 +608,7 @@
         },
         {
           "disabled": false,
-          "document": "费用结束日期，格式yyyy-MM-dd，目前与StartDate相等",
+          "document": "<p>费用结束日期，格式yyyy-MM-dd，目前与StartDate相等</p>",
           "example": "2023-06-01",
           "member": "string",
           "name": "EndDate",
@@ -619,7 +619,7 @@
         },
         {
           "disabled": false,
-          "document": "节省计划覆盖金额（即节省计划支付金额）",
+          "document": "<p>节省计划覆盖金额（即节省计划支付金额）</p>",
           "example": "1.0",
           "member": "float",
           "name": "SpCoveredAmount",
@@ -630,7 +630,7 @@
         },
         {
           "disabled": false,
-          "document": "节省计划未覆盖金额（即优惠后总价）",
+          "document": "<p>节省计划未覆盖金额（即优惠后总价）</p>",
           "example": "2.0",
           "member": "float",
           "name": "SpUncoveredAmount",
@@ -641,7 +641,7 @@
         },
         {
           "disabled": false,
-          "document": "总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）",
+          "document": "<p>总支出（即节省计划未覆盖金额 + 节省计划覆盖金额）</p>",
           "example": "3.0",
           "member": "float",
           "name": "TotalRealAmount",
@@ -652,7 +652,7 @@
         },
         {
           "disabled": false,
-          "document": "按量计费预期金额（即折前价 * 折扣）",
+          "document": "<p>按量计费预期金额（即折前价 * 折扣）</p>",
           "example": "3.0",
           "member": "float",
           "name": "ExpectedAmount",
@@ -663,7 +663,7 @@
         },
         {
           "disabled": false,
-          "document": "覆盖率结果，取值[0, 100]",
+          "document": "<p>覆盖率结果，取值为百分比值，取值范围[0,100]</p>",
           "example": "30.0",
           "member": "float",
           "name": "SpCoverage",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者昵称",
+          "document": "<p>支付者昵称</p>",
           "example": "腾讯",
           "member": "string",
           "name": "PayerUinName",
@@ -685,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "使用者昵称",
+          "document": "<p>使用者昵称</p>",
           "example": "腾讯",
           "member": "string",
           "name": "OwnerUinName",
@@ -696,7 +696,7 @@
         },
         {
           "disabled": false,
-          "document": "支付者uin",
+          "document": "<p>支付者uin</p>",
           "example": "9091",
           "member": "string",
           "name": "PayerUin",
@@ -707,7 +707,7 @@
         },
         {
           "disabled": false,
-          "document": "计费项名称",
+          "document": "<p>计费项名称</p>",
           "example": "存储",
           "member": "string",
           "name": "SubBillingItemName",
@@ -718,8 +718,8 @@
         },
         {
           "disabled": false,
-          "document": "计费细项名称",
-          "example": "cynosdb_存储_mysql\t",
+          "document": "<p>计费细项名称</p>",
+          "example": "cynosdb_存储_mysql",
           "member": "string",
           "name": "BillingItemName",
           "output_required": false,
@@ -729,7 +729,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品名称",
+          "document": "<p>子产品名称</p>",
           "example": "TDSQL-C MySQL版",
           "member": "string",
           "name": "SubProductName",

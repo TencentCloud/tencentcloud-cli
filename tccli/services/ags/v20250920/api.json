@@ -8475,6 +8475,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>表示发起实例启动并取得该实例的账号 UIN</p>",
+          "example": "3321337994",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"

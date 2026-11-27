@@ -8,7 +8,7 @@ Input:
 tccli live CreateLiveTimeShiftTemplate --cli-unfold-argument  \
     --TemplateName name \
     --Description timeshift \
-    --Area 0 \
+    --Area Mainland \
     --Duration 604800 \
     --ItemDuration 5 \
     --RemoveWatermark False \

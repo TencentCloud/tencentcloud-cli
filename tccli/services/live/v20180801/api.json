@@ -1261,7 +1261,7 @@
       "status": "online"
     },
     "DescribeLogDownloadList": {
-      "document": "批量获取日志URL。\n日志数据打包存在一定延迟，24小时候数据包趋于完整。",
+      "document": "批量获取日志URL。\n日志数据打包存在一定延迟，24小时后数据包趋于完整。",
       "input": "DescribeLogDownloadListRequest",
       "name": "批量获取日志URL",
       "output": "DescribeLogDownloadListResponse",
@@ -3171,7 +3171,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数字人直播间 ID。",
+          "document": "<p>数字人直播间 ID。</p>",
           "example": "10002",
           "member": "string",
           "name": "RoomId",
@@ -3181,7 +3181,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人直播间名称。",
+          "document": "<p>数字人直播间名称。</p>",
           "example": "live",
           "member": "string",
           "name": "Name",
@@ -3191,8 +3191,8 @@
         },
         {
           "disabled": false,
-          "document": "数字人直播间状态，\nCLOSE - 未开播。\nOPEN - 直播中。\n",
-          "example": "live",
+          "document": "<p>数字人直播间状态，<br>CLOSE - 未开播。<br>OPEN - 直播中。</p><p>枚举值：</p><ul><li>CLOSE： 未开播</li><li>OPEN： 直播中</li></ul>",
+          "example": "OPEN",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -3201,7 +3201,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人形象 KEY。",
+          "document": "<p>数字人形象 KEY。</p>",
           "example": "fessdfs",
           "member": "string",
           "name": "AvatarKey",
@@ -3211,7 +3211,7 @@
         },
         {
           "disabled": false,
-          "document": "音色 KEy。",
+          "document": "<p>音色 KEY。</p>",
           "example": "fsefsae",
           "member": "string",
           "name": "TimbreKey",
@@ -3221,7 +3221,7 @@
         },
         {
           "disabled": false,
-          "document": "数字人形象图片 URL。",
+          "document": "<p>数字人形象图片 URL。</p>",
           "example": "http://avatar.image.com/live/test.png",
           "member": "string",
           "name": "AvatarImageUrl",
@@ -3231,7 +3231,7 @@
         },
         {
           "disabled": false,
-          "document": "背景图片 URL。",
+          "document": "<p>背景图片 URL。</p>",
           "example": "http://avatar.background.com/live/test.png",
           "member": "string",
           "name": "BackgroundUrl",
@@ -3241,7 +3241,7 @@
         },
         {
           "disabled": false,
-          "document": "推流目标描述。",
+          "document": "<p>推流目标描述。</p>",
           "example": "第三方平台",
           "member": "string",
           "name": "Comment",
@@ -3251,7 +3251,7 @@
         },
         {
           "disabled": false,
-          "document": "目标推流地址。",
+          "document": "<p>目标推流地址。</p>",
           "example": "rtmp://my.push.com/live/test",
           "member": "string",
           "name": "ToUrl",
@@ -3261,7 +3261,7 @@
         },
         {
           "disabled": false,
-          "document": "主播大小，默认1.00。 取值范围(0, 15.00]。",
+          "document": "<p>主播大小，默认1.00。 取值范围(0, 15.00]。</p>",
           "example": "1.00",
           "member": "float",
           "name": "AnchorScale",
@@ -3271,7 +3271,7 @@
         },
         {
           "disabled": false,
-          "document": "主播纵向位置。默认-1贴底部。",
+          "document": "<p>主播纵向位置。默认-1贴底部。</p>",
           "example": "10",
           "member": "int64",
           "name": "AnchorVerticalPos",
@@ -3281,7 +3281,7 @@
         },
         {
           "disabled": false,
-          "document": "主播横向位置。默认-1居中。",
+          "document": "<p>主播横向位置。默认-1居中。</p>",
           "example": "8",
           "member": "int64",
           "name": "AnchorHorizontalPos",
@@ -3291,7 +3291,7 @@
         },
         {
           "disabled": false,
-          "document": "语速（1.0为正常语速，范围[0.5-1.5]，值为0.5时播报语速最慢，值为1.5时播报语速最快。",
+          "document": "<p>语速（1.0为正常语速，范围[0.5-1.5]，值为0.5时播报语速最慢，值为1.5时播报语速最快。</p>",
           "example": "1.0",
           "member": "float",
           "name": "SpeechSpeed",
@@ -3301,7 +3301,7 @@
         },
         {
           "disabled": false,
-          "document": "音量大小，范围[0，10]，对应音量大小。默认为0，代表正常音量，值越大音量越高。",
+          "document": "<p>音量大小，范围[0，10]，对应音量大小。默认为0，代表正常音量，值越大音量越高。</p>",
           "example": "0",
           "member": "int64",
           "name": "SpeechVolume",
@@ -3311,7 +3311,7 @@
         },
         {
           "disabled": false,
-          "document": "直播间创建时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>直播间创建时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-02T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
@@ -3321,10 +3321,30 @@
         },
         {
           "disabled": false,
-          "document": "直播间最后更新时间，UTC时间。\n注意：UTC时间和北京时间相差八小时。",
+          "document": "<p>直播间最后更新时间，UTC时间。<br>注意：UTC时间和北京时间相差八小时。</p>",
           "example": "2025-07-03T00:00:00Z",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>直播间类型。</p><p>枚举值：</p><ul><li>AIGC： AIGC直播</li></ul>",
+          "example": "AIGC",
+          "member": "string",
+          "name": "RoomType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "<p>通过AIGC生成的数字人形象图片 URL。</p>",
+          "example": "http://avatar.image.com/live/test.png",
+          "member": "string",
+          "name": "AvatarAigcImageUrl",
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5213,7 +5233,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书 ID。",
+          "document": "<p>证书 ID。</p>",
           "example": "25",
           "member": "int64",
           "name": "CertId",
@@ -5223,7 +5243,7 @@
         },
         {
           "disabled": false,
-          "document": "证书名称。",
+          "document": "<p>证书名称。</p>",
           "example": "certname",
           "member": "string",
           "name": "CertName",
@@ -5233,7 +5253,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "describe",
           "member": "string",
           "name": "Description",
@@ -5243,7 +5263,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，UTC 格式。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>创建时间，UTC 格式。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2023-09-07 14:36:56",
           "member": "string",
           "name": "CreateTime",
@@ -5253,7 +5273,7 @@
         },
         {
           "disabled": false,
-          "document": "证书内容。",
+          "document": "<p>证书内容。</p>",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIGkzCCBPugAwIBAgIbARReVnKfzs8qY4R\\n7k3XSMi\\/bYK0DbRkrflzJviwZAAmyx24Y4W7byfTf6O9D8K56NDcMSv1xnWeWkkl\\nYTmU+vZ9czFIGtbI0M6JHAdwjLBUOLZgDb0A7GGGhyByWaPqXftEqiUjC78\\/8pDL\\nxviG4QhCkw==\\n-----END CERTIFICATE-----",
           "member": "string",
           "name": "HttpsCrt",
@@ -5263,7 +5283,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。\n0：用户添加证书，\n1：腾讯云托管证书。",
+          "document": "<p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>",
           "example": "1",
           "member": "int64",
           "name": "CertType",
@@ -5273,7 +5293,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间，UTC 格式。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>证书过期时间，UTC 格式。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2024-09-07 07:59:59",
           "member": "string",
           "name": "CertExpireTime",
@@ -5283,8 +5303,8 @@
         },
         {
           "disabled": false,
-          "document": "使用此证书的域名列表。",
-          "example": "auto.liveplay.org",
+          "document": "<p>使用此证书的域名列表。</p>",
+          "example": "[\"auto.liveplay.org\"]",
           "member": "string",
           "name": "DomainList",
           "output_required": true,
@@ -7023,7 +7043,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNHNOWN： 不知道</li></ul>",
+          "document": "<p>克隆的形象的性别</p><p>枚举值：</p><ul><li>MALE： 男</li><li>FEMALE： 女</li><li>UNKNOWN： 不知道</li></ul>",
           "example": "FEMALE",
           "member": "string",
           "name": "Gender",
@@ -8103,7 +8123,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名。仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名。仅支持中文、英文、数字、_、-。</p>",
           "example": "templat",
           "member": "string",
           "name": "TemplateName",
@@ -8112,7 +8132,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "录制规则",
           "member": "string",
           "name": "Description",
@@ -8121,7 +8141,7 @@
         },
         {
           "disabled": false,
-          "document": "Flv录制参数，开启Flv录制时设置。",
+          "document": "<p>Flv录制参数，开启Flv录制时设置。</p>",
           "example": "无",
           "member": "RecordParam",
           "name": "FlvParam",
@@ -8130,7 +8150,7 @@
         },
         {
           "disabled": false,
-          "document": "Hls录制参数，开启hls录制时设置。",
+          "document": "<p>Hls录制参数，开启hls录制时设置。</p>",
           "example": "无",
           "member": "RecordParam",
           "name": "HlsParam",
@@ -8139,7 +8159,7 @@
         },
         {
           "disabled": false,
-          "document": "Mp4录制参数，开启Mp4录制时设置。",
+          "document": "<p>Mp4录制参数，开启Mp4录制时设置。</p>",
           "example": "无",
           "member": "RecordParam",
           "name": "Mp4Param",
@@ -8148,7 +8168,7 @@
         },
         {
           "disabled": false,
-          "document": "Aac录制参数，开启Aac录制时设置。",
+          "document": "<p>Aac录制参数，开启Aac录制时设置。</p>",
           "example": "无",
           "member": "RecordParam",
           "name": "AacParam",
@@ -8157,8 +8177,8 @@
         },
         {
           "disabled": false,
-          "document": "直播类型，默认 0。\n0：普通直播，\n1：慢直播。",
-          "example": "12",
+          "document": "<p>直播类型，默认 0。<br>0：普通直播，<br>1：慢直播。</p>",
+          "example": "1",
           "member": "int64",
           "name": "IsDelayLive",
           "required": false,
@@ -8166,7 +8186,7 @@
         },
         {
           "disabled": false,
-          "document": "HLS专属录制参数。",
+          "document": "<p>HLS专属录制参数。</p>",
           "example": "无",
           "member": "HlsSpecialParam",
           "name": "HlsSpecialParam",
@@ -8175,7 +8195,7 @@
         },
         {
           "disabled": false,
-          "document": "Mp3录制参数，开启Mp3录制时设置。",
+          "document": "<p>Mp3录制参数，开启Mp3录制时设置。</p>",
           "example": "无",
           "member": "RecordParam",
           "name": "Mp3Param",
@@ -8184,7 +8204,7 @@
         },
         {
           "disabled": false,
-          "document": "是否存储至 cos，值为 1 时表示存储至 cos。",
+          "document": "<p>是否存储至 cos，值为 1 时表示存储至 cos。</p>",
           "example": "1",
           "member": "int64",
           "name": "CosStore",
@@ -8193,7 +8213,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除水印，类型为慢直播时此参数无效。\n如果为false，则录制水印流或转码流；如果为true，则录制原始流。",
+          "document": "<p>是否去除水印，类型为慢直播时此参数无效。<br>如果为false，则录制水印流或转码流；如果为true，则录制原始流。</p>",
           "example": "false",
           "member": "bool",
           "name": "RemoveWatermark",
@@ -8202,7 +8222,7 @@
         },
         {
           "disabled": false,
-          "document": "FLV 录制特殊参数。",
+          "document": "<p>FLV 录制特殊参数。</p>",
           "example": "无",
           "member": "FlvSpecialParam",
           "name": "FlvSpecialParam",
@@ -8217,7 +8237,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -8818,7 +8838,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板名称。\n长度上限：255字节。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>模板名称。<br>长度上限：255字节。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testName",
           "member": "string",
           "name": "TemplateName",
@@ -8827,7 +8847,7 @@
         },
         {
           "disabled": false,
-          "document": "时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。",
+          "document": "<p>时移时长。单位：s。取值范围：86400 259200 604800 1296000 2592000。</p>",
           "example": "604800",
           "member": "uint64",
           "name": "Duration",
@@ -8836,7 +8856,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。\n仅支持中文、英文、数字、_、-。",
+          "document": "<p>描述信息。<br>仅支持中文、英文、数字、_、-。</p>",
           "example": "testDesc",
           "member": "string",
           "name": "Description",
@@ -8845,7 +8865,7 @@
         },
         {
           "disabled": false,
-          "document": "地域。\nMainland：中国大陆。\nOverseas：海外及港澳台地区。\n默认值：Mainland。",
+          "document": "<p>地域。<br>Mainland：中国大陆。<br>Overseas：海外及港澳台地区。<br>EuropeFrankfurt：欧洲-法兰克福。<br>NorthAmericaSiliconValley：北美-硅谷。<br>MiddleEastRiyadh：中东-利雅得。<br>AsiaTokyo：亚太-东京。<br>AsiaSeoul：亚太-首尔。<br>默认值：Mainland。</p>",
           "example": "Mainland",
           "member": "string",
           "name": "Area",
@@ -8854,7 +8874,7 @@
         },
         {
           "disabled": false,
-          "document": "分片时长。\n可取3-10。\n单位：s。\n默认值：5。",
+          "document": "<p>分片时长。<br>可取3-10。<br>单位：s。<br>默认值：5。</p>",
           "example": "5",
           "member": "uint64",
           "name": "ItemDuration",
@@ -8863,7 +8883,7 @@
         },
         {
           "disabled": false,
-          "document": "是否去除水印。\n传true则将录制原始流。\n默认值：false。",
+          "document": "<p>是否去除水印。<br>传true则将录制原始流。<br>默认值：false。</p>",
           "example": "false",
           "member": "bool",
           "name": "RemoveWatermark",
@@ -8872,7 +8892,7 @@
         },
         {
           "disabled": false,
-          "document": "转码流id列表。\n此参数仅在 RemoveWatermark为false时生效。",
+          "document": "<p>转码流id列表。<br>此参数仅在 RemoveWatermark为false时生效。</p>",
           "example": "[1]",
           "member": "int64",
           "name": "TranscodeTemplateIds",
@@ -8887,7 +8907,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板Id。",
+          "document": "<p>模板Id。</p>",
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
@@ -14236,7 +14256,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "包类型，可选值：\n0：流量包\n1：转码包\n2: 连麦包。",
+          "document": "<p>包类型，可选值：<br>0：流量包<br>1：转码包<br>2: 连麦包。</p>",
           "example": "1",
           "member": "int64",
           "name": "PackageType",
@@ -14245,8 +14265,8 @@
         },
         {
           "disabled": false,
-          "document": "排序规则:\n1. BuyTimeDesc： 最新购买的排在最前面\n2. BuyTimeAsc： 最老购买的排在最前面\n3. ExpireTimeDesc： 最后过期的排在最前面\n4. ExpireTimeAsc：最先过期的排在最前面。\n\n注意：\n1. PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。",
-          "example": "BuyTime desc",
+          "document": "<p>排序规则:</p><ol><li>BuyTimeDesc： 最新购买的排在最前面</li><li>BuyTimeAsc： 最老购买的排在最前面</li><li>ExpireTimeDesc： 最后过期的排在最前面</li><li>ExpireTimeAsc：最先过期的排在最前面。</li></ol><p>注意：</p><ol><li>PackageType 为 2（连麦包） 的时候，不支持 3、4 排序。</li></ol>",
+          "example": "BuyTimeDesc",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -14254,7 +14274,7 @@
         },
         {
           "disabled": false,
-          "document": "取得第几页的数据，和 PageSize 同时传递才会生效。",
+          "document": "<p>取得第几页的数据，和 PageSize 同时传递才会生效。</p>",
           "example": "1",
           "member": "int64",
           "name": "PageNum",
@@ -14263,7 +14283,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小，和 PageNum 同时传递才会生效。\n取值：10 ～ 100 之间的任意整数。",
+          "document": "<p>分页大小，和 PageNum 同时传递才会生效。<br>取值：10 ～ 100 之间的任意整数。</p>",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -14278,7 +14298,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "套餐包信息。",
+          "document": "<p>套餐包信息。</p>",
           "example": "无",
           "member": "LivePackageInfo",
           "name": "LivePackageInfoList",
@@ -14288,7 +14308,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐包当前计费方式:\n-1: 无计费方式或获取失败\n0: 无计费方式\n201: 月结带宽\n202: 月结流量\n203: 日结带宽\n204: 日结流量\n205: 日结时长\n206: 月结时长\n304: 日结流量。",
+          "document": "<p>套餐包当前计费方式:<br>-1: 无计费方式或获取失败<br>0: 无计费方式<br>201: 月结带宽<br>202: 月结流量<br>203: 日结带宽<br>204: 日结流量<br>205: 日结时长<br>206: 月结时长<br>304: 日结流量。</p>",
           "example": "201",
           "member": "int64",
           "name": "PackageBillMode",
@@ -14298,7 +14318,7 @@
         },
         {
           "disabled": false,
-          "document": "总页数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>总页数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TotalPage",
@@ -14308,7 +14328,7 @@
         },
         {
           "disabled": false,
-          "document": "数据总条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>数据总条数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "95",
           "member": "int64",
           "name": "TotalNum",
@@ -14318,7 +14338,7 @@
         },
         {
           "disabled": false,
-          "document": "当前页数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前页数。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "PageNum",
@@ -14328,7 +14348,7 @@
         },
         {
           "disabled": false,
-          "document": "当前每页数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>当前每页数量。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "PageSize",
@@ -14338,7 +14358,7 @@
         },
         {
           "disabled": false,
-          "document": "当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：\n标准直播，中国大陆（境内全地区）计费方式。\n标准直播，国际/港澳台（境外多地区）计费方式。\n快直播，中国大陆（境内全地区）计费方式。\n快直播，国际/港澳台（境外多地区）计费方式。",
+          "document": "<p>当请求参数 PackageType = 0 时生效，逗号分隔，从第一个到最后一个分别表示：<br>标准直播，中国大陆（境内全地区）计费方式。<br>标准直播，国际/港澳台（境外多地区）计费方式。<br>快直播，中国大陆（境内全地区）计费方式。<br>快直播，国际/港澳台（境外多地区）计费方式。</p>",
           "example": "201,201,204,204",
           "member": "string",
           "name": "FluxPackageBillMode",
@@ -16056,8 +16076,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要筛选的模板ID数组。",
-          "example": "365245",
+          "document": "<p>要筛选的模板ID数组。</p>",
+          "example": "[365245]",
           "member": "int64",
           "name": "TemplateIds",
           "required": false,
@@ -16065,8 +16085,8 @@
         },
         {
           "disabled": false,
-          "document": "要筛选的域名数组。",
-          "example": "tc.videosolar.com",
+          "document": "<p>要筛选的域名数组。</p>",
+          "example": "[\"tc.videosolar.com\"]",
           "member": "string",
           "name": "DomainNames",
           "required": false,
@@ -16080,8 +16100,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "转码规则列表。",
-          "example": "[{\"TemplateId\":369918,\"DomainName\":\"tc.videosolar.com\"}]",
+          "document": "<p>转码规则列表。</p>",
+          "example": "无",
           "member": "RuleInfo",
           "name": "Rules",
           "output_required": true,
@@ -16689,7 +16709,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>是否透传相应，可取值：on、off。<br>当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>是否透传响应，可取值：on、off。当原站播放协议为 hls 时，传递该字段才会生效。</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "off",
           "member": "string",
           "name": "PassThroughResponse",
@@ -19382,7 +19402,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "证书Id。",
+          "document": "<p>证书Id。</p>",
           "example": "38518",
           "member": "int64",
           "name": "CertId",
@@ -19392,7 +19412,7 @@
         },
         {
           "disabled": false,
-          "document": "证书名称。",
+          "document": "<p>证书名称。</p>",
           "example": "inkegd",
           "member": "string",
           "name": "CertName",
@@ -19402,7 +19422,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息。",
+          "document": "<p>描述信息。</p>",
           "example": "describe",
           "member": "string",
           "name": "Description",
@@ -19412,7 +19432,7 @@
         },
         {
           "disabled": false,
-          "document": "创建时间，UTC格式。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>创建时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "CreateTime",
@@ -19422,7 +19442,7 @@
         },
         {
           "disabled": false,
-          "document": "证书内容。",
+          "document": "<p>证书内容。</p>",
           "example": "-----BEGIN CERTIFICATE-----\\\\nMIIGvjCCBaagAwIBAgIQByuQf2Ch2YzIRqKLw02HazANBgkqhkiG9w0BAQsFADBf\\\\\\\\ntVzBAiBjg8xWJzJq57oMQeYLYrdlR8MHqyfXcXqggvZ3TIgyNQB3AObSMYukn\\\\nlA4=\\\\n-----END CERTIFICATE----",
           "member": "string",
           "name": "HttpsCrt",
@@ -19432,7 +19452,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型。\n0：用户添加证书，\n1：腾讯云托管证书。",
+          "document": "<p>证书类型。<br>0：用户添加证书，<br>1：腾讯云托管证书。</p>",
           "example": "1",
           "member": "int64",
           "name": "CertType",
@@ -19442,7 +19462,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间，UTC格式。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>证书过期时间，UTC格式。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2025-04-17 11:55:21",
           "member": "string",
           "name": "CertExpireTime",
@@ -19452,7 +19472,7 @@
         },
         {
           "disabled": false,
-          "document": "使用此证书的域名名称。",
+          "document": "<p>使用此证书的域名名称。</p>",
           "example": "iparty-pull.in.com",
           "member": "string",
           "name": "DomainName",
@@ -19462,7 +19482,7 @@
         },
         {
           "disabled": false,
-          "document": "证书状态。",
+          "document": "<p>证书状态。</p>",
           "example": "1",
           "member": "int64",
           "name": "Status",
@@ -19472,8 +19492,8 @@
         },
         {
           "disabled": false,
-          "document": "证书本身标识的域名列表。\n比如: [\"*.x.com\"]",
-          "example": "certname",
+          "document": "<p>证书本身标识的域名列表。<br>比如: [&quot;*.x.com&quot;]</p>",
+          "example": "[\"test.com\"]",
           "member": "string",
           "name": "CertDomains",
           "output_required": true,
@@ -19482,7 +19502,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云ssl的证书Id",
+          "document": "<p>腾讯云ssl的证书Id</p>",
           "example": "4512",
           "member": "string",
           "name": "CloudCertId",
@@ -20324,7 +20344,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>性别：男或者女</p>",
+          "document": "<p>性别：男或者女或者UNKNOWN</p>",
           "example": "UNKNOWN",
           "member": "string",
           "name": "Gender",
@@ -21219,7 +21239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志名称。",
+          "document": "<p>日志名称。</p>",
           "example": "logname",
           "member": "string",
           "name": "LogName",
@@ -21229,7 +21249,7 @@
         },
         {
           "disabled": false,
-          "document": "日志 URL。",
+          "document": "<p>日志 URL。</p>",
           "example": "http://abc.ab.com",
           "member": "string",
           "name": "LogUrl",
@@ -21239,7 +21259,7 @@
         },
         {
           "disabled": false,
-          "document": "日志生成时间。\n注：此字段为北京时间（UTC+8时区）。",
+          "document": "<p>日志生成时间。<br>注：此字段为北京时间（UTC+8时区）。</p>",
           "example": "2024-04-17 11:55:21",
           "member": "string",
           "name": "LogTime",
@@ -21249,7 +21269,7 @@
         },
         {
           "disabled": false,
-          "document": "文件大小。",
+          "document": "<p>文件大小，单位字节。</p>",
           "example": "10000",
           "member": "int64",
           "name": "FileSize",
@@ -22102,7 +22122,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要绑定证书的播放域名/状态 信息列表。\n如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。",
+          "document": "<p>要绑定证书的播放域名/状态 信息列表。<br>如果CloudCertId和证书公钥私钥对均不传，且域名列表已有绑定规则，只批量更新域名https规则的启用状态，并把未上传至腾讯云ssl的已有自有证书上传。</p>",
           "example": "无",
           "member": "LiveCertDomainInfo",
           "name": "DomainInfos",
@@ -22111,7 +22131,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云ssl的证书Id。\n见 https://cloud.tencent.com/document/api/400/41665",
+          "document": "<p>腾讯云ssl的证书Id。<br>见 https://cloud.tencent.com/document/api/400/41665</p>",
           "example": "Kf2ymCv",
           "member": "string",
           "name": "CloudCertId",
@@ -22120,7 +22140,7 @@
         },
         {
           "disabled": false,
-          "document": "证书公钥。\nCloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。",
+          "document": "<p>证书公钥。<br>CloudCertId和公钥私钥对二选一，若CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>",
           "example": "NXpT4oZAQ0JLclP1I9EbV8daGk9j86hd1oWJlmGMuz-Qc",
           "member": "string",
           "name": "CertificatePublicKey",
@@ -22129,7 +22149,7 @@
         },
         {
           "disabled": false,
-          "document": "证书私钥。\nCloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。",
+          "document": "<p>证书私钥。<br>CloudCertId和公钥私钥对二选一，若传CloudCertId将会舍弃公钥和私钥参数，否则将自动先把公钥私钥对上传至ssl新建证书，并使用上传成功后返回的CloudCertId。</p>",
           "example": "lb7KhNmJL8wS7XXIZeFreu353WIeYtQX8xz4OOLwWR2pwamXsH5rLGVSVSDMnpjhd6q7RMbxJeNyByL3WpytvXgA1bn4w",
           "member": "string",
           "name": "CertificatePrivateKey",
@@ -22138,7 +22158,7 @@
         },
         {
           "disabled": false,
-          "document": "上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。",
+          "document": "<p>上传至ssl证书中心的备注信息，只有新建证书时有效。传CloudCertId时会忽略。</p>",
           "example": "Kf2ymCv",
           "member": "string",
           "name": "CertificateAlias",
@@ -22153,8 +22173,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。",
-          "example": "5000.liveplay.com",
+          "document": "<p>DomainNames 入参中，与证书不匹配的域名列表，将会跳过处理。</p>",
+          "example": "[\"5000.liveplay.com\"]",
           "member": "string",
           "name": "MismatchedDomainNames",
           "output_required": true,
@@ -22163,7 +22183,7 @@
         },
         {
           "disabled": false,
-          "document": "操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。",
+          "document": "<p>操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。</p>",
           "example": "无",
           "member": "BatchDomainOperateErrors",
           "name": "Errors",
@@ -22915,7 +22935,7 @@
         {
           "disabled": false,
           "document": "<p>擦除类型选择“隐私保护”后，该项可见</p><p>枚举值：</p><ul><li>blur face： 人脸模糊</li><li>license plate： 车牌模糊</li></ul>",
-          "example": "blur face|blur license plate",
+          "example": "blur face",
           "member": "string",
           "name": "PrivacyProtection",
           "required": false,
@@ -23338,7 +23358,7 @@
         {
           "disabled": false,
           "document": "<p>音频码率，默认0。<br>范围：0-500。</p>",
-          "example": "600",
+          "example": "128",
           "member": "int64",
           "name": "AudioBitrate",
           "required": false,
@@ -23464,7 +23484,7 @@
         {
           "disabled": false,
           "document": "<p>极速高清视频码率压缩比。<br>极速高清目标码率=VideoBitrate * (1-AdaptBitratePercent)</p><p>取值范围：0.0 到 0.5<br>智能降码：0.5 到 0.9</p>",
-          "example": "1.1",
+          "example": "0.6",
           "member": "float",
           "name": "AdaptBitratePercent",
           "required": false,
@@ -27290,7 +27310,7 @@
         {
           "disabled": false,
           "document": "<p>进入房间时需要用UserSign来校验权限</p>",
-          "example": "eJwtzE8LgjAcxvH3smth29pfoUNdKvEiBhV0KZz1o6y5qQXRe2*lx*fzheeNNmkedcahGNEIo-F-Q2HuDZTQM2GSKS6EHKovrkdroUAxERhjraaU9sW8LDgTnHNOQ*q1gepnUinJtJCDejiH86WdW*pPN02Sx6LdHiam9T7tSvcUNWV2dZFVnY*S3X6dZTP0*QKnjTIx",
+          "example": "********************************************************************************************************************************************************************************************************",
           "member": "string",
           "name": "TrtcUserSig",
           "required": false,
@@ -28406,7 +28426,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始宽度</p>",
+          "document": "<p>高，默认0。<br>范围[0-3000]<br>数值必须是2的倍数，0是原始高度</p>",
           "example": "0",
           "member": "int64",
           "name": "Height",

@@ -4429,7 +4429,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "<p>域名</p>",
           "example": "dnspod.cn",
           "member": "string",
           "name": "Domain",
@@ -4438,7 +4438,7 @@
         },
         {
           "disabled": false,
-          "document": "域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId",
+          "document": "<p>域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId</p>",
           "example": "61",
           "member": "uint64",
           "name": "DomainId",
@@ -4447,7 +4447,7 @@
         },
         {
           "disabled": false,
-          "document": "记录开始的偏移，第一条记录为 0，依次类推，默认为0",
+          "document": "<p>记录开始的偏移，第一条记录为 0，依次类推，默认为0</p>",
           "example": "1",
           "member": "uint64",
           "name": "Offset",
@@ -4456,7 +4456,7 @@
         },
         {
           "disabled": false,
-          "document": "共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。",
+          "document": "<p>共要获取的日志条数，比如获取20条，则为20，默认为500条，单次最多获取500条。</p>",
           "example": "100",
           "member": "uint64",
           "name": "Limit",
@@ -4471,8 +4471,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名日志信息",
-          "example": "[\"2021-01-18 12:06:11: (111.111.111.111) 添加 A 记录 默认 线路 ftp 值 64]",
+          "document": "<p>域名日志信息</p>",
+          "example": "[\"2021-01-18 12:06:11: (111.111.111.111) 添加 A 记录 默认 线路 ftp 值 64.144.7.51\"]",
           "member": "string",
           "name": "LogList",
           "output_required": true,
@@ -4481,7 +4481,7 @@
         },
         {
           "disabled": false,
-          "document": "分页大小",
+          "document": "<p>分页大小</p>",
           "example": "100",
           "member": "uint64",
           "name": "PageSize",
@@ -4491,7 +4491,7 @@
         },
         {
           "disabled": false,
-          "document": "日志总条数",
+          "document": "<p>日志总条数</p>",
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",

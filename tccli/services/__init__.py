@@ -264,9 +264,6 @@ SERVICE_VERSIONS = {
     "controlcenter": [
         "2023-01-10"
     ],
-    "cpdp": [
-        "2019-08-20"
-    ],
     "csip": [
         "2022-11-21"
     ],

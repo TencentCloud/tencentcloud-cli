@@ -13023,7 +13023,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单类型，枚举值\nbillOverview=L0-PDF账单\nbillSummary=L1-汇总账单\t\nbillResource=L2-资源账单\t\nbillDetail=L3-明细账单\t\nbillPack=账单包",
+          "document": "<p>账单类型，枚举值<br>billOverview=L0-PDF账单<br>billSummary=L1-汇总账单<br>billResource=L2-资源账单<br>billDetail=L3-明细账单<br>billPack=账单包</p>",
           "example": "billOverview",
           "member": "string",
           "name": "FileType",
@@ -13032,7 +13032,7 @@
         },
         {
           "disabled": false,
-          "document": "账单月份\n支持的最早开始月份为2021-01\nL0-PDF&账单包不支持当月下载，当月账单请在次月1号19:00出账后下载",
+          "document": "<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>",
           "example": "2023-08",
           "member": "string",
           "name": "Month",
@@ -13041,8 +13041,8 @@
         },
         {
           "disabled": false,
-          "document": "下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN",
-          "example": "909619400",
+          "document": "<p>下载的账号 ID列表，默认查询本账号账单，如集团管理账号需下载成员账号自付的账单，该字段需入参成员账号UIN</p>",
+          "example": "[\"909619400\"]",
           "member": "string",
           "name": "ChildUin",
           "required": false,
@@ -13056,7 +13056,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账单文件是否准备就绪，0文件生成中，1文件已生成",
+          "document": "<p>账单文件是否准备就绪，0文件生成中，1文件已生成</p>",
           "example": "1",
           "member": "int64",
           "name": "Ready",
@@ -13066,8 +13066,8 @@
         },
         {
           "disabled": false,
-          "document": "账单文件下载链接，有效时长为一天\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://resourcebillv2-maz-1258344699.cos.ap-guangzhou.myqcloud.com/L3-%E6%98%8E%E7%BB%86%E8%B4%A6%E5%8D%95-909619400-202409-%E6%8C%89%E8%AE%A1%E8%B4%B9%E5%91%A8%E6%9C%9F-67442308143401732518664402346837.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDinyr6Z152-6jTkBZ5Nuo2FxKS2OzFzwgEL4Kbrmxn-kPo0ginL833RBPFY1766Us%26q-sign-time%3D1732518627%3B1732605087%26q-key-time%3D1732518627%3B1732605087%26q-header-list%3Dhost%26q-url-param-list%3D%26q-signature%3D6cd481b56b4daf7e666a06b0bd9160f8ee2af320&&x-cos-security-token=665a677mNcVYg2GabYQbyPNGjPP6SCoac16c3a79413531b910a4a24be079734f_TWD79Qt5FZ5F61oxce95b4QDN08UxQ4CZuhqd1qS7BaSNPUqAp2rPmTSGsZJNpCkOgCpMtQFTRvy1q4qDUqQVeJInJun5E76Rsx81pOYJ23qScULZMl859qycheq0vMRJBEDO21inxo4c-VbePXqNLELrnv-JvefzHc049BCX4JhcNSaB1i7Xg41LN9r6cVO3_Cqtzp84XqsaeS1iQiZNI6D7Bn_IoSu5jXtmQrrtKtWnK7nJ4GS6qkxwcGR75MDmCJYT_k1RfVsLtBn9dJA8SqwabRph-nYhFEs4IjREk",
+          "document": "<p>账单文件下载链接，有效时长为一天</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://resourcebillv2-maz-1258344699.cos.ap-guangzhou.myqcloud.com/L3-%E6%98%8E%E7%BB%86%E8%B4%A6%E5%8D%95-909619400-202409-%E6%8C%89%E8%AE%A1%E8%B4%B9%E5%91%A8%E6%9C%9F-67442308143401732518664402346837.zip",
           "member": "string",
           "name": "DownloadUrl",
           "output_required": true,
@@ -13444,7 +13444,7 @@
         },
         {
           "disabled": false,
-          "document": "<p>月份，格式为yyyy-mm。不能早于开通账单2.0的月份</p>",
+          "document": "<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>",
           "example": "2018-08",
           "member": "string",
           "name": "Month",
@@ -13572,8 +13572,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -13581,8 +13581,8 @@
         },
         {
           "disabled": false,
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -13590,7 +13590,7 @@
         },
         {
           "disabled": false,
-          "document": "查询账单数据的用户UIN",
+          "document": "<p>查询账单数据的用户UIN</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -13605,7 +13605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -13615,8 +13615,8 @@
         },
         {
           "disabled": false,
-          "document": "各付费模式花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"businessCode\":\"p_ntp\",\"realTotalCost\":\"6.38000000\",\"totalCost\":\"7.50000000\",\"cashPayAmount\":\"6.38000000\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2023-09\",\"realTotalCostRatio\":\"67.43\",\"businessCodeName\":\"共享流量包\"}]",
+          "document": "<p>各付费模式花费分布详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "PayModeSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": true,
@@ -13637,8 +13637,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -13646,8 +13646,8 @@
         },
         {
           "disabled": false,
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -13655,7 +13655,7 @@
         },
         {
           "disabled": false,
-          "document": "查询账单数据的用户UIN",
+          "document": "<p>查询账单数据的用户UIN</p>",
           "example": "909619400",
           "member": "string",
           "name": "PayerUin",
@@ -13664,7 +13664,7 @@
         },
         {
           "disabled": false,
-          "document": "款项类别，与L0账单上的汇总类别对应。\n此参数自账单3.0（即2021-05）之后开始生效。\n枚举值：\nconsume-消费\nrefund-退款\nadjustment-调账",
+          "document": "<p>款项类别，与L0账单上的汇总类别对应。 此参数自账单3.0（即2021-01）之后开始生效。</p><p>枚举值：</p><ul><li>consume： 消费</li><li>refund： 退款</li><li>adjustment： 调账</li></ul>",
           "example": "consume",
           "member": "string",
           "name": "PayType",
@@ -13679,7 +13679,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -13689,8 +13689,8 @@
         },
         {
           "disabled": false,
-          "document": "总花费详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "{\"realTotalCost\":\"6.72000000\",\"totalCost\":\"6.72000000\",\"voucherPayAmount\":\"0.00000000\",\"incentivePayAmount\":\"0.00000000\",\"cashPayAmount\":\"6.72000000\",\"transferPayAmount\":\"0.00000000\"}",
+          "document": "<p>总花费详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BusinessSummaryTotal",
           "name": "SummaryTotal",
           "output_required": true,
@@ -13699,8 +13699,8 @@
         },
         {
           "disabled": false,
-          "document": "各产品花费分布\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"businessCode\":\"p_eip\",\"realTotalCost\":\"7.73432921\",\"totalCost\":\"7.73432921\",\"cashPayAmount\":\"7.73432921\",\"incentivePayAmount\":\"0.00000000\",\"voucherPayAmount\":\"0.00000000\",\"transferPayAmount\":\"0.00000000\",\"billMonth\":\"2024-01\",\"realTotalCostRatio\":\"100.00\",\"businessCodeName\":\"公网 IP\"}]",
+          "document": "<p>各产品花费分布</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "BusinessSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": true,
@@ -13786,8 +13786,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -13795,8 +13795,8 @@
         },
         {
           "disabled": false,
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2018-11",
+          "document": "<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -13804,7 +13804,7 @@
         },
         {
           "disabled": false,
-          "document": "查询账单数据的用户UIN",
+          "document": "<p>查询账单数据的用户UIN</p>",
           "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
@@ -13819,7 +13819,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -13829,7 +13829,7 @@
         },
         {
           "disabled": false,
-          "document": "各地域花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "<p>各地域花费分布详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RegionSummaryOverviewItem",
           "name": "SummaryOverview",
@@ -13851,8 +13851,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2019-09",
+          "document": "<p>目前必须和EndTime相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "BeginTime",
           "required": true,
@@ -13860,8 +13860,8 @@
         },
         {
           "disabled": false,
-          "document": "目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2018-09，EndTime 为 2018-09，查询结果是 2018 年 9 月数据。",
-          "example": "2019-09",
+          "document": "<p>目前必须和BeginTime为相同月份，不支持跨月查询，且查询结果是整月数据，例如 BeginTime为2026-11，EndTime 为 2026-11，查询结果是 2026 年 11 月数据。格式为yyyy-mm，不能早于2021-01</p>",
+          "example": "2026-11",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -13869,7 +13869,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签键，用户自定义",
+          "document": "<p>分账标签键，用户自定义</p>",
           "example": "province",
           "member": "string",
           "name": "TagKey",
@@ -13878,7 +13878,7 @@
         },
         {
           "disabled": false,
-          "document": "查询账单数据的用户UIN",
+          "document": "<p>查询账单数据的用户UIN</p>",
           "example": "10002011014",
           "member": "string",
           "name": "PayerUin",
@@ -13887,7 +13887,7 @@
         },
         {
           "disabled": false,
-          "document": "分账标签值",
+          "document": "<p>分账标签值</p>",
           "example": "0",
           "member": "string",
           "name": "TagValue",
@@ -13902,7 +13902,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）",
+          "document": "<p>数据是否准备好，0准备中，1已就绪。（Ready=0，为当前UIN首次进行初始化出账，预计需要5~10分钟出账，请于10分钟后重试即可）</p>",
           "example": "1",
           "member": "uint64",
           "name": "Ready",
@@ -13912,8 +13912,8 @@
         },
         {
           "disabled": false,
-          "document": "各标签值花费分布详情\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{ \t\t\t\"TagValue\": \"prod_data_oceanus_oceanus_oceanus06_oceanus\", \t\t\t\"RealTotalCost\": \"20160.00000000\", \t\t\t\"TotalCost\": \"50400.00000000\", \t\t\t\"CashPayAmount\": \"20160.00000000\", \t\t\t\"IncentivePayAmount\": \"0.00000000\", \t\t\t\"VoucherPayAmount\": \"0.00000000\", \t\t\t\"TransferPayAmount\": \"0.00000000\", \t\t\t\"RealTotalCostRatio\": \"1.47\" \t\t}]",
+          "document": "<p>各标签值花费分布详情</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TagSummaryOverviewItem",
           "name": "SummaryOverview",
           "output_required": true,
@@ -13922,8 +13922,8 @@
         },
         {
           "disabled": false,
-          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": " { \t\t\t\"RealTotalCost\": \"1367086.42000000\", \t\t\t\"TotalCost\": \"3656103.49136314\" \t\t}",
+          "document": "<p>总数</p>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "SummaryTotal",
           "name": "SummaryTotal",
           "output_required": true,
@@ -14009,7 +14009,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>账单月份，格式为2023-04</p>",
+          "document": "<p>月份，格式为yyyy-mm，不能早于2021-01  示例值：2026-11</p>",
           "example": "2023-05",
           "member": "string",
           "name": "Month",

@@ -15,7 +15,7 @@ tccli live CreateLiveTranscodeTemplate --cli-unfold-argument  \
     --AdaptiveChildren.0.VideoBitrate 3000 \
     --AdaptiveChildren.0.Height 2000 \
     --AdaptiveChildren.0.Fps 0 \
-    --AdaptiveChildren.0.Gop 0 \
+    --AdaptiveChildren.0.Gop 2 \
     --AdaptiveChildren.0.NeedVideo 1 \
     --AdaptiveChildren.0.NeedAudio 1 \
     --AdaptiveChildren.0.BitrateToOrig 0 \

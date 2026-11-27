@@ -15,7 +15,7 @@
       "status": "online"
     },
     "CallbackStatusStatistics": {
-      "document": "本接口 (CallbackStatusStatistics) 用于统计用户回执的数据。",
+      "document": "本接口 (CallbackStatusStatistics) 用于查询回执统计数据。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>本接口仅支持查询国内短信回执统计数据。</li></ul></blockquote>",
       "input": "CallbackStatusStatisticsRequest",
       "name": "回执数据统计",
       "output": "CallbackStatusStatisticsResponse",
@@ -127,14 +127,14 @@
       "status": "online"
     },
     "SendStatusStatistics": {
-      "document": "本接口 (SendStatusStatistics) 用于统计用户发送短信的数据。",
+      "document": "本接口 (SendStatusStatistics) 用于查询用户发送短信的统计数据。",
       "input": "SendStatusStatisticsRequest",
       "name": "发送短信数据统计",
       "output": "SendStatusStatisticsResponse",
       "status": "online"
     },
     "SmsPackagesStatistics": {
-      "document": "本接口 (SmsPackagesStatistics) 用于统计用户套餐包数据。",
+      "document": "本接口 (SmsPackagesStatistics) 用于查询国内短信套餐包统计信息。\n<blockquote class=\"d-mod-explain\"><div class=\"d-mod-title d-explain-title\" style=\"line-height: normal;\"><i class=\"d-icon-explain\"></i>说明：</div><p></p><ul><li>本接口仅支持查询国内短信套餐包统计信息。</li></ul></blockquote>",
       "input": "SmsPackagesStatisticsRequest",
       "name": "套餐包信息统计",
       "output": "SmsPackagesStatisticsResponse",
@@ -2530,7 +2530,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "短信 SdkAppId 在 [短信控制台](https://console.cloud.tencent.com/smsv2/app-manage)  添加应用后生成的实际 SdkAppId，示例如1400006666。",
+          "document": "<p>短信 SdkAppId 在 <a href=\"https://console.cloud.tencent.com/smsv2/app-manage\">短信控制台</a>  添加应用后生成的实际 SdkAppId，示例如1400006666。</p>",
           "example": "1400006666",
           "member": "string",
           "name": "SmsSdkAppId",
@@ -2539,7 +2539,7 @@
         },
         {
           "disabled": false,
-          "document": "最大上限(需要拉取的套餐包个数)。\n注：Limit默认最大值为500，可结合Offset实现分页查询。",
+          "document": "<p>最大上限(需要拉取的套餐包个数)。<br>注：Limit默认最大值为500，可结合Offset实现分页查询。</p>",
           "example": "2",
           "member": "uint64",
           "name": "Limit",
@@ -2548,7 +2548,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量。",
+          "document": "<p>偏移量。</p>",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -2557,7 +2557,7 @@
         },
         {
           "disabled": false,
-          "document": "起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。\n注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。",
+          "document": "<p>起始时间，格式为yyyymmddhh，精确到小时，例如2024050113，表示2024年5月1号13时。<br>注：接口会返回 BeginTime 到 EndTime 之间创建的套餐包的统计信息。</p>",
           "example": "2024050113",
           "member": "string",
           "name": "BeginTime",
@@ -2566,7 +2566,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。\n注：EndTime 必须大于 BeginTime 且小于当前时间。",
+          "document": "<p>结束时间，格式为yyyymmddhh，精确到小时，例如2024050118，表示2024年5月1号18时。<br>注：EndTime 必须大于 BeginTime 且小于当前时间。</p>",
           "example": "2024050118",
           "member": "string",
           "name": "EndTime",
@@ -2581,8 +2581,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "发送数据统计响应包体。",
-          "example": "[{\"PackageCreateTime\":1617292800,\"PackageExpiredTime\":1617292800,\"PackageEffectiveTime\":1619884800,\"PackageType\":1,\"CurrentUsage\":1000,\"PackageId\":1000791745,\"PackageAmount\":1000}]",
+          "document": "<p>套餐包统计信息响应包体。</p>",
+          "example": "无",
           "member": "SmsPackagesStatistics",
           "name": "SmsPackagesStatisticsSet",
           "output_required": true,

@@ -867,7 +867,7 @@
         {
           "disabled": false,
           "document": "会话标题",
-          "example": "你好",
+          "example": "您好",
           "member": "string",
           "name": "Title",
           "output_required": false,
@@ -1031,7 +1031,7 @@
         {
           "disabled": false,
           "document": "代码仓库地址",
-          "example": "https://git.woa.com/calvinliao/tcs-middleware",
+          "example": "https://github.com/username/tcs-middleware",
           "member": "string",
           "name": "RepoUrl",
           "output_required": false,

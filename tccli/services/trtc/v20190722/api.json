@@ -11716,7 +11716,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<p>tts模型参数，仅支持填写&quot;flow_02_turbo&quot;。</p>",
+          "document": "<p>tts模型参数，当前支持填写&quot;flow_02_turbo&quot;。</p>",
           "example": "flow_02_turbo",
           "member": "string",
           "name": "Model",
@@ -11758,6 +11758,15 @@
           "name": "Voice",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<p>TTS高级扩展参数，使用需要联系我们支持</p><p>参数格式：{\"Type\":\"xxx\", \"Data\":{}}</p>",
+          "example": "{\\\"Type\\\":\\\"*****\\\",\\\"Data\\\":{}}",
+          "member": "string",
+          "name": "ExtraParams",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
